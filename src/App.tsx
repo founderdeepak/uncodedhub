@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: '', phone: '', email: '' });
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', countryCode: '+91' });
 
   const heroRef = useRef<HTMLDivElement>(null);
   const processRef = useRef<HTMLDivElement>(null);
@@ -120,9 +120,8 @@ export default function App() {
 
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Replace with the user's actual phone number including country code, e.g. "1234567890" for testing
-    const targetPhoneNumber = "1234567890"; 
-    const textMessage = `*New Project Inquiry*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Email:* ${formData.email}`;
+    const targetPhoneNumber = "918660819023"; 
+    const textMessage = `*New Project Inquiry*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.countryCode} ${formData.phone}%0A*Email:* ${formData.email}`;
     window.open(`https://wa.me/${targetPhoneNumber}?text=${textMessage}`, '_blank');
     setIsModalOpen(false);
   };
@@ -502,14 +501,27 @@ export default function App() {
               </div>
               <div>
                 <label className="block text-xs font-semibold text-steel uppercase tracking-wider mb-2">Phone Number</label>
-                <input 
-                  type="tel" 
-                  required
-                  value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  className="w-full bg-midnight/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan focus:ring-1 focus:ring-cyan transition-all"
-                  placeholder="+1 (234) 567-8900"
-                />
+                <div className="flex gap-2">
+                  <select 
+                    value={formData.countryCode}
+                    onChange={(e) => setFormData({...formData, countryCode: e.target.value})}
+                    className="w-[110px] bg-midnight/50 border border-white/10 rounded-xl px-3 py-3 text-white focus:outline-none focus:border-cyan focus:ring-1 focus:ring-cyan transition-all cursor-pointer"
+                  >
+                    <option value="+1">+1 (US)</option>
+                    <option value="+44">+44 (UK)</option>
+                    <option value="+91">+91 (IN)</option>
+                    <option value="+971">+971 (AE)</option>
+                    <option value="+61">+61 (AU)</option>
+                  </select>
+                  <input 
+                    type="tel" 
+                    required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    className="w-full bg-midnight/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan focus:ring-1 focus:ring-cyan transition-all"
+                    placeholder="8660819023"
+                  />
+                </div>
               </div>
               <div>
                 <label className="block text-xs font-semibold text-steel uppercase tracking-wider mb-2">Email Address</label>
