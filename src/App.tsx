@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import WireframeSphere from './components/WireframeSphere';
+import HoverFooter from './components/ui/hover-footer';
 import { ArrowRight, Code2, Zap, Cpu, CheckCircle2, ChevronRight, Star, ShieldCheck, TrendingUp, Menu, X } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -470,9 +471,7 @@ export default function App() {
       </section>
       
       {/* Footer */}
-      <footer className="py-8 text-center border-t border-white/5 text-steel font-mono text-sm bg-midnight relative z-10">
-        <p>&copy; {new Date().getFullYear()} Uncoded Hub. All systems operational.</p>
-      </footer>
+      <HoverFooter />
 
       {/* Contact Us Modal Overlay */}
       {isModalOpen && (
