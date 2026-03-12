@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import WireframeSphere from './components/WireframeSphere';
 import HoverFooter from './components/ui/hover-footer';
-import { ArrowRight, Code2, Zap, Cpu, CheckCircle2, ChevronRight, Star, ShieldCheck, TrendingUp, Menu, X } from 'lucide-react';
+import { ExpandableTabs } from './components/ui/expandable-tabs';
+import { ArrowRight, Code2, Zap, Cpu, CheckCircle2, ChevronRight, Star, ShieldCheck, TrendingUp, Menu, X, Info, MessageCircle } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -12,6 +13,16 @@ export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', countryCode: '+91' });
+
+  const navTabs = [
+    { title: "About", icon: Info },
+    { title: "Contact", icon: MessageCircle },
+  ];
+
+  const handleNavChange = (index: number | null) => {
+    if (index === 0) window.location.hash = "#about";
+    if (index === 1) window.location.hash = "#contact";
+  };
 
   const heroRef = useRef<HTMLDivElement>(null);
   const processRef = useRef<HTMLDivElement>(null);
@@ -195,10 +206,9 @@ export default function App() {
           </div>
           
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#about" className="text-sm font-semibold tracking-wide hover:text-cyan transition-colors">ABOUT</a>
-            <a href="#contact" className="text-sm font-semibold tracking-wide hover:text-cyan transition-colors">CONTACT</a>
-            <button onClick={() => setIsModalOpen(true)} className="cyan-energy-btn !py-2.5 !px-6 !text-sm !font-medium shrink-0">
+          <div className="hidden md:flex items-center gap-6">
+            <ExpandableTabs tabs={navTabs} onChange={handleNavChange} />
+            <button onClick={() => setIsModalOpen(true)} className="cyan-energy-btn !py-2.5 !px-6 !text-sm !font-medium shrink-0 ml-2">
               Start a Project
               <ArrowRight className="w-4 h-4" />
             </button>
