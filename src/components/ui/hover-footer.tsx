@@ -190,8 +190,13 @@ export default function HoverFooter() {
   ];
 
   return (
-    <div className="relative mt-8">
-    <footer className="bg-cyber/40 relative h-fit rounded-t-[3rem] border-t border-white/5">
+    <div
+      className="relative mt-8"
+      style={{
+        background: "linear-gradient(to bottom, rgba(17,20,42,0.6) 0%, rgba(11,14,35,1) 100%)"
+      }}
+    >
+    <footer className="relative h-fit rounded-t-[3rem] border-t border-white/5">
       <div className="max-w-7xl mx-auto p-12 lg:p-16 z-40 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-8 lg:gap-16 pb-12">
           {/* Brand section */}
@@ -297,12 +302,12 @@ export default function HoverFooter() {
         </div>
       </div>
 
-      <FooterBackgroundGradient />
+      {/* Remove internal gradient - it's on the outer wrapper now */}
     </footer>
 
-      {/* Text hover effect - outside footer to avoid overflow-hidden clipping */}
+      {/* Text hover effect - seamlessly joined with footer bottom */}
       <div
-        className="lg:flex hidden w-full items-center justify-center bg-cyber/40 border-t border-white/5"
+        className="lg:flex hidden w-full items-center justify-center"
         style={{ height: "10rem", overflow: "hidden" }}
       >
         <svg
