@@ -11,7 +11,8 @@ import {
   Twitter,
   Dribbble,
   Globe,
-  ArrowRight
+  Info,
+  MessageCircle
 } from "lucide-react";
 
 export const TextHoverEffect = ({
@@ -46,7 +47,7 @@ export const TextHoverEffect = ({
       ref={svgRef}
       width="100%"
       height="100%"
-      viewBox="0 0 800 150"
+      viewBox="0 0 1200 200"
       xmlns="http://www.w3.org/2000/svg"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -98,7 +99,7 @@ export const TextHoverEffect = ({
         dominantBaseline="middle"
         strokeWidth="0.3"
         className="fill-transparent stroke-neutral-200 font-display font-black dark:stroke-white/10"
-        style={{ opacity: hovered ? 0.7 : 0, fontSize: "110px" }}
+        style={{ opacity: hovered ? 0.7 : 0, fontSize: "140px" }}
       >
         {text}
       </text>
@@ -109,7 +110,7 @@ export const TextHoverEffect = ({
         dominantBaseline="middle"
         strokeWidth="0.3"
         className="fill-transparent stroke-cyan font-display font-black dark:stroke-cyan/60"
-        style={{ fontSize: "110px" }}
+        style={{ fontSize: "140px" }}
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
         animate={{
           strokeDashoffset: 0,
@@ -131,7 +132,7 @@ export const TextHoverEffect = ({
         strokeWidth="0.3"
         mask="url(#textMask)"
         className="fill-transparent font-display font-black"
-        style={{ fontSize: "110px" }}
+        style={{ fontSize: "140px" }}
       >
         {text}
       </text>
@@ -157,24 +158,10 @@ export default function HoverFooter() {
     {
       title: "Navigation",
       links: [
-        { label: "Home", href: "#" },
-        { label: "About", href: "#about" },
-        { label: "Process", href: "#" },
-        { label: "Contact", href: "#contact" },
+        { label: "About", href: "#about", icon: <Info size={16} className="mr-2 inline" /> },
+        { label: "Contact", href: "#contact", icon: <MessageCircle size={16} className="mr-2 inline" /> },
       ],
-    },
-    {
-      title: "Legal",
-      links: [
-        { label: "Privacy Policy", href: "#" },
-        { label: "Terms of Service", href: "#" },
-        {
-          label: "Book Strategy Call",
-          href: "#contact",
-          pulse: true,
-        },
-      ],
-    },
+    }
   ];
 
   // Contact info data
@@ -203,9 +190,10 @@ export default function HoverFooter() {
   ];
 
   return (
-    <footer className="bg-cyber/40 relative h-fit rounded-t-[3rem] overflow-hidden mt-8 border-t border-white/5">
+    <div className="relative mt-8">
+    <footer className="bg-cyber/40 relative h-fit rounded-t-[3rem] border-t border-white/5">
       <div className="max-w-7xl mx-auto p-12 lg:p-16 z-40 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 lg:gap-16 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-8 lg:gap-16 pb-12">
           {/* Brand section */}
           <div className="flex flex-col space-y-4">
             <div className="flex items-center space-x-3">
@@ -244,13 +232,11 @@ export default function HoverFooter() {
                   <li key={link.label} className="relative">
                     <a
                       href={link.href}
-                      className="text-steel hover:text-cyan transition-colors"
+                      className="text-steel hover:text-cyan transition-colors flex items-center w-fit"
                     >
+                      {link.icon}
                       {link.label}
                     </a>
-                    {link.pulse && (
-                      <span className="absolute top-1 -right-2 w-2 h-2 rounded-full bg-magenta animate-pulse"></span>
-                    )}
                   </li>
                 ))}
               </ul>
@@ -311,12 +297,44 @@ export default function HoverFooter() {
         </div>
       </div>
 
-      {/* Text hover effect */}
-      <div className="lg:flex hidden h-[22rem] -mt-32 -mb-20 pointer-events-auto items-center justify-center overflow-hidden">
-        <TextHoverEffect text="UNCODEDHUB" className="z-50" />
-      </div>
-
       <FooterBackgroundGradient />
     </footer>
+
+      {/* Text hover effect - outside footer to avoid overflow-hidden clipping */}
+      <div
+        className="lg:flex hidden w-full items-center justify-center bg-cyber/40 border-t border-white/5"
+        style={{ height: "10rem", overflow: "hidden" }}
+      >
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 1200 160"
+          preserveAspectRatio="xMidYMid meet"
+          xmlns="http://www.w3.org/2000/svg"
+          className="select-none cursor-pointer w-full"
+          style={{ display: "block" }}
+        >
+          <defs>
+            <linearGradient id="bigTextGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1200" y2="0">
+              <stop offset="0%" stopColor="#00F0FF" />
+              <stop offset="50%" stopColor="#B026FF" />
+              <stop offset="100%" stopColor="#00F0FF" />
+            </linearGradient>
+          </defs>
+          <text
+            x="50%"
+            y="50%"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="none"
+            stroke="url(#bigTextGrad)"
+            strokeWidth="0.5"
+            style={{ fontSize: "150px", fontWeight: 900, letterSpacing: "-4px", fontFamily: "Space Grotesk, Syne, sans-serif" }}
+          >
+            UNCODEDHUB
+          </text>
+        </svg>
+      </div>
+    </div>
   );
 }
