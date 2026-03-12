@@ -180,7 +180,7 @@ export default function App() {
             </svg>
             <span className="font-display font-bold text-xl tracking-widest uppercase">Uncoded Hub</span>
           </div>
-          <button className="bg-magenta text-white px-4 md:px-6 py-2.5 rounded-xl font-medium flex items-center gap-2 btn-hover shrink-0">
+          <button className="cyan-energy-btn !py-2.5 !px-6 !text-sm !font-medium shrink-0">
             <span className="hidden sm:inline">Start a Project</span>
             <span className="sm:hidden">Start</span>
             <ArrowRight className="w-4 h-4" />
@@ -194,31 +194,32 @@ export default function App() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-magenta/10 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-cyan/10 rounded-full blur-[100px] pointer-events-none"></div>
         
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10" ref={heroRef}>
-          <div className="space-y-8">
-            <h1 className="hero-anim font-display text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center relative z-10 w-full min-h-[600px]" ref={heroRef}>
+          <div className="w-full lg:w-[55%] space-y-8 relative z-20 pt-10 lg:pt-0">
+            <h1 className="hero-anim font-display text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-2xl">
               Your Business Deserves to be Online. <br/>
               <span className="text-gradient">We Make it Happen in 5 Days.</span>
             </h1>
             
-            <p className="hero-anim text-lg md:text-xl text-steel max-w-xl leading-relaxed">
+            <p className="hero-anim text-lg md:text-xl text-steel max-w-xl leading-relaxed drop-shadow-md">
               Stop losing customers to competitors who have a website. Get a fully functional, professional digital storefront built for revenue, not just looks.
             </p>
             
             <div className="hero-anim flex flex-col items-start gap-4 pt-4">
-              <button className="bg-magenta text-white px-8 py-4 rounded-xl font-medium flex items-center gap-2 text-lg btn-hover">
+              <button className="cyan-energy-btn !text-lg !px-8 !py-4">
                 Claim Your 5-Day Build <ChevronRight className="w-5 h-5" />
               </button>
               
               <div className="mt-6 border-l-2 border-cyan/30 pl-4" ref={addToRefs}>
-                <p className="italic text-steel/80 text-sm max-w-md">
+                <p className="italic text-white/90 text-sm max-w-md drop-shadow-md">
                   "A business without a website is a business that sleeps. Your website is the only salesman that works 24/7, 365 days a year without asking for a raise."
                 </p>
               </div>
             </div>
           </div>
           
-          <div className="relative h-[350px] md:h-[500px] lg:h-[600px] w-full">
+          {/* 3D Sphere - Background on mobile (z-index -1, opacity 0.3), right side on desktop (overlapping left) border effect */}
+          <div className="absolute top-0 right-0 w-full h-[350px] md:h-[500px] opacity-30 -z-10 lg:relative lg:w-[50%] lg:h-[700px] lg:opacity-100 lg:z-10 lg:-ml-[5%] pointer-events-none flex justify-center items-center">
             <WireframeSphere />
           </div>
         </div>
@@ -251,9 +252,9 @@ export default function App() {
                   
                   {/* Content */}
                   <div className={`ml-20 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pl-16' : 'md:pr-16 md:text-right'}`}>
-                    <div className="bg-cyber/50 p-6 rounded-2xl border border-white/5 group-hover:border-white/20 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
-                      <h4 className="font-display text-xl font-bold mb-2 text-steel group-hover:text-white transition-colors duration-300">Day {step.day}: {step.title}</h4>
-                      <p className="text-steel/80 text-sm leading-relaxed">{step.desc}</p>
+                    <div className="frosted-glass p-6 rounded-2xl transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_15px_40px_rgba(0,229,255,0.1)] group-hover:border-white/30">
+                      <h4 className="font-display text-xl font-bold mb-2 text-white group-hover:text-cyan transition-colors duration-300">Day {step.day}: {step.title}</h4>
+                      <p className="text-white/80 text-sm leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -428,7 +429,7 @@ export default function App() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-magenta/10 via-midnight to-midnight pointer-events-none"></div>
         <div className="max-w-3xl mx-auto relative z-10">
           <h2 className="font-display text-4xl md:text-6xl font-bold mb-8">Ready to digitize your business this week?</h2>
-          <button className="bg-magenta text-white px-10 py-5 rounded-xl font-bold text-xl flex items-center gap-3 mx-auto btn-hover">
+          <button className="cyan-energy-btn !px-10 !py-5 !text-xl mx-auto w-full md:w-auto">
             Book Your Strategy Call Now <ArrowRight className="w-6 h-6" />
           </button>
         </div>
