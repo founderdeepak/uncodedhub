@@ -29,8 +29,8 @@ export default function WireframeSphere() {
     // 3. The Gradient Shader for Lines
     const lineMaterial = new THREE.ShaderMaterial({
         uniforms: {
-            color1: { value: new THREE.Color("#00F0FF") }, // Cyan
-            color2: { value: new THREE.Color("#B026FF") }  // Magenta
+            color1: { value: new THREE.Color("#2196f3") }, // Blue
+            color2: { value: new THREE.Color("#b145e9") }  // Purple
         },
         vertexShader: `
             varying vec3 vPos;
@@ -56,8 +56,8 @@ export default function WireframeSphere() {
     // 4. The Mathematical Shader for Perfect Circular Nodes
     const pointMaterial = new THREE.ShaderMaterial({
         uniforms: {
-            color1: { value: new THREE.Color("#00F0FF") },
-            color2: { value: new THREE.Color("#B026FF") }
+            color1: { value: new THREE.Color("#2196f3") },
+            color2: { value: new THREE.Color("#b145e9") }
         },
         vertexShader: `
             varying vec3 vPos;
@@ -94,7 +94,7 @@ export default function WireframeSphere() {
     // 6. The Central Core (Glowing Cyan)
     // Scaled up slightly to 0.3 to match the 30% larger outer structure
     const coreGeo = new THREE.SphereGeometry(0.3, 16, 16); 
-    const coreMat = new THREE.MeshBasicMaterial({ color: 0x00F0FF });
+    const coreMat = new THREE.MeshBasicMaterial({ color: 0x00e5ff });
     const core = new THREE.Mesh(coreGeo, coreMat);
     logoGroup.add(core);
 
