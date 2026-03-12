@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import WireframeSphere from './components/WireframeSphere';
-import { ArrowRight, Code2, Zap, Cpu, CheckCircle2, ChevronRight, Star, ShieldCheck, TrendingUp } from 'lucide-react';
+import { ArrowRight, Code2, Zap, Cpu, CheckCircle2, ChevronRight, Star, ShieldCheck, TrendingUp, Menu, X } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -8,6 +8,10 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '' });
+
   const heroRef = useRef<HTMLDivElement>(null);
   const processRef = useRef<HTMLDivElement>(null);
   const philosophyRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -114,12 +118,21 @@ export default function App() {
     }
   };
 
+  const handleWhatsAppSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Replace with the user's actual phone number including country code, e.g. "1234567890" for testing
+    const targetPhoneNumber = "1234567890"; 
+    const textMessage = `*New Project Inquiry*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Email:* ${formData.email}`;
+    window.open(`https://wa.me/${targetPhoneNumber}?text=${textMessage}`, '_blank');
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-midnight text-white selection:bg-magenta/30 selection:text-white">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
-        <div className="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+        <div className="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex items-center justify-between relative">
+          <div className="flex items-center gap-3 z-50">
             <svg width="36" height="36" viewBox="0 0 100 100" className="overflow-visible">
               <defs>
                 <linearGradient id="logoGrad" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -178,13 +191,35 @@ export default function App() {
               {/* Center Node */}
               <circle cx="50" cy="50" r="4" fill="#00F0FF" filter="url(#glow)" />
             </svg>
-            <span className="font-display font-bold text-xl tracking-widest uppercase">Uncoded Hub</span>
+            <span className="font-display font-bold text-xl tracking-widest uppercase relative z-50">Uncoded Hub</span>
           </div>
-          <button className="cyan-energy-btn !py-2.5 !px-6 !text-sm !font-medium shrink-0">
-            <span className="hidden sm:inline">Start a Project</span>
-            <span className="sm:hidden">Start</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+          
+          {/* Desktop Navigation Links */}
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#about" className="text-sm font-semibold tracking-wide hover:text-cyan transition-colors">ABOUT</a>
+            <a href="#contact" className="text-sm font-semibold tracking-wide hover:text-cyan transition-colors">CONTACT</a>
+            <button onClick={() => setIsModalOpen(true)} className="cyan-energy-btn !py-2.5 !px-6 !text-sm !font-medium shrink-0">
+              Start a Project
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Mobile Navigation Toggle */}
+          <div className="flex md:hidden items-center gap-4 z-50">
+            <button onClick={() => setIsModalOpen(true)} className="cyan-energy-btn !py-1.5 !px-4 !text-xs !font-medium shrink-0 rounded-lg">
+              Start
+            </button>
+            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-white hover:text-cyan transition-colors">
+              {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+            </button>
+          </div>
+
+          {/* Mobile Dropdown Menu */}
+          <div className={`absolute top-full left-0 right-0 mt-2 glass-panel rounded-2xl p-4 flex flex-col gap-4 text-center transition-all origin-top duration-300 md:hidden ${isMobileMenuOpen ? 'scale-y-100 opacity-100 visible' : 'scale-y-0 opacity-0 invisible'}`}>
+             <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-semibold py-2 hover:text-cyan border-b border-white/5">ABOUT</a>
+             <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-semibold py-2 hover:text-cyan border-b border-white/5">CONTACT</a>
+             <button onClick={() => { setIsModalOpen(true); setIsMobileMenuOpen(false); }} className="text-lg font-semibold py-2 text-cyan">START A PROJECT</button>
+          </div>
         </div>
       </nav>
 
@@ -206,7 +241,7 @@ export default function App() {
             </p>
             
             <div className="hero-anim flex flex-col items-start gap-4 pt-4">
-              <button className="cyan-energy-btn !text-lg !px-8 !py-4">
+              <button onClick={() => setIsModalOpen(true)} className="cyan-energy-btn !text-lg !px-8 !py-4">
                 Claim Your 5-Day Build <ChevronRight className="w-5 h-5" />
               </button>
               
@@ -327,7 +362,7 @@ export default function App() {
       </section>
 
       {/* SECTION 4: THE ADVANTAGE - NO-CODE SKILLS */}
-      <section className="py-24 px-6 relative z-10 bg-cyber/30 border-t border-white/5">
+      <section id="about" className="py-24 px-6 relative z-10 bg-cyber/30 border-t border-white/5">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="font-display text-3xl md:text-5xl font-bold mb-6">The Uncoded Advantage.</h2>
@@ -425,11 +460,11 @@ export default function App() {
       </section>
 
       {/* SECTION 6: FINAL CTA - URGENCY */}
-      <section className="py-24 px-6 relative z-10 bg-cyber/80 border-t border-white/5 text-center">
+      <section id="contact" className="py-24 px-6 relative z-10 bg-cyber/80 border-t border-white/5 text-center">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-magenta/10 via-midnight to-midnight pointer-events-none"></div>
         <div className="max-w-3xl mx-auto relative z-10">
           <h2 className="font-display text-4xl md:text-6xl font-bold mb-8">Ready to digitize your business this week?</h2>
-          <button className="cyan-energy-btn !px-10 !py-5 !text-xl mx-auto w-full md:w-auto">
+          <button onClick={() => setIsModalOpen(true)} className="cyan-energy-btn !px-10 !py-5 !text-xl mx-auto w-full md:w-auto">
             Book Your Strategy Call Now <ArrowRight className="w-6 h-6" />
           </button>
         </div>
@@ -439,6 +474,62 @@ export default function App() {
       <footer className="py-8 text-center border-t border-white/5 text-steel font-mono text-sm bg-midnight relative z-10">
         <p>&copy; {new Date().getFullYear()} Uncoded Hub. All systems operational.</p>
       </footer>
+
+      {/* Contact Us Modal Overlay */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-midnight/80 backdrop-blur-sm" onClick={() => setIsModalOpen(false)}></div>
+          
+          <div className="frosted-glass relative z-10 w-full max-w-md rounded-3xl p-8 shadow-2xl animate-in fade-in zoom-in duration-300">
+            <button onClick={() => setIsModalOpen(false)} className="absolute top-4 right-4 text-white hover:text-cyan transition-colors">
+              <X className="w-6 h-6" />
+            </button>
+            
+            <h3 className="font-display text-2xl font-bold mb-2 text-white">Let's Build It.</h3>
+            <p className="text-steel text-sm mb-6">Drop your details below and we will reach out immediately via WhatsApp.</p>
+            
+            <form onSubmit={handleWhatsAppSubmit} className="space-y-4">
+              <div>
+                <label className="block text-xs font-semibold text-steel uppercase tracking-wider mb-2">Full Name</label>
+                <input 
+                  type="text" 
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  className="w-full bg-midnight/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan focus:ring-1 focus:ring-cyan transition-all"
+                  placeholder="John Doe"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-steel uppercase tracking-wider mb-2">Phone Number</label>
+                <input 
+                  type="tel" 
+                  required
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  className="w-full bg-midnight/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan focus:ring-1 focus:ring-cyan transition-all"
+                  placeholder="+1 (234) 567-8900"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-steel uppercase tracking-wider mb-2">Email Address</label>
+                <input 
+                  type="email" 
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  className="w-full bg-midnight/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan focus:ring-1 focus:ring-cyan transition-all"
+                  placeholder="john@example.com"
+                />
+              </div>
+              
+              <button type="submit" className="cyan-energy-btn w-full mt-6">
+                Send to WhatsApp
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
