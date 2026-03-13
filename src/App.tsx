@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import WireframeSphere from './components/WireframeSphere';
 import HoverFooter from './components/ui/hover-footer';
 import { ExpandableTabs } from './components/ui/expandable-tabs';
+import { FaqAccordion } from './components/ui/faq-accordion';
 import { ArrowRight, Code2, Zap, Cpu, CheckCircle2, ChevronRight, Star, ShieldCheck, TrendingUp, Menu, X, Info, MessageCircle } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -469,7 +470,19 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECTION 6: FINAL CTA - URGENCY */}
+      {/* SECTION 6: FAQS - ANSWER ENGINE OPTIMIZATION VISIBLE */}
+      <section className="py-24 px-6 relative z-10 bg-midnight border-t border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
+            <p className="text-steel text-lg">Everything you need to know about our 5-day delivery promise.</p>
+          </div>
+          
+          <FaqAccordion />
+        </div>
+      </section>
+
+      {/* SECTION 7: FINAL CTA - URGENCY */}
       <section id="contact" className="py-24 px-6 relative z-10 bg-cyber/80 border-t border-white/5 text-center">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-magenta/10 via-midnight to-midnight pointer-events-none"></div>
         <div className="max-w-3xl mx-auto relative z-10">
