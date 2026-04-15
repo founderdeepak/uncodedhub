@@ -2,9 +2,7 @@
 
 import * as React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useOnClickOutside } from "usehooks-ts";
 import { cn } from "../../lib/utils";
-import { LucideIcon } from "lucide-react";
 
 type TabItem = any;
 
@@ -13,6 +11,7 @@ interface ExpandableTabsProps {
   className?: string;
   activeColor?: string;
   onChange?: (index: number | null) => void;
+  activeTabIndex?: number | null;
 }
 
 const buttonVariants = {
@@ -41,14 +40,16 @@ export function ExpandableTabs({
   className,
   activeColor = "text-cyan",
   onChange,
+  activeTabIndex,
 }: ExpandableTabsProps) {
-  const [selected, setSelected] = React.useState<number | null>(null);
-  const outsideClickRef = React.useRef(null);
+  const [selected, setSelected] = React.useState<number | null>(activeTabIndex ?? null);
 
-  useOnClickOutside(outsideClickRef, () => {
-    setSelected(null);
-    onChange?.(null);
-  });
+  // Sync internal state whenever the active route changes externally
+  React.useEffect(() => {
+    if (activeTabIndex !== undefined) {
+      setSelected(activeTabIndex);
+    }
+  }, [activeTabIndex]);
 
   const handleSelect = (index: number) => {
     setSelected(index);
@@ -61,7 +62,6 @@ export function ExpandableTabs({
 
   return (
     <div
-      ref={outsideClickRef}
       className={cn(
         "flex flex-wrap items-center gap-2 rounded-2xl border border-white/10 bg-midnight/30 backdrop-blur-md p-1.5 shadow-[0_0_15px_rgba(0,240,255,0.05)]",
         className
@@ -77,6 +77,7 @@ export function ExpandableTabs({
         return (
           <motion.button
             key={t.title}
+            aria-label={t.title}
             variants={buttonVariants}
             initial={false}
             animate="animate"

@@ -1,150 +1,78 @@
-import React, { useRef, useState } from 'react';
-import WireframeSphere from './components/WireframeSphere';
+import React, { useState } from 'react';
+import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import HoverFooter from './components/ui/hover-footer';
 import { ExpandableTabs } from './components/ui/expandable-tabs';
-import { FaqAccordion } from './components/ui/faq-accordion';
-import { ArrowRight, Code2, Zap, Cpu, CheckCircle2, ChevronRight, Star, ShieldCheck, TrendingUp, Menu, X, Info, MessageCircle } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
+import { FloatingWhatsApp } from './components/ui/floating-whatsapp';
+import { Menu, X, Info, MessageCircle, Laptop, Briefcase, ChevronRight, BookOpen, CheckCircle, Calendar } from 'lucide-react';
+import { supabase } from './lib/supabase';
+import { PopupModal } from 'react-calendly';
 
-gsap.registerPlugin(ScrollTrigger);
+/* Pages */
+import Home from './pages/Home';
+import Services from './pages/Services';
+import Portfolio from './pages/Portfolio';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Blogs from './pages/Blogs';
+import BlogView from './pages/BlogView';
 
 export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalSuccess, setIsModalSuccess] = useState(false);
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', countryCode: '+91' });
+  
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navTabs = [
-    { title: "About", icon: Info },
-    { title: "Contact", icon: MessageCircle },
+    { title: "Services", icon: Laptop, path: "/services" },
+    { title: "Portfolio", icon: Briefcase, path: "/portfolio" },
+    { title: "Blog", icon: BookOpen, path: "/blog" },
+    { title: "About", icon: Info, path: "/about" },
+    { title: "Contact", icon: MessageCircle, path: "/contact" },
   ];
 
+  /* Match active tab based on route */
+  const currentTabIndex = navTabs.findIndex(t => location.pathname.startsWith(t.path));
+
   const handleNavChange = (index: number | null) => {
-    if (index === 0) window.location.hash = "#about";
-    if (index === 1) window.location.hash = "#contact";
-  };
-
-  const heroRef = useRef<HTMLDivElement>(null);
-  const processRef = useRef<HTMLDivElement>(null);
-  const philosophyRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useGSAP(() => {
-    let mm = gsap.matchMedia();
-
-    mm.add("(min-width: 768px)", () => {
-      // Desktop Animations
-      if (heroRef.current) {
-        const heroElements = heroRef.current.querySelectorAll('.hero-anim');
-        gsap.from(heroElements, {
-          y: 30,
-          opacity: 0,
-          stagger: 0.2,
-          duration: 1,
-          ease: 'power3.out',
-          delay: 0.2
-        });
-      }
-
-      if (processRef.current) {
-        const steps = processRef.current.querySelectorAll('.process-step');
-        gsap.from(steps, {
-          scrollTrigger: {
-            trigger: processRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-          },
-          y: 40,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: 'power2.out'
-        });
-      }
-
-      philosophyRefs.current.forEach((el) => {
-        if (el) {
-          gsap.from(el, {
-            scrollTrigger: {
-              trigger: el,
-              start: 'top 90%',
-            },
-            opacity: 0,
-            duration: 1.5,
-            ease: 'power2.inOut',
-          });
-        }
-      });
-    });
-
-    mm.add("(max-width: 767px)", () => {
-      // Mobile Animations (Optimized)
-      if (heroRef.current) {
-        const heroElements = heroRef.current.querySelectorAll('.hero-anim');
-        gsap.from(heroElements, {
-          y: 20, // Reduced distance
-          opacity: 0,
-          stagger: 0.1, // Faster stagger
-          duration: 0.8, // Faster duration
-          ease: 'power3.out',
-          delay: 0.1
-        });
-      }
-
-      if (processRef.current) {
-        const steps = processRef.current.querySelectorAll('.process-step');
-        gsap.from(steps, {
-          scrollTrigger: {
-            trigger: processRef.current,
-            start: 'top 90%', // Trigger earlier
-            toggleActions: 'play none none none'
-          },
-          y: 20, // Reduced distance
-          opacity: 0,
-          duration: 0.6, // Faster duration
-          stagger: 0.1, // Faster stagger
-          ease: 'power2.out'
-        });
-      }
-
-      philosophyRefs.current.forEach((el) => {
-        if (el) {
-          gsap.from(el, {
-            scrollTrigger: {
-              trigger: el,
-              start: 'top 90%', // Trigger earlier
-            },
-            opacity: 0,
-            duration: 1.0, // Faster duration
-            ease: 'power2.inOut',
-          });
-        }
-      });
-    });
-
-    return () => mm.revert();
-  }, []);
-
-  const addToRefs = (el: HTMLDivElement | null) => {
-    if (el && !philosophyRefs.current.includes(el)) {
-      philosophyRefs.current.push(el);
+    if (index !== null) {
+      navigate(navTabs[index].path);
     }
   };
 
-  const handleWhatsAppSubmit = (e: React.FormEvent) => {
+  const handleWhatsAppSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const targetPhoneNumber = "918660819023"; 
-    const textMessage = `*New Project Inquiry*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.countryCode} ${formData.phone}%0A*Email:* ${formData.email}`;
-    window.open(`https://wa.me/${targetPhoneNumber}?text=${textMessage}`, '_blank');
-    setIsModalOpen(false);
+    
+    // Save to Supabase
+    try {
+      await supabase.from('leads_backup').insert({ 
+        name: formData.name, 
+        email: formData.email, 
+        phone: `${formData.countryCode} ${formData.phone}`, 
+        project_details: 'Contact Form - Start Project Modal',
+        business_type: 'Unknown',
+        submitted_at: new Date().toISOString()
+      });
+    } catch (err) {
+      console.error('Supabase Error:', err);
+    }
+    // Instead of jumping to WhatsApp instantly, show world-class success flow
+    setIsModalSuccess(true);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
   return (
     <div className="min-h-screen bg-midnight text-white selection:bg-magenta/30 selection:text-white">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
-        <div className="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex items-center justify-between relative">
-          <div className="flex items-center gap-3 z-50">
+        <div className="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex items-center justify-between relative shadow-lg">
+          <Link to="/" onClick={closeMobileMenu} className="flex items-center gap-3 z-50 group hover:opacity-80 transition-opacity">
             <svg width="36" height="36" viewBox="0 0 100 100" className="overflow-visible">
               <defs>
                 <linearGradient id="logoGrad" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -159,27 +87,17 @@ export default function App() {
                   </feMerge>
                 </filter>
               </defs>
-              
               <g stroke="url(#logoGrad)" strokeWidth="2" fill="none">
-                {/* Outer Sphere */}
                 <circle cx="50" cy="50" r="40" />
-                {/* Inner Sphere */}
                 <circle cx="50" cy="50" r="20" />
-                
-                {/* Radiating Lines */}
                 <line x1="50" y1="10" x2="50" y2="90" />
                 <line x1="10" y1="50" x2="90" y2="50" />
                 <line x1="21.7" y1="21.7" x2="78.3" y2="78.3" />
                 <line x1="21.7" y1="78.3" x2="78.3" y2="21.7" />
-                
-                {/* Curves (Latitudes/Longitudes approximation) */}
                 <ellipse cx="50" cy="50" rx="40" ry="15" />
                 <ellipse cx="50" cy="50" rx="15" ry="40" />
               </g>
-
-              {/* Nodes */}
               <g fill="url(#logoGrad)">
-                {/* Outer nodes */}
                 <circle cx="50" cy="10" r="3" />
                 <circle cx="50" cy="90" r="3" />
                 <circle cx="10" cy="50" r="3" />
@@ -188,8 +106,6 @@ export default function App() {
                 <circle cx="78.3" cy="78.3" r="3" />
                 <circle cx="21.7" cy="78.3" r="3" />
                 <circle cx="78.3" cy="21.7" r="3" />
-                
-                {/* Inner nodes */}
                 <circle cx="50" cy="30" r="2.5" />
                 <circle cx="50" cy="70" r="2.5" />
                 <circle cx="30" cy="50" r="2.5" />
@@ -199,317 +115,95 @@ export default function App() {
                 <circle cx="35.8" cy="64.2" r="2.5" />
                 <circle cx="64.2" cy="35.8" r="2.5" />
               </g>
-              
-              {/* Center Node */}
               <circle cx="50" cy="50" r="4" fill="#00F0FF" filter="url(#glow)" />
             </svg>
             <span className="font-display font-bold text-xl tracking-widest uppercase relative z-50">Uncoded Hub</span>
-          </div>
+          </Link>
           
-          {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center gap-6">
-            <ExpandableTabs tabs={navTabs} onChange={handleNavChange} />
+            <ExpandableTabs tabs={navTabs} onChange={handleNavChange} activeTabIndex={currentTabIndex === -1 ? null : currentTabIndex} />
             <button onClick={() => setIsModalOpen(true)} className="cyan-energy-btn !py-2.5 !px-6 !text-sm !font-medium shrink-0 ml-2">
-              Start a Project
-              <ArrowRight className="w-4 h-4" />
+              Start Project
             </button>
           </div>
 
-          {/* Mobile Navigation Toggle */}
           <div className="flex md:hidden items-center gap-4 z-50">
             <button onClick={() => setIsModalOpen(true)} className="cyan-energy-btn !py-1.5 !px-4 !text-xs !font-medium shrink-0 rounded-lg">
               Start
             </button>
-            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-white hover:text-cyan transition-colors">
+            <button aria-expanded={isMobileMenuOpen} aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-white hover:text-cyan transition-colors">
               {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>
           </div>
 
           {/* Mobile Dropdown Menu */}
           <div className={`absolute top-full left-0 right-0 mt-2 glass-panel rounded-2xl p-4 flex flex-col gap-4 text-center transition-all origin-top duration-300 md:hidden ${isMobileMenuOpen ? 'scale-y-100 opacity-100 visible' : 'scale-y-0 opacity-0 invisible'}`}>
-             <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-semibold py-2 hover:text-cyan border-b border-white/5">ABOUT</a>
-             <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-semibold py-2 hover:text-cyan border-b border-white/5">CONTACT</a>
-             <button onClick={() => { setIsModalOpen(true); setIsMobileMenuOpen(false); }} className="text-lg font-semibold py-2 text-cyan">START A PROJECT</button>
+             <Link to="/services" onClick={closeMobileMenu} className="text-lg font-semibold py-2 hover:text-cyan border-b border-white/5">SERVICES</Link>
+             <Link to="/portfolio" onClick={closeMobileMenu} className="text-lg font-semibold py-2 hover:text-cyan border-b border-white/5">PORTFOLIO</Link>
+             <Link to="/blog" onClick={closeMobileMenu} className="text-lg font-semibold py-2 hover:text-cyan border-b border-white/5">BLOG</Link>
+             <Link to="/about" onClick={closeMobileMenu} className="text-lg font-semibold py-2 hover:text-cyan border-b border-white/5">ABOUT</Link>
+             <Link to="/contact" onClick={closeMobileMenu} className="text-lg font-semibold py-2 hover:text-cyan border-b border-white/5">CONTACT</Link>
+             <button onClick={() => { setIsModalOpen(true); closeMobileMenu(); }} className="text-lg font-semibold py-2 text-cyan">START A PROJECT</button>
           </div>
         </div>
       </nav>
 
-      {/* SECTION 1: HERO - THE HOOK */}
-      <section className="relative pt-40 pb-24 px-6 overflow-hidden min-h-[90vh] flex items-center">
-        {/* Background Effects */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-magenta/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-cyan/10 rounded-full blur-[100px] pointer-events-none"></div>
-        
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center relative z-10 w-full min-h-[600px]" ref={heroRef}>
-          <div className="w-full lg:w-[55%] space-y-8 relative z-20 pt-10 lg:pt-0">
-            <h1 className="hero-anim font-display text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-2xl">
-              Your Business Deserves to be Online. <br/>
-              <span className="text-gradient">We Make it Happen in 5 Days.</span>
-            </h1>
-            
-            <p className="hero-anim text-lg md:text-xl text-steel max-w-xl leading-relaxed drop-shadow-md">
-              Stop losing customers to competitors who have a website. Get a fully functional, professional digital storefront built for revenue, not just looks.
-            </p>
-            
-            <div className="hero-anim flex flex-col items-start gap-4 pt-4">
-              <button onClick={() => setIsModalOpen(true)} className="cyan-energy-btn !text-lg !px-8 !py-4">
-                Claim Your 5-Day Build <ChevronRight className="w-5 h-5" />
-              </button>
-              
-              <div className="mt-6 border-l-2 border-cyan/30 pl-4" ref={addToRefs}>
-                <p className="italic text-white/90 text-sm max-w-md drop-shadow-md">
-                  "A business without a website is a business that sleeps. Your website is the only salesman that works 24/7, 365 days a year without asking for a raise."
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          {/* 3D Sphere - Background on mobile (z-index -1, opacity 0.3), right side on desktop (overlapping left) border effect */}
-          <div className="absolute top-0 right-0 w-full h-[350px] md:h-[500px] opacity-30 -z-10 lg:relative lg:w-[50%] lg:h-[700px] lg:opacity-100 lg:z-10 lg:-ml-[5%] pointer-events-none flex justify-center items-center">
-            <WireframeSphere />
-          </div>
-        </div>
-      </section>
+      {/* Pages Router */}
+      <Routes>
+        <Route path="/" element={<Home onOpenModal={() => setIsModalOpen(true)} />} />
+        <Route path="/services" element={<Services onOpenModal={() => setIsModalOpen(true)} />} />
+        <Route path="/portfolio" element={<Portfolio onOpenModal={() => setIsModalOpen(true)} />} />
+        <Route path="/about" element={<About onOpenModal={() => setIsModalOpen(true)} />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/blog" element={<Blogs />} />
+        <Route path="/blog/:slug" element={<BlogView />} />
+      </Routes>
 
-      {/* SECTION 2: THE PROCESS - 5-DAY DELIVERY PROMISE */}
-      <section className="py-24 px-6 relative z-10 bg-cyber/30 border-t border-white/5">
-        <div className="max-w-4xl mx-auto" ref={processRef}>
-          <div className="text-center mb-16">
-            <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">From Idea to Live in 120 Hours.</h2>
-            <p className="text-steel text-lg">Here is How:</p>
-          </div>
-
-          <div className="relative">
-            {/* Vertical Line */}
-            <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-cyan via-magenta to-transparent md:-translate-x-1/2"></div>
-
-            <div className="space-y-12">
-              {[
-                { day: "1", title: "Strategy & Architecture", desc: "We learn your business and map the blueprint." },
-                { day: "2-3", title: "Design & Development", desc: "We build the engine and design the interface." },
-                { day: "4", title: "Review & Refine", desc: "You review, we perfect it." },
-                { day: "5", title: "Launch & Handover", desc: "You go live to the world." }
-              ].map((step, index) => (
-                <div key={step.day} className={`process-step relative flex flex-col md:flex-row items-start md:items-center gap-8 group ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                  {/* Timeline Node */}
-                  <div className="absolute left-0 md:left-1/2 w-14 h-14 rounded-full bg-midnight border-2 border-cyber flex items-center justify-center md:-translate-x-1/2 z-10 group-hover:border-cyan transition-colors duration-300 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
-                    <span className="font-mono font-bold text-sm text-white group-hover:text-cyan transition-colors">D{step.day}</span>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className={`ml-20 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pl-16' : 'md:pr-16 md:text-right'}`}>
-                    <div className="frosted-glass p-6 rounded-2xl transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_15px_40px_rgba(0,229,255,0.1)] group-hover:border-white/30">
-                      <h4 className="font-display text-xl font-bold mb-2 text-white group-hover:text-cyan transition-colors duration-300">Day {step.day}: {step.title}</h4>
-                      <p className="text-white/80 text-sm leading-relaxed">{step.desc}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          <div className="mt-20 max-w-2xl mx-auto text-center" ref={addToRefs}>
-            <div className="bg-cyber/40 border border-white/10 rounded-2xl p-8 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan to-magenta"></div>
-              <p className="font-display text-xl md:text-2xl italic text-white/90 leading-relaxed">
-                "Speed is the currency of modern business. While your competitors spend months debating colors, you could be closing sales."
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 3: PORTFOLIO - HIGHLY EFFICIENT DESIGN SAMPLES */}
-      <section className="py-24 px-6 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">Built to Convert. Designed to Impress.</h2>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="portfolio-card rounded-2xl border border-white/10 bg-cyber/50 group cursor-pointer">
-              <div className="h-48 overflow-hidden relative">
-                <img src="https://picsum.photos/seed/retail/600/400" alt="Local Retail & Services" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                <div className="absolute inset-0 bg-midnight/20 group-hover:bg-transparent transition-colors duration-300"></div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-display text-xl font-bold mb-2">Local Retail & Services</h3>
-                <p className="text-steel text-sm">Optimized for local SEO and foot traffic conversion.</p>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="portfolio-card rounded-2xl border border-white/10 bg-cyber/50 group cursor-pointer">
-              <div className="h-48 overflow-hidden relative">
-                <img src="https://picsum.photos/seed/portfolio/600/400" alt="Professional Portfolios" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                <div className="absolute inset-0 bg-midnight/20 group-hover:bg-transparent transition-colors duration-300"></div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-display text-xl font-bold mb-2">Professional Portfolios</h3>
-                <p className="text-steel text-sm">Sleek, authoritative designs that build instant trust.</p>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="portfolio-card rounded-2xl border border-white/10 bg-cyber/50 group cursor-pointer">
-              <div className="h-48 overflow-hidden relative">
-                <img src="https://picsum.photos/seed/ecommerce/600/400" alt="E-commerce Hubs" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                <div className="absolute inset-0 bg-midnight/20 group-hover:bg-transparent transition-colors duration-300"></div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-display text-xl font-bold mb-2">E-commerce Hubs</h3>
-                <p className="text-steel text-sm">Frictionless checkout experiences designed to sell.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-16 text-center" ref={addToRefs}>
-            <p className="italic text-steel text-lg max-w-3xl mx-auto">
-              "Design isn’t just how it looks; it’s how it converts. A confused visitor leaves, but a guided visitor buys."
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 4: THE ADVANTAGE - NO-CODE SKILLS */}
-      <section id="about" className="py-24 px-6 relative z-10 bg-cyber/30 border-t border-white/5">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="font-display text-3xl md:text-5xl font-bold mb-6">The Uncoded Advantage.</h2>
-            <p className="text-steel text-lg leading-relaxed mb-8">
-              We utilize advanced no-code architecture. What does that mean for you? Zero bloated code, lightning-fast load times, and a website you can easily understand and manage without hiring an expensive IT team.
-            </p>
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-center gap-3 text-white/90">
-                <Zap className="w-5 h-5 text-cyan" /> Lightning-fast load times
-              </li>
-              <li className="flex items-center gap-3 text-white/90">
-                <Code2 className="w-5 h-5 text-magenta" /> Zero bloated code
-              </li>
-              <li className="flex items-center gap-3 text-white/90">
-                <ShieldCheck className="w-5 h-5 text-cyan" /> Easy to manage & secure
-              </li>
-            </ul>
-          </div>
-          
-          <div ref={addToRefs} className="bg-midnight p-8 rounded-3xl border border-white/10 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-magenta/10 rounded-full blur-[50px]"></div>
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-cyan/10 rounded-full blur-[50px]"></div>
-            <p className="font-display text-2xl italic text-white/90 leading-relaxed relative z-10">
-              "Complexity kills progress. The best technology is the kind that gets out of your way and lets you run your business."
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 5: SOCIAL PROOF & RETENTION */}
-      <section className="py-24 px-6 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">Real Results & Our Growth Partnership</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {/* Testimonial 1 */}
-            <div className="bg-cyber/50 p-8 rounded-2xl border border-white/5">
-              <div className="flex text-cyan mb-4">
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-              </div>
-              <p className="text-lg text-white/90 mb-6">"They delivered exactly what they promised in 5 days. Our conversion rate doubled in the first month."</p>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/10"></div>
-                <div>
-                  <p className="font-bold text-sm">Sarah J.</p>
-                  <p className="text-steel text-xs">Local Retail Owner</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="bg-cyber/50 p-8 rounded-2xl border border-white/5">
-              <div className="flex text-cyan mb-4">
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-              </div>
-              <p className="text-lg text-white/90 mb-6">"The speed is unmatched. I didn't have to wait months to get my portfolio online. Highly recommended."</p>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/10"></div>
-                <div>
-                  <p className="font-bold text-sm">David M.</p>
-                  <p className="text-steel text-xs">Consultant</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-br from-cyber to-midnight p-8 md:p-12 rounded-3xl border border-white/10 flex flex-col md:flex-row gap-8 items-center">
-            <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
-              <TrendingUp className="w-8 h-8 text-magenta" />
-            </div>
-            <div>
-              <h3 className="font-display text-2xl font-bold mb-3">The Partnership Pitch</h3>
-              <p className="text-steel leading-relaxed">
-                We don't just hand you the keys and leave. With our monthly Growth & Security Partnership, we maintain, secure, and update your site so you can focus entirely on your customers.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-16 text-center" ref={addToRefs}>
-            <p className="italic text-steel text-lg max-w-3xl mx-auto">
-              "The cost of a professional website is an investment. The cost of a bad website—or no website at all—is every customer who couldn't find you."
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 6: FAQS - ANSWER ENGINE OPTIMIZATION VISIBLE */}
-      <section className="py-24 px-6 relative z-10 bg-midnight border-t border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-steel text-lg">Everything you need to know about our 5-day delivery promise.</p>
-          </div>
-          
-          <FaqAccordion />
-        </div>
-      </section>
-
-      {/* SECTION 7: FINAL CTA - URGENCY */}
-      <section id="contact" className="py-24 px-6 relative z-10 bg-cyber/80 border-t border-white/5 text-center">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-magenta/10 via-midnight to-midnight pointer-events-none"></div>
-        <div className="max-w-3xl mx-auto relative z-10">
-          <h2 className="font-display text-4xl md:text-6xl font-bold mb-8">Ready to digitize your business this week?</h2>
-          <button onClick={() => setIsModalOpen(true)} className="cyan-energy-btn !px-10 !py-5 !text-xl mx-auto w-full md:w-auto">
-            Book Your Strategy Call Now <ArrowRight className="w-6 h-6" />
-          </button>
-        </div>
-      </section>
-      
       {/* Footer */}
       <HoverFooter />
 
-      {/* Contact Us Modal Overlay */}
+      {/* WhatsApp Chatbot */}
+      <FloatingWhatsApp />
+
+      {/* Global Contact Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-midnight/80 backdrop-blur-sm" onClick={() => setIsModalOpen(false)}></div>
           
           <div className="frosted-glass relative z-10 w-full max-w-md rounded-3xl p-8 shadow-2xl animate-in fade-in zoom-in duration-300">
-            <button onClick={() => setIsModalOpen(false)} className="absolute top-4 right-4 text-white hover:text-cyan transition-colors">
+            <button aria-label="Close modal" onClick={() => { setIsModalOpen(false); setIsModalSuccess(false); }} className="absolute top-4 right-4 text-white hover:text-cyan transition-colors z-50">
               <X className="w-6 h-6" />
             </button>
             
-            <h3 className="font-display text-2xl font-bold mb-2 text-white">Let's Build It.</h3>
-            <p className="text-steel text-sm mb-6">Drop your details below and we will reach out immediately via WhatsApp.</p>
-            
-            <form onSubmit={handleWhatsAppSubmit} className="space-y-4">
+            {isModalSuccess ? (
+              <div className="flex flex-col items-center text-center py-6 animate-in fade-in zoom-in duration-500">
+                <div className="w-20 h-20 bg-cyan/10 rounded-full flex items-center justify-center mb-6 border border-cyan/20">
+                  <CheckCircle className="w-10 h-10 text-cyan" />
+                </div>
+                <h2 className="font-display text-3xl font-bold mb-4 text-white leading-tight">Request<br/>Received</h2>
+                <p className="text-steel text-sm mb-8 px-4 leading-relaxed">
+                  We'll prepare a custom strategy for <strong className="text-white">{formData.name}</strong>. Pick a time below for your 1-on-1 discovery call.
+                </p>
+                <button 
+                  onClick={(e) => { 
+                    e.preventDefault();
+                    setIsModalOpen(false); 
+                    setIsCalendlyOpen(true); 
+                  }}
+                  className="cyan-energy-btn w-full flex items-center justify-center gap-2 !py-4 !text-lg"
+                >
+                  <Calendar className="w-5 h-5"/> Schedule Discovery Call
+                </button>
+                <button onClick={() => setIsModalOpen(false)} className="mt-4 text-xs text-steel hover:text-white transition-colors">
+                  I'll do this later
+                </button>
+              </div>
+            ) : (
+              <>
+                <h2 className="font-display text-2xl font-bold mb-2 text-white">Let's Build It.</h2>
+                <p className="text-steel text-sm mb-6">Drop your details below and our team will prepare a custom proposal.</p>
+                
+                <form onSubmit={handleWhatsAppSubmit} className="space-y-4">
               <div>
                 <label className="block text-xs font-semibold text-steel uppercase tracking-wider mb-2">Full Name</label>
                 <input 
@@ -557,14 +251,23 @@ export default function App() {
                 />
               </div>
               
-              <button type="submit" className="cyan-energy-btn w-full mt-6">
-                Send to WhatsApp
-              </button>
-            </form>
+                <button type="submit" className="cyan-energy-btn w-full mt-6 flex items-center justify-center gap-2">
+                  Apply for Project <ChevronRight className="w-5 h-5"/>
+                </button>
+              </form>
+              </>
+            )}
           </div>
         </div>
       )}
+
+      {/* Calendly World-Class Modal Integration */}
+      <PopupModal
+        url="https://calendly.com/uncodedhub"
+        onModalClose={() => setIsCalendlyOpen(false)}
+        open={isCalendlyOpen}
+        rootElement={document.getElementById("root") as HTMLElement}
+      />
     </div>
   );
 }
-

@@ -9,24 +9,44 @@ interface FaqItem {
 
 const faqs: FaqItem[] = [
   {
-    question: "How fast can I get a website built for my small business?",
+    question: "How fast can I get a custom website built for my business?",
     answer: "At UncodedHub, we design, build, and launch fully functional, high-converting websites for small businesses in exactly 5 days using advanced no-code architecture."
   },
   {
-    question: "Who does UncodedHub build websites for?",
-    answer: "We specialize in building fast, professional digital storefronts for small-scale businesses, retail shops, and service providers, with a dedicated focus on empowering the Tamil business community."
+    question: "What types of businesses do you build websites for?",
+    answer: "We specialize in building fast, professional digital storefronts for clinics, spas, restaurants, and retail service providers, with a dedicated focus on empowering local business communities."
   },
   {
-    question: "How much does a professional small business website cost?",
-    answer: "Our simple, high-converting business websites start at an affordable price. We also build premium e-commerce hubs starting at an affordable price, allowing you to sell products directly online."
+    question: "Do you provide ongoing website maintenance and support?",
+    answer: "Absolutely. Every website we develop comes with an optional Growth & Security Partnership. We ensure your site remains lightning-fast, secure, and fully updated without you having to lift a finger."
   },
   {
-    question: "Do you provide ongoing website maintenance?",
-    answer: "Yes. Every website we develop comes with an optional Growth & Security Partnership starting at ₹3,000 per month, ensuring your site remains fast, secure, and updated without you having to lift a finger."
+    question: "Why do you use no-code technology for web development?",
+    answer: "No-code architecture allows us to eliminate bloated code and deliver ultra-fast load times. It provides a premium, highly scalable, and easily manageable website in a fraction of the time it takes traditional agencies."
   },
   {
-    question: "Why do you use no-code technology?",
-    answer: "No-code architecture allows us to eliminate bloated code and deliver lightning-fast load times. It provides a premium, easily manageable website in a fraction of the time it takes traditional agencies."
+    question: "Can I sell products directly on my website?",
+    answer: "Yes! We build comprehensive e-commerce solutions. Your site can be equipped with robust inventory management, secure checkout processes, and intuitive payment gateways so you can sell seamlessly."
+  },
+  {
+    question: "Will my website look good on mobile devices?",
+    answer: "100%. We employ a strict mobile-first design philosophy. Your website will be fully responsive, ensuring a flawless and highly readable user experience across all smartphones, tablets, and desktops."
+  },
+  {
+    question: "Is Search Engine Optimization (SEO) included in the build?",
+    answer: "Yes, we integrate fundamental best practices for SEO from day one. This includes semantic HTML, lightning-fast load times, and technical on-page optimizations to help you rank higher on Google search results."
+  },
+  {
+    question: "Can I easily update the website content myself after it launches?",
+    answer: "Definitely. We integrate a highly intuitive Content Management System (CMS) that allows you to effortlessly update text, images, and new products without writing a single line of code."
+  },
+  {
+    question: "Do you handle web hosting and domain registration?",
+    answer: "Yes, we guide you through the entire process. We connect your custom domain and utilize enterprise-grade, highly secure hosting infrastructure so your website never goes down during high traffic."
+  },
+  {
+    question: "How do we get started with our new website project?",
+    answer: "It's simple! Book a free discovery call or fill out our quick estimate form. We'll discuss your vision, provide a transparent project scope, and instantly begin crafting your digital presence."
   }
 ];
 
@@ -52,6 +72,9 @@ export const FaqAccordion = () => {
           >
             <button
               onClick={() => toggleFaq(index)}
+              aria-expanded={isOpen}
+              aria-controls={`faq-answer-${index}`}
+              id={`faq-button-${index}`}
               className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left"
             >
               <span className={`font-display font-semibold sm:text-lg transition-colors duration-300 ${isOpen ? "text-cyan" : "text-white/90"}`}>
@@ -71,6 +94,9 @@ export const FaqAccordion = () => {
             <AnimatePresence initial={false}>
               {isOpen && (
                 <motion.div
+                  id={`faq-answer-${index}`}
+                  role="region"
+                  aria-labelledby={`faq-button-${index}`}
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
