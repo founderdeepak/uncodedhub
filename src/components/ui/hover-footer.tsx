@@ -8,12 +8,17 @@ import {
   MapPin,
   Facebook,
   Instagram,
-  Twitter,
-  Dribbble,
+  Linkedin,
+  Youtube,
+  AtSign,
   Globe,
   Info,
-  MessageCircle
+  MessageCircle,
+  Home,
+  Laptop,
+  Briefcase
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const TextHoverEffect = ({
   text,
@@ -158,8 +163,11 @@ export default function HoverFooter() {
     {
       title: "Navigation",
       links: [
-        { label: "About", href: "#about", icon: <Info size={16} className="mr-2 inline" /> },
-        { label: "Contact", href: "#contact", icon: <MessageCircle size={16} className="mr-2 inline" /> },
+        { label: "Home", href: "/", icon: <Home size={16} className="mr-2 inline" /> },
+        { label: "Services", href: "/services", icon: <Laptop size={16} className="mr-2 inline" /> },
+        { label: "Portfolio", href: "/portfolio", icon: <Briefcase size={16} className="mr-2 inline" /> },
+        { label: "About", href: "/about", icon: <Info size={16} className="mr-2 inline" /> },
+        { label: "Contact", href: "/contact", icon: <MessageCircle size={16} className="mr-2 inline" /> },
       ],
     }
   ];
@@ -184,9 +192,11 @@ export default function HoverFooter() {
 
   // Social media icons
   const socialLinks = [
-    { icon: <Instagram size={20} />, label: "Instagram", href: "#" },
-    { icon: <Twitter size={20} />, label: "Twitter", href: "#" },
-    { icon: <Globe size={20} />, label: "Globe", href: "#" },
+    { icon: <Instagram size={20} />, label: "Instagram", href: "https://www.instagram.com/uncodedhub/" },
+    { icon: <Linkedin size={20} />, label: "LinkedIn", href: "https://www.linkedin.com/company/uncodedhub/" },
+    { icon: <Youtube size={20} />, label: "Youtube", href: "https://www.youtube.com/@uncodedhub" },
+    { icon: <AtSign size={20} />, label: "Threads", href: "https://www.threads.com/@uncodedhub" },
+    { icon: <Facebook size={20} />, label: "Facebook", href: "https://www.facebook.com/people/Uncoded-Hub/61580702457181/" },
   ];
 
   return (
@@ -229,19 +239,19 @@ export default function HoverFooter() {
           {/* Footer link sections */}
           {footerLinks.map((section) => (
             <div key={section.title}>
-              <h4 className="text-white font-display text-lg font-bold mb-6">
+              <h3 className="text-white font-display text-lg font-bold mb-6">
                 {section.title}
-              </h4>
+              </h3>
               <ul className="space-y-4">
                 {section.links.map((link) => (
                   <li key={link.label} className="relative">
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="text-steel hover:text-cyan transition-colors flex items-center w-fit"
                     >
                       {link.icon}
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -250,9 +260,9 @@ export default function HoverFooter() {
 
           {/* Contact section */}
           <div>
-            <h4 className="text-white font-display text-lg font-bold mb-6">
+            <h3 className="text-white font-display text-lg font-bold mb-6">
               Contact Us
-            </h4>
+            </h3>
             <ul className="space-y-5">
               {contactInfo.map((item, i) => (
                 <li key={i} className="flex items-center space-x-4 text-steel">
