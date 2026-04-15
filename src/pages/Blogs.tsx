@@ -45,6 +45,7 @@ export default function Blogs() {
       <Helmet>
         <title>Blog & Insights | Uncoded Hub</title>
         <meta name="description" content="Read our latest insights on web development, no-code solutions, SEO, and digital marketing strategies for small businesses." />
+        <meta name="keywords" content="web development blog, no-code insights, SEO strategies, small business marketing, digital storefront, webflow guides" />
       </Helmet>
       
       <main className="pt-32 pb-24 px-6 min-h-screen">
