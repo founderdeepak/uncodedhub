@@ -17,7 +17,7 @@ export function FloatingWhatsApp() {
 
   // Form states before chat
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', department: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', businessType: '', message: '' });
 
   // Bot state machine
   const [chatStep, setChatStep] = useState(0);
@@ -64,7 +64,7 @@ export function FloatingWhatsApp() {
         supabase.from('chatbot_leads').insert({ 
           name: formData.name, 
           email: formData.email, 
-          department: formData.department,
+          department: formData.businessType, // Saving as department column in DB based on prior schema
           initial_message: formData.message,
           q1_answer: newQAnswers.q1,
           q2_answer: newQAnswers.q2,
@@ -131,7 +131,7 @@ export function FloatingWhatsApp() {
             <div className="flex-1 overflow-y-auto p-5 bg-midnight/90 relative flex flex-col gap-4">
               <form onSubmit={(e) => { e.preventDefault(); startChatFlow(); }} className="flex flex-col gap-4 text-white">
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider mb-1 text-steel">Last Name</label>
+                  <label className="block text-xs font-semibold uppercase tracking-wider mb-1 text-steel">Your Name <span className="text-red-500">*</span></label>
                   <input 
                     type="text" 
                     required 
@@ -153,18 +153,24 @@ export function FloatingWhatsApp() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider mb-1 text-steel">Department <span className="text-red-500">*</span></label>
+                  <label className="block text-xs font-semibold uppercase tracking-wider mb-1 text-steel">Business Type <span className="text-red-500">*</span></label>
                   <select 
                     required
-                    value={formData.department}
-                    onChange={e => setFormData({...formData, department: e.target.value})}
+                    value={formData.businessType}
+                    onChange={e => setFormData({...formData, businessType: e.target.value})}
                     className="w-full bg-midnight/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan focus:ring-1 focus:ring-cyan transition-all cursor-pointer"
                   >
-                    <option className="bg-midnight text-white" value="" disabled>Choose a department</option>
-                    <option className="bg-midnight text-white" value="Sales">Sales</option>
-                    <option className="bg-midnight text-white" value="Support">Support</option>
-                    <option className="bg-midnight text-white" value="Billing">Billing</option>
-                    <option className="bg-midnight text-white" value="General">General Inquiry</option>
+                    <option className="bg-midnight text-white" value="" disabled>Select industry</option>
+                    <option className="bg-midnight text-white" value="Healthcare">Healthcare / Medical</option>
+                    <option className="bg-midnight text-white" value="Spa">Spa / Salon / Wellness</option>
+                    <option className="bg-midnight text-white" value="Restaurant">Restaurant / Cafe</option>
+                    <option className="bg-midnight text-white" value="Ecommerce">E-commerce / Retail</option>
+                    <option className="bg-midnight text-white" value="Services">Professional Services</option>
+                    <option className="bg-midnight text-white" value="Real Estate">Real Estate / Construction</option>
+                    <option className="bg-midnight text-white" value="Startup">Tech Startup / SaaS</option>
+                    <option className="bg-midnight text-white" value="Manufacturing">Manufacturing / Logistics</option>
+                    <option className="bg-midnight text-white" value="Education">Education / Coaching</option>
+                    <option className="bg-midnight text-white" value="Other">Other</option>
                   </select>
                 </div>
                 <div>

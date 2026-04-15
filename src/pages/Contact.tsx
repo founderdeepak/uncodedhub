@@ -152,6 +152,10 @@ export default function Contact() {
                       <option value="Restaurant">Restaurant / Cafe</option>
                       <option value="Ecommerce">E-commerce / Retail</option>
                       <option value="Services">Professional Services</option>
+                      <option value="Real Estate">Real Estate / Construction</option>
+                      <option value="Startup">Tech Startup / SaaS</option>
+                      <option value="Manufacturing">Manufacturing / Logistics</option>
+                      <option value="Education">Education / Coaching</option>
                       <option value="Other">Other</option>
                     </select>
                   </div>

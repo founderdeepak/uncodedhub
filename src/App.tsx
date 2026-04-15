@@ -3,7 +3,7 @@ import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom'
 import HoverFooter from './components/ui/hover-footer';
 import { ExpandableTabs } from './components/ui/expandable-tabs';
 import { FloatingWhatsApp } from './components/ui/floating-whatsapp';
-import { Menu, X, Info, MessageCircle, Laptop, Briefcase, ChevronRight, BookOpen, CheckCircle, Calendar } from 'lucide-react';
+import { Menu, X, Info, MessageCircle, Laptop, Briefcase, ChevronRight, BookOpen, CheckCircle, Calendar, Home as HomeIcon } from 'lucide-react';
 import { supabase } from './lib/supabase';
 import { BookingModal } from './components/ui/booking-modal';
 
@@ -27,6 +27,7 @@ export default function App() {
   const location = useLocation();
 
   const navTabs = [
+    { title: "Home", icon: HomeIcon, path: "/" },
     { title: "Services", icon: Laptop, path: "/services" },
     { title: "Portfolio", icon: Briefcase, path: "/portfolio" },
     { title: "Blog", icon: BookOpen, path: "/blog" },
@@ -35,13 +36,10 @@ export default function App() {
   ];
 
   /* Match active tab based on route */
-  const currentTabIndex = navTabs.findIndex(t => location.pathname.startsWith(t.path));
-
-  const handleNavChange = (index: number | null) => {
-    if (index !== null) {
-      navigate(navTabs[index].path);
-    }
-  };
+  /* Exact or startsWith match algorithm depending on if it's the root path */
+  const currentTabIndex = navTabs.findIndex(t => 
+    t.path === '/' ? location.pathname === '/' : location.pathname.startsWith(t.path)
+  );
 
   const handleWhatsAppSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -120,14 +118,32 @@ export default function App() {
             <span className="font-display font-bold text-xl tracking-widest uppercase relative z-50">Uncoded Hub</span>
           </Link>
           
-          <div className="hidden md:flex items-center gap-6">
-            <ExpandableTabs tabs={navTabs} onChange={handleNavChange} activeTabIndex={currentTabIndex === -1 ? null : currentTabIndex} />
+          <div className="hidden lg:flex items-center gap-6">
+            <div className="flex items-center gap-1 bg-midnight/80 rounded-2xl p-1.5 border border-white/5">
+              {navTabs.map((tab, idx) => {
+                const isActive = currentTabIndex === idx;
+                const Icon = tab.icon;
+                return (
+                  <Link
+                    key={tab.path}
+                    to={tab.path}
+                    className={`flex items-center px-4 md:px-5 py-2.5 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 ${
+                      isActive 
+                        ? 'bg-white/10 text-white shadow-sm' 
+                        : 'text-steel hover:text-cyan hover:bg-cyan/5'
+                    }`}
+                  >
+                    <span className={isActive ? 'text-white' : ''}>{tab.title}</span>
+                  </Link>
+                );
+              })}
+            </div>
             <button onClick={() => setIsModalOpen(true)} className="cyan-energy-btn !py-2.5 !px-6 !text-sm !font-medium shrink-0 ml-2">
               Start Project
             </button>
           </div>
 
-          <div className="flex md:hidden items-center gap-4 z-50">
+          <div className="flex lg:hidden items-center gap-3 z-50">
             <button onClick={() => setIsModalOpen(true)} className="cyan-energy-btn !py-1.5 !px-4 !text-xs !font-medium shrink-0 rounded-lg">
               Start
             </button>
@@ -137,13 +153,16 @@ export default function App() {
           </div>
 
           {/* Mobile Dropdown Menu */}
-          <div className={`absolute top-full left-0 right-0 mt-2 glass-panel rounded-2xl p-4 flex flex-col gap-4 text-center transition-all origin-top duration-300 md:hidden ${isMobileMenuOpen ? 'scale-y-100 opacity-100 visible' : 'scale-y-0 opacity-0 invisible'}`}>
-             <Link to="/services" onClick={closeMobileMenu} className="text-lg font-semibold py-2 hover:text-cyan border-b border-white/5">SERVICES</Link>
-             <Link to="/portfolio" onClick={closeMobileMenu} className="text-lg font-semibold py-2 hover:text-cyan border-b border-white/5">PORTFOLIO</Link>
-             <Link to="/blog" onClick={closeMobileMenu} className="text-lg font-semibold py-2 hover:text-cyan border-b border-white/5">BLOG</Link>
-             <Link to="/about" onClick={closeMobileMenu} className="text-lg font-semibold py-2 hover:text-cyan border-b border-white/5">ABOUT</Link>
-             <Link to="/contact" onClick={closeMobileMenu} className="text-lg font-semibold py-2 hover:text-cyan border-b border-white/5">CONTACT</Link>
-             <button onClick={() => { setIsModalOpen(true); closeMobileMenu(); }} className="text-lg font-semibold py-2 text-cyan">START A PROJECT</button>
+          <div className={`absolute top-full left-4 right-4 mt-2 bg-midnight/95 backdrop-blur-xl border border-white/10 rounded-2xl p-2 flex flex-col gap-1 shadow-2xl transition-all origin-top duration-300 lg:hidden ${isMobileMenuOpen ? 'scale-y-100 opacity-100 visible' : 'scale-y-0 opacity-0 invisible'}`}>
+             <Link to="/" onClick={closeMobileMenu} className="text-sm font-semibold tracking-wide py-3 px-4 rounded-xl hover:bg-white/5 hover:text-cyan text-steel transition-colors flex items-center justify-between">HOME <ChevronRight className="w-4 h-4 opacity-30" /></Link>
+             <Link to="/services" onClick={closeMobileMenu} className="text-sm font-semibold tracking-wide py-3 px-4 rounded-xl hover:bg-white/5 hover:text-cyan text-steel transition-colors flex items-center justify-between">SERVICES <ChevronRight className="w-4 h-4 opacity-30" /></Link>
+             <Link to="/portfolio" onClick={closeMobileMenu} className="text-sm font-semibold tracking-wide py-3 px-4 rounded-xl hover:bg-white/5 hover:text-cyan text-steel transition-colors flex items-center justify-between">PORTFOLIO <ChevronRight className="w-4 h-4 opacity-30" /></Link>
+             <Link to="/blog" onClick={closeMobileMenu} className="text-sm font-semibold tracking-wide py-3 px-4 rounded-xl hover:bg-white/5 hover:text-cyan text-steel transition-colors flex items-center justify-between">BLOG <ChevronRight className="w-4 h-4 opacity-30" /></Link>
+             <Link to="/about" onClick={closeMobileMenu} className="text-sm font-semibold tracking-wide py-3 px-4 rounded-xl hover:bg-white/5 hover:text-cyan text-steel transition-colors flex items-center justify-between">ABOUT <ChevronRight className="w-4 h-4 opacity-30" /></Link>
+             <Link to="/contact" onClick={closeMobileMenu} className="text-sm font-semibold tracking-wide py-3 px-4 rounded-xl hover:bg-white/5 hover:text-cyan text-steel transition-colors flex items-center justify-between">CONTACT <ChevronRight className="w-4 h-4 opacity-30" /></Link>
+             <div className="pt-2 px-2 pb-2 mt-1 border-t border-white/5">
+                <button onClick={() => { setIsModalOpen(true); closeMobileMenu(); }} className="w-full text-sm font-bold py-3.5 px-4 rounded-xl text-white bg-gradient-to-r from-[#00F0FF] to-[#B026FF] shadow-lg shadow-cyan/20 transition-all hover:scale-[1.02]">START A PROJECT</button>
+             </div>
           </div>
         </div>
       </nav>

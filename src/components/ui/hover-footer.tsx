@@ -145,6 +145,82 @@ export const TextHoverEffect = ({
   );
 };
 
+export const InteractiveFooterText = () => {
+  const [mousePos, setMousePos] = useState({ cx: 50, cy: 50 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<SVGSVGElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    setMousePos({ cx: x, cy: y });
+  };
+
+  return (
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 1200 160"
+      preserveAspectRatio="xMidYMid meet"
+      xmlns="http://www.w3.org/2000/svg"
+      className="select-none cursor-pointer w-full"
+      style={{ display: "block" }}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <defs>
+        <radialGradient 
+          id="dynamicGlow" 
+          cx={`${mousePos.cx}%`} 
+          cy={`${mousePos.cy}%`} 
+          r="20%"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0%" stopColor="#00F0FF" />
+          <stop offset="50%" stopColor="#B026FF" />
+          <stop offset="100%" stopColor="transparent" />
+        </radialGradient>
+      </defs>
+      
+      {/* Base Default Single Color Layer - Always Visible (Theme Primary Blueish/Cyan) */}
+      <text
+        x="50%"
+        y="50%"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        fill="none"
+        stroke="rgba(0, 240, 255, 0.5)"
+        strokeWidth="1"
+        style={{ fontSize: "150px", fontWeight: 900, letterSpacing: "-4px", fontFamily: "Space Grotesk, Syne, sans-serif" }}
+      >
+        UNCODEDHUB
+      </text>
+
+      {/* Dynamic Cursor Gradient Layer - Smaller Range, Overlays Base */}
+      <text
+        x="50%"
+        y="50%"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        fill="none"
+        stroke="url(#dynamicGlow)"
+        strokeWidth="1.5"
+        style={{ 
+          fontSize: "150px", 
+          fontWeight: 900, 
+          letterSpacing: "-4px", 
+          fontFamily: "Space Grotesk, Syne, sans-serif", 
+          transition: "opacity 0.3s ease-in-out",
+          opacity: isHovered ? 1 : 0
+        }}
+      >
+        UNCODEDHUB
+      </text>
+    </svg>
+  );
+};
+
 export const FooterBackgroundGradient = () => {
   return (
     <div
@@ -315,40 +391,12 @@ export default function HoverFooter() {
       {/* Remove internal gradient - it's on the outer wrapper now */}
     </footer>
 
-      {/* Text hover effect - seamlessly joined with footer bottom */}
+      {/* Dynamic Text hover effect - perfectly synced to mouse cursor, Desktop Only */}
       <div
-        className="lg:flex hidden w-full items-center justify-center"
+        className="hidden lg:flex w-full items-center justify-center pointer-events-auto"
         style={{ height: "10rem", overflow: "hidden" }}
       >
-        <svg
-          width="100%"
-          height="100%"
-          viewBox="0 0 1200 160"
-          preserveAspectRatio="xMidYMid meet"
-          xmlns="http://www.w3.org/2000/svg"
-          className="select-none cursor-pointer w-full"
-          style={{ display: "block" }}
-        >
-          <defs>
-            <linearGradient id="bigTextGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1200" y2="0">
-              <stop offset="0%" stopColor="#00F0FF" />
-              <stop offset="50%" stopColor="#B026FF" />
-              <stop offset="100%" stopColor="#00F0FF" />
-            </linearGradient>
-          </defs>
-          <text
-            x="50%"
-            y="50%"
-            textAnchor="middle"
-            dominantBaseline="middle"
-            fill="none"
-            stroke="url(#bigTextGrad)"
-            strokeWidth="0.5"
-            style={{ fontSize: "150px", fontWeight: 900, letterSpacing: "-4px", fontFamily: "Space Grotesk, Syne, sans-serif" }}
-          >
-            UNCODEDHUB
-          </text>
-        </svg>
+        <InteractiveFooterText />
       </div>
     </div>
   );
