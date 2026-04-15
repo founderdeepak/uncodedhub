@@ -1,0 +1,42 @@
+# ===================================
+# robots.txt for uncodedhub.com
+# ===================================
+
+# Allow all major search engine crawlers
+User-agent: *
+Allow: /
+
+# AI Engine Crawlers — AEO/GEO Optimization
+# Allow ChatGPT / OpenAI
+User-agent: GPTBot
+Allow: /
+
+# Allow Google's AI (Gemini / Bard)
+User-agent: Google-Extended
+Allow: /
+
+# Allow Anthropic Claude
+User-agent: ClaudeBot
+Allow: /
+
+# Allow Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Allow Bing/Copilot
+User-agent: Bingbot
+Allow: /
+
+# Allow Common Crawl (used by many AI training datasets)
+User-agent: CCBot
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://uncodedhub.com/sitemap.xml

@@ -96,6 +96,8 @@ export default function BlogView() {
     <>
       <Helmet>
         <title>{content.title} | Uncoded Hub Blog</title>
+        <meta name="description" content={content.excerpt || `Read the latest insights on ${content.title} from Uncoded Hub.`} />
+        <meta name="keywords" content={`uncoded hub blog, web development, ${content.title.toLowerCase().split(' ').join(', ')}`} />
       </Helmet>
       
       <main className="pt-32 pb-24 px-6 min-h-screen bg-midnight">

@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { MapPin, Phone, Mail, Calendar, MessageSquare, ArrowRight, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
-import { PopupModal } from 'react-calendly';
+import { BookingModal } from '../components/ui/booking-modal';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', type: '', needs: '', budget: '', timeframe: '', details: '', source: '' });
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
   const [submittedName, setSubmittedName] = useState('');
-  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   const handleWhatsApp = () => {
     window.open(`https://wa.me/918660819023`, '_blank');
@@ -99,7 +99,7 @@ export default function Contact() {
             </a>
             
             <button 
-              onClick={() => setIsCalendlyOpen(true)}
+              onClick={() => setIsBookingOpen(true)}
               className="frosted-glass p-8 w-full rounded-3xl border border-white/10 cursor-pointer hover:-translate-y-2 transition-transform duration-300 text-center flex flex-col items-center group appearance-none text-left"
             >
               <div className="w-16 h-16 bg-cyber/50 rounded-full flex justify-center items-center mb-6 border border-cyan/30 group-hover:bg-cyan/10 transition-colors">
@@ -226,12 +226,10 @@ export default function Contact() {
         </div>
       </main>
 
-      {/* Embedded Calendly Popup */}
-      <PopupModal
-        url="https://calendly.com/uncodedhub"
-        onModalClose={() => setIsCalendlyOpen(false)}
-        open={isCalendlyOpen}
-        rootElement={document.getElementById("root") as HTMLElement}
+      {/* Embedded Custom Booking Popup */}
+      <BookingModal
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
       />
     </>
   );

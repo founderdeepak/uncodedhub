@@ -5,7 +5,7 @@ import { ExpandableTabs } from './components/ui/expandable-tabs';
 import { FloatingWhatsApp } from './components/ui/floating-whatsapp';
 import { Menu, X, Info, MessageCircle, Laptop, Briefcase, ChevronRight, BookOpen, CheckCircle, Calendar } from 'lucide-react';
 import { supabase } from './lib/supabase';
-import { PopupModal } from 'react-calendly';
+import { BookingModal } from './components/ui/booking-modal';
 
 /* Pages */
 import Home from './pages/Home';
@@ -20,7 +20,7 @@ export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalSuccess, setIsModalSuccess] = useState(false);
-  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', countryCode: '+91' });
   
   const navigate = useNavigate();
@@ -188,7 +188,7 @@ export default function App() {
                   onClick={(e) => { 
                     e.preventDefault();
                     setIsModalOpen(false); 
-                    setIsCalendlyOpen(true); 
+                    setIsBookingOpen(true); 
                   }}
                   className="cyan-energy-btn w-full flex items-center justify-center gap-2 !py-4 !text-lg"
                 >
@@ -261,12 +261,10 @@ export default function App() {
         </div>
       )}
 
-      {/* Calendly World-Class Modal Integration */}
-      <PopupModal
-        url="https://calendly.com/uncodedhub"
-        onModalClose={() => setIsCalendlyOpen(false)}
-        open={isCalendlyOpen}
-        rootElement={document.getElementById("root") as HTMLElement}
+      {/* Custom Google Meet Booking Modal */}
+      <BookingModal 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
       />
     </div>
   );

@@ -66,7 +66,7 @@ export default function Home({ onOpenModal }: { onOpenModal: () => void }) {
     <>
       <Helmet>
         <title>Uncoded Hub | Professional No-Code Website Development in 5 Days</title>
-        <meta name="description" content="Get your professional business website built in just 5 days. No-code development experts in Bengaluru. 60% lower cost, 5x faster delivery. E-commerce, medical, spa, restaurant websites. Free consultation." />
+        <meta name="description" content="Get a premium, high-converting business website built in just 5 days. World-class no-code development. E-commerce, medical, spa, restaurant websites. Free consultation and custom quote." />
         <meta name="keywords" content="no-code website development, webflow developer India, website development Bengaluru, affordable website design, 5-day website delivery, professional website India, small business website, startup website" />
         <link rel="canonical" href="https://uncodedhub.com/" />
       </Helmet>
