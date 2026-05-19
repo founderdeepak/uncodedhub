@@ -139,7 +139,7 @@ export default function BlogView() {
                     {section.title}
                   </h2>
                   <p className="mb-6">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    In today's highly competitive coaching landscape, your online presence dictates your perceived value. A fast, well-structured platform not only converts leads more effectively but automatically builds trust before the first discovery call. Let's break down the exact frameworks top-tier consultants use to scale.
                   </p>
                   
                   {section.subsections && (
@@ -150,7 +150,7 @@ export default function BlogView() {
                             {sub.title}
                           </h3>
                           <p>
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            By integrating smart automation and AI-driven chatbots directly into your sales funnel, you eliminate the friction of scheduling and initial qualifying. This means you wake up to a calendar full of high-intent prospects who already understand your core offer.
                           </p>
                           <div className="bg-cyber/50 border border-white/5 rounded-xl p-6 mt-4">
                             <span className="text-cyan font-mono text-sm block mb-2">// Code Example</span>

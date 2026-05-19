@@ -11,12 +11,12 @@ import {
   Linkedin,
   Youtube,
   AtSign,
-  Globe,
   Info,
   MessageCircle,
   Home,
   Laptop,
-  Briefcase
+  Briefcase,
+  BookOpen
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -242,6 +242,7 @@ export default function HoverFooter() {
         { label: "Home", href: "/", icon: <Home size={16} className="mr-2 inline" /> },
         { label: "Services", href: "/services", icon: <Laptop size={16} className="mr-2 inline" /> },
         { label: "Portfolio", href: "/portfolio", icon: <Briefcase size={16} className="mr-2 inline" /> },
+        { label: "Blog", href: "/blog", icon: <BookOpen size={16} className="mr-2 inline" /> },
         { label: "About", href: "/about", icon: <Info size={16} className="mr-2 inline" /> },
         { label: "Contact", href: "/contact", icon: <MessageCircle size={16} className="mr-2 inline" /> },
       ],
@@ -308,7 +309,7 @@ export default function HoverFooter() {
               <span className="text-white text-2xl font-display font-bold tracking-widest uppercase">Uncoded Hub</span>
             </div>
             <p className="text-steel text-sm leading-relaxed mt-4 max-w-sm">
-              Your business deserves to be online. We make it happen in 5 days with high-converting, no-code architecture.
+              Helping coaches and consultants grow online — one world-class website at a time.
             </p>
           </div>
 

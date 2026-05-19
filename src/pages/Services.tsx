@@ -4,51 +4,11 @@ import { Laptop, ShoppingCart, PenTool, BarChart3, Wrench, CheckCircle2, ArrowRi
 import { Link } from 'react-router-dom';
 
 export default function Services({ onOpenModal }: { onOpenModal: () => void }) {
-  const services = [
-    {
-      id: "website",
-      icon: <Laptop className="w-10 h-10 text-cyan" />,
-      title: "Professional Website Development",
-      subtitle: "Custom websites that look amazing, load fast, and convert visitors into customers",
-      description: "Your website is often the first impression customers have of your business. We create stunning, high-performance websites that reflect your brand's unique personality and drive real business results.",
-      highlights: ["Mobile-first design", "Under 2-second load times", "SEO-ready", "Easy to manage"],
-      packages: [
-        { name: "Basic", features: ["5-7 pages", "Template-based", "Contact form", "Basic SEO setup"] },
-        { name: "Professional", features: ["10-15 pages", "Custom design", "Booking system", "WhatsApp widget", "Complete SEO"] }
-      ]
-    },
-    {
-      id: "ecommerce",
-      icon: <ShoppingCart className="w-10 h-10 text-magenta" />,
-      title: "Complete E-commerce Solutions",
-      subtitle: "Start selling online within a week. Complete store setup with payments, inventory, and orders.",
-      description: "Transform your business into a 24/7 sales machine. We build beautiful, conversion-optimized online stores that make shopping easy for your customers and order management simple for you.",
-      highlights: ["Razorpay / Instamojo integration", "Real-time stock management", "Automated notifications", "Customer Accounts"],
-      packages: [
-        { name: "Starter Store", features: ["Up to 50 products", "1 payment gateway", "Basic shipping options", "Essential features"] },
-        { name: "Pro Store", features: ["Up to 100 products", "Multiple payment gateways", "Advanced shipping", "Marketing integrations"] }
-      ]
-    },
-    {
-      id: "maintenance",
-      icon: <Wrench className="w-10 h-10 text-white" />,
-      title: "Website Maintenance & Support",
-      subtitle: "Keep your website fresh, secure, and performing at its best—hassle-free",
-      description: "Your website needs ongoing care to stay secure, fast, and effective. Our maintenance plans ensure your site stays up-to-date with fresh content, optimal performance, and immediate support.",
-      highlights: ["Unlimited updates", "Security monitoring", "Backup management", "Priority support"],
-      packages: [
-        { name: "Basic Plan", features: ["2 hrs updates/mo", "Security monitoring", "Monthly backups", "Email support"] },
-        { name: "Pro Plan", features: ["5 hrs updates/mo", "Weekly backups", "Performance monitoring", "WhatsApp support"] }
-      ]
-    }
-  ];
-
   return (
     <>
       <Helmet>
-        <title>Our Services | Website Development & E-commerce | Uncoded Hub</title>
-        <meta name="description" content="Professional web development services in India. Custom website design, e-commerce stores, and ongoing maintenance. Request a custom quote today." />
-        <meta name="keywords" content="website development services, webflow development, e-commerce website India, website maintenance, web services Bengaluru" />
+        <title>The Coach Authority System | Uncoded Hub</title>
+        <meta name="description" content="One complete package. Built exclusively for coaches and consultants. Delivered in 7 days." />
         <link rel="canonical" href="https://uncodedhub.com/services" />
       </Helmet>
       
@@ -60,58 +20,109 @@ export default function Services({ onOpenModal }: { onOpenModal: () => void }) {
           </div>
 
           <div className="text-center mb-16">
-            <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">Complete Digital Solutions <br className="hidden md:block"/> <span className="text-gradient">For Modern Businesses</span></h1>
+            <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">The Coach Authority System <br className="hidden md:block"/> <span className="text-gradient">Everything You Need to Dominate Online</span></h1>
             <p className="text-steel text-xl max-w-3xl mx-auto leading-relaxed mb-6">
-              From concept to launch to growth—everything you need to succeed online.
-            </p>
-            <p className="text-white/80 max-w-2xl mx-auto">
-              Whether you're launching your first website, building an online store, or upgrading your digital presence, we've got you covered with high-performance digital solutions tailored to your business goals.
+              One complete package. Built exclusively for coaches and consultants. Delivered in 7 days. Backed by a guarantee that makes saying no feel impossible.
             </p>
           </div>
 
-          <div className="space-y-24">
-            {services.map((svc, idx) => (
-              <div key={svc.id} className="grid md:grid-cols-2 gap-12 items-start bg-cyber/30 p-8 md:p-12 rounded-3xl border border-white/5">
-                <div>
-                  <div className="mb-6">{svc.icon}</div>
-                  <h2 className="font-display text-3xl font-bold text-white mb-2">{svc.title}</h2>
-                  <h3 className="text-cyan text-lg mb-6">{svc.subtitle}</h3>
-                  <p className="text-steel leading-relaxed mb-8">{svc.description}</p>
-                  
-                  <ul className="space-y-3 mb-10">
-                    {svc.highlights.map((hlt, i) => (
-                      <li key={i} className="flex items-center gap-3 text-white/90">
-                        <CheckCircle2 className="w-5 h-5 text-magenta" /> {hlt}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <button onClick={onOpenModal} className="cyan-energy-btn !py-3 !px-8 hidden md:inline-flex items-center gap-2">
-                    Request Custom Quote <ArrowRight className="w-5 h-5"/>
-                  </button>
+          <div className="max-w-4xl mx-auto space-y-16">
+            {/* Main Offer */}
+            <div className="bg-cyber/30 p-8 md:p-12 rounded-3xl border border-cyan/30 shadow-[0_0_30px_rgba(0,240,255,0.1)] relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-cyan text-midnight font-bold px-6 py-2 rounded-bl-3xl">Most Popular</div>
+              <h2 className="font-display text-4xl font-bold text-white mb-4">The Coach Authority System</h2>
+              <p className="text-steel text-lg mb-10">A world-class coaching website — live in 7 days — with everything you need to attract premium clients online.</p>
+              
+              <div className="border border-white/10 rounded-2xl overflow-hidden mb-10">
+                <div className="grid grid-cols-4 bg-midnight/80 p-4 border-b border-white/10 font-bold text-white">
+                  <div className="col-span-3">What You Get</div>
+                  <div className="text-right">Value</div>
                 </div>
-
-                <div className="space-y-6">
-                  {svc.packages.map((pkg, i) => (
-                    <div key={i} className="frosted-glass p-6 rounded-2xl border border-white/10 hover:border-cyan/30 transition-all duration-300">
-                      <div className="flex justify-between items-start mb-6 border-b border-white/10 pb-4">
-                        <h4 className="font-bold text-xl">{pkg.name}</h4>
-                      </div>
-                      <ul className="space-y-3">
-                        {pkg.features.map((feat, ix) => (
-                          <li key={ix} className="text-steel text-sm flex gap-2">
-                             <span className="text-cyan shrink-0">✓</span> {feat}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                  <button onClick={onOpenModal} className="cyan-energy-btn !py-3 !px-8 w-full md:hidden flex items-center justify-center gap-2 mt-6">
-                    Request Quote <ArrowRight className="w-5 h-5"/>
-                  </button>
+                <div className="divide-y divide-white/5 bg-cyber/10">
+                  <div className="grid grid-cols-4 p-4 items-center">
+                    <div className="col-span-3 text-white">World-class coaching website — AI-powered, SEO optimised, mobile perfect</div>
+                    <div className="text-right text-steel">$500</div>
+                  </div>
+                  <div className="grid grid-cols-4 p-4 items-center">
+                    <div className="col-span-3 text-cyan flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0" /> BONUS 1: AI Chatbot — captures and qualifies leads 24/7</div>
+                    <div className="text-right text-steel">$300</div>
+                  </div>
+                  <div className="grid grid-cols-4 p-4 items-center">
+                    <div className="col-span-3 text-cyan flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0" /> BONUS 2: SEO Setup & Optimisation — rank on Google</div>
+                    <div className="text-right text-steel">$200</div>
+                  </div>
+                  <div className="grid grid-cols-4 p-4 items-center">
+                    <div className="col-span-3 text-cyan flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0" /> BONUS 3: Google My Business Setup</div>
+                    <div className="text-right text-steel">$150</div>
+                  </div>
+                  <div className="grid grid-cols-4 p-4 items-center">
+                    <div className="col-span-3 text-cyan flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0" /> BONUS 4: Competitor Analysis Report</div>
+                    <div className="text-right text-steel">$150</div>
+                  </div>
+                  <div className="grid grid-cols-4 p-4 items-center">
+                    <div className="col-span-3 text-cyan flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0" /> BONUS 5: Personal Brand Audit & Recommendations</div>
+                    <div className="text-right text-steel">$100</div>
+                  </div>
+                  <div className="grid grid-cols-4 p-4 items-center">
+                    <div className="col-span-3 text-cyan flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0" /> BONUS 6: Client Magnet Copywriting — homepage & about page written for you</div>
+                    <div className="text-right text-steel">$200</div>
+                  </div>
+                  <div className="grid grid-cols-4 p-4 items-center">
+                    <div className="col-span-3 text-cyan flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0" /> BONUS 7: WhatsApp Inquiry Widget</div>
+                    <div className="text-right text-steel">$100</div>
+                  </div>
+                  <div className="grid grid-cols-4 p-4 items-center">
+                    <div className="col-span-3 text-cyan flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0" /> BONUS 8: Business Development PDF Guide</div>
+                    <div className="text-right text-steel">$75</div>
+                  </div>
+                  <div className="grid grid-cols-4 p-4 items-center">
+                    <div className="col-span-3 text-cyan flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0" /> BONUS 9: 1-on-1 Strategy Call (60 minutes)</div>
+                    <div className="text-right text-steel">$150</div>
+                  </div>
+                  <div className="grid grid-cols-4 p-4 items-center">
+                    <div className="col-span-3 text-cyan flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0" /> BONUS 10: 30-Day Performance Check-in Call</div>
+                    <div className="text-right text-steel">$100</div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-4 bg-midnight p-4 border-t border-white/10">
+                  <div className="col-span-3 text-right text-steel font-medium pr-4">Total Value</div>
+                  <div className="text-right text-steel line-through">$2,025</div>
+                </div>
+                <div className="grid grid-cols-4 bg-cyan/10 p-6 border-t border-cyan/30">
+                  <div className="col-span-3 text-right text-cyan text-2xl font-bold pr-4">Your Investment</div>
+                  <div className="text-right text-white text-3xl font-bold">$1,500</div>
                 </div>
               </div>
-            ))}
+
+              {/* Guarantees */}
+              <div className="frosted-glass p-8 rounded-2xl border border-magenta/30 bg-midnight/50 mb-8">
+                <h3 className="font-display text-2xl font-bold text-white mb-6 text-center">Our Triple Guarantee</h3>
+                <ul className="space-y-4">
+                  <li className="flex gap-4 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-magenta shrink-0" />
+                    <span className="text-white text-lg">Live in 7 days — or you pay nothing</span>
+                  </li>
+                  <li className="flex gap-4 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-magenta shrink-0" />
+                    <span className="text-white text-lg">Unlimited design revisions — we don't launch until you are 100% in love with it</span>
+                  </li>
+                  <li className="flex gap-4 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-magenta shrink-0" />
+                    <span className="text-white text-lg">You love the design — or we redesign until you do</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="text-center">
+                <button onClick={onOpenModal} className="cyan-energy-btn !py-4 !px-10 !text-lg w-full md:w-auto inline-flex items-center justify-center gap-2">
+                  Claim This Offer <ArrowRight className="w-5 h-5"/>
+                </button>
+              </div>
+            </div>
+
+            <p className="text-center text-steel text-sm">
+              Website maintenance is available after delivery at $200–$300/month. This covers security updates, content changes, performance monitoring, and priority support.
+            </p>
           </div>
 
           <div className="mt-24 text-center bg-gradient-to-br from-cyber to-midnight p-12 rounded-3xl border border-white/10">

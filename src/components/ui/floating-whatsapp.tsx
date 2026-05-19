@@ -34,8 +34,8 @@ export function FloatingWhatsApp() {
     setIsFormSubmitted(true);
     setMessages([
       { id: 'usr-1', sender: 'user', text: formData.message || 'Started chat.' },
-      { id: 'bot-1', sender: 'bot', text: `Hi ${formData.name || 'there'}! Thanks for reaching out. Let me ask you 3 quick questions about your project.` },
-      { id: 'bot-2', sender: 'bot', text: "Question 1: What is the primary goal of your project?" }
+      { id: 'bot-1', sender: 'bot', text: `Hi ${formData.name || 'there'}! Thanks for reaching out. Let me ask you 3 quick questions to understand your coaching practice.` },
+      { id: 'bot-2', sender: 'bot', text: "Question 1: What type of coaching or consulting do you provide?" }
     ]);
   };
 
@@ -49,15 +49,15 @@ export function FloatingWhatsApp() {
 
       if (chatStep === 0) {
         newQAnswers.q1 = userMsg;
-        botResponse = "Got it. Question 2: What is your estimated timeline?";
+        botResponse = "Got it. Question 2: What's the #1 challenge you're facing in getting new clients online right now?";
         nextStep = 1;
       } else if (chatStep === 1) {
         newQAnswers.q2 = userMsg;
-        botResponse = "Understood. Question 3: Do you have a specific budget range in mind?";
+        botResponse = "Understood. Question 3: Are you ready to invest in a world-class website that books high-ticket clients on autopilot?";
         nextStep = 2;
       } else if (chatStep === 2) {
         newQAnswers.q3 = userMsg;
-        botResponse = `Thanks! To summarize: Target: ${newQAnswers.q1}, Timeline: ${newQAnswers.q2}, Budget: ${userMsg}. Our team will contact you soon!`;
+        botResponse = `Thanks! To summarize: Niche: ${newQAnswers.q1}, Challenge: ${newQAnswers.q2}, Ready: ${userMsg}. Our team will review this and contact you soon!`;
         nextStep = 3;
         
         // Save to Supabase asynchronously
@@ -153,24 +153,22 @@ export function FloatingWhatsApp() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider mb-1 text-steel">Business Type <span className="text-red-500">*</span></label>
+                  <label className="block text-xs font-semibold uppercase tracking-wider mb-1 text-steel">Coaching Niche <span className="text-red-500">*</span></label>
                   <select 
                     required
                     value={formData.businessType}
                     onChange={e => setFormData({...formData, businessType: e.target.value})}
                     className="w-full bg-midnight/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan focus:ring-1 focus:ring-cyan transition-all cursor-pointer"
                   >
-                    <option className="bg-midnight text-white" value="" disabled>Select industry</option>
-                    <option className="bg-midnight text-white" value="Healthcare">Healthcare / Medical</option>
-                    <option className="bg-midnight text-white" value="Spa">Spa / Salon / Wellness</option>
-                    <option className="bg-midnight text-white" value="Restaurant">Restaurant / Cafe</option>
-                    <option className="bg-midnight text-white" value="Ecommerce">E-commerce / Retail</option>
-                    <option className="bg-midnight text-white" value="Services">Professional Services</option>
-                    <option className="bg-midnight text-white" value="Real Estate">Real Estate / Construction</option>
-                    <option className="bg-midnight text-white" value="Startup">Tech Startup / SaaS</option>
-                    <option className="bg-midnight text-white" value="Manufacturing">Manufacturing / Logistics</option>
-                    <option className="bg-midnight text-white" value="Education">Education / Coaching</option>
-                    <option className="bg-midnight text-white" value="Other">Other</option>
+                    <option className="bg-midnight text-white" value="" disabled>Select your niche</option>
+                    <option className="bg-midnight text-white" value="Life">Life Coaching</option>
+                    <option className="bg-midnight text-white" value="Business">Business / Executive</option>
+                    <option className="bg-midnight text-white" value="Health">Health / Fitness</option>
+                    <option className="bg-midnight text-white" value="Financial">Financial / Wealth</option>
+                    <option className="bg-midnight text-white" value="Relationship">Relationship Coaching</option>
+                    <option className="bg-midnight text-white" value="Spiritual">Spiritual / Mindset</option>
+                    <option className="bg-midnight text-white" value="Career">Career Coaching</option>
+                    <option className="bg-midnight text-white" value="Other">Other Consulting</option>
                   </select>
                 </div>
                 <div>

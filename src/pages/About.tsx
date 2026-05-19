@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function About({ onOpenModal }: { onOpenModal: () => void }) {
   const values = [
-    { icon: <Zap />, title: "Speed Without Compromise", desc: "Fast delivery doesn't mean rushed work. We've perfected our process to deliver professional websites in 5-10 days." },
+    { icon: <Zap />, title: "Speed Without Compromise", desc: "Fast delivery doesn't mean rushed work. We've perfected our process to deliver professional websites in 7 days." },
     { icon: <Gem />, title: "Transparency & Honesty", desc: "No hidden costs. No vague timelines. No technical jargon to confuse you. We believe in clear communication." },
     { icon: <Target />, title: "Results Over Aesthetics", desc: "Beautiful design is our starting point. Every element we create serves a purpose: to convert visitors into customers." },
     { icon: <BookOpen />, title: "Continuous Learning", desc: "The web evolves fast, and so do we. We're constantly learning new platforms to give our clients the edge." },
@@ -30,7 +30,7 @@ export default function About({ onOpenModal }: { onOpenModal: () => void }) {
           </div>
 
           <div className="text-center mb-24">
-            <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">Building Digital Futures, <br className="hidden md:block"/> <span className="text-gradient">One Website at a Time</span></h1>
+            <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">Built by Two Siblings. <br className="hidden md:block"/> <span className="text-gradient">Built for Coaches.</span></h1>
             <p className="text-steel text-xl max-w-2xl mx-auto leading-relaxed mb-6">
               Meet the passionate team behind Uncoded Hub
             </p>
@@ -41,7 +41,7 @@ export default function About({ onOpenModal }: { onOpenModal: () => void }) {
               <h2 className="font-display text-4xl font-bold text-white mb-6">How Uncoded Hub Began</h2>
               <div className="space-y-4 text-steel leading-relaxed">
                 <p>Every business deserves a professional website. That's the belief that started Uncoded Hub.</p>
-                <p>We're Deepak and Geetha, and we started this agency after seeing too many small businesses held back by expensive, slow traditional web development. A doctor couldn't afford ₹2 lakhs for a website. A spa owner waited 4 months only to receive something they didn't like.</p>
+                <p>We're Deepak and Geetha — two siblings from Bengaluru who built Uncoded Hub from scratch. We started after seeing talented coaches lose potential clients every day simply because their online presence didn't reflect the quality of their work. A great coach with a bad website loses to a mediocre coach with a great one. We decided to fix that.</p>
                 <p>We knew there had to be a better way.</p>
                 <p>That's when we discovered the power of no-code development. Platforms like Webflow, Framer, and Bubble were revolutionizing how websites could be built—faster, more affordably, and with the same professional quality.</p>
               </div>
@@ -64,11 +64,11 @@ export default function About({ onOpenModal }: { onOpenModal: () => void }) {
                 <h3 className="font-display text-3xl font-bold text-white mb-2">Deepak</h3>
                 <h4 className="text-cyan font-mono text-sm tracking-wider uppercase mb-6">Co-Founder & Lead Developer</h4>
                 <p className="text-steel leading-relaxed mb-6">
-                  Deepak brings a unique blend of technical expertise and spiritual mindfulness to web development. He is a certified Webflow Expert and Framer Partner. He's built websites for healthcare professionals, wellness centers, and e-commerce businesses.
+                  Deepak handles client strategy, sales, and the technical architecture behind every website. With a background in AI engineering and web development, he brings a systems-thinking approach to every coaching website we build. He is obsessed with one thing: making sure your website actually gets you clients.
                 </p>
                 <div className="bg-midnight/50 p-4 rounded-xl border border-white/5">
                   <span className="text-white/60 font-mono text-xs block mb-1">FUN FACT</span>
-                  <p className="text-white text-sm">🧘 Daily meditation practitioner who believes in bringing mindfulness to coding</p>
+                  <p className="text-white text-sm">🧘 Climbed Velliangiri mountain alone and slept on the hill. Believes the best ideas come from silence.</p>
                 </div>
               </div>
 
@@ -79,7 +79,7 @@ export default function About({ onOpenModal }: { onOpenModal: () => void }) {
                 <h3 className="font-display text-3xl font-bold text-white mb-2">Geetha</h3>
                 <h4 className="text-magenta font-mono text-sm tracking-wider uppercase mb-6">Co-Founder & Creative Director</h4>
                 <p className="text-steel leading-relaxed mb-6">
-                  Geetha is the creative force behind Uncoded Hub's stunning designs. With a keen eye for aesthetics and deep understanding of brand psychology, she ensures every website we build communicates the right message to the right audience.
+                  Geetha leads design and delivery at Uncoded Hub. She has a sharp eye for the visual details that make a coaching website feel premium and trustworthy. Every website she builds is crafted to make visitors think: this coach is exactly who I need.
                 </p>
                 <div className="bg-midnight/50 p-4 rounded-xl border border-white/5">
                   <span className="text-white/60 font-mono text-xs block mb-1">FUN FACT</span>

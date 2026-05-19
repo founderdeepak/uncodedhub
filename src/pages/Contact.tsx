@@ -5,7 +5,7 @@ import { supabase } from '../lib/supabase';
 import { BookingModal } from '../components/ui/booking-modal';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', phone: '', email: '', type: '', needs: '', budget: '', timeframe: '', details: '', source: '' });
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', type: '', needs: '', budget: '', timeframe: '', details: '', source: '+1' });
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
   const [submittedName, setSubmittedName] = useState('');
@@ -23,7 +23,7 @@ export default function Contact() {
     const payload = {
       name: formData.name,
       email: formData.email,
-      phone: formData.phone,
+      phone: `${formData.source} ${formData.phone}`,
       business_type: formData.type,
       project_details: formData.details,
     };
@@ -45,7 +45,7 @@ export default function Contact() {
 
       setSubmitStatus('success');
       setSubmittedName(formData.name);
-      setFormData({ name: '', phone: '', email: '', type: '', needs: '', budget: '', timeframe: '', details: '', source: '' });
+      setFormData({ name: '', phone: '', email: '', type: '', needs: '', budget: '', timeframe: '', details: '', source: '+1' });
     } catch (err: any) {
       console.error('Form submission error:', err);
       setErrorMsg('Something went wrong. Please try WhatsApp or email us directly.');
@@ -70,9 +70,9 @@ export default function Contact() {
           </div>
 
           <div className="text-center mb-16">
-            <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">Let's Build Something <br className="hidden md:block"/> <span className="text-gradient">Amazing Together</span></h1>
+            <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">Book Your Free 15-Minute <br className="hidden md:block"/> <span className="text-gradient">Discovery Call</span></h1>
             <p className="text-steel text-xl max-w-2xl mx-auto leading-relaxed">
-              Get your free consultation and custom quote within 24 hours. No pressure, no obligation—just honest advice and clear next steps.
+              Tell us about your coaching practice. We'll show you exactly what your website should look like and how it will bring you more clients. No pressure. No obligation. Just clarity.
             </p>
           </div>
 
@@ -115,7 +115,7 @@ export default function Contact() {
           <div className="grid md:grid-cols-2 gap-16">
             {/* Form */}
             <div className="bg-cyber/30 p-8 md:p-12 rounded-3xl border border-white/10">
-              <h3 className="font-display text-3xl font-bold mb-2">Or Fill Out This Form</h3>
+              <h3 className="font-display text-3xl font-bold mb-2" id="contact-form-section">Or Fill Out This Form</h3>
               <p className="text-steel mb-8">Tell us about your project and we'll get back to you within 24 hours</p>
               
               {submitStatus === 'success' ? (
@@ -141,24 +141,27 @@ export default function Contact() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="text-sm font-semibold text-steel uppercase tracking-wider mb-2 block">Phone Number*</label>
-                    <input type="tel" required placeholder="+91 XXXXX XXXXX" className="w-full bg-midnight/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan transition-colors" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
+                    <div className="flex gap-2">
+                      <select 
+                        value={formData.source}
+                        onChange={(e) => setFormData({...formData, source: e.target.value})}
+                        className="w-[110px] bg-midnight/50 border border-white/10 rounded-xl px-3 py-3 text-white focus:outline-none focus:border-cyan focus:ring-1 focus:ring-cyan transition-all cursor-pointer"
+                      >
+                        <option value="+1">+1 (US)</option>
+                        <option value="+44">+44 (UK)</option>
+                        <option value="+61">+61 (AU)</option>
+                        <option value="+91">+91 (IN)</option>
+                        <option value="+971">+971 (AE)</option>
+                      </select>
+                      <input type="tel" required placeholder="XXXXX XXXXX" className="w-full bg-midnight/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan transition-colors" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
+                    </div>
                   </div>
-                  <div>
-                    <label className="text-sm font-semibold text-steel uppercase tracking-wider mb-2 block">Business Type*</label>
-                    <select required className="w-full bg-midnight/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan transition-colors" value={formData.type} onChange={e => setFormData({...formData, type: e.target.value})}>
-                      <option value="">Select industry</option>
-                      <option value="Healthcare">Healthcare / Medical</option>
-                      <option value="Spa">Spa / Salon / Wellness</option>
-                      <option value="Restaurant">Restaurant / Cafe</option>
-                      <option value="Ecommerce">E-commerce / Retail</option>
-                      <option value="Services">Professional Services</option>
-                      <option value="Real Estate">Real Estate / Construction</option>
-                      <option value="Startup">Tech Startup / SaaS</option>
-                      <option value="Manufacturing">Manufacturing / Logistics</option>
-                      <option value="Education">Education / Coaching</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
+                  <div className="hidden md:block"></div>
+                </div>
+
+                <div>
+                  <label className="text-sm font-semibold text-steel uppercase tracking-wider mb-2 block">Your Biggest Challenge*</label>
+                  <textarea required rows={3} placeholder="What's stopping you from getting more coaching clients online?" className="w-full bg-midnight/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan transition-colors" value={formData.type} onChange={e => setFormData({...formData, type: e.target.value})}></textarea>
                 </div>
 
                 <div>
@@ -218,12 +221,12 @@ export default function Contact() {
               <div className="frosted-glass p-8 rounded-3xl border border-white/5 bg-midnight">
                 <h3 className="font-display text-2xl font-bold mb-6">Find Us Here</h3>
                 <div className="space-y-4 text-steel">
-                  <p className="flex items-start gap-3"><MapPin className="text-magenta shrink-0" /> Uncoded Hub, Bengaluru, Karnataka, India - 560XXX</p>
+                  <p className="flex items-start gap-3"><MapPin className="text-magenta shrink-0" /> Remote — serving coaches and consultants globally</p>
                   <p className="flex items-center gap-3"><Phone className="text-magenta shrink-0" /> +91 8660819023</p>
                   <p className="flex items-center gap-3"><Mail className="text-magenta shrink-0" /> hello@uncodedhub.com</p>
                 </div>
                 <hr className="my-6 border-white/10" />
-                <p className="text-sm text-steel"><strong>Business Hours:</strong> Monday - Saturday: 9:00 AM - 7:00 PM IST</p>
+                <p className="text-sm text-steel"><strong>Business Hours:</strong> Available for calls: Weekdays 7–9 PM IST | Weekends anytime</p>
               </div>
             </div>
           </div>
