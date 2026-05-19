@@ -10,11 +10,11 @@ interface FaqItem {
 const faqs: FaqItem[] = [
   {
     question: "How fast can I get a custom website built for my business?",
-    answer: "At UncodedHub, we design, build, and launch fully functional, high-converting websites for small businesses in exactly 5 days using advanced no-code architecture."
+    answer: "At UncodedHub, we design, build, and launch fully functional, high-converting websites for small businesses in exactly 7 days using advanced no-code architecture."
   },
   {
-    question: "What types of businesses do you build websites for?",
-    answer: "We specialize in building fast, professional digital storefronts for clinics, spas, restaurants, and retail service providers, with a dedicated focus on empowering local business communities."
+    question: "Do you specialise in coaching and consulting websites?",
+    answer: "Yes — exclusively. We build websites specifically for coaches and consultants. This focus means we deeply understand what your clients look for before booking, how to position your expertise, and how to structure your website to convert visitors into paying clients."
   },
   {
     question: "Do you provide ongoing website maintenance and support?",
