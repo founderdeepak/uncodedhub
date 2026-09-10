@@ -1,0 +1,669 @@
+<title>Uncoded Hub Rebuild Record</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* ── Tokens. Light is the bare :root; dark redefines only values. ── */
+  :root {
+    --ground: #fbfbfc;
+    --surface: #f1f3f6;
+    --surface-2: #e8ebef;
+    --ink: #10151c;
+    --ink-soft: #2f3944;
+    --muted: #5b6672;
+    --rule: #dde2e8;
+    --rule-hard: #c3cbd4;
+
+    --signal: #1a4fb5;        /* accent — cool, technical */
+    --sev-crit: #a3231c;
+    --sev-warn: #8a5310;
+    --sev-note: #3f5563;
+    --sev-crit-bg: #fbe9e8;
+    --sev-warn-bg: #fbf1e2;
+    --sev-note-bg: #eaeef1;
+    --good: #1c6b46;
+    --good-bg: #e6f2eb;
+
+    --shadow: 0 1px 2px rgba(16, 21, 28, 0.05);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0c1015;
+      --surface: #141a22;
+      --surface-2: #1b232c;
+      --ink: #e4eaf1;
+      --ink-soft: #c0cad5;
+      --muted: #8b98a6;
+      --rule: #222b35;
+      --rule-hard: #35414e;
+
+      --signal: #79a8ff;
+      --sev-crit: #ff9c94;
+      --sev-warn: #e8b877;
+      --sev-note: #9fb3c2;
+      --sev-crit-bg: #2b1615;
+      --sev-warn-bg: #2a2013;
+      --sev-note-bg: #1a222a;
+      --good: #74d3a3;
+      --good-bg: #12251c;
+
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #0c1015;
+    --surface: #141a22;
+    --surface-2: #1b232c;
+    --ink: #e4eaf1;
+    --ink-soft: #c0cad5;
+    --muted: #8b98a6;
+    --rule: #222b35;
+    --rule-hard: #35414e;
+
+    --signal: #79a8ff;
+    --sev-crit: #ff9c94;
+    --sev-warn: #e8b877;
+    --sev-note: #9fb3c2;
+    --sev-crit-bg: #2b1615;
+    --sev-warn-bg: #2a2013;
+    --sev-note-bg: #1a222a;
+    --good: #74d3a3;
+    --good-bg: #12251c;
+
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  /* ── Type roles ─────────────────────────────────────────────── */
+  h1, h2, h3, .lbl, .chip, code, .num {
+    font-family: Archivo, ui-sans-serif, system-ui, sans-serif;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4.6vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: -0.012em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    margin: 0 0 0.4rem;
+  }
+
+  p { margin: 0 0 0.9rem; max-width: 64ch; }
+  p:last-child { margin-bottom: 0; }
+
+  .lbl {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  code {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.85em;
+    background: var(--surface-2);
+    padding: 0.1em 0.38em;
+    border-radius: 3px;
+    color: var(--ink-soft);
+  }
+
+  a { color: var(--signal); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ── Masthead ───────────────────────────────────────────────── */
+  .mast {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 1.6rem;
+    margin-bottom: 0.9rem;
+  }
+  .mast .lbl { display: block; margin-bottom: 1.1rem; }
+  .standfirst {
+    font-size: 1.2rem;
+    color: var(--ink-soft);
+    margin-top: 1.2rem;
+    max-width: 54ch;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 2rem;
+    padding-bottom: 3.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .meta div { display: flex; gap: 0.6rem; align-items: baseline; }
+  .meta span:last-child {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8125rem;
+    color: var(--ink-soft);
+  }
+
+  /* ── Section: label rail + body ─────────────────────────────── */
+  section { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: 0; }
+
+  .row { display: grid; gap: 1.5rem; }
+  @media (min-width: 62rem) {
+    .row { grid-template-columns: 12rem 1fr; gap: 3rem; }
+  }
+  .rail { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .stack { display: flex; flex-direction: column; gap: 1.6rem; }
+
+  /* ── Decision cards ─────────────────────────────────────────── */
+  .decisions { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  @media (min-width: 48rem) { .decisions { grid-template-columns: repeat(3, 1fr); } }
+  .decision { background: var(--ground); padding: 1.4rem; }
+  .decision .lbl { display: block; margin-bottom: 0.7rem; }
+  .decision p { font-size: 0.95rem; color: var(--muted); margin: 0.5rem 0 0; }
+
+  /* ── Metrics ────────────────────────────────────────────────── */
+  .metrics { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  @media (min-width: 40rem) { .metrics { grid-template-columns: repeat(3, 1fr); } }
+  .metric { background: var(--surface); padding: 1.3rem; }
+  .metric .lbl { display: block; margin-bottom: 0.75rem; }
+  .metric .num {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+    color: var(--good);
+    display: block;
+    line-height: 1.1;
+  }
+  .metric .was {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    display: block;
+    margin-top: 0.45rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ── Findings table ─────────────────────────────────────────── */
+  .scroller { overflow-x: auto; border: 1px solid var(--rule); }
+  table { border-collapse: collapse; width: 100%; min-width: 40rem; }
+  thead th {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.6875rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--muted);
+    text-align: left;
+    padding: 0.7rem 1rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--rule-hard);
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    font-size: 0.9375rem;
+  }
+  tbody tr:last-child td { border-bottom: 0; }
+  tbody td:first-child { white-space: nowrap; }
+  tbody td.what { color: var(--ink); }
+  tbody td.why { color: var(--muted); }
+
+  .chip {
+    display: inline-block;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.45rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .c-crit { background: var(--sev-crit-bg); color: var(--sev-crit); }
+  .c-warn { background: var(--sev-warn-bg); color: var(--sev-warn); }
+  .c-note { background: var(--sev-note-bg); color: var(--sev-note); }
+
+  /* ── Open items ─────────────────────────────────────────────── */
+  ol.todo { list-style: none; counter-reset: t; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0; }
+  ol.todo li {
+    counter-increment: t;
+    display: grid;
+    grid-template-columns: 2.2rem 1fr;
+    gap: 0.5rem 1rem;
+    padding: 1.15rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  ol.todo li::before {
+    content: counter(t, decimal-leading-zero);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--signal);
+    padding-top: 0.28rem;
+  }
+  ol.todo p { font-size: 0.95rem; color: var(--muted); margin: 0.3rem 0 0; }
+
+  .callout {
+    background: var(--surface);
+    border-left: 3px solid var(--signal);
+    padding: 1.1rem 1.3rem;
+  }
+  .callout p { font-size: 0.95rem; color: var(--ink-soft); }
+
+  ul.plain { margin: 0; padding-left: 1.1rem; color: var(--muted); font-size: 0.95rem; }
+  ul.plain li { margin-bottom: 0.4rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="mast">
+    <span class="lbl">Uncoded Hub · Rebuild record</span>
+    <h1>The site was the weakest thing you were selling.</h1>
+    <p class="standfirst">
+      A full diagnosis and rebuild of uncodedhub.com — visual identity, copy, and the
+      engineering underneath it.
+    </p>
+  </header>
+
+  <div class="meta">
+    <div><span class="lbl">Date</span><span>18 Aug 2026</span></div>
+    <div><span class="lbl">Scope</span><span>8 pages, full stack</span></div>
+    <div><span class="lbl">Typecheck</span><span>clean, strict</span></div>
+    <div><span class="lbl">Build</span><span>passing</span></div>
+  </div>
+
+  <!-- ── Why it read as generated ─────────────────────────────── -->
+  <section>
+    <div class="row">
+      <div class="rail"><span class="lbl">01 · Diagnosis</span></div>
+      <div class="stack">
+        <h2>Why it read as AI-generated</h2>
+        <p>
+          The old site used the exact visual vocabulary every AI-built site has shipped since
+          2024: a <code>#11142A</code> midnight ground, a cyan-to-magenta gradient, glassmorphism
+          panels, blurred colour orbs, <code>rounded-3xl</code> on every surface, and headlines
+          split so the second half was filled with a gradient.
+        </p>
+        <p>
+          Underneath that, nothing had hierarchy. Every section carried the same
+          <code>py-24</code>. Every card carried the same border and radius. Every heading was
+          the same size and weight. When everything is emphasised nothing is, and the absence of
+          editorial judgment is a stronger tell than any single colour choice.
+        </p>
+        <p>
+          The copy stacked adjectives — <em>world-class</em>, <em>cutting-edge</em>,
+          <em>premium</em>, <em>ultra-fast</em>, <em>lightning-fast</em> — dozens of times across
+          five pages. <em>Making Websites Win</em> is direct about this: benefits have to be
+          concrete. Adjectives are what you write when you have no evidence.
+        </p>
+        <div class="callout">
+          <p>
+            <strong>The structural problem:</strong> this site is your product demo. Every
+            weakness in it is a live argument against hiring you, and every claim in the copy is
+            being checked against the page the reader is standing on.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Decisions ────────────────────────────────────────────── -->
+  <section>
+    <div class="row">
+      <div class="rail"><span class="lbl">02 · Decisions</span></div>
+      <div class="stack">
+        <h2>Three things were locked before any pixels moved</h2>
+        <p>
+          Both books insist on this order — strategy in words first, design second. These were
+          your calls; everything downstream follows from them.
+        </p>
+        <div class="decisions">
+          <div class="decision">
+            <span class="lbl">Positioning</span>
+            <h3>Broad — any business</h3>
+            <p>
+              All coaching-specific titles, Open Graph tags, and JSON-LD have been removed. Every
+              share of every page used to preview as “Coaching Website Design in 7 Days”.
+            </p>
+          </div>
+          <div class="decision">
+            <span class="lbl">Proof</span>
+            <h3>Fabricated work removed</h3>
+            <p>
+              Four invented case studies and their invented metrics are gone. The Work page now
+              argues from things a prospect can verify.
+            </p>
+          </div>
+          <div class="decision">
+            <span class="lbl">Direction</span>
+            <h3>Editorial studio</h3>
+            <p>
+              Warm paper ground, one vermillion accent, a serif display set very large against
+              mono micro-labels. Hierarchy from scale and space alone.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Measurable ───────────────────────────────────────────── -->
+  <section>
+    <div class="row">
+      <div class="rail"><span class="lbl">03 · Measured</span></div>
+      <div class="stack">
+        <h2>What the rebuild cost the visitor</h2>
+        <p>
+          Three.js, GSAP with ScrollTrigger, Framer Motion, and an icon library were all removed.
+          The Supabase client was moved off the critical path so it only downloads when somebody
+          actually presses Send.
+        </p>
+        <div class="metrics">
+          <div class="metric">
+            <span class="lbl">Homepage payload</span>
+            <span class="num">99.9 kB</span>
+            <span class="was">was 367.0 kB gzipped · −73%</span>
+          </div>
+          <div class="metric">
+            <span class="lbl">Runtime dependencies</span>
+            <span class="num">10</span>
+            <span class="was">was 22 · 236 packages removed</span>
+          </div>
+          <div class="metric">
+            <span class="lbl">Animation libraries</span>
+            <span class="num">0</span>
+            <span class="was">was 3 · now one CSS idiom</span>
+          </div>
+        </div>
+        <p>
+          The homepage now publishes a performance budget and invites the reader to run Lighthouse
+          against it. That only works as an argument if the numbers hold, which is why the budget
+          was written after the weight came out, not before.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Defects ──────────────────────────────────────────────── -->
+  <section>
+    <div class="row">
+      <div class="rail">
+        <span class="lbl">04 · Defects fixed</span>
+        <span class="lbl" style="color:var(--sev-crit)">3 were losing bookings</span>
+      </div>
+      <div class="stack">
+        <h2>Bugs that were live in production</h2>
+        <div class="scroller">
+          <table>
+            <thead>
+              <tr>
+                <th>Severity</th>
+                <th>Defect</th>
+                <th>Consequence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="chip c-crit">Critical</span></td>
+                <td class="what">Booking date built with <code>toISOString()</code> on local midnight</td>
+                <td class="why">In IST that rolls back to 18:30 the previous day. Every booking made from India was saved and sent to Google Calendar dated one day early.</td>
+              </tr>
+              <tr>
+                <td><span class="chip c-crit">Critical</span></td>
+                <td class="what">Slots generated in the visitor's local wall clock</td>
+                <td class="why">The page offered “8am–8pm in your timezone” while both hosts are in India. A visitor in New York could book 6:10 AM IST. Availability is now defined once in IST and rendered in the visitor's zone.</td>
+              </tr>
+              <tr>
+                <td><span class="chip c-crit">Critical</span></td>
+                <td class="what"><code>base: './'</code> in vite.config with BrowserRouter</td>
+                <td class="why">On any nested route the browser resolved assets to <code>/blog/assets/…</code> — a 404 and a white screen.</td>
+              </tr>
+              <tr>
+                <td><span class="chip c-warn">High</span></td>
+                <td class="what">Work page was an orphan</td>
+                <td class="why">Routed and in sitemap.xml but linked from nowhere except one hero button. The page carrying the entire proof argument was effectively unreachable.</td>
+              </tr>
+              <tr>
+                <td><span class="chip c-warn">High</span></td>
+                <td class="what"><code>@types/react</code> was never installed; strict mode off</td>
+                <td class="why">TypeScript was checking almost nothing. Both are on now and the codebase is clean under them.</td>
+              </tr>
+              <tr>
+                <td><span class="chip c-warn">High</span></td>
+                <td class="what">FAQ imported <code>framer-motion</code>; the project depends on <code>motion</code></td>
+                <td class="why">Resolved only through a transitive dependency — one clean install from a broken build.</td>
+              </tr>
+              <tr>
+                <td><span class="chip c-warn">High</span></td>
+                <td class="what">15 × <code>focus:outline-none</code> with no replacement</td>
+                <td class="why">Keyboard users could not see where they were. Focus is now a 2px vermillion ring on every control, verified in-browser.</td>
+              </tr>
+              <tr>
+                <td><span class="chip c-note">Medium</span></td>
+                <td class="what">Month paging compared bare month indices</td>
+                <td class="why">The calendar's back button was stuck every January.</td>
+              </tr>
+              <tr>
+                <td><span class="chip c-note">Medium</span></td>
+                <td class="what">FAQ JSON-LD did not match the rendered FAQ</td>
+                <td class="why">Google flags mismatched structured data. Schema is now generated from the same array the page renders.</td>
+              </tr>
+              <tr>
+                <td><span class="chip c-note">Medium</span></td>
+                <td class="what">No catch-all route</td>
+                <td class="why">Any mistyped URL rendered header and footer around nothing. There is a real 404 now.</td>
+              </tr>
+              <tr>
+                <td><span class="chip c-note">Medium</span></td>
+                <td class="what">Host chosen with <code>Math.random()</code> on mount</td>
+                <td class="why">A returning visitor was told they were speaking to a different founder on each load. The visitor now chooses.</td>
+              </tr>
+              <tr>
+                <td><span class="chip c-note">Medium</span></td>
+                <td class="what">Dead code in the shell</td>
+                <td class="why">A <code>BookingModal</code> that could never open, plus unused state and six unused imports.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Removed ──────────────────────────────────────────────── -->
+  <section>
+    <div class="row">
+      <div class="rail"><span class="lbl">05 · Removed</span></div>
+      <div class="stack">
+        <h2>Claims that could not survive a question</h2>
+        <p>
+          Three things were saying something the site itself disproved. Each is now either true
+          or gone.
+        </p>
+        <ul class="plain">
+          <li>
+            <strong>The “AI chatbot”.</strong> It was a hardcoded three-question script with a
+            fake typing delay and a bot avatar, while “AI chatbot integration” was sold as a
+            headline deliverable. It is now an honestly-labelled enquiry form, and the claim has
+            been removed from the services copy.
+          </li>
+          <li>
+            <strong>The four case studies.</strong> Apex Dental, Kavya Organics, Vanguard Capital,
+            Velocity SaaS — with metrics like “+140% Monthly Appointments”. Beyond the trust
+            problem, fabricated advertising claims are exposure under India's Consumer Protection
+            Act and the ASCI code.
+          </li>
+          <li>
+            <strong>“No-code”.</strong> Claimed in the SEO title and two FAQs, while the portfolio
+            badges said React and Next.js and the site itself is hand-built React. A technical
+            buyer catches that in ten seconds.
+          </li>
+          <li>
+            <strong>The dummy blog article.</strong> <code>/blog/anything</code> rendered a
+            complete fake article — “Using AI within a Workflow”, fabricated byline and date —
+            for any slug typed. The journal now says plainly that nothing is published, carries a
+            <code>noindex</code>, and is out of the nav and sitemap until it is.
+          </li>
+        </ul>
+        <div class="callout">
+          <p>
+            The devotional card headed “GOD — The True Founder” has been <strong>kept, not
+            cut</strong>. Its wording is untouched. It moved from the largest card at the top of
+            the founders grid to a colophon closing the Studio page — a personal statement carries
+            more weight there than it does standing between a prospect and the work.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Open items ───────────────────────────────────────────── -->
+  <section>
+    <div class="row">
+      <div class="rail">
+        <span class="lbl">06 · Open</span>
+        <span class="lbl">Only you can close these</span>
+      </div>
+      <div class="stack">
+        <h2>What is left, and why I stopped short</h2>
+        <ol class="todo">
+          <li>
+            <div>
+              <h3>Put real prices on the Services page</h3>
+              <p>
+                Every scope has an optional <code>price</code> field — fill it in and the figure
+                renders. <em>Making Websites Win</em> is blunt that vagueness costs conversions,
+                and a services page with no numbers is where studios hide. I left them empty
+                rather than invent figures you would have to walk back on a call.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Publish a privacy policy</h3>
+              <p>
+                Three forms write names, emails, and phone numbers to Supabase. Under India's
+                DPDP Act — and GDPR for any EU visitor — a policy is required and you do not have
+                one. This needs a lawyer's eye, not mine, so I did not draft text or link to a
+                page that does not exist.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Lock down the Supabase table</h3>
+              <p>
+                The anon key is in the client bundle, which is normal — but it means anyone can
+                insert rows into <code>contact_submissions</code> directly. I added a honeypot and
+                a minimum time-on-form, which stops naive bots and nothing else. You need
+                row-level security with an insert-only policy, and a rate limit.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Replace the social preview image</h3>
+              <p>
+                <code>og-image.jpg</code> is a copy of the old coaching artwork, so links still
+                preview with the wrong picture even though the text is fixed. It wants a 1200×630
+                image in the new identity.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Ship one real project and put it on the Work page</h3>
+              <p>
+                There is a typed <code>PROJECTS</code> array waiting: add a real client, a real
+                URL, and a number you could defend with a screenshot of the analytics account, and
+                the grid renders itself. This is the single highest-value thing you can do for
+                conversion, and it is the one thing I could not do for you.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Clear the stale build folders from the repo root</h3>
+              <p>
+                <code>uncoded-hub-build/</code>, <code>uncodedhub_production_build/</code>,
+                <code>uncoded-hub-hostinger/</code> and several <code>.zip</code> archives are
+                still tracked. One of them breaks Vite's dependency scan on dev start. I left them
+                alone because deleting your archives is your call, not mine.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Identity ─────────────────────────────────────────────── -->
+  <section>
+    <div class="row">
+      <div class="rail"><span class="lbl">07 · Identity</span></div>
+      <div class="stack">
+        <h2>The system, so it can be applied without me</h2>
+        <p>
+          Every token lives in <code>src/index.css</code>. Three type voices: a serif that states,
+          a grotesque that explains, a mono that labels and measures. One accent — a vermillion
+          that clears WCAG AA on paper, with a lighter tint of the same hue for dark sections
+          where the base tone only reaches 3.4:1.
+        </p>
+        <p>
+          The logomark was redrawn. The old one was an eight-axis atom with sixteen nodes and a
+          glow filter; at favicon size it was a grey smudge. The new mark is a solid square with
+          the lower-right quadrant removed — a block deliberately left unclosed — which reads at
+          16px and has a silhouette you can recognise without the wordmark beside it.
+        </p>
+        <p>
+          Pages are assembled from shared primitives in <code>src/components/primitives.tsx</code>,
+          so section headers, measure, and rhythm stay consistent. Previously each page invented
+          its own spacing, and that inconsistency was doing real damage.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</div>

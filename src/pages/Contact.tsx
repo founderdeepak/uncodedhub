@@ -1,243 +1,326 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { MapPin, Phone, Mail, Calendar, MessageSquare, ArrowRight, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
-import { supabase } from '../lib/supabase';
-import { BookingModal } from '../components/ui/booking-modal';
+import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
+import { BookingCalendar, HOSTS, Host } from '../components/ui/BookingCalendar';
+import { submitLead } from '../lib/supabase';
+
+/* ═══════════════════════════════════════════════════════════════════
+   CONTACT
+
+   The host used to be picked with Math.random() on mount, which meant
+   the page told a returning visitor they were speaking to a different
+   person each time they loaded it. The visitor now chooses, with a
+   sensible default, and ?host=geetha still works for campaign links.
+   ═══════════════════════════════════════════════════════════════════ */
+
+const NEXT = [
+  ['Right now', 'You pick a slot and get a calendar invitation with a video link. Nothing to install.'],
+  ['On the call', 'Twenty minutes. What your business does, who you sell to, and what the site has to achieve. We look at whatever you have now, live.'],
+  ['Within a day', 'A written scope: the pages, the features, a fixed price, and a launch date. One page, no deck.'],
+  ['If you go ahead', 'The seven days start the next morning. If you do not, we part on good terms and there is no follow-up sequence.'],
+];
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', phone: '', email: '', type: '', needs: '', budget: '', timeframe: '', details: '', source: '+1' });
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMsg, setErrorMsg] = useState('');
-  const [submittedName, setSubmittedName] = useState('');
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const location = useLocation();
+  const [host, setHost] = useState<Host>(HOSTS[0]);
 
-  const handleWhatsApp = () => {
-    window.open(`https://wa.me/918660819023`, '_blank');
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitStatus('loading');
-    setErrorMsg('');
-
-    const payload = {
-      name: formData.name,
-      email: formData.email,
-      phone: `${formData.source} ${formData.phone}`,
-      business_type: formData.type,
-      project_details: formData.details,
-    };
-
-    try {
-      // Primary save — contact_submissions
-      const { error: primaryError } = await supabase
-        .from('contact_submissions')
-        .insert([payload]);
-
-      // Backup save — leads_backup (never lose a lead)
-      const { error: backupError } = await supabase
-        .from('leads_backup')
-        .insert([{ ...payload, submitted_at: new Date().toISOString() }]);
-
-      if (primaryError && backupError) {
-        throw new Error(primaryError.message);
-      }
-
-      setSubmitStatus('success');
-      setSubmittedName(formData.name);
-      setFormData({ name: '', phone: '', email: '', type: '', needs: '', budget: '', timeframe: '', details: '', source: '+1' });
-    } catch (err: any) {
-      console.error('Form submission error:', err);
-      setErrorMsg('Something went wrong. Please try WhatsApp or email us directly.');
-      setSubmitStatus('error');
-    }
-  };
+  useEffect(() => {
+    const param = new URLSearchParams(location.search).get('host')?.toLowerCase();
+    const found = HOSTS.find((h) => h.name.toLowerCase() === param);
+    if (found) setHost(found);
+  }, [location.search]);
 
   return (
     <>
       <Helmet>
-        <title>Contact Us | Get Free Consultation | Uncoded Hub</title>
-        <meta name="description" content="Get in touch with Uncoded Hub for professional website development. Free consultation, fast response, custom quotes. WhatsApp, email, or book a call. Based in Bengaluru, serving all of India." />
-        <meta name="keywords" content="contact uncoded hub, website development consultation, free quote website, web developer Bengaluru contact, hire website developer India" />
+        <title>Book a Call — Uncoded Hub</title>
+        <meta
+          name="description"
+          content="Book a free twenty-minute discovery call with Uncoded Hub, or send a project brief. Slots are shown in your timezone."
+        />
         <link rel="canonical" href="https://uncodedhub.com/contact" />
       </Helmet>
-      
-      <main className="pt-32 pb-24 px-6 min-h-screen">
-        <div className="max-w-7xl mx-auto">
-          {/* Breadcrumb */}
-          <div className="text-steel/60 text-sm mb-12 font-mono">
-            Home &gt; <span className="text-cyan">Contact</span>
-          </div>
 
-          <div className="text-center mb-16">
-            <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">Book Your Free 15-Minute <br className="hidden md:block"/> <span className="text-gradient">Discovery Call</span></h1>
-            <p className="text-steel text-xl max-w-2xl mx-auto leading-relaxed">
-              Tell us about your coaching practice. We'll show you exactly what your website should look like and how it will bring you more clients. No pressure. No obligation. Just clarity.
+      {/* ── Header ─────────────────────────────────────────────── */}
+      <section className="pt-36 md:pt-44 pb-14">
+        <Shell>
+          <Reveal>
+            <p className="label text-signal">Contact</p>
+            <h1 className="font-display text-hero mt-8 max-w-[15ch]">
+              Twenty minutes, and you will know either way.
+            </h1>
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="text-lead text-muted mt-10 max-w-2xl">
+              No deck, no discovery workshop, no five-stage sales process. One call with the two
+              people who would build it, and a written scope and price the next day.
             </p>
-          </div>
+          </Reveal>
+        </Shell>
+      </section>
 
-          {/* Contact Options */}
-          <div className="grid md:grid-cols-3 gap-6 mb-20">
-            <div onClick={handleWhatsApp} className="frosted-glass p-8 rounded-3xl border border-cyan/20 cursor-pointer hover:-translate-y-2 transition-transform duration-300 text-center flex flex-col items-center group">
-              <div className="w-16 h-16 bg-[#25D366]/10 rounded-full flex justify-center items-center mb-6 border border-[#25D366]/30 group-hover:bg-[#25D366]/20 transition-colors">
-                 <MessageSquare className="w-8 h-8 text-[#25D366]" />
-              </div>
-              <h3 className="text-xl font-display font-bold text-white mb-2">WhatsApp</h3>
-              <p className="text-steel flex-1">The fastest way to connect</p>
-              <span className="text-cyan font-bold mt-4">+91 8660819023</span>
-              <p className="text-xs text-white/40 mt-3">Usually responds in 15 mins</p>
+      {/* ── Booking ────────────────────────────────────────────── */}
+      <Section id="book" size="tight">
+        <Shell>
+          <Reveal>
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-3 pb-6 border-b border-rule">
+              <span className="label text-muted">Speak with</span>
+              {HOSTS.map((h) => (
+                <button
+                  key={h.name}
+                  onClick={() => setHost(h)}
+                  aria-pressed={host.name === h.name}
+                  className={`text-[0.9375rem] link-quiet ${
+                    host.name === h.name ? 'text-signal' : 'text-muted hover:text-ink'
+                  }`}
+                >
+                  {h.name} — {h.role.replace('Co-founder, ', '')}
+                </button>
+              ))}
             </div>
-            
-            <a href="mailto:hello@uncodedhub.com" className="frosted-glass p-8 rounded-3xl border border-white/10 cursor-pointer hover:-translate-y-2 transition-transform duration-300 text-center flex flex-col items-center group">
-              <div className="w-16 h-16 bg-magenta/10 rounded-full flex justify-center items-center mb-6 border border-magenta/30 group-hover:bg-magenta/20 transition-colors">
-                 <Mail className="w-8 h-8 text-magenta" />
-              </div>
-              <h3 className="text-xl font-display font-bold text-white mb-2">Email</h3>
-              <p className="text-steel flex-1">For detailed inquiries</p>
-              <span className="text-white hover:text-magenta transition-colors mt-4">hello@uncodedhub.com</span>
-              <p className="text-xs text-white/40 mt-3">Usually responds in 2 hours</p>
-            </a>
-            
-            <button 
-              onClick={() => setIsBookingOpen(true)}
-              className="frosted-glass p-8 w-full rounded-3xl border border-white/10 cursor-pointer hover:-translate-y-2 transition-transform duration-300 text-center flex flex-col items-center group appearance-none text-left"
-            >
-              <div className="w-16 h-16 bg-cyber/50 rounded-full flex justify-center items-center mb-6 border border-cyan/30 group-hover:bg-cyan/10 transition-colors">
-                 <Calendar className="w-8 h-8 text-cyan" />
-              </div>
-              <h3 className="text-xl font-display font-bold text-white mb-2">Book a Call</h3>
-              <p className="text-steel flex-1">15-minute discovery call</p>
-              <div className="cyan-energy-btn !py-2 !px-6 mt-4 !text-sm whitespace-nowrap">Schedule Now</div>
-              <p className="text-xs text-white/40 mt-3">Choose your time slot</p>
-            </button>
-          </div>
+          </Reveal>
 
-          <div className="grid md:grid-cols-2 gap-16">
-            {/* Form */}
-            <div className="bg-cyber/30 p-8 md:p-12 rounded-3xl border border-white/10">
-              <h3 className="font-display text-3xl font-bold mb-2" id="contact-form-section">Or Fill Out This Form</h3>
-              <p className="text-steel mb-8">Tell us about your project and we'll get back to you within 24 hours</p>
-              
-              {submitStatus === 'success' ? (
-                <div className="flex flex-col items-center justify-center py-16 text-center gap-4">
-                  <CheckCircle className="w-16 h-16 text-cyan" />
-                  <h4 className="font-display text-2xl font-bold text-white">Message Received!</h4>
-                  <p className="text-steel max-w-xs">Thanks {submittedName || 'for reaching out'}! We'll get back to you within 24 hours with a custom quote.</p>
-                  <button onClick={() => setSubmitStatus('idle')} className="cyan-energy-btn !py-2 !px-6 !text-sm mt-2">Send Another Message</button>
-                </div>
-              ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="text-sm font-semibold text-steel uppercase tracking-wider mb-2 block">Your Name*</label>
-                    <input type="text" required placeholder="Enter your full name" className="w-full bg-midnight/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan transition-colors" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
-                  </div>
-                  <div>
-                    <label className="text-sm font-semibold text-steel uppercase tracking-wider mb-2 block">Email Address*</label>
-                    <input type="email" required placeholder="you@example.com" className="w-full bg-midnight/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan transition-colors" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
-                  </div>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="text-sm font-semibold text-steel uppercase tracking-wider mb-2 block">Phone Number*</label>
-                    <div className="flex gap-2">
-                      <select 
-                        value={formData.source}
-                        onChange={(e) => setFormData({...formData, source: e.target.value})}
-                        className="w-[110px] bg-midnight/50 border border-white/10 rounded-xl px-3 py-3 text-white focus:outline-none focus:border-cyan focus:ring-1 focus:ring-cyan transition-all cursor-pointer"
-                      >
-                        <option value="+1">+1 (US)</option>
-                        <option value="+44">+44 (UK)</option>
-                        <option value="+61">+61 (AU)</option>
-                        <option value="+91">+91 (IN)</option>
-                        <option value="+971">+971 (AE)</option>
-                      </select>
-                      <input type="tel" required placeholder="XXXXX XXXXX" className="w-full bg-midnight/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan transition-colors" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
+          <Reveal delay={80} className="mt-10">
+            {/* Remounted per host so the picker resets cleanly. */}
+            <BookingCalendar key={host.name} host={host} />
+          </Reveal>
+        </Shell>
+      </Section>
+
+      {/* ── Other channels ─────────────────────────────────────── */}
+      <Section tone="sunk" size="default">
+        <Shell>
+          <Reveal>
+            <SectionHead index="01" eyebrow="Other ways" title="If a call is not how you work." />
+          </Reveal>
+          <div className="grid md:grid-cols-3 gap-px bg-rule mt-14 border border-rule">
+            {[
+              {
+                k: 'WhatsApp',
+                v: '+91 86608 19023',
+                note: 'Fastest. Usually answered inside the hour during working hours.',
+                href: 'https://wa.me/918660819023',
+              },
+              {
+                k: 'Email',
+                v: 'hello@uncodedhub.com',
+                note: 'Best for a detailed brief or an RFP. Replies within one working day.',
+                href: 'mailto:hello@uncodedhub.com',
+              },
+              {
+                k: 'Hours',
+                v: '08:00 – 20:00 IST',
+                note: 'Seven days a week. Outside those hours, leave a message and it is answered first thing.',
+              },
+            ].map((c) => (
+              <Reveal key={c.k} className="bg-paper-raised p-8 card-lift">
+                <span className="label text-signal">{c.k}</span>
+                {c.href ? (
+                  <a
+                    href={c.href}
+                    target={c.href.startsWith('http') ? '_blank' : undefined}
+                    rel="noreferrer noopener"
+                    className="block font-display text-title mt-4 link-quiet w-fit max-w-full break-words"
+                  >
+                    {c.v}
+                  </a>
+                ) : (
+                  <p className="font-display text-title mt-4 break-words">{c.v}</p>
+                )}
+                <p className="text-muted leading-relaxed mt-4 text-[0.9375rem]">{c.note}</p>
+              </Reveal>
+            ))}
+          </div>
+        </Shell>
+      </Section>
+
+      {/* ── Brief + what happens next ──────────────────────────── */}
+      <Section size="loose">
+        <Shell>
+          <div className="grid lg:grid-cols-12 gap-14 lg:gap-20">
+            <Reveal className="lg:col-span-7">
+              <SectionHead index="02" eyebrow="Send a brief" title="Or write it down instead." />
+              <div className="mt-12">
+                <BriefForm />
+              </div>
+            </Reveal>
+
+            <Reveal delay={120} className="lg:col-span-5">
+              <SectionHead index="03" eyebrow="What happens next" title="No mystery." />
+              <div className="mt-12 border-t border-rule-strong">
+                {NEXT.map(([k, v], i) => (
+                  <div key={k} className="flex gap-6 py-6 border-b border-rule">
+                    <span className="label text-signal pt-1 shrink-0 w-8">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div>
+                      <h3 className="font-medium">{k}</h3>
+                      <p className="text-muted leading-relaxed mt-2 text-[0.9375rem]">{v}</p>
                     </div>
                   </div>
-                  <div className="hidden md:block"></div>
-                </div>
-
-                <div>
-                  <label className="text-sm font-semibold text-steel uppercase tracking-wider mb-2 block">Your Biggest Challenge*</label>
-                  <textarea required rows={3} placeholder="What's stopping you from getting more coaching clients online?" className="w-full bg-midnight/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan transition-colors" value={formData.type} onChange={e => setFormData({...formData, type: e.target.value})}></textarea>
-                </div>
-
-                <div>
-                   <label className="text-sm font-semibold text-steel uppercase tracking-wider mb-2 block">Tell Us About Your Project*</label>
-                   <textarea required rows={5} placeholder="Tell us about your business, goals, and what you're looking to achieve with your website." className="w-full bg-midnight/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan transition-colors" value={formData.details} onChange={e => setFormData({...formData, details: e.target.value})}></textarea>
-                </div>
-                
-                {submitStatus === 'error' && (
-                  <div className="flex items-center gap-3 bg-red-500/10 border border-red-500/30 rounded-xl px-4 py-3 text-red-400 text-sm">
-                    <AlertCircle className="w-5 h-5 shrink-0" />
-                    {errorMsg}
-                  </div>
-                )}
-                <button
-                  type="submit"
-                  disabled={submitStatus === 'loading'}
-                  className="cyan-energy-btn w-full !text-lg !py-4 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
-                >
-                  {submitStatus === 'loading' ? (
-                    <><Loader2 className="w-5 h-5 animate-spin" /> Sending...</>
-                  ) : (
-                    <>Get Free Consultation <ArrowRight className="w-5 h-5" /></>
-                  )}
-                </button>
-                <p className="text-xs text-center text-steel">We respect your privacy. Your information will never be shared.</p>
-              </form>
-              )}
-            </div>
-            
-            {/* Info Side */}
-            <div className="space-y-12 h-full">
-              <div className="space-y-8">
-                <h3 className="font-display text-3xl font-bold">What Happens Next?</h3>
-                <div className="flex gap-4">
-                  <div className="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-cyan/20 flex items-center justify-center font-bold text-cyan text-sm">1</div>
-                  <div>
-                    <h4 className="font-bold text-white text-lg">Instant Confirmation</h4>
-                    <p className="text-steel text-sm">You'll receive an automated confirmation that we got your message.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-cyan/20 flex items-center justify-center font-bold text-cyan text-sm">2</div>
-                  <div>
-                    <h4 className="font-bold text-white text-lg">Team Review</h4>
-                    <p className="text-steel text-sm">Within 2 hours, we'll review your details and prepare a response.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-cyan/20 flex items-center justify-center font-bold text-cyan text-sm">3</div>
-                  <div>
-                    <h4 className="font-bold text-white text-lg">Custom Quote</h4>
-                    <p className="text-steel text-sm">Within 24 hours, you get a custom quote, timeline estimate, and next steps.</p>
-                  </div>
-                </div>
+                ))}
               </div>
-              
-              <div className="frosted-glass p-8 rounded-3xl border border-white/5 bg-midnight">
-                <h3 className="font-display text-2xl font-bold mb-6">Find Us Here</h3>
-                <div className="space-y-4 text-steel">
-                  <p className="flex items-start gap-3"><MapPin className="text-magenta shrink-0" /> Remote — serving coaches and consultants globally</p>
-                  <p className="flex items-center gap-3"><Phone className="text-magenta shrink-0" /> +91 8660819023</p>
-                  <p className="flex items-center gap-3"><Mail className="text-magenta shrink-0" /> hello@uncodedhub.com</p>
-                </div>
-                <hr className="my-6 border-white/10" />
-                <p className="text-sm text-steel"><strong>Business Hours:</strong> Available for calls: Weekdays 7–9 PM IST | Weekends anytime</p>
-              </div>
-            </div>
+            </Reveal>
+          </div>
+        </Shell>
+      </Section>
+    </>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════ */
+
+function BriefForm() {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    dial: '+91',
+    phone: '',
+    business: '',
+    details: '',
+  });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [trap, setTrap] = useState('');
+  const startedAt = useRef(Date.now());
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (trap) return;
+    if (Date.now() - startedAt.current < 3000) return;
+    setStatus('sending');
+
+    const ok = await submitLead({
+      name: form.name,
+      email: form.email,
+      phone: `${form.dial} ${form.phone}`,
+      business_type: form.business,
+      project_details: form.details,
+    });
+    setStatus(ok ? 'sent' : 'error');
+  };
+
+  if (status === 'sent') {
+    return (
+      <div className="border border-rule-strong bg-paper-raised p-10 md:p-14">
+        <span className="label text-signal">Received</span>
+        <h3 className="font-display text-display mt-5">Thanks, {form.name.split(' ')[0]}.</h3>
+        <p className="text-muted leading-relaxed mt-6 max-w-md">
+          We read every brief ourselves. You will hear back within one working day with either a
+          scope and a price, or a question we need answered first.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={submit} className="space-y-6">
+      <div className="grid sm:grid-cols-2 gap-6">
+        <BriefField label="Your name" name="name" required value={form.name} onChange={(v) => setForm({ ...form, name: v })} />
+        <BriefField label="Email" name="email" type="email" required value={form.email} onChange={(v) => setForm({ ...form, email: v })} />
+      </div>
+
+      <div className="grid sm:grid-cols-2 gap-6">
+        <div>
+          <label htmlFor="brief-phone" className="label text-muted block mb-2">
+            Phone <span className="text-signal">*</span>
+          </label>
+          <div className="flex gap-2">
+            <select
+              aria-label="Country dialling code"
+              value={form.dial}
+              onChange={(e) => setForm({ ...form, dial: e.target.value })}
+              className="w-28 bg-paper border border-rule-strong px-3 py-2.5 text-[0.9375rem] rounded-[3px] focus:border-ink transition-colors"
+            >
+              {['+91', '+1', '+44', '+61', '+971', '+65'].map((d) => (
+                <option key={d} value={d}>{d}</option>
+              ))}
+            </select>
+            <input
+              id="brief-phone"
+              type="tel"
+              required
+              value={form.phone}
+              onChange={(e) => setForm({ ...form, phone: e.target.value })}
+              className="flex-1 min-w-0 bg-paper border border-rule-strong px-3.5 py-2.5 text-[0.9375rem] rounded-[3px] focus:border-ink transition-colors"
+            />
           </div>
         </div>
-      </main>
+        <BriefField
+          label="What does your business do?"
+          name="business"
+          value={form.business}
+          onChange={(v) => setForm({ ...form, business: v })}
+        />
+      </div>
 
-      {/* Embedded Custom Booking Popup */}
-      <BookingModal
-        isOpen={isBookingOpen}
-        onClose={() => setIsBookingOpen(false)}
+      <div>
+        <label htmlFor="brief-details" className="label text-muted block mb-2">
+          What do you need, and by when? <span className="text-signal">*</span>
+        </label>
+        <textarea
+          id="brief-details"
+          required
+          rows={6}
+          placeholder="What you sell, who buys it, what is wrong with the site you have now, and any date you are working towards."
+          value={form.details}
+          onChange={(e) => setForm({ ...form, details: e.target.value })}
+          className="w-full bg-paper border border-rule-strong px-3.5 py-3 text-[0.9375rem] rounded-[3px] resize-y focus:border-ink transition-colors placeholder:text-rule-strong"
+        />
+      </div>
+
+      <div className="absolute left-[-9999px]" aria-hidden="true">
+        <label htmlFor="brief-url">Website</label>
+        <input id="brief-url" tabIndex={-1} autoComplete="off" value={trap} onChange={(e) => setTrap(e.target.value)} />
+      </div>
+
+      {status === 'error' && (
+        <p className="text-[0.875rem] text-signal" role="alert">
+          That did not send. Email hello@uncodedhub.com and we will pick it up there.
+        </p>
+      )}
+
+      <div className="flex flex-wrap items-center gap-6 pt-2">
+        <button type="submit" disabled={status === 'sending'} className="btn-primary disabled:opacity-55">
+          {status === 'sending' ? 'Sending…' : 'Send the brief'}
+        </button>
+        <p className="label text-muted">Replies within one working day</p>
+      </div>
+    </form>
+  );
+}
+
+function BriefField({
+  label,
+  name,
+  value,
+  onChange,
+  type = 'text',
+  required = false,
+}: {
+  label: string;
+  name: string;
+  value: string;
+  onChange: (v: string) => void;
+  type?: string;
+  required?: boolean;
+}) {
+  const id = `brief-${name}`;
+  return (
+    <div>
+      <label htmlFor={id} className="label text-muted block mb-2">
+        {label}
+        {required && <span className="text-signal"> *</span>}
+      </label>
+      <input
+        id={id}
+        name={name}
+        type={type}
+        required={required}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="w-full bg-paper border border-rule-strong px-3.5 py-2.5 text-[0.9375rem] rounded-[3px] focus:border-ink transition-colors"
       />
-    </>
+    </div>
   );
 }

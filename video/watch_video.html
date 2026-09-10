@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UncodedHub Walkthrough Video Player</title>
+  <style>
+    :root {
+      --bg: #050714;
+      --panel: #0B0E23;
+      --cyan: #00F0FF;
+      --magenta: #B026FF;
+      --text: #FFFFFF;
+      --steel: #8F9BB3;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 26px;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--cyan), var(--magenta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+    header p {
+      color: var(--steel);
+      font-size: 14px;
+    }
+    .player-card {
+      background: var(--panel);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      border-radius: 20px;
+      padding: 16px;
+      max-width: 1200px;
+      width: 100%;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .video-container {
+      width: 100%;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .video-container img {
+      width: 100%;
+      height: auto;
+      max-height: 75vh;
+      object-fit: contain;
+      display: block;
+      border-radius: 12px;
+    }
+    .controls-bar {
+      width: 100%;
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .btn {
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn:hover {
+      background: var(--cyan);
+      color: #050714;
+    }
+    .badge {
+      font-size: 12px;
+      font-family: monospace;
+      color: var(--steel);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>UncodedHub Platform Walkthrough & Booking Engine</h1>
+    <p>15-Minute Calendly-Grade Slot Booking Demo for LinkedIn Showcase</p>
+  </header>
+
+  <div class="player-card">
+    <div class="video-container" id="videoBox">
+      <img id="walkthroughMedia" src="./uncodedhub_walkthrough.webp" alt="UncodedHub Walkthrough Recording">
+    </div>
+
+    <div class="controls-bar">
+      <div class="badge">
+        📹 <strong>File:</strong> uncodedhub_walkthrough.webp (Full HD Session)
+      </div>
+
+      <div style="display: flex; gap: 10px;">
+        <button class="btn" onclick="reloadVideo()">🔄 Replay from Start</button>
+        <button class="btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function reloadVideo() {
+      const img = document.getElementById('walkthroughMedia');
+      const src = img.src.split('?')[0];
+      img.src = src + '?t=' + new Date().getTime();
+    }
+
+    function toggleFullscreen() {
+      const el = document.getElementById('videoBox');
+      if (!document.fullscreenElement) {
+        el.requestFullscreen().catch(err => alert(err.message));
+      } else {
+        document.exitFullscreen();
+      }
+    }
+  </script>
+</body>
+</html>

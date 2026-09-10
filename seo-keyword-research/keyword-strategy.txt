@@ -1,0 +1,371 @@
+========================================================================
+UNCODED HUB — SEO / AEO / GEO / AIEO KEYWORD & CONTENT STRATEGY
+Prepared: 10 September 2026
+========================================================================
+
+HOW TO READ THIS FILE
+------------------------------------------------------------------------
+Four different things are being optimised for at once, and they need
+different keyword shapes:
+
+  SEO  (Search Engine Optimization)   -> ranking in classic Google/Bing
+       results. Keyword shape: short, high-volume phrases people type.
+       Example: "website designer for interior designers"
+
+  AEO  (Answer Engine Optimization)   -> winning the featured snippet /
+       "People Also Ask" box and voice-assistant answers. Keyword shape:
+       full questions, phrased the way a person actually asks them.
+       Example: "how much does a website cost for a dental clinic in
+       Bengaluru"
+
+  GEO  (Generative Engine Optimization) -> being the source an AI
+       chatbot (ChatGPT, Perplexity, Gemini, Copilot) cites or paraphrases
+       when someone asks it a question in that tool instead of Google.
+       Keyword shape: conversational, multi-clause prompts a person would
+       actually type into an AI chat.
+       Example: "I'm a wedding photographer in Bangalore, what should my
+       website include to get more bookings"
+
+  AIEO (AI Engine Optimization)       -> making sure AI crawlers and
+       LLMs can technically read, parse, and correctly summarise the
+       site at all (this is the llms.txt + clean HTML + structured data
+       layer, not a keyword layer). Handled separately via public/llms.txt
+       and structured data — not duplicated in this keyword list.
+
+Every category below gives keyword sets for the first three (SEO, AEO,
+GEO), because those three are what blog content is actually written
+against. AIEO is a technical foundation (llms.txt is already built —
+see public/llms.txt) that makes all the content below easier for AI
+systems to find, trust, and cite once it exists.
+
+RECOMMENDED CONTENT STRUCTURE (for when /blog is built)
+------------------------------------------------------------------------
+The sitemap currently keeps /blog out deliberately because it has no
+articles yet (see public/sitemap.xml). When posts exist, structure them
+under the niche, not under a flat /blog/ list, so each niche builds its
+own topical authority instead of diluting into one generic blog:
+
+  /blog/interior-designers/...
+  /blog/real-estate/...
+  /blog/dental-clinics/...
+  /blog/wedding-photographers/...
+  /blog/home-renovation/...
+  /blog/coaches-consultants/...
+
+Each niche folder should eventually have a single "hub" page that links
+to every article in that niche (e.g. /blog/interior-designers/ as an
+index) — this is what turns a pile of posts into topical authority and
+domain authority, and it is also the page most likely to get cited
+whole by an AI answer engine, since it summarises the niche in one place.
+
+Roll niches out one at a time, matching the sequential niche rollout
+already locked for the rest of the site (see the design-direction
+memory) — do not try to write all six niches' content simultaneously.
+
+------------------------------------------------------------------------
+CATEGORY 1 — INTERIOR DESIGNERS & ARCHITECTS
+------------------------------------------------------------------------
+SEO (primary + long-tail):
+  - website design for interior designers
+  - website for architects India
+  - portfolio website for interior designer
+  - interior design studio website design Bengaluru
+  - best website builder for architects
+  - website cost for interior design firm
+  - SEO for interior designers
+  - lead generation website for interior designers
+  - website for modular interior design business
+
+AEO (question-based):
+  - what should an interior designer's website include
+  - how much does a website cost for an interior design studio
+  - do interior designers need a website or is Instagram enough
+  - how do interior designers get clients online
+  - what makes a good architecture portfolio website
+  - how long does it take to build a website for a design studio
+
+GEO (AI-chat conversational prompts):
+  - "I run a small interior design studio in Bengaluru, what should my
+    website have to convert visitors into consultation bookings"
+  - "compare a website vs Instagram-only presence for an interior
+    designer trying to get high-budget clients"
+  - "what questions should I ask before hiring someone to build my
+    architecture firm's website"
+
+Blog topic ideas (to seed domain authority):
+  1. Why an Instagram page is not a substitute for a website for
+     interior designers (trust gap, portfolio control, enquiry capture)
+  2. What to include on an interior design portfolio website that
+     actually books consultations
+  3. How much should an interior design studio budget for a website in
+     India (2026 pricing reality)
+  4. 7 website mistakes that make a design studio look smaller than it
+     is
+  5. How local SEO gets an interior designer found by nearby high-budget
+     clients
+  6. Before/after: what a fast, well-structured portfolio site does to
+     enquiry quality (not just volume)
+
+------------------------------------------------------------------------
+CATEGORY 2 — REAL ESTATE AGENTS & SMALL BUILDERS / PROPERTY CONSULTANTS
+------------------------------------------------------------------------
+SEO (primary + long-tail):
+  - real estate agent website design
+  - website for property consultant India
+  - real estate website builder Bengaluru
+  - website for small builders and developers
+  - property listing website design
+  - lead generation website for real estate agents
+  - real estate website with WhatsApp enquiry
+  - website cost for real estate agency India
+
+AEO (question-based):
+  - do real estate agents need their own website in India
+  - what should a real estate agent's website include to get leads
+  - how do property consultants generate leads online
+  - is a real estate website better than only listing on portals
+  - how much does a real estate website cost in India
+
+GEO (AI-chat conversational prompts):
+  - "I'm an independent real estate agent in Bangalore relying on
+    99acres and MagicBricks, would a personal website actually get me
+    more direct enquiries"
+  - "what should a small builder's website include to win trust from
+    buyers before a site visit"
+  - "how do I make my property website rank locally against big real
+    estate portals"
+
+Blog topic ideas:
+  1. Property portal listings vs your own website: why serious buyers
+     still check both
+  2. What makes a buyer trust a property consultant's website enough to
+     call
+  3. How local SEO helps a real estate agent get found before the big
+     portals in their own neighbourhood
+  4. What a small builder's website needs that a Facebook page cannot do
+  5. Why WhatsApp click-to-chat converts more property enquiries than a
+     contact form alone
+  6. How fast should a real estate website load, and why it affects
+     whether buyers stay on a listing
+
+------------------------------------------------------------------------
+CATEGORY 3 — DENTAL & AESTHETIC / COSMETIC CLINICS
+------------------------------------------------------------------------
+SEO (primary + long-tail):
+  - website design for dental clinics
+  - website for aesthetic clinic India
+  - cosmetic clinic website design Bengaluru
+  - dental clinic website with online booking
+  - SEO for dentists near me
+  - website cost for a dental clinic
+  - website for skin clinic India
+  - local SEO for dental practice
+
+AEO (question-based):
+  - what should a dental clinic website include
+  - how do patients choose a dentist online
+  - does a dental clinic need online appointment booking
+  - how much does a clinic website cost in India
+  - how do aesthetic clinics build trust online before a consultation
+
+GEO (AI-chat conversational prompts):
+  - "I run a dental clinic in Bengaluru, what should my website include
+    to get more first-time patient bookings instead of just calls"
+  - "what makes patients trust a cosmetic clinic's website enough to
+    book a consultation"
+  - "how important is Google Business Profile vs the clinic's own
+    website for a local dental practice"
+
+Blog topic ideas:
+  1. What patients actually look for on a dental clinic website before
+     booking
+  2. Why "near me" search matters more for clinics than almost any other
+     business type
+  3. Online booking vs phone-only: what actually reduces no-shows for
+     small clinics
+  4. What an aesthetic/cosmetic clinic must show online to build trust
+     before a consultation
+  5. Google Business Profile + website: how they work together for
+     local clinic SEO
+  6. How website speed affects a nervous patient's first impression of
+     a clinic
+
+------------------------------------------------------------------------
+CATEGORY 4 — WEDDING PHOTOGRAPHERS, VIDEOGRAPHERS & EVENT PLANNERS
+------------------------------------------------------------------------
+SEO (primary + long-tail):
+  - wedding photographer website design
+  - portfolio website for wedding photographer India
+  - event planner website design Bengaluru
+  - website for videographer with gallery
+  - wedding photography website cost
+  - SEO for wedding photographers
+  - lead generation website for event planners
+
+AEO (question-based):
+  - what should a wedding photographer's website include
+  - do wedding photographers need a website if they post on Instagram
+  - how do couples choose a wedding photographer online
+  - what makes an event planner's website convert enquiries into
+    bookings
+  - how much does a photography portfolio website cost
+
+GEO (AI-chat conversational prompts):
+  - "I'm a wedding photographer in Bangalore, what should my website
+    include to get more bookings from couples planning their wedding"
+  - "compare relying on Instagram only vs having a dedicated website for
+    a wedding photography business"
+  - "what should an event planner's website show to win a couple's trust
+    before a first call"
+
+Blog topic ideas:
+  1. Instagram gets you seen, a website gets you booked: the real
+     difference for wedding photographers
+  2. What couples actually check on a photographer's website before
+     reaching out
+  3. How a slow-loading photo gallery quietly loses wedding enquiries
+  4. What an event planner's website needs that a PDF portfolio cannot
+     do
+  5. How to structure a wedding photography portfolio so it ranks and
+     converts
+  6. Why booking flow matters as much as the photos themselves
+
+------------------------------------------------------------------------
+CATEGORY 5 — HOME RENOVATION / MODULAR KITCHEN & FURNITURE STUDIOS
+------------------------------------------------------------------------
+SEO (primary + long-tail):
+  - website for modular kitchen business
+  - home renovation company website design
+  - furniture studio website India
+  - website design for interior renovation contractors
+  - modular kitchen website cost Bengaluru
+  - lead generation website for renovation contractors
+
+AEO (question-based):
+  - what should a modular kitchen business's website include
+  - do renovation contractors need a website or is word-of-mouth enough
+  - how do homeowners choose a renovation contractor online
+  - how much does a website cost for a furniture/modular kitchen studio
+
+GEO (AI-chat conversational prompts):
+  - "I run a modular kitchen and furniture business in Bengaluru relying
+    mostly on referrals, would a website actually bring in new
+    homeowner enquiries"
+  - "what should a home renovation contractor's website show to prove
+    quality before a site visit"
+  - "how do I get my renovation business found by homeowners searching
+    online instead of only asking neighbours"
+
+Blog topic ideas:
+  1. Why referral-only renovation businesses eventually hit a ceiling —
+     and what a website changes
+  2. What homeowners look for on a modular kitchen studio's website
+     before requesting a quote
+  3. Before/after galleries done right: what actually builds trust for
+     a renovation contractor
+  4. How local SEO gets a home renovation business found in their own
+     service area
+  5. What information a website needs to reduce time-wasting enquiries
+     for a renovation studio
+  6. Pricing transparency online: does it help or hurt a renovation
+     business? (an honest look)
+
+------------------------------------------------------------------------
+CATEGORY 6 — COACHES & CONSULTANTS (Coach Authority System)
+------------------------------------------------------------------------
+Note: this niche already has a dedicated, deeply researched playbook —
+the uncodedhub-linkedin-system skill (11 distilled sources covering
+niche positioning, content, DMs, lead magnets, and email nurture for
+coaches/consultants specifically). Use that skill for the full content
+and funnel strategy for this niche; the keyword sets below are the
+website-SEO layer only, to avoid duplicating what that skill already
+covers in depth.
+
+SEO (primary + long-tail):
+  - website for coaches India
+  - website design for consultants Bengaluru
+  - authority website for business coach
+  - website with AI chatbot for coach
+  - lead generation website for consultants
+  - personal brand website for coach
+
+AEO (question-based):
+  - what should a coach's website include to build authority
+  - do consultants need a website if they already have LinkedIn
+  - how does a website help a coach convert LinkedIn followers into
+    clients
+  - what makes a coaching website look credible instead of generic
+
+GEO (AI-chat conversational prompts):
+  - "I'm a business coach active on LinkedIn, what should my website
+    include to convert profile visitors into discovery calls"
+  - "compare a Linktree/landing-page-only setup vs a full authority
+    website for a consultant"
+
+Blog topic ideas:
+  1. Why a LinkedIn profile alone is not the same as an authority
+     website for a coach
+  2. What a coaching website needs to convert a cold LinkedIn visitor
+     into a booked call
+  3. How a website supports (not replaces) the personal-brand content a
+     coach is already posting
+  4. What makes a consultant's website look credible vs. templated
+
+------------------------------------------------------------------------
+CATEGORY 7 — CORE / STUDIO SERVICE KEYWORDS (cross-niche)
+------------------------------------------------------------------------
+These target people evaluating Uncoded Hub itself, or the web-design
+service category broadly, rather than a specific niche. Useful for the
+Services and Home pages, and for comparison-style blog posts.
+
+SEO:
+  - fixed price website design India
+  - 7 day website design
+  - web design studio Bengaluru
+  - small business website design India
+  - website design with SEO included
+  - website designer with fixed timeline
+
+AEO (question-based):
+  - how much should a small business website cost in India
+  - how long should it take to build a business website
+  - what is included in a fixed-price website package
+  - what is a "late means free" guarantee for web design
+  - how do I know if a web design quote is fair
+
+GEO (AI-chat conversational prompts):
+  - "I need a website for my small business in India and don't want
+    hourly billing surprises, what should a fixed-price web design
+    quote actually include"
+  - "what questions should I ask a web design studio before signing to
+    make sure the timeline and price actually hold"
+
+Blog topic ideas:
+  1. Why hourly-billed web design projects go over budget (and what a
+     fixed price actually protects you from)
+  2. What "late means free" means in practice, and why so few studios
+     offer it
+  3. The real cost breakdown of a small business website in India in
+     2026
+  4. Questions to ask any web design studio before you sign, with the
+     honest answers a client deserves
+
+------------------------------------------------------------------------
+HOW THIS BUILDS DOMAIN AUTHORITY
+------------------------------------------------------------------------
+1. Pick one niche at a time (matching the site's own sequential niche
+   rollout) and publish its blog hub + 4-6 articles before moving to
+   the next niche. A shallow six-niche blog started all at once ranks
+   worse than one niche done properly.
+2. Every article should link to the matching Services scope and to at
+   least one other article in the same niche hub — internal links
+   inside one topic cluster are what search engines read as topical
+   authority.
+3. AEO/GEO keyword phrasing (the full-question and conversational sets
+   above) should become actual H2/H3 headings inside the article, not
+   just meta descriptions — that is what gets pulled into featured
+   snippets and AI-generated answers.
+4. Do not fabricate statistics, client counts, or results inside any of
+   this content — this project's honesty rule applies to blog content
+   exactly as it applies to the rest of the site.
+========================================================================
