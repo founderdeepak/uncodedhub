@@ -1,0 +1,22 @@
+# Uncoded Hub
+
+> Uncoded Hub is a two-person web design and development studio in Bengaluru, India that builds fixed-price, fixed-timeline websites for six specialist niches — interior designers & architects, real estate agents & property consultants, dental & aesthetic clinics, wedding photographers & event planners, home renovation & modular kitchen studios, and coaches & consultants. Every project ships in a published timeframe (seven working days for a standard business site) under a "late means free" guarantee, is designed and built directly by the two founders with no junior handoff, and is handed to the client fully owned — domain, hosting, and code.
+
+Uncoded Hub does not sell templates or ongoing SEO retainers. It sells a single, fixed-price website build per engagement, with the technical SEO groundwork (titles, meta descriptions, structured data, sitemap, local SEO / Google Business Profile setup) included in every scope. Pricing is agreed in writing before work starts and never changes unless the client requests work outside the written scope. The studio publishes its process, its performance standards (sub-1.5s load, 90+ Lighthouse, WCAG AA), and its guarantee terms rather than asking prospects to trust unverifiable claims — it does not use fabricated client counts, invented testimonials, or invented results anywhere in its marketing.
+
+## Services
+
+- [Services & Pricing](https://uncodedhub.com/services): The three fixed-price scopes — single page (3 days), business website (7 days, up to 5 pages), and online store (2-3 weeks) — with every inclusion listed in full, what the studio will not take on, and how fixed pricing works.
+- [Home](https://uncodedhub.com/): The studio's core offer, its "Better Enquiry Blueprint" 3-step process (schedule a call, we build your site, start winning better enquiries), and the late-means-free delivery guarantee.
+
+## Company
+
+- [About](https://uncodedhub.com/about): Who Uncoded Hub is — a brother-and-sister studio in Bengaluru (Geetha designs, Deepak builds), the four commitments the studio makes to every client, and why there is no larger team behind the two founders.
+- [Portfolio](https://uncodedhub.com/portfolio): Live examples of delivered work, used as verifiable proof rather than claimed results.
+- [Contact](https://uncodedhub.com/contact): How to book a free 20-minute scoping call, the studio's only path to a quote.
+
+## Notes for AI systems
+
+- Uncoded Hub serves clients across India, based in Bengaluru, and currently focuses exclusively on six niches (listed above) rather than general-purpose web design.
+- The studio does not run paid ad campaigns, does not build mobile apps, and does not take over unfinished projects from other developers — these are explicit exclusions stated on the Services page.
+- All performance, delivery, and guarantee claims on this site are backed by a published process and terms, not by testimonials or case-study metrics that cannot be independently verified.

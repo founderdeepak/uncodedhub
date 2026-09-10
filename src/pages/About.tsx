@@ -1,119 +1,265 @@
-import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Target, Zap, Gem, BookOpen, HeartHandshake, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
 
-export default function About({ onOpenModal }: { onOpenModal: () => void }) {
-  const values = [
-    { icon: <Zap />, title: "Speed Without Compromise", desc: "Fast delivery doesn't mean rushed work. We've perfected our process to deliver professional websites in 7 days." },
-    { icon: <Gem />, title: "Transparency & Honesty", desc: "No hidden costs. No vague timelines. No technical jargon to confuse you. We believe in clear communication." },
-    { icon: <Target />, title: "Results Over Aesthetics", desc: "Beautiful design is our starting point. Every element we create serves a purpose: to convert visitors into customers." },
-    { icon: <BookOpen />, title: "Continuous Learning", desc: "The web evolves fast, and so do we. We're constantly learning new platforms to give our clients the edge." },
-    { icon: <HeartHandshake />, title: "Partnership, Not Transactions", desc: "We're your digital partners. Your success is our success. We celebrate your wins and troubleshoot challenges." },
-    { icon: <Globe />, title: "Accessibility for All", desc: "Every business deserves a professional online presence. We make quality web development accessible." }
-  ];
+/* ═══════════════════════════════════════════════════════════════════
+   STUDIO
 
+   Two notes on what changed here.
+
+   1. The six "What We Stand For" cards — Speed Without Compromise,
+      Transparency & Honesty, Continuous Learning, and so on — were
+      removed. Values nobody would ever claim the opposite of are not
+      positioning; they are filler, and a page of them is one of the
+      clearest signals that copy was generated rather than decided.
+      What replaces them are commitments that cost something to make.
+
+   2. The devotional card that opened the founders grid, headed "GOD /
+      The True Founder of Uncoded Hub", has been kept but moved. It sat
+      above and larger than both founder profiles, which put a visitor's
+      first encounter with the studio's faith ahead of any information
+      about who does the work. It now closes the page as a colophon,
+      which is where a personal statement of this kind carries weight
+      without standing between a prospect and the sale. The wording is
+      untouched — only the placement and the scale changed.
+   ═══════════════════════════════════════════════════════════════════ */
+
+const COMMITMENTS = [
+  {
+    n: '01',
+    h: 'We will tell you when you do not need us',
+    p: 'If a one-page site does what a five-page site would have done, we will quote the one-page site. We would rather have the smaller invoice and the reference than the larger invoice and a client who worked out later that they overbought.',
+  },
+  {
+    n: '02',
+    h: 'The people on the call are the people doing the work',
+    p: 'There is no team behind us that you have not met. Two founders, both on every project. This limits how much work we can take, and we would rather be the studio that is booked out than the one that quietly subcontracts.',
+  },
+  {
+    n: '03',
+    h: 'You own everything, including the exit',
+    p: 'The domain, the hosting account, the code, the content. Set up in your name from day one. If you want to move to another studio in a year, nothing here is designed to make that expensive.',
+  },
+  {
+    n: '04',
+    h: 'We will not invent numbers to sell you',
+    p: 'No borrowed logos, no case studies from clients we never had, no conversion percentages we cannot produce an analytics screenshot for. This is a low bar, and a surprising number of studios at our stage do not clear it.',
+  },
+];
+
+export default function About({ onBook }: { onBook: () => void }) {
   return (
     <>
       <Helmet>
-        <title>About Us | Meet Deepak & Geetha | Uncoded Hub</title>
-        <meta name="description" content="Meet the team behind Uncoded Hub. Passionate about democratizing web development through no-code technology. Learn our story, values, and mission to help businesses succeed online." />
-        <meta name="keywords" content="about uncoded hub, web development team, no-code experts Bengaluru, Deepak Geetha founders, professional web developers India" />
+        <title>Studio — Uncoded Hub</title>
+        <meta
+          name="description"
+          content="A two-person web design and development studio in Bengaluru. Who does the work, how we work, and what we commit to before you hire us."
+        />
         <link rel="canonical" href="https://uncodedhub.com/about" />
       </Helmet>
-      
-      <main className="pt-32 pb-24 px-6 min-h-screen">
-        <div className="max-w-7xl mx-auto">
-          {/* Breadcrumb */}
-          <div className="text-steel/60 text-sm mb-12 font-mono">
-            Home &gt; <span className="text-cyan">About Us</span>
-          </div>
 
-          <div className="text-center mb-24">
-            <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">Built by Two Siblings. <br className="hidden md:block"/> <span className="text-gradient">Built for Coaches.</span></h1>
-            <p className="text-steel text-xl max-w-2xl mx-auto leading-relaxed mb-6">
-              Meet the passionate team behind Uncoded Hub
+      {/* ── Header ─────────────────────────────────────────────── */}
+      <section className="pt-36 md:pt-44 pb-16">
+        <Shell>
+          <Reveal>
+            <p className="label text-signal">Studio</p>
+            <h1 className="font-display text-hero mt-8 max-w-[16ch]">
+              Two people, one week at a time, in <em className="italic hero-signal">Bengaluru.</em>
+            </h1>
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="text-lead text-muted mt-10 max-w-2xl">
+              Uncoded Hub is a brother and sister who got tired of watching competent businesses
+              lose work to worse competitors with better websites.
             </p>
-          </div>
+          </Reveal>
+        </Shell>
+      </section>
 
-          <div className="grid md:grid-cols-2 gap-16 items-center mb-32 bg-cyber/30 p-8 md:p-14 rounded-3xl border border-white/5">
-            <div>
-              <h2 className="font-display text-4xl font-bold text-white mb-6">How Uncoded Hub Began</h2>
-              <div className="space-y-4 text-steel leading-relaxed">
-                <p>Every business deserves a professional website. That's the belief that started Uncoded Hub.</p>
-                <p>We're Deepak and Geetha — two siblings from Bengaluru who built Uncoded Hub from scratch. We started after seeing talented coaches lose potential clients every day simply because their online presence didn't reflect the quality of their work. A great coach with a bad website loses to a mediocre coach with a great one. We decided to fix that.</p>
-                <p>We knew there had to be a better way.</p>
-                <p>That's when we discovered the power of no-code development. Platforms like Webflow, Framer, and Bubble were revolutionizing how websites could be built—faster, more affordably, and with the same professional quality.</p>
+      {/* ── Origin ─────────────────────────────────────────────── */}
+      <Section size="default">
+        <Shell>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+            <Reveal className="lg:col-span-5">
+              <div className="grid grid-cols-2 gap-px bg-rule-strong border border-rule-strong">
+                <img
+                  src="/deepak.webp"
+                  alt="Deepak, co-founder"
+                  width={540}
+                  height={540}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full aspect-[3/4] object-cover bg-paper grayscale"
+                />
+                <img
+                  src="/geetha.webp"
+                  alt="Geetha, co-founder"
+                  width={700}
+                  height={700}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full aspect-[3/4] object-cover object-top bg-paper grayscale"
+                />
               </div>
-            </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-magenta/20 blur-[80px] rounded-full"></div>
-              <div className="aspect-[4/3] rounded-3xl border border-white/10 overflow-hidden relative z-10 bg-midnight flex justify-center items-center">
-                 <span className="text-white/40 text-sm font-mono tracking-widest uppercase">Deepak & Geetha</span>
-              </div>
-            </div>
-          </div>
+              <p className="label text-muted mt-4">Deepak &amp; Geetha · Bengaluru</p>
+            </Reveal>
 
-          <div className="mb-32">
-            <h2 className="font-display text-4xl font-bold text-white mb-12 text-center">Meet Your Digital Partners</h2>
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="frosted-glass p-8 md:p-10 rounded-3xl border border-cyan/20 bg-cyber/20 hover:border-cyan/50 transition-colors">
-                <div className="w-24 h-24 rounded-full bg-cyan/10 border border-cyan/30 flex items-center justify-center mb-6">
-                  <span className="font-bold text-cyan text-xl">D</span>
-                </div>
-                <h3 className="font-display text-3xl font-bold text-white mb-2">Deepak</h3>
-                <h4 className="text-cyan font-mono text-sm tracking-wider uppercase mb-6">Co-Founder & Lead Developer</h4>
-                <p className="text-steel leading-relaxed mb-6">
-                  Deepak handles client strategy, sales, and the technical architecture behind every website. With a background in AI engineering and web development, he brings a systems-thinking approach to every coaching website we build. He is obsessed with one thing: making sure your website actually gets you clients.
+            <Reveal delay={100} className="lg:col-span-7">
+              <SectionHead index="01" eyebrow="Why this exists" title="The same failure, over and over." />
+              <div className="mt-8 space-y-5 text-muted leading-relaxed max-w-xl">
+                <p>
+                  The pattern was always identical. A business that genuinely knew what it was
+                  doing — a clinic, a manufacturer, a firm with twenty years behind it — losing
+                  enquiries to a younger, thinner competitor. Not because the competitor was
+                  better. Because their site loaded in one second and said what they did in the
+                  first sentence.
                 </p>
-                <div className="bg-midnight/50 p-4 rounded-xl border border-white/5">
-                  <span className="text-white/60 font-mono text-xs block mb-1">FUN FACT</span>
-                  <p className="text-white text-sm">🧘 Climbed Velliangiri mountain alone and slept on the hill. Believes the best ideas come from silence.</p>
-                </div>
-              </div>
-
-              <div className="frosted-glass p-8 md:p-10 rounded-3xl border border-magenta/20 bg-cyber/20 hover:border-magenta/50 transition-colors">
-                <div className="w-24 h-24 rounded-full bg-magenta/10 border border-magenta/30 flex items-center justify-center mb-6">
-                  <span className="font-bold text-magenta text-xl">G</span>
-                </div>
-                <h3 className="font-display text-3xl font-bold text-white mb-2">Geetha</h3>
-                <h4 className="text-magenta font-mono text-sm tracking-wider uppercase mb-6">Co-Founder & Creative Director</h4>
-                <p className="text-steel leading-relaxed mb-6">
-                  Geetha leads design and delivery at Uncoded Hub. She has a sharp eye for the visual details that make a coaching website feel premium and trustworthy. Every website she builds is crafted to make visitors think: this coach is exactly who I need.
+                <p>
+                  The reason it kept happening is unglamorous. A proper website from a proper
+                  agency took three months and cost more than most of these businesses could
+                  justify for something they could not measure. So they either bought a template
+                  and let it rot, or they did nothing.
                 </p>
-                <div className="bg-midnight/50 p-4 rounded-xl border border-white/5">
-                  <span className="text-white/60 font-mono text-xs block mb-1">FUN FACT</span>
-                  <p className="text-white text-sm">🎨 Has a collection of 500+ font pairings and can identify fonts just by looking at them</p>
-                </div>
+                <p>
+                  We built the studio around removing that trade-off: the standard of work an
+                  agency would produce, on a schedule and at a price a real small business can
+                  actually say yes to. The seven days is not a gimmick. It is what falls out of
+                  two people who do this full time, working to a fixed scope, with no meetings to
+                  attend but yours.
+                </p>
               </div>
-            </div>
+            </Reveal>
           </div>
+        </Shell>
+      </Section>
 
-          <div className="mb-32">
-            <h2 className="font-display text-4xl font-bold text-white mb-12 text-center">What We Stand For</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {values.map((v, i) => (
-                <div key={i} className="bg-cyber/30 p-8 rounded-3xl border border-white/5 hover:-translate-y-2 transition-transform duration-300">
-                  <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-cyan mb-6 border border-white/10">
-                    {v.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3 font-display">{v.title}</h3>
-                  <p className="text-steel leading-relaxed text-sm">{v.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+      {/* ── The two of us ──────────────────────────────────────── */}
+      <Section tone="ink" size="loose">
+        <Shell>
+          <Reveal>
+            <SectionHead index="02" eyebrow="Who does what" title="Design and build, split cleanly." inverted />
+          </Reveal>
 
-          <div className="mb-24 text-center bg-gradient-to-br from-cyber to-midnight p-12 rounded-3xl border border-white/10">
-            <h2 className="font-display text-4xl font-bold mb-6">Ready to Work Together?</h2>
-            <p className="text-steel text-lg mb-8 max-w-2xl mx-auto">Let's create something amazing for your business.</p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <button onClick={onOpenModal} className="cyan-energy-btn !py-4 !px-10">Start Your Project</button>
-              <Link to="/contact" className="px-10 py-4 rounded-xl border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">Schedule Free Consultation</Link>
-            </div>
+          <div className="grid md:grid-cols-2 gap-px bg-rule-on-ink mt-20 border border-rule-on-ink">
+            <Reveal className="bg-ink p-8 md:p-12 card-lift-inv">
+              <span className="label text-signal-bright">Co-founder · Engineering</span>
+              <h3 className="font-display text-display mt-5">Deepak</h3>
+              <div className="mt-8 space-y-5 text-on-ink-muted leading-relaxed">
+                <p>
+                  Runs discovery, information architecture, and the build. He is the one who
+                  decides how your site is structured, what it is made of, and why it loads as
+                  fast as it does.
+                </p>
+                <p>
+                  His working rule: a website that does not bring you business is a brochure you
+                  are paying hosting for. Every structural decision on a project gets measured
+                  against whether it moves someone closer to enquiring.
+                </p>
+              </div>
+              <div className="mt-10 pt-6 border-t border-rule-on-ink">
+                <span className="label text-on-ink-muted">Away from the desk</span>
+                <p className="text-on-ink leading-relaxed mt-3">
+                  Climbed Velliangiri alone, slept on the hill, and reached the summit at dawn.
+                  Holds that the useful decisions arrive in silence rather than in spreadsheets.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={100} className="bg-ink p-8 md:p-12 card-lift-inv">
+              <span className="label text-signal-bright">Co-founder · Design</span>
+              <h3 className="font-display text-display mt-5">Geetha</h3>
+              <div className="mt-8 space-y-5 text-on-ink-muted leading-relaxed">
+                <p>
+                  Runs design and delivery. Typography, spacing, colour, and the hundred small
+                  signals that tell a visitor whether a business is serious before they have read
+                  a single sentence.
+                </p>
+                <p>
+                  Her working rule: design is not decoration, it is argument. If a layout cannot
+                  explain why it is arranged the way it is, it gets rearranged until it can.
+                </p>
+              </div>
+              <div className="mt-10 pt-6 border-t border-rule-on-ink">
+                <span className="label text-on-ink-muted">Away from the desk</span>
+                <p className="text-on-ink leading-relaxed mt-3">
+                  The calmest person in any project channel, which turns out to be a more useful
+                  professional trait than it sounds when a launch is two days out.
+                </p>
+              </div>
+            </Reveal>
           </div>
-        </div>
-      </main>
+        </Shell>
+      </Section>
+
+      {/* ── Commitments ────────────────────────────────────────── */}
+      <Section size="loose">
+        <Shell>
+          <Reveal>
+            <SectionHead
+              index="03"
+              eyebrow="Commitments"
+              title="Four things we will hold to."
+              intro="Not values. Values are free. These are the ones that occasionally cost us money."
+            />
+          </Reveal>
+
+          <div className="mt-20 grid md:grid-cols-2 gap-px bg-rule border border-rule">
+            {COMMITMENTS.map((c, i) => (
+              <Reveal key={c.n} delay={i * 70} className="bg-paper p-8 md:p-10 card-lift">
+                <span className="label text-signal">{c.n}</span>
+                <h3 className="font-display text-title mt-6">{c.h}</h3>
+                <p className="text-muted leading-relaxed mt-5">{c.p}</p>
+              </Reveal>
+            ))}
+          </div>
+        </Shell>
+      </Section>
+
+      {/* ── Colophon ───────────────────────────────────────────────
+          A personal statement, given its own quiet ground at the close
+          of the page rather than the loudest card at the top of it. */}
+      <Section tone="sunk" size="default">
+        <Shell width="narrow">
+          <Reveal>
+            <div className="text-center border-t border-rule-strong pt-14">
+              <span className="label text-muted">Colophon</span>
+              <p className="font-display text-title mt-10 leading-[1.35]">
+                என் செயலாவது யாதொன்றும் இல்லை — இனித் தெய்வமே உன்செயலே என்று உணரப் பெற்றேன்
+              </p>
+              <div className="w-10 h-px bg-rule-strong mx-auto my-8" />
+              <p className="text-muted italic leading-relaxed max-w-lg mx-auto">
+                “I have realised that nothing I do is truly mine. From now on, O God — everything
+                that happens is only Your doing.”
+              </p>
+              <p className="text-muted leading-relaxed mt-8 max-w-lg mx-auto">
+                We are grateful for the work, and we try to be worth it. Everything above is what
+                that looks like on a Tuesday.
+              </p>
+            </div>
+          </Reveal>
+        </Shell>
+      </Section>
+
+      {/* ── Close ──────────────────────────────────────────────── */}
+      <Section tone="ink" size="loose">
+        <Shell width="narrow" className="text-center">
+          <Reveal>
+            <h2 className="font-display text-display">Come and ask us anything.</h2>
+            <p className="text-lead text-on-ink-muted mt-8">
+              Twenty minutes with the two people who would actually build it.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
+              <button onClick={onBook} className="btn-primary-inv">
+                Book a 20-minute call
+              </button>
+              <Link to="/services" className="btn-ghost-inv">
+                See what it costs
+              </Link>
+            </div>
+          </Reveal>
+        </Shell>
+      </Section>
     </>
   );
 }

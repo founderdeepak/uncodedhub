@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node __s2.cjs)",
+      "Bash(curl -s -o /dev/null -w \"server: %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(node -e ' *)",
+      "Bash(node C:/Users/LENOVO/AppData/Local/Temp/claude/bundled-skills/2.1.263/547860bba1cd6e766cc87fa5358487b1/design/seed-canvas.mjs --template C:/Users/LENOVO/AppData/Local/Temp/claude/bundled-skills/2.1.263/547860bba1cd6e766cc87fa5358487b1/design/payload.template.html --out lead-magnet-pdf.html --title 'Pre-Sold Prospects Audit PDF' --artboard Main.dc.html --image c:/Users/LENOVO/Downloads/uncoded-hub/public/logo-large.webp --image 'c:/Users/LENOVO/Downloads/uncoded-hub/Lead Magnet/leadmagnet_image2.png=cover-illustration.png' --canvas canvas.json)",
+      "Bash(node C:/Users/LENOVO/AppData/Local/Temp/claude/bundled-skills/2.1.263/547860bba1cd6e766cc87fa5358487b1/design/seed-canvas.mjs --template C:/Users/LENOVO/AppData/Local/Temp/claude/bundled-skills/2.1.263/547860bba1cd6e766cc87fa5358487b1/design/payload.template.html --out lead-magnet-pdf.html --title 'Pre-Sold Prospects Audit PDF' --artboard Main.dc.html --image c:/Users/LENOVO/Downloads/uncoded-hub/public/logo-large.webp --image 'c:/Users/LENOVO/Downloads/uncoded-hub/Lead Magnet/leadmagnet_image2.png' --canvas canvas.json)",
+      "Bash(python -c ' *)",
+      "Bash(node C:/Users/LENOVO/AppData/Local/Temp/claude/bundled-skills/2.1.263/547860bba1cd6e766cc87fa5358487b1/design/seed-canvas.mjs --template C:/Users/LENOVO/AppData/Local/Temp/claude/bundled-skills/2.1.263/547860bba1cd6e766cc87fa5358487b1/design/payload.template.html --out lead-magnet-pdf.html --title 'Pre-Sold Prospects Audit PDF' --artboard Main.dc.html --image c:/Users/LENOVO/Downloads/uncoded-hub/public/logo-large.webp --image 'c:/Users/LENOVO/Downloads/uncoded-hub/Lead Magnet/cover-illustration-optimized.jpg' --canvas canvas.json)"
+    ]
+  }
+}

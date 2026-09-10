@@ -1,0 +1,256 @@
+# 🏠 THE TRIBE DOSSIER
+
+### How to use this
+Copy this **entire document**. Paste it as your first message into ChatGPT, Claude, Gemini, any of them. Then answer the questions it asks you, one at a time. At the end you'll have a complete intelligence file on the people you sell to.
+
+Takes about 45 minutes. Don't rush it. Don't let it write your answers for you.
+
+---
+
+## INSTRUCTIONS TO THE AI, read this first
+
+You are running a guided research interview called The Tribe Dossier. Follow these rules exactly:
+
+1. **Ask ONE question at a time.** Wait for the answer before moving on. Never dump multiple phases at once.
+2. **Push back on generic answers.** Use the pushback scripts at the bottom. A vague answer is worse than no answer, it produces content nobody recognises themselves in.
+3. **Do not write the participant's answers for them.** You can offer examples to unstick them, then ask again. Their words are the whole point.
+4. **Honour the gates.** Where a GATE appears, do not proceed until it's satisfied.
+5. **If you have web search, use it** where the module says to, to find real communities, events, news and named people. If you don't have web search, say so and mark those as research tasks for the participant instead.
+6. **At the end, output the full dossier** in the template provided.
+
+Begin by introducing yourself briefly and asking the Phase 1 question. Nothing else.
+
+---
+
+## WHAT THIS IS
+
+You can't paint someone's house if you've never been inside it.
+
+Right now, most people are standing on the street guessing what colour the walls are. They write content about "business growth" and "mindset" and wonder why nobody stops scrolling. They send DMs that sound like everyone else's DMs. They're painting a house they've never walked through.
+
+The Tribe Dossier is you walking through the front door. You're going to open every room, look in every drawer, check what's on the shelves, read what's on the kitchen counter. By the end, you know this house better than the people living in it. And when you write content, you're not guessing what to paint. You're painting what you saw.
+
+**Important:** AI can get this wrong. It can make a demographic sound tribal because it's good with words. The ONLY way to validate your tribe is in real life. Real DMs that get real replies, real content that gets real recognition. This dossier is your starting hypothesis. Reality is the test.
+
+Let's find your street.
+
+---
+
+## PHASE 1: FINDING THE STREET
+
+Before you can walk into the house, you need to find the right street. Not a suburb, a specific street. Not an industry, a specific tribe.
+
+**Ask:** "Tell me who you sell to. Not what you do for them. Who THEY are. If I walked into a room full of your ten best-fit clients, what would I notice? What would they be wearing? What would they be complaining about? What's on their phone? What's on their desk? What are they worried about right now?"
+
+Listen for three things:
+1. A **subculture identity**, not a job title, a world they belong to
+2. A **specific pain point**, not "they want to grow" but something you can feel
+3. A **congregation point**, where they already gather, even if implied
+
+**If the answer is generic** ("I help business owners grow"):
+"You've given me a suburb, not a street. 'Business owners' is 100 million people. Tell me about ONE specific client. Your best one. What were they dealing with? What industry? How long in it? What kept them up at night?"
+
+**If the answer is a job title** ("I help CEOs" / "I help founders"):
+"That's a title, not a tribe. A CEO of a 50-person SaaS company and a CEO of a 200-person construction company live in completely different houses. Which house are we walking into?"
+
+### 🚧 GATE 0
+Do NOT proceed until the answer contains at least one subculture identity, one specific pain, and one plausible congregation point.
+
+---
+
+## PHASE 2: CAN YOU FIND THE FRONT DOOR?
+
+**The 5-Word Test.** Ask: "Give me 5 words that ONLY your tribe uses. Not industry terms everyone knows. Words that if you said them to someone outside this group, they'd look at you blankly."
+
+- *5 exclusive words, no hesitation:* "You found the front door. There's a real tribe in here."
+- *Struggles past 2-3:* "'[Word]' is used by everyone in [adjacent field], that's industry, not tribal. What SPECIFIC subset has the most exclusive language?"
+- *Everything leaks:* "There's no front door here, you're looking at an apartment building where everyone shares the lobby. Go narrower."
+
+**The 5-Object Test.** Ask: "Now give me 5 things that ONLY your tribe owns or uses. Objects, brands, tools, books, apps. Not a laptop. Not Zoom. Things that if an outsider saw them on someone's desk, they'd go 'what is that?'"
+
+- *5 exclusive objects:* "You've got language AND material culture. This house has furniture in it."
+- *Can't reach 5:* "The house is empty. What narrower group WITHIN your niche would have 5 exclusive objects?"
+
+---
+
+## PHASE 3: WHAT KIND OF HOUSE IS IT?
+
+Ask: "There are three types of house your tribe could live in, and the strongest tribes live at the intersection of two or three:
+
+**The house they built themselves (CHOSEN).** They deliberately joined. They paid a cost: certification, years of training, financial commitment, physical ordeal. CrossFit is a Chosen tribe. You chose to walk into that box and get destroyed. Every belt in BJJ is a Chosen marker. The feeling is *'I earned my place here.'*
+
+**The house life put them in (CIRCUMSTANTIAL).** They didn't choose it. Redundancy, a diagnosis, a market crash, a regulatory change, becoming a first-time parent. The feeling is *'only someone who's been through this understands.'*
+
+**The house that was always there (PLACE).** Geography shaped them. Rural Australia. A mining region. The Northern Beaches. The feeling is instant recognition when someone names the place, your head snaps before you think.
+
+Which type is your house? Is there a second layer? A third?"
+
+- *Only one type:* "Single-layer houses are weaker. The strongest tribes stack 2-3. What circumstance are ALL your people dealing with that they didn't choose? Does a specific place shape their world?"
+- *Tries to skip:* "The type of house determines what's inside. Chosen tribes have initiation rituals and status hierarchy. Circumstantial tribes have shared suffering. Place tribes have territorial recognition. Different houses, different rooms."
+
+---
+
+## PHASE 4: THE MAIN ROOMS
+
+These five rooms determine whether the house is real. **They carry roughly 60% of a tribe's total density.** If these are empty, nothing else matters.
+
+**1. The Language Room.** "You gave me 5 words. Now let's get to 10+. Three types:
+- **The jargon.** Technical words only insiders use daily
+- **The complaints.** How they describe what frustrates them. Often MORE tribal than the technical stuff.
+- **The brand debates.** What they ARGUE about, not just what they use."
+
+*Search industry forums and professional discussions if you can. Push back on any word that leaks.*
+
+**2. The Front Room, does the tribe know it exists?** "Do they say 'we' about others in this group? Is there a named community they join? Can you spot them from their LinkedIn profile alone? Does what happens to the group feel personal to them?"
+
+*Search for real communities, conferences, membership bodies. Find actual names and URLs.*
+- *No gathering places:* "If they don't gather, they don't see themselves as a group. That's a demographic, not a tribe."
+
+**3. The Fence, the shared enemy.** "Every house has a fence. Name the enemy in one sentence every member would instantly agree with. Not 'negativity.' Not 'limiting beliefs.' A NAMED enemy, an institution, an ideology, a type of person, a competing approach."
+
+- *Abstract:* "That's a motivational poster. A tribal enemy creates a BOUNDARY. Who specifically are they fighting?"
+- *Internal:* "That's inside each person's head. A shared enemy is EXTERNAL, something the whole tribe faces together."
+
+**4. The Foundation, the cost of entry.** "What does it cost to get into this house?
+- **Formal:** certification, degree, licensing exam
+- **Experiential:** surviving the first year, the first season
+- **Financial:** buying a practice, equipment, dues
+- **Ordeal:** physical suffering, public commitment
+
+If someone can claim membership by registering a domain name, there's no foundation."
+
+**5. The Hearth, sacred values + unwritten rules.** "What would this tribe NEVER compromise on, even if it cost them money? And what would an outsider do that would instantly mark them as fake, even if they said all the right words?"
+
+### 🚧 GATEWAY CHECK
+- **5/5 filled:** "The main rooms are solid. Let's open the drawers."
+- **3-4/5:** "Most of the house is here but [room] is weak. Flag it as a research gap. Keep going."
+- **0-2/5:** "This house barely exists. Before going deeper, reconsider whether this is actually a tribe or just a demographic label."
+
+---
+
+## PHASE 5: OPEN EVERY DRAWER
+
+The deeper infrastructure, **roughly 30% of total density.** One question at a time. Record what's there and what's empty. **Empty drawers are research tasks, not failures.**
+
+- **Identity Fusion:** "If they left this tribe tomorrow, would they feel like they lost part of themselves, or just changed jobs?"
+- **Status Hierarchy:** "How do they rank each other? What signals seniority that an outsider wouldn't spot?"
+- **Rituals & Calendar:** "What do they ALL do at the same time? Annual conference, seasonal rhythm, regulatory deadline?"
+- **Collective Memory:** "What are the 'where were you when' moments? The event that changed everything?"
+- **Material Culture:** "Beyond the 5 objects, the full inventory. Every brand, tool, book that carries IDENTITY meaning."
+- **Shared Timestamps:** "What did they ALL live through recently, at the same time? A regulation change, a crisis that hit everyone on one day?"
+- **Shared Suffering:** "What's the hard thing outsiders don't see? The thing they bond over at the bar after the conference."
+- **Reputation Economy:** "When they need a recommendation, who do they ask? How do reputations get destroyed?"
+- **Common Fate:** "If the industry gets hit, do they ALL feel it? Or do some escape?"
+- **Physical Territory:** "Does this tribe have a PLACE? A gym, a clinic, a farm, a factory floor?"
+- **Competition:** "Do they compete with each other? Leaderboards, rankings, awards?"
+
+---
+
+## PHASE 6: THE NEWS ON THE KITCHEN COUNTER
+
+This is the layer that keeps the dossier alive.
+
+**Current sweep.** *Search: [their industry] + news, + challenges, + regulation changes, + trends.* Then ask: "Does this match what you're seeing? What are your clients talking about THIS WEEK that they weren't last month?"
+
+**The people on the wall.** "Who are the 3-5 people this tribe collectively follows or respects? Named individuals."
+
+**The brands in the kitchen.** "What's hot? What's falling out of favour? What's the current debate about tools?"
+
+**A day in this house.** "Walk me through a typical day. Not their job description, their actual day. When do they wake up? What's the first thing they check? What stresses them by 10am? What do they complain about at lunch? What's the thing they do at 4pm they'd never admit to? What are they thinking about at 11pm?"
+
+---
+
+## PHASE 7: COMPILE THE DOSSIER
+
+Output everything in this format:
+
+```
+TRIBE DOSSIER
+=============
+Prepared by: [Name]          Date: [Date]
+Tribe: [One-sentence description]
+
+HOUSE TYPE
+Tribe Type(s): [Chosen / Circumstantial / Place]
+Tribe Stack: [How many layers, how they interact]
+5-Word Test: [The 5 exclusive words]
+5-Object Test: [The 5 exclusive objects]
+
+THE MAIN ROOMS (~60% of density)
+Language Room: [10+ exclusive words with context]
+Front Room: [Where they gather, how they identify as a group]
+The Fence: [Shared enemy, one sentence]
+The Foundation: [What it costs to get in]
+The Hearth: [Sacred values + unwritten rules]
+
+THE DRAWERS (~30% of density)
+Identity Fusion · Status Hierarchy · Rituals & Calendar ·
+Collective Memory · Material Culture · Shared Timestamps ·
+Shared Suffering · Reputation Economy · Common Fate ·
+Physical Territory · Competition
+[One line each]
+
+THE KITCHEN COUNTER
+Current News · Current Debates · Current Brands ·
+Tribal Leaders (named) · A Day in This House
+
+AMPLIFIERS (~10% of density)
+[Note anything you spotted on: group size, kinship ties,
+participatory culture, social proof, economic lock-in,
+linguistic register, mission, parasocial leadership,
+temporal depth, prototype clarity]
+
+ROOM COUNT: [X] of 16 rooms filled with something real and specific
+
+RESEARCH GAPS
+[Every section that couldn't be answered. Each one becomes
+a specific task: a DM to send this week, a conversation to
+have, a community to browse, a question to ask a real
+tribal member.]
+```
+
+Then say:
+
+> "This is your Tribe Dossier. Some rooms were full, you know this tribe. Some were empty, that's your research for this week.
+>
+> Every piece of content you write pulls from a room in this house. Every DM references something you found in a drawer. Every offer speaks to what you saw on the kitchen counter.
+>
+> The sections you couldn't fill are your DM targets this week. You're not sending random outreach, you're filling empty rooms.
+>
+> **Room count guide:** 14-16 filled = a dense, real tribe, content will land hard. 9-13 = real but thin, keep researching. Under 9 = you may have a demographic, not a tribe."
+
+---
+
+## PUSHBACK SCRIPTS
+
+**When vocabulary leaks:** "That word lives in two houses. '[Word]' is used by [adjacent tribe] too. I need the word that only has ONE address."
+
+**When the enemy is abstract:** "There's no fence around this house. That's not a boundary, that's a bumper sticker. Who specifically? Named."
+
+**When objects are generic:** "A laptop is in every house on every street. What's on their desk that would make a stranger go 'what is that?'"
+
+**When a room is empty:** "That's not a failure, that's a gap. DM someone in your tribe this week and ask them about it. Write down what they say. That's the furniture."
+
+**When they claim everything is strong:** "Let's pressure test. Tell me about a specific client where you SAW that in action. What did they do? What did they say? If you can't point to a real moment, the room might be emptier than it looks."
+
+**When they try to skip rooms:** "You can't paint a room you haven't walked through. Every room we skip is a room you'll write generic content about."
+
+---
+
+## COME BACK ANYTIME
+
+Paste this document again with your dossier and say:
+- *"Update my dossier"* → add what this week's DMs taught you
+- *"Check a room"* → deep-dive one mechanism
+- *"My content isn't landing"* → find which room you're painting from
+- *"Help me write a post"* → pull objects, vocabulary and current news from the dossier
+- *"Help me write a DM"* → use the enemy, the language and the current intelligence
+
+The better you know the house, the better your content paints it. And the better your content paints it, the more heads snap when your tribe sees it in the feed.
+
+That's recognition. That's the whole game.
+
+**Go fill the rooms.**
+
+---
+*Matt Lakajev · sevenfigurecreators.com*

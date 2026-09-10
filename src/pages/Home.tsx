@@ -1,384 +1,835 @@
-import React, { useRef } from 'react';
-import WireframeSphere from '../components/WireframeSphere';
-import { FaqAccordion } from '../components/ui/faq-accordion';
-import { ArrowRight, Code2, Zap, ShieldCheck, ChevronRight, Star, TrendingUp, XCircle, CheckCircle2, MessageCircle } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
 import { Link } from 'react-router-dom';
+import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
+import { FaqAccordion } from '../components/ui/faq-accordion';
+import { LeadMagnetForm } from '../components/ui/LeadMagnetForm';
+import { FloatingLeadMagnetBanner } from '../components/ui/FloatingLeadMagnetBanner';
+import {
+  IconCompass,
+  IconBrackets,
+  IconLaunch,
+  IconTimer,
+  IconGauge,
+  IconLayers,
+  IconContrast,
+  IconKeyboard,
+  IconCode,
+} from '../components/Glyphs';
 
-gsap.registerPlugin(ScrollTrigger);
+/* ═══════════════════════════════════════════════════════════════════
+   HOME
 
-export default function Home({ onOpenModal }: { onOpenModal: () => void }) {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const processRef = useRef<HTMLDivElement>(null);
-  const philosophyRefs = useRef<(HTMLDivElement | null)[]>([]);
+   Copy sourced from the completed Customer Saga Workbook
+   (Customer Saga/uncodedhub_Full_copy.md) — every section below traces
+   back to a specific workbook conclusion: the big bad (silent loss of
+   good prospects), the ultimate want (pre-sold prospects), the
+   objections (skepticism from being burned before), and the six
+   commercial promises the whole offer is built on. Nothing here claims
+   a track record, client count, or testimonial the studio doesn't have
+   — proof is carried by the process, the standards, the guarantee, and
+   the demo-before-payment model instead.
+   ═══════════════════════════════════════════════════════════════════ */
 
-  useGSAP(() => {
-    let mm = gsap.matchMedia();
+const TRUST = [
+  { k: 'Fixed price', v: 'Agreed before we start' },
+  { k: 'Fixed timeline', v: 'Seven working days' },
+  { k: 'Senior-only delivery', v: 'No account manager, no handoff' },
+  { k: 'You own everything', v: 'Hosting, domain, code' },
+];
 
-    mm.add("(min-width: 768px)", () => {
-      if (heroRef.current) {
-        gsap.from(heroRef.current.querySelectorAll('.hero-anim'), {
-          y: 30, opacity: 0, stagger: 0.2, duration: 1, ease: 'power3.out', delay: 0.2
-        });
-      }
-      if (processRef.current) {
-        gsap.from(processRef.current.querySelectorAll('.process-step'), {
-          scrollTrigger: { trigger: processRef.current, start: 'top 80%', toggleActions: 'play none none none' },
-          y: 40, opacity: 0, duration: 0.8, stagger: 0.2, ease: 'power2.out'
-        });
-      }
-      philosophyRefs.current.forEach((el) => {
-        if (el) {
-          gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 90%' }, opacity: 0, duration: 1.5, ease: 'power2.inOut' });
-        }
-      });
-    });
+/* The six niches, as a list rather than buried in a run-on sentence —
+   this is the one place a visitor checks whether the studio works with
+   businesses like theirs, so it has to be scannable in a glance. */
+const NICHES = [
+  'Interior designers & architects',
+  'Real estate agents & builders',
+  'Dental & aesthetic clinics',
+  'Wedding photographers & event planners',
+  'Home renovation & modular kitchen studios',
+  'Coaches & consultants',
+];
 
-    mm.add("(max-width: 767px)", () => {
-      if (heroRef.current) {
-        gsap.from(heroRef.current.querySelectorAll('.hero-anim'), {
-          y: 20, opacity: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out', delay: 0.1
-        });
-      }
-      if (processRef.current) {
-        gsap.from(processRef.current.querySelectorAll('.process-step'), {
-          scrollTrigger: { trigger: processRef.current, start: 'top 90%', toggleActions: 'play none none none' },
-          y: 20, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out'
-        });
-      }
-      philosophyRefs.current.forEach((el) => {
-        if (el) {
-          gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 90%' }, opacity: 0, duration: 1.0, ease: 'power2.inOut' });
-        }
-      });
-    });
-    return () => mm.revert();
-  }, []);
+const SOLUTION_ITEMS = [
+  {
+    h: 'Built to earn trust',
+    p: 'Your work gets the spotlight. We structure the site around the proof, positioning, and information a serious prospect needs before they’re ready to enquire.',
+  },
+  {
+    h: 'Built without the usual uncertainty',
+    p: 'You know the price before we start. You know the delivery date. You know what happens each day. And if we miss our agreed deadline under the guarantee terms, the build is free.',
+  },
+  {
+    h: 'Built so you stay in control',
+    p: 'Your hosting and domain are yours. Your enquiries go where you choose. And after launch, we show you how to manage your own content.',
+  },
+];
 
-  const addToRefs = (el: HTMLDivElement | null) => {
-    if (el && !philosophyRefs.current.includes(el)) philosophyRefs.current.push(el);
-  };
+const BLUEPRINT = [
+  {
+    n: '01',
+    title: 'Schedule your call',
+    body: 'Book your FREE 20-minute call. Tell us what you do, who you want to attract, and what’s happening with your current online presence.',
+    benefit: 'You leave with clarity on what you actually need.',
+    Icon: IconCompass,
+  },
+  {
+    n: '02',
+    title: 'We build your site',
+    body: 'We handle the copy, design, development, testing, and launch. Your price is agreed before we begin, your timeline is defined upfront, and you don’t have to manage a developer.',
+    benefit: 'You know what you’re paying and when it’s going live.',
+    Icon: IconBrackets,
+  },
+  {
+    n: '03',
+    title: 'Start winning better enquiries',
+    body: 'Your new website gives serious prospects the proof and confidence they need before they reach out.',
+    benefit: 'You spend less time convincing every lead from scratch.',
+    Icon: IconLaunch,
+  },
+];
 
+const FEATURES = [
+  {
+    h: 'Designed around your business',
+    p: 'Every page is designed individually for your business — not dropped into a generic template. We write the copy from our discovery conversation, so you don’t have to figure out how to explain your value yourself.',
+  },
+  {
+    h: 'Make it easy to enquire',
+    p: 'Your website includes clear enquiry paths, WhatsApp click-to-chat, and booking or appointment flows where appropriate. Serious prospects don’t have to hunt for the next step.',
+  },
+  {
+    h: 'Know what is actually working',
+    p: 'Analytics and conversion goals are configured from the start, with essential on-page and local SEO groundwork included. You’ll know what your website is doing rather than simply having another online brochure.',
+  },
+  {
+    h: 'No developer chasing',
+    p: 'You get a published day-by-day schedule, a fixed price agreed before work begins, and a defined delivery window. You shouldn’t have to keep asking when your website will be finished.',
+  },
+  {
+    h: 'Built to measurable standards',
+    p: 'We work to stated performance and accessibility standards, including a sub-1.5-second load target, a 90+ Lighthouse target, and WCAG AA contrast and keyboard-accessibility requirements.',
+  },
+  {
+    h: 'You own it',
+    p: 'Your hosting and domain are registered in your own name. You can leave whenever you want. After launch, you get a recorded walkthrough so you can make your own content changes.',
+  },
+];
+
+const PROOF_POINTS = [
+  {
+    h: 'And if we’re late?',
+    p: 'Under the published guarantee terms, late means free.',
+  },
+  {
+    h: 'Proof before purchase',
+    p: 'As the five-niche rollout begins, we’ll build a live demo using your own logo and real business information — before you pay. You don’t have to believe we’re the right studio. You can see it.',
+  },
+];
+
+const OBJECTIONS = [
+  {
+    q: '“Seven days sounds too fast.”',
+    a: 'It isn’t an open-ended promise to build every possible website in seven days. The timeline is tied to a defined scope and a published process, so you know what happens, what we need from you, and when the site is expected to go live.',
+  },
+  {
+    q: '“How do I know the price won’t change?”',
+    a: 'You don’t have to guess. The price is agreed in writing before work begins. No hourly billing, setup fees, per-page charges, or licence fees.',
+  },
+  {
+    q: '“What if you disappear halfway through?”',
+    a: 'We’re the two people you meet and the two people who do the work. Geetha designs. Deepak builds. There’s no junior handoff or account manager standing between you and the people actually delivering the site.',
+  },
+  {
+    q: '“What if I’ve already paid for a website that didn’t bring enquiries?”',
+    a: 'That’s exactly why we don’t position this as simply a prettier website. The build is structured around helping serious prospects understand, trust, and contact your business before you have to personally convince them. We won’t promise a specific number of leads or sales — we will build the website to give those prospects a better reason to choose you.',
+  },
+  {
+    q: '“You don’t have years of case studies in my industry.”',
+    a: 'That’s true — and we’re not going to pretend otherwise. Instead, as we roll into each niche, you’ll be able to see a live working demo built around your own business before you pay. Judge the work. Don’t take our word for it.',
+  },
+  {
+    q: '“Do I actually own the website?”',
+    a: 'Yes. Your hosting and domain are registered in your own account. You’re not locked into us just to keep control of your website.',
+  },
+  {
+    q: '“What if you’re late?”',
+    a: 'That’s where the guarantee matters. Under the published guarantee terms, if we’re late, the build is free.',
+  },
+];
+
+const PROMISES = [
+  'A defined process',
+  'A fixed price',
+  'A defined timeline',
+  'Measurable standards',
+  'Direct delivery',
+  'Client ownership',
+  'Proof before purchase',
+];
+
+const OUTCOMES = [
+  'Serious prospects arrive already convinced.',
+  'Your growth relies less on personal selling.',
+  'Your expertise gets the respect it deserves.',
+  'Your website becomes an asset that keeps working for the business.',
+];
+
+const BUDGET = [
+  { metric: 'Largest Contentful Paint', target: 'Under 1.5s on a 4G connection', value: '<1.5s', Icon: IconTimer },
+  { metric: 'Lighthouse performance', target: '90 or above on mobile', value: '90+', Icon: IconGauge },
+  { metric: 'Cumulative Layout Shift', target: 'Under 0.1', value: '<0.1', Icon: IconLayers },
+  { metric: 'Colour contrast', target: 'WCAG AA on every text style', value: 'AA', Icon: IconContrast },
+  { metric: 'Keyboard access', target: 'Every control reachable and visibly focused', value: '100%', Icon: IconKeyboard },
+  { metric: 'Third-party scripts', target: 'None beyond analytics, unless you ask', value: '0', Icon: IconCode },
+];
+
+export default function Home({ onBook }: { onBook: () => void }) {
   return (
     <>
       <Helmet>
-        <title>Uncoded Hub | Professional No-Code Website Development in 7 Days</title>
-        <meta name="description" content="Get a premium, high-converting business website built in just 7 days. World-class no-code development. E-commerce, medical, spa, restaurant websites. Free consultation and custom quote." />
-        <meta name="keywords" content="no-code website development, webflow developer India, website development Bengaluru, affordable website design, 7-day website delivery, professional website India, small business website, startup website" />
+        <title>Uncoded Hub — Let Your Website Sell Before You Do</title>
+        <meta
+          name="description"
+          content="Fixed-price, fixed-timeline websites for high-value businesses — interior designers, real estate agents, dental &amp; aesthetic clinics, wedding photographers, renovation studios, and coaches &amp; consultants. Live in seven working days, or the build is free."
+        />
         <link rel="canonical" href="https://uncodedhub.com/" />
       </Helmet>
-      
-      <main>
-        {/* SECTION 1: HERO */}
-        <section className="relative pt-40 pb-24 px-6 overflow-hidden min-h-[90vh] flex items-center">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-magenta/10 rounded-full blur-[120px] pointer-events-none"></div>
-          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-cyan/10 rounded-full blur-[100px] pointer-events-none"></div>
-          
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center relative z-10 w-full min-h-[600px]" ref={heroRef}>
-            <div className="w-full lg:w-[55%] space-y-8 relative z-20 pt-10 lg:pt-0">
-              <h1 className="hero-anim font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-2xl">
-                Get More Coaching Clients With a Website That Works While You Sleep
-              </h1>
-              <p className="hero-anim text-lg md:text-xl text-steel max-w-xl leading-relaxed drop-shadow-md">
-                We build world-class coaching websites in 7 days — complete with AI chatbot, SEO setup, and Google My Business. Your coaching practice deserves a digital presence that attracts premium clients 24/7. Guaranteed delivery or you pay nothing.
-              </p>
-              
-              <div className="hero-anim flex flex-col items-start gap-4 pt-4">
-                <div className="flex flex-wrap gap-4">
-                  <button onClick={onOpenModal} className="cyan-energy-btn !text-lg !px-8 !py-4">
-                    Start Your Project <ChevronRight className="w-5 h-5" />
+
+      {/* ── Hero ───────────────────────────────────────────────────
+          Sized to fit one laptop screen. A visitor should be able to
+          read what this is, who it is for, and what it costs them to
+          find out — without scrolling once. Everything here is
+          measured against that, which is why the headline is set at
+          the scale it is and the image is capped rather than left to
+          its natural aspect. */}
+      <section id="hero" className="relative overflow-hidden pt-28 md:pt-32 pb-14 md:pb-16">
+        <Shell>
+          <Reveal>
+            <p className="label text-signal">Websites for high-value local service businesses</p>
+          </Reveal>
+
+          <div className="mt-7 grid lg:grid-cols-12 gap-x-12 gap-y-10 items-center">
+            <div className="lg:col-span-7">
+              <Reveal delay={80}>
+                <h1 className="font-display text-hero max-w-[17ch]">
+                  Let your website <em className="italic hero-signal">sell before you do.</em>
+                </h1>
+              </Reveal>
+              <Reveal delay={160}>
+                <p className="text-lead text-muted max-w-lg mt-6">
+                  You do great work. Your website should make that obvious before a serious
+                  prospect ever calls — at a fixed price, on a fixed timeline, with a real
+                  late-means-free guarantee.
+                </p>
+                <div className="flex flex-wrap items-center gap-3 mt-7">
+                  <button onClick={onBook} className="btn-primary">
+                    Schedule my FREE 20-minute call
                   </button>
-                  <Link to="/portfolio" className="flex items-center gap-2 text-white border border-white/20 hover:bg-white/5 transition-colors px-8 py-4 rounded-xl font-medium">
-                    View Our Work
+                  <Link to="/services" className="btn-ghost">
+                    See what it costs
                   </Link>
                 </div>
-                
-                <div className="mt-8 flex flex-wrap gap-3" ref={addToRefs}>
-                  <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 text-xs font-mono text-cyan backdrop-blur-sm">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> 7-Day Delivery Guarantee
-                  </div>
-                  <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 text-xs font-mono text-cyan backdrop-blur-sm">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> AI-Powered Websites
-                  </div>
-                  <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 text-xs font-mono text-cyan backdrop-blur-sm">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> Built for Coaches
-                  </div>
-                  <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 text-xs font-mono text-cyan backdrop-blur-sm">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> Free Discovery Call
-                  </div>
-                </div>
-              </div>
+              </Reveal>
             </div>
-            
-            <div className="absolute top-0 right-0 w-full h-[350px] md:h-[500px] opacity-30 -z-10 lg:relative lg:w-[50%] lg:h-[700px] lg:opacity-100 lg:z-10 lg:-ml-[5%] pointer-events-none flex justify-center items-center">
-              <WireframeSphere />
-            </div>
-          </div>
-        </section>
 
-        {/* SECTION 1.5: THE PAIN POINT / PARADIGM SHIFT */}
-        <section className="py-24 px-6 relative z-10 border-t border-white/5 bg-midnight">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16 max-w-3xl mx-auto" ref={addToRefs}>
-              <h2 className="font-display text-3xl md:text-5xl font-bold mb-6">Is Your Coaching Practice <span className="text-magenta">Invisible Online?</span></h2>
-              <p className="text-steel text-lg leading-relaxed">
-                Let's be direct. Right now, potential coaching clients are searching for someone exactly like you online. If your website doesn't exist or doesn't build instant trust — they're booking with another coach. A world-class website fixes this permanently.
+            <Reveal delay={220} className="lg:col-span-5">
+              <img
+                src="/hero-section.webp"
+                alt="A business owner reviewing his newly redesigned website on a laptop, pleased with how it turned out"
+                width={1536}
+                height={1024}
+                loading="eager"
+                decoding="async"
+                className="w-full h-56 sm:h-64 lg:h-80 object-cover object-[70%_25%] grayscale border border-rule-strong"
+              />
+            </Reveal>
+          </div>
+
+          <Reveal delay={300}>
+            <dl className="grid grid-cols-2 md:grid-cols-4 gap-px bg-rule border border-rule mt-10">
+              {TRUST.map((t) => (
+                <div key={t.k} className="bg-paper py-4 px-4 md:px-5">
+                  <dt className="text-[0.9375rem] font-medium">{t.k}</dt>
+                  <dd className="label text-muted mt-1.5">{t.v}</dd>
+                </div>
+              ))}
+            </dl>
+          </Reveal>
+        </Shell>
+      </section>
+
+      {/* ── The problem ────────────────────────────────────────── */}
+      <Section tone="ink" size="loose">
+        <Shell width="narrow">
+          <Reveal>
+            <SectionHead
+              index="01"
+              eyebrow="The problem"
+              inverted
+              align="center"
+              title="You shouldn't have to sell your business twice."
+            />
+          </Reveal>
+          <Reveal delay={100}>
+            <div className="mt-14 space-y-6 text-center">
+              <p className="text-lead text-on-ink-muted">
+                Your work is good. Your prospects just don't get enough time to see it.
+              </p>
+              <p className="text-on-ink-muted leading-relaxed max-w-xl mx-auto">
+                A serious buyer finds you on Google, Instagram, or a referral. Then they check your
+                website. In a few seconds, they're deciding whether you look like the business they
+                can trust with a high-value project.
+              </p>
+              <p className="text-on-ink-muted leading-relaxed max-w-xl mx-auto">
+                If your site doesn't make that decision easy, they move on.
+              </p>
+              <p className="text-on-ink-muted leading-relaxed max-w-xl mx-auto">
+                You never hear the rejection. You don't know what you lost. And you end up spending
+                more of your own time chasing, explaining, and convincing the people who do
+                enquire.
               </p>
             </div>
+          </Reveal>
+          <Reveal delay={130}>
+            <img
+              src="/problem.webp"
+              alt="A business owner overwhelmed by unanswered enquiries arriving across WhatsApp, email, Instagram, and missed calls, unable to keep up with them all"
+              width={1536}
+              height={1024}
+              loading="lazy"
+              decoding="async"
+              className="mt-12 w-full h-64 md:h-80 object-cover object-top grayscale border border-rule-on-ink"
+            />
+            <p className="label text-on-ink-muted mt-4 text-center">
+              What it feels like when the enquiries you wanted arrive faster than you can answer them
+            </p>
+          </Reveal>
+          <Reveal delay={160}>
+            <p className="text-lead mt-14 text-center max-w-2xl mx-auto">
+              We know how frustrating it is to watch serious prospects disappear without ever
+              knowing why — especially when you've built genuinely great work. We've seen
+              firsthand how often the first few seconds online decide whether they ever give you
+              the chance to prove it.
+            </p>
+          </Reveal>
+        </Shell>
+      </Section>
 
-            <div className="grid md:grid-cols-2 gap-8" ref={addToRefs}>
-              {/* The Invisible Business (Pain) */}
-              <div className="bg-red-500/5 border border-red-500/20 p-8 md:p-10 rounded-3xl relative overflow-hidden transition-all hover:bg-red-500/10 duration-500">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-[50px] pointer-events-none"></div>
-                <h3 className="font-display text-2xl font-bold mb-8 text-white flex items-center gap-3">
-                  <XCircle className="w-8 h-8 text-red-500" /> The Invisible Business
-                </h3>
-                <ul className="space-y-8">
-                  <li className="flex gap-4 items-start">
-                    <XCircle className="w-6 h-6 text-red-500 shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-bold text-white mb-1.5 text-lg">Losing clients to coaches with better online presence</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-4 items-start">
-                    <XCircle className="w-6 h-6 text-red-500 shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-bold text-white mb-1.5 text-lg">Spending hours explaining your expertise on every call</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-4 items-start">
-                    <XCircle className="w-6 h-6 text-red-500 shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-bold text-white mb-1.5 text-lg">No automated way to capture leads while you sleep</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+      {/* ── The solution ───────────────────────────────────────── */}
+      <Section size="loose">
+        <Shell>
+          <Reveal>
+            <SectionHead
+              index="02"
+              eyebrow="What we believe"
+              title="Your website should make the quality of your work impossible to miss."
+              intro={
+                <>
+                  Not force you to compete with businesses that simply look better online. It
+                  should make the right prospect think, <em className="italic">"These are the
+                  people I want to work with."</em>
+                </>
+              }
+            />
+          </Reveal>
 
-              {/* The Uncoded Hub Partner (Solution) */}
-              <div className="bg-cyan/5 border border-cyan/20 p-8 md:p-10 rounded-3xl relative overflow-hidden transition-all hover:bg-cyan/10 duration-500 shadow-[0_0_30px_rgba(0,229,255,0.05)]">
-                <div className="absolute bottom-0 right-0 w-32 h-32 bg-cyan/10 rounded-full blur-[50px] pointer-events-none"></div>
-                <h3 className="font-display text-2xl font-bold mb-8 text-white flex items-center gap-3">
-                  <CheckCircle2 className="w-8 h-8 text-cyan" /> The Uncoded Hub Standard
-                </h3>
-                <ul className="space-y-8">
-                  <li className="flex gap-4 items-start">
-                    <CheckCircle2 className="w-6 h-6 text-cyan shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-bold text-white mb-1.5 text-lg">A website that positions you as the top coach in your field</p>
-                    </div>
+          {/* Image and the who-we-build-for list sit side by side: it
+              splits what was one dense left-aligned block into two
+              scannable halves, and lets the image run at its own 3:2
+              aspect in a narrower column — shown whole, never cropped. */}
+          <div className="grid lg:grid-cols-12 gap-x-12 gap-y-10 items-center mt-14">
+            <Reveal delay={120} className="lg:col-span-6">
+              <img
+                src="/our-service.webp"
+                alt="A responsive website design shown across a desktop monitor, laptop, tablet, and phone"
+                width={1536}
+                height={1024}
+                loading="lazy"
+                decoding="async"
+                className="w-full aspect-[3/2] object-cover grayscale border border-rule"
+              />
+              <p className="label text-muted mt-4">
+                One design, considered at every width your prospects actually use
+              </p>
+            </Reveal>
+
+            <Reveal delay={180} className="lg:col-span-6">
+              <span className="label text-signal">Who we build for</span>
+              <ul className="mt-6 border-t border-rule">
+                {NICHES.map((n) => (
+                  <li
+                    key={n}
+                    className="flex items-baseline gap-4 py-3.5 border-b border-rule text-[0.9375rem]"
+                  >
+                    <span className="text-signal shrink-0" aria-hidden="true">
+                      —
+                    </span>
+                    {n}
                   </li>
-                  <li className="flex gap-4 items-start">
-                    <CheckCircle2 className="w-6 h-6 text-cyan shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-bold text-white mb-1.5 text-lg">Clients arrive pre-sold on your expertise before the first call</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-4 items-start">
-                    <CheckCircle2 className="w-6 h-6 text-cyan shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-bold text-white mb-1.5 text-lg">AI chatbot captures and qualifies leads 24 hours a day</p>
-                    </div>
-                  </li>
-                </ul>
-                <div className="mt-8 pt-6 border-t border-cyan/10 flex items-center justify-between">
-                  <p className="font-mono text-cyan text-sm font-bold tracking-wider uppercase">Solved in exactly 7 Days.</p>
-                  <button onClick={onOpenModal} className="text-sm font-bold text-white hover:text-cyan transition-colors flex items-center gap-2 group">
-                    Fix this now <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </div>
-            </div>
+                ))}
+              </ul>
+              <p className="text-muted leading-relaxed mt-7">
+                We handle the strategy, copy, design, development, conversion paths, and
+                local-search groundwork — so your website does the convincing before you have to.
+              </p>
+            </Reveal>
           </div>
-        </section>
-
-        {/* SECTION 2: VALUE PROPOSITION */}
-        <section className="py-24 px-6 relative z-10 bg-cyber/30 border-t border-white/5">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">What Makes Us Unique in the Industry</h2>
-              <p className="text-steel text-lg">Building trust through extraordinary readability and user experience</p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="p-8 rounded-3xl frosted-glass border border-white/10 hover:border-cyan/30 transition-all duration-300">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-cyan/10 flex items-center justify-center text-cyan"><Zap className="w-6 h-6" /></div>
-                  <div className="font-mono text-cyan text-sm font-bold tracking-wider">Unmatched Trust</div>
-                </div>
-                <h3 className="font-display text-2xl font-bold mb-4">Readability & Trust</h3>
-                <p className="text-steel leading-relaxed">We don't just build websites; we engineer trust. By mastering readability, spacing, and modern kinetic typography, your digital presence instantly signals premium authority to every visitor.</p>
-              </div>
-              <div className="p-8 rounded-3xl frosted-glass border border-white/10 hover:border-magenta/30 transition-all duration-300">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-magenta/10 flex items-center justify-center text-magenta"><TrendingUp className="w-6 h-6" /></div>
-                  <div className="font-mono text-magenta text-sm font-bold tracking-wider">Zero Bloat</div>
-                </div>
-                <h3 className="font-display text-2xl font-bold mb-4">Bespoke Scalability</h3>
-                <p className="text-steel leading-relaxed">No expensive agency bloat. You get custom, high-end digital solutions powered by cutting-edge no-code technology—ensuring maximum flexibility without the archaic development barriers.</p>
-              </div>
-              <div className="p-8 rounded-3xl frosted-glass border border-white/10 hover:border-white/30 transition-all duration-300">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-white"><Star className="w-6 h-6" /></div>
-                  <div className="font-mono text-white text-sm font-bold tracking-wider">Lightning Deployment</div>
-                </div>
-                <h3 className="font-display text-2xl font-bold mb-4">7-Day Live Execution</h3>
-                <p className="text-steel leading-relaxed">Get your fully functional, visually striking website live in just 7 days. Say goodbye to months of waiting—capture your target market immediately.</p>
-              </div>
-            </div>
+          <div className="grid md:grid-cols-3 gap-px bg-rule mt-16 border border-rule">
+            {SOLUTION_ITEMS.map((item, i) => (
+              <Reveal key={item.h} delay={i * 80} className="bg-paper-raised p-8 md:p-10 card-lift">
+                <span className="label text-signal">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="font-display text-title mt-6">{item.h}</h3>
+                <p className="text-ink-soft leading-relaxed mt-5">{item.p}</p>
+              </Reveal>
+            ))}
           </div>
-        </section>
+          <Reveal delay={220}>
+            <p className="text-lead mt-16 text-center max-w-2xl mx-auto">
+              We don't ask you to take our word for it — we show you exactly what you're getting,
+              build it with you directly, and put our seven-day delivery promise behind a real
+              "late means free" guarantee.
+            </p>
+          </Reveal>
+          <Reveal delay={260}>
+            <p className="font-display text-title mt-8 text-center">
+              The goal isn't another website. It's fewer prospects you have to convince from
+              scratch.
+            </p>
+          </Reveal>
+        </Shell>
+      </Section>
 
-        {/* SECTION 4: HOW IT WORKS */}
-        <section className="py-24 px-6 relative z-10 border-t border-white/5">
-          <div className="max-w-4xl mx-auto" ref={processRef}>
-            <div className="text-center mb-16">
-              <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">From Idea to Launch in 4 Simple Steps</h2>
-              <p className="text-steel text-lg">Our proven process delivers results, on time, every time</p>
-            </div>
-            <div className="relative">
-              <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-cyan via-magenta to-transparent md:-translate-x-1/2"></div>
-              <div className="space-y-12">
+      {/* ── The Better Enquiry Blueprint ───────────────────────── */}
+      <Section tone="sunk" size="loose">
+        <Shell>
+          <Reveal>
+            <SectionHead
+              index="03"
+              eyebrow="The process"
+              title="The Better Enquiry Blueprint."
+              intro="Three steps, published in full — the client's-eye view, not the internal production schedule."
+            />
+          </Reveal>
+          <div className="grid md:grid-cols-3 gap-px bg-rule-strong mt-16 border border-rule-strong">
+            {BLUEPRINT.map((s, i) => (
+              <Reveal key={s.n} delay={i * 90} className="bg-paper p-8 md:p-10 card-lift">
+                <div className="flex items-center justify-between">
+                  <span className="label text-signal">{s.n}</span>
+                  <s.Icon className="w-6 h-6 text-muted" />
+                </div>
+                <h3 className="font-display text-title mt-6">{s.title}</h3>
+                <p className="text-muted leading-relaxed mt-5">{s.body}</p>
+                <p className="text-[0.9375rem] font-medium mt-6 pt-5 border-t border-rule">
+                  {s.benefit}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={280}>
+            <p className="label text-center mt-14">
+              Fixed price · Fixed timeline · Built by us · Owned by you
+            </p>
+          </Reveal>
+        </Shell>
+      </Section>
+
+      {/* ── The guarantee, with its actual terms ───────────────── */}
+      <Section tone="sunk" size="default">
+        <Shell width="narrow">
+          <Reveal className="text-center">
+            <img
+              src="/guarantee.webp"
+              alt="Uncoded Hub's seven-day delivery guarantee certificate: on time or free, signed by Deepak and Geetha"
+              width={1774}
+              height={887}
+              loading="lazy"
+              decoding="async"
+              className="w-full max-w-lg mx-auto border border-rule"
+            />
+          </Reveal>
+          <Reveal delay={60}>
+            <SectionHead
+              index="04"
+              eyebrow="The guarantee"
+              align="center"
+              title="If we are late, you do not pay."
+            />
+          </Reveal>
+
+          <Reveal delay={100}>
+            <p className="text-lead text-muted mt-8 text-center">
+              Not a discount, not a credit toward future work. If your site is not live by the end
+              of day seven, the build is free and you keep it.
+            </p>
+          </Reveal>
+
+          <Reveal delay={160}>
+            <div className="mt-14 bg-paper-raised border border-rule p-8 md:p-10">
+              <span className="label text-muted">The conditions, in full</span>
+              <ul className="mt-6 space-y-4">
                 {[
-                  { step: "1", time: "Days 1-2", title: "Discovery & Strategy", desc: "Deep-dive consultation to understand your coaching business, goals, and target audience. We nail down your offer and positioning." },
-                  { step: "2", time: "Days 3-4", title: "Design & Identity", desc: "Our designers create stunning mockups that bring your vision to life. See exactly how your site will look before we build. Rapid iteration rounds." },
-                  { step: "3", time: "Days 5-6", title: "Development & Systems", desc: "We transform designs into a high-performance website. Chatbots, booking forms, and automations are connected and tested to perfection." },
-                  { step: "4", time: "Day 7", title: "Launch & Support", desc: "Domain connection, SSL certificate, final testing, and launch. Plus, you get training and 30 days of free support to ensure everything is smooth." }
-                ].map((s, index) => (
-                  <div key={s.step} className={`process-step relative flex flex-col md:flex-row items-start md:items-center gap-8 group ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                    <div className="absolute left-0 md:left-1/2 w-14 h-14 rounded-full bg-midnight border-2 border-cyber flex items-center justify-center md:-translate-x-1/2 z-10 group-hover:border-cyan transition-colors duration-300 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
-                      <span className="font-mono font-bold text-sm text-white group-hover:text-cyan transition-colors">S{s.step}</span>
-                    </div>
-                    <div className={`ml-20 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pl-16' : 'md:pr-16 md:text-right'}`}>
-                      <div className="frosted-glass p-6 rounded-2xl transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_15px_40px_rgba(0,229,255,0.1)] group-hover:border-white/30">
-                        <div className="text-cyan text-sm font-mono mb-2">{s.time}</div>
-                        <h3 className="font-display text-xl font-bold mb-2 text-white group-hover:text-cyan transition-colors duration-300">{s.title}</h3>
-                        <p className="text-white/80 text-sm leading-relaxed">{s.desc}</p>
-                      </div>
-                    </div>
+                  'The seven days start the morning after the discovery call, once we have your brand assets and domain access.',
+                  'If we are waiting on feedback or content from you, the clock pauses. It restarts when we hear back.',
+                  'It covers the scope agreed in writing before we start. New pages or features requested mid-build are quoted separately and do not count against the guarantee.',
+                  'It is our deadline, not a rush job. If your project genuinely needs longer than a week, we will tell you that on the call rather than take the work.',
+                ].map((c, i) => (
+                  <li key={i} className="flex gap-5">
+                    <span className="label text-signal pt-1.5 shrink-0">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span className="text-ink-soft leading-relaxed">{c}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        </Shell>
+      </Section>
+
+      {/* ── Features & proof ───────────────────────────────────── */}
+      <Section size="loose">
+        <Shell>
+          <Reveal>
+            <SectionHead
+              index="05"
+              eyebrow="Built for you"
+              title="Built around what matters to you."
+              intro="A website shouldn't create another job for the business owner. It should remove work, uncertainty, and friction."
+            />
+          </Reveal>
+          <div className="mt-16 border-t border-rule-strong">
+            {FEATURES.map((f, i) => (
+              <Reveal
+                key={f.h}
+                delay={i * 50}
+                className="grid md:grid-cols-12 gap-x-10 gap-y-2 py-7 border-b border-rule"
+              >
+                <h3 className="md:col-span-4 text-lead font-medium">{f.h}</h3>
+                <p className="md:col-span-8 text-muted leading-relaxed">{f.p}</p>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* The guarantee and the pre-purchase demo are the two strongest
+              proof points the offer has — a young studio's credibility
+              rests on them more than on any sentence about them, so they
+              get visual weight the rest of the list doesn't. */}
+          <div className="grid md:grid-cols-2 gap-px bg-ink mt-px border border-ink">
+            {PROOF_POINTS.map((f, i) => (
+              <Reveal key={f.h} delay={i * 70} className="bg-ink p-8 md:p-10 card-lift-inv">
+                <h3 className="font-display text-title text-signal-bright">{f.h}</h3>
+                <p className="text-on-ink-muted leading-relaxed mt-4">{f.p}</p>
+              </Reveal>
+            ))}
+          </div>
+        </Shell>
+      </Section>
+
+      {/* ── Standards ──────────────────────────────────────────── */}
+      <Section tone="sunk" size="loose">
+        <Shell>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+            <Reveal className="lg:col-span-5">
+              <SectionHead
+                index="06"
+                eyebrow="Standards"
+                title="The numbers we hold ourselves to."
+              />
+              <p className="text-muted leading-relaxed mt-8">
+                We are a young studio, so we are not going to show you a wall of borrowed logos.
+                What we can do is publish the standard every site we ship has to meet, and invite
+                you to test this page against it right now.
+              </p>
+              <p className="text-muted leading-relaxed mt-5">
+                Open your browser's developer tools, run Lighthouse on this page, and check the
+                numbers yourself. That is a more useful signal than anything we could write here.
+              </p>
+              <div className="mt-10">
+                <Link to="/portfolio" className="link-underline text-ink">
+                  How we prove it without a portfolio →
+                </Link>
+              </div>
+            </Reveal>
+
+            <Reveal delay={120} className="lg:col-span-7">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-px bg-rule border border-rule mb-10">
+                {BUDGET.map((b) => (
+                  <div key={b.metric} className="bg-paper-raised p-5">
+                    <b.Icon className="w-6 h-6 text-signal" />
+                    <span className="font-display text-title block mt-4">{b.value}</span>
+                    <span className="text-xs text-muted leading-snug block mt-1">{b.metric}</span>
                   </div>
                 ))}
               </div>
-            </div>
-            
-            <div className="mt-20 text-center">
-               <Link to="/services" className="cyan-energy-btn !py-3 !px-8">Explore Our Services</Link>
-            </div>
+              <dl className="border-t border-rule-strong">
+                {BUDGET.map((b) => (
+                  <div
+                    key={b.metric}
+                    className="grid grid-cols-[2fr_3fr] gap-6 py-5 border-b border-rule items-center"
+                  >
+                    <dt className="text-[0.9375rem] font-medium">{b.metric}</dt>
+                    <dd className="font-mono text-[0.8125rem] text-muted text-right text-balance">
+                      {b.target}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </Reveal>
           </div>
-        </section>
+        </Shell>
+      </Section>
 
-        {/* SECTION 6: WHY NO-CODE? */}
-        <section className="py-24 px-6 relative z-10 bg-cyber/30 border-t border-white/5">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="font-display text-3xl md:text-5xl font-bold mb-6">The Smarter Way to Build Your Coaching Website</h2>
-              <p className="text-steel text-lg leading-relaxed mb-6">
-                The old way of building websites takes months, costs a fortune, and leaves you waiting while your competitors grow. We changed that completely. Using cutting-edge AI-powered development tools, we build sophisticated, professional coaching websites that would take traditional agencies 3 months — delivered in 7 days flat.
+      {/* ── Objections & trust ─────────────────────────────────── */}
+      <Section tone="ink" size="loose">
+        <Shell>
+          <Reveal>
+            <SectionHead
+              index="07"
+              eyebrow="Worth asking"
+              inverted
+              title="Still wondering if this will actually work?"
+              intro="Good. You should be careful about who you trust with your business."
+            />
+          </Reveal>
+          <div className="mt-16 border-t border-rule-on-ink">
+            {OBJECTIONS.map((o, i) => (
+              <Reveal
+                key={o.q}
+                delay={i * 50}
+                className="grid md:grid-cols-12 gap-x-10 gap-y-3 py-7 border-b border-rule-on-ink"
+              >
+                <h3 className="md:col-span-4 text-lead font-medium">{o.q}</h3>
+                <p className="md:col-span-8 text-on-ink-muted leading-relaxed">{o.a}</p>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={380}>
+            <div className="mt-14 bg-ink p-8 md:p-10 border border-rule-on-ink">
+              <span className="label text-signal-bright">No empty promises</span>
+              <p className="text-on-ink-muted leading-relaxed mt-4 max-w-2xl">
+                We don't have testimonials to manufacture or impressive numbers to put on a page
+                just because they look reassuring. Instead, we show you what can actually be
+                checked.
               </p>
-              <p className="text-steel text-lg leading-relaxed mb-8">
-                The result? A world-class coaching website that positions you as the premium choice in your market — at a fraction of what agencies charge.
-              </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center gap-3 text-white/90">
-                  <Zap className="w-5 h-5 text-cyan" /> 7 Days Exact Delivery — or you pay nothing
-                </li>
-                <li className="flex items-center gap-3 text-white/90">
-                  <MessageCircle className="w-5 h-5 text-magenta" /> AI Chatbot included — captures leads while you sleep
-                </li>
-                <li className="flex items-center gap-3 text-white/90">
-                  <ShieldCheck className="w-5 h-5 text-cyan" /> Transparent fixed pricing — no hidden fees, ever
-                </li>
+              <ul className="flex flex-wrap gap-x-3 gap-y-2 mt-6" aria-hidden="false">
+                {PROMISES.map((p, i) => (
+                  <li key={p} className="flex items-center gap-3">
+                    <span className="label text-on-ink">{p}</span>
+                    {i < PROMISES.length - 1 && (
+                      <span className="w-1 h-1 rounded-full bg-rule-on-ink" aria-hidden="true" />
+                    )}
+                  </li>
+                ))}
               </ul>
             </div>
-            
-            <div ref={addToRefs} className="bg-midnight p-8 rounded-3xl border border-white/10 relative overflow-hidden h-fit">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-magenta/10 rounded-full blur-[50px]"></div>
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-cyan/10 rounded-full blur-[50px]"></div>
-              
-              <h3 className="font-display text-2xl font-bold mb-6 text-white text-center">Traditional Agency vs Uncoded Hub</h3>
-              <div className="space-y-4 relative z-10">
-                <div className="flex justify-between items-center p-3 rounded-xl bg-white/5 border border-white/5">
-                  <span className="text-steel">Timeline</span>
-                  <div className="text-right">
-                    <span className="line-through text-white/30 text-sm mr-2 block text-right">2-3 months</span>
-                    <span className="text-cyan font-bold block">7 days ⚡</span>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center p-3 rounded-xl bg-white/5 border border-white/5">
-                  <span className="text-steel">Pricing</span>
-                  <div className="text-right">
-                    <span className="line-through text-white/30 text-sm mr-2 block text-right">Hidden fees</span>
-                    <span className="text-magenta font-bold block">Fixed upfront 💰</span>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center p-3 rounded-xl bg-white/5 border border-white/5">
-                  <span className="text-steel">Support</span>
-                  <div className="text-right">
-                    <span className="line-through text-white/30 text-sm mr-2 block text-right">Expensive add-on</span>
-                    <span className="text-white font-bold block">Included ✨</span>
-                  </div>
-                </div>
+          </Reveal>
+        </Shell>
+      </Section>
+
+      {/* ── Stakes → positive transformation ───────────────────── */}
+      <Section size="loose">
+        <Shell width="narrow">
+          <Reveal>
+            <SectionHead
+              index="08"
+              eyebrow="What happens next"
+              align="center"
+              title="Every month you wait, the same prospects are still choosing."
+            />
+          </Reveal>
+          <Reveal delay={100}>
+            <div className="mt-12 space-y-5 text-center">
+              <p className="text-lead text-muted">Doing nothing doesn't make the problem disappear.</p>
+              <p className="text-muted leading-relaxed max-w-xl mx-auto">
+                The serious prospect who finds you online is still deciding between you and your
+                competitors. If your website doesn't give them enough reason to trust you, they can
+                choose someone else before you ever get the chance to speak.
+              </p>
+              <p className="text-muted leading-relaxed max-w-xl mx-auto">
+                And your personal selling remains the ceiling. More growth means more chasing. More
+                explaining. More follow-ups. More time away from the work you're actually good at.
+              </p>
+            </div>
+          </Reveal>
+
+        </Shell>
+
+        {/* Shown whole and uncropped, at its own 3:2 aspect. A wider
+            full-bleed crop looked more dramatic but sliced both faces
+            out of frame — and this image only works if you can read the
+            two panels against each other, which is the comparison the
+            copy either side of it is making. */}
+        <Reveal delay={150}>
+          <div className="px-6 md:px-10">
+            <img
+              src="/before-after.webp"
+              alt="Before: a business owner overwhelmed by scattered enquiries piling up. After: the same business owner, relaxed, with a website doing the work for him"
+              width={1536}
+              height={1024}
+              loading="lazy"
+              decoding="async"
+              className="mt-14 w-full max-w-3xl mx-auto aspect-[3/2] object-cover grayscale border border-rule-strong"
+            />
+            <p className="label text-muted mt-4 text-center">
+              The same business, on either side of one working website
+            </p>
+          </div>
+        </Reveal>
+
+        <Shell width="narrow">
+          <Reveal delay={180}>
+            <div className="mt-16 text-center">
+              <p className="text-lead max-w-xl mx-auto">
+                Here's what changes once your website is actually doing that job: the right
+                prospects find you and understand your value before they ever contact you. They've
+                seen the work. They understand what you do. They already trust what they're
+                seeing.
+              </p>
+              <p className="font-display text-title mt-10 max-w-lg mx-auto">
+                You're no longer starting with "Let me convince you." You're starting with "Let's
+                see if we're the right fit."
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={240}>
+            <div className="mt-16 space-y-3 text-center">
+              {OUTCOMES.map((o) => (
+                <p key={o} className="font-display text-title">
+                  {o}
+                </p>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal delay={300}>
+            <p className="font-display text-display mt-16 text-center">A better first conversation.</p>
+          </Reveal>
+        </Shell>
+      </Section>
+
+      {/* ── Studio ─────────────────────────────────────────────── */}
+      <Section tone="sunk">
+        <Shell>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            <Reveal className="lg:col-span-5">
+              <div className="grid grid-cols-2 gap-px bg-rule-strong border border-rule-strong">
+                <img
+                  src="/deepak.webp"
+                  alt="Deepak, co-founder"
+                  width={540}
+                  height={540}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full aspect-[3/4] object-cover bg-paper grayscale"
+                />
+                <img
+                  src="/geetha.webp"
+                  alt="Geetha, co-founder"
+                  width={700}
+                  height={700}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full aspect-[3/4] object-cover object-top bg-paper grayscale"
+                />
               </div>
-            </div>
-          </div>
-        </section>
+            </Reveal>
 
-        {/* SECTION 9: ABOUT PREVIEW */}
-        <section className="py-24 px-6 relative z-10">
-          <div className="max-w-7xl mx-auto bg-gradient-to-br from-cyber to-midnight p-8 md:p-14 rounded-3xl border border-white/10 flex flex-col md:flex-row gap-12 items-center">
-            <div className="md:w-1/2">
-               <h2 className="font-display text-3xl md:text-5xl font-bold mb-6">Meet Your Digital Partners</h2>
-               <p className="text-steel text-lg leading-relaxed mb-8">
-                 Hi! We're Deepak and Geetha — two siblings who built Uncoded Hub with one mission: give coaches and consultants a world-class online presence that actually brings them clients. We've seen too many talented coaches lose business simply because their website didn't reflect the quality of their work. We're changing that, one coach at a time.
-               </p>
-               <Link to="/about" className="cyan-energy-btn !py-3 !px-8">Learn Our Story</Link>
-            </div>
-            <div className="md:w-1/2 flex justify-center">
-               <div className="relative">
-                 <div className="absolute inset-0 bg-cyan/20 blur-[50px] rounded-full"></div>
-                 <div className="aspect-square w-64 md:w-80 rounded-full border-2 border-white/10 overflow-hidden relative z-10 bg-midnight flex flex-col justify-center items-center">
-                    {/* Placeholder for Photo */}
-                    <span className="text-white/50 font-display text-xl text-center px-6">Deepak & Geetha</span>
-                 </div>
-               </div>
-            </div>
+            <Reveal delay={120} className="lg:col-span-7">
+              <SectionHead index="09" eyebrow="The studio" title="Two people. Both of them on your project." />
+              <p className="text-muted leading-relaxed mt-8 max-w-xl">
+                We are Deepak and Geetha, a brother and sister running a two-person studio out of
+                Bengaluru. Geetha designs, Deepak builds, and the person you meet on the discovery
+                call is the person who does the work. There is no account manager between you and
+                the people making decisions about your site, because at two people there is no room
+                for one.
+              </p>
+              <p className="text-muted leading-relaxed mt-5 max-w-xl">
+                It also means we take on a limited number of builds at a time. That is a real
+                constraint, not a scarcity tactic.
+              </p>
+              <div className="mt-10">
+                <Link to="/about" className="link-underline text-ink">
+                  More about how we work →
+                </Link>
+              </div>
+            </Reveal>
           </div>
-        </section>
+        </Shell>
+      </Section>
 
-        <section className="py-24 px-6 relative z-10 bg-midnight border-t border-white/5">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
-              <p className="text-steel text-lg">Quick answers about our 7-day delivery promise.</p>
-            </div>
+      {/* ── FAQ ────────────────────────────────────────────────── */}
+      <Section>
+        <Shell width="narrow">
+          <Reveal>
+            <SectionHead index="10" eyebrow="Questions" title="Asked before every project." />
+          </Reveal>
+          <div className="mt-16">
             <FaqAccordion />
           </div>
-        </section>
+        </Shell>
+      </Section>
 
-        {/* SECTION 10: FINAL CTA */}
-        <section className="py-24 px-6 relative z-10 bg-cyber/80 border-t border-white/5 text-center">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-magenta/10 via-midnight to-midnight pointer-events-none"></div>
-          <div className="max-w-3xl mx-auto relative z-10">
-            <h2 className="font-display text-4xl md:text-6xl font-bold mb-6">Ready to Attract More Coaching Clients Online?</h2>
-            <p className="text-steel text-lg mb-10">Book a free 15-minute discovery call. We'll show you exactly what your coaching website should look like.</p>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-              <button onClick={onOpenModal} className="cyan-energy-btn !px-10 !py-5 !text-xl w-full md:w-auto">
-                Book Your Strategy Call
+      {/* ── Lead magnet ────────────────────────────────────────── */}
+      <Section id="lead-magnet" tone="sunk" size="default">
+        <Shell>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <Reveal className="lg:col-span-7">
+              <SectionHead
+                index="11"
+                eyebrow="Free resource"
+                title="Not ready to book a call? Score your own site first."
+                intro="The Pre-Sold Prospects Audit is the same 10-point trust diagnostic we run for every client before we design or write a single page — turned into something you can run on your own site in 30 minutes."
+              />
+              <ul className="mt-10 space-y-4">
+                {[
+                  'The 10-point trust test we score every client site against',
+                  'A scoring band — Silent Loss, Leaking, or Near Your Ceiling',
+                  'The objections a skeptical prospect is silently thinking before they message you',
+                  'A 20-minute action checklist, one fix per point, ordered by where you scored lowest',
+                ].map((item) => (
+                  <li key={item} className="flex gap-3 text-muted leading-relaxed">
+                    <span className="text-signal mt-1 shrink-0" aria-hidden="true">→</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+
+            <Reveal delay={100} className="lg:col-span-5">
+              <LeadMagnetForm />
+            </Reveal>
+          </div>
+        </Shell>
+      </Section>
+
+      {/* ── Close ──────────────────────────────────────────────── */}
+      <Section tone="ink" size="loose">
+        <Shell width="narrow" className="text-center">
+          <Reveal>
+            <h2 className="font-display text-display">
+              Let your website start selling before you do.
+            </h2>
+            <p className="text-lead text-on-ink-muted mt-8 max-w-xl mx-auto">
+              No deck and no pitch. We ask what your business does, look at what you have now, and
+              tell you plainly whether we can help — including when the answer is no.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
+              <button onClick={onBook} className="btn-primary-inv">
+                Schedule my FREE 20-minute call
               </button>
-              <Link to="/contact" className="px-10 py-4 rounded-xl border border-white/20 text-white font-medium hover:bg-white/5 transition-colors text-xl w-full md:w-auto">
-                Fill Quick Form
+              <Link to="/contact" className="btn-ghost-inv">
+                Send a brief instead
               </Link>
             </div>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-steel">
-              <span>✓ Free consultation</span>
-              <span>✓ Response within 2 hours</span>
-              <span>✓ 100% privacy</span>
-            </div>
-          </div>
-        </section>
-      </main>
+            <p className="label text-on-ink-muted mt-10">
+              Free · No obligation · We reply within one working day
+            </p>
+          </Reveal>
+        </Shell>
+      </Section>
+
+      <FloatingLeadMagnetBanner />
     </>
   );
 }

@@ -1,186 +1,186 @@
-import React, { useState } from 'react';
-import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
-import HoverFooter from './components/ui/hover-footer';
-import { ExpandableTabs } from './components/ui/expandable-tabs';
-import { FloatingWhatsApp } from './components/ui/floating-whatsapp';
-import { Menu, X, Info, MessageCircle, Laptop, Briefcase, ChevronRight, BookOpen, CheckCircle, Calendar, Home as HomeIcon } from 'lucide-react';
-import { supabase } from './lib/supabase';
-import { BookingModal } from './components/ui/booking-modal';
+import { useState, useEffect, lazy, Suspense, useCallback } from 'react';
+import { Routes, Route, Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
+import { Logo, LogoMark } from './components/Logo';
+import SiteFooter from './components/SiteFooter';
+/* Deferred: the dock is not part of the first screen, so it should not
+   be part of the first download either. */
+const EnquiryDock = lazy(() =>
+  import('./components/EnquiryDock').then((m) => ({ default: m.EnquiryDock })),
+);
 
-/* Pages */
+/* Home is the one route not code-split. Every other route only pays a
+   waterfall (fetch main bundle, then fetch the route chunk) once a
+   visitor has already navigated — the JS engine is warm and there is
+   no LCP riding on it. Home is where nearly every visitor lands first,
+   so splitting it added a second network round-trip in front of the
+   hero paragraph that is this site's own LCP element, for content that
+   is already inside the initial bundle budget. Bundling it directly
+   removes that round-trip for the page it actually matters on. */
 import Home from './pages/Home';
-import Services from './pages/Services';
-import Portfolio from './pages/Portfolio';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Blogs from './pages/Blogs';
-import BlogView from './pages/BlogView';
+const Services = lazy(() => import('./pages/Services'));
+const Work = lazy(() => import('./pages/Portfolio'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Blogs = lazy(() => import('./pages/Blogs'));
+const BlogView = lazy(() => import('./pages/BlogView'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+
+/* Paths are unchanged from the previous site so existing links and
+   indexed URLs keep working; only the labels are new. /blog is
+   deliberately absent — it has no content yet, and a permanently empty
+   page linked from every other page is a liability, not an asset. */
+const NAV = [
+  { label: 'Work', path: '/portfolio' },
+  { label: 'Services', path: '/services' },
+  { label: 'Studio', path: '/about' },
+  { label: 'Contact', path: '/contact' },
+];
 
 export default function App() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: '', phone: '', email: '', countryCode: '+91' });
-  
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
-  const navTabs = [
-    { title: "Home", icon: HomeIcon, path: "/" },
-    { title: "Services", icon: Laptop, path: "/services" },
-    { title: "Portfolio", icon: Briefcase, path: "/portfolio" },
-    { title: "Blog", icon: BookOpen, path: "/blog" },
-    { title: "About", icon: Info, path: "/about" },
-    { title: "Contact", icon: MessageCircle, path: "/contact" },
-  ];
+  /* The header sits transparent over the hero and only acquires a
+     ground and a hairline once the page has moved. */
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-  /* Match active tab based on route */
-  /* Exact or startsWith match algorithm depending on if it's the root path */
-  const currentTabIndex = navTabs.findIndex(t => 
-    t.path === '/' ? location.pathname === '/' : location.pathname.startsWith(t.path)
-  );
+  useEffect(() => setMenuOpen(false), [location.pathname]);
 
-  const handleOpenModal = () => {
+  /* Lock the page behind the mobile overlay, and let Escape close it. */
+  useEffect(() => {
+    if (!menuOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setMenuOpen(false);
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [menuOpen]);
+
+  const goToBooking = useCallback(() => {
     navigate('/contact');
-    setTimeout(() => {
-      const formEl = document.getElementById('contact-form-section');
-      if (formEl) {
-        formEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-      }
-    }, 200);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
+    window.requestAnimationFrame(() => {
+      document.getElementById('book')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-midnight text-white selection:bg-magenta/30 selection:text-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
-        <div className="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex items-center justify-between relative shadow-lg">
-          <Link to="/" onClick={closeMobileMenu} className="flex items-center gap-3 z-50 group hover:opacity-80 transition-opacity">
-            <svg width="36" height="36" viewBox="0 0 100 100" className="overflow-visible">
-              <defs>
-                <linearGradient id="logoGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#00F0FF" />
-                  <stop offset="100%" stopColor="#B026FF" />
-                </linearGradient>
-                <filter id="glow">
-                  <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                  <feMerge>
-                    <feMergeNode in="coloredBlur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
-              </defs>
-              <g stroke="url(#logoGrad)" strokeWidth="2" fill="none">
-                <circle cx="50" cy="50" r="40" />
-                <circle cx="50" cy="50" r="20" />
-                <line x1="50" y1="10" x2="50" y2="90" />
-                <line x1="10" y1="50" x2="90" y2="50" />
-                <line x1="21.7" y1="21.7" x2="78.3" y2="78.3" />
-                <line x1="21.7" y1="78.3" x2="78.3" y2="21.7" />
-                <ellipse cx="50" cy="50" rx="40" ry="15" />
-                <ellipse cx="50" cy="50" rx="15" ry="40" />
-              </g>
-              <g fill="url(#logoGrad)">
-                <circle cx="50" cy="10" r="3" />
-                <circle cx="50" cy="90" r="3" />
-                <circle cx="10" cy="50" r="3" />
-                <circle cx="90" cy="50" r="3" />
-                <circle cx="21.7" cy="21.7" r="3" />
-                <circle cx="78.3" cy="78.3" r="3" />
-                <circle cx="21.7" cy="78.3" r="3" />
-                <circle cx="78.3" cy="21.7" r="3" />
-                <circle cx="50" cy="30" r="2.5" />
-                <circle cx="50" cy="70" r="2.5" />
-                <circle cx="30" cy="50" r="2.5" />
-                <circle cx="70" cy="50" r="2.5" />
-                <circle cx="35.8" cy="35.8" r="2.5" />
-                <circle cx="64.2" cy="64.2" r="2.5" />
-                <circle cx="35.8" cy="64.2" r="2.5" />
-                <circle cx="64.2" cy="35.8" r="2.5" />
-              </g>
-              <circle cx="50" cy="50" r="4" fill="#00F0FF" filter="url(#glow)" />
-            </svg>
-            <span className="font-display font-bold text-xl tracking-widest uppercase relative z-50">Uncoded Hub</span>
+    <div className="min-h-screen bg-paper text-ink flex flex-col">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-ink focus:text-paper focus:px-5 focus:py-3 focus:rounded-[3px]"
+      >
+        Skip to content
+      </a>
+
+      {/* ── Header ─────────────────────────────────────────────── */}
+      <header
+        className={`fixed top-0 inset-x-0 z-[100] transition-colors duration-300 ${
+          scrolled || menuOpen
+            ? 'bg-paper/92 backdrop-blur-[2px] border-b border-rule'
+            : 'border-b border-transparent'
+        }`}
+      >
+        <div className="scroll-progress" aria-hidden="true" />
+        <div className="max-w-6xl mx-auto px-6 md:px-10 h-[4.5rem] flex items-center justify-between">
+          {/* inline-flex (not the default inline) so this wraps its
+              content tightly — an inline <a> carries phantom descender
+              space below its content from the surrounding line box,
+              which pushed the logo group a few px above true vertical
+              centre in the header. */}
+          <Link to="/" aria-label="Uncoded Hub — home" className="shrink-0 brand-link inline-flex items-center">
+            <Logo />
           </Link>
-          
-          <div className="hidden lg:flex items-center gap-6">
-            <div className="flex items-center gap-1 bg-midnight/80 rounded-2xl p-1.5 border border-white/5">
-              {navTabs.map((tab, idx) => {
-                const isActive = currentTabIndex === idx;
-                const Icon = tab.icon;
-                return (
-                  <Link
-                    key={tab.path}
-                    to={tab.path}
-                    className={`flex items-center px-4 md:px-5 py-2.5 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 ${
-                      isActive 
-                        ? 'bg-white/10 text-white shadow-sm' 
-                        : 'text-steel hover:text-cyan hover:bg-cyan/5'
-                    }`}
-                  >
-                    <span className={isActive ? 'text-white' : ''}>{tab.title}</span>
-                  </Link>
-                );
-              })}
-            </div>
-            <button onClick={handleOpenModal} className="cyan-energy-btn !py-2.5 !px-6 !text-sm !font-medium shrink-0 ml-2">
-              Start Project
-            </button>
-          </div>
 
-          <div className="flex lg:hidden items-center gap-3 z-50">
-            <button onClick={handleOpenModal} className="cyan-energy-btn !py-1.5 !px-4 !text-xs !font-medium shrink-0 rounded-lg">
-              Start
+          <nav aria-label="Primary" className="hidden md:flex items-center gap-9">
+            {NAV.map((item) => (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={({ isActive }) =>
+                  `text-[0.9375rem] link-quiet ${isActive ? 'text-signal' : 'text-ink-soft hover:text-ink'}`
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
+            <button onClick={goToBooking} className="btn-primary !px-6 !py-2.5">
+              Book a call
             </button>
-            <button aria-expanded={isMobileMenuOpen} aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-white hover:text-cyan transition-colors">
-              {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-            </button>
-          </div>
+          </nav>
 
-          {/* Mobile Dropdown Menu */}
-          <div className={`absolute top-full left-4 right-4 mt-2 bg-midnight/95 backdrop-blur-xl border border-white/10 rounded-2xl p-2 flex flex-col gap-1 shadow-2xl transition-all origin-top duration-300 lg:hidden ${isMobileMenuOpen ? 'scale-y-100 opacity-100 visible' : 'scale-y-0 opacity-0 invisible'}`}>
-             <Link to="/" onClick={closeMobileMenu} className="text-sm font-semibold tracking-wide py-3 px-4 rounded-xl hover:bg-white/5 hover:text-cyan text-steel transition-colors flex items-center justify-between">HOME <ChevronRight className="w-4 h-4 opacity-30" /></Link>
-             <Link to="/services" onClick={closeMobileMenu} className="text-sm font-semibold tracking-wide py-3 px-4 rounded-xl hover:bg-white/5 hover:text-cyan text-steel transition-colors flex items-center justify-between">SERVICES <ChevronRight className="w-4 h-4 opacity-30" /></Link>
-             <Link to="/portfolio" onClick={closeMobileMenu} className="text-sm font-semibold tracking-wide py-3 px-4 rounded-xl hover:bg-white/5 hover:text-cyan text-steel transition-colors flex items-center justify-between">PORTFOLIO <ChevronRight className="w-4 h-4 opacity-30" /></Link>
-             <Link to="/blog" onClick={closeMobileMenu} className="text-sm font-semibold tracking-wide py-3 px-4 rounded-xl hover:bg-white/5 hover:text-cyan text-steel transition-colors flex items-center justify-between">BLOG <ChevronRight className="w-4 h-4 opacity-30" /></Link>
-             <Link to="/about" onClick={closeMobileMenu} className="text-sm font-semibold tracking-wide py-3 px-4 rounded-xl hover:bg-white/5 hover:text-cyan text-steel transition-colors flex items-center justify-between">ABOUT <ChevronRight className="w-4 h-4 opacity-30" /></Link>
-             <Link to="/contact" onClick={closeMobileMenu} className="text-sm font-semibold tracking-wide py-3 px-4 rounded-xl hover:bg-white/5 hover:text-cyan text-steel transition-colors flex items-center justify-between">CONTACT <ChevronRight className="w-4 h-4 opacity-30" /></Link>
-             <div className="pt-2 px-2 pb-2 mt-1 border-t border-white/5">
-                <button onClick={() => { handleOpenModal(); closeMobileMenu(); }} className="w-full text-sm font-bold py-3.5 px-4 rounded-xl text-white bg-gradient-to-r from-[#00F0FF] to-[#B026FF] shadow-lg shadow-cyan/20 transition-all hover:scale-[1.02]">START A PROJECT</button>
-             </div>
-          </div>
+          <button
+            className="md:hidden label text-ink-soft py-2"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            {menuOpen ? 'Close' : 'Menu'}
+          </button>
         </div>
-      </nav>
+      </header>
 
-      {/* Pages Router */}
-      <Routes>
-        <Route path="/" element={<Home onOpenModal={handleOpenModal} />} />
-        <Route path="/services" element={<Services onOpenModal={handleOpenModal} />} />
-        <Route path="/portfolio" element={<Portfolio onOpenModal={handleOpenModal} />} />
-        <Route path="/about" element={<About onOpenModal={handleOpenModal} />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/blog" element={<Blogs />} />
-        <Route path="/blog/:slug" element={<BlogView />} />
-      </Routes>
+      {/* ── Mobile navigation ──────────────────────────────────── */}
+      <div
+        id="mobile-nav"
+        hidden={!menuOpen}
+        className="fixed inset-0 z-[99] bg-paper md:hidden pt-[4.5rem] flex flex-col"
+      >
+        <nav aria-label="Mobile" className="flex-1 px-6 pt-10 flex flex-col">
+          {NAV.map((item, i) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className="font-display text-[2.5rem] leading-[1.25] py-3 border-b border-rule flex items-baseline gap-5"
+            >
+              <span className="label text-muted">{String(i + 1).padStart(2, '0')}</span>
+              {item.label}
+            </Link>
+          ))}
+          <button onClick={goToBooking} className="btn-primary w-full mt-10">
+            Book a call
+          </button>
+          <p className="label text-muted mt-auto pb-10 pt-12">
+            hello@uncodedhub.com · +91 86608 19023
+          </p>
+        </nav>
+      </div>
 
-      {/* Footer */}
-      <HoverFooter />
+      {/* ── Routes ─────────────────────────────────────────────── */}
+      <main id="main" className="flex-1">
+        <Suspense
+          fallback={
+            <div className="min-h-screen flex items-center justify-center">
+              <LogoMark size={28} className="animate-pulse" />
+            </div>
+          }
+        >
+          <Routes>
+            <Route path="/" element={<Home onBook={goToBooking} />} />
+            <Route path="/services" element={<Services onBook={goToBooking} />} />
+            <Route path="/portfolio" element={<Work onBook={goToBooking} />} />
+            <Route path="/about" element={<About onBook={goToBooking} />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blogs />} />
+            <Route path="/blog/:slug" element={<BlogView />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </main>
 
-      {/* WhatsApp Chatbot */}
-      <FloatingWhatsApp />
-
-
-
-      {/* Custom Google Meet Booking Modal */}
-      <BookingModal 
-        isOpen={isBookingOpen} 
-        onClose={() => setIsBookingOpen(false)} 
-      />
+      <SiteFooter />
+      <Suspense fallback={null}>
+        <EnquiryDock />
+      </Suspense>
     </div>
   );
 }
