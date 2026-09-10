@@ -2,6 +2,7 @@ import { useState, useEffect, lazy, Suspense, useCallback } from 'react';
 import { Routes, Route, Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { Logo, LogoMark } from './components/Logo';
 import SiteFooter from './components/SiteFooter';
+import { getAllPosts } from './lib/blog';
 /* Deferred: the dock is not part of the first screen, so it should not
    be part of the first download either. */
 const EnquiryDock = lazy(() =>
@@ -26,13 +27,14 @@ const BlogView = lazy(() => import('./pages/BlogView'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 /* Paths are unchanged from the previous site so existing links and
-   indexed URLs keep working; only the labels are new. /blog is
-   deliberately absent — it has no content yet, and a permanently empty
-   page linked from every other page is a liability, not an asset. */
+   indexed URLs keep working; only the labels are new. /blog only joins
+   NAV once a real post exists — a permanently empty page linked from
+   every other page is a liability, not an asset. */
 const NAV = [
   { label: 'Work', path: '/portfolio' },
   { label: 'Services', path: '/services' },
   { label: 'Studio', path: '/about' },
+  ...(getAllPosts().length > 0 ? [{ label: 'Journal', path: '/blog' }] : []),
   { label: 'Contact', path: '/contact' },
 ];
 

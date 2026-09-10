@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  /blog is deliberately absent. It has no articles and carries a noindex
-  until it does; submitting an empty page to Google helps nobody.
-  Add it back here at the same time you remove the noindex.
--->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://uncodedhub.com/</loc>
