@@ -9,5 +9,18 @@
       "Bash(python -c ' *)",
       "Bash(node C:/Users/LENOVO/AppData/Local/Temp/claude/bundled-skills/2.1.263/547860bba1cd6e766cc87fa5358487b1/design/seed-canvas.mjs --template C:/Users/LENOVO/AppData/Local/Temp/claude/bundled-skills/2.1.263/547860bba1cd6e766cc87fa5358487b1/design/payload.template.html --out lead-magnet-pdf.html --title 'Pre-Sold Prospects Audit PDF' --artboard Main.dc.html --image c:/Users/LENOVO/Downloads/uncoded-hub/public/logo-large.webp --image 'c:/Users/LENOVO/Downloads/uncoded-hub/Lead Magnet/cover-illustration-optimized.jpg' --canvas canvas.json)"
     ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/check-gstack.sh\""
+          }
+        ]
+      }
+    ]
   }
 }

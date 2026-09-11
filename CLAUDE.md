@@ -33,3 +33,16 @@ material, as one of the things that kills momentum and lead magnets specifically
 ("analysis paralysis," starting over on a "perfect" new thing instead of shipping the
 one already 90% done). This file exists so that discipline is enforced automatically,
 not something the owner has to keep re-asserting.
+
+## gstack
+
+Use /browse from gstack for all web browsing. Never use mcp__claude-in-chrome__* tools.
+Available skills: /office-hours, /plan-ceo-review, /plan-eng-review, /plan-design-review,
+/design-consultation, /design-shotgun, /design-html, /review, /ship, /land-and-deploy,
+/canary, /benchmark, /benchmark-models, /browse, /open-gstack-browser, /connect-chrome,
+/qa, /qa-only, /design-review, /scrape, /skillify, /setup-browser-cookies, /setup-deploy,
+/setup-gbrain, /sync-gbrain, /retro, /investigate, /document-release, /document-generate,
+/codex, /cso, /autoplan, /spec, /plan-tune, /plan-devex-review, /devex-review, /careful,
+/freeze, /guard, /unfreeze, /gstack-upgrade, /learn, /health, /diagram, /make-pdf,
+/context-save, /context-restore, /pair-agent, /landing-report, /ios-qa, /ios-fix,
+/ios-design-review, /ios-clean, /ios-sync.
