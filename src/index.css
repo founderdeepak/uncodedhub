@@ -354,6 +354,105 @@ body {
   transform: translateY(-2px);
 }
 
+/* ── Tile hover. For borderless mosaic-grid cells (stat tiles, budget
+      tiles) sharing hairlines via gap-px + bg-rule — card-lift's
+      translateY would misalign those shared lines, so this shifts
+      background and accent colour only. ─────────────────────────── */
+.tile-hover {
+  transition: background-color 0.3s var(--ease-out-quint);
+}
+.tile-hover:hover {
+  background-color: var(--color-paper-sunk);
+}
+.tile-hover .tile-hover-accent {
+  transition: color 0.3s var(--ease-out-quint);
+}
+.tile-hover:hover .tile-hover-accent {
+  color: var(--color-signal);
+}
+
+/* ── Row hover. Plain list rows (no border of their own, just a shared
+      bottom rule) that should still signal they carry information worth
+      pausing on — a quiet background tint, nothing structural. ────── */
+.row-hover {
+  transition: background-color 0.3s var(--ease-out-quint);
+}
+.row-hover:hover {
+  background-color: var(--color-paper-sunk);
+}
+
+/* ── Photo hover. The site's portrait photography ships desaturated by
+      default (see About.tsx / Home.tsx); hovering brings it to colour,
+      the classic editorial gesture of a photo "waking up" under
+      attention rather than a static ID-card treatment. ────────────── */
+.photo-hover {
+  transition: filter 0.5s var(--ease-out-quint);
+}
+.photo-hover:hover {
+  filter: grayscale(0);
+}
+
+/* ── Pop-in. For content that replaces itself on state change rather
+      than scrolling into view — a form's success state, a booking
+      confirmation — where Reveal's IntersectionObserver would find the
+      element already in the viewport and skip straight to "shown",
+      producing no visible transition at all. Plays once on mount. ─── */
+.pop-in {
+  animation: pop-in 0.45s var(--ease-out-quint) both;
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── Spinner. One small CSS-only ring for the rare moment something is
+      genuinely in flight (checking live availability, sending a form) —
+      not decorative, only used where there is a real wait to signal.
+      Built from currentColor with one edge cut transparent, so it reads
+      correctly in any text colour context (a muted label, a light-on-
+      dark button) with no separate light/dark variant needed. ─────── */
+.spinner {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1.5px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  opacity: 0.85;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Mobile nav. Was a hard `hidden` toggle (display:none has nothing
+      to transition). visibility's own zero-duration, delayed transition
+      is the standard way to animate an overlay while still removing it
+      from hit-testing and the tab order when closed — same practical
+      effect as `hidden`, but animatable. ─────────────────────────── */
+.mobile-nav {
+  opacity: 0;
+  transform: translateY(-8px);
+  visibility: hidden;
+  transition: opacity 0.25s var(--ease-out-quint), transform 0.25s var(--ease-out-quint),
+    visibility 0s linear 0.25s;
+}
+.mobile-nav.mobile-nav-open {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  transition: opacity 0.25s var(--ease-out-quint), transform 0.25s var(--ease-out-quint);
+}
+
 /* ── Scroll progress. A hairline that fills across the header's
       bottom edge as the page scrolls — a small, on-brand instrument
       rather than a decoration. animation-timeline: scroll() is a

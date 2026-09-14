@@ -134,8 +134,8 @@ export default function App() {
       {/* ── Mobile navigation ──────────────────────────────────── */}
       <div
         id="mobile-nav"
-        hidden={!menuOpen}
-        className="fixed inset-0 z-[99] bg-paper md:hidden pt-[4.5rem] flex flex-col"
+        aria-hidden={!menuOpen}
+        className={`mobile-nav ${menuOpen ? 'mobile-nav-open' : ''} fixed inset-0 z-[99] bg-paper md:hidden pt-[4.5rem] flex flex-col`}
       >
         <nav aria-label="Mobile" className="flex-1 px-6 pt-10 flex flex-col">
           {NAV.map((item, i) => (

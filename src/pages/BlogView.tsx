@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link, useParams } from 'react-router-dom';
 import { Reveal, Shell } from '../components/primitives';
 import { getPostBySlug, NICHES } from '../lib/blog';
+import BlogThumbnail from '../components/ui/BlogThumbnail';
 
 /* ═══════════════════════════════════════════════════════════════════
    ARTICLE
@@ -86,6 +87,23 @@ export default function BlogView() {
               })}{' '}
               · {post.readingMinutes} min read
             </p>
+          </Reveal>
+
+          <Reveal delay={40} className="mt-12">
+            {post.image ? (
+              <img
+                src={post.image}
+                alt=""
+                width={1600}
+                height={900}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                className="w-full aspect-video object-cover grayscale border border-rule-strong"
+              />
+            ) : (
+              <BlogThumbnail niche={post.niche} size="hero" />
+            )}
           </Reveal>
 
           <Reveal delay={80} className="mt-14 pt-14 border-t border-rule">

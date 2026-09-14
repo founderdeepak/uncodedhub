@@ -227,7 +227,7 @@ export default function Services({ onBook }: { onBook: () => void }) {
               <Reveal
                 key={k}
                 delay={i * 60}
-                className="grid md:grid-cols-12 gap-x-10 gap-y-2 py-7 border-b border-rule"
+                className="row-hover grid md:grid-cols-12 gap-x-10 gap-y-2 py-7 px-3 -mx-3 border-b border-rule"
               >
                 <h3 className="md:col-span-4 text-lead font-medium">{k}</h3>
                 <p className="md:col-span-8 text-muted leading-relaxed">{v}</p>

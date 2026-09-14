@@ -35,6 +35,7 @@ export interface BlogPost {
   date: string;
   excerpt: string;
   metaDescription: string;
+  image?: string;
   html: string;
   readingMinutes: number;
 }
@@ -88,6 +89,7 @@ function loadPosts(): BlogPost[] {
       date: data.date,
       excerpt: data.excerpt ?? '',
       metaDescription: data.metaDescription || data.excerpt || data.title,
+      image: data.image || undefined,
       html: marked.parse(body, { async: false }) as string,
       readingMinutes: Math.max(1, Math.round(words / 200)),
     });

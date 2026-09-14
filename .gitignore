@@ -7,3 +7,10 @@ coverage/
 .env*
 !.env.example
 BUILDS/
+
+# Local tooling/scratch artifacts
+.playwright-cli/
+.claude/skills/playwright-cli/
+cli-code-claude.txt
+DESIGN.md
+UncodedHub_Content/

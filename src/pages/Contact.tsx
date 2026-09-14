@@ -202,7 +202,7 @@ function BriefForm() {
 
   if (status === 'sent') {
     return (
-      <div className="border border-rule-strong bg-paper-raised p-10 md:p-14">
+      <div className="pop-in border border-rule-strong bg-paper-raised p-10 md:p-14">
         <span className="label text-signal">Received</span>
         <h3 className="font-display text-display mt-5">Thanks, {form.name.split(' ')[0]}.</h3>
         <p className="text-muted leading-relaxed mt-6 max-w-md">
@@ -282,6 +282,7 @@ function BriefForm() {
 
       <div className="flex flex-wrap items-center gap-6 pt-2">
         <button type="submit" disabled={status === 'sending'} className="btn-primary disabled:opacity-55">
+          {status === 'sending' && <span className="spinner" aria-hidden="true" />}
           {status === 'sending' ? 'Sending…' : 'Send the brief'}
         </button>
         <p className="label text-muted">Replies within one working day</p>

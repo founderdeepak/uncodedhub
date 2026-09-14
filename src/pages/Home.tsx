@@ -248,8 +248,8 @@ export default function Home({ onBook }: { onBook: () => void }) {
           <Reveal delay={300}>
             <dl className="grid grid-cols-2 md:grid-cols-4 gap-px bg-rule border border-rule mt-10">
               {TRUST.map((t) => (
-                <div key={t.k} className="bg-paper py-4 px-4 md:px-5">
-                  <dt className="text-[0.9375rem] font-medium">{t.k}</dt>
+                <div key={t.k} className="tile-hover bg-paper py-4 px-4 md:px-5">
+                  <dt className="tile-hover-accent text-[0.9375rem] font-medium">{t.k}</dt>
                   <dd className="label text-muted mt-1.5">{t.v}</dd>
                 </div>
               ))}
@@ -554,8 +554,8 @@ export default function Home({ onBook }: { onBook: () => void }) {
             <Reveal delay={120} className="lg:col-span-7">
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-px bg-rule border border-rule mb-10">
                 {BUDGET.map((b) => (
-                  <div key={b.metric} className="bg-paper-raised p-5">
-                    <b.Icon className="w-6 h-6 text-signal" />
+                  <div key={b.metric} className="tile-hover bg-paper-raised p-5">
+                    <b.Icon className="tile-hover-accent w-6 h-6 text-signal" />
                     <span className="font-display text-title block mt-4">{b.value}</span>
                     <span className="text-xs text-muted leading-snug block mt-1">{b.metric}</span>
                   </div>
@@ -565,7 +565,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                 {BUDGET.map((b) => (
                   <div
                     key={b.metric}
-                    className="grid grid-cols-[2fr_3fr] gap-6 py-5 border-b border-rule items-center"
+                    className="row-hover grid grid-cols-[2fr_3fr] gap-6 py-5 px-2 -mx-2 border-b border-rule items-center"
                   >
                     <dt className="text-[0.9375rem] font-medium">{b.metric}</dt>
                     <dd className="font-mono text-[0.8125rem] text-muted text-right text-balance">
@@ -721,7 +721,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                   height={540}
                   loading="lazy"
                   decoding="async"
-                  className="w-full aspect-[3/4] object-cover bg-paper grayscale"
+                  className="photo-hover w-full aspect-[3/4] object-cover bg-paper grayscale"
                 />
                 <img
                   src="/geetha.webp"
@@ -730,7 +730,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                   height={700}
                   loading="lazy"
                   decoding="async"
-                  className="w-full aspect-[3/4] object-cover object-top bg-paper grayscale"
+                  className="photo-hover w-full aspect-[3/4] object-cover object-top bg-paper grayscale"
                 />
               </div>
             </Reveal>

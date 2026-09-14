@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Reveal, Shell } from '../components/primitives';
 import { getAllPosts, NICHES, type NicheKey } from '../lib/blog';
+import BlogThumbnail from '../components/ui/BlogThumbnail';
 
 /* ═══════════════════════════════════════════════════════════════════
    JOURNAL — list view
@@ -125,6 +126,19 @@ export default function Blogs() {
             {visible.map((post, i) => (
               <Reveal key={post.slug} delay={i * 60} as="article">
                 <Link to={`/blog/${post.slug}`} className="group block">
+                  {post.image ? (
+                    <img
+                      src={post.image}
+                      alt=""
+                      width={880}
+                      height={495}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full aspect-video object-cover grayscale border border-rule-strong mb-5"
+                    />
+                  ) : (
+                    <BlogThumbnail niche={post.niche} size="card" className="mb-5" />
+                  )}
                   <span className="label text-signal">{NICHES[post.niche]}</span>
                   <h2 className="font-display text-title mt-4 group-hover:text-signal transition-colors">
                     {post.title}

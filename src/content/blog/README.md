@@ -40,6 +40,7 @@ isn't tied to one vertical:
 
 - `metaDescription` — overrides `excerpt` for the `<meta name="description">` tag specifically, if you want the on-page summary and the search-result summary to read differently.
 - `draft: true` — keeps the post out of the live site (and out of the sitemap) until it's ready. Remove the line, or set it to `false`, to publish.
+- `image` — path to a hero/thumbnail image (e.g. `/blog/my-post-slug.webp`), shown on the journal listing card and above the article body. The site renders it grayscale with a hairline border to match every other photo on the site (see `About.tsx` / `Home.tsx`). Omit it and the post just has no image — nothing breaks.
 
 ## What NOT to do
 

@@ -199,7 +199,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
               <Reveal
                 key={s.step}
                 delay={i * 70}
-                className="grid md:grid-cols-12 gap-x-10 gap-y-3 py-9 border-b border-rule"
+                className="row-hover grid md:grid-cols-12 gap-x-10 gap-y-3 py-9 px-3 -mx-3 border-b border-rule"
               >
                 <div className="md:col-span-1">
                   <span className="label text-signal">{String(i + 1).padStart(2, '0')}</span>
@@ -241,7 +241,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
                 ['Direct access', 'Both founders on WhatsApp for the duration of the build. Not a ticket queue.'],
                 ['Your say in the case study', 'If we write your project up, you approve every word and every number before it is published — and you can decline entirely.'],
               ].map(([k, v]) => (
-                <div key={k} className="p-7 md:p-8">
+                <div key={k} className="row-hover p-7 md:p-8">
                   <span className="label text-signal">{k}</span>
                   <p className="text-ink-soft leading-relaxed mt-3">{v}</p>
                 </div>

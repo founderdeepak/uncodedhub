@@ -324,7 +324,7 @@ export function BookingCalendar({ host }: { host: Host }) {
 
   if (step === 'done') {
     return (
-      <div className="border border-rule-strong bg-paper-raised p-10 md:p-16 text-center">
+      <div className="pop-in border border-rule-strong bg-paper-raised p-10 md:p-16 text-center">
         <span className="label text-signal">Confirmed</span>
         <h2 className="font-display text-display mt-6">
           You are booked with {host.name}.
@@ -358,7 +358,7 @@ export function BookingCalendar({ host }: { host: Host }) {
           width={80}
           height={80}
           loading="lazy"
-          className="w-14 h-14 object-cover object-[50%_20%] grayscale border border-rule-strong shrink-0"
+          className="photo-hover w-14 h-14 object-cover object-[50%_20%] grayscale border border-rule-strong shrink-0"
         />
         <div>
           <span className="label text-signal">{host.role}</span>
@@ -495,7 +495,10 @@ export function BookingCalendar({ host }: { host: Host }) {
             )}
 
             {loadingAvailability && (
-              <p className="label text-muted mt-4">Checking live availability…</p>
+              <p className="label text-muted mt-4 flex items-center gap-2.5">
+                <span className="spinner" aria-hidden="true" />
+                Checking live availability…
+              </p>
             )}
 
             {slots.length === 0 ? (
