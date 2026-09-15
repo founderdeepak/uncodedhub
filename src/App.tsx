@@ -2,7 +2,7 @@ import { useState, useEffect, lazy, Suspense, useCallback } from 'react';
 import { Routes, Route, Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { Logo, LogoMark } from './components/Logo';
 import SiteFooter from './components/SiteFooter';
-import { getAllPosts } from './lib/blog';
+import { hasBlogPosts } from './lib/blogNav';
 /* Deferred: the dock is not part of the first screen, so it should not
    be part of the first download either. */
 const EnquiryDock = lazy(() =>
@@ -34,7 +34,7 @@ const NAV = [
   { label: 'Work', path: '/portfolio' },
   { label: 'Services', path: '/services' },
   { label: 'Studio', path: '/about' },
-  ...(getAllPosts().length > 0 ? [{ label: 'Journal', path: '/blog' }] : []),
+  ...(hasBlogPosts ? [{ label: 'Journal', path: '/blog' }] : []),
   { label: 'Contact', path: '/contact' },
 ];
 

@@ -15,6 +15,22 @@
  *    - `leads_backup`
  */
 
+/**
+ * Every field below (record.name, record.email, record.project_details, ...)
+ * came from a public, unauthenticated form submission — escape it before it
+ * ever touches an HTML string. Without this, a submitted name or message
+ * like `<a href="https://phish.example">...</a>` would render as a live,
+ * clickable link inside emails sent to staff and to the lead themselves.
+ */
+function escapeHtml(value) {
+  return String(value == null ? '' : value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 function doPost(e) {
   try {
     var payload = JSON.parse(e.postData.contents);
@@ -36,9 +52,9 @@ function doPost(e) {
       
       extraDataBody = `
         <tr><td style="padding: 10px 0; font-weight: 600; color: #00f0ff;" colspan="2">Chat Bot Automation Answers:</td></tr>
-        <tr><td style="padding: 6px 15px; color: #00f0ff; font-weight: 600;" colspan="2">Q1 (Goal): <span style="color: #ffffff !important; font-weight: 400;">${record.q1_answer || 'N/A'}</span></td></tr>
-        <tr><td style="padding: 6px 15px; color: #00f0ff; font-weight: 600;" colspan="2">Q2 (Timeline): <span style="color: #ffffff !important; font-weight: 400;">${record.q2_answer || 'N/A'}</span></td></tr>
-        <tr><td style="padding: 6px 15px; color: #00f0ff; font-weight: 600; border-bottom: 1px solid #ffffff1a;" colspan="2">Q3 (Budget): <span style="color: #ffffff !important; font-weight: 400;">${record.q3_answer || 'N/A'}</span></td></tr>
+        <tr><td style="padding: 6px 15px; color: #00f0ff; font-weight: 600;" colspan="2">Q1 (Goal): <span style="color: #ffffff !important; font-weight: 400;">${escapeHtml(record.q1_answer) || 'N/A'}</span></td></tr>
+        <tr><td style="padding: 6px 15px; color: #00f0ff; font-weight: 600;" colspan="2">Q2 (Timeline): <span style="color: #ffffff !important; font-weight: 400;">${escapeHtml(record.q2_answer) || 'N/A'}</span></td></tr>
+        <tr><td style="padding: 6px 15px; color: #00f0ff; font-weight: 600; border-bottom: 1px solid #ffffff1a;" colspan="2">Q3 (Budget): <span style="color: #ffffff !important; font-weight: 400;">${escapeHtml(record.q3_answer) || 'N/A'}</span></td></tr>
       `;
     } else if (table === "contact_submissions") {
       // Bookings write to this same table via submitLead() so a copy is
@@ -78,21 +94,21 @@ function doPost(e) {
           <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
             <tr style="border-bottom: 1px solid #ffffff1a;">
               <td style="padding: 12px 0; font-weight: 600; width: 30%; color: #00f0ff;">Name:</td>
-              <td style="padding: 12px 0; color: #ffffff !important; font-weight: 500;">${record.name || 'N/A'}</td>
+              <td style="padding: 12px 0; color: #ffffff !important; font-weight: 500;">${escapeHtml(record.name) || 'N/A'}</td>
             </tr>
             <tr style="border-bottom: 1px solid #ffffff1a;">
               <td style="padding: 12px 0; font-weight: 600; color: #00f0ff;">Email:</td>
-              <td style="padding: 12px 0;"><a href="mailto:${record.email}" style="color: #ffffff !important; text-decoration: underline; font-weight: 500;">${record.email || 'N/A'}</a></td>
+              <td style="padding: 12px 0;"><a href="mailto:${encodeURIComponent(record.email || '')}" style="color: #ffffff !important; text-decoration: underline; font-weight: 500;">${escapeHtml(record.email) || 'N/A'}</a></td>
             </tr>
             <tr style="border-bottom: 1px solid #ffffff1a;">
               <td style="padding: 12px 0; font-weight: 600; color: #00f0ff;">Phone:</td>
-              <td style="padding: 12px 0; color: #ffffff !important; font-weight: 500;">${record.phone || 'N/A'}</td>
+              <td style="padding: 12px 0; color: #ffffff !important; font-weight: 500;">${escapeHtml(record.phone) || 'N/A'}</td>
             </tr>
             <tr style="border-bottom: 1px solid #ffffff1a;">
               <td style="padding: 12px 0; font-weight: 600; color: #00f0ff;">Business:</td>
-              <td style="padding: 12px 0; color: #ffffff !important; font-weight: 500;">${record.business_type || record.department || 'N/A'}</td>
+              <td style="padding: 12px 0; color: #ffffff !important; font-weight: 500;">${escapeHtml(record.business_type || record.department) || 'N/A'}</td>
             </tr>
-            
+
             ${extraDataBody}
 
             <tr>
@@ -100,23 +116,28 @@ function doPost(e) {
             </tr>
             <tr>
               <td style="padding: 15px; background: #ffffff0a; border-radius: 8px; line-height: 1.5; border: 1px solid #ffffff1a; color: #ffffff !important; font-style: italic; font-weight: 500;" colspan="2">
-                 "${record.project_details || record.initial_message || 'User provided no additional details.'}"
+                 "${escapeHtml(record.project_details || record.initial_message) || 'User provided no additional details.'}"
               </td>
             </tr>
           </table>
           <div style="margin-top: 30px; text-align: center;">
-            <a href="mailto:${record.email}" style="background: #00f0ff; color: #0b0e23; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;">Reply to Lead</a>
+            <a href="mailto:${encodeURIComponent(record.email || '')}" style="background: #00f0ff; color: #0b0e23; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;">Reply to Lead</a>
           </div>
         </div>
       </div>
     `;
 
     // ----------------------------------------------------
-    // 3. SEND EMAIL
+    // 3. SEND EMAIL (capped so a flood of fake DB inserts can't mail-bomb
+    //    the inbox or burn the account's daily MailApp send quota)
     // ----------------------------------------------------
+    if (!withinSendLimit()) {
+      return ContentService.createTextOutput("Ignored — send limit reached this hour");
+    }
+
     MailApp.sendEmail({
       to: "theuncodedhub@gmail.com", // <-- Configured to send to theuncodedhub@gmail.com
-      subject: emailTitle + " - " + (record.name || 'Unknown User'),
+      subject: emailTitle + " - " + (escapeHtml(record.name) || 'Unknown User'),
       htmlBody: htmlBody
     });
 
@@ -124,4 +145,20 @@ function doPost(e) {
   } catch (error) {
     return ContentService.createTextOutput(error.toString());
   }
+}
+
+/**
+ * Simple hourly cap shared across all lead-alert emails from this script.
+ * Real leads never approach this volume; a scripted flood of fake inserts
+ * (hitting the Supabase anon insert endpoint directly, bypassing the
+ * frontend's honeypot/timing checks) would. CacheService is per-script and
+ * expires on its own, so nothing needs to be cleaned up.
+ */
+function withinSendLimit() {
+  var MAX_PER_HOUR = 30;
+  var cache = CacheService.getScriptCache();
+  var key = 'lead_alert_count_' + Utilities.formatDate(new Date(), 'UTC', 'yyyyMMddHH');
+  var count = parseInt(cache.get(key) || '0', 10) + 1;
+  cache.put(key, String(count), 3600);
+  return count <= MAX_PER_HOUR;
 }

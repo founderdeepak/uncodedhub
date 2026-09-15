@@ -40,7 +40,61 @@
  *   description, the host notification email, and a row appended to a Google Sheet that this
  *   script creates for itself the first time it runs (its ID is stored in Script Properties,
  *   so nothing needs to be configured by hand).
+ *
+ * SECURITY HARDENING IN THIS VERSION (this endpoint is public — "Anyone" access is
+ * required for the browser to call it directly, which also means anyone who reads the
+ * frontend bundle can call it directly too, bypassing the UI entirely)
+ * - A shared token (BOOKING_SHARED_SECRET, read from Script Properties) is required on
+ *   every doPost. It is embedded in the frontend build, so it does not stop someone who
+ *   reads the JS bundle, but it does stop generic scanners/bots hitting this URL blind —
+ *   set it once via Project Settings > Script Properties, and put the same value in the
+ *   frontend's VITE_BOOKING_SECRET.
+ * - Every value interpolated into an HTML email (name, business, niche, ...) is now
+ *   HTML-escaped. Previously a booking with name = `<a href="...">...</a>` would render
+ *   as a live link inside the host/client confirmation emails.
+ * - `email` is validated against a basic RFC-shape pattern before it is used as a
+ *   Calendar guest or a MailApp recipient, and an hourly send cap (shared with the
+ *   per-email daily cap) blocks a scripted flood from spamming arbitrary third parties
+ *   or exhausting the account's daily MailApp quota.
  */
+
+function escapeHtml(value) {
+  return String(value == null ? '' : value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function isValidEmail(value) {
+  return typeof value === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+}
+
+/** Strips line breaks so a submitted field can't inject extra lines into a
+ *  single-line context (e.g. a fake extra field into the .ics attachment). */
+function singleLine(value) {
+  return String(value == null ? '' : value).replace(/[\r\n]+/g, ' ').trim();
+}
+
+/**
+ * Shared caps, keyed by hour/day in CacheService (per-script, self-expiring).
+ * Real bookings never approach these volumes; a scripted flood would.
+ */
+function withinBookingLimits(email) {
+  var cache = CacheService.getScriptCache();
+  var hourKey = 'booking_count_' + Utilities.formatDate(new Date(), 'UTC', 'yyyyMMddHH');
+  var hourCount = parseInt(cache.get(hourKey) || '0', 10) + 1;
+  cache.put(hourKey, String(hourCount), 3600);
+  if (hourCount > 20) return false;
+
+  var dayKey = 'booking_email_' + Utilities.formatDate(new Date(), 'UTC', 'yyyyMMdd') + '_' + email.trim().toLowerCase();
+  var dayCount = parseInt(cache.get(dayKey) || '0', 10) + 1;
+  cache.put(dayKey, String(dayCount), 21600); // cache max TTL is 6h; good enough to blunt a burst
+  if (dayCount > 3) return false;
+
+  return true;
+}
 
 function doGet(e) {
   try {
@@ -81,19 +135,35 @@ function doPost(e) {
   try {
     // Parse incoming JSON body
     var data = JSON.parse(e.postData.contents);
-    var name = data.name;
+
+    var expectedToken = PropertiesService.getScriptProperties().getProperty('BOOKING_SHARED_SECRET');
+    if (expectedToken && data.token !== expectedToken) {
+      return ContentService.createTextOutput(JSON.stringify({ status: "error", message: "Unauthorized" }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+
+    var name = singleLine(data.name);
     var email = data.email;
-    var business = data.business;
+    var business = singleLine(data.business);
+
+    if (!isValidEmail(email)) {
+      return ContentService.createTextOutput(JSON.stringify({ status: "error", message: "Invalid email" }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+    if (!withinBookingLimits(email)) {
+      return ContentService.createTextOutput(JSON.stringify({ status: "error", message: "Too many booking attempts — please try again later or WhatsApp us" }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
     var dateStr = data.date; // Format: YYYY-MM-DD
     var timeStr = data.time; // Format: HH:MM (24-hour style, e.g., "14:00")
-    var host = data.host || "Deepak";
+    var host = singleLine(data.host || "Deepak");
 
     // Quiz answers — all optional, all default to "Not specified" so an
     // older frontend build (or a request that skipped the quiz) never
     // breaks the booking itself.
-    var niche = data.niche || "Not specified";
-    var hasWebsite = data.hasWebsite || "Not specified";
-    var timeline = data.timeline || "Not specified";
+    var niche = singleLine(data.niche || "Not specified");
+    var hasWebsite = singleLine(data.hasWebsite || "Not specified");
+    var timeline = singleLine(data.timeline || "Not specified");
 
     // 1. Calculate Start and End Times
     var startTime;
@@ -213,31 +283,31 @@ function doPost(e) {
         <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
           <tr style="border-bottom: 1px solid #f0f4f8;">
             <td style="padding: 10px 0; font-weight: bold; color: #718096; width: 170px;">Host Name:</td>
-            <td style="padding: 10px 0; font-size: 15px; color: #1a202c;">${host}</td>
+            <td style="padding: 10px 0; font-size: 15px; color: #1a202c;">${escapeHtml(host)}</td>
           </tr>
           <tr style="border-bottom: 1px solid #f0f4f8;">
             <td style="padding: 10px 0; font-weight: bold; color: #718096;">Client Name:</td>
-            <td style="padding: 10px 0; font-size: 15px; color: #1a202c;">${name}</td>
+            <td style="padding: 10px 0; font-size: 15px; color: #1a202c;">${escapeHtml(name)}</td>
           </tr>
           <tr style="border-bottom: 1px solid #f0f4f8;">
             <td style="padding: 10px 0; font-weight: bold; color: #718096;">Email Address:</td>
-            <td style="padding: 10px 0; font-size: 15px; color: #1a202c;"><a href="mailto:${email}" style="color: #9e00e6; text-decoration: none;">${email}</a></td>
+            <td style="padding: 10px 0; font-size: 15px; color: #1a202c;"><a href="mailto:${encodeURIComponent(email)}" style="color: #9e00e6; text-decoration: none;">${escapeHtml(email)}</a></td>
           </tr>
           <tr style="border-bottom: 1px solid #f0f4f8;">
             <td style="padding: 10px 0; font-weight: bold; color: #718096;">Business/Brand:</td>
-            <td style="padding: 10px 0; font-size: 15px; color: #1a202c;">${business}</td>
+            <td style="padding: 10px 0; font-size: 15px; color: #1a202c;">${escapeHtml(business)}</td>
           </tr>
           <tr style="border-bottom: 1px solid #f0f4f8;">
             <td style="padding: 10px 0; font-weight: bold; color: #718096;">Niche:</td>
-            <td style="padding: 10px 0; font-size: 15px; color: #1a202c;">${niche}</td>
+            <td style="padding: 10px 0; font-size: 15px; color: #1a202c;">${escapeHtml(niche)}</td>
           </tr>
           <tr style="border-bottom: 1px solid #f0f4f8;">
             <td style="padding: 10px 0; font-weight: bold; color: #718096;">Has a website already:</td>
-            <td style="padding: 10px 0; font-size: 15px; color: #1a202c;">${hasWebsite}</td>
+            <td style="padding: 10px 0; font-size: 15px; color: #1a202c;">${escapeHtml(hasWebsite)}</td>
           </tr>
           <tr style="border-bottom: 1px solid #f0f4f8;">
             <td style="padding: 10px 0; font-weight: bold; color: #718096;">Timeline:</td>
-            <td style="padding: 10px 0; font-size: 15px; color: #1a202c;">${timeline}</td>
+            <td style="padding: 10px 0; font-size: 15px; color: #1a202c;">${escapeHtml(timeline)}</td>
           </tr>
           <tr style="border-bottom: 1px solid #f0f4f8;">
             <td style="padding: 10px 0; font-weight: bold; color: #718096;">Host Local Time (IST):</td>
@@ -269,12 +339,12 @@ function doPost(e) {
     var clientHtml = `
       <div style="font-family: Arial, sans-serif; padding: 25px; color: #11142a; max-width: 600px; border: 1px solid #e2e8f0; border-radius: 16px; background-color: #ffffff;">
         <h2 style="color: #00e5ff; font-weight: bold; margin-top: 0; border-bottom: 2px solid #f0f4f8; padding-bottom: 15px;">Your Discovery Call is Confirmed!</h2>
-        <p style="font-size: 16px; line-height: 1.5;">Hi ${name},</p>
-        <p style="font-size: 15px; line-height: 1.6; color: #4a5568;">Thank you for scheduling a discovery call with ${host} from Uncoded Hub. We are excited to learn more about your business goals and discuss how we can build a high-converting online presence for you.</p>
+        <p style="font-size: 16px; line-height: 1.5;">Hi ${escapeHtml(name)},</p>
+        <p style="font-size: 15px; line-height: 1.6; color: #4a5568;">Thank you for scheduling a discovery call with ${escapeHtml(host)} from Uncoded Hub. We are excited to learn more about your business goals and discuss how we can build a high-converting online presence for you.</p>
 
         <div style="background-color: #f7fafc; padding: 20px; border-radius: 12px; margin: 25px 0; border: 1px solid #edf2f7;">
           <h3 style="margin-top: 0; color: #11142a; font-size: 16px; border-bottom: 1px solid #edf2f7; padding-bottom: 8px;">Meeting Summary:</h3>
-          <p style="margin: 8px 0; font-size: 15px;"><strong>Host:</strong> ${host}</p>
+          <p style="margin: 8px 0; font-size: 15px;"><strong>Host:</strong> ${escapeHtml(host)}</p>
           <p style="margin: 8px 0; font-size: 15px;"><strong>Date:</strong> ${clientFormattedDate}</p>
           <p style="margin: 8px 0; font-size: 15px;"><strong>Time:</strong> ${clientFormattedTime}</p>
           ${meetLink ? `<p style="margin: 15px 0 0 0; font-size: 15px;"><strong>Google Meet URL:</strong> <a href="${meetLink}" style="color: #00e5ff; font-weight: bold; text-decoration: underline;">Join Meeting Here</a></p>` : ''}

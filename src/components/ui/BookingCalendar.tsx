@@ -115,6 +115,12 @@ const WEEKDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 const GOOGLE_SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycbyX3OAhuWqclLsVXs1Wcb27s5BwfWTiyQtJxZ7s-SQ4XuGxiY81JkA5gLt68325jOIz/exec';
 
+/* Sent as `token` on every booking POST; the Apps Script checks it against
+   its own BOOKING_SHARED_SECRET script property (see booking-google-script.js).
+   This is visible to anyone who reads the bundle, so it is not real auth —
+   it only raises the bar above a blind scanner hitting the URL. */
+const BOOKING_SECRET = import.meta.env.VITE_BOOKING_SECRET || '';
+
 export function BookingCalendar({ host }: { host: Host }) {
   const viewerTz = useMemo(() => {
     try {
@@ -261,6 +267,7 @@ export function BookingCalendar({ host }: { host: Host }) {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify({
+          token: BOOKING_SECRET,
           name: form.name,
           email: form.email,
           business: form.business,

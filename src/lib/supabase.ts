@@ -13,12 +13,13 @@
    different column names and nobody would have noticed it drifting.
    ═══════════════════════════════════════════════════════════════════ */
 
-const SUPABASE_URL =
-  import.meta.env.VITE_SUPABASE_URL || 'https://ruiimbaycfkkejwumoak.supabase.co';
-
-const SUPABASE_ANON_KEY =
-  import.meta.env.VITE_SUPABASE_ANON_KEY ||
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ1aWltYmF5Y2Zra2Vqd3Vtb2FrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMTU3MjksImV4cCI6MjA5MDU5MTcyOX0.2xc1ESzTWZsEHxkafcd092mIj50IQjKvxnkOVrs6EsA';
+/* No hardcoded fallback: rotating the anon key in the Supabase dashboard
+   must actually revoke old client access, which a baked-in fallback here
+   would silently defeat. Missing env vars fail inside getClient() below,
+   caught by submitLead's try/catch — forms degrade to their "failed, email
+   us instead" state rather than the page crashing. */
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 export type Lead = {
   name: string;
@@ -31,6 +32,9 @@ export type Lead = {
 let clientPromise: Promise<any> | null = null;
 
 async function getClient() {
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+    throw new Error('VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY are not set at build time.');
+  }
   if (!clientPromise) {
     clientPromise = import('@supabase/supabase-js').then(({ createClient }) =>
       createClient(SUPABASE_URL, SUPABASE_ANON_KEY),

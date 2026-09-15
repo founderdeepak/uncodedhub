@@ -18,14 +18,19 @@ import BlogThumbnail from '../components/ui/BlogThumbnail';
    once the first real post lands.
    ═══════════════════════════════════════════════════════════════════ */
 
+const PAGE_SIZE = 12;
+
 export default function Blogs() {
   const posts = getAllPosts();
   const [activeNiche, setActiveNiche] = useState<NicheKey | 'all'>('all');
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
-  const visible = useMemo(
+  const filtered = useMemo(
     () => (activeNiche === 'all' ? posts : posts.filter((p) => p.niche === activeNiche)),
     [posts, activeNiche],
   );
+
+  const visible = useMemo(() => filtered.slice(0, visibleCount), [filtered, visibleCount]);
 
   const nichesInUse = useMemo(
     () => Array.from(new Set(posts.map((p) => p.niche))),
@@ -97,7 +102,10 @@ export default function Blogs() {
           {nichesInUse.length > 1 && (
             <Reveal className="flex flex-wrap gap-2 mb-14 pb-10 border-b border-rule">
               <button
-                onClick={() => setActiveNiche('all')}
+                onClick={() => {
+                  setActiveNiche('all');
+                  setVisibleCount(PAGE_SIZE);
+                }}
                 className={`label px-4 py-2 border ${
                   activeNiche === 'all'
                     ? 'bg-ink text-paper border-ink'
@@ -109,7 +117,10 @@ export default function Blogs() {
               {nichesInUse.map((niche) => (
                 <button
                   key={niche}
-                  onClick={() => setActiveNiche(niche)}
+                  onClick={() => {
+                    setActiveNiche(niche);
+                    setVisibleCount(PAGE_SIZE);
+                  }}
                   className={`label px-4 py-2 border ${
                     activeNiche === niche
                       ? 'bg-ink text-paper border-ink'
@@ -158,6 +169,17 @@ export default function Blogs() {
               </Reveal>
             ))}
           </div>
+
+          {visibleCount < filtered.length && (
+            <div className="mt-16 flex justify-center">
+              <button
+                onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
+                className="label px-6 py-3 border border-rule-strong text-ink hover:border-ink"
+              >
+                Load more
+              </button>
+            </div>
+          )}
         </Shell>
       </section>
     </>

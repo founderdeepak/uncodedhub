@@ -1,6 +1,15 @@
 import pg from 'pg';
 
-const connectionString = 'postgresql://postgres:***REDACTED***@db.ruiimbaycfkkejwumoak.supabase.co:5432/postgres';
+// Never hardcode this — it's the Postgres superuser password. Set it in a
+// local, gitignored .env (SUPABASE_DB_URL=postgresql://postgres:<password>@<host>:5432/postgres)
+// and load it into the shell before running this script, e.g.:
+//   node --env-file=.env setup_db.mjs
+const connectionString = process.env.SUPABASE_DB_URL;
+if (!connectionString) {
+  throw new Error(
+    'SUPABASE_DB_URL is not set. Export it or pass --env-file=.env; see comment above.',
+  );
+}
 
 const client = new pg.Client({
   connectionString,
