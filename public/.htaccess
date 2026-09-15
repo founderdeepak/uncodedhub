@@ -1,8 +1,33 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+
+  # www -> apex (bare domain), preserving path and query string.
+  # Previously www.uncodedhub.com served identical content at a second
+  # origin with no redirect (only a client-side canonical tag), so both
+  # were crawlable and any links pointing at www never consolidated.
+  RewriteCond %{HTTP_HOST} ^www\.uncodedhub\.com$ [NC]
+  RewriteRule ^(.*)$ https://uncodedhub.com/$1 [L,R=301]
+
+  # No SPA fallback rewrite: every route the app serves (see
+  # scripts/routes.mjs) is prerendered to a real file at build time
+  # (scripts/prerender.mjs), so it exists on disk and is served
+  # directly. A path that isn't one of those routes is genuinely not a
+  # page, and previously fell through to this same rewrite and returned
+  # HTTP 200 with the homepage for literally any URL -- an unbounded
+  # soft-404 surface. Removing the fallback lets Apache's normal
+  # missing-file handling take over, which ErrorDocument below turns
+  # into the site's real 404 page instead of a generic Apache error.
+</IfModule>
+
+# Real 404 status for anything that isn't a prerendered route or a
+# static asset, served with the site's own 404 page instead of either
+# a blank Apache default or (the previous behaviour) a silent 200.
+ErrorDocument 404 /404.html
+
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>

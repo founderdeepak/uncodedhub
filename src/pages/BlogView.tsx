@@ -65,7 +65,14 @@ export default function BlogView() {
   return (
     <>
       <Helmet>
-        <title>{post.title} — Uncoded Hub</title>
+        {/* A single interpolated string, not `{post.title} — Uncoded Hub`
+            (expression + text = two JSX children): react-helmet-async
+            needs exactly one child to set <title> at all, and silently
+            renders an empty tag otherwise -- which was invisible only
+            because a static fallback title in index.html covered for
+            it. Every other page's <title> is a single literal string,
+            which is why only this dynamic one hit the bug. */}
+        <title>{`${post.title} — Uncoded Hub`}</title>
         <meta name="description" content={post.metaDescription} />
         <link rel="canonical" href={url} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>

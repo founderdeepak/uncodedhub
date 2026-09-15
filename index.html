@@ -6,21 +6,25 @@
 
     <!-- ═══════════════════════════════════════════════════════
          PRIMARY SEO
-         Industry-neutral. These must match the visible copy —
-         a mismatch between metadata and page content is the
-         fastest way to lose both rankings and trust.
+         title / description / canonical are intentionally NOT set
+         here — every route sets them via <Helmet> (see src/pages/*),
+         including the 404 route. A static placeholder here would sit
+         alongside Helmet's tag rather than being replaced by it
+         (Helmet only manages tags it renders), producing two <title>
+         and two canonical elements per page. The prerender step
+         (scripts/prerender.mjs) bakes each route's real Helmet output
+         into its own static HTML file, so there is no window where a
+         crawler sees this file un-prerendered.
     ═══════════════════════════════════════════════════════ -->
-    <title>Uncoded Hub — Business Websites, Built in Seven Days</title>
-    <meta name="title" content="Uncoded Hub — Business Websites, Built in Seven Days">
-    <meta name="description" content="A web design and development studio. We design and build fast, clear business websites on a fixed price and a seven-day schedule. Late means free.">
     <meta name="author" content="Uncoded Hub">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-    <link rel="canonical" href="https://uncodedhub.com/">
 
     <!-- ═══════════════════════════════════════════════════════
          OPEN GRAPH / TWITTER
-         Note: these are the static fallback for crawlers that do
-         not execute JS. Per-page values are set via Helmet.
+         Static fallback shared by every route — not overridden
+         per-page by Helmet, so social previews are homepage-generic
+         until per-page OG images/descriptions are added (tracked
+         separately; not a correctness bug, just not page-specific yet).
     ═══════════════════════════════════════════════════════ -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://uncodedhub.com/">
@@ -70,7 +74,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "ProfessionalService",
       "@id": "https://uncodedhub.com/#organization",
       "name": "Uncoded Hub",
       "alternateName": "UncodedHub",
@@ -83,7 +87,19 @@
       "foundingDate": "2024",
       "email": "hello@uncodedhub.com",
       "telephone": "+91-8660819023",
-      "address": { "@type": "PostalAddress", "addressCountry": "IN" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bengaluru",
+        "addressRegion": "Karnataka",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-8660819023",
+        "email": "hello@uncodedhub.com",
+        "contactType": "sales",
+        "areaServed": ["IN", "GB", "US", "AE"]
+      },
       "founder": [
         { "@type": "Person", "name": "Deepak", "jobTitle": "Co-Founder, Engineering" },
         { "@type": "Person", "name": "Geetha", "jobTitle": "Co-Founder, Design" }
@@ -117,7 +133,12 @@
       "provider": { "@id": "https://uncodedhub.com/#organization" },
       "name": "Seven-day website build",
       "description": "Design and development of a business website delivered on a fixed price and a seven-day schedule, including performance work, on-page SEO groundwork, and thirty days of post-launch support.",
-      "areaServed": "Worldwide",
+      "areaServed": [
+        { "@type": "Country", "name": "India" },
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "United States" },
+        { "@type": "Country", "name": "United Arab Emirates" }
+      ],
       "audience": { "@type": "BusinessAudience", "audienceType": "Small and mid-sized businesses" }
     }
     </script>

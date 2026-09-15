@@ -77,6 +77,18 @@ export function Reveal({
       ref={ref as React.Ref<HTMLElement>}
       className={`reveal ${shown ? 'reveal-in' : ''} ${className}`}
       style={{ ...style, ...(shown && delay ? { transitionDelay: `${delay}ms` } : undefined) }}
+      // Prerendered static HTML (scripts/prerender.mjs) is captured
+      // *after* this component's viewport check has already run, so
+      // above-the-fold elements are baked into the file already showing
+      // `reveal-in` -- but a fresh client mount always starts from
+      // `shown=false` before its own layout effect runs. That's a real,
+      // by-design difference (not a bug to fix by matching states), so
+      // it's the documented use case for suppressHydrationWarning:
+      // without it, React discards this element's markup and re-renders
+      // it client-side on every load (a console error plus wasted work
+      // for zero visible difference); with it, React keeps the correct
+      // pre-rendered result and moves on.
+      suppressHydrationWarning
     >
       {children}
     </Tag>
