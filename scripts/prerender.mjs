@@ -106,7 +106,11 @@ async function main() {
   preview.stdout?.on('data', (d) => (previewOutput += d));
   preview.stderr?.on('data', (d) => (previewOutput += d));
 
-  const browser = await chromium.launch();
+  // --no-sandbox: GitHub Actions runs as root, and Chromium's sandbox
+  // refuses to initialize under root without it -- launch() just hangs
+  // rather than erroring, which is why the first CI run sat "in
+  // progress" indefinitely instead of failing fast. Harmless locally.
+  const browser = await chromium.launch({ args: ['--no-sandbox'] });
   try {
     await waitForServer(BASE + '/');
     const page = await browser.newPage();
@@ -148,7 +152,17 @@ async function main() {
   console.log(`Prerendered ${allRoutes.length} routes + 404.html.`);
 }
 
-main().catch((err) => {
+// Hard ceiling on the whole script. Local runs finish in well under 2
+// minutes; this is generous headroom for CI overhead. Without this, an
+// unexpected hang anywhere (browser launch, a wedged navigation) burns
+// CI minutes indefinitely instead of failing with a clear signal -- as
+// the first CI run of this script did before --no-sandbox was added.
+const OVERALL_TIMEOUT_MS = 8 * 60 * 1000;
+const timeout = new Promise((_, reject) =>
+  setTimeout(() => reject(new Error(`prerender.mjs exceeded ${OVERALL_TIMEOUT_MS}ms overall`)), OVERALL_TIMEOUT_MS),
+);
+
+Promise.race([main(), timeout]).catch((err) => {
   console.error(err);
   process.exit(1);
 });
