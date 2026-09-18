@@ -6,7 +6,7 @@ import { getAllPosts, NICHES, type NicheKey } from '../lib/blog';
 import BlogThumbnail from '../components/ui/BlogThumbnail';
 
 /* ═══════════════════════════════════════════════════════════════════
-   JOURNAL — list view
+   BLOGS — list view
 
    Reads whatever is in src/content/blog/ at build time. With zero
    posts this renders the same honest empty state the page has always
@@ -41,7 +41,7 @@ export default function Blogs() {
     return (
       <>
         <Helmet>
-          <title>Journal — Uncoded Hub</title>
+          <title>Blogs — Uncoded Hub</title>
           <meta name="robots" content="noindex, follow" />
           <meta
             name="description"
@@ -52,7 +52,7 @@ export default function Blogs() {
         <section className="pt-36 md:pt-44 pb-32 min-h-[70vh]">
           <Shell width="narrow">
             <Reveal>
-              <p className="label text-signal">Journal</p>
+              <p className="label text-signal">Blogs</p>
               <h1 className="font-display text-hero mt-8">Nothing here yet.</h1>
               <p className="text-lead text-muted mt-10 max-w-xl">
                 We would rather leave this empty than fill it with the kind of post that exists to
@@ -78,7 +78,7 @@ export default function Blogs() {
   return (
     <>
       <Helmet>
-        <title>Journal — Uncoded Hub</title>
+        <title>Blogs — Uncoded Hub</title>
         <meta
           name="description"
           content="Practical notes on websites, SEO, and getting found online — written for the businesses we build for."
@@ -89,7 +89,7 @@ export default function Blogs() {
       <section className="pt-36 md:pt-44 pb-16">
         <Shell>
           <Reveal>
-            <p className="label text-signal">Journal</p>
+            <p className="label text-signal">Blogs</p>
             <h1 className="font-display text-hero mt-8 max-w-[18ch]">
               Notes on what actually gets a business found online.
             </h1>

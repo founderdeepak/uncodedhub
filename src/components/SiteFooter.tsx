@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { LogoMark } from './Logo';
+import { hasBlogPosts } from '../lib/blogNav';
 
 /* ═══════════════════════════════════════════════════════════════════
    FOOTER
@@ -21,6 +22,7 @@ const NAV = [
   { label: 'Work', to: '/portfolio' },
   { label: 'Services', to: '/services' },
   { label: 'Studio', to: '/about' },
+  ...(hasBlogPosts ? [{ label: 'Blogs', to: '/blog' }] : []),
   { label: 'Contact', to: '/contact' },
 ];
 

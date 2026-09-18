@@ -34,7 +34,7 @@ const NAV = [
   { label: 'Work', path: '/portfolio' },
   { label: 'Services', path: '/services' },
   { label: 'Studio', path: '/about' },
-  ...(hasBlogPosts ? [{ label: 'Journal', path: '/blog' }] : []),
+  ...(hasBlogPosts ? [{ label: 'Blogs', path: '/blog' }] : []),
   { label: 'Contact', path: '/contact' },
 ];
 

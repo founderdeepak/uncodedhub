@@ -29,7 +29,7 @@ export default function BlogView() {
         <section className="pt-36 md:pt-44 pb-32 min-h-[70vh]">
           <Shell width="narrow">
             <Reveal>
-              <p className="label text-signal">Journal</p>
+              <p className="label text-signal">Blogs</p>
               <h1 className="font-display text-hero mt-8">That article does not exist.</h1>
               <p className="text-lead text-muted mt-10 max-w-xl">
                 We have not published anything at this address, so any link you followed to get
@@ -37,7 +37,7 @@ export default function BlogView() {
               </p>
               <div className="mt-12 pt-8 border-t border-rule flex flex-wrap gap-x-8 gap-y-3">
                 <Link to="/blog" className="link-underline text-ink">
-                  Back to the journal →
+                  Back to the blogs →
                 </Link>
                 <Link to="/contact" className="link-underline text-ink">
                   Book a call →
@@ -82,7 +82,7 @@ export default function BlogView() {
         <Shell width="narrow">
           <Reveal>
             <Link to="/blog" className="label text-signal">
-              ← Journal
+              ← Blogs
             </Link>
             <span className="label text-muted ml-4">{NICHES[post.niche]}</span>
             <h1 className="font-display text-hero mt-8">{post.title}</h1>
