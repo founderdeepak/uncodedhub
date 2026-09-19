@@ -246,14 +246,14 @@ export default function Home({ onBook }: { onBook: () => void }) {
           </div>
 
           <Reveal delay={300}>
-            <dl className="grid grid-cols-2 md:grid-cols-4 gap-px bg-rule border border-rule mt-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-rule border border-rule mt-10">
               {TRUST.map((t) => (
                 <div key={t.k} className="tile-hover bg-paper py-4 px-4 md:px-5">
-                  <dt className="tile-hover-accent text-[0.9375rem] font-medium">{t.k}</dt>
-                  <dd className="label text-muted mt-1.5">{t.v}</dd>
+                  <div className="tile-hover-accent text-[0.9375rem] font-medium">{t.k}</div>
+                  <div className="label text-muted mt-1.5">{t.v}</div>
                 </div>
               ))}
-            </dl>
+            </div>
           </Reveal>
         </Shell>
       </section>
@@ -561,19 +561,19 @@ export default function Home({ onBook }: { onBook: () => void }) {
                   </div>
                 ))}
               </div>
-              <dl className="border-t border-rule-strong">
+              <div className="border-t border-rule-strong">
                 {BUDGET.map((b) => (
                   <div
                     key={b.metric}
                     className="row-hover grid grid-cols-[2fr_3fr] gap-6 py-5 px-2 -mx-2 border-b border-rule items-center"
                   >
-                    <dt className="text-[0.9375rem] font-medium">{b.metric}</dt>
-                    <dd className="font-mono text-[0.8125rem] text-muted text-right text-balance">
+                    <div className="text-[0.9375rem] font-medium">{b.metric}</div>
+                    <div className="font-mono text-[0.8125rem] text-muted text-right text-balance">
                       {b.target}
-                    </dd>
+                    </div>
                   </div>
                 ))}
-              </dl>
+              </div>
             </Reveal>
           </div>
         </Shell>
@@ -771,58 +771,159 @@ export default function Home({ onBook }: { onBook: () => void }) {
       </Section>
 
       {/* ── Lead magnet ────────────────────────────────────────── */}
-      <Section id="lead-magnet" tone="sunk" size="default">
+      <Section id="lead-magnet" tone="ink" size="default">
         <Shell>
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            <Reveal className="lg:col-span-7">
-              <SectionHead
-                index="11"
-                eyebrow="Free resource"
-                title="Not ready to book a call? Score your own site first."
-                intro="The Pre-Sold Prospects Audit is the same 10-point trust diagnostic we run for every client before we design or write a single page — turned into something you can run on your own site in 30 minutes."
-              />
-              <ul className="mt-10 space-y-4">
-                {[
-                  'The 10-point trust test we score every client site against',
-                  'A scoring band — Silent Loss, Leaking, or Near Your Ceiling',
-                  'The objections a skeptical prospect is silently thinking before they message you',
-                  'A 20-minute action checklist, one fix per point, ordered by where you scored lowest',
-                ].map((item) => (
-                  <li key={item} className="flex gap-3 text-muted leading-relaxed">
-                    <span className="text-signal mt-1 shrink-0" aria-hidden="true">→</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+          {/* Header */}
+          <Reveal>
+            <div className="flex items-center gap-3 mb-3">
+              <span className="label text-signal-bright">11</span>
+              <span className="label text-on-ink-muted">Free resource</span>
+            </div>
+            <div className="grid lg:grid-cols-2 gap-3 lg:gap-8 items-end mb-14">
+              <h2 className="font-display text-display text-on-ink">
+                Score your own site.<br />
+                <em>Before</em> you book a call.
+              </h2>
+              <p className="text-lead text-on-ink-muted leading-relaxed">
+                The Pre-Sold Prospects Audit — the same 10-point trust diagnostic we run for every client, now in your hands.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+
+            {/* LEFT: Cover mock + bullet benefits */}
+            <Reveal className="lg:col-span-5 flex flex-col gap-8">
+
+              {/* Book cover card */}
+              <div className="relative bg-ink-raised border border-rule-on-ink rounded-[4px] overflow-hidden flex items-center justify-center p-8 aspect-[4/3]">
+                {/* Subtle radial glow behind cover */}
+                <div
+                  aria-hidden="true"
+                  style={{
+                    position: 'absolute', inset: 0,
+                    background: 'radial-gradient(ellipse at 60% 40%, rgba(219,10,84,0.18) 0%, transparent 70%)',
+                    pointerEvents: 'none',
+                  }}
+                />
+                {/* Mock audit document */}
+                <div className="relative z-10 w-52 bg-paper rounded-[3px] shadow-[0_24px_60px_rgba(0,0,0,0.5)] overflow-hidden">
+                  {/* Doc header strip */}
+                  <div className="bg-signal px-4 py-2.5">
+                    <p className="label text-paper text-[0.55rem] leading-snug">Uncoded Hub</p>
+                    <p className="font-sans font-semibold text-paper text-[0.72rem] leading-tight mt-0.5">Pre-Sold Prospects Audit</p>
+                  </div>
+                  <img
+                    src="/audit-cover.jpg"
+                    alt="Pre-Sold Prospects Audit cover illustration"
+                    className="w-full object-cover"
+                    width={208}
+                    height={156}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  {/* Doc footer strip */}
+                  <div className="px-4 py-2 border-t border-rule">
+                    <p className="label text-muted text-[0.55rem]">10-point trust diagnostic · Free</p>
+                  </div>
+                </div>
+
+                {/* FREE badge */}
+                <div className="absolute top-4 right-4 bg-signal text-paper label text-[0.6rem] px-2.5 py-1 rounded-[2px] shadow-md">
+                  FREE
+                </div>
+              </div>
+
+              {/* What you get */}
+              <div>
+                <p className="label text-on-ink-muted mb-5">What's inside</p>
+                <ul className="space-y-3.5">
+                  {[
+                    { label: 'The 10-point trust test', sub: 'We score every client site against this before we start.' },
+                    { label: 'Your scoring band', sub: 'Silent Loss, Leaking, or Near Your Ceiling.' },
+                    { label: 'The silent objections', sub: 'What a skeptical prospect thinks before they message you.' },
+                    { label: '20-minute action checklist', sub: 'One fix per point, ordered by where you scored lowest.' },
+                  ].map(({ label, sub }) => (
+                    <li key={label} className="flex gap-3 items-start">
+                      <span
+                        aria-hidden="true"
+                        className="shrink-0 mt-0.5 w-4 h-4 rounded-full border border-signal flex items-center justify-center"
+                        style={{ color: 'var(--color-signal-bright)' }}
+                      >
+                        <svg width="8" height="7" viewBox="0 0 8 7" fill="none" aria-hidden="true">
+                          <path d="M1 3.5L3 5.5L7 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </span>
+                      <span>
+                        <span className="text-on-ink text-[0.9375rem] font-medium leading-snug">{label}</span>
+                        <span className="text-on-ink-muted text-[0.8125rem] leading-relaxed block mt-0.5">{sub}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </Reveal>
 
-            <Reveal delay={100} className="lg:col-span-5">
-              <LeadMagnetForm />
+            {/* RIGHT: Form card */}
+            <Reveal delay={120} className="lg:col-span-7">
+              <div className="bg-paper-raised border border-rule-strong rounded-[4px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
+                {/* Form card header */}
+                <div className="bg-signal px-6 md:px-8 py-4 flex items-center gap-3">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" className="shrink-0">
+                    <path d="M9 2L10.854 6.764L16 7.09L12.2 10.526L13.416 16L9 13.2L4.584 16L5.8 10.526L2 7.09L7.146 6.764L9 2Z" fill="white"/>
+                  </svg>
+                  <p className="font-sans font-semibold text-paper text-[0.9375rem] leading-tight">
+                    Get the free audit — land in your inbox in minutes
+                  </p>
+                </div>
+
+                {/* Form body */}
+                <div className="px-6 md:px-8 py-6 md:py-8">
+                  <LeadMagnetForm embedded />
+                </div>
+              </div>
+
+              {/* Trust signals below form */}
+              <div className="flex flex-wrap gap-x-6 gap-y-2 mt-5 px-1">
+                {[
+                  'No spam, ever',
+                  'Instant delivery',
+                  'Unsubscribe anytime',
+                ].map((t) => (
+                  <span key={t} className="flex items-center gap-1.5 label text-on-ink-muted">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                      <circle cx="5" cy="5" r="4.5" stroke="currentColor" strokeOpacity="0.5"/>
+                      <path d="M2.5 5L4 6.5L7.5 3" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    {t}
+                  </span>
+                ))}
+              </div>
             </Reveal>
           </div>
         </Shell>
       </Section>
 
       {/* ── Close ──────────────────────────────────────────────── */}
-      <Section tone="ink" size="loose">
+      <Section tone="sunk" size="loose">
         <Shell width="narrow" className="text-center">
           <Reveal>
             <h2 className="font-display text-display">
               Let your website start selling before you do.
             </h2>
-            <p className="text-lead text-on-ink-muted mt-8 max-w-xl mx-auto">
+            <p className="text-lead text-muted mt-8 max-w-xl mx-auto">
               No deck and no pitch. We ask what your business does, look at what you have now, and
               tell you plainly whether we can help — including when the answer is no.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
-              <button onClick={onBook} className="btn-primary-inv">
+              <button onClick={onBook} className="btn-primary">
                 Schedule my FREE 20-minute call
               </button>
-              <Link to="/contact" className="btn-ghost-inv">
+              <Link to="/contact" className="btn-ghost">
                 Send a brief instead
               </Link>
             </div>
-            <p className="label text-on-ink-muted mt-10">
+            <p className="label text-muted mt-10">
               Free · No obligation · We reply within one working day
             </p>
           </Reveal>

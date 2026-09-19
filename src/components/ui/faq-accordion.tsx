@@ -79,12 +79,12 @@ export const FaqAccordion = () => {
         </script>
       </Helmet>
 
-      <dl className="border-t border-rule-strong">
+      <div className="border-t border-rule-strong">
         {FAQS.map((faq, i) => {
           const isOpen = open === i;
           return (
             <div key={faq.q} className="border-b border-rule">
-              <dt>
+              <div>
                 <button
                   id={`${uid}-btn-${i}`}
                   aria-expanded={isOpen}
@@ -114,9 +114,9 @@ export const FaqAccordion = () => {
                     />
                   </span>
                 </button>
-              </dt>
+              </div>
 
-              <dd
+              <div
                 id={`${uid}-panel-${i}`}
                 role="region"
                 aria-labelledby={`${uid}-btn-${i}`}
@@ -126,11 +126,11 @@ export const FaqAccordion = () => {
                 <div className="overflow-hidden">
                   <p className="text-muted leading-relaxed pb-7 pr-12 max-w-2xl">{faq.a}</p>
                 </div>
-              </dd>
+              </div>
             </div>
           );
         })}
-      </dl>
+      </div>
     </div>
   );
 };

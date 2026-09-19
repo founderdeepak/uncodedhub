@@ -2,6 +2,7 @@ import { useState, useEffect, lazy, Suspense, useCallback } from 'react';
 import { Routes, Route, Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { Logo, LogoMark } from './components/Logo';
 import SiteFooter from './components/SiteFooter';
+import { ScrollToTop } from './components/ui/ScrollToTop';
 import { hasBlogPosts } from './lib/blogNav';
 /* Deferred: the dock is not part of the first screen, so it should not
    be part of the first download either. */
@@ -180,6 +181,7 @@ export default function App() {
       </main>
 
       <SiteFooter />
+      <ScrollToTop />
       <Suspense fallback={null}>
         <EnquiryDock />
       </Suspense>

@@ -24,7 +24,13 @@ const LEAD_MAGNET_SCRIPT_URL =
    is the hourly/per-email send caps enforced server-side in that script. */
 const LEAD_MAGNET_SECRET = import.meta.env.VITE_LEAD_MAGNET_SECRET || '';
 
-export function LeadMagnetForm() {
+interface LeadMagnetFormProps {
+  /** When true the form renders without its own outer card border/padding —
+   *  the parent Section already wraps it in a premium card. */
+  embedded?: boolean;
+}
+
+export function LeadMagnetForm({ embedded }: LeadMagnetFormProps) {
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
@@ -60,12 +66,12 @@ export function LeadMagnetForm() {
 
   if (status === 'sent') {
     return (
-      <div className="bg-paper border border-rule-strong p-6 md:p-8">
-        <span className="label text-signal">Sent</span>
+      <div className={embedded ? '' : 'bg-paper border border-rule-strong p-6 md:p-8'}>
+        <span className="label text-signal">Sent ✓</span>
         <h3 className="font-display text-display mt-3">Check your inbox.</h3>
         <p className="text-muted leading-relaxed mt-4">
-          The Pre-Sold Prospects Audit is on its way to {email}. If it doesn't show up in a
-          couple of minutes, check spam — or email{' '}
+          The Pre-Sold Prospects Audit is on its way to <strong>{email}</strong>. If it doesn't
+          show up in a couple of minutes, check spam — or email{' '}
           <a href="mailto:hello@uncodedhub.com?subject=AUDIT" className="link-quiet text-ink">
             hello@uncodedhub.com
           </a>{' '}
@@ -76,26 +82,39 @@ export function LeadMagnetForm() {
   }
 
   return (
-    <div className="bg-paper border border-rule-strong p-6 md:p-8">
+    <div className={embedded ? '' : 'bg-paper border border-rule-strong p-6 md:p-8'}>
+      {!embedded && (
+        <p className="font-sans font-semibold text-ink text-[1rem] mb-4 leading-snug">
+          Get the free audit — straight to your inbox
+        </p>
+      )}
       <form onSubmit={submit} className="space-y-4">
-        <div className="grid sm:grid-cols-2 gap-4">
-          <input
-            type="text"
-            placeholder="First Name"
-            aria-label="First Name"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            className="w-full bg-paper border border-rule-strong px-3.5 py-2.5 text-[0.9375rem] rounded-[3px] focus:border-ink transition-colors"
-          />
-          <input
-            type="email"
-            placeholder="Email Address"
-            aria-label="Email Address"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full bg-paper border border-rule-strong px-3.5 py-2.5 text-[0.9375rem] rounded-[3px] focus:border-ink transition-colors"
-          />
+        <div className="grid sm:grid-cols-2 gap-3">
+          <div className="flex flex-col gap-1.5">
+            <label htmlFor="lm-first-name" className="label text-muted">First Name</label>
+            <input
+              id="lm-first-name"
+              type="text"
+              placeholder="e.g. Deepak"
+              aria-label="First Name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              className="w-full bg-paper border border-rule-strong px-3.5 py-2.5 text-[0.9375rem] rounded-[3px] focus:border-ink transition-colors"
+            />
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <label htmlFor="lm-email" className="label text-muted">Email Address <span className="text-signal">*</span></label>
+            <input
+              id="lm-email"
+              type="email"
+              placeholder="you@example.com"
+              aria-label="Email Address"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full bg-paper border border-rule-strong px-3.5 py-2.5 text-[0.9375rem] rounded-[3px] focus:border-ink transition-colors"
+            />
+          </div>
         </div>
 
         <div className="absolute left-[-9999px]" aria-hidden="true">
@@ -118,22 +137,19 @@ export function LeadMagnetForm() {
         <button
           type="submit"
           disabled={status === 'sending'}
-          className="btn-primary w-full disabled:opacity-55"
+          className="btn-primary w-full disabled:opacity-55 mt-1"
         >
           {status === 'sending' && <span className="spinner" aria-hidden="true" />}
-          {status === 'sending' ? 'Sending…' : 'Grab Your FREE "Pre-Sold Prospects Audit" Now'}
+          {status === 'sending' ? 'Sending…' : 'Send Me the Free Audit →'}
         </button>
       </form>
 
-      <p className="label text-muted mt-5">
-        No spam. One practical email every few days. Unsubscribe anytime.
-      </p>
-      <p className="text-[0.8125rem] text-muted mt-3 leading-relaxed">
-        Form not loading? Email{' '}
+      <p className="text-[0.8125rem] text-muted mt-4 leading-relaxed">
+        Form not loading?{' '}
         <a href="mailto:hello@uncodedhub.com?subject=AUDIT" className="link-quiet text-ink">
-          hello@uncodedhub.com
+          Email us with "AUDIT"
         </a>{' '}
-        with "AUDIT" and we'll send it directly.
+        and we'll send it directly.
       </p>
     </div>
   );
