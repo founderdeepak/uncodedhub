@@ -57,6 +57,10 @@
     <link rel="preload" href="/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 
+    <!-- Preload hero image for fast LCP on both mobile and desktop viewports -->
+    <link rel="preload" href="/hero-section-mobile.webp" as="image" type="image/webp" media="(max-width: 767px)" fetchpriority="high">
+    <link rel="preload" href="/hero-section.webp" as="image" type="image/webp" media="(min-width: 768px)" fetchpriority="high">
+
     <!-- Analytics loads deferred (after window 'load', see the script at
          the bottom of <head>) so it never competes with first paint —
          but Lighthouse still measured ~590ms lost to the DNS+TLS
@@ -143,20 +147,29 @@
     }
     </script>
 
-    <!-- Google Analytics, loaded after the page is interactive so it
-         never competes with the first paint. -->
+    <!-- Google Analytics, loaded deferred after the page is interactive, skipped during static prerender -->
     <script>
-      window.addEventListener('load', function () {
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-9KBM90K2TM';
-        document.head.appendChild(s);
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-9KBM90K2TM');
-        window.gtag = gtag;
-      });
+      (function () {
+        if (navigator.webdriver || /HeadlessChrome/i.test(navigator.userAgent)) return;
+        function loadGtag() {
+          if (window.__gtag_loaded) return;
+          window.__gtag_loaded = true;
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-9KBM90K2TM';
+          document.head.appendChild(s);
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', 'G-9KBM90K2TM');
+          window.gtag = gtag;
+        }
+        if ('requestIdleCallback' in window) {
+          window.addEventListener('load', function () { requestIdleCallback(loadGtag, { timeout: 3000 }); });
+        } else {
+          window.addEventListener('load', function () { setTimeout(loadGtag, 2000); });
+        }
+      })();
     </script>
   </head>
   <body>

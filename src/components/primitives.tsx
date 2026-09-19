@@ -44,9 +44,10 @@ export function Reveal({
   style?: React.CSSProperties;
 }) {
   const ref = useRef<HTMLElement>(null);
-  const [shown, setShown] = useState(false);
+  const [shown, setShown] = useState(() => typeof window !== 'undefined');
 
   useLayoutEffect(() => {
+    if (shown) return;
     const el = ref.current;
     if (!el) return;
 
@@ -70,7 +71,7 @@ export function Reveal({
 
     io.observe(el);
     return () => io.disconnect();
-  }, []);
+  }, [shown]);
 
   return (
     <Tag

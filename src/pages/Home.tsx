@@ -233,15 +233,19 @@ export default function Home({ onBook }: { onBook: () => void }) {
             </div>
 
             <Reveal delay={220} className="lg:col-span-5">
-              <img
-                src="/hero-section.webp"
-                alt="A business owner reviewing his newly redesigned website on a laptop, pleased with how it turned out"
-                width={1536}
-                height={1024}
-                loading="eager"
-                decoding="async"
-                className="w-full h-56 sm:h-64 lg:h-80 object-cover object-[70%_25%] grayscale border border-rule-strong"
-              />
+              <picture className="w-full h-56 sm:h-64 lg:h-80 block">
+                <source media="(max-width: 767px)" srcSet="/hero-section-mobile.webp" />
+                <img
+                  src="/hero-section.webp"
+                  alt="A business owner reviewing his newly redesigned website on a laptop, pleased with how it turned out"
+                  width={1200}
+                  height={800}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="w-full h-full object-cover object-[70%_25%] grayscale border border-rule-strong"
+                />
+              </picture>
             </Reveal>
           </div>
 
@@ -291,15 +295,18 @@ export default function Home({ onBook }: { onBook: () => void }) {
             </div>
           </Reveal>
           <Reveal delay={130}>
-            <img
-              src="/problem.webp"
-              alt="A business owner overwhelmed by unanswered enquiries arriving across WhatsApp, email, Instagram, and missed calls, unable to keep up with them all"
-              width={1536}
-              height={1024}
-              loading="lazy"
-              decoding="async"
-              className="mt-12 w-full h-64 md:h-80 object-cover object-top grayscale border border-rule-on-ink"
-            />
+            <picture className="mt-12 w-full h-64 md:h-80 block">
+              <source media="(max-width: 767px)" srcSet="/problem-mobile.webp" />
+              <img
+                src="/problem.webp"
+                alt="A business owner overwhelmed by unanswered enquiries arriving across WhatsApp, email, Instagram, and missed calls, unable to keep up with them all"
+                width={1200}
+                height={800}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover object-top grayscale border border-rule-on-ink"
+              />
+            </picture>
             <p className="label text-on-ink-muted mt-4 text-center">
               What it feels like when the enquiries you wanted arrive faster than you can answer them
             </p>
@@ -339,15 +346,18 @@ export default function Home({ onBook }: { onBook: () => void }) {
               aspect in a narrower column — shown whole, never cropped. */}
           <div className="grid lg:grid-cols-12 gap-x-12 gap-y-10 items-center mt-14">
             <Reveal delay={120} className="lg:col-span-6">
-              <img
-                src="/our-service.webp"
-                alt="A responsive website design shown across a desktop monitor, laptop, tablet, and phone"
-                width={1536}
-                height={1024}
-                loading="lazy"
-                decoding="async"
-                className="w-full aspect-[3/2] object-cover grayscale border border-rule"
-              />
+              <picture className="w-full aspect-[3/2] block">
+                <source media="(max-width: 767px)" srcSet="/our-service-mobile.webp" />
+                <img
+                  src="/our-service.webp"
+                  alt="A responsive website design shown across a desktop monitor, laptop, tablet, and phone"
+                  width={1200}
+                  height={800}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover grayscale border border-rule"
+                />
+              </picture>
               <p className="label text-muted mt-4">
                 One design, considered at every width your prospects actually use
               </p>
@@ -437,15 +447,18 @@ export default function Home({ onBook }: { onBook: () => void }) {
       <Section tone="sunk" size="default">
         <Shell width="narrow">
           <Reveal className="text-center">
-            <img
-              src="/guarantee.webp"
-              alt="Uncoded Hub's seven-day delivery guarantee certificate: on time or free, signed by Deepak and Geetha"
-              width={1774}
-              height={887}
-              loading="lazy"
-              decoding="async"
-              className="w-full max-w-lg mx-auto border border-rule"
-            />
+            <picture className="w-full max-w-lg mx-auto block">
+              <source media="(max-width: 767px)" srcSet="/guarantee-mobile.webp" />
+              <img
+                src="/guarantee.webp"
+                alt="Uncoded Hub's seven-day delivery guarantee certificate: on time or free, signed by Deepak and Geetha"
+                width={1200}
+                height={600}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-auto border border-rule"
+              />
+            </picture>
           </Reveal>
           <Reveal delay={60}>
             <SectionHead
@@ -661,15 +674,18 @@ export default function Home({ onBook }: { onBook: () => void }) {
             copy either side of it is making. */}
         <Reveal delay={150}>
           <div className="px-6 md:px-10">
-            <img
-              src="/before-after.webp"
-              alt="Before: a business owner overwhelmed by scattered enquiries piling up. After: the same business owner, relaxed, with a website doing the work for him"
-              width={1536}
-              height={1024}
-              loading="lazy"
-              decoding="async"
-              className="mt-14 w-full max-w-3xl mx-auto aspect-[3/2] object-cover grayscale border border-rule-strong"
-            />
+            <picture className="mt-14 w-full max-w-3xl mx-auto aspect-[3/2] block">
+              <source media="(max-width: 767px)" srcSet="/before-after-mobile.webp" />
+              <img
+                src="/before-after.webp"
+                alt="Before: a business owner overwhelmed by scattered enquiries piling up. After: the same business owner, relaxed, with a website doing the work for him"
+                width={1200}
+                height={800}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover grayscale border border-rule-strong"
+              />
+            </picture>
             <p className="label text-muted mt-4 text-center">
               The same business, on either side of one working website
             </p>
@@ -714,24 +730,30 @@ export default function Home({ onBook }: { onBook: () => void }) {
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <Reveal className="lg:col-span-5">
               <div className="grid grid-cols-2 gap-px bg-rule-strong border border-rule-strong">
-                <img
-                  src="/deepak.webp"
-                  alt="Deepak, co-founder"
-                  width={540}
-                  height={540}
-                  loading="lazy"
-                  decoding="async"
-                  className="photo-hover w-full aspect-[3/4] object-cover bg-paper grayscale"
-                />
-                <img
-                  src="/geetha.webp"
-                  alt="Geetha, co-founder"
-                  width={700}
-                  height={700}
-                  loading="lazy"
-                  decoding="async"
-                  className="photo-hover w-full aspect-[3/4] object-cover object-top bg-paper grayscale"
-                />
+                <picture className="w-full aspect-[3/4] block">
+                  <source media="(max-width: 767px)" srcSet="/deepak-mobile.webp" />
+                  <img
+                    src="/deepak.webp"
+                    alt="Deepak, co-founder"
+                    width={540}
+                    height={540}
+                    loading="lazy"
+                    decoding="async"
+                    className="photo-hover w-full h-full object-cover bg-paper grayscale"
+                  />
+                </picture>
+                <picture className="w-full aspect-[3/4] block">
+                  <source media="(max-width: 767px)" srcSet="/geetha-mobile.webp" />
+                  <img
+                    src="/geetha.webp"
+                    alt="Geetha, co-founder"
+                    width={700}
+                    height={700}
+                    loading="lazy"
+                    decoding="async"
+                    className="photo-hover w-full h-full object-cover object-top bg-paper grayscale"
+                  />
+                </picture>
               </div>
             </Reveal>
 
