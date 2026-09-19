@@ -502,17 +502,27 @@ export function BookingCalendar({ host }: { host: Host }) {
             )}
 
             {loadingAvailability && (
-              <p className="label text-muted mt-4 flex items-center gap-2.5">
-                <span className="spinner" aria-hidden="true" />
-                Checking live availability…
-              </p>
+              <>
+                <p className="label text-muted mt-4 flex items-center gap-2.5">
+                  <span className="spinner" aria-hidden="true" />
+                  Checking live availability…
+                </p>
+                <div className="mt-7 grid grid-cols-2 gap-2" aria-hidden="true">
+                  {Array.from({ length: 8 }).map((_, i) => (
+                    <div
+                      key={i}
+                      className="h-[3.25rem] border border-rule-strong bg-paper-raised animate-pulse"
+                    />
+                  ))}
+                </div>
+              </>
             )}
 
-            {slots.length === 0 ? (
+            {!loadingAvailability && slots.length === 0 ? (
               <p className="text-muted leading-relaxed mt-8">
                 Nothing left on this day. Try tomorrow — or message us and we will find a time.
               </p>
-            ) : (
+            ) : !loadingAvailability ? (
               <div className="mt-7 grid grid-cols-2 gap-2 max-h-[22rem] overflow-y-auto pr-1">
                 {slots.map((s) => {
                   const active = slot?.getTime() === s.getTime();
@@ -544,7 +554,7 @@ export function BookingCalendar({ host }: { host: Host }) {
                   );
                 })}
               </div>
-            )}
+            ) : null}
 
             <button
               onClick={() => setStep('details')}

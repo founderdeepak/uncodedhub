@@ -38,6 +38,7 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           VITE_BOOKING_SECRET: ${{ secrets.VITE_BOOKING_SECRET }}
+          VITE_LEAD_MAGNET_SECRET: ${{ secrets.VITE_LEAD_MAGNET_SECRET }}
 
       - name: Deploy to Hostinger via rsync over SSH
         env:
