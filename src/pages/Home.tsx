@@ -190,7 +190,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
         <title>Uncoded Hub — Let Your Website Sell Before You Do</title>
         <meta
           name="description"
-          content="Fixed-price, fixed-timeline websites for high-value businesses — interior designers, real estate agents, dental &amp; aesthetic clinics, wedding photographers, renovation studios, and coaches &amp; consultants. Live in seven working days, or the build is free."
+          content="Fixed-price, 7-day websites for high-value local businesses — interior designers, real estate agents, clinics, photographers &amp; consultants. On time or free."
         />
         <link rel="canonical" href="https://uncodedhub.com/" />
       </Helmet>

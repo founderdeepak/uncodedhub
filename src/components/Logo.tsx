@@ -24,7 +24,7 @@ export function LogoMark({
       src="/logo-medium.webp"
       width={size}
       height={size}
-      alt=""
+      alt="Uncoded Hub logo"
       aria-hidden="true"
       className={className}
       style={{ width: size, height: size, objectFit: 'contain' }}

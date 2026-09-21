@@ -100,7 +100,7 @@ export default function BlogView() {
             {post.image ? (
               <img
                 src={post.image}
-                alt=""
+                alt={post.title}
                 width={1600}
                 height={900}
                 loading="eager"

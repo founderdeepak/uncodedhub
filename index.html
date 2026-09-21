@@ -6,15 +6,9 @@
 
     <!-- ═══════════════════════════════════════════════════════
          PRIMARY SEO
-         title / description / canonical are intentionally NOT set
-         here — every route sets them via <Helmet> (see src/pages/*),
-         including the 404 route. A static placeholder here would sit
-         alongside Helmet's tag rather than being replaced by it
-         (Helmet only manages tags it renders), producing two <title>
-         and two canonical elements per page. The prerender step
-         (scripts/prerender.mjs) bakes each route's real Helmet output
-         into its own static HTML file, so there is no window where a
-         crawler sees this file un-prerendered.
+         Per-route title, description, and canonical tags are set
+         via Helmet (see src/pages/*). Static HTML output is
+         prerendered for all routes via scripts/prerender.mjs.
     ═══════════════════════════════════════════════════════ -->
     <meta name="author" content="Uncoded Hub">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">

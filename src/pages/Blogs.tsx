@@ -140,7 +140,7 @@ export default function Blogs() {
                   {post.image ? (
                     <img
                       src={post.image}
-                      alt=""
+                      alt={post.title}
                       width={880}
                       height={495}
                       loading="lazy"
