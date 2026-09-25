@@ -1,0 +1,57 @@
+{
+  "nicheId": "executive-coaching",
+  "nicheTitle": "Executive Sparring & Founder Advisory",
+  "brandName": "Naomi Reyes Advisory",
+  "currency": "₹",
+  "currencyUnit": "INR",
+  "bookingType": "zoom-diagnostic",
+  "bookingTitle": "Apply for 45-Min Operating Diagnostic Call",
+  "bookingSubtitle": "Confidential, 1-on-1 strategic diagnostic. Strictly diagnostic first — zero sales pitch on call #1.",
+  "travelBufferMinutes": 15,
+  "slotDurationMinutes": 45,
+  "operatingHours": { "start": 10, "end": 18, "days": [1, 2, 3, 4, 5] },
+  "depositRequired": false,
+  "depositAmount": 0,
+  "depositPolicy": "Zero cost. Applicants must meet revenue stage and decision autonomy criteria.",
+  "confirmationMessage": "Your Diagnostic Application has been logged. Add it to your calendar below, and Naomi will review your company stage and send your private Zoom link.",
+  "estimator": {
+    "step1": {
+      "title": "Select Current Company Stage & ARR",
+      "options": [
+        { "id": "seed", "label": "Seed / Early Growth (₹2 Cr – ₹8 Cr ARR)", "desc": "Validating repeatable sales, founder capacity bottlenecks", "icon": "🌱" },
+        { "id": "series-a", "label": "Series A / Scaleup (₹8 Cr – ₹35 Cr ARR)", "desc": "Restructuring executive layer, delegating operating cadences", "icon": "🚀" },
+        { "id": "growth-scale", "label": "Established Growth (> ₹35 Cr ARR)", "desc": "Board alignment, international expansion, high-stakes leadership sparring", "icon": "🏛️" },
+        { "id": "c-suite-solo", "label": "Senior C-Suite Transition", "desc": "Entering Managing Director or Chief Operating Officer role", "icon": "👔" }
+      ]
+    },
+    "step2": {
+      "title": "Select Core Organizational Bottleneck",
+      "options": [
+        { "id": "small", "label": "Founder Operating Bottleneck", "desc": "Working 70+ hours/week, unable to remove self from daily sprint firefighting" },
+        { "id": "medium", "label": "Executive Team & Cadence Drift", "desc": "Head of Sales / VP Product underperforming; need decision rights codification" },
+        { "id": "large", "label": "Strategic Capital Allocation & Board Realignment", "desc": "Navigating investor conflict, term sheet decisions, or runway preservation" }
+      ]
+    },
+    "step3": {
+      "title": "Select Engagement Architecture",
+      "options": [
+        { "id": "standard", "label": "Targeted 30-Day Executive Sprint", "desc": "Urgent bottleneck diagnostic + single key leadership transition playbook", "multiplier": 0.85 },
+        { "id": "mid-range", "label": "Signature 90-Day Execution Arc", "desc": "Bi-weekly intensive 1-on-1 sparring + async voice memo access + graduation criteria", "multiplier": 1.00 },
+        { "id": "high-end", "label": "Annual Principal Advisory Retainer", "desc": "Continuous C-suite advisory, board-meeting prep, and emergency priority window", "multiplier": 1.40 }
+      ]
+    },
+    "pricingMatrix": {
+      "seed": { "small": [90000, 150000], "medium": [180000, 280000], "large": [280000, 420000] },
+      "series-a": { "small": [180000, 280000], "medium": [320000, 480000], "large": [480000, 750000] },
+      "growth-scale": { "small": [300000, 450000], "medium": [550000, 850000], "large": [850000, 1400000] },
+      "c-suite-solo": { "small": [150000, 240000], "medium": [280000, 420000], "large": [420000, 650000] }
+    },
+    "disclaimer": "Investment covers direct 1-on-1 sparring with Naomi Reyes (2x founder, former tech VP). Capped at 6 active founders per cohort. Strictly zero open-ended retainers without graduation criteria."
+  },
+  "notifications": {
+    "ownerEmail": "advisory@naomi-reyes.com",
+    "ownerPhone": "+91 98450 99887",
+    "customerSlaHours": 24,
+    "customerEmailBody": "Dear {name},\n\nWe received your diagnostic brief for your company stage ({project_type}) regarding {project_size}.\n\nNaomi will personally review your context within 24 hours. If we determine we can create 5x value for your stage, you will receive calendar confirmation and a preliminary operating audit framework.\n\nAll details are protected under NDA.\n\nNaomi Reyes Advisory"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "nicheId": "real-estate",
+  "nicheTitle": "Prime Real Estate & Off-Market Acquisitions",
+  "brandName": "Marlow & Co. Private Real Estate",
+  "currency": "₹",
+  "currencyUnit": "Crores",
+  "bookingType": "advisory-session",
+  "bookingTitle": "Book a Private Buyer Strategy Briefing",
+  "bookingSubtitle": "Meet directly with our Managing Partner to review unlisted inventory and 30-year title diligence.",
+  "travelBufferMinutes": 30,
+  "slotDurationMinutes": 45,
+  "operatingHours": { "start": 9, "end": 17, "days": [1, 2, 3, 4, 5] },
+  "depositRequired": false,
+  "depositAmount": 0,
+  "depositPolicy": "Zero fee. Strictly confidential buyer fiduciary representation.",
+  "confirmationMessage": "You're booked for your Private Briefing. Add it to your calendar below, and our Managing Partner will reach out beforehand with preliminary dossier materials.",
+  "estimator": {
+    "step1": {
+      "title": "Select Target Asset Class",
+      "options": [
+        { "id": "prime-apt", "label": "Prime 3/4 BHK Apartment", "desc": "High-spec gated community in prime micro-markets", "icon": "🏙️" },
+        { "id": "penthouse", "label": "Duplex Sky Penthouse", "desc": "Top-floor residence with sea/city panoramic views", "icon": "🌆" },
+        { "id": "villa-estate", "label": "Independent Villa / Gated Plot", "desc": "Freehold land, private pool, mature gardens", "icon": "🏰" },
+        { "id": "commercial", "label": "Grade-A Commercial Pre-Leased", "desc": "High-yield office floors with 7.5%+ cap rate", "icon": "🏢" }
+      ]
+    },
+    "step2": {
+      "title": "Select Micro-Market Location Tier",
+      "options": [
+        { "id": "small", "label": "Emerging Growth Corridor", "desc": "Rapidly appreciating sub-markets (e.g. North Bangalore / Navi Mumbai)" },
+        { "id": "medium", "label": "Established Luxury Enclave", "desc": "Core prime residential centers (e.g. Indiranagar, Whitefield, Bandra)" },
+        { "id": "large", "label": "Ultra-Prime Sovereign Enclave", "desc": "Most coveted addresses (e.g. Worli Sea Face, Malabar Hill, Sadashivanagar)" }
+      ]
+    },
+    "step3": {
+      "title": "Select Acquisition Readiness & Title Urgency",
+      "options": [
+        { "id": "standard", "label": "Immediate Ready Possession (With OC)", "desc": "Move-in ready, zero construction risk, clear Mother Deed", "multiplier": 1.00 },
+        { "id": "mid-range", "label": "Nearing Completion (Under 6 Months)", "desc": "Structure complete, finishes underway, attractive payment terms", "multiplier": 0.92 },
+        { "id": "high-end", "label": "Trophy Off-Market / Custom Shell", "desc": "Rare pocket listing, bare-shell architecture ready for custom interior build", "multiplier": 1.15 }
+      ]
+    },
+    "pricingMatrix": {
+      "prime-apt": { "small": [40000000, 65000000], "medium": [65000000, 120000000], "large": [120000000, 220000000] },
+      "penthouse": { "small": [85000000, 140000000], "medium": [140000000, 250000000], "large": [250000000, 450000000] },
+      "villa-estate": { "small": [90000000, 160000000], "medium": [160000000, 300000000], "large": [300000000, 600000000] },
+      "commercial": { "small": [60000000, 120000000], "medium": [120000000, 250000000], "large": [250000000, 500000000] }
+    },
+    "disclaimer": "Capital figures reflect registered sub-registrar transaction values and vetted builder pricing in prime Mumbai & Bangalore. All prospective acquisitions undergo Marlow's 14-point title diligence."
+  },
+  "notifications": {
+    "ownerEmail": "briefings@marlow-realty.com",
+    "ownerPhone": "+91 (022) 6890-4100",
+    "customerSlaHours": 12,
+    "customerEmailBody": "Dear {name},\n\nThank you for requesting an acquisition brief for a {project_type} in {project_size}.\n\nManaging Partner Julian Marlow will review your parameters against our private off-market registry and contact you directly within 12 hours from +91 (022) 6890-4100.\n\nAll details remain sealed under strict non-disclosure.\n\nRespectfully,\nMarlow & Co. Private Advisory"
+  }
+}

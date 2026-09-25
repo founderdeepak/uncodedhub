@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { submitLead } from '../../lib/supabase';
 
 /* ═══════════════════════════════════════════════════════════════════
    LEAD MAGNET FORM — The Pre-Sold Prospects Audit
@@ -46,6 +47,15 @@ export function LeadMagnetForm({ embedded }: LeadMagnetFormProps) {
     try {
       const trimmedEmail = email.trim();
       const trimmedFirstName = firstName.trim();
+
+      // Mirror lead to Supabase contact_submissions
+      submitLead({
+        name: trimmedFirstName || 'Website Visitor',
+        email: trimmedEmail,
+        business_type: 'Lead Magnet: Pre-Sold Prospects Audit',
+        project_details: 'Requested the Pre-Sold Prospects Audit free download from website.',
+      }).catch(() => {});
+
       const res = await fetch(LEAD_MAGNET_SCRIPT_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
@@ -70,12 +80,11 @@ export function LeadMagnetForm({ embedded }: LeadMagnetFormProps) {
         <span className="label text-signal">Sent ✓</span>
         <h3 className="font-display text-display mt-3">Check your inbox.</h3>
         <p className="text-muted leading-relaxed mt-4">
-          The Pre-Sold Prospects Audit is on its way to <strong>{email}</strong>. If it doesn't
-          show up in a couple of minutes, check spam — or email{' '}
+          {'The Pre-Sold Prospects Audit is on its way to '}<strong>{email}</strong>{". If it doesn't show up in a couple of minutes, check spam — or email "}
           <a href="mailto:hello@uncodedhub.com?subject=AUDIT" className="link-quiet text-ink">
             hello@uncodedhub.com
-          </a>{' '}
-          and we'll send it directly.
+          </a>
+          {" and we'll send it directly."}
         </p>
       </div>
     );
@@ -145,11 +154,11 @@ export function LeadMagnetForm({ embedded }: LeadMagnetFormProps) {
       </form>
 
       <p className="text-[0.8125rem] text-muted mt-4 leading-relaxed">
-        Form not loading?{' '}
+        {'Form not loading? '}
         <a href="mailto:hello@uncodedhub.com?subject=AUDIT" className="link-quiet text-ink">
           Email us with "AUDIT"
-        </a>{' '}
-        and we'll send it directly.
+        </a>
+        {" and we'll send it directly."}
       </p>
     </div>
   );

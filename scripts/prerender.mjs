@@ -190,6 +190,7 @@ async function main() {
   }
 
   console.log(`Prerendered ${allRoutes.length} routes + 404.html.`);
+  process.exit(0);
 }
 
 // Hard ceiling on the whole script. Local runs finish in well under 2
@@ -197,9 +198,11 @@ async function main() {
 // unexpected hang anywhere (browser launch, a wedged navigation) burns
 // CI minutes indefinitely instead of failing with a clear signal.
 const OVERALL_TIMEOUT_MS = 8 * 60 * 1000;
-const timeout = new Promise((_, reject) =>
-  setTimeout(() => reject(new Error(`prerender.mjs exceeded ${OVERALL_TIMEOUT_MS}ms overall`)), OVERALL_TIMEOUT_MS),
-);
+let timeoutTimer;
+const timeout = new Promise((_, reject) => {
+  timeoutTimer = setTimeout(() => reject(new Error(`prerender.mjs exceeded ${OVERALL_TIMEOUT_MS}ms overall`)), OVERALL_TIMEOUT_MS);
+  if (timeoutTimer.unref) timeoutTimer.unref();
+});
 
 Promise.race([main(), timeout]).catch((err) => {
   console.error(err);

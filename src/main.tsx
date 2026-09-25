@@ -25,7 +25,11 @@ const app = (
    (`vite dev`) and in `vite preview` before the prerender step has run,
    #root is empty, so this falls back to a normal client render. */
 if (container.hasChildNodes()) {
-  hydrateRoot(container, app);
+  hydrateRoot(container, app, {
+    onRecoverableError(err: unknown, errorInfo) {
+      console.error('[HYDRATION RECOVERABLE ERROR]', err, errorInfo?.componentStack);
+    },
+  });
 } else {
   createRoot(container).render(app);
 }

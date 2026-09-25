@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marlow &amp; Co. | Private Real Estate Advisory &amp; Prime Estates</title>
+  <meta name="description" content="Independent prime property advisory and verified off-market residential acquisitions. Capped roster of 8 clients, zero developer bias, and 14-point legal title verification.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       CSS DESIGN SYSTEM & THEME TOKENS (HIGH CONTRAST & LEGIBILITY)
+       ========================================================================== */
+    :root, body[data-theme="heritage-estate"] {
+      --bg-primary: #F7F5F0;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #EFECE3;
+      --text-primary: #121E17;
+      --text-muted: #384A3F;
+      --text-subtle: #5C6E63;
+      --border-color: #D3CDC0;
+      --border-subtle: #E4DFD5;
+      --accent: #1B4332;
+      --accent-hover: #08281A;
+      --accent-contrast: #FFFFFF;
+      --accent-light: #E8F0EC;
+      --badge-bg: #E1EBE5;
+      --badge-text: #1B4332;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --card-shadow: 0 10px 30px rgba(19, 42, 34, 0.08);
+      --header-bg: rgba(247, 245, 240, 0.95);
+      --input-bg: #FFFFFF;
+    }
+
+    body[data-theme="nocturne-penthouse"] {
+      --bg-primary: #080C14;
+      --bg-surface: #0E1522;
+      --bg-card: #121A2A;
+      --bg-card-subtle: #1A2438;
+      --text-primary: #F8FAFC;
+      --text-muted: #CBD5E1;
+      --text-subtle: #94A3B8;
+      --border-color: rgba(79, 209, 197, 0.28);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --accent: #38BDF8;
+      --accent-hover: #7DD3FC;
+      --accent-contrast: #080C14;
+      --accent-light: rgba(56, 189, 248, 0.14);
+      --badge-bg: rgba(56, 189, 248, 0.16);
+      --badge-text: #7DD3FC;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --font-heading: 'Cinzel', 'Cormorant Garamond', serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --card-shadow: 0 20px 48px rgba(0, 0, 0, 0.75);
+      --header-bg: rgba(8, 12, 20, 0.94);
+      --input-bg: #0E1522;
+    }
+
+    body[data-theme="swiss-architectural"] {
+      --bg-primary: #F4F4F0;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #EAEAE4;
+      --text-primary: #0F0F0F;
+      --text-muted: #262626;
+      --text-subtle: #525252;
+      --border-color: #0F0F0F;
+      --border-subtle: #0F0F0F;
+      --accent: #E63946;
+      --accent-hover: #C52230;
+      --accent-contrast: #FFFFFF;
+      --accent-light: #FFE8EA;
+      --badge-bg: #0F0F0F;
+      --badge-text: #FFFFFF;
+      --radius-sm: 0px;
+      --radius-md: 0px;
+      --radius-lg: 0px;
+      --font-heading: 'Syne', 'Space Grotesk', sans-serif;
+      --font-body: 'Space Grotesk', -apple-system, sans-serif;
+      --card-shadow: 6px 6px 0px #0F0F0F;
+      --header-bg: #F4F4F0;
+      --input-bg: #FFFFFF;
+    }
+
+    /* Base Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease, box-shadow 0.25s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      padding-bottom: 90px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      color: var(--text-primary);
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; object-fit: cover; }
+
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Badges & Buttons */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      border-radius: var(--radius-sm);
+      margin-bottom: 18px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 32px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-align: center;
+      border: 1px solid transparent;
+      box-shadow: var(--card-shadow);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--accent-contrast);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1.5px solid var(--border-color);
+    }
+    .btn-outline:hover {
+      background: var(--bg-card-subtle);
+      border-color: var(--text-primary);
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .brand-title {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--text-primary);
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-weight: 700;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ==========================================================================
+       HERO SECTION (3 DISTINCT ARCHITECTURAL LAYOUTS)
+       ========================================================================== */
+    .hero-section {
+      padding: 70px 0 60px;
+      position: relative;
+    }
+
+    /* Style 1: Heritage Estate */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 54px;
+      margin-bottom: 22px;
+      font-weight: 600;
+    }
+
+    .hero-content .lead {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 38px;
+      flex-wrap: wrap;
+    }
+
+    .hero-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding-top: 26px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .trust-item h4 {
+      font-size: 24px;
+      font-family: var(--font-body);
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .trust-item p {
+      font-size: 12px;
+      line-height: 1.4;
+      margin: 0;
+      color: var(--text-subtle);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-visual { position: relative; }
+
+    .hero-image-main {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      bottom: -22px;
+      left: -22px;
+      background: var(--bg-surface);
+      padding: 18px 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      max-width: 300px;
+    }
+
+    .hero-floating-card .quote {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .hero-floating-card .author {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* Distinct Architecture for STYLE 2: Nocturne Penthouse HUD */
+    body[data-theme="nocturne-penthouse"] .hero-grid {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    body[data-theme="nocturne-penthouse"] .hero-content h1 {
+      font-size: 58px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #38BDF8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    body[data-theme="nocturne-penthouse"] .hero-actions { justify-content: center; }
+    body[data-theme="nocturne-penthouse"] .hero-trust-bar {
+      max-width: 820px;
+      margin: 0 auto 36px;
+      background: var(--bg-card);
+      padding: 20px 32px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+    body[data-theme="nocturne-penthouse"] .hero-visual { width: 100%; }
+    body[data-theme="nocturne-penthouse"] .hero-image-main {
+      height: 480px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.85);
+    }
+    body[data-theme="nocturne-penthouse"] .hero-floating-card {
+      bottom: 24px;
+      right: 24px;
+      left: auto;
+      background: rgba(14, 21, 34, 0.92);
+      backdrop-filter: blur(16px);
+      border-color: var(--accent);
+    }
+
+    /* Distinct Architecture for STYLE 3: Swiss Architectural Grid */
+    body[data-theme="swiss-architectural"] .hero-section { padding: 40px 0 60px; }
+    body[data-theme="swiss-architectural"] .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 3px solid #0F0F0F;
+      background: #FFFFFF;
+      box-shadow: 8px 8px 0px #0F0F0F;
+    }
+    body[data-theme="swiss-architectural"] .hero-content {
+      padding: 50px 42px;
+      border-right: 3px solid #0F0F0F;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    body[data-theme="swiss-architectural"] .hero-content h1 {
+      font-size: 52px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    body[data-theme="swiss-architectural"] .hero-visual { height: 100%; }
+    body[data-theme="swiss-architectural"] .hero-image-main {
+      border-radius: 0;
+      border: none;
+      height: 100%;
+      min-height: 520px;
+    }
+    body[data-theme="swiss-architectural"] .hero-floating-card {
+      bottom: 0;
+      left: 0;
+      border-radius: 0;
+      border: none;
+      border-top: 3px solid #0F0F0F;
+      border-right: 3px solid #0F0F0F;
+      box-shadow: none;
+      background: #E63946;
+      color: #FFF;
+      max-width: 340px;
+    }
+    body[data-theme="swiss-architectural"] .hero-floating-card .quote {
+      color: #FFF;
+      font-style: normal;
+      font-weight: 600;
+    }
+    body[data-theme="swiss-architectural"] .hero-floating-card .author {
+      color: #0F0F0F;
+      font-weight: 800;
+      background: #FFF;
+      display: inline-block;
+      padding: 2px 8px;
+    }
+    body[data-theme="swiss-architectural"] .card, 
+    body[data-theme="swiss-architectural"] .btn,
+    body[data-theme="swiss-architectural"] input,
+    body[data-theme="swiss-architectural"] select,
+    body[data-theme="swiss-architectural"] textarea {
+      border-radius: 0 !important;
+      border: 2px solid #0F0F0F !important;
+      box-shadow: 5px 5px 0px #0F0F0F !important;
+    }
+
+    /* Common Card & Sections */
+    .section-padding { padding: 80px 0; }
+    .section-header { text-align: center; max-width: 780px; margin: 0 auto 52px; }
+    .section-header h2 { font-size: 38px; margin-bottom: 16px; }
+    .section-header p { font-size: 17px; color: var(--text-muted); }
+
+    .problem-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-light);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .card h3 { font-size: 22px; margin-bottom: 12px; }
+    .card p { font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 0; }
+
+    /* Comparison Wrap */
+    .comparison-wrap {
+      margin-top: 50px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .comp-col-bad {
+      border-right: 1px solid var(--border-color);
+      padding-right: 32px;
+    }
+
+    .comp-col h3 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .comp-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 14.5px;
+    }
+
+    /* Listings */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .property-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .property-img-wrap {
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .property-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .property-card:hover .property-img-wrap img { transform: scale(1.04); }
+
+    .property-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(10, 16, 26, 0.88);
+      color: #FFF;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    .property-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .property-body h3 { font-size: 22px; margin-bottom: 8px; }
+
+    .property-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--text-subtle);
+      border-top: 1px solid var(--border-color);
+      padding-top: 14px;
+      margin-top: 14px;
+      font-weight: 600;
+    }
+
+    /* Process & Guarantees */
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .step-number {
+      font-family: var(--font-heading);
+      font-size: 44px;
+      color: var(--accent);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .guarantees-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .guarantee-box {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      display: flex;
+      gap: 18px;
+    }
+
+    .guarantee-icon {
+      font-size: 28px;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .testimonial-text {
+      font-size: 15.5px;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .client-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .client-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      object-fit: cover;
+    }
+
+    /* Form Container */
+    .cta-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .form-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .form-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--input-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 15px;
+    }
+    .form-control:focus { outline: none; border-color: var(--accent); }
+
+    /* Footer */
+    footer {
+      padding: 50px 0;
+      border-top: 1px solid var(--border-color);
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Floating Switcher */
+    .theme-controller {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      background: rgba(14, 20, 28, 0.94);
+      backdrop-filter: blur(16px);
+      padding: 8px 10px;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .tc-label {
+      color: #FAF8F5;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-right: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .tc-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #38BDF8;
+      box-shadow: 0 0 8px #38BDF8;
+    }
+
+    .tc-btn {
+      background: transparent;
+      border: none;
+      color: #CBD5E1;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .tc-btn:hover { color: #FFF; background: rgba(255, 255, 255, 0.08); }
+    .tc-btn.active {
+      background: #FFFFFF;
+      color: #080C14;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid, .problem-cards, .portfolio-grid, .process-timeline, .form-container, .guarantees-grid, .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-content h1 { font-size: 38px; }
+      .comparison-grid { grid-template-columns: 1fr; }
+      .comp-col-bad { border-right: none; border-bottom: 1px solid var(--border-color); padding-bottom: 24px; padding-right: 0; }
+      .nav-links { display: none; }
+      .theme-controller { width: 92%; overflow-x: auto; justify-content: flex-start; border-radius: 16px; }
+    }
+  </style>
+</head>
+
+<body data-theme="heritage-estate">
+
+  <!-- Header -->
+  <header>
+    <div class="wrap nav-inner">
+      <div>
+        <span class="brand-title">MARLOW &amp; CO.</span>
+        <span class="brand-sub">Private Property Advisory &bull; RERA A518000342</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#inventory">Verified Inventory</a>
+        <a href="#diligence">14-Point Due Diligence</a>
+        <a href="#process">Acquisition Protocol</a>
+        <a href="#fiduciary">Buyer-Side Fiduciary</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="tel:+919888877665" style="font-weight:700; font-size:14px; margin-right:12px;">+91 (022) 6890-4100</a>
+        <a href="#consultation" class="btn btn-primary" style="padding: 10px 22px; font-size: 13.5px;">Request Buyer Briefing</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="wrap hero-grid">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Capped Roster &bull; Max 8 Active Clients
+        </div>
+        
+        <h1>Acquire Prime Residential Real Estate with Zero Broker Bias.</h1>
+        
+        <p class="lead">
+          We represent high-net-worth buyers in prime Mumbai and Bangalore micro-markets. Direct principal advisory, off-market pocket listings, 30-year title diligence, and aggressive price negotiation.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#consultation" class="btn btn-primary">Book Confidential Portfolio Consultation &rarr;</a>
+          <a href="#inventory" class="btn btn-outline">View Off-Market Shortlist</a>
+        </div>
+
+        <div class="hero-trust-bar">
+          <div class="trust-item">
+            <h4>&ZeroWidthSpace;&ZeroWidthSpace;₹340 Cr+</h4>
+            <p>Closed Acquisitions</p>
+          </div>
+          <div class="trust-item">
+            <h4>100% Legal</h4>
+            <p>Title &amp; OC Guarantee</p>
+          </div>
+          <div class="trust-item">
+            <h4>4.8% Avg</h4>
+            <p>Negotiated Discount Below Ask</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img class="hero-image-main" 
+             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80" 
+             alt="Prime Architectural Luxury Villa with Water Feature and Private Grounds">
+        
+        <div class="hero-floating-card">
+          <p class="quote">"Marlow discovered an unreleased duplex in Worli that wasn't on any public portal. Saved us ₹48 Lakhs on the developer's final sheet."</p>
+          <p class="author">&mdash; Aditya &amp; Rashmi Singhania</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem: The Perils of Mass Portals -->
+  <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">The Indian Real Estate Quagmire</div>
+        <h2>Why Public Property Portals Waste Months of Your Time</h2>
+        <p>Browsing open portals feels productive, but 70% of high-end listings are ghost inventory designed to harvest your phone number for aggressive telemarketers.</p>
+      </div>
+
+      <div class="problem-cards">
+        <div class="card">
+          <div class="card-icon">1</div>
+          <h3>The Developer Kickback Conflict</h3>
+          <p>Traditional brokers push whichever developer pays a 3.5% commission instead of the one that aligns with your commute, capital appreciation, and construction quality.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">2</div>
+          <h3>Ghost Listings &amp; Bait Pricing</h3>
+          <p>You call regarding a gorgeous ₹3.2 Cr apartment on a portal, only to hear: "Sir, that unit just sold yesterday, but I have another unfinished project 12 km further away."</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">3</div>
+          <h3>Hidden Legal Traps &amp; Missing OCs</h3>
+          <p>Lured by shiny clubhouses, buyers overlook unapproved height deviations, missing Occupancy Certificates (OC), or pending litigation that freezes property resale for decades.</p>
+        </div>
+      </div>
+
+      <!-- Fiduciary Comparison -->
+      <div class="comparison-wrap">
+        <div class="comparison-grid">
+          <div class="comp-col comp-col-bad">
+            <h3 style="color: #E63946;">&times; Typical Property Brokers</h3>
+            <div class="comp-item"><span style="color:#E63946; font-weight:800;">&times;</span> Junior telemarketers send 40 random PDFs without checking floor plans or sunlight angles</div>
+            <div class="comp-item"><span style="color:#E63946; font-weight:800;">&times;</span> Pressure you to sign booking tokens before verifying RERA sanctions and litigations</div>
+            <div class="comp-item"><span style="color:#E63946; font-weight:800;">&times;</span> Disappear the moment builder payment milestone #1 is completed</div>
+            <div class="comp-item"><span style="color:#E63946; font-weight:800;">&times;</span> No financial modelling for rental yield, society sinking funds, or resale liquidity</div>
+          </div>
+
+          <div class="comp-col">
+            <h3 style="color: var(--accent);">&#10003; The Marlow Fiduciary Protocol</h3>
+            <div class="comp-item"><span style="color:#2A9D8F; font-weight:800;">&#10003;</span> Capped client roster: Founder personally inspects every single property with you</div>
+            <div class="comp-item"><span style="color:#2A9D8F; font-weight:800;">&#10003;</span> 14-point forensic title search by veteran high-court real estate attorneys prior to token</div>
+            <div class="comp-item"><span style="color:#2A9D8F; font-weight:800;">&#10003;</span> Direct buyer advocacy: we negotiate builder loading, parking allocation, and payment terms</div>
+            <div class="comp-item"><span style="color:#2A9D8F; font-weight:800;">&#10003;</span> Turnkey registry, stamp duty assistance, and white-glove handover inspection</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Prime Inventory -->
+  <section id="inventory" class="section-padding">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">Prime Curated Portfolio</div>
+        <h2>Vetted Residential Estates Ready for Acquisition</h2>
+        <p>Every residence listed below has been verified for 100% legal title clarity, RERA compliance, and realistic market valuation.</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <!-- Listing 1 -->
+        <div class="property-card">
+          <div class="property-img-wrap">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Luxury Sea-Facing High Rise Apartment">
+            <span class="property-tag">Off-Market Exclusive</span>
+          </div>
+          <div class="property-body">
+            <div>
+              <h3>The Lumina Sky Penthouse</h3>
+              <p>Panoramic sea views, private elevator vestibule, triple-height balcony, and 4 dedicated basement car stencils.</p>
+            </div>
+            <div class="property-meta">
+              <span>Worli Sea Face &bull; 4,800 Sq.Ft</span>
+              <strong style="color: var(--accent);">&ZeroWidthSpace;₹18.5 Cr &bull; Ready OC</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Listing 2 -->
+        <div class="property-card">
+          <div class="property-img-wrap">
+            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80" alt="Private Gated Modern Villa with Garden Pool">
+            <span class="property-tag">Private Villa</span>
+          </div>
+          <div class="property-body">
+            <div>
+              <h3>Bespoke Orchard Estate</h3>
+              <p>Zero-compromise corner plot with mature teak trees, subterranean wine cellar, and integrated solar microgrid.</p>
+            </div>
+            <div class="property-meta">
+              <span>Sadashivanagar &bull; 6,200 Sq.Ft</span>
+              <strong style="color: var(--accent);">&ZeroWidthSpace;₹24.0 Cr &bull; Freehold</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Listing 3 -->
+        <div class="property-card">
+          <div class="property-img-wrap">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Modern Minimalist Architectural Penthouse Living Room">
+            <span class="property-tag">High Capital Growth</span>
+          </div>
+          <div class="property-body">
+            <div>
+              <h3>The Horizon Glass Pavilion</h3>
+              <p>Architectural simplex with floor-to-ceiling acoustic glass curtain walls and bespoke Poggenpohl kitchen fit-out.</p>
+            </div>
+            <div class="property-meta">
+              <span>Bandra West &bull; 3,250 Sq.Ft</span>
+              <strong style="color: var(--accent);">&ZeroWidthSpace;₹14.2 Cr &bull; OC Applied</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-Step Protocol -->
+  <section id="process" class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">The Acquisition Framework</div>
+        <h2>Our 3-Step Buyer Representation Protocol</h2>
+        <p>No scattered site visits or broker high-pressure tactics. A disciplined, research-backed acquisition roadmap.</p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="card">
+          <div class="step-number">01</div>
+          <h3>Bespoke Criteria &amp; Off-Market Sourcing</h3>
+          <p>We map your family commute requirements, floor-to-ceiling preferences, Vastu compliance, and tax structuring needs. We cross-reference off-market registries not accessible on public websites.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">02</div>
+          <h3>14-Point Forensic Diligence</h3>
+          <p>Before you offer a single rupee, our legal counsel inspects original title deeds, Mother Deed chains for 30 years, sanctioned building plans, environmental clearances, and encumbrance certificates.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">03</div>
+          <h3>Institutional-Grade Price Negotiation</h3>
+          <p>We use historical registered sale deeds (Sub-Registrar data) in the same tower to strip away the builder’s speculative premiums—saving you an average of 4.8% on net payout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantees & Testimonials -->
+  <section id="fiduciary" class="section-padding">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">Uncompromising Guarantees</div>
+        <h2>Our 4 Written Commitments to Prime Buyers</h2>
+        <p>When you hire Marlow &amp; Co., our sole legal duty is to protect your capital and your family's peace of mind.</p>
+      </div>
+
+      <div class="guarantees-grid">
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#128737;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">100% Clear Title Verification Guarantee</h4>
+            <p style="font-size: 14px; margin: 0;">If our independent high-court legal audit uncovers any title defect, encumbrance, or builder non-compliance, we advise walking away immediately.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#128100;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Strictly Founder-Led Representation</h4>
+            <p style="font-size: 14px; margin: 0;">You will never be handed off to a junior sales broker. Marlow’s managing partners personally conduct every inspection and negotiation.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#128274;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Absolute Non-Disclosure &amp; Discretion</h4>
+            <p style="font-size: 14px; margin: 0;">Your identity, wealth profile, and purchase criteria are sealed under a binding NDA. Zero leaks to developers or press.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#128200;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Same-Day Due Diligence Transcripts</h4>
+            <p style="font-size: 14px; margin: 0;">Within 6 hours of any site inspection, you receive an itemized report covering carpet area efficiency, air-rights status, and comparative pricing.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "We were about to pay a ₹50 Lakh advance for a terrace penthouse in Juhu through an online broker. Marlow intervened and discovered the builder had an unresolved height deviation penalty with BMC. He literally saved us from a multi-year courtroom nightmare."
+          </p>
+          <div class="client-info">
+            <img class="client-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Client Headshot">
+            <div>
+              <h4 style="font-size: 16px;">Karan Mehra</h4>
+              <p style="font-size: 13px; color: var(--text-subtle);">Managing Director &bull; Mumbai</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "The level of pricing data Marlow brings to the table is unheard of in India. He showed us actual registered rates in the building from the last 18 months, which gave us the leverage to negotiate ₹62 Lakhs off the asking price."
+          </p>
+          <div class="client-info">
+            <img class="client-avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Client Headshot">
+            <div>
+              <h4 style="font-size: 16px;">Sunita &amp; Rahul Tandon</h4>
+              <p style="font-size: 13px; color: var(--text-subtle);">Private Equity Partners &bull; Bangalore</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Confidential Briefing Form -->
+  <section id="consultation" class="cta-section section-padding">
+    <div class="wrap form-container">
+      <div>
+        <div class="badge">Confidential Acquisition Brief</div>
+        <h2 style="font-size: 42px; margin-bottom: 20px;">Retain Marlow &amp; Co. for Your Next Prime Acquisition</h2>
+        <p style="font-size: 17px; line-height: 1.6; margin-bottom: 24px;">
+          Due to our strict fiduciary policy, we maintain a hard ceiling of 8 active buyer retainers at any point. Submit your acquisition parameters below to request an initial private consultation.
+        </p>
+
+        <div style="background: var(--bg-card-subtle); padding: 22px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 24px;">
+          <h4 style="font-size: 15px; margin-bottom: 8px; color: var(--accent);">&#9733; The Marlow Private Buyer Guarantee:</h4>
+          <p style="font-size: 13.5px; color: var(--text-muted); margin: 0; line-height: 1.7;">
+            We operate exclusively on your side of the table. If a shortlisted property fails our legal due diligence or price sanity check, we explicitly advise you not to buy.
+          </p>
+        </div>
+      </div>
+
+      <div class="form-box">
+        <h3 style="font-size: 24px; margin-bottom: 20px;">Request Private Buyer Briefing</h3>
+        <form onsubmit="event.preventDefault(); alert('Thank you. Your confidential acquisition brief has been received. Managing Partner Julian Marlow will review and contact you within 4 hours.');">
+          <div class="form-group">
+            <label for="name">Your Name &amp; Title</label>
+            <input type="text" id="name" class="form-control" placeholder="e.g. Vikramaditya Oberoi" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Direct Mobile / WhatsApp</label>
+            <input type="tel" id="phone" class="form-control" placeholder="+91 98200 12345" required>
+          </div>
+
+          <div class="form-group">
+            <label for="budget">Target Capital Allocation</label>
+            <select id="budget" class="form-control" required>
+              <option value="">Select target budget bracket...</option>
+              <option value="5-10">&ZeroWidthSpace;₹5 Cr &ndash; ₹10 Cr (Prime 3/4 BHK)</option>
+              <option value="10-20">&ZeroWidthSpace;₹10 Cr &ndash; ₹20 Cr (Penthouse / Prime Enclave)</option>
+              <option value="20plus">&ZeroWidthSpace;₹20 Cr+ (Independent Estate / Private Bungalow)</option>
+              <option value="commercial">&ZeroWidthSpace;Commercial Office Space / High-Yield Asset</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="locations">Preferred Micro-Markets &amp; Timeline</label>
+            <textarea id="locations" class="form-control" rows="3" placeholder="e.g. Worli, Bandra West, or Sadashivanagar. Looking to close within 90 days."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 16px;">Initiate Confidential Advisory &rarr;</button>
+          <p style="font-size: 12px; color: var(--text-subtle); text-align: center; margin-top: 12px; margin-bottom: 0;">Protected by strict client non-disclosure agreement.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap footer-inner">
+      <div>
+        <div class="brand-title" style="font-size: 20px;">MARLOW &amp; CO.</div>
+        <p style="font-size: 12px; margin: 4px 0 0; color: var(--text-subtle);">Headquarters: Express Towers, Nariman Point, Mumbai &bull; UB City, Bangalore</p>
+      </div>
+      <div style="font-size: 13px; color: var(--text-subtle); text-align: right;">
+        &copy; 2026 Marlow Private Real Estate. Fictional agency demo crafted by <a href="https://uncodedhub.com" style="color: var(--accent); font-weight: 700;">Uncoded Hub</a>.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Style Switcher -->
+  <div class="theme-controller" role="region" aria-label="Aesthetic Architecture Switcher">
+    <div class="tc-label">
+      <span class="tc-dot"></span>
+      3 Layout &amp; Visual Styles
+    </div>
+    
+    <button class="tc-btn active" data-theme="heritage-estate" onclick="switchTheme('heritage-estate', this)">
+      <span>&#127963; Heritage Estate</span>
+    </button>
+
+    <button class="tc-btn" data-theme="nocturne-penthouse" onclick="switchTheme('nocturne-penthouse', this)">
+      <span>&#127747; Nocturne Penthouse HUD</span>
+    </button>
+
+    <button class="tc-btn" data-theme="swiss-architectural" onclick="switchTheme('swiss-architectural', this)">
+      <span>&#9632; Swiss Architectural</span>
+    </button>
+  </div>
+
+  <script>
+    function switchTheme(themeName, btnElement) {
+      document.body.setAttribute('data-theme', themeName);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElement) btnElement.classList.add('active');
+      try { localStorage.setItem('marlow_active_style', themeName); } catch (err) {}
+    }
+
+    try {
+      const savedTheme = localStorage.getItem('marlow_active_style');
+      if (savedTheme) {
+        const targetBtn = document.querySelector(`.tc-btn[data-theme="${savedTheme}"]`);
+        if (targetBtn) switchTheme(savedTheme, targetBtn);
+      }
+    } catch (err) {}
+  </script>
+</body>
+</html>

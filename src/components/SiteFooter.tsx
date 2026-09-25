@@ -123,7 +123,7 @@ export default function SiteFooter() {
 
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pb-12 border-t border-rule-on-ink pt-8">
           <p className="label text-on-ink-muted">
-            © {new Date().getFullYear()} Uncoded Hub
+            {`© ${new Date().getFullYear()} Uncoded Hub`}
           </p>
           <p className="label text-on-ink-muted">Designed and built in-house</p>
         </div>

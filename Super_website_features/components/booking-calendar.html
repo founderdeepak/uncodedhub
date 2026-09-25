@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Free In-Home Estimate | Autonomous Calendar Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../core/super-engine.css">
+  <style>
+    body {
+      background: #F4F6F9;
+      margin: 0;
+      padding: 40px 20px 80px;
+      color: #191D24;
+    }
+    .header-bar {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 36px;
+    }
+    .header-bar h1 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .deposit-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: #FEF3C7;
+      color: #92400E;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 20px;
+      margin-top: 10px;
+    }
+    .confirmation-banner {
+      display: none;
+      background: #ECFDF5;
+      border: 2px solid #10B981;
+      border-radius: var(--sf-radius-lg);
+      padding: 32px;
+      text-align: center;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body class="sf-scope">
+
+  <div class="header-bar">
+    <h1 id="booking-main-title">Book a Free In-Home Estimate</h1>
+    <p id="booking-sub-title" style="color: var(--sf-text-muted); margin: 0;">
+      Pick a date and convenient time slot. Automatic travel buffers are calculated to ensure punctual arrival.
+    </p>
+    <div class="deposit-badge" id="deposit-pill" style="display: none;">
+      💳 $250 Fully Refundable Deposit (Free cancellation up to 24 hrs prior)
+    </div>
+  </div>
+
+  <div class="sf-booking-container" id="booking-card">
+    <form id="appointment-form" onsubmit="handleBookingSubmit(event)">
+      
+      <!-- Project Type Selection -->
+      <div class="sf-form-group">
+        <label for="book-project-type">Project Scope Being Quoted</label>
+        <select id="book-project-type" class="sf-form-input" required>
+          <option value="Kitchen Remodel">Kitchen Remodel</option>
+          <option value="Bathroom Renovation">Bathroom Renovation</option>
+          <option value="Basement Finishing">Basement Finishing</option>
+          <option value="Home Addition">Home Addition</option>
+        </select>
+      </div>
+
+      <!-- Date Selection -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div class="sf-form-group">
+          <label for="book-date">Select Inspection Date</label>
+          <input type="date" id="book-date" class="sf-form-input" required onchange="loadDateSlots(this.value)">
+        </div>
+
+        <div class="sf-form-group">
+          <label>Available 1-Hour Time Slots</label>
+          <div style="font-size: 12px; color: var(--sf-text-subtle); margin-bottom: 4px;">
+            Monday &ndash; Friday, 8:00 AM &ndash; 4:00 PM (1-hr travel buffer applied)
+          </div>
+        </div>
+      </div>
+
+      <!-- Slot Buttons Grid -->
+      <div class="sf-slots-grid" id="slots-container">
+        <!-- Rendered dynamically -->
+      </div>
+      <input type="hidden" id="selected-slot" required>
+
+      <div style="border-top: 1px solid var(--sf-border); margin: 24px 0; padding-top: 24px;">
+        <h4 style="font-size: 16px; margin: 0 0 16px;">Contact &amp; Site Address</h4>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="sf-form-group">
+            <label for="book-name">Full Name</label>
+            <input type="text" id="book-name" class="sf-form-input" placeholder="e.g. Anand Murthy" required>
+          </div>
+
+          <div class="sf-form-group">
+            <label for="book-phone">Phone Number</label>
+            <input type="tel" id="book-phone" class="sf-form-input" placeholder="+91 98765 43210" required>
+          </div>
+        </div>
+
+        <div class="sf-form-group">
+          <label for="book-email">Email Address</label>
+          <input type="email" id="book-email" class="sf-form-input" placeholder="anand@company.in" required>
+        </div>
+
+        <div class="sf-form-group">
+          <label for="book-address">Property Address to Be Quoted</label>
+          <input type="text" id="book-address" class="sf-form-input" placeholder="e.g. 104, 4th Cross, Indiranagar, Bangalore" required>
+        </div>
+      </div>
+
+      <button type="submit" class="sf-btn sf-btn-primary" style="width: 100%; justify-content: center; font-size: 16px; padding: 15px;">
+        Confirm Appointment &rarr;
+      </button>
+    </form>
+
+    <!-- CONFIRMATION BANNER -->
+    <div class="confirmation-banner" id="confirmation-banner">
+      <div style="font-size: 38px; line-height: 1; margin-bottom: 12px;">✅</div>
+      <h3 style="font-size: 24px; font-weight: 800; margin: 0 0 8px; color: #065F46;">You're Booked!</h3>
+      <p style="font-size: 16px; color: #047857; margin: 0 0 20px; font-weight: 600;" id="confirmation-text">
+        "You're booked. Add it to your calendar below so you don't forget, and we'll call the day before to confirm."
+      </p>
+
+      <div style="background: #FFFFFF; border: 1px solid #A7F3D0; border-radius: var(--sf-radius-md); padding: 18px; max-width: 480px; margin: 0 auto 24px; text-align: left;">
+        <div style="font-size: 14px; color: #065F46;" id="booking-summary-details"></div>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+        <button class="sf-btn sf-btn-primary" onclick="exportToIcs()" style="background: #059669;">
+          📅 Add to Apple / Google / Outlook Calendar
+        </button>
+        <button class="sf-btn sf-btn-secondary" onclick="resetBooking()">
+          Book Another
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../core/super-engine.js"></script>
+  <script>
+    let activeBookingRecord = null;
+    let selectedSlotLabel = null;
+
+    // Set minimum date to tomorrow
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const minDateStr = tomorrow.toISOString().split('T')[0];
+    document.getElementById('book-date').min = minDateStr;
+    document.getElementById('book-date').value = minDateStr;
+
+    // Read URL query params if bridged from estimator
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('name')) document.getElementById('book-name').value = params.get('name');
+    if (params.get('phone')) document.getElementById('book-phone').value = params.get('phone');
+    if (params.get('email')) document.getElementById('book-email').value = params.get('email');
+
+    async function initCalendar() {
+      // Default load interior design config
+      let cfg = null;
+      try {
+        const res = await fetch('../configs/interior-design-config.json');
+        cfg = await res.json();
+      } catch(e) {}
+      SuperEngine.init(cfg);
+
+      if (cfg && cfg.bookingTitle) document.getElementById('booking-main-title').innerText = cfg.bookingTitle;
+      if (cfg && cfg.bookingSubtitle) document.getElementById('booking-sub-title').innerText = cfg.bookingSubtitle;
+
+      loadDateSlots(minDateStr);
+    }
+
+    function loadDateSlots(dateStr) {
+      const container = document.getElementById('slots-container');
+      const slots = SuperEngine.getAvailableSlots(dateStr);
+
+      container.innerHTML = slots.map(slot => {
+        if (slot.status === 'booked') {
+          return `<div class="sf-slot-btn disabled" style="background:#FEE2E2; color:#DC2626; cursor:not-allowed;">Booked</div>`;
+        } else if (slot.status === 'travel-buffer') {
+          return `<div class="sf-slot-btn travel-buffer" title="Driver / Estimator Travel Window">${slot.label}</div>`;
+        } else {
+          return `<div class="sf-slot-btn ${selectedSlotLabel === slot.label ? 'selected' : ''}" onclick="pickSlot('${slot.label}', this)">${slot.label}</div>`;
+        }
+      }).join('');
+    }
+
+    function pickSlot(slotLabel, el) {
+      document.querySelectorAll('.sf-slot-btn').forEach(b => b.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedSlotLabel = slotLabel;
+      document.getElementById('selected-slot').value = slotLabel;
+    }
+
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      if (!selectedSlotLabel) {
+        alert('Please choose an available 1-hour time slot.');
+        return;
+      }
+
+      const booking = SuperEngine.bookAppointment({
+        name: document.getElementById('book-name').value,
+        phone: document.getElementById('book-phone').value,
+        email: document.getElementById('book-email').value,
+        address: document.getElementById('book-address').value,
+        projectType: document.getElementById('book-project-type').value,
+        date: document.getElementById('book-date').value,
+        timeSlot: selectedSlotLabel
+      });
+
+      activeBookingRecord = booking;
+
+      // Show confirmation
+      document.getElementById('appointment-form').style.display = 'none';
+      document.getElementById('confirmation-banner').style.display = 'block';
+
+      document.getElementById('booking-summary-details').innerHTML = `
+        <strong>Date:</strong> ${booking.booking_date}<br>
+        <strong>Time:</strong> ${booking.booking_time_slot}<br>
+        <strong>Address:</strong> ${booking.property_address}<br>
+        <strong>Scope:</strong> ${booking.project_type}
+      `;
+    }
+
+    function exportToIcs() {
+      if (activeBookingRecord) {
+        SuperEngine.generateIcsCalendar(activeBookingRecord);
+      }
+    }
+
+    function resetBooking() {
+      document.getElementById('appointment-form').reset();
+      selectedSlotLabel = null;
+      document.getElementById('appointment-form').style.display = 'block';
+      document.getElementById('confirmation-banner').style.display = 'none';
+      loadDateSlots(minDateStr);
+    }
+
+    window.addEventListener('DOMContentLoaded', initCalendar);
+  </script>
+</body>
+</html>

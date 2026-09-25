@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estimate Your Project | Autonomous Estimation Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../core/super-engine.css">
+  <style>
+    body {
+      background: #F4F6F9;
+      margin: 0;
+      padding: 40px 20px 80px;
+      color: #191D24;
+    }
+    .header-bar {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 36px;
+    }
+    .header-bar h1 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .niche-selector-bar {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    .niche-pill {
+      padding: 8px 16px;
+      background: #FFFFFF;
+      border: 1px solid var(--sf-border);
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--sf-text-muted);
+    }
+    .niche-pill.active {
+      background: var(--sf-primary);
+      color: #FFFFFF;
+      border-color: var(--sf-primary);
+    }
+  </style>
+</head>
+<body class="sf-scope">
+
+  <div class="header-bar">
+    <div class="niche-selector-bar" id="niche-selector">
+      <!-- Injected Niche Pills -->
+    </div>
+    <h1 id="page-title">Estimate Your Project</h1>
+    <p id="page-desc" style="color: var(--sf-text-muted); margin: 0;">Instant planning range based on verified regional project data. 3 quick steps.</p>
+  </div>
+
+  <div class="sf-estimator-container">
+    <div class="sf-wizard-header">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-size: 13px; font-weight: 800; text-transform: uppercase; color: var(--sf-accent);" id="step-indicator">Step 1 of 3</span>
+        <span style="font-size: 13px; font-weight: 600; color: var(--sf-text-subtle);" id="step-name">Project Category</span>
+      </div>
+      <div class="sf-wizard-progress-bar">
+        <div class="sf-wizard-progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Step 1: Project Type -->
+    <div class="sf-wizard-step active" id="wizard-step-1">
+      <h3 style="font-size: 22px; margin: 0;" id="step-1-title">Select Your Project Type</h3>
+      <p style="font-size: 14px; color: var(--sf-text-muted); margin-top: 4px;">Choose the primary scope of work to calibrate your base cost.</p>
+      <div class="sf-cards-grid" id="step-1-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+
+    <!-- Step 2: Size & Scope -->
+    <div class="sf-wizard-step" id="wizard-step-2">
+      <h3 style="font-size: 22px; margin: 0;" id="step-2-title">Select Dimensions &amp; Scope</h3>
+      <p style="font-size: 14px; color: var(--sf-text-muted); margin-top: 4px;">Choose the size tier that best represents your property or project.</p>
+      <div class="sf-cards-grid" id="step-2-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+
+    <!-- Step 3: Finish & Material Tier -->
+    <div class="sf-wizard-step" id="wizard-step-3">
+      <h3 style="font-size: 22px; margin: 0;" id="step-3-title">Select Finish &amp; Specification Quality</h3>
+      <p style="font-size: 14px; color: var(--sf-text-muted); margin-top: 4px;">Hardware grade, core substrate, and aesthetic tier.</p>
+      <div class="sf-cards-grid" id="step-3-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+
+    <!-- Result Box -->
+    <div class="sf-wizard-step" id="wizard-step-result">
+      <div class="sf-result-box">
+        <span style="font-size: 13px; font-weight: 800; text-transform: uppercase; color: var(--sf-accent); letter-spacing: 0.05em;">Your Turnkey Planning Estimate</span>
+        <div class="sf-result-price" id="result-price-display">₹26.00L &ndash; ₹42.00L</div>
+        <p class="sf-result-disclaimer" id="result-disclaimer-text">
+          This is a turnkey planning range based on completed residences. Your exact quote depends on layout, customized material selection, and site conditions.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a id="bridge-to-calendar-btn" href="booking-calendar.html" class="sf-btn sf-btn-primary" style="font-size: 16px; padding: 15px 32px;">
+            Book Free In-Home Estimate To Lock This Rate &rarr;
+          </a>
+          <button onclick="resetEstimator()" class="sf-btn sf-btn-secondary">Recalculate</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wizard Bottom Navigation -->
+    <div class="sf-wizard-nav" id="wizard-nav">
+      <button class="sf-btn sf-btn-secondary" id="btn-back" onclick="prevStep()" disabled>&larr; Back</button>
+      <button class="sf-btn sf-btn-primary" id="btn-next" onclick="nextStep()">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- GATED LEAD CAPTURE MODAL -->
+  <div class="sf-modal-overlay" id="lead-modal">
+    <div class="sf-modal-card">
+      <h3 style="font-size: 24px; margin: 0 0 8px; font-weight: 800;">Unlock Your Estimate</h3>
+      <p style="font-size: 14px; color: var(--sf-text-muted); margin: 0 0 24px; line-height: 1.5;">
+        Where should we send your itemized cost breakdown and material specification sheet?
+      </p>
+
+      <form onsubmit="handleLeadSubmit(event)">
+        <div class="sf-form-group">
+          <label for="lead-name">Your Full Name</label>
+          <input type="text" id="lead-name" class="sf-form-input" placeholder="e.g. Siddharth Verma" required>
+        </div>
+
+        <div class="sf-form-group">
+          <label for="lead-phone">Direct Mobile / WhatsApp</label>
+          <input type="tel" id="lead-phone" class="sf-form-input" placeholder="+91 98450 12345" required>
+        </div>
+
+        <div class="sf-form-group">
+          <label for="lead-email">Email Address</label>
+          <input type="email" id="lead-email" class="sf-form-input" placeholder="siddharth@company.com" required>
+        </div>
+
+        <div class="sf-form-group">
+          <label for="lead-address">Property Location / Locality (Optional)</label>
+          <input type="text" id="lead-address" class="sf-form-input" placeholder="e.g. Indiranagar, Bangalore">
+        </div>
+
+        <button type="submit" class="sf-btn sf-btn-primary" style="width: 100%; justify-content: center; font-size: 16px; padding: 14px;">
+          Reveal My Custom Price Estimate &rarr;
+        </button>
+        <p style="font-size: 12px; color: var(--sf-text-subtle); text-align: center; margin: 12px 0 0;">
+          🔒 Strictly confidential. Zero spam. We never sell your contact details.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script src="../core/super-engine.js"></script>
+  <script>
+    let currentStep = 1;
+    let selectedType = null;
+    let selectedSize = null;
+    let selectedFinish = null;
+    let currentConfig = null;
+
+    const NICHES = [
+      { id: 'interior-design', label: 'Interior Design', file: '../configs/interior-design-config.json' },
+      { id: 'real-estate', label: 'Real Estate', file: '../configs/real-estate-config.json' },
+      { id: 'dental-clinic', label: 'Dental Clinic', file: '../configs/dental-clinic-config.json' },
+      { id: 'wedding-photo', label: 'Wedding Photography', file: '../configs/wedding-photo-config.json' },
+      { id: 'modular-kitchen', label: 'Modular Kitchens', file: '../configs/modular-kitchen-config.json' },
+      { id: 'executive-coaching', label: 'Executive Coaching', file: '../configs/executive-coaching-config.json' }
+    ];
+
+    async function loadNiche(nicheId) {
+      const match = NICHES.find(n => n.id === nicheId) || NICHES[0];
+      try {
+        const res = await fetch(match.file);
+        currentConfig = await res.json();
+      } catch (err) {
+        console.error('Failed to load niche JSON, fallback to interior design:', err);
+      }
+      SuperEngine.init(currentConfig);
+      renderNichePills(match.id);
+      renderStepCards();
+      resetEstimator();
+    }
+
+    function renderNichePills(activeId) {
+      const container = document.getElementById('niche-selector');
+      container.innerHTML = NICHES.map(n => `
+        <button class="niche-pill ${n.id === activeId ? 'active' : ''}" onclick="loadNiche('${n.id}')">
+          ${n.label}
+        </button>
+      `).join('');
+    }
+
+    function renderStepCards() {
+      if (!currentConfig) return;
+      document.getElementById('page-title').innerText = `Estimate Your ${currentConfig.nicheTitle}`;
+      
+      // Step 1
+      document.getElementById('step-1-title').innerText = currentConfig.estimator.step1.title;
+      document.getElementById('step-1-grid').innerHTML = currentConfig.estimator.step1.options.map((opt, idx) => `
+        <div class="sf-choice-card ${selectedType === opt.id || (!selectedType && idx === 0) ? 'selected' : ''}" 
+             onclick="selectOption(1, '${opt.id}', this)">
+          <div>
+            <div class="sf-card-icon">${opt.icon || '🏷️'}</div>
+            <div class="sf-card-title">${opt.label}</div>
+            <p class="sf-card-desc">${opt.desc}</p>
+          </div>
+        </div>
+      `).join('');
+      if (!selectedType) selectedType = currentConfig.estimator.step1.options[0].id;
+
+      // Step 2
+      document.getElementById('step-2-title').innerText = currentConfig.estimator.step2.title;
+      document.getElementById('step-2-grid').innerHTML = currentConfig.estimator.step2.options.map((opt, idx) => `
+        <div class="sf-choice-card ${selectedSize === opt.id || (!selectedSize && idx === 1) ? 'selected' : ''}" 
+             onclick="selectOption(2, '${opt.id}', this)">
+          <div>
+            <div class="sf-card-title">${opt.label}</div>
+            <p class="sf-card-desc">${opt.desc}</p>
+          </div>
+        </div>
+      `).join('');
+      if (!selectedSize) selectedSize = currentConfig.estimator.step2.options[1].id;
+
+      // Step 3
+      document.getElementById('step-3-title').innerText = currentConfig.estimator.step3.title;
+      document.getElementById('step-3-grid').innerHTML = currentConfig.estimator.step3.options.map((opt, idx) => `
+        <div class="sf-choice-card ${selectedFinish === opt.id || (!selectedFinish && idx === 1) ? 'selected' : ''}" 
+             onclick="selectOption(3, '${opt.id}', this)">
+          <div>
+            <div class="sf-card-title">${opt.label}</div>
+            <p class="sf-card-desc">${opt.desc}</p>
+          </div>
+        </div>
+      `).join('');
+      if (!selectedFinish) selectedFinish = currentConfig.estimator.step3.options[1].id;
+    }
+
+    function selectOption(step, optId, cardEl) {
+      cardEl.parentElement.querySelectorAll('.sf-choice-card').forEach(c => c.classList.remove('selected'));
+      cardEl.classList.add('selected');
+      if (step === 1) selectedType = optId;
+      if (step === 2) selectedSize = optId;
+      if (step === 3) selectedFinish = optId;
+    }
+
+    function updateStepUI() {
+      document.querySelectorAll('.sf-wizard-step').forEach(s => s.classList.remove('active'));
+      const activeStepEl = document.getElementById(`wizard-step-${currentStep}`);
+      if (activeStepEl) activeStepEl.classList.add('active');
+
+      const progress = (currentStep / 3) * 100;
+      document.getElementById('progress-fill').style.width = `${progress}%`;
+      document.getElementById('step-indicator').innerText = `Step ${currentStep} of 3`;
+      
+      const stepNames = ['Project Scope', 'Dimensions & Size', 'Finish Tier'];
+      document.getElementById('step-name').innerText = stepNames[currentStep - 1] || 'Your Estimate';
+      
+      document.getElementById('btn-back').disabled = currentStep === 1;
+      document.getElementById('btn-next').innerText = currentStep === 3 ? 'Calculate Estimate &rarr;' : 'Continue &rarr;';
+    }
+
+    function nextStep() {
+      if (currentStep < 3) {
+        currentStep++;
+        updateStepUI();
+      } else if (currentStep === 3) {
+        // Trigger Gated Modal
+        document.getElementById('lead-modal').classList.add('active');
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 1) {
+        currentStep--;
+        updateStepUI();
+      }
+    }
+
+    function handleLeadSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('lead-name').value;
+      const phone = document.getElementById('lead-phone').value;
+      const email = document.getElementById('lead-email').value;
+      const address = document.getElementById('lead-address').value;
+
+      const calc = SuperEngine.calculateProjectEstimate(selectedType, selectedSize, selectedFinish);
+
+      // Save lead
+      SuperEngine.submitLeadCapture({
+        name,
+        phone,
+        email,
+        address,
+        projectType: selectedType,
+        projectSize: selectedSize,
+        finishLevel: selectedFinish,
+        estimatedMin: calc.min,
+        estimatedMax: calc.max
+      });
+
+      // Close modal
+      document.getElementById('lead-modal').classList.remove('active');
+
+      // Show result
+      document.querySelectorAll('.sf-wizard-step').forEach(s => s.classList.remove('active'));
+      document.getElementById('wizard-step-result').classList.add('active');
+      document.getElementById('wizard-nav').style.display = 'none';
+
+      document.getElementById('result-price-display').innerText = `${calc.formattedMin} – ${calc.formattedMax}`;
+      document.getElementById('result-disclaimer-text').innerText = calc.disclaimer;
+
+      // Update bridge to calendar link with pre-filled query params
+      const bridgeUrl = `booking-calendar.html?name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)}&type=${encodeURIComponent(selectedType)}&niche=${encodeURIComponent(currentConfig.nicheId)}`;
+      document.getElementById('bridge-to-calendar-btn').href = bridgeUrl;
+    }
+
+    function resetEstimator() {
+      currentStep = 1;
+      document.getElementById('wizard-nav').style.display = 'flex';
+      updateStepUI();
+    }
+
+    // Initial load
+    window.addEventListener('DOMContentLoaded', () => {
+      loadNiche('interior-design');
+    });
+  </script>
+</body>
+</html>

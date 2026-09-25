@@ -1,31 +1,19 @@
-import { useState, useEffect, lazy, Suspense, useCallback } from 'react';
+import { useState, useEffect, useCallback, lazy, Suspense } from 'react';
 import { Routes, Route, Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
-import { Logo, LogoMark } from './components/Logo';
+import { Logo } from './components/Logo';
 import SiteFooter from './components/SiteFooter';
 import { ScrollToTop } from './components/ui/ScrollToTop';
 import { hasBlogPosts } from './lib/blogNav';
-/* Deferred: the dock is not part of the first screen, so it should not
-   be part of the first download either. */
-const EnquiryDock = lazy(() =>
-  import('./components/EnquiryDock').then((m) => ({ default: m.EnquiryDock })),
-);
+import { EnquiryDock } from './components/EnquiryDock';
 
-/* Home is the one route not code-split. Every other route only pays a
-   waterfall (fetch main bundle, then fetch the route chunk) once a
-   visitor has already navigated — the JS engine is warm and there is
-   no LCP riding on it. Home is where nearly every visitor lands first,
-   so splitting it added a second network round-trip in front of the
-   hero paragraph that is this site's own LCP element, for content that
-   is already inside the initial bundle budget. Bundling it directly
-   removes that round-trip for the page it actually matters on. */
 import Home from './pages/Home';
-const Services = lazy(() => import('./pages/Services'));
-const Work = lazy(() => import('./pages/Portfolio'));
-const About = lazy(() => import('./pages/About'));
-const Contact = lazy(() => import('./pages/Contact'));
+import Services from './pages/Services';
+import Work from './pages/Portfolio';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 const Blogs = lazy(() => import('./pages/Blogs'));
 const BlogView = lazy(() => import('./pages/BlogView'));
-const NotFound = lazy(() => import('./pages/NotFound'));
 
 /* Paths are unchanged from the previous site so existing links and
    indexed URLs keep working; only the labels are new. /blog only joins
@@ -160,31 +148,35 @@ export default function App() {
 
       {/* ── Routes ─────────────────────────────────────────────── */}
       <main id="main" className="flex-1">
-        <Suspense
-          fallback={
-            <div className="min-h-screen flex items-center justify-center">
-              <LogoMark size={28} className="animate-pulse" />
-            </div>
-          }
-        >
-          <Routes>
-            <Route path="/" element={<Home onBook={goToBooking} />} />
-            <Route path="/services" element={<Services onBook={goToBooking} />} />
-            <Route path="/portfolio" element={<Work onBook={goToBooking} />} />
-            <Route path="/about" element={<About onBook={goToBooking} />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/blog" element={<Blogs />} />
-            <Route path="/blog/:slug" element={<BlogView />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
+        <Routes>
+          <Route path="/" element={<Home onBook={goToBooking} />} />
+          <Route path="/services" element={<Services onBook={goToBooking} />} />
+          <Route path="/portfolio" element={<Work onBook={goToBooking} />} />
+          <Route path="/about" element={<About onBook={goToBooking} />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/blog"
+            element={
+              <Suspense fallback={null}>
+                <Blogs />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/blog/:slug"
+            element={
+              <Suspense fallback={null}>
+                <BlogView />
+              </Suspense>
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </main>
 
       <SiteFooter />
       <ScrollToTop />
-      <Suspense fallback={null}>
-        <EnquiryDock />
-      </Suspense>
+      <EnquiryDock />
     </div>
   );
 }

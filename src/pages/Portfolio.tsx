@@ -102,7 +102,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
           <Reveal>
             <p className="label text-signal">Work</p>
             <h1 className="font-display text-hero mt-8 max-w-[16ch]">
-              We would rather show you nothing than show you{' '}
+              {"We would rather show you nothing than show you "}
               <em className="italic hero-signal">someone else's.</em>
             </h1>
           </Reveal>

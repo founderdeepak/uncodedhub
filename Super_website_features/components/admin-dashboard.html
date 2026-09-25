@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Operations Portal | Lead CRM &amp; Monthly Proof Machine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../core/super-engine.css">
+  <style>
+    body {
+      background: #F4F6F9;
+      margin: 0;
+      color: #191D24;
+    }
+    .top-nav {
+      background: var(--sf-primary);
+      color: #FFFFFF;
+      padding: 16px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tab-btn {
+      padding: 10px 20px;
+      background: transparent;
+      border: none;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--sf-text-subtle);
+      border-bottom: 2px solid transparent;
+    }
+    .tab-btn.active {
+      color: var(--sf-accent);
+      border-bottom-color: var(--sf-accent);
+    }
+  </style>
+</head>
+<body class="sf-scope">
+
+  <div class="top-nav">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 20px;">⚡</span>
+      <span style="font-weight: 800; font-size: 17px; letter-spacing: -0.01em;">UNCODED HUB &bull; STAFF OPS PORTAL</span>
+    </div>
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <button onclick="SuperEngine.generateMonthlyProofReport()" class="sf-btn sf-btn-primary" style="padding: 9px 18px; font-size: 13.5px; background: #059669;">
+        📄 Export Monthly Proof Report (.txt)
+      </button>
+      <span style="font-size: 13px; color: rgba(255,255,255,0.7);">Staff: Deepak (Admin)</span>
+    </div>
+  </div>
+
+  <div class="sf-admin-wrapper">
+    <!-- KPI Header Cards -->
+    <div class="sf-kpi-grid">
+      <div class="sf-kpi-card">
+        <h5>Total Pipeline Value Generated</h5>
+        <div class="val" style="color: var(--sf-accent);" id="kpi-pipeline">₹0.00</div>
+      </div>
+      <div class="sf-kpi-card">
+        <h5>Qualified Inbound Leads</h5>
+        <div class="val" id="kpi-leads-count">0</div>
+      </div>
+      <div class="sf-kpi-card">
+        <h5>In-Home / Clinic Bookings</h5>
+        <div class="val" id="kpi-bookings-count">0</div>
+      </div>
+      <div class="sf-kpi-card">
+        <h5>Needs Immediate Response</h5>
+        <div class="val" style="color: #DC2626;" id="kpi-unresolved-count">0</div>
+      </div>
+    </div>
+
+    <!-- TABS BAR -->
+    <div style="display: flex; gap: 12px; border-bottom: 1px solid var(--sf-border); margin-bottom: 24px;">
+      <button class="tab-btn active" onclick="switchTab('leads', this)">Estimator Leads (<span id="tab-lead-count">0</span>)</button>
+      <button class="tab-btn" onclick="switchTab('bookings', this)">Confirmed Calendar Bookings (<span id="tab-bk-count">0</span>)</button>
+      <button class="tab-btn" onclick="switchTab('inbox', this)">Shared Messaging Inbox (<span id="tab-inbox-count">0</span>)</button>
+    </div>
+
+    <!-- TAB 1: LEADS TABLE -->
+    <div id="tab-content-leads" class="sf-table-wrapper">
+      <table class="sf-table">
+        <thead>
+          <tr>
+            <th>Date &amp; Time</th>
+            <th>Prospect</th>
+            <th>Contact</th>
+            <th>Project Scope</th>
+            <th>Estimated Range</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="leads-tbody">
+          <!-- Rendered via JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TAB 2: BOOKINGS TABLE -->
+    <div id="tab-content-bookings" class="sf-table-wrapper" style="display: none;">
+      <table class="sf-table">
+        <thead>
+          <tr>
+            <th>Booking Date</th>
+            <th>Time Slot</th>
+            <th>Travel Buffer Locked</th>
+            <th>Customer</th>
+            <th>Site Address</th>
+            <th>Project Scope</th>
+            <th>Calendar</th>
+          </tr>
+        </thead>
+        <tbody id="bookings-tbody">
+          <!-- Rendered via JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TAB 3: INBOX TABLE -->
+    <div id="tab-content-inbox" class="sf-table-wrapper" style="display: none;">
+      <table class="sf-table">
+        <thead>
+          <tr>
+            <th>Timestamp</th>
+            <th>Sender</th>
+            <th>Channel / Contact</th>
+            <th>Subject / Inbound Message</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="inbox-tbody">
+          <!-- Rendered via JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="../core/super-engine.js"></script>
+  <script>
+    let activeTab = 'leads';
+
+    async function initAdmin() {
+      // Default load config
+      let cfg = null;
+      try {
+        const res = await fetch('../configs/interior-design-config.json');
+        cfg = await res.json();
+      } catch(e) {}
+      SuperEngine.init(cfg);
+      renderDashboard();
+      SuperEngine.subscribe(renderDashboard);
+    }
+
+    function switchTab(tabName, btn) {
+      activeTab = tabName;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.getElementById('tab-content-leads').style.display = tabName === 'leads' ? 'block' : 'none';
+      document.getElementById('tab-content-bookings').style.display = tabName === 'bookings' ? 'block' : 'none';
+      document.getElementById('tab-content-inbox').style.display = tabName === 'inbox' ? 'block' : 'none';
+    }
+
+    function renderDashboard() {
+      const data = SuperEngine.getAdminData();
+
+      // Update KPI
+      document.getElementById('kpi-pipeline').innerText = data.formattedPipelineValue;
+      document.getElementById('kpi-leads-count').innerText = data.totalLeadsCount;
+      document.getElementById('kpi-bookings-count').innerText = data.confirmedBookingsCount;
+      document.getElementById('kpi-unresolved-count').innerText = data.unresolvedCount;
+
+      document.getElementById('tab-lead-count').innerText = data.totalLeadsCount;
+      document.getElementById('tab-bk-count').innerText = data.confirmedBookingsCount;
+      document.getElementById('tab-inbox-count').innerText = data.convs.length;
+
+      // Render Leads
+      const leadsTbody = document.getElementById('leads-tbody');
+      leadsTbody.innerHTML = data.leads.map(lead => {
+        const dateStr = new Date(lead.created_at).toLocaleDateString('en-IN', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+        const cleanPhone = lead.phone.replace(/[^0-9]/g, '');
+        const waLink = `https://wa.me/${cleanPhone}?text=Hi%20${encodeURIComponent(lead.name)},%20this%20is%20Deepak%20regarding%20your%20recent%20project%20estimate.`;
+
+        return `
+          <tr>
+            <td style="font-size: 12px; color: var(--sf-text-subtle);">${dateStr}</td>
+            <td><strong>${lead.name}</strong><br><span style="font-size:12px; color:var(--sf-text-muted);">${lead.property_address || 'No address given'}</span></td>
+            <td>
+              <a href="tel:${lead.phone}" style="font-weight:700; color:var(--sf-primary);">${lead.phone}</a><br>
+              <span style="font-size:12px; color:var(--sf-text-subtle);">${lead.email}</span>
+            </td>
+            <td><strong>${lead.project_type}</strong><br><span style="font-size:12px; color:var(--sf-text-muted);">${lead.project_size} &bull; ${lead.finish_level}</span></td>
+            <td style="font-weight: 700; color: var(--sf-accent);">
+              ${SuperEngine.formatCurrency(lead.estimated_min)} &ndash; ${SuperEngine.formatCurrency(lead.estimated_max)}
+            </td>
+            <td>
+              <select onchange="SuperEngine.updateLeadStatus('${lead.id}', this.value)" style="padding: 4px 8px; border-radius: 6px; font-weight: 700; font-size: 11px; border: 1px solid var(--sf-border);">
+                <option value="UNRESOLVED" ${lead.status === 'UNRESOLVED' ? 'selected' : ''}>🔴 UNRESOLVED</option>
+                <option value="WAITING_ON_CUSTOMER" ${lead.status === 'WAITING_ON_CUSTOMER' ? 'selected' : ''}>🟡 WAITING ON CLIENT</option>
+                <option value="RESOLVED" ${lead.status === 'RESOLVED' ? 'selected' : ''}>🟢 RESOLVED / CONVERTED</option>
+              </select>
+            </td>
+            <td>
+              <a href="${waLink}" target="_blank" class="sf-btn sf-btn-primary" style="padding: 6px 12px; font-size: 12px; background: #25D366;">
+                💬 WhatsApp
+              </a>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      // Render Bookings
+      const bkTbody = document.getElementById('bookings-tbody');
+      bkTbody.innerHTML = data.bookings.map(bk => `
+        <tr>
+          <td><strong>${bk.booking_date}</strong></td>
+          <td style="color: #059669; font-weight: 700;">${bk.booking_time_slot}</td>
+          <td><span style="font-size: 12px; background: #F3F4F6; padding: 4px 8px; border-radius: 4px; color: #6B7280;">${bk.travel_buffer_slot || 'None'}</span></td>
+          <td><strong>${bk.customer_name}</strong><br><span style="font-size:12px; color:var(--sf-text-subtle);">${bk.customer_phone}</span></td>
+          <td>${bk.property_address}</td>
+          <td>${bk.project_type}</td>
+          <td>
+            <button onclick='SuperEngine.generateIcsCalendar(${JSON.stringify(bk)})' class="sf-btn sf-btn-secondary" style="padding: 6px 10px; font-size: 11px;">
+              Export .ics
+            </button>
+          </td>
+        </tr>
+      `).join('');
+
+      // Render Inbox
+      const inboxTbody = document.getElementById('inbox-tbody');
+      inboxTbody.innerHTML = data.convs.map(cv => `
+        <tr>
+          <td style="font-size: 12px; color: var(--sf-text-subtle);">${new Date(cv.created_at).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}</td>
+          <td><strong>${cv.customer_name}</strong></td>
+          <td>${cv.customer_contact}</td>
+          <td>${cv.last_message || cv.subject}</td>
+          <td><span class="sf-status-tag ${cv.status.toLowerCase()}">${cv.status}</span></td>
+        </tr>
+      `).join('');
+    }
+
+    window.addEventListener('DOMContentLoaded', initAdmin);
+  </script>
+</body>
+</html>

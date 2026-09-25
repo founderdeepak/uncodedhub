@@ -158,12 +158,11 @@ export default function Blogs() {
                     <p className="text-muted leading-relaxed mt-3">{post.excerpt}</p>
                   )}
                   <p className="label text-muted mt-5">
-                    {new Date(post.date).toLocaleDateString('en-IN', {
+                    {`${new Date(post.date).toLocaleDateString('en-IN', {
                       day: 'numeric',
                       month: 'short',
                       year: 'numeric',
-                    })}{' '}
-                    · {post.readingMinutes} min read
+                    })} · ${post.readingMinutes} min read`}
                   </p>
                 </Link>
               </Reveal>

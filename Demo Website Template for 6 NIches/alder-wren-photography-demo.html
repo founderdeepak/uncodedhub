@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alder &amp; Wren | Fine-Art Wedding Photography &amp; Cinematic Films</title>
+  <meta name="description" content="Documentary wedding photography and timeless cinema. Strictly one wedding per weekend, founder-led coverage with zero associate handoffs, and guaranteed 4-week gallery delivery.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       CSS DESIGN SYSTEM & THEME TOKENS (HIGH CONTRAST & LEGIBILITY)
+       ========================================================================== */
+    :root, body[data-theme="fine-art-editorial"] {
+      --bg-primary: #FAF8F5;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #F3EFEA;
+      --text-primary: #1C1917;
+      --text-muted: #49423D;
+      --text-subtle: #736B63;
+      --border-color: #DBD4CA;
+      --border-subtle: #E8E2D8;
+      --accent: #9B7043;
+      --accent-hover: #7E5730;
+      --accent-contrast: #FFFFFF;
+      --accent-light: #F4ECE1;
+      --badge-bg: #EFE6D9;
+      --badge-text: #5E3F1F;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --card-shadow: 0 10px 30px rgba(45, 35, 25, 0.08);
+      --header-bg: rgba(250, 248, 245, 0.95);
+      --input-bg: #FFFFFF;
+    }
+
+    body[data-theme="cinematic-nocturne"] {
+      --bg-primary: #0A0A0B;
+      --bg-surface: #131316;
+      --bg-card: #18181D;
+      --bg-card-subtle: #212128;
+      --text-primary: #FAF8F5;
+      --text-muted: #D1C9BE;
+      --text-subtle: #999185;
+      --border-color: rgba(212, 175, 55, 0.28);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --accent: #E5C378;
+      --accent-hover: #F2D998;
+      --accent-contrast: #0A0A0B;
+      --accent-light: rgba(229, 195, 120, 0.15);
+      --badge-bg: rgba(229, 195, 120, 0.16);
+      --badge-text: #F2D998;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --font-heading: 'Cinzel', 'Cormorant Garamond', serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --card-shadow: 0 20px 48px rgba(0, 0, 0, 0.8);
+      --header-bg: rgba(10, 10, 11, 0.94);
+      --input-bg: #131316;
+    }
+
+    body[data-theme="vogue-minimalist"] {
+      --bg-primary: #F4F3EF;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #E8E6E0;
+      --text-primary: #050505;
+      --text-muted: #242424;
+      --text-subtle: #4D4D4D;
+      --border-color: #050505;
+      --border-subtle: #050505;
+      --accent: #D90429;
+      --accent-hover: #AF0421;
+      --accent-contrast: #FFFFFF;
+      --accent-light: #FDE8EB;
+      --badge-bg: #050505;
+      --badge-text: #FFFFFF;
+      --radius-sm: 0px;
+      --radius-md: 0px;
+      --radius-lg: 0px;
+      --font-heading: 'Syne', 'Space Grotesk', sans-serif;
+      --font-body: 'Space Grotesk', -apple-system, sans-serif;
+      --card-shadow: 6px 6px 0px #050505;
+      --header-bg: #F4F3EF;
+      --input-bg: #FFFFFF;
+    }
+
+    /* Base Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease, box-shadow 0.25s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      padding-bottom: 90px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      color: var(--text-primary);
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+
+    p { color: var(--text-muted); margin-bottom: 1.25rem; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; object-fit: cover; }
+
+    .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      border-radius: var(--radius-sm);
+      margin-bottom: 18px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 32px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-align: center;
+      border: 1px solid transparent;
+      box-shadow: var(--card-shadow);
+    }
+
+    .btn-primary { background: var(--accent); color: var(--accent-contrast); }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1.5px solid var(--border-color);
+    }
+    .btn-outline:hover { background: var(--bg-card-subtle); border-color: var(--text-primary); }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .brand-title {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: var(--text-primary);
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-weight: 700;
+      display: block;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: 14px; font-weight: 600; color: var(--text-muted); }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ==========================================================================
+       HERO SECTION (3 DISTINCT ARCHITECTURAL LAYOUTS)
+       ========================================================================== */
+    .hero-section { padding: 70px 0 60px; position: relative; }
+
+    /* Style 1: Fine-Art Editorial */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-content h1 { font-size: 54px; margin-bottom: 22px; font-weight: 600; }
+    .hero-content .lead { font-size: 18px; line-height: 1.6; color: var(--text-muted); margin-bottom: 30px; }
+    .hero-actions { display: flex; gap: 16px; margin-bottom: 38px; flex-wrap: wrap; }
+
+    .hero-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding-top: 26px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .trust-item h4 { font-size: 24px; font-family: var(--font-body); color: var(--accent); margin-bottom: 3px; }
+    .trust-item p {
+      font-size: 12px;
+      line-height: 1.4;
+      margin: 0;
+      color: var(--text-subtle);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-visual { position: relative; }
+
+    .hero-image-main {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      bottom: -22px;
+      left: -22px;
+      background: var(--bg-surface);
+      padding: 18px 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      max-width: 300px;
+    }
+
+    .hero-floating-card .quote {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .hero-floating-card .author {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* Style 2: Cinematic Nocturne */
+    body[data-theme="cinematic-nocturne"] .hero-grid {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    body[data-theme="cinematic-nocturne"] .hero-content h1 {
+      font-size: 58px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #E5C378 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    body[data-theme="cinematic-nocturne"] .hero-actions { justify-content: center; }
+    body[data-theme="cinematic-nocturne"] .hero-trust-bar {
+      max-width: 820px;
+      margin: 0 auto 36px;
+      background: var(--bg-card);
+      padding: 20px 32px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+    body[data-theme="cinematic-nocturne"] .hero-visual { width: 100%; }
+    body[data-theme="cinematic-nocturne"] .hero-image-main {
+      height: 480px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.85);
+    }
+    body[data-theme="cinematic-nocturne"] .hero-floating-card {
+      bottom: 24px;
+      right: 24px;
+      left: auto;
+      background: rgba(19, 19, 22, 0.92);
+      backdrop-filter: blur(16px);
+      border-color: var(--accent);
+    }
+
+    /* Style 3: Vogue Minimalist Grid */
+    body[data-theme="vogue-minimalist"] .hero-section { padding: 40px 0 60px; }
+    body[data-theme="vogue-minimalist"] .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 3px solid #050505;
+      background: #FFFFFF;
+      box-shadow: 8px 8px 0px #050505;
+    }
+    body[data-theme="vogue-minimalist"] .hero-content {
+      padding: 50px 42px;
+      border-right: 3px solid #050505;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    body[data-theme="vogue-minimalist"] .hero-content h1 {
+      font-size: 52px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    body[data-theme="vogue-minimalist"] .hero-visual { height: 100%; }
+    body[data-theme="vogue-minimalist"] .hero-image-main {
+      border-radius: 0;
+      border: none;
+      height: 100%;
+      min-height: 520px;
+    }
+    body[data-theme="vogue-minimalist"] .hero-floating-card {
+      bottom: 0;
+      left: 0;
+      border-radius: 0;
+      border: none;
+      border-top: 3px solid #050505;
+      border-right: 3px solid #050505;
+      box-shadow: none;
+      background: #D90429;
+      color: #FFF;
+      max-width: 340px;
+    }
+    body[data-theme="vogue-minimalist"] .hero-floating-card .quote {
+      color: #FFF;
+      font-style: normal;
+      font-weight: 600;
+    }
+    body[data-theme="vogue-minimalist"] .hero-floating-card .author {
+      color: #050505;
+      font-weight: 800;
+      background: #FFF;
+      display: inline-block;
+      padding: 2px 8px;
+    }
+    body[data-theme="vogue-minimalist"] .card, 
+    body[data-theme="vogue-minimalist"] .btn,
+    body[data-theme="vogue-minimalist"] input,
+    body[data-theme="vogue-minimalist"] select,
+    body[data-theme="vogue-minimalist"] textarea {
+      border-radius: 0 !important;
+      border: 2px solid #050505 !important;
+      box-shadow: 5px 5px 0px #050505 !important;
+    }
+
+    /* Common Card & Sections */
+    .section-padding { padding: 80px 0; }
+    .section-header { text-align: center; max-width: 780px; margin: 0 auto 52px; }
+    .section-header h2 { font-size: 38px; margin-bottom: 16px; }
+    .section-header p { font-size: 17px; color: var(--text-muted); }
+
+    .problem-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-light);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .card h3 { font-size: 22px; margin-bottom: 12px; }
+    .card p { font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 0; }
+
+    /* Comparison Wrap */
+    .comparison-wrap {
+      margin-top: 50px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .comp-col-bad { border-right: 1px solid var(--border-color); padding-right: 32px; }
+    .comp-col h3 { font-size: 22px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .comp-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 14.5px; }
+
+    /* Portfolio */
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+    .photo-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .photo-img-wrap { height: 320px; position: relative; overflow: hidden; }
+    .photo-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .photo-card:hover .photo-img-wrap img { transform: scale(1.04); }
+
+    .photo-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(10, 10, 10, 0.85);
+      color: #FFF;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    .photo-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .photo-body h3 { font-size: 22px; margin-bottom: 8px; }
+
+    .photo-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--text-subtle);
+      border-top: 1px solid var(--border-color);
+      padding-top: 14px;
+      margin-top: 14px;
+      font-weight: 600;
+    }
+
+    /* Process & Guarantees */
+    .process-timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+    .step-number {
+      font-family: var(--font-heading);
+      font-size: 44px;
+      color: var(--accent);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .guarantees-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .guarantee-box {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      display: flex;
+      gap: 18px;
+    }
+
+    .guarantee-icon { font-size: 28px; color: var(--accent); line-height: 1; }
+
+    .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .testimonial-text {
+      font-size: 15.5px;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .client-info { display: flex; align-items: center; gap: 14px; }
+    .client-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      object-fit: cover;
+    }
+
+    /* Form Container */
+    .cta-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .form-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .form-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--input-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 15px;
+    }
+    .form-control:focus { outline: none; border-color: var(--accent); }
+
+    /* Footer */
+    footer { padding: 50px 0; border-top: 1px solid var(--border-color); font-size: 14px; color: var(--text-muted); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+
+    /* Floating Switcher */
+    .theme-controller {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      background: rgba(18, 16, 14, 0.94);
+      backdrop-filter: blur(16px);
+      padding: 8px 10px;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .tc-label {
+      color: #FAF8F5;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-right: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .tc-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #E5C378;
+      box-shadow: 0 0 8px #E5C378;
+    }
+
+    .tc-btn {
+      background: transparent;
+      border: none;
+      color: #CBD5E1;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .tc-btn:hover { color: #FFF; background: rgba(255, 255, 255, 0.08); }
+    .tc-btn.active {
+      background: #FFFFFF;
+      color: #1C1917;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid, .problem-cards, .portfolio-grid, .process-timeline, .form-container, .guarantees-grid, .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-content h1 { font-size: 38px; }
+      .comparison-grid { grid-template-columns: 1fr; }
+      .comp-col-bad { border-right: none; border-bottom: 1px solid var(--border-color); padding-bottom: 24px; padding-right: 0; }
+      .nav-links { display: none; }
+      .theme-controller { width: 92%; overflow-x: auto; justify-content: flex-start; border-radius: 16px; }
+    }
+  </style>
+</head>
+
+<body data-theme="fine-art-editorial">
+
+  <!-- Header -->
+  <header>
+    <div class="wrap nav-inner">
+      <div>
+        <span class="brand-title">ALDER &amp; WREN</span>
+        <span class="brand-sub">Fine-Art Wedding Films &amp; Documentation</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#films">Recent Love Stories</a>
+        <a href="#manifesto">The 1-Wedding Rule</a>
+        <a href="#process">The 4-Week Delivery</a>
+        <a href="#guarantees">Contract Commitments</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="#consultation" class="btn btn-primary" style="padding: 10px 22px; font-size: 13.5px;">Check Date Availability</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="wrap hero-grid">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Strictly 1 Wedding Per Weekend &bull; 2026/2027 Inquiries Open
+        </div>
+        
+        <h1>Real Tears. Unscripted Laughter. Zero Awkward Posing.</h1>
+        
+        <p class="lead">
+          We preserve destination weddings and intimate unions with honest documentary intuition. We guarantee the founders shoot your day in person, deliver a 48-hour sneak peek, and hand over your full color-graded gallery in 4 weeks.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#consultation" class="btn btn-primary">Check Availability for Your Wedding Date &rarr;</a>
+          <a href="#films" class="btn btn-outline">Watch 4K Cinematic Films</a>
+        </div>
+
+        <div class="hero-trust-bar">
+          <div class="trust-item">
+            <h4>100%</h4>
+            <p>Founder-Shot Guarantee</p>
+          </div>
+          <div class="trust-item">
+            <h4>48 Hours</h4>
+            <p>Curated Sneak Peek</p>
+          </div>
+          <div class="trust-item">
+            <h4>28 Days</h4>
+            <p>Full 800+ Frame Delivery</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img class="hero-image-main" 
+             src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" 
+             alt="Bride and Groom Embracing Naturally in Golden Hour Coastal Light">
+        
+        <div class="hero-floating-card">
+          <p class="quote">"We didn't spend a single minute missing our own sangeet cocktail. Alder &amp; Wren captured every laugh, every hug, and every tear invisibly."</p>
+          <p class="author">&mdash; Rhea &amp; Kabir, Udaipur Palace Wedding</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Wedding Industry Breakdown -->
+  <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">The Painful Reality</div>
+        <h2>The 3 Silent Traps of Commercial Wedding Photography</h2>
+        <p>Your wedding is the single most emotionally significant weekend of your life. Don't let an assembly-line photography agency treat it like an invoice.</p>
+      </div>
+
+      <div class="problem-cards">
+        <div class="card">
+          <div class="card-icon">1</div>
+          <h3>The Associate Bait-and-Switch</h3>
+          <p>Large agencies show you breathtaking photos shot by their celebrity founder, but on your wedding morning, two college interns show up with gear they rented that week.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">2</div>
+          <h3>The 6-Month Delivery Void</h3>
+          <p>Months pass. The euphoria fades. You text the studio for updates and get "in queue, files rendering." Half a year later, your memories arrive when nobody cares to post them.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">3</div>
+          <h3>Posing Like Frozen Mannequins</h3>
+          <p>Being dragged away from your college best friends for 3 hours of stiff, awkward poses while a stressed photographer barks orders and blinds your guests with flashes.</p>
+        </div>
+      </div>
+
+      <div class="comparison-wrap">
+        <div class="comparison-grid">
+          <div class="comp-col comp-col-bad">
+            <h3 style="color: #E63946;">&times; Typical Commercial Wedding Studios</h3>
+            <div class="comp-item"><span style="color:#E63946; font-weight:800;">&times;</span> Book 4 to 6 weddings on the same auspicious date, subcontracting out shooters</div>
+            <div class="comp-item"><span style="color:#E63946; font-weight:800;">&times;</span> 6 to 9 months delivery delays with zero financial compensation clauses</div>
+            <div class="comp-item"><span style="color:#E63946; font-weight:800;">&times;</span> Harsh trendy orange-and-teal filters that look dated in five years</div>
+            <div class="comp-item"><span style="color:#E63946; font-weight:800;">&times;</span> Massive camera crews blocking your grandparents' view during pheras</div>
+          </div>
+
+          <div class="comp-col">
+            <h3 style="color: var(--accent);">&#10003; The Alder &amp; Wren Standard</h3>
+            <div class="comp-item"><span style="color:#2A9D8F; font-weight:800;">&#10003;</span> Guaranteed 1 wedding per weekend: founders Alder &amp; Wren personally shoot your day</div>
+            <div class="comp-item"><span style="color:#2A9D8F; font-weight:800;">&#10003;</span> 48-Hour 40-image sneak peek + strictly 28-day full high-res gallery delivery</div>
+            <div class="comp-item"><span style="color:#2A9D8F; font-weight:800;">&#10003;</span> Timeless filmic color science that honors skin tones and Indian wedding vibrance</div>
+            <div class="comp-item"><span style="color:#2A9D8F; font-weight:800;">&#10003;</span> Unobtrusive, stealth documentary coverage so you live every minute of your party</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio / Gallery -->
+  <section id="films" class="section-padding">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">Featured Galleries</div>
+        <h2>Real Celebrations. Unfiltered Emotion.</h2>
+        <p>Explore recent visual documentation from palaces in Rajasthan, estates in Goa, and private ancestral homes.</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="photo-card">
+          <div class="photo-img-wrap">
+            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Intimate Haldi Ceremony Candid Laughs">
+            <span class="photo-tag">Udaipur &bull; Destination</span>
+          </div>
+          <div class="photo-body">
+            <div>
+              <h3>Rhea &amp; Kabir's Sunset Vows</h3>
+              <p>An emotional 3-day royal palace celebration focused on genuine family reunions and candlelit midnight dancing.</p>
+            </div>
+            <div class="photo-meta">
+              <span>Taj Fateh Prakash &bull; 850 Frames</span>
+              <strong style="color: var(--accent);">4-Week Handover</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <div class="photo-img-wrap">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Couple Walking Barefoot on Sunset Beach">
+            <span class="photo-tag">Goa &bull; Coastal</span>
+          </div>
+          <div class="photo-body">
+            <div>
+              <h3>Tara &amp; Dev at Cabo Serai</h3>
+              <p>Barefoot beach vows under coconut groves, vintage Portuguese villa cocktails, and unscripted acoustic music.</p>
+            </div>
+            <div class="photo-meta">
+              <span>South Goa &bull; 650 Frames</span>
+              <strong style="color: var(--accent);">3-Week Handover</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <div class="photo-img-wrap">
+            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80" alt="Traditional Heritage Silk Wedding Details">
+            <span class="photo-tag">Heritage &bull; Intimate</span>
+          </div>
+          <div class="photo-body">
+            <div>
+              <h3>Meera &amp; Arjun's Chettinad Union</h3>
+              <p>Courtyard celebrations honoring ancestral traditions, quiet glances between rituals, and classical nadaswaram echoes.</p>
+            </div>
+            <div class="photo-meta">
+              <span>Kanadukathan &bull; 720 Frames</span>
+              <strong style="color: var(--accent);">4-Week Handover</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-Step Process -->
+  <section id="process" class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">The Experience</div>
+        <h2>Our 3-Step Wedding Documentation Journey</h2>
+        <p>From our first tea tasting to the moment you open your heirloom linen album, every interaction is curated for calm.</p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="card">
+          <div class="step-number">01</div>
+          <h3>Pre-Wedding Vision &amp; Run-of-Show Alignment</h3>
+          <p>We sit down over coffee or Zoom to understand your family dynamics, must-have people, and emotional sensitivities. We build a zero-stress photography timeline with your planner.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">02</div>
+          <h3>Discreet, Empathetic Wedding Day Presence</h3>
+          <p>We blend in seamlessly as trusted friends with Leica and Sony prime lenses. No intrusive booms, no harsh blinding lights—just gentle guidance when you need it and invisibility when you don't.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">03</div>
+          <h3>48-Hour Sneak Peek &amp; 28-Day Master Delivery</h3>
+          <p>Relive your wedding before you even land on your honeymoon with 40 curated preview frames. Within 28 business days, your full password-protected cloud gallery and 4K film cut are delivered.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Commitments & Guarantees -->
+  <section id="guarantees" class="section-padding">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">Enforceable Guarantees</div>
+        <h2>Our 4 Written Promises in Every Wedding Contract</h2>
+        <p>We respect the trust you place in us. Here is what we guarantee in our signed agreement.</p>
+      </div>
+
+      <div class="guarantees-grid">
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#128247;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Zero Substitute Shooters Guarantee</h4>
+            <p style="font-size: 14px; margin: 0;">Our principal founders Alder &amp; Wren personally shoot your event. If medical emergency prevents attendance, our full fee is refunded.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#9200;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Contractual 4-Week Delivery Clause</h4>
+            <p style="font-size: 14px; margin: 0;">If your full high-res photo gallery is not delivered in 28 days, we credit ₹10,000 for every additional week of delay directly to your account.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#128190;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Triple-Redundant Cloud &amp; Vault Backup</h4>
+            <p style="font-size: 14px; margin: 0;">Every card is backed up to two isolated SSDs on-site each evening, plus encrypted cloud storage before we sleep.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#10024;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Natural Skin-Tone Mastery Guarantee</h4>
+            <p style="font-size: 14px; margin: 0;">We color grade every individual file by hand to accurately represent real skin complexions and authentic bridal silks without muddy filters.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "I was terrified of being photographed all day because I hate posing. Alder &amp; Wren were like family. Half the time, we forgot they were even there. When we saw our photos, my husband cried. They captured moments we didn't even notice happening."
+          </p>
+          <div class="client-info">
+            <img class="client-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Bride Avatar">
+            <div>
+              <h4 style="font-size: 16px;">Sanjana &amp; Varun</h4>
+              <p style="font-size: 13px; color: var(--text-subtle);">Jaipur Palace Celebration &bull; Nov 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "The 4-week delivery was unbelievable! My sister's wedding photographer took 7 months to send files. Alder &amp; Wren gave us 40 gorgeous sneak-peeks while we were waiting at the airport, and the whole gallery on day 26."
+          </p>
+          <div class="client-info">
+            <img class="client-avatar" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80" alt="Groom Avatar">
+            <div>
+              <h4 style="font-size: 16px;">Nikhil &amp; Tanya</h4>
+              <p style="font-size: 13px; color: var(--text-subtle);">Goa Beach Wedding &bull; Jan 2026</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultation / Availability Booking -->
+  <section id="consultation" class="cta-section section-padding">
+    <div class="wrap form-container">
+      <div>
+        <div class="badge">Inquire For Your Date</div>
+        <h2 style="font-size: 42px; margin-bottom: 20px;">Let’s Check If Your Wedding Date Is Free</h2>
+        <p style="font-size: 17px; line-height: 1.6; margin-bottom: 24px;">
+          Because we maintain a strict policy of shooting only one wedding per weekend, peak winter and auspicious dates book 6 to 12 months in advance. Share your celebration details below.
+        </p>
+
+        <div style="background: var(--bg-card-subtle); padding: 22px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 24px;">
+          <h4 style="font-size: 15px; margin-bottom: 8px; color: var(--accent);">&#9733; The Alder &amp; Wren Promise:</h4>
+          <p style="font-size: 13.5px; color: var(--text-muted); margin: 0; line-height: 1.7;">
+            We respond to every serious inquiry within 12 hours with exact availability, transparent package investment guides, and full sample unedited gallery links.
+          </p>
+        </div>
+      </div>
+
+      <div class="form-box">
+        <h3 style="font-size: 24px; margin-bottom: 20px;">Check Date Availability</h3>
+        <form onsubmit="event.preventDefault(); alert('Thank you! We have received your wedding details and will confirm date availability within 12 hours.');">
+          <div class="form-group">
+            <label for="names">Couple’s Names</label>
+            <input type="text" id="names" class="form-control" placeholder="e.g. Natasha &amp; Sameer" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone / WhatsApp Number</label>
+            <input type="tel" id="phone" class="form-control" placeholder="+91 98111 22334" required>
+          </div>
+
+          <div class="form-group">
+            <label for="date">Wedding Date(s) &amp; City/Venue</label>
+            <input type="text" id="date" class="form-control" placeholder="e.g. Dec 12-14, 2026 &bull; Alila Diwa, Goa" required>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Tell us about your celebration</label>
+            <textarea id="notes" class="form-control" rows="3" placeholder="Approx guest count, number of events, or vibe you are imagining..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 16px;">Check Date &amp; Request Pricing Guide &rarr;</button>
+          <p style="font-size: 12px; color: var(--text-subtle); text-align: center; margin-top: 12px; margin-bottom: 0;">We take only 18 weddings per calendar year.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap footer-inner">
+      <div>
+        <div class="brand-title" style="font-size: 20px;">ALDER &amp; WREN</div>
+        <p style="font-size: 12px; margin: 4px 0 0; color: var(--text-subtle);">Available across India, Sri Lanka, UAE &amp; Italy &bull; Based in Delhi &amp; Mumbai</p>
+      </div>
+      <div style="font-size: 13px; color: var(--text-subtle); text-align: right;">
+        &copy; 2026 Alder &amp; Wren Studios. Fictional agency demo crafted by <a href="https://uncodedhub.com" style="color: var(--accent); font-weight: 700;">Uncoded Hub</a>.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Style Switcher -->
+  <div class="theme-controller" role="region" aria-label="Aesthetic Architecture Switcher">
+    <div class="tc-label">
+      <span class="tc-dot"></span>
+      3 Layout &amp; Visual Styles
+    </div>
+    
+    <button class="tc-btn active" data-theme="fine-art-editorial" onclick="switchTheme('fine-art-editorial', this)">
+      <span>&#127807; Fine-Art Editorial</span>
+    </button>
+
+    <button class="tc-btn" data-theme="cinematic-nocturne" onclick="switchTheme('cinematic-nocturne', this)">
+      <span>&#127916; Cinematic Nocturne</span>
+    </button>
+
+    <button class="tc-btn" data-theme="vogue-minimalist" onclick="switchTheme('vogue-minimalist', this)">
+      <span>&#9632; Vogue Minimalist</span>
+    </button>
+  </div>
+
+  <script>
+    function switchTheme(themeName, btnElement) {
+      document.body.setAttribute('data-theme', themeName);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElement) btnElement.classList.add('active');
+      try { localStorage.setItem('alder_active_style', themeName); } catch (err) {}
+    }
+
+    try {
+      const savedTheme = localStorage.getItem('alder_active_style');
+      if (savedTheme) {
+        const targetBtn = document.querySelector(`.tc-btn[data-theme="${savedTheme}"]`);
+        if (targetBtn) switchTheme(savedTheme, targetBtn);
+      }
+    } catch (err) {}
+  </script>
+</body>
+</html>

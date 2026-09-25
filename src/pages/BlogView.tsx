@@ -87,12 +87,11 @@ export default function BlogView() {
             <span className="label text-muted ml-4">{NICHES[post.niche]}</span>
             <h1 className="font-display text-hero mt-8">{post.title}</h1>
             <p className="label text-muted mt-6">
-              {new Date(post.date).toLocaleDateString('en-IN', {
+              {`${new Date(post.date).toLocaleDateString('en-IN', {
                 day: 'numeric',
                 month: 'short',
                 year: 'numeric',
-              })}{' '}
-              · {post.readingMinutes} min read
+              })} · ${post.readingMinutes} min read`}
             </p>
           </Reveal>
 

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uncoded Hub Agency Command Center | 100–200 Client Multi-Tenant Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../core/super-engine.css">
+  <style>
+    body {
+      background: #0B0E14;
+      color: #F1F5F9;
+      margin: 0;
+      font-family: var(--sf-font);
+    }
+    .command-header {
+      background: #111622;
+      border-bottom: 1px solid #1E293B;
+      padding: 20px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .agency-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .mrr-badge {
+      background: rgba(16, 185, 129, 0.15);
+      color: #10B981;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .agency-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+    .dark-card {
+      background: #111622;
+      border: 1px solid #1E293B;
+      border-radius: var(--sf-radius-lg);
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .dark-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 14px;
+    }
+    .dark-table th {
+      background: #172033;
+      padding: 14px 18px;
+      font-weight: 700;
+      color: #94A3B8;
+      border-bottom: 1px solid #1E293B;
+    }
+    .dark-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid #1E293B;
+      color: #E2E8F0;
+    }
+    .dark-table tr:hover td {
+      background: #172033;
+    }
+    .search-input {
+      background: #172033;
+      border: 1px solid #334155;
+      color: #F8FAFC;
+      padding: 10px 16px;
+      border-radius: var(--sf-radius-sm);
+      font-size: 14px;
+      outline: none;
+      width: 280px;
+    }
+  </style>
+</head>
+<body class="sf-scope">
+
+  <div class="command-header">
+    <div class="agency-title">
+      <span style="font-size: 24px;">⚡</span>
+      <span>UNCODED HUB &bull; AGENCY COMMAND CENTER</span>
+      <span style="font-size: 12px; background: #334155; padding: 3px 8px; border-radius: 4px; color: #94A3B8;">SUPER ADMIN</span>
+    </div>
+    <div style="display: flex; gap: 16px; align-items: center;">
+      <div class="mrr-badge" id="global-mrr-ticker">MRR: ₹1,49,985 / month (15 Active)</div>
+      <button onclick="openOnboardingModal()" class="sf-btn sf-btn-primary" style="background: var(--sf-accent); padding: 10px 20px;">
+        + Onboard New Client (60s)
+      </button>
+      <span style="font-size: 13px; color: #94A3B8;">Deepak &amp; Geetha</span>
+    </div>
+  </div>
+
+  <div class="agency-wrap">
+    
+    <!-- TOP AGENCY KPI GRID -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 32px;">
+      <div class="dark-card">
+        <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: #94A3B8; letter-spacing: 0.05em;">Total Active Clients</span>
+        <div style="font-size: 36px; font-weight: 800; margin-top: 8px; color: #F8FAFC;" id="kpi-client-count">15</div>
+        <span style="font-size: 12px; color: #10B981;">Target: 200 Clients (Scaling on Track)</span>
+      </div>
+
+      <div class="dark-card">
+        <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: #94A3B8; letter-spacing: 0.05em;">Total Agency Monthly MRR</span>
+        <div style="font-size: 36px; font-weight: 800; margin-top: 8px; color: #10B981;" id="kpi-mrr-total">₹1,49,985</div>
+        <span style="font-size: 12px; color: #94A3B8;">Annualized Run Rate: ₹18.0 Lakhs</span>
+      </div>
+
+      <div class="dark-card">
+        <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: #94A3B8; letter-spacing: 0.05em;">30-Day Inbound Leads Captured</span>
+        <div style="font-size: 36px; font-weight: 800; margin-top: 8px; color: #38BDF8;" id="kpi-global-leads">342</div>
+        <span style="font-size: 12px; color: #94A3B8;">Across all 6 Niches</span>
+      </div>
+
+      <div class="dark-card">
+        <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: #94A3B8; letter-spacing: 0.05em;">Client Pipeline Value Generated</span>
+        <div style="font-size: 36px; font-weight: 800; margin-top: 8px; color: #F59E0B;" id="kpi-pipeline-total">₹18.4 Cr</div>
+        <span style="font-size: 12px; color: #94A3B8;">Average 122x ROI on Retainers</span>
+      </div>
+    </div>
+
+    <!-- CLIENT DIRECTORY TABLE -->
+    <div class="dark-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h3 style="margin: 0; font-size: 18px; font-weight: 800;">Multi-Tenant Client Roster (<span id="roster-count">15</span> / 200 Max Capacity)</h3>
+        <input type="text" id="client-search-input" class="search-input" placeholder="Search by studio name or niche..." oninput="filterClients(this.value)">
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table class="dark-table">
+          <thead>
+            <tr>
+              <th>Client Studio &bull; Domain</th>
+              <th>Target Niche</th>
+              <th>Plan Tier &bull; Retainer</th>
+              <th>30-Day Leads</th>
+              <th>Pipeline Value</th>
+              <th>Status</th>
+              <th>Embed Snippet</th>
+              <th>Client Portal</th>
+            </tr>
+          </thead>
+          <tbody id="client-roster-tbody">
+            <!-- Rendered dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 60-SECOND ONBOARDING MODAL -->
+  <div class="sf-modal-overlay" id="onboard-modal">
+    <div class="sf-modal-card" style="background: #111622; border-color: #1E293B; color: #F8FAFC;">
+      <h3 style="font-size: 22px; margin: 0 0 6px; font-weight: 800;">60-Second Client Onboarding</h3>
+      <p style="font-size: 13px; color: #94A3B8; margin: 0 0 20px;">
+        Instantly generates tenant key, RLS database partitions, and embeddable snippet.
+      </p>
+
+      <form onsubmit="handleOnboardSubmit(event)">
+        <div class="sf-form-group">
+          <label style="color: #94A3B8;" for="new-client-name">Client Business / Studio Name</label>
+          <input type="text" id="new-client-name" class="sf-form-input" style="background:#172033; border-color:#334155; color:#FFF;" placeholder="e.g. Oakridge Architectural Sanctuaries" required>
+        </div>
+
+        <div class="sf-form-group">
+          <label style="color: #94A3B8;" for="new-client-niche">Industry Niche</label>
+          <select id="new-client-niche" class="sf-form-input" style="background:#172033; border-color:#334155; color:#FFF;" required>
+            <option value="interior-design">Residential Interiors &amp; Architecture</option>
+            <option value="real-estate">Real Estate &amp; Prime Estates</option>
+            <option value="dental-clinic">Dental &amp; Aesthetic Clinics</option>
+            <option value="wedding-photo">Wedding Photography &amp; Films</option>
+            <option value="modular-kitchen">Home Renovation &amp; Modular Kitchens</option>
+            <option value="executive-coaching">Coaches &amp; Strategic Consultants</option>
+          </select>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div class="sf-form-group">
+            <label style="color: #94A3B8;" for="new-client-retainer">Monthly Retainer (INR)</label>
+            <input type="number" id="new-client-retainer" class="sf-form-input" style="background:#172033; border-color:#334155; color:#FFF;" value="9999" required>
+          </div>
+          <div class="sf-form-group">
+            <label style="color: #94A3B8;" for="new-client-phone">Owner WhatsApp Phone</label>
+            <input type="tel" id="new-client-phone" class="sf-form-input" style="background:#172033; border-color:#334155; color:#FFF;" placeholder="+91 98450 12345" required>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-top: 10px;">
+          <button type="submit" class="sf-btn sf-btn-primary" style="flex: 1; justify-content: center; background: var(--sf-accent);">
+            Generate Client Engine &rarr;
+          </button>
+          <button type="button" onclick="closeOnboardingModal()" class="sf-btn sf-btn-secondary" style="border-color:#334155; color:#94A3B8;">
+            Cancel
+          </button>
+        </div>
+      </form>
+
+      <!-- Snippet Reveal Area -->
+      <div id="snippet-reveal" style="display: none; margin-top: 20px; background: #0B0E14; border: 1px solid #1E293B; border-radius: 8px; padding: 14px;">
+        <span style="font-size: 11px; font-weight: 800; color: #10B981; text-transform: uppercase;">✅ Embed Script Ready:</span>
+        <pre id="snippet-code" style="font-size: 12px; color: #38BDF8; margin: 8px 0; overflow-x: auto;"></pre>
+        <button onclick="copySnippet()" class="sf-btn sf-btn-secondary" style="padding: 6px 12px; font-size: 12px; border-color: #334155; color: #FFF;">
+          📋 Copy to Clipboard
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Master Multi-Tenant Client Roster Data
+    const CLIENTS = [
+      { id: 't-01', name: 'Meridian Interiors', slug: 'meridian-interiors-804', domain: 'meridianinteriors.com', niche: 'Interior Design', retainer: 9999, leads: 38, pipeline: '₹2.4 Cr', status: 'ACTIVE' },
+      { id: 't-02', name: 'Marlow & Co. Realty', slug: 'marlow-realty-102', domain: 'marlowrealty.in', niche: 'Real Estate', retainer: 14999, leads: 19, pipeline: '₹14.2 Cr', status: 'ACTIVE' },
+      { id: 't-03', name: 'Alder & Wren Studios', slug: 'alder-wren-55', domain: 'alderwren.com', niche: 'Wedding Photography', retainer: 9999, leads: 26, pipeline: '₹48 Lakhs', status: 'ACTIVE' },
+      { id: 't-04', name: 'Willowmere Dental Sanctuary', slug: 'willowmere-dental-90', domain: 'willowmeredental.in', niche: 'Dental Clinics', retainer: 9999, leads: 44, pipeline: '₹18 Lakhs', status: 'ACTIVE' },
+      { id: 't-05', name: 'Halbrook Modular Studios', slug: 'halbrook-studios-33', domain: 'halbrookstudios.in', niche: 'Modular Kitchens', retainer: 9999, leads: 31, pipeline: '₹1.1 Cr', status: 'ACTIVE' },
+      { id: 't-06', name: 'Naomi Reyes Advisory', slug: 'naomi-reyes-07', domain: 'naomireyes.com', niche: 'Executive Coaching', retainer: 14999, leads: 14, pipeline: '₹32 Lakhs', status: 'ACTIVE' },
+      { id: 't-07', name: 'Kavita Chawla Designs', slug: 'kavita-chawla-88', domain: 'kavitachawla.in', niche: 'Interior Design', retainer: 9999, leads: 22, pipeline: '₹1.6 Cr', status: 'ACTIVE' },
+      { id: 't-08', name: 'Prestige Point Properties', slug: 'prestige-point-41', domain: 'prestigepoint.in', niche: 'Real Estate', retainer: 9999, leads: 17, pipeline: '₹8.4 Cr', status: 'ACTIVE' },
+      { id: 't-09', name: 'Dr. Shenoy Aesthetics', slug: 'shenoy-aesthetics-12', domain: 'drshenoy.com', niche: 'Dental Clinics', retainer: 9999, leads: 36, pipeline: '₹14 Lakhs', status: 'ACTIVE' },
+      { id: 't-10', name: 'CinemaVerite Weddings', slug: 'cinemaverite-94', domain: 'cinemaverite.in', niche: 'Wedding Photography', retainer: 9999, leads: 18, pipeline: '₹36 Lakhs', status: 'ACTIVE' },
+      { id: 't-11', name: 'Nordic Oak Kitchens', slug: 'nordic-oak-73', domain: 'nordicoak.in', niche: 'Modular Kitchens', retainer: 9999, leads: 29, pipeline: '₹95 Lakhs', status: 'ACTIVE' },
+      { id: 't-12', name: 'Stratford Founder Sparring', slug: 'stratford-spar-66', domain: 'stratfordsparring.com', niche: 'Executive Coaching', retainer: 14999, leads: 11, pipeline: '₹24 Lakhs', status: 'ACTIVE' },
+      { id: 't-13', name: 'Atelier Earth Architecture', slug: 'atelier-earth-51', domain: 'atelierearth.in', niche: 'Interior Design', retainer: 9999, leads: 25, pipeline: '₹1.8 Cr', status: 'ACTIVE' },
+      { id: 't-14', name: 'Urban Nest Builders', slug: 'urban-nest-27', domain: 'urbannest.in', niche: 'Real Estate', retainer: 9999, leads: 15, pipeline: '₹6.2 Cr', status: 'ACTIVE' },
+      { id: 't-15', name: 'SmileCraft Dental', slug: 'smilecraft-19', domain: 'smilecraft.in', niche: 'Dental Clinics', retainer: 9999, leads: 32, pipeline: '₹12 Lakhs', status: 'ACTIVE' }
+    ];
+
+    function renderRoster(clientsToRender) {
+      const tbody = document.getElementById('client-roster-tbody');
+      tbody.innerHTML = clientsToRender.map(c => `
+        <tr>
+          <td>
+            <strong>${c.name}</strong><br>
+            <span style="font-size:12px; color:#64748B;">${c.domain}</span>
+          </td>
+          <td><span style="font-size:13px; color:#CBD5E1;">${c.niche}</span></td>
+          <td>
+            <strong style="color:#10B981;">₹${c.retainer.toLocaleString('en-IN')}/mo</strong><br>
+            <span style="font-size:11px; color:#64748B;">Front-Office WaaS</span>
+          </td>
+          <td style="font-weight:700; color:#38BDF8;">${c.leads}</td>
+          <td style="font-weight:700; color:#F59E0B;">${c.pipeline}</td>
+          <td>
+            <span style="padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 800; background: rgba(16,185,129,0.15); color: #10B981;">
+              ${c.status}
+            </span>
+          </td>
+          <td>
+            <button onclick="viewSnippet('${c.slug}')" class="sf-btn sf-btn-secondary" style="padding: 5px 10px; font-size: 11px; border-color: #334155; color: #FFF;">
+              &lt;/&gt; Code
+            </button>
+          </td>
+          <td>
+            <a href="client-login-portal.html?tenant=${c.slug}" class="sf-btn sf-btn-primary" style="padding: 5px 12px; font-size: 11px; background: #2563EB;">
+              Open Portal &rarr;
+            </a>
+          </td>
+        </tr>
+      `).join('');
+
+      document.getElementById('roster-count').innerText = clientsToRender.length;
+    }
+
+    function filterClients(query) {
+      const q = query.toLowerCase();
+      const filtered = CLIENTS.filter(c => c.name.toLowerCase().includes(q) || c.niche.toLowerCase().includes(q));
+      renderRoster(filtered);
+    }
+
+    function openOnboardingModal() {
+      document.getElementById('onboard-modal').classList.add('active');
+    }
+
+    function closeOnboardingModal() {
+      document.getElementById('onboard-modal').classList.remove('active');
+      document.getElementById('snippet-reveal').style.display = 'none';
+    }
+
+    function handleOnboardSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('new-client-name').value;
+      const niche = document.getElementById('new-client-niche').value;
+      const retainer = Number(document.getElementById('new-client-retainer').value);
+      const slug = name.toLowerCase().replace(/[^a-z0-9]/g, '-') + '-' + Math.floor(Math.random() * 89 + 10);
+
+      const snippet = `<script src="https://engine.uncodedhub.com/sdk.js" data-tenant-key="${slug}" async></script>`;
+      document.getElementById('snippet-code').innerText = snippet;
+      document.getElementById('snippet-reveal').style.display = 'block';
+
+      // Add to clients list
+      CLIENTS.unshift({
+        id: 't-' + Date.now(),
+        name,
+        slug,
+        domain: slug + '.com',
+        niche: niche.replace('-', ' '),
+        retainer,
+        leads: 1,
+        pipeline: '₹12 Lakhs',
+        status: 'ACTIVE'
+      });
+      renderRoster(CLIENTS);
+    }
+
+    function viewSnippet(slug) {
+      alert(`Embed Tag for ${slug}:\n\n<script src="https://engine.uncodedhub.com/sdk.js" data-tenant-key="${slug}" async></script>`);
+    }
+
+    function copySnippet() {
+      const code = document.getElementById('snippet-code').innerText;
+      navigator.clipboard.writeText(code);
+      alert('Embed script copied to clipboard!');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderRoster(CLIENTS);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "nicheId": "modular-kitchen",
+  "nicheTitle": "Modular Kitchens & Precision Home Renovations",
+  "brandName": "Halbrook Kitchen & Renovation Studios",
+  "currency": "₹",
+  "currencyUnit": "INR",
+  "bookingType": "in-home",
+  "bookingTitle": "Book a Free In-Home Laser Measurement Survey",
+  "bookingSubtitle": "Our senior modular engineer visits with tactile material samples, acrylic swatches, and laser measuring tools.",
+  "travelBufferMinutes": 60,
+  "slotDurationMinutes": 60,
+  "operatingHours": { "start": 8, "end": 17, "days": [1, 2, 3, 4, 5, 6] },
+  "depositRequired": false,
+  "depositAmount": 0,
+  "depositPolicy": "Zero cost site measurement survey. Never any sales pressure.",
+  "confirmationMessage": "You're booked for your In-Home Laser Survey. Add it to your calendar below, and our senior engineer will confirm address and parking details the day before.",
+  "estimator": {
+    "step1": {
+      "title": "Select Renovation Category",
+      "options": [
+        { "id": "kitchen", "label": "Modular Kitchen (New Flat / Upgrade)", "desc": "L-Shape, Parallel, or Island kitchen layout with Blum fittings", "icon": "🍳" },
+        { "id": "wardrobes", "label": "Full Home Wardrobes & Storage", "desc": "Floor-to-ceiling sliding or hinged wardrobes for all bedrooms", "icon": "🚪" },
+        { "id": "kitchen-civil", "label": "Kitchen + Civil & Plumbing Overhaul", "desc": "Tile chipping, granite countertop, plumbing rerouting & kitchen installation", "icon": "🔨" },
+        { "id": "full-reno", "label": "Complete Apartment Turnkey Renovation", "desc": "Civil flooring, painting, electrical, kitchen, bathrooms & joinery", "icon": "🏡" }
+      ]
+    },
+    "step2": {
+      "title": "Select Dimensions & Layout Scope",
+      "options": [
+        { "id": "small", "label": "Compact Scope (Under 120 Sq.Ft)", "desc": "Straight galley kitchen (approx. 25–35 running ft of cabinetry)" },
+        { "id": "medium", "label": "Standard Family Layout (150–250 Sq.Ft)", "desc": "Spacious L-shape or Parallel layout (approx. 45–65 running ft of cabinetry)" },
+        { "id": "large", "label": "Expansive Culinary Suite (300+ Sq.Ft)", "desc": "Island centerpiece, pantry tall-unit tower & breakfast counter (80+ running ft)" }
+      ]
+    },
+    "step3": {
+      "title": "Select Core Material & Hardware Grade",
+      "options": [
+        { "id": "standard", "label": "Standard BWR Grade + Hafele", "desc": "BWR commercial-grade plywood, laminate shutters, standard soft-close runners", "multiplier": 0.90 },
+        { "id": "mid-range", "label": "100% Calibrated Marine BWP + Blum", "desc": "Certified IS:710 Marine Boiling-Water-Proof ply, anti-scratch acrylic, Blum Tandembox", "multiplier": 1.00 },
+        { "id": "high-end", "label": "Haute PU Lacquer / Ceramic + Blum Legrabox", "desc": "Seamless 7-coat PU lacquer shutters, motorized Blum Aventos lift-ups, Dekton stone", "multiplier": 1.15 }
+      ]
+    },
+    "pricingMatrix": {
+      "kitchen": { "small": [220000, 340000], "medium": [340000, 580000], "large": [580000, 950000] },
+      "wardrobes": { "small": [180000, 290000], "medium": [290000, 520000], "large": [520000, 850000] },
+      "kitchen-civil": { "small": [320000, 480000], "medium": [480000, 820000], "large": [820000, 1400000] },
+      "full-reno": { "small": [650000, 1100000], "medium": [1100000, 1900000], "large": [1900000, 3200000] }
+    },
+    "disclaimer": "All estimates include 100% factory CNC manufacturing, 10-year carcass warranty, and milestone-staged payment terms. Zero upfront lump sums."
+  },
+  "notifications": {
+    "ownerEmail": "dispatch@halbrook-studios.com",
+    "ownerPhone": "+91 (080) 4155-9900",
+    "customerSlaHours": 3,
+    "customerEmailBody": "Hi {name},\n\nWe received your request for a {project_type} measurement ({project_size}).\n\nOur senior installation engineer will call you within 3 business hours from +91 (080) 4155-9900 to confirm your location and ensure we bring the exact material swatches you want to inspect.\n\nBest regards,\nHalbrook Kitchen Engineering Team"
+  }
+}

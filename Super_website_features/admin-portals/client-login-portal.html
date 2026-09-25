@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Portal | Uncoded Hub Multi-Tenant System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(18, 24, 38, 0.85);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover: rgba(255, 255, 255, 0.12);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #6366f1;
+      --accent-glow: rgba(99, 102, 241, 0.25);
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      background-image: 
+        radial-gradient(ellipse at 15% 10%, rgba(99, 102, 241, 0.12) 0%, transparent 45%),
+        radial-gradient(ellipse at 85% 90%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+      background-attachment: fixed;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+    }
+    
+    /* SIDEBAR */
+    .sidebar {
+      width: 260px;
+      background: rgba(12, 17, 29, 0.95);
+      border-right: 1px solid var(--card-border);
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .logo-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #6366f1, #3b82f6);
+      display: grid;
+      place-items: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 14px var(--accent-glow);
+    }
+    .brand-text h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .brand-text span {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .client-tenant-switcher {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    .switcher-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .tenant-select {
+      width: 100%;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--card-border);
+      color: #fff;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      cursor: pointer;
+      outline: none;
+    }
+    .tenant-select:focus {
+      border-color: var(--accent);
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      list-style: none;
+      flex: 1;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .nav-item:hover, .nav-item.active {
+      color: #fff;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+    .nav-item.active {
+      font-weight: 600;
+    }
+
+    .sidebar-footer {
+      padding-top: 16px;
+      border-top: 1px solid var(--card-border);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .powered-by {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .powered-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+    }
+
+    /* MAIN CONTENT */
+    .main {
+      flex: 1;
+      padding: 32px 40px;
+      overflow-y: auto;
+      max-width: 1400px;
+    }
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+    .tenant-header-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .tenant-badge-pill {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .page-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+    .page-subtitle {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+    .header-actions {
+      display: flex;
+      gap: 12px;
+    }
+    .btn {
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      outline: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      color: #fff;
+      box-shadow: 0 4px 14px var(--accent-glow);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #4f46e5, #4338ca);
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      border: 1px solid var(--card-border);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: var(--card-hover);
+    }
+
+    /* KPI METRICS GRID */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+    .kpi-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .kpi-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--card-hover);
+    }
+    .kpi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .kpi-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .kpi-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.06);
+      font-size: 1rem;
+    }
+    .kpi-value {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .kpi-subtext {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .kpi-subtext .trend-up {
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    /* CONTENT TABS */
+    .tab-bar {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 24px;
+      padding-bottom: 8px;
+    }
+    .tab-btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tab-btn.active {
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* LEADS TABLE CARD */
+    .content-panel {
+      display: none;
+    }
+    .content-panel.active {
+      display: block;
+    }
+    .data-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .data-card-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .data-card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+    .table-responsive {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+    th {
+      padding: 14px 20px;
+      background: rgba(255,255,255,0.02);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--card-border);
+    }
+    td {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: #e2e8f0;
+      vertical-align: middle;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tr:hover td {
+      background: rgba(255,255,255,0.015);
+    }
+    .lead-name {
+      font-weight: 600;
+      color: #fff;
+    }
+    .lead-phone {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .badge-status.unresolved {
+      background: rgba(239, 68, 68, 0.15);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    .badge-status.waiting {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    .badge-status.resolved {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .btn-wa {
+      background: #25d366;
+      color: #0b1e13;
+      padding: 6px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .btn-wa:hover {
+      background: #20ba5a;
+    }
+
+    /* CALENDAR BOOKING TILES */
+    .booking-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 16px;
+      padding: 20px;
+    }
+    .booking-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .booking-time-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #818cf8;
+      background: rgba(99, 102, 241, 0.15);
+      padding: 4px 10px;
+      border-radius: 6px;
+      width: fit-content;
+    }
+    .buffer-protection-tag {
+      font-size: 0.7rem;
+      color: #34d399;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 600;
+      background: rgba(16,185,129,0.1);
+      padding: 3px 8px;
+      border-radius: 4px;
+      width: fit-content;
+    }
+
+    /* MODAL FOR MONTHLY REPORT PREVIEW */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      place-items: center;
+      padding: 24px;
+    }
+    .modal-overlay.active {
+      display: grid;
+    }
+    .report-modal {
+      background: #0f172a;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 18px;
+      max-width: 680px;
+      width: 100%;
+      padding: 32px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    }
+    .report-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 1024px) {
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      .sidebar { width: 80px; padding: 20px 12px; }
+      .brand-text, .switcher-label, .sidebar-footer, .nav-item span { display: none; }
+      .main { padding: 24px 20px; }
+    }
+    @media (max-width: 640px) {
+      body { flex-direction: column; }
+      .sidebar { width: 100%; height: auto; position: static; }
+      .kpi-grid { grid-template-columns: 1fr; }
+      .top-header { flex-direction: column; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR NAVIGATION -->
+  <aside class="sidebar">
+    <a href="../index.html" class="brand-logo">
+      <div class="logo-badge">UH</div>
+      <div class="brand-text">
+        <h3>Uncoded Hub</h3>
+        <span>Super Systems v2.4</span>
+      </div>
+    </a>
+
+    <div class="client-tenant-switcher">
+      <label class="switcher-label">Switch Client Portal</label>
+      <select id="tenantSelector" class="tenant-select" onchange="switchTenant(this.value)">
+        <option value="meridian_interiors">Meridian Architecture</option>
+        <option value="halbrook_dental">Halbrook Aesthetic Clinic</option>
+        <option value="alder_realestate">Alder Luxury Estates</option>
+        <option value="willowmere_weddings">Willowmere Events & Photo</option>
+        <option value="forge_kitchens">Forge Modular Kitchens</option>
+        <option value="naomi_coaching">Naomi Executive Coaching</option>
+      </select>
+    </div>
+
+    <ul class="nav-menu">
+      <li class="nav-item active" onclick="showTab('leads', this)">
+        <span>📊</span> <span>Live Inquiries</span>
+      </li>
+      <li class="nav-item" onclick="showTab('bookings', this)">
+        <span>📅</span> <span>Bookings & Calendar</span>
+      </li>
+      <li class="nav-item" onclick="showTab('chats', this)">
+        <span>💬</span> <span>Shared Web Inbox</span>
+      </li>
+      <li class="nav-item" onclick="showTab('settings', this)">
+        <span>⚙️</span> <span>Widget Embed Code</span>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="powered-by">
+        <div class="powered-dot"></div>
+        <span>Multi-Tenant Gateway Live</span>
+      </div>
+      <div>Retainer: <strong>PRO Level (₹4,999/mo)</strong></div>
+    </div>
+  </aside>
+
+  <!-- MAIN VIEWPORT -->
+  <main class="main">
+    
+    <!-- TOP HEADER -->
+    <header class="top-header">
+      <div>
+        <div class="tenant-header-title">
+          <h1 id="clientBrandName" class="page-title">Meridian Architecture & Interiors</h1>
+          <span id="clientStatusBadge" class="tenant-badge-pill">Active Retainer</span>
+        </div>
+        <p class="page-subtitle" id="clientSubtitle">
+          Multi-Tenant Client Portal • Live Estimator Leads & 1-Hour Buffer Calendar
+        </p>
+      </div>
+
+      <div class="header-actions">
+        <button class="btn btn-outline" onclick="openReportModal()">
+          <span>📄</span> Generate ROI Report
+        </button>
+        <a id="publicSiteLink" href="../index.html" target="_blank" class="btn btn-primary">
+          <span>🌐</span> View Public Website
+        </a>
+      </div>
+    </header>
+
+    <!-- 4 REAL-TIME KPI METRICS -->
+    <section class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-header">
+          <span class="kpi-label">High-Intent Leads</span>
+          <div class="kpi-icon">🎯</div>
+        </div>
+        <div id="kpiLeadsCount" class="kpi-value">42</div>
+        <div class="kpi-subtext">
+          <span class="trend-up">↑ +38%</span> vs previous month
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-header">
+          <span class="kpi-label">Estimated Pipeline</span>
+          <div class="kpi-icon">💰</div>
+        </div>
+        <div id="kpiPipelineValue" class="kpi-value">₹84.5L</div>
+        <div class="kpi-subtext">
+          <span>Captured via 3-Step Estimator</span>
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-header">
+          <span class="kpi-label">Site Visits / Bookings</span>
+          <div class="kpi-icon">📅</div>
+        </div>
+        <div id="kpiBookingsCount" class="kpi-value">19</div>
+        <div class="kpi-subtext">
+          <span style="color: #34d399;">🛡️ 1-Hr Travel Buffers Active</span>
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-header">
+          <span class="kpi-label">Retainer ROI Multiple</span>
+          <div class="kpi-icon">🚀</div>
+        </div>
+        <div id="kpiRoiMultiple" class="kpi-value">169x</div>
+        <div class="kpi-subtext">
+          <span>Retainer: ₹4,999/mo (Uncoded Hub)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB CONTROLS -->
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="showTab('leads', this)">Captured Estimator Leads (<span id="tabLeadCount">5</span>)</button>
+      <button class="tab-btn" onclick="showTab('bookings', this)">Confirmed Appointments & Calendar (<span id="tabBookingCount">4</span>)</button>
+      <button class="tab-btn" onclick="showTab('chats', this)">Shared Website Chat Inbox</button>
+      <button class="tab-btn" onclick="showTab('settings', this)">Embed SDK Setup</button>
+    </div>
+
+    <!-- TAB 1: ESTIMATOR LEADS TABLE -->
+    <div id="tab-leads" class="content-panel active">
+      <div class="data-card">
+        <div class="data-card-header">
+          <h2 class="data-card-title">Live Estimator Submissions (Instant WhatsApp Ready)</h2>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Row-Level Security Protected • Instant Alert Sent</span>
+        </div>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Customer Contact</th>
+                <th>Project Scope</th>
+                <th>Timeline</th>
+                <th>Est. Investment</th>
+                <th>Lead Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="leadsTableBody">
+              <!-- Dynamically populated per tenant -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: BOOKINGS & CALENDAR -->
+    <div id="tab-bookings" class="content-panel">
+      <div class="data-card">
+        <div class="data-card-header">
+          <div>
+            <h2 class="data-card-title">Confirmed 1-Hour Consultations</h2>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">Each booking automatically blocks out +1 hr travel/prep buffer before and after</p>
+          </div>
+          <span class="tenant-badge-pill">🛡️ Travel Buffer Engine: Active</span>
+        </div>
+        <div class="booking-grid" id="bookingsGrid">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: SHARED CHAT INBOX -->
+    <div id="tab-chats" class="content-panel">
+      <div class="data-card" style="padding: 24px;">
+        <div class="data-card-header" style="padding: 0 0 16px 0;">
+          <h2 class="data-card-title">Website Shared Chat Inquiries</h2>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Staff Notification: Instant via WhatsApp Cloud API</span>
+        </div>
+        <div id="chatConversationsList" style="display: flex; flex-direction: column; gap: 14px; margin-top: 16px;">
+          <!-- Chat threads -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: EMBED SDK & SETTINGS -->
+    <div id="tab-settings" class="content-panel">
+      <div class="data-card" style="padding: 28px;">
+        <h2 class="data-card-title">Client Single-Line Embed Script</h2>
+        <p style="color: var(--text-muted); font-size: 0.88rem; margin: 8px 0 20px 0;">
+          To activate the 9 Super Website Features on any HTML, WordPress, Webflow, or Shopify site, paste this snippet right before <code>&lt;/body&gt;</code>:
+        </p>
+        
+        <div style="background: rgba(0,0,0,0.6); padding: 18px; border-radius: 10px; border: 1px solid var(--card-border); font-family: monospace; font-size: 0.88rem; color: #38bdf8; word-break: break-all; margin-bottom: 20px;">
+          &lt;script src="https://uncodedhub.com/sdk/super-features.js" data-tenant-key="<span id="displayTenantKey">meridian_interiors_live_8492</span>" data-api-gateway="https://api.uncodedhub.com/v1" async&gt;&lt;/script&gt;
+        </div>
+
+        <h3 style="font-size: 0.95rem; margin-bottom: 10px;">Enabled Super Features for This Client:</h3>
+        <ul style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.8; margin-left: 20px;">
+          <li>✅ Interactive 3-Step Project Cost Estimator with Lead Gate</li>
+          <li>✅ 1-Hour Consultation Calendar with Auto 1-Hour Travel Buffer Blocking</li>
+          <li>✅ Centralized WhatsApp Cloud 2-Way Staff Alerts</li>
+          <li>✅ Shared Multi-Tenant Chat Inbox with Customer Email/Phone Capture</li>
+          <li>✅ Monthly Proof of ROI Report Generated on 1st of Every Month</li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- MONTHLY PROOF REPORT MODAL -->
+  <div class="modal-overlay" id="reportModal" onclick="if(event.target === this) closeReportModal()">
+    <div class="report-modal">
+      <div class="report-header">
+        <div>
+          <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Client Proof Report</span>
+          <h2 style="font-size: 1.3rem; margin-top: 4px;" id="modalClientTitle">Meridian Architecture • Monthly Proof Report</h2>
+        </div>
+        <button onclick="closeReportModal()" style="background: transparent; border: none; color: #fff; font-size: 1.2rem; cursor: pointer;">✕</button>
+      </div>
+
+      <div style="background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: 12px; padding: 16px; margin-bottom: 20px;">
+        <h3 style="font-size: 0.95rem; color: #818cf8; margin-bottom: 6px;">Executive Summary (Proof of Value)</h3>
+        <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+          During this billing period, the Uncoded Hub Super Website Features generated <strong id="modalLeadsCount">42 verified high-intent leads</strong> and booked <strong id="modalBookingsCount">19 direct consultations</strong>, building an estimated prospective project pipeline of <strong id="modalPipelineVal">₹84,50,000</strong>.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px;">
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); padding: 14px; border-radius: 10px;">
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Uncoded Hub Monthly Retainer</div>
+          <div style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-top: 4px;">₹4,999 / mo</div>
+        </div>
+        <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); padding: 14px; border-radius: 10px;">
+          <div style="font-size: 0.75rem; color: #34d399;">Calculated Return on Investment</div>
+          <div style="font-size: 1.25rem; font-weight: 700; color: #34d399; margin-top: 4px;" id="modalRoiVal">169x ROI</div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <button class="btn btn-outline" onclick="closeReportModal()">Close</button>
+        <button class="btn btn-primary" onclick="alert('Proof Report PDF exported to client download folder.')">
+          <span>📥</span> Download PDF Proof Report
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Multi-tenant client mock data dictionary
+    const TENANT_DATA = {
+      meridian_interiors: {
+        name: "Meridian Architecture & Interiors",
+        niche: "Interior Design & Architecture",
+        tenantKey: "meridian_interiors_live_8492",
+        leadsCount: 42,
+        pipelineVal: "₹84.5L",
+        bookingsCount: 19,
+        roi: "169x",
+        leads: [
+          { name: "Vikram Malhotra", phone: "+91 98201 44521", scope: "4BHK Luxury Villa Interior", time: "Within 30 Days", est: "₹32,50,000", status: "WAITING_ON_CUSTOMER" },
+          { name: "Pooja Reddy", phone: "+91 98480 32190", scope: "Duplex Penthouse Living Room & Modular Kitchen", time: "1-3 Months", est: "₹18,00,000", status: "UNRESOLVED" },
+          { name: "Rohit Singhania", phone: "+91 98112 99881", scope: "3BHK Full Apartment Renovation", time: "Immediate", est: "₹15,00,000", status: "RESOLVED" },
+          { name: "Ananya Deshmukh", phone: "+91 99203 11442", scope: "Bespoke Master Suite & Walk-in Closet", time: "Flexible", est: "₹9,00,000", status: "WAITING_ON_CUSTOMER" },
+          { name: "Kunal Mehra", phone: "+91 97110 55432", scope: "Commercial Architect Blueprint & 3D Render", time: "Within 60 Days", est: "₹10,00,000", status: "RESOLVED" }
+        ],
+        bookings: [
+          { date: "Tomorrow, 10:30 AM", client: "Vikram Malhotra", service: "On-Site Architectural Survey", location: "Hiranandani Gardens, Powai", buffer: "09:30 AM - 12:30 PM Blocked" },
+          { date: "Tomorrow, 03:00 PM", client: "Pooja Reddy", service: "Design Moodboard Consultation", location: "Meridian Studio / Zoom", buffer: "02:00 PM - 05:00 PM Blocked" },
+          { date: "Friday, 11:00 AM", client: "Rohit Singhania", service: "Estimate & Material Selection", location: "Site Visit (Bandra West)", buffer: "10:00 AM - 01:00 PM Blocked" },
+          { date: "Saturday, 04:00 PM", client: "Ananya Deshmukh", service: "Walk-in Closet Walkthrough", location: "Studio Meeting", buffer: "03:00 PM - 06:00 PM Blocked" }
+        ],
+        chats: [
+          { from: "Vikram M.", snippet: "Is the site visit estimate refundable if we don't proceed?", time: "12m ago", unread: true },
+          { from: "Pooja R.", snippet: "Can your team share 3D VR renders before civil demolition begins?", time: "1h ago", unread: false },
+          { from: "Rohit S.", snippet: "Confirmed for Friday morning. Please bring Italian marble samples.", time: "3h ago", unread: false }
+        ]
+      },
+      halbrook_dental: {
+        name: "Halbrook Aesthetic & Dental Clinic",
+        niche: "Dental & Aesthetic Clinics",
+        tenantKey: "halbrook_dental_live_9921",
+        leadsCount: 56,
+        pipelineVal: "₹38.2L",
+        bookingsCount: 28,
+        roi: "76x",
+        leads: [
+          { name: "Simran Kaur", phone: "+91 98721 00321", scope: "Full Arch Ceramic Veneers (8 teeth)", time: "Within 2 Weeks", est: "₹1,80,000", status: "WAITING_ON_CUSTOMER" },
+          { name: "Dr. Arvind Patel", phone: "+91 98250 88210", scope: "Invisalign Clear Aligners", time: "Immediate", est: "₹2,20,000", status: "RESOLVED" },
+          { name: "Meera Sen", phone: "+91 98301 77443", scope: "Laser Teeth Whitening & Smile Rehab", time: "This Weekend", est: "₹45,000", status: "UNRESOLVED" }
+        ],
+        bookings: [
+          { date: "Today, 04:00 PM", client: "Simran Kaur", service: "3D Intraoral Smile Scan", location: "Op Room 2", buffer: "03:00 PM - 05:30 PM Blocked" },
+          { date: "Tomorrow, 11:00 AM", client: "Dr. Arvind Patel", service: "Clear Aligner Tray Fitting", location: "Op Room 1", buffer: "10:00 AM - 12:30 PM Blocked" }
+        ],
+        chats: [
+          { from: "Simran K.", snippet: "Do you have 0% interest EMI options for 12 months?", time: "25m ago", unread: true },
+          { from: "Meera S.", snippet: "I have sensitive gums, is laser whitening safe for me?", time: "2h ago", unread: false }
+        ]
+      },
+      alder_realestate: {
+        name: "Alder Luxury Estates",
+        niche: "Real Estate Agents & Builders",
+        tenantKey: "alder_realestate_live_3312",
+        leadsCount: 31,
+        pipelineVal: "₹14.2 Cr",
+        bookingsCount: 14,
+        roi: "284x",
+        leads: [
+          { name: "Rajeshwar Rao", phone: "+91 99401 55667", scope: "4BHK Sea-Facing Sky Villa", time: "Immediate Ready", est: "₹4,80,00,000", status: "WAITING_ON_CUSTOMER" },
+          { name: "Deepak Chawla", phone: "+91 98110 33441", scope: "Golf Course Penthouse", time: "Within 60 Days", est: "₹6,50,00,000", status: "RESOLVED" }
+        ],
+        bookings: [
+          { date: "Tomorrow, 02:00 PM", client: "Rajeshwar Rao", service: "Private Chauffeur Site Tour", location: "Alder Heights Site Office", buffer: "01:00 PM - 04:00 PM Blocked" }
+        ],
+        chats: [
+          { from: "Rajeshwar R.", snippet: "Can you send the RERA registration number and approved layout?", time: "30m ago", unread: true }
+        ]
+      },
+      willowmere_weddings: {
+        name: "Willowmere Events & Photography",
+        niche: "Wedding Photographers & Planners",
+        tenantKey: "willowmere_weddings_live_7719",
+        leadsCount: 29,
+        pipelineVal: "₹46.0L",
+        bookingsCount: 11,
+        roi: "92x",
+        leads: [
+          { name: "Tanvi & Siddharth", phone: "+91 98200 44112", scope: "3-Day Destination Wedding (Udaipur)", time: "Dec 2026", est: "₹18,50,000", status: "WAITING_ON_CUSTOMER" }
+        ],
+        bookings: [
+          { date: "Saturday, 05:00 PM", client: "Tanvi & Siddharth", service: "Moodboard & Cinematic Video Screening", location: "Willowmere Studio", buffer: "04:00 PM - 07:00 PM Blocked" }
+        ],
+        chats: [
+          { from: "Tanvi S.", snippet: "Do your drone pilots have Udaipur palace clearance?", time: "18m ago", unread: true }
+        ]
+      },
+      forge_kitchens: {
+        name: "Forge Modular Kitchen Studios",
+        niche: "Home Renovation & Modular Kitchens",
+        tenantKey: "forge_kitchens_live_2291",
+        leadsCount: 38,
+        pipelineVal: "₹34.8L",
+        bookingsCount: 16,
+        roi: "69x",
+        leads: [
+          { name: "Sunil Grover", phone: "+91 98450 11992", scope: "L-Shape Acrylic Finish Kitchen with Quartz Island", time: "Within 30 Days", est: "₹5,80,000", status: "UNRESOLVED" }
+        ],
+        bookings: [
+          { date: "Thursday, 11:30 AM", client: "Sunil Grover", service: "Laser Measurement & 3D Kitchen Config", location: "Customer Residence (Whitefield)", buffer: "10:30 AM - 01:30 PM Blocked" }
+        ],
+        chats: [
+          { from: "Sunil G.", snippet: "Are Blum hinges included in the estimate or extra?", time: "45m ago", unread: true }
+        ]
+      },
+      naomi_coaching: {
+        name: "Naomi Executive Coaching",
+        niche: "Coaches & Consultants",
+        tenantKey: "naomi_coaching_live_5541",
+        leadsCount: 22,
+        pipelineVal: "₹18.4L",
+        bookingsCount: 12,
+        roi: "36x",
+        leads: [
+          { name: "Devika Roy", phone: "+91 99201 88344", scope: "6-Month VP Leadership Transformation", time: "Immediate", est: "₹3,50,000", status: "RESOLVED" }
+        ],
+        bookings: [
+          { date: "Tomorrow, 09:00 AM", client: "Devika Roy", service: "Confidential 1-on-1 Strategy Diagnostic", location: "Private Zoom Link", buffer: "08:00 AM - 11:00 AM Blocked" }
+        ],
+        chats: [
+          { from: "Devika R.", snippet: "Signed the NDA. Looking forward to our diagnostic tomorrow.", time: "1h ago", unread: false }
+        ]
+      }
+    };
+
+    // Parse URL param ?tenant=slug
+    const urlParams = new URLSearchParams(window.location.search);
+    let currentTenantSlug = urlParams.get('tenant') || 'meridian_interiors';
+
+    function renderTenant(slug) {
+      const data = TENANT_DATA[slug] || TENANT_DATA.meridian_interiors;
+      currentTenantSlug = slug;
+
+      // Update dropdown selector
+      document.getElementById('tenantSelector').value = slug;
+
+      // Update Header
+      document.getElementById('clientBrandName').textContent = data.name;
+      document.getElementById('clientSubtitle').textContent = `${data.niche} • Multi-Tenant Client Portal • 1-Hour Buffer Calendar`;
+      document.getElementById('displayTenantKey').textContent = data.tenantKey;
+
+      // Update KPIs
+      document.getElementById('kpiLeadsCount').textContent = data.leadsCount;
+      document.getElementById('kpiPipelineValue').textContent = data.pipelineVal;
+      document.getElementById('kpiBookingsCount').textContent = data.bookingsCount;
+      document.getElementById('kpiRoiMultiple').textContent = data.roi;
+
+      document.getElementById('tabLeadCount').textContent = data.leads.length;
+      document.getElementById('tabBookingCount').textContent = data.bookings.length;
+
+      // Populate Leads Table
+      const tbody = document.getElementById('leadsTableBody');
+      tbody.innerHTML = '';
+      data.leads.forEach((l, idx) => {
+        const tr = document.createElement('tr');
+        const phoneClean = l.phone.replace(/[^0-9]/g, '');
+        const waLink = `https://wa.me/${phoneClean}?text=Hi%20${encodeURIComponent(l.name)},%20thank%20you%20for%20your%20inquiry%20with%20${encodeURIComponent(data.name)}!`;
+        
+        let statusClass = 'unresolved';
+        if (l.status === 'WAITING_ON_CUSTOMER') statusClass = 'waiting';
+        if (l.status === 'RESOLVED') statusClass = 'resolved';
+
+        tr.innerHTML = `
+          <td>
+            <div class="lead-name">${l.name}</div>
+            <div class="lead-phone">📞 ${l.phone}</div>
+          </td>
+          <td>${l.scope}</td>
+          <td><span style="font-size: 0.8rem; background: rgba(255,255,255,0.06); padding: 2px 8px; border-radius: 4px;">${l.time}</span></td>
+          <td><strong style="color: #34d399;">${l.est}</strong></td>
+          <td>
+            <select class="badge-status ${statusClass}" onchange="updateLeadStatus(this, ${idx})">
+              <option value="UNRESOLVED" ${l.status==='UNRESOLVED'?'selected':''}>Unresolved</option>
+              <option value="WAITING_ON_CUSTOMER" ${l.status==='WAITING_ON_CUSTOMER'?'selected':''}>Waiting</option>
+              <option value="RESOLVED" ${l.status==='RESOLVED'?'selected':''}>Resolved</option>
+            </select>
+          </td>
+          <td>
+            <a href="${waLink}" target="_blank" class="btn-wa">
+              <span>💬</span> WhatsApp
+            </a>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // Populate Bookings Grid
+      const bgrid = document.getElementById('bookingsGrid');
+      bgrid.innerHTML = '';
+      data.bookings.forEach(b => {
+        const card = document.createElement('div');
+        card.className = 'booking-card';
+        card.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="booking-time-badge">🕒 ${b.date}</div>
+            <div class="buffer-protection-tag">🛡️ Travel Buffer Active</div>
+          </div>
+          <div>
+            <h4 style="font-size: 1.05rem; margin-bottom: 4px;">${b.client}</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted);">${b.service}</p>
+          </div>
+          <div style="font-size: 0.8rem; color: #94a3b8; display: flex; align-items: center; gap: 6px;">
+            <span>📍</span> ${b.location}
+          </div>
+          <div style="border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 8px; font-size: 0.72rem; color: #6ee7b7;">
+            Calendar Guard: ${b.buffer}
+          </div>
+        `;
+        bgrid.appendChild(card);
+      });
+
+      // Populate Chats
+      const cList = document.getElementById('chatConversationsList');
+      cList.innerHTML = '';
+      data.chats.forEach(c => {
+        const item = document.createElement('div');
+        item.style.cssText = `
+          background: rgba(255,255,255,0.03);
+          border: 1px solid ${c.unread ? 'rgba(99, 102, 241, 0.4)' : 'var(--card-border)'};
+          border-radius: 10px;
+          padding: 14px 18px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        `;
+        item.innerHTML = `
+          <div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <strong style="color: #fff;">${c.from}</strong>
+              ${c.unread ? '<span style="font-size: 0.65rem; background: #6366f1; color: #fff; padding: 2px 6px; border-radius: 4px;">UNREAD</span>' : ''}
+              <span style="font-size: 0.75rem; color: var(--text-muted);">${c.time}</span>
+            </div>
+            <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 6px;">"${c.snippet}"</p>
+          </div>
+          <button class="btn btn-outline" style="padding: 6px 14px; font-size: 0.8rem;" onclick="alert('Staff direct chat responder opened.')">Reply</button>
+        `;
+        cList.appendChild(item);
+      });
+
+      // Update Report Modal Data
+      document.getElementById('modalClientTitle').textContent = `${data.name} • Monthly Proof Report`;
+      document.getElementById('modalLeadsCount').textContent = `${data.leadsCount} verified high-intent leads`;
+      document.getElementById('modalBookingsCount').textContent = `${data.bookingsCount} direct consultations`;
+      document.getElementById('modalPipelineVal').textContent = data.pipelineVal;
+      document.getElementById('modalRoiVal').textContent = `${data.roi} ROI`;
+    }
+
+    function switchTenant(slug) {
+      window.history.pushState({}, '', `?tenant=${slug}`);
+      renderTenant(slug);
+    }
+
+    function showTab(tabId, el) {
+      document.querySelectorAll('.content-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+
+      const target = document.getElementById(`tab-${tabId}`);
+      if (target) target.classList.add('active');
+      if (el) el.classList.add('active');
+    }
+
+    function updateLeadStatus(selectEl, idx) {
+      const val = selectEl.value;
+      selectEl.className = 'badge-status';
+      if (val === 'UNRESOLVED') selectEl.classList.add('unresolved');
+      if (val === 'WAITING_ON_CUSTOMER') selectEl.classList.add('waiting');
+      if (val === 'RESOLVED') selectEl.classList.add('resolved');
+    }
+
+    function openReportModal() {
+      document.getElementById('reportModal').classList.add('active');
+    }
+    function closeReportModal() {
+      document.getElementById('reportModal').classList.remove('active');
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderTenant(currentTenantSlug);
+    });
+  </script>
+</body>
+</html>

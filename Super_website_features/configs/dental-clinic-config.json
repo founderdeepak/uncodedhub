@@ -1,0 +1,57 @@
+{
+  "nicheId": "dental-clinic",
+  "nicheTitle": "Specialized Dental & Facial Aesthetics",
+  "brandName": "Willowmere Dental Sanctuary",
+  "currency": "₹",
+  "currencyUnit": "INR",
+  "bookingType": "in-clinic",
+  "bookingTitle": "Book an Anxiety-Free 3D Scan & Consultation",
+  "bookingSubtitle": "Experience painless computerized dentistry with our patient handheld stop-buzzer protocol.",
+  "travelBufferMinutes": 15,
+  "slotDurationMinutes": 45,
+  "operatingHours": { "start": 9, "end": 18, "days": [1, 2, 3, 4, 5, 6] },
+  "depositRequired": false,
+  "depositAmount": 1000,
+  "depositPolicy": "Credited 100% directly toward your treatment plan. Fully refundable with 24 hours notice.",
+  "confirmationMessage": "You're confirmed for your 3D Diagnostic. Add it to your calendar below, and our patient coordinator will reach out with parking and arrival instructions.",
+  "estimator": {
+    "step1": {
+      "title": "Select Area of Clinical Care",
+      "options": [
+        { "id": "implants", "label": "Swiss Dental Implants", "desc": "Keyhole computer-guided titanium implants for missing teeth", "icon": "🦷" },
+        { "id": "veneers", "label": "Porcelain Veneers / Smile Makeover", "desc": "Bespoke hand-layered aesthetic ceramic restorations", "icon": "✨" },
+        { "id": "aligners", "label": "Clear Aligners / Invisalign", "desc": "Invisible orthodontic alignment without wires or brackets", "icon": "😁" },
+        { "id": "rehab", "label": "Full Mouth Functional Rehabilitation", "desc": "Comprehensive bite reconstruction and painless restorative care", "icon": "🏥" }
+      ]
+    },
+    "step2": {
+      "title": "Select Clinical Scope & Complexity",
+      "options": [
+        { "id": "small", "label": "Targeted Single Unit", "desc": "Single tooth restoration / localized cosmetic correction" },
+        { "id": "medium", "label": "Quadrant / Mid-Arch Scope", "desc": "3 to 6 teeth / partial smile line aesthetic contouring" },
+        { "id": "large", "label": "Complete Dual-Arch Transformation", "desc": "Full upper and lower arch reconstruction (10–14 teeth per arch)" }
+      ]
+    },
+    "step3": {
+      "title": "Select Material & Sedation Preferences",
+      "options": [
+        { "id": "standard", "label": "Standard Comfort Protocol", "desc": "Computerized painless local anesthesia + noise-canceling headphones", "multiplier": 0.90 },
+        { "id": "mid-range", "label": "Premium Swiss / German Restorations", "desc": "Straumann® implants or Ivoclar E-Max ceramics + wireless stop buzzer", "multiplier": 1.00 },
+        { "id": "high-end", "label": "VIP Sedation & Master Ceramist", "desc": "Conscious twilight sleep sedation + Swiss master dental technician hand-glazing", "multiplier": 1.15 }
+      ]
+    },
+    "pricingMatrix": {
+      "implants": { "small": [32000, 55000], "medium": [95000, 180000], "large": [280000, 550000] },
+      "veneers": { "small": [18000, 32000], "medium": [90000, 160000], "large": [220000, 420000] },
+      "aligners": { "small": [60000, 95000], "medium": [120000, 190000], "large": [220000, 340000] },
+      "rehab": { "small": [45000, 85000], "medium": [160000, 320000], "large": [380000, 750000] }
+    },
+    "disclaimer": "This is an itemized clinical planning estimate based on NABH accredited standards. Exact pricing requires an intraoral 3D scan and bone density assessment. Zero surprise bills guaranteed."
+  },
+  "notifications": {
+    "ownerEmail": "patientcare@willowmere-dental.com",
+    "ownerPhone": "+91 (080) 4920-3300",
+    "customerSlaHours": 4,
+    "customerEmailBody": "Dear {name},\n\nWe have received your clinical inquiry for {project_type} ({project_size}).\n\nOur Clinical Director Dr. Willowmere will review your diagnostic profile. Our lead patient care coordinator will call you within 4 business hours from +91 (080) 4920-3300 to answer your questions and confirm your comfortable appointment.\n\nWarm regards,\nWillowmere Dental Sanctuary Team"
+  }
+}

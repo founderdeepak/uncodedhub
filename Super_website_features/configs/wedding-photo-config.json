@@ -1,0 +1,57 @@
+{
+  "nicheId": "wedding-photo",
+  "nicheTitle": "Fine-Art Wedding Films & Documentation",
+  "brandName": "Alder & Wren Studios",
+  "currency": "₹",
+  "currencyUnit": "INR",
+  "bookingType": "availability-call",
+  "bookingTitle": "Check Wedding Date & Reserve Consultation",
+  "bookingSubtitle": "We take strictly 1 wedding per weekend to guarantee founder-led personal coverage.",
+  "travelBufferMinutes": 0,
+  "slotDurationMinutes": 45,
+  "operatingHours": { "start": 10, "end": 19, "days": [1, 2, 3, 4, 5, 6] },
+  "depositRequired": false,
+  "depositAmount": 0,
+  "depositPolicy": "Zero obligation date verification.",
+  "confirmationMessage": "You're scheduled for a Date & Vision Consultation. Add it to your calendar below, and we will send over sample unedited full galleries prior to our call.",
+  "estimator": {
+    "step1": {
+      "title": "Select Your Wedding Celebration Format",
+      "options": [
+        { "id": "intimate", "label": "Single-Day Intimate Wedding", "desc": "Morning rituals + evening reception (under 150 guests)", "icon": "💍" },
+        { "id": "city-multiday", "label": "2-Day Metro Celebration", "desc": "Mehendi, Sangeet cocktail, and full wedding day", "icon": "🎉" },
+        { "id": "destination", "label": "3-Day Royal / Coastal Destination", "desc": "Palace in Rajasthan, Goa beach resort, or international destination", "icon": "🏰" },
+        { "id": "pre-wedding", "label": "Cinematic Pre-Wedding Story", "desc": "Dedicated 2-day narrative editorial film and stills session", "icon": "🎬" }
+      ]
+    },
+    "step2": {
+      "title": "Select Deliverables & Coverage Depth",
+      "options": [
+        { "id": "small", "label": "Fine-Art Photography Only", "desc": "Two lead candid photographers, 600+ color-graded high-res stills, 4-week gallery" },
+        { "id": "medium", "label": "Complete Photography + 4K Cinema", "desc": "Stills + 3-5 min cinematic teaser + 20-min documentary feature film" },
+        { "id": "large", "label": "The Heirloom Grand Archive", "desc": "Stills + 4K Cinema + FPV Drone + Handcrafted Italian linen flush-mount album" }
+      ]
+    },
+    "step3": {
+      "title": "Select Crew & Delivery Guarantees",
+      "options": [
+        { "id": "standard", "label": "Standard 4-Week Delivery", "desc": "48-hr sneak peek (40 images) + 28-day master gallery delivery", "multiplier": 1.00 },
+        { "id": "mid-range", "label": "Express 14-Day Delivery", "desc": "Priority editing queue + same-day slideshow during reception", "multiplier": 1.12 },
+        { "id": "high-end", "label": "Ultra-Priority & 35mm Analog Film", "desc": "Genuine vintage Leica 35mm film rolls included + 7-day express handover", "multiplier": 1.25 }
+      ]
+    },
+    "pricingMatrix": {
+      "intimate": { "small": [150000, 240000], "medium": [260000, 380000], "large": [380000, 520000] },
+      "city-multiday": { "small": [280000, 420000], "medium": [450000, 680000], "large": [680000, 950000] },
+      "destination": { "small": [450000, 650000], "medium": [700000, 1100000], "large": [1100000, 1600000] },
+      "pre-wedding": { "small": [95000, 150000], "medium": [160000, 240000], "large": [240000, 350000] }
+    },
+    "disclaimer": "Investment includes full shooting, color grading, and delivery guarantees. Travel and stay for outstation weddings are billed at actuals. Never any substitute shooters."
+  },
+  "notifications": {
+    "ownerEmail": "bookings@alder-wren.com",
+    "ownerPhone": "+91 98111 22334",
+    "customerSlaHours": 12,
+    "customerEmailBody": "Dear {name},\n\nWe received your wedding celebration inquiry for {project_type} ({project_size}).\n\nFounders Alder & Wren are checking the studio production calendar to confirm your date availability. We will respond directly via WhatsApp/call within 12 hours from +91 98111 22334 with our comprehensive pricing guide and date status.\n\nWarmly,\nAlder & Wren Studios"
+  }
+}

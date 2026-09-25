@@ -272,8 +272,9 @@ function doPost(e) {
       Logger.log("Google Meet generation failed (Make sure Calendar API is enabled under Services): " + err.message);
     }
 
-    // 3. Email details to Uncoded Hub Team (deepak@uncodedhub.com, geetha@uncodedhub.com, mr.deepakr8@gmail.com)
-    var hostEmail = "deepak@uncodedhub.com, geetha@uncodedhub.com, mr.deepakr8@gmail.com, theuncodedhub@gmail.com";
+    // 3. Email details to Uncoded Hub Team
+    var hostEmail = "theuncodedhub@gmail.com";
+    var hostCc = "deepak@uncodedhub.com, geetha@uncodedhub.com";
     var hostSubject = "📅 New Discovery Call Booked with " + host + ": " + name + " (" + business + ")";
     var hostHtml = `
       <div style="font-family: Arial, sans-serif; padding: 25px; color: #11142a; max-width: 600px; border: 1px solid #e2e8f0; border-radius: 16px; background-color: #ffffff;">
@@ -330,6 +331,7 @@ function doPost(e) {
 
     MailApp.sendEmail({
       to: hostEmail,
+      cc: hostCc,
       subject: hostSubject,
       htmlBody: hostHtml
     });

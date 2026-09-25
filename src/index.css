@@ -100,17 +100,15 @@
   --color-rule-on-ink: #302d26;
 
   /* ── Signal ──────────────────────────────────────────────────────
-     Raspberry, per the brand's chosen swatch (#E30B58). This value is
-     tuned about 3% darker than that exact spec — #E30B58 itself
-     measures 4.25:1 against the paper ground, just under the 4.5:1
-     WCAG AA floor for small text, and the .label eyebrows that run
-     through every section are 11px. #DB0A54 is not distinguishable
-     from #E30B58 by eye at this saturation, and it clears 4.5:1 with
-     margin (4.52:1), so the site's own published "AA on every text
-     style" promise stays true rather than becoming an asterisk.
+     Raspberry, per the brand's chosen swatch (#E30B58). Tuned to #C7074B
+     so small 11px text (.label eyebrows like "THE PROCESS", "THE GUARANTEE",
+     "STANDARDS") clears the 4.5:1 WCAG AA floor on BOTH the standard
+     paper ground (#F5F3EF -> 5.33:1) and the darker sunk ground
+     (#EDEAE4 -> 4.91:1). Visually indistinguishable from the brand hue,
+     ensuring the site's stated AA guarantee is strictly met everywhere.
      signal-bright is a lighter tint for the same hue on ink
      backgrounds (6.4:1 there). */
-  --color-signal: #db0a54;
+  --color-signal: #c7074b;
   --color-signal-bright: #ff5c96;
   --color-signal-wash: #fbe8ef;
 

@@ -1,0 +1,53 @@
+name: Supabase 24x7 Keepalive Ping
+
+# Supabase Free Tier projects automatically pause after 7 days of inactivity.
+# This workflow runs twice daily (every 12 hours) to send an authenticated
+# lightweight heartbeat request to the Supabase REST endpoint.
+# This keeps the project permanently active 24x7 with zero downtime.
+
+on:
+  schedule:
+    # Runs at 04:00 and 16:00 UTC every day
+    - cron: '0 4,16 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase REST API Heartbeat
+        env:
+          SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL || 'https://ruiimbaycfkkejwumoak.supabase.co' }}
+          SUPABASE_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ1aWltYmF5Y2Zra2Vqd3Vtb2FrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMTU3MjksImV4cCI6MjA5MDU5MTcyOX0.2xc1ESzTWZsEHxkafcd092mIj50IQjKvxnkOVrs6EsA' }}
+        run: |
+          echo "Sending 24x7 keepalive heartbeat to Supabase project..."
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "apikey: $SUPABASE_KEY" \
+            -H "Authorization: Bearer $SUPABASE_KEY" \
+            "$SUPABASE_URL/rest/v1/contact_submissions?select=id&limit=1")
+          
+          echo "Supabase Response HTTP Status: $HTTP_STATUS"
+          if [ "$HTTP_STATUS" -eq 200 ] || [ "$HTTP_STATUS" -eq 206 ]; then
+            echo "✅ Supabase is active and heartbeat succeeded. Inactivity timer reset."
+          else
+            echo "⚠️ Unexpected status code: $HTTP_STATUS"
+            exit 1
+          fi
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Send Supabase Email Reports
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL || 'https://ruiimbaycfkkejwumoak.supabase.co' }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ1aWltYmF5Y2Zra2Vqd3Vtb2FrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMTU3MjksImV4cCI6MjA5MDU5MTcyOX0.2xc1ESzTWZsEHxkafcd092mIj50IQjKvxnkOVrs6EsA' }}
+          VITE_BOOKING_SECRET: ${{ secrets.VITE_BOOKING_SECRET }}
+        run: |
+          echo "Generating and dispatching 2 Supabase reports to theuncodedhub@gmail.com (CC: deepak@uncodedhub.com, geetha@uncodedhub.com)..."
+          node scripts/send-supabase-report.mjs
+

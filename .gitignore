@@ -16,3 +16,7 @@ DESIGN.md
 UncodedHub_Content/
 .codegraph/
 ECC/
+.agents/
+.gstack/
+.mcp.json
+

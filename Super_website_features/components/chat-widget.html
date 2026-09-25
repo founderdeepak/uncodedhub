@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unified Live Chat &amp; Contact Feed Widget</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../core/super-engine.css">
+  <style>
+    body {
+      background: #F4F6F9;
+      margin: 0;
+      padding: 40px;
+      font-family: var(--sf-font);
+    }
+  </style>
+</head>
+<body class="sf-scope">
+
+  <div style="max-width: 600px; margin: 60px auto; text-align: center;">
+    <h2>Unified Live Chat &amp; Contact Feed</h2>
+    <p style="color: var(--sf-text-muted);">
+      Notice the floating chat widget on the bottom right. Click to test live chat messages feeding directly into the shared staff inbox with <code>UNRESOLVED</code> status.
+    </p>
+  </div>
+
+  <!-- FLOATING CHAT LAUNCHER BUTTON -->
+  <div class="sf-chat-launcher" onclick="toggleChatDrawer()" id="chat-launcher">
+    💬
+    <div class="sf-chat-badge">1</div>
+  </div>
+
+  <!-- EXPANDABLE CHAT DRAWER -->
+  <div class="sf-chat-drawer" id="chat-drawer">
+    <div class="sf-chat-header">
+      <div>
+        <h4 id="chat-studio-name">Studio Concierge</h4>
+        <p>● Online &bull; Direct inquiry line</p>
+      </div>
+      <button class="sf-chat-close" onclick="toggleChatDrawer()">&times;</button>
+    </div>
+
+    <div class="sf-chat-messages" id="chat-messages-container">
+      <div class="sf-msg sf-msg-bot">
+        Hi there! 👋 How can we help with your upcoming residential or architectural project?
+      </div>
+    </div>
+
+    <form class="sf-chat-input-bar" onsubmit="sendChatMessage(event)">
+      <input type="text" id="chat-input-field" class="sf-chat-input" placeholder="Type your question or requirement..." required>
+      <button type="submit" class="sf-chat-send">Send</button>
+    </form>
+  </div>
+
+  <script src="../core/super-engine.js"></script>
+  <script>
+    let isDrawerOpen = false;
+
+    function toggleChatDrawer() {
+      isDrawerOpen = !isDrawerOpen;
+      const drawer = document.getElementById('chat-drawer');
+      if (isDrawerOpen) {
+        drawer.classList.add('active');
+        document.querySelector('.sf-chat-badge').style.display = 'none';
+      } else {
+        drawer.classList.remove('active');
+      }
+    }
+
+    function sendChatMessage(e) {
+      e.preventDefault();
+      const input = document.getElementById('chat-input-field');
+      const text = input.value.trim();
+      if (!text) return;
+
+      const container = document.getElementById('chat-messages-container');
+
+      // Append user msg
+      const userMsg = document.createElement('div');
+      userMsg.className = 'sf-msg sf-msg-user';
+      userMsg.innerText = text;
+      container.appendChild(userMsg);
+      input.value = '';
+      container.scrollTop = container.scrollHeight;
+
+      // Log into shared storage inbox as UNRESOLVED
+      const convs = JSON.parse(localStorage.getItem('sf_conversations_data') || '[]');
+      convs.unshift({
+        id: 'conv-' + Date.now(),
+        created_at: new Date().toISOString(),
+        customer_name: 'Website Visitor',
+        customer_contact: 'In-Widget Live Chat',
+        subject: text.slice(0, 40) + '...',
+        status: 'UNRESOLVED',
+        last_message: text
+      });
+      localStorage.setItem('sf_conversations_data', JSON.stringify(convs));
+
+      // Automated bot reply after 700ms
+      setTimeout(() => {
+        const botMsg = document.createElement('div');
+        botMsg.className = 'sf-msg sf-msg-bot';
+        botMsg.innerText = "Thank you! Your message has been logged in our team inbox. A senior designer will review and respond shortly.";
+        container.appendChild(botMsg);
+        container.scrollTop = container.scrollHeight;
+      }, 700);
+    }
+  </script>
+</body>
+</html>

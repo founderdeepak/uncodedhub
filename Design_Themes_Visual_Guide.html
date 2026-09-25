@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uncoded Hub — Design Themes & Visual Reference</title>
+  <meta name="description" content="10 curated website design themes with font pairings for every niche. Uncoded Hub client presentation tool.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Fraunces:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600&family=Lato:wght@300;400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #05050e;
+      --surface: #0c0c1a;
+      --surface2: #0a0a16;
+      --border: rgba(255,255,255,0.06);
+      --gold: #D4AF37;
+      --gold-dim: rgba(212,175,55,0.12);
+      --text: #f0f0f5;
+      --muted: #6b7280;
+      --dim: #2d3748;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+
+    /* =========================================
+       HEADER
+    ========================================= */
+    .site-header {
+      position: relative;
+      padding: 100px 40px 88px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hdr-glow {
+      position: absolute;
+      top: -80px; left: 50%;
+      transform: translateX(-50%);
+      width: 800px; height: 500px;
+      background: radial-gradient(ellipse at center, rgba(212,175,55,0.09) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hdr-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse at center top, black 10%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hdr-content { position: relative; z-index: 1; }
+
+    .hdr-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(212,175,55,0.06);
+      border: 1px solid rgba(212,175,55,0.2);
+      color: var(--gold);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 30px;
+      margin-bottom: 32px;
+    }
+
+    .hdr-badge::before { content: '◆'; font-size: 6px; opacity: 0.7; }
+
+    .site-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 7.5vw, 96px);
+      font-weight: 600;
+      line-height: 1.02;
+      color: #fff;
+      margin-bottom: 14px;
+      letter-spacing: -1.5px;
+    }
+
+    .gold-word {
+      background: linear-gradient(135deg, #C9A227 0%, #F0D060 45%, #C9A227 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hdr-sub {
+      font-size: 16px;
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 460px;
+      margin: 0 auto 56px;
+      line-height: 1.65;
+    }
+
+    .stats-row {
+      display: inline-flex;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.015);
+    }
+
+    .stat-c {
+      padding: 18px 36px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .stat-c:last-child { border-right: none; }
+
+    .stat-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-l {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-top: 7px;
+    }
+
+    /* =========================================
+       FILTER BAR
+    ========================================= */
+    .filter-bar {
+      position: sticky;
+      top: 0;
+      z-index: 300;
+      padding: 13px 40px;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: rgba(5,5,14,0.86);
+      backdrop-filter: blur(32px);
+      -webkit-backdrop-filter: blur(32px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .fb {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.09);
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      outline: none;
+    }
+
+    .fb:hover { border-color: rgba(212,175,55,0.35); color: var(--gold); }
+
+    .fb.on {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #05050e;
+      font-weight: 700;
+    }
+
+    /* =========================================
+       THEMES GRID
+    ========================================= */
+    .themes-wrap {
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 60px 40px 20px;
+    }
+
+    .themes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+
+    /* Theme Card */
+    .tc {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      background: var(--surface);
+      opacity: 0;
+      animation: riseUp 0.55s cubic-bezier(0.22,1,0.36,1) forwards;
+      transition: transform 0.38s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.38s ease,
+                  border-color 0.25s ease;
+    }
+
+    @keyframes riseUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .tc:nth-child(1)  { animation-delay: 0.04s; }
+    .tc:nth-child(2)  { animation-delay: 0.09s; }
+    .tc:nth-child(3)  { animation-delay: 0.14s; }
+    .tc:nth-child(4)  { animation-delay: 0.19s; }
+    .tc:nth-child(5)  { animation-delay: 0.24s; }
+    .tc:nth-child(6)  { animation-delay: 0.29s; }
+    .tc:nth-child(7)  { animation-delay: 0.34s; }
+    .tc:nth-child(8)  { animation-delay: 0.39s; }
+    .tc:nth-child(9)  { animation-delay: 0.44s; }
+    .tc:nth-child(10) { animation-delay: 0.49s; }
+
+    .tc:hover {
+      transform: translateY(-9px) scale(1.006);
+      border-color: rgba(255,255,255,0.13);
+      box-shadow: 0 32px 90px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);
+    }
+
+    /* Mini Site Preview */
+    .mini-site {
+      height: 340px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .mini-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 18px;
+      background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.28s ease;
+    }
+
+    .tc:hover .mini-overlay { opacity: 1; }
+
+    .prev-pill {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 7px 16px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Theme Info Panel */
+    .ti {
+      padding: 22px 26px 26px;
+      background: #09091a;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .ti-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .ti-num { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dim); margin-bottom: 4px; }
+    .ti-name { font-size: 21px; font-weight: 700; color: #f8fafc; letter-spacing: -0.4px; }
+
+    .ti-cat {
+      font-size: 9px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.07);
+      white-space: nowrap;
+      margin-top: 6px;
+    }
+
+    .sw-row { display: flex; gap: 7px; margin-bottom: 14px; }
+
+    .sw {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.08);
+      cursor: default;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .sw:hover { transform: scale(1.35) translateY(-2px); }
+
+    .finfo {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .finfo strong { color: #d1d5db; font-weight: 500; }
+    .fsep { color: var(--dim); margin: 0 6px; }
+
+    .niche-row { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+
+    .nlbl {
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-right: 3px;
+    }
+
+    .nt {
+      font-size: 10px;
+      padding: 3px 10px;
+      border-radius: 5px;
+      background: rgba(255,255,255,0.04);
+      color: #9ca3af;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: all 0.18s;
+    }
+
+    .nt:hover { background: rgba(255,255,255,0.09); color: #d1d5db; }
+
+    /* =========================================
+       TYPOGRAPHY SECTION
+    ========================================= */
+    .typo-wrap {
+      max-width: 1480px;
+      margin: 60px auto 0;
+      padding: 60px 40px 100px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .sec-hdr {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .sec-hdr h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 56px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .sec-hdr p { font-size: 15px; color: var(--muted); font-weight: 300; }
+
+    .font-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .fspec {
+      background: #09091a;
+      padding: 28px 22px;
+      border: 1px solid rgba(255,255,255,0.03);
+      position: relative;
+      transition: background 0.2s;
+      overflow: hidden;
+    }
+
+    .fspec::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent, rgba(212,175,55,0.5));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .fspec:hover { background: #0e0e22; }
+    .fspec:hover::before { transform: scaleX(1); }
+
+    .spec-n {
+      position: absolute;
+      top: 12px; right: 14px;
+      font-size: 9px;
+      color: var(--dim);
+      letter-spacing: 1px;
+    }
+
+    .spec-h {
+      font-size: 29px;
+      line-height: 1.15;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .spec-b {
+      font-size: 11px;
+      line-height: 1.7;
+      color: #4b5563;
+      margin-bottom: 14px;
+    }
+
+    .spec-meta { font-size: 9px; letter-spacing: 0.7px; text-transform: uppercase; }
+    .spec-hf { color: #374151; }
+    .spec-mood { color: #1f2937; margin-top: 4px; }
+
+    /* =========================================
+       MODAL
+    ========================================= */
+    .modal-bg {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.9);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-bg.open { display: flex; }
+
+    .modal-box {
+      width: 100%;
+      max-width: 1100px;
+      max-height: 88vh;
+      border-radius: 22px;
+      overflow: hidden;
+      overflow-y: auto;
+      box-shadow: 0 50px 140px rgba(0,0,0,0.85);
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.08) transparent;
+    }
+
+    .modal-box::-webkit-scrollbar { width: 4px; }
+    .modal-box::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 2px; }
+
+    .modal-x {
+      position: fixed;
+      top: 22px; right: 22px;
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      background: rgba(20,20,40,0.88);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.65);
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
+      transition: all 0.2s;
+      backdrop-filter: blur(10px);
+    }
+
+    .modal-x:hover { background: rgba(40,40,70,0.95); color: #fff; border-color: rgba(255,255,255,0.2); }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+    .site-footer {
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding: 32px 40px;
+      text-align: center;
+    }
+
+    .site-footer p {
+      font-size: 11px;
+      color: var(--dim);
+      letter-spacing: 0.5px;
+    }
+
+    .site-footer strong { color: var(--gold); }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+    @media (max-width: 1200px) { .font-grid { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 960px)  { .font-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 900px) {
+      .themes-grid { grid-template-columns: 1fr; }
+      .site-header { padding: 70px 24px 60px; }
+      .themes-wrap, .typo-wrap { padding: 40px 20px; }
+    }
+    @media (max-width: 640px) {
+      .font-grid { grid-template-columns: repeat(2, 1fr); }
+      .filter-bar { padding: 12px 16px; }
+      .fb { font-size: 9px; padding: 7px 14px; }
+      .stat-c { padding: 14px 22px; }
+      .stat-n { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="hdr-glow"></div>
+    <div class="hdr-grid"></div>
+    <div class="hdr-content">
+      <div class="hdr-badge">Uncoded Hub &nbsp;·&nbsp; Design Reference</div>
+      <h1>Design <span class="gold-word">Themes</span><br>&amp; Visual Guide</h1>
+      <p class="hdr-sub">10 curated themes · 13 font pairings · for every niche, every client, every vision</p>
+      <div class="stats-row">
+        <div class="stat-c">
+          <div class="stat-n">10</div>
+          <div class="stat-l">Themes</div>
+        </div>
+        <div class="stat-c">
+          <div class="stat-n">13</div>
+          <div class="stat-l">Font Pairs</div>
+        </div>
+        <div class="stat-c">
+          <div class="stat-n">5</div>
+          <div class="stat-l">Categories</div>
+        </div>
+        <div class="stat-c">
+          <div class="stat-n">8</div>
+          <div class="stat-l">Niches</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- FILTER BAR -->
+  <nav class="filter-bar">
+    <button class="fb on" data-f="all">All Themes</button>
+    <button class="fb" data-f="dark-luxury">Dark &amp; Luxury</button>
+    <button class="fb" data-f="light-minimal">Light &amp; Minimal</button>
+    <button class="fb" data-f="bold-vibrant">Bold &amp; Vibrant</button>
+    <button class="fb" data-f="earthy-warm">Earthy &amp; Warm</button>
+    <button class="fb" data-f="editorial">Editorial</button>
+  </nav>
+
+  <!-- THEMES GRID -->
+  <section class="themes-wrap">
+    <div class="themes-grid" id="grid"></div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section class="typo-wrap">
+    <div class="sec-hdr">
+      <h2>Font Pairings</h2>
+      <p>13 curated combinations — from classical serif to bold geometric sans</p>
+    </div>
+    <div class="font-grid" id="fgrid"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p><strong>Uncoded Hub</strong> &nbsp;·&nbsp; Global Design Reference &nbsp;·&nbsp; Internal Use &amp; Client Presentations &nbsp;·&nbsp; Not for Redistribution</p>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-bg" id="modalBg">
+    <button class="modal-x" id="modalX" title="Close">✕</button>
+    <div class="modal-box" id="modalBox"></div>
+  </div>
+
+<script>
+/* ===== THEME DATA ===== */
+const T = [
+  {
+    id:'obsidian-gold', num:'01', name:'Obsidian Gold', cat:'dark-luxury',
+    tags:['Luxury','Timeless','Premium'],
+    niches:['Luxury Real Estate','Premium Coaches','Sculptors'],
+    sw:['#0c0c0c','#1a1a1a','#D4AF37','#F5F0E8','#8B6914'],
+    hF:"'Cormorant Garamond',serif", bF:"'Jost',sans-serif",
+    hN:'Cormorant Garamond', bN:'Jost',
+    c:{ bg:'#0c0c0c', nav:'rgba(12,12,12,0.96)', acc:'#D4AF37', txt:'#F5F0E8',
+        mu:'rgba(245,240,232,0.5)', surf:'#161616', brd:'rgba(212,175,55,0.13)',
+        bBg:'#D4AF37', bTx:'#0c0c0c' },
+    line:'Crafted for\nCenturies.',
+    sub:'For those who believe excellence is not an option — it is the only standard.',
+    cta:'Begin the Conversation',
+    feat:['Legacy Craftsmanship','Shastric Precision','Generational Durability']
+  },
+  {
+    id:'clean-slate', num:'02', name:'Clean Slate', cat:'light-minimal',
+    tags:['Minimal','Focused','Modern'],
+    niches:['Coaches & Consultants','Tech Businesses','Professional Services'],
+    sw:['#FFFFFF','#F9FAFB','#111827','#2563EB','#9CA3AF'],
+    hF:"'Inter',sans-serif", bF:"'Inter',sans-serif",
+    hN:'Inter', bN:'Inter',
+    c:{ bg:'#FFFFFF', nav:'rgba(255,255,255,0.97)', acc:'#2563EB', txt:'#111827',
+        mu:'#6B7280', surf:'#F3F4F6', brd:'#E5E7EB',
+        bBg:'#111827', bTx:'#FFFFFF' },
+    line:'Clarity is\nthe Strategy.',
+    sub:'We help ambitious professionals transform their expertise into businesses that run without them.',
+    cta:'Schedule a Free Call',
+    feat:['1:1 Deep-Dive Sessions','Accountability System','Measurable Milestones']
+  },
+  {
+    id:'warm-canvas', num:'03', name:'Warm Canvas', cat:'earthy-warm',
+    tags:['Warm','Craft','Authentic'],
+    niches:['Interior Designers','Home Renovation','Modular Kitchens'],
+    sw:['#F5EDE0','#E8D5C0','#C84B31','#2C1810','#8B6555'],
+    hF:"'DM Serif Display',serif", bF:"'Source Sans 3',sans-serif",
+    hN:'DM Serif Display', bN:'Source Sans 3',
+    c:{ bg:'#F5EDE0', nav:'#EDE3D4', acc:'#C84B31', txt:'#2C1810',
+        mu:'#6B4E3D', surf:'#EDE3D4', brd:'rgba(44,24,16,0.11)',
+        bBg:'#C84B31', bTx:'#FFFFFF' },
+    line:'Spaces That\nFeel Like Home.',
+    sub:'We design interiors that carry your personality — warm, considered, and built to last a lifetime.',
+    cta:'See Our Work',
+    feat:['Full Turnkey Execution','3D Design Preview','On-Site Supervision']
+  },
+  {
+    id:'royal-midnight', num:'04', name:'Royal Midnight', cat:'dark-luxury',
+    tags:['Corporate','Trust','Authority'],
+    niches:['Real Estate Agents','Corporate Consultants','Law & Finance'],
+    sw:['#0D1B2A','#1B3A5C','#4CC9F0','#E2EAF4','#7EB6D4'],
+    hF:"'Raleway',sans-serif", bF:"'Raleway',sans-serif",
+    hN:'Raleway', bN:'Raleway',
+    c:{ bg:'#0D1B2A', nav:'rgba(13,27,42,0.96)', acc:'#4CC9F0', txt:'#E2EAF4',
+        mu:'rgba(226,234,244,0.5)', surf:'#132236', brd:'rgba(76,201,240,0.1)',
+        bBg:'#4CC9F0', bTx:'#0D1B2A' },
+    line:'Where Trust\nMeets Results.',
+    sub:'Over a decade of guiding clients through the most important decisions of their professional lives.',
+    cta:'Book a Consultation',
+    feat:['Verified Market Expertise','Transparent Process','End-to-End Support']
+  },
+  {
+    id:'stone-ochre', num:'05', name:'Stone & Ochre', cat:'dark-luxury',
+    tags:['Heritage','Craft','Traditional'],
+    niches:['Sculptors & Craftsmen','Temple Projects','Heritage Restoration'],
+    sw:['#1E1A15','#2D2620','#D4890A','#F0E8DC','#6B5A4E'],
+    hF:"'Playfair Display',serif", bF:"'Lato',sans-serif",
+    hN:'Playfair Display', bN:'Lato',
+    c:{ bg:'#1E1A15', nav:'rgba(30,26,21,0.97)', acc:'#D4890A', txt:'#F0E8DC',
+        mu:'rgba(240,232,220,0.47)', surf:'#2A2218', brd:'rgba(212,137,10,0.13)',
+        bBg:'#D4890A', bTx:'#1E1A15' },
+    line:'Sculpted in Stone.\nBuilt for Eternity.',
+    sub:'Every curve chiselled with purpose. Every proportion guided by scripture. Every work a legacy.',
+    cta:'Commission a Work',
+    feat:['Shastric Proportions','100-Year Durability','On-Site Residency']
+  },
+  {
+    id:'bloom-editorial', num:'06', name:'Bloom Editorial', cat:'editorial',
+    tags:['Romantic','Elegant','Emotional'],
+    niches:['Wedding Photographers','Event Planners','Lifestyle Brands'],
+    sw:['#FFF5F7','#FDE8EF','#BE3A6A','#1F0A14','#F0A0C0'],
+    hF:"'Fraunces',serif", bF:"'DM Sans',sans-serif",
+    hN:'Fraunces', bN:'DM Sans',
+    c:{ bg:'#FFF5F7', nav:'rgba(255,255,255,0.97)', acc:'#BE3A6A', txt:'#1F0A14',
+        mu:'#785060', surf:'#FDE8EF', brd:'rgba(190,58,106,0.1)',
+        bBg:'#BE3A6A', bTx:'#FFFFFF' },
+    line:'Your Story,\nBeautifully Told.',
+    sub:'We capture the quiet moments between the moments — the ones you will want to live inside forever.',
+    cta:'View Our Portfolio',
+    feat:['Candid Storytelling','Film & Photography','Lifetime Archive']
+  },
+  {
+    id:'forest-calm', num:'07', name:'Forest Calm', cat:'dark-luxury',
+    tags:['Calm','Natural','Healing'],
+    niches:['Wellness Coaches','Dental & Aesthetic Clinics','Yoga & Retreat'],
+    sw:['#162216','#1E3A1E','#6DBF5E','#E6F4E6','#A8D4A0'],
+    hF:"'Libre Baskerville',serif", bF:"'Outfit',sans-serif",
+    hN:'Libre Baskerville', bN:'Outfit',
+    c:{ bg:'#162216', nav:'rgba(22,34,22,0.97)', acc:'#6DBF5E', txt:'#E6F4E6',
+        mu:'rgba(230,244,230,0.47)', surf:'#1E3218', brd:'rgba(109,191,94,0.12)',
+        bBg:'#6DBF5E', bTx:'#162216' },
+    line:'Heal. Grow.\nThrive.',
+    sub:'A practice rooted in stillness, guided by science — designed to help you return to yourself.',
+    cta:'Book a Consultation',
+    feat:['Evidence-Based Care','Holistic Approach','Gentle Environment']
+  },
+  {
+    id:'electric-bold', num:'08', name:'Electric Bold', cat:'bold-vibrant',
+    tags:['Bold','Energetic','Disruptive'],
+    niches:['Young Coaches','Creative Agencies','Entertainment Brands'],
+    sw:['#0A0A1A','#1A0A2E','#8B5CF6','#EC4899','#FFE66D'],
+    hF:"'Outfit',sans-serif", bF:"'Outfit',sans-serif",
+    hN:'Outfit (800)', bN:'Outfit (400)',
+    c:{ bg:'#0A0A1A', nav:'rgba(10,10,26,0.97)', acc:'#8B5CF6', txt:'#FFFFFF',
+        mu:'rgba(255,255,255,0.47)', surf:'#120D2A', brd:'rgba(139,92,246,0.18)',
+        bBg:'linear-gradient(135deg,#8B5CF6,#EC4899)', bTx:'#FFFFFF' },
+    line:'Stop Playing\nSmall.',
+    sub:'Everything you want is on the other side of the version of you that acts before they feel ready.',
+    cta:'Join the Movement',
+    feat:['Group Masterminds','Accountability Pods','Live Monthly Intensives']
+  },
+  {
+    id:'sunset-dream', num:'09', name:'Sunset Dream', cat:'bold-vibrant',
+    tags:['Modern','Aspirational','Warm'],
+    niches:['Life Coaches','Personal Branding','Modern Startups'],
+    sw:['#1A1030','#2D1B60','#FF9A8B','#FFD89B','#FFFFFF'],
+    hF:"'Poppins',sans-serif", bF:"'Poppins',sans-serif",
+    hN:'Poppins (700)', bN:'Poppins (400)',
+    c:{ bg:'#1A1030', nav:'rgba(26,16,48,0.97)', acc:'#FF9A8B', txt:'#FFFFFF',
+        mu:'rgba(255,255,255,0.52)', surf:'#241640', brd:'rgba(255,154,139,0.13)',
+        bBg:'linear-gradient(135deg,#FF9A8B,#FF6A88)', bTx:'#FFFFFF' },
+    line:'Build the Life\nYou Designed.',
+    sub:'Stop waiting for permission. Your transformation starts with one conversation — and it starts today.',
+    cta:'Start Your Journey',
+    feat:['12-Week Transformation','Daily Mindset Rituals','Private Community Access']
+  },
+  {
+    id:'classic-noir', num:'10', name:'Classic Noir', cat:'editorial',
+    tags:['Editorial','Classic','Timeless'],
+    niches:['Photographers','Architects','High-End Consultants'],
+    sw:['#0A0A0A','#1A1A1A','#888888','#FAFAFA','#E0E0E0'],
+    hF:"'Libre Baskerville',serif", bF:"'Jost',sans-serif",
+    hN:'Libre Baskerville', bN:'Jost',
+    c:{ bg:'#FAFAFA', nav:'rgba(250,250,250,0.97)', acc:'#111111', txt:'#0A0A0A',
+        mu:'#888888', surf:'#F0F0F0', brd:'#E0E0E0',
+        bBg:'#0A0A0A', bTx:'#FAFAFA' },
+    line:'The Work\nSpeaks.',
+    sub:'No gimmicks. No shortcuts. Only craft that stands the test of every scrutinising eye.',
+    cta:'View Portfolio',
+    feat:['Full-Day Coverage','Second Shooter Included','6-Week Delivery']
+  }
+];
+
+/* ===== FONT PAIRINGS DATA ===== */
+const F = [
+  { n:'01', h:'Cormorant Garamond', b:'Jost',          hF:"'Cormorant Garamond',serif",  bF:"'Jost',sans-serif",         hs:'Elegant & Refined',     bs:'For luxury brands and high-ticket services demanding a classical yet contemporary feel.', m:'Luxury · Heritage',   a:'#D4AF37' },
+  { n:'02', h:'Playfair Display',    b:'Lato',          hF:"'Playfair Display',serif",     bF:"'Lato',sans-serif",         hs:'Time-Honoured',         bs:'A trusted pairing for premium services — authoritative heading, supremely clean body text.', m:'Classic · Professional', a:'#8B7355' },
+  { n:'03', h:'DM Serif Display',    b:'Source Sans 3', hF:"'DM Serif Display',serif",     bF:"'Source Sans 3',sans-serif",hs:'Warm & Considered',     bs:'Perfect for craft businesses, interior studios, and renovation specialists with soul.', m:'Warm · Craft',         a:'#C84B31' },
+  { n:'04', h:'Fraunces',            b:'DM Sans',       hF:"'Fraunces',serif",             bF:"'DM Sans',sans-serif",      hs:'Poetic Precision',      bs:'A modern optical serif with character — ideal for editorial, wedding, and lifestyle brands.', m:'Editorial · Romantic',  a:'#BE3A6A' },
+  { n:'05', h:'Libre Baskerville',   b:'Outfit',        hF:"'Libre Baskerville',serif",    bF:"'Outfit',sans-serif",       hs:'Rooted & Modern',       bs:'The gravitas of a traditional serif grounded with the freshness of geometric sans-serif.', m:'Grounded · Contemporary', a:'#6DBF5E' },
+  { n:'06', h:'Libre Baskerville',   b:'Jost',          hF:"'Libre Baskerville',serif",    bF:"'Jost',sans-serif",         hs:'The Classic Edit',      bs:'Clean, editorial, and trustworthy. Works beautifully for photographers and architects.', m:'Noir · Editorial',     a:'#888888' },
+  { n:'07', h:'Raleway',             b:'Raleway',       hF:"'Raleway',sans-serif",         bF:"'Raleway',sans-serif",      hs:'Precise Authority',     bs:'A single-family pairing delivering visual harmony and professional confidence on every page.', m:'Corporate · Trust',    a:'#4CC9F0' },
+  { n:'08', h:'Inter',               b:'Inter',         hF:"'Inter',sans-serif",           bF:"'Inter',sans-serif",        hs:'Clarity Above All',     bs:'The gold standard for digital-first brands. Maximum legibility. Zero distraction. Pure function.', m:'Minimal · Focused',    a:'#2563EB' },
+  { n:'09', h:'Poppins',             b:'Poppins',       hF:"'Poppins',sans-serif",         bF:"'Poppins',sans-serif",      hs:'Friendly & Forward',    bs:'Rounded geometry that feels approachable and optimistic — great for coaches and modern brands.', m:'Modern · Warm',        a:'#FF9A8B' },
+  { n:'10', h:'Outfit',              b:'Outfit',        hF:"'Outfit',sans-serif",          bF:"'Outfit',sans-serif",       hs:'Bold & Direct',         bs:'Heavy weights command attention, light weights deliver. One family, infinite range.', m:'Bold · Energetic',     a:'#8B5CF6' },
+  { n:'11', h:'DM Serif Display',    b:'DM Sans',       hF:"'DM Serif Display',serif",     bF:"'DM Sans',sans-serif",      hs:'Designed Contrast',     bs:'The DM family split across serif and sans — sharp contrast within a perfectly unified visual system.', m:'Balanced · Sharp',     a:'#F59E0B' },
+  { n:'12', h:'Playfair Display',    b:'Source Sans 3', hF:"'Playfair Display',serif",     bF:"'Source Sans 3',sans-serif",hs:'Premium but Clear',     bs:'The richness of Playfair with ultra-readable Source Sans. Works beautifully in print and digital.', m:'Premium · Readable',   a:'#D4890A' },
+  { n:'13', h:'Cormorant Garamond',  b:'DM Sans',       hF:"'Cormorant Garamond',serif",   bF:"'DM Sans',sans-serif",      hs:'Old World Meets New',   bs:'Renaissance-era letterforms matched with contemporary geometry — timeless and progressive at once.', m:'Timeless · Progressive', a:'#A78BFA' }
+];
+
+/* ===== RENDER CARD ===== */
+function mkCard(t) {
+  const lines = t.line.split('\n').join('<br>');
+  const swH = t.sw.map(c => {
+    const light = ['#ffffff','#fafafa','#f5ede0','#fff5f7'].includes(c.toLowerCase());
+    return `<div class="sw" style="background:${c};border-color:${light?'#d0d0d0':'rgba(255,255,255,0.1)'};" title="${c}"></div>`;
+  }).join('');
+  const ntH = t.niches.map(n=>`<span class="nt">${n}</span>`).join('');
+
+  return `
+  <div class="tc" data-cat="${t.cat}" onclick="openM('${t.id}')">
+    <div class="mini-site">
+      <div style="height:100%;display:flex;flex-direction:column;font-family:${t.bF};background:${t.c.bg};">
+        <!-- mini nav -->
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:${t.c.nav};border-bottom:1px solid ${t.c.brd};flex-shrink:0;">
+          <div style="font-family:${t.hF};font-size:14px;font-weight:700;color:${t.c.txt};letter-spacing:.3px;">${t.name.replace(' ','')}.studio</div>
+          <div style="display:flex;gap:14px;align-items:center;">
+            <span style="font-size:9px;color:${t.c.mu};">Work</span>
+            <span style="font-size:9px;color:${t.c.mu};">About</span>
+            <span style="font-size:9px;color:${t.c.mu};">Services</span>
+            <span style="font-size:9px;padding:5px 14px;border-radius:3px;background:${t.c.bBg};color:${t.c.bTx};font-weight:700;letter-spacing:.5px;white-space:nowrap;">${t.cta.split(' ').slice(0,2).join(' ')}</span>
+          </div>
+        </div>
+        <!-- mini hero -->
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:22px 24px 24px;">
+          <div style="font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:${t.c.acc};margin-bottom:10px;font-weight:600;">Premium Studio · Est. 2024</div>
+          <div style="font-family:${t.hF};font-size:25px;font-weight:700;color:${t.c.txt};line-height:1.1;margin-bottom:9px;">${lines}</div>
+          <div style="font-size:10px;line-height:1.65;color:${t.c.mu};max-width:300px;margin-bottom:18px;">${t.sub}</div>
+          <div style="display:flex;gap:10px;align-items:center;">
+            <span style="display:inline-block;font-size:9px;padding:7px 18px;border-radius:3px;background:${t.c.bBg};color:${t.c.bTx};font-weight:700;letter-spacing:.8px;text-transform:uppercase;">${t.cta}</span>
+            <span style="font-size:9px;color:${t.c.acc};">Portfolio →</span>
+          </div>
+        </div>
+        <div style="height:3px;background:linear-gradient(90deg,${t.c.acc},transparent);flex-shrink:0;"></div>
+      </div>
+      <div class="mini-overlay"><span class="prev-pill">Full Preview →</span></div>
+    </div>
+    <div class="ti">
+      <div class="ti-top">
+        <div>
+          <div class="ti-num">Theme ${t.num}</div>
+          <div class="ti-name">${t.name}</div>
+        </div>
+        <div class="ti-cat">${t.tags.slice(0,2).join(' · ')}</div>
+      </div>
+      <div class="sw-row">${swH}</div>
+      <div class="finfo"><strong>${t.hN}</strong><span class="fsep">/</span><strong>${t.bN}</strong></div>
+      <div class="niche-row"><span class="nlbl">Best for</span>${ntH}</div>
+    </div>
+  </div>`;
+}
+
+/* ===== RENDER FONT SPECIMEN ===== */
+function mkSpec(f) {
+  return `
+  <div class="fspec" style="--accent:${f.a};">
+    <div class="spec-n">${f.n}</div>
+    <div class="spec-h" style="font-family:${f.hF};">${f.hs}</div>
+    <div class="spec-b" style="font-family:${f.bF};">${f.bs}</div>
+    <div class="spec-meta">
+      <div class="spec-hf">${f.h} + ${f.b}</div>
+      <div class="spec-mood">${f.m}</div>
+    </div>
+  </div>`;
+}
+
+/* ===== RENDER MODAL ===== */
+function mkModal(t) {
+  const lines = t.line.split('\n').join('<br>');
+  const features = t.feat.map((f,i) => {
+    const icons = ['◈','✦','◎'];
+    return `
+    <div style="background:${t.c.surf};border:1px solid ${t.c.brd};border-radius:14px;padding:28px 24px;">
+      <div style="font-size:22px;color:${t.c.acc};margin-bottom:14px;">${icons[i]}</div>
+      <div style="font-family:${t.hF};font-size:19px;font-weight:600;color:${t.c.txt};margin-bottom:9px;">${f}</div>
+      <div style="font-size:13px;line-height:1.7;color:${t.c.mu};">Built around your clients' real needs — precise, thoughtful, and designed for lasting impact beyond the first impression.</div>
+    </div>`;
+  }).join('');
+
+  return `
+  <div style="background:${t.c.bg};color:${t.c.txt};font-family:${t.bF};min-height:600px;">
+    <!-- Nav -->
+    <nav style="display:flex;justify-content:space-between;align-items:center;padding:18px 44px;background:${t.c.nav};border-bottom:1px solid ${t.c.brd};position:sticky;top:0;z-index:5;backdrop-filter:blur(14px);">
+      <div style="font-family:${t.hF};font-size:20px;font-weight:700;color:${t.c.txt};">${t.name} Studio</div>
+      <div style="display:flex;gap:28px;align-items:center;">
+        <span style="font-size:13px;color:${t.c.mu};cursor:pointer;">Work</span>
+        <span style="font-size:13px;color:${t.c.mu};cursor:pointer;">About</span>
+        <span style="font-size:13px;color:${t.c.mu};cursor:pointer;">Services</span>
+        <span style="font-size:13px;padding:11px 26px;border-radius:4px;background:${t.c.bBg};color:${t.c.bTx};font-weight:700;letter-spacing:.5px;cursor:pointer;">${t.cta}</span>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section style="padding:84px 60px 72px;max-width:880px;">
+      <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${t.c.acc};margin-bottom:20px;font-weight:600;">Est. 2024 &nbsp;·&nbsp; Premium Studio</div>
+      <h1 style="font-family:${t.hF};font-size:clamp(44px,5.5vw,68px);font-weight:700;line-height:1.05;color:${t.c.txt};margin-bottom:22px;">${lines}</h1>
+      <p style="font-size:17px;line-height:1.72;color:${t.c.mu};max-width:520px;margin-bottom:36px;">${t.sub}</p>
+      <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+        <span style="display:inline-block;font-size:12px;padding:14px 36px;border-radius:4px;background:${t.c.bBg};color:${t.c.bTx};font-weight:700;letter-spacing:.9px;text-transform:uppercase;cursor:pointer;">${t.cta}</span>
+        <span style="font-size:13px;color:${t.c.acc};cursor:pointer;">View our portfolio →</span>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div style="height:1px;background:${t.c.brd};margin:0 60px;"></div>
+
+    <!-- Features -->
+    <section style="padding:60px;">
+      <div style="font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:${t.c.acc};margin-bottom:10px;font-weight:600;">What We Offer</div>
+      <h2 style="font-family:${t.hF};font-size:38px;font-weight:600;color:${t.c.txt};margin-bottom:36px;line-height:1.15;">Built for results.<br>Designed for trust.</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
+        ${features}
+      </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div style="display:flex;gap:0;margin:0 60px;border:1px solid ${t.c.brd};border-radius:12px;overflow:hidden;margin-bottom:60px;">
+      ${[['10+','Years of Experience'],['200+','Projects Delivered'],['98%','Client Satisfaction']].map((s,i)=>`
+        <div style="flex:1;padding:22px 24px;text-align:center;border-right:${i<2?`1px solid ${t.c.brd}`:'none'};">
+          <div style="font-family:${t.hF};font-size:34px;font-weight:700;color:${t.c.acc};line-height:1;">${s[0]}</div>
+          <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:${t.c.mu};margin-top:6px;">${s[1]}</div>
+        </div>`).join('')}
+    </div>
+
+    <!-- CTA Section -->
+    <section style="padding:60px;background:${t.c.surf};border-top:1px solid ${t.c.brd};text-align:center;">
+      <div style="font-family:${t.hF};font-size:42px;font-weight:700;color:${t.c.txt};margin-bottom:14px;line-height:1.15;">Ready to begin?</div>
+      <p style="font-size:16px;color:${t.c.mu};max-width:420px;margin:0 auto 32px;line-height:1.65;">The first step is a conversation. Let us find out if we are the right fit for your project.</p>
+      <span style="display:inline-block;font-size:12px;padding:16px 44px;border-radius:4px;background:${t.c.bBg};color:${t.c.bTx};font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;">${t.cta}</span>
+    </section>
+
+    <!-- Theme Meta Bar -->
+    <div style="padding:16px 44px;background:rgba(0,0,0,0.18);border-top:1px solid ${t.c.brd};display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+      <div style="font-size:9px;letter-spacing:1px;text-transform:uppercase;color:${t.c.mu};">Theme <strong style="color:${t.c.acc};">${t.name}</strong></div>
+      <div style="font-size:9px;color:${t.c.mu};">Heading: <strong style="color:${t.c.txt};">${t.hN}</strong></div>
+      <div style="font-size:9px;color:${t.c.mu};">Body: <strong style="color:${t.c.txt};">${t.bN}</strong></div>
+      <div style="display:flex;gap:5px;margin-left:auto;">${t.sw.map(c=>`<div style="width:13px;height:13px;border-radius:50%;background:${c};border:1px solid rgba(128,128,128,0.2);"></div>`).join('')}</div>
+    </div>
+  </div>`;
+}
+
+/* ===== OPEN / CLOSE MODAL ===== */
+function openM(id) {
+  const t = T.find(x=>x.id===id);
+  if(!t) return;
+  document.getElementById('modalBox').innerHTML = mkModal(t);
+  document.getElementById('modalBg').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeM() {
+  document.getElementById('modalBg').classList.remove('open');
+  document.body.style.overflow = '';
+  document.getElementById('modalBox').innerHTML = '';
+}
+
+/* ===== INIT ===== */
+(function init() {
+  document.getElementById('grid').innerHTML  = T.map(mkCard).join('');
+  document.getElementById('fgrid').innerHTML = F.map(mkSpec).join('');
+
+  // Filter
+  document.querySelectorAll('.fb').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.fb').forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      const f = btn.dataset.f;
+      document.querySelectorAll('.tc').forEach(c => {
+        c.style.display = (f==='all' || c.dataset.cat===f) ? '' : 'none';
+      });
+    });
+  });
+
+  // Modal close
+  document.getElementById('modalX').addEventListener('click', closeM);
+  document.getElementById('modalBg').addEventListener('click', e => { if(e.target===e.currentTarget) closeM(); });
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeM(); });
+})();
+</script>
+</body>
+</html>

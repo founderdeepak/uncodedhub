@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Website Features Engine | Uncoded Hub Autonomous System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="core/super-engine.css">
+  <style>
+    body {
+      background: #F7F9FC;
+      margin: 0;
+      color: #191D24;
+      font-family: var(--sf-font);
+      padding-bottom: 120px;
+    }
+    header {
+      background: #121922;
+      color: #FFFFFF;
+      padding: 48px 24px;
+      text-align: center;
+      border-bottom: 3px solid var(--sf-accent);
+    }
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .feature-nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .feature-card {
+      background: #FFFFFF;
+      border: 1px solid var(--sf-border);
+      border-radius: var(--sf-radius-lg);
+      padding: 32px 28px;
+      box-shadow: var(--sf-shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--sf-shadow-md);
+      border-color: var(--sf-accent);
+    }
+    .feature-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 14px;
+      background: #FFF0E6;
+      color: var(--sf-accent);
+    }
+    .niche-showcase-bar {
+      background: #FFFFFF;
+      border: 1px solid var(--sf-border);
+      border-radius: 50px;
+      padding: 8px 14px;
+      display: inline-flex;
+      gap: 8px;
+      margin-top: 24px;
+      box-shadow: var(--sf-shadow-sm);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .niche-btn {
+      background: transparent;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--sf-text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .niche-btn:hover { color: var(--sf-primary); background: #F1F4F8; }
+    .niche-btn.active { background: var(--sf-accent); color: #FFF; }
+  </style>
+</head>
+<body class="sf-scope">
+
+  <header>
+    <div class="wrap">
+      <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sf-accent);">
+        UNCODED HUB &bull; HIGH-TICKET CLIENT OPS
+      </span>
+      <h1 style="font-size: 44px; margin: 12px 0 16px; font-family: 'Space Grotesk', sans-serif;">
+        The Super Website Features Engine
+      </h1>
+      <p style="font-size: 18px; color: rgba(255,255,255,0.8); max-width: 780px; margin: 0 auto; line-height: 1.6;">
+        Turning static client websites into autonomous <strong>Lead Capture, Quoting, Booking &amp; Front-Office Engines</strong> that generate pipeline proof and justify a <strong>recurring monthly retainer (MRR)</strong>.
+      </p>
+
+      <div class="niche-showcase-bar">
+        <button class="niche-btn active" onclick="switchNicheDemo('interior-design', this)">Interior Design</button>
+        <button class="niche-btn" onclick="switchNicheDemo('real-estate', this)">Real Estate</button>
+        <button class="niche-btn" onclick="switchNicheDemo('dental-clinic', this)">Dental Clinics</button>
+        <button class="niche-btn" onclick="switchNicheDemo('wedding-photo', this)">Wedding Photography</button>
+        <button class="niche-btn" onclick="switchNicheDemo('modular-kitchen', this)">Modular Kitchens</button>
+        <button class="niche-btn" onclick="switchNicheDemo('executive-coaching', this)">Executive Coaching</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    
+    <div style="margin-top: 50px; text-align: center;">
+      <h2 style="font-size: 32px; margin-bottom: 8px;">Explore The 4 Modular Systems</h2>
+      <p style="color: var(--sf-text-muted); margin: 0;">Click any module below to interact with the live standalone engine or inspect the staff portal.</p>
+    </div>
+
+    <div class="feature-nav-grid">
+      
+      <!-- Module 1: 3-Step Estimator -->
+      <div class="feature-card">
+        <div>
+          <span class="feature-badge">Feature #3, #4 &amp; #5</span>
+          <h3 style="font-size: 22px; margin: 0 0 10px;">3-Step Interactive Project Estimator</h3>
+          <p style="font-size: 14.5px; color: var(--sf-text-muted); line-height: 1.6;">
+            Gated lead magnet wizard. Calibrates scope, dimensions, and finish grade. Captures verified phone and email before displaying the minimum &amp; maximum price range with regional disclaimers.
+          </p>
+        </div>
+        <div style="margin-top: 24px;">
+          <a href="components/project-estimator.html" class="sf-btn sf-btn-primary" style="width: 100%; justify-content: center;">
+            Launch Project Estimator &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Module 2: Booking Calendar -->
+      <div class="feature-card">
+        <div>
+          <span class="feature-badge">Feature #2 &amp; #7</span>
+          <h3 style="font-size: 22px; margin: 0 0 10px;">Calendar Booking &amp; Travel Buffer Engine</h3>
+          <p style="font-size: 14.5px; color: var(--sf-text-muted); line-height: 1.6;">
+            Mon–Fri (8 AM – 4 PM) 1-hour appointment scheduler with <strong>automatic 1-hour travel buffer lockout</strong> to prevent overlapping. Includes 1-tap Google/Apple Calendar (.ics) export and refundable deposit terms.
+          </p>
+        </div>
+        <div style="margin-top: 24px;">
+          <a href="components/booking-calendar.html" class="sf-btn sf-btn-primary" style="width: 100%; justify-content: center;">
+            Launch Calendar Booking &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Module 3: Live Chat & Shared Inbox -->
+      <div class="feature-card">
+        <div>
+          <span class="feature-badge">Feature #1 &amp; #6</span>
+          <h3 style="font-size: 22px; margin: 0 0 10px;">Unified Messaging &amp; Live Chat</h3>
+          <p style="font-size: 14.5px; color: var(--sf-text-muted); line-height: 1.6;">
+            Floating interactive chat and contact feed. Every customer inquiry is logged directly into the shared staff inbox with <code>UNRESOLVED</code> triage status and automated callback reassurance.
+          </p>
+        </div>
+        <div style="margin-top: 24px;">
+          <a href="components/chat-widget.html" class="sf-btn sf-btn-primary" style="width: 100%; justify-content: center;">
+            Launch Live Chat Demo &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Module 4: Staff CRM & Proof Machine -->
+      <div class="feature-card" style="border: 2px solid var(--sf-primary);">
+        <div>
+          <span class="feature-badge" style="background: #121922; color: #FFF;">Feature #8 &bull; The MRR Retainer Hook</span>
+          <h3 style="font-size: 22px; margin: 0 0 10px;">Staff CRM &amp; Monthly Proof Machine</h3>
+          <p style="font-size: 14.5px; color: var(--sf-text-muted); line-height: 1.6;">
+            Internal staff dashboard tracking pipeline value in ₹ Lakhs, bookings calendar, status toggles, direct WhatsApp click-to-chat, and a 1-click <strong>Monthly Performance Proof Report</strong> for clients.
+          </p>
+        </div>
+        <div style="margin-top: 24px;">
+          <a href="components/admin-dashboard.html" class="sf-btn sf-btn-primary" style="width: 100%; justify-content: center; background: #121922;">
+            Access Staff CRM Portal &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MULTI-TENANT BACKEND & COMMAND PORTALS -->
+    <div style="margin-top: 50px; background: linear-gradient(135deg, #121922, #1a2332); border: 2px solid #6366f1; border-radius: var(--sf-radius-lg); padding: 36px; color: #fff; box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+        <div>
+          <span style="background: rgba(99, 102, 241, 0.2); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;">
+            100–200 Client Scaling Infrastructure
+          </span>
+          <h3 style="font-size: 26px; margin: 10px 0 6px; font-family: 'Space Grotesk', sans-serif;">
+            Multi-Tenant Backend Architecture &amp; Command Portals
+          </h3>
+          <p style="color: #94a3b8; font-size: 14.5px; margin: 0; max-width: 750px;">
+            Single Postgres/Supabase instance with Row-Level Security (RLS) serving hundreds of clients at 99.5%+ profit margin. Zero per-site backend deployment needed.
+          </p>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <a href="admin-portals/agency-command-center.html" class="sf-btn" style="background: #6366f1; color: #fff; text-decoration: none; font-weight: 700;">
+            🚀 Agency Command Center (Master) &rarr;
+          </a>
+          <a href="admin-portals/client-login-portal.html" class="sf-btn" style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; font-weight: 700;">
+            🏢 Client Login Portal &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+        <div style="padding: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--sf-radius-sm);">
+          <strong style="color: #38bdf8; display: block; margin-bottom: 4px;">PostgreSQL / RLS Schema</strong>
+          <span style="font-size: 13px; color: #94a3b8;">Production schema with tenants, leads, bookings, &amp; RLS policies.</span><br>
+          <a href="backend/multi-tenant-schema.sql" target="_blank" style="font-size: 12.5px; color: #818cf8; font-weight: 600; text-decoration: none; margin-top: 6px; display: inline-block;">View SQL Schema &rarr;</a>
+        </div>
+        <div style="padding: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--sf-radius-sm);">
+          <strong style="color: #34d399; display: block; margin-bottom: 4px;">Edge API Engine</strong>
+          <span style="font-size: 13px; color: #94a3b8;">Serverless routes: /config, /leads, /slots, /bookings, /chat.</span><br>
+          <a href="backend/edge-api-routes.js" target="_blank" style="font-size: 12.5px; color: #34d399; font-weight: 600; text-decoration: none; margin-top: 6px; display: inline-block;">View Edge Routes &rarr;</a>
+        </div>
+        <div style="padding: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--sf-radius-sm);">
+          <strong style="color: #f59e0b; display: block; margin-bottom: 4px;">WhatsApp Cloud Alerts</strong>
+          <span style="font-size: 13px; color: #94a3b8;">Centralized webhook for 2-way staff WhatsApp alerts &amp; SMS.</span><br>
+          <a href="backend/notification-service.js" target="_blank" style="font-size: 12.5px; color: #f59e0b; font-weight: 600; text-decoration: none; margin-top: 6px; display: inline-block;">View Notification Service &rarr;</a>
+        </div>
+        <div style="padding: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--sf-radius-sm);">
+          <strong style="color: #ec4899; display: block; margin-bottom: 4px;">1st of Month Cron Machine</strong>
+          <span style="font-size: 13px; color: #94a3b8;">Automated PDF proof generator compiling ROI for 200 clients.</span><br>
+          <a href="backend/cron-monthly-reports.js" target="_blank" style="font-size: 12.5px; color: #ec4899; font-weight: 600; text-decoration: none; margin-top: 6px; display: inline-block;">View Report Cron &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOCUMENTATION AND ARCHITECTURE ARCHIVES -->
+    <div style="margin-top: 40px; background: #FFFFFF; border: 1px solid var(--sf-border); border-radius: var(--sf-radius-lg); padding: 36px; box-shadow: var(--sf-shadow-sm);">
+      <h3 style="font-size: 24px; margin: 0 0 16px;">Core System Documentation</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+        <div style="padding: 16px; background: var(--sf-bg-subtle); border-radius: var(--sf-radius-sm);">
+          <strong style="display: block; margin-bottom: 4px;">1. Raw Specification</strong>
+          <span style="font-size: 13px; color: var(--sf-text-muted);">Word-for-word extracted requirement document.</span><br>
+          <a href="RAW_SPECIFICATION.md" style="font-size: 13px; color: var(--sf-accent); font-weight: 700; text-decoration: none;">View RAW_SPECIFICATION.md &rarr;</a>
+        </div>
+        <div style="padding: 16px; background: var(--sf-bg-subtle); border-radius: var(--sf-radius-sm);">
+          <strong style="display: block; margin-bottom: 4px;">2. Technical Blueprint</strong>
+          <span style="font-size: 13px; color: var(--sf-text-muted);">Data flow, travel buffers &amp; database schema.</span><br>
+          <a href="FEATURE_BLUEPRINT_AND_ARCHITECTURE.md" style="font-size: 13px; color: var(--sf-accent); font-weight: 700; text-decoration: none;">View Architecture Blueprint &rarr;</a>
+        </div>
+        <div style="padding: 16px; background: var(--sf-bg-subtle); border-radius: var(--sf-radius-sm);">
+          <strong style="display: block; margin-bottom: 4px;">3. Recurring MRR Model</strong>
+          <span style="font-size: 13px; color: var(--sf-text-muted);">Pricing tiers, sales scripts &amp; proof reports.</span><br>
+          <a href="RECURRING_MRR_BUSINESS_MODEL.md" style="font-size: 13px; color: var(--sf-accent); font-weight: 700; text-decoration: none;">View MRR Business Model &rarr;</a>
+        </div>
+        <div style="padding: 16px; background: var(--sf-bg-subtle); border-radius: var(--sf-radius-sm);">
+          <strong style="display: block; margin-bottom: 4px;">4. Multi-Tenant Scaling Manual</strong>
+          <span style="font-size: 13px; color: var(--sf-text-muted);">How to run 200+ clients on 1 Supabase DB with 99.5% margin.</span><br>
+          <a href="SCALABLE_MULTI_TENANT_BACKEND_ARCHITECTURE.md" style="font-size: 13px; color: var(--sf-accent); font-weight: 700; text-decoration: none;">View Scaling Manual &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Interactive Floating Chat for quick test -->
+  <div class="sf-chat-launcher" onclick="toggleMainChat()">💬</div>
+  <div class="sf-chat-drawer" id="main-chat-drawer">
+    <div class="sf-chat-header">
+      <div>
+        <h4 id="main-chat-title">Uncoded Hub Concierge</h4>
+        <p>● Online &bull; Direct inquiry line</p>
+      </div>
+      <button class="sf-chat-close" onclick="toggleMainChat()">&times;</button>
+    </div>
+    <div class="sf-chat-messages" id="main-chat-messages">
+      <div class="sf-msg sf-msg-bot">
+        Hello! You are testing the Super Website Features engine. Try sending an inquiry here or launch the Project Estimator!
+      </div>
+    </div>
+    <form class="sf-chat-input-bar" onsubmit="handleMainChat(event)">
+      <input type="text" id="main-chat-input" class="sf-chat-input" placeholder="Type a message..." required>
+      <button type="submit" class="sf-chat-send">Send</button>
+    </form>
+  </div>
+
+  <script src="core/super-engine.js"></script>
+  <script>
+    let activeChatOpen = false;
+
+    async function switchNicheDemo(nicheId, btn) {
+      document.querySelectorAll('.niche-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      try {
+        const res = await fetch(`configs/${nicheId}-config.json`);
+        const cfg = await res.json();
+        SuperEngine.init(cfg);
+        document.getElementById('main-chat-title').innerText = `${cfg.brandName} Concierge`;
+      } catch(e) {}
+    }
+
+    function toggleMainChat() {
+      activeChatOpen = !activeChatOpen;
+      const d = document.getElementById('main-chat-drawer');
+      if (activeChatOpen) d.classList.add('active');
+      else d.classList.remove('active');
+    }
+
+    function handleMainChat(e) {
+      e.preventDefault();
+      const input = document.getElementById('main-chat-input');
+      const val = input.value.trim();
+      if (!val) return;
+
+      const container = document.getElementById('main-chat-messages');
+      const uMsg = document.createElement('div');
+      uMsg.className = 'sf-msg sf-msg-user';
+      uMsg.innerText = val;
+      container.appendChild(uMsg);
+      input.value = '';
+
+      // Save to inbox
+      const convs = JSON.parse(localStorage.getItem('sf_conversations_data') || '[]');
+      convs.unshift({
+        id: 'conv-' + Date.now(),
+        created_at: new Date().toISOString(),
+        customer_name: 'Visitor via Hub',
+        customer_contact: 'Live Chat Widget',
+        subject: val.slice(0, 35) + '...',
+        status: 'UNRESOLVED',
+        last_message: val
+      });
+      localStorage.setItem('sf_conversations_data', JSON.stringify(convs));
+
+      setTimeout(() => {
+        const bMsg = document.createElement('div');
+        bMsg.className = 'sf-msg sf-msg-bot';
+        bMsg.innerText = "Message logged into Staff CRM with UNRESOLVED status! View it in the Staff Portal.";
+        container.appendChild(bMsg);
+      }, 600);
+    }
+
+    // Default init
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch('configs/interior-design-config.json')
+        .then(r => r.json())
+        .then(cfg => SuperEngine.init(cfg));
+    });
+  </script>
+</body>
+</html>

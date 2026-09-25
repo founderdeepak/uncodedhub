@@ -136,7 +136,8 @@ function doPost(e) {
     }
 
     MailApp.sendEmail({
-      to: "theuncodedhub@gmail.com", // <-- Configured to send to theuncodedhub@gmail.com
+      to: "theuncodedhub@gmail.com",
+      cc: "deepak@uncodedhub.com, geetha@uncodedhub.com",
       subject: emailTitle + " - " + (escapeHtml(record.name) || 'Unknown User'),
       htmlBody: htmlBody
     });
@@ -162,3 +163,104 @@ function withinSendLimit() {
   cache.put(key, String(count), 3600);
   return count <= MAX_PER_HOUR;
 }
+
+/**
+ * GET Handler — allows triggering the Supabase Report on demand or viewing health
+ */
+function doGet(e) {
+  var action = (e && e.parameter && e.parameter.action) || 'health';
+  if (action === 'report') {
+    var result = sendSupabaseDigestReport();
+    return ContentService.createTextOutput(JSON.stringify(result)).setMimeType(ContentService.MimeType.JSON);
+  }
+  return ContentService.createTextOutput("Uncoded Hub Supabase Email Service: OK");
+}
+
+/**
+ * Generates and emails the Supabase Lead & Pipeline Report to theuncodedhub@gmail.com
+ * with CC to deepak@uncodedhub.com and geetha@uncodedhub.com
+ */
+function sendSupabaseDigestReport() {
+  var SUPABASE_URL = "https://ruiimbaycfkkejwumoak.supabase.co";
+  var SUPABASE_KEY = PropertiesService.getScriptProperties().getProperty("SUPABASE_KEY") || 
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ1aWltYmF5Y2Zra2Vqd3Vtb2FrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMTU3MjksImV4cCI6MjA5MDU5MTcyOX0.2xc1ESzTWZsEHxkafcd092mIj50IQjKvxnkOVrs6EsA";
+
+  var headers = {
+    "apikey": SUPABASE_KEY,
+    "Authorization": "Bearer " + SUPABASE_KEY
+  };
+
+  try {
+    // 1. Fetch Contact Form & Booking submissions
+    var resContact = UrlFetchApp.fetch(SUPABASE_URL + "/rest/v1/contact_submissions?select=*&order=created_at.desc&limit=25", {
+      headers: headers,
+      muteHttpExceptions: true
+    });
+    var contactLeads = JSON.parse(resContact.getContentText()) || [];
+
+    // 2. Fetch Chatbot submissions
+    var resChat = UrlFetchApp.fetch(SUPABASE_URL + "/rest/v1/chatbot_leads?select=*&order=created_at.desc&limit=15", {
+      headers: headers,
+      muteHttpExceptions: true
+    });
+    var chatLeads = JSON.parse(resChat.getContentText()) || [];
+
+    // 3. Build HTML Report
+    var reportRows = "";
+    contactLeads.forEach(function(l) {
+      reportRows += `
+        <tr style="border-bottom: 1px solid #e2e8f0;">
+          <td style="padding: 10px; font-weight: 600; color: #0f172a;">${escapeHtml(l.name)}</td>
+          <td style="padding: 10px; color: #475569;">${escapeHtml(l.email)}<br><small style="color: #64748b;">${escapeHtml(l.phone || '')}</small></td>
+          <td style="padding: 10px; color: #0284c7; font-weight: 500;">${escapeHtml(l.business_type || 'Enquiry')}</td>
+          <td style="padding: 10px; font-size: 13px; color: #334155;">${escapeHtml(l.project_details || '')}</td>
+          <td style="padding: 10px; font-size: 12px; color: #94a3b8;">${l.created_at ? l.created_at.split('T')[0] : 'N/A'}</td>
+        </tr>
+      `;
+    });
+
+    var reportHtml = `
+      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 750px; margin: 0 auto; border: 1px solid #cbd5e1; border-radius: 12px; overflow: hidden; background-color: #ffffff;">
+        <div style="background: linear-gradient(135deg, #090d16, #1e293b); padding: 24px 30px; color: #ffffff;">
+          <h2 style="margin: 0; font-size: 22px;">📊 Uncoded Hub — Supabase Pipeline Report</h2>
+          <p style="margin: 6px 0 0 0; color: #94a3b8; font-size: 14px;">Total Contact/Booking Leads: <strong>${contactLeads.length}</strong> | Chatbot Leads: <strong>${chatLeads.length}</strong></p>
+        </div>
+
+        <div style="padding: 24px;">
+          <h3 style="color: #0f172a; margin-top: 0; font-size: 16px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px;">Recent Contact Submissions & Bookings</h3>
+          <table style="width: 100%; border-collapse: collapse; font-size: 13.5px; text-align: left;">
+            <thead>
+              <tr style="background: #f8fafc; border-bottom: 2px solid #cbd5e1;">
+                <th style="padding: 10px; color: #475569;">Name</th>
+                <th style="padding: 10px; color: #475569;">Contact</th>
+                <th style="padding: 10px; color: #475569;">Type</th>
+                <th style="padding: 10px; color: #475569;">Details</th>
+                <th style="padding: 10px; color: #475569;">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${reportRows || '<tr><td colspan="5" style="padding: 15px; text-align: center; color: #94a3b8;">No leads recorded yet.</td></tr>'}
+            </tbody>
+          </table>
+
+          <div style="margin-top: 30px; padding: 16px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; font-size: 13px; color: #166534;">
+            ✅ <strong>Supabase 24x7 System Status:</strong> Active &amp; Verified. All form submissions, discovery calendar bookings, and chatbot leads are safely archived.
+          </div>
+        </div>
+      </div>
+    `;
+
+    // 4. Send Email Report
+    MailApp.sendEmail({
+      to: "theuncodedhub@gmail.com",
+      cc: "deepak@uncodedhub.com, geetha@uncodedhub.com",
+      subject: "📊 Uncoded Hub Supabase Lead Report (" + contactLeads.length + " Total Submissions)",
+      htmlBody: reportHtml
+    });
+
+    return { success: true, count: contactLeads.length };
+  } catch (err) {
+    return { success: false, error: err.toString() };
+  }
+}
+
