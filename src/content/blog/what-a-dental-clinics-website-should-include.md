@@ -108,3 +108,30 @@ Reviews and a complete Google Business Profile drive most early filtering, and e
 
 **How do aesthetic and cosmetic clinics build trust online before a consultation?**
 By answering the objections patients are too embarrassed to ask aloud, covering recovery time, realistic outcomes and cost transparency, as actual content rather than saving all of it for the consultation.
+
+
+---
+
+## The Complete Topical Guide Series for Dental & Aesthetic Clinics
+
+This master pillar guide defines the core framework. For specialized, step-by-step breakdowns on every stage of your digital presence, explore the companion guides in this series:
+
+- **[Near Me Search Optimization for Dental Clinics](/blog/near-me-search-for-dental-clinics)**
+- **[What a Dental Clinic Website Should Cost in India](/blog/what-a-dental-clinics-website-should-cost-in-india)**
+- **[Aesthetic Clinic Web Design: Trust Before Consultation](/blog/aesthetic-clinic-trust-before-consultation)**
+- **[Online Booking vs Call-Only: Why Clinics Lose Patients](/blog/online-booking-vs-phone-only-dental-clinics)**
+- **[Emergency Dental Care Pages Win Urgent High-Trust Patients](/blog/emergency-dental-care-page-strategy)**
+- **[Website Design for Skin Clinics in India (Cosmetic Dermatology)](/blog/website-for-skin-clinic-india)**
+- **[Website Speed Matters: Nervous Patient First Impressions](/blog/website-speed-nervous-patient-first-impression)**
+- **[Google Business Profile and Website Sync for Local Clinics](/blog/google-business-profile-website-local-clinic-seo)**
+- **[How AI Assistants Route Patients to Clinics](/blog/ai-assistants-patient-search-for-dentist)**
+- **[Clear Aligners and Invisalign Landing Page Architecture](/blog/clear-aligners-landing-page-conversion)**
+- **[Dental Implant Cost Page and Financing Breakdown Strategy](/blog/dental-implant-cost-page-strategy)**
+- **[Medical Advertising Ethics & Before/After Compliance in India](/blog/medical-advertising-ethics-before-after-photos-india)**
+- **[Multi-Location Dental Clinic SEO and Domain Architecture](/blog/multi-location-clinic-website-seo)**
+- **[Doctor Profile Pages and Video Testimonials That Reduce Anxiety](/blog/video-testimonials-doctor-profile-pages)**
+- **[Designing for Anxious Dental Patients (Dental Phobia UX)](/blog/dental-phobia-anxious-patient-website-ux)**
+- **[Cosmetic Dermatology Treatment Menu Design That Drives Bookings](/blog/dermatology-clinic-treatment-menu-design)**
+- **[Google Local Services Ads and Landing Page Synchronization](/blog/google-local-service-ads-dental-landing-page)**
+- **[WhatsApp Triage and Automated Booking for Dental Emergencies](/blog/whatsapp-chatbot-triage-clinic-website)**
+- **[Hair Transplant and Trichology Clinic Website Architecture](/blog/hair-transplant-clinic-website-design)**

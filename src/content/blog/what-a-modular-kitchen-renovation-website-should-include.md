@@ -102,3 +102,30 @@ It depends on gallery count, whether before-and-after content needs professional
 
 **Does pricing transparency online help or hurt a renovation business?**
 It filters rather than repels. It loses enquiries who were never going to afford the real number, and earns disproportionate trust from the ones who were, because it directly answers the category's biggest fear.
+
+
+---
+
+## The Complete Topical Guide Series for Home Renovation & Modular Kitchen Studios
+
+This master pillar guide defines the core framework. For specialized, step-by-step breakdowns on every stage of your digital presence, explore the companion guides in this series:
+
+- **[What Homeowners Look for Before Requesting a Quote](/blog/what-homeowners-look-for-before-requesting-a-quote)**
+- **[Local SEO for Home Renovation Businesses: Dominate Your City](/blog/local-seo-for-home-renovation-business)**
+- **[Pricing Transparency: How Renovation Businesses Win Trust](/blog/pricing-transparency-renovation-business)**
+- **[How to Reduce Time-Wasting Enquiries for Renovation Studios](/blog/reduce-time-wasting-enquiries-renovation-studio)**
+- **[Before-and-After Galleries Done Right on Renovation Sites](/blog/before-after-galleries-done-right)**
+- **[Warranty Pages Done Right Build Renovation Reputation](/blog/warranty-pages-done-right-renovation)**
+- **[Why a Furniture Studio Website Must Be Different from a Modular Kitchen Business](/blog/furniture-studio-website-vs-modular-kitchen)**
+- **[Website Cost for Home Renovation and Modular Kitchen Business](/blog/website-cost-for-home-renovation-and-modular-kitchen-business)**
+- **[How a Renovation Website Attracts Enquiries During Seasonal Slow Months](/blog/renovation-website-seasonal-slow-months)**
+- **[Modular Kitchen Cost Calculator as a Lead Generation Engine](/blog/modular-kitchen-cost-calculator-lead-generation)**
+- **[Turnkey Home Renovation Package Page Design Strategy](/blog/turnkey-home-renovation-package-page-design)**
+- **[Hardware and Material Brand Showcases (Blum, Hettich, Hafele)](/blog/hardware-material-brands-showcase-renovation)**
+- **[Apartment Society and Gated Community Renovation Pages](/blog/apartment-society-renovation-landing-pages)**
+- **[Virtual Kitchen Design Consultation Booking Architecture](/blog/virtual-kitchen-design-consultation-booking)**
+- **[Commercial Office Fit-Out and Retail Renovation Sites](/blog/commercial-office-renovation-contractor-website)**
+- **[Modular Factory and Showroom Virtual Tour Pages](/blog/modular-factory-tour-page-builds-trust)**
+- **[Bathroom Renovation and Waterproofing Authority Pages](/blog/bathroom-renovation-waterproofing-page-strategy)**
+- **[Bespoke Furniture Maker Commission and Portfolio Pages](/blog/bespoke-furniture-commissions-portfolio-page)**
+- **[Transparent Timeline and Delay Guarantee Pages](/blog/transparent-renovation-timeline-guarantee-page)**

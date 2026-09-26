@@ -163,6 +163,14 @@ export default function App() {
             }
           />
           <Route
+            path="/blog/niche/:niche"
+            element={
+              <Suspense fallback={null}>
+                <Blogs />
+              </Suspense>
+            }
+          />
+          <Route
             path="/blog/:slug"
             element={
               <Suspense fallback={null}>

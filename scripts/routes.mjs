@@ -73,6 +73,16 @@ export function getBlogPosts() {
     .filter(Boolean);
 }
 
+export const NICHE_KEYS = [
+  'interior-designers',
+  'real-estate',
+  'dental-clinics',
+  'wedding-photographers',
+  'home-renovation',
+  'coaches-consultants',
+  'studio',
+];
+
 /** Every route the app actually serves, in the shape prerender.mjs needs:
  * a URL path plus, for blog posts, the frontmatter date used as lastmod. */
 export function getAllRoutes() {
@@ -83,6 +93,9 @@ export function getAllRoutes() {
   }));
   if (posts.length > 0) {
     routes.push({ loc: '/blog' });
+    for (const niche of NICHE_KEYS) {
+      routes.push({ loc: `/blog/niche/${niche}` });
+    }
     for (const p of posts) {
       routes.push({ loc: `/blog/${p.slug}`, lastmod: p.updated || p.date });
     }

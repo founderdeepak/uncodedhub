@@ -107,3 +107,30 @@ Specific, outcome-based proof rather than generic praise, a clearly described pr
 
 **Linktree or a full website, which should a coach's LinkedIn bio point to?**
 A full website, once it exists. A Linktree only routes. It can't make the case a proper authority page can, and it doesn't compound in search the way a real site does.
+
+
+---
+
+## The Complete Topical Guide Series for Coaches & Consultants
+
+This master pillar guide defines the core framework. For specialized, step-by-step breakdowns on every stage of your digital presence, explore the companion guides in this series:
+
+- **[The 'Work With Me' Page: How Consultants Turn Visitors Into Clients](/blog/consultant-work-with-me-page)**
+- **[Why Most Consultant Websites Look Templated and Fail to Build Credibility](/blog/credible-vs-templated-consultant-website)**
+- **[SEO for Coaches: Why Ranking for a Broad Keyword Is a Trap](/blog/seo-for-coaches-ranking-broad-keyword)**
+- **[Should a Coach Gate Content Behind Email Signup](/blog/should-a-coach-gate-content-behind-email-signup)**
+- **[How a Website Supports Your Personal Brand Content Ecosystem](/blog/website-supports-personal-brand-content)**
+- **[How Much Should a Coach or Consultant's Website Cost](/blog/how-much-should-a-coachs-website-cost)**
+- **[How Long Does It Take to Build a Coach or Consultant's Website](/blog/how-long-to-build-a-coachs-website)**
+- **[Why Most Coaches Are Still Relying on Word-of-Mouth](/blog/why-most-coaches-rely-on-word-of-mouth)**
+- **[How AI Assistants Answer 'Find Me a Coach for X'](/blog/ai-assistants-finding-a-coach-or-consultant)**
+- **[Application Funnels vs Open Calendly Links for High-Ticket Coaches](/blog/application-funnel-vs-calendly-for-coaches)**
+- **[Speaker One-Sheet and Media Press Kit Architecture](/blog/speaker-one-sheet-press-kit-website-page)**
+- **[How B2B Consultants Write Case Studies Without Fluff](/blog/how-consultants-write-b2b-case-studies)**
+- **[Author and Book Launch Landing Page Architecture for Consultants](/blog/book-launch-landing-page-for-consultants)**
+- **[Client Confidentiality, NDAs and Executive Testimonials](/blog/client-confidentiality-nda-case-studies-coaches)**
+- **[Podcast and Media Appearances Hub on Personal Websites](/blog/podcast-media-hub-on-personal-brand-website)**
+- **[Mastermind and Group Coaching Sales Page Design](/blog/mastermind-group-coaching-sales-page-design)**
+- **[Email Newsletter Archive as an SEO Organic Engine](/blog/newsletter-archive-seo-engine-for-consultants)**
+- **[Substack and Medium vs Owning Your Thought Leadership Domain](/blog/substack-medium-vs-owned-consultant-website)**
+- **[Fractional Executive and Retainer Service Page Architecture](/blog/fractional-cmo-coo-retainer-service-page)**

@@ -17,6 +17,14 @@ UncodedHub_Content/
 .codegraph/
 ECC/
 .agents/
-.gstack/
+# Scratch and local outreach scripts
+scratch/
+books/
+output/
+scrapers/
+google-maps-scraper/
+local_map_outreach/
+social_cold_outreach/
+test_*.py
 .mcp.json
 

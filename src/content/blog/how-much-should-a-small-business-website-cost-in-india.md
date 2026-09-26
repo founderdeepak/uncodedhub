@@ -108,3 +108,30 @@ A guarantee that if the agreed delivery date passes without the site being live,
 
 **How do I know if a web design quote is fair?**
 Ask whether the price is fixed, exactly what's included, what the launch date is and what happens if it slips, who writes the copy, and what's explicitly excluded. A studio answering all of this plainly is one whose process can be trusted with a fixed price.
+
+
+---
+
+## The Complete Topical Guide Series for Studio Notes & Core Services
+
+This master pillar guide defines the core framework. For specialized, step-by-step breakdowns on every stage of your digital presence, explore the companion guides in this series:
+
+- **[What Makes a Website Actually Convert Visitors Into Paying Clients](/blog/what-makes-a-website-actually-convert)**
+- **[Seven-Day Website Design: Is It Actually Possible or a Gimmick](/blog/seven-day-website-design-is-it-possible)**
+- **[DIY Website vs Hiring a Studio: Where Small Businesses Lose Money](/blog/diy-website-vs-hiring-a-studio)**
+- **[How to Brief a Web Design Studio: What to Prepare Before You Pay](/blog/how-to-brief-a-web-design-studio)**
+- **[Website Design with SEO Included: What That Actually Means](/blog/website-design-with-seo-included)**
+- **[Why Most Websites Never Get Updated After Launch](/blog/why-websites-never-get-updated-after-launch)**
+- **[Why We Build with React, Vite and Tailwind Instead of WordPress](/blog/why-we-build-with-react-vite-and-tailwind-instead-of-wordpress)**
+- **[Website Maintenance: The Question Most Quotes Don't Answer](/blog/website-maintenance-question-quotes-dont-answer)**
+- **[How AI Assistants Find and Recommend Web Design Studios](/blog/ai-assistants-web-design-studio-search)**
+- **[The 'Late Means Free' Web Design Guarantee Explained](/blog/late-means-free-web-design-guarantee-explained)**
+- **[Code Ownership vs Website Builder Lock-In (Wix, Shopify, WordPress)](/blog/code-ownership-vs-website-builder-lock-in)**
+- **[Core Web Vitals Guide for Small Business Owners](/blog/core-web-vitals-guide-small-business-owners)**
+- **[React, Vite and Tailwind vs WordPress Speed and Security Benchmarks](/blog/react-vite-vs-wordpress-business-website-speed)**
+- **[The Day-by-Day Anatomy of a 7-Day Website Build](/blog/day-by-day-7-day-website-design-process)**
+- **[Senior-Only Studio Delivery vs Agency Account Manager Handoffs](/blog/senior-developer-studio-vs-agency-handoff)**
+- **[Minimalist Carbon Enterprise Design for Small Businesses](/blog/minimalist-carbon-enterprise-design-small-business)**
+- **[WhatsApp Lead Capture and Instant CRM Notification Architecture](/blog/whatsapp-lead-capture-instant-notifications-website)**
+- **[Website Conversion Rate Benchmarks for Indian Service Businesses](/blog/conversion-rate-benchmarks-service-business-india)**
+- **[How to Audit Your Business Website Before Planning a Redesign](/blog/how-to-audit-your-business-website-before-redesign)**
