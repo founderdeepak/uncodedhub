@@ -3,6 +3,7 @@ title: "How to Structure a Wedding Photography Portfolio So It Ranks and Convert
 niche: wedding-photographers
 date: 2026-07-02
 excerpt: "How to organise a wedding photography portfolio so it both ranks in search and converts the couples who find it. The two goals need different structure."
+image: "/blog/structure-wedding-photography-portfolio.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

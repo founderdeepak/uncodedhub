@@ -4,6 +4,7 @@ niche: coaches-consultants
 date: 2026-09-12
 excerpt: "Appearing on industry podcasts, news features, and panels creates fleeting social media buzz that fades in 48 hours. Here is how to aggregate your media appearances into a permanent, searchable authority hub."
 metaDescription: "Build a permanent podcast and media appearances hub on your personal website. Compound third-party authority and generate long-tail search traffic from past interviews."
+image: "/blog/podcast-media-hub-on-personal-brand-website.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 

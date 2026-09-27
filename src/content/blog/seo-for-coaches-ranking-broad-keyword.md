@@ -3,6 +3,7 @@ title: "What Makes a Consultant's Website Rank in Search When 'Coach' Is an Impo
 niche: coaches-consultants
 date: 2026-08-15
 excerpt: "Why trying to rank for 'coach' or 'consultant' is a losing fight, and what a narrower, winnable SEO strategy actually looks like for this category."
+image: "/blog/seo-for-coaches-ranking-broad-keyword.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

@@ -3,6 +3,7 @@ title: "Pricing Transparency Online: Does It Help or Hurt a Renovation Business?
 niche: home-renovation
 date: 2026-07-24
 excerpt: "An honest look at whether showing pricing online helps or hurts a modular kitchen or renovation contractor, with the real trade-offs rather than only the upside."
+image: "/blog/pricing-transparency-renovation-business.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

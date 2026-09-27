@@ -4,6 +4,7 @@ niche: real-estate
 date: 2026-08-01
 excerpt: "Commercial Real Estate & Office Space Leasing Websites: The B2B Architecture"
 metaDescription: "How commercial property brokers and business park developers structure leasing websites that win enterprise corporate tenants and institutional facility managers."
+image: "/blog/commercial-real-estate-leasing-website.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 

@@ -3,6 +3,7 @@ title: "Property Portal Listings vs Your Own Website: Why Serious Buyers Still C
 niche: real-estate
 date: 2026-05-17
 excerpt: "Why buyers who found you on 99acres or MagicBricks still search for your own website before calling, and what that costs an agent who doesn't have one."
+image: "/blog/property-portals-vs-your-own-website.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

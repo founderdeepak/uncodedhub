@@ -4,6 +4,7 @@ niche: coaches-consultants
 date: 2026-09-08
 excerpt: "Event organizers, corporate event chairs, and podcast producers don't have time to read your life story. Here is the exact digital Speaker One-Sheet and Media Kit architecture that books ₹2L to ₹10L keynote fees."
 metaDescription: "Architect an authoritative speaker one-sheet and digital press kit. Win high-paying conference keynotes with speech descriptions, sizzle reels, and bio assets."
+image: "/blog/speaker-one-sheet-press-kit-website-page.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 

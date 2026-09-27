@@ -4,6 +4,7 @@ niche: real-estate
 date: 2026-08-02
 excerpt: "Virtual 360 Tours and Interactive Floor Plans: Avoiding the Mobile Lag Trap"
 metaDescription: "Why embedding heavy Matterport 3D tours crashes mobile real estate pages, and how to implement lazy-loaded virtual walkthroughs that preserve sub-second speed."
+image: "/blog/virtual-property-tours-floor-plans-web-speed.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 26, 2026.*
 

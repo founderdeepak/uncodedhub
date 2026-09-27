@@ -3,6 +3,7 @@ title: "How AI Assistants Are Changing How Couples Search for Wedding Vendors"
 niche: wedding-photographers
 date: 2026-07-08
 excerpt: "How couples are starting to use AI chat tools when shortlisting wedding photographers and planners, and what it means for how a vendor's site is built."
+image: "/blog/ai-assistants-wedding-vendor-search.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

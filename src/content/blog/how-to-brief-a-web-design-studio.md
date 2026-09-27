@@ -3,6 +3,7 @@ title: "How to Brief a Web Design Studio So the Project Actually Goes Fast"
 niche: studio
 date: 2026-09-06
 excerpt: "What a genuinely good client brief includes, and why the quality of the brief rather than the studio's speed is usually what determines the timeline."
+image: "/blog/how-to-brief-a-web-design-studio.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

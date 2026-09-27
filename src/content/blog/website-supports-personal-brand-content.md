@@ -3,6 +3,7 @@ title: "How a Website Supports (Not Replaces) the Personal-Brand Content You're 
 niche: coaches-consultants
 date: 2026-08-05
 excerpt: "Why a coach's website is where LinkedIn content compounds rather than a competitor to it, and what breaks when the two aren't connected."
+image: "/blog/website-supports-personal-brand-content.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

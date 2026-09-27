@@ -4,6 +4,7 @@ niche: dental-clinics
 date: 2026-08-12
 excerpt: "Patients don't choose clinical logos; they choose human doctors they trust with their health and appearance. Here is how to engineer doctor profile pages and authentic video testimonials that eliminate procedure fear."
 metaDescription: "Design high-converting doctor profile pages and clinical video testimonials. Eliminate patient anxiety and establish authentic surgical credibility."
+image: "/blog/video-testimonials-doctor-profile-pages.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 26, 2026.*
 

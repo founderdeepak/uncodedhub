@@ -4,6 +4,7 @@ niche: studio
 date: 2026-09-19
 excerpt: "Demystifying Google's Core Web Vitals (LCP, INP, CLS) in plain business language. Learn why a 0.5-second speed advantage translates directly into lower Google ad costs, higher organic rankings, and more phone calls."
 metaDescription: "Understand Google Core Web Vitals (LCP, INP, CLS) without technical jargon. Discover how sub-second page speed slashes ad spend and boosts conversions."
+image: "/blog/core-web-vitals-guide-small-business-owners.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 26, 2026.*
 

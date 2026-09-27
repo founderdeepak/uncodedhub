@@ -4,6 +4,7 @@ niche: real-estate
 date: 2026-07-30
 excerpt: "The NRI Real Estate Landing Page: Converting Overseas Buyers in Dubai, US & UK"
 metaDescription: "How Indian property brokers and builders structure high-ticket landing pages that convert non-resident Indian buyers across different timezones without site visits."
+image: "/blog/nri-real-estate-landing-page-strategy.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 

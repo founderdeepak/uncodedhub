@@ -3,6 +3,7 @@ title: "What Happens After Launch: The Maintenance Question Most Web Design Quot
 niche: studio
 date: 2026-09-04
 excerpt: "Why most web design quotes go quiet on what happens after launch, and the specific maintenance questions a business owner should ask before signing."
+image: "/blog/website-maintenance-question-quotes-dont-answer.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

@@ -3,6 +3,7 @@ title: "Should a Coach Use an AI Chatbot on Their Website? What It Can and Can't
 niche: coaches-consultants
 date: 2026-08-11
 excerpt: "What an AI chatbot on a coach's website can genuinely do well, what it can't replace, and how to decide if one belongs on your site at all."
+image: "/blog/should-a-coach-use-an-ai-chatbot.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

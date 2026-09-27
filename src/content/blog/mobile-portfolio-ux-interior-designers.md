@@ -4,6 +4,7 @@ niche: interior-designers
 date: 2026-07-26
 excerpt: "Mobile UX for Interior Design Websites: Designing for the 80% Smartphone Visitor"
 metaDescription: "Over 80% of interior design inquiries originate on mobile phones. How to design touch-friendly image carousels, thumb-zone navigation, and instant WhatsApp booking."
+image: "/blog/mobile-portfolio-ux-interior-designers.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 

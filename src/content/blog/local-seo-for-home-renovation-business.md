@@ -3,6 +3,7 @@ title: "How Local SEO Gets a Home Renovation Business Found in Their Own Service
 niche: home-renovation
 date: 2026-07-18
 excerpt: "How local search actually works for a modular kitchen or renovation contractor, and why getting found is a repeatable system rather than a one-time website task."
+image: "/blog/local-seo-for-home-renovation-business.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

@@ -3,6 +3,7 @@ title: "7-Day Website Design: Is It Actually Possible, and What Has to Be True f
 niche: studio
 date: 2026-08-27
 excerpt: "What genuinely has to be true, on both sides, for a 7-day website delivery to actually happen, and when it's a realistic promise versus a marketing claim."
+image: "/blog/seven-day-website-design-is-it-possible.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

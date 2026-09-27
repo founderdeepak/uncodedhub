@@ -3,6 +3,7 @@ title: "How Much Should an Interior Design Studio Budget for a Website in India 
 niche: interior-designers
 date: 2026-04-29
 excerpt: "What actually drives the cost of an interior design studio's website, why a cheap quote is often the most expensive one, and how to evaluate what you're paying for."
+image: "/blog/interior-design-website-cost-india.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

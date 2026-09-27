@@ -3,6 +3,7 @@ title: "The Real Cost Breakdown of a Small Business Website in India in 2026"
 niche: studio
 date: 2026-08-25
 excerpt: "A line-by-line look at what actually drives small business website costs in India, so you can evaluate a quote by its parts rather than only its total."
+image: "/blog/small-business-website-cost-breakdown-india.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

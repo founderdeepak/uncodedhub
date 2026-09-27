@@ -3,6 +3,7 @@ title: "Website Design With SEO Included: What 'Included' Should Actually Mean"
 niche: studio
 date: 2026-08-29
 excerpt: "What 'SEO included' in a website design quote should actually cover, and the specific technical items that quietly get skipped when it's just a marketing line."
+image: "/blog/website-design-with-seo-included.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

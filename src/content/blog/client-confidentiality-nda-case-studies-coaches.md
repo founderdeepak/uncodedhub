@@ -4,6 +4,7 @@ niche: coaches-consultants
 date: 2026-09-11
 excerpt: "Executive coaches and turnaround consultants work on sensitive corporate crises covered by strict NDAs. Here is how to display undeniable social proof on your website without breaching confidentiality or alienating enterprise clients."
 metaDescription: "Present social proof while respecting strict NDAs. Learn how executive coaches and corporate consultants publish blinded case studies that convert enterprise buyers."
+image: "/blog/client-confidentiality-nda-case-studies-coaches.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 26, 2026.*
 

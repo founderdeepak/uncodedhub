@@ -3,6 +3,7 @@ title: "Property Listing Page Design: The Structure That Actually Helps Buyers D
 niche: real-estate
 date: 2026-05-29
 excerpt: "How to structure an individual property listing page so it actually helps a buyer decide to visit or call, rather than being a photo gallery with a price tag."
+image: "/blog/property-listing-page-design.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

@@ -3,6 +3,7 @@ title: "Why an Instagram Page Is Not a Substitute for a Website for Interior Des
 niche: interior-designers
 date: 2026-04-27
 excerpt: "The trust gap, the portfolio-control problem, and the enquiry you never see. Why interior design studios need a website even with a strong Instagram."
+image: "/blog/instagram-vs-website-interior-designers.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

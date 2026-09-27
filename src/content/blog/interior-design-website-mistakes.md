@@ -3,6 +3,7 @@ title: "7 Website Mistakes That Make a Design Studio Look Smaller Than It Is"
 niche: interior-designers
 date: 2026-05-01
 excerpt: "The specific, common mistakes that make a genuinely good interior design studio's website read as smaller, newer, or less serious than the studio actually is."
+image: "/blog/interior-design-website-mistakes.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

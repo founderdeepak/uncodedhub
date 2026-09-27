@@ -3,6 +3,7 @@ title: "Pricing Packages for Wedding Photography: How to Present Tiers Without L
 niche: wedding-photographers
 date: 2026-07-10
 excerpt: "How to structure and present pricing tiers for wedding photography so they signal value instead of reading like an impersonal restaurant menu."
+image: "/blog/wedding-photography-pricing-packages.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

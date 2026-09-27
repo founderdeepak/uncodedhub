@@ -4,6 +4,7 @@ niche: interior-designers
 date: 2026-07-19
 excerpt: "The Interior Design Client Questionnaire: How to Filter Inquiries on Your Website"
 metaDescription: "Why a 4-field contact form invites price-shoppers, and how a structured inquiry questionnaire pre-qualifies project scopes and budgets before the first call."
+image: "/blog/interior-design-client-questionnaire-website.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 26, 2026.*
 

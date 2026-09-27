@@ -4,6 +4,7 @@ niche: home-renovation
 date: 2026-09-01
 excerpt: "Visiting physical kitchen showrooms across heavy city traffic consumes half a Saturday. Offering a seamless virtual 3D design consultation workflow lets homeowners upload floor plans and co-design from their living room."
 metaDescription: "Architect a virtual design consultation booking engine for modular kitchen studios. Allow floor plan uploads and deliver live 3D Zoom walkthroughs."
+image: "/blog/virtual-kitchen-design-consultation-booking.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 26, 2026.*
 

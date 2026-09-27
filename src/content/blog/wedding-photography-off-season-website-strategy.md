@@ -3,6 +3,7 @@ title: "The Off-Season Problem: What a Wedding Photographer's Website Should Do 
 niche: wedding-photographers
 date: 2026-07-12
 excerpt: "What to actually do with a wedding photography website during the slow months, so the off-season becomes an investment rather than a quiet gap."
+image: "/blog/wedding-photography-off-season-website-strategy.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

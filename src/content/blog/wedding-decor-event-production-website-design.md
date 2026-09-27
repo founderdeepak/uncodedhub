@@ -4,6 +4,7 @@ niche: wedding-photographers
 date: 2026-08-23
 excerpt: "Wedding decor designers and production agencies deal with spatial scale, 3D structural fabrication, and lighting engineering. Here is how to translate physical event production into a digital portfolio that wins high-ticket planners."
 metaDescription: "Architect a website for wedding decorators and production agencies. Showcase spatial design, 3D renders, stage fabrication, and architectural lighting."
+image: "/blog/wedding-decor-event-production-website-design.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 

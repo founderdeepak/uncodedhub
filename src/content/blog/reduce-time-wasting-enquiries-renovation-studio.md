@@ -3,6 +3,7 @@ title: "What Information a Website Needs to Reduce Time-Wasting Enquiries for a 
 niche: home-renovation
 date: 2026-07-22
 excerpt: "The specific missing information that causes vague, time-wasting enquiries for renovation and modular kitchen studios, and how to close each gap."
+image: "/blog/reduce-time-wasting-enquiries-renovation-studio.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

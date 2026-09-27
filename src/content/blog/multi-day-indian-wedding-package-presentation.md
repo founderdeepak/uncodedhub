@@ -4,6 +4,7 @@ niche: wedding-photographers
 date: 2026-08-21
 excerpt: "Indian weddings are complex multi-event celebrations spanning Mehendi, Haldi, Sangeet, Muhurtham, and Reception. Presenting hourly rates creates cognitive overload. Here is how to package multi-day celebrations cleanly."
 metaDescription: "Structure and present multi-day Indian wedding photography packages. Simplify pricing for Mehendi, Sangeet, and Muhurtham without leaving money on the table."
+image: "/blog/multi-day-indian-wedding-package-presentation.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 

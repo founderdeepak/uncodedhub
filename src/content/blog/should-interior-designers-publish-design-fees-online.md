@@ -4,6 +4,7 @@ niche: interior-designers
 date: 2026-07-24
 excerpt: "Should Interior Designers Publish Design Fees Online? An Honest Look"
 metaDescription: "The strategic debate on publishing interior design pricing online. Why hiding prices wastes consultation time and how starting-at thresholds build trust."
+image: "/blog/should-interior-designers-publish-design-fees-online.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 

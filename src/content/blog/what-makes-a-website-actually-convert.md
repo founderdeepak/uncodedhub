@@ -3,6 +3,7 @@ title: "What Makes a Website Actually Convert, Not Just Look Good"
 niche: studio
 date: 2026-09-10
 excerpt: "The core principles separating a website that generates real enquiries from one that only looks impressive, pulled together across every niche in this system."
+image: "/blog/what-makes-a-website-actually-convert.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

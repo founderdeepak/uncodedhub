@@ -3,6 +3,7 @@ title: "What a Real Estate Agent's Website Should Include to Generate Direct Enq
 niche: real-estate
 date: 2026-05-15
 excerpt: "What a real estate agent or property consultant's website needs to generate direct buyer enquiries, beyond another listing on 99acres or MagicBricks."
+image: "/blog/what-a-real-estate-agents-website-should-include.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

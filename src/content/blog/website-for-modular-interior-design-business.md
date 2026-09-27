@@ -3,6 +3,7 @@ title: "A Modular or Catalog-Based Interior Design Business Needs a Different We
 niche: interior-designers
 date: 2026-05-09
 excerpt: "Why a modular or catalog-based interior design business should not copy a bespoke studio's website playbook. The buyer, the decision process and the proof are all different."
+image: "/blog/website-for-modular-interior-design-business.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

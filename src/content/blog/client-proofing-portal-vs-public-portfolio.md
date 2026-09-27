@@ -4,6 +4,7 @@ niche: wedding-photographers
 date: 2026-08-19
 excerpt: "Hosting thousands of password-protected high-res client proofing files directly on your marketing website destroys mobile page speed and confuses search crawlers. Here is how to architect a decoupled client portal."
 metaDescription: "Architect a decoupled wedding photography website. Separate public marketing portfolios from client proofing portals to maintain sub-second load times and rank high on Google."
+image: "/blog/client-proofing-portal-vs-public-portfolio.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 

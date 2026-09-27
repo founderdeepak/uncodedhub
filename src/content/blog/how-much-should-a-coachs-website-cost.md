@@ -3,6 +3,7 @@ title: "How Much Should a Coach's Website Cost? A Realistic Budget for an Author
 niche: coaches-consultants
 date: 2026-08-09
 excerpt: "What actually drives the cost of a coaching or consulting authority website, and why the cheapest option is often the most expensive one over time."
+image: "/blog/how-much-should-a-coachs-website-cost.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

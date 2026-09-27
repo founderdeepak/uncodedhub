@@ -4,6 +4,7 @@ niche: dental-clinics
 date: 2026-08-13
 excerpt: "Over 60% of adults experience mild to severe dental anxiety, delaying essential care for years. Here is how trauma-informed website UX, color psychology, and sensory reassurance convert phobic patients into lifelong appointments."
 metaDescription: "Design empathetic website experiences for anxious dental patients. Reduce dental fear through soothing UX, sensory reassurance, and sedation transparency."
+image: "/blog/dental-phobia-anxious-patient-website-ux.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 

@@ -3,6 +3,7 @@ title: "What Homeowners Look for on a Modular Kitchen Studio's Website Before Re
 niche: home-renovation
 date: 2026-07-20
 excerpt: "The specific things a homeowner checks on a modular kitchen or renovation studio's website before they'll actually request a quote rather than just browse."
+image: "/blog/what-homeowners-look-for-before-requesting-a-quote.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

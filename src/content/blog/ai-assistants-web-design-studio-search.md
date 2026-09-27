@@ -3,6 +3,7 @@ title: "How AI Assistants Are Changing How Small Businesses Search for a Web Des
 niche: studio
 date: 2026-08-31
 excerpt: "How small business owners are starting to use AI chat tools when researching a web design studio, and what that means for how a studio's own site is built."
+image: "/blog/ai-assistants-web-design-studio-search.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

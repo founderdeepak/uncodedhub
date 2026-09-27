@@ -3,6 +3,7 @@ title: "How Website Speed Affects a Nervous Patient's First Impression of a Clin
 niche: dental-clinics
 date: 2026-06-14
 excerpt: "Why a slow-loading clinic website does more damage than lost time, actively worsening a nervous patient's first impression before they've read a word."
+image: "/blog/website-speed-nervous-patient-first-impression.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

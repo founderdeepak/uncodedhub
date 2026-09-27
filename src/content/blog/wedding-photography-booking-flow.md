@@ -3,6 +3,7 @@ title: "Why Booking Flow Matters as Much as the Photos Themselves"
 niche: wedding-photographers
 date: 2026-07-04
 excerpt: "Why a beautiful portfolio with a clunky booking process loses weddings to a less polished photographer with a smoother path from interest to signed date."
+image: "/blog/wedding-photography-booking-flow.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

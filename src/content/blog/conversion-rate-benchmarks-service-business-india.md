@@ -4,6 +4,7 @@ niche: studio
 date: 2026-09-25
 excerpt: "Is a 2% website conversion rate good or terrible? What should architects, clinic owners, builders, and consultants realistically expect from their digital traffic in India? Here are empirical conversion rate benchmarks and the levers that double them."
 metaDescription: "Empirical website conversion rate benchmarks for Indian service businesses. Compare your site's visitor-to-inquiry ratio across clinics, builders, and studios."
+image: "/blog/conversion-rate-benchmarks-service-business-india.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 26, 2026.*
 

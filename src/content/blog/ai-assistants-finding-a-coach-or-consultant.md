@@ -3,6 +3,7 @@ title: "How AI Assistants Are Changing How People Find a Coach or Consultant"
 niche: coaches-consultants
 date: 2026-08-17
 excerpt: "How people are starting to use AI chat tools when looking for a coach or consultant, and what it means for how a coaching website should be built."
+image: "/blog/ai-assistants-finding-a-coach-or-consultant.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

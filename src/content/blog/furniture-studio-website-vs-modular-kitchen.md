@@ -3,6 +3,7 @@ title: "A Furniture Studio's Website Is Not a Modular Kitchen Site: What Changes
 niche: home-renovation
 date: 2026-07-26
 excerpt: "Why a furniture studio's website needs different priorities than a modular kitchen business's, even when the same company sells both."
+image: "/blog/furniture-studio-website-vs-modular-kitchen.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

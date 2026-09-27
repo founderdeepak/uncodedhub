@@ -3,6 +3,7 @@ title: "Seasonal Demand for Renovation: What a Website Should Do During the Slow
 niche: home-renovation
 date: 2026-08-01
 excerpt: "How a modular kitchen or renovation business should use its quieter seasonal months, like monsoon in India, to strengthen the website for the busy season ahead."
+image: "/blog/renovation-website-seasonal-slow-months.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

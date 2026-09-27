@@ -3,6 +3,7 @@ title: "Website for a Skin Clinic in India: What's Different From a General Dent
 niche: dental-clinics
 date: 2026-06-16
 excerpt: "Why a skin or dermatology clinic's website needs different priorities than a dental clinic's, even though the two categories often get built the same way."
+image: "/blog/website-for-skin-clinic-india.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

@@ -3,6 +3,7 @@ title: "How Much Should a Small Business Website Cost in India (And What a Fixed
 niche: studio
 date: 2026-08-23
 excerpt: "What a fixed-price website quote should actually include, why hourly-billed projects go over budget, and how a 'late means free' guarantee changes the incentive."
+image: "/blog/how-much-should-a-small-business-website-cost-in-india.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

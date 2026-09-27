@@ -4,6 +4,7 @@ niche: studio
 date: 2026-09-26
 excerpt: "Jumping into a website redesign without diagnosing your current site's structural failures is like undergoing surgery without an X-ray. Here is the 10-point diagnostic audit checklist every business owner should run before spending a rupee on a rebuild."
 metaDescription: "Audit your website before redesigning. Run this 10-point diagnostic covering mobile speed, conversion leaks, SEO indexing, and messaging clarity."
+image: "/blog/how-to-audit-your-business-website-before-redesign.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 

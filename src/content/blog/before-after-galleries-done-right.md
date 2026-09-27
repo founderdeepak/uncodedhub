@@ -3,6 +3,7 @@ title: "Before/After Galleries Done Right: What Actually Builds Trust for a Reno
 niche: home-renovation
 date: 2026-07-16
 excerpt: "Why most before/after galleries fail to build trust, and how to shoot and present them so they actually convince a skeptical homeowner."
+image: "/blog/before-after-galleries-done-right.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

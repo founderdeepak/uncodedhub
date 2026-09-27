@@ -4,6 +4,7 @@ niche: coaches-consultants
 date: 2026-09-09
 excerpt: "Vague client stories filled with corporate buzzwords like 'synergy' and 'transformation' persuade nobody. Here is how B2B consultants structure hard-hitting case studies with baselines, interventions, and financial ROI."
 metaDescription: "Write compelling B2B consulting case studies that convert enterprise buyers. Learn the Baseline-Intervention-Outcome framework that proves verifiable ROI."
+image: "/blog/how-consultants-write-b2b-case-studies.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 26, 2026.*
 

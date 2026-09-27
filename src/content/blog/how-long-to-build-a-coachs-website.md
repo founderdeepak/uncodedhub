@@ -3,6 +3,7 @@ title: "How Long Does It Take to Build a Coach's Authority Website?"
 niche: coaches-consultants
 date: 2026-08-13
 excerpt: "A realistic timeline for building a coaching or consulting authority website, and why content rather than development is almost always the real bottleneck."
+image: "/blog/how-long-to-build-a-coachs-website.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

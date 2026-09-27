@@ -4,6 +4,7 @@ niche: real-estate
 date: 2026-08-05
 excerpt: "Joint Venture & Landowner Showcase Pages: Securing Prime Development Land"
 metaDescription: "How boutique builders and developers structure Joint Development (JD) showcase pages that convince private landowners to sign exclusive development agreements."
+image: "/blog/joint-venture-property-developer-website.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 

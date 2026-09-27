@@ -4,6 +4,7 @@ niche: interior-designers
 date: 2026-07-20
 excerpt: "How to Write Interior Design Case Studies That Sell Premium Projects"
 metaDescription: "Why before-and-after photos alone fail to justify high fees. How to structure architectural project case studies around client briefs, spatial constraints, and material solutions."
+image: "/blog/how-to-write-interior-design-case-studies.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 

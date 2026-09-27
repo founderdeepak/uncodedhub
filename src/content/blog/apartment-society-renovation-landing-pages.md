@@ -4,6 +4,7 @@ niche: home-renovation
 date: 2026-08-31
 excerpt: "Thousands of identical apartments in major residential societies (Prestige, Sobha, Brigade) undergo simultaneous interior fit-outs. Creating dedicated society renovation landing pages generates viral resident word-of-mouth."
 metaDescription: "Dominate hyperlocal interior inquiries with apartment society landing pages. Target specific gated communities (Prestige, Sobha, DLF) with floor-plan-accurate case studies."
+image: "/blog/apartment-society-renovation-landing-pages.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 

@@ -3,6 +3,7 @@ title: "What an Event Planner's Website Needs That a PDF Portfolio Cannot Do"
 niche: wedding-photographers
 date: 2026-06-30
 excerpt: "Why a static PDF portfolio quietly limits an event planner's business, and what a real website does instead: searchable, current, and provably capable."
+image: "/blog/event-planner-website-vs-pdf-portfolio.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

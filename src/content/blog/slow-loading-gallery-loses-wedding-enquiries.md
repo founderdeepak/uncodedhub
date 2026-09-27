@@ -3,6 +3,7 @@ title: "How a Slow-Loading Photo Gallery Quietly Loses Wedding Enquiries"
 niche: wedding-photographers
 date: 2026-06-26
 excerpt: "Why page speed is the highest-leverage, least glamorous fix a wedding photography portfolio can make, and how to find out if yours is losing enquiries."
+image: "/blog/slow-loading-gallery-loses-wedding-enquiries.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

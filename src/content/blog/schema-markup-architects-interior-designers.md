@@ -4,6 +4,7 @@ niche: interior-designers
 date: 2026-07-27
 excerpt: "Schema Markup for Architects and Interior Designers: Winning Google Rich Snippets"
 metaDescription: "How to implement structured JSON-LD schema for architectural practices. Win Google image rich snippets, local knowledge panels, and AI engine recommendations."
+image: "/blog/schema-markup-architects-interior-designers.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 26, 2026.*
 

@@ -3,6 +3,7 @@ title: "What a Wedding Photographer's Website Should Include to Get More Booking
 niche: wedding-photographers
 date: 2026-06-24
 excerpt: "What a wedding photography or event planning portfolio site needs to turn Instagram followers into signed bookings, rather than just likes."
+image: "/blog/what-a-wedding-photographers-website-should-include.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

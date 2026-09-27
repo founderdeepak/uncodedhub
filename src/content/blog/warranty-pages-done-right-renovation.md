@@ -3,6 +3,7 @@ title: "Warranty Pages Done Right: The One Page Homeowners Check Before Signing"
 niche: home-renovation
 date: 2026-07-30
 excerpt: "Why a clear, honest warranty page is one of the most trust-building pages a renovation or modular kitchen business can build, and how to write one well."
+image: "/blog/warranty-pages-done-right-renovation.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

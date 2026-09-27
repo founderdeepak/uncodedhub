@@ -62,11 +62,16 @@ export default function BlogView() {
   const pillarSlug = NICHE_PILLAR_SLUGS[post.niche];
 
   const url = `https://uncodedhub.com/blog/${post.slug}`;
+  const ogImageUrl = post.image
+    ? `https://uncodedhub.com${post.image}`
+    : 'https://uncodedhub.com/og-image.jpg';
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
     description: post.metaDescription,
+    image: [ogImageUrl],
     datePublished: post.date,
     author: {
       '@type': 'Person',
@@ -77,6 +82,10 @@ export default function BlogView() {
       '@type': 'Organization',
       name: 'Uncoded Hub',
       url: 'https://uncodedhub.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://uncodedhub.com/logo-large.png',
+      },
     },
     mainEntityOfPage: url,
   };
@@ -102,6 +111,23 @@ export default function BlogView() {
         <title>{`${post.title} — Uncoded Hub`}</title>
         <meta name="description" content={post.metaDescription} />
         <link rel="canonical" href={url} />
+        {/* OpenGraph */}
+        <meta property="og:site_name" content="Uncoded Hub" />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.metaDescription} />
+        <meta property="og:url" content={url} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="675" />
+        <meta property="og:image:alt" content={post.title} />
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@uncodedhub" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.metaDescription} />
+        <meta name="twitter:image" content={ogImageUrl} />
+        <meta name="twitter:image:alt" content={post.title} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
@@ -194,16 +220,18 @@ export default function BlogView() {
           {/* ── Hero Image / Graphic Motif ── */}
           <Reveal delay={40} className="mt-10">
             {post.image ? (
-              <img
-                src={post.image}
-                alt={post.title}
-                width={1600}
-                height={900}
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                className="w-full aspect-video object-cover grayscale border border-rule-strong"
-              />
+              <figure className="m-0 p-0">
+                <img
+                  src={post.image}
+                  alt={`${post.title} — Architectural Blueprint by Uncoded Hub`}
+                  width={1600}
+                  height={900}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="w-full aspect-video object-cover border border-rule-strong shadow-sm"
+                />
+              </figure>
             ) : (
               <BlogThumbnail niche={post.niche} size="hero" />
             )}

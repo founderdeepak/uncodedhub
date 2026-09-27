@@ -3,6 +3,7 @@ title: "What Makes a Good Architecture Portfolio Website: Drawings, Sequence, an
 niche: interior-designers
 date: 2026-05-11
 excerpt: "A deeper look at what actually makes an architecture firm's portfolio site work for the buyers who commission buildings, rather than the peers who admire them."
+image: "/blog/architecture-portfolio-website-deeper-look.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

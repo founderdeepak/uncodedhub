@@ -4,6 +4,7 @@ niche: coaches-consultants
 date: 2026-09-10
 excerpt: "Publishing a business book isn't about collecting ₹40 royalties on Amazon; it is the ultimate apex lead magnet for ₹10L consulting retainers and ₹5L keynotes. Here is how to architect a high-converting book launch page."
 metaDescription: "Architect an apex book launch landing page for business consultants. Turn book buyers into high-paying keynote clients and enterprise consulting retainers."
+image: "/blog/book-launch-landing-page-for-consultants.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 

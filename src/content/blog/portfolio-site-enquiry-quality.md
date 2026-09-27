@@ -3,6 +3,7 @@ title: "Before/After: What a Fast, Well-Structured Portfolio Site Does to Enquir
 niche: interior-designers
 date: 2026-05-05
 excerpt: "Why a faster, better-structured interior design portfolio changes the kind of enquiries you get, not just the number, and how to measure that shift honestly."
+image: "/blog/portfolio-site-enquiry-quality.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

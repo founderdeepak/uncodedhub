@@ -3,6 +3,7 @@ title: "What a Coach's Website Should Include to Convert LinkedIn Visitors Into 
 niche: coaches-consultants
 date: 2026-08-03
 excerpt: "What a coach or consultant's authority website needs to turn a cold LinkedIn profile click into a booked discovery call, rather than another Linktree."
+image: "/blog/what-a-coachs-website-should-include.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

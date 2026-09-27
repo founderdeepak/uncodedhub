@@ -4,6 +4,7 @@ niche: coaches-consultants
 date: 2026-09-15
 excerpt: "Relying entirely on Substack, Medium, or LinkedIn to host your thought leadership builds enterprise value for someone else's platform while leaving you vulnerable to algorithm shifts and fee hikes. Here is why consultants must own their domain."
 metaDescription: "Don't build your intellectual property on rented land. Compare Substack and Medium against an owned website domain for high-ticket consulting authority."
+image: "/blog/substack-medium-vs-owned-consultant-website.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 26, 2026.*
 

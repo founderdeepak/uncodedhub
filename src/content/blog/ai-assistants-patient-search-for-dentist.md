@@ -3,6 +3,7 @@ title: "How AI Assistants Are Changing How Patients Search for a Dentist or Clin
 niche: dental-clinics
 date: 2026-06-18
 excerpt: "How patients are starting to use AI chat tools when researching a dentist or clinic, and what it means for how clinic websites should be built and written."
+image: "/blog/ai-assistants-patient-search-for-dentist.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

@@ -3,6 +3,7 @@ title: "What an Aesthetic/Cosmetic Clinic Must Show Online to Build Trust Before
 niche: dental-clinics
 date: 2026-06-10
 excerpt: "What a cosmetic or aesthetic clinic's website needs to show to earn a nervous patient's trust before they ever book a consultation."
+image: "/blog/aesthetic-clinic-trust-before-consultation.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

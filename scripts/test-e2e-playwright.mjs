@@ -162,6 +162,20 @@ async function runTests() {
     console.log('  ✓ Contact page loaded:', contactHeading?.trim());
     passed++;
 
+    // ── Test 6: WebP Thumbnail Delivery & Hero Image Rendering ──
+    console.log('[E2E] Test 6: Verifying WebP Thumbnail Delivery & Hero Image Rendering ...');
+    await page.goto(`${BASE}/blog/what-a-dental-clinics-website-should-include`, { waitUntil: 'networkidle' });
+    const heroImg = page.locator('figure img[src*=".webp"]');
+    await heroImg.waitFor({ state: 'visible', timeout: 8000 });
+    const imgSrc = await heroImg.getAttribute('src');
+    const isLoaded = await heroImg.evaluate((img) => img.complete && img.naturalWidth > 0);
+    if (isLoaded && imgSrc && imgSrc.endsWith('.webp')) {
+      console.log(`  ✓ WebP hero image verified (${imgSrc}) loaded with natural width`);
+      passed++;
+    } else {
+      throw new Error(`WebP image failed to load or render properly: ${imgSrc}`);
+    }
+
     if (consoleErrors.length > 0) {
       console.warn('[E2E] Console warnings/errors during test run:', consoleErrors);
     }

@@ -3,6 +3,7 @@ title: "How AI Assistants Are Changing How Homeowners Search for a Renovation Co
 niche: home-renovation
 date: 2026-07-28
 excerpt: "How homeowners are starting to use AI chat tools when researching a modular kitchen or renovation contractor, and what it means for a studio's website."
+image: "/blog/ai-assistants-renovation-contractor-search.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

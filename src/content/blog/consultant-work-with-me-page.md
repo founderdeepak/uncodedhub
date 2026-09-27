@@ -3,6 +3,7 @@ title: "What a Consultant's 'Work With Me' Page Should Actually Say"
 niche: coaches-consultants
 date: 2026-08-21
 excerpt: "Why most 'work with me' pages fail at the exact moment they matter most, and how to structure one that converts a warm visitor into a booked call."
+image: "/blog/consultant-work-with-me-page.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 

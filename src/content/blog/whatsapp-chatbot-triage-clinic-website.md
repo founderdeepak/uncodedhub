@@ -4,6 +4,7 @@ niche: dental-clinics
 date: 2026-08-16
 excerpt: "A patient suffering an acute abscess at 10 PM will not fill out a web contact form and wait 24 hours for an email. Here is how automated WhatsApp triage routes emergencies, collects clinical photos, and secures patient appointments instantly."
 metaDescription: "Deploy automated WhatsApp triage on your clinic website. Route urgent dental emergencies, collect photos, and confirm bookings 24/7 without burning staff."
+image: "/blog/whatsapp-chatbot-triage-clinic-website.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 26, 2026.*
 

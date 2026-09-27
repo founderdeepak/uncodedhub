@@ -3,6 +3,7 @@ title: "What an Interior Designer's Website Should Include to Book Consultations
 niche: interior-designers
 date: 2026-04-25
 excerpt: "What an interior design website needs to turn browsers into booked consultations. A working checklist for design studios in Bengaluru and across India."
+image: "/blog/what-an-interior-designers-website-should-include.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

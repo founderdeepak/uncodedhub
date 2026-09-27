@@ -3,6 +3,7 @@ title: "What Couples Actually Check on a Photographer's Website Before Reaching 
 niche: wedding-photographers
 date: 2026-06-28
 excerpt: "The specific things a couple looks for before messaging a wedding photographer, beyond just liking the photos, and how to make sure your site has them."
+image: "/blog/what-couples-check-before-contacting-photographer.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

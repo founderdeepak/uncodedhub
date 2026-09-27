@@ -3,6 +3,7 @@ title: "Should a Coach Gate Their Best Content Behind an Email Signup? The Free 
 niche: coaches-consultants
 date: 2026-08-19
 excerpt: "Where the line between free and gated content should sit on a coach's website, and why giving away too little is as costly as giving away too much."
+image: "/blog/should-a-coach-gate-content-behind-email-signup.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 

@@ -4,6 +4,7 @@ niche: wedding-photographers
 date: 2026-08-25
 excerpt: "Couples planning Indian weddings panic over scheduling: hair and makeup delays, baraat timings, and missing golden hour portraits. Here is how a downloadable Wedding Day Timeline Guide builds an email list of premium couples."
 metaDescription: "Capture couples months in advance with a realistic wedding timeline guide lead magnet. Solve scheduling anxiety and position your studio as the trusted authority."
+image: "/blog/wedding-timeline-planning-guide-as-lead-magnet.webp"
 ---
 *By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 

@@ -3,6 +3,7 @@ title: "What a Modular Kitchen & Renovation Website Should Include to Win Homeow
 niche: home-renovation
 date: 2026-07-14
 excerpt: "What a modular kitchen, furniture, or home renovation contractor's website needs, for homeowners used to hiring purely on word-of-mouth."
+image: "/blog/what-a-modular-kitchen-renovation-website-should-include.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 
