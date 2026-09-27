@@ -167,6 +167,10 @@ async function main() {
   try {
     await waitForServer(BASE + '/');
     const page = await browser.newPage();
+    page.on('pageerror', (err) => console.error('  [PAGE ERROR]', err.message));
+    page.on('console', (msg) => {
+      if (msg.type() === 'error') console.error('  [PAGE CONSOLE ERROR]', msg.text());
+    });
 
     for (const route of routes) {
       const html = await renderRoute(page, route);

@@ -422,7 +422,7 @@ export default function BlogView() {
                           height={495}
                           loading="lazy"
                           decoding="async"
-                          className="w-full aspect-video object-cover grayscale border border-rule-strong mb-5 group-hover:grayscale-0 transition-all duration-300"
+                          className="w-full aspect-video object-cover border border-rule-strong mb-5 group-hover:border-signal transition-all duration-300"
                         />
                       ) : (
                         <BlogThumbnail niche={related.niche} size="card" className="mb-5" />
