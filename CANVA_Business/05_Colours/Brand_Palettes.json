@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "brand": "Uncoded Hub",
+  "version": "2.0.0",
+  "updated_at": "2026-09-26",
+  "primary_brand_kit": {
+    "name": "Uncoded Hub Official Core",
+    "colors": [
+      {
+        "name": "Matte Obsidian",
+        "role": "Primary Dark & High-Contrast Typography",
+        "hex": "#111111",
+        "rgb": "rgb(17, 17, 17)",
+        "hsl": "hsl(0, 0%, 7%)"
+      },
+      {
+        "name": "Limestone Off-White",
+        "role": "Primary Canvas & Editorial Background",
+        "hex": "#FBFBF9",
+        "rgb": "rgb(251, 251, 249)",
+        "hsl": "hsl(60, 14%, 98%)"
+      },
+      {
+        "name": "International Flame",
+        "role": "Primary Studio Brand Accent & CTAs",
+        "hex": "#FF3B00",
+        "rgb": "rgb(255, 59, 0)",
+        "hsl": "hsl(14, 100%, 50%)"
+      },
+      {
+        "name": "Architectural Stone Gray",
+        "role": "Muted Meta Text & Secondary Captions",
+        "hex": "#6B7280",
+        "rgb": "rgb(107, 114, 128)",
+        "hsl": "hsl(220, 9%, 46%)"
+      },
+      {
+        "name": "Fine Hairline Divider",
+        "role": "1px Grid Borders & Subtle Separators",
+        "hex": "#E5E5E0",
+        "rgb": "rgb(229, 229, 224)",
+        "hsl": "hsl(60, 9%, 89%)"
+      }
+    ]
+  },
+  "niche_brand_palettes": [
+    {
+      "niche_id": "interior-designers-architects",
+      "niche_name": "Interior Designers & Architects",
+      "articles_count": 20,
+      "aesthetic": "Tactile Travertine, Raw Concrete & Brushed Brass",
+      "colors": {
+        "primary_accent": "#B8860B",
+        "secondary_deep": "#2C2621",
+        "highlight_brass": "#D4AF37",
+        "limestone_card": "#F5F2EB",
+        "text_headline": "#1A1714"
+      }
+    },
+    {
+      "niche_id": "real-estate-builders",
+      "niche_name": "Real Estate & High-End Builders",
+      "articles_count": 20,
+      "aesthetic": "Blueprint Cadastral, Architectural Slate & Sky Glass",
+      "colors": {
+        "primary_accent": "#0E7490",
+        "secondary_deep": "#0F172A",
+        "highlight_cyan": "#38BDF8",
+        "slate_card": "#F8FAFC",
+        "text_headline": "#0B1329"
+      }
+    },
+    {
+      "niche_id": "dental-aesthetic-clinics",
+      "niche_name": "Dental & Aesthetic Cosmetic Clinics",
+      "articles_count": 20,
+      "aesthetic": "Clinical Sage, Sterile Pure Porcelain & Cobalt",
+      "colors": {
+        "primary_accent": "#059669",
+        "secondary_deep": "#1E293B",
+        "highlight_mint": "#6EE7B7",
+        "clinical_card": "#F0FDF4",
+        "text_headline": "#0F1F17"
+      }
+    },
+    {
+      "niche_id": "wedding-photographers",
+      "niche_name": "Luxury Wedding & Editorial Photographers",
+      "articles_count": 20,
+      "aesthetic": "Editorial Noir, Velvet Amethyst & Warm Grain",
+      "colors": {
+        "primary_accent": "#7C3AED",
+        "secondary_deep": "#18181B",
+        "highlight_champagne": "#FDE68A",
+        "velvet_card": "#FAF5FF",
+        "text_headline": "#140D26"
+      }
+    },
+    {
+      "niche_id": "home-renovation-kitchens",
+      "niche_name": "Home Renovation & Modular Kitchens",
+      "articles_count": 20,
+      "aesthetic": "Workshop Amber, Raw Joinery Timber & Slate",
+      "colors": {
+        "primary_accent": "#D97706",
+        "secondary_deep": "#27272A",
+        "highlight_amber": "#FBBF24",
+        "workshop_card": "#FFFBEB",
+        "text_headline": "#1F1A12"
+      }
+    },
+    {
+      "niche_id": "coaches-consultants",
+      "niche_name": "Executive Coaches & Strategic Consultants",
+      "articles_count": 20,
+      "aesthetic": "Swiss International, Deep Indigo & Precision Platinum",
+      "colors": {
+        "primary_accent": "#4F46E5",
+        "secondary_deep": "#111827",
+        "highlight_periwinkle": "#818CF8",
+        "platinum_card": "#EEF2FF",
+        "text_headline": "#0D1117"
+      }
+    },
+    {
+      "niche_id": "core-web-studio",
+      "niche_name": "Core Web Performance & Architecture",
+      "articles_count": 20,
+      "aesthetic": "Monospace Terminal, Pure Flame Orange & High-Speed Green",
+      "colors": {
+        "primary_accent": "#FF3B00",
+        "secondary_deep": "#0A0A0A",
+        "highlight_green": "#22C55E",
+        "terminal_card": "#FAFAFA",
+        "text_headline": "#111111"
+      }
+    }
+  ]
+}

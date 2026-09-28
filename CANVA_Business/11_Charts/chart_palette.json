@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "Uncoded Hub Canva Chart Palettes",
+  "description": "Standardized color sequences for Canva data visualizations, line charts, bar graphs, and metric rings",
+  "chart_sequences": {
+    "primary_high_contrast": [
+      "#FF3B00",
+      "#111111",
+      "#0E7490",
+      "#B8860B",
+      "#059669",
+      "#6B7280"
+    ],
+    "speed_and_performance_audit": [
+      "#22C55E",
+      "#EAB308",
+      "#EF4444",
+      "#111111"
+    ],
+    "conversion_comparison": [
+      "#FF3B00",
+      "#D1D5DB"
+    ],
+    "monochrome_architectural": [
+      "#111111",
+      "#374151",
+      "#6B7280",
+      "#9CA3AF",
+      "#E5E7EB"
+    ]
+  },
+  "chart_formatting_rules": {
+    "font_family": "Space Mono",
+    "font_size_axis": 12,
+    "font_size_legend": 14,
+    "line_thickness_px": 2.5,
+    "show_grid_lines": true,
+    "grid_line_color": "#E5E5E0",
+    "corner_rounding_px": 4
+  }
+}

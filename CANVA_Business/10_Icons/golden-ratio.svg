@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <!-- Outer Frame -->
+  <rect x="10" y="10" width="180" height="180" stroke="#C86446" stroke-width="1.5" stroke-opacity="0.3"/>
+  <!-- Sub-rectangles -->
+  <rect x="10" y="10" width="111" height="180" stroke="#C86446" stroke-width="1.5" stroke-opacity="0.3"/>
+  <rect x="121" y="79" width="69" height="111" stroke="#C86446" stroke-width="1.5" stroke-opacity="0.3"/>
+  <!-- Filled Accent Square -->
+  <rect x="121" y="10" width="69" height="69" fill="#C86446" fill-opacity="0.85"/>
+  <!-- Golden Spiral Curve -->
+  <path d="M 10 190 A 180 180 0 0 1 190 10 A 111 111 0 0 1 121 190 A 69 69 0 0 1 121 79 A 42 42 0 0 1 163 79" stroke="#C86446" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -818,42 +818,16 @@ export default function Home({ onBook }: { onBook: () => void }) {
             <Reveal className="lg:col-span-5 flex flex-col gap-8">
 
               {/* Book cover card */}
-              <div className="relative bg-ink-raised border border-rule-on-ink rounded-[4px] overflow-hidden flex items-center justify-center p-8 aspect-[4/3]">
-                {/* Subtle radial glow behind cover */}
-                <div
-                  aria-hidden="true"
-                  style={{
-                    position: 'absolute', inset: 0,
-                    background: 'radial-gradient(ellipse at 60% 40%, rgba(219,10,84,0.18) 0%, transparent 70%)',
-                    pointerEvents: 'none',
-                  }}
+              <div className="relative bg-paper-raised border border-rule-strong rounded-[4px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.28)] group flex items-center justify-center p-2 sm:p-3">
+                <img
+                  src="/lead-magnet-cover.webp"
+                  alt="The Pre-Sold Prospects Audit — Free 10-point website trust diagnostic"
+                  className="w-full h-auto object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                  width={1200}
+                  height={680}
+                  loading="lazy"
+                  decoding="async"
                 />
-                {/* Mock audit document */}
-                <div className="relative z-10 w-52 bg-paper rounded-[3px] shadow-[0_24px_60px_rgba(0,0,0,0.5)] overflow-hidden">
-                  {/* Doc header strip */}
-                  <div className="bg-signal px-4 py-2.5">
-                    <p className="label text-paper text-[0.55rem] leading-snug">Uncoded Hub</p>
-                    <p className="font-sans font-semibold text-paper text-[0.72rem] leading-tight mt-0.5">Pre-Sold Prospects Audit</p>
-                  </div>
-                  <img
-                    src="/audit-cover.jpg"
-                    alt="Pre-Sold Prospects Audit cover illustration"
-                    className="w-full object-cover"
-                    width={208}
-                    height={156}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  {/* Doc footer strip */}
-                  <div className="px-4 py-2 border-t border-rule">
-                    <p className="label text-muted text-[0.55rem]">10-point trust diagnostic · Free</p>
-                  </div>
-                </div>
-
-                {/* FREE badge */}
-                <div className="absolute top-4 right-4 bg-signal text-paper label text-[0.6rem] px-2.5 py-1 rounded-[2px] shadow-md">
-                  FREE
-                </div>
               </div>
 
               {/* What you get */}

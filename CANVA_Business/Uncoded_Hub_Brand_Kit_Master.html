@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Uncoded Hub — Master Brand Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 14mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #111111;
+      background: #FFFFFF;
+      line-height: 1.45;
+      font-size: 10pt;
+      -webkit-font-smoothing: antialiased;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+    .page {
+      page-break-after: always;
+      break-after: page;
+      min-height: 265mm;
+      position: relative;
+      padding-bottom: 12mm;
+    }
+    .page:last-child {
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #E5E5E0;
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+      font-family: 'Space Mono', monospace;
+      font-size: 7.5pt;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6B7280;
+    }
+    .page-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #E5E5E0;
+      padding-top: 6px;
+      font-family: 'Space Mono', monospace;
+      font-size: 7.5pt;
+      color: #888888;
+    }
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 700;
+      color: #111111;
+      line-height: 1.15;
+    }
+    h1 {
+      font-size: 26pt;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: 17pt;
+      letter-spacing: -0.01em;
+      margin-top: 14px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #E5E5E0;
+      padding-bottom: 4px;
+    }
+    h3 {
+      font-size: 12pt;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+    p {
+      margin-bottom: 8px;
+      color: #374151;
+      font-size: 9.2pt;
+    }
+    .mono {
+      font-family: 'Space Mono', monospace;
+    }
+    .accent {
+      color: #FF3B00;
+    }
+    
+    /* Cover Page */
+    .cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 250mm;
+      padding: 20mm 10mm;
+    }
+    .cover-brand-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 9pt;
+      letter-spacing: 0.25em;
+      color: #FF3B00;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .cover-title {
+      font-size: 40pt;
+      line-height: 1.05;
+      margin-bottom: 16px;
+      color: #111111;
+    }
+    .cover-desc {
+      font-size: 12.5pt;
+      color: #4B5563;
+      max-width: 85%;
+      margin-bottom: 40px;
+      line-height: 1.4;
+    }
+    .cover-meta {
+      border-top: 2px solid #111111;
+      padding-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+      font-family: 'Space Mono', monospace;
+      font-size: 8pt;
+    }
+    .cover-meta-item strong {
+      display: block;
+      color: #111111;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Swatches & Grids */
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .swatch {
+      border: 1px solid #E5E5E0;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #FFFFFF;
+    }
+    .swatch-color {
+      height: 42px;
+      width: 100%;
+    }
+    .swatch-info {
+      padding: 4px 6px;
+      font-family: 'Space Mono', monospace;
+      font-size: 7pt;
+    }
+    .swatch-name {
+      font-weight: 700;
+      color: #111111;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .swatch-hex {
+      color: #6B7280;
+    }
+
+    /* Specimen Box */
+    .specimen-box {
+      border: 1px solid #E5E5E0;
+      border-radius: 6px;
+      padding: 10px 14px;
+      background: #FAFAFA;
+      margin-bottom: 10px;
+    }
+    .specimen-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22pt;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .specimen-subtitle {
+      font-family: 'Space Mono', monospace;
+      font-size: 8.5pt;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #FF3B00;
+      margin-bottom: 4px;
+    }
+    .specimen-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.5pt;
+      color: #4B5563;
+      line-height: 1.4;
+    }
+
+    /* Logos Grid */
+    .logos-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .logo-card {
+      border: 1px solid #E5E5E0;
+      border-radius: 6px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #FAFAFA;
+    }
+    .logo-card img {
+      max-height: 60px;
+      max-width: 100%;
+      object-fit: contain;
+      margin-bottom: 8px;
+    }
+    .logo-caption {
+      font-family: 'Space Mono', monospace;
+      font-size: 7.5pt;
+      color: #6B7280;
+      text-transform: uppercase;
+    }
+
+    /* Icon Row */
+    .icons-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .icon-card {
+      border: 1px solid #E5E5E0;
+      border-radius: 6px;
+      padding: 8px 4px;
+      text-align: center;
+      background: #FFFFFF;
+    }
+    .icon-svg-wrapper {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4px;
+    }
+    .icon-svg-wrapper svg {
+      width: 32px;
+      height: 32px;
+    }
+    .icon-name {
+      font-family: 'Space Mono', monospace;
+      font-size: 5.5pt;
+      color: #111111;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    /* Layout Diagram */
+    .layout-box {
+      border: 2px dashed #B8860B;
+      border-radius: 6px;
+      background: #FDFDFB;
+      padding: 10px;
+      margin-bottom: 12px;
+    }
+    .diagram-rect {
+      width: 100%;
+      height: 120px;
+      border: 1px solid #111111;
+      position: relative;
+      background: #ECECE8;
+      display: flex;
+      flex-direction: column;
+    }
+    .diagram-top {
+      height: 60%;
+      background: #E0E0DA;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #555555;
+      border-bottom: 1px solid #111111;
+    }
+    .diagram-bottom {
+      height: 40%;
+      background: #FBFBF9;
+      display: flex;
+    }
+    .diagram-bottom-left {
+      width: 70%;
+      padding: 6px 10px;
+      border-right: 1px solid #CCCCCC;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .diagram-bottom-right {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #FAFAFA;
+    }
+
+    /* Photos Grid */
+    .photos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .photo-card {
+      border: 1px solid #E5E5E0;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #FAFAFA;
+      text-align: center;
+    }
+    .photo-card img {
+      width: 100%;
+      height: 85px;
+      object-fit: cover;
+    }
+    .photo-caption {
+      padding: 4px;
+      font-family: 'Space Mono', monospace;
+      font-size: 6.5pt;
+      color: #374151;
+      font-weight: 700;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 12px;
+      font-size: 8pt;
+    }
+    th, td {
+      border: 1px solid #E5E5E0;
+      padding: 4px 6px;
+      text-align: left;
+    }
+    th {
+      background: #FAFAFA;
+      font-family: 'Space Mono', monospace;
+      font-size: 7pt;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #111111;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: COVER PAGE -->
+  <div class="page cover">
+    <div class="cover-brand-tag">UNCODED HUB • OFFICIAL BRAND KIT</div>
+    <div class="cover-title">Swiss Architectural Minimalism & High-Performance Digital Architecture</div>
+    <div class="cover-desc">
+      Unified Brand Hub specification, design guidelines, master 60/40 templates, color palettes, typographic hierarchy, photography library, and vector assets formatted for Canva Business Brand Kit ingestion.
+    </div>
+
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <strong>Studio</strong>
+        Uncoded Hub Architecture
+      </div>
+      <div class="cover-meta-item">
+        <strong>Production Domain</strong>
+        https://uncodedhub.com
+      </div>
+      <div class="cover-meta-item">
+        <strong>Release Version</strong>
+        v2.0 • September 2026
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: ALL ASSETS & MANIFEST -->
+  <div class="page">
+    <div class="page-header">
+      <span>Uncoded Hub Brand Kit</span>
+      <span>01 • All Assets Manifest</span>
+    </div>
+
+    <h1>01. All Assets & Brand Hub Index</h1>
+    <p>This master document unifies all 11 official Canva Business Brand Hub categories into one place. When uploaded to Canva, every font, color swatch, logo mark, and prompt is extracted directly into your Brand Kit.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Canva Brand Hub Section</th>
+          <th>Extracted Deliverables & Standards</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>01</strong></td>
+          <td><strong>All Assets</strong></td>
+          <td>Complete file manifest, index, and system directory mapping.</td>
+        </tr>
+        <tr>
+          <td><strong>02</strong></td>
+          <td><strong>Guidelines</strong></td>
+          <td>Swiss architectural design philosophy, 60/40 thumbnail ratios, margin formulas, contrast rules.</td>
+        </tr>
+        <tr>
+          <td><strong>03</strong></td>
+          <td><strong>Brand Templates</strong></td>
+          <td>Master 1600 × 900 px 60/40 blog thumbnail template specification and 140 article queue.</td>
+        </tr>
+        <tr>
+          <td><strong>04</strong></td>
+          <td><strong>Logos</strong></td>
+          <td>Primary horizontal logo, compact mark, and monogram app badge.</td>
+        </tr>
+        <tr>
+          <td><strong>05</strong></td>
+          <td><strong>Colours</strong></td>
+          <td>Studio Core 5-color palette plus 7 custom industry niche palettes (35 color definitions).</td>
+        </tr>
+        <tr>
+          <td><strong>06</strong></td>
+          <td><strong>Fonts</strong></td>
+          <td>Cormorant Garamond (Heading), Space Mono (Eyebrow/Caption), Inter (Body).</td>
+        </tr>
+        <tr>
+          <td><strong>07</strong></td>
+          <td><strong>Brand Voice</strong></td>
+          <td>Canva Magic Write system prompt for architectural authority and disciplined clarity.</td>
+        </tr>
+        <tr>
+          <td><strong>08</strong></td>
+          <td><strong>Photos</strong></td>
+          <td>Founder portraits (Deepak & Geetha), Late-Means-Free guarantee seal, speed transformation proof.</td>
+        </tr>
+        <tr>
+          <td><strong>09</strong></td>
+          <td><strong>Graphics</strong></td>
+          <td>Canva Magic Media AI generation formulas for tactile scale-model art across all 7 niches.</td>
+        </tr>
+        <tr>
+          <td><strong>10</strong></td>
+          <td><strong>Icons</strong></td>
+          <td>7 custom geometric vector marks in SVG for thumbnail right-panel stamps.</td>
+        </tr>
+        <tr>
+          <td><strong>11</strong></td>
+          <td><strong>Charts</strong></td>
+          <td>Performance audit sequences, latency comparison bars, and Core Web Vitals donut styling.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-footer">
+      <span>Uncoded Hub • Canva Brand Kit</span>
+      <span>Page 02</span>
+    </div>
+  </div>
+
+  <!-- PAGE 3: GUIDELINES & BRAND TEMPLATES (60/40 SYSTEM) -->
+  <div class="page">
+    <div class="page-header">
+      <span>Uncoded Hub Brand Kit</span>
+      <span>02 & 03 • Guidelines & Templates</span>
+    </div>
+
+    <h1>02 & 03. Guidelines & Master Templates</h1>
+    <p>Our visual language combines <strong>Swiss Architectural Minimalism</strong> with tactile editorial luxury. Every blog thumbnail adheres to our mathematically calibrated <strong>Golden 60/40 Split Architecture</strong>.</p>
+
+    <div class="layout-box">
+      <div class="diagram-rect">
+        <div class="diagram-top">
+          TOP 60% (1600 × 540 px) — Tactile Editorial Scale-Model Art (Travertine, Concrete, Brass)
+        </div>
+        <div class="diagram-bottom">
+          <div class="diagram-bottom-left">
+            <span style="font-family:'Space Mono'; font-size: 6.5pt; color: #B8860B; font-weight:700;">EYEBROW CATEGORY TAG • 16PX MONO</span>
+            <span style="font-family:'Cormorant Garamond'; font-size: 11pt; font-weight:700; color: #111111;">Article Headline Hook in Cormorant Garamond Serif</span>
+            <span style="font-family:'Inter'; font-size: 6.5pt; color: #6B7280;">7 MIN READ • UNCODED HUB ARCHITECTURE</span>
+          </div>
+          <div class="diagram-bottom-right">
+            <span style="font-family:'Space Mono'; font-size: 6.5pt; color: #111111; font-weight:700;">[SVG ICON]</span>
+            <span style="font-family:'Space Mono'; font-size: 5.5pt; color: #6B7280;">ARCH.RATIO.V1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Precise Coordinate Specification for Canva (1600 × 900 px Canvas)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Element</th>
+          <th>Canva Object</th>
+          <th>Coordinates</th>
+          <th>Size</th>
+          <th>Styling Rules</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Top Artwork</strong></td>
+          <td>Image Frame</td>
+          <td>X: 0, Y: 0</td>
+          <td>1600 × 540 px</td>
+          <td>Top 60% vertical crop. Physical raw materials, soft daylight.</td>
+        </tr>
+        <tr>
+          <td><strong>Bottom Card</strong></td>
+          <td>Rectangle Fill</td>
+          <td>X: 0, Y: 540</td>
+          <td>1600 × 360 px</td>
+          <td>Fill: #FBFBF9 (Limestone) or niche card tint. 0px border.</td>
+        </tr>
+        <tr>
+          <td><strong>Vertical Divider</strong></td>
+          <td>1px Line</td>
+          <td>X: 1120, Y: 540</td>
+          <td>1 × 360 px</td>
+          <td>Stroke: 1px solid #E5E5E0. Creates 70/30 horizontal split.</td>
+        </tr>
+        <tr>
+          <td><strong>Eyebrow Tag</strong></td>
+          <td>Text Box</td>
+          <td>X: 80, Y: 580</td>
+          <td>960 × 24 px</td>
+          <td>Space Mono Bold, 16px, tracking +160, Niche Accent color.</td>
+        </tr>
+        <tr>
+          <td><strong>Article Headline</strong></td>
+          <td>Text Box</td>
+          <td>X: 80, Y: 620</td>
+          <td>960 × 160 px</td>
+          <td>Cormorant Garamond Bold, 56–64px, line-height 1.15, #111111.</td>
+        </tr>
+        <tr>
+          <td><strong>Metadata Tag</strong></td>
+          <td>Text Box</td>
+          <td>X: 80, Y: 825</td>
+          <td>960 × 24 px</td>
+          <td>Inter Medium, 18px, tracking +30, #6B7280.</td>
+        </tr>
+        <tr>
+          <td><strong>Geometric SVG Icon</strong></td>
+          <td>Vector Graphic</td>
+          <td>X: 1360, Y: 690</td>
+          <td>120 × 120 px</td>
+          <td>Minimalist 1.5px vector line art from 10_Icons/ folder.</td>
+        </tr>
+        <tr>
+          <td><strong>Sub-Label Stamp</strong></td>
+          <td>Text Box</td>
+          <td>X: 1360, Y: 795</td>
+          <td>300 × 20 px</td>
+          <td>Space Mono, 13px, tracking +200, uppercase, #6B7280.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-footer">
+      <span>Uncoded Hub • Canva Brand Kit</span>
+      <span>Page 03</span>
+    </div>
+  </div>
+
+  <!-- PAGE 4: LOGOS & MONOGRAMS -->
+  <div class="page">
+    <div class="page-header">
+      <span>Uncoded Hub Brand Kit</span>
+      <span>04 • Logos & Marks</span>
+    </div>
+
+    <h1>04. Official Logos & Identity Marks</h1>
+    <p>Upload these official vectors and high-resolution marks directly to the <strong>Logos</strong> section in Canva Brand Kit.</p>
+
+    <div class="logos-grid">
+      <div class="logo-card">
+        <img src="./04_Logos/logo-large.png" alt="Uncoded Hub Primary Logo">
+        <div class="logo-caption">Primary Horizontal Logo (Light Backgrounds)</div>
+      </div>
+      <div class="logo-card">
+        <img src="./04_Logos/apple-touch-icon.png" alt="Uncoded Hub Monogram">
+        <div class="logo-caption">App Icon / Monogram Mark</div>
+      </div>
+    </div>
+
+    <div class="logo-card" style="margin-bottom: 14px;">
+      <img src="./04_Logos/logo-small.png" alt="Uncoded Hub Compact Logo">
+      <div class="logo-caption">Compact Navbar / Social Header Logo Mark</div>
+    </div>
+
+    <h3>Logo Usage Rules in Canva</h3>
+    <ul style="margin-left: 20px; font-size: 8.5pt; color: #374151; line-height: 1.5;">
+      <li><strong>Clear Space</strong>: Maintain a minimum clear space equal to the height of the capital letter "U" on all four sides.</li>
+      <li><strong>Background Contrast</strong>: Place the primary dark logo only on #FFFFFF, #FBFBF9, or tints lighter than 15% gray.</li>
+      <li><strong>Unacceptable Modifications</strong>: Do not rotate the logo, do not alter typography tracking, and do not apply drop shadows or neon glows.</li>
+    </ul>
+
+    <div class="page-footer">
+      <span>Uncoded Hub • Canva Brand Kit</span>
+      <span>Page 04</span>
+    </div>
+  </div>
+
+  <!-- PAGE 5: COLOUR PALETTES -->
+  <div class="page">
+    <div class="page-header">
+      <span>Uncoded Hub Brand Kit</span>
+      <span>05 • Official Color Palettes</span>
+    </div>
+
+    <h1>05. Color Palettes (Core & 7 Silos)</h1>
+    <p>Canva automatically extracts colors from the swatches below into your Brand Kit. Each niche features a tailored accent, deep foundation, highlight, and card fill.</p>
+
+    <h3>1. Studio Core Brand Palette (Global Setting)</h3>
+    <div class="palette-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #111111;"></div>
+        <div class="swatch-info"><div class="swatch-name">Obsidian</div><div class="swatch-hex">#111111</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #FBFBF9;"></div>
+        <div class="swatch-info"><div class="swatch-name">Limestone</div><div class="swatch-hex">#FBFBF9</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #FF3B00;"></div>
+        <div class="swatch-info"><div class="swatch-name">Flame Orange</div><div class="swatch-hex">#FF3B00</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #6B7280;"></div>
+        <div class="swatch-info"><div class="swatch-name">Stone Gray</div><div class="swatch-hex">#6B7280</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #E5E5E0;"></div>
+        <div class="swatch-info"><div class="swatch-name">Hairline Border</div><div class="swatch-hex">#E5E5E0</div></div>
+      </div>
+    </div>
+
+    <h3>2. Niche Custom Palettes (Add as Canva Palettes)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Industry Niche</th>
+          <th>Primary Accent</th>
+          <th>Secondary Deep</th>
+          <th>Highlight</th>
+          <th>Card Fill</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>🏛️ Interior Designers & Architects</strong></td>
+          <td><span style="color:#B8860B; font-weight:700;">#B8860B</span> (Ochre)</td>
+          <td><code>#2C2621</code></td>
+          <td><code>#D4AF37</code> (Brass)</td>
+          <td><code>#F5F2EB</code> (Travertine)</td>
+        </tr>
+        <tr>
+          <td><strong>🏢 Real Estate & High-End Builders</strong></td>
+          <td><span style="color:#0E7490; font-weight:700;">#0E7490</span> (Cyan)</td>
+          <td><code>#0F172A</code></td>
+          <td><code>#38BDF8</code> (Sky)</td>
+          <td><code>#F8FAFC</code> (Slate)</td>
+        </tr>
+        <tr>
+          <td><strong>🦷 Dental & Aesthetic Clinics</strong></td>
+          <td><span style="color:#059669; font-weight:700;">#059669</span> (Sage)</td>
+          <td><code>#1E293B</code></td>
+          <td><code>#6EE7B7</code> (Mint)</td>
+          <td><code>#F0FDF4</code> (Ceramic)</td>
+        </tr>
+        <tr>
+          <td><strong>📸 Luxury Wedding Photographers</strong></td>
+          <td><span style="color:#7C3AED; font-weight:700;">#7C3AED</span> (Violet)</td>
+          <td><code>#18181B</code></td>
+          <td><code>#FDE68A</code> (Champagne)</td>
+          <td><code>#FAF5FF</code> (Lavender)</td>
+        </tr>
+        <tr>
+          <td><strong>🔨 Home Renovation & Kitchens</strong></td>
+          <td><span style="color:#D97706; font-weight:700;">#D97706</span> (Amber)</td>
+          <td><code>#27272A</code></td>
+          <td><code>#FBBF24</code> (Oak)</td>
+          <td><code>#FFFBEB</code> (Woodgrain)</td>
+        </tr>
+        <tr>
+          <td><strong>🎯 Coaches & Consultants</strong></td>
+          <td><span style="color:#4F46E5; font-weight:700;">#4F46E5</span> (Indigo)</td>
+          <td><code>#111827</code></td>
+          <td><code>#818CF8</code> (Periwinkle)</td>
+          <td><code>#EEF2FF</code> (Platinum)</td>
+        </tr>
+        <tr>
+          <td><strong>⚡ Core Web Performance</strong></td>
+          <td><span style="color:#FF3B00; font-weight:700;">#FF3B00</span> (Flame)</td>
+          <td><code>#0A0A0A</code></td>
+          <td><code>#22C55E</code> (100 Green)</td>
+          <td><code>#FAFAFA</code> (Studio)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-footer">
+      <span>Uncoded Hub • Canva Brand Kit</span>
+      <span>Page 05</span>
+    </div>
+  </div>
+
+  <!-- PAGE 6: FONTS & TYPOGRAPHY -->
+  <div class="page">
+    <div class="page-header">
+      <span>Uncoded Hub Brand Kit</span>
+      <span>06 • Typography System</span>
+    </div>
+
+    <h1>06. Typographic Hierarchy</h1>
+    <p>Canva will identify and extract these exact font pairings for your Headings, Subheadings, and Body text.</p>
+
+    <div class="specimen-box">
+      <div class="specimen-subtitle">PRIMARY HEADLINE SERIF • CORMORANT GARAMOND BOLD</div>
+      <div class="specimen-title">Architecting Digital Foundations for High-Ticket Services</div>
+      <div class="specimen-body" style="font-family:'Cormorant Garamond'; font-size: 12pt;">
+        Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789
+      </div>
+    </div>
+
+    <div class="specimen-box">
+      <div class="specimen-subtitle">SUBTITLE & EYEBROWS • SPACE MONO BOLD</div>
+      <div style="font-family:'Space Mono'; font-size: 10.5pt; font-weight:700; color: #111111; margin-bottom: 4px;">
+        INTERIOR ARCHITECTURE • HIGH-TICKET CLIENT ACQUISITION • 0.4S SPEED
+      </div>
+      <div class="mono" style="font-size: 8pt; color: #4B5563;">
+        AA BB CC DD EE FF GG HH II JJ KK LL MM NN OO PP QQ RR SS TT UU VV WW XX YY ZZ 0123456789
+      </div>
+    </div>
+
+    <div class="specimen-box">
+      <div class="specimen-subtitle">BODY & METADATA • INTER REGULAR & MEDIUM</div>
+      <p style="font-family:'Inter'; font-size: 9pt; color: #111111; margin-bottom: 4px;">
+        Every line of hand-crafted code serves a single commercial imperative: establishing immediate, visceral credibility for discerning clients before they scroll past the first viewport.
+      </p>
+      <div style="font-family:'Inter'; font-size: 8pt; color: #6B7280;">
+        Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789
+      </div>
+    </div>
+
+    <h3>Canva Font Role Configuration</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Canva Font Role</th>
+          <th>Font Family</th>
+          <th>Weight</th>
+          <th>Tracking / Letter Spacing</th>
+          <th>Leading</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Title / Heading</strong></td>
+          <td>Cormorant Garamond</td>
+          <td>Bold</td>
+          <td>-20 (Tight editorial)</td>
+          <td>1.15</td>
+        </tr>
+        <tr>
+          <td><strong>Subtitle / Eyebrow</strong></td>
+          <td>Space Mono</td>
+          <td>Bold (ALL CAPS)</td>
+          <td>+160 (Wide luxury)</td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <td><strong>Body Text</strong></td>
+          <td>Inter</td>
+          <td>Regular / Medium</td>
+          <td>0</td>
+          <td>1.4</td>
+        </tr>
+        <tr>
+          <td><strong>Caption / Stamp</strong></td>
+          <td>Space Mono</td>
+          <td>Regular (ALL CAPS)</td>
+          <td>+200</td>
+          <td>1.0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-footer">
+      <span>Uncoded Hub • Canva Brand Kit</span>
+      <span>Page 06</span>
+    </div>
+  </div>
+
+  <!-- PAGE 7: BRAND VOICE -->
+  <div class="page">
+    <div class="page-header">
+      <span>Uncoded Hub Brand Kit</span>
+      <span>07 • Brand Voice & Persona</span>
+    </div>
+
+    <h1>07. Brand Voice for Canva Magic Write</h1>
+    <p>Canva Business uses the description below to calibrate all AI writing, caption generation, and headline adjustments to our tone.</p>
+
+    <div class="specimen-box" style="background:#FFFDF9; border-color:#FF3B00;">
+      <div class="specimen-subtitle" style="color:#FF3B00;">CANVA BRAND VOICE SYSTEM PROMPT</div>
+      <p style="font-size: 9.5pt; color: #111111; line-height: 1.5; font-style: italic;">
+        "Uncoded Hub is an ultra-premium, boutique web architecture and high-performance design engineering studio. Our voice is authoritative, intellectually sharp, deeply disciplined, and editorial—reminiscent of architectural monographs, Swiss international design criticism, and high-end engineering documentation. Confident, precise, and uncompromising on craftsmanship. Speaks directly to discerning founders, elite architects, clinical directors, and high-ticket service leaders. Treats digital experiences as tangible physical architecture."
+      </p>
+    </div>
+
+    <h3>Voice Pillars</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Pillar</th>
+          <th>How We Sound</th>
+          <th>What We Avoid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Architectural Rigor</strong></td>
+          <td>Discusses load-bearing code, visual hierarchy, sub-second latency, and mathematical precision.</td>
+          <td>Never uses cheap SaaS jargon, superficial buzzwords, or cartoonish hyperbole.</td>
+        </tr>
+        <tr>
+          <td><strong>High-Ticket Prestige</strong></td>
+          <td>Speaks with calm, confident authority to luxury clients who value time and craftsmanship.</td>
+          <td>Never sounds pushy, needy, discount-oriented, or apologetic.</td>
+        </tr>
+        <tr>
+          <td><strong>Accountability</strong></td>
+          <td>Highlights our verifiable Late-Means-Free guarantee and 100/100 Core Web Vitals audits.</td>
+          <td>Avoids vague promises like 'satisfaction guaranteed' or 'fast turnaround'.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-footer">
+      <span>Uncoded Hub • Canva Brand Kit</span>
+      <span>Page 07</span>
+    </div>
+  </div>
+
+  <!-- PAGE 8: PHOTOS -->
+  <div class="page">
+    <div class="page-header">
+      <span>Uncoded Hub Brand Kit</span>
+      <span>08 • Photography Library</span>
+    </div>
+
+    <h1>08. Photos & Studio Assets</h1>
+    <p>These official photographs and verified proof seals will be extracted into the <strong>Photos</strong> section in Canva.</p>
+
+    <div class="photos-grid">
+      <div class="photo-card">
+        <img src="./08_Photos/deepak.webp" alt="Deepak Chaurasiya">
+        <div class="photo-caption">Deepak Chaurasiya • Founder</div>
+      </div>
+      <div class="photo-card">
+        <img src="./08_Photos/geetha.webp" alt="Geetha">
+        <div class="photo-caption">Geetha • Co-Founder</div>
+      </div>
+      <div class="photo-card">
+        <img src="./08_Photos/guarantee.webp" alt="Late-Means-Free Guarantee">
+        <div class="photo-caption">Late-Means-Free Seal</div>
+      </div>
+      <div class="photo-card">
+        <img src="./08_Photos/before-after.webp" alt="Before & After Performance">
+        <div class="photo-caption">Speed Audit Graphic</div>
+      </div>
+    </div>
+
+    <h3>Photography Art Direction</h3>
+    <ul style="margin-left: 20px; font-size: 8.5pt; color: #374151; line-height: 1.5;">
+      <li><strong>Portraits</strong>: High-contrast black and white or muted studio portraits with natural catchlights and clean neutral backdrops.</li>
+      <li><strong>Guarantees & Proof</strong>: Crisp vector stamps with sharp borders, high legibility, and zero visual artifacts.</li>
+      <li><strong>Project Artwork</strong>: Real built environments, architectural models, and tactile materials. Never artificial 3D cartoon avatars.</li>
+    </ul>
+
+    <div class="page-footer">
+      <span>Uncoded Hub • Canva Brand Kit</span>
+      <span>Page 08</span>
+    </div>
+  </div>
+
+  <!-- PAGE 9: GRAPHICS & MAGIC MEDIA -->
+  <div class="page">
+    <div class="page-header">
+      <span>Uncoded Hub Brand Kit</span>
+      <span>09 • Graphics & Magic Media</span>
+    </div>
+
+    <h1>09. Graphics & Magic Media Formulas</h1>
+    <p>Use these tested formulas in <strong>Canva Magic Media</strong> to generate top 60% artwork backgrounds.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Silo</th>
+          <th>Canva Magic Media Prompt Formula (16:9 Landscape)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>🏛️ Architecture</strong></td>
+          <td><code>Architectural scale model of minimalist villa interior, travertine, brushed brass, fluted glass, raw plaster. Macro Hasselblad 50mm, morning sunlight, warm ochre and cream, 8k, no text.</code></td>
+        </tr>
+        <tr>
+          <td><strong>🏢 Real Estate</strong></td>
+          <td><code>Architectural glass and slate skyscraper scale model on basalt plinth, cyan acrylic floors, laser etched blueprint lines, studio lighting, slate gray backdrop, 8k, no text.</code></td>
+        </tr>
+        <tr>
+          <td><strong>🦷 Dental</strong></td>
+          <td><code>Minimalist clinical sculpture, polished white ceramic, frosted seafoam sage glass, satin titanium details, diffused daylight, soft focus, pale mint palette, 8k, no text.</code></td>
+        </tr>
+        <tr>
+          <td><strong>📸 Wedding</strong></td>
+          <td><code>Luxury photography atelier still life, black marble table, vintage camera lenses, titanium aperture blades, golden hour light, textured linen paper, violet shadows, 8k, no text.</code></td>
+        </tr>
+        <tr>
+          <td><strong>🔨 Renovation</strong></td>
+          <td><code>Craft workshop flat-lay maquette, dovetail joinery of smoked oak, terracotta tiles, raw slate, brass cabinet pulls, warm amber and charcoal tones, Hasselblad macro, 8k, no text.</code></td>
+        </tr>
+        <tr>
+          <td><strong>🎯 Coaching</strong></td>
+          <td><code>Geometric sculpture of strategic leverage, frosted obsidian and brushed platinum chrome blocks in Fibonacci equilibrium on indigo felt, executive boardroom lighting, 8k, no text.</code></td>
+        </tr>
+        <tr>
+          <td><strong>⚡ Core Web</strong></td>
+          <td><code>Futuristic computational core, obsidian glass fiber-optic tubes transmitting orange and green light through milled black aluminum heatsink, server room macro, 8k, no text.</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-footer">
+      <span>Uncoded Hub • Canva Brand Kit</span>
+      <span>Page 09</span>
+    </div>
+  </div>
+
+  <!-- PAGE 10: ICONS -->
+  <div class="page">
+    <div class="page-header">
+      <span>Uncoded Hub Brand Kit</span>
+      <span>10 • Vector Iconography</span>
+    </div>
+
+    <h1>10. Geometric Vector Icon Set</h1>
+    <p>These 7 clean minimalist SVG vectors are assigned to each industry niche for the bottom-right stamp panel.</p>
+
+    <div class="icons-grid">
+      <div class="icon-card">
+        <div class="icon-svg-wrapper">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#B8860B" stroke-width="2.5"><rect x="10" y="10" width="80" height="80"/><rect x="10" y="10" width="49.4" height="80"/><rect x="59.4" y="40.6" width="30.6" height="49.4"/><path d="M10 90 A80 80 0 0 1 90 10"/></svg>
+        </div>
+        <div class="icon-name">Golden Ratio<br><span style="color:#6B7280; font-size:5pt;">Architecture</span></div>
+      </div>
+      <div class="icon-card">
+        <div class="icon-svg-wrapper">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#0E7490" stroke-width="2.5"><rect x="15" y="15" width="70" height="70"/><line x1="15" y1="50" x2="85" y2="50"/><line x1="50" y1="15" x2="50" y2="85"/><rect x="25" y="25" width="20" height="20"/></svg>
+        </div>
+        <div class="icon-name">Cadastral Grid<br><span style="color:#6B7280; font-size:5pt;">Real Estate</span></div>
+      </div>
+      <div class="icon-card">
+        <div class="icon-svg-wrapper">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#059669" stroke-width="2.5"><circle cx="50" cy="50" r="35"/><line x1="50" y1="5" x2="50" y2="95"/><line x1="5" y1="50" x2="95" y2="50"/><circle cx="50" cy="50" r="10"/></svg>
+        </div>
+        <div class="icon-name">Crosshair<br><span style="color:#6B7280; font-size:5pt;">Dental Clinic</span></div>
+      </div>
+      <div class="icon-card">
+        <div class="icon-svg-wrapper">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#7C3AED" stroke-width="2.5"><circle cx="50" cy="50" r="40"/><polygon points="50,20 76,35 76,65 50,80 24,65 24,35"/></svg>
+        </div>
+        <div class="icon-name">Aperture<br><span style="color:#6B7280; font-size:5pt;">Photographer</span></div>
+      </div>
+      <div class="icon-card">
+        <div class="icon-svg-wrapper">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#D97706" stroke-width="2.5"><rect x="20" y="20" width="60" height="60"/><line x1="20" y1="40" x2="80" y2="40"/><line x1="20" y1="60" x2="80" y2="60"/></svg>
+        </div>
+        <div class="icon-name">Joinery<br><span style="color:#6B7280; font-size:5pt;">Renovation</span></div>
+      </div>
+      <div class="icon-card">
+        <div class="icon-svg-wrapper">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#4F46E5" stroke-width="2.5"><circle cx="50" cy="50" r="35"/><polygon points="50,15 85,50 50,85 15,50"/></svg>
+        </div>
+        <div class="icon-name">Matrix<br><span style="color:#6B7280; font-size:5pt;">Consultants</span></div>
+      </div>
+      <div class="icon-card">
+        <div class="icon-svg-wrapper">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#FF3B00" stroke-width="2.5"><circle cx="50" cy="50" r="35"/><polyline points="35,50 50,30 65,50"/></svg>
+        </div>
+        <div class="icon-name">Speed Core<br><span style="color:#6B7280; font-size:5pt;">Web Studio</span></div>
+      </div>
+    </div>
+
+    <h3>Icon Placement Rules</h3>
+    <ul style="margin-left: 20px; font-size: 8.5pt; color: #374151; line-height: 1.5;">
+      <li>Place centered in the right 30% panel (X: 1360 px, Y: 690 px) at 120 × 120 px.</li>
+      <li>Pair with the corresponding monospace sub-label at 13 px tracking +200.</li>
+    </ul>
+
+    <div class="page-footer">
+      <span>Uncoded Hub • Canva Brand Kit</span>
+      <span>Page 10</span>
+    </div>
+  </div>
+
+  <!-- PAGE 11: CHARTS & DATA -->
+  <div class="page">
+    <div class="page-header">
+      <span>Uncoded Hub Brand Kit</span>
+      <span>11 • Charts & Data</span>
+    </div>
+
+    <h1>11. Charts & Data Visualizations</h1>
+    <p>Rules and color sequences for generating dynamic charts and metric comparisons in Canva.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Chart Sequence</th>
+          <th>Color Array</th>
+          <th>Recommended Application</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Performance Audit</strong></td>
+          <td><span style="color:#22C55E;">#22C55E</span>, <span style="color:#EAB308;">#EAB308</span>, <span style="color:#EF4444;">#EF4444</span>, <code>#111111</code></td>
+          <td>100/100 Core Web Vitals progress rings & audit donuts.</td>
+        </tr>
+        <tr>
+          <td><strong>Latency Comparison</strong></td>
+          <td><span style="color:#FF3B00; font-weight:700;">#FF3B00</span> vs <code>#D1D5DB</code></td>
+          <td>0.4s Hand-Coded Architecture vs 4.8s WordPress benchmark.</td>
+        </tr>
+        <tr>
+          <td><strong>Growth & Revenue</strong></td>
+          <td><code>#111111</code>, <code>#374151</code>, <code>#6B7280</code>, <code>#9CA3AF</code></td>
+          <td>Organic search ranking trajectories and compounding traffic.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="specimen-box">
+      <div class="specimen-subtitle">CHART STYLING PROTOCOL</div>
+      <p style="font-size: 8.5pt; margin-bottom: 2px;">• <strong>Font Family</strong>: Space Mono for all axis labels and legends; Cormorant Garamond for chart headlines.</p>
+      <p style="font-size: 8.5pt; margin-bottom: 2px;">• <strong>Gridlines</strong>: 1px hairline stroke in #E5E5E0. Never use heavy black borders.</p>
+      <p style="font-size: 8.5pt;">• <strong>Data Density</strong>: Maximum 3 to 6 data points per thumbnail chart for sub-2-second viewer comprehension.</p>
+    </div>
+
+    <div class="page-footer">
+      <span>Uncoded Hub • Canva Brand Kit</span>
+      <span>Page 11</span>
+    </div>
+  </div>
+
+</body>
+</html>

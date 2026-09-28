@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <!-- Film Rebate Frame -->
+  <rect x="15" y="15" width="170" height="170" rx="4" stroke="#E2B180" stroke-width="1.5" stroke-opacity="0.4"/>
+  <!-- Lens Circle Outer -->
+  <circle cx="100" cy="100" r="72" stroke="#E2B180" stroke-width="2"/>
+  <!-- Aperture Blades (Hexagonal f/1.4 Geometric lines) -->
+  <polygon points="100,50 143,75 143,125 100,150 57,125 57,75" stroke="#E2B180" stroke-width="1.5" fill="#E2B180" fill-opacity="0.15"/>
+  <line x1="100" y1="28" x2="143" y2="75" stroke="#E2B180" stroke-width="1.5"/>
+  <line x1="172" y1="100" x2="143" y2="125" stroke="#E2B180" stroke-width="1.5"/>
+  <line x1="100" y1="172" x2="57" y2="125" stroke="#E2B180" stroke-width="1.5"/>
+  <line x1="28" y1="100" x2="57" y2="75" stroke="#E2B180" stroke-width="1.5"/>
+  <!-- Center Optical Glow -->
+  <circle cx="100" cy="100" r="8" fill="#E2B180"/>
+</svg>
