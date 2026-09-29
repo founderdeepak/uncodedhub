@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Willowmere Dental &amp; Facial Aesthetics | Anxiety-Free Specialized Care</title>
+  <meta name="description" content="Specialized, anxiety-free dental implants, smile design, and facial aesthetics. Handheld stop-signal protocol, 100% transparent written estimates, and Class-B autoclave sterilization.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       CSS DESIGN SYSTEM & THEME TOKENS (HIGH CONTRAST & LEGIBILITY)
+       ========================================================================== */
+    :root, body[data-theme="nordic-sanctuary"] {
+      --bg-primary: #F5F8F6;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #EAF1EC;
+      --text-primary: #12241C;
+      --text-muted: #384F44;
+      --text-subtle: #5C7569;
+      --border-color: #D2E0D8;
+      --border-subtle: #E2ECE6;
+      --accent: #236E4E;
+      --accent-hover: #185239;
+      --accent-contrast: #FFFFFF;
+      --accent-light: #E4F2EC;
+      --badge-bg: #E1EFE8;
+      --badge-text: #19543C;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --card-shadow: 0 10px 30px rgba(18, 36, 28, 0.07);
+      --header-bg: rgba(245, 248, 246, 0.95);
+      --input-bg: #FFFFFF;
+    }
+
+    body[data-theme="harley-medluxe"] {
+      --bg-primary: #090E14;
+      --bg-surface: #101824;
+      --bg-card: #141F2E;
+      --bg-card-subtle: #1C2B3F;
+      --text-primary: #F8FAFC;
+      --text-muted: #C9D6E4;
+      --text-subtle: #8FA4BC;
+      --border-color: rgba(0, 180, 216, 0.28);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --accent: #00B4D8;
+      --accent-hover: #48CAE4;
+      --accent-contrast: #090E14;
+      --accent-light: rgba(0, 180, 216, 0.15);
+      --badge-bg: rgba(0, 180, 216, 0.16);
+      --badge-text: #90E0EF;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --font-heading: 'Cinzel', 'Cormorant Garamond', serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --card-shadow: 0 20px 48px rgba(0, 0, 0, 0.75);
+      --header-bg: rgba(9, 14, 20, 0.94);
+      --input-bg: #101824;
+    }
+
+    body[data-theme="swiss-radiance"] {
+      --bg-primary: #F4F6F9;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #E7EDF4;
+      --text-primary: #0F172A;
+      --text-muted: #24324D;
+      --text-subtle: #4D5E7B;
+      --border-color: #0F172A;
+      --border-subtle: #0F172A;
+      --accent: #2563EB;
+      --accent-hover: #1D4ED8;
+      --accent-contrast: #FFFFFF;
+      --accent-light: #E0EAFF;
+      --badge-bg: #0F172A;
+      --badge-text: #FFFFFF;
+      --radius-sm: 0px;
+      --radius-md: 0px;
+      --radius-lg: 0px;
+      --font-heading: 'Syne', 'Space Grotesk', sans-serif;
+      --font-body: 'Space Grotesk', -apple-system, sans-serif;
+      --card-shadow: 6px 6px 0px #0F172A;
+      --header-bg: #F4F6F9;
+      --input-bg: #FFFFFF;
+    }
+
+    /* Base Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease, box-shadow 0.25s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      padding-bottom: 90px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      color: var(--text-primary);
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+
+    p { color: var(--text-muted); margin-bottom: 1.25rem; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; object-fit: cover; }
+
+    .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      border-radius: var(--radius-sm);
+      margin-bottom: 18px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 32px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-align: center;
+      border: 1px solid transparent;
+      box-shadow: var(--card-shadow);
+    }
+
+    .btn-primary { background: var(--accent); color: var(--accent-contrast); }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1.5px solid var(--border-color);
+    }
+    .btn-outline:hover { background: var(--bg-card-subtle); border-color: var(--text-primary); }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .brand-title {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: var(--text-primary);
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-weight: 700;
+      display: block;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: 14px; font-weight: 600; color: var(--text-muted); }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ==========================================================================
+       HERO SECTION (3 DISTINCT ARCHITECTURAL LAYOUTS)
+       ========================================================================== */
+    .hero-section { padding: 70px 0 60px; position: relative; }
+
+    /* Style 1: Nordic Sanctuary */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-content h1 { font-size: 54px; margin-bottom: 22px; font-weight: 600; }
+    .hero-content .lead { font-size: 18px; line-height: 1.6; color: var(--text-muted); margin-bottom: 30px; }
+    .hero-actions { display: flex; gap: 16px; margin-bottom: 38px; flex-wrap: wrap; }
+
+    .hero-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding-top: 26px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .trust-item h4 { font-size: 24px; font-family: var(--font-body); color: var(--accent); margin-bottom: 3px; }
+    .trust-item p {
+      font-size: 12px;
+      line-height: 1.4;
+      margin: 0;
+      color: var(--text-subtle);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-visual { position: relative; }
+
+    .hero-image-main {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      bottom: -22px;
+      left: -22px;
+      background: var(--bg-surface);
+      padding: 18px 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      max-width: 300px;
+    }
+
+    .hero-floating-card .quote {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .hero-floating-card .author {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* Style 2: Harley Med-Luxe Dark */
+    body[data-theme="harley-medluxe"] .hero-grid {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    body[data-theme="harley-medluxe"] .hero-content h1 {
+      font-size: 58px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #00B4D8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    body[data-theme="harley-medluxe"] .hero-actions { justify-content: center; }
+    body[data-theme="harley-medluxe"] .hero-trust-bar {
+      max-width: 820px;
+      margin: 0 auto 36px;
+      background: var(--bg-card);
+      padding: 20px 32px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+    body[data-theme="harley-medluxe"] .hero-visual { width: 100%; }
+    body[data-theme="harley-medluxe"] .hero-image-main {
+      height: 480px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.85);
+    }
+    body[data-theme="harley-medluxe"] .hero-floating-card {
+      bottom: 24px;
+      right: 24px;
+      left: auto;
+      background: rgba(16, 24, 36, 0.92);
+      backdrop-filter: blur(16px);
+      border-color: var(--accent);
+    }
+
+    /* Style 3: Swiss Radiance Grid */
+    body[data-theme="swiss-radiance"] .hero-section { padding: 40px 0 60px; }
+    body[data-theme="swiss-radiance"] .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 3px solid #0F172A;
+      background: #FFFFFF;
+      box-shadow: 8px 8px 0px #0F172A;
+    }
+    body[data-theme="swiss-radiance"] .hero-content {
+      padding: 50px 42px;
+      border-right: 3px solid #0F172A;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    body[data-theme="swiss-radiance"] .hero-content h1 {
+      font-size: 52px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    body[data-theme="swiss-radiance"] .hero-visual { height: 100%; }
+    body[data-theme="swiss-radiance"] .hero-image-main {
+      border-radius: 0;
+      border: none;
+      height: 100%;
+      min-height: 520px;
+    }
+    body[data-theme="swiss-radiance"] .hero-floating-card {
+      bottom: 0;
+      left: 0;
+      border-radius: 0;
+      border: none;
+      border-top: 3px solid #0F172A;
+      border-right: 3px solid #0F172A;
+      box-shadow: none;
+      background: #2563EB;
+      color: #FFF;
+      max-width: 340px;
+    }
+    body[data-theme="swiss-radiance"] .hero-floating-card .quote {
+      color: #FFF;
+      font-style: normal;
+      font-weight: 600;
+    }
+    body[data-theme="swiss-radiance"] .hero-floating-card .author {
+      color: #0F172A;
+      font-weight: 800;
+      background: #FFF;
+      display: inline-block;
+      padding: 2px 8px;
+    }
+    body[data-theme="swiss-radiance"] .card, 
+    body[data-theme="swiss-radiance"] .btn,
+    body[data-theme="swiss-radiance"] input,
+    body[data-theme="swiss-radiance"] select,
+    body[data-theme="swiss-radiance"] textarea {
+      border-radius: 0 !important;
+      border: 2px solid #0F172A !important;
+      box-shadow: 5px 5px 0px #0F172A !important;
+    }
+
+    /* Common Card & Sections */
+    .section-padding { padding: 80px 0; }
+    .section-header { text-align: center; max-width: 780px; margin: 0 auto 52px; }
+    .section-header h2 { font-size: 38px; margin-bottom: 16px; }
+    .section-header p { font-size: 17px; color: var(--text-muted); }
+
+    .problem-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-light);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .card h3 { font-size: 22px; margin-bottom: 12px; }
+    .card p { font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 0; }
+
+    /* Comparison Wrap */
+    .comparison-wrap {
+      margin-top: 50px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .comp-col-bad { border-right: 1px solid var(--border-color); padding-right: 32px; }
+    .comp-col h3 { font-size: 22px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .comp-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 14.5px; }
+
+    /* Treatments / Services */
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+    .clinic-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .clinic-img-wrap { height: 260px; position: relative; overflow: hidden; }
+    .clinic-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .clinic-card:hover .clinic-img-wrap img { transform: scale(1.04); }
+
+    .clinic-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(14, 28, 22, 0.88);
+      color: #FFF;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    .clinic-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .clinic-body h3 { font-size: 22px; margin-bottom: 8px; }
+
+    .clinic-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--text-subtle);
+      border-top: 1px solid var(--border-color);
+      padding-top: 14px;
+      margin-top: 14px;
+      font-weight: 600;
+    }
+
+    /* Process & Guarantees */
+    .process-timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+    .step-number {
+      font-family: var(--font-heading);
+      font-size: 44px;
+      color: var(--accent);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .guarantees-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .guarantee-box {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      display: flex;
+      gap: 18px;
+    }
+
+    .guarantee-icon { font-size: 28px; color: var(--accent); line-height: 1; }
+
+    .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .testimonial-text {
+      font-size: 15.5px;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .client-info { display: flex; align-items: center; gap: 14px; }
+    .client-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      object-fit: cover;
+    }
+
+    /* Form Container */
+    .cta-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .form-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .form-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--input-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 15px;
+    }
+    .form-control:focus { outline: none; border-color: var(--accent); }
+
+    /* Footer */
+    footer { padding: 50px 0; border-top: 1px solid var(--border-color); font-size: 14px; color: var(--text-muted); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+
+    /* Floating Switcher */
+    .theme-controller {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      background: rgba(14, 24, 20, 0.94);
+      backdrop-filter: blur(16px);
+      padding: 8px 10px;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .tc-label {
+      color: #FAF8F5;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-right: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .tc-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00B4D8;
+      box-shadow: 0 0 8px #00B4D8;
+    }
+
+    .tc-btn {
+      background: transparent;
+      border: none;
+      color: #CBD5E1;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .tc-btn:hover { color: #FFF; background: rgba(255, 255, 255, 0.08); }
+    .tc-btn.active {
+      background: #FFFFFF;
+      color: #12241C;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid, .problem-cards, .portfolio-grid, .process-timeline, .form-container, .guarantees-grid, .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-content h1 { font-size: 38px; }
+      .comparison-grid { grid-template-columns: 1fr; }
+      .comp-col-bad { border-right: none; border-bottom: 1px solid var(--border-color); padding-bottom: 24px; padding-right: 0; }
+      .nav-links { display: none; }
+      .theme-controller { width: 92%; overflow-x: auto; justify-content: flex-start; border-radius: 16px; }
+    }
+  </style>
+</head>
+
+<body data-theme="nordic-sanctuary">
+
+  <!-- Top Uncoded Hub Specimen Banner -->
+  <div style="background: #14130F; color: #F5F3EF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; padding: 10px 20px; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 99999; backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.25);">
+    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <a href="/portfolio" style="color: #FFFFFF; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 12px; padding: 5px 12px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; transition: all 0.2s ease;">
+        ← Back to Uncoded Hub Portfolio
+      </a>
+      <span style="color: rgba(245,243,239,0.4); display: inline-block;">|</span>
+      <span style="color: #F5F3EF; font-weight: 500; font-size: 12.5px;">
+        Handcrafted 7-Day Sprint Specimen Prototype
+      </span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <span style="background: rgba(199,7,75,0.2); color: #FF4D79; border: 1px solid rgba(199,7,75,0.45); font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 9px; border-radius: 3px;">
+        Interactive Niche Demo
+      </span>
+      <a href="/contact" style="color: #FFFFFF; font-size: 12.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; transition: opacity 0.2s ease;">
+        Book Your 7-Day Sprint →
+      </a>
+    </div>
+  </div>
+
+
+  <!-- Header -->
+  <header>
+    <div class="wrap nav-inner">
+      <div>
+        <span class="brand-title">WILLOWMERE</span>
+        <span class="brand-sub">Dental &amp; Facial Aesthetics &bull; NABH Accredited</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#specialties">Specialized Care</a>
+        <a href="#comfort">Painless Protocol</a>
+        <a href="#process">The Patient Journey</a>
+        <a href="#guarantees">Written Pricing Guarantee</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="tel:+918023456789" style="font-weight:700; font-size:14px; margin-right:12px;">+91 (080) 4920-3300</a>
+        <a href="#consultation" class="btn btn-primary" style="padding: 10px 22px; font-size: 13.5px;">Book Clinical Consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="wrap hero-grid">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Certified Anxiety-Free Practice &bull; Handheld Stop-Buzzer Protocol
+        </div>
+        
+        <h1>World-Class Dental Care. Zero Discomfort. Zero Surprise Bills.</h1>
+        
+        <p class="lead">
+          We combine Swiss precision implantology, digital smile design, and gentle facial aesthetics in a calming sanctuary. You control treatment with our wireless stop-signal button, with 100% itemized pricing before anything begins.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#consultation" class="btn btn-primary">Book 3D Diagnostic &amp; Scan &rarr;</a>
+          <a href="#comfort" class="btn btn-outline">Our Painless Protocol</a>
+        </div>
+
+        <div class="hero-trust-bar">
+          <div class="trust-item">
+            <h4>100% Painless</h4>
+            <p>Computerized Anesthesia</p>
+          </div>
+          <div class="trust-item">
+            <h4>Class-B</h4>
+            <p>Hospital Autoclave Standard</p>
+          </div>
+          <div class="trust-item">
+            <h4>Fixed Fee</h4>
+            <p>Written Pre-Treatment BOQ</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img class="hero-image-main" 
+             src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80" 
+             alt="Calming Scandinavian Dental Operatory with State-of-the-Art Digital Scanner">
+        
+        <div class="hero-floating-card">
+          <p class="quote">"I avoided dentists for 7 years due to needle trauma. Dr. Willowmere gave me the stop buzzer and used computer numbing. I fell asleep during my root canal."</p>
+          <p class="author">&mdash; Ananya Sen, Principal Architect</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Real Problem: Dental Trauma & Upselling -->
+  <section id="comfort" class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">The Patient Reality</div>
+        <h2>Why Millions Avoid the Dental Chair Until It Hurts</h2>
+        <p>Dental visits shouldn’t feel like an interrogation or a high-pressure retail showroom. Here is why patients come to Willowmere after traumatic experiences elsewhere.</p>
+      </div>
+
+      <div class="problem-cards">
+        <div class="card">
+          <div class="card-icon">1</div>
+          <h3>Dismissed Pain &amp; Needle Shock</h3>
+          <p>Being told "just bear with it for two minutes" while clutching the armrests in agony because the clinic rushed local anesthesia absorption.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">2</div>
+          <h3>The Sudden ₹1.2 Lakh Upsell</h3>
+          <p>You walked in for a routine ₹1,500 cleaning, and while helpless on the chair, you’re told 4 molars need emergency crowns and veneers today.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">3</div>
+          <h3>Questionable Clinic Sterilization</h3>
+          <p>Unsealed instruments taken from open metal trays, cloudy suction lines, and no visible biological indicators proving autoclave sterilization cycles.</p>
+        </div>
+      </div>
+
+      <div class="comparison-wrap">
+        <div class="comparison-grid">
+          <div class="comp-col comp-col-bad">
+            <h3 style="color: #E63946;">&times; Typical Commercial Dental Clinics</h3>
+            <div class="comp-item"><span style="color:#E63946; font-weight:800;">&times;</span> Rushed 15-minute appointment slots where you feel like an assembly-line product</div>
+            <div class="comp-item"><span style="color:#E63946; font-weight:800;">&times;</span> Vague verbal quotes that balloon when you reach the checkout desk</div>
+            <div class="comp-item"><span style="color:#E63946; font-weight:800;">&times;</span> Rotating junior interns treating complex root canals while senior doctors manage billing</div>
+            <div class="comp-item"><span style="color:#E63946; font-weight:800;">&times;</span> Harsh chemical odors, loud drill echoes, and zero sensory comfort measures</div>
+          </div>
+
+          <div class="comp-col">
+            <h3 style="color: var(--accent);">&#10003; The Willowmere Clinical Standard</h3>
+            <div class="comp-item"><span style="color:#2A9D8F; font-weight:800;">&#10003;</span> Handheld wireless stop-signal button: you pause treatment whenever you choose</div>
+            <div class="comp-item"><span style="color:#2A9D8F; font-weight:800;">&#10003;</span> 100% written itemized estimate: zero billing surprises before procedure begins</div>
+            <div class="comp-item"><span style="color:#2A9D8F; font-weight:800;">&#10003;</span> MDS Prosthodontists, Endodontists &amp; Implantologists with 15+ years of focus</div>
+            <div class="comp-item"><span style="color:#2A9D8F; font-weight:800;">&#10003;</span> Medical-grade HEPA air filtration, noise-canceling headphones, and ceiling monitors</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialized Care & Treatments -->
+  <section id="specialties" class="section-padding">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">Clinical Excellence</div>
+        <h2>Specialized Dentistry &amp; Facial Aesthetics</h2>
+        <p>Combining microscopic precision with restorative biology for long-lasting health and natural aesthetics.</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="clinic-card">
+          <div class="clinic-img-wrap">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Patient Smiling Confidently After Porcelain Veneers">
+            <span class="clinic-tag">Smile Design</span>
+          </div>
+          <div class="clinic-body">
+            <div>
+              <h3>Bespoke Porcelain Veneers</h3>
+              <p>Hand-layered E-Max ceramic veneers customized for your facial proportions, skin undertone, and lip dynamic movement.</p>
+            </div>
+            <div class="clinic-meta">
+              <span>3D Digital Mockup &bull; 2 Visits</span>
+              <strong style="color: var(--accent);">10-Yr Warranty</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="clinic-card">
+          <div class="clinic-img-wrap">
+            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80" alt="Precision Dental Implantology">
+            <span class="clinic-tag">Swiss Implants</span>
+          </div>
+          <div class="clinic-body">
+            <div>
+              <h3>Straumann&reg; Guided Implants</h3>
+              <p>Computer-guided robotic keyhole placement. Minimal swelling, zero scalpel incisions, and same-day provisional teeth.</p>
+            </div>
+            <div class="clinic-meta">
+              <span>Titanium Grade-4 &bull; Lifetime</span>
+              <strong style="color: var(--accent);">99.4% Success</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="clinic-card">
+          <div class="clinic-img-wrap">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Gentle Facial Aesthetics and Skin Rejuvenation">
+            <span class="clinic-tag">Aesthetics</span>
+          </div>
+          <div class="clinic-body">
+            <div>
+              <h3>Medical Facial Harmonization</h3>
+              <p>Subtle, undetectable anti-wrinkle micro-dosing and hyaluronic contouring administered by board-certified maxillofacial surgeons.</p>
+            </div>
+            <div class="clinic-meta">
+              <span>US-FDA Approved &bull; 30 Mins</span>
+              <strong style="color: var(--accent);">Zero Downtime</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-Step Journey -->
+  <section id="process" class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">The Patient Protocol</div>
+        <h2>Our 3-Step Anxiety-Free Care Protocol</h2>
+        <p>From your initial sensory consultation to lasting maintenance, your peace of mind is our primary clinical indicator.</p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="card">
+          <div class="step-number">01</div>
+          <h3>Intraoral 3D Scan &amp; Comfort Profile</h3>
+          <p>No gooey gag-inducing putty impressions. Our 3D optical wand captures 6,000 photos/second to render your teeth in real time. We record your dental anxiety history and numbing preferences.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">02</div>
+          <h3>Written Pre-Treatment BOQ &amp; Preview</h3>
+          <p>We show you a 3D simulation of your completed smile before touching a tooth. You receive an itemized cost schedule with zero fine print, plus flexible 0% interest EMI options.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">03</div>
+          <h3>Empowered Gentle Care &amp; Dedicated Follow-up</h3>
+          <p>You hold the stop buzzer throughout. Computerized anesthesia ensures zero needle sting. Post-treatment, your personal clinical coordinator checks on your comfort via direct WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantees & Testimonials -->
+  <section id="guarantees" class="section-padding">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">Clinical Commitments</div>
+        <h2>Our 4 Written Patient Commitments</h2>
+        <p>We treat every patient like our own family. Here is what we guarantee in writing.</p>
+      </div>
+
+      <div class="guarantees-grid">
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#128737;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Hospital-Grade Class-B Autoclave Guarantee</h4>
+            <p style="font-size: 14px; margin: 0;">Instruments are sterilized at 134&deg;C in vacuum autoclaves and opened exclusively from color-indicator sealed pouches in your presence.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#128176;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Zero Hidden Medical Fee Guarantee</h4>
+            <p style="font-size: 14px; margin: 0;">If unexpected clinical complications arise during a planned procedure, we absorb the additional cost—never the patient.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#128100;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Senior MDS Specialist Sole Attendance</h4>
+            <p style="font-size: 14px; margin: 0;">Your entire procedure is performed directly by the specialist doctor you consulted with—never outsourced to junior interns.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#9201;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Zero Waiting Time Guarantee</h4>
+            <p style="font-size: 14px; margin: 0;">We schedule only one patient per operatory per hour. If your scheduled appointment starts more than 15 minutes late, your consultation fee is waived.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "I had a dental implant placed by Dr. Willowmere after two horrible experiences elsewhere. The difference was night and day. No bruising, no swelling, and the computer-guided surgery took barely 20 minutes."
+          </p>
+          <div class="client-info">
+            <img class="client-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Patient Avatar">
+            <div>
+              <h4 style="font-size: 16px;">Suresh Nambiar</h4>
+              <p style="font-size: 13px; color: var(--text-subtle);">Managing Partner &bull; Indiranagar</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "I was self-conscious about my smile for 15 years. The digital smile preview showed me exactly what my veneers would look like before we even started. They look so natural that even my closest colleagues just thought I got a new haircut!"
+          </p>
+          <div class="client-info">
+            <img class="client-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Patient Avatar">
+            <div>
+              <h4 style="font-size: 16px;">Pooja Hegde</h4>
+              <p style="font-size: 13px; color: var(--text-subtle);">Creative Director &bull; Koramangala</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultation Booking Form -->
+  <section id="consultation" class="cta-section section-padding">
+    <div class="wrap form-container">
+      <div>
+        <div class="badge">Reserve Your Session</div>
+        <h2 style="font-size: 42px; margin-bottom: 20px;">Experience Modern, Pain-Free Dental Care</h2>
+        <p style="font-size: 17px; line-height: 1.6; margin-bottom: 24px;">
+          Meet with our senior MDS specialists. Your initial 40-minute consultation includes a digital 3D intraoral scan, personalized anxiety assessment, and transparent treatment plan.
+        </p>
+
+        <div style="background: var(--bg-card-subtle); padding: 22px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 24px;">
+          <h4 style="font-size: 15px; margin-bottom: 8px; color: var(--accent);">&#9733; The Willowmere First-Visit Standard:</h4>
+          <p style="font-size: 13.5px; color: var(--text-muted); margin: 0; line-height: 1.7;">
+            We never perform invasive treatment on your first consultation visit unless you are in acute pain. Our goal is to diagnose, listen, and earn your trust first.
+          </p>
+        </div>
+      </div>
+
+      <div class="form-box">
+        <h3 style="font-size: 24px; margin-bottom: 20px;">Request Consultation</h3>
+        
+      <div id="demo-success-box" style="display:none; text-align:center; padding: 44px 24px; background: var(--bg-card); border: 1.5px solid var(--accent); border-radius: var(--radius-lg); box-shadow: var(--card-shadow); animation: demoFadeIn 0.35s ease;">
+        <div style="width: 58px; height: 58px; border-radius: 50%; background: var(--accent-light); color: var(--accent); display: inline-flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 18px; border: 1.5px solid var(--accent);">✓</div>
+        <h3 style="font-family: var(--font-heading); font-size: 26px; color: var(--text-primary); margin-bottom: 10px;">Inquiry Received</h3>
+        <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.65; max-width: 440px; margin: 0 auto 24px auto;">Thank you! Your anxiety-free clinical consultation request has been received in this live demo simulation. In a live build, appointment slots sync to the clinic calendar.</p>
+        <button type="button" onclick="resetDemoInquiry()" class="btn btn-outline" style="font-size: 13.5px; padding: 10px 24px;">Submit Another Inquiry</button>
+      </div>
+
+      <form id="demo-form" onsubmit="handleDemoInquiry(event)">
+          <div class="form-group">
+            <label for="name">Patient Full Name</label>
+            <input type="text" id="name" class="form-control" placeholder="e.g. Shalini Menon" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone / WhatsApp Number</label>
+            <input type="tel" id="phone" class="form-control" placeholder="+91 98450 12345" required>
+          </div>
+
+          <div class="form-group">
+            <label for="concern">Primary Reason for Visit</label>
+            <select id="concern" class="form-control" required>
+              <option value="">Select your area of concern...</option>
+              <option value="implants">Dental Implants / Missing Teeth</option>
+              <option value="veneers">Cosmetic Smile Design / Porcelain Veneers</option>
+              <option value="aligners">Clear Aligners / Invisalign / Crooked Teeth</option>
+              <option value="pain">Tooth Pain / Root Canal Treatment</option>
+              <option value="aesthetics">Facial Aesthetics / Skin Contouring</option>
+              <option value="checkup">Comprehensive Dental Checkup &amp; 3D Scan</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Dental Anxiety Level or Previous Bad Experiences?</label>
+            <textarea id="notes" class="form-control" rows="3" placeholder="Tell us if you have needle anxiety, sensitive gag reflex, or specific questions..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 16px;">Schedule Anxiety-Free Visit &rarr;</button>
+          <p style="font-size: 12px; color: var(--text-subtle); text-align: center; margin-top: 12px; margin-bottom: 0;">Zero obligation. Complete doctor-patient confidentiality.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap footer-inner">
+      <div>
+        <div class="brand-title" style="font-size: 20px;">WILLOWMERE</div>
+        <p style="font-size: 12px; margin: 4px 0 0; color: var(--text-subtle);">12th Main, HAL 2nd Stage, Indiranagar, Bangalore &bull; NABH &amp; ISO 9001 Certified</p>
+      </div>
+      <div style="font-size: 13px; color: var(--text-subtle); text-align: right;">
+        &copy; 2026 Willowmere Dental Clinic. Fictional agency demo crafted by <a href="https://uncodedhub.com" style="color: var(--accent); font-weight: 700;">Uncoded Hub</a>.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Style Switcher -->
+  <div class="theme-controller" role="region" aria-label="Aesthetic Architecture Switcher">
+    <div class="tc-label">
+      <span class="tc-dot"></span>
+      3 Layout &amp; Visual Styles
+    </div>
+    
+    <button class="tc-btn active" data-theme="nordic-sanctuary" onclick="switchTheme('nordic-sanctuary', this)">
+      <span>&#129528; Nordic Sanctuary</span>
+    </button>
+
+    <button class="tc-btn" data-theme="harley-medluxe" onclick="switchTheme('harley-medluxe', this)">
+      <span>&#9795; Harley Med-Luxe</span>
+    </button>
+
+    <button class="tc-btn" data-theme="swiss-radiance" onclick="switchTheme('swiss-radiance', this)">
+      <span>&#9632; Swiss Radiance Grid</span>
+    </button>
+  </div>
+
+  <script>
+    function switchTheme(themeName, btnElement) {
+      document.body.setAttribute('data-theme', themeName);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElement) btnElement.classList.add('active');
+      try { localStorage.setItem('willowmere_active_style', themeName); } catch (err) {}
+    }
+
+    try {
+      const savedTheme = localStorage.getItem('willowmere_active_style');
+      if (savedTheme) {
+        const targetBtn = document.querySelector(`.tc-btn[data-theme="${savedTheme}"]`);
+        if (targetBtn) switchTheme(savedTheme, targetBtn);
+      }
+    } catch (err) {}
+  </script>
+
+  <style>
+    @keyframes demoFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <script>
+    function handleDemoInquiry(e) {
+      e.preventDefault();
+      const form = document.getElementById('demo-form');
+      const successBox = document.getElementById('demo-success-box');
+      if (form && successBox) {
+        form.style.display = 'none';
+        successBox.style.display = 'block';
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+    function resetDemoInquiry() {
+      const form = document.getElementById('demo-form');
+      const successBox = document.getElementById('demo-success-box');
+      if (form && successBox) {
+        form.reset();
+        form.style.display = 'block';
+        successBox.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naomi Reyes | Executive Sparring &amp; Founder Advisory</title>
+  <meta name="description" content="Strategic executive sparring and 90-day scaling architecture for high-growth founders and C-suite leaders. Diagnostic-first, zero pitch on call #1, and structured exit criteria.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       CSS DESIGN SYSTEM & THEME TOKENS (HIGH CONTRAST & LEGIBILITY)
+       ========================================================================== */
+    :root, body[data-theme="bespoke-executive"] {
+      --bg-primary: #F8F6F0;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #EDEAE1;
+      --text-primary: #121922;
+      --text-muted: #3D4856;
+      --text-subtle: #687588;
+      --border-color: #D6D1C4;
+      --border-subtle: #E6E1D6;
+      --accent: #915F28;
+      --accent-hover: #754B1D;
+      --accent-contrast: #FFFFFF;
+      --accent-light: #F7EFE6;
+      --badge-bg: #EFE6D8;
+      --badge-text: #5C3A16;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --card-shadow: 0 10px 30px rgba(18, 25, 34, 0.08);
+      --header-bg: rgba(248, 246, 240, 0.95);
+      --input-bg: #FFFFFF;
+    }
+
+    body[data-theme="thought-leader"] {
+      --bg-primary: #FAF7F2;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #ECE6DC;
+      --text-primary: #111111;
+      --text-muted: #333333;
+      --text-subtle: #5C5C5C;
+      --border-color: #111111;
+      --border-subtle: #111111;
+      --accent: #991B1B;
+      --accent-hover: #7F1D1D;
+      --accent-contrast: #FFFFFF;
+      --accent-light: #FEE2E2;
+      --badge-bg: #111111;
+      --badge-text: #FFFFFF;
+      --radius-sm: 0px;
+      --radius-md: 0px;
+      --radius-lg: 0px;
+      --font-heading: 'Syne', 'Space Grotesk', sans-serif;
+      --font-body: 'Space Grotesk', -apple-system, sans-serif;
+      --card-shadow: 6px 6px 0px #111111;
+      --header-bg: #FAF7F2;
+      --input-bg: #FFFFFF;
+    }
+
+    body[data-theme="tech-monolith"] {
+      --bg-primary: #0A0D14;
+      --bg-surface: #121822;
+      --bg-card: #161E2C;
+      --bg-card-subtle: #202B3D;
+      --text-primary: #FAF8F5;
+      --text-muted: #CBD5E1;
+      --text-subtle: #94A3B8;
+      --border-color: rgba(245, 158, 11, 0.28);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --accent: #F59E0B;
+      --accent-hover: #FBBF24;
+      --accent-contrast: #0A0D14;
+      --accent-light: rgba(245, 158, 11, 0.15);
+      --badge-bg: rgba(245, 158, 11, 0.16);
+      --badge-text: #FBBF24;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --font-heading: 'Cinzel', 'Cormorant Garamond', serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --card-shadow: 0 20px 48px rgba(0, 0, 0, 0.8);
+      --header-bg: rgba(10, 13, 20, 0.94);
+      --input-bg: #121822;
+    }
+
+    /* Base Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease, box-shadow 0.25s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      padding-bottom: 90px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      color: var(--text-primary);
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+
+    p { color: var(--text-muted); margin-bottom: 1.25rem; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; object-fit: cover; }
+
+    .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      border-radius: var(--radius-sm);
+      margin-bottom: 18px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 32px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-align: center;
+      border: 1px solid transparent;
+      box-shadow: var(--card-shadow);
+    }
+
+    .btn-primary { background: var(--accent); color: var(--accent-contrast); }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1.5px solid var(--border-color);
+    }
+    .btn-outline:hover { background: var(--bg-card-subtle); border-color: var(--text-primary); }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .brand-title {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: var(--text-primary);
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-weight: 700;
+      display: block;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: 14px; font-weight: 600; color: var(--text-muted); }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ==========================================================================
+       HERO SECTION (3 DISTINCT ARCHITECTURAL LAYOUTS)
+       ========================================================================== */
+    .hero-section { padding: 70px 0 60px; position: relative; }
+
+    /* Style 1: Bespoke Executive */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-content h1 { font-size: 54px; margin-bottom: 22px; font-weight: 600; }
+    .hero-content .lead { font-size: 18px; line-height: 1.6; color: var(--text-muted); margin-bottom: 30px; }
+    .hero-actions { display: flex; gap: 16px; margin-bottom: 38px; flex-wrap: wrap; }
+
+    .hero-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding-top: 26px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .trust-item h4 { font-size: 24px; font-family: var(--font-body); color: var(--accent); margin-bottom: 3px; }
+    .trust-item p {
+      font-size: 12px;
+      line-height: 1.4;
+      margin: 0;
+      color: var(--text-subtle);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-visual { position: relative; }
+
+    .hero-image-main {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      bottom: -22px;
+      left: -22px;
+      background: var(--bg-surface);
+      padding: 18px 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      max-width: 300px;
+    }
+
+    .hero-floating-card .quote {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .hero-floating-card .author {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* Style 2: Thought Leader Grid */
+    body[data-theme="thought-leader"] .hero-section { padding: 40px 0 60px; }
+    body[data-theme="thought-leader"] .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 3px solid #111111;
+      background: #FFFFFF;
+      box-shadow: 8px 8px 0px #111111;
+    }
+    body[data-theme="thought-leader"] .hero-content {
+      padding: 50px 42px;
+      border-right: 3px solid #111111;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    body[data-theme="thought-leader"] .hero-content h1 {
+      font-size: 52px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    body[data-theme="thought-leader"] .hero-visual { height: 100%; }
+    body[data-theme="thought-leader"] .hero-image-main {
+      border-radius: 0;
+      border: none;
+      height: 100%;
+      min-height: 520px;
+    }
+    body[data-theme="thought-leader"] .hero-floating-card {
+      bottom: 0;
+      left: 0;
+      border-radius: 0;
+      border: none;
+      border-top: 3px solid #111111;
+      border-right: 3px solid #111111;
+      box-shadow: none;
+      background: #991B1B;
+      color: #FFF;
+      max-width: 340px;
+    }
+    body[data-theme="thought-leader"] .hero-floating-card .quote { color: #FFF; font-style: normal; font-weight: 600; }
+    body[data-theme="thought-leader"] .hero-floating-card .author {
+      color: #111111;
+      font-weight: 800;
+      background: #FFF;
+      display: inline-block;
+      padding: 2px 8px;
+    }
+    body[data-theme="thought-leader"] .card, 
+    body[data-theme="thought-leader"] .btn,
+    body[data-theme="thought-leader"] input,
+    body[data-theme="thought-leader"] select,
+    body[data-theme="thought-leader"] textarea {
+      border-radius: 0 !important;
+      border: 2px solid #111111 !important;
+      box-shadow: 5px 5px 0px #111111 !important;
+    }
+
+    /* Style 3: Tech Monolith HUD */
+    body[data-theme="tech-monolith"] .hero-grid {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    body[data-theme="tech-monolith"] .hero-content h1 {
+      font-size: 58px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F59E0B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    body[data-theme="tech-monolith"] .hero-actions { justify-content: center; }
+    body[data-theme="tech-monolith"] .hero-trust-bar {
+      max-width: 820px;
+      margin: 0 auto 36px;
+      background: var(--bg-card);
+      padding: 20px 32px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+    body[data-theme="tech-monolith"] .hero-visual { width: 100%; }
+    body[data-theme="tech-monolith"] .hero-image-main {
+      height: 480px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.85);
+    }
+    body[data-theme="tech-monolith"] .hero-floating-card {
+      bottom: 24px;
+      right: 24px;
+      left: auto;
+      background: rgba(18, 24, 34, 0.92);
+      backdrop-filter: blur(16px);
+      border-color: var(--accent);
+    }
+
+    /* Common Card & Sections */
+    .section-padding { padding: 80px 0; }
+    .section-header { text-align: center; max-width: 780px; margin: 0 auto 52px; }
+    .section-header h2 { font-size: 38px; margin-bottom: 16px; }
+    .section-header p { font-size: 17px; color: var(--text-muted); }
+
+    .problem-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-light);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .card h3 { font-size: 22px; margin-bottom: 12px; }
+    .card p { font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 0; }
+
+    /* Comparison Wrap */
+    .comparison-wrap {
+      margin-top: 50px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .comp-col-bad { border-right: 1px solid var(--border-color); padding-right: 32px; }
+    .comp-col h3 { font-size: 22px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .comp-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 14.5px; }
+
+    /* Frameworks / Case Studies */
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+    .case-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .case-img-wrap { height: 260px; position: relative; overflow: hidden; }
+    .case-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .case-card:hover .case-img-wrap img { transform: scale(1.04); }
+
+    .case-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(18, 24, 34, 0.88);
+      color: #FFF;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    .case-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .case-body h3 { font-size: 22px; margin-bottom: 8px; }
+
+    .case-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--text-subtle);
+      border-top: 1px solid var(--border-color);
+      padding-top: 14px;
+      margin-top: 14px;
+      font-weight: 600;
+    }
+
+    /* Process & Guarantees */
+    .process-timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+    .step-number {
+      font-family: var(--font-heading);
+      font-size: 44px;
+      color: var(--accent);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .guarantees-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .guarantee-box {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      display: flex;
+      gap: 18px;
+    }
+
+    .guarantee-icon { font-size: 28px; color: var(--accent); line-height: 1; }
+
+    .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .testimonial-text {
+      font-size: 15.5px;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .client-info { display: flex; align-items: center; gap: 14px; }
+    .client-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      object-fit: cover;
+    }
+
+    /* Form Container */
+    .cta-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .form-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .form-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--input-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 15px;
+    }
+    .form-control:focus { outline: none; border-color: var(--accent); }
+
+    /* Footer */
+    footer { padding: 50px 0; border-top: 1px solid var(--border-color); font-size: 14px; color: var(--text-muted); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+
+    /* Floating Switcher */
+    .theme-controller {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      background: rgba(18, 24, 34, 0.94);
+      backdrop-filter: blur(16px);
+      padding: 8px 10px;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .tc-label {
+      color: #FAF8F5;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-right: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .tc-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #F59E0B;
+      box-shadow: 0 0 8px #F59E0B;
+    }
+
+    .tc-btn {
+      background: transparent;
+      border: none;
+      color: #CBD5E1;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .tc-btn:hover { color: #FFF; background: rgba(255, 255, 255, 0.08); }
+    .tc-btn.active {
+      background: #FFFFFF;
+      color: #121922;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid, .problem-cards, .portfolio-grid, .process-timeline, .form-container, .guarantees-grid, .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-content h1 { font-size: 38px; }
+      .comparison-grid { grid-template-columns: 1fr; }
+      .comp-col-bad { border-right: none; border-bottom: 1px solid var(--border-color); padding-bottom: 24px; padding-right: 0; }
+      .nav-links { display: none; }
+      .theme-controller { width: 92%; overflow-x: auto; justify-content: flex-start; border-radius: 16px; }
+    }
+  </style>
+</head>
+
+<body data-theme="bespoke-executive">
+
+  <!-- Top Uncoded Hub Specimen Banner -->
+  <div style="background: #14130F; color: #F5F3EF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; padding: 10px 20px; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 99999; backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.25);">
+    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <a href="/portfolio" style="color: #FFFFFF; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 12px; padding: 5px 12px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; transition: all 0.2s ease;">
+        ← Back to Uncoded Hub Portfolio
+      </a>
+      <span style="color: rgba(245,243,239,0.4); display: inline-block;">|</span>
+      <span style="color: #F5F3EF; font-weight: 500; font-size: 12.5px;">
+        Handcrafted 7-Day Sprint Specimen Prototype
+      </span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <span style="background: rgba(199,7,75,0.2); color: #FF4D79; border: 1px solid rgba(199,7,75,0.45); font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 9px; border-radius: 3px;">
+        Interactive Niche Demo
+      </span>
+      <a href="/contact" style="color: #FFFFFF; font-size: 12.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; transition: opacity 0.2s ease;">
+        Book Your 7-Day Sprint →
+      </a>
+    </div>
+  </div>
+
+
+  <!-- Header -->
+  <header>
+    <div class="wrap nav-inner">
+      <div>
+        <span class="brand-title">NAOMI REYES</span>
+        <span class="brand-sub">Executive Sparring &bull; Strategic Advisory</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#frameworks">The 90-Day Arc</a>
+        <a href="#standards">Sparring vs. Coaching</a>
+        <a href="#process">3-Step Protocol</a>
+        <a href="#criteria">Qualification Criteria</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="#consultation" class="btn btn-primary" style="padding: 10px 22px; font-size: 13.5px;">Apply for Diagnostic</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="wrap hero-grid">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Capped Cohort &bull; Max 6 Founders Per Quarter
+        </div>
+        
+        <h1>Zero Motivational Fluff. Just Ruthless Operating Clarity.</h1>
+        
+        <p class="lead">
+          Strategic sparring partner for Seed to Series B founders and managing directors. We dismantle organizational bottlenecks, restructure unit economics, and transition you from the chief firefighter into an architect of scale.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#consultation" class="btn btn-primary">Book 45-Min Operating Diagnostic &rarr;</a>
+          <a href="#frameworks" class="btn btn-outline">Explore 90-Day Playbooks</a>
+        </div>
+
+        <div class="hero-trust-bar">
+          <div class="trust-item">
+            <h4>2x Founder</h4>
+            <p>1 Exit &bull; Former VP Product</p>
+          </div>
+          <div class="trust-item">
+            <h4>Strict 90-Day</h4>
+            <p>Milestone Execution Arc</p>
+          </div>
+          <div class="trust-item">
+            <h4>Zero Pitch</h4>
+            <p>On Call #1 Guarantee</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img class="hero-image-main" 
+             src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80" 
+             alt="Naomi Reyes in Thoughtful Strategic Sparring Session">
+        
+        <div class="hero-floating-card">
+          <p class="quote">"Naomi doesn't give you cheesy motivational pep talks. She diagnosed our 42% sales cycle leak in 30 minutes and helped us restructure our executive team in 60 days."</p>
+          <p class="author">&mdash; Raghav V., Founder &amp; CEO (B2B SaaS, $4M ARR)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Consultant Fluff Problem -->
+  <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">The Coaching Industry Trap</div>
+        <h2>Why Most Executive Coaching Leaves Founders Frustrated</h2>
+        <p>The market is flooded with certified "life coaches" who have never carried payroll, launched a product, or faced a hostile board review.</p>
+      </div>
+
+      <div class="problem-cards">
+        <div class="card">
+          <div class="card-icon">1</div>
+          <h3>Motivational Clichés with Zero P&amp;L Reality</h3>
+          <p>Being told to "visualize your breakthrough" while your burn rate is $65k/month and your head of sales just missed quarterly quotas by 40%.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">2</div>
+          <h3>The Open-Ended Retainer Trap</h3>
+          <p>Consultants who structure contracts to create dependency, stretching vague weekly chats for 18 months without defining tangible graduation metrics.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">3</div>
+          <h3>The "Junior Associate" Bait-and-Switch</h3>
+          <p>Signing an agreement after being impressed by a prominent name, only to be handed off to a 26-year-old junior coach for your actual sparring sessions.</p>
+        </div>
+      </div>
+
+      <div class="comparison-wrap">
+        <div class="comparison-grid">
+          <div class="comp-col comp-col-bad">
+            <h3 style="color: #E63946;">&times; Typical "Life &amp; Business" Coaches</h3>
+            <div class="comp-item"><span style="color:#E63946; font-weight:800;">&times;</span> Read 4 popular business books and regurgitate generic frameworks without operational context</div>
+            <div class="comp-item"><span style="color:#E63946; font-weight:800;">&times;</span> High-pressure "discovery" calls that turn into an uncomfortable hard-sell pitch</div>
+            <div class="comp-item"><span style="color:#E63946; font-weight:800;">&times;</span> Passive listening with zero tactical pushback or operational accountability</div>
+            <div class="comp-item"><span style="color:#E63946; font-weight:800;">&times;</span> Never built, scaled, or exited a business with real shareholder equity</div>
+          </div>
+
+          <div class="comp-col">
+            <h3 style="color: var(--accent);">&#10003; The Naomi Reyes Sparring Standard</h3>
+            <div class="comp-item"><span style="color:#2A9D8F; font-weight:800;">&#10003;</span> 15+ years operating experience: 2x founder, former Tier-1 tech VP with real exit credentials</div>
+            <div class="comp-item"><span style="color:#2A9D8F; font-weight:800;">&#10003;</span> Diagnostic First: Call #1 is 100% an operational audit. Zero pitches or selling permitted</div>
+            <div class="comp-item"><span style="color:#2A9D8F; font-weight:800;">&#10003;</span> Strictly 90-day time-boxed execution arcs with measurable KPI graduation criteria</div>
+            <div class="comp-item"><span style="color:#2A9D8F; font-weight:800;">&#10003;</span> 1-on-1 direct access: Naomi personally spars with you; zero junior associates</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies / Operational Arcs -->
+  <section id="frameworks" class="section-padding">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">Transformation Archives</div>
+        <h2>Tangible Founder &amp; Executive Transformations</h2>
+        <p>Real operators. Real leadership bottlenecks. Measurable strategic shifts achieved within a single 90-day sprint.</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="case-card">
+          <div class="case-img-wrap">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="Executive Leadership Meeting in Modern Boardroom">
+            <span class="case-tag">Series A &bull; SaaS</span>
+          </div>
+          <div class="case-body">
+            <div>
+              <h3>From Chief Firefighter to Scale Architect</h3>
+              <p>Restructured executive reporting lines and decision rights, freeing 24 hours/week for the CEO to focus on strategic US enterprise expansion.</p>
+            </div>
+            <div class="case-meta">
+              <span>B2B Cloud &bull; $5.2M ARR</span>
+              <strong style="color: var(--accent);">90-Day Arc</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-img-wrap">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Founders Strategy Session Around Whiteboard">
+            <span class="case-tag">D2C &bull; Omnichannel</span>
+          </div>
+          <div class="case-body">
+            <div>
+              <h3>Resolving Co-Founder Vision Deadlock</h3>
+              <p>Rebuilt operating cadence and equity governance between 3 co-founders, aligning on unit economics and preventing a costly board rift.</p>
+            </div>
+            <div class="case-meta">
+              <span>Consumer Health &bull; 85 FTEs</span>
+              <strong style="color: var(--accent);">60-Day Sprint</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-img-wrap">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Executive Delivering Keynote at Industry Summit">
+            <span class="case-tag">Enterprise &bull; Fintech</span>
+          </div>
+          <div class="case-body">
+            <div>
+              <h3>C-Suite Executive Transition</h3>
+              <p>Guided a Senior VP entering a high-visibility Chief Operating Officer role, navigating board politics and establishing 100-day credibility.</p>
+            </div>
+            <div class="case-meta">
+              <span>Global Payments &bull; 600+ Team</span>
+              <strong style="color: var(--accent);">100-Day Onboarding</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-Step Protocol -->
+  <section id="process" class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">The Sparring Framework</div>
+        <h2>Our 3-Step Strategic Sparring Roadmap</h2>
+        <p>A rigorous, closed-loop execution protocol designed to deliver compounding organizational clarity.</p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="card">
+          <div class="step-number">01</div>
+          <h3>Deep Diagnostic &amp; Bottleneck Identification</h3>
+          <p>We audit your executive calendar, organization chart, cash levers, and mental energy sinks. We identify the single operational constraint holding back 80% of company progress.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">02</div>
+          <h3>The 90-Day Sprint &amp; Weekly Sparring</h3>
+          <p>Bi-weekly 75-minute intensive sparring sessions + asynchronous WhatsApp voice memo access. We pressure-test strategic hires, investor memos, and hard personnel decisions before execution.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">03</div>
+          <h3>Operating System Handover &amp; Graduation</h3>
+          <p>We codify your decision filters and operating rhythm into durable playbooks. At day 90, we review milestones and graduate you—or structure a clearly defined maintenance track.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantees & Testimonials -->
+  <section id="criteria" class="section-padding">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">Uncompromising Standards</div>
+        <h2>Our 4 Enforceable Sparring Commitments</h2>
+        <p>Senior executive time is sacred. Here is what we contractually commit to every partner.</p>
+      </div>
+
+      <div class="guarantees-grid">
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#128737;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Zero Sales Pitch on Call #1 Guarantee</h4>
+            <p style="font-size: 14px; margin: 0;">Our initial 45-minute diagnostic is 100% operational audit. If we determine we cannot create 5x value, we explicitly reject your engagement.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#128274;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Absolute Institutional Non-Disclosure</h4>
+            <p style="font-size: 14px; margin: 0;">Full legal NDA protecting cap table details, board disputes, internal financials, and personal leadership doubts.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#128100;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Direct Founder-to-Founder Access</h4>
+            <p style="font-size: 14px; margin: 0;">You spar 1-on-1 exclusively with Naomi Reyes. No proxies. No associate coaches. Direct unmediated sparring.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#128197;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Same-Day Emergency Sparring Window</h4>
+            <p style="font-size: 14px; margin: 0;">Facing an unexpected crisis, key executive resignation, or emergency term sheet? You receive a priority 30-min call within 4 hours.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "Before working with Naomi, I was working 70 hours a week and feeling like a bottleneck for my 40-person team. Naomi's frameworks gave me the courage to replace myself in daily sprint meetings. Revenue grew 180% while my hours dropped by half."
+          </p>
+          <div class="client-info">
+            <img class="client-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Client Avatar">
+            <div>
+              <h4 style="font-size: 16px;">Devika Mallick</h4>
+              <p style="font-size: 13px; color: var(--text-subtle);">Co-Founder &amp; CEO &bull; Fintech Logistics</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "Naomi’s background as a former tech VP makes all the difference. She understands product velocity, cap table dilution, and founder loneliness in a way that academic coaches simply cannot touch. Best executive investment I’ve made."
+          </p>
+          <div class="client-info">
+            <img class="client-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Client Avatar">
+            <div>
+              <h4 style="font-size: 16px;">Karthik Sundar</h4>
+              <p style="font-size: 13px; color: var(--text-subtle);">Managing Director &bull; HealthTech</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application / Diagnostic Form -->
+  <section id="consultation" class="cta-section section-padding">
+    <div class="wrap form-container">
+      <div>
+        <div class="badge">Apply For Q3/Q4 Cohort</div>
+        <h2 style="font-size: 42px; margin-bottom: 20px;">Request a Confidential Operating Diagnostic</h2>
+        <p style="font-size: 17px; line-height: 1.6; margin-bottom: 24px;">
+          Naomi maintains a hard cap of 6 active founder retainers at any point. We carefully vet applicants for decision autonomy, operational stage, and appetite for radical candor.
+        </p>
+
+        <div style="background: var(--bg-card-subtle); padding: 22px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 24px;">
+          <h4 style="font-size: 15px; margin-bottom: 8px; color: var(--accent);">&#9733; Who This Is Specifically For:</h4>
+          <ul style="font-size: 14px; color: var(--text-muted); list-style-position: inside; line-height: 1.8;">
+            <li>Founders of businesses with &gt; ₹3 Cr ($400k) annual revenue or institutional backing</li>
+            <li>Managing Directors / C-Suite leaders navigating high-stakes organizational scale</li>
+            <li>Operators who value direct, unvarnished feedback over ego validation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="form-box">
+        <h3 style="font-size: 24px; margin-bottom: 20px;">Confidential Application</h3>
+        
+      <div id="demo-success-box" style="display:none; text-align:center; padding: 44px 24px; background: var(--bg-card); border: 1.5px solid var(--accent); border-radius: var(--radius-lg); box-shadow: var(--card-shadow); animation: demoFadeIn 0.35s ease;">
+        <div style="width: 58px; height: 58px; border-radius: 50%; background: var(--accent-light); color: var(--accent); display: inline-flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 18px; border: 1.5px solid var(--accent);">✓</div>
+        <h3 style="font-family: var(--font-heading); font-size: 26px; color: var(--text-primary); margin-bottom: 10px;">Inquiry Received</h3>
+        <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.65; max-width: 440px; margin: 0 auto 24px auto;">Thank you! Your diagnostic application has been received in this live demo simulation. In a live build, qualifying responses triage high-ticket prospects automatically.</p>
+        <button type="button" onclick="resetDemoInquiry()" class="btn btn-outline" style="font-size: 13.5px; padding: 10px 24px;">Submit Another Inquiry</button>
+      </div>
+
+      <form id="demo-form" onsubmit="handleDemoInquiry(event)">
+          <div class="form-group">
+            <label for="name">Your Full Name &amp; Title</label>
+            <input type="text" id="name" class="form-control" placeholder="e.g. Siddharth Nair, CEO" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Work Email / WhatsApp</label>
+            <input type="text" id="email" class="form-control" placeholder="siddharth@company.com / +91 98..." required>
+          </div>
+
+          <div class="form-group">
+            <label for="stage">Current Company Stage &amp; ARR</label>
+            <select id="stage" class="form-control" required>
+              <option value="">Select company stage...</option>
+              <option value="seed">Seed / Early Stage ($250k - $1M ARR)</option>
+              <option value="series-a">Series A / Growth ($1M - $5M ARR)</option>
+              <option value="scaling">Scaleup ($5M - $20M ARR)</option>
+              <option value="enterprise">Established Enterprise / Family Office</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="bottleneck">What is your single biggest organizational bottleneck right now?</label>
+            <textarea id="bottleneck" class="form-control" rows="3" placeholder="Tell us about your team dynamics, personal capacity, or upcoming strategic milestone..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 16px;">Submit Diagnostic Application &rarr;</button>
+          <p style="font-size: 12px; color: var(--text-subtle); text-align: center; margin-top: 12px; margin-bottom: 0;">Protected by strict client non-disclosure agreement.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap footer-inner">
+      <div>
+        <div class="brand-title" style="font-size: 20px;">NAOMI REYES</div>
+        <p style="font-size: 12px; margin: 4px 0 0; color: var(--text-subtle);">Executive Advisory &bull; Offices in Bangalore &bull; Working with Leaders Globally</p>
+      </div>
+      <div style="font-size: 13px; color: var(--text-subtle); text-align: right;">
+        &copy; 2026 Naomi Reyes Advisory. Fictional agency demo crafted by <a href="https://uncodedhub.com" style="color: var(--accent); font-weight: 700;">Uncoded Hub</a>.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Style Switcher -->
+  <div class="theme-controller" role="region" aria-label="Aesthetic Architecture Switcher">
+    <div class="tc-label">
+      <span class="tc-dot"></span>
+      3 Layout &amp; Visual Styles
+    </div>
+    
+    <button class="tc-btn active" data-theme="bespoke-executive" onclick="switchTheme('bespoke-executive', this)">
+      <span>&#128188; Bespoke Executive</span>
+    </button>
+
+    <button class="tc-btn" data-theme="thought-leader" onclick="switchTheme('thought-leader', this)">
+      <span>&#128214; Thought Leader</span>
+    </button>
+
+    <button class="tc-btn" data-theme="tech-monolith" onclick="switchTheme('tech-monolith', this)">
+      <span>&#9889; Tech Monolith HUD</span>
+    </button>
+  </div>
+
+  <script>
+    function switchTheme(themeName, btnElement) {
+      document.body.setAttribute('data-theme', themeName);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElement) btnElement.classList.add('active');
+      try { localStorage.setItem('naomi_active_style', themeName); } catch (err) {}
+    }
+
+    try {
+      const savedTheme = localStorage.getItem('naomi_active_style');
+      if (savedTheme) {
+        const targetBtn = document.querySelector(`.tc-btn[data-theme="${savedTheme}"]`);
+        if (targetBtn) switchTheme(savedTheme, targetBtn);
+      }
+    } catch (err) {}
+  </script>
+
+  <style>
+    @keyframes demoFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <script>
+    function handleDemoInquiry(e) {
+      e.preventDefault();
+      const form = document.getElementById('demo-form');
+      const successBox = document.getElementById('demo-success-box');
+      if (form && successBox) {
+        form.style.display = 'none';
+        successBox.style.display = 'block';
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+    function resetDemoInquiry() {
+      const form = document.getElementById('demo-form');
+      const successBox = document.getElementById('demo-success-box');
+      if (form && successBox) {
+        form.reset();
+        form.style.display = 'block';
+        successBox.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

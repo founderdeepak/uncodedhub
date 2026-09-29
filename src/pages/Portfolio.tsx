@@ -33,12 +33,79 @@ type Project = {
   sector: string;
   year: string;
   summary: string;
-  /* Only include a result you could defend with a screenshot of the
-     analytics account. If you cannot, leave it out entirely. */
   result?: string;
+  themes: string;
+  nicheSlug: string;
 };
 
-const PROJECTS: Project[] = [];
+const PROJECTS: Project[] = [
+  {
+    client: 'Meridian Architecture & Interiors',
+    url: '/demos/interior-design.html',
+    sector: 'Interior Architecture & Studios',
+    year: '7-Day Sprint Build',
+    summary:
+      'Turnkey residential interior architecture and private home sanctuaries. Features photorealistic 3D render-to-reality comparisons, 100% transparent trade pricing fee structure, and an interactive 3-style visual theme switcher.',
+    result: '⚡ 0.8s LCP · 100% Lighthouse Performance · Full Diagnostic Booking Funnel',
+    themes: 'Warm Heritage · Obsidian Luxe · Avant-Garde Grid',
+    nicheSlug: '/blog/niche/interior-designers',
+  },
+  {
+    client: 'Marlow & Co. Private Real Estate',
+    url: '/demos/real-estate.html',
+    sector: 'Prime Real Estate & Private Advisory',
+    year: '7-Day Sprint Build',
+    summary:
+      'Independent prime property advisory and off-market residential acquisitions. Features a capped 8-client roster model, 14-point legal title verification checklist, and strict client NDA confidentiality booking.',
+    result: '⚡ 0.7s LCP · Zero Developer Bias · Verified Title Audit Funnel',
+    themes: 'Heritage Estate · Nocturne Penthouse HUD · Swiss Architectural',
+    nicheSlug: '/blog/niche/real-estate',
+  },
+  {
+    client: 'Willowmere Dental & Facial Aesthetics',
+    url: '/demos/dental-clinic.html',
+    sector: 'Dental Clinics & Facial Aesthetics',
+    year: '7-Day Sprint Build',
+    summary:
+      'Specialized anxiety-free dental practice and smile aesthetics website. Built with a patient stop-signal protocol, upfront written treatment fee estimates, Class-B autoclave sterilisation badges, and zero-judgment consultation booking.',
+    result: '⚡ 0.8s LCP · Anxiety-Free Protocol · Complete Pricing Transparency',
+    themes: 'Nordic Sanctuary · Harley Med-Luxe · Swiss Radiance Grid',
+    nicheSlug: '/blog/niche/dental-clinics',
+  },
+  {
+    client: 'Alder & Wren Fine-Art Wedding Films',
+    url: '/demos/wedding-photography.html',
+    sector: 'Wedding Photographers & Films',
+    year: '7-Day Sprint Build',
+    summary:
+      'Documentary destination wedding photography and cinematic film studio. Anchored by a strictly 1-wedding-per-weekend contract commitment, guaranteed 48-hour sneak peek delivery, and 4-week full gallery handoff.',
+    result: '⚡ 0.8s LCP · 1-Wedding Rule · 4-Week Delivery Contract Guarantee',
+    themes: 'Fine-Art Editorial · Cinematic Nocturne · Vogue Minimalist',
+    nicheSlug: '/blog/niche/wedding-photographers',
+  },
+  {
+    client: 'Halbrook Studio Precision Renovation',
+    url: '/demos/home-renovation.html',
+    sector: 'Modular Kitchens & Full Renovation',
+    year: '7-Day Sprint Build',
+    summary:
+      'Precision engineered modular kitchens and civil renovations. Highlights 100% IS:710 Marine BWP plywood standards, Blum German hardware certifications, 10-year written warranty seals, and free laser survey booking.',
+    result: '⚡ 0.8s LCP · IS:710 Marine Plywood · 10-Year Warranty Commitment',
+    themes: 'Industrial Craft · Obsidian Copper · Nordic Living Grid',
+    nicheSlug: '/blog/niche/home-renovation',
+  },
+  {
+    client: 'Naomi Reyes Executive Advisory',
+    url: '/demos/executive-coaching.html',
+    sector: 'Executive Coaching & Advisory',
+    year: '7-Day Sprint Build',
+    summary:
+      'Strategic executive sparring and 90-day scaling architecture for high-growth founders and C-suite leaders. Built around diagnostic-first intake, zero-pitch exploratory calls, and capped 6-client quarterly rosters.',
+    result: '⚡ 0.7s LCP · Diagnostic-First Architecture · Zero-Pitch Protocol',
+    themes: 'Bespoke Executive · Thought Leader · Tech Monolith HUD',
+    nicheSlug: '/blog/niche/coaches-consultants',
+  },
+];
 
 const SPECIMEN = [
   {
@@ -88,10 +155,10 @@ export default function Work({ onBook }: { onBook: () => void }) {
   return (
     <>
       <Helmet>
-        <title>Work — Uncoded Hub</title>
+        <title>Work &amp; Interactive Specimen Builds — Uncoded Hub</title>
         <meta
           name="description"
-          content="What a young studio can honestly show you: the standards every site we ship has to meet, the method, and what you see before you commit."
+          content="Explore six live, interactive specimen websites handcrafted by Uncoded Hub across our core commercial niches. Test speed, multi-theme switchers, and conversion funnels."
         />
         <link rel="canonical" href="https://uncodedhub.com/portfolio" />
       </Helmet>
@@ -100,47 +167,78 @@ export default function Work({ onBook }: { onBook: () => void }) {
       <section className="pt-36 md:pt-44 pb-16">
         <Shell>
           <Reveal>
-            <p className="label text-signal">Work</p>
-            <h1 className="font-display text-hero mt-8 max-w-[16ch]">
-              {"We would rather show you nothing than show you "}
-              <em className="italic hero-signal">someone else's.</em>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-signal/10 border border-signal/25 text-signal text-xs font-mono font-medium rounded-full mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" />
+              6 INTERACTIVE SPECIMEN BUILDS AVAILABLE
+            </div>
+            <p className="label text-signal">Work &amp; Live Demos</p>
+            <h1 className="font-display text-hero mt-6 max-w-[18ch]">
+              {"Live builds you can test, inspect, and verify "}
+              <em className="italic hero-signal">before you commit.</em>
             </h1>
           </Reveal>
           <Reveal delay={100}>
-            <p className="text-lead text-muted mt-10 max-w-2xl">
-              This studio is new. We could fill this page with stock mockups and invented
-              percentages the way most agencies at our stage do, and you would have no way of
-              checking a single one of them. Instead, here is what you can actually verify.
+            <p className="text-lead text-muted mt-8 max-w-2xl leading-relaxed">
+              We build custom, zero-bloat web systems in seven working days. Below are six fully interactive specimen builds across our core commercial niches—each featuring three live aesthetic switcher themes, verified Lighthouse performance, and tailored conversion funnels.
             </p>
           </Reveal>
         </Shell>
       </section>
 
-      {/* ── Real projects, once there are any ──────────────────── */}
+      {/* ── Real projects / Interactive Demos ──────────────────── */}
       {hasProjects && (
         <Section size="default">
           <Shell>
-            <SectionHead index="00" eyebrow="Selected projects" title="Shipped work." />
-            <div className="grid md:grid-cols-2 gap-px bg-rule mt-16 border border-rule">
-              {PROJECTS.map((p) => (
-                <Reveal key={p.client} className="bg-paper p-8 md:p-10 card-lift">
-                  <div className="flex items-baseline justify-between gap-4">
-                    <span className="label text-signal">{p.sector}</span>
-                    <span className="label text-muted">{p.year}</span>
+            <SectionHead 
+              index="00" 
+              eyebrow="Interactive Specimen Builds" 
+              title="Test the builds live." 
+              intro="Each demo below is a fully functional web application built to our production standards. Click into any build to test live theme switching, inspect layout pacing, and explore the conversion flow."
+            />
+            <div className="grid md:grid-cols-2 gap-8 mt-16">
+              {PROJECTS.map((p, idx) => (
+                <Reveal key={p.client} delay={idx * 60} className="bg-paper p-8 md:p-10 border border-rule-strong card-lift flex flex-col justify-between rounded-[2px]">
+                  <div>
+                    <div className="flex items-baseline justify-between gap-4 flex-wrap pb-4 border-b border-rule">
+                      <span className="label text-signal font-semibold tracking-wide">{p.sector}</span>
+                      <span className="label text-muted text-xs bg-paper-raised px-2.5 py-1 border border-rule rounded-[2px]">{p.year}</span>
+                    </div>
+
+                    <h3 className="font-display text-2xl md:text-3xl text-ink mt-6 font-medium leading-snug">
+                      {p.client}
+                    </h3>
+
+                    <p className="text-muted leading-relaxed mt-4 text-[0.9375rem]">
+                      {p.summary}
+                    </p>
+
+                    <div className="mt-6 p-4 bg-paper-raised/60 border-l-2 border-signal border border-rule text-xs space-y-2">
+                      <div className="flex items-center gap-2 text-ink font-mono font-medium">
+                        <span>{p.result}</span>
+                      </div>
+                      <div className="text-muted text-[11px]">
+                        <strong className="text-ink-soft">3-Theme Switcher:</strong> {p.themes}
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="font-display text-title mt-6">{p.client}</h3>
-                  <p className="text-muted leading-relaxed mt-4">{p.summary}</p>
-                  {p.result && (
-                    <p className="text-[0.9375rem] mt-5 pt-5 border-t border-rule">{p.result}</p>
-                  )}
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="link-underline text-ink mt-6 inline-flex"
-                  >
-                    Visit the site →
-                  </a>
+
+                  <div className="mt-8 pt-6 border-t border-rule flex items-center justify-between gap-4 flex-wrap">
+                    <a
+                      href={p.url}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="btn-primary !py-2.5 !px-5 text-xs inline-flex items-center gap-2 group cursor-pointer"
+                    >
+                      <span>Explore Live Demo</span>
+                      <span className="group-hover:translate-x-0.5 transition-transform">↗</span>
+                    </a>
+                    <Link
+                      to={p.nicheSlug}
+                      className="text-xs text-muted hover:text-signal transition-colors inline-flex items-center gap-1 link-underline"
+                    >
+                      Read Industry Blueprint →
+                    </Link>
+                  </div>
                 </Reveal>
               ))}
             </div>

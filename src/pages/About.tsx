@@ -90,7 +90,7 @@ export default function About({ onBook }: { onBook: () => void }) {
                   height={540}
                   loading="lazy"
                   decoding="async"
-                  className="photo-hover w-full aspect-[3/4] object-cover bg-paper grayscale"
+                  className="photo-hover w-full aspect-[3/4] object-cover bg-paper"
                 />
                 <img
                   src="/geetha.webp"
@@ -99,7 +99,7 @@ export default function About({ onBook }: { onBook: () => void }) {
                   height={700}
                   loading="lazy"
                   decoding="async"
-                  className="photo-hover w-full aspect-[3/4] object-cover object-top bg-paper grayscale"
+                  className="photo-hover w-full aspect-[3/4] object-cover object-top bg-paper"
                 />
               </div>
               <p className="label text-muted mt-4">Deepak &amp; Geetha · Bengaluru</p>

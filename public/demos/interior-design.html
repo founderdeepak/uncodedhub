@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meridian Interiors &amp; Architecture | Bespoke Residential Studios</title>
+  <meta name="description" content="Turnkey residential interior architecture and private home sanctuaries. Photorealistic 3D renders before procurement, 100% transparent trade pricing, and guaranteed delivery timelines.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       CSS DESIGN SYSTEM & THEME TOKENS (HIGH CONTRAST & LEGIBILITY)
+       ========================================================================== */
+    :root, body[data-theme="warm-heritage"] {
+      --bg-primary: #F8F5EE;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #F1EDE2;
+      --text-primary: #191512;
+      --text-muted: #4A423A;
+      --text-subtle: #6E6459;
+      --border-color: #DDD4C4;
+      --border-subtle: #E8E2D6;
+      --accent: #876239;
+      --accent-hover: #6D4C28;
+      --accent-contrast: #FFFFFF;
+      --accent-light: #F2E9DE;
+      --badge-bg: #EAE1D2;
+      --badge-text: #593D1E;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --card-shadow: 0 10px 30px rgba(50, 40, 25, 0.07);
+      --header-bg: rgba(248, 245, 238, 0.94);
+      --input-bg: #FFFFFF;
+    }
+
+    body[data-theme="obsidian-luxe"] {
+      --bg-primary: #0C0A09;
+      --bg-surface: #141210;
+      --bg-card: #181512;
+      --bg-card-subtle: #221E19;
+      --text-primary: #FAF8F5;
+      --text-muted: #D5CEC2;
+      --text-subtle: #A39B8E;
+      --border-color: rgba(220, 185, 120, 0.28);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --accent: #E5C378;
+      --accent-hover: #F2D998;
+      --accent-contrast: #0C0A09;
+      --accent-light: rgba(229, 195, 120, 0.14);
+      --badge-bg: rgba(229, 195, 120, 0.16);
+      --badge-text: #F0D494;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --font-heading: 'Cinzel', 'Cormorant Garamond', serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --card-shadow: 0 20px 48px rgba(0, 0, 0, 0.7);
+      --header-bg: rgba(12, 10, 9, 0.92);
+      --input-bg: #141210;
+    }
+
+    body[data-theme="avant-garde"] {
+      --bg-primary: #F2EFEB;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #E8E4DA;
+      --text-primary: #0A0A0A;
+      --text-muted: #242424;
+      --text-subtle: #4D4D4D;
+      --border-color: #0A0A0A;
+      --border-subtle: #0A0A0A;
+      --accent: #FF3B00;
+      --accent-hover: #D43000;
+      --accent-contrast: #FFFFFF;
+      --accent-light: #FFEBE5;
+      --badge-bg: #0A0A0A;
+      --badge-text: #FFFFFF;
+      --radius-sm: 0px;
+      --radius-md: 0px;
+      --radius-lg: 0px;
+      --font-heading: 'Syne', 'Space Grotesk', sans-serif;
+      --font-body: 'Space Grotesk', -apple-system, sans-serif;
+      --card-shadow: 6px 6px 0px #0A0A0A;
+      --header-bg: #F2EFEB;
+      --input-bg: #FFFFFF;
+    }
+
+    /* Base Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease, box-shadow 0.25s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      padding-bottom: 90px; /* Switcher space */
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      color: var(--text-primary);
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Badges & Indicators */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      border-radius: var(--radius-sm);
+      margin-bottom: 18px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 32px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-align: center;
+      border: 1px solid transparent;
+      box-shadow: var(--card-shadow);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--accent-contrast);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1.5px solid var(--border-color);
+    }
+    .btn-outline:hover {
+      background: var(--bg-card-subtle);
+      border-color: var(--text-primary);
+    }
+
+    /* ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--text-primary);
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .phone-link {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* ==========================================================================
+       HERO SECTION WITH 3 DISTINCT LAYOUT ARCHITECTURES
+       ========================================================================== */
+    .hero-section {
+      padding: 70px 0 60px;
+      position: relative;
+    }
+
+    /* Standard Hero (Default / Style 1: Warm Heritage) */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 54px;
+      margin-bottom: 22px;
+      font-weight: 600;
+    }
+
+    .hero-content .lead {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 38px;
+      flex-wrap: wrap;
+    }
+
+    .hero-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding-top: 26px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .trust-item h4 {
+      font-size: 24px;
+      font-family: var(--font-body);
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .trust-item p {
+      font-size: 12px;
+      line-height: 1.4;
+      margin: 0;
+      color: var(--text-subtle);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-image-main {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      bottom: -22px;
+      left: -22px;
+      background: var(--bg-surface);
+      padding: 18px 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      max-width: 280px;
+    }
+
+    .hero-floating-card .quote {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .hero-floating-card .author {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* Distinct Architecture for STYLE 2: Obsidian Luxe */
+    body[data-theme="obsidian-luxe"] .hero-grid {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    body[data-theme="obsidian-luxe"] .hero-content h1 {
+      font-size: 58px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #D8C398 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    body[data-theme="obsidian-luxe"] .hero-actions {
+      justify-content: center;
+    }
+    body[data-theme="obsidian-luxe"] .hero-trust-bar {
+      max-width: 800px;
+      margin: 0 auto 36px;
+      background: var(--bg-card);
+      padding: 20px 32px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+    body[data-theme="obsidian-luxe"] .hero-visual {
+      width: 100%;
+    }
+    body[data-theme="obsidian-luxe"] .hero-image-main {
+      height: 480px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.85);
+    }
+    body[data-theme="obsidian-luxe"] .hero-floating-card {
+      bottom: 24px;
+      right: 24px;
+      left: auto;
+      background: rgba(20, 18, 16, 0.88);
+      backdrop-filter: blur(16px);
+      border-color: var(--accent);
+    }
+
+    /* Distinct Architecture for STYLE 3: Avant-Garde Minimalist Monolith */
+    body[data-theme="avant-garde"] .hero-section {
+      padding: 40px 0 60px;
+    }
+    body[data-theme="avant-garde"] .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 3px solid #0A0A0A;
+      background: #FFFFFF;
+      box-shadow: 8px 8px 0px #0A0A0A;
+    }
+    body[data-theme="avant-garde"] .hero-content {
+      padding: 50px 42px;
+      border-right: 3px solid #0A0A0A;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    body[data-theme="avant-garde"] .hero-content h1 {
+      font-size: 52px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    body[data-theme="avant-garde"] .hero-visual {
+      height: 100%;
+    }
+    body[data-theme="avant-garde"] .hero-image-main {
+      border-radius: 0;
+      border: none;
+      height: 100%;
+      min-height: 520px;
+    }
+    body[data-theme="avant-garde"] .hero-floating-card {
+      bottom: 0;
+      left: 0;
+      border-radius: 0;
+      border: none;
+      border-top: 3px solid #0A0A0A;
+      border-right: 3px solid #0A0A0A;
+      box-shadow: none;
+      background: #FF3B00;
+      color: #FFF;
+      max-width: 320px;
+    }
+    body[data-theme="avant-garde"] .hero-floating-card .quote {
+      color: #FFF;
+      font-style: normal;
+      font-weight: 600;
+    }
+    body[data-theme="avant-garde"] .hero-floating-card .author {
+      color: #0A0A0A;
+      font-weight: 800;
+      background: #FFF;
+      display: inline-block;
+      padding: 2px 8px;
+    }
+    body[data-theme="avant-garde"] .card, 
+    body[data-theme="avant-garde"] .btn,
+    body[data-theme="avant-garde"] input,
+    body[data-theme="avant-garde"] select,
+    body[data-theme="avant-garde"] textarea {
+      border-radius: 0 !important;
+      border: 2px solid #0A0A0A !important;
+      box-shadow: 5px 5px 0px #0A0A0A !important;
+    }
+
+    /* ==========================================================================
+       PAIN POINTS & THE CUSTOMER SAGA (THE "SILENT LOSS" & REAL STAKES)
+       ========================================================================== */
+    .section-padding {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 52px;
+    }
+
+    .section-header h2 {
+      font-size: 38px;
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      font-size: 17px;
+      color: var(--text-muted);
+    }
+
+    .problem-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-light);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* Comparison Table (Bad Designers vs. Meridian Standard) */
+    .comparison-wrap {
+      margin-top: 50px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .comp-col-bad {
+      border-right: 1px solid var(--border-color);
+      padding-right: 32px;
+    }
+
+    .comp-col h3 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .comp-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 14.5px;
+    }
+
+    .comp-icon-bad {
+      color: #E63946;
+      font-weight: 800;
+    }
+
+    .comp-icon-good {
+      color: #2A9D8F;
+      font-weight: 800;
+    }
+
+    /* ==========================================================================
+       PORTFOLIO / RECENT RESIDENCES (RICH VISUALS)
+       ========================================================================== */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-img-wrap {
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .project-card:hover .project-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .project-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(18, 16, 14, 0.85);
+      color: #FFF;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    .project-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-body h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--text-subtle);
+      border-top: 1px solid var(--border-color);
+      padding-top: 14px;
+      margin-top: 14px;
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       OUR 3-STEP SANCTUARY PROCESS
+       ========================================================================== */
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      position: relative;
+    }
+
+    .process-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      position: relative;
+    }
+
+    .step-number {
+      font-family: var(--font-heading);
+      font-size: 44px;
+      color: var(--accent);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    /* ==========================================================================
+       VERIFIABLE PROMISES & CLIENT TESTIMONIALS
+       ========================================================================== */
+    .guarantees-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .guarantee-box {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      display: flex;
+      gap: 18px;
+    }
+
+    .guarantee-icon {
+      font-size: 28px;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .testimonial-text {
+      font-size: 15.5px;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .client-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .client-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      object-fit: cover;
+    }
+
+    .client-meta h4 {
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+
+    .client-meta p {
+      font-size: 13px;
+      color: var(--text-subtle);
+      margin: 0;
+    }
+
+    /* ==========================================================================
+       CONSULTATION BOOKING FORM (FRICTIONLESS CONVERSION)
+       ========================================================================== */
+    .cta-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .form-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .form-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--input-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 15px;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      padding: 50px 0;
+      border-top: 1px solid var(--border-color);
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ==========================================================================
+       INTERACTIVE FLOATING STYLE SWITCHER (PREVIEW CONTROLLER)
+       ========================================================================== */
+    .theme-controller {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      background: rgba(18, 16, 14, 0.94);
+      backdrop-filter: blur(16px);
+      padding: 8px 10px;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .tc-label {
+      color: #FAF8F5;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-right: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .tc-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #2ECC71;
+      box-shadow: 0 0 8px #2ECC71;
+    }
+
+    .tc-btn {
+      background: transparent;
+      border: none;
+      color: #CFCAC2;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .tc-btn:hover {
+      color: #FFF;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .tc-btn.active {
+      background: #FFFFFF;
+      color: #12100E;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-grid, .problem-cards, .portfolio-grid, .process-timeline, .form-container, .guarantees-grid, .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-content h1 { font-size: 38px; }
+      .comparison-grid { grid-template-columns: 1fr; }
+      .comp-col-bad { border-right: none; border-bottom: 1px solid var(--border-color); padding-bottom: 24px; padding-right: 0; }
+      .nav-links { display: none; }
+      .theme-controller { width: 92%; overflow-x: auto; justify-content: flex-start; border-radius: 16px; }
+    }
+  </style>
+</head>
+
+<body data-theme="warm-heritage">
+
+  <!-- Top Uncoded Hub Specimen Banner -->
+  <div style="background: #14130F; color: #F5F3EF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; padding: 10px 20px; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 99999; backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.25);">
+    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <a href="/portfolio" style="color: #FFFFFF; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 12px; padding: 5px 12px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; transition: all 0.2s ease;">
+        ← Back to Uncoded Hub Portfolio
+      </a>
+      <span style="color: rgba(245,243,239,0.4); display: inline-block;">|</span>
+      <span style="color: #F5F3EF; font-weight: 500; font-size: 12.5px;">
+        Handcrafted 7-Day Sprint Specimen Prototype
+      </span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <span style="background: rgba(199,7,75,0.2); color: #FF4D79; border: 1px solid rgba(199,7,75,0.45); font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 9px; border-radius: 3px;">
+        Interactive Niche Demo
+      </span>
+      <a href="/contact" style="color: #FFFFFF; font-size: 12.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; transition: opacity 0.2s ease;">
+        Book Your 7-Day Sprint →
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <header>
+    <div class="wrap nav-inner">
+      <div class="brand">
+        <span class="brand-title">MERIDIAN</span>
+        <span class="brand-sub">Interiors &amp; Architecture</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#portfolio">Completed Residences</a>
+        <a href="#standards">The Meridian Difference</a>
+        <a href="#process">3-Step Process</a>
+        <a href="#guarantees">Fixed Guarantees</a>
+        <a href="#faq">Client FAQ</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="tel:+919876543210" class="phone-link">+91 (080) 4122-8900</a>
+        <a href="#consultation" class="btn btn-primary" style="padding: 10px 22px; font-size: 13.5px;">Book Design Diagnostic</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION (3 DISTINCT ARCHITECTURAL LAYOUTS)
+       ========================================================================== -->
+  <section class="hero-section">
+    <div class="wrap hero-grid">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Accepting Only 4 Residences for Q3/Q4
+        </div>
+        
+        <h1>Sanctuaries Designed for Living. Delivered Without Surprises.</h1>
+        
+        <p class="lead">
+          We curate bespoke residential architecture and turnkey interiors for homeowners who demand uncompromised aesthetics, 100% itemized procurement at trade cost, and a contractual completion guarantee.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#consultation" class="btn btn-primary">Book 1-on-1 Concept Diagnostic &rarr;</a>
+          <a href="#portfolio" class="btn btn-outline">Explore Completed Homes</a>
+        </div>
+
+        <div class="hero-trust-bar">
+          <div class="trust-item">
+            <h4>100%</h4>
+            <p>Trade-Cost Sourcing</p>
+          </div>
+          <div class="trust-item">
+            <h4>48 Days</h4>
+            <p>Avg. 3BHK Turnkey Build</p>
+          </div>
+          <div class="trust-item">
+            <h4>&ZeroWidthSpace;&ZeroWidthSpace;₹2,500/Day</h4>
+            <p>Late Penalty Guarantee</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img class="hero-image-main" 
+             src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80" 
+             alt="Luxury Living Room Interior Architecture with Italian Marble and Oak Paneling">
+        
+        <div class="hero-floating-card">
+          <p class="quote">"Meridian was the only firm that gave us full factory invoices for our veneer and Blum hardware. Finished on day 46 with zero budget drift."</p>
+          <p class="author">&mdash; Vikram &amp; Priya Nair, The Pavilion Villa</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       THE REAL PROBLEM / WHY TYPICAL INTERIOR PROJECTS BREAK DOWN
+       ========================================================================== */
+  -->
+  <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">The Painful Reality</div>
+        <h2>Why 82% of Homeowners Regret Their Interior Experience</h2>
+        <p>You’ve invested crores into your property. But the interior design industry is notorious for three silent traps that turn dream homes into month-long nightmares.</p>
+      </div>
+
+      <div class="problem-cards">
+        <div class="card">
+          <div class="card-icon">1</div>
+          <h3>The Contractor Vanishing Act</h3>
+          <p>Most design studios are mere brokers. They draft glossy sketches, take a 50% advance, and dump execution on unsupervised local sub-contractors who cut corners when you aren’t looking.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">2</div>
+          <h3>Hidden 25% Vendor Kickbacks</h3>
+          <p>Did that custom Italian sofa really cost ₹3.8 Lakhs? Traditional designers push specific tile, lighting, and timber showrooms because they collect covert 15–25% dealer cuts behind your back.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">3</div>
+          <h3>"Fantasy Renders" That Collapse on Site</h3>
+          <p>3D renders downloaded from Pinterest that look breathtaking on an iPad, but ignore structural beam heights, HVAC ducting, and electrical conduits—forcing ugly on-site compromises.</p>
+        </div>
+      </div>
+
+      <!-- Comparison Section -->
+      <div class="comparison-wrap">
+        <div class="comparison-grid">
+          <div class="comp-col comp-col-bad">
+            <h3 style="color: #E63946;">&times; Typical Interior Studios</h3>
+            <div class="comp-item"><span class="comp-icon-bad">&times;</span> Junior designers handle your site while the founder disappears after contract signing</div>
+            <div class="comp-item"><span class="comp-icon-bad">&times;</span> Vague lump-sum quotations with hidden "variation orders" that balloon 30% over budget</div>
+            <div class="comp-item"><span class="comp-icon-bad">&times;</span> Endless timeline delays with zero financial accountability for your extended rental costs</div>
+            <div class="comp-item"><span class="comp-icon-bad">&times;</span> Commercial ply substituted for Marine BWP Grade in high-moisture kitchen zones</div>
+          </div>
+
+          <div class="comp-col">
+            <h3 style="color: var(--accent);">&#10003; The Meridian Practice</h3>
+            <div class="comp-item"><span class="comp-icon-good">&#10003;</span> Dedicated resident site engineer stationed on your premises every single working day</div>
+            <div class="comp-item"><span class="comp-icon-good">&#10003;</span> 100% open-book trade procurement: you pay factory price; our design fee is strictly fixed</div>
+            <div class="comp-item"><span class="comp-icon-good">&#10003;</span> Contractual handover guarantee: we credit ₹2,500 for every single day past deadline</div>
+            <div class="comp-item"><span class="comp-icon-good">&#10003;</span> Structural 3D engineering with verified MEP coordinates before any chisel touches a wall</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CURATED PORTFOLIO / RECENT COMPLETED RESIDENCES
+       ========================================================================== -->
+  <section id="portfolio" class="section-padding">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">Architectural Portfolio</div>
+        <h2>Homes That Feel Like You. Crafted to Endure.</h2>
+        <p>Explore a selection of private residences, duplex penthouses, and bespoke sanctuaries recently completed across Bangalore and Mumbai.</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="Minimalist Japandi Living Room with Bespoke White Oak Millwork">
+            <span class="project-tag">Japandi Duplex</span>
+          </div>
+          <div class="project-body">
+            <div>
+              <h3>The Alabaster Penthouse</h3>
+              <p>Minimalist micro-cement walls, concealed fluted oak storage, and architectural cove illumination tailored for a venture partner's family.</p>
+            </div>
+            <div class="project-meta">
+              <span>Indiranagar &bull; 4,200 Sq.Ft</span>
+              <strong style="color: var(--accent);">52 Days Turnkey</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Modern Warm Organic Interior with Travertine Stone Island and Brass Accents">
+            <span class="project-tag">Warm Minimalist</span>
+          </div>
+          <div class="project-body">
+            <div>
+              <h3>The Travertine Villa</h3>
+              <p>Honored monolithic travertine centerpieces, custom acoustic wall panelling, and discreet smart-home HVAC integration.</p>
+            </div>
+            <div class="project-meta">
+              <span>Whitefield &bull; 5,800 Sq.Ft</span>
+              <strong style="color: var(--accent);">64 Days Turnkey</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Contemporary High-Spec Kitchen with Matte Black Quartz and Walnut Finishes">
+            <span class="project-tag">Culinary Studio</span>
+          </div>
+          <div class="project-body">
+            <div>
+              <h3>Koramangala 4th Block Residence</h3>
+              <p>Ergonomic Blum Legrabox kitchen architecture, imported Dekton work surfaces, and atmospheric Lutron warm-dim lighting scenes.</p>
+            </div>
+            <div class="project-meta">
+              <span>Koramangala &bull; 3,600 Sq.Ft</span>
+              <strong style="color: var(--accent);">44 Days Turnkey</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       THE 3-STEP SANCTUARY ROADMAP
+       ========================================================================== -->
+  <section id="process" class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">Predictable Execution</div>
+        <h2>Our 3-Step Sanctuary Framework</h2>
+        <p>No endless WhatsApp groups with 15 confused technicians. A structured, milestone-driven protocol from spatial concept to white-glove handover.</p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="process-step card">
+          <div class="step-number">01</div>
+          <h3>Spatial Discovery &amp; Architectural Audit</h3>
+          <p>We analyze your floor plan, family routines, lighting angles, and storage pinch points. You receive a comprehensive feasibility deck and exact budget bracket before paying a rupee in design retainers.</p>
+        </div>
+
+        <div class="process-step card">
+          <div class="step-number">02</div>
+          <h3>Virtual 3D Twin &amp; Open-Book BOQ</h3>
+          <p>We render your exact space down to tile grout tones, switchplate positions, and fabric textures. We provide a line-by-line Bill of Quantities showing trade factory pricing with zero hidden contractor buffers.</p>
+        </div>
+
+        <div class="process-step card">
+          <div class="step-number">03</div>
+          <h3>Supervised Execution &amp; Guaranteed Handover</h3>
+          <p>Our resident engineer coordinates precision carpentry, MEP, and finishes. You receive daily timestamped photo logs via our private client portal, leading to a zero-snag deep-cleaned handover on schedule.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       GUARANTEES & SOCIAL PROOF
+       ========================================================================== -->
+  <section id="guarantees" class="section-padding">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">Verifiable Security</div>
+        <h2>Our 4 Immutable Commitments in Writing</h2>
+        <p>We don't expect blind trust. We back our architectural practice with enforceable contractual clauses.</p>
+      </div>
+
+      <div class="guarantees-grid">
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#128737;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">10-Year Hardware &amp; Joinery Warranty</h4>
+            <p style="font-size: 14px; margin: 0;">We exclusively install certified marine BWP-grade ply and Austrian Blum fittings backed by a 10-year replacement warranty.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#128176;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Zero Budget Escalation Clause</h4>
+            <p style="font-size: 14px; margin: 0;">Once your final 3D design and BOQ are signed, not a single rupee of additional cost is billed unless you initiate a structural scope change.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#9200;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">₹2,500 Daily Delay Compensation</h4>
+            <p style="font-size: 14px; margin: 0;">If we miss the handover date stamped on our construction schedule, we credit ₹2,500 for every single day of delay directly against your balance.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-box">
+          <div class="guarantee-icon">&#128221;</div>
+          <div>
+            <h4 style="font-size: 18px; margin-bottom: 6px;">Unrestricted Trade-Cost Invoices</h4>
+            <p style="font-size: 14px; margin: 0;">You inspect every stone, veneer, and fixture invoice from primary suppliers. We never markup procurement or receive back-channel commissions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "Before Meridian, we spent 3 months negotiating with two big interior agencies who kept inflating costs with hidden 'civil modification' fees. Meridian was completely open. The 3D render was literally 99% identical to the home we unlocked on handover day."
+          </p>
+          <div class="client-info">
+            <img class="client-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Client Headshot">
+            <div class="client-meta">
+              <h4>Dr. Ananya Deshmukh</h4>
+              <p>4BHK Residence, Embassy Boulevard &bull; Bangalore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "What impressed me most was the resident site engineer. With my travel schedule, I couldn't be on site. The daily 6 PM photo log and milestone check-ins meant I didn't lose sleep over shoddy plumbing or uneven tile joints."
+          </p>
+          <div class="client-info">
+            <img class="client-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Client Headshot">
+            <div class="client-meta">
+              <h4>Rohit Shenoy</h4>
+              <p>VP Engineering &bull; Duplex Villa, Adarsh Palm Retreat</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONSULTATION BOOKING SECTION
+       ========================================================================== -->
+  <section id="consultation" class="cta-section section-padding">
+    <div class="wrap form-container">
+      <div>
+        <div class="badge">Reserve Your Space</div>
+        <h2 style="font-size: 42px; margin-bottom: 20px;">Let’s Map Out Your Home’s Full Potential</h2>
+        <p style="font-size: 17px; line-height: 1.6; margin-bottom: 24px;">
+          Meet directly with our Principal Architect. In this 45-minute spatial diagnostic, we review your floor plan, clarify real material costs, and identify structural layout opportunities—without any sales pitch or pressure.
+        </p>
+
+        <div style="background: var(--bg-card-subtle); padding: 22px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 24px;">
+          <h4 style="font-size: 15px; margin-bottom: 8px; color: var(--accent);">&#9733; What You Take Home From This Session:</h4>
+          <ul style="font-size: 14px; color: var(--text-muted); list-style-position: inside; line-height: 1.8;">
+            <li>Preliminary spatial efficiency layout ideas for your floor plan</li>
+            <li>Realistic itemized budget range based on current trade material rates</li>
+            <li>A detailed 48-day execution timeline breakdown</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="form-box">
+        <h3 style="font-size: 24px; margin-bottom: 20px;">Schedule Your Diagnostic</h3>
+        
+      <div id="demo-success-box" style="display:none; text-align:center; padding: 44px 24px; background: var(--bg-card); border: 1.5px solid var(--accent); border-radius: var(--radius-lg); box-shadow: var(--card-shadow); animation: demoFadeIn 0.35s ease;">
+        <div style="width: 58px; height: 58px; border-radius: 50%; background: var(--accent-light); color: var(--accent); display: inline-flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 18px; border: 1.5px solid var(--accent);">✓</div>
+        <h3 style="font-family: var(--font-heading); font-size: 26px; color: var(--text-primary); margin-bottom: 10px;">Inquiry Received</h3>
+        <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.65; max-width: 440px; margin: 0 auto 24px auto;">Thank you! Your architectural diagnostic has been registered in this live demo simulation. In a live build, 3D renders and floorplans attach directly to the inquiry.</p>
+        <button type="button" onclick="resetDemoInquiry()" class="btn btn-outline" style="font-size: 13.5px; padding: 10px 24px;">Submit Another Inquiry</button>
+      </div>
+
+      <form id="demo-form" onsubmit="handleDemoInquiry(event)">
+          <div class="form-group">
+            <label for="name">Your Full Name</label>
+            <input type="text" id="name" class="form-control" placeholder="e.g. Siddharth Verma" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone / WhatsApp Number</label>
+            <input type="tel" id="phone" class="form-control" placeholder="+91 98765 43210" required>
+          </div>
+
+          <div class="form-group">
+            <label for="property">Property Type &amp; Location</label>
+            <select id="property" class="form-control" required>
+              <option value="">Select your home type...</option>
+              <option value="3bhk">3 BHK Apartment (1,800 - 2,600 Sq.Ft)</option>
+              <option value="4bhk">4 BHK / Penthouse (2,800 - 4,500 Sq.Ft)</option>
+              <option value="villa">Independent Villa / Bungalow (4,000+ Sq.Ft)</option>
+              <option value="renovation">Complete Structural Home Renovation</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Key Priorities / Target Move-In Date</label>
+            <textarea id="notes" class="form-control" rows="3" placeholder="Tell us about your timeline, design preferences, or specific needs..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 16px;">Confirm Diagnostic Reservation &rarr;</button>
+          <p style="font-size: 12px; color: var(--text-subtle); text-align: center; margin-top: 12px; margin-bottom: 0;">We respect your privacy. No spam. No unsolicited broker calls.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap footer-inner">
+      <div>
+        <div class="brand-title" style="font-size: 20px;">MERIDIAN</div>
+        <p style="font-size: 12px; margin: 4px 0 0; color: var(--text-subtle);">Studio: 104 Lavelle Road, Bangalore &bull; Nariman Point, Mumbai</p>
+      </div>
+      <div style="font-size: 13px; color: var(--text-subtle); text-align: right;">
+        &copy; 2026 Meridian Architecture &amp; Interiors. Fictional agency demo crafted by <a href="https://uncodedhub.com" style="color: var(--accent); font-weight: 700;">Uncoded Hub</a>.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       FLOATING 3-STYLE INTERACTIVE PREVIEW SWITCHER
+       ========================================================================== -->
+  <div class="theme-controller" role="region" aria-label="Aesthetic Architecture Switcher">
+    <div class="tc-label">
+      <span class="tc-dot"></span>
+      3 Layout &amp; Visual Styles
+    </div>
+    
+    <button class="tc-btn active" data-theme="warm-heritage" onclick="switchTheme('warm-heritage', this)">
+      <span>&#127968; Warm Heritage</span>
+    </button>
+
+    <button class="tc-btn" data-theme="obsidian-luxe" onclick="switchTheme('obsidian-luxe', this)">
+      <span>&#10024; Obsidian Luxe</span>
+    </button>
+
+    <button class="tc-btn" data-theme="avant-garde" onclick="switchTheme('avant-garde', this)">
+      <span>&#9632; Avant-Garde Grid</span>
+    </button>
+  </div>
+
+  <script>
+    function switchTheme(themeName, btnElement) {
+      document.body.setAttribute('data-theme', themeName);
+      
+      // Update switcher active states
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElement) {
+        btnElement.classList.add('active');
+      }
+
+      // Store in session
+      try {
+        localStorage.setItem('meridian_active_style', themeName);
+      } catch (err) {}
+    }
+
+    // Auto-restore previously selected style
+    try {
+      const savedTheme = localStorage.getItem('meridian_active_style');
+      if (savedTheme) {
+        const targetBtn = document.querySelector(`.tc-btn[data-theme="${savedTheme}"]`);
+        if (targetBtn) {
+          switchTheme(savedTheme, targetBtn);
+        }
+      }
+    } catch (err) {}
+  </script>
+
+  <style>
+    @keyframes demoFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <script>
+    function handleDemoInquiry(e) {
+      e.preventDefault();
+      const form = document.getElementById('demo-form');
+      const successBox = document.getElementById('demo-success-box');
+      if (form && successBox) {
+        form.style.display = 'none';
+        successBox.style.display = 'block';
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+    function resetDemoInquiry() {
+      const form = document.getElementById('demo-form');
+      const successBox = document.getElementById('demo-success-box');
+      if (form && successBox) {
+        form.reset();
+        form.style.display = 'block';
+        successBox.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
