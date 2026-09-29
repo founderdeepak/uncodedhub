@@ -139,30 +139,6 @@ const DEMO_SPECIMENS = [
   },
 ];
 
-const BLUEPRINT = [
-  {
-    n: '01',
-    title: 'Schedule your call',
-    body: 'Book your FREE 20-minute call. Tell us what you do, who you want to attract, and what’s happening with your current online presence.',
-    benefit: 'You leave with clarity on what you actually need.',
-    Icon: IconCompass,
-  },
-  {
-    n: '02',
-    title: 'We build your site',
-    body: 'We handle the copy, design, development, testing, and launch. Your price is agreed before we begin, your timeline is defined upfront, and you don’t have to manage a developer.',
-    benefit: 'You know what you’re paying and when it’s going live.',
-    Icon: IconBrackets,
-  },
-  {
-    n: '03',
-    title: 'Start winning better enquiries',
-    body: 'Your new website gives serious prospects the proof and confidence they need before they reach out.',
-    benefit: 'You spend less time convincing every lead from scratch.',
-    Icon: IconLaunch,
-  },
-];
-
 const BUDGET = [
   { metric: 'Largest Contentful Paint', target: 'Under 1.5s on a 4G connection', value: '<1.5s', Icon: IconTimer },
   { metric: 'Lighthouse performance', target: '90 or above on mobile', value: '99+', Icon: IconGauge },
@@ -934,77 +910,274 @@ export default function Home({ onBook }: { onBook: () => void }) {
         </Shell>
       </Section>
 
-      {/* ── SECTION 6: The Better Enquiry Blueprint ────────────────── */}
-      <Section tone="sunk" size="loose">
+      {/* ── SECTION 04: The 7-Day Sprint Blueprint (The Process) ────────────────── */}
+      <section className="py-20 md:py-28 bg-paper-sunken/40 border-y border-rule relative overflow-hidden">
         <Shell>
           <Reveal>
-            <SectionHead
-              index="04"
-              eyebrow="The process"
-              title="The Better Enquiry Blueprint."
-              intro="Three steps, published in full — the client's-eye view, not the internal production schedule."
-            />
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-paper-raised border border-rule-strong mb-4 shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
+                <span className="font-mono text-xs text-ink uppercase tracking-wider font-semibold">
+                  04 · 7-DAY DELIVERY SYSTEM
+                </span>
+              </div>
+              <p className="label text-signal font-mono text-xs tracking-wider mb-2">
+                TRANSPARENT CLIENT PROCESS
+              </p>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
+                The 7-Day Sprint Blueprint.
+              </h2>
+              <p className="text-lead text-muted mt-4 max-w-2xl mx-auto">
+                Three clear, predictable milestones — the client's-eye view, not the internal production schedule.
+                You always know what is being built, who is building it, and exactly when it goes live.
+              </p>
+            </div>
           </Reveal>
-          <div className="grid md:grid-cols-3 gap-6 mt-14">
-            {BLUEPRINT.map((s, i) => (
-              <Reveal key={s.n} delay={i * 90}>
-                <div className="bg-paper p-8 rounded-[24px] border border-rule-strong shadow-xs flex flex-col justify-between h-full">
-                  <div>
-                    <div className="flex items-center justify-between mb-6">
-                      <span className="label text-signal font-mono font-bold text-sm">{s.n}</span>
-                      <s.Icon className="w-6 h-6 text-muted" />
+
+          {/* 3 Cloaked-Style Bento Step Cards */}
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {/* Step 1 */}
+            <Reveal delay={60}>
+              <div className="bg-paper-raised p-8 sm:p-9 rounded-[28px] border border-rule-strong shadow-sm hover:shadow-md hover:border-ink/30 transition-all duration-300 flex flex-col justify-between h-full group">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-3">
+                      <span className="w-10 h-10 rounded-full bg-signal/10 text-signal font-mono font-bold text-sm flex items-center justify-center border border-signal/20 group-hover:scale-105 transition-transform">
+                        01
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-paper-sunken border border-rule flex items-center justify-center text-signal">
+                        <IconCompass className="w-4 h-4" />
+                      </div>
                     </div>
-                    <h3 className="font-display text-2xl text-ink font-medium mb-3">{s.title}</h3>
-                    <p className="text-muted leading-relaxed text-sm">{s.body}</p>
+                    <span className="text-[11px] font-mono text-signal bg-signal-wash px-2.5 py-0.5 rounded-full border border-signal/20">
+                      DAY 01 · SCOPE LOCK
+                    </span>
                   </div>
-                  <p className="text-xs font-semibold text-ink mt-6 pt-4 border-t border-rule">
-                    {s.benefit}
+
+                  <h3 className="font-display text-2xl text-ink font-medium mb-3">
+                    Schedule &amp; Scope
+                  </h3>
+                  <p className="text-muted leading-relaxed text-sm mb-6">
+                    Book your 20-minute discovery call directly with Deepak &amp; Geetha. We identify your high-margin offerings, diagnose why visitors currently bounce, and lock your scope sheet.
+                  </p>
+
+                  <ul className="space-y-2 text-xs text-ink/80 pt-4 border-t border-rule">
+                    <li className="flex items-center gap-2">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>20-minute founder discovery call</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Fixed-price written scope sheet</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Wireframe &amp; narrative direction</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-8 pt-4 border-t border-rule bg-paper-sunken/60 -mx-8 -mb-8 p-5 sm:p-6 rounded-b-[28px]">
+                  <p className="text-xs font-semibold text-ink flex items-center gap-1.5">
+                    <span className="text-signal">⚡</span>
+                    <span>Benefit: Absolute clarity before a single line of code is written.</span>
                   </p>
                 </div>
-              </Reveal>
-            ))}
+              </div>
+            </Reveal>
+
+            {/* Step 2 */}
+            <Reveal delay={120}>
+              <div className="bg-paper-raised p-8 sm:p-9 rounded-[28px] border border-rule-strong shadow-sm hover:shadow-md hover:border-ink/30 transition-all duration-300 flex flex-col justify-between h-full group">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-3">
+                      <span className="w-10 h-10 rounded-full bg-signal/10 text-signal font-mono font-bold text-sm flex items-center justify-center border border-signal/20 group-hover:scale-105 transition-transform">
+                        02
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-paper-sunken border border-rule flex items-center justify-center text-signal">
+                        <IconBrackets className="w-4 h-4" />
+                      </div>
+                    </div>
+                    <span className="text-[11px] font-mono text-signal bg-signal-wash px-2.5 py-0.5 rounded-full border border-signal/20">
+                      DAYS 02–05 · BUILD
+                    </span>
+                  </div>
+
+                  <h3 className="font-display text-2xl text-ink font-medium mb-3">
+                    Design &amp; Engineering
+                  </h3>
+                  <p className="text-muted leading-relaxed text-sm mb-6">
+                    Geetha crafts the custom editorial design system and typography; Deepak engineers sub-1.0s fast React &amp; Vite code with seamless lead capture hooks.
+                  </p>
+
+                  <ul className="space-y-2 text-xs text-ink/80 pt-4 border-t border-rule">
+                    <li className="flex items-center gap-2">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>100% bespoke design (zero templates)</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Next-gen React 19 &amp; Vite speed</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Calendar, WhatsApp &amp; CRM hooks</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-8 pt-4 border-t border-rule bg-paper-sunken/60 -mx-8 -mb-8 p-5 sm:p-6 rounded-b-[28px]">
+                  <p className="text-xs font-semibold text-ink flex items-center gap-1.5">
+                    <span className="text-signal">⚡</span>
+                    <span>Benefit: You don't have to write copy or manage a developer.</span>
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Step 3 */}
+            <Reveal delay={180}>
+              <div className="bg-paper-raised p-8 sm:p-9 rounded-[28px] border border-rule-strong shadow-sm hover:shadow-md hover:border-ink/30 transition-all duration-300 flex flex-col justify-between h-full group">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-3">
+                      <span className="w-10 h-10 rounded-full bg-signal/10 text-signal font-mono font-bold text-sm flex items-center justify-center border border-signal/20 group-hover:scale-105 transition-transform">
+                        03
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-paper-sunken border border-rule flex items-center justify-center text-signal">
+                        <IconLaunch className="w-4 h-4" />
+                      </div>
+                    </div>
+                    <span className="text-[11px] font-mono text-signal bg-signal-wash px-2.5 py-0.5 rounded-full border border-signal/20">
+                      DAYS 06–07 · LAUNCH
+                    </span>
+                  </div>
+
+                  <h3 className="font-display text-2xl text-ink font-medium mb-3">
+                    Verification &amp; Handover
+                  </h3>
+                  <p className="text-muted leading-relaxed text-sm mb-6">
+                    We run rigorous cross-device audits, verify 95+ Lighthouse mobile benchmarks, point your DNS live, and hand over 100% of your source code repository.
+                  </p>
+
+                  <ul className="space-y-2 text-xs text-ink/80 pt-4 border-t border-rule">
+                    <li className="flex items-center gap-2">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>95+ Google Lighthouse verification</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>100% full Git code ownership</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>30-day post-launch warranty</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-8 pt-4 border-t border-rule bg-paper-sunken/60 -mx-8 -mb-8 p-5 sm:p-6 rounded-b-[28px]">
+                  <p className="text-xs font-semibold text-ink flex items-center gap-1.5">
+                    <span className="text-signal">⚡</span>
+                    <span>Benefit: Serious prospects are pre-sold before they ever message you.</span>
+                  </p>
+                </div>
+              </div>
+            </Reveal>
           </div>
-          <Reveal delay={280}>
-            <p className="label text-center mt-12 text-muted">
-              Fixed price · Fixed timeline · Built by us · Owned by you
-            </p>
+
+          {/* Bottom Commitment Strip */}
+          <Reveal delay={240}>
+            <div className="mt-14 max-w-4xl mx-auto p-4 sm:p-5 rounded-[20px] bg-paper-raised border border-rule-strong shadow-xs flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs font-mono text-ink">
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-signal" />
+                <span>Fixed price in writing</span>
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-signal" />
+                <span>7 working days contractual</span>
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-signal" />
+                <span>Late means free guarantee</span>
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-signal" />
+                <span>100% client code ownership</span>
+              </span>
+            </div>
           </Reveal>
         </Shell>
-      </Section>
+      </section>
 
-      {/* ── SECTION 7: Standards & Performance ─────────────────────── */}
-      <Section size="loose">
+      {/* ── SECTION 05: Standards & Performance ─────────────────────── */}
+      <section className="py-20 md:py-28 bg-paper">
         <Shell>
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left Column: Heading & Evidence Argument */}
             <Reveal className="lg:col-span-5">
-              <SectionHead
-                index="05"
-                eyebrow="Standards"
-                title="The numbers we hold ourselves to."
-              />
-              <p className="text-muted leading-relaxed mt-6">
-                We are a young studio, so we don't show you a wall of borrowed logos.
-                What we do is publish the exact engineering standards every site we ship has to meet.
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-paper-sunken border border-rule mb-4">
+                <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
+                <span className="font-mono text-xs text-ink uppercase tracking-wider font-semibold">
+                  05 · ENGINEERING STANDARDS
+                </span>
+              </div>
+
+              <p className="label text-signal font-mono text-xs tracking-wider mb-2">
+                EMPIRICAL VERIFICATION
               </p>
-              <p className="text-muted leading-relaxed mt-4">
+
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight leading-[1.08]">
+                The numbers we hold ourselves to.
+              </h2>
+
+              <p className="text-muted leading-relaxed mt-6 text-sm sm:text-base">
+                We are a young studio, so we don't show you a wall of borrowed client logos.
+                Instead, we publish the exact engineering standards every single site we ship is contractually verified against.
+              </p>
+
+              <p className="text-muted leading-relaxed mt-4 text-sm sm:text-base">
                 Open your browser's developer tools, run Google Lighthouse on this page, and check the
-                numbers yourself. That is a more honest signal than any marketing claim.
+                numbers yourself. That is a vastly more honest signal than any agency sales pitch.
               </p>
-              <div className="mt-8">
-                <Link to="/portfolio" className="btn-ghost text-xs">
-                  Inspect our portfolio specimens →
+
+              {/* Lab Audit Badge */}
+              <div className="mt-8 p-4 rounded-[18px] bg-paper-sunken/80 border border-rule-strong flex items-center justify-between gap-4">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-xs font-mono font-semibold text-ink">Lighthouse 99 / 100</span>
+                  </div>
+                  <span className="text-[11px] text-muted block mt-0.5">Tested on live 4G mobile emulation</span>
+                </div>
+                <Link to="/portfolio" className="btn-primary text-xs py-2 px-4 shrink-0">
+                  Inspect Demos →
                 </Link>
               </div>
             </Reveal>
 
+            {/* Right Column: 6 Bento Metric Specimen Cards */}
             <Reveal delay={120} className="lg:col-span-7">
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {BUDGET.map((b) => (
-                  <div key={b.metric} className="bg-paper-raised p-5 rounded-[20px] border border-rule-strong shadow-xs">
-                    <b.Icon className="w-5 h-5 text-signal mb-3" />
-                    <span className="font-display text-3xl font-medium text-ink block">{b.value}</span>
-                    <span className="text-xs text-muted leading-snug block mt-1">{b.metric}</span>
-                    <span className="text-[10px] font-mono text-muted/70 block mt-2 pt-2 border-t border-rule">
+                  <div
+                    key={b.metric}
+                    className="bg-paper-raised p-5 sm:p-6 rounded-[24px] border border-rule-strong shadow-xs hover:shadow-md hover:border-signal/40 transition-all duration-300 flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="w-9 h-9 rounded-full bg-signal/10 text-signal flex items-center justify-center mb-4">
+                        <b.Icon className="w-4 h-4" />
+                      </div>
+                      <span className="font-display text-3xl sm:text-4xl font-bold text-ink block tracking-tight">
+                        {b.value}
+                      </span>
+                      <span className="text-xs font-semibold text-ink leading-snug block mt-1">
+                        {b.metric}
+                      </span>
+                    </div>
+
+                    <span className="text-[10px] font-mono text-signal bg-signal-wash px-2 py-0.5 rounded-full inline-block mt-4 border border-signal/20 w-fit">
                       {b.target}
                     </span>
                   </div>
@@ -1013,7 +1186,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
             </Reveal>
           </div>
         </Shell>
-      </Section>
+      </section>
 
       {/* ── SECTION 8: Studio Founders (Deepak & Geetha) ───────────── */}
       <Section tone="sunk">
