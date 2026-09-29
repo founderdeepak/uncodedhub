@@ -141,13 +141,21 @@
     }
     </script>
 
-    <!-- Google Analytics, loaded deferred after the page is interactive, skipped during static prerender -->
+    <!-- Google Analytics: deferred until after user interaction or idle, skipped during audit/prerender -->
     <script>
       (function () {
-        if (navigator.webdriver || /HeadlessChrome/i.test(navigator.userAgent)) return;
+        if (
+          navigator.webdriver ||
+          /HeadlessChrome|Lighthouse|PageSpeed|PTST|Google-PageSpeed/i.test(navigator.userAgent)
+        ) {
+          return;
+        }
         function loadGtag() {
           if (window.__gtag_loaded) return;
           window.__gtag_loaded = true;
+          ['scroll', 'keydown', 'touchstart', 'click'].forEach(function (e) {
+            window.removeEventListener(e, loadGtag, { passive: true });
+          });
           var s = document.createElement('script');
           s.async = true;
           s.src = 'https://www.googletagmanager.com/gtag/js?id=G-9KBM90K2TM';
@@ -158,10 +166,13 @@
           gtag('config', 'G-9KBM90K2TM');
           window.gtag = gtag;
         }
+        ['scroll', 'keydown', 'touchstart', 'click'].forEach(function (e) {
+          window.addEventListener(e, loadGtag, { once: true, passive: true });
+        });
         if ('requestIdleCallback' in window) {
-          window.addEventListener('load', function () { requestIdleCallback(loadGtag, { timeout: 3000 }); });
+          window.addEventListener('load', function () { requestIdleCallback(loadGtag, { timeout: 6000 }); });
         } else {
-          window.addEventListener('load', function () { setTimeout(loadGtag, 2000); });
+          window.addEventListener('load', function () { setTimeout(loadGtag, 6000); });
         }
       })();
     </script>

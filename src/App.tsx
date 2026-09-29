@@ -16,10 +16,7 @@ const Terms = lazy(() => import('./pages/Terms'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Blogs = lazy(() => import('./pages/Blogs'));
 const BlogView = lazy(() => import('./pages/BlogView'));
-
-const EnquiryDock = lazy(() =>
-  import('./components/EnquiryDock').then((m) => ({ default: m.EnquiryDock }))
-);
+import { EnquiryDock } from './components/EnquiryDock';
 
 /* Paths are unchanged from the previous site so existing links and
    indexed URLs keep working; only the labels are new. /blog only joins
@@ -157,30 +154,110 @@ export default function App() {
 
       {/* ── Routes ─────────────────────────────────────────────── */}
       <main id="main" className="flex-1 pt-[6.5rem]">
-        <Suspense fallback={null}>
-          <Routes>
-            <Route path="/" element={<Home onBook={goToBooking} />} />
-            <Route path="/services" element={<Services onBook={goToBooking} />} />
-            <Route path="/portfolio" element={<Work onBook={goToBooking} />} />
-            <Route path="/about" element={<About onBook={goToBooking} />} />
-            <Route path="/faq" element={<Faq onBook={goToBooking} />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/404" element={<NotFound />} />
-            <Route path="/blog" element={<Blogs />} />
-            <Route path="/blog/niche/:niche" element={<Blogs />} />
-            <Route path="/blog/:slug" element={<BlogView />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
+        <Routes>
+          <Route path="/" element={<Home onBook={goToBooking} />} />
+          <Route
+            path="/services"
+            element={
+              <Suspense fallback={null}>
+                <Services onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/portfolio"
+            element={
+              <Suspense fallback={null}>
+                <Work onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <Suspense fallback={null}>
+                <About onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/faq"
+            element={
+              <Suspense fallback={null}>
+                <Faq onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <Suspense fallback={null}>
+                <Contact />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/terms"
+            element={
+              <Suspense fallback={null}>
+                <Terms />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/privacy"
+            element={
+              <Suspense fallback={null}>
+                <Privacy />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/404"
+            element={
+              <Suspense fallback={null}>
+                <NotFound />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/blog"
+            element={
+              <Suspense fallback={null}>
+                <Blogs />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/blog/niche/:niche"
+            element={
+              <Suspense fallback={null}>
+                <Blogs />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/blog/:slug"
+            element={
+              <Suspense fallback={null}>
+                <BlogView />
+              </Suspense>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={null}>
+                <NotFound />
+              </Suspense>
+            }
+          />
+        </Routes>
       </main>
 
       <SiteFooter />
       <ScrollToTop />
-      <Suspense fallback={null}>
-        <EnquiryDock />
-      </Suspense>
+      <EnquiryDock />
     </div>
   );
 }
