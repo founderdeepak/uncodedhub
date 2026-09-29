@@ -153,15 +153,32 @@ export default function Home({ onBook }: { onBook: () => void }) {
   const [activeDemoIdx, setActiveDemoIdx] = useState(0);
 
   const [isDemoPaused, setIsDemoPaused] = useState(false);
+  const [isDemoInView, setIsDemoInView] = useState(false);
 
-  /* Auto-rotate Live Demo Specimens smoothly with fixed duration (4.5s) */
   useEffect(() => {
-    if (isDemoPaused) return;
+    const el = document.getElementById('live-demos');
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      setIsDemoInView(true);
+      return;
+    }
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        setIsDemoInView(entry.isIntersecting);
+      },
+      { rootMargin: '150px' }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  /* Auto-rotate Live Demo Specimens smoothly with fixed duration (4.5s) only when visible */
+  useEffect(() => {
+    if (isDemoPaused || !isDemoInView) return;
     const timer = setInterval(() => {
       setActiveDemoIdx((prev) => (prev + 1) % DEMO_SPECIMENS.length);
     }, 4500);
     return () => clearInterval(timer);
-  }, [isDemoPaused]);
+  }, [isDemoPaused, isDemoInView]);
 
   const nextDemo = () => {
     setActiveDemoIdx((prev) => (prev + 1) % DEMO_SPECIMENS.length);
