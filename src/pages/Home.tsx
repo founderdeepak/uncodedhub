@@ -14,6 +14,7 @@ import {
   IconContrast,
   IconKeyboard,
   IconCode,
+  IconDocument,
 } from '../components/Glyphs';
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -31,10 +32,10 @@ import {
    ═══════════════════════════════════════════════════════════════════ */
 
 const TRUST = [
-  { k: 'Fixed price', v: 'Agreed before we start' },
-  { k: 'Fixed timeline', v: 'Seven working days' },
-  { k: 'Senior-only delivery', v: 'No account manager, no handoff' },
-  { k: 'You own everything', v: 'Hosting, domain, code' },
+  { k: 'Fixed price', v: 'Agreed before we start', Icon: IconDocument },
+  { k: 'Fixed timeline', v: 'Seven working days', Icon: IconTimer },
+  { k: 'Senior-only delivery', v: 'No account manager, no handoff', Icon: IconBrackets },
+  { k: 'You own everything', v: 'Hosting, domain, code', Icon: IconCode },
 ];
 
 /* The six niches, as a list rather than buried in a run-on sentence —
@@ -203,12 +204,24 @@ export default function Home({ onBook }: { onBook: () => void }) {
           the scale it is and the image is capped rather than left to
           its natural aspect. */}
       <section id="hero" className="relative overflow-hidden pt-28 md:pt-32 pb-14 md:pb-16">
+        {/* Subtle atmospheric ambient tint */}
+        <div
+          aria-hidden="true"
+          className="absolute top-0 right-1/4 w-96 h-96 bg-signal/5 rounded-full blur-3xl pointer-events-none"
+        />
+
         <Shell>
           <Reveal>
-            <p className="label text-signal">Websites for high-value local service businesses</p>
+            <div className="flex items-center gap-2.5 mb-2">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-signal-wash border border-signal/20 text-signal label text-[0.6875rem]">
+                <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" aria-hidden="true" />
+                Next 7-day cohort opening
+              </span>
+              <span className="label text-muted hidden sm:inline">Websites for high-value local services</span>
+            </div>
           </Reveal>
 
-          <div className="mt-7 grid lg:grid-cols-12 gap-x-12 gap-y-10 items-center">
+          <div className="mt-6 grid lg:grid-cols-12 gap-x-12 gap-y-10 items-center">
             <div className="lg:col-span-7">
               <Reveal delay={80}>
                 <h1 className="font-display text-hero max-w-[17ch]">
@@ -222,39 +235,127 @@ export default function Home({ onBook }: { onBook: () => void }) {
                   late-means-free guarantee.
                 </p>
                 <div className="flex flex-wrap items-center gap-3 mt-7">
-                  <button onClick={onBook} className="btn-primary">
-                    Schedule my FREE 20-minute call
+                  <button onClick={onBook} className="btn-primary group">
+                    <span>Schedule my FREE 20-minute call</span>
+                    <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">→</span>
                   </button>
                   <Link to="/services" className="btn-ghost">
                     See what it costs
                   </Link>
                 </div>
+                {/* Micro trust indicators */}
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-4 text-[0.8125rem] text-muted">
+                  <span className="flex items-center gap-1.5">
+                    <svg className="w-3.5 h-3.5 text-signal" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                    </svg>
+                    <span>No sales pitch</span>
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <svg className="w-3.5 h-3.5 text-signal" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                    </svg>
+                    <span>Fixed price in writing</span>
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <svg className="w-3.5 h-3.5 text-signal" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                    </svg>
+                    <span>Late-means-free guarantee</span>
+                  </span>
+                </div>
               </Reveal>
             </div>
 
             <Reveal delay={220} className="lg:col-span-5">
-              <picture className="w-full h-56 sm:h-64 lg:h-80 block">
-                <source media="(max-width: 767px)" srcSet="/hero-section-mobile.webp" />
-                <img
-                  src="/hero-section.webp"
-                  alt="A business owner reviewing his newly redesigned website on a laptop, pleased with how it turned out"
-                  width={1200}
-                  height={800}
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                  className="w-full h-full object-cover object-[70%_25%] grayscale border border-rule-strong"
+              <div className="relative group">
+                {/* Ambient drop glow */}
+                <div
+                  aria-hidden="true"
+                  className="absolute -inset-2 bg-gradient-to-tr from-signal/15 via-transparent to-transparent rounded-lg blur-xl opacity-60 group-hover:opacity-90 transition-opacity duration-700 pointer-events-none"
                 />
-              </picture>
+
+                {/* Studio Window Card */}
+                <div className="relative bg-paper-raised border border-rule-strong rounded-[4px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-transform duration-500 ease-out group-hover:scale-[1.01]">
+                  {/* Studio chrome top bar */}
+                  <div className="bg-paper border-b border-rule px-3.5 py-2 flex items-center justify-between">
+                    <div className="flex items-center gap-1.5" aria-hidden="true">
+                      <span className="w-2.5 h-2.5 rounded-full bg-rule-strong" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-rule" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-rule" />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
+                      <span className="label text-[0.625rem] text-muted tracking-wider">
+                        uncodedhub.com · live studio preview
+                      </span>
+                    </div>
+                    <span className="label text-[0.6rem] text-signal font-medium">7-DAY SPRINT</span>
+                  </div>
+
+                  {/* Main Hero Visual in Warm Natural Color */}
+                  <div className="relative aspect-[16/11] sm:aspect-[16/10] overflow-hidden bg-paper">
+                    <picture className="w-full h-full block">
+                      <source media="(max-width: 767px)" srcSet="/hero-section-mobile.webp" />
+                      <img
+                        src="/hero-section.webp"
+                        alt="Business owner reviewing his high-converting custom website delivered by Uncoded Hub"
+                        width={1200}
+                        height={800}
+                        loading="eager"
+                        fetchPriority="high"
+                        decoding="async"
+                        className="w-full h-full object-cover object-[70%_25%] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                      />
+                    </picture>
+
+                    {/* Gradient shading overlay for pill legibility */}
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent pointer-events-none"
+                    />
+
+                    {/* Floating Bottom Metric Bar inside image */}
+                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2 p-2.5 rounded-[3px] bg-paper-raised/95 backdrop-blur-sm border border-rule-strong/80 shadow-md">
+                      <div className="flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-full bg-signal-wash text-signal flex items-center justify-center shrink-0">
+                          <IconGauge className="w-3.5 h-3.5" />
+                        </span>
+                        <div>
+                          <p className="text-[0.75rem] font-semibold text-ink leading-tight">Lighthouse 99 · 0.8s Load</p>
+                          <p className="label text-[0.55rem] text-muted">Zero bloatware · Handcrafted code</p>
+                        </div>
+                      </div>
+                      <span className="label text-[0.6rem] bg-signal text-paper px-2 py-0.5 rounded-[2px] font-medium shrink-0">
+                        VERIFIED
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Editorial footer bar under image */}
+                  <div className="px-4 py-2.5 bg-paper border-t border-rule flex items-center justify-between text-[0.75rem]">
+                    <span className="text-muted flex items-center gap-1.5">
+                      <IconTimer className="w-3.5 h-3.5 text-signal" />
+                      <span>Turnaround: <strong className="text-ink font-medium">7 working days</strong></span>
+                    </span>
+                    <span className="text-muted">
+                      Guarantee: <strong className="text-signal font-medium">Late means free</strong>
+                    </span>
+                  </div>
+                </div>
+              </div>
             </Reveal>
           </div>
 
           <Reveal delay={300}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-rule border border-rule mt-10">
               {TRUST.map((t) => (
-                <div key={t.k} className="tile-hover bg-paper py-4 px-4 md:px-5">
-                  <div className="tile-hover-accent text-[0.9375rem] font-medium">{t.k}</div>
-                  <div className="label text-muted mt-1.5">{t.v}</div>
+                <div key={t.k} className="tile-hover bg-paper p-4 md:p-5 flex flex-col justify-between group">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="tile-hover-accent text-[0.9375rem] font-medium text-ink">{t.k}</span>
+                    <t.Icon className="w-4 h-4 text-muted group-hover:text-signal transition-colors duration-200 shrink-0" />
+                  </div>
+                  <div className="label text-muted text-[0.6875rem]">{t.v}</div>
                 </div>
               ))}
             </div>
