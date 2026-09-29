@@ -1,51 +1,75 @@
 import { NICHES, type NicheKey } from '../../lib/blog';
 
 /* ═══════════════════════════════════════════════════════════════════
-   BLOG THUMBNAIL — no-photography placeholder
-
-   Every article needs a visual on the journal grid and above the body,
-   but nothing in the source content includes real photography, and
-   generating 70 AI images is blocked on unbilled API keys (see chat).
-   This reuses the site's own closing-wordmark motif from SiteFooter.tsx
-   — an oversized, low-opacity serif word bleeding off the tile edge —
-   so every post has a distinct, on-brand visual today with zero
-   photography and zero external dependency. Swap in `post.image` (see
-   src/content/blog/README.md) whenever real hero photos exist; this
-   component is only ever the fallback.
+   BLOG THUMBNAIL — Cloaked-Style Editorial Generative Tile
    ═══════════════════════════════════════════════════════════════════ */
 
-const THUMB: Record<NicheKey, { bg: string; ghost: string; label: string; word: string }> = {
-  studio: { bg: 'bg-ink', ghost: 'text-on-ink/[0.16]', label: 'text-signal-bright', word: 'Studio' },
+const THUMB_THEMES: Record<
+  NicheKey,
+  {
+    gradient: string;
+    pillBg: string;
+    pillText: string;
+    ghostText: string;
+    code: string;
+    motif: string;
+  }
+> = {
+  studio: {
+    gradient: 'from-[#1a1714] via-[#0e0c0a] to-[#251f1a]',
+    pillBg: 'bg-signal/20 border-signal/40',
+    pillText: 'text-signal-bright',
+    ghostText: 'Studio',
+    code: 'SYS.00',
+    motif: 'Engineering & Craft',
+  },
   'coaches-consultants': {
-    bg: 'bg-paper-sunk',
-    ghost: 'text-ink/[0.09]',
-    label: 'text-signal',
-    word: 'Coach',
+    gradient: 'from-[#181a20] via-[#0f1117] to-[#21242e]',
+    pillBg: 'bg-blue-500/20 border-blue-400/40',
+    pillText: 'text-blue-300',
+    ghostText: 'Advisory',
+    code: 'ADV.01',
+    motif: 'Authority & Funnels',
   },
   'dental-clinics': {
-    bg: 'bg-signal-wash',
-    ghost: 'text-ink/[0.09]',
-    label: 'text-signal',
-    word: 'Clinic',
+    gradient: 'from-[#141d1a] via-[#0c1411] to-[#1a2822]',
+    pillBg: 'bg-emerald-500/20 border-emerald-400/40',
+    pillText: 'text-emerald-300',
+    ghostText: 'Clinic',
+    code: 'MED.02',
+    motif: 'Trust & Patient UX',
   },
   'home-renovation': {
-    bg: 'bg-ink-raised',
-    ghost: 'text-on-ink/[0.16]',
-    label: 'text-signal-bright',
-    word: 'Renovate',
+    gradient: 'from-[#221c17] via-[#14100c] to-[#2e2319]',
+    pillBg: 'bg-amber-500/20 border-amber-400/40',
+    pillText: 'text-amber-300',
+    ghostText: 'Renovate',
+    code: 'REN.03',
+    motif: 'Scope & Costing',
   },
   'interior-designers': {
-    bg: 'bg-paper-raised',
-    ghost: 'text-ink/[0.09]',
-    label: 'text-signal',
-    word: 'Interior',
+    gradient: 'from-[#21161d] via-[#140c11] to-[#2d1b26]',
+    pillBg: 'bg-fuchsia-500/20 border-fuchsia-400/40',
+    pillText: 'text-fuchsia-300',
+    ghostText: 'Interior',
+    code: 'ARC.04',
+    motif: 'Visual Persuasion',
   },
-  'real-estate': { bg: 'bg-ink-soft', ghost: 'text-on-ink/[0.16]', label: 'text-signal-bright', word: 'Estate' },
+  'real-estate': {
+    gradient: 'from-[#131b23] via-[#0c1218] to-[#1b2633]',
+    pillBg: 'bg-cyan-500/20 border-cyan-400/40',
+    pillText: 'text-cyan-300',
+    ghostText: 'Property',
+    code: 'EST.05',
+    motif: 'Hyperlocal Authority',
+  },
   'wedding-photographers': {
-    bg: 'bg-paper',
-    ghost: 'text-ink/[0.09]',
-    label: 'text-signal',
-    word: 'Wedding',
+    gradient: 'from-[#24171a] via-[#140b0e] to-[#301c22]',
+    pillBg: 'bg-rose-500/20 border-rose-400/40',
+    pillText: 'text-rose-300',
+    ghostText: 'Cinema',
+    code: 'FLM.06',
+    motif: 'Emotional Lead Flow',
   },
 };
 
@@ -58,21 +82,56 @@ export default function BlogThumbnail({
   size?: 'card' | 'hero';
   className?: string;
 }) {
-  const t = THUMB[niche];
-  const ghostSize = size === 'hero' ? 'clamp(3.5rem, 11vw, 9rem)' : 'clamp(2.25rem, 9vw, 4.5rem)';
+  const theme = THUMB_THEMES[niche] || THUMB_THEMES.studio;
+  const isHero = size === 'hero';
 
   return (
     <div
-      className={`relative overflow-hidden border border-rule-strong aspect-video ${t.bg} ${className}`}
+      className={`relative overflow-hidden bg-gradient-to-br ${theme.gradient} border border-white/10 ${
+        isHero ? 'rounded-[28px] aspect-[21/9]' : 'rounded-[20px] aspect-[16/10]'
+      } p-6 sm:p-8 flex flex-col justify-between group-hover:border-signal/40 transition-all duration-500 ${className}`}
       aria-hidden="true"
     >
+      {/* Background Architectural Grid Lines */}
+      <div className="absolute inset-0 opacity-[0.07] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
+      
+      {/* Glow Orb */}
+      <div className="absolute -top-16 -right-16 w-48 h-48 bg-signal/15 rounded-full blur-[70px] pointer-events-none" />
+
+      {/* Oversized Ghost Wordmark */}
       <span
-        className={`font-display absolute -left-1 -bottom-3 select-none whitespace-nowrap ${t.ghost}`}
-        style={{ fontSize: ghostSize, lineHeight: 0.8, letterSpacing: '-0.03em' }}
+        className="font-display absolute -right-2 -bottom-4 text-white/[0.06] select-none whitespace-nowrap pointer-events-none tracking-tighter"
+        style={{
+          fontSize: isHero ? 'clamp(4rem, 14vw, 11rem)' : 'clamp(3rem, 10vw, 6.5rem)',
+          lineHeight: 0.85,
+        }}
       >
-        {t.word}
+        {theme.ghostText}
       </span>
-      <span className={`label absolute top-4 left-4 sm:top-5 sm:left-5 ${t.label}`}>{NICHES[niche]}</span>
+
+      {/* Top Header Row */}
+      <div className="relative z-10 flex items-center justify-between gap-3">
+        <span
+          className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider border ${theme.pillBg} ${theme.pillText}`}
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
+          {NICHES[niche]}
+        </span>
+
+        <span className="text-[10px] font-mono text-white/40 tracking-widest">
+          {theme.code}
+        </span>
+      </div>
+
+      {/* Bottom Row */}
+      <div className="relative z-10 pt-6">
+        <span className="text-[10px] font-mono text-white/50 uppercase tracking-widest block mb-1">
+          {theme.motif}
+        </span>
+        <span className="font-display text-lg sm:text-xl text-white/90 font-medium">
+          Architectural Blueprint
+        </span>
+      </div>
     </div>
   );
 }

@@ -10,13 +10,10 @@ import {
   getPostsByNiche,
 } from '../lib/blog';
 import BlogThumbnail from '../components/ui/BlogThumbnail';
+import { LogoMark } from '../components/Logo';
 
 /* ═══════════════════════════════════════════════════════════════════
-   ARTICLE VIEW
-
-   Renders long-form markdown posts with an interactive Table of
-   Contents, executive takeaways, verified author bio, fast-track
-   studio consultation callout, and in-silo related articles.
+   ARTICLE VIEW — Cloaked-Style Editorial Longform Architecture
    ═══════════════════════════════════════════════════════════════════ */
 
 export default function BlogView() {
@@ -29,25 +26,26 @@ export default function BlogView() {
     return (
       <>
         <Helmet>
-          <title>Not found — Uncoded Hub</title>
+          <title>Article Not Found — Uncoded Hub</title>
           <meta name="robots" content="noindex, follow" />
         </Helmet>
 
-        <section className="pt-36 md:pt-44 pb-32 min-h-[70vh]">
+        <section className="pt-36 md:pt-44 pb-32 min-h-[70vh] bg-paper">
           <Shell width="narrow">
             <Reveal>
-              <p className="label text-signal">Blogs</p>
-              <h1 className="font-display text-hero mt-8">That article does not exist.</h1>
-              <p className="text-lead text-muted mt-10 max-w-xl">
-                We have not published anything at this address, so any link you followed to get
-                here was pointing at nothing. Sorry about that.
+              <span className="text-xs font-mono text-signal uppercase tracking-wider block mb-4">
+                404 · NOT FOUND
+              </span>
+              <h1 className="font-display text-5xl sm:text-6xl text-ink font-normal">That article does not exist.</h1>
+              <p className="text-muted text-base mt-6 max-w-xl leading-relaxed">
+                We have not published anything at this address. The URL may have moved or been retired.
               </p>
-              <div className="mt-12 pt-8 border-t border-rule flex flex-wrap gap-x-8 gap-y-3">
-                <Link to="/blog" className="link-underline text-ink">
-                  Back to the blogs →
+              <div className="mt-10 pt-8 border-t border-rule flex flex-wrap gap-4">
+                <Link to="/blog" className="btn-primary !py-3 !px-6 rounded-full text-xs">
+                  ← Back to All Blueprints
                 </Link>
-                <Link to="/contact" className="link-underline text-ink">
-                  Book a call →
+                <Link to="/contact" className="px-6 py-3 rounded-full border border-rule-strong text-xs font-mono hover:border-ink transition-colors">
+                  Contact Studio →
                 </Link>
               </div>
             </Reveal>
@@ -131,46 +129,61 @@ export default function BlogView() {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      <article className="pt-36 md:pt-44 pb-20">
+      <article className="pt-32 sm:pt-40 pb-20 bg-paper">
         <Shell width="narrow">
           <Reveal>
-            {/* ── Breadcrumb ── */}
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2.5 text-xs">
-              <Link to="/blog" className="label text-signal hover:underline">
-                ← Blogs
-              </Link>
-              <span className="text-rule-strong">/</span>
-              <Link
-                to={`/blog/niche/${post.niche}`}
-                className="label text-muted hover:text-ink transition-colors"
-              >
-                {NICHES[post.niche]}
-              </Link>
-            </nav>
+            {/* ── Breadcrumb & Top Pill ── */}
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+              <nav aria-label="Breadcrumb" className="inline-flex items-center gap-2 text-xs font-mono">
+                <Link to="/blog" className="text-signal hover:underline">
+                  ← Blogs
+                </Link>
+                <span className="text-rule-strong">/</span>
+                <Link
+                  to={`/blog/niche/${post.niche}`}
+                  className="text-muted hover:text-ink transition-colors"
+                >
+                  {NICHES[post.niche]}
+                </Link>
+              </nav>
 
-            <h1 className="font-display text-hero mt-8">{post.title}</h1>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-raised border border-rule-strong text-[11px] font-mono text-muted shadow-xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" />
+                <span>ARCHITECTURAL BLUEPRINT</span>
+              </div>
+            </div>
 
-            {/* ── Byline & Metadata ── */}
-            <div className="flex flex-wrap items-center justify-between gap-y-4 gap-x-6 mt-6 pt-6 border-t border-rule">
-              <div className="flex items-center gap-3">
-                <span className="w-8 h-8 rounded-full bg-ink text-paper flex items-center justify-center font-display text-xs">
+            {/* ── Article Heading ── */}
+            <h1 className="font-display text-3xl sm:text-5xl md:text-6xl text-ink font-normal tracking-tight leading-[1.08] mb-8">
+              {post.title}
+            </h1>
+
+            {/* ── Author Byline & Timing Meta Row ── */}
+            <div className="flex flex-wrap items-center justify-between gap-y-4 gap-x-6 py-6 border-y border-rule">
+              <div className="flex items-center gap-3.5">
+                <span className="w-10 h-10 rounded-full bg-ink text-paper flex items-center justify-center font-display text-base font-medium shadow-xs">
                   {post.author.initials}
                 </span>
                 <div>
-                  <a
-                    href={post.author.linkedin}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="font-medium text-sm text-ink hover:text-signal transition-colors inline-flex items-center gap-1"
-                  >
-                    {post.author.name}
-                    <span className="text-[10px] text-muted">↗</span>
-                  </a>
-                  <p className="label text-muted text-[11px]">{post.author.role}</p>
+                  <div className="flex items-center gap-2">
+                    <a
+                      href={post.author.linkedin}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="font-medium text-sm text-ink hover:text-signal transition-colors inline-flex items-center gap-1"
+                    >
+                      {post.author.name}
+                      <span className="text-[10px] text-muted">↗</span>
+                    </a>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-paper-raised border border-rule text-signal">
+                      Verified Author
+                    </span>
+                  </div>
+                  <p className="text-[11px] font-mono text-muted mt-0.5">{post.author.role}</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 text-xs text-muted">
+              <div className="flex items-center gap-3 text-xs font-mono text-muted">
                 <time dateTime={post.date}>
                   {new Date(post.date).toLocaleDateString('en-IN', {
                     day: 'numeric',
@@ -183,44 +196,42 @@ export default function BlogView() {
               </div>
             </div>
 
-            {/* ── Utility & Share Bar ── */}
-            <div className="mt-6 flex items-center justify-between flex-wrap gap-3 pb-6 border-b border-rule text-xs">
-              <div className="flex items-center gap-3">
-                <span className="label text-muted text-[10px] tracking-widest uppercase">
-                  Share Guide:
-                </span>
+            {/* ── Social Share & Copy Bar ── */}
+            <div className="mt-4 flex items-center justify-between flex-wrap gap-3 pb-6 border-b border-rule text-xs font-mono">
+              <div className="flex items-center gap-3 text-muted">
+                <span className="text-[10px] uppercase tracking-wider">Share:</span>
                 <a
                   href={shareLinkedInUrl}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="link-quiet hover:text-signal transition-colors"
+                  className="hover:text-signal transition-colors"
                 >
-                  LinkedIn
+                  LinkedIn ↗
                 </a>
                 <a
                   href={shareTwitterUrl}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="link-quiet hover:text-signal transition-colors"
+                  className="hover:text-signal transition-colors"
                 >
-                  X (Twitter)
+                  X (Twitter) ↗
                 </a>
               </div>
 
               <button
                 type="button"
                 onClick={handleCopyLink}
-                className="label text-ink hover:text-signal transition-colors inline-flex items-center gap-1.5 cursor-pointer"
+                className="text-ink hover:text-signal transition-colors inline-flex items-center gap-1.5 cursor-pointer"
               >
-                {copied ? '✓ Link Copied to Clipboard' : '⎘ Copy Article Link'}
+                {copied ? '✓ Link Copied' : '⎘ Copy Article Link'}
               </button>
             </div>
           </Reveal>
 
-          {/* ── Hero Image / Graphic Motif ── */}
+          {/* ── Hero Graphic Motif / Image ── */}
           <Reveal delay={40} className="mt-10">
             {post.image ? (
-              <figure className="m-0 p-0">
+              <figure className="m-0 p-0 overflow-hidden rounded-[28px] border border-rule-strong shadow-xs">
                 <img
                   src={post.image}
                   alt={`${post.title} — Architectural Blueprint by Uncoded Hub`}
@@ -229,25 +240,25 @@ export default function BlogView() {
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
-                  className="w-full aspect-video object-cover border border-rule-strong shadow-sm"
+                  className="w-full aspect-[16/9] object-cover"
                 />
               </figure>
             ) : (
-              <BlogThumbnail niche={post.niche} size="hero" />
+              <BlogThumbnail niche={post.niche} size="hero" className="rounded-[28px]" />
             )}
           </Reveal>
 
-          {/* ── Executive Summary / Key Takeaways Box ── */}
+          {/* ── Executive Summary / Key Takeaways Bento Card ── */}
           {post.excerpt && (
             <Reveal delay={60} className="mt-10">
-              <div className="p-6 md:p-8 border-l-2 border-signal bg-paper-raised/50 border border-y-rule border-r-rule">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-signal"></span>
-                  <p className="label text-signal text-xs font-semibold tracking-wider">
-                    Executive Summary · Key Takeaways
-                  </p>
+              <div className="p-8 rounded-[24px] bg-paper-sunken border border-rule-strong shadow-xs">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-2 h-2 rounded-full bg-signal animate-pulse" />
+                  <span className="text-xs font-mono text-signal font-semibold tracking-wider uppercase">
+                    EXECUTIVE SUMMARY · KEY TAKEAWAYS
+                  </span>
                 </div>
-                <p className="text-ink leading-relaxed text-sm md:text-base font-normal">
+                <p className="text-ink text-sm sm:text-base leading-relaxed">
                   {post.excerpt}
                 </p>
               </div>
@@ -259,21 +270,21 @@ export default function BlogView() {
             <Reveal delay={70} className="mt-8">
               <nav
                 aria-label="Table of contents"
-                className="p-6 md:p-8 border border-rule-strong bg-paper-raised/40 rounded-[2px]"
+                className="p-8 rounded-[24px] bg-paper-raised border border-rule-strong shadow-xs"
               >
                 <div className="flex items-center justify-between pb-4 border-b border-rule">
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-signal"></span>
-                    <h2 className="label text-ink font-semibold tracking-wider text-xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-signal" />
+                    <h2 className="text-xs font-mono text-ink font-semibold tracking-wider uppercase">
                       Table of Contents
                     </h2>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="label text-muted text-xs">{post.toc.length} Sections</span>
+                    <span className="text-xs font-mono text-muted">{post.toc.length} Sections</span>
                     <button
                       type="button"
                       onClick={() => setTocCollapsed(!tocCollapsed)}
-                      className="label text-signal hover:underline text-xs cursor-pointer"
+                      className="text-xs font-mono text-signal hover:underline cursor-pointer"
                     >
                       {tocCollapsed ? 'Expand [↓]' : 'Collapse [↑]'}
                     </button>
@@ -281,7 +292,7 @@ export default function BlogView() {
                 </div>
 
                 {!tocCollapsed && (
-                  <ol className="mt-5 space-y-2.5 text-sm">
+                  <ol className="mt-6 space-y-3 text-sm">
                     {post.toc.map((item, index) => {
                       const isH3 = item.level === 3;
                       return (
@@ -296,7 +307,7 @@ export default function BlogView() {
                               </span>
                             )}
                             {isH3 && <span className="text-rule-strong">↳</span>}
-                            <span className="group-hover:underline underline-offset-4">
+                            <span className="group-hover:underline underline-offset-4 text-xs sm:text-sm">
                               {item.text}
                             </span>
                           </a>
@@ -314,28 +325,37 @@ export default function BlogView() {
             <div className="prose-article" dangerouslySetInnerHTML={{ __html: post.html }} />
           </Reveal>
 
-          {/* ── In-Article Fast-Track Conversion Callout ── */}
+          {/* ── In-Article Fast-Track Conversion Bento ── */}
           <Reveal delay={100} className="mt-16">
-            <div className="p-7 md:p-9 border border-signal/30 bg-surface/50 rounded-[2px] relative overflow-hidden">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-signal"></span>
-                <p className="label text-signal text-xs">Uncoded Hub · 7-Day Fast-Track Delivery</p>
+            <div className="bg-ink text-paper p-8 sm:p-12 rounded-[28px] border border-white/10 relative overflow-hidden shadow-lg">
+              <div className="absolute top-0 right-0 w-72 h-72 bg-signal/15 rounded-full blur-[90px] pointer-events-none -z-10" />
+
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-2 h-2 rounded-full bg-signal-bright" />
+                <span className="text-xs font-mono text-signal-bright tracking-wider uppercase">
+                  UNCODED HUB · 7-DAY FAST-TRACK DELIVERY
+                </span>
               </div>
-              <h3 className="font-display text-xl md:text-2xl mt-3 text-ink">
-                Need a high-converting website built for your {NICHES[post.niche].toLowerCase()}{' '}
-                business?
+
+              <h3 className="font-display text-2xl sm:text-3xl text-paper font-normal leading-tight mt-2">
+                Need a high-converting website built for your {NICHES[post.niche].toLowerCase()} business?
               </h3>
-              <p className="text-muted text-sm mt-2.5 max-w-2xl leading-relaxed">
-                No WordPress bloat or agency delays. We deliver custom high-performance websites in 7
-                business days with a published late-means-free guarantee and complete code ownership.
+
+              <p className="text-on-ink-muted text-xs sm:text-sm mt-3.5 max-w-xl leading-relaxed">
+                Zero WordPress bloat, zero junior handoffs. Deepak & Geetha build bespoke high-performance websites in 7 business days with a contractual late-means-free guarantee and complete code ownership.
               </p>
-              <div className="mt-6 flex flex-wrap items-center gap-4">
-                <Link to="/contact" className="btn-primary !py-2.5 !px-6 text-xs">
-                  Book a 20-minute call →
+
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <Link
+                  to="/contact"
+                  className="bg-signal hover:bg-signal-bright text-paper font-sans font-medium text-xs py-3.5 px-7 rounded-full transition-colors flex items-center gap-2 cursor-pointer shadow-md"
+                >
+                  <span>Book a 20-minute discovery call</span>
+                  <span>→</span>
                 </Link>
                 <Link
                   to={`/blog/niche/${post.niche}`}
-                  className="link-underline text-xs text-ink hover:text-signal transition-colors"
+                  className="text-xs font-mono text-on-ink-muted hover:text-paper transition-colors"
                 >
                   Browse all {NICHES[post.niche]} guides →
                 </Link>
@@ -343,68 +363,60 @@ export default function BlogView() {
             </div>
           </Reveal>
 
-          {/* ── Verified Author Bio & Trust Box ── */}
+          {/* ── Verified Author Bio Box ── */}
           <Reveal delay={120} className="mt-16 pt-10 border-t border-rule">
-            <div className="p-6 md:p-8 bg-paper-raised/40 border border-rule-strong flex flex-col sm:flex-row gap-6 items-start sm:items-center">
-              <div className="w-16 h-16 rounded-full bg-ink text-paper flex items-center justify-center font-display text-xl shrink-0">
+            <div className="p-8 bg-paper-raised border border-rule-strong rounded-[24px] shadow-xs flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+              <div className="w-16 h-16 rounded-full bg-ink text-paper flex items-center justify-center font-display text-2xl font-medium shrink-0 shadow-xs">
                 {post.author.initials}
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 flex-wrap">
-                  <h3 className="font-display text-lg text-ink font-medium">{post.author.name}</h3>
-                  <span className="label bg-signal/10 text-signal border border-signal/20 px-2 py-0.5 text-[10px] uppercase font-semibold">
+                  <h3 className="font-display text-2xl text-ink font-medium">{post.author.name}</h3>
+                  <span className="text-[10px] font-mono bg-signal/10 text-signal border border-signal/20 px-2.5 py-0.5 rounded-full uppercase font-semibold">
                     Verified Studio Author
                   </span>
                 </div>
-                <p className="label text-muted text-xs mt-0.5">{post.author.role}</p>
-                <p className="text-muted text-sm mt-3 leading-relaxed">{post.author.bio}</p>
-                <div className="mt-4 flex items-center gap-4">
+                <p className="text-xs font-mono text-muted mt-1">{post.author.role}</p>
+                <p className="text-muted text-xs sm:text-sm mt-3 leading-relaxed">{post.author.bio}</p>
+                <div className="mt-4 flex items-center gap-4 text-xs font-mono">
                   <a
                     href={post.author.linkedin}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="link-underline text-xs text-ink hover:text-signal transition-colors inline-flex items-center gap-1"
+                    className="text-signal hover:underline inline-flex items-center gap-1"
                   >
                     Connect on LinkedIn ↗
                   </a>
                   <Link
                     to="/about"
-                    className="link-underline text-xs text-muted hover:text-ink transition-colors"
+                    className="text-muted hover:text-ink transition-colors"
                   >
-                    About Uncoded Hub →
+                    About Deepak & Geetha →
                   </Link>
                 </div>
               </div>
             </div>
-          </Reveal>
-
-          {/* ── Final Consultation CTA ── */}
-          <Reveal delay={140} className="mt-16 pt-10 border-t border-rule">
-            <p className="text-lead text-muted max-w-xl">
-              Want a site built around your own business instead of a generic template?
-            </p>
-            <Link to="/contact" className="btn-primary mt-6">
-              Book a 20-minute call
-            </Link>
           </Reveal>
         </Shell>
       </article>
 
       {/* ── In-Silo Related Articles Section ── */}
       {relatedPosts.length > 0 && (
-        <section className="border-t border-rule py-20 md:py-28 bg-paper-raised/40">
+        <section className="border-t border-rule py-20 md:py-28 bg-paper-sunken">
           <Shell>
             <Reveal>
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12 pb-6 border-b border-rule">
                 <div>
-                  <p className="label text-signal">Related Articles · {NICHES[post.niche]}</p>
-                  <h2 className="font-display text-2xl md:text-3xl mt-2">
+                  <span className="text-xs font-mono text-signal uppercase tracking-wider block mb-2">
+                    RELATED BLUEPRINTS · {NICHES[post.niche]}
+                  </span>
+                  <h2 className="font-display text-3xl sm:text-4xl text-ink font-normal">
                     Continue Reading in this Industry Series
                   </h2>
                 </div>
                 <Link
                   to={`/blog/niche/${post.niche}`}
-                  className="link-underline text-sm font-medium hover:text-signal transition-colors inline-flex items-center gap-1.5"
+                  className="text-xs font-mono text-signal hover:underline inline-flex items-center gap-1.5"
                 >
                   View all {nicheTotalCount} {NICHES[post.niche]} guides →
                 </Link>
@@ -413,43 +425,60 @@ export default function BlogView() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {relatedPosts.map((related, i) => (
                   <Reveal key={related.slug} delay={i * 40} as="article">
-                    <Link to={`/blog/${related.slug}`} className="group block">
-                      {related.image ? (
-                        <img
-                          src={related.image}
-                          alt={related.title}
-                          width={880}
-                          height={495}
-                          loading="lazy"
-                          decoding="async"
-                          className="w-full aspect-video object-cover border border-rule-strong mb-5 group-hover:border-signal transition-all duration-300"
-                        />
-                      ) : (
-                        <BlogThumbnail niche={related.niche} size="card" className="mb-5" />
-                      )}
-                      <div className="flex items-center justify-between">
-                        <span className="label text-signal">{NICHES[related.niche]}</span>
-                        {related.slug === pillarSlug && (
-                          <span className="label bg-signal/10 text-signal border border-signal/20 px-2 py-0.5 text-[10px] uppercase font-semibold">
-                            ★ Master Pillar
+                    <Link
+                      to={`/blog/${related.slug}`}
+                      className="group block bg-paper-raised border border-rule-strong rounded-[24px] p-6 shadow-xs hover:border-ink/40 hover:shadow-md transition-all duration-300 h-full flex flex-col justify-between"
+                    >
+                      <div>
+                        {related.image ? (
+                          <div className="overflow-hidden rounded-[16px] border border-rule-strong mb-5 aspect-[16/10]">
+                            <img
+                              src={related.image}
+                              alt={related.title}
+                              width={880}
+                              height={550}
+                              loading="lazy"
+                              decoding="async"
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                          </div>
+                        ) : (
+                          <BlogThumbnail niche={related.niche} size="card" className="mb-5" />
+                        )}
+
+                        <div className="flex items-center justify-between gap-2 mb-3">
+                          <span className="text-[11px] font-mono text-signal uppercase tracking-wider font-medium">
+                            {NICHES[related.niche]}
                           </span>
+                          {related.slug === pillarSlug && (
+                            <span className="text-[10px] font-mono bg-signal/10 text-signal border border-signal/20 px-2 py-0.5 rounded-full uppercase font-semibold">
+                              ★ Master Pillar
+                            </span>
+                          )}
+                        </div>
+
+                        <h3 className="font-display text-xl sm:text-2xl text-ink font-medium group-hover:text-signal transition-colors line-clamp-2 leading-snug">
+                          {related.title}
+                        </h3>
+
+                        {related.excerpt && (
+                          <p className="text-muted leading-relaxed mt-3 line-clamp-2 text-xs sm:text-sm">
+                            {related.excerpt}
+                          </p>
                         )}
                       </div>
-                      <h3 className="font-display text-title mt-3 group-hover:text-signal transition-colors line-clamp-2">
-                        {related.title}
-                      </h3>
-                      {related.excerpt && (
-                        <p className="text-muted leading-relaxed mt-3 line-clamp-2 text-sm">
-                          {related.excerpt}
-                        </p>
-                      )}
-                      <p className="label text-muted mt-5 text-xs">
-                        {`${new Date(related.date).toLocaleDateString('en-IN', {
-                          day: 'numeric',
-                          month: 'short',
-                          year: 'numeric',
-                        })} · ${related.readingMinutes} min read`}
-                      </p>
+
+                      <div className="mt-6 pt-4 border-t border-rule flex items-center justify-between text-xs font-mono text-muted">
+                        <span>
+                          {`${new Date(related.date).toLocaleDateString('en-IN', {
+                            day: 'numeric',
+                            month: 'short',
+                          })} · ${related.readingMinutes}m read`}
+                        </span>
+                        <span className="text-signal group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-sans text-xs font-medium">
+                          Read Blueprint →
+                        </span>
+                      </div>
                     </Link>
                   </Reveal>
                 ))}
@@ -458,6 +487,69 @@ export default function BlogView() {
           </Shell>
         </section>
       )}
+
+      {/* ── Cloaked-Style Dual-Card Closing CTA ─────────────────── */}
+      <section className="bg-ink text-paper py-20 border-t border-white/10">
+        <Shell>
+          <Reveal>
+            <div className="grid md:grid-cols-12 gap-8 items-center bg-white/[0.03] border border-white/10 rounded-[32px] p-8 sm:p-12">
+              <div className="md:col-span-6 flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <LogoMark size={48} />
+                    <span className="font-display text-2xl text-paper font-medium">Uncoded Hub</span>
+                  </div>
+                  <h3 className="font-display text-3xl sm:text-4xl text-paper font-normal leading-tight">
+                    Build your website with the engineers who write this.<br />
+                    <span className="text-signal-bright italic">Direct with Deepak & Geetha.</span>
+                  </h3>
+                  <p className="text-on-ink-muted text-sm leading-relaxed mt-4 max-w-md">
+                    One 20-minute video call. We look at your business live, discuss the architecture, and deliver an exact scope and fixed price the next day.
+                  </p>
+                </div>
+
+                <div className="mt-8 flex items-center gap-4 text-xs font-mono text-on-ink-muted">
+                  <span>● Deepak & Geetha</span>
+                  <span>·</span>
+                  <span>Direct Delivery</span>
+                  <span>·</span>
+                  <span>7-Day Sprints</span>
+                </div>
+              </div>
+
+              <div className="md:col-span-6 bg-white/[0.05] p-6 sm:p-8 rounded-[24px] border border-white/10 flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-mono text-signal-bright uppercase tracking-wider block mb-2">
+                    7-DAY SPRINT RESERVATION
+                  </span>
+                  <h4 className="font-display text-2xl text-paper font-medium mb-3">
+                    Ready to book your discovery call?
+                  </h4>
+                  <p className="text-on-ink-muted text-xs leading-relaxed mb-6">
+                    Slots are scheduled in your local timezone. Zero pitch decks, zero high-pressure sales reps.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <Link
+                    to="/contact"
+                    className="w-full bg-signal hover:bg-signal-bright text-paper font-sans font-medium text-sm py-3.5 px-6 rounded-full transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+                  >
+                    <span>Schedule 20-Minute Call</span>
+                    <span>→</span>
+                  </Link>
+                  <Link
+                    to="/portfolio"
+                    className="w-full block text-center text-xs text-on-ink-muted hover:text-paper py-2 transition-colors"
+                  >
+                    Or test our 6 live client demos first →
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </Shell>
+      </section>
     </>
   );
 }
