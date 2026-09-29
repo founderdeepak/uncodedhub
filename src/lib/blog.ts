@@ -44,11 +44,11 @@ export interface AuthorInfo {
 
 export const AUTHORS: Record<'deepak' | 'geetha', AuthorInfo> = {
   deepak: {
-    name: 'Deepak Chaurasiya',
+    name: 'Deepak',
     role: 'Co-Founder & Lead Engineer',
     bio: 'Deepak architects ultra-fast, zero-bloat web systems and organic search acquisition engines for high-ticket service businesses in India and abroad.',
     linkedin: 'https://in.linkedin.com/in/deepakdeveloper',
-    initials: 'DC',
+    initials: 'D',
   },
   geetha: {
     name: 'Geetha',

@@ -28,7 +28,7 @@ This directory contains the complete source assets and configuration files to bu
 ├── 📄 06_Fonts.md                           # Canva font pairings, typographic scale & fallbacks
 ├── 📄 07_Brand_Voice.md                     # Brand voice prompt for Canva Magic Write & AI tools
 ├── 📁 08_Photos/                            # Official studio photography & proof assets
-│   ├── 🖼️ deepak.webp                       # Founder portrait: Deepak Chaurasiya
+│   ├── 🖼️ deepak.webp                       # Founder portrait: Deepak
 │   ├── 🖼️ geetha.webp                       # Founder portrait: Geetha
 │   ├── 🖼️ guarantee.webp                    # Published Late-Means-Free guarantee seal
 │   ├── 🖼️ before-after.webp                 # Studio speed & transformation proof graphic

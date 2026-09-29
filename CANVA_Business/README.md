@@ -100,7 +100,7 @@ Under **Fonts**, assign your standard brand typography:
 
 ### Step 6: Upload Photos (`08_Photos/`)
 Under **Photos**, click **Add new** and upload:
-- `deepak.webp` (Deepak Chaurasiya)
+- `deepak.webp` (Deepak)
 - `geetha.webp` (Geetha)
 - `guarantee.webp` (Late-Means-Free seal)
 - `before-after.webp` (Speed & transformation proof)
