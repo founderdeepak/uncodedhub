@@ -27,4 +27,5 @@ local_map_outreach/
 social_cold_outreach/
 test_*.py
 .mcp.json
-
+tools/
+brag-output*/

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
@@ -8,10 +9,112 @@ import { LogoMark } from '../components/Logo';
    Cloaked-inspired design:
    - High-contrast editorial hero with announcement badge
    - Rounded squircle bento scope cards (rounded-[28px])
+   - Interactive Day-by-Day Sprint Scrubber (Day 1 to 7)
    - Cinematic dark chapter: "How Pricing Works" (pitch espresso #0e0c0a)
    - "What We Turn Down" filter cards
    - Dual-card closing CTA module
    ═══════════════════════════════════════════════════════════════════ */
+
+const SPRINT_DAYS = [
+  {
+    day: 'Day 1',
+    phase: 'DISCOVERY & ARCHITECTURE',
+    title: 'Brand Assets & Wireframe Blueprint',
+    owner: 'Geetha (Design) & Deepak (Architecture)',
+    deliverable: 'Approved Information Architecture & Homepage Layout Direction',
+    details:
+      'We run the 60-minute kickoff discovery call, audit your vector logos and portfolio assets, finalize the URL structure, and map the exact client enquiry conversion path.',
+    checkpoints: [
+      'Pre-sprint asset checklist validated',
+      'Sitemap and content hierarchy locked',
+      'Homepage layout wireframe reviewed',
+    ],
+  },
+  {
+    day: 'Day 2',
+    phase: 'VISUAL SYSTEM & DESIGN',
+    title: 'Bespoke UI Design & Typography Lockup',
+    owner: 'Geetha (Co-Founder, Design)',
+    deliverable: 'Full Interactive Desktop & Mobile Figma UI Signoff',
+    details:
+      'Geetha crafts bespoke mobile and desktop screens tailored specifically to your high-ticket service. No generic templates — custom typography, editorial layout, and brand color harmony.',
+    checkpoints: [
+      'Desktop & mobile screens presented',
+      'Typography & color contrast verified',
+      'Client revision feedback incorporated same-day',
+    ],
+  },
+  {
+    day: 'Day 3',
+    phase: 'FRONTEND ENGINEERING',
+    title: 'Clean Semantic React Component Build',
+    owner: 'Deepak (Co-Founder, Engineering)',
+    deliverable: 'Zero-Bloatware Semantic DOM & Responsive Architecture',
+    details:
+      'Deepak hand-codes clean React components using Tailwind CSS. Zero third-party page builder bloat, zero heavy WordPress plugins, zero license lock-in.',
+    checkpoints: [
+      'Accessible semantic HTML5 structure',
+      'Fluid responsive breakpoints tested',
+      'Sub-100KB initial bundle optimization',
+    ],
+  },
+  {
+    day: 'Day 4',
+    phase: 'CONTENT & CONVERSION',
+    title: 'Copy Deck & High-Ticket Lead Funnels',
+    owner: 'Geetha & Deepak (Joint Review)',
+    deliverable: 'All Service Pages Populated & Conversion Triggers Placed',
+    details:
+      'We populate approved sales copy, client proof case studies, pricing clarity tiers, and prominent call-to-actions designed to qualify and pre-sell clients before they call.',
+    checkpoints: [
+      'Service scope breakdowns populated',
+      'Trust credentials and founder proof embedded',
+      'Micro-animations & entrance transitions tuned',
+    ],
+  },
+  {
+    day: 'Day 5',
+    phase: 'SYSTEMS & INTEGRATIONS',
+    title: 'Database, CRM & WhatsApp Webhooks',
+    owner: 'Deepak (Co-Founder, Engineering)',
+    deliverable: 'Live Database Hooks & Spam-Protected Forms',
+    details:
+      'Forms are wired straight to your private database and inbox, complete with Google Sheets backup redundancy and instant WhatsApp click-to-chat routing.',
+    checkpoints: [
+      'Supabase database table routing tested',
+      'Dual-redundancy email & Sheets backup active',
+      'Honeypot anti-spam defense configured',
+    ],
+  },
+  {
+    day: 'Day 6',
+    phase: 'PERFORMANCE & SEO',
+    title: 'Core Web Vitals & On-Page SEO Groundwork',
+    owner: 'Deepak (Co-Founder, Engineering)',
+    deliverable: 'Contractual 95+ Mobile Lighthouse Audit Verification',
+    details:
+      'We run rigorous audits simulating slow mobile 4G. Images converted to next-gen WebP, fonts self-hosted with font-display swap, and structured JSON-LD schemas validated.',
+    checkpoints: [
+      'Lighthouse 95+ verified on mobile emulation',
+      'Open Graph & Twitter card previews generated',
+      'Schema.org ProfessionalService structured data active',
+    ],
+  },
+  {
+    day: 'Day 7',
+    phase: 'WALKTHROUGH & GO-LIVE',
+    title: 'Client Review, DNS Switch & Handoff',
+    owner: 'Deepak & Geetha (With Client)',
+    deliverable: 'Production Domain Live + 30-Day Post-Launch Support',
+    details:
+      'Final staging walkthrough with Deepak & Geetha. We switch DNS records, deploy SSL, hand over full source code ownership, and record a walkthrough tutorial so you can edit with ease.',
+    checkpoints: [
+      'Production DNS & SSL switchover',
+      'Recorded editorial walkthrough delivered',
+      '30 days of direct priority warranty begins',
+    ],
+  },
+];
 
 type Scope = {
   id: string;
@@ -123,6 +226,8 @@ const ONGOING = [
 ];
 
 export default function Services({ onBook }: { onBook: () => void }) {
+  const [activeDayIdx, setActiveDayIdx] = useState(0);
+
   return (
     <>
       <Helmet>
@@ -224,6 +329,115 @@ export default function Services({ onBook }: { onBook: () => void }) {
           </div>
         </Shell>
       </Section>
+
+      {/* ── Interactive Day-by-Day Sprint Execution Scrubber ───── */}
+      <section className="py-16 md:py-24 bg-paper-sunken/40 border-y border-rule-subtle">
+        <Shell>
+          <div className="max-w-4xl mx-auto">
+            <Reveal>
+              <div className="text-center max-w-2xl mx-auto mb-12">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-raised border border-rule-strong text-ink text-xs font-mono mb-4 shadow-2xs">
+                  <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
+                  <span className="font-semibold text-signal">EXECUTION PROTOCOL</span>
+                  <span className="text-muted">·</span>
+                  <span className="text-muted">Day 1 to 7</span>
+                </span>
+                <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
+                  What happens on each day.
+                </h2>
+                <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
+                  No mystery, no weeks of silence. Here is the exact daily progression from the Day 1 kickoff to your production DNS switchover on Day 7.
+                </p>
+              </div>
+            </Reveal>
+
+            {/* Day Selector Navigation Pills */}
+            <Reveal delay={80}>
+              <div className="flex items-center justify-between gap-1.5 sm:gap-2 p-1.5 bg-paper-raised border border-rule-strong rounded-full overflow-x-auto shadow-xs mb-8">
+                {SPRINT_DAYS.map((d, idx) => (
+                  <button
+                    key={d.day}
+                    onClick={() => setActiveDayIdx(idx)}
+                    className={`flex-1 min-w-[72px] sm:min-w-0 py-2.5 px-3 rounded-full text-xs font-mono text-center transition-all cursor-pointer ${
+                      activeDayIdx === idx
+                        ? 'bg-signal text-paper font-semibold shadow-sm scale-[1.02]'
+                        : 'text-ink-soft hover:text-ink hover:bg-paper'
+                    }`}
+                  >
+                    <span>{d.day}</span>
+                  </button>
+                ))}
+              </div>
+            </Reveal>
+
+            {/* Active Day Detail Display Card (Cloaked Squircle) */}
+            <Reveal delay={120}>
+              {(() => {
+                const day = SPRINT_DAYS[activeDayIdx];
+                return (
+                  <div className="bg-paper-raised border border-rule-strong rounded-[28px] p-6 sm:p-10 shadow-sm relative overflow-hidden transition-all duration-300">
+                    {/* Top Bar with Phase Badge and Owner */}
+                    <div className="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-rule">
+                      <div className="flex items-center gap-2.5">
+                        <span className="px-3 py-1 rounded-full bg-signal/10 border border-signal/20 text-signal font-mono text-xs font-semibold">
+                          {day.day} · {day.phase}
+                        </span>
+                      </div>
+                      <div className="text-xs font-mono text-muted flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        <span>Owner: <strong className="text-ink font-medium">{day.owner}</strong></span>
+                      </div>
+                    </div>
+
+                    {/* Headline and Details */}
+                    <div className="mt-6">
+                      <h3 className="font-display text-2xl sm:text-3xl text-ink font-medium">
+                        {day.title}
+                      </h3>
+                      <p className="text-sm sm:text-base text-muted mt-3 leading-relaxed">
+                        {day.details}
+                      </p>
+                    </div>
+
+                    {/* Milestone Deliverable Box */}
+                    <div className="mt-8 p-5 rounded-[18px] bg-paper-sunken border border-rule-strong flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                      <div>
+                        <span className="text-[10px] font-mono text-signal uppercase tracking-wider block font-semibold">
+                          PRIMARY DAY DELIVERABLE
+                        </span>
+                        <strong className="text-ink text-sm sm:text-base block mt-0.5">
+                          {day.deliverable}
+                        </strong>
+                      </div>
+                      <span className="text-[11px] font-mono px-3 py-1 rounded-full bg-paper border border-rule text-ink font-medium shrink-0">
+                        VERIFIED GATE ✓
+                      </span>
+                    </div>
+
+                    {/* Daily Checkpoints List */}
+                    <div className="mt-6 pt-6 border-t border-rule">
+                      <span className="text-xs font-mono text-ink-muted uppercase tracking-wider block mb-3 font-semibold">
+                        Day-Specific Checkpoints:
+                      </span>
+                      <div className="grid sm:grid-cols-3 gap-3">
+                        {day.checkpoints.map((cp) => (
+                          <div
+                            key={cp}
+                            className="p-3 rounded-[14px] bg-paper border border-rule text-xs text-ink-soft flex items-start gap-2"
+                          >
+                            <span className="text-signal font-bold mt-0.5">✓</span>
+                            <span>{cp}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
+            </Reveal>
+          </div>
+        </Shell>
+      </section>
 
       {/* ── Cinematic Dark Chapter: How Pricing Works ──────────── */}
       <section className="bg-ink text-paper py-20 md:py-28 relative overflow-hidden border-y border-white/10">
