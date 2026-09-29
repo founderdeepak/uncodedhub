@@ -1,19 +1,16 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
+import { LogoMark } from '../components/Logo';
 
 /* ═══════════════════════════════════════════════════════════════════
-   SERVICES
-
-   ── PRICING ─────────────────────────────────────────────────────────
-   Making Websites Win is unambiguous that vagueness costs conversions,
-   and a services page with no numbers on it is the most common place a
-   studio hides. Every scope below has an optional `price` field: fill
-   it in and the figure renders in the scope header automatically.
-
-   Leave it empty only for genuinely variable scopes. Do not invent a
-   figure you would not honour — a quoted price you walk back on the
-   call is worse than no price at all.
+   SERVICES & SCOPES
+   Cloaked-inspired design:
+   - High-contrast editorial hero with announcement badge
+   - Rounded squircle bento scope cards (rounded-[28px])
+   - Cinematic dark chapter: "How Pricing Works" (pitch espresso #0e0c0a)
+   - "What We Turn Down" filter cards
+   - Dual-card closing CTA module
    ═══════════════════════════════════════════════════════════════════ */
 
 type Scope = {
@@ -21,6 +18,7 @@ type Scope = {
   name: string;
   forWho: string;
   timeline: string;
+  tag: string;
   price?: string;
   includes: string[];
 };
@@ -29,22 +27,24 @@ const SCOPES: Scope[] = [
   {
     id: '01',
     name: 'Single page',
+    tag: 'CAMPAIGN / FAST LAUNCH',
     forWho:
       'One offer, one audience, one action. Usually the landing page behind an ad campaign, or a first site for a business that does not need five pages pretending it does.',
     timeline: 'Three working days',
     includes: [
-      'One page, designed at mobile and desktop widths',
+      'One bespoke page, designed at mobile and desktop widths',
       'Copy written by us from the discovery call, not filled in by you afterwards',
       'Enquiry form wired to your inbox and to a database you own',
       'WhatsApp click-to-chat, if that is how your customers reach you',
       'Analytics installed and a conversion goal configured',
       'On-page SEO groundwork: titles, descriptions, structured data, sitemap',
-      'One round of revisions',
+      'One round of revisions and launch checklist verification',
     ],
   },
   {
     id: '02',
     name: 'Business website',
+    tag: 'MOST POPULAR · 7-DAY SPRINT',
     forWho:
       'The default. A business that needs to explain what it does, prove it can be trusted, and take enquiries — which is nearly every business that is not selling online.',
     timeline: 'Seven working days',
@@ -61,6 +61,7 @@ const SCOPES: Scope[] = [
   {
     id: '03',
     name: 'Online store',
+    tag: 'ECOMMERCE ARCHITECTURE',
     forWho:
       'Selling physical or digital products directly, with real inventory and real payments. This is the one scope where seven days is not a promise we will make.',
     timeline: 'Two to three weeks, quoted per catalogue',
@@ -68,27 +69,57 @@ const SCOPES: Scope[] = [
       'Product catalogue, categories, search, and stock handling',
       'Payments through Razorpay or Stripe, including UPI',
       'Automated order confirmation by email and WhatsApp',
-      'Abandoned-cart recovery',
+      'Abandoned-cart recovery workflows',
       'Admin training session, recorded, plus written documentation',
       'Thirty days of priority support after launch',
     ],
   },
 ];
 
-/* Saying plainly what you will not take on is one of the cheapest and
-   least-used trust signals available. It also filters the enquiries. */
 const NOT_US = [
-  ['Mobile apps', 'We build for the web. If you need iOS and Android, we are the wrong studio and will say so on the call.'],
-  ['SEO retainers', 'We do the technical groundwork that lets you rank. We do not sell monthly link-building, and we would be suspicious of anyone who does.'],
-  ['Paid ads management', 'We will build the landing page your campaign needs and wire up the tracking. Running the campaign is someone else’s job.'],
-  ['Rescuing a half-built site', 'Taking over another developer’s unfinished work almost always costs more than starting again, and we would rather tell you that than bill you for it.'],
-  ['Twelve-page sites in a week', 'The seven days holds for the scope on this page. Larger builds get a longer, honestly quoted schedule.'],
+  {
+    k: 'Mobile apps',
+    v: 'We build for the modern web. If you need native iOS and Android apps, we are the wrong studio and will say so immediately on the call.',
+    pill: 'Web Focused Only',
+  },
+  {
+    k: 'SEO retainers',
+    v: 'We do the technical on-page and local groundwork that lets you rank. We do not sell monthly link-building packages, and we would be suspicious of anyone who does.',
+    pill: 'Zero Retainers',
+  },
+  {
+    k: 'Paid ads management',
+    v: 'We build the high-conversion landing page your campaign needs and wire up the tracking. Running the ad campaign is someone else’s job.',
+    pill: 'Conversion Only',
+  },
+  {
+    k: 'Rescuing broken sites',
+    v: 'Taking over another developer’s unfinished or plugin-riddled WordPress site almost always costs more than starting clean, and we would rather tell you that upfront.',
+    pill: 'Clean Builds Only',
+  },
+  {
+    k: 'Twelve-page sites in a week',
+    v: 'The seven-day guarantee holds strictly for our defined 5-page scope. Larger builds receive a longer, honestly quoted schedule.',
+    pill: 'Strict Integrity',
+  },
 ];
 
 const ONGOING = [
-  ['Hosting and domain', 'We set it up in your name, on your account. You own it, and you can leave whenever you like.'],
-  ['Care plan', 'Optional. Updates, backups, uptime monitoring, and a set number of content changes each month.'],
-  ['Further work', 'Priced per project at the rate you were originally quoted, for as long as you are a client.'],
+  {
+    title: 'Hosting and domain',
+    desc: 'We set it up in your own name, on your own account. You own everything, and you can leave whenever you like.',
+    badge: '100% Client Owned',
+  },
+  {
+    title: 'Care plan',
+    desc: 'Optional. Performance monitoring, security backups, uptime tracking, and a set number of content updates each month.',
+    badge: 'Optional Peace of Mind',
+  },
+  {
+    title: 'Future additions',
+    desc: 'Priced per project at the transparent rate you were originally quoted, for as long as you are a client.',
+    badge: 'Locked-in Rate',
+  },
 ];
 
 export default function Services({ onBook }: { onBook: () => void }) {
@@ -103,67 +134,98 @@ export default function Services({ onBook }: { onBook: () => void }) {
         <link rel="canonical" href="https://uncodedhub.com/services" />
       </Helmet>
 
+      {/* ── Top Announcement ────────────────────────────────────── */}
+      <div className="bg-ink text-paper text-[12px] font-mono py-2 px-4 border-b border-white/10 text-center flex items-center justify-center gap-2">
+        <span className="w-2 h-2 rounded-full bg-signal animate-pulse" aria-hidden="true" />
+        <span>Fixed scope, fixed timeline, terms published in full</span>
+        <span className="text-white/40">·</span>
+        <span className="text-signal-bright font-medium">Late means free guarantee</span>
+      </div>
+
       {/* ── Header ─────────────────────────────────────────────── */}
-      <section className="pt-36 md:pt-44 pb-16">
+      <section className="pt-24 md:pt-32 pb-16">
         <Shell>
           <Reveal>
-            <p className="label text-signal">Services</p>
-            <h1 className="font-display text-hero mt-8 max-w-[15ch]">
-              Three scopes. <em className="italic hero-signal">No surprises.</em>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-raised border border-rule-strong text-ink text-xs font-mono mb-6 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
+              <span className="font-semibold text-signal">3 TURNKEY SCOPES</span>
+              <span className="text-muted">·</span>
+              <span className="text-muted">Zero Bloatware</span>
+            </div>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-ink max-w-[16ch] leading-[1.08] tracking-tight">
+              Three scopes. <br />
+              <em className="italic hero-signal font-normal">No surprises.</em>
             </h1>
           </Reveal>
           <Reveal delay={100}>
-            <p className="text-lead text-muted mt-10 max-w-2xl">
-              Below is everything each scope includes, written out rather than summarised into a
-              tick list you have to interpret. If what you need is not here, the fourth option is
-              a call where we scope it properly.
+            <p className="text-lead text-muted mt-6 max-w-2xl leading-relaxed">
+              Below is everything each scope includes, written out in detail rather than summarised into a
+              vague tick list you have to interpret. You leave the discovery call with a fixed written scope,
+              a defined price, and a contractual launch date.
             </p>
           </Reveal>
         </Shell>
       </section>
 
-      {/* ── Scopes ─────────────────────────────────────────────── */}
+      {/* ── Scopes Bento Cards ───────────────────────────────────── */}
       <Section size="default">
         <Shell>
-          <div className="border-t border-rule-strong">
+          <div className="space-y-10">
             {SCOPES.map((s, i) => (
-              <Reveal
-                key={s.id}
-                delay={i * 80}
-                className="grid lg:grid-cols-12 gap-x-12 gap-y-8 py-14 border-b border-rule"
-              >
-                <div className="lg:col-span-5">
-                  <div className="flex items-baseline gap-4">
-                    <span className="label text-signal">{s.id}</span>
-                    <span className="label text-muted">{s.timeline}</span>
-                  </div>
-                  <h2 className="font-display text-display mt-6">{s.name}</h2>
-                  {s.price && (
-                    <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 bg-paper-raised/80 border border-rule-strong rounded-[2px]">
-                      <span className="font-mono text-xs md:text-sm text-ink font-semibold">{s.price}</span>
-                    </div>
-                  )}
-                  <p className="text-muted leading-relaxed mt-6 max-w-md">{s.forWho}</p>
-                  <button onClick={onBook} className="btn-ghost mt-8">
-                    Get a fixed quote
-                  </button>
-                </div>
-
-                <div className="lg:col-span-7">
-                  <span className="label text-muted">Included, in full</span>
-                  <ul className="mt-6 border-t border-rule">
-                    {s.includes.map((item) => (
-                      <li
-                        key={item}
-                        className="flex gap-5 py-3.5 border-b border-rule text-[0.9375rem] text-ink-soft leading-relaxed"
-                      >
-                        <span className="text-signal shrink-0" aria-hidden="true">
-                          —
+              <Reveal key={s.id} delay={i * 80}>
+                <div className="bg-paper-raised border border-rule-strong rounded-[28px] p-8 sm:p-12 shadow-sm hover:shadow-md transition-shadow grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                  {/* Left Column: Scope Info & CTA */}
+                  <div className="lg:col-span-5 flex flex-col justify-between h-full">
+                    <div>
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="w-8 h-8 rounded-full bg-signal/10 text-signal font-mono font-bold text-xs flex items-center justify-center">
+                          {s.id}
                         </span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                        <span className="text-[11px] font-mono text-signal bg-signal-wash px-3 py-0.5 rounded-full border border-signal/20 font-semibold">
+                          {s.tag}
+                        </span>
+                      </div>
+
+                      <h2 className="font-display text-3xl sm:text-4xl text-ink font-medium mt-2">{s.name}</h2>
+                      
+                      <div className="mt-4 inline-flex items-center gap-2 text-xs font-mono text-muted bg-paper-sunk/80 px-3 py-1 rounded-full border border-rule">
+                        <span className="w-1.5 h-1.5 rounded-full bg-signal" />
+                        <span>Timeline: <strong className="text-ink">{s.timeline}</strong></span>
+                      </div>
+
+                      <p className="text-muted leading-relaxed mt-5 text-sm">{s.forWho}</p>
+                    </div>
+
+                    <div className="mt-8 pt-6 border-t border-rule">
+                      <button
+                        onClick={onBook}
+                        className="bg-signal hover:bg-signal-bright text-paper font-sans font-medium text-xs md:text-sm py-3 px-6 rounded-full transition-colors flex items-center gap-2 shadow-sm cursor-pointer"
+                      >
+                        <span>Schedule 20-min Discovery Call</span>
+                        <span>→</span>
+                      </button>
+                      <span className="text-[11px] text-muted block mt-2">
+                        Get a written scope and quote on the call
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Right Column: Included Deliverables */}
+                  <div className="lg:col-span-7 bg-paper p-6 sm:p-8 rounded-[20px] border border-rule">
+                    <span className="label text-signal font-semibold tracking-wider uppercase text-xs block mb-4">
+                      Included in Full
+                    </span>
+                    <ul className="space-y-3.5">
+                      {s.includes.map((item) => (
+                        <li key={item} className="flex gap-3 items-start text-xs sm:text-sm text-ink-soft leading-relaxed">
+                          <span className="w-4 h-4 rounded-full bg-signal/10 text-signal flex items-center justify-center shrink-0 mt-0.5 font-bold text-[10px]">
+                            ✓
+                          </span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -171,68 +233,110 @@ export default function Services({ onBook }: { onBook: () => void }) {
         </Shell>
       </Section>
 
-      {/* ── How pricing works ──────────────────────────────────── */}
-      <Section tone="ink" size="loose">
+      {/* ── Cinematic Dark Chapter: How Pricing Works ──────────── */}
+      <section className="bg-ink text-paper py-20 md:py-28 relative overflow-hidden border-y border-white/10">
+        <div
+          aria-hidden="true"
+          className="absolute -top-24 right-1/4 w-96 h-96 bg-signal/15 rounded-full blur-[100px] pointer-events-none"
+        />
+
         <Shell>
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             <Reveal className="lg:col-span-5">
-              <SectionHead
-                index="04"
-                eyebrow="Pricing"
-                inverted
-                title="One number, agreed in writing, before anything starts."
-              />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-signal-bright text-xs font-mono mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
+                PRICING INTEGRITY
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-paper font-normal leading-tight">
+                One number, agreed in writing,{' '}
+                <span className="text-signal-bright italic font-normal">before anything starts.</span>
+              </h2>
+              <p className="text-on-ink-muted text-sm md:text-base leading-relaxed mt-6">
+                We do not bill by the hour. You are quoted a single fixed figure for the scope, and
+                that figure is what you pay — whether the build takes us four days or nine.
+              </p>
+              <div className="mt-8">
+                <button
+                  onClick={onBook}
+                  className="bg-signal hover:bg-signal-bright text-paper text-xs md:text-sm font-medium px-6 py-3 rounded-full transition-colors flex items-center gap-2 cursor-pointer shadow-md"
+                >
+                  <span>Book 20-min Scope Call</span>
+                  <span>→</span>
+                </button>
+              </div>
             </Reveal>
+
             <Reveal delay={100} className="lg:col-span-7">
-              <div className="space-y-8">
-                <p className="text-lead text-on-ink">
-                  We do not bill by the hour. You are quoted a single figure for the scope, and
-                  that figure is what you pay — whether the build takes us four days or nine.
-                </p>
-                <div className="border-t border-rule-on-ink">
-                  {[
-                    ['How it is set', 'From the scope agreed on the discovery call: the number of pages, the features, and the integrations. Nothing else moves it.'],
-                    ['When it can change', 'Only if you ask for something outside the written scope. We quote the addition separately and you decide before we build it.'],
-                    ['How it is paid', 'Half to start, half on the day it goes live. Not before.'],
-                    ['What is never added', 'No setup fees, no per-page charges, no licence fees for the work itself, no charge for the revision rounds included in your scope.'],
-                  ].map(([k, v]) => (
-                    <div key={k} className="py-6 border-b border-rule-on-ink">
-                      <span className="label text-signal-bright">{k}</span>
-                      <p className="text-on-ink-muted leading-relaxed mt-3">{v}</p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  {
+                    title: 'How it is set',
+                    desc: 'From the scope agreed on the discovery call: the number of pages, custom features, and third-party integrations. Nothing else moves it.',
+                    badge: 'Scope-Based',
+                  },
+                  {
+                    title: 'When it can change',
+                    desc: 'Only if you explicitly request something outside the agreed written scope. We quote the addition separately and you decide before we build it.',
+                    badge: 'Zero Surprises',
+                  },
+                  {
+                    title: 'How it is paid',
+                    desc: 'Half to start the sprint, half on the day your website goes live in production. Never before.',
+                    badge: '50 / 50 Milestone',
+                  },
+                  {
+                    title: 'What is never added',
+                    desc: 'No setup fees, no per-page charges, no license fees, and zero charges for the revision rounds included in your scope.',
+                    badge: 'Zero Hidden Fees',
+                  },
+                ].map((item) => (
+                  <div key={item.title} className="p-6 rounded-[24px] bg-white/[0.04] backdrop-blur-md border border-white/10 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-xs font-mono font-semibold text-signal-bright">{item.title}</span>
+                        <span className="text-[9px] font-mono text-white/60 bg-white/10 px-2 py-0.5 rounded-full">{item.badge}</span>
+                      </div>
+                      <p className="text-on-ink-muted text-xs leading-relaxed">{item.desc}</p>
                     </div>
-                  ))}
-                </div>
-                <p className="text-on-ink-muted leading-relaxed">
-                  We do not publish a price list because the honest range across these three
-                  scopes is wide enough that a number on a page would mislead you either way. You
-                  get a firm figure on the first call, not after three meetings.
-                </p>
+                  </div>
+                ))}
               </div>
             </Reveal>
           </div>
         </Shell>
-      </Section>
+      </section>
 
-      {/* ── What we don't do ───────────────────────────────────── */}
+      {/* ── What we don't do (Out of Scope) ─────────────────────── */}
       <Section size="loose">
         <Shell>
           <Reveal>
-            <SectionHead
-              index="05"
-              eyebrow="Out of scope"
-              title="What we will turn down."
-              intro="A studio that says yes to everything is telling you something about how carefully it says yes."
-            />
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="label text-signal font-semibold uppercase tracking-wider block mb-2">
+                FILTERING THE WORK
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
+                What we will turn down.
+              </h2>
+              <p className="text-muted text-base max-w-xl mx-auto mt-4">
+                A studio that says yes to everything is telling you something about how carefully it says yes.
+              </p>
+            </div>
           </Reveal>
-          <div className="mt-20 border-t border-rule-strong">
-            {NOT_US.map(([k, v], i) => (
-              <Reveal
-                key={k}
-                delay={i * 60}
-                className="row-hover grid md:grid-cols-12 gap-x-10 gap-y-2 py-7 px-3 -mx-3 border-b border-rule"
-              >
-                <h3 className="md:col-span-4 text-lead font-medium">{k}</h3>
-                <p className="md:col-span-8 text-muted leading-relaxed">{v}</p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {NOT_US.map((item, idx) => (
+              <Reveal key={item.k} delay={idx * 60}>
+                <div className="bg-paper-raised p-6 sm:p-8 rounded-[24px] border border-rule-strong shadow-xs flex flex-col justify-between h-full">
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="font-display text-xl text-ink font-medium">{item.k}</span>
+                      <span className="text-[10px] font-mono text-muted bg-paper-sunk px-2.5 py-0.5 rounded-full border border-rule">
+                        {item.pill}
+                      </span>
+                    </div>
+                    <p className="text-muted text-xs sm:text-sm leading-relaxed">{item.v}</p>
+                  </div>
+                </div>
               </Reveal>
             ))}
           </div>
@@ -243,39 +347,86 @@ export default function Services({ onBook }: { onBook: () => void }) {
       <Section tone="sunk">
         <Shell>
           <Reveal>
-            <SectionHead index="06" eyebrow="After launch" title="What happens once it is live." />
+            <SectionHead index="05" eyebrow="After launch" title="What happens once it is live." />
           </Reveal>
-          <div className="grid md:grid-cols-3 gap-px bg-rule mt-16 border border-rule">
-            {ONGOING.map(([k, v], i) => (
-              <Reveal key={k} delay={i * 70} className="bg-paper-raised p-8 card-lift">
-                <span className="label text-signal">{k}</span>
-                <p className="text-ink-soft leading-relaxed mt-4">{v}</p>
+          <div className="grid md:grid-cols-3 gap-6 mt-14">
+            {ONGOING.map((item, i) => (
+              <Reveal key={item.title} delay={i * 70}>
+                <div className="bg-paper p-8 rounded-[24px] border border-rule-strong shadow-xs flex flex-col justify-between h-full">
+                  <div>
+                    <span className="text-[10px] font-mono text-signal uppercase tracking-wider block mb-2">
+                      {item.badge}
+                    </span>
+                    <h3 className="font-display text-2xl text-ink font-medium mb-3">{item.title}</h3>
+                    <p className="text-muted text-xs sm:text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
               </Reveal>
             ))}
           </div>
         </Shell>
       </Section>
 
-      {/* ── Close ──────────────────────────────────────────────── */}
-      <Section tone="ink" size="loose">
-        <Shell width="narrow" className="text-center">
+      {/* ── Cloaked-Style Dual-Card Closing CTA ─────────────────── */}
+      <section className="bg-ink text-paper py-20 border-t border-white/10">
+        <Shell>
           <Reveal>
-            <h2 className="font-display text-display">Get the number on the first call.</h2>
-            <p className="text-lead text-on-ink-muted mt-8">
-              Twenty minutes, no deck. You leave with a scope, a price, and a date — or with an
-              honest reason why we are not the right studio for it.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
-              <button onClick={onBook} className="btn-primary-inv">
-                Book a 20-minute call
-              </button>
-              <Link to="/portfolio" className="btn-ghost-inv">
-                See how we prove it
-              </Link>
+            <div className="grid md:grid-cols-12 gap-8 items-center bg-white/[0.03] border border-white/10 rounded-[32px] p-8 sm:p-12">
+              <div className="md:col-span-6 flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <LogoMark size={48} />
+                    <span className="font-display text-2xl text-paper font-medium">Uncoded Hub</span>
+                  </div>
+                  <h3 className="font-display text-3xl sm:text-4xl text-paper font-normal leading-tight">
+                    Get the fixed number on the first call.<br />
+                    <span className="text-signal-bright italic">Twenty minutes, no pitch deck.</span>
+                  </h3>
+                  <p className="text-on-ink-muted text-sm leading-relaxed mt-4 max-w-md">
+                    You leave with a clear scope, a defined price, and a contractual launch date — or an honest explanation if we're not the right studio.
+                  </p>
+                </div>
+
+                <div className="mt-8 flex items-center gap-4 text-xs font-mono text-on-ink-muted">
+                  <span>● Deepak & Geetha</span>
+                  <span>·</span>
+                  <span>Direct delivery</span>
+                </div>
+              </div>
+
+              <div className="md:col-span-6 bg-white/[0.05] p-6 sm:p-8 rounded-[24px] border border-white/10 flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-mono text-signal-bright uppercase tracking-wider block mb-2">
+                    7-DAY COHORT RESERVATION
+                  </span>
+                  <h4 className="font-display text-2xl text-paper font-medium mb-3">
+                    Ready to define your build?
+                  </h4>
+                  <p className="text-on-ink-muted text-xs leading-relaxed mb-6">
+                    Book a free discovery call with Deepak & Geetha. Slots are scheduled in your local timezone.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <button
+                    onClick={onBook}
+                    className="w-full bg-signal hover:bg-signal-bright text-paper font-sans font-medium text-sm py-3.5 px-6 rounded-full transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+                  >
+                    <span>Book a 20-Minute Discovery Call</span>
+                    <span>→</span>
+                  </button>
+                  <Link
+                    to="/portfolio"
+                    className="w-full block text-center text-xs text-on-ink-muted hover:text-paper py-2 transition-colors"
+                  >
+                    Or test our 6 live demos first
+                  </Link>
+                </div>
+              </div>
             </div>
           </Reveal>
         </Shell>
-      </Section>
+      </section>
     </>
   );
 }

@@ -1,24 +1,52 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
 import { BookingCalendar, HOSTS, Host } from '../components/ui/BookingCalendar';
 import { submitLead } from '../lib/supabase';
+import { LogoMark } from '../components/Logo';
 
 /* ═══════════════════════════════════════════════════════════════════
-   CONTACT
-
-   The host used to be picked with Math.random() on mount, which meant
-   the page told a returning visitor they were speaking to a different
-   person each time they loaded it. The visitor now chooses, with a
-   sensible default, and ?host=geetha still works for campaign links.
+   CONTACT & DISCOVERY
+   Cloaked-inspired design:
+   - High-contrast editorial hero with announcement badge
+   - Rounded squircle calendar bento card (rounded-[28px])
+   - Visual host selector tabs (Deepak & Geetha)
+   - Alternative channels bento grid
+   - Cinematic dark chapter: "The 4-Step Handover Protocol" (#0e0c0a)
+   - Written brief form in squircle container
+   - Dual-card closing CTA module
    ═══════════════════════════════════════════════════════════════════ */
 
-const NEXT = [
-  ['Right now', 'You pick a slot and get a calendar invitation with a video link. Nothing to install.'],
-  ['On the call', 'Twenty minutes. What your business does, who you sell to, and what the site has to achieve. We look at whatever you have now, live.'],
-  ['Within a day', 'A written scope: the pages, the features, a fixed price, and a launch date. One page, no deck.'],
-  ['If you go ahead', 'The seven days start the next morning. If you do not, we part on good terms and there is no follow-up sequence.'],
+const PROTOCOL = [
+  {
+    step: '01',
+    timing: 'Right now',
+    title: 'Instant Calendar Confirmation',
+    desc: 'You select a slot and immediately receive a Google Meet video invitation with automated timezone conversion. Zero software to install.',
+    tag: 'STEP 1 · INSTANT',
+  },
+  {
+    step: '02',
+    timing: 'On the call',
+    title: '20-Minute Live Architecture Teardown',
+    desc: 'We examine your business model, customer journey, and existing site or competitor benchmark live on screen. Pure engineering insight, zero sales slides.',
+    tag: 'STEP 2 · 20 MINUTES',
+  },
+  {
+    step: '03',
+    timing: 'Within 24 hours',
+    title: 'Fixed Scope & Delivery Contract',
+    desc: 'A written one-page specification: every page itemized, performance targets locked, fixed all-inclusive investment, and an exact launch date.',
+    tag: 'STEP 3 · 24 HOURS',
+  },
+  {
+    step: '04',
+    timing: 'If you go ahead',
+    title: 'The 7-Day Sprint Commences',
+    desc: 'Development starts the next morning. If our proposal is not a fit, we part as friends and you will never receive an automated drip email sequence.',
+    tag: 'STEP 4 · NO SPAM',
+  },
 ];
 
 export default function Contact() {
@@ -34,130 +62,303 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Book a Call — Uncoded Hub</title>
+        <title>Book a Discovery Call — Uncoded Hub</title>
         <meta
           name="description"
-          content="Book a free twenty-minute discovery call with Uncoded Hub, or send a project brief. Slots are shown in your timezone."
+          content="Book a free twenty-minute discovery call directly with Deepak & Geetha, or send a project brief. Slots are displayed in your local timezone."
         />
         <link rel="canonical" href="https://uncodedhub.com/contact" />
       </Helmet>
 
-      {/* ── Header ─────────────────────────────────────────────── */}
-      <section className="pt-36 md:pt-44 pb-14">
+      {/* ── Editorial Hero ──────────────────────────────────────── */}
+      <section className="pt-32 sm:pt-40 pb-16 bg-paper relative overflow-hidden border-b border-rule">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-signal/5 rounded-full blur-[140px] pointer-events-none -z-10" />
+
         <Shell>
           <Reveal>
-            <p className="label text-signal">Contact</p>
-            <h1 className="font-display text-hero mt-8 max-w-[15ch]">
-              Twenty minutes, and you will know either way.
-            </h1>
-          </Reveal>
-          <Reveal delay={100}>
-            <p className="text-lead text-muted mt-10 max-w-2xl">
-              No deck, no discovery workshop, no five-stage sales process. One call with the two
-              people who would build it, and a written scope and price the next day.
-            </p>
+            {/* Top Announcement Pill */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-paper-raised border border-rule-strong shadow-xs mb-8">
+              <span className="w-2 h-2 rounded-full bg-signal animate-pulse" />
+              <span className="text-[11px] font-mono uppercase tracking-wider text-muted font-medium">
+                DIRECT FOUNDER DISCOVERY · SCHEDULED IN YOUR LOCAL TIMEZONE
+              </span>
+            </div>
+
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-end">
+              <div className="lg:col-span-8">
+                <p className="label text-signal mb-4">Direct Access</p>
+                <h1 className="font-display text-4xl sm:text-6xl md:text-7xl text-ink font-normal tracking-tight leading-[1.05]">
+                  Twenty minutes, and you will know either way.
+                </h1>
+              </div>
+
+              <div className="lg:col-span-4">
+                <p className="text-muted text-sm sm:text-base leading-relaxed">
+                  No pitch decks, no junior account managers, no five-stage sales process. One call directly with <strong className="text-ink font-semibold">Deepak & Geetha</strong> — the two founders who build your website.
+                </p>
+              </div>
+            </div>
           </Reveal>
         </Shell>
       </section>
 
-      {/* ── Booking ────────────────────────────────────────────── */}
-      <Section id="book" size="tight">
+      {/* ── Interactive Booking Bento ───────────────────────────── */}
+      <Section id="book" size="tight" className="bg-paper-sunken">
         <Shell>
           <Reveal>
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-3 pb-6 border-b border-rule">
-              <span className="label text-muted">Speak with</span>
-              {HOSTS.map((h) => (
-                <button
-                  key={h.name}
-                  onClick={() => setHost(h)}
-                  aria-pressed={host.name === h.name}
-                  className={`text-[0.9375rem] link-quiet ${
-                    host.name === h.name ? 'text-signal' : 'text-muted hover:text-ink'
-                  }`}
-                >
-                  {h.name} — {h.role.replace('Co-founder, ', '')}
-                </button>
-              ))}
+            {/* Host Toggle Tabs */}
+            <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-rule">
+              <div>
+                <span className="text-[11px] font-mono text-signal uppercase tracking-wider block mb-1">
+                  CHOOSE YOUR HOST
+                </span>
+                <p className="text-ink font-medium text-sm">
+                  Both founders attend and deliver every project together. Pick who you'd like to lead discovery:
+                </p>
+              </div>
+
+              <div className="inline-flex p-1.5 bg-paper rounded-full border border-rule-strong shadow-xs gap-1.5">
+                {HOSTS.map((h) => {
+                  const active = host.name === h.name;
+                  return (
+                    <button
+                      key={h.name}
+                      onClick={() => setHost(h)}
+                      aria-pressed={active}
+                      className={`px-5 py-2 rounded-full text-xs font-mono transition-all flex items-center gap-2 cursor-pointer ${
+                        active
+                          ? 'bg-ink text-paper font-medium shadow-xs'
+                          : 'text-muted hover:text-ink'
+                      }`}
+                    >
+                      <span className={`w-1.5 h-1.5 rounded-full ${active ? 'bg-signal-bright' : 'bg-rule-strong'}`} />
+                      <span>{h.name}</span>
+                      <span className="hidden sm:inline text-[10px] opacity-70">
+                        ({h.name === 'Deepak' ? 'Engineering' : 'Design'})
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </Reveal>
 
-          <Reveal delay={80} className="mt-10">
-            {/* Remounted per host so the picker resets cleanly. */}
-            <BookingCalendar key={host.name} host={host} />
+          {/* Calendar Squircle Card */}
+          <Reveal delay={80}>
+            <div className="bg-paper-raised border border-rule-strong rounded-[28px] p-6 sm:p-10 shadow-xs relative">
+              <div className="flex items-center justify-between pb-6 mb-6 border-b border-rule text-xs font-mono text-muted">
+                <span className="flex items-center gap-2 text-ink font-medium">
+                  <span className="w-2 h-2 rounded-full bg-signal" />
+                  Live Slot Booking with {host.name} ({host.role.replace('Co-founder, ', '')})
+                </span>
+                <span className="hidden sm:inline text-[11px]">Duration: 20 Minutes · Video (Google Meet)</span>
+              </div>
+
+              {/* Remounted per host so the picker resets cleanly. */}
+              <BookingCalendar key={host.name} host={host} />
+            </div>
           </Reveal>
         </Shell>
       </Section>
 
-      {/* ── Other channels ─────────────────────────────────────── */}
+      {/* ── Other Direct Channels Bento ─────────────────────────── */}
       <Section tone="sunk" size="default">
         <Shell>
           <Reveal>
-            <SectionHead index="01" eyebrow="Other ways" title="If a call is not how you work." />
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+              <div>
+                <span className="text-[11px] font-mono text-signal uppercase tracking-wider block mb-2">
+                  DIRECT CONTACT · ZERO MIDDLEMEN
+                </span>
+                <SectionHead index="01" eyebrow="Alternative channels" title="If a call is not how you work." />
+              </div>
+              <p className="text-muted text-xs sm:text-sm max-w-md">
+                Reach Deepak & Geetha directly through WhatsApp or Email. We answer messages ourselves without ticketing systems.
+              </p>
+            </div>
           </Reveal>
-          <div className="grid md:grid-cols-3 gap-px bg-rule mt-14 border border-rule">
+
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 k: 'WhatsApp',
                 v: '+91 86608 19023',
-                note: 'Fastest. Usually answered inside the hour during working hours.',
+                pill: '< 1 HOUR RESPONSE',
+                note: 'Fastest for urgent questions or quick voice notes. Answered directly by Deepak & Geetha during active hours.',
                 href: 'https://wa.me/918660819023',
+                action: 'Open WhatsApp Chat →',
               },
               {
                 k: 'Email',
                 v: 'hello@uncodedhub.com',
-                note: 'Best for a detailed brief or an RFP. Replies within one working day.',
+                pill: '< 24 HOURS RESPONSE',
+                note: 'Best for detailed project briefs, RFP specifications, design Figma links, or existing website audits.',
                 href: 'mailto:hello@uncodedhub.com',
+                action: 'Send an Email →',
               },
               {
-                k: 'Hours',
+                k: 'Operating Hours',
                 v: '08:00 – 20:00 IST',
-                note: 'Seven days a week. Outside those hours, leave a message and it is answered first thing.',
+                pill: '7 DAYS A WEEK',
+                note: 'Bengaluru, India standard time. Messages sent overnight are reviewed first thing at 08:00 IST.',
+                action: 'Timezone: UTC +5:30',
               },
-            ].map((c) => (
-              <Reveal key={c.k} className="bg-paper-raised p-8 card-lift">
-                <span className="label text-signal">{c.k}</span>
-                {c.href ? (
-                  <a
-                    href={c.href}
-                    target={c.href.startsWith('http') ? '_blank' : undefined}
-                    rel="noreferrer noopener"
-                    className="block font-display text-title mt-4 link-quiet w-fit max-w-full break-words"
-                  >
-                    {c.v}
-                  </a>
-                ) : (
-                  <p className="font-display text-title mt-4 break-words">{c.v}</p>
-                )}
-                <p className="text-muted leading-relaxed mt-4 text-[0.9375rem]">{c.note}</p>
+            ].map((c, i) => (
+              <Reveal key={c.k} delay={i * 80}>
+                <div className="bg-paper-raised p-8 rounded-[24px] border border-rule-strong shadow-xs h-full flex flex-col justify-between hover:border-ink/30 transition-all duration-300">
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="label text-signal font-mono">{c.k}</span>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-paper border border-rule-strong text-muted">
+                        {c.pill}
+                      </span>
+                    </div>
+
+                    {c.href ? (
+                      <a
+                        href={c.href}
+                        target={c.href.startsWith('http') ? '_blank' : undefined}
+                        rel="noreferrer noopener"
+                        className="block font-display text-2xl sm:text-3xl text-ink font-medium mt-2 hover:text-signal transition-colors break-words"
+                      >
+                        {c.v}
+                      </a>
+                    ) : (
+                      <p className="font-display text-2xl sm:text-3xl text-ink font-medium mt-2 break-words">
+                        {c.v}
+                      </p>
+                    )}
+
+                    <p className="text-muted leading-relaxed mt-4 text-xs sm:text-sm">
+                      {c.note}
+                    </p>
+                  </div>
+
+                  <div className="mt-8 pt-4 border-t border-rule text-xs font-mono text-signal">
+                    {c.href ? (
+                      <a
+                        href={c.href}
+                        target={c.href.startsWith('http') ? '_blank' : undefined}
+                        rel="noreferrer noopener"
+                        className="hover:underline flex items-center gap-1.5"
+                      >
+                        <span>{c.action}</span>
+                      </a>
+                    ) : (
+                      <span className="text-muted">{c.action}</span>
+                    )}
+                  </div>
+                </div>
               </Reveal>
             ))}
           </div>
         </Shell>
       </Section>
 
-      {/* ── Brief + what happens next ──────────────────────────── */}
-      <Section size="loose">
+      {/* ── Cinematic Dark Chapter: Handover Protocol ───────────── */}
+      <section className="bg-ink text-paper py-24 sm:py-32 relative overflow-hidden border-y border-white/10">
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-signal/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+
         <Shell>
-          <div className="grid lg:grid-cols-12 gap-14 lg:gap-20">
+          <Reveal>
+            <div className="max-w-3xl mb-16">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-[11px] font-mono text-signal-bright uppercase tracking-wider mb-6">
+                <span>● ZERO SALES MYSTERY</span>
+              </div>
+              <h2 className="font-display text-3xl sm:text-5xl md:text-6xl text-paper font-normal leading-[1.1] tracking-tight">
+                The 4-Step Handover Protocol
+              </h2>
+              <p className="text-on-ink-muted text-sm sm:text-base leading-relaxed mt-6 max-w-xl">
+                What actually occurs after you schedule your slot. No hidden discovery phases, no high-pressure close, no endless pitch decks.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {PROTOCOL.map((p, i) => (
+              <Reveal key={p.step} delay={i * 90}>
+                <div className="bg-white/[0.04] p-8 rounded-[24px] border border-white/10 flex flex-col justify-between h-full hover:border-white/20 transition-all duration-300">
+                  <div>
+                    <div className="flex items-center justify-between mb-6">
+                      <span className="text-xs font-mono text-signal-bright font-medium">
+                        {p.tag}
+                      </span>
+                      <span className="font-display text-2xl text-white/40">{p.step}</span>
+                    </div>
+
+                    <p className="text-[11px] font-mono text-on-ink-muted uppercase tracking-wider mb-2">
+                      {p.timing}
+                    </p>
+                    <h3 className="font-display text-xl text-paper font-medium mb-3 leading-snug">
+                      {p.title}
+                    </h3>
+                    <p className="text-on-ink-muted text-xs leading-relaxed">
+                      {p.desc}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Shell>
+      </section>
+
+      {/* ── Brief + What Happens Next ──────────────────────────── */}
+      <Section size="loose" className="bg-paper">
+        <Shell>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
             <Reveal className="lg:col-span-7">
-              <SectionHead index="02" eyebrow="Send a brief" title="Or write it down instead." />
-              <div className="mt-12">
+              <div className="mb-10">
+                <span className="text-[11px] font-mono text-signal uppercase tracking-wider block mb-2">
+                  ASYNC PROJECT BRIEF
+                </span>
+                <SectionHead index="02" eyebrow="Send a brief" title="Or write it down instead." />
+                <p className="text-muted text-xs sm:text-sm mt-3">
+                  Prefer not to speak on a call yet? Share your business requirements in written form. We review every brief personally and reply within one business day.
+                </p>
+              </div>
+
+              <div className="bg-paper-raised border border-rule-strong rounded-[28px] p-6 sm:p-10 shadow-xs">
                 <BriefForm />
               </div>
             </Reveal>
 
             <Reveal delay={120} className="lg:col-span-5">
-              <SectionHead index="03" eyebrow="What happens next" title="No mystery." />
-              <div className="mt-12 border-t border-rule-strong">
-                {NEXT.map(([k, v], i) => (
-                  <div key={k} className="flex gap-6 py-6 border-b border-rule">
-                    <span className="label text-signal pt-1 shrink-0 w-8">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <div>
-                      <h3 className="font-medium">{k}</h3>
-                      <p className="text-muted leading-relaxed mt-2 text-[0.9375rem]">{v}</p>
+              <div className="mb-10">
+                <span className="text-[11px] font-mono text-signal uppercase tracking-wider block mb-2">
+                  OUR PLEDGE
+                </span>
+                <SectionHead index="03" eyebrow="Our guarantee" title="Direct founder accountability." />
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  {
+                    title: 'Deepak writes the architecture',
+                    desc: 'Full TypeScript, Vite, zero bloated plugins, instant sub-second page loads, and 100/100 Lighthouse performance.',
+                  },
+                  {
+                    title: 'Geetha designs the interface',
+                    desc: 'Distinctive typography, bespoke visual layouts, customer-first conversion hierarchy, and frictionless interaction models.',
+                  },
+                  {
+                    title: 'Fixed all-inclusive quote',
+                    desc: 'No hourly rate overruns. The number on the scope sheet is the exact number on the invoice.',
+                  },
+                  {
+                    title: '7-day contractual delivery',
+                    desc: 'If we commit to launching on day seven, it launches on day seven. If we miss it without agreed scope creep, we discount 50%.',
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="p-6 bg-paper-sunken border border-rule rounded-[20px] hover:border-rule-strong transition-colors"
+                  >
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-signal" />
+                      <h4 className="font-medium text-sm text-ink">{item.title}</h4>
                     </div>
+                    <p className="text-muted text-xs leading-relaxed pl-3.5">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -165,6 +366,69 @@ export default function Contact() {
           </div>
         </Shell>
       </Section>
+
+      {/* ── Cloaked-Style Dual-Card Closing CTA ─────────────────── */}
+      <section className="bg-ink text-paper py-20 border-t border-white/10">
+        <Shell>
+          <Reveal>
+            <div className="grid md:grid-cols-12 gap-8 items-center bg-white/[0.03] border border-white/10 rounded-[32px] p-8 sm:p-12">
+              <div className="md:col-span-6 flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <LogoMark size={48} />
+                    <span className="font-display text-2xl text-paper font-medium">Uncoded Hub</span>
+                  </div>
+                  <h3 className="font-display text-3xl sm:text-4xl text-paper font-normal leading-tight">
+                    Start your 7-day sprint.<br />
+                    <span className="text-signal-bright italic">Direct with Deepak & Geetha.</span>
+                  </h3>
+                  <p className="text-on-ink-muted text-sm leading-relaxed mt-4 max-w-md">
+                    We only take two sprint builds per month to maintain 100% founder attention. Secure your discovery slot or explore our verified builds.
+                  </p>
+                </div>
+
+                <div className="mt-8 flex items-center gap-4 text-xs font-mono text-on-ink-muted">
+                  <span>● Deepak & Geetha</span>
+                  <span>·</span>
+                  <span>Zero Sales Reps</span>
+                  <span>·</span>
+                  <span>Bengaluru, India</span>
+                </div>
+              </div>
+
+              <div className="md:col-span-6 bg-white/[0.05] p-6 sm:p-8 rounded-[24px] border border-white/10 flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-mono text-signal-bright uppercase tracking-wider block mb-2">
+                    DISCOVERY CALL · 20 MINUTES
+                  </span>
+                  <h4 className="font-display text-2xl text-paper font-medium mb-3">
+                    Ready to discuss your site?
+                  </h4>
+                  <p className="text-on-ink-muted text-xs leading-relaxed mb-6">
+                    Pick a 20-minute slot on the calendar above, or jump straight to inspecting our 6 interactive sector demos.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <a
+                    href="#book"
+                    className="w-full bg-signal hover:bg-signal-bright text-paper font-sans font-medium text-sm py-3.5 px-6 rounded-full transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+                  >
+                    <span>Jump to Slot Selector</span>
+                    <span>↑</span>
+                  </a>
+                  <Link
+                    to="/portfolio"
+                    className="w-full block text-center text-xs text-on-ink-muted hover:text-paper py-2 transition-colors"
+                  >
+                    Or test our 6 live client demos first →
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </Shell>
+      </section>
     </>
   );
 }
@@ -202,12 +466,13 @@ function BriefForm() {
 
   if (status === 'sent') {
     return (
-      <div className="pop-in border border-rule-strong bg-paper-raised p-10 md:p-14">
-        <span className="label text-signal">Received</span>
-        <h3 className="font-display text-display mt-5">Thanks, {form.name.split(' ')[0]}.</h3>
-        <p className="text-muted leading-relaxed mt-6 max-w-md">
-          We read every brief ourselves. You will hear back within one working day with either a
-          scope and a price, or a question we need answered first.
+      <div className="pop-in bg-paper-sunken border border-rule-strong rounded-[24px] p-8 md:p-12 text-center">
+        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-signal/10 text-signal font-mono text-xs uppercase tracking-wider mb-4">
+          ✓ BRIEF RECEIVED
+        </span>
+        <h3 className="font-display text-3xl text-ink font-medium">Thanks, {form.name.split(' ')[0]}.</h3>
+        <p className="text-muted leading-relaxed mt-4 max-w-md mx-auto text-sm">
+          Deepak & Geetha read every brief personally. You will hear back within one working day with either a detailed scope and fixed price, or a specific question we need clarified first.
         </p>
       </div>
     );
@@ -223,14 +488,14 @@ function BriefForm() {
       <div className="grid sm:grid-cols-2 gap-6">
         <div>
           <label htmlFor="brief-phone" className="label text-muted block mb-2">
-            Phone <span className="text-signal">*</span>
+            Phone / WhatsApp <span className="text-signal">*</span>
           </label>
           <div className="flex gap-2">
             <select
               aria-label="Country dialling code"
               value={form.dial}
               onChange={(e) => setForm({ ...form, dial: e.target.value })}
-              className="w-28 bg-paper border border-rule-strong px-3 py-2.5 text-[0.9375rem] rounded-[3px] focus:border-ink transition-colors"
+              className="w-24 bg-paper border border-rule-strong px-2.5 py-2.5 text-xs font-mono rounded-xl focus:border-ink transition-colors"
             >
               {['+91', '+1', '+44', '+61', '+971', '+65'].map((d) => (
                 <option key={d} value={d}>{d}</option>
@@ -240,15 +505,17 @@ function BriefForm() {
               id="brief-phone"
               type="tel"
               required
+              placeholder="98765 43210"
               value={form.phone}
               onChange={(e) => setForm({ ...form, phone: e.target.value })}
-              className="flex-1 min-w-0 bg-paper border border-rule-strong px-3.5 py-2.5 text-[0.9375rem] rounded-[3px] focus:border-ink transition-colors"
+              className="flex-1 min-w-0 bg-paper border border-rule-strong px-3.5 py-2.5 text-sm rounded-xl focus:border-ink transition-colors"
             />
           </div>
         </div>
         <BriefField
           label="What does your business do?"
           name="business"
+          placeholder="e.g. Interior studio, Dental clinic"
           value={form.business}
           onChange={(v) => setForm({ ...form, business: v })}
         />
@@ -256,16 +523,16 @@ function BriefForm() {
 
       <div>
         <label htmlFor="brief-details" className="label text-muted block mb-2">
-          What do you need, and by when? <span className="text-signal">*</span>
+          What do you need built, and by when? <span className="text-signal">*</span>
         </label>
         <textarea
           id="brief-details"
           required
-          rows={6}
-          placeholder="What you sell, who buys it, what is wrong with the site you have now, and any date you are working towards."
+          rows={5}
+          placeholder="What you sell, who buys it, what is broken on your current website, and any target launch date you have in mind."
           value={form.details}
           onChange={(e) => setForm({ ...form, details: e.target.value })}
-          className="w-full bg-paper border border-rule-strong px-3.5 py-3 text-[0.9375rem] rounded-[3px] resize-y focus:border-ink transition-colors placeholder:text-rule-strong"
+          className="w-full bg-paper border border-rule-strong px-4 py-3 text-sm rounded-xl resize-y focus:border-ink transition-colors placeholder:text-muted/50"
         />
       </div>
 
@@ -275,17 +542,23 @@ function BriefForm() {
       </div>
 
       {status === 'error' && (
-        <p className="text-[0.875rem] text-signal" role="alert">
-          That did not send. Email hello@uncodedhub.com and we will pick it up there.
+        <p className="text-xs text-signal font-mono" role="alert">
+          Unable to submit form right now. Please email hello@uncodedhub.com directly.
         </p>
       )}
 
-      <div className="flex flex-wrap items-center gap-6 pt-2">
-        <button type="submit" disabled={status === 'sending'} className="btn-primary disabled:opacity-55">
-          {status === 'sending' && <span className="spinner" aria-hidden="true" />}
-          {status === 'sending' ? 'Sending…' : 'Send the brief'}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+        <button
+          type="submit"
+          disabled={status === 'sending'}
+          className="btn-primary py-3 px-8 rounded-full disabled:opacity-55 cursor-pointer shadow-xs text-sm"
+        >
+          {status === 'sending' && <span className="spinner mr-2" aria-hidden="true" />}
+          {status === 'sending' ? 'Transmitting…' : 'Send Project Brief →'}
         </button>
-        <p className="label text-muted">Replies within one working day</p>
+        <span className="text-[11px] font-mono text-muted">
+          ● Replies guaranteed within 1 working day
+        </span>
       </div>
     </form>
   );
@@ -297,6 +570,7 @@ function BriefField({
   value,
   onChange,
   type = 'text',
+  placeholder = '',
   required = false,
 }: {
   label: string;
@@ -304,6 +578,7 @@ function BriefField({
   value: string;
   onChange: (v: string) => void;
   type?: string;
+  placeholder?: string;
   required?: boolean;
 }) {
   const id = `brief-${name}`;
@@ -318,9 +593,10 @@ function BriefField({
         name={name}
         type={type}
         required={required}
+        placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full bg-paper border border-rule-strong px-3.5 py-2.5 text-[0.9375rem] rounded-[3px] focus:border-ink transition-colors"
+        className="w-full bg-paper border border-rule-strong px-3.5 py-2.5 text-sm rounded-xl focus:border-ink transition-colors placeholder:text-muted/50"
       />
     </div>
   );
