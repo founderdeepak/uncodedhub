@@ -22,6 +22,7 @@ const NAV = [
   { label: 'Work', to: '/portfolio' },
   { label: 'Services', to: '/services' },
   { label: 'Studio', to: '/about' },
+  { label: 'FAQ', to: '/faq' },
   ...(hasBlogPosts ? [{ label: 'Blogs', to: '/blog' }] : []),
   { label: 'Terms', to: '/terms' },
   { label: 'Privacy', to: '/privacy' },

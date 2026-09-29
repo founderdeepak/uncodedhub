@@ -81,37 +81,46 @@ export function FloatingLeadMagnetBanner() {
     <div
       role="complementary"
       aria-label="Free website audit"
-      className={`fixed left-1/2 -translate-x-1/2 bottom-20 md:bottom-6 z-[85] w-[calc(100vw-2.5rem)] md:w-[32rem] print:hidden transition-all duration-300 ${
-        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'
+      className={`fixed left-1/2 -translate-x-1/2 bottom-20 md:bottom-6 z-[85] w-[calc(100vw-2rem)] md:w-auto md:min-w-[34rem] md:max-w-[40rem] print:hidden transition-all duration-500 ease-out ${
+        visible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-95 pointer-events-none'
       }`}
     >
-      <div className="bg-paper-raised border border-rule-strong rounded-[3px] shadow-[0_18px_50px_-12px_rgba(20,19,15,0.32)] flex items-center gap-4 pl-5 pr-3 py-3">
+      <div className="bg-ink/95 text-paper border border-white/20 rounded-full shadow-[0_24px_50px_-10px_rgba(0,0,0,0.45)] backdrop-blur-lg flex items-center gap-3 pl-4 sm:pl-5 pr-2 py-2">
+        <span className="w-2 h-2 rounded-full bg-signal animate-pulse shrink-0" aria-hidden="true" />
+
         <button
           type="button"
           onClick={goToLeadMagnet}
-          className="flex-1 text-left min-w-0"
+          className="flex-1 text-left min-w-0 pr-1 cursor-pointer"
         >
-          <span className="label text-signal">Free · 10-point audit</span>
-          <span className="block text-[0.8125rem] md:text-[0.9375rem] font-medium text-ink mt-0.5 leading-snug">
-            Not ready to book a call? Score your site first.
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-[10px] text-signal-bright font-semibold uppercase tracking-wider">
+              FREE AUDIT
+            </span>
+            <span className="text-white/40 text-xs hidden sm:inline">·</span>
+            <span className="text-[11px] text-on-ink-muted hidden sm:inline">Takes 60 seconds</span>
+          </div>
+          <span className="block text-xs sm:text-[13px] font-medium text-paper truncate leading-snug">
+            Score your site before you book a call.
           </span>
         </button>
 
         <button
           type="button"
           onClick={goToLeadMagnet}
-          className="btn-primary !px-4 !py-2.5 !text-[0.8125rem] shrink-0"
+          className="bg-signal hover:bg-signal-bright text-paper font-sans font-medium text-xs py-2 px-4 rounded-full transition-colors shrink-0 shadow-sm cursor-pointer flex items-center gap-1"
         >
-          Get it free →
+          <span>Get Audit</span>
+          <span className="hidden sm:inline">→</span>
         </button>
 
         <button
           type="button"
           onClick={dismiss}
           aria-label="Dismiss"
-          className="shrink-0 text-muted hover:text-ink transition-colors p-1"
+          className="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-colors flex items-center justify-center shrink-0 cursor-pointer ml-0.5"
         >
-          <IconClose className="w-4 h-4" />
+          <IconClose className="w-3.5 h-3.5" />
         </button>
       </div>
     </div>

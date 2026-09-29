@@ -19,6 +19,7 @@ const STATIC_ROUTE_FILES = {
   '/services': 'src/pages/Services.tsx',
   '/portfolio': 'src/pages/Portfolio.tsx',
   '/about': 'src/pages/About.tsx',
+  '/faq': 'src/pages/Faq.tsx',
   '/contact': 'src/pages/Contact.tsx',
   '/terms': 'src/pages/Terms.tsx',
   '/privacy': 'src/pages/Privacy.tsx',

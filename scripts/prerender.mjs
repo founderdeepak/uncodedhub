@@ -166,13 +166,22 @@ async function main() {
   const browser = await chromium.launch({ args: ['--no-sandbox', '--disable-dev-shm-usage'] });
   try {
     await waitForServer(BASE + '/');
-    const page = await browser.newPage();
-    page.on('pageerror', (err) => console.error('  [PAGE ERROR]', err.message));
-    page.on('console', (msg) => {
-      if (msg.type() === 'error') console.error('  [PAGE CONSOLE ERROR]', msg.text());
-    });
+    let page = await browser.newPage();
+    const attachHandlers = (p) => {
+      p.on('pageerror', (err) => console.error('  [PAGE ERROR]', err.message));
+      p.on('console', (msg) => {
+        if (msg.type() === 'error') console.error('  [PAGE CONSOLE ERROR]', msg.text());
+      });
+    };
+    attachHandlers(page);
 
-    for (const route of routes) {
+    for (let i = 0; i < routes.length; i++) {
+      if (i > 0 && i % 25 === 0) {
+        await page.close().catch(() => {});
+        page = await browser.newPage();
+        attachHandlers(page);
+      }
+      const route = routes[i];
       const html = await renderRoute(page, route);
       if (route === NOT_FOUND_PROBE) {
         writeFileSync(path.join(distDir, '404.html'), html);
@@ -184,7 +193,7 @@ async function main() {
       writeFileSync(outPath, html);
     }
 
-    await page.close();
+    await page.close().catch(() => {});
   } catch (err) {
     console.error('--- vite preview output ---\n' + previewOutput);
     throw err;

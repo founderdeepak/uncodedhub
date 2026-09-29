@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
@@ -198,6 +198,17 @@ export default function Home({ onBook }: { onBook: () => void }) {
     }
   };
 
+  const [isDemoPaused, setIsDemoPaused] = useState(false);
+
+  /* Auto-rotate Live Demo Specimens smoothly with fixed duration (4.5s) */
+  useEffect(() => {
+    if (isDemoPaused) return;
+    const timer = setInterval(() => {
+      setActiveDemoIdx((prev) => (prev + 1) % DEMO_SPECIMENS.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [isDemoPaused]);
+
   const nextDemo = () => {
     setActiveDemoIdx((prev) => (prev + 1) % DEMO_SPECIMENS.length);
   };
@@ -337,15 +348,19 @@ export default function Home({ onBook }: { onBook: () => void }) {
 
                     {/* Visual Media with Conversion Health Meter Overlay */}
                     <div className="relative aspect-[16/11] overflow-hidden bg-paper">
-                      <img
-                        src="/hero-section.webp"
-                        alt="Business owner reviewing his high-converting custom website delivered by Uncoded Hub"
-                        width={1200}
-                        height={800}
-                        loading="eager"
-                        fetchPriority="high"
-                        className="w-full h-full object-cover object-[70%_25%]"
-                      />
+                      <picture>
+                        <source media="(max-width: 767px)" srcSet="/hero-section-mobile.webp" />
+                        <img
+                          src="/hero-section.webp"
+                          alt="Business owner reviewing his high-converting custom website delivered by Uncoded Hub"
+                          width={1200}
+                          height={800}
+                          loading="eager"
+                          fetchPriority="high"
+                          decoding="async"
+                          className="w-full h-full object-cover object-[70%_25%]"
+                        />
+                      </picture>
 
                       {/* Gradient scrim for overlay contrast */}
                       <div
@@ -749,11 +764,15 @@ export default function Home({ onBook }: { onBook: () => void }) {
       <Section size="loose">
         <Shell>
           <Reveal>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
               <div>
-                <span className="label text-signal font-semibold uppercase tracking-wider block mb-2">
-                  03 · LIVE DEMO SPECIMENS
-                </span>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-sunken border border-rule mb-3">
+                  <span className="w-2 h-2 rounded-full bg-signal animate-pulse" aria-hidden="true" />
+                  <span className="font-mono text-[10px] text-signal font-semibold uppercase tracking-wider">
+                    03 · LIVE DEMO SPECIMENS
+                  </span>
+                  <span className="text-muted text-[10px] hidden sm:inline">· Auto-advancing (4.5s)</span>
+                </div>
                 <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
                   Test the builds live before you commit.
                 </h2>
@@ -763,8 +782,15 @@ export default function Home({ onBook }: { onBook: () => void }) {
                 </p>
               </div>
 
-              {/* Carousel navigation buttons */}
+              {/* Carousel navigation buttons and pause toggle */}
               <div className="flex items-center gap-3">
+                <button
+                  onClick={() => setIsDemoPaused(!isDemoPaused)}
+                  className="px-3 py-2 rounded-full border border-rule text-[11px] font-mono text-muted hover:text-ink transition-colors cursor-pointer"
+                  title={isDemoPaused ? 'Resume auto-advance' : 'Pause auto-advance'}
+                >
+                  {isDemoPaused ? '▶ RESUME' : '❚❚ PAUSE'}
+                </button>
                 <button
                   onClick={prevDemo}
                   className="w-11 h-11 rounded-full border border-rule-strong bg-paper hover:bg-paper-raised text-ink flex items-center justify-center transition-colors cursor-pointer"
@@ -781,31 +807,68 @@ export default function Home({ onBook }: { onBook: () => void }) {
                 </button>
               </div>
             </div>
+
+            {/* 6 Auto-Scroll Sector Tab Pills */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 mb-8">
+              {DEMO_SPECIMENS.map((demo, idx) => {
+                const isActive = activeDemoIdx === idx;
+                return (
+                  <button
+                    key={demo.client}
+                    onClick={() => setActiveDemoIdx(idx)}
+                    className={`px-3 py-2.5 rounded-[16px] border text-left transition-all cursor-pointer relative overflow-hidden ${
+                      isActive
+                        ? 'bg-paper-raised border-signal/80 text-ink shadow-sm'
+                        : 'bg-paper-sunken/60 border-rule text-ink-muted hover:text-ink hover:border-rule-strong'
+                    }`}
+                  >
+                    {isActive && !isDemoPaused && (
+                      <div
+                        className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-signal animate-progress"
+                        style={{ animationDuration: '4500ms' }}
+                      />
+                    )}
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="font-mono text-[10px] text-signal font-semibold">0{idx + 1}</span>
+                      {isActive && (
+                        <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
+                      )}
+                    </div>
+                    <span className="text-xs font-medium block truncate text-ink">{demo.sector}</span>
+                  </button>
+                );
+              })}
+            </div>
           </Reveal>
 
-          {/* Current Active Demo Spotlight Card */}
+          {/* Current Active Demo Spotlight Card (Pauses auto-scroll on hover) */}
           <Reveal delay={100}>
             {(() => {
               const currentDemo = DEMO_SPECIMENS[activeDemoIdx];
               return (
-                <div className="bg-paper-raised border border-rule-strong rounded-[28px] overflow-hidden shadow-lg grid lg:grid-cols-12 gap-0 items-center">
+                <div
+                  onMouseEnter={() => setIsDemoPaused(true)}
+                  onMouseLeave={() => setIsDemoPaused(false)}
+                  className="bg-paper-raised border border-rule-strong rounded-[28px] overflow-hidden shadow-lg grid lg:grid-cols-12 gap-0 items-center transition-all duration-300"
+                >
                   {/* Left: Thumbnail Browser Window */}
                   <div className="lg:col-span-7 bg-ink p-4 sm:p-6 border-b lg:border-b-0 lg:border-r border-rule-strong">
-                    <div className="rounded-[12px] overflow-hidden border border-white/15 bg-paper">
-                      <div className="flex items-center justify-between px-3 py-2 bg-ink text-paper text-[10px] font-mono border-b border-white/10">
+                    <div className="rounded-[16px] overflow-hidden border border-white/15 bg-paper">
+                      <div className="flex items-center justify-between px-3.5 py-2.5 bg-ink text-paper text-[10px] font-mono border-b border-white/10">
                         <div className="flex items-center gap-1.5">
-                          <span className="w-2 h-2 rounded-full bg-signal" />
-                          <span className="w-2 h-2 rounded-full bg-white/20" />
-                          <span className="w-2 h-2 rounded-full bg-white/20" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-signal" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
                         </div>
-                        <span className="text-white/60">live specimen · {currentDemo.sector}</span>
+                        <span className="text-white/60">specimen 0{activeDemoIdx + 1} of 06 · {currentDemo.sector}</span>
                         <span className="text-signal-bright font-semibold">3 THEMES</span>
                       </div>
                       <a href={currentDemo.url} target="_blank" rel="noreferrer noopener" className="block relative group">
                         <img
+                          key={currentDemo.thumbnail}
                           src={currentDemo.thumbnail}
                           alt={currentDemo.client}
-                          className="w-full aspect-[16/10] object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                          className="w-full aspect-[16/10] object-cover object-top group-hover:scale-[1.02] transition-transform duration-500 animate-fade-in"
                         />
                         <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors flex items-center justify-center">
                           <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-ink/90 text-paper text-xs font-mono px-4 py-2 rounded-full shadow-lg">
@@ -819,10 +882,15 @@ export default function Home({ onBook }: { onBook: () => void }) {
                   {/* Right: Specimen Details & Launch */}
                   <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between">
                     <div>
-                      <span className="label text-signal font-semibold tracking-wider uppercase">
-                        {currentDemo.sector}
-                      </span>
-                      <h3 className="font-display text-2xl sm:text-3xl text-ink font-medium mt-3 mb-4">
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <span className="label text-signal font-semibold tracking-wider uppercase">
+                          {currentDemo.sector}
+                        </span>
+                        <span className="text-[10px] font-mono text-muted">
+                          Specimen 0{activeDemoIdx + 1} / 06
+                        </span>
+                      </div>
+                      <h3 className="font-display text-2xl sm:text-3xl text-ink font-medium mt-1 mb-4">
                         {currentDemo.client}
                       </h3>
                       <p className="text-muted text-sm leading-relaxed mb-6">
@@ -1101,11 +1169,11 @@ export default function Home({ onBook }: { onBook: () => void }) {
         </Shell>
       </Section>
 
-      {/* ── SECTION 11: Cloaked-Style Modern Dark Dual-Card Closing CTA ── */}
-      <section className="bg-ink text-paper py-20 border-t border-white/10">
+      {/* ── SECTION 11: Cloaked-Style Modern Dual-Card Closing Lead Capture CTA ── */}
+      <section className="bg-paper-sunken/70 text-ink py-20 sm:py-28 border-t border-rule">
         <Shell>
           <Reveal>
-            <div className="grid md:grid-cols-12 gap-8 items-center bg-white/[0.03] border border-white/10 rounded-[32px] p-8 sm:p-12">
+            <div className="grid md:grid-cols-12 gap-8 items-center bg-ink text-paper border border-white/10 rounded-[32px] p-8 sm:p-12 shadow-[0_24px_70px_rgba(0,0,0,0.2)]">
               {/* Left Brand Mark */}
               <div className="md:col-span-6 flex flex-col justify-between h-full">
                 <div>
@@ -1124,7 +1192,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                 </div>
 
                 <div className="mt-8 flex items-center gap-4 text-xs font-mono text-on-ink-muted">
-                  <span>● Deepak & Geetha</span>
+                  <span>● Deepak &amp; Geetha</span>
                   <span>·</span>
                   <span>Bengaluru, India</span>
                   <span>·</span>
@@ -1133,9 +1201,9 @@ export default function Home({ onBook }: { onBook: () => void }) {
               </div>
 
               {/* Right CTA Action Card */}
-              <div className="md:col-span-6 bg-white/[0.05] p-6 sm:p-8 rounded-[24px] border border-white/10 flex flex-col justify-between">
+              <div className="md:col-span-6 bg-white/[0.06] p-6 sm:p-8 rounded-[24px] border border-white/15 flex flex-col justify-between shadow-inner">
                 <div>
-                  <span className="text-[11px] font-mono text-signal-bright uppercase tracking-wider block mb-2">
+                  <span className="text-[11px] font-mono text-signal-bright uppercase tracking-wider block mb-2 font-semibold">
                     RESERVE YOUR BUILD COHORT
                   </span>
                   <h4 className="font-display text-2xl text-paper font-medium mb-3">

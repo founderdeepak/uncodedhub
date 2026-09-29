@@ -17,9 +17,20 @@ import { useEffect, useState } from 'react';
 
 export function ScrollToTop() {
   const [visible, setVisible] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 400);
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      setVisible(scrollY > 350);
+
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight > 0) {
+        const progress = Math.min(Math.max(scrollY / docHeight, 0), 1);
+        setScrollProgress(progress);
+      }
+    };
+
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -27,31 +38,72 @@ export function ScrollToTop() {
 
   const scrollUp = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
+  // Circumference of 40px diameter circle (r = 18px): 2 * pi * 18 ≈ 113.1
+  const circumference = 113.1;
+  const strokeDashoffset = circumference - scrollProgress * circumference;
+
   return (
     <button
       type="button"
       onClick={scrollUp}
       aria-label="Scroll back to top"
+      title="Back to top"
       className={`fixed bottom-6 left-6 z-[80] print:hidden
-        w-10 h-10 rounded-full
-        bg-paper border border-rule-strong shadow-[0_4px_16px_rgba(20,19,15,0.14)]
+        group w-12 h-12 rounded-full
+        bg-ink text-paper
+        shadow-[0_8px_24px_rgba(0,0,0,0.28)] hover:shadow-[0_8px_28px_rgba(199,7,75,0.45)]
         flex items-center justify-center
-        text-ink-soft hover:text-ink hover:border-ink hover:shadow-[0_6px_20px_rgba(20,19,15,0.2)]
-        transition-all duration-300
-        ${visible ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-3 pointer-events-none'}
+        transition-all duration-300 ease-out cursor-pointer hover:scale-105
+        ${visible ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'}
       `}
     >
+      {/* Outer Raspberry Ring with Progress */}
       <svg
-        width="14"
-        height="14"
+        className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none p-0.5"
+        viewBox="0 0 44 44"
+        aria-hidden="true"
+      >
+        {/* Subtle static raspberry track */}
+        <circle
+          cx="22"
+          cy="22"
+          r="18"
+          fill="none"
+          stroke="currentColor"
+          className="text-signal/25"
+          strokeWidth="2.5"
+        />
+        {/* Active raspberry outer ring fill */}
+        <circle
+          cx="22"
+          cy="22"
+          r="18"
+          fill="none"
+          stroke="#c7074b"
+          className="text-signal"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          style={{
+            strokeDasharray: circumference,
+            strokeDashoffset,
+            transition: 'stroke-dashoffset 150ms ease-out',
+          }}
+        />
+      </svg>
+
+      {/* Upward Chevron Icon */}
+      <svg
+        width="15"
+        height="15"
         viewBox="0 0 14 14"
         fill="none"
         aria-hidden="true"
+        className="text-paper group-hover:-translate-y-0.5 transition-transform duration-200 relative z-10"
       >
         <path
           d="M7 12V2M2.5 6.5L7 2L11.5 6.5"
           stroke="currentColor"
-          strokeWidth="1.5"
+          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
