@@ -15,7 +15,7 @@ const sitemapPath = path.join(root, 'public', 'sitemap.xml');
 // (and have been for years) — omitted rather than carried as dead
 // weight. <lastmod> is kept: it's the one hint crawlers still use for
 // recrawl prioritization, so every route gets one, not just blog posts.
-const routes = getAllRoutes();
+const routes = getAllRoutes().filter((r) => r.loc !== '/404');
 
 const body = routes
   .map((r) => {

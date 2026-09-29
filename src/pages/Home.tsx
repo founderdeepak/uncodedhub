@@ -217,16 +217,8 @@ export default function Home({ onBook }: { onBook: () => void }) {
         <link rel="canonical" href="https://uncodedhub.com/" />
       </Helmet>
 
-      {/* ── Top Announcement Bar (Cloaked style) ────────────────── */}
-      <div className="bg-ink text-paper text-[12px] font-mono py-2 px-4 border-b border-white/10 text-center flex items-center justify-center gap-2">
-        <span className="w-2 h-2 rounded-full bg-signal animate-pulse" aria-hidden="true" />
-        <span>Now taking bookings for next monthly cohort</span>
-        <span className="text-white/40">·</span>
-        <span className="text-signal-bright font-medium">Fixed 7-day delivery or 100% free</span>
-      </div>
-
       {/* ── Hero Section (Cloaked 50/50 Layout) ─────────────────── */}
-      <section id="hero" className="relative overflow-hidden pt-20 md:pt-28 pb-16 md:pb-24">
+      <section id="hero" className="relative overflow-hidden pt-10 md:pt-16 pb-16 md:pb-24">
         {/* Subtle warm ambient tint */}
         <div
           aria-hidden="true"

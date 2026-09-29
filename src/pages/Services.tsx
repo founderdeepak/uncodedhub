@@ -134,16 +134,8 @@ export default function Services({ onBook }: { onBook: () => void }) {
         <link rel="canonical" href="https://uncodedhub.com/services" />
       </Helmet>
 
-      {/* ── Top Announcement ────────────────────────────────────── */}
-      <div className="bg-ink text-paper text-[12px] font-mono py-2 px-4 border-b border-white/10 text-center flex items-center justify-center gap-2">
-        <span className="w-2 h-2 rounded-full bg-signal animate-pulse" aria-hidden="true" />
-        <span>Fixed scope, fixed timeline, terms published in full</span>
-        <span className="text-white/40">·</span>
-        <span className="text-signal-bright font-medium">Late means free guarantee</span>
-      </div>
-
       {/* ── Header ─────────────────────────────────────────────── */}
-      <section className="pt-24 md:pt-32 pb-16">
+      <section className="pt-10 md:pt-16 pb-16">
         <Shell>
           <Reveal>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-raised border border-rule-strong text-ink text-xs font-mono mb-6 shadow-sm">

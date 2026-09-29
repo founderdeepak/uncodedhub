@@ -98,7 +98,7 @@ export default function Blogs() {
       </Helmet>
 
       {/* ── Editorial Hero ──────────────────────────────────────── */}
-      <section className="pt-32 sm:pt-40 pb-16 bg-paper relative overflow-hidden border-b border-rule">
+      <section className="pt-10 sm:pt-16 pb-16 bg-paper relative overflow-hidden border-b border-rule">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-signal/5 rounded-full blur-[140px] pointer-events-none -z-10" />
 
         <Shell>
@@ -298,7 +298,7 @@ export default function Blogs() {
                   <div>
                     {/* Visual Tile */}
                     {post.image ? (
-                      <div className="overflow-hidden rounded-[16px] border border-rule-strong mb-5 aspect-[16/10]">
+                      <div className="rounded-[16px] border border-rule-strong mb-5 aspect-[16/10] bg-paper-sunken/80 overflow-hidden flex items-center justify-center p-1.5">
                         <img
                           src={post.image}
                           alt={post.title}
@@ -306,7 +306,7 @@ export default function Blogs() {
                           height={550}
                           loading="lazy"
                           decoding="async"
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="w-full h-full object-contain rounded-[12px] group-hover:scale-[1.02] transition-transform duration-300"
                         />
                       </div>
                     ) : (

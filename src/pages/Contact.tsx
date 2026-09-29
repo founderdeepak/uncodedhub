@@ -71,7 +71,7 @@ export default function Contact() {
       </Helmet>
 
       {/* ── Editorial Hero ──────────────────────────────────────── */}
-      <section className="pt-32 sm:pt-40 pb-16 bg-paper relative overflow-hidden border-b border-rule">
+      <section className="pt-10 sm:pt-16 pb-16 bg-paper relative overflow-hidden border-b border-rule">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-signal/5 rounded-full blur-[140px] pointer-events-none -z-10" />
 
         <Shell>

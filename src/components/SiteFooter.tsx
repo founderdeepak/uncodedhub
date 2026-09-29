@@ -23,6 +23,8 @@ const NAV = [
   { label: 'Services', to: '/services' },
   { label: 'Studio', to: '/about' },
   ...(hasBlogPosts ? [{ label: 'Blogs', to: '/blog' }] : []),
+  { label: 'Terms', to: '/terms' },
+  { label: 'Privacy', to: '/privacy' },
   { label: 'Contact', to: '/contact' },
 ];
 
@@ -122,9 +124,19 @@ export default function SiteFooter() {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pb-12 border-t border-rule-on-ink pt-8">
-          <p className="label text-on-ink-muted">
-            {`© ${new Date().getFullYear()} Uncoded Hub`}
-          </p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <p className="label text-on-ink-muted">
+              {`© ${new Date().getFullYear()} Uncoded Hub`}
+            </p>
+            <span className="text-on-ink-muted/40 text-xs hidden sm:inline">·</span>
+            <Link to="/terms" className="label text-on-ink-muted hover:text-signal-bright transition-colors">
+              Terms &amp; Guarantee
+            </Link>
+            <span className="text-on-ink-muted/40 text-xs">·</span>
+            <Link to="/privacy" className="label text-on-ink-muted hover:text-signal-bright transition-colors">
+              Privacy Policy
+            </Link>
+          </div>
           <p className="label text-on-ink-muted">Designed and built in-house</p>
         </div>
       </div>

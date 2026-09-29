@@ -20,6 +20,9 @@ const STATIC_ROUTE_FILES = {
   '/portfolio': 'src/pages/Portfolio.tsx',
   '/about': 'src/pages/About.tsx',
   '/contact': 'src/pages/Contact.tsx',
+  '/terms': 'src/pages/Terms.tsx',
+  '/privacy': 'src/pages/Privacy.tsx',
+  '/404': 'src/pages/NotFound.tsx',
 };
 
 export const STATIC_ROUTES = Object.keys(STATIC_ROUTE_FILES);

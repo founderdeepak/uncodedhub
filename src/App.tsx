@@ -12,6 +12,9 @@ import Work from './pages/Portfolio';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
+
 const Blogs = lazy(() => import('./pages/Blogs'));
 const BlogView = lazy(() => import('./pages/BlogView'));
 
@@ -33,8 +36,7 @@ export default function App() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  /* The header sits transparent over the hero and only acquires a
-     ground and a hairline once the page has moved. */
+  /* The header acquires a hairline once the page has moved. */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
@@ -77,17 +79,12 @@ export default function App() {
       <header
         className={`fixed top-0 inset-x-0 z-[100] transition-colors duration-300 ${
           scrolled || menuOpen
-            ? 'bg-paper/92 backdrop-blur-[2px] border-b border-rule'
-            : 'border-b border-transparent'
+            ? 'bg-paper/96 backdrop-blur-md shadow-xs'
+            : 'bg-paper/90 backdrop-blur-xs'
         }`}
       >
         <div className="scroll-progress" aria-hidden="true" />
-        <div className="max-w-6xl mx-auto px-6 md:px-10 h-[4.5rem] flex items-center justify-between">
-          {/* inline-flex (not the default inline) so this wraps its
-              content tightly — an inline <a> carries phantom descender
-              space below its content from the surrounding line box,
-              which pushed the logo group a few px above true vertical
-              centre in the header. */}
+        <div className="max-w-6xl mx-auto px-6 md:px-10 h-[4.25rem] flex items-center justify-between border-b border-rule/50">
           <Link to="/" aria-label="Uncoded Hub — home" className="shrink-0 brand-link inline-flex items-center">
             <Logo />
           </Link>
@@ -118,42 +115,53 @@ export default function App() {
             {menuOpen ? 'Close' : 'Menu'}
           </button>
         </div>
+
+        {/* ── Top Announcement Banner — positioned explicitly below the navigation header ── */}
+        <div className="bg-ink text-paper text-[11px] sm:text-[12px] font-mono py-2 px-4 border-b border-white/10 text-center flex items-center justify-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" aria-hidden="true" />
+          <span>Fixed scope, fixed timeline, terms published in full</span>
+          <span className="text-white/40">·</span>
+          <span className="text-signal-bright font-medium">Late means free guarantee</span>
+        </div>
       </header>
 
       {/* ── Mobile navigation ──────────────────────────────────── */}
       <div
         id="mobile-nav"
         aria-hidden={!menuOpen}
-        className={`mobile-nav ${menuOpen ? 'mobile-nav-open' : ''} fixed inset-0 z-[99] bg-paper md:hidden pt-[4.5rem] flex flex-col`}
+        className={`mobile-nav ${menuOpen ? 'mobile-nav-open' : ''} fixed inset-0 z-[99] bg-paper md:hidden pt-[6.5rem] flex flex-col`}
       >
-        <nav aria-label="Mobile" className="flex-1 px-6 pt-10 flex flex-col">
+        <nav aria-label="Mobile" className="flex-1 px-6 pt-8 flex flex-col">
           {NAV.map((item, i) => (
             <Link
               key={item.path}
               to={item.path}
-              className="font-display text-[2.5rem] leading-[1.25] py-3 border-b border-rule flex items-baseline gap-5"
+              className="font-display text-[2.25rem] leading-[1.25] py-3 border-b border-rule flex items-baseline gap-5"
             >
               <span className="label text-muted">{String(i + 1).padStart(2, '0')}</span>
               {item.label}
             </Link>
           ))}
-          <button onClick={goToBooking} className="btn-primary w-full mt-10">
+          <button onClick={goToBooking} className="btn-primary w-full mt-8">
             Book a call
           </button>
-          <p className="label text-muted mt-auto pb-10 pt-12">
+          <p className="label text-muted mt-auto pb-8 pt-10">
             hello@uncodedhub.com · +91 86608 19023
           </p>
         </nav>
       </div>
 
       {/* ── Routes ─────────────────────────────────────────────── */}
-      <main id="main" className="flex-1">
+      <main id="main" className="flex-1 pt-[6.5rem]">
         <Routes>
           <Route path="/" element={<Home onBook={goToBooking} />} />
           <Route path="/services" element={<Services onBook={goToBooking} />} />
           <Route path="/portfolio" element={<Work onBook={goToBooking} />} />
           <Route path="/about" element={<About onBook={goToBooking} />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/404" element={<NotFound />} />
           <Route
             path="/blog"
             element={

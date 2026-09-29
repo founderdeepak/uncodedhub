@@ -129,7 +129,7 @@ export default function BlogView() {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      <article className="pt-32 sm:pt-40 pb-20 bg-paper">
+      <article className="pt-10 sm:pt-16 pb-20 bg-paper">
         <Shell width="narrow">
           <Reveal>
             {/* ── Breadcrumb & Top Pill ── */}
@@ -231,16 +231,14 @@ export default function BlogView() {
           {/* ── Hero Graphic Motif / Image ── */}
           <Reveal delay={40} className="mt-10">
             {post.image ? (
-              <figure className="m-0 p-0 overflow-hidden rounded-[28px] border border-rule-strong shadow-xs">
+              <figure className="m-0 p-0 rounded-[28px] border border-rule-strong bg-paper-sunken/60 overflow-hidden p-2 sm:p-3 shadow-xs">
                 <img
                   src={post.image}
                   alt={`${post.title} — Architectural Blueprint by Uncoded Hub`}
-                  width={1600}
-                  height={900}
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
-                  className="w-full aspect-[16/9] object-cover"
+                  className="w-full h-auto max-h-[680px] object-contain rounded-[20px] mx-auto block"
                 />
               </figure>
             ) : (
@@ -431,7 +429,7 @@ export default function BlogView() {
                     >
                       <div>
                         {related.image ? (
-                          <div className="overflow-hidden rounded-[16px] border border-rule-strong mb-5 aspect-[16/10]">
+                          <div className="rounded-[16px] border border-rule-strong mb-5 aspect-[16/10] bg-paper-sunken/80 overflow-hidden flex items-center justify-center p-1.5">
                             <img
                               src={related.image}
                               alt={related.title}
@@ -439,7 +437,7 @@ export default function BlogView() {
                               height={550}
                               loading="lazy"
                               decoding="async"
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                              className="w-full h-full object-contain rounded-[12px] group-hover:scale-[1.02] transition-transform duration-300"
                             />
                           </div>
                         ) : (
