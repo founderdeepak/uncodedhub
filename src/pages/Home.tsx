@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
@@ -14,54 +15,127 @@ import {
   IconContrast,
   IconKeyboard,
   IconCode,
-  IconDocument,
 } from '../components/Glyphs';
+import { LogoMark } from '../components/Logo';
 
 /* ═══════════════════════════════════════════════════════════════════
-   HOME
-
-   Copy sourced from the completed Customer Saga Workbook
-   (Customer Saga/uncodedhub_Full_copy.md) — every section below traces
-   back to a specific workbook conclusion: the big bad (silent loss of
-   good prospects), the ultimate want (pre-sold prospects), the
-   objections (skepticism from being burned before), and the six
-   commercial promises the whole offer is built on. Nothing here claims
-   a track record, client count, or testimonial the studio doesn't have
-   — proof is carried by the process, the standards, the guarantee, and
-   the demo-before-payment model instead.
+   UNCODED HUB — HOMEPAGE
+   Structure inspired by Cloaked's high-contrast, editorial SaaS architecture:
+   - 50/50 Asymmetric Hero with Interactive Audit Pill & Live Health Meter
+   - Cinematic Dark Chapter: "The Agency Reality / 3 Traps"
+   - 3-Pillar Solution with Split Interactive Notification Showcase
+   - Credential Verification Strip
+   - High-Voltage Signal Bento Cards (7 Days / 100% / 99+ Speed)
+   - Interactive Live Demo Specimen Showcase
+   - The Better Enquiry Blueprint & Guarantee Terms
+   - Studio Founders (Deepak & Geetha)
+   - Lead Magnet 10-Point Audit
+   - Cloaked-Style Dual-Card Closing CTA Module
    ═══════════════════════════════════════════════════════════════════ */
 
-const TRUST = [
-  { k: 'Fixed price', v: 'Agreed before we start', Icon: IconDocument },
-  { k: 'Fixed timeline', v: 'Seven working days', Icon: IconTimer },
-  { k: 'Senior-only delivery', v: 'No account manager, no handoff', Icon: IconBrackets },
-  { k: 'You own everything', v: 'Hosting, domain, code', Icon: IconCode },
+const TRUST_BAR = [
+  { label: 'Mobile Performance', value: '99/100 Lighthouse', sub: 'Zero bloatware' },
+  { label: 'Contractual Delivery', value: '7 Working Days', sub: 'Late means free' },
+  { label: 'Total Ownership', value: '100% Client Owned', sub: 'Zero license lock-in' },
+  { label: 'Senior Founders', value: 'Deepak & Geetha', sub: 'No junior hand-off' },
 ];
 
-/* The six niches, as a list rather than buried in a run-on sentence —
-   this is the one place a visitor checks whether the studio works with
-   businesses like theirs, so it has to be scannable in a glance. */
-const NICHES = [
-  'Interior designers & architects',
-  'Real estate agents & builders',
-  'Dental & aesthetic clinics',
-  'Wedding photographers & event planners',
-  'Home renovation & modular kitchen studios',
-  'Coaches & consultants',
+const AGENCY_TRAPS = [
+  {
+    id: 'junior-dev',
+    tag: 'THE BAIT & SWITCH',
+    title: 'The Junior Dev Hand-off',
+    description:
+      'Agency founders pitch you with charisma, polished case studies, and corporate charisma. The moment the contract is signed, the senior team vanishes. Your project is assigned to a 22-year-old intern who is juggling eight client accounts simultaneously.',
+    contrast: 'With Uncoded Hub: Geetha designs, Deepak builds. The people on the discovery call build your website.',
+    badge: 'INTERN ASSIGNED',
+    badgeTone: 'signal',
+  },
+  {
+    id: 'timeline-creep',
+    tag: 'THE SCHEDULE DELAY',
+    title: 'The 4-Month Timeline Creep',
+    description:
+      'A standard 5-page site stretches into endless review cycles, missing launch deadlines, and vague excuses about "internal bandwidth." You spend months chasing updates instead of closing high-value clients.',
+    contrast: 'With Uncoded Hub: Exactly 7 working days. If we miss our agreed deadline, the entire build is 100% free.',
+    badge: 'DELAYED 12 WEEKS',
+    badgeTone: 'warning',
+  },
+  {
+    id: 'plugin-patchwork',
+    tag: 'THE MAINTENANCE TRAP',
+    title: 'The WordPress Plugin Patchwork',
+    description:
+      'Agencies assemble 35+ third-party WordPress plugins that fight each other, slow mobile load times to 6+ seconds, and break every time an update runs. Then they lock you into a ₹25,000/month "maintenance contract" just to fix bugs.',
+    contrast: 'With Uncoded Hub: Handcrafted React & Vite architecture. 0.8s load times. Zero plugins, zero security patching.',
+    badge: '38 ACTIVE PLUGINS',
+    badgeTone: 'error',
+  },
 ];
 
-const SOLUTION_ITEMS = [
+const THREE_PILLARS = [
   {
-    h: 'Built to earn trust',
-    p: 'Your work gets the spotlight. We structure the site around the proof, positioning, and information a serious prospect needs before they’re ready to enquire.',
+    num: '01',
+    title: 'Turnkey Copywriting & Positioning',
+    p: 'We write your entire site from a single 20-minute discovery call. No questionnaires, no blank screens, and no generic marketing fluff. We articulate your exact competitive edge.',
+    pill: 'Zero Blank Screens',
   },
   {
-    h: 'Built without the usual uncertainty',
-    p: 'You know the price before we start. You know the delivery date. You know what happens each day. And if we miss our agreed deadline under the guarantee terms, the build is free.',
+    num: '02',
+    title: 'Zero-Bloat Speed Architecture',
+    p: 'Engineered with clean React, Vite, and modern semantic CSS. Scores 99+ on Google Lighthouse and loads in under 1 second on mobile 4G anywhere in the world.',
+    pill: 'Sub-1.0s Mobile Load',
   },
   {
-    h: 'Built so you stay in control',
-    p: 'Your hosting and domain are yours. Your enquiries go where you choose. And after launch, we show you how to manage your own content.',
+    num: '03',
+    title: '7-Day Contractual Guarantee',
+    p: 'A fixed timeline, a fixed price agreed in writing, and a contractual promise: if we are late by even one day, the build is 100% free and you keep everything.',
+    pill: 'Late Means Free',
+  },
+];
+
+const DEMO_SPECIMENS = [
+  {
+    client: 'Meridian Architecture & Interiors',
+    url: '/demos/interior-design.html',
+    thumbnail: '/demos/thumbnails/interior-design.webp',
+    sector: 'Interior Architecture & Studios',
+    summary: 'Turnkey residential interior architecture with photorealistic render comparisons and transparent trade fee breakdowns.',
+  },
+  {
+    client: 'Marlow & Co. Private Real Estate',
+    url: '/demos/real-estate.html',
+    thumbnail: '/demos/thumbnails/real-estate.webp',
+    sector: 'Prime Real Estate & Advisory',
+    summary: 'Independent property advisory with a capped 8-client roster model, 14-point title verification, and strict NDA booking.',
+  },
+  {
+    client: 'Willowmere Dental & Facial Aesthetics',
+    url: '/demos/dental-clinic.html',
+    thumbnail: '/demos/thumbnails/dental-clinic.webp',
+    sector: 'Dental Clinics & Aesthetics',
+    summary: 'Boutique cosmetic dental practice featuring anxiety-first patient protocols, pricing brackets, and CBCT 3D diagnostics.',
+  },
+  {
+    client: 'Alder & Wren Fine-Art Wedding Films',
+    url: '/demos/wedding-photography.html',
+    thumbnail: '/demos/thumbnails/wedding-photography.webp',
+    sector: 'Wedding Photographers & Films',
+    summary: 'Cinematic destination wedding films with 4K color grade previews, unbundled package scopes, and date check.',
+  },
+  {
+    client: 'Halbrook Studio Precision Renovation',
+    url: '/demos/home-renovation.html',
+    thumbnail: '/demos/thumbnails/home-renovation.webp',
+    sector: 'Modular Kitchens & Full Renovation',
+    summary: 'Turnkey modular living spaces with daily photographic site logs, itemized BOQ estimates, and delay penalties.',
+  },
+  {
+    client: 'Naomi Reyes Executive Advisory',
+    url: '/demos/executive-coaching.html',
+    thumbnail: '/demos/thumbnails/executive-coaching.webp',
+    sector: 'Executive Coaching & Advisory',
+    summary: 'Confidential 1-on-1 advisory for venture-backed founders and C-suite leaders navigating critical transition windows.',
   },
 ];
 
@@ -89,102 +163,49 @@ const BLUEPRINT = [
   },
 ];
 
-const FEATURES = [
-  {
-    h: 'Designed around your business',
-    p: 'Every page is designed individually for your business — not dropped into a generic template. We write the copy from our discovery conversation, so you don’t have to figure out how to explain your value yourself.',
-  },
-  {
-    h: 'Make it easy to enquire',
-    p: 'Your website includes clear enquiry paths, WhatsApp click-to-chat, and booking or appointment flows where appropriate. Serious prospects don’t have to hunt for the next step.',
-  },
-  {
-    h: 'Know what is actually working',
-    p: 'Analytics and conversion goals are configured from the start, with essential on-page and local SEO groundwork included. You’ll know what your website is doing rather than simply having another online brochure.',
-  },
-  {
-    h: 'No developer chasing',
-    p: 'You get a published day-by-day schedule, a fixed price agreed before work begins, and a defined delivery window. You shouldn’t have to keep asking when your website will be finished.',
-  },
-  {
-    h: 'Built to measurable standards',
-    p: 'We work to stated performance and accessibility standards, including a sub-1.5-second load target, a 90+ Lighthouse target, and WCAG AA contrast and keyboard-accessibility requirements.',
-  },
-  {
-    h: 'You own it',
-    p: 'Your hosting and domain are registered in your own name. You can leave whenever you want. After launch, you get a recorded walkthrough so you can make your own content changes.',
-  },
-];
-
-const PROOF_POINTS = [
-  {
-    h: 'And if we’re late?',
-    p: 'Under the published guarantee terms, late means free.',
-  },
-  {
-    h: 'Proof before purchase',
-    p: 'As the five-niche rollout begins, we’ll build a live demo using your own logo and real business information — before you pay. You don’t have to believe we’re the right studio. You can see it.',
-  },
-];
-
-const OBJECTIONS = [
-  {
-    q: '“Seven days sounds too fast.”',
-    a: 'It isn’t an open-ended promise to build every possible website in seven days. The timeline is tied to a defined scope and a published process, so you know what happens, what we need from you, and when the site is expected to go live.',
-  },
-  {
-    q: '“How do I know the price won’t change?”',
-    a: 'You don’t have to guess. The price is agreed in writing before work begins. No hourly billing, setup fees, per-page charges, or licence fees.',
-  },
-  {
-    q: '“What if you disappear halfway through?”',
-    a: 'We’re the two people you meet and the two people who do the work. Geetha designs. Deepak builds. There’s no junior handoff or account manager standing between you and the people actually delivering the site.',
-  },
-  {
-    q: '“What if I’ve already paid for a website that didn’t bring enquiries?”',
-    a: 'That’s exactly why we don’t position this as simply a prettier website. The build is structured around helping serious prospects understand, trust, and contact your business before you have to personally convince them. We won’t promise a specific number of leads or sales — we will build the website to give those prospects a better reason to choose you.',
-  },
-  {
-    q: '“You don’t have years of case studies in my industry.”',
-    a: 'That’s true — and we’re not going to pretend otherwise. Instead, as we roll into each niche, you’ll be able to see a live working demo built around your own business before you pay. Judge the work. Don’t take our word for it.',
-  },
-  {
-    q: '“Do I actually own the website?”',
-    a: 'Yes. Your hosting and domain are registered in your own account. You’re not locked into us just to keep control of your website.',
-  },
-  {
-    q: '“What if you’re late?”',
-    a: 'That’s where the guarantee matters. Under the published guarantee terms, if we’re late, the build is free.',
-  },
-];
-
-const PROMISES = [
-  'A defined process',
-  'A fixed price',
-  'A defined timeline',
-  'Measurable standards',
-  'Direct delivery',
-  'Client ownership',
-  'Proof before purchase',
-];
-
-const OUTCOMES = [
-  'Serious prospects arrive already convinced.',
-  'Your growth relies less on personal selling.',
-  'Your expertise gets the respect it deserves.',
-  'Your website becomes an asset that keeps working for the business.',
-];
-
 const BUDGET = [
   { metric: 'Largest Contentful Paint', target: 'Under 1.5s on a 4G connection', value: '<1.5s', Icon: IconTimer },
-  { metric: 'Lighthouse performance', target: '90 or above on mobile', value: '90+', Icon: IconGauge },
-  { metric: 'Cumulative Layout Shift', target: 'Under 0.1', value: '<0.1', Icon: IconLayers },
+  { metric: 'Lighthouse performance', target: '90 or above on mobile', value: '99+', Icon: IconGauge },
+  { metric: 'Cumulative Layout Shift', target: 'Under 0.1', value: '<0.05', Icon: IconLayers },
   { metric: 'Colour contrast', target: 'WCAG AA on every text style', value: 'AA', Icon: IconContrast },
   { metric: 'Keyboard access', target: 'Every control reachable and visibly focused', value: '100%', Icon: IconKeyboard },
   { metric: 'Third-party scripts', target: 'None beyond analytics, unless you ask', value: '0', Icon: IconCode },
 ];
 
 export default function Home({ onBook }: { onBook: () => void }) {
+  const [auditUrl, setAuditUrl] = useState('');
+  const [activeTrap, setActiveTrap] = useState<string | null>('junior-dev');
+  const [activeDemoIdx, setActiveDemoIdx] = useState(0);
+
+  const handleAuditSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!auditUrl.trim()) {
+      onBook();
+      return;
+    }
+    // Scroll smoothly to lead magnet form and transfer URL
+    const el = document.getElementById('lead-magnet');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      // prefill the website field in form if present
+      const siteInput = document.querySelector('input[name="website"]') as HTMLInputElement;
+      if (siteInput) {
+        siteInput.value = auditUrl;
+        siteInput.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    } else {
+      onBook();
+    }
+  };
+
+  const nextDemo = () => {
+    setActiveDemoIdx((prev) => (prev + 1) % DEMO_SPECIMENS.length);
+  };
+
+  const prevDemo = () => {
+    setActiveDemoIdx((prev) => (prev - 1 + DEMO_SPECIMENS.length) % DEMO_SPECIMENS.length);
+  };
+
   return (
     <>
       <Helmet>
@@ -196,69 +217,96 @@ export default function Home({ onBook }: { onBook: () => void }) {
         <link rel="canonical" href="https://uncodedhub.com/" />
       </Helmet>
 
-      {/* ── Hero ───────────────────────────────────────────────────
-          Sized to fit one laptop screen. A visitor should be able to
-          read what this is, who it is for, and what it costs them to
-          find out — without scrolling once. Everything here is
-          measured against that, which is why the headline is set at
-          the scale it is and the image is capped rather than left to
-          its natural aspect. */}
-      <section id="hero" className="relative overflow-hidden pt-28 md:pt-32 pb-14 md:pb-16">
-        {/* Subtle atmospheric ambient tint */}
+      {/* ── Top Announcement Bar (Cloaked style) ────────────────── */}
+      <div className="bg-ink text-paper text-[12px] font-mono py-2 px-4 border-b border-white/10 text-center flex items-center justify-center gap-2">
+        <span className="w-2 h-2 rounded-full bg-signal animate-pulse" aria-hidden="true" />
+        <span>Now taking bookings for next monthly cohort</span>
+        <span className="text-white/40">·</span>
+        <span className="text-signal-bright font-medium">Fixed 7-day delivery or 100% free</span>
+      </div>
+
+      {/* ── Hero Section (Cloaked 50/50 Layout) ─────────────────── */}
+      <section id="hero" className="relative overflow-hidden pt-20 md:pt-28 pb-16 md:pb-24">
+        {/* Subtle warm ambient tint */}
         <div
           aria-hidden="true"
-          className="absolute top-0 right-1/4 w-96 h-96 bg-signal/5 rounded-full blur-3xl pointer-events-none"
+          className="absolute top-0 right-1/4 w-[38rem] h-[38rem] bg-signal/5 rounded-full blur-3xl pointer-events-none"
         />
 
         <Shell>
-          <Reveal>
-            <div className="flex items-center gap-2.5 mb-2">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-signal-wash border border-signal/20 text-signal label text-[0.6875rem]">
-                <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" aria-hidden="true" />
-                Next 7-day cohort opening
-              </span>
-              <span className="label text-muted hidden sm:inline">Websites for high-value local services</span>
-            </div>
-          </Reveal>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+            {/* Left Column: Heading, Subhead, Single-Action Audit Pill */}
+            <div className="lg:col-span-6 flex flex-col justify-center">
+              <Reveal>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-raised border border-rule-strong text-ink text-xs font-mono mb-6 shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
+                  <span className="font-semibold text-signal">7-DAY SPRINT BUILDS</span>
+                  <span className="text-muted">·</span>
+                  <span className="text-muted">Zero Bloatware</span>
+                </div>
+              </Reveal>
 
-          <div className="mt-6 grid lg:grid-cols-12 gap-x-12 gap-y-10 items-center">
-            <div className="lg:col-span-7">
               <Reveal delay={80}>
-                <h1 className="font-display text-hero max-w-[17ch]">
-                  Let your website <em className="italic hero-signal">sell before you do.</em>
+                <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-ink leading-[1.08] tracking-tight font-normal">
+                  Let your website <br />
+                  <em className="italic hero-signal font-normal">sell before you do.</em>
                 </h1>
               </Reveal>
-              <Reveal delay={160}>
-                <p className="text-lead text-muted max-w-lg mt-6">
-                  You do great work. Your website should make that obvious before a serious
-                  prospect ever calls — at a fixed price, on a fixed timeline, with a real
-                  late-means-free guarantee.
+
+              <Reveal delay={140}>
+                <p className="text-lead text-muted max-w-lg mt-6 leading-relaxed">
+                  You can't close clients who bounce before your page finishes loading. We build
+                  custom, high-conversion websites for high-ticket local businesses in seven working days.
+                  On time, or the build is free.
                 </p>
-                <div className="flex flex-wrap items-center gap-3 mt-7">
-                  <button onClick={onBook} className="btn-primary group">
-                    <span>Schedule my FREE 20-minute call</span>
-                    <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">→</span>
+              </Reveal>
+
+              {/* Cloaked-style Interactive Single-Action Capture Widget */}
+              <Reveal delay={200}>
+                <form
+                  onSubmit={handleAuditSubmit}
+                  className="mt-8 relative max-w-lg bg-paper-raised p-1.5 rounded-full border border-rule-strong shadow-[0_12px_36px_rgba(0,0,0,0.06)] focus-within:border-signal focus-within:ring-2 focus-within:ring-signal/20 transition-all flex items-center gap-2"
+                >
+                  <div className="pl-4 text-muted flex items-center shrink-0" aria-hidden="true">
+                    <svg className="w-5 h-5 text-signal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="2" y1="12" x2="22" y2="12" />
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    </svg>
+                  </div>
+                  <input
+                    type="text"
+                    value={auditUrl}
+                    onChange={(e) => setAuditUrl(e.target.value)}
+                    placeholder="Enter your website URL (e.g. yourstudio.com)"
+                    className="w-full bg-transparent text-ink placeholder:text-muted/70 text-sm font-sans px-2 py-2 focus:outline-none"
+                    aria-label="Website URL for free audit"
+                  />
+                  <button
+                    type="submit"
+                    className="shrink-0 bg-signal hover:bg-signal-bright text-paper font-sans text-xs md:text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm flex items-center gap-1.5 group cursor-pointer"
+                  >
+                    <span>Instant Audit</span>
+                    <span className="group-hover:translate-x-0.5 transition-transform" aria-hidden="true">→</span>
                   </button>
-                  <Link to="/services" className="btn-ghost">
-                    See what it costs
-                  </Link>
-                </div>
+                </form>
+
                 {/* Micro trust indicators */}
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-4 text-[0.8125rem] text-muted">
                   <span className="flex items-center gap-1.5">
-                    <svg className="w-3.5 h-3.5 text-signal" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                    <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                    </svg>
+                    <span>Free 60-second diagnostic</span>
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
                       <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
                     </svg>
                     <span>No sales pitch</span>
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <svg className="w-3.5 h-3.5 text-signal" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
-                    </svg>
-                    <span>Fixed price in writing</span>
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <svg className="w-3.5 h-3.5 text-signal" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                    <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
                       <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
                     </svg>
                     <span>Late-means-free guarantee</span>
@@ -267,36 +315,36 @@ export default function Home({ onBook }: { onBook: () => void }) {
               </Reveal>
             </div>
 
-            <Reveal delay={220} className="lg:col-span-5">
-              <div className="relative group">
-                {/* Ambient drop glow */}
-                <div
-                  aria-hidden="true"
-                  className="absolute -inset-2 bg-gradient-to-tr from-signal/15 via-transparent to-transparent rounded-lg blur-xl opacity-60 group-hover:opacity-90 transition-opacity duration-700 pointer-events-none"
-                />
+            {/* Right Column: Cloaked-Style Squircle Hero Card with Conversion Health Meter */}
+            <div className="lg:col-span-6">
+              <Reveal delay={180}>
+                <div className="relative group">
+                  {/* Outer Ambient Glow */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute -inset-2 bg-gradient-to-tr from-signal/20 via-transparent to-transparent rounded-[32px] blur-2xl opacity-60 group-hover:opacity-90 transition-opacity duration-700 pointer-events-none"
+                  />
 
-                {/* Studio Window Card */}
-                <div className="relative bg-paper-raised border border-rule-strong rounded-[4px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-transform duration-500 ease-out group-hover:scale-[1.01]">
-                  {/* Studio chrome top bar */}
-                  <div className="bg-paper border-b border-rule px-3.5 py-2 flex items-center justify-between">
-                    <div className="flex items-center gap-1.5" aria-hidden="true">
-                      <span className="w-2.5 h-2.5 rounded-full bg-rule-strong" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-rule" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-rule" />
+                  {/* Main Rounded Squircle Card */}
+                  <div className="relative bg-paper-raised border border-rule-strong rounded-[28px] overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.09)] transition-transform duration-500 ease-out group-hover:scale-[1.01]">
+                    {/* Browser chrome top bar */}
+                    <div className="bg-ink px-4 py-2.5 flex items-center justify-between border-b border-white/10">
+                      <div className="flex items-center gap-1.5" aria-hidden="true">
+                        <span className="w-2.5 h-2.5 rounded-full bg-signal" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
+                        <span className="font-mono text-[11px] text-white/70">
+                          uncodedhub.com · live production specimen
+                        </span>
+                      </div>
+                      <span className="text-[10px] font-mono text-signal-bright font-semibold">7-DAY BUILD</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
-                      <span className="label text-[0.625rem] text-muted tracking-wider">
-                        uncodedhub.com · live studio preview
-                      </span>
-                    </div>
-                    <span className="label text-[0.6rem] text-signal font-medium">7-DAY SPRINT</span>
-                  </div>
 
-                  {/* Main Hero Visual in Warm Natural Color */}
-                  <div className="relative aspect-[16/11] sm:aspect-[16/10] overflow-hidden bg-paper">
-                    <picture className="w-full h-full block">
-                      <source media="(max-width: 767px)" srcSet="/hero-section-mobile.webp" />
+                    {/* Visual Media with Conversion Health Meter Overlay */}
+                    <div className="relative aspect-[16/11] overflow-hidden bg-paper">
                       <img
                         src="/hero-section.webp"
                         alt="Business owner reviewing his high-converting custom website delivered by Uncoded Hub"
@@ -304,58 +352,94 @@ export default function Home({ onBook }: { onBook: () => void }) {
                         height={800}
                         loading="eager"
                         fetchPriority="high"
-                        decoding="async"
-                        className="w-full h-full object-cover object-[70%_25%] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                        className="w-full h-full object-cover object-[70%_25%]"
                       />
-                    </picture>
 
-                    {/* Gradient shading overlay for pill legibility */}
-                    <div
-                      aria-hidden="true"
-                      className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent pointer-events-none"
-                    />
+                      {/* Gradient scrim for overlay contrast */}
+                      <div
+                        aria-hidden="true"
+                        className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent pointer-events-none"
+                      />
 
-                    {/* Floating Bottom Metric Bar inside image */}
-                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2 p-2.5 rounded-[3px] bg-paper-raised/95 backdrop-blur-sm border border-rule-strong/80 shadow-md">
-                      <div className="flex items-center gap-2">
-                        <span className="w-6 h-6 rounded-full bg-signal-wash text-signal flex items-center justify-center shrink-0">
-                          <IconGauge className="w-3.5 h-3.5" />
-                        </span>
-                        <div>
-                          <p className="text-[0.75rem] font-semibold text-ink leading-tight">Lighthouse 99 · 0.8s Load</p>
-                          <p className="label text-[0.55rem] text-muted">Zero bloatware · Handcrafted code</p>
+                      {/* Floating Cloaked-Style "Conversion Health" Gauge Meter */}
+                      <div className="absolute top-4 right-4 bg-ink/90 backdrop-blur-md border border-white/15 p-3 rounded-[16px] text-paper shadow-xl max-w-[200px] animate-fade-in">
+                        <div className="flex items-center justify-between pb-1 mb-2 border-b border-white/10">
+                          <span className="text-[10px] font-mono text-white/60 uppercase tracking-wider">Site Health</span>
+                          <span className="text-[10px] font-mono font-semibold text-emerald-400">99 / 100</span>
                         </div>
+                        {/* Gauge Arc */}
+                        <div className="relative w-full h-12 flex items-center justify-center">
+                          <svg className="w-24 h-12 overflow-visible" viewBox="0 0 100 50">
+                            <path
+                              d="M 10 50 A 40 40 0 0 1 90 50"
+                              fill="none"
+                              stroke="rgba(255,255,255,0.15)"
+                              strokeWidth="8"
+                              strokeLinecap="round"
+                            />
+                            <path
+                              d="M 10 50 A 40 40 0 0 1 88 45"
+                              fill="none"
+                              stroke="url(#gaugeGrad)"
+                              strokeWidth="8"
+                              strokeLinecap="round"
+                            />
+                            <defs>
+                              <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="#c7074b" />
+                                <stop offset="70%" stopColor="#10b981" />
+                                <stop offset="100%" stopColor="#34d399" />
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                          <div className="absolute bottom-0 text-center">
+                            <span className="text-xs font-mono font-bold text-white">Safe & Pre-Sold</span>
+                          </div>
+                        </div>
+                        <p className="text-[9px] text-white/60 text-center mt-1">Ready to take client enquiries</p>
                       </div>
-                      <span className="label text-[0.6rem] bg-signal text-paper px-2 py-0.5 rounded-[2px] font-medium shrink-0">
-                        VERIFIED
+
+                      {/* Floating Bottom Metric Bar */}
+                      <div className="absolute bottom-4 left-4 right-4 bg-paper/95 backdrop-blur-md border border-rule-strong/80 p-3 rounded-[14px] shadow-lg flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <span className="w-8 h-8 rounded-full bg-signal-wash text-signal flex items-center justify-center shrink-0">
+                            <IconGauge className="w-4 h-4" />
+                          </span>
+                          <div>
+                            <p className="text-xs font-semibold text-ink leading-tight">Lighthouse 99 · 0.8s Load Speed</p>
+                            <p className="text-[11px] text-muted">Zero bloatware · Handcrafted React & Vite</p>
+                          </div>
+                        </div>
+                        <span className="label text-[10px] bg-signal text-paper px-2.5 py-1 rounded-full font-semibold">
+                          VERIFIED
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Bottom editorial info strip */}
+                    <div className="px-5 py-3 bg-paper border-t border-rule flex items-center justify-between text-xs">
+                      <span className="text-muted flex items-center gap-1.5">
+                        <IconTimer className="w-3.5 h-3.5 text-signal" />
+                        <span>Delivery: <strong className="text-ink font-medium">7 working days</strong></span>
+                      </span>
+                      <span className="text-muted">
+                        Guarantee: <strong className="text-signal font-medium">Late means free</strong>
                       </span>
                     </div>
                   </div>
-
-                  {/* Editorial footer bar under image */}
-                  <div className="px-4 py-2.5 bg-paper border-t border-rule flex items-center justify-between text-[0.75rem]">
-                    <span className="text-muted flex items-center gap-1.5">
-                      <IconTimer className="w-3.5 h-3.5 text-signal" />
-                      <span>Turnaround: <strong className="text-ink font-medium">7 working days</strong></span>
-                    </span>
-                    <span className="text-muted">
-                      Guarantee: <strong className="text-signal font-medium">Late means free</strong>
-                    </span>
-                  </div>
                 </div>
-              </div>
-            </Reveal>
+              </Reveal>
+            </div>
           </div>
 
-          <Reveal delay={300}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-rule border border-rule mt-10">
-              {TRUST.map((t) => (
-                <div key={t.k} className="tile-hover bg-paper p-4 md:p-5 flex flex-col justify-between group">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="tile-hover-accent text-[0.9375rem] font-medium text-ink">{t.k}</span>
-                    <t.Icon className="w-4 h-4 text-muted group-hover:text-signal transition-colors duration-200 shrink-0" />
-                  </div>
-                  <div className="label text-muted text-[0.6875rem]">{t.v}</div>
+          {/* 4-Pillar Trust Strip under Hero */}
+          <Reveal delay={260}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14">
+              {TRUST_BAR.map((t) => (
+                <div key={t.label} className="bg-paper-raised p-4 rounded-[16px] border border-rule-strong shadow-xs flex flex-col justify-between">
+                  <span className="label text-[10px] text-signal font-semibold tracking-wider uppercase">{t.label}</span>
+                  <div className="font-display text-xl text-ink font-medium mt-1">{t.value}</div>
+                  <div className="text-xs text-muted mt-0.5">{t.sub}</div>
                 </div>
               ))}
             </div>
@@ -363,328 +447,506 @@ export default function Home({ onBook }: { onBook: () => void }) {
         </Shell>
       </section>
 
-      {/* ── The problem ────────────────────────────────────────── */}
-      <Section tone="ink" size="loose">
-        <Shell width="narrow">
+      {/* ── SECTION 2: The Cinematic Dark Chapter ("The Agency Reality") ──
+          Directly inspired by Cloaked's dark "Data Parasites" section:
+          High contrast pitch background, 3 floating glass cards with warning states. */}
+      <section className="bg-ink text-paper py-20 md:py-28 relative overflow-hidden border-y border-white/10">
+        {/* Ambient atmospheric red orb in dark space */}
+        <div
+          aria-hidden="true"
+          className="absolute -top-24 left-1/3 w-96 h-96 bg-signal/15 rounded-full blur-[100px] pointer-events-none"
+        />
+
+        <Shell>
           <Reveal>
-            <SectionHead
-              index="01"
-              eyebrow="The problem"
-              inverted
-              align="center"
-              title="You shouldn't have to sell your business twice."
-            />
-          </Reveal>
-          <Reveal delay={100}>
-            <div className="mt-14 space-y-6 text-center">
-              <p className="text-lead text-on-ink-muted">
-                Your work is good. Your prospects just don't get enough time to see it.
-              </p>
-              <p className="text-on-ink-muted leading-relaxed max-w-xl mx-auto">
-                A serious buyer finds you on Google, Instagram, or a referral. Then they check your
-                website. In a few seconds, they're deciding whether you look like the business they
-                can trust with a high-value project.
-              </p>
-              <p className="text-on-ink-muted leading-relaxed max-w-xl mx-auto">
-                If your site doesn't make that decision easy, they move on.
-              </p>
-              <p className="text-on-ink-muted leading-relaxed max-w-xl mx-auto">
-                You never hear the rejection. You don't know what you lost. And you end up spending
-                more of your own time chasing, explaining, and convincing the people who do
-                enquire.
+            <div className="text-center max-w-3xl mx-auto">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-signal-bright text-xs font-mono mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
+                THE AGENCY REALITY
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-paper font-normal leading-tight tracking-tight">
+                Traditional web agencies put your business{' '}
+                <span className="text-signal-bright italic font-normal">at risk.</span>
+              </h2>
+              <p className="text-on-ink-muted text-base md:text-lg mt-5 leading-relaxed">
+                You do great work. But traditional agencies make getting a website painful, expensive,
+                and notoriously unreliable. Here is what happens behind the glossy sales deck:
               </p>
             </div>
           </Reveal>
-          <Reveal delay={130}>
-            <picture className="mt-12 w-full h-64 md:h-80 block">
-              <source media="(max-width: 767px)" srcSet="/problem-mobile.webp" />
-              <img
-                src="/problem.webp"
-                alt="A business owner overwhelmed by unanswered enquiries arriving across WhatsApp, email, Instagram, and missed calls, unable to keep up with them all"
-                width={1200}
-                height={800}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover object-top grayscale border border-rule-on-ink"
-              />
-            </picture>
-            <p className="label text-on-ink-muted mt-4 text-center">
-              What it feels like when the enquiries you wanted arrive faster than you can answer them
-            </p>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="text-lead mt-14 text-center max-w-2xl mx-auto">
-              We know how frustrating it is to watch serious prospects disappear without ever
-              knowing why — especially when you've built genuinely great work. We've seen
-              firsthand how often the first few seconds online decide whether they ever give you
-              the chance to prove it.
-            </p>
+
+          {/* 3 Dark Floating Glass Bento Cards */}
+          <div className="grid md:grid-cols-3 gap-6 mt-14">
+            {AGENCY_TRAPS.map((trap, idx) => {
+              const isSelected = activeTrap === trap.id;
+              return (
+                <Reveal key={trap.id} delay={idx * 90}>
+                  <div
+                    onClick={() => setActiveTrap(isSelected ? null : trap.id)}
+                    className={`relative p-6 sm:p-8 rounded-[24px] bg-white/[0.04] backdrop-blur-md border transition-all duration-300 cursor-pointer flex flex-col justify-between h-full ${
+                      isSelected
+                        ? 'border-signal ring-1 ring-signal/40 bg-white/[0.07] shadow-[0_20px_40px_rgba(199,7,75,0.2)]'
+                        : 'border-white/10 hover:border-white/20 hover:bg-white/[0.06]'
+                    }`}
+                  >
+                    <div>
+                      {/* Card Header & Badge */}
+                      <div className="flex items-center justify-between gap-3 mb-4">
+                        <span className="text-[10px] font-mono text-signal-bright uppercase tracking-wider">
+                          {trap.tag}
+                        </span>
+                        <span
+                          className={`text-[9px] font-mono font-semibold px-2 py-0.5 rounded-full border ${
+                            trap.badgeTone === 'signal'
+                              ? 'bg-signal/20 text-signal-bright border-signal/40'
+                              : trap.badgeTone === 'warning'
+                              ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+                              : 'bg-red-500/20 text-red-300 border-red-500/40'
+                          }`}
+                        >
+                          {trap.badge}
+                        </span>
+                      </div>
+
+                      <h3 className="font-display text-2xl text-paper font-medium mb-3">{trap.title}</h3>
+                      <p className="text-on-ink-muted text-sm leading-relaxed">{trap.description}</p>
+                    </div>
+
+                    {/* Uncoded Hub Contrast Box */}
+                    <div className="mt-6 pt-4 border-t border-white/10 flex items-start gap-2">
+                      <span className="text-signal-bright font-bold shrink-0">✓</span>
+                      <p className="text-xs text-paper/90 font-medium leading-relaxed">{trap.contrast}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+
+          {/* Bottom Free Audit Strip inside Dark Section */}
+          <Reveal delay={280}>
+            <div className="mt-14 max-w-2xl mx-auto p-6 rounded-[24px] bg-white/[0.03] border border-white/10 text-center">
+              <p className="text-paper text-sm font-medium">
+                Find out how much revenue your current website is quietly leaking.
+              </p>
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+                <button
+                  onClick={onBook}
+                  className="bg-signal hover:bg-signal-bright text-paper text-xs md:text-sm font-medium px-6 py-2.5 rounded-full transition-colors flex items-center gap-1.5 cursor-pointer shadow-md"
+                >
+                  <span>Schedule 20-min Discovery Call</span>
+                  <span>→</span>
+                </button>
+                <Link
+                  to="/portfolio"
+                  className="text-on-ink-muted hover:text-paper text-xs md:text-sm font-medium px-4 py-2 transition-colors"
+                >
+                  Inspect our 6 live demos first
+                </Link>
+              </div>
+            </div>
           </Reveal>
         </Shell>
-      </Section>
+      </section>
 
-      {/* ── The solution ───────────────────────────────────────── */}
+      {/* ── SECTION 3: The 3-Pillar Solution & Interactive App Mockup ──
+          Cloaked Section 3: "Cloaked lets you take back control" */}
       <Section size="loose">
         <Shell>
           <Reveal>
-            <SectionHead
-              index="02"
-              eyebrow="What we believe"
-              title="Your website should make the quality of your work impossible to miss."
-              intro={
-                <>
-                  Not force you to compete with businesses that simply look better online. It
-                  should make the right prospect think, <em className="italic">"These are the
-                  people I want to work with."</em>
-                </>
-              }
-            />
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="label text-signal font-semibold tracking-wider uppercase mb-2 block">
+                02 · THE UNCODED HUB SYSTEM
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
+                Uncoded Hub gives you back your{' '}
+                <em className="italic hero-signal font-normal">competitive edge.</em>
+              </h2>
+              <p className="text-lead text-muted mt-5 max-w-xl mx-auto">
+                Everything you need to turn cold visitors into pre-sold enquiries — without you having
+                to write copy, manage developers, or wait months.
+              </p>
+            </div>
           </Reveal>
 
-          {/* Image and the who-we-build-for list sit side by side: it
-              splits what was one dense left-aligned block into two
-              scannable halves, and lets the image run at its own 3:2
-              aspect in a narrower column — shown whole, never cropped. */}
-          <div className="grid lg:grid-cols-12 gap-x-12 gap-y-10 items-center mt-14">
-            <Reveal delay={120} className="lg:col-span-6">
-              <picture className="w-full aspect-[3/2] block">
-                <source media="(max-width: 767px)" srcSet="/our-service-mobile.webp" />
-                <img
-                  src="/our-service.webp"
-                  alt="A responsive website design shown across a desktop monitor, laptop, tablet, and phone"
-                  width={1200}
-                  height={800}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover grayscale border border-rule"
-                />
-              </picture>
-              <p className="label text-muted mt-4">
-                One design, considered at every width your prospects actually use
-              </p>
-            </Reveal>
-
-            <Reveal delay={180} className="lg:col-span-6">
-              <span className="label text-signal">Who we build for</span>
-              <ul className="mt-6 border-t border-rule">
-                {NICHES.map((n) => (
-                  <li
-                    key={n}
-                    className="flex items-baseline gap-4 py-3.5 border-b border-rule text-[0.9375rem]"
-                  >
-                    <span className="text-signal shrink-0" aria-hidden="true">
-                      —
-                    </span>
-                    {n}
-                  </li>
-                ))}
-              </ul>
-              <p className="text-muted leading-relaxed mt-7">
-                We handle the strategy, copy, design, development, conversion paths, and
-                local-search groundwork — so your website does the convincing before you have to.
-              </p>
-            </Reveal>
-          </div>
-          <div className="grid md:grid-cols-3 gap-px bg-rule mt-16 border border-rule">
-            {SOLUTION_ITEMS.map((item, i) => (
-              <Reveal key={item.h} delay={i * 80} className="bg-paper-raised p-8 md:p-10 card-lift">
-                <span className="label text-signal">{String(i + 1).padStart(2, '0')}</span>
-                <h3 className="font-display text-title mt-6">{item.h}</h3>
-                <p className="text-ink-soft leading-relaxed mt-5">{item.p}</p>
+          {/* 3 Pillar Columns with soft salmon badges */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {THREE_PILLARS.map((p, idx) => (
+              <Reveal key={p.num} delay={idx * 80}>
+                <div className="bg-paper-raised p-8 rounded-[24px] border border-rule-strong shadow-xs flex flex-col justify-between h-full">
+                  <div>
+                    <div className="flex items-center justify-between mb-5">
+                      <span className="w-8 h-8 rounded-full bg-signal/10 text-signal font-mono font-bold text-xs flex items-center justify-center">
+                        {p.num}
+                      </span>
+                      <span className="text-[11px] font-mono text-signal bg-signal-wash px-2.5 py-0.5 rounded-full border border-signal/20">
+                        {p.pill}
+                      </span>
+                    </div>
+                    <h3 className="font-display text-2xl text-ink font-medium mb-3">{p.title}</h3>
+                    <p className="text-muted text-sm leading-relaxed">{p.p}</p>
+                  </div>
+                </div>
               </Reveal>
             ))}
           </div>
-          <Reveal delay={220}>
-            <p className="text-lead mt-16 text-center max-w-2xl mx-auto">
-              We don't ask you to take our word for it — we show you exactly what you're getting,
-              build it with you directly, and put our seven-day delivery promise behind a real
-              "late means free" guarantee.
-            </p>
+
+          {/* Split Interactive Showcase (Cloaked Lifestyle + Notification Pills) */}
+          <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+            {/* Left Card: Customer inquiry notification mockup */}
+            <Reveal delay={120} className="lg:col-span-7">
+              <div className="relative h-full min-h-[380px] rounded-[28px] overflow-hidden border border-rule-strong bg-paper-sunk p-6 sm:p-8 flex flex-col justify-between shadow-sm">
+                <picture className="absolute inset-0 block w-full h-full">
+                  <source media="(max-width: 767px)" srcSet="/our-service-mobile.webp" />
+                  <img
+                    src="/our-service.webp"
+                    alt="Responsive website working across all devices"
+                    className="w-full h-full object-cover grayscale opacity-25"
+                  />
+                </picture>
+
+                <div className="relative z-10">
+                  <span className="label text-signal font-semibold uppercase tracking-wider block mb-2">
+                    REAL-TIME INQUIRY NOTIFICATIONS
+                  </span>
+                  <h4 className="font-display text-2xl text-ink font-medium max-w-md">
+                    Inquiries that arrive educated, qualified, and ready to buy.
+                  </h4>
+                </div>
+
+                {/* Floating Notification Cards (Cloaked style) */}
+                <div className="relative z-10 space-y-3 mt-6">
+                  {/* WhatsApp Lead Notification */}
+                  <div className="bg-paper/95 backdrop-blur-md p-4 rounded-[16px] border border-rule-strong shadow-md flex items-start gap-3 max-w-md">
+                    <span className="w-9 h-9 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs shrink-0">
+                      WA
+                    </span>
+                    <div className="text-xs">
+                      <div className="flex items-center justify-between gap-4">
+                        <strong className="text-ink font-semibold">WhatsApp Inquiry · High Ticket</strong>
+                        <span className="text-[10px] text-muted">2m ago</span>
+                      </div>
+                      <p className="text-muted mt-1 leading-normal">
+                        "Hi Deepak! Saw your interior architecture portfolio. We're closing on a 4BHK villa in Indiranagar. Budget ₹45L. Can we do a concept diagnostic call Thursday?"
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Direct Calendar Booking */}
+                  <div className="bg-paper/95 backdrop-blur-md p-4 rounded-[16px] border border-rule-strong shadow-md flex items-start gap-3 max-w-md ml-auto">
+                    <span className="w-9 h-9 rounded-full bg-signal text-white flex items-center justify-center font-bold text-xs shrink-0">
+                      CAL
+                    </span>
+                    <div className="text-xs">
+                      <div className="flex items-center justify-between gap-4">
+                        <strong className="text-ink font-semibold">Calendar Booking Confirmed</strong>
+                        <span className="text-[10px] text-muted">Just now</span>
+                      </div>
+                      <p className="text-muted mt-1 leading-normal">
+                        Pre-Sold Discovery Session booked for Friday at 11:30 AM IST. All intake questions answered.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Right Card: 7-Day Guarantee Spotlight */}
+            <Reveal delay={180} className="lg:col-span-5">
+              <div className="h-full rounded-[28px] overflow-hidden border border-rule-strong bg-paper-raised p-8 flex flex-col justify-between shadow-sm">
+                <div>
+                  <div className="w-12 h-12 rounded-full bg-signal/10 text-signal flex items-center justify-center mb-6">
+                    <IconTimer className="w-6 h-6" />
+                  </div>
+                  <span className="label text-signal font-semibold uppercase tracking-wider block mb-1">
+                    CONTRACTUAL DEADLINE
+                  </span>
+                  <h4 className="font-display text-3xl text-ink font-medium leading-snug">
+                    If we are late, you do not pay.
+                  </h4>
+                  <p className="text-muted text-sm leading-relaxed mt-4">
+                    Not a voucher, not a discount on your next project. If your site is not live
+                    by the end of day seven under our published conditions, the build is free and you keep everything.
+                  </p>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-rule flex items-center justify-between">
+                  <div className="text-xs">
+                    <span className="text-muted block">Signed by co-founders:</span>
+                    <strong className="text-ink font-medium">Deepak & Geetha</strong>
+                  </div>
+                  <button onClick={onBook} className="btn-primary text-xs py-2 px-4">
+                    Schedule call →
+                  </button>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </Shell>
+      </Section>
+
+      {/* ── SECTION 4: High-Voltage Stat Bento Cards ──
+          Cloaked Section 6: Massive solid orange/vermilion stat blocks */}
+      <section className="py-20 bg-paper-sunk border-y border-rule">
+        <Shell>
+          <Reveal>
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <span className="label text-signal font-semibold uppercase tracking-wider block mb-2">
+                MEASURABLE STANDARDS
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
+                Built for business owners who demand results.
+              </h2>
+            </div>
           </Reveal>
-          <Reveal delay={260}>
-            <p className="font-display text-title mt-8 text-center">
-              The goal isn't another website. It's fewer prospects you have to convince from
-              scratch.
-            </p>
+
+          {/* 3 High-Impact Solid Vermilion/Crimson Cards */}
+          <div className="grid md:grid-cols-3 gap-6">
+            <Reveal delay={60}>
+              <div className="bg-signal text-paper p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
+                <div>
+                  <span className="font-mono text-xs uppercase tracking-wider text-paper/80 block mb-2">
+                    Turnaround Timeline
+                  </span>
+                  <div className="font-display text-6xl sm:text-7xl font-bold tracking-tight text-paper">
+                    7 Days
+                  </div>
+                </div>
+                <p className="text-paper/90 text-sm mt-6 leading-relaxed font-sans">
+                  From discovery call to live production deployment. No open-ended months of waiting.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <div className="bg-signal text-paper p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
+                <div>
+                  <span className="font-mono text-xs uppercase tracking-wider text-paper/80 block mb-2">
+                    On-Time Guarantee
+                  </span>
+                  <div className="font-display text-6xl sm:text-7xl font-bold tracking-tight text-paper">
+                    100%
+                  </div>
+                </div>
+                <p className="text-paper/90 text-sm mt-6 leading-relaxed font-sans">
+                  Contractual delivery rate under our published guarantee. On time, or the build is free.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={180}>
+              <div className="bg-signal text-paper p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
+                <div>
+                  <span className="font-mono text-xs uppercase tracking-wider text-paper/80 block mb-2">
+                    Google PageSpeed
+                  </span>
+                  <div className="font-display text-6xl sm:text-7xl font-bold tracking-tight text-paper">
+                    99+
+                  </div>
+                </div>
+                <p className="text-paper/90 text-sm mt-6 leading-relaxed font-sans">
+                  Verified mobile performance. Loads in under 1 second on real 4G devices worldwide.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </Shell>
+      </section>
+
+      {/* ── SECTION 5: Live Specimen Builds Carousel (The 6 Demos) ── */}
+      <Section size="loose">
+        <Shell>
+          <Reveal>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+              <div>
+                <span className="label text-signal font-semibold uppercase tracking-wider block mb-2">
+                  03 · LIVE DEMO SPECIMENS
+                </span>
+                <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
+                  Test the builds live before you commit.
+                </h2>
+                <p className="text-muted text-base max-w-xl mt-3">
+                  Each build below is a complete, fully functional web application built to our production
+                  standards. Click into any build to test live 3-theme switching and examine the conversion funnel.
+                </p>
+              </div>
+
+              {/* Carousel navigation buttons */}
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={prevDemo}
+                  className="w-11 h-11 rounded-full border border-rule-strong bg-paper hover:bg-paper-raised text-ink flex items-center justify-center transition-colors cursor-pointer"
+                  aria-label="Previous demo"
+                >
+                  ←
+                </button>
+                <button
+                  onClick={nextDemo}
+                  className="w-11 h-11 rounded-full border border-rule-strong bg-paper hover:bg-paper-raised text-ink flex items-center justify-center transition-colors cursor-pointer"
+                  aria-label="Next demo"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Current Active Demo Spotlight Card */}
+          <Reveal delay={100}>
+            {(() => {
+              const currentDemo = DEMO_SPECIMENS[activeDemoIdx];
+              return (
+                <div className="bg-paper-raised border border-rule-strong rounded-[28px] overflow-hidden shadow-lg grid lg:grid-cols-12 gap-0 items-center">
+                  {/* Left: Thumbnail Browser Window */}
+                  <div className="lg:col-span-7 bg-ink p-4 sm:p-6 border-b lg:border-b-0 lg:border-r border-rule-strong">
+                    <div className="rounded-[12px] overflow-hidden border border-white/15 bg-paper">
+                      <div className="flex items-center justify-between px-3 py-2 bg-ink text-paper text-[10px] font-mono border-b border-white/10">
+                        <div className="flex items-center gap-1.5">
+                          <span className="w-2 h-2 rounded-full bg-signal" />
+                          <span className="w-2 h-2 rounded-full bg-white/20" />
+                          <span className="w-2 h-2 rounded-full bg-white/20" />
+                        </div>
+                        <span className="text-white/60">live specimen · {currentDemo.sector}</span>
+                        <span className="text-signal-bright font-semibold">3 THEMES</span>
+                      </div>
+                      <a href={currentDemo.url} target="_blank" rel="noreferrer noopener" className="block relative group">
+                        <img
+                          src={currentDemo.thumbnail}
+                          alt={currentDemo.client}
+                          className="w-full aspect-[16/10] object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors flex items-center justify-center">
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-ink/90 text-paper text-xs font-mono px-4 py-2 rounded-full shadow-lg">
+                            Open Live Demo ↗
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Right: Specimen Details & Launch */}
+                  <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between">
+                    <div>
+                      <span className="label text-signal font-semibold tracking-wider uppercase">
+                        {currentDemo.sector}
+                      </span>
+                      <h3 className="font-display text-2xl sm:text-3xl text-ink font-medium mt-3 mb-4">
+                        {currentDemo.client}
+                      </h3>
+                      <p className="text-muted text-sm leading-relaxed mb-6">
+                        {currentDemo.summary}
+                      </p>
+                      <div className="space-y-2 text-xs text-ink/80">
+                        <div className="flex items-center gap-2">
+                          <span className="text-signal font-bold">✓</span>
+                          <span>Interactive 3-style visual theme switcher</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-signal font-bold">✓</span>
+                          <span>Tailored lead conversion questionnaire</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-signal font-bold">✓</span>
+                          <span>99+ Verified Lighthouse mobile performance</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 pt-6 border-t border-rule flex items-center justify-between gap-4">
+                      <a
+                        href={currentDemo.url}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="btn-primary text-xs py-2.5 px-5 flex items-center gap-1.5"
+                      >
+                        <span>Test this demo live</span>
+                        <span>↗</span>
+                      </a>
+                      <Link to="/portfolio" className="text-xs text-muted hover:text-ink font-medium">
+                        View all 6 demos →
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              );
+            })()}
           </Reveal>
         </Shell>
       </Section>
 
-      {/* ── The Better Enquiry Blueprint ───────────────────────── */}
+      {/* ── SECTION 6: The Better Enquiry Blueprint ────────────────── */}
       <Section tone="sunk" size="loose">
         <Shell>
           <Reveal>
             <SectionHead
-              index="03"
+              index="04"
               eyebrow="The process"
               title="The Better Enquiry Blueprint."
               intro="Three steps, published in full — the client's-eye view, not the internal production schedule."
             />
           </Reveal>
-          <div className="grid md:grid-cols-3 gap-px bg-rule-strong mt-16 border border-rule-strong">
+          <div className="grid md:grid-cols-3 gap-6 mt-14">
             {BLUEPRINT.map((s, i) => (
-              <Reveal key={s.n} delay={i * 90} className="bg-paper p-8 md:p-10 card-lift">
-                <div className="flex items-center justify-between">
-                  <span className="label text-signal">{s.n}</span>
-                  <s.Icon className="w-6 h-6 text-muted" />
+              <Reveal key={s.n} delay={i * 90}>
+                <div className="bg-paper p-8 rounded-[24px] border border-rule-strong shadow-xs flex flex-col justify-between h-full">
+                  <div>
+                    <div className="flex items-center justify-between mb-6">
+                      <span className="label text-signal font-mono font-bold text-sm">{s.n}</span>
+                      <s.Icon className="w-6 h-6 text-muted" />
+                    </div>
+                    <h3 className="font-display text-2xl text-ink font-medium mb-3">{s.title}</h3>
+                    <p className="text-muted leading-relaxed text-sm">{s.body}</p>
+                  </div>
+                  <p className="text-xs font-semibold text-ink mt-6 pt-4 border-t border-rule">
+                    {s.benefit}
+                  </p>
                 </div>
-                <h3 className="font-display text-title mt-6">{s.title}</h3>
-                <p className="text-muted leading-relaxed mt-5">{s.body}</p>
-                <p className="text-[0.9375rem] font-medium mt-6 pt-5 border-t border-rule">
-                  {s.benefit}
-                </p>
               </Reveal>
             ))}
           </div>
           <Reveal delay={280}>
-            <p className="label text-center mt-14">
+            <p className="label text-center mt-12 text-muted">
               Fixed price · Fixed timeline · Built by us · Owned by you
             </p>
           </Reveal>
         </Shell>
       </Section>
 
-      {/* ── The guarantee, with its actual terms ───────────────── */}
-      <Section tone="sunk" size="default">
-        <Shell width="narrow">
-          <Reveal className="text-center">
-            <picture className="w-full max-w-lg mx-auto block">
-              <source media="(max-width: 767px)" srcSet="/guarantee-mobile.webp" />
-              <img
-                src="/guarantee.webp"
-                alt="Uncoded Hub's seven-day delivery guarantee certificate: on time or free, signed by Deepak and Geetha"
-                width={1200}
-                height={600}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-auto border border-rule"
-              />
-            </picture>
-          </Reveal>
-          <Reveal delay={60}>
-            <SectionHead
-              index="04"
-              eyebrow="The guarantee"
-              align="center"
-              title="If we are late, you do not pay."
-            />
-          </Reveal>
-
-          <Reveal delay={100}>
-            <p className="text-lead text-muted mt-8 text-center">
-              Not a discount, not a credit toward future work. If your site is not live by the end
-              of day seven, the build is free and you keep it.
-            </p>
-          </Reveal>
-
-          <Reveal delay={160}>
-            <div className="mt-14 bg-paper-raised border border-rule p-8 md:p-10">
-              <span className="label text-muted">The conditions, in full</span>
-              <ul className="mt-6 space-y-4">
-                {[
-                  'The seven days start the morning after the discovery call, once we have your brand assets and domain access.',
-                  'If we are waiting on feedback or content from you, the clock pauses. It restarts when we hear back.',
-                  'It covers the scope agreed in writing before we start. New pages or features requested mid-build are quoted separately and do not count against the guarantee.',
-                  'It is our deadline, not a rush job. If your project genuinely needs longer than a week, we will tell you that on the call rather than take the work.',
-                ].map((c, i) => (
-                  <li key={i} className="flex gap-5">
-                    <span className="label text-signal pt-1.5 shrink-0">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <span className="text-ink-soft leading-relaxed">{c}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-        </Shell>
-      </Section>
-
-      {/* ── Features & proof ───────────────────────────────────── */}
+      {/* ── SECTION 7: Standards & Performance ─────────────────────── */}
       <Section size="loose">
         <Shell>
-          <Reveal>
-            <SectionHead
-              index="05"
-              eyebrow="Built for you"
-              title="Built around what matters to you."
-              intro="A website shouldn't create another job for the business owner. It should remove work, uncertainty, and friction."
-            />
-          </Reveal>
-          <div className="mt-16 border-t border-rule-strong">
-            {FEATURES.map((f, i) => (
-              <Reveal
-                key={f.h}
-                delay={i * 50}
-                className="grid md:grid-cols-12 gap-x-10 gap-y-2 py-7 border-b border-rule"
-              >
-                <h3 className="md:col-span-4 text-lead font-medium">{f.h}</h3>
-                <p className="md:col-span-8 text-muted leading-relaxed">{f.p}</p>
-              </Reveal>
-            ))}
-          </div>
-
-          {/* The guarantee and the pre-purchase demo are the two strongest
-              proof points the offer has — a young studio's credibility
-              rests on them more than on any sentence about them, so they
-              get visual weight the rest of the list doesn't. */}
-          <div className="grid md:grid-cols-2 gap-px bg-ink mt-px border border-ink">
-            {PROOF_POINTS.map((f, i) => (
-              <Reveal key={f.h} delay={i * 70} className="bg-ink p-8 md:p-10 card-lift-inv">
-                <h3 className="font-display text-title text-signal-bright">{f.h}</h3>
-                <p className="text-on-ink-muted leading-relaxed mt-4">{f.p}</p>
-              </Reveal>
-            ))}
-          </div>
-        </Shell>
-      </Section>
-
-      {/* ── Standards ──────────────────────────────────────────── */}
-      <Section tone="sunk" size="loose">
-        <Shell>
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <Reveal className="lg:col-span-5">
               <SectionHead
-                index="06"
+                index="05"
                 eyebrow="Standards"
                 title="The numbers we hold ourselves to."
               />
-              <p className="text-muted leading-relaxed mt-8">
-                We are a young studio, so we are not going to show you a wall of borrowed logos.
-                What we can do is publish the standard every site we ship has to meet, and invite
-                you to test this page against it right now.
+              <p className="text-muted leading-relaxed mt-6">
+                We are a young studio, so we don't show you a wall of borrowed logos.
+                What we do is publish the exact engineering standards every site we ship has to meet.
               </p>
-              <p className="text-muted leading-relaxed mt-5">
-                Open your browser's developer tools, run Lighthouse on this page, and check the
-                numbers yourself. That is a more useful signal than anything we could write here.
+              <p className="text-muted leading-relaxed mt-4">
+                Open your browser's developer tools, run Google Lighthouse on this page, and check the
+                numbers yourself. That is a more honest signal than any marketing claim.
               </p>
-              <div className="mt-10">
-                <Link to="/portfolio" className="link-underline text-ink">
-                  How we prove it without a portfolio →
+              <div className="mt-8">
+                <Link to="/portfolio" className="btn-ghost text-xs">
+                  Inspect our portfolio specimens →
                 </Link>
               </div>
             </Reveal>
 
             <Reveal delay={120} className="lg:col-span-7">
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-px bg-rule border border-rule mb-10">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {BUDGET.map((b) => (
-                  <div key={b.metric} className="tile-hover bg-paper-raised p-5">
-                    <b.Icon className="tile-hover-accent w-6 h-6 text-signal" />
-                    <span className="font-display text-title block mt-4">{b.value}</span>
+                  <div key={b.metric} className="bg-paper-raised p-5 rounded-[20px] border border-rule-strong shadow-xs">
+                    <b.Icon className="w-5 h-5 text-signal mb-3" />
+                    <span className="font-display text-3xl font-medium text-ink block">{b.value}</span>
                     <span className="text-xs text-muted leading-snug block mt-1">{b.metric}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="border-t border-rule-strong">
-                {BUDGET.map((b) => (
-                  <div
-                    key={b.metric}
-                    className="row-hover grid grid-cols-[2fr_3fr] gap-6 py-5 px-2 -mx-2 border-b border-rule items-center"
-                  >
-                    <div className="text-[0.9375rem] font-medium">{b.metric}</div>
-                    <div className="font-mono text-[0.8125rem] text-muted text-right text-balance">
+                    <span className="text-[10px] font-mono text-muted/70 block mt-2 pt-2 border-t border-rule">
                       {b.target}
-                    </div>
+                    </span>
                   </div>
                 ))}
               </div>
@@ -693,186 +955,66 @@ export default function Home({ onBook }: { onBook: () => void }) {
         </Shell>
       </Section>
 
-      {/* ── Objections & trust ─────────────────────────────────── */}
-      <Section tone="ink" size="loose">
-        <Shell>
-          <Reveal>
-            <SectionHead
-              index="07"
-              eyebrow="Worth asking"
-              inverted
-              title="Still wondering if this will actually work?"
-              intro="Good. You should be careful about who you trust with your business."
-            />
-          </Reveal>
-          <div className="mt-16 border-t border-rule-on-ink">
-            {OBJECTIONS.map((o, i) => (
-              <Reveal
-                key={o.q}
-                delay={i * 50}
-                className="grid md:grid-cols-12 gap-x-10 gap-y-3 py-7 border-b border-rule-on-ink"
-              >
-                <h3 className="md:col-span-4 text-lead font-medium">{o.q}</h3>
-                <p className="md:col-span-8 text-on-ink-muted leading-relaxed">{o.a}</p>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal delay={380}>
-            <div className="mt-14 bg-ink p-8 md:p-10 border border-rule-on-ink">
-              <span className="label text-signal-bright">No empty promises</span>
-              <p className="text-on-ink-muted leading-relaxed mt-4 max-w-2xl">
-                We don't have testimonials to manufacture or impressive numbers to put on a page
-                just because they look reassuring. Instead, we show you what can actually be
-                checked.
-              </p>
-              <ul className="flex flex-wrap gap-x-3 gap-y-2 mt-6" aria-hidden="false">
-                {PROMISES.map((p, i) => (
-                  <li key={p} className="flex items-center gap-3">
-                    <span className="label text-on-ink">{p}</span>
-                    {i < PROMISES.length - 1 && (
-                      <span className="w-1 h-1 rounded-full bg-rule-on-ink" aria-hidden="true" />
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-        </Shell>
-      </Section>
-
-      {/* ── Stakes → positive transformation ───────────────────── */}
-      <Section size="loose">
-        <Shell width="narrow">
-          <Reveal>
-            <SectionHead
-              index="08"
-              eyebrow="What happens next"
-              align="center"
-              title="Every month you wait, the same prospects are still choosing."
-            />
-          </Reveal>
-          <Reveal delay={100}>
-            <div className="mt-12 space-y-5 text-center">
-              <p className="text-lead text-muted">Doing nothing doesn't make the problem disappear.</p>
-              <p className="text-muted leading-relaxed max-w-xl mx-auto">
-                The serious prospect who finds you online is still deciding between you and your
-                competitors. If your website doesn't give them enough reason to trust you, they can
-                choose someone else before you ever get the chance to speak.
-              </p>
-              <p className="text-muted leading-relaxed max-w-xl mx-auto">
-                And your personal selling remains the ceiling. More growth means more chasing. More
-                explaining. More follow-ups. More time away from the work you're actually good at.
-              </p>
-            </div>
-          </Reveal>
-
-        </Shell>
-
-        {/* Shown whole and uncropped, at its own 3:2 aspect. A wider
-            full-bleed crop looked more dramatic but sliced both faces
-            out of frame — and this image only works if you can read the
-            two panels against each other, which is the comparison the
-            copy either side of it is making. */}
-        <Reveal delay={150}>
-          <div className="px-6 md:px-10">
-            <picture className="mt-14 w-full max-w-3xl mx-auto aspect-[3/2] block">
-              <source media="(max-width: 767px)" srcSet="/before-after-mobile.webp" />
-              <img
-                src="/before-after.webp"
-                alt="Before: a business owner overwhelmed by scattered enquiries piling up. After: the same business owner, relaxed, with a website doing the work for him"
-                width={1200}
-                height={800}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover grayscale border border-rule-strong"
-              />
-            </picture>
-            <p className="label text-muted mt-4 text-center">
-              The same business, on either side of one working website
-            </p>
-          </div>
-        </Reveal>
-
-        <Shell width="narrow">
-          <Reveal delay={180}>
-            <div className="mt-16 text-center">
-              <p className="text-lead max-w-xl mx-auto">
-                Here's what changes once your website is actually doing that job: the right
-                prospects find you and understand your value before they ever contact you. They've
-                seen the work. They understand what you do. They already trust what they're
-                seeing.
-              </p>
-              <p className="font-display text-title mt-10 max-w-lg mx-auto">
-                You're no longer starting with "Let me convince you." You're starting with "Let's
-                see if we're the right fit."
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={240}>
-            <div className="mt-16 space-y-3 text-center">
-              {OUTCOMES.map((o) => (
-                <p key={o} className="font-display text-title">
-                  {o}
-                </p>
-              ))}
-            </div>
-          </Reveal>
-
-          <Reveal delay={300}>
-            <p className="font-display text-display mt-16 text-center">A better first conversation.</p>
-          </Reveal>
-        </Shell>
-      </Section>
-
-      {/* ── Studio ─────────────────────────────────────────────── */}
+      {/* ── SECTION 8: Studio Founders (Deepak & Geetha) ───────────── */}
       <Section tone="sunk">
         <Shell>
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <Reveal className="lg:col-span-5">
-              <div className="grid grid-cols-2 gap-px bg-rule-strong border border-rule-strong">
-                <picture className="w-full aspect-[3/4] block">
-                  <source media="(max-width: 767px)" srcSet="/deepak-mobile.webp" />
-                  <img
-                    src="/deepak.webp"
-                    alt="Deepak, co-founder"
-                    width={540}
-                    height={540}
-                    loading="lazy"
-                    decoding="async"
-                    className="photo-hover w-full h-full object-cover bg-paper grayscale"
-                  />
-                </picture>
-                <picture className="w-full aspect-[3/4] block">
-                  <source media="(max-width: 767px)" srcSet="/geetha-mobile.webp" />
-                  <img
-                    src="/geetha.webp"
-                    alt="Geetha, co-founder"
-                    width={700}
-                    height={700}
-                    loading="lazy"
-                    decoding="async"
-                    className="photo-hover w-full h-full object-cover object-top bg-paper grayscale"
-                  />
-                </picture>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-[20px] overflow-hidden border border-rule-strong bg-paper shadow-sm">
+                  <picture className="w-full aspect-[3/4] block">
+                    <source media="(max-width: 767px)" srcSet="/deepak-mobile.webp" />
+                    <img
+                      src="/deepak.webp"
+                      alt="Deepak, co-founder"
+                      width={540}
+                      height={540}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover grayscale"
+                    />
+                  </picture>
+                  <div className="p-3 text-center border-t border-rule">
+                    <strong className="text-xs text-ink block">Deepak</strong>
+                    <span className="text-[10px] text-muted">Development</span>
+                  </div>
+                </div>
+
+                <div className="rounded-[20px] overflow-hidden border border-rule-strong bg-paper shadow-sm">
+                  <picture className="w-full aspect-[3/4] block">
+                    <source media="(max-width: 767px)" srcSet="/geetha-mobile.webp" />
+                    <img
+                      src="/geetha.webp"
+                      alt="Geetha, co-founder"
+                      width={700}
+                      height={700}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover object-top grayscale"
+                    />
+                  </picture>
+                  <div className="p-3 text-center border-t border-rule">
+                    <strong className="text-xs text-ink block">Geetha</strong>
+                    <span className="text-[10px] text-muted">Design & Copy</span>
+                  </div>
+                </div>
               </div>
             </Reveal>
 
             <Reveal delay={120} className="lg:col-span-7">
-              <SectionHead index="09" eyebrow="The studio" title="Two people. Both of them on your project." />
-              <p className="text-muted leading-relaxed mt-8 max-w-xl">
-                We are Deepak and Geetha, a brother and sister running a two-person studio out of
+              <SectionHead index="06" eyebrow="The studio" title="Two people. Both of them on your project." />
+              <p className="text-muted leading-relaxed mt-6 max-w-xl">
+                We are Deepak and Geetha, a brother and sister running a two-person studio in
                 Bengaluru. Geetha designs, Deepak builds, and the person you meet on the discovery
                 call is the person who does the work. There is no account manager between you and
-                the people making decisions about your site, because at two people there is no room
-                for one.
+                the people making decisions about your site.
               </p>
-              <p className="text-muted leading-relaxed mt-5 max-w-xl">
-                It also means we take on a limited number of builds at a time. That is a real
-                constraint, not a scarcity tactic.
+              <p className="text-muted leading-relaxed mt-4 max-w-xl">
+                It also means we take on a capped number of builds per month. That is a real
+                quality constraint, not an artificial marketing scarcity tactic.
               </p>
-              <div className="mt-10">
-                <Link to="/about" className="link-underline text-ink">
+              <div className="mt-8">
+                <Link to="/about" className="link-underline text-ink text-sm font-medium">
                   More about how we work →
                 </Link>
               </div>
@@ -881,31 +1023,30 @@ export default function Home({ onBook }: { onBook: () => void }) {
         </Shell>
       </Section>
 
-      {/* ── FAQ ────────────────────────────────────────────────── */}
+      {/* ── SECTION 9: FAQ Accordion ──────────────────────────────── */}
       <Section>
         <Shell width="narrow">
           <Reveal>
-            <SectionHead index="10" eyebrow="Questions" title="Asked before every project." />
+            <SectionHead index="07" eyebrow="Questions" title="Asked before every project." />
           </Reveal>
-          <div className="mt-16">
+          <div className="mt-14">
             <FaqAccordion />
           </div>
         </Shell>
       </Section>
 
-      {/* ── Lead magnet ────────────────────────────────────────── */}
+      {/* ── SECTION 10: Lead Magnet (The 10-Point Audit) ───────────── */}
       <Section id="lead-magnet" tone="ink" size="default">
         <Shell>
-          {/* Header */}
           <Reveal>
             <div className="flex items-center gap-3 mb-3">
-              <span className="label text-signal-bright">11</span>
-              <span className="label text-on-ink-muted">Free resource</span>
+              <span className="label text-signal-bright">08</span>
+              <span className="label text-on-ink-muted">Free diagnostic resource</span>
             </div>
-            <div className="grid lg:grid-cols-2 gap-3 lg:gap-8 items-end mb-14">
-              <h2 className="font-display text-display text-on-ink">
+            <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-end mb-12">
+              <h2 className="font-display text-3xl sm:text-4xl text-on-ink font-normal">
                 Score your own site.<br />
-                <em>Before</em> you book a call.
+                <em className="italic text-signal-bright font-normal">Before</em> you book a call.
               </h2>
               <p className="text-lead text-on-ink-muted leading-relaxed">
                 The Pre-Sold Prospects Audit — the same 10-point trust diagnostic we run for every client, now in your hands.
@@ -914,46 +1055,35 @@ export default function Home({ onBook }: { onBook: () => void }) {
           </Reveal>
 
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-
-            {/* LEFT: Cover mock + bullet benefits */}
-            <Reveal className="lg:col-span-5 flex flex-col gap-8">
-
-              {/* Book cover card */}
-              <div className="relative bg-paper-raised border border-rule-strong rounded-[4px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.28)] group flex items-center justify-center p-2 sm:p-3">
+            {/* Left: Cover card */}
+            <Reveal className="lg:col-span-5 flex flex-col gap-6">
+              <div className="relative bg-paper-raised border border-rule-strong rounded-[24px] overflow-hidden shadow-2xl p-3 flex items-center justify-center">
                 <img
                   src="/lead-magnet-cover.webp"
-                  alt="The Pre-Sold Prospects Audit — Free 10-point website trust diagnostic"
-                  className="w-full h-auto object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                  alt="The Pre-Sold Prospects Audit"
+                  className="w-full h-auto object-contain rounded-[18px]"
                   width={1200}
                   height={680}
                   loading="lazy"
-                  decoding="async"
                 />
               </div>
 
-              {/* What you get */}
               <div>
-                <p className="label text-on-ink-muted mb-5">What's inside</p>
-                <ul className="space-y-3.5">
+                <p className="label text-on-ink-muted mb-4">What's inside</p>
+                <ul className="space-y-3">
                   {[
                     { label: 'The 10-point trust test', sub: 'We score every client site against this before we start.' },
                     { label: 'Your scoring band', sub: 'Silent Loss, Leaking, or Near Your Ceiling.' },
                     { label: 'The silent objections', sub: 'What a skeptical prospect thinks before they message you.' },
                     { label: '20-minute action checklist', sub: 'One fix per point, ordered by where you scored lowest.' },
                   ].map(({ label, sub }) => (
-                    <li key={label} className="flex gap-3 items-start">
-                      <span
-                        aria-hidden="true"
-                        className="shrink-0 mt-0.5 w-4 h-4 rounded-full border border-signal flex items-center justify-center"
-                        style={{ color: 'var(--color-signal-bright)' }}
-                      >
-                        <svg width="8" height="7" viewBox="0 0 8 7" fill="none" aria-hidden="true">
-                          <path d="M1 3.5L3 5.5L7 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
+                    <li key={label} className="flex gap-3 items-start text-xs">
+                      <span className="shrink-0 mt-0.5 w-4 h-4 rounded-full bg-signal/20 text-signal-bright flex items-center justify-center font-bold">
+                        ✓
                       </span>
                       <span>
-                        <span className="text-on-ink text-[0.9375rem] font-medium leading-snug">{label}</span>
-                        <span className="text-on-ink-muted text-[0.8125rem] leading-relaxed block mt-0.5">{sub}</span>
+                        <strong className="text-on-ink font-medium block">{label}</strong>
+                        <span className="text-on-ink-muted">{sub}</span>
                       </span>
                     </li>
                   ))}
@@ -961,71 +1091,89 @@ export default function Home({ onBook }: { onBook: () => void }) {
               </div>
             </Reveal>
 
-            {/* RIGHT: Form card */}
+            {/* Right: Form card */}
             <Reveal delay={120} className="lg:col-span-7">
-              <div className="bg-paper-raised border border-rule-strong rounded-[4px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
-                {/* Form card header */}
-                <div className="bg-signal px-6 md:px-8 py-4 flex items-center gap-3">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" className="shrink-0">
-                    <path d="M9 2L10.854 6.764L16 7.09L12.2 10.526L13.416 16L9 13.2L4.584 16L5.8 10.526L2 7.09L7.146 6.764L9 2Z" fill="white"/>
-                  </svg>
-                  <p className="font-sans font-semibold text-paper text-[0.9375rem] leading-tight">
-                    Get the free audit — land in your inbox in minutes
+              <div className="bg-paper-raised border border-rule-strong rounded-[24px] overflow-hidden shadow-2xl">
+                <div className="bg-signal px-6 py-4 flex items-center gap-3">
+                  <span className="text-paper font-bold text-sm">⚡</span>
+                  <p className="font-sans font-semibold text-paper text-sm">
+                    Get the free audit — lands in your inbox in 60 seconds
                   </p>
                 </div>
-
-                {/* Form body */}
-                <div className="px-6 md:px-8 py-6 md:py-8">
+                <div className="p-6 md:p-8">
                   <LeadMagnetForm embedded />
                 </div>
-              </div>
-
-              {/* Trust signals below form */}
-              <div className="flex flex-wrap gap-x-6 gap-y-2 mt-5 px-1">
-                {[
-                  'No spam, ever',
-                  'Instant delivery',
-                  'Unsubscribe anytime',
-                ].map((t) => (
-                  <span key={t} className="flex items-center gap-1.5 label text-on-ink-muted">
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                      <circle cx="5" cy="5" r="4.5" stroke="currentColor" strokeOpacity="0.5"/>
-                      <path d="M2.5 5L4 6.5L7.5 3" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    {t}
-                  </span>
-                ))}
               </div>
             </Reveal>
           </div>
         </Shell>
       </Section>
 
-      {/* ── Close ──────────────────────────────────────────────── */}
-      <Section tone="sunk" size="loose">
-        <Shell width="narrow" className="text-center">
+      {/* ── SECTION 11: Cloaked-Style Modern Dark Dual-Card Closing CTA ── */}
+      <section className="bg-ink text-paper py-20 border-t border-white/10">
+        <Shell>
           <Reveal>
-            <h2 className="font-display text-display">
-              Let your website start selling before you do.
-            </h2>
-            <p className="text-lead text-muted mt-8 max-w-xl mx-auto">
-              No deck and no pitch. We ask what your business does, look at what you have now, and
-              tell you plainly whether we can help — including when the answer is no.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
-              <button onClick={onBook} className="btn-primary">
-                Schedule my FREE 20-minute call
-              </button>
-              <Link to="/contact" className="btn-ghost">
-                Send a brief instead
-              </Link>
+            <div className="grid md:grid-cols-12 gap-8 items-center bg-white/[0.03] border border-white/10 rounded-[32px] p-8 sm:p-12">
+              {/* Left Brand Mark */}
+              <div className="md:col-span-6 flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <LogoMark size={48} />
+                    <span className="font-display text-2xl text-paper font-medium">Uncoded Hub</span>
+                  </div>
+                  <h3 className="font-display text-3xl sm:text-4xl text-paper font-normal leading-tight">
+                    Fixed price. Seven working days.<br />
+                    <span className="text-signal-bright italic">On time or free.</span>
+                  </h3>
+                  <p className="text-on-ink-muted text-sm leading-relaxed mt-4 max-w-md">
+                    No deck and no sales pitch. Book a 20-minute call to see if your business is
+                    the right fit for our seven-day sprint.
+                  </p>
+                </div>
+
+                <div className="mt-8 flex items-center gap-4 text-xs font-mono text-on-ink-muted">
+                  <span>● Deepak & Geetha</span>
+                  <span>·</span>
+                  <span>Bengaluru, India</span>
+                  <span>·</span>
+                  <span>Working globally</span>
+                </div>
+              </div>
+
+              {/* Right CTA Action Card */}
+              <div className="md:col-span-6 bg-white/[0.05] p-6 sm:p-8 rounded-[24px] border border-white/10 flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-mono text-signal-bright uppercase tracking-wider block mb-2">
+                    RESERVE YOUR BUILD COHORT
+                  </span>
+                  <h4 className="font-display text-2xl text-paper font-medium mb-3">
+                    Ready to let your website sell before you do?
+                  </h4>
+                  <p className="text-on-ink-muted text-xs leading-relaxed mb-6">
+                    Leave with a written scope, a fixed price, and a defined delivery date — or an honest recommendation if you need something else.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <button
+                    onClick={onBook}
+                    className="w-full bg-signal hover:bg-signal-bright text-paper font-sans font-medium text-sm py-3.5 px-6 rounded-full transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+                  >
+                    <span>Schedule My FREE 20-Minute Call</span>
+                    <span>→</span>
+                  </button>
+                  <Link
+                    to="/contact"
+                    className="w-full block text-center text-xs text-on-ink-muted hover:text-paper py-2 transition-colors"
+                  >
+                    Or send us a written brief instead
+                  </Link>
+                </div>
+              </div>
             </div>
-            <p className="label text-muted mt-10">
-              Free · No obligation · We reply within one working day
-            </p>
           </Reveal>
         </Shell>
-      </Section>
+      </section>
 
       <FloatingLeadMagnetBanner />
     </>
