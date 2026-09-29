@@ -30,6 +30,7 @@ import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
 type Project = {
   client: string;
   url: string;
+  thumbnail: string;
   sector: string;
   year: string;
   summary: string;
@@ -42,6 +43,7 @@ const PROJECTS: Project[] = [
   {
     client: 'Meridian Architecture & Interiors',
     url: '/demos/interior-design.html',
+    thumbnail: '/demos/thumbnails/interior-design.webp',
     sector: 'Interior Architecture & Studios',
     year: '7-Day Sprint Build',
     summary:
@@ -53,6 +55,7 @@ const PROJECTS: Project[] = [
   {
     client: 'Marlow & Co. Private Real Estate',
     url: '/demos/real-estate.html',
+    thumbnail: '/demos/thumbnails/real-estate.webp',
     sector: 'Prime Real Estate & Private Advisory',
     year: '7-Day Sprint Build',
     summary:
@@ -64,6 +67,7 @@ const PROJECTS: Project[] = [
   {
     client: 'Willowmere Dental & Facial Aesthetics',
     url: '/demos/dental-clinic.html',
+    thumbnail: '/demos/thumbnails/dental-clinic.webp',
     sector: 'Dental Clinics & Facial Aesthetics',
     year: '7-Day Sprint Build',
     summary:
@@ -75,6 +79,7 @@ const PROJECTS: Project[] = [
   {
     client: 'Alder & Wren Fine-Art Wedding Films',
     url: '/demos/wedding-photography.html',
+    thumbnail: '/demos/thumbnails/wedding-photography.webp',
     sector: 'Wedding Photographers & Films',
     year: '7-Day Sprint Build',
     summary:
@@ -86,6 +91,7 @@ const PROJECTS: Project[] = [
   {
     client: 'Halbrook Studio Precision Renovation',
     url: '/demos/home-renovation.html',
+    thumbnail: '/demos/thumbnails/home-renovation.webp',
     sector: 'Modular Kitchens & Full Renovation',
     year: '7-Day Sprint Build',
     summary:
@@ -97,6 +103,7 @@ const PROJECTS: Project[] = [
   {
     client: 'Naomi Reyes Executive Advisory',
     url: '/demos/executive-coaching.html',
+    thumbnail: '/demos/thumbnails/executive-coaching.webp',
     sector: 'Executive Coaching & Advisory',
     year: '7-Day Sprint Build',
     summary:
@@ -197,15 +204,43 @@ export default function Work({ onBook }: { onBook: () => void }) {
             />
             <div className="grid md:grid-cols-2 gap-8 mt-16">
               {PROJECTS.map((p, idx) => (
-                <Reveal key={p.client} delay={idx * 60} className="bg-paper p-8 md:p-10 border border-rule-strong card-lift flex flex-col justify-between rounded-[2px]">
+                <Reveal key={p.client} delay={idx * 60} className="bg-paper p-7 md:p-9 border border-rule-strong card-lift flex flex-col justify-between rounded-[2px] group">
                   <div>
-                    <div className="flex items-baseline justify-between gap-4 flex-wrap pb-4 border-b border-rule">
-                      <span className="label text-signal font-semibold tracking-wide">{p.sector}</span>
-                      <span className="label text-muted text-xs bg-paper-raised px-2.5 py-1 border border-rule rounded-[2px]">{p.year}</span>
+                    {/* Thumbnail Studio Window */}
+                    <div className="relative mb-6 overflow-hidden border border-rule-strong rounded-[2px] bg-paper-raised group-hover:border-signal/50 transition-colors">
+                      <div className="flex items-center justify-between px-3 py-1.5 bg-ink text-paper text-[10px] font-mono border-b border-white/10">
+                        <div className="flex items-center gap-1.5">
+                          <span className="w-2 h-2 rounded-full bg-signal" />
+                          <span className="w-2 h-2 rounded-full bg-paper/20" />
+                          <span className="w-2 h-2 rounded-full bg-paper/20" />
+                        </div>
+                        <span className="text-paper/60 text-[10px]">live specimen · {p.sector}</span>
+                        <span className="text-[10px] text-signal font-semibold">3 THEMES</span>
+                      </div>
+                      <a href={p.url} target="_blank" rel="noreferrer noopener" className="block overflow-hidden relative">
+                        <img
+                          src={p.thumbnail}
+                          alt={`${p.client} — 7-Day Sprint Live Specimen Demo`}
+                          width={1280}
+                          height={720}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full aspect-[16/9] object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/5 transition-colors pointer-events-none" />
+                      </a>
                     </div>
 
-                    <h3 className="font-display text-2xl md:text-3xl text-ink mt-6 font-medium leading-snug">
-                      {p.client}
+                    <div className="flex items-baseline justify-between gap-4 flex-wrap pb-3 border-b border-rule">
+                      <span className="label text-signal font-semibold tracking-wide">{p.sector}</span>
+                      <span className="label text-muted text-xs bg-paper-raised px-2.5 py-0.5 border border-rule rounded-[2px]">{p.year}</span>
+                    </div>
+
+                    <h3 className="font-display text-2xl md:text-3xl text-ink mt-5 font-medium leading-snug">
+                      <a href={p.url} target="_blank" rel="noreferrer noopener" className="hover:text-signal transition-colors inline-flex items-center gap-1.5">
+                        <span>{p.client}</span>
+                        <span className="text-xs text-muted">↗</span>
+                      </a>
                     </h3>
 
                     <p className="text-muted leading-relaxed mt-4 text-[0.9375rem]">

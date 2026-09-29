@@ -32,7 +32,6 @@ const SCOPES: Scope[] = [
     forWho:
       'One offer, one audience, one action. Usually the landing page behind an ad campaign, or a first site for a business that does not need five pages pretending it does.',
     timeline: 'Three working days',
-    price: 'Fixed at ₹28,000 / $450',
     includes: [
       'One page, designed at mobile and desktop widths',
       'Copy written by us from the discovery call, not filled in by you afterwards',
@@ -49,7 +48,6 @@ const SCOPES: Scope[] = [
     forWho:
       'The default. A business that needs to explain what it does, prove it can be trusted, and take enquiries — which is nearly every business that is not selling online.',
     timeline: 'Seven working days',
-    price: 'Fixed at ₹58,000 / $850 · Late means free guarantee',
     includes: [
       'Up to five pages, each designed rather than filled from a template',
       'Full copy deck written and approved before design begins',
@@ -66,7 +64,6 @@ const SCOPES: Scope[] = [
     forWho:
       'Selling physical or digital products directly, with real inventory and real payments. This is the one scope where seven days is not a promise we will make.',
     timeline: 'Two to three weeks, quoted per catalogue',
-    price: 'Starting from ₹95,000 / $1,400',
     includes: [
       'Product catalogue, categories, search, and stock handling',
       'Payments through Razorpay or Stripe, including UPI',
