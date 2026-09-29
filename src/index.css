@@ -638,3 +638,21 @@ body {
     animation: none !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   ANIMATED MARCHING OUTLINE (Hero Primary CTA)
+   ═══════════════════════════════════════════════════════════════════ */
+@keyframes marchingDash {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -56px;
+  }
+}
+
+.animate-marching-dash {
+  animation: marchingDash 1.2s linear infinite;
+  filter: drop-shadow(0 0 6px rgba(199, 7, 75, 0.5));
+}
+

@@ -218,45 +218,71 @@ export default function Home({ onBook }: { onBook: () => void }) {
                 </p>
               </Reveal>
 
-              {/* High-Converting 20-Min Discovery Call CTA */}
+              {/* High-Converting 20-Min Discovery Call CTA with Animated Marching Outline */}
               <Reveal delay={200}>
-                <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
-                  <button
-                    onClick={onBook}
-                    className="btn-primary py-4 px-8 text-base font-medium rounded-full shadow-[0_12px_28px_rgba(199,7,75,0.28)] hover:shadow-[0_16px_36px_rgba(199,7,75,0.36)] hover:scale-[1.02] active:scale-[0.99] transition-all flex items-center justify-center gap-2 group cursor-pointer"
-                  >
-                    <span>Book Your Free 20-Min Call</span>
-                    <span className="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
-                  </button>
-                  <Link
-                    to="/portfolio"
-                    className="px-6 py-3.5 rounded-full bg-paper-raised hover:bg-paper-sunken border border-rule-strong text-ink text-xs sm:text-sm font-mono text-center transition-all flex items-center justify-center gap-2 shadow-xs"
-                  >
-                    <span>Inspect 6 Live Demos</span>
-                    <span aria-hidden="true">↗</span>
-                  </Link>
-                </div>
+                <div className="mt-8 flex flex-col items-start gap-4">
+                  {/* Primary 20-Min Call Action with Marching Dashed Outline */}
+                  <div className="relative inline-flex items-center group">
+                    {/* SVG Animated Marching Outline */}
+                    <svg
+                      aria-hidden="true"
+                      className="absolute -inset-[5px] w-[calc(100%+10px)] h-[calc(100%+10px)] pointer-events-none z-10 overflow-visible"
+                    >
+                      <rect
+                        x="2.5"
+                        y="2.5"
+                        rx="9999"
+                        fill="none"
+                        stroke="#c7074b"
+                        strokeWidth="2.5"
+                        strokeDasharray="9 7"
+                        className="animate-marching-dash"
+                        style={{ width: 'calc(100% - 5px)', height: 'calc(100% - 5px)' }}
+                      />
+                    </svg>
 
-                {/* Direct Founder Trust Indicators */}
-                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-5 text-[0.8125rem] text-muted">
-                  <span className="flex items-center gap-1.5">
-                    <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
-                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
-                    </svg>
-                    <span>Direct call with Deepak &amp; Geetha</span>
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
-                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
-                    </svg>
-                    <span>No sales pitch · Pure diagnosis</span>
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
-                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
-                    </svg>
-                    <span>Late-means-free guarantee</span>
-                  </span>
+                    <button
+                      onClick={onBook}
+                      className="relative z-0 btn-primary py-4 px-8 sm:px-10 text-base sm:text-lg font-medium rounded-full shadow-[0_12px_28px_rgba(199,7,75,0.28)] hover:shadow-[0_18px_40px_rgba(199,7,75,0.42)] hover:scale-[1.02] active:scale-[0.99] transition-all flex items-center justify-center gap-2.5 cursor-pointer"
+                    >
+                      <span>Book Your Free 20-Min Call</span>
+                      <span className="group-hover:translate-x-1.5 transition-transform" aria-hidden="true">→</span>
+                    </button>
+                  </div>
+
+                  {/* Direct Founder Trust Indicators */}
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[0.8125rem] text-muted">
+                    <span className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
+                        <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                      </svg>
+                      <span>Direct call with Deepak &amp; Geetha</span>
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
+                        <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                      </svg>
+                      <span>No sales pitch · Pure diagnosis</span>
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
+                        <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                      </svg>
+                      <span>Late-means-free guarantee</span>
+                    </span>
+                  </div>
+
+                  {/* 6 Demo Site as Link Button at Bottom */}
+                  <div className="pt-2">
+                    <Link
+                      to="/portfolio"
+                      className="group inline-flex items-center gap-2 text-xs sm:text-sm font-mono text-ink-soft hover:text-signal transition-colors py-1.5 px-3.5 rounded-full hover:bg-paper-raised border border-rule/60 hover:border-signal/40 shadow-2xs"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" aria-hidden="true" />
+                      <span>Prefer to see live builds first? Inspect 6 sprint specimens</span>
+                      <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-signal" aria-hidden="true">↗</span>
+                    </Link>
+                  </div>
                 </div>
               </Reveal>
             </div>
@@ -549,6 +575,8 @@ export default function Home({ onBook }: { onBook: () => void }) {
                   <img
                     src="/our-service.webp"
                     alt="Responsive website working across all devices"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover grayscale opacity-25"
                   />
                 </picture>

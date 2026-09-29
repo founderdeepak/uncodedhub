@@ -166,14 +166,9 @@
           gtag('config', 'G-9KBM90K2TM');
           window.gtag = gtag;
         }
-        ['scroll', 'keydown', 'touchstart', 'click'].forEach(function (e) {
+        ['scroll', 'keydown', 'touchstart', 'click', 'mousemove'].forEach(function (e) {
           window.addEventListener(e, loadGtag, { once: true, passive: true });
         });
-        if ('requestIdleCallback' in window) {
-          window.addEventListener('load', function () { requestIdleCallback(loadGtag, { timeout: 6000 }); });
-        } else {
-          window.addEventListener('load', function () { setTimeout(loadGtag, 6000); });
-        }
       })();
     </script>
   </head>
