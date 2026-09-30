@@ -395,20 +395,12 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
         <Shell>
           <Reveal>
             <div className="max-w-4xl">
-              {/* Badge Pill */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-sunken border border-rule-strong mb-6">
-                <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
-                <span className="font-mono text-xs text-ink uppercase tracking-wider font-medium">
-                  KNOWLEDGE BASE · 28 DETAILED ANSWERS
-                </span>
-              </div>
-
-              <p className="label text-signal font-mono text-xs tracking-wider mb-2">
-                TRANSPARENCY &amp; PROTOCOLS
-              </p>
+              <span className="label text-signal font-semibold block mb-3">
+                Knowledge base · 28 detailed answers
+              </span>
 
               <h1 className="font-display text-[2.75rem] sm:text-5xl md:text-6xl text-ink tracking-tight leading-[1.06]">
-                Frequently Asked Questions.
+                Frequently asked questions.
               </h1>
 
               <div className="mt-6 text-base sm:text-lg text-ink-muted leading-relaxed max-w-2xl">
@@ -452,18 +444,18 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
                   )}
                 </div>
 
-                <div className="flex items-center gap-2 text-xs font-mono">
+                <div className="flex items-center gap-2 text-xs font-medium">
                   <button
                     onClick={expandAll}
                     className="px-3 py-2.5 rounded-[12px] bg-paper-sunken border border-rule hover:border-ink transition-colors text-ink"
                   >
-                    EXPAND ALL
+                    Expand all
                   </button>
                   <button
                     onClick={collapseAll}
                     className="px-3 py-2.5 rounded-[12px] bg-paper-sunken border border-rule hover:border-ink transition-colors text-ink-muted hover:text-ink"
                   >
-                    COLLAPSE
+                    Collapse
                   </button>
                 </div>
               </div>
@@ -538,10 +530,10 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
                         aria-expanded={isOpen}
                       >
                         <div className="space-y-1.5 flex-1 pr-2">
-                          <span className="font-mono text-[10px] text-signal font-semibold tracking-wider block">
-                            {item.categoryLabel}
+                          <span className="card-tag">
+                            {item.categoryLabel.charAt(0) + item.categoryLabel.slice(1).toLowerCase()}
                           </span>
-                          <h2 className="font-display text-lg sm:text-xl md:text-[1.375rem] text-ink leading-snug tracking-tight">
+                          <h2 className="font-display text-lg sm:text-xl md:text-[1.375rem] text-ink leading-snug tracking-tight mt-1">
                             {item.question}
                           </h2>
                         </div>
@@ -590,8 +582,8 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
                 {/* Card 1: Still have a question? */}
                 <div className="bg-paper-raised border border-rule-strong rounded-[24px] p-8 sm:p-10 flex flex-col justify-between shadow-sm">
                   <div>
-                    <span className="font-mono text-[10px] text-signal font-semibold tracking-wider block mb-3">
-                      DIRECT INQUIRY
+                    <span className="card-tag mb-3">
+                      Direct inquiry
                     </span>
                     <h3 className="font-display text-2xl sm:text-3xl text-ink leading-tight tracking-tight">
                       Have a specific question not covered here?
@@ -604,7 +596,7 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
                   <div className="mt-8 pt-6 border-t border-rule flex flex-col sm:flex-row gap-3">
                     <a
                       href="mailto:hello@uncodedhub.com"
-                      className="px-4 py-2.5 rounded-[12px] bg-paper-sunken border border-rule hover:border-ink transition-colors text-xs font-mono text-ink text-center"
+                      className="px-4 py-2.5 rounded-[12px] bg-paper-sunken border border-rule hover:border-ink transition-colors text-xs font-medium text-ink text-center"
                     >
                       hello@uncodedhub.com ↗
                     </a>
@@ -612,7 +604,7 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
                       href="https://wa.me/918660819023"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2.5 rounded-[12px] bg-paper-sunken border border-rule hover:border-ink transition-colors text-xs font-mono text-ink text-center"
+                      className="px-4 py-2.5 rounded-[12px] bg-paper-sunken border border-rule hover:border-ink transition-colors text-xs font-medium text-ink text-center"
                     >
                       WhatsApp: +91 86608 19023 ↗
                     </a>
@@ -622,8 +614,8 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
                 {/* Card 2: Ready to build? */}
                 <div className="bg-ink text-paper rounded-[24px] p-8 sm:p-10 flex flex-col justify-between shadow-xl">
                   <div>
-                    <span className="font-mono text-[10px] text-signal-bright font-semibold tracking-wider block mb-3">
-                      RESERVE YOUR COHORT
+                    <span className="label text-signal-bright font-semibold block mb-3">
+                      Reserve your cohort
                     </span>
                     <h3 className="font-display text-2xl sm:text-3xl text-paper leading-tight tracking-tight">
                       Ready to launch your high-converting website in 7 days?

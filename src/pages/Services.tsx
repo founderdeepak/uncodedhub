@@ -130,7 +130,7 @@ const SCOPES: Scope[] = [
   {
     id: '01',
     name: 'Single page',
-    tag: 'CAMPAIGN / FAST LAUNCH',
+    tag: 'Campaign / Fast launch',
     forWho:
       'One offer, one audience, one action. Usually the landing page behind an ad campaign, or a first site for a business that does not need five pages pretending it does.',
     timeline: 'Three working days',
@@ -147,7 +147,7 @@ const SCOPES: Scope[] = [
   {
     id: '02',
     name: 'Business website',
-    tag: 'MOST POPULAR · 7-DAY SPRINT',
+    tag: 'Most popular · 7-day sprint',
     forWho:
       'The default. A business that needs to explain what it does, prove it can be trusted, and take enquiries — which is nearly every business that is not selling online.',
     timeline: 'Seven working days',
@@ -164,7 +164,7 @@ const SCOPES: Scope[] = [
   {
     id: '03',
     name: 'Online store',
-    tag: 'ECOMMERCE ARCHITECTURE',
+    tag: 'Ecommerce architecture',
     forWho:
       'Selling physical or digital products directly, with real inventory and real payments. This is the one scope where seven days is not a promise we will make.',
     timeline: 'Two to three weeks, quoted per catalogue',
@@ -243,15 +243,12 @@ export default function Services({ onBook }: { onBook: () => void }) {
       <section className="pt-10 md:pt-16 pb-16">
         <Shell>
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-raised border border-rule-strong text-ink text-xs font-mono mb-6 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
-              <span className="font-semibold text-signal">3 TURNKEY SCOPES</span>
-              <span className="text-muted">·</span>
-              <span className="text-muted">Zero Bloatware</span>
-            </div>
+            <span className="label text-signal font-semibold block mb-3">
+              3 turnkey scopes · Zero bloatware
+            </span>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-ink max-w-[16ch] leading-[1.08] tracking-tight">
               Three scopes. <br />
-              <em className="italic hero-signal font-normal">No surprises.</em>
+              <em className="italic hero-signal font-medium">No surprises.</em>
             </h1>
           </Reveal>
           <Reveal delay={100}>
@@ -274,20 +271,15 @@ export default function Services({ onBook }: { onBook: () => void }) {
                   {/* Left Column: Scope Info & CTA */}
                   <div className="lg:col-span-5 flex flex-col justify-between h-full">
                     <div>
-                      <div className="flex items-center gap-3 mb-4">
-                        <span className="w-8 h-8 rounded-full bg-signal/10 text-signal font-mono font-bold text-xs flex items-center justify-center">
-                          {s.id}
-                        </span>
-                        <span className="text-[11px] font-mono text-signal bg-signal-wash px-3 py-0.5 rounded-full border border-signal/20 font-semibold">
-                          {s.tag}
-                        </span>
-                      </div>
+                      <span className="card-tag mb-4">
+                        {s.tag}
+                      </span>
 
-                      <h2 className="font-display text-3xl sm:text-4xl text-ink font-medium mt-2">{s.name}</h2>
+                      <h2 className="font-display text-3xl sm:text-4xl text-ink font-medium mt-1">{s.name}</h2>
                       
-                      <div className="mt-4 inline-flex items-center gap-2 text-xs font-mono text-muted bg-paper-sunk/80 px-3 py-1 rounded-full border border-rule">
+                      <div className="mt-4 inline-flex items-center gap-2 text-xs text-muted bg-paper-sunk/80 px-3 py-1 rounded-full border border-rule">
                         <span className="w-1.5 h-1.5 rounded-full bg-signal" />
-                        <span>Timeline: <strong className="text-ink">{s.timeline}</strong></span>
+                        <span>Timeline: <strong className="text-ink font-medium">{s.timeline}</strong></span>
                       </div>
 
                       <p className="text-muted leading-relaxed mt-5 text-sm">{s.forWho}</p>
@@ -309,8 +301,8 @@ export default function Services({ onBook }: { onBook: () => void }) {
 
                   {/* Right Column: Included Deliverables */}
                   <div className="lg:col-span-7 bg-paper p-6 sm:p-8 rounded-[20px] border border-rule">
-                    <span className="label text-signal font-semibold tracking-wider uppercase text-xs block mb-4">
-                      Included in Full
+                    <span className="label text-signal font-semibold text-xs block mb-4">
+                      Included in full
                     </span>
                     <ul className="space-y-3.5">
                       {s.includes.map((item) => (
@@ -336,11 +328,8 @@ export default function Services({ onBook }: { onBook: () => void }) {
           <div className="max-w-4xl mx-auto">
             <Reveal>
               <div className="text-center max-w-2xl mx-auto mb-12">
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-raised border border-rule-strong text-ink text-xs font-mono mb-4 shadow-2xs">
-                  <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
-                  <span className="font-semibold text-signal">EXECUTION PROTOCOL</span>
-                  <span className="text-muted">·</span>
-                  <span className="text-muted">Day 1 to 7</span>
+                <span className="label text-signal font-semibold block mb-2.5">
+                  Execution protocol · Day 1 to 7
                 </span>
                 <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
                   What happens on each day.
@@ -358,10 +347,10 @@ export default function Services({ onBook }: { onBook: () => void }) {
                   <button
                     key={d.day}
                     onClick={() => setActiveDayIdx(idx)}
-                    className={`flex-1 min-w-[72px] sm:min-w-0 py-2.5 px-3 rounded-full text-xs font-mono text-center transition-all cursor-pointer ${
+                    className={`flex-1 min-w-[72px] sm:min-w-0 py-2.5 px-3 rounded-full text-xs text-center transition-all cursor-pointer ${
                       activeDayIdx === idx
                         ? 'bg-signal text-paper font-semibold shadow-sm scale-[1.02]'
-                        : 'text-ink-soft hover:text-ink hover:bg-paper'
+                        : 'text-ink-soft hover:text-ink hover:bg-paper font-medium'
                     }`}
                   >
                     <span>{d.day}</span>
@@ -378,12 +367,10 @@ export default function Services({ onBook }: { onBook: () => void }) {
                   <div className="bg-paper-raised border border-rule-strong rounded-[28px] p-6 sm:p-10 shadow-sm relative overflow-hidden transition-all duration-300">
                     {/* Top Bar with Phase Badge and Owner */}
                     <div className="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-rule">
-                      <div className="flex items-center gap-2.5">
-                        <span className="px-3 py-1 rounded-full bg-signal/10 border border-signal/20 text-signal font-mono text-xs font-semibold">
-                          {day.day} · {day.phase}
-                        </span>
-                      </div>
-                      <div className="text-xs font-mono text-muted flex items-center gap-1.5">
+                      <span className="card-tag">
+                        {day.day} · {day.phase.charAt(0) + day.phase.slice(1).toLowerCase()}
+                      </span>
+                      <div className="text-xs text-muted flex items-center gap-1.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                         <span>Owner: <strong className="text-ink font-medium">{day.owner}</strong></span>
                       </div>
@@ -402,22 +389,22 @@ export default function Services({ onBook }: { onBook: () => void }) {
                     {/* Milestone Deliverable Box */}
                     <div className="mt-8 p-5 rounded-[18px] bg-paper-sunken border border-rule-strong flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                       <div>
-                        <span className="text-[10px] font-mono text-signal uppercase tracking-wider block font-semibold">
-                          PRIMARY DAY DELIVERABLE
+                        <span className="text-[11px] font-semibold text-signal block">
+                          Primary day deliverable
                         </span>
                         <strong className="text-ink text-sm sm:text-base block mt-0.5">
                           {day.deliverable}
                         </strong>
                       </div>
-                      <span className="text-[11px] font-mono px-3 py-1 rounded-full bg-paper border border-rule text-ink font-medium shrink-0">
-                        VERIFIED GATE ✓
+                      <span className="card-tag shrink-0">
+                        Verified gate ✓
                       </span>
                     </div>
 
                     {/* Daily Checkpoints List */}
                     <div className="mt-6 pt-6 border-t border-rule">
-                      <span className="text-xs font-mono text-ink-muted uppercase tracking-wider block mb-3 font-semibold">
-                        Day-Specific Checkpoints:
+                      <span className="text-xs font-semibold text-ink-muted block mb-3">
+                        Day-specific checkpoints:
                       </span>
                       <div className="grid sm:grid-cols-3 gap-3">
                         {day.checkpoints.map((cp) => (
@@ -449,13 +436,12 @@ export default function Services({ onBook }: { onBook: () => void }) {
         <Shell>
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             <Reveal className="lg:col-span-5">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-signal-bright text-xs font-mono mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
-                PRICING INTEGRITY
+              <span className="label text-signal-bright block mb-3">
+                Pricing integrity
               </span>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-paper font-normal leading-tight">
                 One number, agreed in writing,{' '}
-                <span className="text-signal-bright italic font-normal">before anything starts.</span>
+                <em className="text-signal-bright italic font-medium">before anything starts.</em>
               </h2>
               <p className="text-on-ink-muted text-sm md:text-base leading-relaxed mt-6">
                 We do not bill by the hour. You are quoted a single fixed figure for the scope, and
@@ -478,30 +464,30 @@ export default function Services({ onBook }: { onBook: () => void }) {
                   {
                     title: 'How it is set',
                     desc: 'From the scope agreed on the discovery call: the number of pages, custom features, and third-party integrations. Nothing else moves it.',
-                    badge: 'Scope-Based',
+                    badge: 'Scope-based',
                   },
                   {
                     title: 'When it can change',
                     desc: 'Only if you explicitly request something outside the agreed written scope. We quote the addition separately and you decide before we build it.',
-                    badge: 'Zero Surprises',
+                    badge: 'Zero surprises',
                   },
                   {
                     title: 'How it is paid',
                     desc: 'Half to start the sprint, half on the day your website goes live in production. Never before.',
-                    badge: '50 / 50 Milestone',
+                    badge: '50 / 50 milestone',
                   },
                   {
                     title: 'What is never added',
                     desc: 'No setup fees, no per-page charges, no license fees, and zero charges for the revision rounds included in your scope.',
-                    badge: 'Zero Hidden Fees',
+                    badge: 'Zero hidden fees',
                   },
                 ].map((item) => (
                   <div key={item.title} className="p-6 rounded-[24px] bg-white/[0.04] backdrop-blur-md border border-white/10 flex flex-col justify-between">
                     <div>
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="text-xs font-mono font-semibold text-signal-bright">{item.title}</span>
-                        <span className="text-[9px] font-mono text-white/60 bg-white/10 px-2 py-0.5 rounded-full">{item.badge}</span>
-                      </div>
+                      <span className="inline-block text-[11px] font-semibold px-2.5 py-1 rounded-[6px] bg-signal/20 text-signal-bright mb-3">
+                        {item.badge}
+                      </span>
+                      <h3 className="font-display text-xl text-paper font-medium mb-2">{item.title}</h3>
                       <p className="text-on-ink-muted text-xs leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
@@ -517,8 +503,8 @@ export default function Services({ onBook }: { onBook: () => void }) {
         <Shell>
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="label text-signal font-semibold uppercase tracking-wider block mb-2">
-                FILTERING THE WORK
+              <span className="label text-signal font-semibold block mb-2.5">
+                Filtering the work
               </span>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
                 What we will turn down.
@@ -534,12 +520,8 @@ export default function Services({ onBook }: { onBook: () => void }) {
               <Reveal key={item.k} delay={idx * 60}>
                 <div className="bg-paper-raised p-6 sm:p-8 rounded-[24px] border border-rule-strong shadow-xs flex flex-col justify-between h-full">
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="font-display text-xl text-ink font-medium">{item.k}</span>
-                      <span className="text-[10px] font-mono text-muted bg-paper-sunk px-2.5 py-0.5 rounded-full border border-rule">
-                        {item.pill}
-                      </span>
-                    </div>
+                    <span className="card-tag mb-3">{item.pill}</span>
+                    <h3 className="font-display text-xl text-ink font-medium mb-2">{item.k}</h3>
                     <p className="text-muted text-xs sm:text-sm leading-relaxed">{item.v}</p>
                   </div>
                 </div>
@@ -560,7 +542,7 @@ export default function Services({ onBook }: { onBook: () => void }) {
               <Reveal key={item.title} delay={i * 70}>
                 <div className="bg-paper p-8 rounded-[24px] border border-rule-strong shadow-xs flex flex-col justify-between h-full">
                   <div>
-                    <span className="text-[10px] font-mono text-signal uppercase tracking-wider block mb-2">
+                    <span className="card-tag mb-3">
                       {item.badge}
                     </span>
                     <h3 className="font-display text-2xl text-ink font-medium mb-3">{item.title}</h3>

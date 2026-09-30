@@ -250,12 +250,9 @@ export default function BlogView() {
           {post.excerpt && (
             <Reveal delay={60} className="mt-10">
               <div className="p-8 rounded-[24px] bg-paper-sunken border border-rule-strong shadow-xs">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="w-2 h-2 rounded-full bg-signal animate-pulse" />
-                  <span className="text-xs font-mono text-signal font-semibold tracking-wider uppercase">
-                    EXECUTIVE SUMMARY · KEY TAKEAWAYS
-                  </span>
-                </div>
+                <span className="card-tag mb-3">
+                  Executive summary · Key takeaways
+                </span>
                 <p className="text-ink text-sm sm:text-base leading-relaxed">
                   {post.excerpt}
                 </p>
@@ -273,8 +270,8 @@ export default function BlogView() {
                 <div className="flex items-center justify-between pb-4 border-b border-rule">
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-signal" />
-                    <h2 className="text-xs font-mono text-ink font-semibold tracking-wider uppercase">
-                      Table of Contents
+                    <h2 className="text-xs text-ink font-semibold">
+                      Table of contents
                     </h2>
                   </div>
                   <div className="flex items-center gap-3">
@@ -328,12 +325,9 @@ export default function BlogView() {
             <div className="bg-ink text-paper p-8 sm:p-12 rounded-[28px] border border-white/10 relative overflow-hidden shadow-lg">
               <div className="absolute top-0 right-0 w-72 h-72 bg-signal/15 rounded-full blur-[90px] pointer-events-none -z-10" />
 
-              <div className="flex items-center gap-2 mb-3">
-                <span className="w-2 h-2 rounded-full bg-signal-bright" />
-                <span className="text-xs font-mono text-signal-bright tracking-wider uppercase">
-                  UNCODED HUB · 7-DAY FAST-TRACK DELIVERY
-                </span>
-              </div>
+              <span className="label text-signal-bright block mb-2.5">
+                Uncoded Hub · 7-day fast-track delivery
+              </span>
 
               <h3 className="font-display text-2xl sm:text-3xl text-paper font-normal leading-tight mt-2">
                 Need a high-converting website built for your {NICHES[post.niche].toLowerCase()} business?
@@ -405,16 +399,16 @@ export default function BlogView() {
             <Reveal>
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12 pb-6 border-b border-rule">
                 <div>
-                  <span className="text-xs font-mono text-signal uppercase tracking-wider block mb-2">
-                    RELATED BLUEPRINTS · {NICHES[post.niche]}
+                  <span className="label text-signal block mb-2">
+                    Related blueprints · {NICHES[post.niche]}
                   </span>
                   <h2 className="font-display text-3xl sm:text-4xl text-ink font-normal">
-                    Continue Reading in this Industry Series
+                    Continue reading in this industry series
                   </h2>
                 </div>
                 <Link
                   to={`/blog/niche/${post.niche}`}
-                  className="text-xs font-mono text-signal hover:underline inline-flex items-center gap-1.5"
+                  className="text-xs font-medium text-signal hover:underline inline-flex items-center gap-1.5"
                 >
                   View all {nicheTotalCount} {NICHES[post.niche]} guides →
                 </Link>
@@ -444,15 +438,11 @@ export default function BlogView() {
                           <BlogThumbnail niche={related.niche} size="card" className="mb-5" />
                         )}
 
-                        <div className="flex items-center justify-between gap-2 mb-3">
-                          <span className="text-[11px] font-mono text-signal uppercase tracking-wider font-medium">
+                        <div className="mb-3">
+                          <span className="card-tag">
                             {NICHES[related.niche]}
+                            {related.slug === pillarSlug ? ' · Master pillar' : ''}
                           </span>
-                          {related.slug === pillarSlug && (
-                            <span className="text-[10px] font-mono bg-signal/10 text-signal border border-signal/20 px-2 py-0.5 rounded-full uppercase font-semibold">
-                              ★ Master Pillar
-                            </span>
-                          )}
                         </div>
 
                         <h3 className="font-display text-xl sm:text-2xl text-ink font-medium group-hover:text-signal transition-colors line-clamp-2 leading-snug">
@@ -517,8 +507,8 @@ export default function BlogView() {
 
               <div className="md:col-span-6 bg-white/[0.05] p-6 sm:p-8 rounded-[24px] border border-white/10 flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-mono text-signal-bright uppercase tracking-wider block mb-2">
-                    7-DAY SPRINT RESERVATION
+                  <span className="label text-signal-bright block mb-2">
+                    7-day sprint reservation
                   </span>
                   <h4 className="font-display text-2xl text-paper font-medium mb-3">
                     Ready to book your discovery call?

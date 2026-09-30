@@ -16,23 +16,23 @@ function isNicheKey(value: string | undefined): value is NicheKey {
 
 const PRINCIPLES = [
   {
-    tag: 'PRINCIPLE 01',
-    title: 'Zero Recycled Filler',
+    tag: 'Principle 1',
+    title: 'Zero recycled filler',
     desc: 'No generic 500-word SEO fluff. Every blueprint is extracted from actual client builds, codebase profiling, and genuine conversion tests.',
   },
   {
-    tag: 'PRINCIPLE 02',
-    title: 'Metric & Code-Backed',
+    tag: 'Principle 2',
+    title: 'Metric & code-backed',
     desc: 'Lighthouse 100/100, Core Web Vitals benchmarks, schema markup, and real architectural patterns instead of vague agency generalities.',
   },
   {
-    tag: 'PRINCIPLE 03',
-    title: 'Commercial Specialization',
+    tag: 'Principle 3',
+    title: 'Commercial specialization',
     desc: 'Deep industry playbooks for Architects, Doctors, Home Renovators, Real Estate Advisors, and Wedding Filmmakers.',
   },
   {
-    tag: 'PRINCIPLE 04',
-    title: 'Direct Founder Authorship',
+    tag: 'Principle 4',
+    title: 'Direct founder authorship',
     desc: 'Written by Deepak (Lead Engineer) and Geetha (Conversion Strategist). Zero outsourced ghostwriting or generic AI auto-blogs.',
   },
 ];
@@ -103,18 +103,10 @@ export default function Blogs() {
 
         <Shell>
           <Reveal>
-            {/* Top Announcement Pill */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-paper-raised border border-rule-strong shadow-xs mb-8">
-              <span className="w-2 h-2 rounded-full bg-signal animate-pulse" />
-              <span className="text-[11px] font-mono uppercase tracking-wider text-muted font-medium">
-                140+ INDUSTRY BLUEPRINTS & TACTICAL GUIDES · UPDATED WEEKLY
-              </span>
-            </div>
-
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-end">
               <div className="lg:col-span-8">
-                <p className="label text-signal mb-4">
-                  {isNicheView ? `${NICHES[activeNiche]} · Knowledge Hub` : 'Research & Blueprints'}
+                <p className="label text-signal mb-3">
+                  {isNicheView ? `${NICHES[activeNiche]} · Knowledge hub` : 'Research & blueprints · 140+ guides'}
                 </p>
                 <h1 className="font-display text-4xl sm:text-6xl md:text-7xl text-ink font-normal tracking-tight leading-[1.05]">
                   {isNicheView
@@ -237,11 +229,10 @@ export default function Blogs() {
               <div className="p-8 sm:p-14 border border-signal/40 bg-paper-raised rounded-[32px] relative overflow-hidden shadow-xs">
                 <div className="absolute top-0 right-0 w-80 h-80 bg-signal/10 rounded-full blur-[100px] pointer-events-none -z-10" />
 
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="px-3.5 py-1 rounded-full bg-signal/10 text-signal border border-signal/30 text-xs font-mono uppercase tracking-wider font-semibold">
-                    ★ MASTER INDUSTRY BLUEPRINT
+                <div className="mb-6">
+                  <span className="card-tag">
+                    Master industry blueprint · 7-day sprint foundation
                   </span>
-                  <span className="text-xs font-mono text-muted">7-DAY SPRINT FOUNDATION</span>
                 </div>
 
                 <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal max-w-3xl leading-tight">
@@ -258,7 +249,7 @@ export default function Blogs() {
                 </p>
 
                 <div className="mt-10 pt-8 border-t border-rule flex items-center justify-between flex-wrap gap-4">
-                  <p className="text-xs font-mono text-muted">
+                  <p className="text-xs text-muted">
                     {`${new Date(pillarPost.date).toLocaleDateString('en-IN', {
                       day: 'numeric',
                       month: 'short',
@@ -280,10 +271,10 @@ export default function Blogs() {
           {/* Subheading for Cluster Guides in Niche View */}
           {isNicheView && (
             <div className="mb-10 pb-4 border-b border-rule flex items-center justify-between">
-              <h3 className="text-xs font-mono text-ink tracking-wider uppercase font-semibold">
-                Specialized Tactical Guides ({clusterPosts.length} Articles)
+              <h3 className="text-xs text-ink font-semibold">
+                Specialized tactical guides ({clusterPosts.length} articles)
               </h3>
-              <span className="text-xs font-mono text-muted">Silo Knowledge Base</span>
+              <span className="text-xs text-muted">Silo knowledge base</span>
             </div>
           )}
 
@@ -314,15 +305,11 @@ export default function Blogs() {
                     )}
 
                     {/* Metadata Header */}
-                    <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="text-[11px] font-mono text-signal uppercase tracking-wider font-medium">
+                    <div className="mb-3">
+                      <span className="card-tag">
                         {NICHES[post.niche]}
+                        {NICHE_PILLAR_SLUGS[post.niche] === post.slug ? ' · Pillar' : ''}
                       </span>
-                      {NICHE_PILLAR_SLUGS[post.niche] === post.slug && (
-                        <span className="text-[10px] font-mono bg-signal/10 text-signal border border-signal/20 px-2 py-0.5 rounded-full uppercase font-semibold">
-                          Pillar
-                        </span>
-                      )}
                     </div>
 
                     {/* Title */}
@@ -364,11 +351,11 @@ export default function Blogs() {
         <Shell>
           <Reveal>
             <div className="max-w-3xl mb-16">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-[11px] font-mono text-signal-bright uppercase tracking-wider mb-6">
-                <span>● EDITORIAL RIGOR</span>
-              </div>
+              <span className="label text-signal-bright block mb-3">
+                Editorial rigor
+              </span>
               <h2 className="font-display text-3xl sm:text-5xl md:text-6xl text-paper font-normal leading-[1.1] tracking-tight">
-                The 4 Principles Behind Our Blueprints
+                The 4 principles behind our blueprints
               </h2>
               <p className="text-on-ink-muted text-sm sm:text-base leading-relaxed mt-6 max-w-xl">
                 Why we publish our entire technical playbook openly. No gatekept "contact for pricing" secrets, no superficial tips.
@@ -381,7 +368,7 @@ export default function Blogs() {
               <Reveal key={p.tag} delay={i * 80}>
                 <div className="bg-white/[0.04] p-8 rounded-[24px] border border-white/10 flex flex-col justify-between h-full hover:border-white/20 transition-all duration-300">
                   <div>
-                    <span className="text-xs font-mono text-signal-bright font-medium block mb-4">
+                    <span className="inline-block text-[11px] font-semibold px-2.5 py-1 rounded-[6px] bg-signal/20 text-signal-bright mb-4">
                       {p.tag}
                     </span>
                     <h3 className="font-display text-2xl text-paper font-medium mb-3 leading-snug">
@@ -411,26 +398,26 @@ export default function Blogs() {
                   </div>
                   <h3 className="font-display text-3xl sm:text-4xl text-paper font-normal leading-tight">
                     Turn these blueprints into your website.<br />
-                    <span className="text-signal-bright italic">Delivered in seven days.</span>
+                    <em className="text-signal-bright italic font-medium">Delivered in seven days.</em>
                   </h3>
                   <p className="text-on-ink-muted text-sm leading-relaxed mt-4 max-w-md">
-                    Written by Deepak & Geetha. Every article on this hub describes what we build every week for growing businesses.
+                    Written by Deepak &amp; Geetha. Every article on this hub describes what we build every week for growing businesses.
                   </p>
                 </div>
 
-                <div className="mt-8 flex items-center gap-4 text-xs font-mono text-on-ink-muted">
-                  <span>● Deepak & Geetha</span>
+                <div className="mt-8 flex items-center gap-4 text-xs text-on-ink-muted">
+                  <span>● Deepak &amp; Geetha</span>
                   <span>·</span>
                   <span>140+ Guides</span>
                   <span>·</span>
-                  <span>Direct Delivery</span>
+                  <span>Direct delivery</span>
                 </div>
               </div>
 
               <div className="md:col-span-6 bg-white/[0.05] p-6 sm:p-8 rounded-[24px] border border-white/10 flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-mono text-signal-bright uppercase tracking-wider block mb-2">
-                    7-DAY SPRINT RESERVATION
+                  <span className="label text-signal-bright block mb-2">
+                    7-day sprint reservation
                   </span>
                   <h4 className="font-display text-2xl text-paper font-medium mb-3">
                     Ready to build your bespoke site?

@@ -116,14 +116,13 @@ export function Shell({
    Numbered, rule-topped, mono eyebrow above a serif title. This is the
    recurring editorial device that gives the site its rhythm. */
 export function SectionHead({
-  index,
   eyebrow,
   title,
   intro,
   inverted = false,
   align = 'left',
 }: {
-  index: string;
+  index?: string;
   eyebrow: string;
   title: React.ReactNode;
   intro?: React.ReactNode;
@@ -132,25 +131,22 @@ export function SectionHead({
 }) {
   const muted = inverted ? 'text-on-ink-muted' : 'text-muted';
   const rule = inverted ? 'border-rule-on-ink' : 'border-rule';
-  /* The signal vermillion clears AA on paper but only reaches ~3.4:1 on
-     ink, so dark sections use the lighter tint of the same hue. */
   const accent = inverted ? 'text-signal-bright' : 'text-signal';
   const centered = align === 'center';
 
   return (
     <div className={centered ? 'text-center' : ''}>
-      <div className={`flex items-baseline gap-4 border-t ${rule} pt-4 ${centered ? 'justify-center' : ''}`}>
-        <span className={`label ${muted}`}>{index}</span>
+      <div className={`flex items-baseline gap-3 border-t ${rule} pt-4 ${centered ? 'justify-center' : ''}`}>
         <span className={`label ${accent}`}>{eyebrow}</span>
       </div>
       <h2
-        className={`font-display text-display mt-8 ${centered ? 'mx-auto max-w-4xl' : 'max-w-3xl'}`}
+        className={`font-display text-display mt-5 ${centered ? 'mx-auto max-w-4xl' : 'max-w-3xl'}`}
       >
         {title}
       </h2>
       {intro && (
         <p
-          className={`text-lead ${muted} mt-6 ${centered ? 'mx-auto max-w-2xl' : 'max-w-2xl'}`}
+          className={`text-lead ${muted} mt-5 ${centered ? 'mx-auto max-w-2xl' : 'max-w-2xl'}`}
         >
           {intro}
         </p>

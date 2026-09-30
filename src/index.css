@@ -21,65 +21,44 @@
    Google ships by default for a site that is English-only throughout.
    ═══════════════════════════════════════════════════════════════════ */
 @font-face {
-  font-family: "Instrument Sans";
+  font-family: "Fraunces";
   font-style: normal;
   font-weight: 400 500;
   font-display: swap;
-  src: url("/fonts/instrument-sans-400.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
-    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215;
+  src: url("/fonts/fraunces.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Instrument Sans";
+  font-family: "Fraunces";
   font-style: italic;
   font-weight: 400 500;
   font-display: optional;
-  src: url("/fonts/instrument-sans-400-italic.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
-    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215;
+  src: url("/fonts/fraunces-italic.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Instrument Serif";
+  font-family: "Inter";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400 700;
   font-display: swap;
-  src: url("/fonts/instrument-serif-400.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
-    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215;
-}
-@font-face {
-  font-family: "Instrument Serif";
-  font-style: italic;
-  font-weight: 400;
-  font-display: optional;
-  src: url("/fonts/instrument-serif-400-italic.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
-    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215;
-}
-@font-face {
-  font-family: "JetBrains Mono";
-  font-style: normal;
-  font-weight: 400 500;
-  font-display: optional;
-  src: url("/fonts/jetbrains-mono-400.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
-    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215;
+  src: url("/fonts/inter.woff2") format("woff2");
 }
 
 /* ═══════════════════════════════════════════════════════════════════
    UNCODED HUB — DESIGN SYSTEM
    Editorial studio. Light ground, warm ink, one signal colour.
-   Hierarchy is carried by type scale and whitespace, never by
-   decoration. No gradients on text. No glass. No blur orbs.
+   Two typefaces total: Fraunces for headlines and data values,
+   Inter for body, UI, kickers, and labels.
    ═══════════════════════════════════════════════════════════════════ */
 
 @theme {
   /* ── Type families ───────────────────────────────────────────────
-     Display serif + neo-grotesque + mono. A deliberate three-voice
-     system: serif states, sans explains, mono labels and measures. */
-  --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
-  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+     Two-voice system per Geetha's type spec:
+     Fraunces (Regular / Medium / Italic) for headlines and data values,
+     Inter (Regular / Medium / Semibold) for everything else.
+     --font-mono is intentionally mapped to Inter so no monospace
+     decoration appears anywhere in the UI. */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Inter", -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, sans-serif;
 
   /* ── Ground & ink ────────────────────────────────────────────────
      Warm paper, warm near-black. Nothing here is pure #FFF or #000 —
@@ -136,9 +115,9 @@
   --text-lead: clamp(1.0625rem, 1.3vw, 1.1875rem);
   --text-lead--line-height: 1.6;
 
-  --text-label: 0.6875rem;
-  --text-label--line-height: 1;
-  --text-label--letter-spacing: 0.14em;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.25;
+  --text-label--letter-spacing: 0.01em;
 
   /* ── Motion ──────────────────────────────────────────────────── */
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
@@ -170,11 +149,14 @@ body {
   color: var(--color-paper);
 }
 
-/* Display type is set at a single weight by design. The serif carries
-   emphasis through size and scale, not through weight. */
+/* Display type uses Fraunces Regular (400) for main headlines and
+   Medium (500) for card headings, data values, and italic emphasis. */
 .font-display {
-  font-weight: 400;
   font-synthesis-weight: none;
+}
+.font-display em {
+  font-style: italic;
+  font-weight: 500;
 }
 
 /* ── Focus. Visible, always, on a light ground and a dark one. ──── */
@@ -192,11 +174,27 @@ body {
    PRIMITIVES
    ═══════════════════════════════════════════════════════════════════ */
 
-/* ── Micro-label. Mono, caps, tracked. Used for section numbering,
-      eyebrows, and measures — the studio "voice of record". ─────── */
+/* ── Kicker / Label. Inter Semibold, natural case, minimal tracking. */
 .label {
-  @apply font-mono text-label uppercase;
-  letter-spacing: 0.14em;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+/* ── Single unified card tag (replaces number badge + pill combo). */
+.card-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-signal);
+  background: var(--color-signal-wash);
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.375rem;
 }
 
 /* ── Buttons ─────────────────────────────────────────────────────
@@ -290,23 +288,11 @@ body {
 }
 
 /* ── Hero signal ─────────────────────────────────────────────────
-   A one-shot underline that draws itself in beneath the key phrase
-   of each page's opening thesis, timed to land just after the
-   heading's own fade-up finishes. Used once per page, on the phrase
-   that states the argument — not on every italic word. Pure CSS:
-   a pseudo-element scaled from 0, no JS, no per-frame cost. */
+   Italic alone carries the emphasis on key phrases — no underline,
+   so it never reads as a fake link. */
 .hero-signal {
-  position: relative;
-  display: inline-block;
-}
-.hero-signal::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0.06em;
-  height: 2px;
-  background: var(--color-signal);
+  font-style: italic;
+  font-weight: 500;
 }
 
 /* ── Hero mark ring. A two-minute rotation — slow enough to register

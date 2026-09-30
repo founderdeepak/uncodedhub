@@ -22,30 +22,30 @@ const PROTOCOL = [
   {
     step: '01',
     timing: 'Right now',
-    title: 'Instant Calendar Confirmation',
+    title: 'Instant calendar confirmation',
     desc: 'You select a slot and immediately receive a Google Meet video invitation with automated timezone conversion. Zero software to install.',
-    tag: 'STEP 1 · INSTANT',
+    tag: 'Step 1 · Instant',
   },
   {
     step: '02',
     timing: 'On the call',
-    title: '20-Minute Live Architecture Teardown',
+    title: '20-minute live architecture teardown',
     desc: 'We examine your business model, customer journey, and existing site or competitor benchmark live on screen. Pure engineering insight, zero sales slides.',
-    tag: 'STEP 2 · 20 MINUTES',
+    tag: 'Step 2 · 20 minutes',
   },
   {
     step: '03',
     timing: 'Within 24 hours',
-    title: 'Fixed Scope & Delivery Contract',
+    title: 'Fixed scope & delivery contract',
     desc: 'A written one-page specification: every page itemized, performance targets locked, fixed all-inclusive investment, and an exact launch date.',
-    tag: 'STEP 3 · 24 HOURS',
+    tag: 'Step 3 · 24 hours',
   },
   {
     step: '04',
     timing: 'If you go ahead',
-    title: 'The 7-Day Sprint Commences',
+    title: 'The 7-day sprint commences',
     desc: 'Development starts the next morning. If our proposal is not a fit, we part as friends and you will never receive an automated drip email sequence.',
-    tag: 'STEP 4 · NO SPAM',
+    tag: 'Step 4 · No spam',
   },
 ];
 
@@ -76,17 +76,9 @@ export default function Contact() {
 
         <Shell>
           <Reveal>
-            {/* Top Announcement Pill */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-paper-raised border border-rule-strong shadow-xs mb-8">
-              <span className="w-2 h-2 rounded-full bg-signal animate-pulse" />
-              <span className="text-[11px] font-mono uppercase tracking-wider text-muted font-medium">
-                DIRECT FOUNDER DISCOVERY · SCHEDULED IN YOUR LOCAL TIMEZONE
-              </span>
-            </div>
-
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-end">
               <div className="lg:col-span-8">
-                <p className="label text-signal mb-4">Direct Access</p>
+                <p className="label text-signal mb-3">Direct founder discovery · Local timezone</p>
                 <h1 className="font-display text-4xl sm:text-6xl md:text-7xl text-ink font-normal tracking-tight leading-[1.05]">
                   Twenty minutes, and you will know either way.
                 </h1>
@@ -94,7 +86,7 @@ export default function Contact() {
 
               <div className="lg:col-span-4">
                 <p className="text-muted text-sm sm:text-base leading-relaxed">
-                  No pitch decks, no junior account managers, no five-stage sales process. One call directly with <strong className="text-ink font-semibold">Deepak & Geetha</strong> — the two founders who build your website.
+                  No pitch decks, no junior account managers, no five-stage sales process. One call directly with <strong className="text-ink font-semibold">Deepak &amp; Geetha</strong> — the two founders who build your website.
                 </p>
               </div>
             </div>
@@ -109,8 +101,8 @@ export default function Contact() {
             {/* Host Toggle Tabs */}
             <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-rule">
               <div>
-                <span className="text-[11px] font-mono text-signal uppercase tracking-wider block mb-1">
-                  CHOOSE YOUR HOST
+                <span className="label text-signal block mb-1">
+                  Choose your host
                 </span>
                 <p className="text-ink font-medium text-sm">
                   Both founders attend and deliver every project together. Pick who you'd like to lead discovery:
@@ -167,13 +159,10 @@ export default function Contact() {
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
               <div>
-                <span className="text-[11px] font-mono text-signal uppercase tracking-wider block mb-2">
-                  DIRECT CONTACT · ZERO MIDDLEMEN
-                </span>
                 <SectionHead index="01" eyebrow="Alternative channels" title="If a call is not how you work." />
               </div>
               <p className="text-muted text-xs sm:text-sm max-w-md">
-                Reach Deepak & Geetha directly through WhatsApp or Email. We answer messages ourselves without ticketing systems.
+                Reach Deepak &amp; Geetha directly through WhatsApp or Email. We answer messages ourselves without ticketing systems.
               </p>
             </div>
           </Reveal>
@@ -183,7 +172,7 @@ export default function Contact() {
               {
                 k: 'WhatsApp',
                 v: '+91 86608 19023',
-                pill: '< 1 HOUR RESPONSE',
+                pill: 'Under 1 hour response',
                 note: 'Fastest for urgent questions or quick voice notes. Answered directly by Deepak & Geetha during active hours.',
                 href: 'https://wa.me/918660819023',
                 action: 'Open WhatsApp Chat →',
@@ -191,15 +180,15 @@ export default function Contact() {
               {
                 k: 'Email',
                 v: 'hello@uncodedhub.com',
-                pill: '< 24 HOURS RESPONSE',
+                pill: 'Under 24 hours response',
                 note: 'Best for detailed project briefs, RFP specifications, design Figma links, or existing website audits.',
                 href: 'mailto:hello@uncodedhub.com',
                 action: 'Send an Email →',
               },
               {
-                k: 'Operating Hours',
+                k: 'Operating hours',
                 v: '08:00 – 20:00 IST',
-                pill: '7 DAYS A WEEK',
+                pill: '7 days a week',
                 note: 'Bengaluru, India standard time. Messages sent overnight are reviewed first thing at 08:00 IST.',
                 action: 'Timezone: UTC +5:30',
               },
@@ -207,24 +196,21 @@ export default function Contact() {
               <Reveal key={c.k} delay={i * 80}>
                 <div className="bg-paper-raised p-8 rounded-[24px] border border-rule-strong shadow-xs h-full flex flex-col justify-between hover:border-ink/30 transition-all duration-300">
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="label text-signal font-mono">{c.k}</span>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-paper border border-rule-strong text-muted">
-                        {c.pill}
-                      </span>
-                    </div>
+                    <span className="card-tag mb-4">
+                      {c.k} · {c.pill}
+                    </span>
 
                     {c.href ? (
                       <a
                         href={c.href}
                         target={c.href.startsWith('http') ? '_blank' : undefined}
                         rel="noreferrer noopener"
-                        className="block font-display text-2xl sm:text-3xl text-ink font-medium mt-2 hover:text-signal transition-colors break-words"
+                        className="block font-display text-2xl sm:text-3xl text-ink font-medium mt-1 hover:text-signal transition-colors break-words"
                       >
                         {c.v}
                       </a>
                     ) : (
-                      <p className="font-display text-2xl sm:text-3xl text-ink font-medium mt-2 break-words">
+                      <p className="font-display text-2xl sm:text-3xl text-ink font-medium mt-1 break-words">
                         {c.v}
                       </p>
                     )}
@@ -234,7 +220,7 @@ export default function Contact() {
                     </p>
                   </div>
 
-                  <div className="mt-8 pt-4 border-t border-rule text-xs font-mono text-signal">
+                  <div className="mt-8 pt-4 border-t border-rule text-xs font-medium text-signal">
                     {c.href ? (
                       <a
                         href={c.href}
@@ -262,11 +248,11 @@ export default function Contact() {
         <Shell>
           <Reveal>
             <div className="max-w-3xl mb-16">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-[11px] font-mono text-signal-bright uppercase tracking-wider mb-6">
-                <span>● ZERO SALES MYSTERY</span>
-              </div>
+              <span className="label text-signal-bright block mb-3">
+                Zero sales mystery
+              </span>
               <h2 className="font-display text-3xl sm:text-5xl md:text-6xl text-paper font-normal leading-[1.1] tracking-tight">
-                The 4-Step Handover Protocol
+                The 4-step handover protocol
               </h2>
               <p className="text-on-ink-muted text-sm sm:text-base leading-relaxed mt-6 max-w-xl">
                 What actually occurs after you schedule your slot. No hidden discovery phases, no high-pressure close, no endless pitch decks.
@@ -279,16 +265,9 @@ export default function Contact() {
               <Reveal key={p.step} delay={i * 90}>
                 <div className="bg-white/[0.04] p-8 rounded-[24px] border border-white/10 flex flex-col justify-between h-full hover:border-white/20 transition-all duration-300">
                   <div>
-                    <div className="flex items-center justify-between mb-6">
-                      <span className="text-xs font-mono text-signal-bright font-medium">
-                        {p.tag}
-                      </span>
-                      <span className="font-display text-2xl text-white/40">{p.step}</span>
-                    </div>
-
-                    <p className="text-[11px] font-mono text-on-ink-muted uppercase tracking-wider mb-2">
-                      {p.timing}
-                    </p>
+                    <span className="inline-block text-[11px] font-semibold px-2.5 py-1 rounded-[6px] bg-signal/20 text-signal-bright mb-4">
+                      {p.tag}
+                    </span>
                     <h3 className="font-display text-xl text-paper font-medium mb-3 leading-snug">
                       {p.title}
                     </h3>
@@ -309,9 +288,6 @@ export default function Contact() {
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
             <Reveal className="lg:col-span-7">
               <div className="mb-10">
-                <span className="text-[11px] font-mono text-signal uppercase tracking-wider block mb-2">
-                  ASYNC PROJECT BRIEF
-                </span>
                 <SectionHead index="02" eyebrow="Send a brief" title="Or write it down instead." />
                 <p className="text-muted text-xs sm:text-sm mt-3">
                   Prefer not to speak on a call yet? Share your business requirements in written form. We review every brief personally and reply within one business day.
@@ -325,9 +301,6 @@ export default function Contact() {
 
             <Reveal delay={120} className="lg:col-span-5">
               <div className="mb-10">
-                <span className="text-[11px] font-mono text-signal uppercase tracking-wider block mb-2">
-                  OUR PLEDGE
-                </span>
                 <SectionHead index="03" eyebrow="Our guarantee" title="Direct founder accountability." />
               </div>
 
@@ -398,8 +371,8 @@ export default function Contact() {
 
               <div className="md:col-span-6 bg-white/[0.05] p-6 sm:p-8 rounded-[24px] border border-white/10 flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-mono text-signal-bright uppercase tracking-wider block mb-2">
-                    DISCOVERY CALL · 20 MINUTES
+                  <span className="label text-signal-bright block mb-2">
+                    Discovery call · 20 minutes
                   </span>
                   <h4 className="font-display text-2xl text-paper font-medium mb-3">
                     Ready to discuss your site?

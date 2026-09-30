@@ -94,8 +94,8 @@ export function FloatingLeadMagnetBanner() {
           className="flex-1 text-left min-w-0 pr-1 cursor-pointer"
         >
           <div className="flex items-center gap-2">
-            <span className="font-mono text-[10px] text-signal-bright font-semibold uppercase tracking-wider">
-              FREE AUDIT
+            <span className="text-[11px] text-signal-bright font-semibold">
+              Free audit
             </span>
             <span className="text-white/40 text-xs hidden sm:inline">·</span>
             <span className="text-[11px] text-on-ink-muted hidden sm:inline">Takes 60 seconds</span>

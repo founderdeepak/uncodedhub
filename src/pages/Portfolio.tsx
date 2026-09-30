@@ -128,7 +128,7 @@ const SPECIMEN = [
   {
     n: '02',
     label: 'Typography',
-    body: 'Three typefaces, one accent colour, and a scale that runs from 11px to 120px. Hierarchy here is made from deliberate size and whitespace. If a site needs gradients to tell you what matters, the layout is broken.',
+    body: 'Two typefaces — Fraunces for headlines and data values, Inter for everything else — and one accent colour. Hierarchy here is made from deliberate size and whitespace.',
   },
   {
     n: '03',
@@ -184,15 +184,12 @@ export default function Work({ onBook }: { onBook: () => void }) {
       <section className="pt-10 md:pt-16 pb-14">
         <Shell>
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-raised border border-rule-strong text-ink text-xs font-mono mb-6 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
-              <span className="font-semibold text-signal">6 INTERACTIVE DEMOS</span>
-              <span className="text-muted">·</span>
-              <span className="text-muted">3 Themes Each</span>
-            </div>
+            <span className="label text-signal font-semibold block mb-3">
+              6 interactive demos · 3 themes each
+            </span>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-ink max-w-[18ch] leading-[1.08] tracking-tight">
               Live builds you can test, inspect, and verify{' '}
-              <em className="italic hero-signal font-normal">before you commit.</em>
+              <em className="italic hero-signal font-medium">before you commit.</em>
             </h1>
           </Reveal>
           <Reveal delay={100}>
@@ -262,9 +259,8 @@ export default function Work({ onBook }: { onBook: () => void }) {
                     </a>
                   </div>
 
-                  <div className="flex items-baseline justify-between gap-4 flex-wrap pb-3 border-b border-rule">
-                    <span className="label text-signal font-semibold tracking-wide text-xs">{p.sector}</span>
-                    <span className="label text-muted text-xs bg-paper-sunk px-2.5 py-0.5 border border-rule rounded-full">{p.year}</span>
+                  <div className="mb-3">
+                    <span className="card-tag">{p.sector}</span>
                   </div>
 
                   <h3 className="font-display text-2xl sm:text-3xl text-ink mt-5 font-medium leading-snug">
@@ -321,13 +317,12 @@ export default function Work({ onBook }: { onBook: () => void }) {
         <Shell>
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-signal-bright text-xs font-mono mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
-                ZERO FABRICATED PROOF
+              <span className="label text-signal-bright block mb-3">
+                Zero fabricated proof
               </span>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-paper font-normal leading-tight">
                 The engineering standards{' '}
-                <span className="text-signal-bright italic font-normal">you can verify.</span>
+                <em className="text-signal-bright italic font-medium">you can verify.</em>
               </h2>
               <p className="text-on-ink-muted text-sm md:text-base leading-relaxed mt-5">
                 Every site we build is held to stated performance and positioning standards.
@@ -341,10 +336,9 @@ export default function Work({ onBook }: { onBook: () => void }) {
               <Reveal key={s.n} delay={idx * 70}>
                 <div className="p-6 sm:p-8 rounded-[24px] bg-white/[0.04] backdrop-blur-md border border-white/10 flex flex-col justify-between h-full">
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-signal-bright font-mono font-bold text-sm">{s.n}</span>
-                      <span className="text-[10px] font-mono text-white/60 uppercase tracking-wider">{s.label}</span>
-                    </div>
+                    <span className="inline-block text-[11px] font-semibold px-2.5 py-1 rounded-[6px] bg-signal/20 text-signal-bright mb-4">
+                      {s.label}
+                    </span>
                     <p className="text-on-ink-muted text-xs sm:text-sm leading-relaxed">{s.body}</p>
                   </div>
                 </div>
@@ -360,7 +354,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
           <Reveal>
             <SectionHead
               index="02"
-              eyebrow="Zero Risk"
+              eyebrow="Zero risk"
               title="You see the work before you are committed to it."
               intro="Hiring a studio with no public portfolio is a real risk, and pretending otherwise would be insulting. So the project is structured so that you are never far from an exit."
             />
@@ -371,13 +365,8 @@ export default function Work({ onBook }: { onBook: () => void }) {
               <Reveal key={s.step} delay={i * 70}>
                 <div className="bg-paper-raised p-8 rounded-[24px] border border-rule-strong shadow-xs flex flex-col justify-between h-full">
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="w-8 h-8 rounded-full bg-signal/10 text-signal font-mono font-bold text-xs flex items-center justify-center">
-                        {String(i + 1).padStart(2, '0')}
-                      </span>
-                      <span className="label text-signal font-semibold text-xs">{s.step}</span>
-                    </div>
-                    <p className="text-muted text-xs sm:text-sm leading-relaxed mt-2">{s.body}</p>
+                    <span className="card-tag mb-4">{s.step}</span>
+                    <p className="text-muted text-xs sm:text-sm leading-relaxed">{s.body}</p>
                   </div>
                 </div>
               </Reveal>
@@ -399,7 +388,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
                   </div>
                   <h3 className="font-display text-3xl sm:text-4xl text-paper font-normal leading-tight">
                     Ask us the hard questions on the call.<br />
-                    <span className="text-signal-bright italic">Direct conversation with founders.</span>
+                    <em className="text-signal-bright italic font-medium">Direct conversation with founders.</em>
                   </h3>
                   <p className="text-on-ink-muted text-sm leading-relaxed mt-4 max-w-md">
                     "Who else have you built this for?" is a fair question and we will answer it straight.
@@ -407,8 +396,8 @@ export default function Work({ onBook }: { onBook: () => void }) {
                   </p>
                 </div>
 
-                <div className="mt-8 flex items-center gap-4 text-xs font-mono text-on-ink-muted">
-                  <span>● Deepak & Geetha</span>
+                <div className="mt-8 flex items-center gap-4 text-xs text-on-ink-muted">
+                  <span>● Deepak &amp; Geetha</span>
                   <span>·</span>
                   <span>Direct delivery</span>
                 </div>
@@ -416,8 +405,8 @@ export default function Work({ onBook }: { onBook: () => void }) {
 
               <div className="md:col-span-6 bg-white/[0.05] p-6 sm:p-8 rounded-[24px] border border-white/10 flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-mono text-signal-bright uppercase tracking-wider block mb-2">
-                    FREE 20-MIN DISCOVERY
+                  <span className="label text-signal-bright block mb-2">
+                    Free 20-min discovery
                   </span>
                   <h4 className="font-display text-2xl text-paper font-medium mb-3">
                     Ready to see your business in 7 days?

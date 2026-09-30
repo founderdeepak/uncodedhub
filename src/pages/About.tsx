@@ -56,15 +56,12 @@ export default function About({ onBook }: { onBook: () => void }) {
       <section className="pt-10 md:pt-16 pb-14">
         <Shell>
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-raised border border-rule-strong text-ink text-xs font-mono mb-6 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
-              <span className="font-semibold text-signal">THE STUDIO</span>
-              <span className="text-muted">·</span>
-              <span className="text-muted">Deepak & Geetha</span>
-            </div>
+            <span className="label text-signal font-semibold block mb-3">
+              The studio · Deepak &amp; Geetha
+            </span>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-ink max-w-[17ch] leading-[1.08] tracking-tight">
               Two people, one week at a time, in{' '}
-              <em className="italic hero-signal font-normal">Bengaluru.</em>
+              <em className="italic hero-signal font-medium">Bengaluru.</em>
             </h1>
           </Reveal>
           <Reveal delay={100}>
@@ -126,8 +123,8 @@ export default function About({ onBook }: { onBook: () => void }) {
 
             {/* Right: Narrative */}
             <Reveal delay={100} className="lg:col-span-7">
-              <span className="label text-signal font-semibold uppercase tracking-wider block mb-2">
-                01 · THE ORIGIN
+              <span className="label text-signal font-semibold block mb-2.5">
+                The origin
               </span>
               <h2 className="font-display text-3xl sm:text-4xl text-ink font-normal tracking-tight mb-6">
                 The same failure, over and over.
@@ -163,13 +160,12 @@ export default function About({ onBook }: { onBook: () => void }) {
         <Shell>
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-signal-bright text-xs font-mono mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
-                SENIOR CRAFT
+              <span className="label text-signal-bright block mb-3">
+                Senior craft
               </span>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-paper font-normal leading-tight">
                 Design and engineering,{' '}
-                <span className="text-signal-bright italic font-normal">split cleanly.</span>
+                <em className="text-signal-bright italic font-medium">split cleanly.</em>
               </h2>
             </div>
           </Reveal>
@@ -179,14 +175,9 @@ export default function About({ onBook }: { onBook: () => void }) {
             <Reveal>
               <div className="p-8 sm:p-10 rounded-[28px] bg-white/[0.04] backdrop-blur-md border border-white/10 flex flex-col justify-between h-full">
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-signal-bright font-mono text-xs font-semibold uppercase tracking-wider">
-                      Co-founder · Engineering
-                    </span>
-                    <span className="text-[10px] font-mono text-white/60 bg-white/10 px-2.5 py-0.5 rounded-full">
-                      Build & Architecture
-                    </span>
-                  </div>
+                  <span className="inline-block text-[11px] font-semibold px-2.5 py-1 rounded-[6px] bg-signal/20 text-signal-bright mb-4">
+                    Co-founder · Engineering
+                  </span>
                   <h3 className="font-display text-3xl text-paper font-medium mb-4">Deepak</h3>
                   <div className="space-y-4 text-on-ink-muted text-xs sm:text-sm leading-relaxed">
                     <p>
@@ -201,7 +192,7 @@ export default function About({ onBook }: { onBook: () => void }) {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-white/10">
-                  <span className="text-[11px] font-mono text-white/60 block mb-1">Away from the desk:</span>
+                  <span className="text-[11px] font-semibold text-white/60 block mb-1">Away from the desk:</span>
                   <p className="text-xs text-paper/80 leading-relaxed">
                     Climbed Velliangiri alone, slept on the hill, and reached the summit at dawn. Holds that the most useful decisions arrive in silence rather than in spreadsheets.
                   </p>
@@ -213,14 +204,9 @@ export default function About({ onBook }: { onBook: () => void }) {
             <Reveal delay={100}>
               <div className="p-8 sm:p-10 rounded-[28px] bg-white/[0.04] backdrop-blur-md border border-white/10 flex flex-col justify-between h-full">
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-signal-bright font-mono text-xs font-semibold uppercase tracking-wider">
-                      Co-founder · Design
-                    </span>
-                    <span className="text-[10px] font-mono text-white/60 bg-white/10 px-2.5 py-0.5 rounded-full">
-                      Visuals & Copy
-                    </span>
-                  </div>
+                  <span className="inline-block text-[11px] font-semibold px-2.5 py-1 rounded-[6px] bg-signal/20 text-signal-bright mb-4">
+                    Co-founder · Design &amp; copy
+                  </span>
                   <h3 className="font-display text-3xl text-paper font-medium mb-4">Geetha</h3>
                   <div className="space-y-4 text-on-ink-muted text-xs sm:text-sm leading-relaxed">
                     <p>
@@ -234,7 +220,7 @@ export default function About({ onBook }: { onBook: () => void }) {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-white/10">
-                  <span className="text-[11px] font-mono text-white/60 block mb-1">Away from the desk:</span>
+                  <span className="text-[11px] font-semibold text-white/60 block mb-1">Away from the desk:</span>
                   <p className="text-xs text-paper/80 leading-relaxed">
                     The calmest person in any project channel, which turns out to be a remarkably useful professional trait when a live launch is 48 hours away.
                   </p>
@@ -250,8 +236,8 @@ export default function About({ onBook }: { onBook: () => void }) {
         <Shell>
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
-              <span className="label text-signal font-semibold uppercase tracking-wider block mb-2">
-                03 · CONTRACTUAL TRUTH
+              <span className="label text-signal font-semibold block mb-2.5">
+                Contractual truth
               </span>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
                 Four commitments we hold to.
@@ -267,14 +253,9 @@ export default function About({ onBook }: { onBook: () => void }) {
               <Reveal key={c.n} delay={i * 70}>
                 <div className="bg-paper-raised p-8 rounded-[24px] border border-rule-strong shadow-xs flex flex-col justify-between h-full">
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="w-8 h-8 rounded-full bg-signal/10 text-signal font-mono font-bold text-xs flex items-center justify-center">
-                        {c.n}
-                      </span>
-                      <span className="text-[10px] font-mono text-signal bg-signal-wash px-2.5 py-0.5 rounded-full border border-signal/20">
-                        {c.badge}
-                      </span>
-                    </div>
+                    <span className="card-tag mb-4">
+                      {c.badge}
+                    </span>
                     <h3 className="font-display text-2xl text-ink font-medium mb-3">{c.h}</h3>
                     <p className="text-muted text-xs sm:text-sm leading-relaxed">{c.p}</p>
                   </div>
@@ -336,8 +317,8 @@ export default function About({ onBook }: { onBook: () => void }) {
 
               <div className="md:col-span-6 bg-white/[0.05] p-6 sm:p-8 rounded-[24px] border border-white/10 flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-mono text-signal-bright uppercase tracking-wider block mb-2">
-                    CO-FOUNDER DISCOVERY
+                  <span className="label text-signal-bright block mb-2">
+                    Co-founder discovery
                   </span>
                   <h4 className="font-display text-2xl text-paper font-medium mb-3">
                     Let's see if we're the right fit.

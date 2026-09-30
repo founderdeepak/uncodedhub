@@ -11,8 +11,8 @@ import { LogoMark } from '../components/Logo';
 const PRIVACY_SECTIONS = [
   {
     index: '01',
-    title: 'Information We Collect',
-    tag: 'DATA COLLECTION',
+    title: 'Information we collect',
+    tag: 'Data collection',
     points: [
       'Discovery Call Bookings: When you schedule a 20-minute call with Deepak or Geetha, we collect your name, email address, phone number, and answers to preliminary business qualification questions.',
       'Project Briefs: When you send a written brief via our contact form, we collect your contact information, company name, industry niche, and project requirements.',
@@ -22,8 +22,8 @@ const PRIVACY_SECTIONS = [
   },
   {
     index: '02',
-    title: 'How We Use Your Information',
-    tag: 'PURPOSE & USAGE',
+    title: 'How we use your information',
+    tag: 'Purpose & usage',
     points: [
       'To schedule, conduct, and follow up on your 20-minute discovery consultation.',
       'To draft your customized one-page architectural scope and fixed-price sprint proposal.',
@@ -33,8 +33,8 @@ const PRIVACY_SECTIONS = [
   },
   {
     index: '03',
-    title: 'Zero Data Selling or Renting',
-    tag: 'STRICT COMMITMENT',
+    title: 'Zero data selling or renting',
+    tag: 'Strict commitment',
     points: [
       'Uncoded Hub will never sell, rent, license, or monetize your contact information, business data, or website metrics to third-party ad brokers or lead aggregators.',
       'Your information is accessed exclusively by Deepak & Geetha for the direct purpose of executing your web project.',
@@ -42,8 +42,8 @@ const PRIVACY_SECTIONS = [
   },
   {
     index: '04',
-    title: 'Data Storage & Infrastructure Security',
-    tag: 'SECURITY & ENCRYPTION',
+    title: 'Data storage & infrastructure security',
+    tag: 'Security & encryption',
     points: [
       'Lead submissions and discovery records are encrypted in transit via TLS 1.3 and stored in secure Supabase PostgreSQL databases with row-level security (RLS) policies.',
       'We maintain strict least-privilege administrative access, requiring multi-factor authentication for all cloud environments.',
@@ -52,8 +52,8 @@ const PRIVACY_SECTIONS = [
   },
   {
     index: '05',
-    title: 'Cookies & Analytics',
-    tag: 'MINIMAL TRACKING',
+    title: 'Cookies & analytics',
+    tag: 'Minimal tracking',
     points: [
       'We use minimal, privacy-conscious session cookies to manage interface preferences (e.g. theme switchers on demo sites).',
       'We do not deploy intrusive third-party cross-site behavioral retargeting trackers or invasive ad pixels.',
@@ -61,8 +61,8 @@ const PRIVACY_SECTIONS = [
   },
   {
     index: '06',
-    title: 'Your Rights & Contacting Us',
-    tag: 'YOUR CONTROL',
+    title: 'Your rights & contacting us',
+    tag: 'Your control',
     points: [
       'You hold full rights to inspect, update, export, or request the immediate permanent deletion of all personal data held by Uncoded Hub.',
       'To exercise any privacy right or ask a question regarding your data, email Deepak & Geetha directly at hello@uncodedhub.com.',
@@ -89,17 +89,9 @@ export default function Privacy() {
 
         <Shell>
           <Reveal>
-            {/* Top Announcement Pill */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-paper-raised border border-rule-strong shadow-xs mb-8">
-              <span className="w-2 h-2 rounded-full bg-signal animate-pulse" />
-              <span className="text-[11px] font-mono uppercase tracking-wider text-muted font-medium">
-                DATA PRIVACY · LAST UPDATED SEPTEMBER 2026
-              </span>
-            </div>
-
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-end">
               <div className="lg:col-span-8">
-                <p className="label text-signal mb-4">Privacy & Trust</p>
+                <p className="label text-signal mb-4">Privacy & trust · Last updated September 2026</p>
                 <h1 className="font-display text-4xl sm:text-6xl md:text-7xl text-ink font-normal tracking-tight leading-[1.05]">
                   Privacy Policy & Data Stewardship
                 </h1>
@@ -122,18 +114,13 @@ export default function Privacy() {
             {PRIVACY_SECTIONS.map((sec, i) => (
               <Reveal key={sec.index} delay={i * 40}>
                 <div className="bg-paper-raised border border-rule-strong rounded-[28px] p-8 sm:p-12 shadow-xs hover:border-ink/30 transition-all duration-300">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-rule">
-                    <div className="flex items-center gap-3">
-                      <span className="w-8 h-8 rounded-full bg-ink text-paper text-xs font-mono flex items-center justify-center font-medium">
-                        {sec.index}
-                      </span>
-                      <h2 className="font-display text-2xl sm:text-3xl text-ink font-medium">
-                        {sec.title}
-                      </h2>
-                    </div>
-                    <span className="text-[10px] font-mono px-3 py-1 rounded-full bg-paper border border-rule-strong text-signal uppercase tracking-wider self-start sm:self-auto font-semibold">
+                  <div className="pb-6 mb-8 border-b border-rule">
+                    <span className="card-tag mb-3">
                       {sec.tag}
                     </span>
+                    <h2 className="font-display text-2xl sm:text-3xl text-ink font-medium">
+                      {sec.title}
+                    </h2>
                   </div>
 
                   <ul className="space-y-4 text-muted text-sm sm:text-base leading-relaxed">
@@ -182,8 +169,8 @@ export default function Privacy() {
 
               <div className="md:col-span-6 bg-white/[0.05] p-6 sm:p-8 rounded-[24px] border border-white/10 flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-mono text-signal-bright uppercase tracking-wider block mb-2">
-                    DISCOVERY CALL · 20 MINUTES
+                  <span className="text-[11px] font-semibold text-signal-bright block mb-2">
+                    Discovery call · 20 minutes
                   </span>
                   <h4 className="font-display text-2xl text-paper font-medium mb-3">
                     Have questions about privacy?

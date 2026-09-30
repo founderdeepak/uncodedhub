@@ -11,8 +11,8 @@ import { LogoMark } from '../components/Logo';
 const TERMS_SECTIONS = [
   {
     index: '01',
-    title: 'Sprint Commitment & Scope Boundaries',
-    tag: 'AGREEMENT · SCOPE',
+    title: 'Sprint commitment & scope boundaries',
+    tag: 'Agreement & scope',
     points: [
       'Every project begins with a 20-minute discovery call directly with Deepak & Geetha, followed by a written one-page scope document.',
       'The scope sheet itemizes every single page, interactive component, form integration, and performance benchmark included in your build.',
@@ -22,8 +22,8 @@ const TERMS_SECTIONS = [
   },
   {
     index: '02',
-    title: 'The 50% "Late Means Free" Delivery Guarantee',
-    tag: 'GUARANTEE · ACCOUNTABILITY',
+    title: 'The 50% "Late means free" delivery guarantee',
+    tag: 'Guarantee & accountability',
     points: [
       'We commit to delivering your fully functional staging website within seven working days from the scheduled kickoff date.',
       'If Uncoded Hub misses the agreed launch milestone due to our own delay, we immediately apply a 50% discount to your final invoice.',
@@ -32,8 +32,8 @@ const TERMS_SECTIONS = [
   },
   {
     index: '03',
-    title: '100% Code & Intellectual Property Ownership',
-    tag: 'OWNERSHIP · ZERO LOCK-IN',
+    title: '100% code & intellectual property ownership',
+    tag: 'Ownership & zero lock-in',
     points: [
       'Upon settlement of the final invoice, full and unencumbered ownership of all custom code, stylesheets, typography licenses (where client-supplied), and bespoke design assets transfers entirely to you.',
       'We do not lock your business into proprietary agency platforms, closed website builders, or mandatory hosting retainers.',
@@ -42,8 +42,8 @@ const TERMS_SECTIONS = [
   },
   {
     index: '04',
-    title: 'Payment Schedule & Retainers',
-    tag: 'TRANSPARENCY · BILLING',
+    title: 'Payment schedule & retainers',
+    tag: 'Transparency & billing',
     points: [
       'A 50% reservation deposit is required to lock your project cohort on Deepak & Geetha’s calendar. Because we only take two sprints per month, this reservation is non-refundable once sprint preparations begin.',
       'The remaining 50% balance is payable upon completion of staging review and prior to public DNS switchover or source repository transfer.',
@@ -52,8 +52,8 @@ const TERMS_SECTIONS = [
   },
   {
     index: '05',
-    title: 'Revisions & 30-Day Post-Launch Warranty',
-    tag: 'QUALITY · POST-LAUNCH',
+    title: 'Revisions & 30-day post-launch warranty',
+    tag: 'Quality & post-launch',
     points: [
       'Every build includes two structured revision cycles during the sprint to adjust visual treatments, typography, wording, and mobile layout nuances.',
       'Every launch is backed by a 30-day warranty starting on DNS switchover. If any technical defect, broken link, or browser rendering inconsistency surfaces during this period, we fix it promptly at zero additional charge.',
@@ -62,8 +62,8 @@ const TERMS_SECTIONS = [
   },
   {
     index: '06',
-    title: 'Client Responsibilities & Assets',
-    tag: 'COOPERATION · PREREQUISITES',
+    title: 'Client responsibilities & assets',
+    tag: 'Cooperation & prerequisites',
     points: [
       'To maintain our 7-day velocity, clients agree to provide necessary assets (brand logos, photography, business credentials, and domain registrar access) prior to kickoff.',
       'Clients designate a single primary decision-maker to provide consolidated feedback within 24 hours of each milestone review.',
@@ -71,8 +71,8 @@ const TERMS_SECTIONS = [
   },
   {
     index: '07',
-    title: 'Governing Law & Jurisdiction',
-    tag: 'LEGAL JURISDICTION',
+    title: 'Governing law & jurisdiction',
+    tag: 'Legal jurisdiction',
     points: [
       'These terms and any disputes arising out of our work are governed by the laws of India, with exclusive jurisdiction in the courts of Bengaluru, Karnataka.',
       'Any notices or formal inquiries regarding these terms may be directed to hello@uncodedhub.com.',
@@ -98,17 +98,9 @@ export default function Terms() {
 
         <Shell>
           <Reveal>
-            {/* Top Announcement Pill */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-paper-raised border border-rule-strong shadow-xs mb-8">
-              <span className="w-2 h-2 rounded-full bg-signal animate-pulse" />
-              <span className="text-[11px] font-mono uppercase tracking-wider text-muted font-medium">
-                LEGAL AGREEMENT · LAST UPDATED SEPTEMBER 2026
-              </span>
-            </div>
-
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-end">
               <div className="lg:col-span-8">
-                <p className="label text-signal mb-4">Contract Terms</p>
+                <p className="label text-signal mb-4">Legal agreement · Last updated September 2026</p>
                 <h1 className="font-display text-4xl sm:text-6xl md:text-7xl text-ink font-normal tracking-tight leading-[1.05]">
                   Terms of Service & Sprint Contract
                 </h1>
@@ -131,18 +123,13 @@ export default function Terms() {
             {TERMS_SECTIONS.map((sec, i) => (
               <Reveal key={sec.index} delay={i * 40}>
                 <div className="bg-paper-raised border border-rule-strong rounded-[28px] p-8 sm:p-12 shadow-xs hover:border-ink/30 transition-all duration-300">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-rule">
-                    <div className="flex items-center gap-3">
-                      <span className="w-8 h-8 rounded-full bg-ink text-paper text-xs font-mono flex items-center justify-center font-medium">
-                        {sec.index}
-                      </span>
-                      <h2 className="font-display text-2xl sm:text-3xl text-ink font-medium">
-                        {sec.title}
-                      </h2>
-                    </div>
-                    <span className="text-[10px] font-mono px-3 py-1 rounded-full bg-paper border border-rule-strong text-signal uppercase tracking-wider self-start sm:self-auto font-semibold">
+                  <div className="pb-6 mb-8 border-b border-rule">
+                    <span className="card-tag mb-3">
                       {sec.tag}
                     </span>
+                    <h2 className="font-display text-2xl sm:text-3xl text-ink font-medium">
+                      {sec.title}
+                    </h2>
                   </div>
 
                   <ul className="space-y-4 text-muted text-sm sm:text-base leading-relaxed">
@@ -191,8 +178,8 @@ export default function Terms() {
 
               <div className="md:col-span-6 bg-white/[0.05] p-6 sm:p-8 rounded-[24px] border border-white/10 flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-mono text-signal-bright uppercase tracking-wider block mb-2">
-                    20-MINUTE DISCOVERY
+                  <span className="text-[11px] font-semibold text-signal-bright block mb-2">
+                    20-minute discovery
                   </span>
                   <h4 className="font-display text-2xl text-paper font-medium mb-3">
                     Ready to define your build?

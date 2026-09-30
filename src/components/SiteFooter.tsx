@@ -85,10 +85,9 @@ export default function SiteFooter() {
         {/* ── Short Lead Magnet Strip (The 10-Point Audit) ─────────── */}
         <div className="mb-16 p-6 sm:p-8 rounded-[24px] bg-white/[0.04] border border-white/12 grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
           <div className="lg:col-span-5">
-            <div className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-signal-bright mb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-signal-bright" aria-hidden="true" />
-              <span>Free 10-Point Diagnostic</span>
-            </div>
+            <span className="label text-signal-bright block mb-2">
+              Free 10-point diagnostic
+            </span>
             <h2 className="font-display text-2xl sm:text-3xl text-on-ink font-normal leading-tight">
               The Pre-Sold Prospects Audit
             </h2>

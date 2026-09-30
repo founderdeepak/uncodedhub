@@ -46,12 +46,9 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="alternate" type="application/rss+xml" title="Uncoded Hub — Field Notes RSS Feed" href="https://uncodedhub.com/rss.xml" />
 
-    <!-- Typography is the identity here, so the two above-the-fold faces
-         (the hero serif and the body sans) are preloaded from the same
-         origin — see src/index.css for why these are self-hosted rather
-         than pulled from Google Fonts. -->
-    <link rel="preload" href="/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Self-hosted Fraunces (display serif) and Inter (body/UI sans) -->
+    <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Preload hero image for fast LCP on both mobile and desktop viewports -->
     <link rel="preload" href="/hero-section-mobile.webp" as="image" type="image/webp" media="(max-width: 767px)" fetchpriority="high">

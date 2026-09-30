@@ -9,28 +9,28 @@ import { LogoMark } from '../components/Logo';
 
 const DESTINATIONS = [
   {
-    tag: 'STARTING POINT',
+    tag: 'Starting point',
     title: 'Homepage',
     desc: 'The complete architectural overview: our 7-day sprint model, verified Lighthouse scores, and client teardowns.',
     to: '/',
     cta: 'Go to Homepage →',
   },
   {
-    tag: 'LIVE SPECIMENS',
+    tag: 'Live specimens',
     title: 'Portfolio & Demos',
     desc: 'Test 6 fully interactive specimen websites with live theme switchers, audit scores, and booking funnels.',
     to: '/portfolio',
     cta: 'Test 6 Live Demos →',
   },
   {
-    tag: 'TURNKEY SCOPES',
+    tag: 'Turnkey scopes',
     title: 'Services & Delivery',
     desc: 'Three fixed-scope packages: single page, business website, and online store. On time or 50% discount.',
     to: '/services',
     cta: 'Review 3 Scopes →',
   },
   {
-    tag: 'DIRECT ACCESS',
+    tag: 'Direct access',
     title: 'Contact Deepak & Geetha',
     desc: 'Book a free twenty-minute discovery call directly with the two founders who will build your website.',
     to: '/contact',
@@ -57,17 +57,9 @@ export default function NotFound() {
 
         <Shell>
           <Reveal>
-            {/* Top Announcement Pill */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-paper-raised border border-rule-strong shadow-xs mb-8">
-              <span className="w-2 h-2 rounded-full bg-signal animate-pulse" />
-              <span className="text-[11px] font-mono uppercase tracking-wider text-muted font-medium">
-                ERROR 404 · PAGE NOT LOCATED
-              </span>
-            </div>
-
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-end">
               <div className="lg:col-span-8">
-                <p className="label text-signal mb-4">Broken or Moved Link</p>
+                <p className="label text-signal mb-4">Error 404 · Broken or moved link</p>
                 <h1 className="font-display text-4xl sm:text-6xl md:text-7xl text-ink font-normal tracking-tight leading-[1.05]">
                   This page has moved or never existed.
                 </h1>
@@ -89,9 +81,9 @@ export default function NotFound() {
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
               <div>
-                <span className="text-[11px] font-mono text-signal uppercase tracking-wider block mb-2">
-                  NAVIGATION DIRECTORY
-                </span>
+                <p className="label text-signal mb-2">
+                  Navigation directory
+                </p>
                 <h2 className="font-display text-3xl sm:text-4xl text-ink font-medium">
                   Where would you like to go next?
                 </h2>
@@ -110,12 +102,9 @@ export default function NotFound() {
                   className="group bg-paper-raised p-8 sm:p-10 rounded-[28px] border border-rule-strong shadow-xs hover:border-ink/40 hover:shadow-md transition-all duration-300 flex flex-col justify-between h-full"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[10px] font-mono text-signal uppercase tracking-wider font-semibold">
-                        {d.tag}
-                      </span>
-                      <span className="text-xs font-mono text-muted">0{i + 1}</span>
-                    </div>
+                    <span className="card-tag mb-4">
+                      {d.tag}
+                    </span>
 
                     <h3 className="font-display text-2xl sm:text-3xl text-ink font-medium group-hover:text-signal transition-colors mb-3">
                       {d.title}
@@ -126,7 +115,7 @@ export default function NotFound() {
                     </p>
                   </div>
 
-                  <div className="mt-8 pt-4 border-t border-rule text-xs font-mono text-signal group-hover:translate-x-1 transition-transform inline-flex items-center gap-1.5 font-sans font-medium">
+                  <div className="mt-8 pt-4 border-t border-rule text-xs text-signal group-hover:translate-x-1 transition-transform inline-flex items-center gap-1.5 font-sans font-semibold">
                     <span>{d.cta}</span>
                   </div>
                 </Link>
@@ -167,8 +156,8 @@ export default function NotFound() {
 
               <div className="md:col-span-6 bg-white/[0.05] p-6 sm:p-8 rounded-[24px] border border-white/10 flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-mono text-signal-bright uppercase tracking-wider block mb-2">
-                    DISCOVERY CALL · 20 MINUTES
+                  <span className="text-[11px] font-semibold text-signal-bright block mb-2">
+                    Discovery call · 20 minutes
                   </span>
                   <h4 className="font-display text-2xl text-paper font-medium mb-3">
                     Ready to schedule a call?

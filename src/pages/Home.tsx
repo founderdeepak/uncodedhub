@@ -6,9 +6,6 @@ import { FaqAccordion } from '../components/ui/faq-accordion';
 import { LeadMagnetForm } from '../components/ui/LeadMagnetForm';
 import { FloatingLeadMagnetBanner } from '../components/ui/FloatingLeadMagnetBanner';
 import {
-  IconCompass,
-  IconBrackets,
-  IconLaunch,
   IconTimer,
   IconGauge,
   IconLayers,
@@ -34,41 +31,41 @@ import { LogoMark } from '../components/Logo';
    ═══════════════════════════════════════════════════════════════════ */
 
 const TRUST_BAR = [
-  { label: 'Mobile Performance', value: '99/100 Lighthouse', sub: 'Zero bloatware' },
-  { label: 'Contractual Delivery', value: '7 Working Days', sub: 'Late means free' },
-  { label: 'Total Ownership', value: '100% Client Owned', sub: 'Zero license lock-in' },
-  { label: 'Senior Founders', value: 'Deepak & Geetha', sub: 'No junior hand-off' },
+  { label: 'Mobile performance', value: '99/100', sub: 'Zero bloatware' },
+  { label: 'Contractual delivery', value: '7 days', sub: 'Late means free' },
+  { label: 'Total ownership', value: '100% yours', sub: 'Zero license lock-in' },
+  { label: 'Senior founders', value: 'Deepak & Geetha', sub: 'No junior hand-off' },
 ];
 
 const AGENCY_TRAPS = [
   {
     id: 'junior-dev',
-    tag: 'THE BAIT & SWITCH',
-    title: 'The Junior Dev Hand-off',
+    tag: 'The bait & switch',
+    title: 'The junior dev hand-off',
     description:
       'Agency founders pitch you with charisma, polished case studies, and corporate charisma. The moment the contract is signed, the senior team vanishes. Your project is assigned to a 22-year-old intern who is juggling eight client accounts simultaneously.',
     contrast: 'With Uncoded Hub: Geetha designs, Deepak builds. The people on the discovery call build your website.',
-    badge: 'INTERN ASSIGNED',
+    badge: 'Intern assigned',
     badgeTone: 'signal',
   },
   {
     id: 'timeline-creep',
-    tag: 'THE SCHEDULE DELAY',
-    title: 'The 4-Month Timeline Creep',
+    tag: 'The schedule delay',
+    title: 'The 4-month timeline creep',
     description:
       'A standard 5-page site stretches into endless review cycles, missing launch deadlines, and vague excuses about "internal bandwidth." You spend months chasing updates instead of closing high-value clients.',
     contrast: 'With Uncoded Hub: Exactly 7 working days. If we miss our agreed deadline, the entire build is 100% free.',
-    badge: 'DELAYED 12 WEEKS',
+    badge: 'Delayed 12 weeks',
     badgeTone: 'warning',
   },
   {
     id: 'plugin-patchwork',
-    tag: 'THE MAINTENANCE TRAP',
-    title: 'The WordPress Plugin Patchwork',
+    tag: 'The maintenance trap',
+    title: 'The WordPress plugin patchwork',
     description:
       'Agencies assemble 35+ third-party WordPress plugins that fight each other, slow mobile load times to 6+ seconds, and break every time an update runs. Then they lock you into a ₹25,000/month "maintenance contract" just to fix bugs.',
     contrast: 'With Uncoded Hub: Handcrafted React & Vite architecture. 0.8s load times. Zero plugins, zero security patching.',
-    badge: '38 ACTIVE PLUGINS',
+    badge: '38 active plugins',
     badgeTone: 'error',
   },
 ];
@@ -76,21 +73,21 @@ const AGENCY_TRAPS = [
 const THREE_PILLARS = [
   {
     num: '01',
-    title: 'Turnkey Copywriting & Positioning',
+    title: 'Turnkey copywriting & positioning',
     p: 'We write your entire site from a single 20-minute discovery call. No questionnaires, no blank screens, and no generic marketing fluff. We articulate your exact competitive edge.',
-    pill: 'Zero Blank Screens',
+    pill: 'Zero blank screens',
   },
   {
     num: '02',
-    title: 'Zero-Bloat Speed Architecture',
+    title: 'Zero-bloat speed architecture',
     p: 'Engineered with clean React, Vite, and modern semantic CSS. Scores 99+ on Google Lighthouse and loads in under 1 second on mobile 4G anywhere in the world.',
-    pill: 'Sub-1.0s Mobile Load',
+    pill: 'Sub-1.0s mobile load',
   },
   {
     num: '03',
-    title: '7-Day Contractual Guarantee',
+    title: '7-day contractual guarantee',
     p: 'A fixed timeline, a fixed price agreed in writing, and a contractual promise: if we are late by even one day, the build is 100% free and you keep everything.',
-    pill: 'Late Means Free',
+    pill: 'Late means free',
   },
 ];
 
@@ -212,11 +209,11 @@ export default function Home({ onBook }: { onBook: () => void }) {
             {/* Left Column: Heading, Subhead, Primary Booking CTA */}
             <div className="lg:col-span-6 flex flex-col justify-center">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-raised border border-rule-strong text-ink text-xs font-mono mb-6 shadow-sm">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-raised border border-rule-strong text-ink text-xs font-medium mb-6 shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
-                  <span className="font-semibold text-signal">7-DAY SPRINT BUILDS</span>
+                  <span className="font-semibold text-signal">7-day sprint builds</span>
                   <span className="text-muted">·</span>
-                  <span className="text-muted">Zero Bloatware</span>
+                  <span className="text-muted">Zero bloatware</span>
                 </div>
               </div>
 
@@ -336,8 +333,8 @@ export default function Home({ onBook }: { onBook: () => void }) {
                       {/* Floating Cloaked-Style "Conversion Standard" Gauge Meter */}
                       <div className="absolute top-4 right-4 bg-ink/95 border border-white/15 p-3 rounded-[16px] text-paper shadow-xl max-w-[200px]">
                         <div className="flex items-center justify-between pb-1 mb-2 border-b border-white/10">
-                          <span className="text-[10px] font-mono text-white/60 uppercase tracking-wider">Studio Standard</span>
-                          <span className="text-[10px] font-mono font-semibold text-emerald-400">99 / 100</span>
+                          <span className="text-[10px] font-semibold text-white/70">Studio standard</span>
+                          <span className="text-[10px] font-semibold text-emerald-400">99 / 100</span>
                         </div>
                         {/* Gauge Arc */}
                         <div className="relative w-full h-12 flex items-center justify-center">
@@ -408,8 +405,8 @@ export default function Home({ onBook }: { onBook: () => void }) {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14">
             {TRUST_BAR.map((t) => (
               <div key={t.label} className="bg-paper-raised p-4 rounded-[16px] border border-rule-strong shadow-xs flex flex-col justify-between">
-                <span className="label text-[10px] text-signal font-semibold tracking-wider uppercase">{t.label}</span>
-                <div className="font-display text-xl text-ink font-medium mt-1">{t.value}</div>
+                <span className="text-[11px] font-semibold text-muted">{t.label}</span>
+                <div className="font-display text-xl text-ink font-medium mt-1.5">{t.value}</div>
                 <div className="text-xs text-muted mt-0.5">{t.sub}</div>
               </div>
             ))}
@@ -431,12 +428,11 @@ export default function Home({ onBook }: { onBook: () => void }) {
         <Shell>
           <Reveal>
             <div className="text-center max-w-3xl mx-auto">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-signal-bright text-xs font-mono mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
-                THE AGENCY REALITY
+              <span className="label text-signal-bright mb-3 block">
+                The agency reality
               </span>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-paper font-normal leading-tight tracking-tight">
-                Traditional web agencies put your business <span className="text-signal-bright italic font-normal">at risk.</span>
+                Traditional web agencies put your business <em className="text-signal-bright italic font-medium">at risk.</em>
               </h2>
               <p className="text-on-ink-muted text-base md:text-lg mt-5 leading-relaxed">
                 You do great work. But traditional agencies make getting a website painful, expensive,
@@ -460,21 +456,18 @@ export default function Home({ onBook }: { onBook: () => void }) {
                     }`}
                   >
                     <div>
-                      {/* Card Header & Badge */}
-                      <div className="flex items-center justify-between gap-3 mb-4">
-                        <span className="text-[10px] font-mono text-signal-bright uppercase tracking-wider">
-                          {trap.tag}
-                        </span>
+                      {/* Unified single tag */}
+                      <div className="mb-4">
                         <span
-                          className={`text-[9px] font-mono font-semibold px-2 py-0.5 rounded-full border ${
+                          className={`inline-block text-[11px] font-semibold px-2.5 py-1 rounded-[6px] ${
                             trap.badgeTone === 'signal'
-                              ? 'bg-signal/20 text-signal-bright border-signal/40'
+                              ? 'bg-signal/20 text-signal-bright'
                               : trap.badgeTone === 'warning'
-                              ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
-                              : 'bg-red-500/20 text-red-300 border-red-500/40'
+                              ? 'bg-amber-500/20 text-amber-300'
+                              : 'bg-red-500/20 text-red-300'
                           }`}
                         >
-                          {trap.badge}
+                          {trap.tag} · {trap.badge}
                         </span>
                       </div>
 
@@ -525,11 +518,11 @@ export default function Home({ onBook }: { onBook: () => void }) {
         <Shell>
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="label text-signal font-semibold tracking-wider uppercase mb-2 block">
-                02 · THE UNCODED HUB SYSTEM
+              <span className="label text-signal font-semibold mb-2.5 block">
+                The Uncoded Hub System
               </span>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
-                Uncoded Hub gives you back your <em className="italic hero-signal font-normal">competitive edge.</em>
+                Uncoded Hub gives you back your <em className="italic hero-signal font-medium">competitive edge.</em>
               </h2>
               <p className="text-lead text-muted mt-5 max-w-xl mx-auto">
                 Everything you need to turn cold visitors into pre-sold enquiries — without you having
@@ -538,20 +531,15 @@ export default function Home({ onBook }: { onBook: () => void }) {
             </div>
           </Reveal>
 
-          {/* 3 Pillar Columns with soft salmon badges */}
+          {/* 3 Pillar Columns with unified single tag */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {THREE_PILLARS.map((p, idx) => (
               <Reveal key={p.num} delay={idx * 80}>
                 <div className="bg-paper-raised p-8 rounded-[24px] border border-rule-strong shadow-xs flex flex-col justify-between h-full">
                   <div>
-                    <div className="flex items-center justify-between mb-5">
-                      <span className="w-8 h-8 rounded-full bg-signal/10 text-signal font-mono font-bold text-xs flex items-center justify-center">
-                        {p.num}
-                      </span>
-                      <span className="text-[11px] font-mono text-signal bg-signal-wash px-2.5 py-0.5 rounded-full border border-signal/20">
-                        {p.pill}
-                      </span>
-                    </div>
+                    <span className="card-tag mb-4">
+                      {p.pill}
+                    </span>
                     <h3 className="font-display text-2xl text-ink font-medium mb-3">{p.title}</h3>
                     <p className="text-muted text-sm leading-relaxed">{p.p}</p>
                   </div>
@@ -577,8 +565,8 @@ export default function Home({ onBook }: { onBook: () => void }) {
                 </picture>
 
                 <div className="relative z-10">
-                  <span className="label text-signal font-semibold uppercase tracking-wider block mb-2">
-                    REAL-TIME INQUIRY NOTIFICATIONS
+                  <span className="label text-signal font-semibold block mb-2">
+                    Real-time inquiry notifications
                   </span>
                   <h4 className="font-display text-2xl text-ink font-medium max-w-md">
                     Inquiries that arrive educated, qualified, and ready to buy.
@@ -629,8 +617,8 @@ export default function Home({ onBook }: { onBook: () => void }) {
                   <div className="w-12 h-12 rounded-full bg-signal/10 text-signal flex items-center justify-center mb-6">
                     <IconTimer className="w-6 h-6" />
                   </div>
-                  <span className="label text-signal font-semibold uppercase tracking-wider block mb-1">
-                    CONTRACTUAL DEADLINE
+                  <span className="label text-signal font-semibold block mb-1.5">
+                    Contractual deadline
                   </span>
                   <h4 className="font-display text-3xl text-ink font-medium leading-snug">
                     If we are late, you do not pay.
@@ -644,7 +632,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                 <div className="mt-8 pt-6 border-t border-rule flex items-center justify-between">
                   <div className="text-xs">
                     <span className="text-muted block">Signed by co-founders:</span>
-                    <strong className="text-ink font-medium">Deepak & Geetha</strong>
+                    <strong className="text-ink font-medium">Deepak &amp; Geetha</strong>
                   </div>
                   <button onClick={onBook} className="btn-primary text-xs py-2 px-4">
                     Schedule call →
@@ -662,8 +650,8 @@ export default function Home({ onBook }: { onBook: () => void }) {
         <Shell>
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <span className="label text-signal font-semibold uppercase tracking-wider block mb-2">
-                MEASURABLE STANDARDS
+              <span className="label text-signal font-semibold block mb-2">
+                Measurable standards
               </span>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
                 Built for business owners who demand results.
@@ -676,11 +664,11 @@ export default function Home({ onBook }: { onBook: () => void }) {
             <Reveal delay={60}>
               <div className="bg-signal text-paper p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
                 <div>
-                  <span className="font-mono text-xs uppercase tracking-wider text-paper block mb-2">
-                    Turnaround Timeline
+                  <span className="text-xs font-semibold text-paper/85 block mb-2">
+                    Turnaround timeline
                   </span>
-                  <div className="font-display text-6xl sm:text-7xl font-bold tracking-tight text-paper">
-                    7 Days
+                  <div className="font-display text-6xl sm:text-7xl font-medium tracking-tight text-paper">
+                    7 days
                   </div>
                 </div>
                 <p className="text-paper text-sm mt-6 leading-relaxed font-sans">
@@ -692,10 +680,10 @@ export default function Home({ onBook }: { onBook: () => void }) {
             <Reveal delay={120}>
               <div className="bg-signal text-paper p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
                 <div>
-                  <span className="font-mono text-xs uppercase tracking-wider text-paper block mb-2">
-                    On-Time Guarantee
+                  <span className="text-xs font-semibold text-paper/85 block mb-2">
+                    On-time guarantee
                   </span>
-                  <div className="font-display text-6xl sm:text-7xl font-bold tracking-tight text-paper">
+                  <div className="font-display text-6xl sm:text-7xl font-medium tracking-tight text-paper">
                     100%
                   </div>
                 </div>
@@ -708,10 +696,10 @@ export default function Home({ onBook }: { onBook: () => void }) {
             <Reveal delay={180}>
               <div className="bg-signal text-paper p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
                 <div>
-                  <span className="font-mono text-xs uppercase tracking-wider text-paper block mb-2">
+                  <span className="text-xs font-semibold text-paper/85 block mb-2">
                     Google PageSpeed
                   </span>
-                  <div className="font-display text-6xl sm:text-7xl font-bold tracking-tight text-paper">
+                  <div className="font-display text-6xl sm:text-7xl font-medium tracking-tight text-paper">
                     99+
                   </div>
                 </div>
@@ -730,13 +718,9 @@ export default function Home({ onBook }: { onBook: () => void }) {
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-sunken border border-rule mb-3">
-                  <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
-                  <span className="font-mono text-[10px] text-signal font-semibold uppercase tracking-wider">
-                    03 · LIVE DEMO SPECIMENS
-                  </span>
-                  <span className="text-muted text-[10px] hidden sm:inline">· Auto-advancing (4.5s)</span>
-                </div>
+                <span className="label text-signal font-semibold block mb-2">
+                  Live demo specimens
+                </span>
                 <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
                   Test the builds live before you commit.
                 </h2>
@@ -850,12 +834,12 @@ export default function Home({ onBook }: { onBook: () => void }) {
                   {/* Right: Specimen Details & Launch */}
                   <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between">
                     <div>
-                      <div className="flex items-center justify-between gap-2 mb-2">
-                        <span className="label text-signal font-semibold tracking-wider uppercase">
+                      <div className="flex items-center justify-between gap-2 mb-3">
+                        <span className="card-tag">
                           {currentDemo.sector}
                         </span>
-                        <span className="text-[10px] font-mono text-muted">
-                          {`Specimen 0${activeDemoIdx + 1} / 06`}
+                        <span className="text-xs text-muted font-medium">
+                          {`Specimen ${activeDemoIdx + 1} of 6`}
                         </span>
                       </div>
                       <h3 className="font-display text-2xl sm:text-3xl text-ink font-medium mt-1 mb-4">
@@ -907,17 +891,11 @@ export default function Home({ onBook }: { onBook: () => void }) {
         <Shell>
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-paper-raised border border-rule-strong mb-4 shadow-xs">
-                <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
-                <span className="font-mono text-xs text-ink uppercase tracking-wider font-semibold">
-                  04 · 7-DAY DELIVERY SYSTEM
-                </span>
-              </div>
-              <p className="label text-signal font-mono text-xs tracking-wider mb-2">
-                TRANSPARENT CLIENT PROCESS
-              </p>
+              <span className="label text-signal font-semibold mb-2.5 block">
+                7-day delivery system
+              </span>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
-                The 7-Day Sprint Blueprint.
+                The 7-day sprint blueprint.
               </h2>
               <p className="text-lead text-muted mt-4 max-w-2xl mx-auto">
                 Three clear, predictable milestones — the client's-eye view, not the internal production schedule.
@@ -932,22 +910,12 @@ export default function Home({ onBook }: { onBook: () => void }) {
             <Reveal delay={60}>
               <div className="bg-paper-raised p-8 sm:p-9 rounded-[28px] border border-rule-strong shadow-sm hover:shadow-md hover:border-ink/30 transition-all duration-300 flex flex-col justify-between h-full group">
                 <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-3">
-                      <span className="w-10 h-10 rounded-full bg-signal/10 text-signal font-mono font-bold text-sm flex items-center justify-center border border-signal/20 group-hover:scale-105 transition-transform">
-                        01
-                      </span>
-                      <div className="w-8 h-8 rounded-full bg-paper-sunken border border-rule flex items-center justify-center text-signal">
-                        <IconCompass className="w-4 h-4" />
-                      </div>
-                    </div>
-                    <span className="text-[11px] font-mono text-signal bg-signal-wash px-2.5 py-0.5 rounded-full border border-signal/20">
-                      DAY 01 · SCOPE LOCK
-                    </span>
-                  </div>
+                  <span className="card-tag mb-4">
+                    Day 1 · Scope lock
+                  </span>
 
                   <h3 className="font-display text-2xl text-ink font-medium mb-3">
-                    Schedule &amp; Scope
+                    Schedule &amp; scope
                   </h3>
                   <p className="text-muted leading-relaxed text-sm mb-6">
                     Book your 20-minute discovery call directly with Deepak &amp; Geetha. We identify your high-margin offerings, diagnose why visitors currently bounce, and lock your scope sheet.
@@ -982,22 +950,12 @@ export default function Home({ onBook }: { onBook: () => void }) {
             <Reveal delay={120}>
               <div className="bg-paper-raised p-8 sm:p-9 rounded-[28px] border border-rule-strong shadow-sm hover:shadow-md hover:border-ink/30 transition-all duration-300 flex flex-col justify-between h-full group">
                 <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-3">
-                      <span className="w-10 h-10 rounded-full bg-signal/10 text-signal font-mono font-bold text-sm flex items-center justify-center border border-signal/20 group-hover:scale-105 transition-transform">
-                        02
-                      </span>
-                      <div className="w-8 h-8 rounded-full bg-paper-sunken border border-rule flex items-center justify-center text-signal">
-                        <IconBrackets className="w-4 h-4" />
-                      </div>
-                    </div>
-                    <span className="text-[11px] font-mono text-signal bg-signal-wash px-2.5 py-0.5 rounded-full border border-signal/20">
-                      DAYS 02–05 · BUILD
-                    </span>
-                  </div>
+                  <span className="card-tag mb-4">
+                    Days 2–5 · Build
+                  </span>
 
                   <h3 className="font-display text-2xl text-ink font-medium mb-3">
-                    Design &amp; Engineering
+                    Design &amp; engineering
                   </h3>
                   <p className="text-muted leading-relaxed text-sm mb-6">
                     Geetha crafts the custom editorial design system and typography; Deepak engineers sub-1.0s fast React &amp; Vite code with seamless lead capture hooks.
@@ -1032,22 +990,12 @@ export default function Home({ onBook }: { onBook: () => void }) {
             <Reveal delay={180}>
               <div className="bg-paper-raised p-8 sm:p-9 rounded-[28px] border border-rule-strong shadow-sm hover:shadow-md hover:border-ink/30 transition-all duration-300 flex flex-col justify-between h-full group">
                 <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-3">
-                      <span className="w-10 h-10 rounded-full bg-signal/10 text-signal font-mono font-bold text-sm flex items-center justify-center border border-signal/20 group-hover:scale-105 transition-transform">
-                        03
-                      </span>
-                      <div className="w-8 h-8 rounded-full bg-paper-sunken border border-rule flex items-center justify-center text-signal">
-                        <IconLaunch className="w-4 h-4" />
-                      </div>
-                    </div>
-                    <span className="text-[11px] font-mono text-signal bg-signal-wash px-2.5 py-0.5 rounded-full border border-signal/20">
-                      DAYS 06–07 · LAUNCH
-                    </span>
-                  </div>
+                  <span className="card-tag mb-4">
+                    Days 6–7 · Launch
+                  </span>
 
                   <h3 className="font-display text-2xl text-ink font-medium mb-3">
-                    Verification &amp; Handover
+                    Verification &amp; handover
                   </h3>
                   <p className="text-muted leading-relaxed text-sm mb-6">
                     We run rigorous cross-device audits, verify 95+ Lighthouse mobile benchmarks, point your DNS live, and hand over 100% of your source code repository.
@@ -1081,7 +1029,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
 
           {/* Bottom Commitment Strip */}
           <Reveal delay={240}>
-            <div className="mt-14 max-w-4xl mx-auto p-4 sm:p-5 rounded-[20px] bg-paper-raised border border-rule-strong shadow-xs flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs font-mono text-ink">
+            <div className="mt-14 max-w-4xl mx-auto p-4 sm:p-5 rounded-[20px] bg-paper-raised border border-rule-strong shadow-xs flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs font-medium text-ink">
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-signal" />
                 <span>Fixed price in writing</span>
@@ -1109,16 +1057,9 @@ export default function Home({ onBook }: { onBook: () => void }) {
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Column: Heading & Evidence Argument */}
             <Reveal className="lg:col-span-5">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-paper-sunken border border-rule mb-4">
-                <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
-                <span className="font-mono text-xs text-ink uppercase tracking-wider font-semibold">
-                  05 · ENGINEERING STANDARDS
-                </span>
-              </div>
-
-              <p className="label text-signal font-mono text-xs tracking-wider mb-2">
-                EMPIRICAL VERIFICATION
-              </p>
+              <span className="label text-signal font-semibold mb-2.5 block">
+                Engineering standards
+              </span>
 
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight leading-[1.08]">
                 The numbers we hold ourselves to.
@@ -1139,7 +1080,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                 <div>
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                    <span className="text-xs font-mono font-semibold text-ink">Lighthouse 99 / 100</span>
+                    <span className="text-xs font-semibold text-ink">Lighthouse 99 / 100</span>
                   </div>
                   <span className="text-[11px] text-muted block mt-0.5">Tested on live 4G mobile emulation</span>
                 </div>
@@ -1158,18 +1099,15 @@ export default function Home({ onBook }: { onBook: () => void }) {
                     className="bg-paper-raised p-5 sm:p-6 rounded-[24px] border border-rule-strong shadow-xs hover:shadow-md hover:border-signal/40 transition-all duration-300 flex flex-col justify-between"
                   >
                     <div>
-                      <div className="w-9 h-9 rounded-full bg-signal/10 text-signal flex items-center justify-center mb-4">
-                        <b.Icon className="w-4 h-4" />
-                      </div>
-                      <span className="font-display text-3xl sm:text-4xl font-bold text-ink block tracking-tight">
-                        {b.value}
-                      </span>
-                      <span className="text-xs font-semibold text-ink leading-snug block mt-1">
+                      <span className="text-[11px] font-semibold text-muted leading-snug block mb-2">
                         {b.metric}
+                      </span>
+                      <span className="font-display text-3xl sm:text-4xl font-medium text-ink block tracking-tight">
+                        {b.value}
                       </span>
                     </div>
 
-                    <span className="text-[10px] font-mono text-signal bg-signal-wash px-2 py-0.5 rounded-full inline-block mt-4 border border-signal/20 w-fit">
+                    <span className="text-xs text-muted block mt-3">
                       {b.target}
                     </span>
                   </div>
@@ -1264,14 +1202,13 @@ export default function Home({ onBook }: { onBook: () => void }) {
       <Section id="lead-magnet" tone="ink" size="default">
         <Shell>
           <Reveal>
-            <div className="flex items-center gap-3 mb-3">
-              <span className="label text-signal-bright">08</span>
-              <span className="label text-on-ink-muted">Free diagnostic resource</span>
+            <div className="mb-3">
+              <span className="label text-signal-bright">Free diagnostic resource</span>
             </div>
             <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-end mb-12">
               <h2 className="font-display text-3xl sm:text-4xl text-on-ink font-normal">
                 Score your own site.<br />
-                <em className="italic text-signal-bright font-normal">Before</em> you book a call.
+                <em className="italic text-signal-bright font-medium">Before</em> you book a call.
               </h2>
               <p className="text-lead text-on-ink-muted leading-relaxed">
                 The Pre-Sold Prospects Audit — the same 10-point trust diagnostic we run for every client, now in your hands.
@@ -1348,7 +1285,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                   </div>
                   <h3 className="font-display text-3xl sm:text-4xl text-paper font-normal leading-tight">
                     Fixed price. Seven working days.<br />
-                    <span className="text-signal-bright italic">On time or free.</span>
+                    <em className="text-signal-bright italic font-medium">On time or free.</em>
                   </h3>
                   <p className="text-on-ink-muted text-sm leading-relaxed mt-4 max-w-md">
                     No deck and no sales pitch. Book a 20-minute call to see if your business is
@@ -1356,7 +1293,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                   </p>
                 </div>
 
-                <div className="mt-8 flex items-center gap-4 text-xs font-mono text-on-ink-muted">
+                <div className="mt-8 flex items-center gap-4 text-xs text-on-ink-muted">
                   <span>● Deepak &amp; Geetha</span>
                   <span>·</span>
                   <span>Bengaluru, India</span>
@@ -1368,8 +1305,8 @@ export default function Home({ onBook }: { onBook: () => void }) {
               {/* Right CTA Action Card */}
               <div className="md:col-span-6 bg-white/[0.06] p-6 sm:p-8 rounded-[24px] border border-white/15 flex flex-col justify-between shadow-inner">
                 <div>
-                  <span className="text-[11px] font-mono text-signal-bright uppercase tracking-wider block mb-2 font-semibold">
-                    RESERVE YOUR BUILD COHORT
+                  <span className="label text-signal-bright block mb-2 font-semibold">
+                    Reserve your build cohort
                   </span>
                   <h4 className="font-display text-2xl text-paper font-medium mb-3">
                     Ready to let your website sell before you do?
