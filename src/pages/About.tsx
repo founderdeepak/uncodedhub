@@ -182,27 +182,15 @@ export default function About({ onBook }: { onBook: () => void }) {
                   <p className="text-[11px] font-mono text-white/50 mb-6 tracking-wide uppercase">
                     2.5 yrs McKinsey &amp; Co. · 15,000+ slides · 550+ decks · Senior leaders &amp; global teams
                   </p>
-                  <div className="space-y-4 text-on-ink-muted text-xs sm:text-sm leading-relaxed">
+                  <div className="space-y-3 text-on-ink-muted text-xs sm:text-sm leading-relaxed">
                     <p>
-                      Before Uncoded Hub, Geetha spent 2.5 years as a Business Presentation Specialist at McKinsey &amp; Company, where she designed more than 15,000 slides and 550+ presentation decks for senior leaders and global teams.
+                      Before Uncoded Hub, Geetha spent 2.5 years as a Business Presentation Specialist at McKinsey &amp; Company — designing more than 15,000 slides and 550+ decks for senior leaders and global teams. The job was never to make information look good. It was to take something complicated, find what mattered, and make it clear enough that someone could understand it, trust it, and act on it.
                     </p>
                     <p>
-                      That experience shaped how she thinks about design.
+                      She brings that discipline to every client website. Today she designs for businesses where trust matters before the first conversation — interior designers, architects, clinics, photographers, renovation studios, and other high-consideration service businesses.
                     </p>
                     <p>
-                      The job was never simply to make information look good. It was to take something complicated, find what actually mattered, and make it clear enough that someone could understand it, trust it, and act on it.
-                    </p>
-                    <p>
-                      She brings that same discipline to Uncoded Hub.
-                    </p>
-                    <p>
-                      Today, Geetha designs websites for businesses where trust matters before the first conversation — including interior designers, architects, real estate professionals, clinics, photographers, renovation studios and other high-consideration service businesses.
-                    </p>
-                    <p>
-                      Her focus is simple: <strong className="text-paper">make the quality of the business impossible to miss online.</strong>
-                    </p>
-                    <p>
-                      Every page has a job. Every section has a reason to exist. And every design decision is made to help a potential client understand what the business does, why it is credible, and why they should take the next step.
+                      Her focus: <strong className="text-paper">make the quality of the business impossible to miss online.</strong> Every page has a job. Every section has a reason to exist.
                     </p>
                     <p className="text-paper/70 italic text-xs border-t border-white/10 pt-4 mt-2">
                       2.5 years at McKinsey. 550+ decks. 15,000+ slides. Now designing websites that make service businesses look as credible online as they are in person.
@@ -241,27 +229,18 @@ export default function About({ onBook }: { onBook: () => void }) {
                   <p className="text-[11px] font-mono text-white/50 mb-6 tracking-wide uppercase">
                     7.2+ yrs · 17,000+ lines of code · Games · Apps · Web · WebGL · AR/VR
                   </p>
-                  <div className="space-y-4 text-on-ink-muted text-xs sm:text-sm leading-relaxed">
+                  <div className="space-y-3 text-on-ink-muted text-xs sm:text-sm leading-relaxed">
                     <p>
-                      Deepak has spent more than 7.2 years building software across very different kinds of problems — from games and mobile applications to websites, WebGL experiences, AR/VR projects and multiplayer games.
+                      Deepak has spent 7.2+ years building software across very different problems — from games and mobile apps to websites, WebGL, AR/VR and multiplayer projects — writing more than 17,000 lines of code across C, C++, C#, Swift, Java, HTML, CSS and JavaScript.
                     </p>
                     <p>
-                      Over the years, he has worked across C, C++, C#, Swift, Java, HTML, CSS and JavaScript, writing more than 17,000 lines of code across projects with different requirements, constraints and moving parts.
+                      For him, the code has never been the finished product. The finished product is something that works — properly structured, tested, fixed, and delivered to the point where someone can actually use it.
                     </p>
                     <p>
-                      But for him, the code has never been the finished product. The finished product is something that works.
+                      Alongside engineering, he has worked across SEO, AEO, AIEO, content, copywriting and business development, and coordinated teams of 20+ people as a Project Coordinator — giving him a broader view of how a website needs to perform beyond the code.
                     </p>
                     <p>
-                      That means taking an idea or requirement, figuring out how it needs to be structured, building it properly, testing the details, fixing what breaks, and getting it to a point where someone can actually use it.
-                    </p>
-                    <p>
-                      Alongside development, Deepak has worked across blogging, copywriting, content, SEO, AEO and AIEO, presentation design and business development — giving him a broader understanding of how a website needs to work beyond the code itself.
-                    </p>
-                    <p>
-                      He has also coordinated teams of 20+ people as a Project Coordinator, bringing together people, requirements and deadlines to move projects from brief to delivery.
-                    </p>
-                    <p>
-                      At Uncoded Hub, that experience comes together in one role: <strong className="text-paper">turning Geetha's designs and the client's requirements into a website that works as hard as it looks.</strong>
+                      At Uncoded Hub, that all comes together in one role: <strong className="text-paper">turning Geetha's designs and the client's requirements into a website that works as hard as it looks.</strong>
                     </p>
                     <p className="text-paper/70 italic text-xs border-t border-white/10 pt-4 mt-2">
                       7.2+ years building software. 17,000+ lines of code. Games, apps, web, WebGL and AR/VR. Now building fast, reliable websites that turn clear design into a working business tool.
@@ -337,27 +316,84 @@ export default function About({ onBook }: { onBook: () => void }) {
         </Shell>
       </Section>
 
-      {/* ── Colophon ─────────────────────────────────────────────── */}
-      <Section tone="sunk" size="default">
+      {/* -- Colophon: Divine Golden -- */}
+      <section className="relative overflow-hidden py-28 md:py-36">
+        {/* Deep dark base */}
+        <div aria-hidden="true" className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #0d0a05 0%, #090703 60%, #0d0a05 100%)' }} />
+        {/* Radial glow */}
+        <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 65% 50% at 50% 55%, rgba(212,175,55,0.14) 0%, rgba(212,175,55,0.04) 50%, transparent 78%)' }} />
+        {/* Top border */}
+        <div aria-hidden="true" className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.5) 50%, transparent 100%)' }} />
+        {/* Bottom border */}
+        <div aria-hidden="true" className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.25) 50%, transparent 100%)' }} />
+
         <Shell width="narrow">
           <Reveal>
-            <div className="text-center border-t border-rule-strong pt-14">
-              <span className="label text-muted">Colophon</span>
-              <p className="font-display text-2xl sm:text-3xl text-ink mt-8 leading-[1.35]">
-                என் செயலாவது யாதொன்றும் இல்லை — இனித் தெய்வமே உன்செயலே என்று உணரப் பெற்றேன்
+            <div className="relative text-center">
+
+              {/* Label */}
+              <span className="inline-block text-[10px] font-mono font-semibold tracking-[0.22em] uppercase mb-10" style={{ color: 'rgba(212,175,55,0.55)' }}>
+                Colophon &nbsp;&middot;&nbsp; Our Belief
+              </span>
+
+              {/* Ornament */}
+              <div className="flex items-center justify-center mb-10" aria-hidden="true">
+                <svg width="240" height="52" viewBox="0 0 240 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="0" y1="26" x2="88" y2="26" stroke="url(#colL)" strokeWidth="0.75"/>
+                  <line x1="152" y1="26" x2="240" y2="26" stroke="url(#colR)" strokeWidth="0.75"/>
+                  <polygon points="120,10 134,26 120,42 106,26" fill="none" stroke="rgba(212,175,55,0.5)" strokeWidth="1"/>
+                  <polygon points="120,17 128,26 120,35 112,26" fill="rgba(212,175,55,0.07)"/>
+                  <circle cx="120" cy="26" r="2.5" fill="rgba(212,175,55,0.75)"/>
+                  <circle cx="96" cy="26" r="1.5" fill="rgba(212,175,55,0.3)"/>
+                  <circle cx="144" cy="26" r="1.5" fill="rgba(212,175,55,0.3)"/>
+                  <defs>
+                    <linearGradient id="colL" x1="0" y1="0" x2="88" y2="0" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="rgba(212,175,55,0)"/>
+                      <stop offset="100%" stopColor="rgba(212,175,55,0.45)"/>
+                    </linearGradient>
+                    <linearGradient id="colR" x1="152" y1="0" x2="240" y2="0" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="rgba(212,175,55,0.45)"/>
+                      <stop offset="100%" stopColor="rgba(212,175,55,0)"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+
+              {/* Tamil verse */}
+              <p
+                className="font-display text-2xl sm:text-3xl md:text-[2.1rem] font-normal leading-[1.65] max-w-2xl mx-auto mb-10"
+                style={{
+                  background: 'linear-gradient(135deg, #b8902a 0%, #f5d78e 38%, #d4af37 62%, #9a7025 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                {'என் செயலாவது யாதொன்றும் இல்லை — இனித் தெய்வமே உன்செயலே என்று உணரப் பெற்றேன்'}
               </p>
-              <div className="w-10 h-px bg-signal mx-auto my-6" />
-              <p className="text-muted italic text-sm leading-relaxed max-w-lg mx-auto">
-                “I have realised that nothing I do is truly mine. From now on, O God — everything
-                that happens is only Your doing.”
+
+              {/* Gold dot rule */}
+              <div className="flex items-center justify-center gap-3 mb-8" aria-hidden="true">
+                <div className="h-px w-16" style={{ background: 'linear-gradient(90deg, transparent, rgba(212,175,55,0.45))' }} />
+                <div className="w-1.5 h-1.5 rounded-full" style={{ background: 'rgba(212,175,55,0.65)' }} />
+                <div className="h-px w-16" style={{ background: 'linear-gradient(90deg, rgba(212,175,55,0.45), transparent)' }} />
+              </div>
+
+              {/* English translation */}
+              <p className="text-sm sm:text-base italic leading-relaxed max-w-lg mx-auto mb-8" style={{ color: 'rgba(245,215,142,0.72)' }}>
+                &ldquo;I have realised that nothing I do is truly mine. From now on, O God &mdash;
+                everything that happens is only Your doing.&rdquo;
               </p>
-              <p className="text-muted text-xs leading-relaxed mt-6 max-w-lg mx-auto">
+
+              {/* Gratitude */}
+              <p className="text-xs leading-relaxed max-w-sm mx-auto" style={{ color: 'rgba(212,175,55,0.38)' }}>
                 We are grateful for the work, and we strive to be worthy of it on every project.
               </p>
+
             </div>
           </Reveal>
         </Shell>
-      </Section>
+      </section>
 
       {/* ── Cloaked-Style Dual-Card Closing CTA ─────────────────── */}
       <section className="bg-ink text-paper py-20 border-t border-white/10">
