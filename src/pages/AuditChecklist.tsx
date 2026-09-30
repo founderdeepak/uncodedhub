@@ -223,7 +223,7 @@ export default function AuditChecklist() {
           name="description"
           content="Score your website against the 10-point conversion and trust diagnostic Uncoded Hub runs for paying clients. Free interactive calculator & 20-minute action checklist."
         />
-        <link rel="canonical" href="https://uncodedhub.com/audit-checklist" />
+        <link rel="canonical" href="https://uncodedhub.com/audit-checklist/" />
       </Helmet>
 
       {/* ── SAFEGUARD: GATED STATE FOR VISITORS WITHOUT EMAIL ──────── */}

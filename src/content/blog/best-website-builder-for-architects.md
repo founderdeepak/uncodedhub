@@ -1,8 +1,8 @@
 ---
-title: "Best Website Builder for Architects: DIY Platforms vs a Custom-Built Site"
+title: "Best Website Builder for Architects: Squarespace vs Custom Site"
 niche: interior-designers
 date: 2026-05-07
-excerpt: "When a DIY website builder is genuinely enough for an architecture practice, and when it quietly becomes the reason serious enquiries go elsewhere."
+excerpt: "When a DIY builder like Squarespace is enough for an architecture practice, and when slow image loading quietly costs you institutional enquiries."
 image: "/blog/best-website-builder-for-architects.webp"
 ---
 *By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*

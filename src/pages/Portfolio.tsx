@@ -177,7 +177,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
           name="description"
           content="Explore six live, interactive specimen websites handcrafted by Uncoded Hub across our core commercial niches. Test speed, multi-theme switchers, and conversion funnels."
         />
-        <link rel="canonical" href="https://uncodedhub.com/portfolio" />
+        <link rel="canonical" href="https://uncodedhub.com/portfolio/" />
       </Helmet>
 
       {/* ── Header ─────────────────────────────────────────────── */}

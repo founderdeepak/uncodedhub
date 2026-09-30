@@ -49,7 +49,7 @@ export default function About({ onBook }: { onBook: () => void }) {
           name="description"
           content="A two-person web design and development studio in Bengaluru. Who does the work, how we work, and what we commit to before you hire us."
         />
-        <link rel="canonical" href="https://uncodedhub.com/about" />
+        <link rel="canonical" href="https://uncodedhub.com/about/" />
       </Helmet>
 
       {/* ── Header ─────────────────────────────────────────────── */}

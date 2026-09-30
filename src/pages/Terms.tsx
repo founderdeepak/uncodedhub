@@ -89,7 +89,7 @@ export default function Terms() {
           name="description"
           content="Plain-English terms of service and sprint delivery commitments for Uncoded Hub. Clear scope, 50% late guarantee, and 100% code ownership."
         />
-        <link rel="canonical" href="https://uncodedhub.com/terms" />
+        <link rel="canonical" href="https://uncodedhub.com/terms/" />
       </Helmet>
 
       {/* ── Editorial Hero ──────────────────────────────────────── */}

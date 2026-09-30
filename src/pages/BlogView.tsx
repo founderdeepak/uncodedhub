@@ -59,7 +59,7 @@ export default function BlogView() {
   const nicheTotalCount = getPostsByNiche(post.niche).length;
   const pillarSlug = NICHE_PILLAR_SLUGS[post.niche];
 
-  const url = `https://uncodedhub.com/blog/${post.slug}`;
+  const url = `https://uncodedhub.com/blog/${post.slug}/`;
   const ogImageUrl = post.image
     ? `https://uncodedhub.com${post.image}`
     : 'https://uncodedhub.com/og-image.jpg';

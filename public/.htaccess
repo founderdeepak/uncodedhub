@@ -2,29 +2,49 @@
   RewriteEngine On
   RewriteBase /
 
-  # www -> apex (bare domain), preserving path and query string.
-  # Previously www.uncodedhub.com served identical content at a second
-  # origin with no redirect (only a client-side canonical tag), so both
-  # were crawlable and any links pointing at www never consolidated.
+  # 1. Force HTTPS and non-www (apex domain)
+  RewriteCond %{HTTPS} off [OR]
   RewriteCond %{HTTP_HOST} ^www\.uncodedhub\.com$ [NC]
   RewriteRule ^(.*)$ https://uncodedhub.com/$1 [L,R=301]
 
-  # No SPA fallback rewrite: every route the app serves (see
-  # scripts/routes.mjs) is prerendered to a real file at build time
-  # (scripts/prerender.mjs), so it exists on disk and is served
-  # directly. A path that isn't one of those routes is genuinely not a
-  # page, and previously fell through to this same rewrite and returned
-  # HTTP 200 with the homepage for literally any URL -- an unbounded
-  # soft-404 surface. Removing the fallback lets Apache's normal
-  # missing-file handling take over, which ErrorDocument below turns
-  # into the site's real 404 page instead of a generic Apache error.
+  # 2. Canonical Trailing Slash Enforcement (fixes Google Search Console duplicate URL split)
+  # Automatically 301 redirects /path -> /path/ for clean canonical consolidation.
+  # Excludes real files and paths with asset extensions (.css, .js, .png, .webp, .xml, .txt, etc.)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !^/.*\.([a-zA-Z0-9]{1,5})$
+  RewriteCond %{REQUEST_URI} !(.*)/$
+  RewriteRule ^(.*)$ https://uncodedhub.com/$1/ [L,R=301]
+
+  # 3. Clean query parameter canonicalization (?book=true -> /contact/)
+  RewriteCond %{THE_REQUEST} \s/contact\?book=true [NC]
+  RewriteRule ^contact$ https://uncodedhub.com/contact/ [L,R=301]
 </IfModule>
 
-# Real 404 status for anything that isn't a prerendered route or a
-# static asset, served with the site's own 404 page instead of either
-# a blank Apache default or (the previous behaviour) a silent 200.
+# Real 404 status for anything that isn't a prerendered route or static asset
 ErrorDocument 404 /404.html
 
+# ── Performance & Core Web Vitals Optimization ───────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/json "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 1 hour"
+  ExpiresByType text/xml "access plus 1 hour"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# ── Security & Header Standards ─────────────────────────────────
 <IfModule mod_headers.c>
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
   Header always set X-Content-Type-Options "nosniff"

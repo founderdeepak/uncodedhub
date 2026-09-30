@@ -236,7 +236,7 @@ export default function Services({ onBook }: { onBook: () => void }) {
           name="description"
           content="Three scopes, what each one includes in full, what we do not take on, and how pricing works. Fixed price agreed before any work starts."
         />
-        <link rel="canonical" href="https://uncodedhub.com/services" />
+        <link rel="canonical" href="https://uncodedhub.com/services/" />
       </Helmet>
 
       {/* ── Header ─────────────────────────────────────────────── */}

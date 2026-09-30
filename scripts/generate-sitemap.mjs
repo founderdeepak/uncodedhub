@@ -20,7 +20,8 @@ const routes = getAllRoutes().filter((r) => r.loc !== '/404');
 const body = routes
   .map((r) => {
     const lastmod = r.lastmod ? `\n    <lastmod>${r.lastmod}</lastmod>` : '';
-    return `  <url>\n    <loc>https://uncodedhub.com${r.loc}</loc>${lastmod}\n  </url>`;
+    const loc = r.loc.endsWith('/') ? r.loc : `${r.loc}/`;
+    return `  <url>\n    <loc>https://uncodedhub.com${loc}</loc>${lastmod}\n  </url>`;
   })
   .join('\n');
 

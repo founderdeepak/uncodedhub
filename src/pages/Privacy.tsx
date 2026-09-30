@@ -80,7 +80,7 @@ export default function Privacy() {
           name="description"
           content="Privacy policy and data protection commitments for Uncoded Hub. Zero data selling, secure encrypted storage, and direct founder accountability."
         />
-        <link rel="canonical" href="https://uncodedhub.com/privacy" />
+        <link rel="canonical" href="https://uncodedhub.com/privacy/" />
       </Helmet>
 
       {/* ── Editorial Hero ──────────────────────────────────────── */}

@@ -86,8 +86,8 @@ export default function Blogs() {
     ? `Master pillar blueprint and companion guides on website strategy, high-ticket conversions, and local SEO for ${NICHES[activeNiche]}.`
     : 'Practical notes on websites, SEO, and getting found online — written by Deepak & Geetha.';
   const canonicalUrl = isNicheView
-    ? `https://uncodedhub.com/blog/niche/${activeNiche}`
-    : 'https://uncodedhub.com/blog';
+    ? `https://uncodedhub.com/blog/niche/${activeNiche}/`
+    : 'https://uncodedhub.com/blog/';
 
   return (
     <>

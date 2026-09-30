@@ -67,7 +67,7 @@ export default function Contact() {
           name="description"
           content="Book a free twenty-minute discovery call directly with Deepak & Geetha, or send a project brief. Slots are displayed in your local timezone."
         />
-        <link rel="canonical" href="https://uncodedhub.com/contact" />
+        <link rel="canonical" href="https://uncodedhub.com/contact/" />
       </Helmet>
 
       {/* ── Editorial Hero ──────────────────────────────────────── */}
