@@ -316,23 +316,23 @@ export default function About({ onBook }: { onBook: () => void }) {
         </Shell>
       </Section>
 
-      {/* -- Colophon: Divine Golden -- */}
+      {/* -- Colophon: Divine Golden (Light) -- */}
       <section className="relative overflow-hidden py-28 md:py-36">
-        {/* Deep dark base */}
-        <div aria-hidden="true" className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #0d0a05 0%, #090703 60%, #0d0a05 100%)' }} />
-        {/* Radial glow */}
-        <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 65% 50% at 50% 55%, rgba(212,175,55,0.14) 0%, rgba(212,175,55,0.04) 50%, transparent 78%)' }} />
+        {/* Warm cream/parchment base */}
+        <div aria-hidden="true" className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #fdf8ee 0%, #faf3e0 50%, #fdf8ee 100%)' }} />
+        {/* Subtle warm centre glow */}
+        <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 45% at 50% 50%, rgba(212,175,55,0.10) 0%, transparent 72%)' }} />
         {/* Top border */}
-        <div aria-hidden="true" className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.5) 50%, transparent 100%)' }} />
+        <div aria-hidden="true" className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(180,140,30,0.4) 50%, transparent 100%)' }} />
         {/* Bottom border */}
-        <div aria-hidden="true" className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.25) 50%, transparent 100%)' }} />
+        <div aria-hidden="true" className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(180,140,30,0.3) 50%, transparent 100%)' }} />
 
         <Shell width="narrow">
           <Reveal>
             <div className="relative text-center">
 
               {/* Label */}
-              <span className="inline-block text-[10px] font-mono font-semibold tracking-[0.22em] uppercase mb-10" style={{ color: 'rgba(212,175,55,0.55)' }}>
+              <span className="inline-block text-[10px] font-mono font-semibold tracking-[0.22em] uppercase mb-10" style={{ color: 'rgba(160,110,20,0.7)' }}>
                 Colophon &nbsp;&middot;&nbsp; Our Belief
               </span>
 
@@ -341,29 +341,29 @@ export default function About({ onBook }: { onBook: () => void }) {
                 <svg width="240" height="52" viewBox="0 0 240 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <line x1="0" y1="26" x2="88" y2="26" stroke="url(#colL)" strokeWidth="0.75"/>
                   <line x1="152" y1="26" x2="240" y2="26" stroke="url(#colR)" strokeWidth="0.75"/>
-                  <polygon points="120,10 134,26 120,42 106,26" fill="none" stroke="rgba(212,175,55,0.5)" strokeWidth="1"/>
-                  <polygon points="120,17 128,26 120,35 112,26" fill="rgba(212,175,55,0.07)"/>
-                  <circle cx="120" cy="26" r="2.5" fill="rgba(212,175,55,0.75)"/>
-                  <circle cx="96" cy="26" r="1.5" fill="rgba(212,175,55,0.3)"/>
-                  <circle cx="144" cy="26" r="1.5" fill="rgba(212,175,55,0.3)"/>
+                  <polygon points="120,10 134,26 120,42 106,26" fill="none" stroke="rgba(180,140,30,0.6)" strokeWidth="1"/>
+                  <polygon points="120,17 128,26 120,35 112,26" fill="rgba(212,175,55,0.12)"/>
+                  <circle cx="120" cy="26" r="2.5" fill="rgba(160,110,20,0.8)"/>
+                  <circle cx="96" cy="26" r="1.5" fill="rgba(180,140,30,0.4)"/>
+                  <circle cx="144" cy="26" r="1.5" fill="rgba(180,140,30,0.4)"/>
                   <defs>
                     <linearGradient id="colL" x1="0" y1="0" x2="88" y2="0" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="rgba(212,175,55,0)"/>
-                      <stop offset="100%" stopColor="rgba(212,175,55,0.45)"/>
+                      <stop offset="0%" stopColor="rgba(180,140,30,0)"/>
+                      <stop offset="100%" stopColor="rgba(180,140,30,0.5)"/>
                     </linearGradient>
                     <linearGradient id="colR" x1="152" y1="0" x2="240" y2="0" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="rgba(212,175,55,0.45)"/>
-                      <stop offset="100%" stopColor="rgba(212,175,55,0)"/>
+                      <stop offset="0%" stopColor="rgba(180,140,30,0.5)"/>
+                      <stop offset="100%" stopColor="rgba(180,140,30,0)"/>
                     </linearGradient>
                   </defs>
                 </svg>
               </div>
 
-              {/* Tamil verse */}
+              {/* Tamil verse — deep antique gold on light */}
               <p
                 className="font-display text-2xl sm:text-3xl md:text-[2.1rem] font-normal leading-[1.65] max-w-2xl mx-auto mb-10"
                 style={{
-                  background: 'linear-gradient(135deg, #b8902a 0%, #f5d78e 38%, #d4af37 62%, #9a7025 100%)',
+                  background: 'linear-gradient(135deg, #7a5a10 0%, #b8902a 35%, #9a7220 65%, #5c4010 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -374,19 +374,19 @@ export default function About({ onBook }: { onBook: () => void }) {
 
               {/* Gold dot rule */}
               <div className="flex items-center justify-center gap-3 mb-8" aria-hidden="true">
-                <div className="h-px w-16" style={{ background: 'linear-gradient(90deg, transparent, rgba(212,175,55,0.45))' }} />
-                <div className="w-1.5 h-1.5 rounded-full" style={{ background: 'rgba(212,175,55,0.65)' }} />
-                <div className="h-px w-16" style={{ background: 'linear-gradient(90deg, rgba(212,175,55,0.45), transparent)' }} />
+                <div className="h-px w-16" style={{ background: 'linear-gradient(90deg, transparent, rgba(180,140,30,0.5))' }} />
+                <div className="w-1.5 h-1.5 rounded-full" style={{ background: 'rgba(160,110,20,0.7)' }} />
+                <div className="h-px w-16" style={{ background: 'linear-gradient(90deg, rgba(180,140,30,0.5), transparent)' }} />
               </div>
 
               {/* English translation */}
-              <p className="text-sm sm:text-base italic leading-relaxed max-w-lg mx-auto mb-8" style={{ color: 'rgba(245,215,142,0.72)' }}>
+              <p className="text-sm sm:text-base italic leading-relaxed max-w-lg mx-auto mb-8" style={{ color: 'rgba(80,55,10,0.75)' }}>
                 &ldquo;I have realised that nothing I do is truly mine. From now on, O God &mdash;
                 everything that happens is only Your doing.&rdquo;
               </p>
 
               {/* Gratitude */}
-              <p className="text-xs leading-relaxed max-w-sm mx-auto" style={{ color: 'rgba(212,175,55,0.38)' }}>
+              <p className="text-xs leading-relaxed max-w-sm mx-auto" style={{ color: 'rgba(120,90,20,0.55)' }}>
                 We are grateful for the work, and we strive to be worthy of it on every project.
               </p>
 
