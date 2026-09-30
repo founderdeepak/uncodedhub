@@ -280,6 +280,13 @@ export default function SiteFooter() {
             <Link to="/privacy" className="label text-on-ink-muted hover:text-signal-bright transition-colors">
               Privacy Policy
             </Link>
+            <span className="text-on-ink-muted text-xs" aria-hidden="true">·</span>
+            <a
+              href="/rss.xml"
+              className="label text-on-ink-muted hover:text-signal-bright transition-colors"
+            >
+              RSS Feed
+            </a>
           </div>
           <p className="label text-on-ink-muted">Designed and built in-house</p>
         </div>
