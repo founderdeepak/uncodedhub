@@ -28,4 +28,7 @@ social_cold_outreach/
 test_*.py
 .mcp.json
 tools/
+brag-output/
+scripts/mux-brag.mjs
+scripts/render-brag-video.mjs
 brag-output*/

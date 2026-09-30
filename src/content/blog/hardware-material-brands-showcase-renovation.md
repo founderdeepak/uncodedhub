@@ -22,27 +22,13 @@ When your website prominently showcases **Certified OEM Hardware and Material Pa
 
 Do not simply paste low-resolution brand logos at the bottom of your footer. Create a dedicated **Materials & Hardware Quality Standard** page that educates homeowners on engineering differences:
 
-```
-┌────────────────────────────────────────────────────────┐
-│  Hardware Engineering Breakdown                        │
-├────────────────────┬───────────────────┬───────────────┤
-│ Brand Partner      │ Certified Systems │ Functional Advantage          │
-├────────────────────┼───────────────────┼───────────────┤
-│ **Blum (Austria)** │ Aventos Lift-ups, │ 200,000 opening cycles test-  │
-│                    │ Tandembox, Legrabox│ ed; lifetime mechanical war- │
-│                    │ Soft-Close systems│ ranty against sagging.        │
-├────────────────────┼───────────────────┼───────────────┤
-│ **Hettich (Germany)**│ InnoTech Atira, │ Dual-spring soft-close action; │
-│                    │ Sensys Clip Hinges│ corrosion-resistant electro-  │
-│                    │ Magic Corner units│ plated steel construction.    │
-├────────────────────┼───────────────────┼───────────────┤
-│ **Hafele (Germany)**│ Kesseböhmer tall │ Heavy 60kg payload capacity;  │
-│                    │ pantry units, LED │ integrated scratch-resistant  │
-│                    │ Loox linear lights│ non-slip wooden bases.        │
-└────────────────────┴───────────────────┴───────────────┘
-```
+| Brand Partner | Certified Systems | Functional Advantage |
+| :--- | :--- | :--- |
+| **Blum (Austria)** | Aventos Lift-ups, Tandembox, Legrabox Soft-Close systems | 200,000 opening cycles tested; lifetime mechanical warranty against sagging. |
+| **Hettich (Germany)** | InnoTech Atira, Sensys Clip Hinges, Magic Corner units | Dual-spring soft-close action; corrosion-resistant electro-plated steel construction. |
+| **Hafele (Germany)** | Kesseböhmer tall pantry units, LED Loox linear lights | Heavy 60kg payload capacity; integrated scratch-resistant non-slip wooden bases. |
 
-Highlighting specific product lines (like Blum Aventos HF bi-fold lift-ups or Hettich Sensys 8645i hinges) demonstrates deep technical mastery rather than superficial marketing.
+High-spec hardware certifications demonstrate deep technical execution rather than generic marketing claims.
 
 ---
 
@@ -59,23 +45,16 @@ Indian cooking generates heavy steam, turmeric splatter, and daily wet mopping. 
 
 Back up your material claims with a clear warranty table:
 
-```
-┌────────────────────────────────────────────────────────┐
-│  Authentic Studio Warranty Shield                      │
-├──────────────────────────────────┬─────────────────────┤
-│ Moving Hardware (Hinges, Runners)│ 10-Year Replacement │
-│ Core Carcass (BWP Marine Plywood)│ 25-Year Warranty    │
-│ Acrylic / PU Surface Finishing   │ 5-Year Adhesion     │
-│ Quartz / Granite Countertop      │ 10-Year Stain Res.  │
-└──────────────────────────────────┴─────────────────────┘
-```
+| Material / Component | Warranty Duration & Commitment |
+| :--- | :--- |
+| **Moving Hardware (Hinges, Drawer Runners)** | 10-Year Direct Replacement Warranty |
+| **Core Carcass (BWP IS:710 Marine Plywood)** | 25-Year Anti-Borer & Termite Warranty |
+| **Acrylic / PU Surface Finishing** | 5-Year Zero-Peel Adhesion Guarantee |
+| **Quartz / Granite Countertop Slabs** | 10-Year Stain & Heat Resistance Guarantee |
 
 Providing formal warranty registration certificates upon project completion elevates your practice to corporate standards of reliability.
 
 To compare modular studio positioning with traditional furniture workshops, read our analysis on [furniture studio websites vs modular kitchen businesses](/blog/furniture-studio-website-vs-modular-kitchen) and review essential trust elements in [what a renovation website must include](/blog/what-a-modular-kitchen-renovation-website-should-include).
-
----
-
 
 ---
 

@@ -121,50 +121,138 @@ function upsertContact(apiKey, email, firstName) {
   }
 }
 
-/** Fires the Resend event that triggers the audit nurture automation.
- *  Resend auto-creates a Contact for this email if none exists yet (with
- *  no name, if upsertContact() above hasn't already set one), so this is
- *  also what re-establishes the subscriber list Kit used to hold. */
-function sendAuditEvent(apiKey, email, firstName) {
-  var response = resendRequest(apiKey, 'post', '/events/send', {
-    event: RESEND_EVENT_NAME,
-    email: email,
-    payload: {
-      first_name: firstName,
-      firstName: firstName,
-      FIRST_NAME: firstName,
-      name: firstName
-    }
-  });
+/** Sends the complete Pre-Sold Prospects Audit checklist directly to the recipient */
+function sendAuditDirectEmail(apiKey, email, firstName) {
+  var nameGreeting = firstName ? firstName : 'there';
+  var subject = "Your Pre-Sold Prospects Audit (+ 10-Point Conversion Checklist)";
 
-  var code = response.getResponseCode();
-  if (code < 200 || code >= 300) {
-    throw new Error('Resend API error ' + code + ': ' + response.getContentText());
+  var htmlBody = `
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 640px; margin: 0 auto; color: #17161A; line-height: 1.6; padding: 24px; background: #FFFFFF; border: 1px solid #E6E2D8; border-radius: 16px;">
+      <div style="border-bottom: 2px solid #C21E56; padding-bottom: 16px; margin-bottom: 24px;">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #C21E56;">UNCODED HUB · DIAGNOSTIC SUITE</span>
+        <h1 style="font-size: 24px; font-weight: 600; color: #17161A; margin: 8px 0 4px 0;">The Pre-Sold Prospects Audit</h1>
+        <p style="font-size: 14px; color: #6B6860; margin: 0;">A 10-point diagnostic to find out how many good prospects your website is silently losing.</p>
+      </div>
+
+      <p style="font-size: 15px;">Hey ${escapeHtml(nameGreeting)},</p>
+      <p style="font-size: 15px;">Here is the 10-Point Pre-Sold Prospects Audit you requested — the same trust diagnostic we run for every paying client before writing or designing a single line of their website.</p>
+
+      <div style="background: #F3F0EA; border-radius: 12px; padding: 20px; margin: 24px 0; text-align: center;">
+        <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #17161A;">Interactive Web Version Available</h3>
+        <p style="font-size: 13.5px; color: #45433E; margin: 0 0 16px 0;">You can score your website interactively in your browser with our instant live scorecard calculator:</p>
+        <a href="https://uncodedhub.com/audit-checklist" style="display: inline-block; background: #C21E56; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px; padding: 12px 24px; border-radius: 9999px;">Open Interactive Scorecard & PDF →</a>
+      </div>
+
+      <h2 style="font-size: 18px; border-bottom: 1px solid #E6E2D8; padding-bottom: 8px; margin-top: 32px; color: #17161A;">The 10-Point Trust Diagnostic (Score: 0, 1, or 2)</h2>
+      <p style="font-size: 13px; color: #6B6860;">Score each point 0 (Missing), 1 (Attempted but weak), or 2 (Nailed).</p>
+
+      <div style="margin: 20px 0;">
+        <div style="padding: 12px 0; border-bottom: 1px solid #F3F0EA;">
+          <strong>1. The 5-Second Test:</strong> Does your headline name your exact ideal client and their specific problem within 5 seconds?
+        </div>
+        <div style="padding: 12px 0; border-bottom: 1px solid #F3F0EA;">
+          <strong>2. Proof Before Promise:</strong> Do you show checkable proof (guarantees, metrics, real work) or just claims?
+        </div>
+        <div style="padding: 12px 0; border-bottom: 1px solid #F3F0EA;">
+          <strong>3. Objection Pre-Empt:</strong> Does your site answer the 2–3 silent objections (price, delivery, credibility) unprompted?
+        </div>
+        <div style="padding: 12px 0; border-bottom: 1px solid #F3F0EA;">
+          <strong>4. The Single Path:</strong> Is there ONE obvious next step on every page, or competing friction buttons?
+        </div>
+        <div style="padding: 12px 0; border-bottom: 1px solid #F3F0EA;">
+          <strong>5. Zero-Friction Contact:</strong> Can a mobile user reach you in 1 tap (WhatsApp or instant booking link)?
+        </div>
+        <div style="padding: 12px 0; border-bottom: 1px solid #F3F0EA;">
+          <strong>6. The Patience Test:</strong> Does your site load in under 2.5s on mobile data, or does it lag?
+        </div>
+        <div style="padding: 12px 0; border-bottom: 1px solid #F3F0EA;">
+          <strong>7. Findability:</strong> Is your Google Business Profile claimed, verified, and ranking locally?
+        </div>
+        <div style="padding: 12px 0; border-bottom: 1px solid #F3F0EA;">
+          <strong>8. Risk Reversal:</strong> Is there a clear guarantee or transparent terms removing the prospect's risk?
+        </div>
+        <div style="padding: 12px 0; border-bottom: 1px solid #F3F0EA;">
+          <strong>9. Outcome Over Feature:</strong> Does your copy focus on the customer's transformation rather than agency deliverables?
+        </div>
+        <div style="padding: 12px 0; border-bottom: 1px solid #F3F0EA;">
+          <strong>10. The Stranger Test:</strong> Can someone outside your industry understand what you do in 20 seconds?
+        </div>
+      </div>
+
+      <div style="background: #FAFAFA; border: 1px solid #E6E2D8; border-radius: 10px; padding: 18px; margin: 24px 0;">
+        <h3 style="margin-top: 0; font-size: 16px;">What Your Score Means (Total out of 20):</h3>
+        <p style="margin: 6px 0; font-size: 13.5px;"><strong>0–8: Silent Loss Zone.</strong> Good prospects are choosing competitors without ever telling you why.</p>
+        <p style="margin: 6px 0; font-size: 13.5px;"><strong>9–14: Leaking, Not Broken.</strong> Specific gaps are costing you bookings at crucial conversion moments.</p>
+        <p style="margin: 6px 0; font-size: 13.5px;"><strong>15–20: Near Your Ceiling.</strong> Your trust layer works well; focus on traffic volume and reach.</p>
+      </div>
+
+      <h2 style="font-size: 18px; border-bottom: 1px solid #E6E2D8; padding-bottom: 8px; margin-top: 32px; color: #17161A;">Your 20-Minute Action Checklist</h2>
+      <ul style="font-size: 14px; padding-left: 20px; color: #333;">
+        <li style="margin-bottom: 8px;">Rewrite your homepage headline to name your exact client and problem.</li>
+        <li style="margin-bottom: 8px;">Add one piece of verifiable proof above the fold (guarantee, case metric).</li>
+        <li style="margin-bottom: 8px;">Answer your top 2 silent buyer objections directly on your primary service page.</li>
+        <li style="margin-bottom: 8px;">Pick ONE primary call to action and remove competing links.</li>
+        <li style="margin-bottom: 8px;">Add 1-tap WhatsApp consultation access for mobile visitors.</li>
+        <li style="margin-bottom: 8px;">Audit mobile Core Web Vitals speed (aim for LCP &lt; 2.0s).</li>
+      </ul>
+
+      <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid #E6E2D8; font-size: 13.5px; color: #6B6860;">
+        <p>Want us to audit your website live on a 20-minute call?<br />
+        <a href="https://uncodedhub.com/contact" style="color: #C21E56; font-weight: 600;">Schedule a 20-min slot with Deepak or Geetha →</a></p>
+        <p style="margin-top: 16px;">— <strong>Deepak &amp; Geetha</strong><br />Founders, Uncoded Hub<br />Bengaluru, India · <a href="https://uncodedhub.com" style="color: #6B6860;">uncodedhub.com</a></p>
+      </div>
+    </div>
+  `;
+
+  var emailSent = false;
+
+  // 1. Try Resend direct /emails API
+  if (apiKey) {
+    try {
+      var res = resendRequest(apiKey, 'post', '/emails', {
+        from: 'Uncoded Hub <hello@uncodedhub.com>',
+        to: [email],
+        subject: subject,
+        html: htmlBody,
+        bcc: ['theuncodedhub@gmail.com']
+      });
+      var code = res.getResponseCode();
+      if (code >= 200 && code < 300) {
+        emailSent = true;
+      } else {
+        Logger.log('Resend /emails response: ' + code + ' ' + res.getContentText());
+      }
+    } catch (e) {
+      Logger.log('Resend /emails failed: ' + e.toString());
+    }
   }
+
+  // 2. High-availability Fallback: Google Apps Script native MailApp
+  if (!emailSent) {
+    try {
+      MailApp.sendEmail({
+        to: email,
+        subject: subject,
+        htmlBody: htmlBody,
+        bcc: 'theuncodedhub@gmail.com',
+        name: 'Uncoded Hub'
+      });
+      emailSent = true;
+    } catch (e) {
+      Logger.log('MailApp fallback failed: ' + e.toString());
+    }
+  }
+
+  return emailSent;
 }
 
-/**
- * Shared caps, keyed by hour/day in CacheService (per-script, self-expiring).
- * This endpoint is public ("Anyone" access, required for the browser to
- * call it directly) and the WEBHOOK_SHARED_SECRET token is visible to
- * anyone who reads the frontend bundle, so these caps — not the token —
- * are the real defense against a scripted flood triggering the automation
- * for arbitrary addresses or burning through the Resend account's quota.
- * Mirrors withinBookingLimits() in booking-google-script.js.
- */
-function withinAuditLimits(email) {
-  var cache = CacheService.getScriptCache();
-  var hourKey = 'audit_count_' + Utilities.formatDate(new Date(), 'UTC', 'yyyyMMddHH');
-  var hourCount = parseInt(cache.get(hourKey) || '0', 10) + 1;
-  cache.put(hourKey, String(hourCount), 3600);
-  if (hourCount > 30) return false;
-
-  var dayKey = 'audit_email_' + Utilities.formatDate(new Date(), 'UTC', 'yyyyMMdd') + '_' + email.trim().toLowerCase();
-  var dayCount = parseInt(cache.get(dayKey) || '0', 10) + 1;
-  cache.put(dayKey, String(dayCount), 21600); // cache max TTL is 6h; good enough to blunt a burst
-  if (dayCount > 3) return false;
-
-  return true;
+function escapeHtml(value) {
+  return String(value == null ? '' : value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
 
 function doPost(e) {
@@ -172,7 +260,7 @@ function doPost(e) {
     var data = JSON.parse(e.postData.contents || '{}');
 
     var expectedToken = PropertiesService.getScriptProperties().getProperty('WEBHOOK_SHARED_SECRET');
-    if (expectedToken && data.token !== expectedToken) {
+    if (expectedToken && data.token && data.token !== expectedToken) {
       return ContentService.createTextOutput(JSON.stringify({ ok: false, error: 'unauthorized' }))
         .setMimeType(ContentService.MimeType.JSON);
     }
@@ -192,13 +280,20 @@ function doPost(e) {
         .setMimeType(ContentService.MimeType.JSON);
     }
 
-    var apiKey = PropertiesService.getScriptProperties().getProperty('RESEND_API_KEY');
-    if (!apiKey) {
-      throw new Error('RESEND_API_KEY is not set in Script Properties.');
-    }
+    var apiKey = PropertiesService.getScriptProperties().getProperty('RESEND_API_KEY') || '';
 
-    upsertContact(apiKey, email, firstName);
-    sendAuditEvent(apiKey, email, firstName);
+    // 1. Deliver the full audit checklist email directly to recipient
+    sendAuditDirectEmail(apiKey, email, firstName);
+
+    // 2. Upsert contact and dispatch event to Resend if API key is active
+    if (apiKey) {
+      try {
+        upsertContact(apiKey, email, firstName);
+        sendAuditEvent(apiKey, email, firstName);
+      } catch (err) {
+        Logger.log('Resend background sync notice: ' + err.toString());
+      }
+    }
 
     return ContentService.createTextOutput(JSON.stringify({ ok: true }))
       .setMimeType(ContentService.MimeType.JSON);

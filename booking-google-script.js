@@ -154,13 +154,61 @@ function doPost(e) {
       return ContentService.createTextOutput(JSON.stringify({ status: "error", message: "Too many booking attempts — please try again later or WhatsApp us" }))
         .setMimeType(ContentService.MimeType.JSON);
     }
+
+    // ── CASE A: Contact Form Submission Backup (Briefs & Enquiries) ──
+    // NEVER create a calendar event or send a discovery call confirmation email.
+    if (data.type === 'contact_submission_backup' || data.type === 'lead_submission') {
+      var phone = singleLine(data.phone || 'Not provided');
+      var projectDetails = escapeHtml(data.project_details || 'No details provided');
+
+      appendLeadRow([
+        new Date(),
+        name,
+        email,
+        phone,
+        business,
+        projectDetails
+      ]);
+
+      // Notify the team
+      try {
+        MailApp.sendEmail({
+          to: "theuncodedhub@gmail.com",
+          cc: "deepak@uncodedhub.com, geetha@uncodedhub.com",
+          subject: "📩 New Website Contact Form Brief: " + name + " (" + business + ")",
+          htmlBody: `
+            <div style="font-family: Arial, sans-serif; padding: 20px; color: #11142a; max-width: 600px; border: 1px solid #e2e8f0; border-radius: 12px;">
+              <h2 style="color: #C21E56; margin-top: 0;">New Project Brief Received</h2>
+              <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+              <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+              <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+              <p><strong>Business:</strong> ${escapeHtml(business)}</p>
+              <p><strong>Project Details:</strong></p>
+              <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border-left: 3px solid #C21E56; white-space: pre-wrap;">${projectDetails}</div>
+            </div>
+          `,
+          name: "Uncoded Hub System"
+        });
+      } catch (err) {
+        Logger.log("Lead notification email failed: " + err.toString());
+      }
+
+      return ContentService.createTextOutput(JSON.stringify({ status: "success", type: "lead_logged" }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+
+    // ── CASE B: 20-Minute Discovery Call Calendar Booking ──
     var dateStr = data.date; // Format: YYYY-MM-DD
     var timeStr = data.time; // Format: HH:MM (24-hour style, e.g., "14:00")
     var host = singleLine(data.host || "Deepak");
 
-    // Quiz answers — all optional, all default to "Not specified" so an
-    // older frontend build (or a request that skipped the quiz) never
-    // breaks the booking itself.
+    // Strictly require a booking date
+    if (!data.start_time && !dateStr) {
+      return ContentService.createTextOutput(JSON.stringify({ status: "error", message: "Date and time required for calendar booking" }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+
+    // Quiz answers — all optional, all default to "Not specified"
     var niche = singleLine(data.niche || "Not specified");
     var hasWebsite = singleLine(data.hasWebsite || "Not specified");
     var timeline = singleLine(data.timeline || "Not specified");
@@ -170,7 +218,6 @@ function doPost(e) {
     if (data.start_time) {
       startTime = new Date(data.start_time);
     } else {
-      // Robust fallback for legacy format
       var time24 = timeStr || "08:00";
       if (time24.indexOf('AM') > -1 || time24.indexOf('PM') > -1) {
         var parts = time24.split(' ');
@@ -184,6 +231,12 @@ function doPost(e) {
       }
       var dateTimeStr = dateStr + 'T' + time24 + ':00';
       startTime = new Date(dateTimeStr);
+    }
+
+    // Strict validation: Reject invalid or ancient dates (e.g. 1970 epoch bugs)
+    if (!startTime || isNaN(startTime.getTime()) || startTime.getFullYear() < 2025) {
+      return ContentService.createTextOutput(JSON.stringify({ status: "error", message: "Invalid appointment date/time" }))
+        .setMimeType(ContentService.MimeType.JSON);
     }
 
     // Default meeting duration: 20 minutes
@@ -491,3 +544,41 @@ function appendBookingRow(row) {
     Logger.log('Sheet logging failed (booking itself still succeeded): ' + err.message);
   }
 }
+
+/**
+ * Appends one contact form brief/lead to the Leads tab or creates it.
+ */
+function appendLeadRow(row) {
+  try {
+    var props = PropertiesService.getScriptProperties();
+    var sheetId = props.getProperty('BOOKINGS_SHEET_ID');
+    var ss = null;
+
+    if (sheetId) {
+      try {
+        ss = SpreadsheetApp.openById(sheetId);
+      } catch (e) {
+        ss = null;
+      }
+    }
+
+    if (!ss) {
+      ss = SpreadsheetApp.create('Uncoded Hub — Leads & Enquiries');
+      props.setProperty('BOOKINGS_SHEET_ID', ss.getId());
+    }
+
+    var leadSheet = ss.getSheetByName('Leads & Briefs');
+    if (!leadSheet) {
+      leadSheet = ss.insertSheet('Leads & Briefs');
+      leadSheet.appendRow([
+        'Received at', 'Name', 'Email', 'Phone', 'Business / Brand', 'Project Details'
+      ]);
+      leadSheet.setFrozenRows(1);
+    }
+
+    leadSheet.appendRow(row);
+  } catch (err) {
+    Logger.log('Lead sheet logging failed: ' + err.message);
+  }
+}
+

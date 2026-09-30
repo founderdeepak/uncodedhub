@@ -27,34 +27,20 @@ Before you spend a single rupee on a redesign, run your existing website through
 
 ## 1. The 10-Point Pre-Redesign Audit Matrix
 
-```
-┌────────────────────────────────────────────────────────┐
-│  The 10-Point Forensic Website Diagnostic Matrix       │
-├────┬────────────────────────┬──────────────────────────┤
-│ #  │ Diagnostic Dimension   │ The Passing Benchmark    │
-├────┼────────────────────────┼──────────────────────────┤
-│ 1  │ The 5-Second Test      │ Does a stranger grasp who│
-│    │                        │ you serve within 5 secs? │
-│ 2  │ Mobile LCP Speed       │ Does main content render │
-│    │                        │ in under 2.0s on mobile? │
-│ 3  │ Conversion Clarity     │ Is there ONE unambiguous │
-│    │                        │ primary CTA per page?    │
-│ 4  │ Pricing Transparency   │ Are clear starting-at    │
-│    │                        │ tiers visible online?    │
-│ 5  │ WhatsApp Integration   │ Can a mobile user reach  │
-│    │                        │ WhatsApp in 1 tap?       │
-│ 6  │ Social Proof Specifics │ Are case studies backed  │
-│    │                        │ by real numbers & names? │
-│ 7  │ Indexing & Health      │ Are all pages indexed    │
-│    │                        │ in Google Search Console?│
-│ 8  │ Structured Schema      │ Is valid JSON-LD schema  │
-│    │                        │ injected in the header?  │
-│ 9  │ Code Sovereignty       │ Do you own your Git repo │
-│    │                        │ or are you locked in?    │
-│ 10 │ Speed to Lead Routing  │ Does sales get notified  │
-│    │                        │ in < 10 secs on phone?   │
-└────┴────────────────────────┴──────────────────────────┘
-```
+| # | Diagnostic Dimension | The Passing Benchmark |
+| :--- | :--- | :--- |
+| **01** | **The 5-Second Test** | Does a stranger grasp who you serve within 5 seconds? |
+| **02** | **Mobile LCP Speed** | Does main content render in under 2.0s on mobile data? |
+| **03** | **Conversion Clarity** | Is there ONE unambiguous primary call to action per page? |
+| **04** | **Pricing Transparency** | Are clear starting-at investment tiers visible online? |
+| **05** | **WhatsApp Integration** | Can a mobile user reach you via WhatsApp in 1 tap? |
+| **06** | **Social Proof Specifics** | Are case studies backed by verified numbers & names? |
+| **07** | **Indexing & Health** | Are all pages cleanly indexed in Google Search Console? |
+| **08** | **Structured Schema** | Is valid JSON-LD schema injected in the document head? |
+| **09** | **Code Sovereignty** | Do you own your Git repository or are you locked into a platform? |
+| **10** | **Speed to Lead Routing** | Does your team get notified in < 10 seconds on mobile? |
+
+> You can also run our [Free Interactive 10-Point Audit Scorecard](/audit-checklist) directly in your browser with automated scoring and PDF export.
 
 ---
 
@@ -89,9 +75,6 @@ If running technical audits feels overwhelming, our engineering team offers a co
 To schedule your diagnostic teardown, book your free audit with our senior creators at [Uncoded Hub](https://uncodedhub.com).
 
 To study how to brief a studio once you are ready to rebuild, read [how to brief a web design studio](/blog/how-to-brief-a-web-design-studio) and explore the foundational elements of conversion in [what makes a website actually convert](/blog/what-makes-a-website-actually-convert).
-
----
-
 
 ---
 

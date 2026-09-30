@@ -4,12 +4,6 @@
  * Tailored to Uncoded Hub design system (Fraunces + Inter, #F3F0EA, #17161A, #C21E56)
  */
 
-interface DiagramMeta {
-  title: string;
-  category?: string;
-  desc?: string;
-}
-
 function escapeHtml(str: string): string {
   return str
     .replace(/&/g, '&amp;')
@@ -339,7 +333,6 @@ export function renderCardBlueprintDiagram(
   let itemsSvg = '';
   items.forEach((item, i) => {
     const y = startY + i * rowH;
-    const isLast = i === items.length - 1;
     if (item.isAction) {
       itemsSvg += `
         <rect x="${startX + 20}" y="${y + 6}" width="160" height="26" rx="13" fill="#C21E56" />

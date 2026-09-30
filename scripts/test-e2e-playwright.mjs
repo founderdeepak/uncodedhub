@@ -90,7 +90,7 @@ async function runTests() {
 
     // ── Test 2: Blog Hub & Search ──
     console.log('[E2E] Test 2: Verifying Blog Hub & Instant Search (/blog) ...');
-    await page.goto(`${BASE}/blog`, { waitUntil: 'networkidle' });
+    await page.goto(`${BASE}/blog/`, { waitUntil: 'networkidle' });
     const blogTitle = await page.title();
     console.log('  ✓ Blog page title:', blogTitle);
 
@@ -100,13 +100,16 @@ async function runTests() {
     console.log('  ✓ Search bar is present');
 
     // Type search query
-    await searchInput.fill('dental implant');
-    await page.waitForTimeout(500);
-    const resultText = await page.locator('text=/matching "dental implant"/').textContent();
+    await searchInput.click();
+    await searchInput.pressSequentially('dental implant', { delay: 30 });
+    const resultEl = page.locator('text=matching "dental implant"');
+    await resultEl.waitFor({ state: 'attached', timeout: 8000 });
+    const resultText = await resultEl.textContent();
     console.log('  ✓ Search filter results:', resultText?.trim());
 
     // Clear search query
-    const clearBtn = page.locator('button:has-text("✕")');
+    const clearBtn = page.locator('button:has-text("Clear")');
+    await clearBtn.waitFor({ state: 'attached', timeout: 5000 });
     await clearBtn.click();
     await page.waitForTimeout(500);
     console.log('  ✓ Search cleared successfully');
@@ -114,7 +117,7 @@ async function runTests() {
 
     // ── Test 3: Niche Hub Page ──
     console.log('[E2E] Test 3: Verifying Niche Hub Page (/blog/niche/dental-clinics) ...');
-    await page.goto(`${BASE}/blog/niche/dental-clinics`, { waitUntil: 'networkidle' });
+    await page.goto(`${BASE}/blog/niche/dental-clinics/`, { waitUntil: 'networkidle' });
     const nicheHeading = await page.locator('h1').textContent();
     console.log('  ✓ Niche heading:', nicheHeading?.trim());
 
@@ -125,7 +128,7 @@ async function runTests() {
 
     // ── Test 4: Individual Blog Post with TOC, Takeaways, Author, Related ──
     console.log('[E2E] Test 4: Verifying Blog Post Features (/blog/what-a-dental-clinics-website-should-include) ...');
-    await page.goto(`${BASE}/blog/what-a-dental-clinics-website-should-include`, { waitUntil: 'networkidle' });
+    await page.goto(`${BASE}/blog/what-a-dental-clinics-website-should-include/`, { waitUntil: 'networkidle' });
 
     // Breadcrumb
     const breadcrumb = page.locator('nav[aria-label="Breadcrumb"]');
@@ -157,14 +160,14 @@ async function runTests() {
 
     // ── Test 5: Contact Page ──
     console.log('[E2E] Test 5: Verifying Contact Page (/contact) ...');
-    await page.goto(`${BASE}/contact`, { waitUntil: 'domcontentloaded' });
+    await page.goto(`${BASE}/contact/`, { waitUntil: 'domcontentloaded' });
     const contactHeading = await page.locator('h1').textContent();
     console.log('  ✓ Contact page loaded:', contactHeading?.trim());
     passed++;
 
     // ── Test 6: WebP Thumbnail Delivery & Hero Image Rendering ──
     console.log('[E2E] Test 6: Verifying WebP Thumbnail Delivery & Hero Image Rendering ...');
-    await page.goto(`${BASE}/blog/what-a-dental-clinics-website-should-include`, { waitUntil: 'networkidle' });
+    await page.goto(`${BASE}/blog/what-a-dental-clinics-website-should-include/`, { waitUntil: 'networkidle' });
     const heroImg = page.locator('figure img[src*=".webp"]');
     await heroImg.waitFor({ state: 'visible', timeout: 8000 });
     const imgSrc = await heroImg.getAttribute('src');

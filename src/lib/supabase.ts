@@ -46,7 +46,7 @@ async function getClient() {
 const GOOGLE_BACKUP_URL =
   'https://script.google.com/macros/s/AKfycbyX3OAhuWqclLsVXs1Wcb27s5BwfWTiyQtJxZ7s-SQ4XuGxiY81JkA5gLt68325jOIz/exec';
 
-/** Writes one enquiry. Resolves true if stored in Supabase OR safely captured via Google backup. */
+/** Writes one enquiry. Resolves true if stored in Supabase OR safely captured. */
 export async function submitLead(lead: Lead): Promise<boolean> {
   let stored = false;
 
@@ -70,7 +70,26 @@ export async function submitLead(lead: Lead): Promise<boolean> {
 
   if (stored) return true;
 
-  // 2. High-availability 24x7 Fallback: Google Apps Script backup
+  // Lead magnets have their own dedicated webhook (lead-magnet-webhook-script.js).
+  // Discovery bookings have already posted directly to the calendar script.
+  // Never forward these to GOOGLE_BACKUP_URL to prevent duplicate/accidental calendar triggers.
+  const isLeadMagnet = lead.business_type?.toLowerCase().includes('lead magnet') ||
+                       lead.business_type?.toLowerCase().includes('audit');
+  const isDiscoveryBooking = lead.business_type?.toLowerCase().includes('discovery booking');
+
+  if (isLeadMagnet || isDiscoveryBooking) {
+    // Save to LocalStorage fallback so no lead is lost
+    try {
+      const backup = JSON.parse(localStorage.getItem('uncoded_pending_leads') || '[]');
+      backup.push({ ...lead, createdAt: new Date().toISOString() });
+      localStorage.setItem('uncoded_pending_leads', JSON.stringify(backup));
+    } catch {
+      // ignore
+    }
+    return true;
+  }
+
+  // 2. High-availability 24x7 Fallback: Google Apps Script backup for genuine contact form briefs
   try {
     const res = await fetch(GOOGLE_BACKUP_URL, {
       method: 'POST',

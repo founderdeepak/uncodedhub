@@ -16,6 +16,7 @@ const Terms = lazy(() => import('./pages/Terms'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Blogs = lazy(() => import('./pages/Blogs'));
 const BlogView = lazy(() => import('./pages/BlogView'));
+const AuditChecklist = lazy(() => import('./pages/AuditChecklist'));
 import { EnquiryDock } from './components/EnquiryDock';
 
 /* Paths are unchanged from the previous site so existing links and
@@ -209,6 +210,22 @@ export default function App() {
             element={
               <Suspense fallback={null}>
                 <Privacy />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/audit-checklist"
+            element={
+              <Suspense fallback={null}>
+                <AuditChecklist />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/audit"
+            element={
+              <Suspense fallback={null}>
+                <AuditChecklist />
               </Suspense>
             }
           />

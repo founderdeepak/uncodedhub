@@ -98,16 +98,24 @@ export default function SiteFooter() {
 
           <div className="lg:col-span-7">
             {status === 'sent' ? (
-              <div className="p-4 rounded-[14px] bg-white/[0.06] border border-white/15 text-sm text-on-ink flex items-center gap-3">
-                <span className="w-6 h-6 rounded-full bg-signal text-paper flex items-center justify-center font-bold text-xs shrink-0">
-                  ✓
-                </span>
-                <div>
-                  <strong className="font-medium text-paper block">Audit on its way to {email}</strong>
-                  <span className="text-xs text-on-ink-muted">
-                    Check your inbox (and spam folder) in the next 60 seconds.
+              <div className="p-4 sm:p-5 rounded-[16px] bg-white/[0.06] border border-white/15 text-sm text-on-ink flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-signal text-paper flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                    ✓
                   </span>
+                  <div>
+                    <strong className="font-medium text-paper block">Audit on its way to {email}</strong>
+                    <span className="text-xs text-on-ink-muted">
+                      Check your inbox in the next 60 seconds, or open the checklist right now:
+                    </span>
+                  </div>
                 </div>
+                <Link
+                  to="/audit-checklist"
+                  className="bg-signal hover:bg-signal-bright text-paper text-xs font-semibold px-4 py-2.5 rounded-full transition-colors shrink-0 text-center"
+                >
+                  View Checklist Now →
+                </Link>
               </div>
             ) : (
               <form onSubmit={handleAuditSubmit} className="space-y-2.5">

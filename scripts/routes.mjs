@@ -23,6 +23,7 @@ const STATIC_ROUTE_FILES = {
   '/contact': 'src/pages/Contact.tsx',
   '/terms': 'src/pages/Terms.tsx',
   '/privacy': 'src/pages/Privacy.tsx',
+  '/audit-checklist': 'src/pages/AuditChecklist.tsx',
   '/404': 'src/pages/NotFound.tsx',
 };
 

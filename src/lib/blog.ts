@@ -211,7 +211,7 @@ const WIKILINK_MAP: Record<string, { label: string; slug: string }> = {
 };
 
 function resolveWikilinks(text: string): string {
-  return text.replace(/\[\[(.*?)\]\]/g, (match, inner) => {
+  return text.replace(/\[\[(.*?)\]\]/g, (_match, inner) => {
     const trimmed = inner.trim();
     const entry = WIKILINK_MAP[trimmed];
     if (entry) {
@@ -225,6 +225,11 @@ function resolveWikilinks(text: string): string {
 function cleanBlogBody(rawBody: string): string {
   let cleaned = rawBody;
   cleaned = resolveWikilinks(cleaned);
+  // Clean up double-bullet unicode boxes (e.g. "- ☐ " -> "- [ ] ")
+  cleaned = cleaned.replace(/^(\s*[-*])\s*☐\s*/gm, '$1 [ ] ');
+  cleaned = cleaned.replace(/^(\s*[-*])\s*☑\s*/gm, '$1 [x] ');
+  // Clean up redundant consecutive horizontal rules
+  cleaned = cleaned.replace(/(?:^|\n)\s*---\s*\n(?:\s*\n)*\s*---\s*(?=\n|$)/g, '\n\n---\n\n');
   // Strip duplicate h1 title at start of article body
   cleaned = cleaned.replace(/^#\s+[^\r\n]+\r?\n+/m, '');
   // Strip duplicate author line (e.g. *By [Deepak]...* or *By [Geetha]...*)
@@ -258,6 +263,48 @@ function renderPost(markdown: string, slug: string): { html: string; toc: TocIte
           });
         }
         return `<h${token.depth} id="${finalId}">${text}</h${token.depth}>\n`;
+      },
+      table(token) {
+        const header = token.header
+          .map((cell) => {
+            const content = this.parser.parseInline(cell.tokens);
+            const align = cell.align ? ` align="${cell.align}"` : '';
+            return `<th${align}>${content}</th>`;
+          })
+          .join('');
+
+        const rows = token.rows
+          .map((row) => {
+            const cells = row
+              .map((cell) => {
+                const content = this.parser.parseInline(cell.tokens);
+                const align = cell.align ? ` align="${cell.align}"` : '';
+                return `<td${align}>${content}</td>`;
+              })
+              .join('');
+            return `<tr>${cells}</tr>`;
+          })
+          .join('\n');
+
+        return `<div class="table-responsive-wrapper">\n<table>\n<thead>\n<tr>${header}</tr>\n</thead>\n<tbody>\n${rows}\n</tbody>\n</table>\n</div>\n`;
+      },
+      list(token) {
+        const isTaskList = token.items.some((it: any) => it.task);
+        const body = token.items.map((it: any) => this.listitem(it)).join('');
+        const tag = token.ordered ? 'ol' : 'ul';
+        const cls = isTaskList ? ' class="checklist-unstyled"' : '';
+        return `<${tag}${cls}>\n${body}</${tag}>\n`;
+      },
+      listitem(token) {
+        if (token.task) {
+          const rawText = this.parser.parse(token.tokens);
+          const cleanText = rawText
+            .replace(/^<input[^>]*>\s*/i, '')
+            .replace(/^<p>\s*<input[^>]*>\s*/i, '<p>');
+          return `<li class="checklist-item"><span class="checklist-box" aria-hidden="true">${token.checked ? '✓' : ''}</span><span>${cleanText}</span></li>\n`;
+        }
+        const text = this.parser.parse(token.tokens);
+        return `<li>${text}</li>\n`;
       },
       code(token) {
         const lang = (token.lang || '').toLowerCase().trim();
