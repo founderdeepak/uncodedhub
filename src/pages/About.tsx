@@ -150,7 +150,7 @@ export default function About({ onBook }: { onBook: () => void }) {
         </Shell>
       </Section>
 
-      {/* ── Cinematic Dark Chapter: Who Does What ───────────────── */}
+      {/* ── Founder Bios: Evidence-Led ───────────────────────────── */}
       <section className="bg-ink text-paper py-20 md:py-28 relative overflow-hidden border-y border-white/10">
         <div
           aria-hidden="true"
@@ -161,73 +161,120 @@ export default function About({ onBook }: { onBook: () => void }) {
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
               <span className="label text-signal-bright block mb-3">
-                Senior craft
+                Who does the work
               </span>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-paper font-normal leading-tight">
-                Design and engineering,{' '}
-                <em className="text-signal-bright italic font-medium">split cleanly.</em>
+                The people you meet are the{' '}
+                <em className="text-signal-bright italic font-medium">people who build.</em>
               </h2>
             </div>
           </Reveal>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Deepak */}
-            <Reveal>
-              <div className="p-8 sm:p-10 rounded-[28px] bg-white/[0.04] backdrop-blur-md border border-white/10 flex flex-col justify-between h-full">
-                <div>
+          {/* Geetha */}
+          <Reveal>
+            <div className="mb-10 p-8 sm:p-10 rounded-[28px] bg-white/[0.04] backdrop-blur-md border border-white/10">
+              <div className="grid md:grid-cols-12 gap-8">
+                <div className="md:col-span-8">
+                  <span className="inline-block text-[11px] font-semibold px-2.5 py-1 rounded-[6px] bg-signal/20 text-signal-bright mb-4">
+                    Co-founder · Design
+                  </span>
+                  <h3 className="font-display text-3xl text-paper font-medium mb-1">Geetha</h3>
+                  <p className="text-[11px] font-mono text-white/50 mb-6 tracking-wide uppercase">
+                    2.5 years at McKinsey &amp; Company · 15,000+ slides · 550+ decks · Senior leaders &amp; global teams
+                  </p>
+                  <div className="space-y-4 text-on-ink-muted text-xs sm:text-sm leading-relaxed">
+                    <p>
+                      Before Uncoded Hub, Geetha spent 2.5 years as a Business Presentation Specialist at McKinsey &amp; Company, where she designed more than 15,000 slides and 550+ presentation decks for senior leaders and global teams.
+                    </p>
+                    <p>
+                      That experience shaped how she thinks about design. The job was never simply to make information look good. It was to take something complicated, find what actually mattered, and make it clear enough that someone reading at speed could act on it.
+                    </p>
+                    <p>
+                      She brings that same discipline to every client website. Not decoration. Clarity. The kind of design that answers a visitor's real question — "can I trust these people?" — before they have read a single paragraph.
+                    </p>
+                    <p>
+                      What she does not do is design by committee or follow a template. Every layout is argued from the content out. If it cannot be explained, it gets redesigned.
+                    </p>
+                  </div>
+                </div>
+                {/* Geetha stat cards */}
+                <div className="md:col-span-4 grid grid-cols-2 md:grid-cols-1 gap-4 content-start">
+                  <div className="bg-white/[0.06] border border-white/10 rounded-[18px] p-5 text-center">
+                    <span className="font-display text-3xl text-signal-bright font-semibold">2.5</span>
+                    <span className="font-display text-xl text-signal-bright font-semibold"> yrs</span>
+                    <p className="text-[10px] text-white/50 mt-1 font-mono uppercase tracking-wide">McKinsey &amp; Co.</p>
+                  </div>
+                  <div className="bg-white/[0.06] border border-white/10 rounded-[18px] p-5 text-center">
+                    <span className="font-display text-3xl text-signal-bright font-semibold">15,000+</span>
+                    <p className="text-[10px] text-white/50 mt-1 font-mono uppercase tracking-wide">Slides designed</p>
+                  </div>
+                  <div className="bg-white/[0.06] border border-white/10 rounded-[18px] p-5 text-center col-span-2 md:col-span-1">
+                    <span className="font-display text-3xl text-signal-bright font-semibold">550+</span>
+                    <p className="text-[10px] text-white/50 mt-1 font-mono uppercase tracking-wide">Decks delivered</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Deepak */}
+          <Reveal delay={100}>
+            <div className="mb-16 p-8 sm:p-10 rounded-[28px] bg-white/[0.04] backdrop-blur-md border border-white/10">
+              <div className="grid md:grid-cols-12 gap-8">
+                <div className="md:col-span-8">
                   <span className="inline-block text-[11px] font-semibold px-2.5 py-1 rounded-[6px] bg-signal/20 text-signal-bright mb-4">
                     Co-founder · Engineering
                   </span>
-                  <h3 className="font-display text-3xl text-paper font-medium mb-4">Deepak</h3>
+                  <h3 className="font-display text-3xl text-paper font-medium mb-1">Deepak</h3>
+                  <p className="text-[11px] font-mono text-white/50 mb-6 tracking-wide uppercase">
+                    Healthcare · Finance · Logistics · Government · SaaS
+                  </p>
                   <div className="space-y-4 text-on-ink-muted text-xs sm:text-sm leading-relaxed">
                     <p>
-                      Runs discovery, information architecture, performance engineering, and full deployment.
-                      He is the one who decides how your site is structured, what it is built with, and why it scores 99+ on Lighthouse.
+                      Deepak has built software across five industries — healthcare, finance, logistics, government, and SaaS — which means he has seen the full range of what can go wrong when a system is not engineered to last.
                     </p>
                     <p>
-                      His working principle: a website that does not bring you business is a digital brochure
-                      you are paying hosting for. Every line of code gets measured against whether it moves a client closer to enquiring.
+                      At Uncoded Hub, he runs everything technical: discovery, information architecture, performance engineering, and deployment. He is the one who decides what the site is built with, how it is structured, and why it consistently scores 99+ on Lighthouse.
+                    </p>
+                    <p>
+                      His working principle: a website that does not bring you business is a digital brochure you are paying hosting for. Every technical decision gets measured against whether it moves a visitor closer to enquiring.
+                    </p>
+                    <p>
+                      He climbed Velliangiri alone, slept on the hill, and reached the summit at dawn. He holds that the most useful decisions arrive in silence rather than in spreadsheets.
                     </p>
                   </div>
                 </div>
-
-                <div className="mt-8 pt-6 border-t border-white/10">
-                  <span className="text-[11px] font-semibold text-white/60 block mb-1">Away from the desk:</span>
-                  <p className="text-xs text-paper/80 leading-relaxed">
-                    Climbed Velliangiri alone, slept on the hill, and reached the summit at dawn. Holds that the most useful decisions arrive in silence rather than in spreadsheets.
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Geetha */}
-            <Reveal delay={100}>
-              <div className="p-8 sm:p-10 rounded-[28px] bg-white/[0.04] backdrop-blur-md border border-white/10 flex flex-col justify-between h-full">
-                <div>
-                  <span className="inline-block text-[11px] font-semibold px-2.5 py-1 rounded-[6px] bg-signal/20 text-signal-bright mb-4">
-                    Co-founder · Design &amp; copy
-                  </span>
-                  <h3 className="font-display text-3xl text-paper font-medium mb-4">Geetha</h3>
-                  <div className="space-y-4 text-on-ink-muted text-xs sm:text-sm leading-relaxed">
-                    <p>
-                      Runs brand positioning, typographic hierarchy, responsive pacing, and turnkey copy.
-                      She shapes the hundred small visual signals that tell a prospective client whether a business is trustworthy before they have read a single paragraph.
-                    </p>
-                    <p>
-                      Her working principle: design is not decoration, it is persuasion. If a layout cannot explain why it is arranged the way it is, it gets redesigned until it can.
-                    </p>
+                {/* Deepak stat cards */}
+                <div className="md:col-span-4 grid grid-cols-2 md:grid-cols-1 gap-4 content-start">
+                  <div className="bg-white/[0.06] border border-white/10 rounded-[18px] p-5 text-center">
+                    <span className="font-display text-3xl text-signal-bright font-semibold">5</span>
+                    <p className="text-[10px] text-white/50 mt-1 font-mono uppercase tracking-wide">Industries built in</p>
+                  </div>
+                  <div className="bg-white/[0.06] border border-white/10 rounded-[18px] p-5 text-center">
+                    <span className="font-display text-3xl text-signal-bright font-semibold">99+</span>
+                    <p className="text-[10px] text-white/50 mt-1 font-mono uppercase tracking-wide">Lighthouse score</p>
+                  </div>
+                  <div className="bg-white/[0.06] border border-white/10 rounded-[18px] p-5 text-center col-span-2 md:col-span-1">
+                    <span className="font-display text-3xl text-signal-bright font-semibold">7</span>
+                    <span className="text-xl text-signal-bright font-semibold"> days</span>
+                    <p className="text-[10px] text-white/50 mt-1 font-mono uppercase tracking-wide">Fixed delivery</p>
                   </div>
                 </div>
-
-                <div className="mt-8 pt-6 border-t border-white/10">
-                  <span className="text-[11px] font-semibold text-white/60 block mb-1">Away from the desk:</span>
-                  <p className="text-xs text-paper/80 leading-relaxed">
-                    The calmest person in any project channel, which turns out to be a remarkably useful professional trait when a live launch is 48 hours away.
-                  </p>
-                </div>
               </div>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
+
+          {/* Tagline */}
+          <Reveal delay={150}>
+            <div className="text-center border-t border-white/10 pt-12">
+              <p className="font-display text-2xl sm:text-3xl text-paper font-normal leading-snug max-w-2xl mx-auto">
+                She makes it clear.{' '}
+                <em className="text-signal-bright italic">He makes it work.</em>
+                <br />
+                Together, they build the whole thing.
+              </p>
+            </div>
+          </Reveal>
         </Shell>
       </section>
 
