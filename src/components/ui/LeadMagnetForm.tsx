@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import { submitLead } from '../../lib/supabase';
 
 /* ═══════════════════════════════════════════════════════════════════
    LEAD MAGNET FORM — The Pre-Sold Prospects Audit
@@ -49,12 +48,16 @@ export function LeadMagnetForm({ embedded }: LeadMagnetFormProps) {
       const trimmedFirstName = firstName.trim();
 
       // Mirror lead to Supabase contact_submissions
-      submitLead({
-        name: trimmedFirstName || 'Website Visitor',
-        email: trimmedEmail,
-        business_type: 'Lead Magnet: Pre-Sold Prospects Audit',
-        project_details: 'Requested the Pre-Sold Prospects Audit free download from website.',
-      }).catch(() => {});
+      import('../../lib/supabase')
+        .then(({ submitLead }) =>
+          submitLead({
+            name: trimmedFirstName || 'Website Visitor',
+            email: trimmedEmail,
+            business_type: 'Lead Magnet: Pre-Sold Prospects Audit',
+            project_details: 'Requested the Pre-Sold Prospects Audit free download from website.',
+          }),
+        )
+        .catch(() => {});
 
       const res = await fetch(LEAD_MAGNET_SCRIPT_URL, {
         method: 'POST',

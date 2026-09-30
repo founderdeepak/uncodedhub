@@ -640,19 +640,67 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════
-   ANIMATED MARCHING OUTLINE (Hero Primary CTA)
+   HERO PRIMARY CTA — Bespoke Editorial Signal + Ink Lockup
    ═══════════════════════════════════════════════════════════════════ */
-@keyframes marchingDash {
-  0% {
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: -56px;
-  }
+.btn-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  line-height: 1.2;
+  padding: 0.625rem 0.625rem 0.625rem 1.75rem;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, #d80953 0%, var(--color-signal) 100%);
+  color: var(--color-paper);
+  border: 1px solid #9e043a;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 0 0 4px rgba(199, 7, 75, 0.14),
+    0 14px 32px -6px rgba(199, 7, 75, 0.42);
+  cursor: pointer;
+  transition:
+    background 0.28s var(--ease-out-quint),
+    border-color 0.28s var(--ease-out-quint),
+    box-shadow 0.28s var(--ease-out-quint),
+    transform 0.22s var(--ease-out-quint);
 }
 
-.animate-marching-dash {
-  animation: marchingDash 1.2s linear infinite;
-  filter: drop-shadow(0 0 6px rgba(199, 7, 75, 0.5));
+.btn-hero-cta:hover {
+  background: linear-gradient(180deg, #1d1d1b 0%, var(--color-ink) 100%);
+  border-color: var(--color-ink);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 0 0 5px rgba(199, 7, 75, 0.22),
+    0 18px 38px -6px rgba(17, 17, 16, 0.36);
+  transform: translateY(-2px);
 }
+
+.btn-hero-cta:active {
+  transform: translateY(0);
+}
+
+.btn-hero-cta-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  transition:
+    background-color 0.28s var(--ease-out-quint),
+    color 0.28s var(--ease-out-quint),
+    transform 0.28s var(--ease-out-quint);
+}
+
+.btn-hero-cta:hover .btn-hero-cta-badge {
+  background: var(--color-signal);
+  color: var(--color-paper);
+  transform: translateX(2px);
+}
+
 

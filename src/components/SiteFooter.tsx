@@ -1,21 +1,17 @@
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { LogoMark } from './Logo';
 import { hasBlogPosts } from '../lib/blogNav';
 
+const LEAD_MAGNET_SCRIPT_URL =
+  'https://script.google.com/macros/s/AKfycbxjs7uylG1UuDne9_rCCd8YfZKp9RRE5vIFK9_Ctq8MMWfur0100fBDwAaTZd2l3_iq/exec';
+const LEAD_MAGNET_SECRET = import.meta.env.VITE_LEAD_MAGNET_SECRET || '';
+
 /* ═══════════════════════════════════════════════════════════════════
    FOOTER
-
-   The previous footer ended in a mouse-tracked SVG wordmark with a
-   radial cyan/magenta gradient that followed the cursor — desktop only,
-   and re-rendering an SVG gradient on every mousemove. The large closing
-   wordmark was a good editorial instinct, so it is kept; the neon and
-   the per-frame state are not. It is now a static serif lockup that
-   costs nothing and reads on every device.
-
-   Note also that /portfolio is linked from here and from the header.
-   Previously it was routed and listed in sitemap.xml but linked from
-   nowhere except one hero button — an orphaned page carrying the entire
-   proof argument.
+   Includes the compact Short Version of the Lead Magnet ("The Pre-Sold
+   Prospects Audit") at the top of the footer so visitors on any route
+   can grab the 10-point diagnostic checklist in one step.
    ═══════════════════════════════════════════════════════════════════ */
 
 const NAV = [
@@ -38,9 +34,149 @@ const SOCIAL = [
 ];
 
 export default function SiteFooter() {
+  const [firstName, setFirstName] = useState('');
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [trap, setTrap] = useState('');
+  const startedAt = useRef(Date.now());
+
+  const handleAuditSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (trap) return;
+    if (Date.now() - startedAt.current < 1500) return;
+    setStatus('sending');
+
+    try {
+      const trimmedEmail = email.trim();
+      const trimmedName = firstName.trim();
+
+      import('../lib/supabase')
+        .then(({ submitLead }) =>
+          submitLead({
+            name: trimmedName || 'Footer Subscriber',
+            email: trimmedEmail,
+            business_type: 'Footer Lead Magnet: Pre-Sold Prospects Audit',
+            project_details: 'Requested the Pre-Sold Prospects Audit from the compact footer form.',
+          }),
+        )
+        .catch(() => {});
+
+      const res = await fetch(LEAD_MAGNET_SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({
+          token: LEAD_MAGNET_SECRET,
+          email: trimmedEmail,
+          first_name: trimmedName,
+          firstName: trimmedName,
+          name: trimmedName,
+        }),
+      });
+      const json = await res.json().catch(() => null);
+      setStatus(json?.ok ? 'sent' : 'error');
+    } catch {
+      setStatus('error');
+    }
+  };
+
   return (
-    <footer className="on-ink pt-20 md:pt-28">
+    <footer className="on-ink pt-16 md:pt-24">
       <div className="max-w-6xl mx-auto px-6 md:px-10">
+        {/* ── Short Lead Magnet Strip (The 10-Point Audit) ─────────── */}
+        <div className="mb-16 p-6 sm:p-8 rounded-[24px] bg-white/[0.04] border border-white/12 grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+          <div className="lg:col-span-5">
+            <div className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-signal-bright mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-signal-bright" aria-hidden="true" />
+              <span>Free 10-Point Diagnostic</span>
+            </div>
+            <h2 className="font-display text-2xl sm:text-3xl text-on-ink font-normal leading-tight">
+              The Pre-Sold Prospects Audit
+            </h2>
+            <p className="text-on-ink-muted text-xs sm:text-sm leading-relaxed mt-2">
+              Score your site against our 10-point conversion checklist before booking a call. Sent to your inbox in 60 seconds.
+            </p>
+          </div>
+
+          <div className="lg:col-span-7">
+            {status === 'sent' ? (
+              <div className="p-4 rounded-[14px] bg-white/[0.06] border border-white/15 text-sm text-on-ink flex items-center gap-3">
+                <span className="w-6 h-6 rounded-full bg-signal text-paper flex items-center justify-center font-bold text-xs shrink-0">
+                  ✓
+                </span>
+                <div>
+                  <strong className="font-medium text-paper block">Audit on its way to {email}</strong>
+                  <span className="text-xs text-on-ink-muted">
+                    Check your inbox (and spam folder) in the next 60 seconds.
+                  </span>
+                </div>
+              </div>
+            ) : (
+              <form onSubmit={handleAuditSubmit} className="space-y-2.5">
+                <div className="flex flex-col sm:flex-row gap-2.5">
+                  <label htmlFor="footer-lm-name" className="sr-only">
+                    First Name
+                  </label>
+                  <input
+                    id="footer-lm-name"
+                    type="text"
+                    placeholder="First name"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    className="sm:w-40 bg-white/[0.06] border border-white/15 text-paper placeholder:text-on-ink-muted/70 px-3.5 py-2.5 text-sm rounded-[8px] focus:border-signal-bright focus:outline-none transition-colors"
+                  />
+
+                  <label htmlFor="footer-lm-email" className="sr-only">
+                    Email Address
+                  </label>
+                  <input
+                    id="footer-lm-email"
+                    type="email"
+                    required
+                    placeholder="Your work email *"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="flex-1 bg-white/[0.06] border border-white/15 text-paper placeholder:text-on-ink-muted/70 px-3.5 py-2.5 text-sm rounded-[8px] focus:border-signal-bright focus:outline-none transition-colors"
+                  />
+
+                  <button
+                    type="submit"
+                    disabled={status === 'sending'}
+                    className="bg-signal hover:bg-signal-bright text-paper font-sans font-medium text-sm px-5 py-2.5 rounded-[8px] transition-colors shrink-0 cursor-pointer disabled:opacity-60"
+                  >
+                    {status === 'sending' ? 'Sending…' : 'Send Free Audit →'}
+                  </button>
+                </div>
+
+                {/* Honeypot */}
+                <div className="absolute left-[-9999px]" aria-hidden="true">
+                  <label htmlFor="footer-lm-trap">Website</label>
+                  <input
+                    id="footer-lm-trap"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={trap}
+                    onChange={(e) => setTrap(e.target.value)}
+                  />
+                </div>
+
+                {status === 'error' ? (
+                  <p className="text-xs text-signal-bright" role="alert">
+                    Couldn't send right now — email{' '}
+                    <a href="mailto:hello@uncodedhub.com?subject=AUDIT" className="underline">
+                      hello@uncodedhub.com
+                    </a>{' '}
+                    with "AUDIT" and we'll send it directly.
+                  </p>
+                ) : (
+                  <p className="text-[11px] text-on-ink-muted font-mono">
+                    PDF checklist · Zero spam · Unsubscribe anytime
+                  </p>
+                )}
+              </form>
+            )}
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-12 gap-12 md:gap-10 pb-16 border-b border-rule-on-ink">
           {/* Studio */}
           <div className="md:col-span-5">

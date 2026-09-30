@@ -211,102 +211,80 @@ export default function Home({ onBook }: { onBook: () => void }) {
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
             {/* Left Column: Heading, Subhead, Primary Booking CTA */}
             <div className="lg:col-span-6 flex flex-col justify-center">
-              <Reveal>
+              <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-raised border border-rule-strong text-ink text-xs font-mono mb-6 shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
                   <span className="font-semibold text-signal">7-DAY SPRINT BUILDS</span>
                   <span className="text-muted">·</span>
                   <span className="text-muted">Zero Bloatware</span>
                 </div>
-              </Reveal>
+              </div>
 
-              <Reveal delay={80}>
-                <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-ink leading-[1.08] tracking-tight font-normal">
-                  Let your website <br />
-                  <em className="italic hero-signal font-normal">sell before you do.</em>
-                </h1>
-              </Reveal>
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-ink leading-[1.08] tracking-tight font-normal">
+                Let your website <br />
+                <em className="italic hero-signal font-normal">sell before you do.</em>
+              </h1>
 
-              <Reveal delay={140}>
-                <p className="text-lead text-muted max-w-lg mt-6 leading-relaxed">
-                  You can't close clients who bounce before your page finishes loading. We build
-                  custom, high-conversion websites for high-ticket local businesses in seven working days.
-                  On time, or the build is free.
-                </p>
-              </Reveal>
+              <p className="text-lead text-muted max-w-lg mt-6 leading-relaxed">
+                You can't close clients who bounce before your page finishes loading. We build
+                custom, high-conversion websites for high-ticket local businesses in seven working days.
+                On time, or the build is free.
+              </p>
 
-              {/* High-Converting 20-Min Discovery Call CTA with Animated Marching Outline */}
-              <Reveal delay={200}>
-                <div className="mt-8 flex flex-col items-start gap-4">
-                  {/* Primary 20-Min Call Action with Marching Dashed Outline */}
-                  <div className="relative inline-flex items-center group">
-                    {/* SVG Animated Marching Outline */}
-                    <svg
-                      aria-hidden="true"
-                      className="absolute -inset-[5px] w-[calc(100%+10px)] h-[calc(100%+10px)] pointer-events-none z-10 overflow-visible"
-                    >
-                      <rect
-                        x="2.5"
-                        y="2.5"
-                        rx="9999"
-                        fill="none"
-                        stroke="#c7074b"
-                        strokeWidth="2.5"
-                        strokeDasharray="9 7"
-                        className="animate-marching-dash"
-                        style={{ width: 'calc(100% - 5px)', height: 'calc(100% - 5px)' }}
-                      />
+              {/* High-Converting Bespoke 20-Min Discovery Call CTA */}
+              <div className="mt-8 flex flex-col items-start gap-4">
+                <button
+                  onClick={onBook}
+                  className="btn-hero-cta group"
+                >
+                  <span className="flex items-center gap-2.5">
+                    <span className="w-2 h-2 rounded-full bg-paper/90" aria-hidden="true" />
+                    <span>Book Your Free 20-Min Call</span>
+                  </span>
+                  <span className="btn-hero-cta-badge" aria-hidden="true">
+                    →
+                  </span>
+                </button>
+
+                {/* Direct Founder Trust Indicators */}
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[0.8125rem] text-muted">
+                  <span className="flex items-center gap-1.5">
+                    <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
                     </svg>
-
-                    <button
-                      onClick={onBook}
-                      className="relative z-0 btn-primary py-4 px-8 sm:px-10 text-base sm:text-lg font-medium rounded-full shadow-[0_12px_28px_rgba(199,7,75,0.28)] hover:shadow-[0_18px_40px_rgba(199,7,75,0.42)] hover:scale-[1.02] active:scale-[0.99] transition-all flex items-center justify-center gap-2.5 cursor-pointer"
-                    >
-                      <span>Book Your Free 20-Min Call</span>
-                      <span className="group-hover:translate-x-1.5 transition-transform" aria-hidden="true">→</span>
-                    </button>
-                  </div>
-
-                  {/* Direct Founder Trust Indicators */}
-                  <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[0.8125rem] text-muted">
-                    <span className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
-                        <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
-                      </svg>
-                      <span>Direct call with Deepak &amp; Geetha</span>
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
-                        <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
-                      </svg>
-                      <span>No sales pitch · Pure diagnosis</span>
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
-                        <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
-                      </svg>
-                      <span>Late-means-free guarantee</span>
-                    </span>
-                  </div>
-
-                  {/* 6 Demo Site as Link Button at Bottom */}
-                  <div className="pt-2">
-                    <Link
-                      to="/portfolio"
-                      className="group inline-flex items-center gap-2 text-xs sm:text-sm font-mono text-ink-soft hover:text-signal transition-colors py-1.5 px-3.5 rounded-full hover:bg-paper-raised border border-rule/60 hover:border-signal/40 shadow-2xs"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" aria-hidden="true" />
-                      <span>Prefer to see live builds first? Inspect 6 sprint specimens</span>
-                      <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-signal" aria-hidden="true">↗</span>
-                    </Link>
-                  </div>
+                    <span>Direct call with Deepak &amp; Geetha</span>
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                    </svg>
+                    <span>No sales pitch · Pure diagnosis</span>
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                    </svg>
+                    <span>Late-means-free guarantee</span>
+                  </span>
                 </div>
-              </Reveal>
+
+                {/* 6 Demo Site as Link Button at Bottom */}
+                <div className="pt-2">
+                  <Link
+                    to="/portfolio"
+                    className="group inline-flex items-center gap-2 text-xs sm:text-sm font-mono text-ink-soft hover:text-signal transition-colors py-1.5 px-3.5 rounded-full hover:bg-paper-raised border border-rule/60 hover:border-signal/40 shadow-2xs"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
+                    <span>Prefer to see live builds first? Inspect 6 sprint specimens</span>
+                    <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-signal" aria-hidden="true">↗</span>
+                  </Link>
+                </div>
+              </div>
             </div>
 
             {/* Right Column: Cloaked-Style Squircle Hero Card with Conversion Health Meter */}
             <div className="lg:col-span-6">
-              <Reveal delay={180}>
+              <div>
                 <div className="relative group">
                   {/* Outer Ambient Glow */}
                   <div
@@ -324,7 +302,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                         <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
                         <span className="font-mono text-[11px] text-white/70">
                           Client Specimen · Verified 7-Day Sprint Build
                         </span>
@@ -343,7 +321,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                           height={800}
                           loading="eager"
                           fetchPriority="high"
-                          decoding="async"
+                          decoding="sync"
                           className="w-full h-full object-cover object-[70%_25%]"
                         />
                       </picture>
@@ -355,7 +333,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                       />
 
                       {/* Floating Cloaked-Style "Conversion Standard" Gauge Meter */}
-                      <div className="absolute top-4 right-4 bg-ink/90 backdrop-blur-md border border-white/15 p-3 rounded-[16px] text-paper shadow-xl max-w-[200px] animate-fade-in">
+                      <div className="absolute top-4 right-4 bg-ink/90 backdrop-blur-md border border-white/15 p-3 rounded-[16px] text-paper shadow-xl max-w-[200px]">
                         <div className="flex items-center justify-between pb-1 mb-2 border-b border-white/10">
                           <span className="text-[10px] font-mono text-white/60 uppercase tracking-wider">Studio Standard</span>
                           <span className="text-[10px] font-mono font-semibold text-emerald-400">99 / 100</span>
@@ -421,22 +399,20 @@ export default function Home({ onBook }: { onBook: () => void }) {
                     </div>
                   </div>
                 </div>
-              </Reveal>
+              </div>
             </div>
           </div>
 
           {/* 4-Pillar Trust Strip under Hero */}
-          <Reveal delay={260}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14">
-              {TRUST_BAR.map((t) => (
-                <div key={t.label} className="bg-paper-raised p-4 rounded-[16px] border border-rule-strong shadow-xs flex flex-col justify-between">
-                  <span className="label text-[10px] text-signal font-semibold tracking-wider uppercase">{t.label}</span>
-                  <div className="font-display text-xl text-ink font-medium mt-1">{t.value}</div>
-                  <div className="text-xs text-muted mt-0.5">{t.sub}</div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14">
+            {TRUST_BAR.map((t) => (
+              <div key={t.label} className="bg-paper-raised p-4 rounded-[16px] border border-rule-strong shadow-xs flex flex-col justify-between">
+                <span className="label text-[10px] text-signal font-semibold tracking-wider uppercase">{t.label}</span>
+                <div className="font-display text-xl text-ink font-medium mt-1">{t.value}</div>
+                <div className="text-xs text-muted mt-0.5">{t.sub}</div>
+              </div>
+            ))}
+          </div>
         </Shell>
       </section>
 

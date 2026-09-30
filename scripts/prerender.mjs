@@ -11,7 +11,7 @@
 // static HTML instead of throwing it away and rendering from scratch,
 // so interactivity works exactly as it did before.
 import { spawn, execSync } from 'node:child_process';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
@@ -109,6 +109,20 @@ async function renderOnce(page, route) {
   if (route !== '/contact') {
     html = html.replace(/<link[^>]*rel="modulepreload"[^>]*href="[^"]*(?:supabase|EnquiryDock)[^"]*"[^>]*>/g, '');
   }
+  // Remove homepage-only hero image preloads on non-home routes to prevent unused preload warnings
+  if (route !== '/') {
+    html = html.replace(/<link[^>]*rel="preload"[^>]*href="\/hero-section[^"]*"[^>]*>/g, '');
+  }
+  // Inline external stylesheet directly into <style> to eliminate render-blocking CSS round-trip
+  html = html.replace(/<link[^>]*rel="stylesheet"[^>]*href="(\/assets\/[^"]+\.css)"[^>]*>/g, (match, cssHref) => {
+    try {
+      const cssFile = path.join(distDir, cssHref.replace(/^\//, ''));
+      const cssContent = readFileSync(cssFile, 'utf8');
+      return `<style>${cssContent}</style>`;
+    } catch {
+      return match;
+    }
+  });
   console.log(`  [${Date.now() - startedAt}ms] ${route}`);
   return html;
 }
