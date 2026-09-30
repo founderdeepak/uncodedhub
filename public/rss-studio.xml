@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Uncoded Hub — Web Design, Speed &amp; Conversion</title>
+    <title>Uncoded Hub — Small Business Website &amp; SEO Guides</title>
     <link>https://uncodedhub.com/blog</link>
-    <description>Practical guides for service-business owners on high-converting web design, Core Web Vitals, local SEO, and seven-day custom builds.</description>
+    <description>Uncoded Hub — Small Business Website &amp; SEO Guides — published by Uncoded Hub.</description>
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Mar 2026 09:00:00 GMT</lastBuildDate>
-    <atom:link href="https://uncodedhub.com/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://uncodedhub.com/rss-studio.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Audit Your Business Website Before Planning a Redesign: The 10-Point Checklist</title>
       <link>https://uncodedhub.com/blog/how-to-audit-your-business-website-before-redesign</link>
@@ -88,44 +88,44 @@
       <enclosure url="https://uncodedhub.com/blog/late-means-free-web-design-guarantee-explained.jpg" length="49978" type="image/jpeg" />
     </item>
     <item>
-      <title>Fractional Executive and Retainer Service Page Architecture: Selling Leadership as a Service</title>
-      <link>https://uncodedhub.com/blog/fractional-cmo-coo-retainer-service-page</link>
-      <guid isPermaLink="true">https://uncodedhub.com/blog/fractional-cmo-coo-retainer-service-page</guid>
+      <title>What Makes a Website Actually Convert, Not Just Look Good</title>
+      <link>https://uncodedhub.com/blog/what-makes-a-website-actually-convert</link>
+      <guid isPermaLink="true">https://uncodedhub.com/blog/what-makes-a-website-actually-convert</guid>
       <pubDate>Sun, 15 Mar 2026 09:00:00 GMT</pubDate>
-      <description>Architect a high-converting service page for Fractional CMOs, COOs, and CTOs. Define scopes, hours, and strategic deliverables to win 6-figure retainers.</description>
-      <enclosure url="https://uncodedhub.com/blog/fractional-cmo-coo-retainer-service-page.jpg" length="68306" type="image/jpeg" />
+      <description>The core principles separating a website that generates real enquiries from one that only looks impressive, pulled together across every niche in this system.</description>
+      <enclosure url="https://uncodedhub.com/blog/what-makes-a-website-actually-convert.jpg" length="60947" type="image/jpeg" />
     </item>
     <item>
-      <title>Substack and Medium vs Owning Your Domain: The Platform Trap for Consultants</title>
-      <link>https://uncodedhub.com/blog/substack-medium-vs-owned-consultant-website</link>
-      <guid isPermaLink="true">https://uncodedhub.com/blog/substack-medium-vs-owned-consultant-website</guid>
+      <title>Why Most Small Business Websites Never Get Updated After Launch (And What Actually Fixes That)</title>
+      <link>https://uncodedhub.com/blog/why-websites-never-get-updated-after-launch</link>
+      <guid isPermaLink="true">https://uncodedhub.com/blog/why-websites-never-get-updated-after-launch</guid>
       <pubDate>Sat, 14 Mar 2026 09:00:00 GMT</pubDate>
-      <description>Don&apos;t build your intellectual property on rented land. Compare Substack and Medium against an owned website domain for high-ticket consulting authority.</description>
-      <enclosure url="https://uncodedhub.com/blog/substack-medium-vs-owned-consultant-website.jpg" length="86575" type="image/jpeg" />
+      <description>The real reasons most small business websites are never touched again after launch, and the specific operational fix that actually changes this.</description>
+      <enclosure url="https://uncodedhub.com/blog/why-websites-never-get-updated-after-launch.jpg" length="60957" type="image/jpeg" />
     </item>
     <item>
-      <title>Email Newsletter Archive: The Overlooked SEO Organic Search Engine</title>
-      <link>https://uncodedhub.com/blog/newsletter-archive-seo-engine-for-consultants</link>
-      <guid isPermaLink="true">https://uncodedhub.com/blog/newsletter-archive-seo-engine-for-consultants</guid>
+      <title>How to Brief a Web Design Studio So the Project Actually Goes Fast</title>
+      <link>https://uncodedhub.com/blog/how-to-brief-a-web-design-studio</link>
+      <guid isPermaLink="true">https://uncodedhub.com/blog/how-to-brief-a-web-design-studio</guid>
       <pubDate>Fri, 13 Mar 2026 09:00:00 GMT</pubDate>
-      <description>Transform your weekly email newsletter into an indexable organic SEO engine. Rank for long-tail thought leadership keywords on your personal domain.</description>
-      <enclosure url="https://uncodedhub.com/blog/newsletter-archive-seo-engine-for-consultants.jpg" length="78108" type="image/jpeg" />
+      <description>What a genuinely good client brief includes, and why the quality of the brief rather than the studio&apos;s speed is usually what determines the timeline.</description>
+      <enclosure url="https://uncodedhub.com/blog/how-to-brief-a-web-design-studio.jpg" length="56602" type="image/jpeg" />
     </item>
     <item>
-      <title>Mastermind and Group Coaching Sales Page Design: Transitioning from 1:1 to Scale</title>
-      <link>https://uncodedhub.com/blog/mastermind-group-coaching-sales-page-design</link>
-      <guid isPermaLink="true">https://uncodedhub.com/blog/mastermind-group-coaching-sales-page-design</guid>
+      <title>What Happens After Launch: The Maintenance Question Most Web Design Quotes Don&apos;t Answer</title>
+      <link>https://uncodedhub.com/blog/website-maintenance-question-quotes-dont-answer</link>
+      <guid isPermaLink="true">https://uncodedhub.com/blog/website-maintenance-question-quotes-dont-answer</guid>
       <pubDate>Thu, 12 Mar 2026 09:00:00 GMT</pubDate>
-      <description>Design a high-converting mastermind or group coaching sales page. Emphasize peer curation, cohort dynamics, and application deadlines to scale beyond 1:1.</description>
-      <enclosure url="https://uncodedhub.com/blog/mastermind-group-coaching-sales-page-design.jpg" length="78541" type="image/jpeg" />
+      <description>Why most web design quotes go quiet on what happens after launch, and the specific maintenance questions a business owner should ask before signing.</description>
+      <enclosure url="https://uncodedhub.com/blog/website-maintenance-question-quotes-dont-answer.jpg" length="56248" type="image/jpeg" />
     </item>
     <item>
-      <title>Podcast and Media Appearances Hub: Compounding Third-Party Authority</title>
-      <link>https://uncodedhub.com/blog/podcast-media-hub-on-personal-brand-website</link>
-      <guid isPermaLink="true">https://uncodedhub.com/blog/podcast-media-hub-on-personal-brand-website</guid>
+      <title>Should a Small Business Build Its Own Website or Hire a Studio? An Honest Comparison</title>
+      <link>https://uncodedhub.com/blog/diy-website-vs-hiring-a-studio</link>
+      <guid isPermaLink="true">https://uncodedhub.com/blog/diy-website-vs-hiring-a-studio</guid>
       <pubDate>Wed, 11 Mar 2026 09:00:00 GMT</pubDate>
-      <description>Build a permanent podcast and media appearances hub on your personal website. Compound third-party authority and generate long-tail search traffic from past interviews.</description>
-      <enclosure url="https://uncodedhub.com/blog/podcast-media-hub-on-personal-brand-website.jpg" length="76581" type="image/jpeg" />
+      <description>An honest, non-self-serving comparison of building your own small business website versus hiring a studio, including when DIY is genuinely the right call.</description>
+      <enclosure url="https://uncodedhub.com/blog/diy-website-vs-hiring-a-studio.jpg" length="60034" type="image/jpeg" />
     </item>
   </channel>
 </rss>
