@@ -46,6 +46,12 @@ if (container.hasChildNodes()) {
   events.forEach((evt) => {
     window.addEventListener(evt, runHydrate, { once: true, passive: true });
   });
+
+  try {
+    if (window.location.pathname.includes('/audit') || localStorage.getItem('uh_audit_unlocked')) {
+      runHydrate();
+    }
+  } catch {}
 } else {
   import('./bootstrap').then(({ mountOrHydrate }) => mountOrHydrate(container, false));
 }

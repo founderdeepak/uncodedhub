@@ -36,9 +36,10 @@ export function LeadMagnetForm({ embedded }: LeadMagnetFormProps) {
     if (Date.now() - startedAt.current < 2000) return;
     setStatus('sending');
 
+    const trimmedEmail = email.trim();
+    const trimmedFirstName = firstName.trim();
+
     try {
-      const trimmedEmail = email.trim();
-      const trimmedFirstName = firstName.trim();
 
       // Mirror lead to Supabase contact_submissions (safely guarded)
       import('../../lib/supabase')
@@ -51,6 +52,17 @@ export function LeadMagnetForm({ embedded }: LeadMagnetFormProps) {
           }),
         )
         .catch(() => {});
+
+      try {
+        localStorage.setItem(
+          'uh_audit_unlocked',
+          JSON.stringify({
+            email: trimmedEmail,
+            name: trimmedFirstName,
+            unlockedAt: Date.now(),
+          }),
+        );
+      } catch {}
 
       const res = await fetch(LEAD_MAGNET_SCRIPT_URL, {
         method: 'POST',
@@ -66,6 +78,16 @@ export function LeadMagnetForm({ embedded }: LeadMagnetFormProps) {
       const json = await res.json().catch(() => null);
       setStatus(json?.ok !== false ? 'sent' : 'error');
     } catch {
+      try {
+        localStorage.setItem(
+          'uh_audit_unlocked',
+          JSON.stringify({
+            email: trimmedEmail,
+            name: trimmedFirstName,
+            unlockedAt: Date.now(),
+          }),
+        );
+      } catch {}
       // Degrade gracefully to sent so visitor can access on-site scorecard
       setStatus('sent');
     }

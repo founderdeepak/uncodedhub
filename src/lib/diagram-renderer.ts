@@ -795,7 +795,34 @@ export function parseAsciiDiagram(rawCode: string): ParsedDiagram {
     };
   }
 
-  // 6. Vertical Flowchart (▼,  v , ➔)
+  // 6. Box Card Blueprint
+  if (body.includes('┌') && body.includes('└')) {
+    let title = 'Interactive Specimen Blueprint';
+    const titleMatch = body.match(/│\s*([A-Za-z0-9\s:–-]+?)\s*│/);
+    if (titleMatch && !titleMatch[1].includes(':')) {
+      title = titleMatch[1].trim();
+    }
+
+    const items: { label?: string; value: string; isAction?: boolean }[] = [];
+    for (const l of lines) {
+      if (l.includes('┌') || l.includes('└') || l.includes('├')) continue;
+      if (l.includes('│')) {
+        const content = l.replace(/^│\s*/, '').replace(/\s*│$/, '').trim();
+        if (content && content !== title) {
+          const parts = content.split(/:\s*(.*)/);
+          if (parts.length > 1) {
+            items.push({ label: parts[0].trim(), value: parts[1].trim() });
+          } else {
+            items.push({ value: content });
+          }
+        }
+      }
+    }
+    if (items.length === 0) items.push({ value: 'Standard Component Blueprint' });
+    return { type: 'card', title, items };
+  }
+
+  // 7. Vertical Flowchart (▼,  v , ➔)
   if (body.includes('▼') || body.includes('  v ') || body.includes('│\r\n') || body.includes('│\n') || body.includes('➔')) {
     let title = 'Conversion Flowchart';
     const titleMatch = body.match(/^\[(.*?)\]/m);
@@ -834,33 +861,6 @@ export function parseAsciiDiagram(rawCode: string): ParsedDiagram {
     }
 
     return { type: 'flowchart', title, steps };
-  }
-
-  // 6. Box Card Blueprint
-  if (body.includes('┌') && body.includes('└')) {
-    let title = 'Interactive Specimen Blueprint';
-    const titleMatch = body.match(/│\s*([A-Za-z0-9\s:–-]+?)\s*│/);
-    if (titleMatch && !titleMatch[1].includes(':')) {
-      title = titleMatch[1].trim();
-    }
-
-    const items: { label?: string; value: string; isAction?: boolean }[] = [];
-    for (const l of lines) {
-      if (l.includes('┌') || l.includes('└') || l.includes('├')) continue;
-      if (l.includes('│')) {
-        const content = l.replace(/^│\s*/, '').replace(/\s*│$/, '').trim();
-        if (content && content !== title) {
-          const parts = content.split(/:\s*(.*)/);
-          if (parts.length > 1) {
-            items.push({ label: parts[0].trim(), value: parts[1].trim() });
-          } else {
-            items.push({ value: content });
-          }
-        }
-      }
-    }
-    if (items.length === 0) items.push({ value: 'Standard Component Blueprint' });
-    return { type: 'card', title, items };
   }
 
   // 7. Timeline Progression (Day 1..Day 7, Year 1..Year 3)

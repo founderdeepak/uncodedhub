@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
-const PORT = 4325;
+const PORT = 4328;
 const BASE = `http://localhost:${PORT}`;
 
 let previewProc = null;
@@ -20,7 +20,7 @@ function killTree(child) {
   } catch {}
 }
 
-async function waitForServer(url, timeoutMs = 20000) {
+async function waitForServer(url, timeoutMs = 30000) {
   const start = Date.now();
   while (Date.now() - start < timeoutMs) {
     try {
@@ -160,7 +160,9 @@ async function main() {
     await h1El.scrollIntoViewIfNeeded();
     assert(await h1El.count() > 0, 'Audit checklist title displayed');
 
-    const totalBefore = await page.locator('.font-display.text-2xl.font-bold').textContent();
+    const totalScoreEl = page.locator('#score-total-val');
+    await totalScoreEl.waitFor({ state: 'visible', timeout: 10000 });
+    const totalBefore = await totalScoreEl.textContent();
     assert(totalBefore !== '', `Initial total score displayed: ${totalBefore}/20`);
 
     // Click "2" on Point #1 card
@@ -168,7 +170,7 @@ async function main() {
     await score2Btn.scrollIntoViewIfNeeded();
     await score2Btn.click();
 
-    const totalAfter = await page.locator('.font-display.text-2xl.font-bold').textContent();
+    const totalAfter = await page.locator('#score-total-val').textContent();
     assert(totalAfter !== totalBefore, `Interactive score updated: ${totalBefore} -> ${totalAfter}`);
 
     // Verify 20-minute action checklist checkbox toggles
@@ -178,6 +180,42 @@ async function main() {
     await firstCheckbox.click();
     const isNowChecked = await firstCheckbox.isChecked();
     assert(wasChecked !== isNowChecked, 'Action checklist checkbox toggles cleanly');
+
+    // ── TEST 6: Audit Safeguard on Fresh Unauthenticated Visitor ────
+    console.log('\n--- TEST 6: Audit Safeguard & Email Gate ---');
+    const freshContext = await browser.newContext();
+    const freshPage = await freshContext.newPage();
+    await freshPage.route('**/macros/s/**', (route) => {
+      route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        body: JSON.stringify({ ok: true }),
+      });
+    });
+    freshPage.on('console', (msg) => console.log(`[FRESH PAGE LOG] ${msg.type()}: ${msg.text()}`));
+    freshPage.on('pageerror', (err) => console.error(`[FRESH PAGE ERROR]`, err));
+
+    await freshPage.goto(`${BASE}/audit-checklist/`, { waitUntil: 'networkidle' });
+    const gateEmailInput = freshPage.locator('#gate-email');
+    await gateEmailInput.waitFor({ state: 'attached', timeout: 5000 });
+    assert(await gateEmailInput.isVisible(), 'Safeguard gate email input is visible for new visitors');
+
+    const scoreButtonsCount = await freshPage.locator('.bg-paper-raised button:text-is("2")').count();
+    assert(scoreButtonsCount === 0, 'Scorecard buttons are strictly locked/hidden before email submission');
+
+    // Fill the gate form to unlock
+    await freshPage.locator('#gate-name').fill('Geetha Test');
+    await freshPage.locator('#gate-email').fill('geetha.client@example.com');
+    await freshPage.locator('button[type="submit"]:has-text("Unlock Full Audit Scorecard")').click();
+
+    const unlockedScoreHeader = freshPage.locator('#score-total-val');
+    await unlockedScoreHeader.waitFor({ state: 'attached', timeout: 5000 });
+    assert(await unlockedScoreHeader.isVisible(), 'Scorecard unlocks instantly on-screen after submitting name & email');
+
+    const unlockedButtonsCount = await freshPage.locator('.bg-paper-raised button:text-is("2")').count();
+    assert(unlockedButtonsCount > 0, '10-point scorecard buttons are active and interactive after unlock');
+
+    await freshContext.close();
 
   } catch (err) {
     console.error('[ERROR during tests]:', err);

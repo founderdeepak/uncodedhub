@@ -61,6 +61,17 @@ export default function SiteFooter() {
         )
         .catch(() => {});
 
+      try {
+        localStorage.setItem(
+          'uh_audit_unlocked',
+          JSON.stringify({
+            email: trimmedEmail,
+            name: trimmedName,
+            unlockedAt: Date.now(),
+          }),
+        );
+      } catch {}
+
       const res = await fetch(LEAD_MAGNET_SCRIPT_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
