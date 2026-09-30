@@ -570,6 +570,48 @@ body {
   font-weight: 600;
 }
 
+/* ── Editorial Diagrams & Code Blocks ───────────────────────────── */
+.diagram-container {
+  margin: 2.5rem 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border-radius: 14px;
+  background: #F3F0EA;
+  border: 1px solid var(--color-rule);
+  box-shadow: 0 4px 24px -4px rgba(23, 22, 26, 0.06);
+  -webkit-overflow-scrolling: touch;
+}
+
+.diagram-container svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 680px;
+}
+
+.prose-article pre.code-block {
+  background: #17161A;
+  color: #F3F0EA;
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  margin: 2rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.prose-article pre.code-block code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+
 /* ── Ink section. Full-bleed dark moments punctuate the paper. ──── */
 .on-ink {
   background: var(--color-ink);

@@ -1,7 +1,9 @@
 import { Marked } from 'marked';
+import { compileAsciiToSvgDiagram } from './diagram-renderer';
 
 /* ═══════════════════════════════════════════════════════════════════
    BLOG CONTENT LOADER
+
 
    Posts are plain Markdown files in src/content/blog/ — see the README
    in that folder for the exact format. The filename (minus .md) is the
@@ -105,20 +107,148 @@ function parseFrontmatter(raw: string): { data: Record<string, string>; body: st
   return { data, body: body.trim() };
 }
 
-function renderPost(markdown: string): { html: string; toc: TocItem[] } {
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+const WIKILINK_MAP: Record<string, { label: string; slug: string }> = {
+  '06 - What a Fast Portfolio Site Does to Enquiry Quality': {
+    label: 'What a Fast Portfolio Site Does to Enquiry Quality',
+    slug: 'portfolio-site-enquiry-quality',
+  },
+  '04 - 7 Website Mistakes That Make a Design Studio Look Smaller': {
+    label: '7 Website Mistakes That Make a Design Studio Look Smaller',
+    slug: 'interior-design-website-mistakes',
+  },
+  '11 - Interior Design Client Questionnaire Website': {
+    label: 'Interior Design Client Questionnaire Website Strategy',
+    slug: 'interior-design-client-questionnaire-website',
+  },
+  '02 - Property Portals vs Your Own Website': {
+    label: 'Property Portals vs Your Own Website',
+    slug: 'property-portals-vs-your-own-website',
+  },
+  '13 - Luxury Real Estate and Penthouse Web Design': {
+    label: 'Luxury Real Estate and Penthouse Web Design',
+    slug: 'luxury-real-estate-website-design',
+  },
+  '02 - Why an Instagram Page Is Not a Substitute for a Website': {
+    label: 'Why an Instagram Page Is Not a Substitute for a Website',
+    slug: 'instagram-vs-website-interior-designers',
+  },
+  '12 - How to Write Interior Design Case Studies': {
+    label: 'How to Write Interior Design Case Studies',
+    slug: 'how-to-write-interior-design-case-studies',
+  },
+  '10 - How AI Assistants Are Changing How Homeowners Find a Designer': {
+    label: 'How AI Assistants Are Changing How Homeowners Find a Designer',
+    slug: 'ai-assistants-finding-an-interior-designer',
+  },
+  '09 - What Makes a Good Architecture Portfolio Website (Deeper Look)': {
+    label: 'What Makes a Good Architecture Portfolio Website',
+    slug: 'architecture-portfolio-website-deeper-look',
+  },
+  '10 - Neighbourhood Content the Authority-Building Asset Agents Skip': {
+    label: 'Neighbourhood Content: The Authority-Building Asset Agents Skip',
+    slug: 'neighbourhood-content-real-estate-authority',
+  },
+  '05 - How Local SEO Beats the Big Portals in Your Own Neighbourhood': {
+    label: 'How Local SEO Beats the Big Portals in Your Own Neighbourhood',
+    slug: 'local-seo-beats-portals-in-your-neighbourhood',
+  },
+  "01 - What an Interior Designer's Website Should Include": {
+    label: "What an Interior Designer's Website Should Include",
+    slug: 'what-an-interior-designers-website-should-include',
+  },
+  "06 - What a Small Builder's Website Does That a Facebook Page Cannot": {
+    label: "What a Small Builder's Website Does That a Facebook Page Cannot",
+    slug: 'small-builders-website-vs-facebook-page',
+  },
+  '08 - Property Listing Page Design': {
+    label: 'Property Listing Page Design',
+    slug: 'property-listing-page-design',
+  },
+  '07 - How Fast Should a Real Estate Website Load': {
+    label: 'How Fast Should a Real Estate Website Load',
+    slug: 'real-estate-website-speed',
+  },
+  '03 - Why WhatsApp Converts More Property Enquiries Than a Form': {
+    label: 'Why WhatsApp Converts More Property Enquiries Than a Form',
+    slug: 'whatsapp-vs-contact-form-real-estate',
+  },
+  "04 - What Makes a Buyer Trust a Property Consultant's Website": {
+    label: "What Makes a Buyer Trust a Property Consultant's Website",
+    slug: 'what-makes-a-buyer-trust-a-property-consultants-website',
+  },
+  '05 - How Local SEO Finds High-Budget Clients': {
+    label: 'How Local SEO Finds High-Budget Clients',
+    slug: 'local-seo-for-high-budget-interior-design-clients',
+  },
+  '16 - Should Interior Designers Publish Design Fees Online': {
+    label: 'Should Interior Designers Publish Design Fees Online',
+    slug: 'should-interior-designers-publish-design-fees-online',
+  },
+  '03 - How Much Should an Interior Design Studio Budget for a Website': {
+    label: 'How Much Should an Interior Design Studio Budget for a Website',
+    slug: 'interior-design-website-cost-india',
+  },
+  '14 - 3D Renders vs Built Project Photography Speed': {
+    label: '3D Renders vs Built Project Photography Speed',
+    slug: '3d-renderings-interior-design-website-speed',
+  },
+  '18 - Mobile UX Best Practices for Design Portfolios': {
+    label: 'Mobile UX Best Practices for Design Portfolios',
+    slug: 'mobile-portfolio-ux-interior-designers',
+  },
+  '12 - NRI Property Buyer Landing Page Strategy': {
+    label: 'NRI Property Buyer Landing Page Strategy',
+    slug: 'nri-real-estate-landing-page-strategy',
+  },
+};
+
+function resolveWikilinks(text: string): string {
+  return text.replace(/\[\[(.*?)\]\]/g, (match, inner) => {
+    const trimmed = inner.trim();
+    const entry = WIKILINK_MAP[trimmed];
+    if (entry) {
+      return `[${entry.label}](/blog/${entry.slug})`;
+    }
+    const clean = trimmed.replace(/^\d+\s*-\s*/, '').trim();
+    return `[${clean}](/blog/${slugify(clean)})`;
+  });
+}
+
+function cleanBlogBody(rawBody: string): string {
+  let cleaned = rawBody;
+  cleaned = resolveWikilinks(cleaned);
+  // Strip duplicate h1 title at start of article body
+  cleaned = cleaned.replace(/^#\s+[^\r\n]+\r?\n+/m, '');
+  // Strip duplicate author line (e.g. *By [Deepak]...* or *By [Geetha]...*)
+  cleaned = cleaned.replace(/^\*By\s+\[?[A-Za-z]+\]?[^\r\n]*\*\s*\r?\n+/m, '');
+  // Strip redundant mid-article or footer "### Work With Uncoded Hub" boilerplate (authoritatively rendered by BlogView's bento)
+  cleaned = cleaned.replace(/(?:---\s*\r?\n)?###\s*Work With Uncoded Hub[\s\S]*$/i, '');
+  return cleaned.trim();
+}
+
+function renderPost(markdown: string, slug: string): { html: string; toc: TocItem[] } {
   const toc: TocItem[] = [];
   const seenIds = new Map<string, number>();
   const instance = new Marked();
+  let diagramIndex = 0;
 
   instance.use({
     renderer: {
       heading(token) {
         const text = this.parser.parseInline(token.tokens);
-        let slug = slugify(token.text);
-        if (!slug) slug = `section-${toc.length + 1}`;
-        const count = seenIds.get(slug) || 0;
-        seenIds.set(slug, count + 1);
-        const finalId = count === 0 ? slug : `${slug}-${count + 1}`;
+        let headerSlug = slugify(token.text);
+        if (!headerSlug) headerSlug = `section-${toc.length + 1}`;
+        const count = seenIds.get(headerSlug) || 0;
+        seenIds.set(headerSlug, count + 1);
+        const finalId = count === 0 ? headerSlug : `${headerSlug}-${count + 1}`;
 
         if (token.depth === 2 || token.depth === 3) {
           toc.push({
@@ -128,6 +258,14 @@ function renderPost(markdown: string): { html: string; toc: TocItem[] } {
           });
         }
         return `<h${token.depth} id="${finalId}">${text}</h${token.depth}>\n`;
+      },
+      code(token) {
+        const lang = (token.lang || '').toLowerCase().trim();
+        if (lang === 'json' || lang === 'txt' || lang === 'javascript' || lang === 'typescript' || lang === 'html' || lang === 'css') {
+          return `<pre class="code-block" tabindex="0"><code class="font-mono text-xs">${escapeHtml(token.text)}</code></pre>\n`;
+        }
+        diagramIndex++;
+        return compileAsciiToSvgDiagram(token.text, slug, diagramIndex) + '\n';
       },
     },
   });
@@ -153,8 +291,9 @@ function loadPosts(): BlogPost[] {
     if (!data.title || !data.date) continue;
 
     const niche = data.niche && isNicheKey(data.niche) ? data.niche : 'studio';
-    const words = body.split(/\s+/).filter(Boolean).length;
-    const { html, toc } = renderPost(body);
+    const cleanedBody = cleanBlogBody(body);
+    const words = cleanedBody.split(/\s+/).filter(Boolean).length;
+    const { html, toc } = renderPost(cleanedBody, slug);
 
     const isGeetha =
       /geethaspecialist/i.test(body) ||
