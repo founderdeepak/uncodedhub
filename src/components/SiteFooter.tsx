@@ -26,11 +26,15 @@ const NAV = [
 ];
 
 const SOCIAL = [
-  { label: 'Instagram', href: 'https://www.instagram.com/uncodedhub/' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/uncodedhub/' },
+  { label: 'X', href: 'https://x.com/uncodedhub' },
+  { label: 'Instagram', href: 'https://www.instagram.com/uncodedhub/' },
   { label: 'YouTube', href: 'https://www.youtube.com/@uncodedhub' },
   { label: 'Threads', href: 'https://www.threads.com/@uncodedhub' },
-  { label: 'Facebook', href: 'https://www.facebook.com/people/Uncoded-Hub/61580702457181/' },
+  { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61580702457181' },
+  { label: 'Pinterest', href: 'https://www.pinterest.com/uncodedhub/' },
+  { label: 'Reddit', href: 'https://www.reddit.com/user/uncodedhub/' },
+  { label: 'Google Maps', href: 'https://maps.app.goo.gl/fwvgEPkguRSfkcC49' },
 ];
 
 export default function SiteFooter() {

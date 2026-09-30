@@ -158,10 +158,11 @@ async function main() {
   const routes = [...allRoutes.filter((r) => r !== '/'), NOT_FOUND_PROBE, '/'];
   console.log(`Prerendering ${allRoutes.length} routes + 404...`);
 
+  const viteBin = path.resolve(root, 'node_modules/vite/bin/vite.js');
   const preview = spawn(
-    'npx',
-    ['vite', 'preview', '--port', String(PORT), '--strictPort'],
-    { cwd: root, stdio: 'pipe', shell: true, detached: process.platform !== 'win32' },
+    process.execPath,
+    [viteBin, 'preview', '--port', String(PORT), '--strictPort'],
+    { cwd: root, stdio: 'pipe', detached: process.platform !== 'win32' },
   );
   previewProc = preview;
   let previewOutput = '';

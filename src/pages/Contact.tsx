@@ -238,6 +238,117 @@ export default function Contact() {
               </Reveal>
             ))}
           </div>
+
+          {/* ── Official Profiles & Social Channels ──────────── */}
+          <div className="mt-16 pt-12 border-t border-rule">
+            <Reveal>
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+                <div>
+                  <span className="label text-signal block mb-2">Verified studio presence</span>
+                  <h3 className="font-display text-2xl sm:text-3xl text-ink font-normal">
+                    Official channels &amp; profiles
+                  </h3>
+                </div>
+                <p className="text-muted text-xs sm:text-sm max-w-md">
+                  Follow our live website teardowns, speed benchmarks, design notes, and verified company registry across the web.
+                </p>
+              </div>
+            </Reveal>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                {
+                  name: 'LinkedIn',
+                  handle: '/company/uncodedhub',
+                  desc: 'Executive updates, case studies & founder articles',
+                  href: 'https://www.linkedin.com/company/uncodedhub/',
+                  tag: 'Company Page',
+                },
+                {
+                  name: 'X (Twitter)',
+                  handle: '@uncodedhub',
+                  desc: 'Real-time engineering notes & web design benchmarks',
+                  href: 'https://x.com/uncodedhub',
+                  tag: 'Real-time',
+                },
+                {
+                  name: 'Instagram',
+                  handle: '@uncodedhub',
+                  desc: 'Visual site teardowns, aesthetic layouts & typography',
+                  href: 'https://www.instagram.com/uncodedhub/',
+                  tag: 'Visual Craft',
+                },
+                {
+                  name: 'YouTube',
+                  handle: '@uncodedhub',
+                  desc: 'Long-form website audits & 7-day sprint walk-throughs',
+                  href: 'https://www.youtube.com/@uncodedhub',
+                  tag: 'Video Audits',
+                },
+                {
+                  name: 'Threads',
+                  handle: '@uncodedhub',
+                  desc: 'Behind-the-scenes thoughts on web craft & studio life',
+                  href: 'https://www.threads.com/@uncodedhub',
+                  tag: 'Microblog',
+                },
+                {
+                  name: 'Facebook',
+                  handle: 'Uncoded Hub',
+                  desc: 'Official business page, announcements & community',
+                  href: 'https://www.facebook.com/profile.php?id=61580702457181',
+                  tag: 'Community',
+                },
+                {
+                  name: 'Pinterest',
+                  handle: 'uncodedhub',
+                  desc: 'Curated editorial web boards, typography & monographs',
+                  href: 'https://www.pinterest.com/uncodedhub/',
+                  tag: 'Moodboards',
+                },
+                {
+                  name: 'Reddit',
+                  handle: 'u/uncodedhub',
+                  desc: 'Discussions on web performance, Core Web Vitals & code',
+                  href: 'https://www.reddit.com/user/uncodedhub/',
+                  tag: 'Technical Forum',
+                },
+                {
+                  name: 'Google Maps',
+                  handle: 'Uncoded Hub · Bengaluru',
+                  desc: 'Verified studio location, directions & Google reviews',
+                  href: 'https://maps.app.goo.gl/fwvgEPkguRSfkcC49',
+                  tag: 'Verified Location',
+                },
+              ].map((s, idx) => (
+                <Reveal key={s.name} delay={idx * 35}>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="group bg-paper-raised p-5 rounded-[20px] border border-rule-strong shadow-xs flex flex-col justify-between hover:border-ink/40 hover:shadow-sm transition-all duration-200 h-full"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-2.5">
+                        <span className="font-display text-lg text-ink font-medium group-hover:text-signal transition-colors">
+                          {s.name}
+                        </span>
+                        <span className="text-[10px] font-mono tracking-wider px-2 py-0.5 rounded-full bg-paper-sunken border border-rule text-muted uppercase">
+                          {s.tag}
+                        </span>
+                      </div>
+                      <p className="text-xs font-mono text-signal mb-1.5">{s.handle}</p>
+                      <p className="text-muted text-xs leading-relaxed">{s.desc}</p>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-rule/60 flex items-center justify-between text-xs text-muted group-hover:text-ink transition-colors font-medium">
+                      <span>Visit profile</span>
+                      <span className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                    </div>
+                  </a>
+                </Reveal>
+              ))}
+            </div>
+          </div>
         </Shell>
       </Section>
 
