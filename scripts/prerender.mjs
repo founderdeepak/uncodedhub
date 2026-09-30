@@ -105,10 +105,8 @@ async function renderOnce(page, route) {
   let html = await page.content();
   // Clean up any dynamically appended external scripts (like GTag) during headless render
   html = html.replace(/<script[^>]*src="[^"]*googletagmanager\.com[^"]*"[^>]*><\/script>/g, '');
-  // Clean up modulepreloads for non-critical lazy chunks on routes that don't need them
-  if (route !== '/contact') {
-    html = html.replace(/<link[^>]*rel="modulepreload"[^>]*href="[^"]*(?:supabase|EnquiryDock)[^"]*"[^>]*>/g, '');
-  }
+  // Clean up modulepreloads injected during prerender so deferred chunks only load on interaction
+  html = html.replace(/<link[^>]*rel="modulepreload"[^>]*>/g, '');
   // Remove homepage-only hero image preloads on non-home routes to prevent unused preload warnings
   if (route !== '/') {
     html = html.replace(/<link[^>]*rel="preload"[^>]*href="\/hero-section[^"]*"[^>]*>/g, '');

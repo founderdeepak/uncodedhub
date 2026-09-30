@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "tailwindcss" source("./");
 
 /* ═══════════════════════════════════════════════════════════════════
    SELF-HOSTED TYPE
@@ -33,7 +33,7 @@
   font-family: "Instrument Sans";
   font-style: italic;
   font-weight: 400 500;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/instrument-sans-400-italic.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
     U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215;
@@ -51,7 +51,7 @@
   font-family: "Instrument Serif";
   font-style: italic;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/instrument-serif-400-italic.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
     U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215;
@@ -60,7 +60,7 @@
   font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 400 500;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/jetbrains-mono-400.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
     U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215;
@@ -307,15 +307,6 @@ body {
   bottom: 0.06em;
   height: 2px;
   background: var(--color-signal);
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: hero-signal-draw 0.8s var(--ease-out-quint) both;
-  animation-delay: 0.6s;
-}
-@keyframes hero-signal-draw {
-  to {
-    transform: scaleX(1);
-  }
 }
 
 /* ── Hero mark ring. A two-minute rotation — slow enough to register
@@ -703,4 +694,8 @@ body {
   transform: translateX(2px);
 }
 
-
+/* Defer layout and paint of below-the-fold light sections until scrolled near */
+main > section:not(:first-child):not(.on-ink) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
+}

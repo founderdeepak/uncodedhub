@@ -81,7 +81,7 @@ export default function App() {
         className={`fixed top-0 inset-x-0 z-[100] transition-colors duration-300 ${
           scrolled || menuOpen
             ? 'bg-paper/96 backdrop-blur-md shadow-xs'
-            : 'bg-paper/90 backdrop-blur-xs'
+            : 'bg-paper'
         }`}
       >
         <div className="scroll-progress" aria-hidden="true" />
@@ -119,7 +119,7 @@ export default function App() {
 
         {/* ── Top Announcement Banner — positioned explicitly below the navigation header ── */}
         <div className="bg-ink text-paper text-[11px] sm:text-[12px] font-mono py-2 px-4 border-b border-white/10 text-center flex items-center justify-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" aria-hidden="true" />
+          <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
           <span>Fixed scope, fixed timeline, terms published in full</span>
           <span className="text-white/40">·</span>
           <span className="text-signal-bright font-medium">Late means free guarantee</span>

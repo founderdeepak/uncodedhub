@@ -158,7 +158,6 @@ export default function Home({ onBook }: { onBook: () => void }) {
   useEffect(() => {
     const el = document.getElementById('live-demos');
     if (!el || typeof IntersectionObserver === 'undefined') {
-      setIsDemoInView(true);
       return;
     }
     const obs = new IntersectionObserver(
@@ -204,7 +203,8 @@ export default function Home({ onBook }: { onBook: () => void }) {
         {/* Subtle warm ambient tint */}
         <div
           aria-hidden="true"
-          className="absolute top-0 right-1/4 w-[38rem] h-[38rem] bg-signal/5 rounded-full blur-3xl pointer-events-none"
+          className="absolute top-0 right-1/4 w-[38rem] h-[38rem] rounded-full pointer-events-none"
+          style={{ background: 'radial-gradient(circle, rgba(199, 7, 75, 0.06) 0%, transparent 70%)' }}
         />
 
         <Shell>
@@ -289,7 +289,8 @@ export default function Home({ onBook }: { onBook: () => void }) {
                   {/* Outer Ambient Glow */}
                   <div
                     aria-hidden="true"
-                    className="absolute -inset-2 bg-gradient-to-tr from-signal/20 via-transparent to-transparent rounded-[32px] blur-2xl opacity-60 group-hover:opacity-90 transition-opacity duration-700 pointer-events-none"
+                    className="absolute -inset-2 rounded-[32px] opacity-60 group-hover:opacity-90 transition-opacity duration-700 pointer-events-none"
+                    style={{ background: 'radial-gradient(circle at 20% 80%, rgba(199, 7, 75, 0.18) 0%, transparent 70%)' }}
                   />
 
                   {/* Main Rounded Squircle Card */}
@@ -321,7 +322,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                           height={800}
                           loading="eager"
                           fetchPriority="high"
-                          decoding="sync"
+                          decoding="async"
                           className="w-full h-full object-cover object-[70%_25%]"
                         />
                       </picture>
@@ -333,7 +334,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                       />
 
                       {/* Floating Cloaked-Style "Conversion Standard" Gauge Meter */}
-                      <div className="absolute top-4 right-4 bg-ink/90 backdrop-blur-md border border-white/15 p-3 rounded-[16px] text-paper shadow-xl max-w-[200px]">
+                      <div className="absolute top-4 right-4 bg-ink/95 border border-white/15 p-3 rounded-[16px] text-paper shadow-xl max-w-[200px]">
                         <div className="flex items-center justify-between pb-1 mb-2 border-b border-white/10">
                           <span className="text-[10px] font-mono text-white/60 uppercase tracking-wider">Studio Standard</span>
                           <span className="text-[10px] font-mono font-semibold text-emerald-400">99 / 100</span>
@@ -371,7 +372,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                       </div>
 
                       {/* Floating Bottom Metric Bar */}
-                      <div className="absolute bottom-4 left-4 right-4 bg-paper/95 backdrop-blur-md border border-rule-strong/80 p-3 rounded-[14px] shadow-lg flex items-center justify-between">
+                      <div className="absolute bottom-4 left-4 right-4 bg-paper/96 border border-rule-strong/80 p-3 rounded-[14px] shadow-lg flex items-center justify-between">
                         <div className="flex items-center gap-3">
                           <span className="w-8 h-8 rounded-full bg-signal-wash text-signal flex items-center justify-center shrink-0">
                             <IconGauge className="w-4 h-4" />
@@ -423,7 +424,8 @@ export default function Home({ onBook }: { onBook: () => void }) {
         {/* Ambient atmospheric red orb in dark space */}
         <div
           aria-hidden="true"
-          className="absolute -top-24 left-1/3 w-96 h-96 bg-signal/15 rounded-full blur-[100px] pointer-events-none"
+          className="absolute -top-24 left-1/3 w-96 h-96 rounded-full pointer-events-none"
+          style={{ background: 'radial-gradient(circle, rgba(199, 7, 75, 0.16) 0%, transparent 70%)' }}
         />
 
         <Shell>
@@ -587,7 +589,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                 <div className="relative z-10 space-y-3 mt-6">
                   {/* WhatsApp Lead Notification */}
                   <div className="bg-paper/95 backdrop-blur-md p-4 rounded-[16px] border border-rule-strong shadow-md flex items-start gap-3 max-w-md">
-                    <span className="w-9 h-9 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs shrink-0">
+                    <span className="w-9 h-9 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs shrink-0">
                       WA
                     </span>
                     <div className="text-xs">
@@ -674,14 +676,14 @@ export default function Home({ onBook }: { onBook: () => void }) {
             <Reveal delay={60}>
               <div className="bg-signal text-paper p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
                 <div>
-                  <span className="font-mono text-xs uppercase tracking-wider text-paper/80 block mb-2">
+                  <span className="font-mono text-xs uppercase tracking-wider text-paper block mb-2">
                     Turnaround Timeline
                   </span>
                   <div className="font-display text-6xl sm:text-7xl font-bold tracking-tight text-paper">
                     7 Days
                   </div>
                 </div>
-                <p className="text-paper/90 text-sm mt-6 leading-relaxed font-sans">
+                <p className="text-paper text-sm mt-6 leading-relaxed font-sans">
                   From discovery call to live production deployment. No open-ended months of waiting.
                 </p>
               </div>
@@ -690,14 +692,14 @@ export default function Home({ onBook }: { onBook: () => void }) {
             <Reveal delay={120}>
               <div className="bg-signal text-paper p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
                 <div>
-                  <span className="font-mono text-xs uppercase tracking-wider text-paper/80 block mb-2">
+                  <span className="font-mono text-xs uppercase tracking-wider text-paper block mb-2">
                     On-Time Guarantee
                   </span>
                   <div className="font-display text-6xl sm:text-7xl font-bold tracking-tight text-paper">
                     100%
                   </div>
                 </div>
-                <p className="text-paper/90 text-sm mt-6 leading-relaxed font-sans">
+                <p className="text-paper text-sm mt-6 leading-relaxed font-sans">
                   Contractual delivery rate under our published guarantee. On time, or the build is free.
                 </p>
               </div>
@@ -706,14 +708,14 @@ export default function Home({ onBook }: { onBook: () => void }) {
             <Reveal delay={180}>
               <div className="bg-signal text-paper p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
                 <div>
-                  <span className="font-mono text-xs uppercase tracking-wider text-paper/80 block mb-2">
+                  <span className="font-mono text-xs uppercase tracking-wider text-paper block mb-2">
                     Google PageSpeed
                   </span>
                   <div className="font-display text-6xl sm:text-7xl font-bold tracking-tight text-paper">
                     99+
                   </div>
                 </div>
-                <p className="text-paper/90 text-sm mt-6 leading-relaxed font-sans">
+                <p className="text-paper text-sm mt-6 leading-relaxed font-sans">
                   Verified mobile performance. Loads in under 1 second on real 4G devices worldwide.
                 </p>
               </div>
@@ -723,13 +725,13 @@ export default function Home({ onBook }: { onBook: () => void }) {
       </section>
 
       {/* ── SECTION 5: Live Specimen Builds Carousel (The 6 Demos) ── */}
-      <Section size="loose">
+      <Section id="live-demos" size="loose">
         <Shell>
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-sunken border border-rule mb-3">
-                  <span className="w-2 h-2 rounded-full bg-signal animate-pulse" aria-hidden="true" />
+                  <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
                   <span className="font-mono text-[10px] text-signal font-semibold uppercase tracking-wider">
                     03 · LIVE DEMO SPECIMENS
                   </span>
@@ -784,7 +786,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                         : 'bg-paper-sunken/60 border-rule text-ink-muted hover:text-ink hover:border-rule-strong'
                     }`}
                   >
-                    {isActive && !isDemoPaused && (
+                    {isActive && isDemoInView && !isDemoPaused && (
                       <div
                         className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-signal animate-progress"
                         style={{ animationDuration: '4500ms' }}
@@ -1136,7 +1138,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
               <div className="mt-8 p-4 rounded-[18px] bg-paper-sunken/80 border border-rule-strong flex items-center justify-between gap-4">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
                     <span className="text-xs font-mono font-semibold text-ink">Lighthouse 99 / 100</span>
                   </div>
                   <span className="text-[11px] text-muted block mt-0.5">Tested on live 4G mobile emulation</span>

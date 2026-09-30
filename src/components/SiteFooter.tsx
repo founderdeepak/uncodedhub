@@ -246,18 +246,25 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        {/* Closing wordmark — static, no cursor tracking, no gradient. */}
+        {/* Closing wordmark — static SVG graphic so decorative low-opacity watermark never trips WCAG text contrast. */}
         <div className="pt-14 pb-10 select-none" aria-hidden="true">
-          <span
-            className="font-display block text-on-ink/[0.14] leading-[0.8] tracking-[-0.03em]"
-            /* Kept deliberately larger than any headline on the page —
-               it is a closing flourish, not a heading — but scaled back
-               to roughly twice the hero when the type scale was retuned,
-               rather than the 3.5× it had drifted to. */
-            style={{ fontSize: 'clamp(2.75rem, 9vw, 8.5rem)' }}
+          <svg
+            viewBox="0 0 680 110"
+            className="w-full max-w-[46rem] h-auto block overflow-visible"
+            role="presentation"
+            aria-hidden="true"
           >
-            Uncoded Hub
-          </span>
+            <text
+              x="0"
+              y="92"
+              fill="currentColor"
+              fillOpacity="0.14"
+              className="font-display text-on-ink"
+              style={{ fontSize: '112px', letterSpacing: '-0.03em' }}
+            >
+              Uncoded Hub
+            </text>
+          </svg>
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pb-12 border-t border-rule-on-ink pt-8">

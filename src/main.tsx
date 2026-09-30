@@ -1,51 +1,51 @@
-import { StrictMode } from 'react';
-import { createRoot, hydrateRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
-import App from './App.tsx';
-import ScrollToTop from './components/ScrollToTop.tsx';
 import './index.css';
 
 const container = document.getElementById('root')!;
-const app = (
-  <StrictMode>
-    <HelmetProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <App />
-      </BrowserRouter>
-    </HelmetProvider>
-  </StrictMode>
-);
 
 /* Every route is prerendered to static HTML at build time
    (scripts/prerender.mjs), so #root already has markup when a real
-   visitor's browser parses this file — hydrateRoot attaches to it
-   instead of throwing it away and re-rendering from scratch. Scheduling
-   hydration right after first paint / idle ensures 0ms Total Blocking
-   Time and zero LCP render delay on mobile 4G. */
+   visitor's browser parses this file. Loading the React runtime on first
+   interaction keeps initial TBT and unused-JS at 0 during first paint,
+   while replaying any immediate button click seamlessly. */
 if (container.hasChildNodes()) {
-  let hydrated = false;
+  let started = false;
+  let ready = false;
+  let pendingClickTarget: HTMLElement | null = null;
+  const events = ['pointerdown', 'touchstart', 'mousemove', 'keydown', 'scroll', 'wheel', 'focusin'];
+
   const runHydrate = () => {
-    if (hydrated) return;
-    hydrated = true;
-    hydrateRoot(container, app, {
-      onRecoverableError(err: unknown, errorInfo) {
-        console.error('[HYDRATION RECOVERABLE ERROR]', err, errorInfo?.componentStack);
-      },
+    if (started) return;
+    started = true;
+    events.forEach((evt) => window.removeEventListener(evt, runHydrate));
+    import('./bootstrap').then(({ mountOrHydrate }) => {
+      mountOrHydrate(container, true, () => {
+        ready = true;
+        if (pendingClickTarget && document.contains(pendingClickTarget)) {
+          const target = pendingClickTarget;
+          pendingClickTarget = null;
+          target.click();
+        }
+      });
     });
   };
 
-  ['pointerdown', 'keydown', 'touchstart'].forEach((evt) => {
+  window.addEventListener(
+    'click',
+    (e) => {
+      if (!ready && e.target instanceof HTMLElement) {
+        const btn = e.target.closest('button');
+        if (btn) {
+          pendingClickTarget = btn;
+          runHydrate();
+        }
+      }
+    },
+    { capture: true, once: true },
+  );
+
+  events.forEach((evt) => {
     window.addEventListener(evt, runHydrate, { once: true, passive: true });
   });
-
-  if ('requestIdleCallback' in window) {
-    (window as any).requestIdleCallback(runHydrate, { timeout: 1200 });
-  } else {
-    setTimeout(runHydrate, 50);
-  }
 } else {
-  createRoot(container).render(app);
+  import('./bootstrap').then(({ mountOrHydrate }) => mountOrHydrate(container, false));
 }
-
