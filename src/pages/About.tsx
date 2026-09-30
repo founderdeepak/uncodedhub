@@ -359,9 +359,9 @@ export default function About({ onBook }: { onBook: () => void }) {
                 </svg>
               </div>
 
-              {/* Tamil verse — deep antique gold on light */}
+              {/* Tamil verse — deep antique gold on light (reduced 20% to match English) */}
               <p
-                className="font-display text-2xl sm:text-3xl md:text-[2.1rem] font-normal leading-[1.65] max-w-2xl mx-auto mb-10"
+                className="font-display text-[1.2rem] sm:text-[1.5rem] md:text-[1.68rem] font-normal leading-[1.65] max-w-2xl mx-auto mb-8"
                 style={{
                   background: 'linear-gradient(135deg, #7a5a10 0%, #b8902a 35%, #9a7220 65%, #5c4010 100%)',
                   WebkitBackgroundClip: 'text',
@@ -379,14 +379,17 @@ export default function About({ onBook }: { onBook: () => void }) {
                 <div className="h-px w-16" style={{ background: 'linear-gradient(90deg, rgba(180,140,30,0.5), transparent)' }} />
               </div>
 
-              {/* English translation */}
-              <p className="text-sm sm:text-base italic leading-relaxed max-w-lg mx-auto mb-8" style={{ color: 'rgba(80,55,10,0.75)' }}>
+              {/* English translation — matched in size and typographic dignity with the Tamil verse */}
+              <p
+                className="font-display text-[1.2rem] sm:text-[1.5rem] md:text-[1.68rem] italic font-normal leading-[1.65] max-w-2xl mx-auto mb-8"
+                style={{ color: 'rgba(80,55,10,0.85)' }}
+              >
                 &ldquo;I have realised that nothing I do is truly mine. From now on, O God &mdash;
                 everything that happens is only Your doing.&rdquo;
               </p>
 
               {/* Gratitude */}
-              <p className="text-xs leading-relaxed max-w-sm mx-auto" style={{ color: 'rgba(120,90,20,0.55)' }}>
+              <p className="text-xs sm:text-sm leading-relaxed max-w-md mx-auto" style={{ color: 'rgba(120,90,20,0.65)' }}>
                 We are grateful for the work, and we strive to be worthy of it on every project.
               </p>
 
