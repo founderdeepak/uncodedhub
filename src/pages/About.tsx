@@ -180,20 +180,32 @@ export default function About({ onBook }: { onBook: () => void }) {
                   </span>
                   <h3 className="font-display text-3xl text-paper font-medium mb-1">Geetha</h3>
                   <p className="text-[11px] font-mono text-white/50 mb-6 tracking-wide uppercase">
-                    2.5 years at McKinsey &amp; Company · 15,000+ slides · 550+ decks · Senior leaders &amp; global teams
+                    2.5 yrs McKinsey &amp; Co. · 15,000+ slides · 550+ decks · Senior leaders &amp; global teams
                   </p>
                   <div className="space-y-4 text-on-ink-muted text-xs sm:text-sm leading-relaxed">
                     <p>
                       Before Uncoded Hub, Geetha spent 2.5 years as a Business Presentation Specialist at McKinsey &amp; Company, where she designed more than 15,000 slides and 550+ presentation decks for senior leaders and global teams.
                     </p>
                     <p>
-                      That experience shaped how she thinks about design. The job was never simply to make information look good. It was to take something complicated, find what actually mattered, and make it clear enough that someone reading at speed could act on it.
+                      That experience shaped how she thinks about design.
                     </p>
                     <p>
-                      She brings that same discipline to every client website. Not decoration. Clarity. The kind of design that answers a visitor's real question — "can I trust these people?" — before they have read a single paragraph.
+                      The job was never simply to make information look good. It was to take something complicated, find what actually mattered, and make it clear enough that someone could understand it, trust it, and act on it.
                     </p>
                     <p>
-                      What she does not do is design by committee or follow a template. Every layout is argued from the content out. If it cannot be explained, it gets redesigned.
+                      She brings that same discipline to Uncoded Hub.
+                    </p>
+                    <p>
+                      Today, Geetha designs websites for businesses where trust matters before the first conversation — including interior designers, architects, real estate professionals, clinics, photographers, renovation studios and other high-consideration service businesses.
+                    </p>
+                    <p>
+                      Her focus is simple: <strong className="text-paper">make the quality of the business impossible to miss online.</strong>
+                    </p>
+                    <p>
+                      Every page has a job. Every section has a reason to exist. And every design decision is made to help a potential client understand what the business does, why it is credible, and why they should take the next step.
+                    </p>
+                    <p className="text-paper/70 italic text-xs border-t border-white/10 pt-4 mt-2">
+                      2.5 years at McKinsey. 550+ decks. 15,000+ slides. Now designing websites that make service businesses look as credible online as they are in person.
                     </p>
                   </div>
                 </div>
@@ -227,37 +239,49 @@ export default function About({ onBook }: { onBook: () => void }) {
                   </span>
                   <h3 className="font-display text-3xl text-paper font-medium mb-1">Deepak</h3>
                   <p className="text-[11px] font-mono text-white/50 mb-6 tracking-wide uppercase">
-                    Healthcare · Finance · Logistics · Government · SaaS
+                    7.2+ yrs · 17,000+ lines of code · Games · Apps · Web · WebGL · AR/VR
                   </p>
                   <div className="space-y-4 text-on-ink-muted text-xs sm:text-sm leading-relaxed">
                     <p>
-                      Deepak has built software across five industries — healthcare, finance, logistics, government, and SaaS — which means he has seen the full range of what can go wrong when a system is not engineered to last.
+                      Deepak has spent more than 7.2 years building software across very different kinds of problems — from games and mobile applications to websites, WebGL experiences, AR/VR projects and multiplayer games.
                     </p>
                     <p>
-                      At Uncoded Hub, he runs everything technical: discovery, information architecture, performance engineering, and deployment. He is the one who decides what the site is built with, how it is structured, and why it consistently scores 99+ on Lighthouse.
+                      Over the years, he has worked across C, C++, C#, Swift, Java, HTML, CSS and JavaScript, writing more than 17,000 lines of code across projects with different requirements, constraints and moving parts.
                     </p>
                     <p>
-                      His working principle: a website that does not bring you business is a digital brochure you are paying hosting for. Every technical decision gets measured against whether it moves a visitor closer to enquiring.
+                      But for him, the code has never been the finished product. The finished product is something that works.
                     </p>
                     <p>
-                      He climbed Velliangiri alone, slept on the hill, and reached the summit at dawn. He holds that the most useful decisions arrive in silence rather than in spreadsheets.
+                      That means taking an idea or requirement, figuring out how it needs to be structured, building it properly, testing the details, fixing what breaks, and getting it to a point where someone can actually use it.
+                    </p>
+                    <p>
+                      Alongside development, Deepak has worked across blogging, copywriting, content, SEO, AEO and AIEO, presentation design and business development — giving him a broader understanding of how a website needs to work beyond the code itself.
+                    </p>
+                    <p>
+                      He has also coordinated teams of 20+ people as a Project Coordinator, bringing together people, requirements and deadlines to move projects from brief to delivery.
+                    </p>
+                    <p>
+                      At Uncoded Hub, that experience comes together in one role: <strong className="text-paper">turning Geetha's designs and the client's requirements into a website that works as hard as it looks.</strong>
+                    </p>
+                    <p className="text-paper/70 italic text-xs border-t border-white/10 pt-4 mt-2">
+                      7.2+ years building software. 17,000+ lines of code. Games, apps, web, WebGL and AR/VR. Now building fast, reliable websites that turn clear design into a working business tool.
                     </p>
                   </div>
                 </div>
                 {/* Deepak stat cards */}
                 <div className="md:col-span-4 grid grid-cols-2 md:grid-cols-1 gap-4 content-start">
                   <div className="bg-white/[0.06] border border-white/10 rounded-[18px] p-5 text-center">
-                    <span className="font-display text-3xl text-signal-bright font-semibold">5</span>
-                    <p className="text-[10px] text-white/50 mt-1 font-mono uppercase tracking-wide">Industries built in</p>
+                    <span className="font-display text-3xl text-signal-bright font-semibold">7.2+</span>
+                    <span className="font-display text-lg text-signal-bright font-semibold"> yrs</span>
+                    <p className="text-[10px] text-white/50 mt-1 font-mono uppercase tracking-wide">In software</p>
                   </div>
                   <div className="bg-white/[0.06] border border-white/10 rounded-[18px] p-5 text-center">
-                    <span className="font-display text-3xl text-signal-bright font-semibold">99+</span>
-                    <p className="text-[10px] text-white/50 mt-1 font-mono uppercase tracking-wide">Lighthouse score</p>
+                    <span className="font-display text-3xl text-signal-bright font-semibold">17k+</span>
+                    <p className="text-[10px] text-white/50 mt-1 font-mono uppercase tracking-wide">Lines of code</p>
                   </div>
                   <div className="bg-white/[0.06] border border-white/10 rounded-[18px] p-5 text-center col-span-2 md:col-span-1">
-                    <span className="font-display text-3xl text-signal-bright font-semibold">7</span>
-                    <span className="text-xl text-signal-bright font-semibold"> days</span>
-                    <p className="text-[10px] text-white/50 mt-1 font-mono uppercase tracking-wide">Fixed delivery</p>
+                    <span className="font-display text-3xl text-signal-bright font-semibold">20+</span>
+                    <p className="text-[10px] text-white/50 mt-1 font-mono uppercase tracking-wide">People coordinated</p>
                   </div>
                 </div>
               </div>
