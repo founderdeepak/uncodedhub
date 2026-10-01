@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <title>Uncoded Hub | Team Outreach Command Center (Deepak & Geetha)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090b10;
+      --card-bg: rgba(18, 22, 34, 0.88);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover: rgba(26, 32, 50, 0.95);
+      --primary: #6366f1;
+      --primary-light: #818cf8;
+      --primary-glow: rgba(99, 102, 241, 0.25);
+      --gold: #10b981;
+      --gold-bg: rgba(16, 185, 129, 0.12);
+      --gold-border: rgba(16, 185, 129, 0.3);
+      --amber: #f59e0b;
+      --amber-bg: rgba(245, 158, 11, 0.12);
+      --whatsapp: #25d366;
+      --whatsapp-bg: rgba(37, 211, 102, 0.15);
+      --deepak: #3b82f6;
+      --deepak-bg: rgba(59, 130, 246, 0.15);
+      --geetha: #ec4899;
+      --geetha-bg: rgba(236, 72, 153, 0.15);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.06) 0px, transparent 60%);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+
+    /* Top Sticky Header */
+    header {
+      padding: 18px 32px;
+      border-bottom: 1px solid var(--card-border);
+      background: rgba(9, 11, 16, 0.92);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-badge {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #6366f1, #ec4899);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 20px var(--primary-glow);
+    }
+
+    .brand-title h1 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-title p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Team User Selector */
+    .user-picker-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 4px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+    }
+
+    .user-btn {
+      padding: 7px 16px;
+      border-radius: 9px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .user-btn.active.deepak {
+      background: #2563eb;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    }
+
+    .user-btn.active.geetha {
+      background: #db2777;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(219, 39, 119, 0.35);
+    }
+
+    /* Engine Switcher */
+    .engine-switcher {
+      display: flex;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 4px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+    }
+
+    .engine-btn {
+      padding: 8px 18px;
+      border-radius: 9px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .engine-btn.active {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    /* Header Team Stats */
+    .header-stats {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .badge-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      padding: 6px 12px;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-pill.deepak {
+      background: var(--deepak-bg);
+      color: #60a5fa;
+      border-color: rgba(59, 130, 246, 0.3);
+      font-weight: 700;
+    }
+
+    .badge-pill.geetha {
+      background: var(--geetha-bg);
+      color: #f472b6;
+      border-color: rgba(236, 72, 153, 0.3);
+      font-weight: 700;
+    }
+
+    .sync-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.75rem;
+      color: #34d399;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .sync-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 8px #34d399;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.5; }
+      50% { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 28px auto;
+      padding: 0 24px;
+    }
+
+    /* Live Demos Showcase Bar */
+    .demos-showcase {
+      background: linear-gradient(180deg, rgba(24, 29, 45, 0.95), rgba(16, 20, 32, 0.9));
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 18px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .demos-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .demos-header h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #e0e7ff;
+    }
+
+    .demos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+    }
+
+    .demo-chip {
+      background: rgba(9, 11, 16, 0.7);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .demo-chip:hover {
+      border-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .demo-chip-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .demo-chip-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .demo-actions {
+      display: flex;
+      gap: 6px;
+    }
+
+    .demo-mini-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s ease;
+    }
+
+    .demo-mini-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .demo-mini-btn.primary {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: rgba(99, 102, 241, 0.4);
+      color: #a5b4fc;
+    }
+
+    /* Niche Tabs */
+    .niche-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .niche-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 14px 18px;
+      border-radius: 14px;
+      color: var(--text-muted);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .niche-btn:hover {
+      background: var(--card-hover);
+      border-color: rgba(99, 102, 241, 0.4);
+      color: var(--text-main);
+      transform: translateY(-2px);
+    }
+
+    .niche-btn.active {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(236, 72, 153, 0.18));
+      border-color: var(--primary);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.25);
+    }
+
+    .niche-btn-title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .niche-btn-meta {
+      font-size: 0.74rem;
+      color: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Control Bar */
+    .control-bar {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 16px 20px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .selector-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pills-container {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      max-width: 650px;
+      padding: 4px 0;
+    }
+
+    .pill-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      padding: 6px 14px;
+      border-radius: 10px;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+
+    .pill-btn:hover, .pill-btn.active {
+      background: var(--primary);
+      border-color: var(--primary-light);
+      color: #fff;
+    }
+
+    .search-filter-box {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .search-input {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--card-border);
+      padding: 8px 14px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 0.82rem;
+      outline: none;
+      min-width: 200px;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary);
+    }
+
+    /* Action bar */
+    .action-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .cadence-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .export-btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      border-color: var(--primary-light);
+      color: #fff;
+    }
+
+    .btn-whatsapp {
+      background: var(--whatsapp);
+      border-color: #34d399;
+      color: #042f1a;
+      font-weight: 700;
+    }
+
+    /* Leads Grid */
+    .leads-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+      gap: 20px;
+    }
+
+    .lead-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+    }
+
+    .lead-card:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      background: var(--card-hover);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .lead-card.dispatched {
+      opacity: 0.65;
+      border-color: rgba(16, 185, 129, 0.5);
+    }
+
+    .lead-card.dispatched-deepak {
+      border-color: rgba(59, 130, 246, 0.5);
+    }
+
+    .lead-card.dispatched-geetha {
+      border-color: rgba(236, 72, 153, 0.5);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .prospect-info h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .prospect-handle {
+      font-size: 0.85rem;
+      color: var(--primary-light);
+      font-family: 'JetBrains Mono', monospace;
+      text-decoration: none;
+    }
+
+    .meta-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .tag-gold {
+      background: var(--gold-bg);
+      color: #34d399;
+      border: 1px solid var(--gold-border);
+    }
+
+    .tag-city {
+      background: rgba(99, 102, 241, 0.15);
+      color: #c7d2fe;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .tag-rating {
+      background: var(--amber-bg);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .tag-dispatched-deepak {
+      background: var(--deepak-bg);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      font-weight: 700;
+    }
+
+    .tag-dispatched-geetha {
+      background: var(--geetha-bg);
+      color: #f472b6;
+      border: 1px solid rgba(236, 72, 153, 0.4);
+      font-weight: 700;
+    }
+
+    .contact-details {
+      background: rgba(0, 0, 0, 0.35);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: var(--text-muted);
+    }
+
+    .contact-item strong {
+      color: var(--text-main);
+      min-width: 65px;
+    }
+
+    /* Pitch Container */
+    .pitch-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .pitch-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .pitch-header span {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+    }
+
+    .copy-btn {
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #a5b4fc;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .copy-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .copy-btn.copied {
+      background: var(--gold);
+      border-color: #34d399;
+      color: #fff;
+    }
+
+    .pitch-box {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid var(--card-border);
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      line-height: 1.45;
+      font-family: 'JetBrains Mono', monospace;
+      white-space: pre-wrap;
+      max-height: 140px;
+      overflow-y: auto;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .direct-link {
+      font-size: 0.82rem;
+      color: #818cf8;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .direct-link:hover {
+      color: #a5b4fc;
+      text-decoration: underline;
+    }
+
+    .dispatch-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .dispatch-toggle input {
+      accent-color: var(--gold);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    /* PIN Lock Screen Modal */
+    .pin-lock-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(9, 11, 16, 0.96);
+      backdrop-filter: blur(16px);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .pin-card {
+      background: #121622;
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    }
+
+    .pin-card h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .pin-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .pin-input {
+      background: rgba(0, 0, 0, 0.4);
+      border: 2px solid var(--card-border);
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 1.4rem;
+      letter-spacing: 0.3em;
+      text-align: center;
+      color: #fff;
+      width: 100%;
+      margin-bottom: 20px;
+      outline: none;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .pin-input:focus {
+      border-color: var(--primary);
+    }
+
+    /* Modals */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #111420;
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 1100px;
+      height: 85vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+    }
+
+    .modal-top {
+      padding: 16px 24px;
+      background: rgba(18, 22, 34, 0.95);
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-close {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .modal-body {
+      flex: 1;
+      background: #000;
+    }
+
+    .modal-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .script-content {
+      padding: 24px;
+      overflow-y: auto;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #e2e8f0;
+      white-space: pre-wrap;
+    }
+  </style>
+
+  <!-- Embedded Offline Data Bundles -->
+  <script src="social_data.js"></script>
+  <script src="gmaps_data.js"></script>
+</head>
+<body>
+
+  <!-- PIN Security Gate -->
+  <div class="pin-lock-overlay" id="pinGateModal" style="display:none;">
+    <div class="pin-card">
+      <div style="font-size: 2.5rem; margin-bottom: 12px;">🔐</div>
+      <h2>Team Outreach Portal</h2>
+      <p>Enter your 4-digit Security PIN to access live shared leads & pitches.</p>
+      <input type="password" maxlength="6" id="pinInputField" class="pin-input" placeholder="••••" autofocus>
+      <button class="btn btn-primary" style="width:100%; justify-content:center; padding:12px;" onclick="verifyPin()">Unlock Dashboard</button>
+      <div id="pinErrorMsg" style="color:#ef4444; font-size:0.8rem; margin-top:12px; display:none;">Invalid PIN. Try again.</div>
+    </div>
+  </div>
+
+  <!-- Top Sticky Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo-badge">UH</div>
+        <div class="brand-title">
+          <h1>Uncoded Hub | Team Outreach Command Center</h1>
+          <p>Live 2-Way Sync between Deepak & Geetha · 6 High-Ticket Niches</p>
+        </div>
+      </div>
+
+      <!-- Who is Sending? -->
+      <div class="user-picker-bar">
+        <span style="font-size:0.75rem; color:var(--text-dim); margin-left:6px; font-weight:700;">SENDER:</span>
+        <button class="user-btn deepak active" id="userDeepakBtn" onclick="setSender('Deepak')">
+          <span>👨‍💻</span> Deepak
+        </button>
+        <button class="user-btn geetha" id="userGeethaBtn" onclick="setSender('Geetha')">
+          <span>👩‍🎨</span> Geetha
+        </button>
+      </div>
+
+      <!-- Engine Mode Switcher -->
+      <div class="engine-switcher">
+        <button class="engine-btn active" id="modeSocialBtn" onclick="switchEngine('social')">
+          <span>📱</span> Social Cold DMs (6,000)
+        </button>
+        <button class="engine-btn" id="modeGmapsBtn" onclick="switchEngine('gmaps')">
+          <span>📍</span> Google Maps Scraper (810)
+        </button>
+      </div>
+
+      <!-- Live Team Stats & Sync Status -->
+      <div class="header-stats">
+        <div class="sync-indicator">
+          <span class="sync-dot"></span>
+          <span id="syncStatusText">Synced</span>
+        </div>
+        <div class="badge-pill deepak">
+          <span>👨‍💻 Deepak:</span>
+          <strong id="deepakCountBadge">0</strong>
+        </div>
+        <div class="badge-pill geetha">
+          <span>👩‍🎨 Geetha:</span>
+          <strong id="geethaCountBadge">0</strong>
+        </div>
+        <div class="badge-pill gold">
+          <span>🚀 Total Sent:</span>
+          <strong id="totalSentBadge">0</strong>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Live Client Demos Showcase -->
+    <div class="demos-showcase">
+      <div class="demos-header">
+        <div>
+          <h2>⚡ Live Client Demos Ready to Pitch</h2>
+          <p>Every cold pitch links directly to these 6 high-speed industry showcase demos.</p>
+        </div>
+        <span style="font-size:0.78rem; color:var(--text-dim); font-family:'JetBrains Mono',monospace;">https://uncodedhub.com/demos/*.html</span>
+      </div>
+
+      <div class="demos-grid" id="demosGrid">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+
+    <!-- Niche Navigation Tabs -->
+    <div class="niche-tabs" id="nicheTabs">
+      <!-- Injected via JS -->
+    </div>
+
+    <!-- Filter & Cadence Bar -->
+    <div class="control-bar">
+      <div class="selector-group" id="cohortSelectorGroup">
+        <!-- Injected via JS -->
+      </div>
+
+      <div class="search-filter-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search name, phone, handle, area...">
+        <button class="btn" id="filterUnsentBtn">⏳ Unsent Only</button>
+        <button class="btn" id="filterGoldBtn">🌟 No Website Only</button>
+        <button class="btn" id="filterContactBtn">📞 Phone/Email Ready</button>
+      </div>
+    </div>
+
+    <!-- Action Bar -->
+    <div class="action-row">
+      <div class="cadence-badge">
+        <span id="currentBatchTitle"><strong>Batch:</strong> Loading...</span>
+        <span>•</span>
+        <span id="batchStatsText">Calculating leads...</span>
+      </div>
+      <div class="export-btns">
+        <button class="btn" id="copyAllPitchesBtn">📋 Copy All Pitches</button>
+        <button class="btn btn-primary" id="downloadCsvBtn">📥 Download CSV</button>
+        <button class="btn" onclick="openPhoneScriptModal()" id="scriptBtn" style="display:none;">📞 Call Script</button>
+      </div>
+    </div>
+
+    <!-- Leads Grid -->
+    <div class="leads-grid" id="leadsGrid">
+      <div style="grid-column: 1 / -1; padding: 40px; text-align: center; color: var(--text-muted);">
+        Loading prospects...
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Interactive Demo Preview Modal -->
+  <div class="modal-overlay" id="demoModal">
+    <div class="modal-box">
+      <div class="modal-top">
+        <div class="modal-title" id="demoModalTitle" style="color:#fff; font-weight:700;">Live Demo Preview</div>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <a href="#" target="_blank" class="demo-mini-btn primary" id="demoModalExternalLink">Open Full Screen ↗</a>
+          <button class="modal-close" onclick="closeDemoModal()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <iframe src="" class="modal-iframe" id="demoModalIframe"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phone Call Script Modal -->
+  <div class="modal-overlay" id="scriptModal">
+    <div class="modal-box" style="max-width: 750px; height: 75vh;">
+      <div class="modal-top">
+        <div class="modal-title" style="color:#fff; font-weight:700;">📞 4-Step Phone Call Pitch Script (High Conversion)</div>
+        <button class="modal-close" onclick="closeScriptModal()">✕ Close</button>
+      </div>
+      <div class="script-content" id="scriptModalContent">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const CORRECT_PIN = "2026";
+    let activeSender = localStorage.getItem("team_outreach_sender") || "Deepak";
+    let cloudDispatches = {}; // { lead_id: { by: "Deepak", time: "..." } }
+
+    const NICHES = {
+      "01_interior_designers": {
+        id: "01_interior_designers",
+        name: "Interior Designers & Architects",
+        icon: "🎨",
+        demo_name: "Meridian Interiors Demo",
+        demo_file: "interior-design.html",
+        demo_url: "https://uncodedhub.com/demos/interior-design.html",
+        hook: "high-end visual before/after project showcase, 3D floor plan explorer, and instant client inquiry capture"
+      },
+      "02_real_estate_agents": {
+        id: "02_real_estate_agents",
+        name: "Real Estate Agents & Realtors",
+        icon: "🏢",
+        demo_name: "Marlow Realty Demo",
+        demo_file: "real-estate.html",
+        demo_url: "https://uncodedhub.com/demos/real-estate.html",
+        hook: "verified property listings, virtual walkthrough requests, neighborhood guides, and instant WhatsApp booking"
+      },
+      "03_dental_aesthetic_clinics": {
+        id: "03_dental_aesthetic_clinics",
+        name: "Dental & Aesthetic Clinics",
+        icon: "🦷",
+        demo_name: "Willowmere Dental Clinic",
+        demo_file: "dental-clinic.html",
+        demo_url: "https://uncodedhub.com/demos/dental-clinic.html",
+        hook: "instant patient appointment scheduling, before/after smile transformations, and doctor credential profiles"
+      },
+      "04_wedding_photographers": {
+        id: "04_wedding_photographers",
+        name: "Wedding Photographers",
+        icon: "📷",
+        demo_name: "Alder & Wren Photography",
+        demo_file: "wedding-photography.html",
+        demo_url: "https://uncodedhub.com/demos/wedding-photography.html",
+        hook: "full-bleed photo galleries, 4K wedding films reel, package pricing guides, and live date availability checker"
+      },
+      "05_home_renovation_modular_kitchens": {
+        id: "05_home_renovation_modular_kitchens",
+        name: "Home Renovation & Kitchens",
+        icon: "🔨",
+        demo_name: "Halbrook Renovation Studio",
+        demo_file: "home-renovation.html",
+        demo_url: "https://uncodedhub.com/demos/home-renovation.html",
+        hook: "kitchen & wardrobe material visualizer, instant renovation cost estimator, and site inspection booking"
+      },
+      "06_coaches_consultants": {
+        id: "06_coaches_consultants",
+        name: "Coaches & Consultants",
+        icon: "🎯",
+        demo_name: "Naomi Reyes Coaching",
+        demo_file: "executive-coaching.html",
+        demo_url: "https://uncodedhub.com/demos/executive-coaching.html",
+        hook: "1-on-1 strategy call booking, client transformation case studies, program frameworks, and free lead magnet funnel"
+      }
+    };
+
+    let currentEngine = "social";
+    let currentNiche = "01_interior_designers";
+    let currentDay = 1;
+    let currentCity = "ALL";
+    let allCurrentLeads = [];
+    let filterGoldOnly = false;
+    let filterContactOnly = false;
+    let filterUnsentOnly = false;
+    let searchQuery = "";
+
+    // 1. PIN Security Gate
+    function checkPinGate() {
+      const authorized = localStorage.getItem("team_pin_authorized") === "true";
+      if (!authorized) {
+        document.getElementById("pinGateModal").style.display = "flex";
+      } else {
+        document.getElementById("pinGateModal").style.display = "none";
+        initDashboard();
+      }
+    }
+
+    function verifyPin() {
+      const val = document.getElementById("pinInputField").value.trim();
+      if (val === CORRECT_PIN) {
+        localStorage.setItem("team_pin_authorized", "true");
+        document.getElementById("pinGateModal").style.display = "none";
+        initDashboard();
+      } else {
+        document.getElementById("pinErrorMsg").style.display = "block";
+      }
+    }
+
+    document.getElementById("pinInputField").addEventListener("keypress", (e) => {
+      if (e.key === "Enter") verifyPin();
+    });
+
+    // 2. Sender Setting
+    function setSender(user) {
+      activeSender = user;
+      localStorage.setItem("team_outreach_sender", user);
+      document.getElementById("userDeepakBtn").classList.toggle("active", user === "Deepak");
+      document.getElementById("userGeethaBtn").classList.toggle("active", user === "Geetha");
+    }
+
+    // 3. Calendar Schedule (Oct 2nd Kickoff)
+    const KICKOFF_DATE = new Date(2026, 9, 2); // Oct 2nd, 2026
+
+    function getDayDate(dayNum) {
+      const d = new Date(KICKOFF_DATE);
+      d.setDate(d.getDate() + (dayNum - 1));
+      const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      return {
+        dayNum: dayNum,
+        dayStr: dayNum < 10 ? `Day_0${dayNum}` : `Day_${dayNum}`,
+        formatted: `${monthNames[d.getMonth()]} ${d.getDate() < 10 ? '0' + d.getDate() : d.getDate()}`,
+        fullDate: `${dayNames[d.getDay()]}, ${monthNames[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`
+      };
+    }
+
+    // 4. Live Cloud Sync API (sync.php)
+    async function fetchCloudDispatches() {
+      try {
+        const res = await fetch(`sync.php?pin=${CORRECT_PIN}`);
+        if (res.ok) {
+          const json = await res.json();
+          if (json.status === "success" && json.data) {
+            cloudDispatches = json.data.dispatches || {};
+            updateTeamStats(json.data.stats);
+            document.getElementById("syncStatusText").innerText = "Live Synced ✓";
+          }
+        }
+      } catch (err) {
+        document.getElementById("syncStatusText").innerText = "Local Mode";
+      }
+    }
+
+    async function toggleCloudDispatch(leadId, isChecked) {
+      // Optimistic local update
+      if (isChecked) {
+        cloudDispatches[leadId] = {
+          by: activeSender,
+          time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        };
+      } else {
+        delete cloudDispatches[leadId];
+      }
+      renderLeads();
+
+      try {
+        await fetch('sync.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'X-Team-PIN': CORRECT_PIN },
+          body: JSON.stringify({
+            action: 'toggle',
+            lead_id: leadId,
+            sent_by: activeSender,
+            status: isChecked,
+            pin: CORRECT_PIN
+          })
+        });
+        fetchCloudDispatches();
+      } catch (e) {
+        // Fallback to localStorage
+        if (isChecked) localStorage.setItem(`sent_${leadId}`, activeSender);
+        else localStorage.removeItem(`sent_${leadId}`);
+      }
+    }
+
+    function updateTeamStats(stats) {
+      if (!stats) {
+        let total = 0, dCount = 0, gCount = 0;
+        Object.values(cloudDispatches).forEach(item => {
+          total++;
+          if ((item.by || '').toLowerCase().includes('geetha')) gCount++;
+          else dCount++;
+        });
+        stats = { total, deepak: dCount, geetha: gCount };
+      }
+      document.getElementById("deepakCountBadge").innerText = stats.deepak || 0;
+      document.getElementById("geethaCountBadge").innerText = stats.geetha || 0;
+      document.getElementById("totalSentBadge").innerText = stats.total || 0;
+    }
+
+    // 5. Render Demos Showcase Bar
+    function renderDemosShowcase() {
+      const container = document.getElementById("demosGrid");
+      container.innerHTML = Object.entries(NICHES).map(([id, meta]) => `
+        <div class="demo-chip">
+          <div class="demo-chip-top">
+            <span class="demo-chip-title">${meta.icon} ${meta.name.split('&')[0].trim()}</span>
+          </div>
+          <div style="font-size:0.73rem; color:var(--text-muted); text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">
+            ${meta.demo_name}
+          </div>
+          <div class="demo-actions">
+            <button class="demo-mini-btn" onclick="previewDemo('${meta.demo_url}', '${meta.name}')">👁️ Preview</button>
+            <button class="demo-mini-btn" onclick="copyDemoLink(this, '${meta.demo_url}')">📋 Copy Link</button>
+            <a href="${meta.demo_url}" target="_blank" class="demo-mini-btn primary">↗ Open</a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function switchEngine(mode) {
+      currentEngine = mode;
+      document.getElementById("modeSocialBtn").classList.toggle("active", mode === 'social');
+      document.getElementById("modeGmapsBtn").classList.toggle("active", mode === 'gmaps');
+      document.getElementById("scriptBtn").style.display = mode === 'gmaps' ? 'flex' : 'none';
+
+      renderNicheTabs();
+      renderControlPills();
+      loadLeads();
+    }
+
+    function renderNicheTabs() {
+      const tabsEl = document.getElementById("nicheTabs");
+      tabsEl.innerHTML = Object.entries(NICHES).map(([id, meta]) => {
+        let countText = "";
+        if (currentEngine === 'gmaps') {
+          const gmapsArr = (window.GMAPS_LEADS && window.GMAPS_LEADS[id]) || [];
+          countText = `${gmapsArr.length} Map Leads`;
+        } else {
+          countText = `1,000 Social Leads (20 Days)`;
+        }
+
+        return `
+          <button class="niche-btn ${id === currentNiche ? 'active' : ''}" onclick="selectNiche('${id}')">
+            <div class="niche-btn-title">${meta.icon} ${meta.name}</div>
+            <div class="niche-btn-meta">
+              <span>${countText}</span>
+              <span>👉 Demo Ready</span>
+            </div>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectNiche(id) {
+      currentNiche = id;
+      renderNicheTabs();
+      loadLeads();
+    }
+
+    function renderControlPills() {
+      const groupEl = document.getElementById("cohortSelectorGroup");
+
+      if (currentEngine === 'social') {
+        groupEl.innerHTML = `
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <strong style="font-size: 0.85rem; color: var(--text-main);">Daily Schedule:</strong>
+              <span style="font-size:0.75rem; color:#34d399; font-weight:700;">🚀 Day 01 Kickoff: Fri, Oct 02, 2026</span>
+            </div>
+            <div class="pills-container">
+              ${Array.from({length: 20}, (_, i) => i + 1).map(day => {
+                const info = getDayDate(day);
+                const isKickoff = day === 1;
+                return `
+                  <button class="pill-btn ${day === currentDay ? 'active' : ''}" onclick="selectDay(${day})" title="${info.fullDate}">
+                    Day ${day < 10 ? '0' + day : day} (${info.formatted})${isKickoff ? ' ⭐' : ''}
+                  </button>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      } else {
+        groupEl.innerHTML = `
+          <strong style="font-size: 0.85rem; color: var(--text-main);">City Filter:</strong>
+          <div class="pills-container">
+            <button class="pill-btn ${currentCity === 'ALL' ? 'active' : ''}" onclick="selectCity('ALL')">All Cities</button>
+            <button class="pill-btn ${currentCity === 'Bengaluru' ? 'active' : ''}" onclick="selectCity('Bengaluru')">📍 Bengaluru</button>
+            <button class="pill-btn ${currentCity === 'Chennai' ? 'active' : ''}" onclick="selectCity('Chennai')">📍 Chennai</button>
+          </div>
+        `;
+      }
+    }
+
+    function selectDay(day) {
+      currentDay = day;
+      renderControlPills();
+      loadLeads();
+    }
+
+    function selectCity(city) {
+      currentCity = city;
+      renderControlPills();
+      renderLeads();
+    }
+
+    async function loadLeads() {
+      const gridEl = document.getElementById("leadsGrid");
+      gridEl.innerHTML = `<div style="grid-column: 1 / -1; padding: 40px; text-align: center; color: var(--text-muted);">Loading targets for ${NICHES[currentNiche].name}...</div>`;
+
+      if (currentEngine === 'gmaps') {
+        const gmapsData = window.GMAPS_LEADS || {};
+        allCurrentLeads = gmapsData[currentNiche] || [];
+      } else {
+        const dayStr = currentDay < 10 ? `Day_0${currentDay}` : `Day_${currentDay}`;
+        const socialData = window.SOCIAL_BATCHES || {};
+        allCurrentLeads = (socialData[currentNiche] && socialData[currentNiche][dayStr]) || [];
+      }
+
+      renderLeads();
+    }
+
+    function sanitizePhoneForWhatsApp(phone) {
+      if (!phone) return null;
+      let digits = phone.replace(/\D/g, '');
+      if (digits.length === 10) return '91' + digits;
+      if (digits.length === 11 && digits.startsWith('0')) return '91' + digits.substring(1);
+      if (digits.length === 12 && digits.startsWith('91')) return digits;
+      if (digits.length > 10) return digits;
+      return null;
+    }
+
+    function renderLeads() {
+      const gridEl = document.getElementById("leadsGrid");
+
+      let filtered = allCurrentLeads.filter(lead => {
+        const leadId = currentEngine === 'gmaps' ? `gmaps_${sanitizeId(lead.name + '_' + lead.phone)}` : `social_${lead.username}`;
+        const isDispatched = !!cloudDispatches[leadId] || localStorage.getItem(`sent_${leadId}`);
+
+        if (filterUnsentOnly && isDispatched) return false;
+
+        if (currentEngine === 'gmaps') {
+          if (currentCity !== 'ALL' && lead.city && !lead.city.toLowerCase().includes(currentCity.toLowerCase())) return false;
+          if (filterGoldOnly && lead.website) return false;
+          if (filterContactOnly && !lead.phone) return false;
+        } else {
+          if (filterGoldOnly && !lead.is_gold_lead) return false;
+          if (filterContactOnly && !lead.primary_email && !lead.primary_phone) return false;
+        }
+
+        if (searchQuery) {
+          const q = searchQuery.toLowerCase();
+          const nameMatch = (lead.name || '').toLowerCase().includes(q);
+          const handleMatch = (lead.username || '').toLowerCase().includes(q);
+          const phoneMatch = (lead.phone || lead.primary_phone || '').includes(q);
+          const areaMatch = (lead.address || lead.city || lead.bio || '').toLowerCase().includes(q);
+          if (!nameMatch && !handleMatch && !phoneMatch && !areaMatch) return false;
+        }
+        return true;
+      });
+
+      if (currentEngine === 'gmaps') {
+        const total = allCurrentLeads.length;
+        const noWeb = allCurrentLeads.filter(x => !x.website).length;
+        const hasPhone = allCurrentLeads.filter(x => x.phone).length;
+        document.getElementById("currentBatchTitle").innerHTML = `<strong>Google Maps Queue:</strong> ${filtered.length} of ${total} Businesses`;
+        document.getElementById("batchStatsText").innerText = `🌟 ${noWeb} Zero Website | 📞 ${hasPhone} Direct Phones`;
+      } else {
+        const total = allCurrentLeads.length;
+        const goldCount = allCurrentLeads.filter(x => x.is_gold_lead).length;
+        const emailCount = allCurrentLeads.filter(x => x.primary_email).length;
+        const phoneCount = allCurrentLeads.filter(x => x.primary_phone).length;
+        const dateInfo = getDayDate(currentDay);
+        document.getElementById("currentBatchTitle").innerHTML = `<strong>Day ${currentDay < 10 ? '0' + currentDay : currentDay} Queue (${dateInfo.fullDate}):</strong> ${filtered.length} Targets`;
+        document.getElementById("batchStatsText").innerText = `🌟 ${goldCount} Zero Website | ✉️ ${emailCount} Emails | 📞 ${phoneCount} WhatsApp`;
+      }
+
+      if (!filtered.length) {
+        gridEl.innerHTML = `<div style="grid-column: 1 / -1; padding: 50px; text-align: center; color: var(--text-dim);">No prospects matched current filters.</div>`;
+        return;
+      }
+
+      gridEl.innerHTML = filtered.map((lead, idx) => {
+        const leadId = currentEngine === 'gmaps' ? `gmaps_${sanitizeId(lead.name + '_' + lead.phone)}` : `social_${lead.username}`;
+        const dispatchInfo = cloudDispatches[leadId] || (localStorage.getItem(`sent_${leadId}`) ? { by: localStorage.getItem(`sent_${leadId}`), time: 'Local' } : null);
+        const isDispatched = !!dispatchInfo;
+        const senderClass = isDispatched ? ((dispatchInfo.by || '').toLowerCase().includes('geetha') ? 'dispatched-geetha' : 'dispatched-deepak') : '';
+
+        if (currentEngine === 'gmaps') {
+          const waNumber = sanitizePhoneForWhatsApp(lead.phone);
+          const waUrl = waNumber ? `https://wa.me/${waNumber}?text=${encodeURIComponent(lead.whatsapp_pitch || '')}` : null;
+
+          return `
+            <div class="lead-card ${isDispatched ? 'dispatched ' + senderClass : ''}" id="card_${leadId}">
+              <div class="card-top">
+                <div class="prospect-info">
+                  <h3>${escapeHtml(lead.name)}</h3>
+                  <div style="font-size:0.8rem; color:var(--text-muted); margin-top:2px;">
+                    📍 ${escapeHtml(lead.city || 'Bengaluru/Chennai')}
+                  </div>
+                  <div class="meta-tags">
+                    ${isDispatched ? `
+                      <span class="tag ${dispatchInfo.by.toLowerCase().includes('geetha') ? 'tag-dispatched-geetha' : 'tag-dispatched-deepak'}">
+                        ✓ Sent by ${escapeHtml(dispatchInfo.by)} (${dispatchInfo.time || ''})
+                      </span>
+                    ` : ''}
+                    <span class="tag tag-gold">${lead.website ? 'Has Outdated Site' : '🌟 ZERO WEBSITE (GOLD)'}</span>
+                    ${lead.rating ? `<span class="tag tag-rating">⭐ ${lead.rating} (${lead.parsed_reviews || lead.reviews || 'Reviews'})</span>` : ''}
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-details">
+                <div class="contact-item">
+                  <strong>Phone:</strong> 
+                  <span style="color:#fff; font-family:'JetBrains Mono',monospace;">${lead.phone || '<span style="color:#64748b;">Not listed</span>'}</span>
+                  ${lead.phone ? `<a href="tel:${lead.phone.replace(/\s+/g,'')}" class="demo-mini-btn" style="margin-left:auto;">📞 Call</a>` : ''}
+                </div>
+                <div class="contact-item">
+                  <strong>Address:</strong> 
+                  <span style="font-size:0.75rem; color:#cbd5e1; max-height:40px; overflow:hidden;">${escapeHtml(lead.address ? lead.address.split('\n')[0] : 'Bengaluru/Chennai')}</span>
+                </div>
+                <div class="contact-item">
+                  <strong>Website:</strong> 
+                  ${lead.website ? `<a href="${lead.website}" target="_blank" style="color:#a5b4fc; text-decoration:underline;">${lead.website}</a>` : '<span style="color:#34d399; font-weight:700;">Zero Website Listed (Pitch Custom 7-Day Site)</span>'}
+                </div>
+              </div>
+
+              <div class="pitch-container">
+                <div class="pitch-header">
+                  <span>💬 WhatsApp Outreach Pitch (With Demo Link)</span>
+                  <button class="copy-btn" onclick="copyText(this, \`${escapeJs(lead.whatsapp_pitch)}\`)">Copy WhatsApp</button>
+                </div>
+                <div class="pitch-box">${escapeHtml(lead.whatsapp_pitch)}</div>
+              </div>
+
+              <div class="card-footer">
+                <div class="footer-actions">
+                  ${waUrl ? `
+                    <a href="${waUrl}" target="_blank" class="btn btn-whatsapp" onclick="toggleCloudDispatch('${leadId}', true)">
+                      <span>💬 Send WhatsApp</span> ↗
+                    </a>
+                  ` : ''}
+                  ${lead.maps_link ? `
+                    <a href="${lead.maps_link}" target="_blank" class="direct-link">
+                      <span>Google Maps</span> ↗
+                    </a>
+                  ` : ''}
+                </div>
+
+                <label class="dispatch-toggle">
+                  <input type="checkbox" ${isDispatched ? 'checked' : ''} onchange="toggleCloudDispatch('${leadId}', this.checked)">
+                  <span>${isDispatched ? `Sent by ${dispatchInfo.by}` : `Mark Sent (${activeSender})`}</span>
+                </label>
+              </div>
+            </div>
+          `;
+        } else {
+          return `
+            <div class="lead-card ${isDispatched ? 'dispatched ' + senderClass : ''}" id="card_${leadId}">
+              <div class="card-top">
+                <div class="prospect-info">
+                  <h3>${escapeHtml(lead.name || lead.username)}</h3>
+                  <a href="${lead.profile_url}" target="_blank" class="prospect-handle">@${escapeHtml(lead.username)} ↗</a>
+                  <div class="meta-tags">
+                    ${isDispatched ? `
+                      <span class="tag ${dispatchInfo.by.toLowerCase().includes('geetha') ? 'tag-dispatched-geetha' : 'tag-dispatched-deepak'}">
+                        ✓ Sent by ${escapeHtml(dispatchInfo.by)} (${dispatchInfo.time || ''})
+                      </span>
+                    ` : ''}
+                    <span class="tag tag-gold">${lead.target_category || 'TARGET 1: NO WEBSITE'}</span>
+                    <span class="tag tag-city">📍 ${escapeHtml(lead.city || 'Bengaluru/Chennai')}</span>
+                    <span class="tag tag-followers">👥 ${lead.followers ? lead.followers.toLocaleString() : 'Growing'}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-details">
+                <div class="contact-item"><strong>Website:</strong> ${lead.website ? `<a href="${lead.website}" target="_blank" style="color:#a5b4fc;">${lead.website}</a>` : '<span style="color:#34d399; font-weight:700;">Zero Website Listed (Gold Prospect)</span>'}</div>
+                <div class="contact-item"><strong>Email:</strong> ${lead.primary_email || '<span style="color:#64748b;">DM only (No public email)</span>'}</div>
+                <div class="contact-item"><strong>Phone / WA:</strong> ${lead.primary_phone || '<span style="color:#64748b;">None</span>'}</div>
+              </div>
+
+              <div class="pitch-container">
+                <div class="pitch-header">
+                  <span>📱 Cold DM (Instagram / Threads)</span>
+                  <button class="copy-btn" onclick="copyText(this, \`${escapeJs(lead.cold_dm_instagram)}\`)">Copy DM</button>
+                </div>
+                <div class="pitch-box">${escapeHtml(lead.cold_dm_instagram)}</div>
+              </div>
+
+              ${lead.primary_email ? `
+                <div class="pitch-container">
+                  <div class="pitch-header">
+                    <span>✉️ Cold Email (Subject + Body)</span>
+                    <button class="copy-btn" onclick="copyText(this, \`Subject: ${escapeJs(lead.cold_email_subject)}\\n\\n${escapeJs(lead.cold_email_body)}\`)">Copy Email</button>
+                  </div>
+                  <div class="pitch-box">Subject: ${escapeHtml(lead.cold_email_subject)}\n\n${escapeHtml(lead.cold_email_body)}</div>
+                </div>
+              ` : ''}
+
+              <div class="card-footer">
+                <div class="footer-actions">
+                  <a href="https://ig.me/m/${lead.username}" target="_blank" class="direct-link" onclick="toggleCloudDispatch('${leadId}', true)">
+                    <span>Direct Message @${lead.username}</span> ↗
+                  </a>
+                </div>
+
+                <label class="dispatch-toggle">
+                  <input type="checkbox" ${isDispatched ? 'checked' : ''} onchange="toggleCloudDispatch('${leadId}', this.checked)">
+                  <span>${isDispatched ? `Sent by ${dispatchInfo.by}` : `Mark Sent (${activeSender})`}</span>
+                </label>
+              </div>
+            </div>
+          `;
+        }
+      }).join('');
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      return String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function escapeJs(text) {
+      if (!text) return '';
+      return String(text).replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/\$/g, '\\$');
+    }
+
+    function sanitizeId(str) {
+      return String(str || '').replace(/[^a-zA-Z0-9_-]/g, '_');
+    }
+
+    function copyText(btn, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.innerText;
+        btn.innerText = "Copied! ✓";
+        btn.classList.add("copied");
+        setTimeout(() => {
+          btn.innerText = orig;
+          btn.classList.remove("copied");
+        }, 1800);
+      });
+    }
+
+    function copyDemoLink(btn, url) {
+      navigator.clipboard.writeText(url).then(() => {
+        const orig = btn.innerText;
+        btn.innerText = "Copied! ✓";
+        setTimeout(() => {
+          btn.innerText = orig;
+        }, 1600);
+      });
+    }
+
+    function previewDemo(url, title) {
+      document.getElementById("demoModalTitle").innerText = `Live Preview: ${title}`;
+      document.getElementById("demoModalExternalLink").href = url;
+      document.getElementById("demoModalIframe").src = url;
+      document.getElementById("demoModal").classList.add("open");
+    }
+
+    function closeDemoModal() {
+      document.getElementById("demoModal").classList.remove("open");
+      document.getElementById("demoModalIframe").src = "";
+    }
+
+    function openPhoneScriptModal() {
+      const demoUrl = NICHES[currentNiche].demo_url;
+      const script = `1. THE OPENING (10 Seconds):
+"Hi, am I speaking with the founder or manager of [Business Name]? 
+My name is ${activeSender} from Uncoded Hub here in Bengaluru."
+
+2. THE OBSERVATION & PROBLEM (15 Seconds):
+"I was looking at top ${NICHES[currentNiche].name} in your area on Google Maps and came across your high ratings. 
+I noticed you don't have a modern portfolio website linked, which means customers searching on their phones can't view your projects or book with you directly."
+
+3. THE HOOK (Uncoded Hub Advantage):
+"Rather than pitching you blindly, our studio already built a 100% live, working demo website specifically for a business like yours so you can see the exact design upfront. It loads in under 1 second and has instant WhatsApp booking."
+
+4. THE DIRECT CALL TO ACTION:
+"I just sent the link to your WhatsApp on this number. Can you open it right now while we're on the line? It takes just 15 seconds to look at:
+👉 ${demoUrl}"`;
+
+      document.getElementById("scriptModalContent").innerText = script;
+      document.getElementById("scriptModal").classList.add("open");
+    }
+
+    function closeScriptModal() {
+      document.getElementById("scriptModal").classList.remove("open");
+    }
+
+    // Search and filter listeners
+    document.getElementById("searchInput").addEventListener("input", (e) => {
+      searchQuery = e.target.value;
+      renderLeads();
+    });
+
+    document.getElementById("filterUnsentBtn").addEventListener("click", function() {
+      filterUnsentOnly = !filterUnsentOnly;
+      this.classList.toggle("btn-primary", filterUnsentOnly);
+      renderLeads();
+    });
+
+    document.getElementById("filterGoldBtn").addEventListener("click", function() {
+      filterGoldOnly = !filterGoldOnly;
+      this.classList.toggle("btn-primary", filterGoldOnly);
+      renderLeads();
+    });
+
+    document.getElementById("filterContactBtn").addEventListener("click", function() {
+      filterContactOnly = !filterContactOnly;
+      this.classList.toggle("btn-primary", filterContactOnly);
+      renderLeads();
+    });
+
+    document.getElementById("copyAllPitchesBtn").addEventListener("click", function() {
+      if (!allCurrentLeads.length) return;
+      let text = "";
+      if (currentEngine === 'gmaps') {
+        text = allCurrentLeads.map((l, i) => `=== BUSINESS #${i+1}: ${l.name} (${l.phone}) ===\nMaps: ${l.maps_link}\n\n${l.whatsapp_pitch}\n\n`).join('\n');
+      } else {
+        text = allCurrentLeads.map((l, i) => `=== TARGET #${i+1} @${l.username} ===\nLink: https://ig.me/m/${l.username}\n\n${l.cold_dm_instagram}\n\n`).join('\n');
+      }
+      navigator.clipboard.writeText(text).then(() => {
+        alert(`Copied all ${allCurrentLeads.length} pitches to clipboard!`);
+      });
+    });
+
+    document.getElementById("downloadCsvBtn").addEventListener("click", function() {
+      const csvUrl = currentEngine === 'gmaps' ? `../local_map_outreach/targeted_outreach_ready/${currentNiche}_outreach_targets.csv` : `../social_cold_outreach/daily_batches/${currentNiche}/Day_${currentDay < 10 ? '0' + currentDay : currentDay}.csv`;
+      window.open(csvUrl, '_blank');
+    });
+
+    // Close modals
+    document.querySelectorAll('.modal-overlay').forEach(el => {
+      el.addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.classList.remove('open');
+          const iframe = this.querySelector('iframe');
+          if (iframe) iframe.src = '';
+        }
+      });
+    });
+
+    function initDashboard() {
+      setSender(activeSender);
+      renderDemosShowcase();
+      renderNicheTabs();
+      renderControlPills();
+      loadLeads();
+      fetchCloudDispatches();
+
+      // Poll cloud sync every 8 seconds so both Deepak & Geetha see real-time updates
+      setInterval(fetchCloudDispatches, 8000);
+    }
+
+    checkPinGate();
+  </script>
+</body>
+</html>
