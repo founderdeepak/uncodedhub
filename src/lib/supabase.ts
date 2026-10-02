@@ -48,6 +48,15 @@ const GOOGLE_BACKUP_URL =
 
 /** Writes one enquiry. Resolves true if stored in Supabase OR safely captured. */
 export async function submitLead(lead: Lead): Promise<boolean> {
+  // Track Meta Pixel conversion event
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    try {
+      (window as any).fbq('track', 'Lead', {
+        content_name: lead.business_type || 'Enquiry',
+      });
+    } catch {}
+  }
+
   let stored = false;
 
   // 1. Try Supabase first

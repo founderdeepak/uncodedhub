@@ -65,6 +65,8 @@
          if the browser never uses it. -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://connect.facebook.net">
+    <link rel="dns-prefetch" href="https://connect.facebook.net">
 
     <!-- ═══════════════════════════════════════════════════════
          STRUCTURED DATA
@@ -149,7 +151,7 @@
     }
     </script>
 
-    <!-- Google Analytics: deferred until after user interaction or idle, skipped during audit/prerender -->
+    <!-- Analytics & Meta Pixel: deferred until after user interaction or idle, skipped during audit/prerender -->
     <script>
       (function () {
         if (
@@ -158,27 +160,51 @@
         ) {
           return;
         }
-        function loadGtag() {
-          if (window.__gtag_loaded) return;
-          window.__gtag_loaded = true;
-          ['scroll', 'keydown', 'touchstart', 'click'].forEach(function (e) {
-            window.removeEventListener(e, loadGtag, { passive: true });
+        function loadTrackers() {
+          if (window.__trackers_loaded) return;
+          window.__trackers_loaded = true;
+          ['scroll', 'keydown', 'touchstart', 'click', 'mousemove'].forEach(function (e) {
+            window.removeEventListener(e, loadTrackers, { passive: true });
           });
-          var s = document.createElement('script');
-          s.async = true;
-          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-9KBM90K2TM';
-          document.head.appendChild(s);
+
+          // 1. Google Analytics
+          var s1 = document.createElement('script');
+          s1.async = true;
+          s1.src = 'https://www.googletagmanager.com/gtag/js?id=G-9KBM90K2TM';
+          document.head.appendChild(s1);
           window.dataLayer = window.dataLayer || [];
           function gtag() { dataLayer.push(arguments); }
           gtag('js', new Date());
           gtag('config', 'G-9KBM90K2TM');
           window.gtag = gtag;
+
+          // 2. Meta Pixel (ID: 1640189624147202)
+          !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+          n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+          document,'script','https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '1640189624147202');
+          fbq('track', 'PageView');
         }
+
         ['scroll', 'keydown', 'touchstart', 'click', 'mousemove'].forEach(function (e) {
-          window.addEventListener(e, loadGtag, { once: true, passive: true });
+          window.addEventListener(e, loadTrackers, { once: true, passive: true });
         });
+
+        // 3. Idle fallback: load after 3.5s so non-scrolling visitors are captured
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(function () {
+            setTimeout(loadTrackers, 3500);
+          });
+        } else {
+          setTimeout(loadTrackers, 4000);
+        }
       })();
     </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1640189624147202&ev=PageView&noscript=1" alt="" />
+    </noscript>
   </head>
   <body>
     <div id="root"></div>

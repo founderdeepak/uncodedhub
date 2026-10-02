@@ -323,8 +323,18 @@ export function BookingCalendar({ host }: { host: Host }) {
     if (stored) ok = true;
 
     setBusy(false);
-    if (ok) setStep('done');
-    else setFailed(true);
+    if (ok) {
+      if (typeof window !== 'undefined' && (window as any).fbq) {
+        try {
+          (window as any).fbq('track', 'Schedule', {
+            content_name: `Discovery Call with ${host.name}`,
+          });
+        } catch {}
+      }
+      setStep('done');
+    } else {
+      setFailed(true);
+    }
   };
 
   /* ═══════════════════════════════════════════════════════════════ */
