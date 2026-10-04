@@ -435,7 +435,7 @@ A typical WP site has 30 plugins, costs ₹5k/mo to maintain, and takes 5+ secon
 **Theme**: Radical Proof & The 6 Target Industry Demos.  
 **Goal**: Allow prospects to click, test, and experience the speed before signing.
 
-### 🖼️ Canva Carousel Slide-by-Slide Copy (7 Slides)
+### 🖼️ Canva Carousel Slide-by-Slide Copy (8 Slides)
 
 - **Slide 1 [COVER — Dark Obsidian `#14130F`]**:
   - Header: `[Uncoded Hub Logo]` (Top-Right)
@@ -451,7 +451,7 @@ A typical WP site has 30 plugins, costs ₹5k/mo to maintain, and takes 5+ secon
     - 🏛️ Sub-second 3D architectural portfolio rendering.
     - 📐 Before/After transformation sliders & material guides.
     - 🔗 Live URL: `uncodedhub.com/demos/interior-design.html`
-  - Footer: `uncodedhub.com` | `02 / 07`
+  - Footer: `uncodedhub.com` | `02 / 08`
 
 - **Slide 3 [Light Limestone `#F5F3EF`]**:
   - Header: `02 / REAL ESTATE & BUILDERS` | `[Uncoded Hub Logo]`
@@ -460,7 +460,7 @@ A typical WP site has 30 plugins, costs ₹5k/mo to maintain, and takes 5+ secon
     - 🏢 Interactive floor plan viewer & RERA compliance badge.
     - 📲 Direct buyer WhatsApp triage (no shared portal brokers).
     - 🔗 Live URL: `uncodedhub.com/demos/real-estate.html`
-  - Footer: `uncodedhub.com` | `03 / 07`
+  - Footer: `uncodedhub.com` | `03 / 08`
 
 - **Slide 4 [Light Limestone `#F5F3EF`]**:
   - Header: `03 / CLINICAL EXCELLENCE` | `[Uncoded Hub Logo]`
@@ -469,7 +469,7 @@ A typical WP site has 30 plugins, costs ₹5k/mo to maintain, and takes 5+ secon
     - 🦷 Transparent procedure menus (Implants, Aligners).
     - 👨‍⚕️ Verified doctor credentials & emergency WhatsApp booking.
     - 🔗 Live URL: `uncodedhub.com/demos/dental-clinic.html`
-  - Footer: `uncodedhub.com` | `04 / 07`
+  - Footer: `uncodedhub.com` | `04 / 08`
 
 - **Slide 5 [Light Limestone `#F5F3EF`]**:
   - Header: `04 / WEDDINGS & EVENTS` | `[Uncoded Hub Logo]`
@@ -478,23 +478,33 @@ A typical WP site has 30 plugins, costs ₹5k/mo to maintain, and takes 5+ secon
     - 📸 High-resolution retina galleries loading in 1.1s on mobile 4G.
     - 📅 Real-time date availability checker & package guides.
     - 🔗 Live URL: `uncodedhub.com/demos/wedding-photography.html`
-  - Footer: `uncodedhub.com` | `05 / 07`
+  - Footer: `uncodedhub.com` | `05 / 08`
 
 - **Slide 6 [Light Limestone `#F5F3EF`]**:
-  - Header: `05 & 06 / RENOVATION & COACHING` | `[Uncoded Hub Logo]`
-  - Headline: **Home Renovation & Executive Coaching**
+  - Header: `05 / HOME RENOVATION & KITCHENS` | `[Uncoded Hub Logo]`
+  - Headline: **Home Renovation & Modular Kitchen Studio**
   - Points:
-    - 🔨 Home Renovation: Modular cost breakdown & 10-year warranty proof (`/demos/home-renovation.html`).
-    - 🎯 Executive Coaching: Application funnel with confidential case studies (`/demos/executive-coaching.html`).
-  - Footer: `uncodedhub.com` | `06 / 07`
+    - 🔨 Modular cost estimation calculator & clear package tiers.
+    - 🛡️ Factory machinery tour, material brands & 10-year warranty proof.
+    - 🔗 Live URL: `uncodedhub.com/demos/home-renovation.html`
+  - Footer: `uncodedhub.com` | `06 / 08`
 
-- **Slide 7 [CALL TO ACTION — Dark Obsidian `#14130F`]**:
+- **Slide 7 [Light Limestone `#F5F3EF`]**:
+  - Header: `06 / COACHES & CONSULTANTS` | `[Uncoded Hub Logo]`
+  - Headline: **Executive Coaching & Management Advisory**
+  - Points:
+    - 🎯 High-ticket application funnel (no open, amateur Calendly links).
+    - 📊 Anonymous NDA-compliant case studies with measurable ROI proof.
+    - 🔗 Live URL: `uncodedhub.com/demos/executive-coaching.html`
+  - Footer: `uncodedhub.com` | `07 / 08`
+
+- **Slide 8 [CALL TO ACTION — Dark Obsidian `#14130F`]**:
   - Header: `[Uncoded Hub Logo]` (Centered)
   - Eyebrow: `TEST IT YOURSELF`
   - Headline: **Don't judge an agency by promises. Judge them by code.**
   - Subtitle: *All 6 demos are live right now on uncodedhub.com.*
   - Button Box: **Schedule your 20-min discovery call via link in bio.**
-  - Footer: `uncodedhub.com` | `07 / 07`
+  - Footer: `uncodedhub.com` | `08 / 08`
 
 ---
 
