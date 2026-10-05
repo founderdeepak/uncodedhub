@@ -1,0 +1,25 @@
+{
+  "issuer": "https://uncodedhub.com",
+  "registration_endpoint": "https://uncodedhub.com/auth.md",
+  "scopes_supported": ["read", "quote", "audit", "portfolio"],
+  "bearer_methods_supported": ["header"],
+  "grant_types_supported": ["client_credentials"],
+  "token_endpoint_auth_methods_supported": ["client_secret_basic"],
+  "service_documentation": "https://uncodedhub.com/auth.md",
+  "agent_auth": {
+    "skill": "https://uncodedhub.com/auth.md",
+    "register_uri": "https://uncodedhub.com/auth.md",
+    "identity_types_supported": ["service_auth"],
+    "credential_types_supported": ["bearer"],
+    "methods": [
+      {
+        "type": "client_credentials",
+        "credential_types_supported": ["bearer"],
+        "register_uri": "https://uncodedhub.com/auth.md",
+        "provisioning": "operator_reviewed",
+        "note": "Operator-provisioned API token, presented as Authorization: Bearer <token>."
+      }
+    ],
+    "revocation": "operator_managed"
+  }
+}

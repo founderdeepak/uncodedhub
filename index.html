@@ -50,13 +50,16 @@
     <link rel="alternate" type="application/rss+xml" title="Uncoded Hub — Field Notes RSS Feed" href="https://uncodedhub.com/rss.xml" />
 
     <!-- ═══════════════════════════════════════════════════════
-         AI ENGINE & AGENT PROTOCOL DISCOVERY (AEO / GEO)
+         AI ENGINE & AGENT PROTOCOL DISCOVERY (AEO / GEO / RFC 9727 / RFC 8288)
     ═══════════════════════════════════════════════════════ -->
-    <link rel="alternate" type="text/markdown" title="Uncoded Hub LLM Summary" href="https://uncodedhub.com/llms.txt" />
+    <link rel="api-catalog" type="application/linkset+json" href="https://uncodedhub.com/.well-known/api-catalog" />
+    <link rel="describedby" type="text/plain" title="llms.txt" href="https://uncodedhub.com/llms.txt" />
     <link rel="alternate" type="text/markdown" title="Uncoded Hub Comprehensive Knowledge Base" href="https://uncodedhub.com/llms-full.txt" />
     <link rel="agent-skills" type="application/json" href="https://uncodedhub.com/.well-known/agent-skills/index.json" />
     <link rel="mcp-server" type="application/json" href="https://uncodedhub.com/.well-known/mcp/server-card.json" />
-    <link rel="authorization-server" href="https://uncodedhub.com/.well-known/oauth-protected-resource" />
+    <link rel="oauth-authorization-server" type="application/json" href="https://uncodedhub.com/.well-known/oauth-authorization-server" />
+    <link rel="oauth-protected-resource" type="application/json" href="https://uncodedhub.com/.well-known/oauth-protected-resource" />
+    <link rel="auth-md" type="text/markdown" href="https://uncodedhub.com/auth.md" />
 
     <!-- Self-hosted Fraunces (display serif) and Inter (body/UI sans) -->
     <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
@@ -228,6 +231,69 @@
       <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1640189624147202&ev=PageView&noscript=1" alt="" />
     </noscript>
     <div id="root"></div>
+
+    <!-- ═══════════════════════════════════════════════════════
+         WEBMCP IN-BROWSER AGENT TOOL REGISTRATION (W3C / Fastlook Standard)
+    ═══════════════════════════════════════════════════════ -->
+    <script>
+      (function() {
+        if (typeof window !== 'undefined') {
+          window.navigator = window.navigator || {};
+          if (!window.navigator.modelContext) {
+            window.navigator.modelContext = {
+              tools: [],
+              provideContext: function(ctx) {
+                if (ctx && ctx.tools) {
+                  this.tools = ctx.tools;
+                }
+                return Promise.resolve(ctx);
+              }
+            };
+          }
+          try {
+            window.navigator.modelContext.provideContext({
+              tools: [
+                {
+                  name: "calculateWebsiteQuote",
+                  description: "Calculate transparent project quote for business websites based on niche, pages, and integrations.",
+                  parameters: {
+                    type: "object",
+                    properties: {
+                      niche: { type: "string", description: "Business category (e.g. clinic, interior, consultant, architecture)" },
+                      timelineDays: { type: "number", description: "Target completion timeline in days (default 7)" }
+                    },
+                    required: ["niche"]
+                  }
+                },
+                {
+                  name: "requestAudit",
+                  description: "Request comprehensive 100% SEO, performance, and AI-readiness audit for an existing website.",
+                  parameters: {
+                    type: "object",
+                    properties: {
+                      url: { type: "string", description: "Website URL to audit" },
+                      contactEmail: { type: "string", description: "Recipient email for full executive report" }
+                    },
+                    required: ["url"]
+                  }
+                },
+                {
+                  name: "getPortfolioWork",
+                  description: "Query verified portfolio case studies across interior design, clinics, real estate, and professional consultants.",
+                  parameters: {
+                    type: "object",
+                    properties: {
+                      industry: { type: "string", description: "Filter by industry vertical" }
+                    }
+                  }
+                }
+              ]
+            });
+          } catch (e) {}
+        }
+      })();
+    </script>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

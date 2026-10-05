@@ -162,7 +162,7 @@ test('8. Web Bot Auth directory exists at /.well-known/http-message-signatures-d
   }
 });
 
-// ── Check 9: Discovery Signals (llms.txt, llms-full.txt, link tags)
+// ── Check 9: Discovery Signals (llms.txt, llms-full.txt, and link tags)
 test('9. Discovery Signals: llms.txt, llms-full.txt, and HTML link tags', () => {
   const llms = fs.readFileSync(path.join(root, 'public', 'llms.txt'), 'utf8');
   const llmsFull = fs.readFileSync(path.join(root, 'public', 'llms-full.txt'), 'utf8');
@@ -172,7 +172,45 @@ test('9. Discovery Signals: llms.txt, llms-full.txt, and HTML link tags', () => 
   if (!llmsFull.includes('28 Plain-English Answers')) throw new Error('llms-full.txt missing FAQ data');
   if (!indexHtml.includes('rel="agent-skills"')) throw new Error('index.html missing rel="agent-skills" tag');
   if (!indexHtml.includes('rel="mcp-server"')) throw new Error('index.html missing rel="mcp-server" tag');
-  if (!indexHtml.includes('rel="alternate" type="text/markdown"')) throw new Error('index.html missing rel="alternate" for llms.txt');
+  if (!indexHtml.includes('rel="api-catalog"')) throw new Error('index.html missing rel="api-catalog" tag');
+  if (!indexHtml.includes('rel="oauth-authorization-server"')) throw new Error('index.html missing rel="oauth-authorization-server" tag');
+});
+
+// ── Check 10: API Catalog (RFC 9727) ──────────────────────────────
+test('10. RFC 9727 API Catalog exists at /.well-known/api-catalog', () => {
+  const pPath = path.join(root, 'public', '.well-known', 'api-catalog');
+  if (!fs.existsSync(pPath)) throw new Error('public/.well-known/api-catalog missing');
+  const parsed = JSON.parse(fs.readFileSync(pPath, 'utf8'));
+  if (!parsed.linkset || !parsed.linkset.length) throw new Error('api-catalog linkset array missing');
+});
+
+// ── Check 11: OAuth Authorization Server ──────────────────────────
+test('11. OAuth Authorization Server metadata exists at /.well-known/oauth-authorization-server', () => {
+  const pPath = path.join(root, 'public', '.well-known', 'oauth-authorization-server');
+  if (!fs.existsSync(pPath)) throw new Error('public/.well-known/oauth-authorization-server missing');
+  const parsed = JSON.parse(fs.readFileSync(pPath, 'utf8'));
+  if (!parsed.issuer || !parsed.agent_auth) throw new Error('oauth-authorization-server issuer/agent_auth missing');
+});
+
+// ── Check 12: Content Signals in robots.txt ───────────────────────
+test('12. Content-Signal directive declared in robots.txt', () => {
+  const content = fs.readFileSync(path.join(root, 'public', 'robots.txt'), 'utf8');
+  if (!content.includes('Content-Signal:')) throw new Error('robots.txt missing Content-Signal directive');
+});
+
+// ── Check 13: WebMCP in-browser tools ──────────────────────────────
+test('13. WebMCP navigator.modelContext.provideContext on homepage', () => {
+  const indexHtml = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+  if (!indexHtml.includes('modelContext.provideContext')) throw new Error('index.html missing modelContext.provideContext');
+  if (!indexHtml.includes('calculateWebsiteQuote')) throw new Error('index.html missing WebMCP tools');
+});
+
+// ── Check 14: .htaccess Link headers and Markdown negotiation ─────
+test('14. .htaccess configures RFC 8288 Link headers and Markdown content negotiation', () => {
+  const htaccess = fs.readFileSync(path.join(root, 'public', '.htaccess'), 'utf8');
+  if (!htaccess.includes('Header always set Link')) throw new Error('.htaccess missing Header Link');
+  if (!htaccess.includes('RewriteCond %{HTTP:Accept} text/markdown')) throw new Error('.htaccess missing Markdown rewrite rule');
+  if (!htaccess.includes('ForceType "text/markdown; charset=utf-8"')) throw new Error('.htaccess missing auth.md MIME type rule');
 });
 
 console.log('\n----------------------------------------------------');
@@ -182,5 +220,5 @@ console.log('----------------------------------------------------');
 if (failed > 0) {
   process.exit(1);
 } else {
-  console.log('ALL AUDIT CHECKS PASSED PERFECTLY! 🚀');
+  console.log('ALL 14 AUDIT CHECKS PASSED PERFECTLY! 🚀');
 }

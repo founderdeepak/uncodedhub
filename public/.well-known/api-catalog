@@ -1,0 +1,43 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://uncodedhub.com",
+      "service-desc": [
+        {
+          "href": "https://uncodedhub.com/.well-known/mcp/server-card.json",
+          "type": "application/json"
+        },
+        {
+          "href": "https://uncodedhub.com/.well-known/agent-skills/index.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://uncodedhub.com/auth.md",
+          "type": "text/markdown"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://uncodedhub.com/.well-known/oauth-protected-resource",
+          "type": "application/json"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://uncodedhub.com/llms.txt",
+          "type": "text/plain"
+        },
+        {
+          "href": "https://uncodedhub.com/llms-full.txt",
+          "type": "text/plain"
+        },
+        {
+          "href": "https://uncodedhub.com/sitemap.xml",
+          "type": "application/xml"
+        }
+      ]
+    }
+  ]
+}

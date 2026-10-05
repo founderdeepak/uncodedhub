@@ -7,11 +7,17 @@
   RewriteCond %{HTTP_HOST} ^www\.uncodedhub\.com$ [NC]
   RewriteRule ^(.*)$ https://uncodedhub.com/$1 [L,R=301]
 
-  # 2. Pass through .well-known protocols and agent discovery endpoints
+  # 2. Markdown for Agents Content Negotiation (RFC / Fastlook Standard)
+  # When an AI agent requests Accept: text/markdown on the homepage or root, serve llms-full.txt
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteCond %{REQUEST_URI} ^/?$
+  RewriteRule ^(.*)$ /llms-full.txt [T=text/markdown,L]
+
+  # 3. Pass through .well-known protocols and agent discovery endpoints
   RewriteCond %{REQUEST_URI} ^/\.well-known/
   RewriteRule ^ - [L]
 
-  # 3. Canonical Trailing Slash Enforcement (fixes Google Search Console duplicate URL split)
+  # 4. Canonical Trailing Slash Enforcement (fixes Google Search Console duplicate URL split)
   # Automatically 301 redirects /path -> /path/ for clean canonical consolidation.
   # Excludes real files and paths with asset extensions (.css, .js, .png, .webp, .xml, .txt, etc.)
   RewriteCond %{REQUEST_FILENAME} !-f
@@ -19,17 +25,38 @@
   RewriteCond %{REQUEST_URI} !(.*)/$
   RewriteRule ^(.*)$ https://uncodedhub.com/$1/ [L,R=301]
 
-  # 4. Clean query parameter canonicalization (?book=true -> /contact/)
+  # 5. Clean query parameter canonicalization (?book=true -> /contact/)
   RewriteCond %{THE_REQUEST} \s/contact\?book=true [NC]
   RewriteRule ^contact$ https://uncodedhub.com/contact/ [L,R=301]
 </IfModule>
 
-# Ensure extensionless agent metadata endpoints serve application/json
-<Files "oauth-protected-resource">
-  ForceType application/json
+# MIME type mapping for agent protocols and documents
+AddType text/markdown .md
+AddType application/linkset+json .json
+
+<Files "auth.md">
+  ForceType "text/markdown; charset=utf-8"
+  Header always set Content-Type "text/markdown; charset=utf-8"
 </Files>
+
+<Files "api-catalog">
+  ForceType "application/linkset+json; charset=utf-8"
+  Header always set Content-Type "application/linkset+json; charset=utf-8"
+</Files>
+
+<Files "oauth-authorization-server">
+  ForceType "application/json; charset=utf-8"
+  Header always set Content-Type "application/json; charset=utf-8"
+</Files>
+
+<Files "oauth-protected-resource">
+  ForceType "application/json; charset=utf-8"
+  Header always set Content-Type "application/json; charset=utf-8"
+</Files>
+
 <Files "http-message-signatures-directory">
-  ForceType application/json
+  ForceType "application/json; charset=utf-8"
+  Header always set Content-Type "application/json; charset=utf-8"
 </Files>
 
 # Real 404 status for anything that isn't a prerendered route or static asset
@@ -37,14 +64,16 @@ ErrorDocument 404 /404.html
 
 # ── Performance & Core Web Vitals Optimization ───────────────────
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml image/svg+xml
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript text/markdown application/javascript application/json application/xml application/linkset+json image/svg+xml
 </IfModule>
 
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault "access plus 1 month"
   ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/markdown "access plus 0 seconds"
   ExpiresByType application/json "access plus 0 seconds"
+  ExpiresByType application/linkset+json "access plus 0 seconds"
   ExpiresByType application/xml "access plus 1 hour"
   ExpiresByType text/xml "access plus 1 hour"
   ExpiresByType text/css "access plus 1 year"
@@ -56,10 +85,13 @@ ErrorDocument 404 /404.html
   ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>
 
-# ── Security & Header Standards ─────────────────────────────────
+# ── Security & Agent Header Standards ─────────────────────────────
 <IfModule mod_headers.c>
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # RFC 8288 Link headers for autonomous AI agent discovery
+  Header always set Link '<https://uncodedhub.com/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", <https://uncodedhub.com/llms.txt>; rel="describedby"; type="text/plain"; title="llms.txt", <https://uncodedhub.com/sitemap.xml>; rel="sitemap"; type="application/xml", <https://uncodedhub.com/.well-known/agent-skills/index.json>; rel="agent-skills", <https://uncodedhub.com/.well-known/mcp/server-card.json>; rel="mcp-server-card", <https://uncodedhub.com/auth.md>; rel="auth-md"; type="text/markdown", <https://uncodedhub.com/.well-known/oauth-protected-resource>; rel="oauth-protected-resource"; type="application/json", <https://uncodedhub.com/>; rel="alternate"; type="text/markdown"'
 </IfModule>

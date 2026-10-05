@@ -7,6 +7,9 @@
 User-agent: *
 Allow: /
 
+# AI Content-Usage Preferences (contentsignals.org / draft-romm-aipref-contentsignals)
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
 # Dedicated AI Answer Engines & Grounding Bots (Explicitly Allowed)
 User-agent: GPTBot
 Allow: /
@@ -75,3 +78,9 @@ Disallow: /
 # Sitemaps & Feeds
 Sitemap: https://uncodedhub.com/sitemap.xml
 Sitemap: https://uncodedhub.com/rss.xml
+
+# Agent discovery endpoints
+# llms.txt: https://uncodedhub.com/llms.txt
+# API catalog (RFC 9727): https://uncodedhub.com/.well-known/api-catalog
+# Agent skills: https://uncodedhub.com/.well-known/agent-skills/index.json
+# MCP server card: https://uncodedhub.com/.well-known/mcp/server-card.json
