@@ -2,7 +2,7 @@
 title: "Website Design With SEO Included: What 'Included' Should Actually Mean"
 niche: "studio"
 date: "2026-09-06T08:00:00+05:30"
-author: "geetha"
+author: "deepak"
 excerpt: "What 'SEO included' in a website design quote should actually cover, and the specific technical items that quietly get skipped when it's just a marketing line."
 metaDescription: "What 'SEO included' in a website design quote should actually cover, and the specific technical items that quietly get skipped when it's just a marketing..."
 keywords: "website design included, web engineering and conversion, studio website design, high converting web architecture"

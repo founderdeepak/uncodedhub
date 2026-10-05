@@ -2,7 +2,7 @@
 title: "How to Structure a Wedding Photography Portfolio So It Ranks and Converts"
 niche: "wedding-photographers"
 date: "2026-08-21T16:00:00+05:30"
-author: "deepak"
+author: "geetha"
 excerpt: "How to organise a wedding photography portfolio so it both ranks in search and converts the couples who find it. The two goals need different structure."
 metaDescription: "How to organise a wedding photography portfolio so it both ranks in search and converts the couples who find it. The two goals need different structure."
 keywords: "structure wedding photography, wedding photography website, wedding photographers website design, high converting web architecture"

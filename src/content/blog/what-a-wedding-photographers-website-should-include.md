@@ -2,7 +2,7 @@
 title: "What a Wedding Photographer's Website Should Include to Get More Bookings"
 niche: "wedding-photographers"
 date: "2026-03-20T19:00:00+05:30"
-author: "deepak"
+author: "geetha"
 excerpt: "What a wedding photography or event planning portfolio site needs to turn Instagram followers into signed bookings, rather than just likes."
 metaDescription: "What a wedding photography or event planning portfolio site needs to turn Instagram followers into signed bookings, rather than just likes."
 keywords: "wedding photographers website, wedding photography website, wedding photographers website design, high converting web architecture"

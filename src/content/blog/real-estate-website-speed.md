@@ -2,7 +2,7 @@
 title: "Real Estate Website Speed: What Page Load Speed Should It Hit?"
 niche: "real-estate"
 date: "2026-07-29T21:00:00+05:30"
-author: "deepak"
+author: "geetha"
 excerpt: "Google benchmarks (under 2.5s LCP) for property listing sites, and why buyers in multiple tabs abandon slow listings before ever seeing photos."
 metaDescription: "Google benchmarks (under 2.5s LCP) for property listing sites, and why buyers in multiple tabs abandon slow listings before ever seeing photos."
 keywords: "real estate website, real estate web strategy, real estate website design, high converting web architecture"

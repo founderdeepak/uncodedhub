@@ -2,7 +2,7 @@
 title: "Podcast and Media Appearances Hub: Compounding Third-Party Authority"
 niche: "coaches-consultants"
 date: "2026-07-16T11:00:00+05:30"
-author: "geetha"
+author: "deepak"
 excerpt: "Appearing on industry podcasts, news features, and panels creates fleeting social media buzz that fades in 48 hours. Here is how to aggregate your media appearances into a permanent, searchable authority hub."
 metaDescription: "Build a permanent podcast and media appearances hub on your personal website. Compound third-party authority and generate long-tail search traffic from past interviews."
 keywords: "podcast media appearances, consulting website architecture, coaches consultants website design, high converting web architecture"

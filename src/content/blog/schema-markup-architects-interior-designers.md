@@ -2,7 +2,7 @@
 title: "Schema Markup for Architects and Interior Designers: Winning Google Rich Snippets"
 niche: "interior-designers"
 date: "2026-08-04T14:00:00+05:30"
-author: "deepak"
+author: "geetha"
 excerpt: "How to implement structured JSON-LD schema for architectural practices. Win Google image rich snippets, local knowledge panels, and AI engine recommendations."
 metaDescription: "How to implement structured JSON-LD schema for architectural practices. Win Google image rich snippets, local knowledge panels, and AI engine recommendations."
 keywords: "schema markup architects, interior design website, interior designers website design, high converting web architecture"

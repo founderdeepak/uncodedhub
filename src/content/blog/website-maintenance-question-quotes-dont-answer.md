@@ -2,7 +2,7 @@
 title: "What Happens After Launch: The Maintenance Question Most Web Design Quotes Don't Answer"
 niche: "studio"
 date: "2026-09-11T08:00:00+05:30"
-author: "deepak"
+author: "geetha"
 excerpt: "Why most web design quotes go quiet on what happens after launch, and the specific maintenance questions a business owner should ask before signing."
 metaDescription: "Why most web design quotes go quiet on what happens after launch, and the specific maintenance questions a business owner should ask before signing."
 keywords: "happens after launch, web engineering and conversion, studio website design, high converting web architecture"

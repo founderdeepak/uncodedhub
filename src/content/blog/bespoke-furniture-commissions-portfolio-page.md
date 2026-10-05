@@ -2,7 +2,7 @@
 title: "Bespoke Furniture Maker Commission Pages: Selling Custom Artisanal Craft"
 niche: "home-renovation"
 date: "2026-04-12T16:00:00+05:30"
-author: "deepak"
+author: "geetha"
 excerpt: "Custom dining tables, live-edge timber desks, and artisanal credenzas cannot be sold through generic shopping cart checkouts. Here is how to architect an editorial commission page that attracts discerning connoisseurs."
 metaDescription: "Design a high-converting commission page for bespoke furniture makers. Showcase live-edge solid timbers, traditional joinery, and custom commission intake flows."
 keywords: "bespoke furniture maker, home renovation web design, home renovation website design, high converting web architecture"

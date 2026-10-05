@@ -2,7 +2,7 @@
 title: "Drone and 4K Wedding Video Streaming Optimization: Speed Meets Cinema"
 niche: "wedding-photographers"
 date: "2026-05-14T14:00:00+05:30"
-author: "deepak"
+author: "geetha"
 excerpt: "Nothing sells high-end wedding cinematography faster than sweeping 4K aerial drone trailers. But bloated video files cause mobile buffering and destroy search rankings. Here is how to stream cinematic footage with sub-second page loads."
 metaDescription: "Stream 4K wedding films and drone cinematography without page lag. Implement adaptive bitrate streaming, facade embeds, and mobile performance optimization."
 keywords: "drone wedding video, wedding photography website, wedding photographers website design, high converting web architecture"

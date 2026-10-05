@@ -2,7 +2,7 @@
 title: "Should a Coach Use an AI Chatbot on Their Website? What It Can and Can't Replace"
 niche: "coaches-consultants"
 date: "2026-08-13T19:00:00+05:30"
-author: "deepak"
+author: "geetha"
 excerpt: "What an AI chatbot on a coach's website can genuinely do well, what it can't replace, and how to decide if one belongs on your site at all."
 metaDescription: "What an AI chatbot on a coach's website can genuinely do well, what it can't replace, and how to decide if one belongs on your site at all."
 keywords: "should coach chatbot, consulting website architecture, coaches consultants website design, high converting web architecture"

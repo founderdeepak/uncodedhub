@@ -2,7 +2,7 @@
 title: "Why \\\"Near Me\\\" Search Matters More for Clinics Than Almost Any Other Business"
 niche: "dental-clinics"
 date: "2026-07-07T14:00:00+05:30"
-author: "geetha"
+author: "deepak"
 excerpt: "Why local search behaviour is different for clinics than for almost any other business type, and what that means for a dental or aesthetic practice's website."
 metaDescription: "Why local search behaviour is different for clinics than for almost any other business type, and what that means for a dental or aesthetic practice's website."
 keywords: "near search matters, dental clinic web architecture, dental clinics website design, high converting web architecture"

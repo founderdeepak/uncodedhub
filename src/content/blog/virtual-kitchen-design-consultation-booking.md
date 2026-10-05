@@ -2,7 +2,7 @@
 title: "Virtual Kitchen Design Consultation Booking: Streamlining First Appointments"
 niche: "home-renovation"
 date: "2026-09-02T11:00:00+05:30"
-author: "deepak"
+author: "geetha"
 excerpt: "Visiting physical kitchen showrooms across heavy city traffic consumes half a Saturday. Offering a seamless virtual 3D design consultation workflow lets homeowners upload floor plans and co-design from their living room."
 metaDescription: "Architect a virtual design consultation booking engine for modular kitchen studios. Allow floor plan uploads and deliver live 3D Zoom walkthroughs."
 keywords: "virtual kitchen design, home renovation web design, home renovation website design, high converting web architecture"

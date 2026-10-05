@@ -227,9 +227,14 @@ export default function BlogView() {
             {/* ── Author Byline & Timing Meta Row ── */}
             <div className="flex flex-wrap items-center justify-between gap-y-4 gap-x-6 py-6 border-y border-rule">
               <div className="flex items-center gap-3.5">
-                <span className="w-10 h-10 rounded-full bg-ink text-paper flex items-center justify-center font-display text-base font-medium shadow-xs">
-                  {post.author.initials}
-                </span>
+                <img
+                  src={post.author.avatar}
+                  alt={`${post.author.name} — ${post.author.role}`}
+                  className="w-10 h-10 rounded-full object-cover border border-rule-strong shadow-xs shrink-0"
+                  loading="eager"
+                  width="40"
+                  height="40"
+                />
                 <div>
                   <div className="flex items-center gap-2">
                     <a
@@ -434,9 +439,14 @@ export default function BlogView() {
           {/* ── Verified Author Bio Box ── */}
           <Reveal delay={120} className="mt-16 pt-10 border-t border-rule">
             <div className="p-8 bg-paper-raised border border-rule-strong rounded-[24px] shadow-xs flex flex-col sm:flex-row gap-6 items-start sm:items-center">
-              <div className="w-16 h-16 rounded-full bg-ink text-paper flex items-center justify-center font-display text-2xl font-medium shrink-0 shadow-xs">
-                {post.author.initials}
-              </div>
+              <img
+                src={post.author.avatar}
+                alt={`${post.author.name} — ${post.author.role}`}
+                className="w-16 h-16 rounded-full object-cover border border-rule-strong shadow-xs shrink-0"
+                loading="lazy"
+                width="64"
+                height="64"
+              />
               <div className="flex-1">
                 <div className="flex items-center gap-3 flex-wrap">
                   <h3 className="font-display text-2xl text-ink font-medium">{post.author.name}</h3>

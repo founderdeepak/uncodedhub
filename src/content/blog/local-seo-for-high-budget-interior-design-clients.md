@@ -2,7 +2,7 @@
 title: "How Local SEO Gets an Interior Designer Found by Nearby High-Budget Clients"
 niche: "interior-designers"
 date: "2026-06-21T11:00:00+05:30"
-author: "deepak"
+author: "geetha"
 excerpt: "Why generic local SEO attracts the wrong enquiries, and how to structure it specifically to reach nearby homeowners with real project budgets."
 metaDescription: "Why generic local SEO attracts the wrong enquiries, and how to structure it specifically to reach nearby homeowners with real project budgets."
 keywords: "local gets interior, interior design website, interior designers website design, high converting web architecture"

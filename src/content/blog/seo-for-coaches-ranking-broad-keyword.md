@@ -2,7 +2,7 @@
 title: "What Makes a Consultant's Website Rank in Search When 'Coach' Is an Impossibly Broad Keyword"
 niche: "coaches-consultants"
 date: "2026-08-07T16:00:00+05:30"
-author: "deepak"
+author: "geetha"
 excerpt: "Why trying to rank for 'coach' or 'consultant' is a losing fight, and what a narrower, winnable SEO strategy actually looks like for this category."
 metaDescription: "Why trying to rank for 'coach' or 'consultant' is a losing fight, and what a narrower, winnable SEO strategy actually looks like for this category."
 keywords: "makes consultants website, consulting website architecture, coaches consultants website design, high converting web architecture"

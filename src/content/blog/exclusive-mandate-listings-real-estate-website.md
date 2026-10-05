@@ -2,7 +2,7 @@
 title: "Exclusive Mandate Listings vs Open Feeds: Why Serious Buyers Seek Solo Brokers"
 niche: "real-estate"
 date: "2026-05-19T21:00:00+05:30"
-author: "geetha"
+author: "deepak"
 excerpt: "Why serious property buyers avoid messy multi-agent listings. How showcasing sole-selling exclusive mandates positions independent consultants as market authorities."
 metaDescription: "Why serious property buyers avoid messy multi-agent listings. How showcasing sole-selling exclusive mandates positions independent consultants as market authorities."
 keywords: "exclusive mandate listings, real estate web strategy, real estate website design, high converting web architecture"

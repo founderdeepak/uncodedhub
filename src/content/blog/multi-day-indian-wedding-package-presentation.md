@@ -2,7 +2,7 @@
 title: "Multi-Day Indian Wedding Package Presentation: Clarity Over Confusion"
 niche: "wedding-photographers"
 date: "2026-07-04T08:00:00+05:30"
-author: "geetha"
+author: "deepak"
 excerpt: "Indian weddings are complex multi-event celebrations spanning Mehendi, Haldi, Sangeet, Muhurtham, and Reception. Presenting hourly rates creates cognitive overload. Here is how to package multi-day celebrations cleanly."
 metaDescription: "Structure and present multi-day Indian wedding photography packages. Simplify pricing for Mehendi, Sangeet, and Muhurtham without leaving money on the table."
 keywords: "multiday indian wedding, wedding photography website, wedding photographers website design, high converting web architecture"

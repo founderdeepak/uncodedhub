@@ -2,7 +2,7 @@
 title: "Doctor Profile Pages and Video Testimonials: The Clinical Trust Engine"
 niche: "dental-clinics"
 date: "2026-08-30T10:00:00+05:30"
-author: "deepak"
+author: "geetha"
 excerpt: "Patients don't choose clinical logos; they choose human doctors they trust with their health and appearance. Here is how to engineer doctor profile pages and authentic video testimonials that eliminate procedure fear."
 metaDescription: "Design high-converting doctor profile pages and clinical video testimonials. Eliminate patient anxiety and establish authentic surgical credibility."
 keywords: "doctor profile pages, dental clinic web architecture, dental clinics website design, high converting web architecture"

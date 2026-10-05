@@ -42,6 +42,7 @@ export interface AuthorInfo {
   bio: string;
   linkedin: string;
   initials: string;
+  avatar: string;
 }
 
 export const AUTHORS: Record<'deepak' | 'geetha', AuthorInfo> = {
@@ -51,6 +52,7 @@ export const AUTHORS: Record<'deepak' | 'geetha', AuthorInfo> = {
     bio: 'Deepak architects ultra-fast, zero-bloat web systems and organic search acquisition engines for high-ticket service businesses in India and abroad.',
     linkedin: 'https://in.linkedin.com/in/deepakdeveloper',
     initials: 'D',
+    avatar: '/deepak.webp',
   },
   geetha: {
     name: 'Geetha',
@@ -58,6 +60,7 @@ export const AUTHORS: Record<'deepak' | 'geetha', AuthorInfo> = {
     bio: 'Geetha leads user research, conversion psychology, and 7-day sprint schedules at Uncoded Hub.',
     linkedin: 'https://www.linkedin.com/in/geethaspecialist',
     initials: 'G',
+    avatar: '/geetha.webp',
   },
 };
 

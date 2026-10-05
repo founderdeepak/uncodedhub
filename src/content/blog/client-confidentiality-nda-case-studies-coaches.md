@@ -2,7 +2,7 @@
 title: "Client Confidentiality, NDAs and Executive Testimonials: Proving Mastery Safely"
 niche: "coaches-consultants"
 date: "2026-04-18T10:00:00+05:30"
-author: "deepak"
+author: "geetha"
 excerpt: "Executive coaches and turnaround consultants work on sensitive corporate crises covered by strict NDAs. Here is how to display undeniable social proof on your website without breaching confidentiality or alienating enterprise clients."
 metaDescription: "Present social proof while respecting strict NDAs. Learn how executive coaches and corporate consultants publish blinded case studies that convert enterprise buyers."
 keywords: "client confidentiality ndas, consulting website architecture, coaches consultants website design, high converting web architecture"

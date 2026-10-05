@@ -2,7 +2,7 @@
 title: "Modular Kitchen Cost Calculator: The Interactive Inbound Lead Engine"
 niche: "home-renovation"
 date: "2026-07-03T16:00:00+05:30"
-author: "deepak"
+author: "geetha"
 excerpt: "Homeowners planning a kitchen overhaul have one urgent question: 'How much will it cost?' Static 'request a quote' forms get ignored. Here is how an interactive modular kitchen cost calculator captures pre-qualified buyer phone leads."
 metaDescription: "Deploy an interactive modular kitchen cost calculator on your website. Capture pre-qualified homeowner leads by estimating layout, finishes, and hardware pricing."
 keywords: "modular kitchen cost, home renovation web design, home renovation website design, high converting web architecture"

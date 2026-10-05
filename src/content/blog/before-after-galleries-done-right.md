@@ -2,7 +2,7 @@
 title: "Before/After Galleries Done Right: What Actually Builds Trust for a Renovation Contractor"
 niche: "home-renovation"
 date: "2026-04-11T11:00:00+05:30"
-author: "geetha"
+author: "deepak"
 excerpt: "Why most before/after galleries fail to build trust, and how to shoot and present them so they actually convince a skeptical homeowner."
 metaDescription: "Why most before/after galleries fail to build trust, and how to shoot and present them so they actually convince a skeptical homeowner."
 keywords: "beforeafter galleries done, home renovation web design, home renovation website design, high converting web architecture"

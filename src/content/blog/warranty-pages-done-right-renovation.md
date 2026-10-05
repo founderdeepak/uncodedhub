@@ -2,7 +2,7 @@
 title: "Warranty Pages Done Right: The One Page Homeowners Check Before Signing"
 niche: "home-renovation"
 date: "2026-09-05T16:00:00+05:30"
-author: "deepak"
+author: "geetha"
 excerpt: "Why a clear, honest warranty page is one of the most trust-building pages a renovation or modular kitchen business can build, and how to write one well."
 metaDescription: "Why a clear, honest warranty page is one of the most trust-building pages a renovation or modular kitchen business can build, and how to write one well."
 keywords: "warranty pages done, home renovation web design, home renovation website design, high converting web architecture"

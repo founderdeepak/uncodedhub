@@ -2,7 +2,7 @@
 title: "Client Proofing Galleries vs Public Portfolio Architecture: Protecting Speed and SEO"
 niche: "wedding-photographers"
 date: "2026-04-19T11:00:00+05:30"
-author: "geetha"
+author: "deepak"
 excerpt: "Hosting thousands of password-protected high-res client proofing files directly on your marketing website destroys mobile page speed and confuses search crawlers. Here is how to architect a decoupled client portal."
 metaDescription: "Architect a decoupled wedding photography website. Separate public marketing portfolios from client proofing portals to maintain sub-second load times and rank high on Google."
 keywords: "client proofing galleries, wedding photography website, wedding photographers website design, high converting web architecture"

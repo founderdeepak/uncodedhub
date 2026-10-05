@@ -2,7 +2,7 @@
 title: "The 'Late Means Free' Web Design Guarantee Explained: Engineering Extreme Accountability"
 niche: "studio"
 date: "2026-06-18T14:00:00+05:30"
-author: "deepak"
+author: "geetha"
 excerpt: "Traditional web agencies dread deadlines because their bloated handoffs and junior staff guarantee schedule slippage. Here is why we back our 7-day website builds with a contractual 'Late Means Free' guarantee."
 metaDescription: "Discover how Uncoded Hub backs web design with a contractual Late Means Free guarantee. If we miss our 7-day launch deadline, your website is 100% free."
 keywords: "late means free, web engineering and conversion, studio website design, high converting web architecture"

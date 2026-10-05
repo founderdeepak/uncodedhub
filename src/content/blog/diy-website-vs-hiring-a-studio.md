@@ -2,7 +2,7 @@
 title: "Should a Small Business Build Its Own Website or Hire a Studio? An Honest Comparison"
 niche: "studio"
 date: "2026-05-13T16:00:00+05:30"
-author: "geetha"
+author: "deepak"
 excerpt: "An honest, non-self-serving comparison of building your own small business website versus hiring a studio, including when DIY is genuinely the right call."
 metaDescription: "An honest, non-self-serving comparison of building your own small business website versus hiring a studio, including when DIY is genuinely the right call."
 keywords: "should small business, web engineering and conversion, studio website design, high converting web architecture"
