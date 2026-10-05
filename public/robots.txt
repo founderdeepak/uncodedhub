@@ -1,32 +1,23 @@
-# ===================================
+# ==============================================================================
 # robots.txt for uncodedhub.com
-# ===================================
+# AI Answer Engine Optimization (AEO) & Generative Engine Optimization (GEO)
+# ==============================================================================
 
-# Allow all major search engine crawlers
+# Search engine & general crawler access
 User-agent: *
 Allow: /
 
-# AI Engine Crawlers — AEO/GEO Optimization
-# `User-agent: *` above already allows everything below; each is named
-# explicitly so intent is auditable rather than incidental, and because
-# training crawlers and search/grounding crawlers are different things
-# even when both happen to be operated by the same company.
-
-# Training-corpus crawlers (feed a model's training data, not live search)
+# Dedicated AI Answer Engines & Grounding Bots (Explicitly Allowed)
 User-agent: GPTBot
 Allow: /
 
-User-agent: Google-Extended
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
 Allow: /
 
 User-agent: ClaudeBot
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-# Search / answer-grounding crawlers (feed live citations and AI answers)
-User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: Claude-SearchBot
@@ -35,16 +26,52 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
 User-agent: Bingbot
 Allow: /
 
-# Block bad bots
+# Exclude aggressive commercial scrapers
 User-agent: AhrefsBot
 Disallow: /
 
 User-agent: SemrushBot
 Disallow: /
 
-# Sitemap & RSS feed locations
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemaps & Feeds
 Sitemap: https://uncodedhub.com/sitemap.xml
 Sitemap: https://uncodedhub.com/rss.xml

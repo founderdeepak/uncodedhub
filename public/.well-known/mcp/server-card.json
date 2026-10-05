@@ -1,0 +1,138 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schema/server-card.json",
+  "serverInfo": {
+    "name": "uncodedhub-mcp",
+    "version": "1.0.0",
+    "title": "Uncoded Hub Web Agent MCP Server",
+    "description": "Official Model Context Protocol (MCP) server card for Uncoded Hub. Allows AI agents and assistants to inspect fixed-price web engineering services, check 7-day sprint cohort availability, calculate delivery milestone timelines, query niche-specific blueprints, verify the 50% Late Means Free guarantee, and initiate scoping consultations.",
+    "website": "https://uncodedhub.com",
+    "vendor": "Uncoded Hub"
+  },
+  "transport": {
+    "type": "http",
+    "url": "https://uncodedhub.com/api/mcp",
+    "endpoint": "https://uncodedhub.com/api/mcp"
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    },
+    "resources": {
+      "subscribe": false,
+      "listChanged": false
+    },
+    "prompts": {
+      "listChanged": false
+    }
+  },
+  "tools": [
+    {
+      "name": "get_services_and_pricing",
+      "description": "Retrieve Uncoded Hub's fixed-price web design and development tiers, deliverables, and timelines.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "tier": {
+            "type": "string",
+            "enum": ["all", "single-page", "business-website", "online-store"],
+            "description": "Specific tier to query or 'all'"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "check_sprint_availability",
+      "description": "Check current availability for upcoming 7-day development sprint cohorts (limited to two clients per month).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "month": {
+            "type": "string",
+            "description": "Target month (e.g. 'October 2026')"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "calculate_sprint_timeline",
+      "description": "Calculate exact day-by-day sprint milestones (Kickoff, Design Approval, Code Freeze, Staging Review, Launch) based on a preferred start date.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "startDate": {
+            "type": "string",
+            "description": "Kickoff date in YYYY-MM-DD format"
+          }
+        },
+        "required": ["startDate"]
+      }
+    },
+    {
+      "name": "get_niche_blueprints",
+      "description": "Get detailed feature specs, live demo URLs, and performance benchmarks for Uncoded Hub's 6 target niches.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "niche": {
+            "type": "string",
+            "enum": [
+              "interior-design",
+              "real-estate",
+              "dental-clinic",
+              "wedding-photography",
+              "home-renovation",
+              "executive-coaching"
+            ],
+            "description": "The specific industry niche"
+          }
+        },
+        "required": ["niche"]
+      }
+    },
+    {
+      "name": "verify_guarantee_terms",
+      "description": "Retrieve the exact contractual terms of the 50% Late Means Free delivery guarantee and 30-day post-launch warranty.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "book_scoping_call",
+      "description": "Get direct calendar scheduling instructions for a 20-minute discovery consultation with founders Deepak and Geetha.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "clientName": { "type": "string" },
+          "email": { "type": "string" },
+          "website": { "type": "string" },
+          "niche": { "type": "string" }
+        },
+        "required": ["clientName", "email"]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "uncodedhub://specs/services",
+      "name": "Uncoded Hub Services & Pricing Specification",
+      "mimeType": "application/json",
+      "description": "Full structured breakdown of all development packages, inclusions, exclusions, and technical deliverables."
+    },
+    {
+      "uri": "uncodedhub://specs/guarantee",
+      "name": "Contractual Delivery Guarantee Policy",
+      "mimeType": "text/markdown",
+      "description": "Legally binding terms of the 7-day timeline and 50% invoice reduction clause."
+    },
+    {
+      "uri": "uncodedhub://specs/niches",
+      "name": "6 Specialist Niche Blueprints",
+      "mimeType": "application/json",
+      "description": "Target audience architecture, conversion components, and live interactive demo specimens."
+    }
+  ]
+}

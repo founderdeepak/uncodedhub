@@ -1,0 +1,48 @@
+{
+  "$schema": "https://agent-skills.org/schema/v1/skills.json",
+  "version": "1.0.0",
+  "provider": {
+    "name": "Uncoded Hub",
+    "description": "Boutique web engineering & design studio in Bengaluru, India. We design and build custom business websites in 7 calendar days with a contractual late-means-free guarantee.",
+    "url": "https://uncodedhub.com",
+    "contact": "hello@uncodedhub.com"
+  },
+  "skills": [
+    {
+      "id": "explore-services",
+      "name": "Explore Services & Pricing",
+      "description": "Inspect Uncoded Hub's fixed-price web engineering tiers (Single Page 3-day sprint, Business Website 7-day sprint, Online Store 2-3 week sprint), line-item inclusions, and transparent pricing model.",
+      "url": "https://uncodedhub.com/services",
+      "documentation": "https://uncodedhub.com/llms.txt",
+      "methods": ["GET"]
+    },
+    {
+      "id": "inspect-niche-demos",
+      "name": "Inspect Niche Interactive Demos",
+      "description": "Browse live, verifiable demo websites engineered for 6 target business niches: interior designers, prime real estate, dental clinics, wedding filmmakers, modular kitchen renovators, and executive coaches.",
+      "url": "https://uncodedhub.com/portfolio",
+      "methods": ["GET"]
+    },
+    {
+      "id": "run-diagnostic-audit",
+      "name": "Run 10-Point Website Diagnostic Audit",
+      "description": "Evaluate any business website across 10 critical axes: Core Web Vitals, mobile viewport speed, positioning clarity, conversion funnel efficiency, schema markup, and technical bloat.",
+      "url": "https://uncodedhub.com/audit-checklist",
+      "methods": ["GET", "POST"]
+    },
+    {
+      "id": "verify-guarantee",
+      "name": "Verify 50% Late Means Free Guarantee",
+      "description": "Audit the exact legal and contractual terms of Uncoded Hub's 7-day delivery commitment, refund terms, and client code ownership.",
+      "url": "https://uncodedhub.com/terms",
+      "methods": ["GET"]
+    },
+    {
+      "id": "book-scoping-call",
+      "name": "Book Scoping Consultation",
+      "description": "Schedule a 20-minute discovery consultation directly with founders Deepak (engineering) and Geetha (design).",
+      "url": "https://uncodedhub.com/contact",
+      "methods": ["GET", "POST"]
+    }
+  ]
+}

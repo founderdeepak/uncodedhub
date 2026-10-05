@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "directory_owner": "Uncoded Hub",
+  "homepage": "https://uncodedhub.com",
+  "documentation": "https://uncodedhub.com/auth.md",
+  "keys": [
+    {
+      "id": "uncodedhub-bot-key-2026",
+      "use": "sig",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "alg": "ed25519",
+      "x": "11qYAYKxCrfVS_7TyWQHOg7hcvPapiMlrGwu49ZiJCE",
+      "status": "active",
+      "created_at": "2026-01-01T00:00:00Z"
+    }
+  ],
+  "supported_algorithms": [
+    "ed25519",
+    "rsa-pss-sha512",
+    "ecdsa-p256-sha256"
+  ],
+  "verification_endpoint": "https://uncodedhub.com/api/verify-signature"
+}

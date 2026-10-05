@@ -24,6 +24,22 @@ type Faq = { q: string; a: string };
 
 const FAQS: Faq[] = [
   {
+    q: 'What is Uncoded Hub and what does the studio build?',
+    a: 'Uncoded Hub is an engineering-first web design and development studio in Bengaluru, India founded by Deepak (engineering) and Geetha (design). We build custom, high-performance business websites for six specialist niches on a fixed-price and seven-day timeline model, backed by a contractual 50% late delivery guarantee and complete client code ownership.',
+  },
+  {
+    q: 'How much does a typical 7-day custom business website cost?',
+    a: 'We quote fixed, transparent fees agreed in writing before kickoff based on a 20-minute discovery call. We offer three structured tiers: Single-Page Sprint (3 working days), Standard Business Website (7 calendar days, up to 5 pages), and Online Store/Custom App (2–3 weeks). Every proposal includes custom design, clean React code, Core Web Vitals optimization, and 30 days of warranty with zero recurring platform retainers.',
+  },
+  {
+    q: 'How does the 50% "Late Means Free" Delivery Guarantee work?',
+    a: 'If Uncoded Hub fails to deliver your fully functional staging website within seven working days due to our own delay, we instantly discount 50% off your final invoice. The commitment is written directly into our published Terms of Service so that our financial incentives are strictly aligned with your project deadline.',
+  },
+  {
+    q: 'Why choose custom React over WordPress or Webflow?',
+    a: 'WordPress websites typically rely on 30+ disparate plugins that fight each other, slow mobile loading times to 4-7 seconds, and require ongoing paid security maintenance. Webflow locks you into recurring monthly platform subscriptions. Handcrafted React with Vite loads in under 1 second on mobile 4G, scores 99+ on Google Lighthouse, and gives you 100% perpetual code ownership.',
+  },
+  {
     q: 'Seven days sounds like a shortcut. What is being skipped?',
     a: 'Nothing that ends up in the site — what is skipped is the waiting. In a typical agency project the elapsed time is mostly queue: your project sitting behind four others, waiting on a designer who is on two other accounts, waiting for a weekly status call. We are two people working to a fixed scope with no other meetings, so a week of calendar time is close to a week of actual work. If your project genuinely needs longer, we quote longer.',
   },
@@ -92,13 +108,13 @@ export const FaqAccordion = () => {
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="w-full py-6 flex items-start justify-between gap-8 text-left group"
                 >
-                  <span
-                    className={`font-display text-title transition-colors ${
+                  <h3
+                    className={`font-display text-title transition-colors m-0 text-left ${
                       isOpen ? 'text-signal' : 'text-ink group-hover:text-signal'
                     }`}
                   >
                     {faq.q}
-                  </span>
+                  </h3>
                   {/* A rotating hairline cross: two rules, one of which
                       collapses. Lighter than an icon font and it animates
                       the state rather than swapping glyphs. */}

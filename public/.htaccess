@@ -7,7 +7,11 @@
   RewriteCond %{HTTP_HOST} ^www\.uncodedhub\.com$ [NC]
   RewriteRule ^(.*)$ https://uncodedhub.com/$1 [L,R=301]
 
-  # 2. Canonical Trailing Slash Enforcement (fixes Google Search Console duplicate URL split)
+  # 2. Pass through .well-known protocols and agent discovery endpoints
+  RewriteCond %{REQUEST_URI} ^/\.well-known/
+  RewriteRule ^ - [L]
+
+  # 3. Canonical Trailing Slash Enforcement (fixes Google Search Console duplicate URL split)
   # Automatically 301 redirects /path -> /path/ for clean canonical consolidation.
   # Excludes real files and paths with asset extensions (.css, .js, .png, .webp, .xml, .txt, etc.)
   RewriteCond %{REQUEST_FILENAME} !-f
@@ -15,10 +19,18 @@
   RewriteCond %{REQUEST_URI} !(.*)/$
   RewriteRule ^(.*)$ https://uncodedhub.com/$1/ [L,R=301]
 
-  # 3. Clean query parameter canonicalization (?book=true -> /contact/)
+  # 4. Clean query parameter canonicalization (?book=true -> /contact/)
   RewriteCond %{THE_REQUEST} \s/contact\?book=true [NC]
   RewriteRule ^contact$ https://uncodedhub.com/contact/ [L,R=301]
 </IfModule>
+
+# Ensure extensionless agent metadata endpoints serve application/json
+<Files "oauth-protected-resource">
+  ForceType application/json
+</Files>
+<Files "http-message-signatures-directory">
+  ForceType application/json
+</Files>
 
 # Real 404 status for anything that isn't a prerendered route or static asset
 ErrorDocument 404 /404.html

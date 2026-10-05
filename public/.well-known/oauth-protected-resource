@@ -1,0 +1,19 @@
+{
+  "resource": "https://uncodedhub.com",
+  "authorization_servers": [
+    "https://uncodedhub.com"
+  ],
+  "scopes_supported": [
+    "read:services",
+    "read:pricing",
+    "read:portfolio",
+    "read:audit",
+    "write:inquiry",
+    "write:consultation"
+  ],
+  "bearer_methods_supported": [
+    "header"
+  ],
+  "resource_documentation": "https://uncodedhub.com/auth.md",
+  "service_documentation": "https://uncodedhub.com/llms.txt"
+}

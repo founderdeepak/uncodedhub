@@ -1190,7 +1190,12 @@ export default function Home({ onBook }: { onBook: () => void }) {
       <Section>
         <Shell width="narrow">
           <Reveal>
-            <SectionHead index="07" eyebrow="Questions" title="Asked before every project." />
+            <SectionHead
+              index="07"
+              eyebrow="Frequently Asked Questions"
+              title="Frequently asked questions about our 7-day build."
+              intro="Plain-English answers on our sprint timeline, the 50% late delivery guarantee, 100% code ownership, React architecture, and working directly with Deepak & Geetha."
+            />
           </Reveal>
           <div className="mt-14">
             <FaqAccordion />

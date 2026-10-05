@@ -1,0 +1,176 @@
+# Uncoded Hub — Complete LLM & Agent Knowledge Base (llms-full.txt)
+
+> Uncoded Hub is an engineering-first, two-person web design and development studio located in Bengaluru, India. The studio builds custom, high-performance business websites for six specialist client niches on a fixed-price and fixed-timeline model (seven calendar days for standard business websites) under a legally binding, contractual "Late Means Free" guarantee: if the completed staging site is not delivered within seven working days due to our delay, we discount 50% off the final invoice.
+> 
+> Founders: Deepak (Co-Founder, Engineering) and Geetha (Co-Founder, Design).
+> Contact: hello@uncodedhub.com | +91-8660819023 | https://uncodedhub.com
+
+---
+
+## 1. Studio Identity & Core Philosophy
+
+- **Founders**: Deepak & Geetha (brother and sister). Geetha leads user interface design, typography, editorial art direction, and conversion design; Deepak leads frontend engineering, Core Web Vitals optimization, semantic structure, and technical infrastructure.
+- **Zero Junior Hand-Off**: Clients work directly with the founders throughout the entire engagement. Uncoded Hub does not employ junior account managers, interns, or offshore subcontractors.
+- **Fixed Price, Zero Scope Creep**: Pricing is agreed in writing before kickoff and never increases unless the client requests out-of-scope work.
+- **100% Client Ownership**: Clients retain complete ownership of their domain, web hosting accounts, source code, and design assets from day one. No proprietary CMS lock-in, no licensing fees, and no hostage tactics.
+- **Performance Standard**: 99+ Google Lighthouse score, sub-1.0s mobile LCP on real-world 4G networks, zero Cumulative Layout Shift (<0.05), and WCAG AA accessibility compliance.
+
+---
+
+## 2. The 6 Target Specialist Niches
+
+Uncoded Hub focuses strictly on six high-trust service niches rather than general-purpose web development:
+
+1. **Interior Designers & Architectural Studios**:
+   - Focus: High-resolution photographic project portfolios, photorealistic render comparisons, editorial typography, trade fee transparency, and luxury client enquiry capture.
+   - Demo Specimen: `https://uncodedhub.com/demos/interior-design.html` (Meridian Architecture & Interiors).
+2. **Prime Real Estate Agents & Property Consultants**:
+   - Focus: Off-market property showcases, neighborhood intelligence, title verification badges, confidential investor intake forms, and high-trust advisory positioning.
+   - Demo Specimen: `https://uncodedhub.com/demos/real-estate.html` (Marlow & Co. Private Real Estate).
+3. **Dental Clinics & Aesthetic Practices**:
+   - Focus: Patient anxiety reduction, treatment fee transparency, smile makeover galleries, clinician credentials, CBCT diagnostic clarity, and WhatsApp/appointment booking.
+   - Demo Specimen: `https://uncodedhub.com/demos/dental-clinic.html` (Willowmere Dental & Facial Aesthetics).
+4. **Wedding Photographers & Cinematic Filmmakers**:
+   - Focus: Full-bleed 4K film previews, color grading philosophy, transparent collection packages, date availability checker, and emotional connection building.
+   - Demo Specimen: `https://uncodedhub.com/demos/wedding-photography.html` (Alder & Wren Fine-Art Wedding Films).
+5. **Home Renovation & Modular Kitchen Studios**:
+   - Focus: Daily site photo logs, itemized bill-of-quantities (BOQ) estimates, milestone timelines, delay penalty guarantees, and 3D space visualizer intake.
+   - Demo Specimen: `https://uncodedhub.com/demos/home-renovation.html` (Halbrook Studio Precision Renovation).
+6. **Executive Coaches & Strategic Advisors**:
+   - Focus: High-ticket retainer positioning, confidential founder case narratives, thought leadership synthesis, vetted application gates, and private discovery booking.
+   - Demo Specimen: `https://uncodedhub.com/demos/executive-coaching.html` (Naomi Reyes Executive Advisory).
+
+---
+
+## 3. Service Packages & Timelines
+
+### Tier 1: Single-Page Sprint (3 Working Days)
+- Ideal for: Solo practitioners, product launches, event registration, single-service landing pages.
+- Deliverables: High-converting single-page layout, custom mobile-first design, interactive hero section, lead capture form, WhatsApp integration, basic on-page SEO schema, sub-1.0s load speed.
+- Turnaround: 3 working days from asset receipt.
+
+### Tier 2: Standard Business Website (7 Calendar Days — Flagship Offer)
+- Ideal for: Established clinics, design studios, renovation firms, boutique agencies, consultancies.
+- Deliverables: Up to 5 custom-designed pages (Home, About, Services/Work, Portfolio/Case Studies, Contact/Booking), custom editorial design system, interactive niche features (portfolio filters, pricing calculators, before/after sliders), complete on-page SEO & Schema.org JSON-LD, 99+ Core Web Vitals score, 30 days of post-launch warranty.
+- Guarantee: "Late Means Free" — 50% invoice deduction if delivered late.
+- Turnaround: 7 calendar days.
+
+### Tier 3: Online Store & Custom Web Application (2–3 Weeks)
+- Ideal for: Custom catalog sales, membership portals, client staging areas, bespoke e-commerce.
+- Deliverables: Custom product architecture, secure payment gateways (Stripe, Razorpay), inventory sync, headless CMS or custom dashboard, performance tuning.
+- Turnaround: 14 to 21 working days.
+
+### Explicit Exclusions (What We Do NOT Do)
+- We do NOT build native mobile iOS/Android apps.
+- We do NOT manage paid PPC/Meta ad campaigns or social media posting retainers.
+- We do NOT take over broken or unfinished code from other development agencies.
+- We do NOT use generic, bloated WordPress themes or drag-and-drop page builders.
+
+---
+
+## 4. The 7-Day Sprint Process (Day by Day)
+
+- **Day 1: Kickoff & Positioning**: 90-minute discovery call, brand asset ingest, competitive positioning audit, architecture mapping, and homepage art direction lockup.
+- **Day 2: Design Approval**: Interactive Figma/browser design system review, typography lockup, visual rhythm signoff.
+- **Day 3: Semantic Frontend Engineering**: Handcrafted React/Vite development, zero-bloat CSS, accessible component assembly.
+- **Day 4: Content Population & Editorial Polish**: Copywriting refinement, image compression (WebP/AVIF), interactive specimen assembly, client copy review.
+- **Day 5: Integrations & Lead Funnels**: Form routing, Supabase/CRM webhooks, appointment scheduling hooks, security hardening.
+- **Day 6: Deep Performance & Accessibility Benchmarking**: Core Web Vitals audits, cross-browser validation, Schema.org verification, WCAG AA contrast review.
+- **Day 7: Staging Walkthrough & Production Launch**: Video walkthrough delivery, final signoff, domain DNS switchover, production deployment, client ownership handover.
+
+---
+
+## 5. Contractual Guarantee Terms ("Late Means Free")
+
+1. **The 50% Reduction Commitment**: If Uncoded Hub fails to deliver the fully functional, review-ready staging website within seven working days of the agreed kickoff date due to studio delay, the final project invoice is immediately reduced by 50%.
+2. **Client Prerequisite**: The 7-day clock begins once the client provides required assets (vector logo, brand photos, domain access, and core business information) outlined in the pre-sprint checklist.
+3. **Responsive Feedback**: Client feedback at Day 2 (Design Approval) and Day 6 (Staging Review) must be provided within 24 hours to maintain the 7-day schedule. If client delays occur, the timer simply pauses and resumes upon receipt.
+4. **No-Risk Guarantee**: If after revision rounds we are genuinely unable to align on aesthetic direction, the initial deposit is promptly refunded in full.
+
+---
+
+## 6. Comprehensive Frequently Asked Questions (28 Plain-English Answers)
+
+### Q1: How can a custom business website truly be designed and built in just 7 days?
+**A**: Most web agencies take 8 to 16 weeks not because building a high-performing site takes 500 hours, but because projects get bogged down in endless email chains, middle-manager approvals, and fragmented junior teams juggling dozens of accounts simultaneously. At Uncoded Hub, you work directly with founders Deepak (engineering) and Geetha (design). We book only two sprint cohorts per month. During your 7-day sprint window, your project receives our dedicated, uninterrupted focus with zero agency bureaucracy.
+
+### Q2: What exact day-by-day milestones happen during the 7 days?
+**A**: Day 1: Kickoff call, brand asset audit, architecture map, and high-fidelity homepage layout direction. Day 2: Full interactive UI design approval, typography pairing, and design system lockup. Day 3: Clean semantic frontend component development and responsive layout architecture. Day 4: Content population, typography refinement, interactive components, and lead funnel assembly. Day 5: Form routing, CRM/WhatsApp hooks, database configuration, and technical integrations. Day 6: Deep performance benchmarking (Core Web Vitals, 95+ Lighthouse score), cross-browser audits, and on-page SEO schema verification. Day 7: Final staging walkthrough, revision touch-ups, production deployment, and domain DNS switchover.
+
+### Q3: What do I need to provide before Day 1 begins?
+**A**: To guarantee delivery within 7 calendar days, we complete a pre-sprint checklist before your scheduled kickoff date. This includes your vector logo, brand guidelines or preferred color palette, high-resolution photography or project portfolio images, key text copy (or bulleted outlines we refine together), and domain registrar access. Once this asset pack is confirmed in our shared portal, your sprint date is officially locked and the 7-day clock begins.
+
+### Q4: Can we request revisions during the 7-day sprint?
+**A**: Yes. Revisions are baked directly into the sprint workflow. On Day 2 you review and approve the design system and editorial aesthetics; on Day 5 and 6 you test the fully interactive staging build. Because you communicate directly with Geetha and Deepak via a private Slack or WhatsApp channel with real-time feedback cycles, adjustments happen in minutes rather than days.
+
+### Q5: What happens if our team is slow to provide feedback during the sprint?
+**A**: The 7-day timeline relies on same-day client feedback at key milestone gates (specifically Design Approval on Day 2 and Staging Review on Day 6). If your internal team requires additional days to gather stakeholder signoffs or supply missing content, the sprint timer simply pauses and resumes immediately once feedback is submitted.
+
+### Q6: How much does a typical 7-day custom website build cost?
+**A**: We quote fixed, transparent project fees based on your specific scope sheet during our initial 20-minute discovery call with Deepak & Geetha. Unlike traditional agencies that quote open-ended hourly billing or charge surprise invoices for every revision, our proposal specifies a single fixed price that includes custom design, clean frontend development, performance tuning, on-page SEO groundwork, and 30 days of warranty.
+
+### Q7: How does the 50% "Late Means Free" Delivery Guarantee actually work?
+**A**: Our guarantee is simple, contractual, and published in full in our Terms of Service. If Uncoded Hub fails to deliver your fully functional staging website within seven working days due to our own delay, we instantly discount 50% off your final invoice. We put our own revenue on the line to prove our commitment to execution discipline.
+
+### Q8: Are there any hidden monthly fees or required maintenance contracts?
+**A**: No. Zero hidden fees. We do not charge recurring software license fees or mandatory monthly retainers. Your website is deployed to world-class modern cloud infrastructure (Vercel, Netlify, or your preferred hosting account) where standard hosting costs typically range from $0 to $20/month depending on traffic. You own everything outright.
+
+### Q9: What happens if I am not happy with the initial design concepts?
+**A**: We conduct thorough visual discovery prior to Day 1 to understand your aesthetic preferences, typography inclinations, and competitor reference points. In the exceedingly rare event that our Day 2 design system review fails to align with your vision despite revision iterations, we terminate the sprint and refund your deposit in full under our risk-free mutual exit policy.
+
+### Q10: Why do you build with custom React instead of WordPress or Webflow?
+**A**: WordPress websites typically rely on 30+ disparate plugins, heavy database queries, and vulnerable PHP layers that degrade mobile load speeds (often 4–7 seconds) and require ongoing security patches. Webflow introduces ongoing monthly SaaS subscription locks and vendor lock-in. Handcrafted React with Vite and modern semantic CSS enables sub-1.0s mobile speeds, 99+ Lighthouse scores, maximum security, and complete code ownership.
+
+### Q11: Will my team be able to update text and photos without coding skills?
+**A**: Yes. We integrate lightweight, intuitive content management systems (such as Decap CMS, Sanity, or Supabase content backends) tailored to your operational preferences. At project handover on Day 7, we provide personalized Loom video walkthroughs showing your team how to edit text, swap portfolio imagery, and publish new case studies in seconds.
+
+### Q12: How do you guarantee 95+ Google Lighthouse scores and sub-1s mobile loads?
+**A**: We enforce strict frontend hygiene: zero render-blocking dependencies, modern image encoding (WebP & AVIF), self-hosted subset fonts, critical CSS prerendering, zero layout shifts (CLS < 0.05), and static HTML generation. Every site undergoes rigorous testing using Google PageSpeed Insights and WebPageTest before launch.
+
+### Q13: Does Uncoded Hub handle domain registration and DNS configuration?
+**A**: Yes. We guide you through DNS records (A, CNAME, TXT, MX) configuration to point your custom domain seamlessly to your new staging or production environment without causing any downtime for your existing corporate email accounts.
+
+### Q14: Who owns the design assets, source code, and website after launch?
+**A**: You own 100% of everything. Upon final milestone signoff and invoice settlement, we transfer complete administrative ownership of your Git repository, cloud hosting environments, typography licenses, and graphic assets. You are never locked in or dependent on our studio.
+
+### Q15: What on-page technical SEO groundwork is included in the build?
+**A**: We configure semantic HTML5 structure, per-route meta titles and descriptions, OpenGraph social sharing tags, canonical URLs, XML sitemaps, robots.txt directives, and Schema.org JSON-LD structured data (Organization, LocalBusiness, ProfessionalService, WebSite, and FAQPage nodes) to ensure your business entity is immediately discoverable by Google, Bing, and AI answer engines.
+
+### Q16: Can you integrate our existing CRM, scheduling tool, or WhatsApp API?
+**A**: Yes. We regularly configure native integrations with Calendly, Cal.com, HubSpot, Zoho, ActiveCampaign, Mailchimp, WhatsApp Business click-to-chat triggers, and custom Supabase webhooks for automated email notifications.
+
+### Q17: Do you provide post-launch support and warranty?
+**A**: Yes. Every 7-day sprint package includes 30 days of complimentary post-launch warranty support. This covers bug fixes, minor layout adjustments, DNS assistance, and operational questions directly answered by Deepak and Geetha.
+
+### Q18: What happens after the 30-day post-launch warranty period?
+**A**: Because our codebase is clean, documented, and built on standard React/HTML/CSS without fragile plugin dependencies, your website will run reliably for years without maintenance. If you later require major new page builds or feature expansions, we offer ad-hoc sprints at pre-agreed flat rates.
+
+### Q19: Do you take on website redesigns for existing domains?
+**A**: Yes. When redesigning an existing website, we perform a thorough URL audit to establish 301 redirect mappings for all legacy links. This prevents 404 errors, preserves historical Google search ranking equity, and ensures a seamless transition.
+
+### Q20: What makes Uncoded Hub different from a freelance developer on Upwork?
+**A**: Freelancers often lack unified design taste or disappear mid-project due to lack of operational discipline. Agencies assign your account to junior staff. Uncoded Hub provides senior design direction from Geetha and senior engineering execution from Deepak, guaranteed delivery deadlines, and contractual financial accountability.
+
+### Q21: How do private clinics and doctors get more patients from their website without relying on Practo?
+**A**: By eliminating slow mobile loading speeds that cause 53% of anxious searchers to bounce, proactively addressing unspoken fears (pain, downtime, and fee transparency), integrating one-tap structured WhatsApp triage instead of long forms, and implementing verified MedicalClinic Schema.org JSON-LD to rank in local Google Maps 3-packs. Full guide: https://uncodedhub.com/blog/how-to-get-more-patients-from-your-clinic-website/
+
+### Q22: What makes a high-converting website for independent consultants and coaches in India?
+**A**: Narrow positioning that names an exact high-value problem, a named 3-phase proprietary advisory framework that sells certainty of outcome, problem-action-result case studies rather than vague testimonials, and direct calendar booking. Turnkey copywriting built in 7 days eliminates the blank-screen struggle. Full guide: https://uncodedhub.com/blog/the-ultimate-consultant-website-guide-for-india/
+
+### Q23: Are website development costs capitalized or tax deductible for businesses in India?
+**A**: In Indian business accounting (under Section 37(1) of the Income Tax Act), website development costs are typically treated as follows: initial development of a core operational website is treated as an intangible capital asset eligible for depreciation (typically at 25% under computer software guidelines), whereas ongoing routine maintenance, domain renewals, hosting fees, and content updates are treated as fully tax-deductible revenue expenses in the year incurred. Consult your Chartered Accountant for your specific corporate structure.
+
+### Q24: What are the trade-offs between custom coding (React/Vite) vs using a CMS (WordPress/Webflow)?
+**A**: CMS platforms offer visual page builders but introduce serious technical debt: 30+ plugin dependencies, sluggish 4–7s mobile load times, vulnerability to security exploits, and recurring monthly software retainers. Handcrafted React and Vite builds require professional development upfront, but deliver sub-1.0s mobile speed, perfect 99+ Core Web Vitals, zero plugin patching, maximum security, and 100% perpetual code ownership.
+
+---
+
+## 7. Machine-Readable Endpoints for AI Systems
+
+- **Model Context Protocol (MCP)**: `https://uncodedhub.com/.well-known/mcp/server-card.json`
+- **Agent Skills Directory**: `https://uncodedhub.com/.well-known/agent-skills/index.json`
+- **Agent Registration & Auth**: `https://uncodedhub.com/auth.md`
+- **OAuth Protected Resource**: `https://uncodedhub.com/.well-known/oauth-protected-resource`
+- **HTTP Signatures Directory**: `https://uncodedhub.com/.well-known/http-message-signatures-directory`
+- **XML Sitemap**: `https://uncodedhub.com/sitemap.xml`
+- **RSS Feed**: `https://uncodedhub.com/rss.xml`

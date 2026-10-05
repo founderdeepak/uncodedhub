@@ -49,6 +49,15 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="alternate" type="application/rss+xml" title="Uncoded Hub — Field Notes RSS Feed" href="https://uncodedhub.com/rss.xml" />
 
+    <!-- ═══════════════════════════════════════════════════════
+         AI ENGINE & AGENT PROTOCOL DISCOVERY (AEO / GEO)
+    ═══════════════════════════════════════════════════════ -->
+    <link rel="alternate" type="text/markdown" title="Uncoded Hub LLM Summary" href="https://uncodedhub.com/llms.txt" />
+    <link rel="alternate" type="text/markdown" title="Uncoded Hub Comprehensive Knowledge Base" href="https://uncodedhub.com/llms-full.txt" />
+    <link rel="agent-skills" type="application/json" href="https://uncodedhub.com/.well-known/agent-skills/index.json" />
+    <link rel="mcp-server" type="application/json" href="https://uncodedhub.com/.well-known/mcp/server-card.json" />
+    <link rel="authorization-server" href="https://uncodedhub.com/.well-known/oauth-protected-resource" />
+
     <!-- Self-hosted Fraunces (display serif) and Inter (body/UI sans) -->
     <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
@@ -76,16 +85,19 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
+      "@type": ["Organization", "ProfessionalService"],
       "@id": "https://uncodedhub.com/#organization",
       "name": "Uncoded Hub",
-      "alternateName": "UncodedHub",
+      "legalName": "Uncoded Hub",
+      "alternateName": ["UncodedHub", "Uncoded Hub Studio"],
       "url": "https://uncodedhub.com",
       "logo": {
         "@type": "ImageObject",
         "url": "https://uncodedhub.com/logo-large.webp"
       },
-      "description": "Uncoded Hub is a web design and development studio. We design and build business websites on a fixed price and a seven-day schedule.",
+      "image": "https://uncodedhub.com/og-image.jpg",
+      "description": "Uncoded Hub is an engineering-first web design and development studio. We design and build business websites on a fixed price and a seven-day schedule.",
+      "slogan": "Business Websites, Built in Seven Days",
       "foundingDate": "2024",
       "email": "hello@uncodedhub.com",
       "telephone": "+91-8660819023",
@@ -112,11 +124,19 @@
         "https://x.com/uncodedhub",
         "https://www.instagram.com/uncodedhub/",
         "https://www.youtube.com/@uncodedhub",
-        "https://www.threads.com/@uncodedhub",
+        "https://www.threads.net/@uncodedhub",
         "https://www.facebook.com/profile.php?id=61580702457181",
         "https://www.pinterest.com/uncodedhub/",
         "https://www.reddit.com/user/uncodedhub/",
         "https://maps.app.goo.gl/fwvgEPkguRSfkcC49"
+      ],
+      "knowsAbout": [
+        "Web Design",
+        "Web Development",
+        "Core Web Vitals Optimization",
+        "React Frontend Architecture",
+        "Technical SEO",
+        "AEO and GEO Answer Engine Optimization"
       ]
     }
     </script>

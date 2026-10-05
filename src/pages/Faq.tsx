@@ -552,18 +552,26 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
                         </div>
                       </button>
 
-                      {/* Accordion Content */}
-                      {isOpen && (
-                        <div className="px-5 pb-6 sm:px-6 sm:pb-7 pt-1 border-t border-rule/60 animate-fade-in">
-                          <div className="space-y-3 pt-3">
-                            {item.answer.map((para, pIdx) => (
-                              <p key={pIdx} className="text-sm sm:text-base text-ink-muted leading-relaxed">
-                                {para}
-                              </p>
-                            ))}
+                      {/* Accordion Content — Kept in DOM for AI Answer Engines & Prerender Answerability */}
+                      <div
+                        id={`faq-panel-${item.id}`}
+                        role="region"
+                        aria-labelledby={`faq-btn-${item.id}`}
+                        className="grid transition-[grid-template-rows] duration-300 ease-out"
+                        style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
+                      >
+                        <div className="overflow-hidden">
+                          <div className="px-5 pb-6 sm:px-6 sm:pb-7 pt-1 border-t border-rule/60">
+                            <div className="space-y-3 pt-3">
+                              {item.answer.map((para, pIdx) => (
+                                <p key={pIdx} className="text-sm sm:text-base text-ink-muted leading-relaxed">
+                                  {para}
+                                </p>
+                              ))}
+                            </div>
                           </div>
                         </div>
-                      )}
+                      </div>
                     </div>
                   </Reveal>
                 );
