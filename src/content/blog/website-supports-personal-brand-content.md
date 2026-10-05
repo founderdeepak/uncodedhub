@@ -1,7 +1,7 @@
 ---
 title: "How a Website Supports (Not Replaces) the Personal-Brand Content You're Already Posting"
 niche: "coaches-consultants"
-date: "2026-08-05"
+date: "2026-09-14T21:00:00+05:30"
 author: "geetha"
 excerpt: "Why a coach's website is where LinkedIn content compounds rather than a competitor to it, and what breaks when the two aren't connected."
 metaDescription: "Why a coach's website is where LinkedIn content compounds rather than a competitor to it, and what breaks when the two aren't connected."

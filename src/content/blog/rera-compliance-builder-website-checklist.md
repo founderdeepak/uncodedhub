@@ -1,7 +1,7 @@
 ---
 title: "RERA Compliance on Builder Websites: What Small Developers Must Display"
 niche: "real-estate"
-date: "2026-07-29"
+date: "2026-08-02T16:00:00+05:30"
 author: "deepak"
 excerpt: "What RERA registration numbers, carpet area disclosures, and statutory approvals small builders must showcase to build buyer trust and avoid legal penalties."
 metaDescription: "What RERA registration numbers, carpet area disclosures, and statutory approvals small builders must showcase to build buyer trust and avoid legal penalties."

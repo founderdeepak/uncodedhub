@@ -1,7 +1,7 @@
 ---
 title: "Video Walkthroughs on Interior Design Websites: Boosting On-Page Dwell Time"
 niche: "interior-designers"
-date: "2026-07-28"
+date: "2026-09-01T11:00:00+05:30"
 author: "geetha"
 excerpt: "Why static photos fail to convey spatial scale and how embedding lightweight video walkthroughs increases client engagement without slowing down your site."
 metaDescription: "Why static photos fail to convey spatial scale and how embedding lightweight video walkthroughs increases client engagement without slowing down your site."

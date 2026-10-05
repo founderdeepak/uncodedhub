@@ -1,7 +1,7 @@
 ---
 title: "Google Business Profile + Website: How They Work Together for Local Clinic SEO"
 niche: "dental-clinics"
-date: "2026-06-12"
+date: "2026-05-23T10:00:00+05:30"
 author: "deepak"
 excerpt: "Why a Google Business Profile and a clinic website need to be built as one connected system rather than two separate efforts, to actually win local search."
 metaDescription: "Why a Google Business Profile and a clinic website need to be built as one connected system rather than two separate efforts, to actually win local search."

@@ -1,7 +1,7 @@
 ---
 title: "Houzz and Pinterest vs Owning an Independent Website: The Platform Trap"
 niche: "interior-designers"
-date: "2026-07-25"
+date: "2026-05-29T11:00:00+05:30"
 author: "deepak"
 excerpt: "Why relying on aggregator directories and Pinterest boards traps design studios in price-comparison wars, and why owning your website domain compounds long-term authority."
 metaDescription: "Why relying on aggregator directories and Pinterest boards traps design studios in price-comparison wars, and why owning your website domain compounds long-term authority."

@@ -1,7 +1,7 @@
 ---
 title: "Commercial Real Estate & Office Space Leasing Websites: The B2B Architecture"
 niche: "real-estate"
-date: "2026-08-01"
+date: "2026-04-25T14:00:00+05:30"
 author: "geetha"
 excerpt: "How commercial property brokers and business park developers structure leasing websites that win enterprise corporate tenants and institutional facility managers."
 metaDescription: "How commercial property brokers and business park developers structure leasing websites that win enterprise corporate tenants and institutional facility managers."

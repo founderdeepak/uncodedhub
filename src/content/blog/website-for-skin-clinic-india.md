@@ -1,7 +1,7 @@
 ---
 title: "Website for a Skin Clinic in India: What's Different From a General Dental Site"
 niche: "dental-clinics"
-date: "2026-06-16"
+date: "2026-09-09T21:00:00+05:30"
 author: "deepak"
 excerpt: "Why a skin or dermatology clinic's website needs different priorities than a dental clinic's, even though the two categories often get built the same way."
 metaDescription: "Why a skin or dermatology clinic's website needs different priorities than a dental clinic's, even though the two categories often get built the same way."

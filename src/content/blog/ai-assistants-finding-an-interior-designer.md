@@ -1,7 +1,7 @@
 ---
 title: "How AI Assistants Are Changing How Homeowners Find an Interior Designer"
 niche: "interior-designers"
-date: "2026-05-13"
+date: "2026-03-27T14:00:00+05:30"
 author: "geetha"
 excerpt: "How ChatGPT, Perplexity and similar tools are becoming part of how homeowners shortlist interior designers, and what it means for how a studio's site is built."
 metaDescription: "How ChatGPT, Perplexity and similar tools are becoming part of how homeowners shortlist interior designers, and what it means for how a studio's site is..."

@@ -1,7 +1,7 @@
 ---
 title: "What a Coach's Website Should Include to Convert LinkedIn Visitors Into Booked Calls"
 niche: "coaches-consultants"
-date: "2026-08-03"
+date: "2026-03-14T11:00:00+05:30"
 author: "deepak"
 excerpt: "What a coach or consultant's authority website needs to turn a cold LinkedIn profile click into a booked discovery call, rather than another Linktree."
 metaDescription: "What a coach or consultant's authority website needs to turn a cold LinkedIn profile click into a booked discovery call, rather than another Linktree."

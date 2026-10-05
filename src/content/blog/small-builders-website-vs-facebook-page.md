@@ -1,7 +1,7 @@
 ---
 title: "What a Small Builder's Website Needs That a Facebook Page Cannot Do"
 niche: "real-estate"
-date: "2026-05-25"
+date: "2026-08-17T08:00:00+05:30"
 author: "geetha"
 excerpt: "Why a Facebook page can't replace a small builder or developer's website, and what specifically a real site does that a social page structurally cannot."
 metaDescription: "Why a Facebook page can't replace a small builder or developer's website, and what specifically a real site does that a social page structurally cannot."

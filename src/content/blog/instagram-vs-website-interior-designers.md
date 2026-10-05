@@ -1,7 +1,7 @@
 ---
 title: "Why an Instagram Page Is Not a Substitute for a Website for Interior Designers"
 niche: "interior-designers"
-date: "2026-04-27"
+date: "2026-06-11T16:00:00+05:30"
 author: "geetha"
 excerpt: "The trust gap, the portfolio-control problem, and the enquiry you never see. Why interior design studios need a website even with a strong Instagram."
 metaDescription: "The trust gap, the portfolio-control problem, and the enquiry you never see. Why interior design studios need a website even with a strong Instagram."

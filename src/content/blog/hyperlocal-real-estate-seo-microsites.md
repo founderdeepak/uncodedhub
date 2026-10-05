@@ -1,7 +1,7 @@
 ---
 title: "Hyperlocal Real Estate SEO: Outranking 99acres in Your Own Neighborhood"
 niche: "real-estate"
-date: "2026-08-04"
+date: "2026-06-09T16:00:00+05:30"
 author: "deepak"
 excerpt: "How independent property brokers and boutique builders use micro-location SEO pages to rank above national aggregator portals for neighborhood property searches."
 metaDescription: "How independent property brokers and boutique builders use micro-location SEO pages to rank above national aggregator portals for neighborhood property searches."

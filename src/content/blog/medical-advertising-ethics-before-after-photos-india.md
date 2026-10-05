@@ -1,7 +1,7 @@
 ---
 title: "Medical Advertising Ethics and Before-After Compliance in India: Legal Clinical Marketing"
 niche: "dental-clinics"
-date: "2026-08-10"
+date: "2026-06-27T08:00:00+05:30"
 author: "deepak"
 excerpt: "National Medical Commission (NMC) and State Dental Council regulations prohibit misleading claims, celebrity endorsements, and sensationalized before/after imagery. Here is how to maintain strict regulatory compliance while building clinical authority."
 metaDescription: "Comply with NMC and State Dental Council regulations for clinic websites. Learn compliant ways to display clinical documentation, patient consent, and doctor bio."

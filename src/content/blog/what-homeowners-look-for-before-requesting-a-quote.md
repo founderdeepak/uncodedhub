@@ -1,7 +1,7 @@
 ---
 title: "What Homeowners Look for on a Modular Kitchen Studio's Website Before Requesting a Quote"
 niche: "home-renovation"
-date: "2026-07-20"
+date: "2026-09-25T21:00:00+05:30"
 author: "geetha"
 excerpt: "The specific things a homeowner checks on a modular kitchen or renovation studio's website before they'll actually request a quote rather than just browse."
 metaDescription: "The specific things a homeowner checks on a modular kitchen or renovation studio's website before they'll actually request a quote rather than just browse."

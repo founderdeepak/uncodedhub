@@ -1,7 +1,7 @@
 ---
 title: "What an Event Planner's Website Needs That a PDF Portfolio Cannot Do"
 niche: "wedding-photographers"
-date: "2026-06-30"
+date: "2026-05-17T11:00:00+05:30"
 author: "geetha"
 excerpt: "Why a static PDF portfolio quietly limits an event planner's business, and what a real website does instead: searchable, current, and provably capable."
 metaDescription: "Why a static PDF portfolio quietly limits an event planner's business, and what a real website does instead: searchable, current, and provably capable."

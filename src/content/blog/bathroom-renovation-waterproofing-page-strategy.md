@@ -1,7 +1,7 @@
 ---
 title: "Bathroom Renovation and Waterproofing: Engineering Technical Superiority"
 niche: "home-renovation"
-date: "2026-09-04"
+date: "2026-04-09T21:00:00+05:30"
 author: "geetha"
 excerpt: "Bathrooms have the highest failure and leakage rate of any residential renovation. Publishing an authoritative, step-by-step waterproofing guide establishes technical superiority over unorganized contractors."
 metaDescription: "Establish technical authority with bathroom renovation and waterproofing pages. Explain chemical waterproofing coats, flood tests, and plumbing lines."

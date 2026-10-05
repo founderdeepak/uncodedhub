@@ -1,7 +1,7 @@
 ---
 title: "Should a Coach Use an AI Chatbot on Their Website? What It Can and Can't Replace"
 niche: "coaches-consultants"
-date: "2026-08-11"
+date: "2026-08-13T19:00:00+05:30"
 author: "deepak"
 excerpt: "What an AI chatbot on a coach's website can genuinely do well, what it can't replace, and how to decide if one belongs on your site at all."
 metaDescription: "What an AI chatbot on a coach's website can genuinely do well, what it can't replace, and how to decide if one belongs on your site at all."

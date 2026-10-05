@@ -1,7 +1,7 @@
 ---
 title: "Best Website Builder for Architects: Squarespace vs Custom Site"
 niche: "interior-designers"
-date: "2026-05-07"
+date: "2026-04-14T19:00:00+05:30"
 author: "deepak"
 excerpt: "When a DIY builder like Squarespace is enough for an architecture practice, and when slow image loading quietly costs you institutional enquiries."
 metaDescription: "When a DIY builder like Squarespace is enough for an architecture practice, and when slow image loading quietly costs you institutional enquiries."

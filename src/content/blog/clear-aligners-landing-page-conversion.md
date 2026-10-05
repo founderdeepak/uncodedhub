@@ -1,7 +1,7 @@
 ---
 title: "Clear Aligners and Invisalign Landing Page Architecture: Converting High-Ticket Dental Inquiries"
 niche: "dental-clinics"
-date: "2026-08-08"
+date: "2026-04-16T14:00:00+05:30"
 author: "deepak"
 excerpt: "Clear aligners represent high-ticket elective care where patients compare aesthetic promises and installment transparency. Here is the 6-part landing page architecture that converts hesitant adult patients."
 metaDescription: "Convert adult ortho patients with high-ticket landing page architecture for clear aligners and Invisalign. Includes pricing transparency and 3D preview flows."

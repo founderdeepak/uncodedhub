@@ -1,7 +1,7 @@
 ---
 title: "The Real Cost Breakdown of a Small Business Website in India in 2026"
 niche: "studio"
-date: "2026-08-25"
+date: "2026-08-18T14:00:00+05:30"
 author: "geetha"
 excerpt: "A line-by-line look at what actually drives small business website costs in India, so you can evaluate a quote by its parts rather than only its total."
 metaDescription: "A line-by-line look at what actually drives small business website costs in India, so you can evaluate a quote by its parts rather than only its total."

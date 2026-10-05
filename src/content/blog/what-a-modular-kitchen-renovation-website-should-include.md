@@ -1,7 +1,7 @@
 ---
 title: "What a Modular Kitchen & Renovation Website Should Include to Win Homeowner Trust"
 niche: "home-renovation"
-date: "2026-07-14"
+date: "2026-03-17T11:00:00+05:30"
 author: "deepak"
 excerpt: "What a modular kitchen, furniture, or home renovation contractor's website needs, for homeowners used to hiring purely on word-of-mouth."
 metaDescription: "What a modular kitchen, furniture, or home renovation contractor's website needs, for homeowners used to hiring purely on word-of-mouth."

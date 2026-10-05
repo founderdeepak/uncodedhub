@@ -1,7 +1,7 @@
 ---
 title: "Cosmetic Dermatology Treatment Menu Design: Converting Browsers into Consultations"
 niche: "dental-clinics"
-date: "2026-08-14"
+date: "2026-05-10T19:00:00+05:30"
 author: "deepak"
 excerpt: "Aesthetic patients don't think in medical laser brand names; they think in personal skin insecurities like acne scars and dullness. Here is how to structure a treatment menu that guides patients intuitively to high-ticket aesthetic bookings."
 metaDescription: "Design a high-converting dermatology clinic treatment menu. Organize by patient concerns, demystify laser technologies, and drive consultation volume."

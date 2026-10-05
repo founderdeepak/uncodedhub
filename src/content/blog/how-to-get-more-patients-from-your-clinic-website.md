@@ -1,7 +1,7 @@
 ---
 title: "How to Get More Patients From Your Clinic Website (Without Relying on Practo)"
 niche: "dental-clinics"
-date: "2026-10-05"
+date: "2026-06-07T10:00:00+05:30"
 author: "geetha"
 excerpt: "A practical guide for clinic owners in urban India on turning website visitors into booked patients through mobile speed, anxiety reduction, and WhatsApp booking."
 metaDescription: "A practical guide for clinic owners in urban India on turning website visitors into booked patients through mobile speed, anxiety reduction, and WhatsApp..."

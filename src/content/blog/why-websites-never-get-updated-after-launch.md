@@ -1,7 +1,7 @@
 ---
 title: "Why Most Small Business Websites Never Get Updated After Launch (And What Actually Fixes That)"
 niche: "studio"
-date: "2026-09-08"
+date: "2026-10-04T21:00:00+05:30"
 author: "deepak"
 excerpt: "The real reasons most small business websites are never touched again after launch, and the specific operational fix that actually changes this."
 metaDescription: "The real reasons most small business websites are never touched again after launch, and the specific operational fix that actually changes this."

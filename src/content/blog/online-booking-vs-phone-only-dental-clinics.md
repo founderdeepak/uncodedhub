@@ -1,7 +1,7 @@
 ---
 title: "Online Booking vs Phone-Only: What Actually Reduces No-Shows for Small Clinics"
 niche: "dental-clinics"
-date: "2026-06-08"
+date: "2026-07-13T21:00:00+05:30"
 author: "deepak"
 excerpt: "Why online appointment booking reduces no-shows more than it raises raw enquiry volume, and how to set it up without losing the personal touch a call provides."
 metaDescription: "Why online appointment booking reduces no-shows more than it raises raw enquiry volume, and how to set it up without losing the personal touch a call..."

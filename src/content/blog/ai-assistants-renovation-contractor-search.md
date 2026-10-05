@@ -1,7 +1,7 @@
 ---
 title: "How AI Assistants Are Changing How Homeowners Search for a Renovation Contractor"
 niche: "home-renovation"
-date: "2026-07-28"
+date: "2026-03-31T19:00:00+05:30"
 author: "geetha"
 excerpt: "How homeowners are starting to use AI chat tools when researching a modular kitchen or renovation contractor, and what it means for a studio's website."
 metaDescription: "How homeowners are starting to use AI chat tools when researching a modular kitchen or renovation contractor, and what it means for a studio's website."

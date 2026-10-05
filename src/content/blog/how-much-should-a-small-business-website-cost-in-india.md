@@ -1,7 +1,7 @@
 ---
 title: "Cost of Small Business Website in India (2026 Price Breakdown)"
 niche: "studio"
-date: "2026-08-23"
+date: "2026-03-13T19:00:00+05:30"
 author: "deepak"
 excerpt: "Real website cost breakdown in India. Why hourly agencies go over budget, what a fair fixed-price quote includes, and our 7-day delivery guarantee."
 metaDescription: "Real website cost breakdown in India. Why hourly agencies go over budget, what a fair fixed-price quote includes, and our 7-day delivery guarantee."

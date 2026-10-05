@@ -1,7 +1,7 @@
 ---
 title: "A Videographer's Website Needs a Different Gallery Than a Photographer's. Here's How"
 niche: "wedding-photographers"
-date: "2026-07-06"
+date: "2026-09-22T21:00:00+05:30"
 author: "deepak"
 excerpt: "Why a wedding videographer's website can't just be a photographer's gallery template with video swapped in, and what actually needs to change."
 metaDescription: "Why a wedding videographer's website can't just be a photographer's gallery template with video swapped in, and what actually needs to change."

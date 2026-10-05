@@ -1,7 +1,7 @@
 ---
 title: "Pricing Packages for Wedding Photography: How to Present Tiers Without Looking Like a Menu"
 niche: "wedding-photographers"
-date: "2026-07-10"
+date: "2026-09-19T21:00:00+05:30"
 author: "deepak"
 excerpt: "How to structure and present pricing tiers for wedding photography so they signal value instead of reading like an impersonal restaurant menu."
 metaDescription: "How to structure and present pricing tiers for wedding photography so they signal value instead of reading like an impersonal restaurant menu."

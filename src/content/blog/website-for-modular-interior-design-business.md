@@ -1,7 +1,7 @@
 ---
 title: "A Modular or Catalog-Based Interior Design Business Needs a Different Website Than a Bespoke Studio"
 niche: "interior-designers"
-date: "2026-05-09"
+date: "2026-09-08T21:00:00+05:30"
 author: "geetha"
 excerpt: "Why a modular or catalog-based interior design business should not copy a bespoke studio's website playbook. The buyer, the decision process and the proof are all different."
 metaDescription: "Why a modular or catalog-based interior design business should not copy a bespoke studio's website playbook. The buyer, the decision process and the proof..."

@@ -1,7 +1,7 @@
 ---
 title: "Property Listing Page Design: High-Converting Layout & Structure"
 niche: "real-estate"
-date: "2026-05-29"
+date: "2026-07-22T16:00:00+05:30"
 author: "geetha"
 excerpt: "How to structure an individual real estate listing page so buyers actually schedule a visit, with essential specs, neighbourhood context, and WhatsApp."
 metaDescription: "How to structure an individual real estate listing page so buyers actually schedule a visit, with essential specs, neighbourhood context, and WhatsApp."

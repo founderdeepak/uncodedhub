@@ -1,7 +1,7 @@
 ---
 title: "What an Interior Designer's Website Should Include to Book Consultations"
 niche: "interior-designers"
-date: "2026-04-25"
+date: "2026-03-21T08:00:00+05:30"
 author: "deepak"
 excerpt: "What an interior design website needs to turn browsers into booked consultations. A working checklist for design studios in Bengaluru and across India."
 metaDescription: "What an interior design website needs to turn browsers into booked consultations. A working checklist for design studios in Bengaluru and across India."

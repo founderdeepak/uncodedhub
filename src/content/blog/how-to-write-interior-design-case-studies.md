@@ -1,7 +1,7 @@
 ---
 title: "How to Write Interior Design Case Studies That Sell Premium Projects"
 niche: "interior-designers"
-date: "2026-07-20"
+date: "2026-06-08T21:00:00+05:30"
 author: "geetha"
 excerpt: "Why before-and-after photos alone fail to justify high fees. How to structure architectural project case studies around client briefs, spatial constraints, and material solutions."
 metaDescription: "Why before-and-after photos alone fail to justify high fees. How to structure architectural project case studies around client briefs, spatial constraints, and material solutions."

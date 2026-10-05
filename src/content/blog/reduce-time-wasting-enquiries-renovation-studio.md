@@ -1,7 +1,7 @@
 ---
 title: "What Information a Website Needs to Reduce Time-Wasting Enquiries for a Renovation Studio"
 niche: "home-renovation"
-date: "2026-07-22"
+date: "2026-07-30T08:00:00+05:30"
 author: "deepak"
 excerpt: "The specific missing information that causes vague, time-wasting enquiries for renovation and modular kitchen studios, and how to close each gap."
 metaDescription: "The specific missing information that causes vague, time-wasting enquiries for renovation and modular kitchen studios, and how to close each gap."

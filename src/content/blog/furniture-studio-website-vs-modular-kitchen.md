@@ -1,7 +1,7 @@
 ---
 title: "A Furniture Studio's Website Is Not a Modular Kitchen Site: What Changes When You Sell Standalone Pieces"
 niche: "home-renovation"
-date: "2026-07-26"
+date: "2026-05-21T14:00:00+05:30"
 author: "deepak"
 excerpt: "Why a furniture studio's website needs different priorities than a modular kitchen business's, even when the same company sells both."
 metaDescription: "Why a furniture studio's website needs different priorities than a modular kitchen business's, even when the same company sells both."

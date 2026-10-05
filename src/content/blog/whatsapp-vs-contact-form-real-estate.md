@@ -1,7 +1,7 @@
 ---
 title: "Why WhatsApp Click-to-Chat Converts More Property Enquiries Than a Contact Form Alone"
 niche: "real-estate"
-date: "2026-05-19"
+date: "2026-10-03T21:00:00+05:30"
 author: "deepak"
 excerpt: "Why a WhatsApp enquiry button consistently outperforms a contact form for property leads, and how to set one up without losing the ability to qualify buyers."
 metaDescription: "Why a WhatsApp enquiry button consistently outperforms a contact form for property leads, and how to set one up without losing the ability to qualify buyers."

@@ -1,7 +1,7 @@
 ---
 title: "The Ultimate Consultant Website Guide for India (How to Win ₹50,000+ Engagements)"
 niche: "coaches-consultants"
-date: "2026-10-05"
+date: "2026-08-24T14:00:00+05:30"
 author: "deepak"
 excerpt: "How independent consultants, executive coaches, and fractional leaders in India build a personal brand website that pre-qualifies premium clients and books discovery calls."
 metaDescription: "How independent consultants, executive coaches, and fractional leaders in India build a personal brand website that pre-qualifies premium clients and..."

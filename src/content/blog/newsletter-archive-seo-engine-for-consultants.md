@@ -1,7 +1,7 @@
 ---
 title: "Email Newsletter Archive: The Overlooked SEO Organic Search Engine"
 niche: "coaches-consultants"
-date: "2026-09-14"
+date: "2026-07-10T08:00:00+05:30"
 author: "geetha"
 excerpt: "Sending thoughtful weekly advisory essays to an email list and letting them vanish into inbox archives is a massive waste of intellectual capital. Here is how turning your newsletter into an indexable website archive drives compound organic search traffic."
 metaDescription: "Transform your weekly email newsletter into an indexable organic SEO engine. Rank for long-tail thought leadership keywords on your personal domain."

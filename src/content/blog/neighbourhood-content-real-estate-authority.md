@@ -1,7 +1,7 @@
 ---
 title: "Neighbourhood Content: The Real Estate Authority-Building Asset Most Agents Skip"
 niche: "real-estate"
-date: "2026-06-02"
+date: "2026-07-09T08:00:00+05:30"
 author: "geetha"
 excerpt: "Why genuinely useful neighbourhood content is the most underused asset in real estate marketing, and how to build it without it becoming empty filler."
 metaDescription: "Why genuinely useful neighbourhood content is the most underused asset in real estate marketing, and how to build it without it becoming empty filler."

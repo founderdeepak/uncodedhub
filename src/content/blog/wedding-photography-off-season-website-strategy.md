@@ -1,7 +1,7 @@
 ---
 title: "The Off-Season Problem: What a Wedding Photographer's Website Should Do When Enquiries Slow Down"
 niche: "wedding-photographers"
-date: "2026-07-12"
+date: "2026-09-18T21:00:00+05:30"
 author: "geetha"
 excerpt: "What to actually do with a wedding photography website during the slow months, so the off-season becomes an investment rather than a quiet gap."
 metaDescription: "What to actually do with a wedding photography website during the slow months, so the off-season becomes an investment rather than a quiet gap."

@@ -1,7 +1,7 @@
 ---
 title: "Commercial vs Residential Interior Design: Why One Website Cannot Serve Both"
 niche: "interior-designers"
-date: "2026-07-21"
+date: "2026-04-22T14:00:00+05:30"
 author: "deepak"
 excerpt: "Why blending residential decor with corporate office fit-outs on the same website confuses both buyers. How to separate commercial procurement from homeowner decision-making."
 metaDescription: "Why blending residential decor with corporate office fit-outs on the same website confuses both buyers. How to separate commercial procurement from homeowner decision-making."

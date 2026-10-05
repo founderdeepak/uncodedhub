@@ -1,7 +1,7 @@
 ---
 title: "React, Vite and Tailwind vs WordPress: Measured Speed and Security Benchmarks"
 niche: "studio"
-date: "2026-09-20"
+date: "2026-07-26T08:00:00+05:30"
 author: "geetha"
 excerpt: "WordPress powers 40% of the web, but also accounts for over 90% of all CMS website hacks and notorious mobile bloat. Here are head-to-head empirical speed, security, and maintenance benchmarks comparing modern static architecture to legacy WordPress."
 metaDescription: "Empirical benchmarks comparing React, Vite, and Tailwind against WordPress. Compare mobile load speed, server vulnerabilities, and hosting costs."

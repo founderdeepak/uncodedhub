@@ -1,7 +1,7 @@
 ---
 title: "Emergency Dental Care Pages: Why They Need Their Own URL, Not Just a Section"
 niche: "dental-clinics"
-date: "2026-06-22"
+date: "2026-05-16T19:00:00+05:30"
 author: "geetha"
 excerpt: "Why burying emergency dental information inside a general services page loses the exact patients who need it most, and what a dedicated page should include."
 metaDescription: "Why burying emergency dental information inside a general services page loses the exact patients who need it most, and what a dedicated page should include."

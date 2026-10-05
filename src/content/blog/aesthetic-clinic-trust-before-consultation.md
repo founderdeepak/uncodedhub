@@ -1,7 +1,7 @@
 ---
 title: "What an Aesthetic/Cosmetic Clinic Must Show Online to Build Trust Before a Consultation"
 niche: "dental-clinics"
-date: "2026-06-10"
+date: "2026-03-24T21:00:00+05:30"
 author: "geetha"
 excerpt: "What a cosmetic or aesthetic clinic's website needs to show to earn a nervous patient's trust before they ever book a consultation."
 metaDescription: "What a cosmetic or aesthetic clinic's website needs to show to earn a nervous patient's trust before they ever book a consultation."

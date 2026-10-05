@@ -1,7 +1,7 @@
 ---
 title: "How Website Speed Affects a Nervous Patient's First Impression of a Clinic"
 niche: "dental-clinics"
-date: "2026-06-14"
+date: "2026-09-12T14:00:00+05:30"
 author: "geetha"
 excerpt: "Why a slow-loading clinic website does more damage than lost time, actively worsening a nervous patient's first impression before they've read a word."
 metaDescription: "Why a slow-loading clinic website does more damage than lost time, actively worsening a nervous patient's first impression before they've read a word."

@@ -1,7 +1,7 @@
 ---
 title: "Mastermind and Group Coaching Sales Page Design: Transitioning from 1:1 to Scale"
 niche: "coaches-consultants"
-date: "2026-09-13"
+date: "2026-06-25T11:00:00+05:30"
 author: "deepak"
 excerpt: "Transitioning from 1:1 consulting to high-ticket group masterminds requires selling peer curation and cohort accountability rather than just curriculum. Here is how to architect a high-converting mastermind sales page."
 metaDescription: "Design a high-converting mastermind or group coaching sales page. Emphasize peer curation, cohort dynamics, and application deadlines to scale beyond 1:1."

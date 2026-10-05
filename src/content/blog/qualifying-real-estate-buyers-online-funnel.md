@@ -1,7 +1,7 @@
 ---
 title: "Qualifying Real Estate Leads Online: How to Stop Chasing Dead Enquiries"
 niche: "real-estate"
-date: "2026-08-03"
+date: "2026-07-25T21:00:00+05:30"
 author: "geetha"
 excerpt: "Why generic real estate forms overwhelm sales teams with unqualified leads. How multi-step qualification funnels filter serious property buyers automatically."
 metaDescription: "Why generic real estate forms overwhelm sales teams with unqualified leads. How multi-step qualification funnels filter serious property buyers automatically."

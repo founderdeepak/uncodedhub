@@ -1,7 +1,7 @@
 ---
 title: "7-Day Website Design: How We Build & Launch Sites in 7 Days"
 niche: "studio"
-date: "2026-08-27"
+date: "2026-08-10T21:00:00+05:30"
 author: "deepak"
 excerpt: "Can a custom business website be built in 7 days? How our sprint process works, the pre-sprint checklist, and our binding 'late means free' guarantee."
 metaDescription: "Can a custom business website be built in 7 days? How our sprint process works, the pre-sprint checklist, and our binding 'late means free' guarantee."

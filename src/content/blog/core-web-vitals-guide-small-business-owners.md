@@ -1,7 +1,7 @@
 ---
 title: "Core Web Vitals Guide for Small Business Owners: Speed Is Revenue"
 niche: "studio"
-date: "2026-09-19"
+date: "2026-04-30T10:00:00+05:30"
 author: "deepak"
 excerpt: "Demystifying Google's Core Web Vitals (LCP, INP, CLS) in plain business language. Learn why a 0.5-second speed advantage translates directly into lower Google ad costs, higher organic rankings, and more phone calls."
 metaDescription: "Understand Google Core Web Vitals (LCP, INP, CLS) without technical jargon. Discover how sub-second page speed slashes ad spend and boosts conversions."

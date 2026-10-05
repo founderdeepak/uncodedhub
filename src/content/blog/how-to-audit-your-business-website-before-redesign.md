@@ -1,7 +1,7 @@
 ---
 title: "How to Audit Your Business Website Before Planning a Redesign: The 10-Point Checklist"
 niche: "studio"
-date: "2026-09-26"
+date: "2026-06-04T19:00:00+05:30"
 author: "geetha"
 excerpt: "Jumping into a website redesign without diagnosing your current site's structural failures is like undergoing surgery without an X-ray. Here is the 10-point diagnostic audit checklist every business owner should run before spending a rupee on a rebuild."
 metaDescription: "Audit your website before redesigning. Run this 10-point diagnostic covering mobile speed, conversion leaks, SEO indexing, and messaging clarity."

@@ -1,7 +1,7 @@
 ---
 title: "How AI Assistants Are Changing How Property Buyers Search for an Agent"
 niche: "real-estate"
-date: "2026-05-31"
+date: "2026-03-30T21:00:00+05:30"
 author: "deepak"
 excerpt: "How buyers are starting to use AI chat tools alongside Google and portals when researching property, and what it means for a real estate agent's website."
 metaDescription: "How buyers are starting to use AI chat tools alongside Google and portals when researching property, and what it means for a real estate agent's website."

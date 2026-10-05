@@ -1,7 +1,7 @@
 ---
 title: "Should Interior Designers Publish Design Fees Online? An Honest Look"
 niche: "interior-designers"
-date: "2026-07-24"
+date: "2026-08-14T19:00:00+05:30"
 author: "geetha"
 excerpt: "The strategic debate on publishing interior design pricing online. Why hiding prices wastes consultation time and how starting-at thresholds build trust."
 metaDescription: "The strategic debate on publishing interior design pricing online. Why hiding prices wastes consultation time and how starting-at thresholds build trust."

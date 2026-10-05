@@ -1,7 +1,7 @@
 ---
 title: "SEO for Luxury Turnkey Architects in India: Ranking for 50-Lakh+ Projects"
 niche: "interior-designers"
-date: "2026-07-23"
+date: "2026-08-08T19:00:00+05:30"
 author: "deepak"
 excerpt: "How luxury residential architects and turnkey design firms rank on Google for high-ticket villa and penthouse projects without competing for cheap drafting keywords."
 metaDescription: "How luxury residential architects and turnkey design firms rank on Google for high-ticket villa and penthouse projects without competing for cheap drafting keywords."

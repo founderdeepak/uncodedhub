@@ -256,6 +256,16 @@ export default function BlogView() {
                     month: 'short',
                     year: 'numeric',
                   })}
+                  {post.date.includes('T') && (
+                    <span>
+                      {' · '}
+                      {new Date(post.date).toLocaleTimeString('en-US', {
+                        hour: 'numeric',
+                        minute: '2-digit',
+                        hour12: true,
+                      })}
+                    </span>
+                  )}
                 </time>
                 <span>·</span>
                 <span>{post.readingMinutes} min read</span>

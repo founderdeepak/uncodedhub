@@ -1,7 +1,7 @@
 ---
 title: "Patient Education Content: The Clinic SEO Asset That Also Reduces Chair-Side Anxiety"
 niche: "dental-clinics"
-date: "2026-06-20"
+date: "2026-07-14T14:00:00+05:30"
 author: "deepak"
 excerpt: "Why genuinely useful patient education content is one of the best SEO investments a clinic can make, and how it reduces anxiety before the visit even happens."
 metaDescription: "Why genuinely useful patient education content is one of the best SEO investments a clinic can make, and how it reduces anxiety before the visit even happens."

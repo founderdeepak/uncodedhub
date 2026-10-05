@@ -1,7 +1,7 @@
 ---
 title: "What Makes a Consultant's Website Look Credible vs. Templated"
 niche: "coaches-consultants"
-date: "2026-08-07"
+date: "2026-05-03T10:00:00+05:30"
 author: "deepak"
 excerpt: "Why so many coaching and consulting websites feel interchangeable, and the specific choices that make one feel like a real, trustworthy practice instead."
 metaDescription: "Why so many coaching and consulting websites feel interchangeable, and the specific choices that make one feel like a real, trustworthy practice instead."

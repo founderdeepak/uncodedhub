@@ -1,7 +1,7 @@
 ---
 title: "3D Renders vs Built Project Photography: The Hidden Speed Cost on Design Sites"
 niche: "interior-designers"
-date: "2026-07-22"
+date: "2026-03-23T19:00:00+05:30"
 author: "geetha"
 excerpt: "Why uploading uncompressed 4K 3D renders crushes mobile website speed, and how prospective clients tell virtual concepts apart from real finished homes."
 metaDescription: "Why uploading uncompressed 4K 3D renders crushes mobile website speed, and how prospective clients tell virtual concepts apart from real finished homes."

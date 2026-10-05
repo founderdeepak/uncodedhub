@@ -1,7 +1,7 @@
 ---
 title: "What a Real Estate Agent's Website Should Include to Generate Direct Enquiries"
 niche: "real-estate"
-date: "2026-05-15"
+date: "2026-03-18T21:00:00+05:30"
 author: "deepak"
 excerpt: "What a real estate agent or property consultant's website needs to generate direct buyer enquiries, beyond another listing on 99acres or MagicBricks."
 metaDescription: "What a real estate agent or property consultant's website needs to generate direct buyer enquiries, beyond another listing on 99acres or MagicBricks."

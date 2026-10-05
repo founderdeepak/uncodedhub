@@ -1,7 +1,7 @@
 ---
 title: "Property Portal Listings vs Your Own Website: Why Serious Buyers Still Check Both"
 niche: "real-estate"
-date: "2026-05-17"
+date: "2026-07-23T16:00:00+05:30"
 author: "geetha"
 excerpt: "Why buyers who found you on 99acres or MagicBricks still search for your own website before calling, and what that costs an agent who doesn't have one."
 metaDescription: "Why buyers who found you on 99acres or MagicBricks still search for your own website before calling, and what that costs an agent who doesn't have one."

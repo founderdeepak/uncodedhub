@@ -1,7 +1,7 @@
 ---
 title: "How Local SEO Gets a Home Renovation Business Found in Their Own Service Area"
 niche: "home-renovation"
-date: "2026-07-18"
+date: "2026-06-23T21:00:00+05:30"
 author: "deepak"
 excerpt: "How local search actually works for a modular kitchen or renovation contractor, and why getting found is a repeatable system rather than a one-time website task."
 metaDescription: "How local search actually works for a modular kitchen or renovation contractor, and why getting found is a repeatable system rather than a one-time..."

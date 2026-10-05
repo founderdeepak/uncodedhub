@@ -1,7 +1,7 @@
 ---
 title: "What a Consultant's 'Work With Me' Page Should Actually Say"
 niche: "coaches-consultants"
-date: "2026-08-21"
+date: "2026-04-27T21:00:00+05:30"
 author: "geetha"
 excerpt: "Why most 'work with me' pages fail at the exact moment they matter most, and how to structure one that converts a warm visitor into a booked call."
 metaDescription: "Why most 'work with me' pages fail at the exact moment they matter most, and how to structure one that converts a warm visitor into a booked call."

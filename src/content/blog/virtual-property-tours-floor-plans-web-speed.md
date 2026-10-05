@@ -1,7 +1,7 @@
 ---
 title: "Virtual 360 Tours and Interactive Floor Plans: Avoiding the Mobile Lag Trap"
 niche: "real-estate"
-date: "2026-08-02"
+date: "2026-09-03T08:00:00+05:30"
 author: "deepak"
 excerpt: "Why embedding heavy Matterport 3D tours crashes mobile real estate pages, and how to implement lazy-loaded virtual walkthroughs that preserve sub-second speed."
 metaDescription: "Why embedding heavy Matterport 3D tours crashes mobile real estate pages, and how to implement lazy-loaded virtual walkthroughs that preserve sub-second speed."

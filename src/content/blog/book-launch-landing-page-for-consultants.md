@@ -1,7 +1,7 @@
 ---
 title: "Author and Book Launch Landing Page Architecture: The Apex Authority Asset"
 niche: "coaches-consultants"
-date: "2026-09-10"
+date: "2026-04-15T10:00:00+05:30"
 author: "geetha"
 excerpt: "Publishing a business book isn't about collecting ₹40 royalties on Amazon; it is the ultimate apex lead magnet for ₹10L consulting retainers and ₹5L keynotes. Here is how to architect a high-converting book launch page."
 metaDescription: "Architect an apex book launch landing page for business consultants. Turn book buyers into high-paying keynote clients and enterprise consulting retainers."

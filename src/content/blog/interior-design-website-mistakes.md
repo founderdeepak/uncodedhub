@@ -1,7 +1,7 @@
 ---
 title: "7 Website Mistakes That Make a Design Studio Look Smaller Than It Is"
 niche: "interior-designers"
-date: "2026-05-01"
+date: "2026-06-15T16:00:00+05:30"
 author: "geetha"
 excerpt: "The specific, common mistakes that make a genuinely good interior design studio's website read as smaller, newer, or less serious than the studio actually is."
 metaDescription: "The specific, common mistakes that make a genuinely good interior design studio's website read as smaller, newer, or less serious than the studio actually is."

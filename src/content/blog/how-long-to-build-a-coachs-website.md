@@ -1,7 +1,7 @@
 ---
 title: "How Long Does It Take to Build a Coach's Authority Website?"
 niche: "coaches-consultants"
-date: "2026-08-13"
+date: "2026-06-01T21:00:00+05:30"
 author: "geetha"
 excerpt: "A realistic timeline for building a coaching or consulting authority website, and why content rather than development is almost always the real bottleneck."
 metaDescription: "A realistic timeline for building a coaching or consulting authority website, and why content rather than development is almost always the real bottleneck."

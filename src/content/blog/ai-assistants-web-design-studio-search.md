@@ -1,7 +1,7 @@
 ---
 title: "How AI Assistants Are Changing How Small Businesses Search for a Web Design Studio"
 niche: "studio"
-date: "2026-08-31"
+date: "2026-04-02T14:00:00+05:30"
 author: "deepak"
 excerpt: "How small business owners are starting to use AI chat tools when researching a web design studio, and what that means for how a studio's own site is built."
 metaDescription: "How small business owners are starting to use AI chat tools when researching a web design studio, and what that means for how a studio's own site is built."

@@ -1,7 +1,7 @@
 ---
 title: "Should a Coach Gate Their Best Content Behind an Email Signup? The Free vs Paid Line on a Website"
 niche: "coaches-consultants"
-date: "2026-08-19"
+date: "2026-08-11T19:00:00+05:30"
 author: "deepak"
 excerpt: "Where the line between free and gated content should sit on a coach's website, and why giving away too little is as costly as giving away too much."
 metaDescription: "Where the line between free and gated content should sit on a coach's website, and why giving away too little is as costly as giving away too much."

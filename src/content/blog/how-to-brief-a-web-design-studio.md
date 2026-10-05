@@ -1,7 +1,7 @@
 ---
 title: "How to Brief a Web Design Studio So the Project Actually Goes Fast"
 niche: "studio"
-date: "2026-09-06"
+date: "2026-06-05T19:00:00+05:30"
 author: "geetha"
 excerpt: "What a genuinely good client brief includes, and why the quality of the brief rather than the studio's speed is usually what determines the timeline."
 metaDescription: "What a genuinely good client brief includes, and why the quality of the brief rather than the studio's speed is usually what determines the timeline."

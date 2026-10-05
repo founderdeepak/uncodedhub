@@ -1,7 +1,7 @@
 ---
 title: "Joint Venture & Landowner Showcase Pages: Securing Prime Development Land"
 niche: "real-estate"
-date: "2026-08-05"
+date: "2026-06-17T16:00:00+05:30"
 author: "geetha"
 excerpt: "How boutique builders and developers structure Joint Development (JD) showcase pages that convince private landowners to sign exclusive development agreements."
 metaDescription: "How boutique builders and developers structure Joint Development (JD) showcase pages that convince private landowners to sign exclusive development agreements."
