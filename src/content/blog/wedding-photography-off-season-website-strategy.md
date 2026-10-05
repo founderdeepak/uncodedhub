@@ -1,11 +1,13 @@
 ---
 title: "The Off-Season Problem: What a Wedding Photographer's Website Should Do When Enquiries Slow Down"
-niche: wedding-photographers
-date: 2026-07-12
+niche: "wedding-photographers"
+date: "2026-07-12"
+author: "geetha"
 excerpt: "What to actually do with a wedding photography website during the slow months, so the off-season becomes an investment rather than a quiet gap."
+metaDescription: "What to actually do with a wedding photography website during the slow months, so the off-season becomes an investment rather than a quiet gap."
+keywords: "offseason problem wedding, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/wedding-photography-off-season-website-strategy.webp"
 ---
-*By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 
 Wedding season has a real shape. Busy months with no time to touch the website, and quiet months where enquiries slow and the temptation is to treat the whole period as dead time. That instinct wastes the one stretch of the year with actual room to do the work making next season's busy months busier.
 
@@ -63,3 +65,7 @@ Full case study writing, technical fixes noticed but not addressed during peak s
 
 **Is it a waste of time to work on the website when enquiries are already slow?**
 No. The off-season's low enquiry volume isn't a signal the website doesn't matter right now. It's the actual opportunity to do the work that increases enquiries during the next peak season.
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

@@ -1,11 +1,13 @@
 ---
 title: "How AI Assistants Are Changing How Homeowners Find an Interior Designer"
-niche: interior-designers
-date: 2026-05-13
+niche: "interior-designers"
+date: "2026-05-13"
+author: "geetha"
 excerpt: "How ChatGPT, Perplexity and similar tools are becoming part of how homeowners shortlist interior designers, and what it means for how a studio's site is built."
+metaDescription: "How ChatGPT, Perplexity and similar tools are becoming part of how homeowners shortlist interior designers, and what it means for how a studio's site is..."
+keywords: "assistants changing homeowners, interior design website, interior designers website design, high converting web architecture"
 image: "/blog/ai-assistants-finding-an-interior-designer.webp"
 ---
-*By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 
 A homeowner opens an AI chat tool instead of Google and types something closer to a conversation than a search: "I'm renovating a 3BHK in Bengaluru, who should I be looking at for turnkey interior design?" The assistant answers with names, reasoning, and often a direct citation of a specific studio's website content. That's a genuinely different discovery path from a search results page, and most studio websites aren't built with it in mind at all.
 
@@ -61,3 +63,12 @@ Structured data, genuinely specific content rather than generic marketing langua
 
 **Does this require a separate SEO strategy from traditional search?**
 No. The practices that help here overlap almost entirely with good existing SEO and content discipline, so it's a byproduct of doing that well rather than a separate project.
+
+### Related Blueprints in This Silo
+- [3D Renders vs Built Project Photography: The Hidden Speed Cost on Design Sites](/blog/3d-renderings-interior-design-website-speed)
+- [What Makes a Good Architecture Portfolio Website: Drawings, Sequence, and the Institutional Buyer](/blog/architecture-portfolio-website-deeper-look)
+
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

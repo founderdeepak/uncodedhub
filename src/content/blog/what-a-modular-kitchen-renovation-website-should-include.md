@@ -1,11 +1,13 @@
 ---
 title: "What a Modular Kitchen & Renovation Website Should Include to Win Homeowner Trust"
-niche: home-renovation
-date: 2026-07-14
+niche: "home-renovation"
+date: "2026-07-14"
+author: "deepak"
 excerpt: "What a modular kitchen, furniture, or home renovation contractor's website needs, for homeowners used to hiring purely on word-of-mouth."
+metaDescription: "What a modular kitchen, furniture, or home renovation contractor's website needs, for homeowners used to hiring purely on word-of-mouth."
+keywords: "modular kitchen renovation, home renovation web design, home renovation website design, high converting web architecture"
 image: "/blog/what-a-modular-kitchen-renovation-website-should-include.webp"
 ---
-*By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 
 A neighbour says: "Call this guy, he did our kitchen last year, excellent work."
 
@@ -130,3 +132,7 @@ This master pillar guide defines the core framework. For specialized, step-by-st
 - **[Bathroom Renovation and Waterproofing Authority Pages](/blog/bathroom-renovation-waterproofing-page-strategy)**
 - **[Bespoke Furniture Maker Commission and Portfolio Pages](/blog/bespoke-furniture-commissions-portfolio-page)**
 - **[Transparent Timeline and Delay Guarantee Pages](/blog/transparent-renovation-timeline-guarantee-page)**
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

@@ -1,11 +1,13 @@
 ---
 title: "7 Website Mistakes That Make a Design Studio Look Smaller Than It Is"
-niche: interior-designers
-date: 2026-05-01
+niche: "interior-designers"
+date: "2026-05-01"
+author: "geetha"
 excerpt: "The specific, common mistakes that make a genuinely good interior design studio's website read as smaller, newer, or less serious than the studio actually is."
+metaDescription: "The specific, common mistakes that make a genuinely good interior design studio's website read as smaller, newer, or less serious than the studio actually is."
+keywords: "website mistakes make, interior design website, interior designers website design, high converting web architecture"
 image: "/blog/interior-design-website-mistakes.webp"
 ---
-*By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 
 A five-person studio with a genuinely strong client list can look, on its own website, indistinguishable from a solo designer who started last month. The gap usually isn't the work. It's a handful of small, specific choices that quietly signal "small and new" regardless of what's actually true. This is the kind of gap we spend most of our time closing for clients, since it has nothing to do with talent and everything to do with what the site actually shows.
 
@@ -69,3 +71,12 @@ They matter for every studio, though a smaller or newer one has less room for er
 
 **Can fixing these mistakes make a studio look bigger than it actually is?**
 The goal is closing the gap between how established a studio is and how established it looks, rather than inflating beyond reality. Honest presentation of real work is the point.
+
+### Related Blueprints in This Silo
+- [3D Renders vs Built Project Photography: The Hidden Speed Cost on Design Sites](/blog/3d-renderings-interior-design-website-speed)
+- [How AI Assistants Are Changing How Homeowners Find an Interior Designer](/blog/ai-assistants-finding-an-interior-designer)
+
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

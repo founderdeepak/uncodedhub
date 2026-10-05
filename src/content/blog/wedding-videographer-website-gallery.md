@@ -1,11 +1,13 @@
 ---
 title: "A Videographer's Website Needs a Different Gallery Than a Photographer's. Here's How"
-niche: wedding-photographers
-date: 2026-07-06
+niche: "wedding-photographers"
+date: "2026-07-06"
+author: "deepak"
 excerpt: "Why a wedding videographer's website can't just be a photographer's gallery template with video swapped in, and what actually needs to change."
+metaDescription: "Why a wedding videographer's website can't just be a photographer's gallery template with video swapped in, and what actually needs to change."
+keywords: "videographers website needs, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/wedding-videographer-website-gallery.webp"
 ---
-*By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 
 Most wedding videographers build their sites on templates designed for photographers. A grid of static thumbnails, click to open, essentially a photo gallery with video files dropped in instead of images. It technically displays the work. It doesn't show what makes video different from photography, which is motion, sound, pacing and time. A static thumbnail grid communicates none of those.
 
@@ -57,3 +59,7 @@ An autoplay-safe, muted preview clip showing real motion and energy rather than 
 
 **Does video need different page speed handling than photography?**
 Yes, significantly. Video files are far heavier than optimised images, and unoptimised video embeds cause more severe loading problems than an unoptimised photo gallery would.
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

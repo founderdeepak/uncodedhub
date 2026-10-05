@@ -1,11 +1,13 @@
 ---
 title: "Property Portal Listings vs Your Own Website: Why Serious Buyers Still Check Both"
-niche: real-estate
-date: 2026-05-17
+niche: "real-estate"
+date: "2026-05-17"
+author: "geetha"
 excerpt: "Why buyers who found you on 99acres or MagicBricks still search for your own website before calling, and what that costs an agent who doesn't have one."
+metaDescription: "Why buyers who found you on 99acres or MagicBricks still search for your own website before calling, and what that costs an agent who doesn't have one."
+keywords: "property portal listings, real estate web strategy, real estate website design, high converting web architecture"
 image: "/blog/property-portals-vs-your-own-website.webp"
 ---
-*By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 
 A buyer finds your listing on 99acres. Before calling, they do something the portal never suggests and almost every serious buyer does anyway. They search your name, or your agency's name, separately.
 
@@ -67,3 +69,12 @@ Serious buyers routinely do at least a quick name search before committing to a 
 
 **What should a real estate website show that a portal listing can't?**
 Fee structure, real transaction history, area-specific expertise, and specific testimonials. None of these fit inside a standard portal listing template.
+
+### Related Blueprints in This Silo
+- [How AI Assistants Are Changing How Property Buyers Search for an Agent](/blog/ai-assistants-property-buyer-search)
+- [Commercial Real Estate & Office Space Leasing Websites: The B2B Architecture](/blog/commercial-real-estate-leasing-website)
+
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

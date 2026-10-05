@@ -1,11 +1,13 @@
 ---
 title: "What Homeowners Look for on a Modular Kitchen Studio's Website Before Requesting a Quote"
-niche: home-renovation
-date: 2026-07-20
+niche: "home-renovation"
+date: "2026-07-20"
+author: "geetha"
 excerpt: "The specific things a homeowner checks on a modular kitchen or renovation studio's website before they'll actually request a quote rather than just browse."
+metaDescription: "The specific things a homeowner checks on a modular kitchen or renovation studio's website before they'll actually request a quote rather than just browse."
+keywords: "homeowners look modular, home renovation web design, home renovation website design, high converting web architecture"
 image: "/blog/what-homeowners-look-for-before-requesting-a-quote.webp"
 ---
-*By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 
 Requesting a quote feels like a commitment to most homeowners, even when it isn't one. Before taking that step they run a quiet mental checklist that has almost nothing to do with how nice the finished-kitchen photos look, and everything to do with whether this specific studio feels safe to let into their home and their budget.
 
@@ -57,3 +59,12 @@ A homeowner with no sense of range takes a bigger risk requesting a quote, and a
 
 **What's the biggest unstated fear this content needs to address?**
 Whether the materials actually used will match what's shown on the site. Naming real brands and specifics answers this directly before it's ever raised as a question.
+
+### Related Blueprints in This Silo
+- [How AI Assistants Are Changing How Homeowners Search for a Renovation Contractor](/blog/ai-assistants-renovation-contractor-search)
+- [Apartment Society Renovation Pages: Hyperlocal SEO for Gated Communities](/blog/apartment-society-renovation-landing-pages)
+
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

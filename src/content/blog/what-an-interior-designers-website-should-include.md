@@ -1,11 +1,13 @@
 ---
 title: "What an Interior Designer's Website Should Include to Book Consultations"
-niche: interior-designers
-date: 2026-04-25
+niche: "interior-designers"
+date: "2026-04-25"
+author: "deepak"
 excerpt: "What an interior design website needs to turn browsers into booked consultations. A working checklist for design studios in Bengaluru and across India."
+metaDescription: "What an interior design website needs to turn browsers into booked consultations. A working checklist for design studios in Bengaluru and across India."
+keywords: "interior designers website, interior design website, interior designers website design, high converting web architecture"
 image: "/blog/what-an-interior-designers-website-should-include.webp"
 ---
-*By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 
 Two enquiries land in your inbox on the same Tuesday.
 
@@ -238,3 +240,7 @@ This master pillar guide defines the core framework. For specialized, step-by-st
 - **[Mobile UX Best Practices for Design Portfolios](/blog/mobile-portfolio-ux-interior-designers)**
 - **[Schema Markup and Project Rich Snippets for Architects](/blog/schema-markup-architects-interior-designers)**
 - **[Video Walkthroughs and Reels on Studio Websites](/blog/video-walkthroughs-interior-design-websites)**
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

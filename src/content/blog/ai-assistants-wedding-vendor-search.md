@@ -1,11 +1,13 @@
 ---
 title: "How AI Assistants Are Changing How Couples Search for Wedding Vendors"
-niche: wedding-photographers
-date: 2026-07-08
+niche: "wedding-photographers"
+date: "2026-07-08"
+author: "geetha"
 excerpt: "How couples are starting to use AI chat tools when shortlisting wedding photographers and planners, and what it means for how a vendor's site is built."
+metaDescription: "How couples are starting to use AI chat tools when shortlisting wedding photographers and planners, and what it means for how a vendor's site is built."
+keywords: "assistants changing couples, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/ai-assistants-wedding-vendor-search.webp"
 ---
-*By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 
 A couple planning a wedding types something into an AI chat tool that no vendor directory search box could handle: "We're getting married outdoors this December, want candid documentary-style photography, who should we be looking at?" The tool answers with reasoning and, increasingly, names specific vendors, often citing content it found on their websites. This sits alongside Instagram and Google as a genuinely new discovery path for this category.
 
@@ -61,3 +63,10 @@ Clear, specific style positioning, genuinely descriptive gallery content rather 
 
 **Should a photographer build a separate strategy for AI search specifically?**
 No. The same content discipline that helps search rankings and Instagram-to-website conversion also helps here, so it's a byproduct of doing that well rather than a separate initiative.
+
+> **Silo Pillar Guide:** For our comprehensive master breakdown of layout strategy, technical performance, and conversion architecture in this category, explore [What a Wedding Photographer's Website Should Include](/blog/what-a-wedding-photographers-website-should-include).
+
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

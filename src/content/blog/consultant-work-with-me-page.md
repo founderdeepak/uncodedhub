@@ -1,11 +1,13 @@
 ---
 title: "What a Consultant's 'Work With Me' Page Should Actually Say"
-niche: coaches-consultants
-date: 2026-08-21
+niche: "coaches-consultants"
+date: "2026-08-21"
+author: "geetha"
 excerpt: "Why most 'work with me' pages fail at the exact moment they matter most, and how to structure one that converts a warm visitor into a booked call."
+metaDescription: "Why most 'work with me' pages fail at the exact moment they matter most, and how to structure one that converts a warm visitor into a booked call."
+keywords: "consultants work page, consulting website architecture, coaches consultants website design, high converting web architecture"
 image: "/blog/consultant-work-with-me-page.webp"
 ---
-*By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 
 By the time a visitor reaches a Work With Me page, they aren't being introduced to the practice. They're deciding whether to act. Most of these pages don't seem to know that. They repeat the homepage's positioning, list a few services, and end with a generic contact form, treating the most decision-ready visitor on the entire site the same as someone who just landed for the first time.
 
@@ -61,3 +63,15 @@ A visitor reaching this page already believes the underlying premise, so restati
 
 **What's the most common mistake on this type of page?**
 Ending with a generic, context-free contact form after everything before it felt specific and genuine. The tone shift is jarring, and it fails to capitalise on a visitor ready to act on something specific right now.
+
+> **Silo Pillar Guide:** For our comprehensive master breakdown of layout strategy, technical performance, and conversion architecture in this category, explore [What a Coach or Consultant's Website Should Include](/blog/what-a-coachs-website-should-include).
+
+
+### Related Blueprints in This Silo
+- [How AI Assistants Are Changing How People Find a Coach or Consultant](/blog/ai-assistants-finding-a-coach-or-consultant)
+- [Application Funnels vs Open Calendly Links: Protecting High-Ticket Authority](/blog/application-funnel-vs-calendly-for-coaches)
+
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

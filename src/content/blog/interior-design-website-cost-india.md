@@ -1,11 +1,13 @@
 ---
 title: "How Much Should an Interior Design Studio Budget for a Website in India (2026 Pricing Reality)"
-niche: interior-designers
-date: 2026-04-29
+niche: "interior-designers"
+date: "2026-04-29"
+author: "deepak"
 excerpt: "What actually drives the cost of an interior design studio's website, why a cheap quote is often the most expensive one, and how to evaluate what you're paying for."
+metaDescription: "What actually drives the cost of an interior design studio's website, why a cheap quote is often the most expensive one, and how to evaluate what you're..."
+keywords: "much should interior, interior design website, interior designers website design, high converting web architecture"
 image: "/blog/interior-design-website-cost-india.webp"
 ---
-*By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 
 Two quotes arrive for the same brief: a homepage, six case studies, a services page and a contact flow. One is noticeably lower than the other. The instinct is to assume the cheaper one is the better deal.
 
@@ -74,3 +76,7 @@ Portfolio sites carry specific cost drivers, mainly heavy imagery, structured ca
 
 **What should I prepare before getting quotes for a studio website?**
 Your six best projects, documented with scope, location, timeline and constraint. Arriving with this content already written changes what any studio can realistically quote you.
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

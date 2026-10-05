@@ -1,11 +1,13 @@
 ---
 title: "What a Coach's Website Should Include to Convert LinkedIn Visitors Into Booked Calls"
-niche: coaches-consultants
-date: 2026-08-03
+niche: "coaches-consultants"
+date: "2026-08-03"
+author: "deepak"
 excerpt: "What a coach or consultant's authority website needs to turn a cold LinkedIn profile click into a booked discovery call, rather than another Linktree."
+metaDescription: "What a coach or consultant's authority website needs to turn a cold LinkedIn profile click into a booked discovery call, rather than another Linktree."
+keywords: "coachs website should, consulting website architecture, coaches consultants website design, high converting web architecture"
 image: "/blog/what-a-coachs-website-should-include.webp"
 ---
-*By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 
 > **Scope of this article**
 > This niche already has a dedicated playbook, the uncodedhub-linkedin-system skill, covering niche positioning, content, DMs, lead magnets and email nurture for coaches and consultants in depth. This article stays deliberately in one lane: the website itself. Where the two overlap, this piece points at the deeper system rather than repeating it.
@@ -135,3 +137,7 @@ This master pillar guide defines the core framework. For specialized, step-by-st
 - **[Email Newsletter Archive as an SEO Organic Engine](/blog/newsletter-archive-seo-engine-for-consultants)**
 - **[Substack and Medium vs Owning Your Thought Leadership Domain](/blog/substack-medium-vs-owned-consultant-website)**
 - **[Fractional Executive and Retainer Service Page Architecture](/blog/fractional-cmo-coo-retainer-service-page)**
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

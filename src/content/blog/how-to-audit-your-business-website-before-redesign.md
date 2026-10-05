@@ -1,12 +1,13 @@
 ---
 title: "How to Audit Your Business Website Before Planning a Redesign: The 10-Point Checklist"
-niche: studio
-date: 2026-09-26
+niche: "studio"
+date: "2026-09-26"
+author: "geetha"
 excerpt: "Jumping into a website redesign without diagnosing your current site's structural failures is like undergoing surgery without an X-ray. Here is the 10-point diagnostic audit checklist every business owner should run before spending a rupee on a rebuild."
 metaDescription: "Audit your website before redesigning. Run this 10-point diagnostic covering mobile speed, conversion leaks, SEO indexing, and messaging clarity."
+keywords: "audit business website, web engineering and conversion, studio website design, high converting web architecture"
 image: "/blog/how-to-audit-your-business-website-before-redesign.webp"
 ---
-*By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 26, 2026.*
 
 Every three to four years, business owners look at their website, feel a vague sense of dissatisfaction, and declare: *"It's time for a redesign."*
 
@@ -89,3 +90,14 @@ To study how to brief a studio once you are ready to rebuild, read [how to brief
 - [ ] Audit Google Search Console for crawl errors, 404s, and unindexed URLs
 - [ ] Review Google Analytics for high bounce rate pages (>70%)
 - [ ] Prepare your asset repository (logos, high-res photos) before signing a redesign contract
+
+## Frequently asked questions
+
+**Why is how to audit your business website before planning a redesign the 10-point checklist critical for modern businesses?**
+It directly impacts how prospective high-value clients perceive authority, evaluate delivery capability, and choose to reach out. Clean web systems and transparent information remove friction before the initial consultation.
+
+**What is the most common mistake made in this area?**
+Focusing purely on aesthetic styling while ignoring page load speed, mobile UX, and structured proof. A site that looks impressive but loads slowly loses qualified leads before they can evaluate the work.
+
+**How can a business improve their performance in this category?**
+Audit your current conversion path, optimize media payloads to sub-second load times, and structure case studies as transparent narratives covering constraints, execution, and measured outcomes.

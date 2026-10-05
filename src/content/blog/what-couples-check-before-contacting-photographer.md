@@ -1,11 +1,13 @@
 ---
 title: "What Couples Actually Check on a Photographer's Website Before Reaching Out"
-niche: wedding-photographers
-date: 2026-06-28
+niche: "wedding-photographers"
+date: "2026-06-28"
+author: "deepak"
 excerpt: "The specific things a couple looks for before messaging a wedding photographer, beyond just liking the photos, and how to make sure your site has them."
+metaDescription: "The specific things a couple looks for before messaging a wedding photographer, beyond just liking the photos, and how to make sure your site has them."
+keywords: "couples actually check, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/what-couples-check-before-contacting-photographer.webp"
 ---
-*By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 
 Liking the photos is step one rather than the whole decision. A couple who loves your style still has to answer a handful of quieter questions before they'll send a message, and most photographer websites only answer the first one. The rest gets left to guesswork, which couples usually resolve by moving to the next tab instead of messaging.
 
@@ -57,3 +59,15 @@ Weddings are booked far in advance and dates are fixed. A couple who loves your 
 
 **What kind of testimonial actually helps couples decide?**
 One with a specific detail about the experience of working with you, covering how you handled a stressful moment rather than a generic compliment about the final photos.
+
+> **Silo Pillar Guide:** For our comprehensive master breakdown of layout strategy, technical performance, and conversion architecture in this category, explore [What a Wedding Photographer's Website Should Include](/blog/what-a-wedding-photographers-website-should-include).
+
+
+### Related Blueprints in This Silo
+- [How AI Assistants Are Changing How Couples Search for Wedding Vendors](/blog/ai-assistants-wedding-vendor-search)
+- [Client Proofing Galleries vs Public Portfolio Architecture: Protecting Speed and SEO](/blog/client-proofing-portal-vs-public-portfolio)
+
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

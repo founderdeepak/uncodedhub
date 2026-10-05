@@ -1,11 +1,13 @@
 ---
 title: "What a Real Estate Agent's Website Should Include to Generate Direct Enquiries"
-niche: real-estate
-date: 2026-05-15
+niche: "real-estate"
+date: "2026-05-15"
+author: "deepak"
 excerpt: "What a real estate agent or property consultant's website needs to generate direct buyer enquiries, beyond another listing on 99acres or MagicBricks."
+metaDescription: "What a real estate agent or property consultant's website needs to generate direct buyer enquiries, beyond another listing on 99acres or MagicBricks."
+keywords: "real estate agents, real estate web strategy, real estate website design, high converting web architecture"
 image: "/blog/what-a-real-estate-agents-website-should-include.webp"
 ---
-*By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 
 Two messages arrive about the same 3BHK, on the same day.
 
@@ -140,3 +142,7 @@ This master pillar guide defines the core framework. For specialized, step-by-st
 - **[Joint Venture and Landowner Showcase Pages](/blog/joint-venture-property-developer-website)**
 - **[Real Estate EMI Calculator as an Inquiry Generator](/blog/real-estate-emi-calculator-lead-magnet)**
 - **[Exclusive Mandate Listings vs Open Aggregator Feeds](/blog/exclusive-mandate-listings-real-estate-website)**
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

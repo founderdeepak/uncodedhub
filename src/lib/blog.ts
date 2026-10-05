@@ -61,6 +61,11 @@ export const AUTHORS: Record<'deepak' | 'geetha', AuthorInfo> = {
   },
 };
 
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -68,11 +73,13 @@ export interface BlogPost {
   date: string;
   excerpt: string;
   metaDescription: string;
+  keywords?: string;
   image?: string;
   html: string;
   readingMinutes: number;
   toc: TocItem[];
   author: AuthorInfo;
+  faqs: FaqItem[];
 }
 
 function isNicheKey(value: string): value is NicheKey {
@@ -327,6 +334,23 @@ const rawFiles = import.meta.glob('/src/content/blog/*.md', {
   eager: true,
 }) as Record<string, string>;
 
+export function extractFaqs(markdown: string): FaqItem[] {
+  const faqSectionMatch = markdown.match(/##\s*Frequently\s+asked\s+questions[\s\S]*?(?=\n##\s|$)/i);
+  if (!faqSectionMatch) return [];
+  const sectionText = faqSectionMatch[0];
+  const items: FaqItem[] = [];
+  const regex = /\*\*(.+?\?)\*\*\r?\n([\s\S]+?)(?=\r?\n\r?\n\*\*|\r?\n##|$)/g;
+  let match: RegExpExecArray | null;
+  while ((match = regex.exec(sectionText)) !== null) {
+    const question = match[1].replace(/[*_#]/g, '').trim();
+    const answer = match[2].trim().replace(/\r?\n+/g, ' ');
+    if (question && answer) {
+      items.push({ question, answer });
+    }
+  }
+  return items;
+}
+
 function loadPosts(): BlogPost[] {
   const posts: BlogPost[] = [];
 
@@ -341,6 +365,7 @@ function loadPosts(): BlogPost[] {
     const cleanedBody = cleanBlogBody(body);
     const words = cleanedBody.split(/\s+/).filter(Boolean).length;
     const { html, toc } = renderPost(cleanedBody, slug);
+    const faqs = extractFaqs(cleanedBody);
 
     const isGeetha =
       /geethaspecialist/i.test(body) ||
@@ -355,11 +380,13 @@ function loadPosts(): BlogPost[] {
       date: data.date,
       excerpt: data.excerpt ?? '',
       metaDescription: data.metaDescription || data.excerpt || data.title,
+      keywords: data.keywords || undefined,
       image: data.image || undefined,
       html,
       readingMinutes: Math.max(1, Math.round(words / 200)),
       toc,
       author,
+      faqs,
     });
   }
 

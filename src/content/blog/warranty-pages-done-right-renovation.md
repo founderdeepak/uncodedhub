@@ -1,11 +1,13 @@
 ---
 title: "Warranty Pages Done Right: The One Page Homeowners Check Before Signing"
-niche: home-renovation
-date: 2026-07-30
+niche: "home-renovation"
+date: "2026-07-30"
+author: "deepak"
 excerpt: "Why a clear, honest warranty page is one of the most trust-building pages a renovation or modular kitchen business can build, and how to write one well."
+metaDescription: "Why a clear, honest warranty page is one of the most trust-building pages a renovation or modular kitchen business can build, and how to write one well."
+keywords: "warranty pages done, home renovation web design, home renovation website design, high converting web architecture"
 image: "/blog/warranty-pages-done-right-renovation.webp"
 ---
-*By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 
 A homeowner about to sign a contract for a renovation project carries one quiet, specific fear that rarely gets asked aloud. What happens when something goes wrong six months from now. A hinge that fails, a laminate edge that lifts. Most renovation sites never answer this directly, leaving the homeowner to either ask awkwardly during the sales conversation or assume the worst and hesitate.
 
@@ -61,3 +63,15 @@ Specific terms covering duration and coverage, honest exclusions stated plainly,
 
 **Is it risky to publish detailed warranty terms publicly?**
 Only if the business can't reliably honour them. An overpromised public warranty that doesn't match reality does more damage than no warranty page at all, so published terms should reflect genuine operational capacity.
+
+> **Silo Pillar Guide:** For our comprehensive master breakdown of layout strategy, technical performance, and conversion architecture in this category, explore [What a Modular Kitchen & Renovation Website Should Include](/blog/what-a-modular-kitchen-renovation-website-should-include).
+
+
+### Related Blueprints in This Silo
+- [How AI Assistants Are Changing How Homeowners Search for a Renovation Contractor](/blog/ai-assistants-renovation-contractor-search)
+- [Apartment Society Renovation Pages: Hyperlocal SEO for Gated Communities](/blog/apartment-society-renovation-landing-pages)
+
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

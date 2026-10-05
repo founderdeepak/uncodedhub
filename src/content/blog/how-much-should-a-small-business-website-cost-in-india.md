@@ -1,11 +1,13 @@
 ---
 title: "Cost of Small Business Website in India (2026 Price Breakdown)"
-niche: studio
-date: 2026-08-23
+niche: "studio"
+date: "2026-08-23"
+author: "deepak"
 excerpt: "Real website cost breakdown in India. Why hourly agencies go over budget, what a fair fixed-price quote includes, and our 7-day delivery guarantee."
+metaDescription: "Real website cost breakdown in India. Why hourly agencies go over budget, what a fair fixed-price quote includes, and our 7-day delivery guarantee."
+keywords: "cost small business, web engineering and conversion, studio website design, high converting web architecture"
 image: "/blog/how-much-should-a-small-business-website-cost-in-india.webp"
 ---
-*By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 
 > **Scope of this article**
 > This is the one article in the Uncoded Hub blog not written for a specific niche. It targets anyone evaluating Uncoded Hub itself, or the web-design service category broadly, and it's a good fit for internal linking from every niche cluster's cost-related article.
@@ -136,3 +138,7 @@ This master pillar guide defines the core framework. For specialized, step-by-st
 - **[WhatsApp Lead Capture and Instant CRM Notification Architecture](/blog/whatsapp-lead-capture-instant-notifications-website)**
 - **[Website Conversion Rate Benchmarks for Indian Service Businesses](/blog/conversion-rate-benchmarks-service-business-india)**
 - **[How to Audit Your Business Website Before Planning a Redesign](/blog/how-to-audit-your-business-website-before-redesign)**
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

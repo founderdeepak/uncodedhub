@@ -1,11 +1,13 @@
 ---
 title: "How to Structure a Wedding Photography Portfolio So It Ranks and Converts"
-niche: wedding-photographers
-date: 2026-07-02
+niche: "wedding-photographers"
+date: "2026-07-02"
+author: "deepak"
 excerpt: "How to organise a wedding photography portfolio so it both ranks in search and converts the couples who find it. The two goals need different structure."
+metaDescription: "How to organise a wedding photography portfolio so it both ranks in search and converts the couples who find it. The two goals need different structure."
+keywords: "structure wedding photography, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/structure-wedding-photography-portfolio.webp"
 ---
-*By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 
 Most wedding photography portfolios are structured for one purpose: looking beautiful in a scroll. That's genuinely valuable for a couple who's already found you. It does very little for search, because Google has almost nothing to index on a page that's essentially one long, unlabelled image feed, and it isn't the same structure that converts a stranger into an enquiry.
 
@@ -61,3 +63,12 @@ Not if it's kept short and additive, meaning a venue name and a sentence of cont
 
 **Should a photographer organise their portfolio by wedding or by style?**
 Both, ideally. Full wedding-story galleries for depth and conversion, with clear style or venue-type entry points on the homepage so a specific couple navigates to relevant work quickly.
+
+### Related Blueprints in This Silo
+- [How AI Assistants Are Changing How Couples Search for Wedding Vendors](/blog/ai-assistants-wedding-vendor-search)
+- [Client Proofing Galleries vs Public Portfolio Architecture: Protecting Speed and SEO](/blog/client-proofing-portal-vs-public-portfolio)
+
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

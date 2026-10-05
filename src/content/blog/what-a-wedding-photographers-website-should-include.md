@@ -1,11 +1,13 @@
 ---
 title: "What a Wedding Photographer's Website Should Include to Get More Bookings"
-niche: wedding-photographers
-date: 2026-06-24
+niche: "wedding-photographers"
+date: "2026-06-24"
+author: "deepak"
 excerpt: "What a wedding photography or event planning portfolio site needs to turn Instagram followers into signed bookings, rather than just likes."
+metaDescription: "What a wedding photography or event planning portfolio site needs to turn Instagram followers into signed bookings, rather than just likes."
+keywords: "wedding photographers website, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/what-a-wedding-photographers-website-should-include.webp"
 ---
-*By [Deepak](https://in.linkedin.com/in/deepakdeveloper), co-founder of Uncoded Hub, where he leads sales and strategy. Verified as of September 10, 2026.*
 
 A bride DMs your Instagram: "Hi! How much do you charge?"
 
@@ -134,3 +136,7 @@ This master pillar guide defines the core framework. For specialized, step-by-st
 - **[Wedding Day Timeline Guide as a High-Converting Lead Magnet](/blog/wedding-timeline-planning-guide-as-lead-magnet)**
 - **[Drone and 4K Wedding Video Streaming Optimization](/blog/drone-cinematography-video-streaming-optimization)**
 - **[Luxury Corporate Event Planner Website Architecture](/blog/corporate-event-planner-website-design)**
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

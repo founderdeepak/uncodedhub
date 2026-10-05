@@ -1,11 +1,13 @@
 ---
 title: "How a Slow-Loading Photo Gallery Quietly Loses Wedding Enquiries"
-niche: wedding-photographers
-date: 2026-06-26
+niche: "wedding-photographers"
+date: "2026-06-26"
+author: "geetha"
 excerpt: "Why page speed is the highest-leverage, least glamorous fix a wedding photography portfolio can make, and how to find out if yours is losing enquiries."
+metaDescription: "Why page speed is the highest-leverage, least glamorous fix a wedding photography portfolio can make, and how to find out if yours is losing enquiries."
+keywords: "slowloading photo gallery, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/slow-loading-gallery-loses-wedding-enquiries.webp"
 ---
-*By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 
 A bride is comparing four photographers on her phone during a train ride home. She opens your gallery. It spins. She waits three seconds, maybe four, then closes the tab and opens the next photographer's site, which happened to load in under two.
 
@@ -67,3 +69,12 @@ Full-resolution, uncompressed images served directly to the browser instead of c
 
 **Will fixing site speed alone increase bookings?**
 It removes a silent barrier that loses enquiries before the work is seen, though it doesn't substitute for genuinely strong photography or clear positioning. Speed gets you a fair look rather than replacing the rest of the checklist.
+
+### Related Blueprints in This Silo
+- [How AI Assistants Are Changing How Couples Search for Wedding Vendors](/blog/ai-assistants-wedding-vendor-search)
+- [Client Proofing Galleries vs Public Portfolio Architecture: Protecting Speed and SEO](/blog/client-proofing-portal-vs-public-portfolio)
+
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

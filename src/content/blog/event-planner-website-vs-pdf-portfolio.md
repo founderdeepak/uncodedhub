@@ -1,11 +1,13 @@
 ---
 title: "What an Event Planner's Website Needs That a PDF Portfolio Cannot Do"
-niche: wedding-photographers
-date: 2026-06-30
+niche: "wedding-photographers"
+date: "2026-06-30"
+author: "geetha"
 excerpt: "Why a static PDF portfolio quietly limits an event planner's business, and what a real website does instead: searchable, current, and provably capable."
+metaDescription: "Why a static PDF portfolio quietly limits an event planner's business, and what a real website does instead: searchable, current, and provably capable."
+keywords: "event planners website, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/event-planner-website-vs-pdf-portfolio.webp"
 ---
-*By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 
 An event planner sends a beautifully designed PDF to every enquiry. Past events, photos, a bit of copy about the philosophy. It works for the people who already asked. It does nothing for the couple who's never heard of the planner and is searching Google tonight, and it can't be updated without redesigning the whole document.
 
@@ -61,3 +63,15 @@ No. It still works well as a leave-behind after a real conversation. The problem
 
 **What should an event planner's website show that photos alone don't?**
 The actual planning and coordination process, covering vendor count and budget band handled, and ideally an honest account of something that went wrong and how it was managed.
+
+> **Silo Pillar Guide:** For our comprehensive master breakdown of layout strategy, technical performance, and conversion architecture in this category, explore [What a Wedding Photographer's Website Should Include](/blog/what-a-wedding-photographers-website-should-include).
+
+
+### Related Blueprints in This Silo
+- [How AI Assistants Are Changing How Couples Search for Wedding Vendors](/blog/ai-assistants-wedding-vendor-search)
+- [Client Proofing Galleries vs Public Portfolio Architecture: Protecting Speed and SEO](/blog/client-proofing-portal-vs-public-portfolio)
+
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

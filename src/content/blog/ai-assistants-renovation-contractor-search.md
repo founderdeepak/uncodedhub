@@ -1,11 +1,13 @@
 ---
 title: "How AI Assistants Are Changing How Homeowners Search for a Renovation Contractor"
-niche: home-renovation
-date: 2026-07-28
+niche: "home-renovation"
+date: "2026-07-28"
+author: "geetha"
 excerpt: "How homeowners are starting to use AI chat tools when researching a modular kitchen or renovation contractor, and what it means for a studio's website."
+metaDescription: "How homeowners are starting to use AI chat tools when researching a modular kitchen or renovation contractor, and what it means for a studio's website."
+keywords: "assistants changing homeowners, home renovation web design, home renovation website design, high converting web architecture"
 image: "/blog/ai-assistants-renovation-contractor-search.webp"
 ---
-*By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 
 A homeowner planning a kitchen renovation types something into an AI chat tool that a search engine's keyword box never handled well: "We're renovating a 2BHK kitchen, what should we know before choosing a contractor, and who should we look at?" The tool synthesises a reasoned answer, often citing specific businesses and pulling content directly from their websites. For a category built heavily on referrals and word of mouth, that's a genuinely new discovery path worth understanding.
 
@@ -59,3 +61,7 @@ Real material and hardware specifics stated as text, honest process and timeline
 
 **Does this affect how referrals work in this category?**
 Yes, indirectly. A homeowner told about a contractor by a neighbour may ask an AI tool to help verify that recommendation, which makes a thin or absent web presence a real gap even for referral-driven businesses.
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

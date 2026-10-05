@@ -1,11 +1,13 @@
 ---
 title: "How Long Does It Take to Build a Coach's Authority Website?"
-niche: coaches-consultants
-date: 2026-08-13
+niche: "coaches-consultants"
+date: "2026-08-13"
+author: "geetha"
 excerpt: "A realistic timeline for building a coaching or consulting authority website, and why content rather than development is almost always the real bottleneck."
+metaDescription: "A realistic timeline for building a coaching or consulting authority website, and why content rather than development is almost always the real bottleneck."
+keywords: "long does take, consulting website architecture, coaches consultants website design, high converting web architecture"
 image: "/blog/how-long-to-build-a-coachs-website.webp"
 ---
-*By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 
 A coach expects a website project to take about as long as the build itself. A few weeks of design and development, then launch. In practice the build rarely determines the timeline. What determines it is how quickly the coach can define their own positioning clearly enough to write from, which is a genuinely different kind of work from anything a developer controls.
 
@@ -55,3 +57,7 @@ Unfinished positioning, an undefined value ladder, or unwritten content, rather 
 
 **Should a coach wait until their positioning feels perfect before launching?**
 No. Shipping with genuinely good, honest positioning and refining based on real visitor and client response usually beats an indefinitely delayed launch chasing an unattainable perfect version.
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

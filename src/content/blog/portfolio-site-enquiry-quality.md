@@ -1,11 +1,13 @@
 ---
 title: "Before/After: What a Fast, Well-Structured Portfolio Site Does to Enquiry Quality (Not Just Volume)"
-niche: interior-designers
-date: 2026-05-05
+niche: "interior-designers"
+date: "2026-05-05"
+author: "geetha"
 excerpt: "Why a faster, better-structured interior design portfolio changes the kind of enquiries you get, not just the number, and how to measure that shift honestly."
+metaDescription: "Why a faster, better-structured interior design portfolio changes the kind of enquiries you get, not just the number, and how to measure that shift honestly."
+keywords: "beforeafter fast wellstructured, interior design website, interior designers website design, high converting web architecture"
 image: "/blog/portfolio-site-enquiry-quality.webp"
 ---
-*By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 
 Most studios measure a website redesign by whether enquiries went up. That's the easy number to track and often the wrong one to optimise for. A redesign can genuinely increase enquiry count while making the average enquiry worse: more tire-kickers, more budget mismatches, more people who never respond to the follow-up.
 
@@ -59,3 +61,12 @@ Track whether enquiries include real scope or budget context unprompted, and wha
 
 **Can a slow website ever look like it has higher enquiry quality?**
 Yes, misleadingly. If only the most patient, already-committed visitors stick around to enquire, the remaining sample looks artificially high-quality while a whole segment of viable prospects drops off before reaching the contact form.
+
+### Related Blueprints in This Silo
+- [3D Renders vs Built Project Photography: The Hidden Speed Cost on Design Sites](/blog/3d-renderings-interior-design-website-speed)
+- [How AI Assistants Are Changing How Homeowners Find an Interior Designer](/blog/ai-assistants-finding-an-interior-designer)
+
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

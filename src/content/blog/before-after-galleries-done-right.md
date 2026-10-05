@@ -1,11 +1,13 @@
 ---
 title: "Before/After Galleries Done Right: What Actually Builds Trust for a Renovation Contractor"
-niche: home-renovation
-date: 2026-07-16
+niche: "home-renovation"
+date: "2026-07-16"
+author: "geetha"
 excerpt: "Why most before/after galleries fail to build trust, and how to shoot and present them so they actually convince a skeptical homeowner."
+metaDescription: "Why most before/after galleries fail to build trust, and how to shoot and present them so they actually convince a skeptical homeowner."
+keywords: "beforeafter galleries done, home renovation web design, home renovation website design, high converting web architecture"
 image: "/blog/before-after-galleries-done-right.webp"
 ---
-*By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 
 Most renovation websites show the after and skip the before entirely. It's understandable, since nobody wants to advertise a client's old, unflattering kitchen. Skipping it quietly throws away the single most convincing piece of content this industry has, because a beautiful finished photo alone is indistinguishable from a rendering, a stock image, or someone else's project.
 
@@ -65,3 +67,12 @@ Without a genuine before as a reference point, a finished photo has nothing to b
 
 **Is it ever okay to use supplier catalogue images in a before/after gallery?**
 No. This is one of the fastest ways to lose all credibility on a page, because a homeowner recognising even one borrowed image stops trusting every other photo on the site.
+
+### Related Blueprints in This Silo
+- [How AI Assistants Are Changing How Homeowners Search for a Renovation Contractor](/blog/ai-assistants-renovation-contractor-search)
+- [Apartment Society Renovation Pages: Hyperlocal SEO for Gated Communities](/blog/apartment-society-renovation-landing-pages)
+
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

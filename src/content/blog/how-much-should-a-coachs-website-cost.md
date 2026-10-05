@@ -1,11 +1,13 @@
 ---
 title: "How Much Should a Coach's Website Cost? A Realistic Budget for an Authority Site"
-niche: coaches-consultants
-date: 2026-08-09
+niche: "coaches-consultants"
+date: "2026-08-09"
+author: "geetha"
 excerpt: "What actually drives the cost of a coaching or consulting authority website, and why the cheapest option is often the most expensive one over time."
+metaDescription: "What actually drives the cost of a coaching or consulting authority website, and why the cheapest option is often the most expensive one over time."
+keywords: "much should coachs, consulting website architecture, coaches consultants website design, high converting web architecture"
 image: "/blog/how-much-should-a-coachs-website-cost.webp"
 ---
-*By [Geetha](https://www.linkedin.com/in/geethaspecialist), co-founder of Uncoded Hub, where she leads project delivery. Verified as of September 10, 2026.*
 
 A coach compares a cheap Linktree-plus-landing-page setup against a proper authority site and picks the cheaper option, reasoning that a simple link page does most of the same job for a fraction of the cost. It doesn't, and the gap only becomes visible months later once the cheaper setup has quietly failed to compound the way a real site would have.
 
@@ -57,3 +59,7 @@ They're different categories doing different jobs, a router versus a searchable,
 
 **What should a coach ask before getting a website quote?**
 What's actually included, covering content depth, process structuring and whether you can add content yourself later, and what needs to be ready on your side for a fixed delivery timeline to hold.
+
+---
+
+*Planning a website that reliably converts high-ticket inquiries? [Get a Free 60-Minute Website Audit](/audit) or [Schedule a 15-Minute Strategy Sprint](/contact) with Uncoded Hub.*

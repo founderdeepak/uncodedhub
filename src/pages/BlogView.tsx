@@ -64,16 +64,23 @@ export default function BlogView() {
     ? `https://uncodedhub.com${post.image}`
     : 'https://uncodedhub.com/og-image.jpg';
 
-  const jsonLd = {
+  const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
     description: post.metaDescription,
     image: [ogImageUrl],
     datePublished: post.date,
+    dateModified: post.date,
+    inLanguage: 'en-US',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url,
+    },
     author: {
       '@type': 'Person',
       name: post.author.name,
+      jobTitle: post.author.role,
       url: post.author.linkedin,
     },
     publisher: {
@@ -85,8 +92,58 @@ export default function BlogView() {
         url: 'https://uncodedhub.com/logo-large.png',
       },
     },
-    mainEntityOfPage: url,
+    about: {
+      '@type': 'Thing',
+      name: NICHES[post.niche],
+    },
   };
+
+  const breadcrumbsJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://uncodedhub.com/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blueprints',
+        item: 'https://uncodedhub.com/blog/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: NICHES[post.niche],
+        item: `https://uncodedhub.com/blog/niche/${post.niche}/`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        name: post.title,
+        item: url,
+      },
+    ],
+  };
+
+  const faqJsonLd =
+    post.faqs && post.faqs.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: post.faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: faq.answer,
+            },
+          })),
+        }
+      : null;
 
   const handleCopyLink = () => {
     if (typeof window !== 'undefined') {
@@ -108,6 +165,7 @@ export default function BlogView() {
       <Helmet>
         <title>{`${post.title} — Uncoded Hub`}</title>
         <meta name="description" content={post.metaDescription} />
+        {post.keywords && <meta name="keywords" content={post.keywords} />}
         <link rel="canonical" href={url} />
         {/* OpenGraph */}
         <meta property="og:site_name" content="Uncoded Hub" />
@@ -119,6 +177,9 @@ export default function BlogView() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content={post.title} />
+        <meta property="article:published_time" content={post.date} />
+        <meta property="article:section" content={NICHES[post.niche]} />
+        <meta property="article:author" content={post.author.name} />
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@uncodedhub" />
@@ -126,7 +187,12 @@ export default function BlogView() {
         <meta name="twitter:description" content={post.metaDescription} />
         <meta name="twitter:image" content={ogImageUrl} />
         <meta name="twitter:image:alt" content={post.title} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        {/* Schema.org Rich Structured Data */}
+        <script type="application/ld+json">{JSON.stringify(articleJsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbsJsonLd)}</script>
+        {faqJsonLd && (
+          <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
+        )}
       </Helmet>
 
       <article className="pt-10 sm:pt-16 pb-20 bg-paper">
