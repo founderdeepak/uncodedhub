@@ -7,8 +7,13 @@
 User-agent: *
 Allow: /
 
-# AI Content-Usage Preferences (contentsignals.org / draft-romm-aipref-contentsignals)
+# AI content-usage preferences (contentsignals.org, draft-romm-aipref-contentsignals):
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 Content-Signal: search=yes, ai-input=yes, ai-train=no
+#   Content-Signal: search=yes, ai-input=yes, ai-train=no
+#   search=yes    content may appear in search results and AI-powered search
+#   ai-input=yes  AI agents may use content for generating answers and citations
+#   ai-train=no   content must NOT be used for training foundation models
 
 # Dedicated AI Answer Engines & Grounding Bots (Explicitly Allowed)
 User-agent: GPTBot
