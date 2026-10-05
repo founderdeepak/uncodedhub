@@ -5,18 +5,13 @@
 
 # Search engine & general crawler access
 User-agent: *
-Allow: /
-
-# AI content-usage preferences (contentsignals.org, draft-romm-aipref-contentsignals):
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 Content-Signal: search=yes, ai-input=yes, ai-train=no
-#   Content-Signal: search=yes, ai-input=yes, ai-train=no
-#   search=yes    content may appear in search results and AI-powered search
-#   ai-input=yes  AI agents may use content for generating answers and citations
-#   ai-train=no   content must NOT be used for training foundation models
+Allow: /
 
 # Dedicated AI Answer Engines & Grounding Bots (Explicitly Allowed)
 User-agent: GPTBot
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
 
 User-agent: OAI-SearchBot
@@ -79,6 +74,12 @@ Disallow: /
 
 User-agent: MJ12bot
 Disallow: /
+
+# AI content-usage preferences (contentsignals.org, draft-romm-aipref-contentsignals):
+#   Content-Signal: search=yes, ai-input=yes, ai-train=no
+#   search=yes    content may appear in search results and AI-powered search
+#   ai-input=yes  AI agents may use content for generating answers and citations
+#   ai-train=no   content must NOT be used for training foundation models
 
 # Sitemaps & Feeds
 Sitemap: https://uncodedhub.com/sitemap.xml
