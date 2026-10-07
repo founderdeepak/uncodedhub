@@ -225,10 +225,10 @@ function resolveWikilinks(text: string): string {
     const trimmed = inner.trim();
     const entry = WIKILINK_MAP[trimmed];
     if (entry) {
-      return `[${entry.label}](/blog/${entry.slug})`;
+      return `[${entry.label}](/blog/${entry.slug}/)`;
     }
     const clean = trimmed.replace(/^\d+\s*-\s*/, '').trim();
-    return `[${clean}](/blog/${slugify(clean)})`;
+    return `[${clean}](/blog/${slugify(clean)}/)`;
   });
 }
 
@@ -315,6 +315,18 @@ function renderPost(markdown: string, slug: string): { html: string; toc: TocIte
         }
         const text = this.parser.parse(token.tokens);
         return `<li>${text}</li>\n`;
+      },
+      link(token) {
+        let href = token.href || '';
+        // Canonical trailing slash: if internal link without extension, ensure trailing slash
+        if (href.startsWith('/') && !href.includes('#') && !href.includes('?') && !/\.[a-zA-Z0-9]{1,5}$/.test(href)) {
+          if (!href.endsWith('/')) {
+            href += '/';
+          }
+        }
+        const text = this.parser.parseInline(token.tokens);
+        const title = token.title ? ` title="${escapeHtml(token.title)}"` : '';
+        return `<a href="${href}"${title}>${text}</a>`;
       },
       code(token) {
         const lang = (token.lang || '').toLowerCase().trim();

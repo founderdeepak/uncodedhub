@@ -435,7 +435,7 @@ export default function AuditChecklist() {
                     <span>Save PDF</span>
                   </button>
                   <Link
-                    to="/contact"
+                    to="/contact/"
                     className="bg-signal hover:bg-signal-bright text-paper font-sans text-xs font-medium px-4 py-1.5 rounded-full transition-colors"
                   >
                     Review Score with Founders (20 min) →
@@ -541,7 +541,7 @@ export default function AuditChecklist() {
                         </div>
 
                         <Link
-                          to="/contact"
+                          to="/contact/"
                           className="w-full bg-signal hover:bg-signal-bright text-paper font-medium text-xs py-3 px-4 rounded-full text-center block transition-colors shadow-xs"
                         >
                           Book Free 20-Min Diagnosis Review →
@@ -607,13 +607,13 @@ export default function AuditChecklist() {
 
                   <div className="md:col-span-4 flex flex-col sm:flex-row md:flex-col gap-3">
                     <Link
-                      to="/contact"
+                      to="/contact/"
                       className="bg-signal hover:bg-signal-bright text-paper font-medium text-sm py-3.5 px-6 rounded-full text-center transition-colors shadow-lg"
                     >
                       Schedule Your 20-Min Slot →
                     </Link>
                     <Link
-                      to="/portfolio"
+                      to="/portfolio/"
                       className="border border-white/20 hover:border-white/40 text-paper text-xs py-3 px-6 rounded-full text-center font-mono transition-colors"
                     >
                       Inspect Live Client Demos

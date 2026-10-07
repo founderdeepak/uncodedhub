@@ -126,7 +126,7 @@ export default function SiteFooter() {
                   </div>
                 </div>
                 <Link
-                  to="/audit-checklist"
+                  to="/audit-checklist/"
                   className="bg-signal hover:bg-signal-bright text-paper text-xs font-semibold px-4 py-2.5 rounded-full transition-colors shrink-0 text-center"
                 >
                   View Checklist Now →
@@ -295,11 +295,11 @@ export default function SiteFooter() {
               {`© ${new Date().getFullYear()} Uncoded Hub`}
             </p>
             <span className="text-on-ink-muted/40 text-xs hidden sm:inline">·</span>
-            <Link to="/terms" className="label text-on-ink-muted hover:text-signal-bright transition-colors">
+            <Link to="/terms/" className="label text-on-ink-muted hover:text-signal-bright transition-colors">
               Terms &amp; Guarantee
             </Link>
             <span className="text-on-ink-muted/40 text-xs">·</span>
-            <Link to="/privacy" className="label text-on-ink-muted hover:text-signal-bright transition-colors">
+            <Link to="/privacy/" className="label text-on-ink-muted hover:text-signal-bright transition-colors">
               Privacy Policy
             </Link>
             <span className="text-on-ink-muted text-xs" aria-hidden="true">·</span>

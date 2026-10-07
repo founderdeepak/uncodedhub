@@ -641,7 +641,7 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
                       Schedule Discovery Call
                     </button>
                     <Link
-                      to="/portfolio"
+                      to="/portfolio/"
                       className="px-4 py-2.5 rounded-[12px] bg-white/10 hover:bg-white/20 transition-colors text-xs font-mono text-paper text-center border border-white/15"
                     >
                       Inspect Live Demos

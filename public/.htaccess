@@ -17,17 +17,22 @@
   RewriteCond %{REQUEST_URI} ^/\.well-known/
   RewriteRule ^ - [L]
 
-  # 4. Canonical Trailing Slash Enforcement (fixes Google Search Console duplicate URL split)
+  # 4. Specific alias redirects (fixes potential 404s from GSC)
+  RewriteRule ^audit/?$ https://uncodedhub.com/audit-checklist/ [L,R=301]
+  RewriteRule ^sitemap/?$ https://uncodedhub.com/sitemap.xml [L,R=301]
+  RewriteRule ^(feed|rss)/?$ https://uncodedhub.com/rss.xml [L,R=301]
+
+  # 5. Clean query parameter canonicalization (?book=true -> /contact/)
+  RewriteCond %{QUERY_STRING} ^book=true$ [NC]
+  RewriteRule ^contact/?$ https://uncodedhub.com/contact/? [L,R=301]
+
+  # 6. Canonical Trailing Slash Enforcement (fixes Google Search Console duplicate URL split)
   # Automatically 301 redirects /path -> /path/ for clean canonical consolidation.
   # Excludes real files and paths with asset extensions (.css, .js, .png, .webp, .xml, .txt, etc.)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_URI} !^/.*\.([a-zA-Z0-9]{1,5})$
   RewriteCond %{REQUEST_URI} !(.*)/$
   RewriteRule ^(.*)$ https://uncodedhub.com/$1/ [L,R=301]
-
-  # 5. Clean query parameter canonicalization (?book=true -> /contact/)
-  RewriteCond %{THE_REQUEST} \s/contact\?book=true [NC]
-  RewriteRule ^contact$ https://uncodedhub.com/contact/ [L,R=301]
 </IfModule>
 
 # MIME type mapping for agent protocols and documents
@@ -60,7 +65,9 @@ AddType application/linkset+json .json
 </Files>
 
 <Files "robots.txt">
-  Header always set Cache-Control "no-cache, no-store, must-revalidate"
+  Header always set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+  Header always set Pragma "no-cache"
+  Header always set Expires "0"
 </Files>
 
 # Real 404 status for anything that isn't a prerendered route or static asset
@@ -96,6 +103,9 @@ ErrorDocument 404 /404.html
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Content Signals for AI agents (RFC draft-romm-aipref-contentsignals)
+  Header always set Content-Signal "search=yes, ai-input=yes, ai-train=no"
 
   # RFC 8288 Link headers for autonomous AI agent discovery
   Header always set Link '<https://uncodedhub.com/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", <https://uncodedhub.com/llms.txt>; rel="describedby"; type="text/plain"; title="llms.txt", <https://uncodedhub.com/sitemap.xml>; rel="sitemap"; type="application/xml", <https://uncodedhub.com/.well-known/agent-skills/index.json>; rel="agent-skills", <https://uncodedhub.com/.well-known/mcp/server-card.json>; rel="mcp-server-card", <https://uncodedhub.com/auth.md>; rel="auth-md"; type="text/markdown", <https://uncodedhub.com/.well-known/oauth-protected-resource>; rel="oauth-protected-resource"; type="application/json", <https://uncodedhub.com/>; rel="alternate"; type="text/markdown"'

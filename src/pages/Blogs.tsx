@@ -169,7 +169,7 @@ export default function Blogs() {
             {nichesInUse.length > 1 && (
               <div className="flex flex-wrap gap-2.5 mt-8 pt-6 border-t border-rule">
                 <button
-                  onClick={() => navigate('/blog')}
+                  onClick={() => navigate('/blog/')}
                   className={`px-5 py-2.5 rounded-full text-xs font-mono transition-all cursor-pointer ${
                     activeNiche === 'all'
                       ? 'bg-ink text-paper font-medium shadow-xs'
@@ -183,7 +183,7 @@ export default function Blogs() {
                   return (
                     <button
                       key={niche}
-                      onClick={() => navigate(`/blog/niche/${niche}`)}
+                      onClick={() => navigate(`/blog/niche/${niche}/`)}
                       className={`px-5 py-2.5 rounded-full text-xs font-mono transition-all cursor-pointer ${
                         active
                           ? 'bg-ink text-paper font-medium shadow-xs'
@@ -237,7 +237,7 @@ export default function Blogs() {
 
                 <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal max-w-3xl leading-tight">
                   <Link
-                    to={`/blog/${pillarPost.slug}`}
+                    to={`/blog/${pillarPost.slug}/`}
                     className="hover:text-signal transition-colors"
                   >
                     {pillarPost.title}
@@ -257,7 +257,7 @@ export default function Blogs() {
                     })} · ${pillarPost.readingMinutes} min comprehensive read · Author: ${pillarPost.author.name}`}
                   </p>
                   <Link
-                    to={`/blog/${pillarPost.slug}`}
+                    to={`/blog/${pillarPost.slug}/`}
                     className="btn-primary !py-3 !px-8 text-xs rounded-full inline-flex items-center gap-2 cursor-pointer shadow-xs"
                   >
                     <span>Read Master Blueprint</span>
@@ -283,7 +283,7 @@ export default function Blogs() {
             {clusterPosts.map((post, i) => (
               <Reveal key={post.slug} delay={i * 30} as="article">
                 <Link
-                  to={`/blog/${post.slug}`}
+                  to={`/blog/${post.slug}/`}
                   className="group block bg-paper-raised border border-rule-strong rounded-[24px] p-6 shadow-xs hover:border-ink/40 hover:shadow-md transition-all duration-300 h-full flex flex-col justify-between"
                 >
                   <div>
@@ -429,14 +429,14 @@ export default function Blogs() {
 
                 <div className="space-y-3">
                   <Link
-                    to="/contact"
+                    to="/contact/"
                     className="w-full bg-signal hover:bg-signal-bright text-paper font-sans font-medium text-sm py-3.5 px-6 rounded-full transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-lg"
                   >
                     <span>Book Discovery Call</span>
                     <span>→</span>
                   </Link>
                   <Link
-                    to="/portfolio"
+                    to="/portfolio/"
                     className="w-full block text-center text-xs text-on-ink-muted hover:text-paper py-2 transition-colors"
                   >
                     Or test our 6 interactive sector demos first →

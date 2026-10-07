@@ -425,7 +425,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
                     <span>→</span>
                   </button>
                   <Link
-                    to="/services"
+                    to="/services/"
                     className="w-full block text-center text-xs text-on-ink-muted hover:text-paper py-2 transition-colors"
                   >
                     Review our 3 defined scopes first

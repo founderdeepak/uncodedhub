@@ -41,10 +41,10 @@ export default function BlogView() {
                 We have not published anything at this address. The URL may have moved or been retired.
               </p>
               <div className="mt-10 pt-8 border-t border-rule flex flex-wrap gap-4">
-                <Link to="/blog" className="btn-primary !py-3 !px-6 rounded-full text-xs">
+                <Link to="/blog/" className="btn-primary !py-3 !px-6 rounded-full text-xs">
                   ← Back to All Blueprints
                 </Link>
-                <Link to="/contact" className="px-6 py-3 rounded-full border border-rule-strong text-xs font-mono hover:border-ink transition-colors">
+                <Link to="/contact/" className="px-6 py-3 rounded-full border border-rule-strong text-xs font-mono hover:border-ink transition-colors">
                   Contact Studio →
                 </Link>
               </div>
@@ -201,12 +201,12 @@ export default function BlogView() {
             {/* ── Breadcrumb & Top Pill ── */}
             <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
               <nav aria-label="Breadcrumb" className="inline-flex items-center gap-2 text-xs font-mono">
-                <Link to="/blog" className="text-signal hover:underline">
+                <Link to="/blog/" className="text-signal hover:underline">
                   ← Blogs
                 </Link>
                 <span className="text-rule-strong">/</span>
                 <Link
-                  to={`/blog/niche/${post.niche}`}
+                  to={`/blog/niche/${post.niche}/`}
                   className="text-muted hover:text-ink transition-colors"
                 >
                   {NICHES[post.niche]}
@@ -420,14 +420,14 @@ export default function BlogView() {
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Link
-                  to="/contact"
+                  to="/contact/"
                   className="bg-signal hover:bg-signal-bright text-paper font-sans font-medium text-xs py-3.5 px-7 rounded-full transition-colors flex items-center gap-2 cursor-pointer shadow-md"
                 >
                   <span>Book a 20-minute discovery call</span>
                   <span>→</span>
                 </Link>
                 <Link
-                  to={`/blog/niche/${post.niche}`}
+                  to={`/blog/niche/${post.niche}/`}
                   className="text-xs font-mono text-on-ink-muted hover:text-paper transition-colors"
                 >
                   Browse all {NICHES[post.niche]} guides →
@@ -466,7 +466,7 @@ export default function BlogView() {
                     Connect on LinkedIn ↗
                   </a>
                   <Link
-                    to="/about"
+                    to="/about/"
                     className="text-muted hover:text-ink transition-colors"
                   >
                     About Deepak & Geetha →
@@ -493,7 +493,7 @@ export default function BlogView() {
                   </h2>
                 </div>
                 <Link
-                  to={`/blog/niche/${post.niche}`}
+                  to={`/blog/niche/${post.niche}/`}
                   className="text-xs font-medium text-signal hover:underline inline-flex items-center gap-1.5"
                 >
                   View all {nicheTotalCount} {NICHES[post.niche]} guides →
@@ -504,7 +504,7 @@ export default function BlogView() {
                 {relatedPosts.map((related, i) => (
                   <Reveal key={related.slug} delay={i * 40} as="article">
                     <Link
-                      to={`/blog/${related.slug}`}
+                      to={`/blog/${related.slug}/`}
                       className="group block bg-paper-raised border border-rule-strong rounded-[24px] p-6 shadow-xs hover:border-ink/40 hover:shadow-md transition-all duration-300 h-full flex flex-col justify-between"
                     >
                       <div>
@@ -606,14 +606,14 @@ export default function BlogView() {
 
                 <div className="space-y-3">
                   <Link
-                    to="/contact"
+                    to="/contact/"
                     className="w-full bg-signal hover:bg-signal-bright text-paper font-sans font-medium text-sm py-3.5 px-6 rounded-full transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-lg"
                   >
                     <span>Schedule 20-Minute Call</span>
                     <span>→</span>
                   </Link>
                   <Link
-                    to="/portfolio"
+                    to="/portfolio/"
                     className="w-full block text-center text-xs text-on-ink-muted hover:text-paper py-2 transition-colors"
                   >
                     Or test our 6 live client demos first →

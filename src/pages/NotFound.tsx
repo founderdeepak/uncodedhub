@@ -19,21 +19,21 @@ const DESTINATIONS = [
     tag: 'Live specimens',
     title: 'Portfolio & Demos',
     desc: 'Test 6 fully interactive specimen websites with live theme switchers, audit scores, and booking funnels.',
-    to: '/portfolio',
+    to: '/portfolio/',
     cta: 'Test 6 Live Demos →',
   },
   {
     tag: 'Turnkey scopes',
     title: 'Services & Delivery',
     desc: 'Three fixed-scope packages: single page, business website, and online store. On time or 50% discount.',
-    to: '/services',
+    to: '/services/',
     cta: 'Review 3 Scopes →',
   },
   {
     tag: 'Direct access',
     title: 'Contact Deepak & Geetha',
     desc: 'Book a free twenty-minute discovery call directly with the two founders who will build your website.',
-    to: '/contact',
+    to: '/contact/',
     cta: 'Book Discovery Call →',
   },
 ];
@@ -169,14 +169,14 @@ export default function NotFound() {
 
                 <div className="space-y-3">
                   <Link
-                    to="/contact"
+                    to="/contact/"
                     className="w-full bg-signal hover:bg-signal-bright text-paper font-sans font-medium text-sm py-3.5 px-6 rounded-full transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-lg"
                   >
                     <span>Schedule 20-Minute Call</span>
                     <span>→</span>
                   </Link>
                   <Link
-                    to="/portfolio"
+                    to="/portfolio/"
                     className="w-full block text-center text-xs text-on-ink-muted hover:text-paper py-2 transition-colors"
                   >
                     Or test our 6 live client demos first →

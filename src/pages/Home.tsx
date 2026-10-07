@@ -268,7 +268,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                 {/* 6 Demo Site as Link Button at Bottom */}
                 <div className="pt-2">
                   <Link
-                    to="/portfolio"
+                    to="/portfolio/"
                     className="group inline-flex items-center gap-2 text-xs sm:text-sm font-mono text-ink-soft hover:text-signal transition-colors py-1.5 px-3.5 rounded-full hover:bg-paper-raised border border-rule/60 hover:border-signal/40 shadow-2xs"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
@@ -501,7 +501,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                   <span>→</span>
                 </button>
                 <Link
-                  to="/portfolio"
+                  to="/portfolio/"
                   className="text-on-ink-muted hover:text-paper text-xs md:text-sm font-medium px-4 py-2 transition-colors"
                 >
                   Inspect our 6 live demos first
@@ -662,48 +662,48 @@ export default function Home({ onBook }: { onBook: () => void }) {
           {/* 3 High-Impact Solid Vermilion/Crimson Cards */}
           <div className="grid md:grid-cols-3 gap-6">
             <Reveal delay={60}>
-              <div className="bg-signal text-paper p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
+              <div className="bg-signal text-white p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
                 <div>
-                  <span className="text-xs font-semibold text-paper/85 block mb-2">
+                  <span className="text-xs font-bold text-white uppercase tracking-wider block mb-2">
                     Turnaround timeline
                   </span>
-                  <div className="font-display text-6xl sm:text-7xl font-medium tracking-tight text-paper">
+                  <div className="font-display text-6xl sm:text-7xl font-medium tracking-tight text-white">
                     7 days
                   </div>
                 </div>
-                <p className="text-paper text-sm mt-6 leading-relaxed font-sans">
+                <p className="text-white text-sm mt-6 leading-relaxed font-sans">
                   From discovery call to live production deployment. No open-ended months of waiting.
                 </p>
               </div>
             </Reveal>
 
             <Reveal delay={120}>
-              <div className="bg-signal text-paper p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
+              <div className="bg-signal text-white p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
                 <div>
-                  <span className="text-xs font-semibold text-paper/85 block mb-2">
+                  <span className="text-xs font-bold text-white uppercase tracking-wider block mb-2">
                     On-time guarantee
                   </span>
-                  <div className="font-display text-6xl sm:text-7xl font-medium tracking-tight text-paper">
+                  <div className="font-display text-6xl sm:text-7xl font-medium tracking-tight text-white">
                     100%
                   </div>
                 </div>
-                <p className="text-paper text-sm mt-6 leading-relaxed font-sans">
+                <p className="text-white text-sm mt-6 leading-relaxed font-sans">
                   Contractual delivery rate under our published guarantee. On time, or the build is free.
                 </p>
               </div>
             </Reveal>
 
             <Reveal delay={180}>
-              <div className="bg-signal text-paper p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
+              <div className="bg-signal text-white p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
                 <div>
-                  <span className="text-xs font-semibold text-paper/85 block mb-2">
+                  <span className="text-xs font-bold text-white uppercase tracking-wider block mb-2">
                     Google PageSpeed
                   </span>
-                  <div className="font-display text-6xl sm:text-7xl font-medium tracking-tight text-paper">
+                  <div className="font-display text-6xl sm:text-7xl font-medium tracking-tight text-white">
                     99+
                   </div>
                 </div>
-                <p className="text-paper text-sm mt-6 leading-relaxed font-sans">
+                <p className="text-white text-sm mt-6 leading-relaxed font-sans">
                   Verified mobile performance. Loads in under 1 second on real 4G devices worldwide.
                 </p>
               </div>
@@ -874,7 +874,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                         <span>Test this demo live</span>
                         <span>↗</span>
                       </a>
-                      <Link to="/portfolio" className="text-xs text-muted hover:text-ink font-medium">
+                      <Link to="/portfolio/" className="text-xs text-muted hover:text-ink font-medium">
                         View all 6 demos →
                       </Link>
                     </div>
@@ -1084,7 +1084,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                   </div>
                   <span className="text-[11px] text-muted block mt-0.5">Tested on live 4G mobile emulation</span>
                 </div>
-                <Link to="/portfolio" className="btn-primary text-xs py-2 px-4 shrink-0">
+                <Link to="/portfolio/" className="btn-primary text-xs py-2 px-4 shrink-0">
                   Inspect Demos →
                 </Link>
               </div>
@@ -1177,7 +1177,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                 quality constraint, not an artificial marketing scarcity tactic.
               </p>
               <div className="mt-8">
-                <Link to="/about" className="link-underline text-ink text-sm font-medium">
+                <Link to="/about/" className="link-underline text-ink text-sm font-medium">
                   More about how we work →
                 </Link>
               </div>
@@ -1330,7 +1330,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                     <span>→</span>
                   </button>
                   <Link
-                    to="/contact"
+                    to="/contact/"
                     className="w-full block text-center text-xs text-on-ink-muted hover:text-paper py-2 transition-colors"
                   >
                     Or send us a written brief instead

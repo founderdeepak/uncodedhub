@@ -447,7 +447,7 @@ export default function About({ onBook }: { onBook: () => void }) {
                     <span>→</span>
                   </button>
                   <Link
-                    to="/portfolio"
+                    to="/portfolio/"
                     className="w-full block text-center text-xs text-on-ink-muted hover:text-paper py-2 transition-colors"
                   >
                     Or explore our 6 interactive demos

@@ -191,14 +191,14 @@ export default function Terms() {
 
                 <div className="space-y-3">
                   <Link
-                    to="/contact"
+                    to="/contact/"
                     className="w-full bg-signal hover:bg-signal-bright text-paper font-sans font-medium text-sm py-3.5 px-6 rounded-full transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-lg"
                   >
                     <span>Schedule 20-Minute Call</span>
                     <span>→</span>
                   </Link>
                   <Link
-                    to="/privacy"
+                    to="/privacy/"
                     className="w-full block text-center text-xs text-on-ink-muted hover:text-paper py-2 transition-colors"
                   >
                     Review our Privacy Policy →

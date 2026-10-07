@@ -28,7 +28,6 @@ function hashCode(str) {
   return Math.abs(hash);
 }
 
-// Separate pillars from spokes so foundational pillars come out first
 const PILLAR_SLUGS = [
   'what-an-interior-designers-website-should-include',
   'what-a-real-estate-agents-website-should-include',
@@ -58,7 +57,6 @@ const daysUsed = new Map();
 let updatedCount = 0;
 
 queue.forEach((file, index) => {
-  // Distribute over the 207 days
   const dayIndex = Math.min(totalDays - 1, Math.floor((index / queue.length) * totalDays));
   const postDate = new Date(startDate.getTime() + dayIndex * dayMs);
   const yyyy = postDate.getFullYear();
@@ -76,24 +74,28 @@ queue.forEach((file, index) => {
   usedSlots.push(chosenSlot);
 
   const isoTimestamp = `${dateStr}T${chosenSlot}`;
+  
+  // Strict alternation: Blog 1: Deepak, Blog 2: Geetha, Blog 3: Deepak...
+  const assignedAuthor = index % 2 === 0 ? 'deepak' : 'geetha';
 
   // Update file frontmatter
   const filePath = path.join(blogDir, file);
   let content = fs.readFileSync(filePath, 'utf8');
 
-  // Replace date: "..." or date: YYYY-MM-DD
+  // Replace date
   if (/date:\s*["']?[^"'\r\n]+["']?/.test(content)) {
     content = content.replace(/date:\s*["']?[^"'\r\n]+["']?/, `date: "${isoTimestamp}"`);
+  }
+
+  // Replace author
+  if (/author:\s*["']?[^"'\r\n]+["']?/.test(content)) {
+    content = content.replace(/author:\s*["']?[^"'\r\n]+["']?/, `author: "${assignedAuthor}"`);
   } else {
-    // If not found, add after title:
-    content = content.replace(/(title:\s*["'][^"']+["'])/, `$1\ndate: "${isoTimestamp}"`);
+    content = content.replace(/(niche:\s*["']?[^"'\r\n]+["']?)/, `$1\nauthor: "${assignedAuthor}"`);
   }
 
   fs.writeFileSync(filePath, content, 'utf8');
   updatedCount++;
 });
 
-console.log(`Successfully updated ${updatedCount} blog posts with realistic dates and randomized publishing times!`);
-console.log(`Earliest post: ${startDate.toISOString().slice(0, 10)}`);
-console.log(`Latest post: ${endDate.toISOString().slice(0, 10)}`);
-console.log(`Randomized time slots used: 8:00 AM, 10:00 AM, 11:00 AM, 2:00 PM, 4:00 PM, 7:00 PM, 9:00 PM`);
+console.log(`Rebalanced ${updatedCount} posts: dates across March 13 - Oct 5, times randomized, strictly alternating Deepak/Geetha!`);

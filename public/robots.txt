@@ -5,13 +5,12 @@
 
 # Search engine & general crawler access
 User-agent: *
-Content-Signal: ai-train=no, search=yes, ai-input=yes
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
 # Dedicated AI Answer Engines & Grounding Bots (Explicitly Allowed)
 User-agent: GPTBot
-Content-Signal: ai-train=no, search=yes, ai-input=yes
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
 User-agent: OAI-SearchBot

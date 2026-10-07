@@ -24,12 +24,12 @@ import { EnquiryDock } from './components/EnquiryDock';
    NAV once a real post exists — a permanently empty page linked from
    every other page is a liability, not an asset. */
 const NAV = [
-  { label: 'Work', path: '/portfolio' },
-  { label: 'Services', path: '/services' },
-  { label: 'Studio', path: '/about' },
-  { label: 'FAQ', path: '/faq' },
-  ...(hasBlogPosts ? [{ label: 'Blogs', path: '/blog' }] : []),
-  { label: 'Contact', path: '/contact' },
+  { label: 'Work', path: '/portfolio/' },
+  { label: 'Services', path: '/services/' },
+  { label: 'Studio', path: '/about/' },
+  { label: 'FAQ', path: '/faq/' },
+  ...(hasBlogPosts ? [{ label: 'Blogs', path: '/blog/' }] : []),
+  { label: 'Contact', path: '/contact/' },
 ];
 
 export default function App() {
@@ -62,7 +62,7 @@ export default function App() {
   }, [menuOpen]);
 
   const goToBooking = useCallback(() => {
-    navigate('/contact');
+    navigate('/contact/');
     window.requestAnimationFrame(() => {
       document.getElementById('book')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });

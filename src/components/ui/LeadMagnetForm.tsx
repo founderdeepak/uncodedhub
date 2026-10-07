@@ -111,7 +111,7 @@ export function LeadMagnetForm({ embedded }: LeadMagnetFormProps) {
             <p className="text-muted text-xs mt-0.5">Use our interactive web scorecard with instant calculations &amp; PDF export.</p>
           </div>
           <Link
-            to="/audit-checklist"
+            to="/audit-checklist/"
             className="btn-primary shrink-0 text-xs py-2.5 px-4 shadow-sm w-full sm:w-auto text-center"
           >
             Open Live Scorecard →
@@ -194,7 +194,7 @@ export function LeadMagnetForm({ embedded }: LeadMagnetFormProps) {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mt-4 text-[0.8125rem] text-muted leading-relaxed">
         <span>
           {'Prefer instant access? '}
-          <Link to="/audit-checklist" className="link-quiet text-ink font-semibold hover:text-signal transition-colors">
+          <Link to="/audit-checklist/" className="link-quiet text-ink font-semibold hover:text-signal transition-colors">
             Open Interactive Checklist →
           </Link>
         </span>
