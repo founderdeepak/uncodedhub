@@ -106,7 +106,7 @@ export default function Blogs() {
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-end">
               <div className="lg:col-span-8">
                 <p className="label text-signal mb-3">
-                  {isNicheView ? `${NICHES[activeNiche]} · Knowledge hub` : 'Research & blueprints · 140+ guides'}
+                  {isNicheView ? `${NICHES[activeNiche]} · Knowledge hub` : 'Research & blueprints · 320+ guides'}
                 </p>
                 <h1 className="font-display text-4xl sm:text-6xl md:text-7xl text-ink font-normal tracking-tight leading-[1.05]">
                   {isNicheView
@@ -138,7 +138,7 @@ export default function Blogs() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search 140+ guides by keyword, procedure, or industry..."
+                  placeholder="Search 320+ guides by keyword, procedure, or industry..."
                   className="w-full bg-paper-raised border border-rule-strong px-5 py-3.5 pl-11 text-sm text-ink placeholder:text-muted rounded-full focus:outline-none focus:border-ink transition-colors shadow-xs"
                 />
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted text-sm select-none">

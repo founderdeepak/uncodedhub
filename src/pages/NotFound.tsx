@@ -48,7 +48,7 @@ export default function NotFound() {
           name="description"
           content="The page you requested could not be located. Explore our 7-day website sprint services, portfolio demos, or book a discovery call."
         />
-        <link rel="canonical" href="https://uncodedhub.com/404" />
+        <link rel="canonical" href="https://uncodedhub.com/" />
       </Helmet>
 
       {/* ── Editorial Hero ──────────────────────────────────────── */}

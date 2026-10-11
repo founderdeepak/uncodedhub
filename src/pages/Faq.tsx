@@ -386,7 +386,7 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
           property="og:description"
           content="28 detailed answers on our 7-day sprint model, 50% late delivery guarantee, tech stack, pricing, and code ownership."
         />
-        <meta property="og:url" content="https://uncodedhub.com/faq" />
+        <meta property="og:url" content="https://uncodedhub.com/faq/" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 

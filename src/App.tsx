@@ -48,6 +48,24 @@ export default function App() {
 
   useEffect(() => setMenuOpen(false), [location.pathname]);
 
+  /* Canonical URL normalization: enforce trailing slash on internal routes */
+  useEffect(() => {
+    if (
+      location.pathname !== '/' &&
+      !location.pathname.endsWith('/') &&
+      !location.pathname.includes('.')
+    ) {
+      navigate(
+        {
+          pathname: `${location.pathname}/`,
+          search: location.search,
+          hash: location.hash,
+        },
+        { replace: true }
+      );
+    }
+  }, [location.pathname, location.search, location.hash, navigate]);
+
   /* Lock the page behind the mobile overlay, and let Escape close it. */
   useEffect(() => {
     if (!menuOpen) return;
