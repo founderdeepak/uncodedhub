@@ -2,6 +2,16 @@ import { chromium } from 'playwright';
 import fs from 'fs';
 import path from 'path';
 
+// Read image assets as base64 for reliable, zero-latency rendering in Playwright PDF
+const logoBase64 = fs.readFileSync('public/logo-medium.webp').toString('base64');
+const logoDataUri = `data:image/webp;base64,${logoBase64}`;
+
+const deepakBase64 = fs.readFileSync('public/deepak.webp').toString('base64');
+const deepakDataUri = `data:image/webp;base64,${deepakBase64}`;
+
+const geethaBase64 = fs.readFileSync('public/geetha.webp').toString('base64');
+const geethaDataUri = `data:image/webp;base64,${geethaBase64}`;
+
 const htmlContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +43,7 @@ const htmlContent = `<!DOCTYPE html>
     .page {
       width: 210mm;
       height: 297mm;
-      padding: 16mm 18mm 14mm;
+      padding: 15mm 18mm 13mm;
       position: relative;
       page-break-after: always;
       display: flex;
@@ -59,7 +69,7 @@ const htmlContent = `<!DOCTYPE html>
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 10px;
+      padding-bottom: 9px;
       border-bottom: 1.5px solid #14130F;
       position: relative;
       z-index: 2;
@@ -71,18 +81,11 @@ const htmlContent = `<!DOCTYPE html>
       gap: 10px;
     }
 
-    .brand-logo-mark {
+    .brand-logo-img {
       width: 32px;
       height: 32px;
-      border-radius: 6px;
-      background: #14130F;
-      color: #FAF8F5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 15px;
-      letter-spacing: -0.02em;
+      object-fit: contain;
+      display: block;
     }
 
     .brand-title {
@@ -115,7 +118,7 @@ const htmlContent = `<!DOCTYPE html>
     }
 
     .hero-title-box {
-      margin: 12px 0 10px;
+      margin: 11px 0 9px;
       position: relative;
       z-index: 2;
     }
@@ -131,13 +134,13 @@ const htmlContent = `<!DOCTYPE html>
       background: rgba(199, 7, 75, 0.08);
       padding: 3px 8px;
       border-radius: 4px;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       border: 1px solid rgba(199, 7, 75, 0.2);
     }
 
     h1 {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 30px;
+      font-size: 29px;
       line-height: 1.08;
       font-weight: 700;
       color: #14130F;
@@ -157,7 +160,7 @@ const htmlContent = `<!DOCTYPE html>
       z-index: 2;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 11px;
     }
 
     .section-title {
@@ -528,15 +531,187 @@ const htmlContent = `<!DOCTYPE html>
       text-transform: uppercase;
     }
 
-    .founders-quote {
+    /* Page 3 Styles: About, Founders & Sacred Quote */
+    .page3-founders-grid {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 18px;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid #E2DCD2;
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 10px;
+    }
+    .page3-photos-wrap {
+      display: flex;
+      gap: 10px;
+    }
+    .page3-photo-card {
+      width: 82px;
+      text-align: center;
+    }
+    .page3-photo-card img {
+      width: 82px;
+      height: 96px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid #C4BDB0;
+      filter: grayscale(12%);
+      display: block;
+    }
+    .page3-photo-name {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #14130F;
+      margin-top: 4px;
+      display: block;
+    }
+    .page3-photo-role {
+      font-size: 9px;
+      color: #555046;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: block;
+    }
+
+    .page3-about-text h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 21px;
+      font-weight: 700;
+      color: #14130F;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .page3-about-text p {
+      font-size: 11.5px;
+      color: #38352E;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .studio-promises-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding-top: 8px;
+      border-top: 1px solid #EDEAE4;
+    }
+    .promise-item {
+      font-size: 10px;
+      color: #555046;
+      line-height: 1.35;
+    }
+    .promise-item strong {
+      color: #C7074B;
+      display: block;
+      font-size: 10.5px;
+      margin-bottom: 1px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Sacred Verse Presentation Box (Exact Website Aesthetic) */
+    .sacred-quote-box {
+      background: #FBF8EE;
+      border: 1.5px solid rgba(180, 140, 30, 0.35);
+      border-radius: 12px;
+      padding: 18px 24px;
+      text-align: center;
+      position: relative;
+      margin: 8px 0;
+      box-shadow: 0 4px 16px rgba(180, 140, 30, 0.06);
+    }
+    .sacred-tamil-verse {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.6;
+      max-width: 580px;
+      margin: 0 auto 10px;
+      background: linear-gradient(135deg, #7a5a10 0%, #b8902a 35%, #9a7220 65%, #5c4010 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-dot-rule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 10px 0;
+    }
+    .gold-line {
+      height: 1px;
+      width: 50px;
+      background: linear-gradient(90deg, transparent, rgba(180, 140, 30, 0.6));
+    }
+    .gold-line.reverse {
+      background: linear-gradient(90deg, rgba(180, 140, 30, 0.6), transparent);
+    }
+    .gold-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(160, 110, 20, 0.85);
+    }
+    .sacred-english-quote {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 15.5px;
       font-style: italic;
-      color: #FAF8F5;
+      line-height: 1.55;
+      max-width: 540px;
+      margin: 0 auto 8px;
+      color: rgba(80, 55, 10, 0.9);
+    }
+    .sacred-gratitude {
       font-size: 11px;
-      line-height: 1.45;
-      border-left: 2.5px solid #C7074B;
-      padding-left: 10px;
-      margin: 4px 0 0;
-      opacity: 0.92;
+      color: rgba(120, 90, 20, 0.75);
+      line-height: 1.4;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Page 3 Final Closing CTA Box */
+    .page3-closing-cta {
+      background: #14130F;
+      color: #FAF8F5;
+      border-radius: 12px;
+      padding: 16px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      border: 1px solid #2B2720;
+      margin-top: 6px;
+    }
+    .closing-cta-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+    .closing-cta-sub {
+      font-size: 11.5px;
+      color: #D6D0C5;
+      line-height: 1.4;
+    }
+    .closing-cta-button {
+      background: #C7074B;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 11.5px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 14px rgba(199, 7, 75, 0.35);
     }
   </style>
 </head>
@@ -547,7 +722,7 @@ const htmlContent = `<!DOCTYPE html>
     <div>
       <div class="header">
         <div class="brand-wrap">
-          <div class="brand-logo-mark">UH</div>
+          <img src="${logoDataUri}" alt="Uncoded Hub" class="brand-logo-img">
           <div>
             <div class="brand-title">Uncoded Hub</div>
             <div class="brand-sub">Executive Strategy Briefing</div>
@@ -685,7 +860,7 @@ const htmlContent = `<!DOCTYPE html>
 
     <div class="footer">
       <span>Uncoded Hub · Executive Strategy Briefing</span>
-      <span>Page 1 of 2</span>
+      <span>Page 1 of 3</span>
       <span>WhatsApp: +91 8660819023</span>
     </div>
   </div>
@@ -696,7 +871,7 @@ const htmlContent = `<!DOCTYPE html>
     <div>
       <div class="header">
         <div class="brand-wrap">
-          <div class="brand-logo-mark">UH</div>
+          <img src="${logoDataUri}" alt="Uncoded Hub" class="brand-logo-img">
           <div>
             <div class="brand-title">Uncoded Hub</div>
             <div class="brand-sub">Market Leadership Blueprint</div>
@@ -827,19 +1002,121 @@ const htmlContent = `<!DOCTYPE html>
                 Domain, hosting, code, and content in your name from day one with zero ongoing platform lock-in fees.
               </div>
             </div>
-
-            <div class="founders-quote">
-              "We would rather have a lean invoice and a client who sends three referrals than an overblown budget that leaves a sour taste. We treat your business reputation with the same obsessive precision as our own."
-            </div>
           </div>
         </div>
 
         <!-- Action Box -->
         <div class="cta-strip">
           <div class="cta-text">
-            Ready to claim the live prototype handcrafted for your business?
+            Continue to Page 3 for the Studio Story, Founders &amp; Sacred Verse →
           </div>
-          <div class="cta-btn">WhatsApp +91 8660819023</div>
+          <div class="cta-btn">Page 3 / 3</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>Uncoded Hub · Market Leadership Blueprint</span>
+      <span>Page 2 of 3</span>
+      <span>https://uncodedhub.com</span>
+    </div>
+  </div>
+
+
+  <!-- ================= PAGE 3 ================= -->
+  <div class="page">
+    <div>
+      <div class="header">
+        <div class="brand-wrap">
+          <img src="${logoDataUri}" alt="Uncoded Hub" class="brand-logo-img">
+          <div>
+            <div class="brand-title">Uncoded Hub</div>
+            <div class="brand-sub">The Studio · Deepak &amp; Geetha</div>
+          </div>
+        </div>
+        <div class="header-meta">
+          Two-Person Studio · Bengaluru<br>
+          100% Asset Ownership · Senior Delivery Only
+        </div>
+      </div>
+
+      <div class="hero-title-box">
+        <span class="kicker">About Uncoded Hub</span>
+        <h1 style="font-size: 28px;">Two People, One Sprint at a Time, in Bengaluru.</h1>
+        <p class="hero-sub">Direct founder engineering and design. No middlemen, no account managers.</p>
+      </div>
+
+      <div class="content-body">
+        
+        <!-- Founders Presentation Card -->
+        <div class="page3-founders-grid">
+          <div class="page3-photos-wrap">
+            <div class="page3-photo-card">
+              <img src="${deepakDataUri}" alt="Deepak, Engineering Co-Founder">
+              <span class="page3-photo-name">Deepak</span>
+              <span class="page3-photo-role">Engineering</span>
+            </div>
+            <div class="page3-photo-card">
+              <img src="${geethaDataUri}" alt="Geetha, Design &amp; Strategy Co-Founder">
+              <span class="page3-photo-name">Geetha</span>
+              <span class="page3-photo-role">Design &amp; Copy</span>
+            </div>
+          </div>
+          <div class="page3-about-text">
+            <h3>Direct Accountability From Day One.</h3>
+            <p>
+              Uncoded Hub is a brother and sister who got tired of watching competent, high-quality businesses lose work to worse competitors simply because the competitor had a faster, clearer website.
+            </p>
+            <div class="studio-promises-strip">
+              <div class="promise-item">
+                <strong>Senior Delivery Only</strong>
+                Both founders write every line of code and craft every visual. No junior delegation.
+              </div>
+              <div class="promise-item">
+                <strong>7-Day Turnaround</strong>
+                Complete launch in 7 working days flat. We run one focused sprint at a time.
+              </div>
+              <div class="promise-item">
+                <strong>Zero Platform Lock-in</strong>
+                100% client code, domain, and hosting ownership in your name from day one.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Sacred Verse Box (Exact Website Aesthetic) -->
+        <div class="sacred-quote-box">
+          <div class="sacred-tamil-verse">
+            என் செயலாவது யாதொன்றும் இல்லை — இனித் தெய்வமே உன்செயலே என்று உணரப் பெற்றேன்
+          </div>
+          
+          <div class="gold-dot-rule">
+            <div class="gold-line"></div>
+            <div class="gold-dot"></div>
+            <div class="gold-line reverse"></div>
+          </div>
+
+          <div class="sacred-english-quote">
+            “I have realised that nothing I do is truly mine. From now on, O God — everything that happens is only Your doing.”
+          </div>
+
+          <div class="sacred-gratitude">
+            We are grateful for the work, and we strive to be worthy of it on every project.
+          </div>
+        </div>
+
+        <!-- Closing High-Impact CTA Box -->
+        <div class="page3-closing-cta">
+          <div>
+            <div class="closing-cta-title">Ready to Claim the Website Built for Your Business?</div>
+            <div class="closing-cta-sub">
+              Your live prototype is already engineered. Let's customize it with your branding, services, and intake flow in a 7-day sprint.
+            </div>
+          </div>
+          <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha,%20I%20reviewed%20your%203-page%20executive%20guide%20and%20want%20to%20discuss%20claiming%20our%20website." class="closing-cta-button">
+            WhatsApp Deepak &amp; Geetha →
+          </a>
         </div>
 
       </div>
@@ -847,8 +1124,8 @@ const htmlContent = `<!DOCTYPE html>
 
     <div class="footer">
       <span>© 2026 Uncoded Hub · Bengaluru, India</span>
-      <span>Page 2 of 2</span>
-      <span>https://uncodedhub.com</span>
+      <span>Page 3 of 3</span>
+      <span>Direct WhatsApp: +91 8660819023</span>
     </div>
   </div>
 
@@ -881,7 +1158,7 @@ async function generatePDF() {
   fs.writeFileSync('public/downloads/the-high-trust-advantage.pdf', pdfBuffer);
   fs.writeFileSync('Lead Magnet/The High Trust Advantage.pdf', pdfBuffer);
 
-  console.log('Successfully generated 2-page PDF lead magnet at:');
+  console.log('Successfully generated 3-page PDF lead magnet at:');
   console.log(' - public/downloads/the-high-trust-advantage.pdf');
   console.log(' - Lead Magnet/The High Trust Advantage.pdf');
 
