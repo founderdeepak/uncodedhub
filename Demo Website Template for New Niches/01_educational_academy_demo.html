@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Academy | STEM, Olympiad & Board Excellence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #1d4ed8;
+      --accent: #60a5fa;
+      --bg-dark: #0a0f1d;
+      --bg-card: #111827;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-top: 48px;
+    }
+    h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; line-height: 1.2; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Demo Header */
+    .demo-bar {
+      position: fixed; top: 0; left: 0; right: 0; height: 48px;
+      background: #090d16; border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 20px; font-size: 13px; z-index: 9999;
+    }
+    .demo-badge {
+      background: #2563eb; color: #fff; padding: 3px 10px; border-radius: 99px;
+      font-weight: 700; font-size: 11px; text-transform: uppercase;
+    }
+    .demo-cta {
+      background: #10b981; color: #fff; padding: 6px 14px; border-radius: 6px;
+      font-weight: 600; font-size: 12px; transition: 0.2s;
+    }
+    .demo-cta:hover { background: #059669; }
+
+    /* Hero */
+    .hero { padding: 80px 0 50px; text-align: center; }
+    .hero-tag {
+      display: inline-block; padding: 6px 16px; border-radius: 99px;
+      background: rgba(255, 255, 255, 0.06); border: 1px solid var(--border);
+      font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 20px;
+    }
+    .hero h1 { font-size: clamp(34px, 5.5vw, 62px); margin-bottom: 18px; font-weight: 800; }
+    .hero p { font-size: clamp(16px, 1.8vw, 19px); color: var(--text-muted); max-width: 700px; margin: 0 auto 32px; }
+    .hero-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 14px 28px; border-radius: var(--radius); font-weight: 600; font-size: 15px;
+      cursor: pointer; border: none; transition: 0.2s ease;
+    }
+    .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .btn-primary:hover { filter: brightness(1.12); transform: translateY(-2px); }
+    .btn-secondary { background: rgba(255, 255, 255, 0.08); color: var(--text-main); border: 1px solid var(--border); }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.14); }
+
+    /* Stats */
+    .stat-banner {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px; padding: 36px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      margin: 50px 0; text-align: center;
+    }
+    .stat-val { font-size: 36px; font-weight: 800; color: var(--accent); }
+    .stat-lbl { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+
+    /* Cards */
+    .section-head { text-align: center; margin-bottom: 40px; }
+    .section-head h2 { font-size: clamp(26px, 3.5vw, 38px); margin-bottom: 10px; }
+    .section-head p { color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 60px; }
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; transition: 0.3s; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(255, 255, 255, 0.25); }
+    .card h3 { font-size: 20px; margin-bottom: 10px; }
+    .card p { color: var(--text-muted); font-size: 14px; margin-bottom: 16px; }
+
+    /* Interactive Section */
+    .interactive-box {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 36px; margin: 50px 0; box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+    .form-input, .form-select {
+      width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.3); color: var(--text-main); font-size: 14px; outline: none;
+    }
+    .form-input:focus, .form-select:focus { border-color: var(--primary); }
+
+    /* Reviews */
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 60px; }
+    .review-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+    .review-stars { color: #f59e0b; margin-bottom: 8px; }
+    .reviewer { display: flex; align-items: center; gap: 12px; margin-top: 14px; }
+    .reviewer-avatar {
+      width: 40px; height: 40px; border-radius: 50%; background: var(--primary);
+      display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff;
+    }
+
+    /* Floating WhatsApp */
+    .floating-wa {
+      position: fixed; bottom: 20px; right: 20px; background: #25d366; color: #fff;
+      padding: 12px 20px; border-radius: 99px; font-weight: 700; font-size: 14px;
+      display: flex; align-items: center; gap: 8px; box-shadow: 0 10px 25px rgba(37,211,102,0.4);
+      z-index: 999; transition: 0.2s;
+    }
+    .floating-wa:hover { transform: scale(1.05); }
+
+    footer {
+      padding: 36px 0; border-top: 1px solid var(--border); text-align: center;
+      font-size: 13px; color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <!-- Demo Bar -->
+  <div class="demo-bar">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span class="demo-badge">Education & Coaching Niche Demo</span>
+      <span style="color:#94a3b8; font-weight:500;">Live Client Prototype by Uncoded Hub • ₹22,500 Flat Sprint</span>
+    </div>
+    <a href="https://wa.me/919999999999?text=Hi%20Uncoded%20Hub,%20I%20want%20this%20exact%20website%20for%20my%20business" class="demo-cta">Launch This for My Business (7 Days)</a>
+  </div>
+
+  <div class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-tag">🏆 Top 1% Ranked Coaching & Academic Institute</div>
+      <h1>Unlock Top Ranks with Proven Mentorship & Small Batches</h1>
+      <p>Personalized academic coaching for Classes 8–12, IIT-JEE, NEET, and Olympiads. Smart classrooms, chapter-wise test analytics, and doubt-solving sprints.</p>
+      <div class="hero-btns">
+        <button class="btn btn-primary" onclick="scrollToInteractive()">📥 Download 2026-27 Syllabus & Fee Structure</button>
+        <button class="btn btn-secondary" onclick="openWhatsApp()">Book Free Diagnostic Test</button>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stat-banner">
+      <div class="stat-item"><div class="stat-val">98.4%</div><div class="stat-lbl">Board Pass Rate</div></div><div class="stat-item"><div class="stat-val">640+</div><div class="stat-lbl">Competitive Selections</div></div><div class="stat-item"><div class="stat-val">1:15</div><div class="stat-lbl">Teacher-Student Ratio</div></div><div class="stat-item"><div class="stat-val">14 Yrs</div><div class="stat-lbl">Academic Legacy</div></div>
+    </div>
+
+    <!-- Cards Section -->
+    <section>
+      <div class="section-head">
+        <h2>Why Ambitious Parents Choose Apex</h2>
+        <p>No overcrowded mega-batches. Complete transparency and real-time parent progress apps.</p>
+      </div>
+      <div class="card-grid">
+        
+    <div class="card">
+      <div style="font-size: 28px; margin-bottom: 14px;">🎯</div>
+      <h3>Small 15-Student Batches</h3>
+      <p>Every student gets dedicated attention and personalized weekly doubt clearing sessions.</p>
+      <div style="font-weight: 700; color: var(--accent); font-size: 15px;">Zero Backbench Syndrome</div>
+    </div>
+    
+    <div class="card">
+      <div style="font-size: 28px; margin-bottom: 14px;">📊</div>
+      <h3>Weekly Computerized Analytics</h3>
+      <p>Parents receive detailed chapter mastery reports, weak area diagnostics, and accuracy speeds.</p>
+      <div style="font-weight: 700; color: var(--accent); font-size: 15px;">Parent Mobile App</div>
+    </div>
+    
+    <div class="card">
+      <div style="font-size: 28px; margin-bottom: 14px;">🧪</div>
+      <h3>Concept-First Teaching</h3>
+      <p>Experiential demonstrations for physics and chemistry that make complex principles stick for life.</p>
+      <div style="font-weight: 700; color: var(--accent); font-size: 15px;">Concept Mastery</div>
+    </div>
+    
+      </div>
+    </section>
+
+    <!-- Interactive Component -->
+    <section id="interactive-section">
+      <div class="interactive-box">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <h2>Smart Syllabus & Fee Calculator</h2>
+          <p style="color: var(--text-muted); font-size: 14px;">Select your child's grade and target exam to receive an instant curriculum breakdown and fee structure.</p>
+        </div>
+        
+    <div style="max-width: 600px; margin: 0 auto;">
+      <div class="form-group">
+        <label class="form-label">Student Current Class / Grade</label>
+        <select class="form-select" id="eduClass" onchange="calcEduFee()">
+          <option value="8">Class 8th Foundation</option>
+          <option value="9">Class 9th High School</option>
+          <option value="10">Class 10th Board Intensive</option>
+          <option value="11">Class 11th Science (JEE / NEET)</option>
+          <option value="12">Class 12th Board & Competitive Ranker</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Target Examination</label>
+        <select class="form-select" id="eduExam" onchange="calcEduFee()">
+          <option value="CBSE">CBSE / ICSE Board Top 5%</option>
+          <option value="JEE">IIT-JEE Main & Advanced</option>
+          <option value="NEET">NEET Medical Foundation</option>
+          <option value="OLY">Maths / Science Olympiad</option>
+        </select>
+      </div>
+      <div id="eduResult" style="background:rgba(255,255,255,0.05); padding:16px; border-radius:8px; text-align:center; margin-bottom:16px; font-weight:700; color:var(--accent);">
+        Recommended Batch: Foundation Morning Batch • Est Fee: ₹36,000 / year
+      </div>
+      <button class="btn btn-primary" style="width:100%;" onclick="alert('Instant PDF Syllabus & Fee Details sent to your WhatsApp!')">Download Full Curriculum PDF</button>
+    </div>
+    
+      </div>
+    </section>
+
+    <!-- Social Proof Reviews -->
+    <section>
+      <div class="section-head">
+        <h2>Google Verified Reviews</h2>
+        <p>Rated 4.9 ★ across 450+ verified local client reviews</p>
+      </div>
+      <div class="reviews-grid">
+        
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p style="font-size: 15px; font-style: italic; margin-bottom: 16px;">"My son improved his physics percentile from 72 to 98.4 under Apex. The small batch size and daily doubt sessions made all the difference."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">D</div>
+        <div>
+          <div style="font-weight: 700; font-size: 14px;">Dr. Rajesh Sharma</div>
+          <div style="font-size: 12px; color: var(--text-muted);">Parent of Class 12 Ranker</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p style="font-size: 15px; font-style: italic; margin-bottom: 16px;">"Best coaching academy in the area. The teachers genuinely care, and the weekly progress reports kept us completely informed."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">P</div>
+        <div>
+          <div style="font-weight: 700; font-size: 14px;">Pooja Singhania</div>
+          <div style="font-size: 12px; color: var(--text-muted);">Parent of Class 10th Student</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p style="font-size: 15px; font-style: italic; margin-bottom: 16px;">"Apex provided the exact rigor and high-order thinking material needed to clear national science Olympiads."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">K</div>
+        <div>
+          <div style="font-weight: 700; font-size: 14px;">Kavita Menon</div>
+          <div style="font-size: 12px; color: var(--text-muted);">Olympiad Gold Medalist Parent</div>
+        </div>
+      </div>
+    </div>
+    
+      </div>
+    </section>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <a href="javascript:void(0)" onclick="openWhatsApp()" class="floating-wa">
+    <span>💬 WhatsApp Inquiries</span>
+  </a>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Apex Academy • Engineered for Sub-Second Performance by <a href="https://uncodedhub.com" style="color:var(--accent); font-weight:600;">Uncoded Hub</a></p>
+    </div>
+  </footer>
+
+  <script>
+    function scrollToInteractive() {
+      document.getElementById('interactive-section').scrollIntoView({ behavior: 'smooth' });
+    }
+    function openWhatsApp() {
+      alert('This interactive demo instantly connects clients directly to your business WhatsApp with pre-filled service inquiries!');
+    }
+    
+    function calcEduFee() {
+      const cls = document.getElementById('eduClass').value;
+      const ex = document.getElementById('eduExam').value;
+      let fee = cls * 4000 + 4000;
+      document.getElementById('eduResult').innerHTML = `Recommended: Class ${cls} (${ex} Batch) • Annual Fee: ₹${fee.toLocaleString()} (Installments Available)`;
+    }
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prana & Stillness | Authentic Yoga Shala & Breathwork Sanctuary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #14b8a6;
+      --secondary: #0d9488;
+      --accent: #5eead4;
+      --bg-dark: #041413;
+      --bg-card: #082725;
+      --text-main: #f0fdfa;
+      --text-muted: #99f6e4;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Cormorant Garamond', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-top: 48px;
+    }
+    h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; line-height: 1.2; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Demo Header */
+    .demo-bar {
+      position: fixed; top: 0; left: 0; right: 0; height: 48px;
+      background: #090d16; border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 20px; font-size: 13px; z-index: 9999;
+    }
+    .demo-badge {
+      background: #2563eb; color: #fff; padding: 3px 10px; border-radius: 99px;
+      font-weight: 700; font-size: 11px; text-transform: uppercase;
+    }
+    .demo-cta {
+      background: #10b981; color: #fff; padding: 6px 14px; border-radius: 6px;
+      font-weight: 600; font-size: 12px; transition: 0.2s;
+    }
+    .demo-cta:hover { background: #059669; }
+
+    /* Hero */
+    .hero { padding: 80px 0 50px; text-align: center; }
+    .hero-tag {
+      display: inline-block; padding: 6px 16px; border-radius: 99px;
+      background: rgba(255, 255, 255, 0.06); border: 1px solid var(--border);
+      font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 20px;
+    }
+    .hero h1 { font-size: clamp(34px, 5.5vw, 62px); margin-bottom: 18px; font-weight: 800; }
+    .hero p { font-size: clamp(16px, 1.8vw, 19px); color: var(--text-muted); max-width: 700px; margin: 0 auto 32px; }
+    .hero-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 14px 28px; border-radius: var(--radius); font-weight: 600; font-size: 15px;
+      cursor: pointer; border: none; transition: 0.2s ease;
+    }
+    .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .btn-primary:hover { filter: brightness(1.12); transform: translateY(-2px); }
+    .btn-secondary { background: rgba(255, 255, 255, 0.08); color: var(--text-main); border: 1px solid var(--border); }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.14); }
+
+    /* Stats */
+    .stat-banner {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px; padding: 36px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      margin: 50px 0; text-align: center;
+    }
+    .stat-val { font-size: 36px; font-weight: 800; color: var(--accent); }
+    .stat-lbl { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+
+    /* Cards */
+    .section-head { text-align: center; margin-bottom: 40px; }
+    .section-head h2 { font-size: clamp(26px, 3.5vw, 38px); margin-bottom: 10px; }
+    .section-head p { color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 60px; }
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; transition: 0.3s; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(255, 255, 255, 0.25); }
+    .card h3 { font-size: 20px; margin-bottom: 10px; }
+    .card p { color: var(--text-muted); font-size: 14px; margin-bottom: 16px; }
+
+    /* Interactive Section */
+    .interactive-box {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 36px; margin: 50px 0; box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+    .form-input, .form-select {
+      width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.3); color: var(--text-main); font-size: 14px; outline: none;
+    }
+    .form-input:focus, .form-select:focus { border-color: var(--primary); }
+
+    /* Reviews */
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 60px; }
+    .review-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+    .review-stars { color: #f59e0b; margin-bottom: 8px; }
+    .reviewer { display: flex; align-items: center; gap: 12px; margin-top: 14px; }
+    .reviewer-avatar {
+      width: 40px; height: 40px; border-radius: 50%; background: var(--primary);
+      display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff;
+    }
+
+    /* Floating WhatsApp */
+    .floating-wa {
+      position: fixed; bottom: 20px; right: 20px; background: #25d366; color: #fff;
+      padding: 12px 20px; border-radius: 99px; font-weight: 700; font-size: 14px;
+      display: flex; align-items: center; gap: 8px; box-shadow: 0 10px 25px rgba(37,211,102,0.4);
+      z-index: 999; transition: 0.2s;
+    }
+    .floating-wa:hover { transform: scale(1.05); }
+
+    footer {
+      padding: 36px 0; border-top: 1px solid var(--border); text-align: center;
+      font-size: 13px; color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <!-- Demo Bar -->
+  <div class="demo-bar">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span class="demo-badge">Yoga & Meditation Niche Demo</span>
+      <span style="color:#94a3b8; font-weight:500;">Live Client Prototype by Uncoded Hub • ₹22,500 Flat Sprint</span>
+    </div>
+    <a href="https://wa.me/919999999999?text=Hi%20Uncoded%20Hub,%20I%20want%20this%20exact%20website%20for%20my%20business" class="demo-cta">Launch This for My Business (7 Days)</a>
+  </div>
+
+  <div class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-tag">🧘 Ancient Lineage • Contemporary Mindfulness</div>
+      <h1>Find Stillness in Movement & Strength in Breath</h1>
+      <p>Traditional Hatha, dynamic Vinyasa Flow, restorative Yin, and guided Pranayama. Small groups guided by certified yoga masters in natural teakwood shalas.</p>
+      <div class="hero-btns">
+        <button class="btn btn-primary" onclick="scrollToInteractive()">🌿 Book Your First Trial Yoga Class</button>
+        <button class="btn btn-secondary" onclick="openWhatsApp()">View Weekly Batch Schedule</button>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stat-banner">
+      <div class="stat-item"><div class="stat-val">12</div><div class="stat-lbl">Students Max Per Class</div></div><div class="stat-item"><div class="stat-val">100%</div><div class="stat-lbl">Certified Yoga Alliance</div></div><div class="stat-item"><div class="stat-val">6</div><div class="stat-lbl">Daily Batch Timings</div></div><div class="stat-item"><div class="stat-val">4.9 ★</div><div class="stat-lbl">Google Reviews</div></div>
+    </div>
+
+    <!-- Cards Section -->
+    <section>
+      <div class="section-head">
+        <h2>Holistic Movement Practices for Every Body</h2>
+        <p>Whether seeking physical flexibility, stress relief, or deeper spiritual stillness.</p>
+      </div>
+      <div class="card-grid">
+        
+    <div class="card">
+      <div style="font-size: 28px; margin-bottom: 14px;">🌅</div>
+      <h3>Ashtanga & Dynamic Vinyasa</h3>
+      <p>Build functional core heat, muscular endurance, and graceful cardiovascular flow synchronized with ujjayi breath.</p>
+      <div style="font-weight: 700; color: var(--accent); font-size: 15px;">Strength & Flow</div>
+    </div>
+    
+    <div class="card">
+      <div style="font-size: 28px; margin-bottom: 14px;">🕯️</div>
+      <h3>Yin Yoga & Deep Fascial Release</h3>
+      <p>Long-held passive floor postures to gently stretch connective tissue and calm the parasympathetic nervous system.</p>
+      <div style="font-weight: 700; color: var(--accent); font-size: 15px;">Deep Recovery</div>
+    </div>
+    
+    <div class="card">
+      <div style="font-size: 28px; margin-bottom: 14px;">🔔</div>
+      <h3>Tibetan Singing Bowl Meditation</h3>
+      <p>Acoustic sound frequencies that synchronize brainwaves into theta state for profound mental tranquility.</p>
+      <div style="font-weight: 700; color: var(--accent); font-size: 15px;">Sound Healing</div>
+    </div>
+    
+      </div>
+    </section>
+
+    <!-- Interactive Component -->
+    <section id="interactive-section">
+      <div class="interactive-box">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <h2>Interactive Weekly Yoga Class Timetable</h2>
+          <p style="color: var(--text-muted); font-size: 14px;">Filter by class style and time of day to reserve your mat for the week.</p>
+        </div>
+        
+    <div style="max-width: 650px; margin: 0 auto;">
+      <div style="display:flex; justify-content:center; gap:8px; margin-bottom:20px; flex-wrap:wrap;">
+        <button class="btn btn-secondary" onclick="filterYoga('All')" style="padding:8px 16px; font-size:13px;">All Classes</button>
+        <button class="btn btn-secondary" onclick="filterYoga('Morning')" style="padding:8px 16px; font-size:13px;">Morning Sunrise (6:30 AM)</button>
+        <button class="btn btn-secondary" onclick="filterYoga('Evening')" style="padding:8px 16px; font-size:13px;">Evening Restorative (6:00 PM)</button>
+      </div>
+      <div id="yogaSchedule" style="background:rgba(255,255,255,0.04); border:1px solid var(--border); border-radius:8px; padding:16px;">
+        <div style="padding:10px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+          <div><b>06:30 AM - 07:45 AM</b> • Ashtanga Vinyasa (Level 1 & 2)</div>
+          <span style="color:var(--accent); font-weight:700;">4 Mats Left</span>
+        </div>
+        <div style="padding:10px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+          <div><b>08:30 AM - 09:30 AM</b> • Gentle Hatha & Pranayama</div>
+          <span style="color:var(--accent); font-weight:700;">6 Mats Left</span>
+        </div>
+        <div style="padding:10px; display:flex; justify-content:space-between; align-items:center;">
+          <div><b>06:00 PM - 07:15 PM</b> • Yin Yoga & Sound Bath Meditation</div>
+          <span style="color:var(--accent); font-weight:700;">2 Mats Left</span>
+        </div>
+      </div>
+      <button class="btn btn-primary" style="width:100%; margin-top:20px;" onclick="alert('Trial Mat Reserved! We will WhatsApp you studio location and guidelines.')">Reserve Mat for ₹499 (First Class)</button>
+    </div>
+    
+      </div>
+    </section>
+
+    <!-- Social Proof Reviews -->
+    <section>
+      <div class="section-head">
+        <h2>Google Verified Reviews</h2>
+        <p>Rated 4.9 ★ across 450+ verified local client reviews</p>
+      </div>
+      <div class="reviews-grid">
+        
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p style="font-size: 15px; font-style: italic; margin-bottom: 16px;">"Prana Shala is the purest yoga sanctuary in the city. No loud workout music or commercial gimmicks—just authentic breath, alignment, and peace."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">S</div>
+        <div>
+          <div style="font-weight: 700; font-size: 14px;">Shweta Balakrishnan</div>
+          <div style="font-size: 12px; color: var(--text-muted);">Practitioner for 3 Years</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p style="font-size: 15px; font-style: italic; margin-bottom: 16px;">"I had zero flexibility and suffered from bad posture from desk work. The teachers adjusted every posture patiently. My back pain is completely gone."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">N</div>
+        <div>
+          <div style="font-weight: 700; font-size: 14px;">Naveen Reddy</div>
+          <div style="font-size: 12px; color: var(--text-muted);">Beginner Student</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p style="font-size: 15px; font-style: italic; margin-bottom: 16px;">"The sound bath and pranayama sessions on Sunday mornings reset my entire mental health for the week."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">M</div>
+        <div>
+          <div style="font-weight: 700; font-size: 14px;">Maya Sen</div>
+          <div style="font-size: 12px; color: var(--text-muted);">Weekend Retreat Guest</div>
+        </div>
+      </div>
+    </div>
+    
+      </div>
+    </section>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <a href="javascript:void(0)" onclick="openWhatsApp()" class="floating-wa">
+    <span>💬 WhatsApp Inquiries</span>
+  </a>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Prana & Stillness • Engineered for Sub-Second Performance by <a href="https://uncodedhub.com" style="color:var(--accent); font-weight:600;">Uncoded Hub</a></p>
+    </div>
+  </footer>
+
+  <script>
+    function scrollToInteractive() {
+      document.getElementById('interactive-section').scrollIntoView({ behavior: 'smooth' });
+    }
+    function openWhatsApp() {
+      alert('This interactive demo instantly connects clients directly to your business WhatsApp with pre-filled service inquiries!');
+    }
+    
+    function filterYoga(time) {
+      alert('Showing batches for: ' + time + '. Selected mat can be confirmed in 1-click.');
+    }
+    
+  </script>
+</body>
+</html>
