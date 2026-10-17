@@ -2,7 +2,7 @@ import os
 import shutil
 import re
 
-# 1. First, re-run generator for the 11 new demos if needed, or copy them into public/demos/
+# 1. First, copy the freshly built 11 new demos from "Demo Website Template for New Niches" into "public/demos/"
 mapping_11 = [
     ("Demo Website Template for New Niches/01_educational_academy_demo.html", "public/demos/educational-academy.html"),
     ("Demo Website Template for New Niches/02_gym_fitness_club_demo.html", "public/demos/gym-fitness-club.html"),
@@ -21,7 +21,6 @@ for src, dst in mapping_11:
     if os.path.exists(src):
         shutil.copyfile(src, dst)
         print(f"[COPIED] {src} -> {dst}")
-
 
 # 2. Reusable Uncoded Hub Theme Pitch Modal CSS, HTML, and JS
 MODAL_CSS = """
@@ -75,53 +74,56 @@ MODAL_CSS = """
       font-size: 24px; font-weight: 700; color: #14130F; line-height: 1; letter-spacing: -0.01em;
     }
     .uh-brand-sub {
-      font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em;
-      color: #C7074B; font-weight: 700; margin-top: 3px; font-family: -apple-system, sans-serif;
+      font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+      color: #555046; font-weight: 600; margin-top: 3px; font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     }
     .uh-badge-studio {
-      background: #FBE8EF; color: #C7074B; border: 1px solid rgba(199, 7, 75, 0.25);
+      background: #14130F; color: #FAF8F5; border: 1px solid #14130F;
       font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
       padding: 5px 12px; border-radius: 20px;
     }
 
     /* Founders Presentation Row */
     .founders-row {
-      display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center;
-      background: #FBFAF8; border: 1px solid #DDD8CE; border-radius: 18px;
-      padding: 20px 24px; margin-bottom: 22px;
+      display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center;
+      background: #F4F1EA; border: 1px solid #DDD8CE; border-radius: 16px;
+      padding: 18px 22px; margin-bottom: 20px;
     }
     .founders-photos {
       display: flex; gap: 10px;
     }
     .founder-pic-box {
-      width: 68px; text-align: center;
+      width: 66px; text-align: center;
     }
     .founder-pic {
-      width: 68px; height: 80px; object-fit: cover; border-radius: 12px;
-      border: 1px solid #C4BDB0; filter: grayscale(15%);
+      width: 66px; height: 76px; object-fit: cover; border-radius: 10px;
+      border: 1px solid #C4BDB0; filter: grayscale(10%);
     }
     .founder-name {
-      font-size: 11px; font-weight: 700; color: #14130F; margin-top: 4px; display: block;
+      font-size: 11.5px; font-weight: 700; color: #14130F; margin-top: 4px; display: block;
     }
     .founder-role {
-      font-size: 9.5px; color: #5F5B53; text-transform: uppercase; letter-spacing: 0.05em; display: block;
+      font-size: 9.5px; color: #555046; text-transform: uppercase; letter-spacing: 0.05em; display: block;
     }
     .founders-intro h2 {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 24px; line-height: 1.18; font-weight: 700; color: #14130F; margin-bottom: 6px;
+      font-size: 23px; line-height: 1.2; font-weight: 700; color: #14130F; margin-bottom: 5px;
     }
     .founders-intro p {
-      font-size: 13.5px; line-height: 1.5; color: #5F5B53; margin: 0;
+      font-size: 13.5px; line-height: 1.5; color: #2D2B26; margin: 0;
     }
 
     /* Letter Body */
     .pitch-body {
-      font-size: 14.5px; line-height: 1.68; color: #38352E; display: flex; flex-direction: column; gap: 16px;
+      font-size: 14.5px; line-height: 1.68; color: #14130F; display: flex; flex-direction: column; gap: 16px;
+    }
+    .pitch-body p {
+      color: #2D2B26; margin: 0;
     }
     .pitch-body strong { color: #14130F; font-weight: 700; }
     
     .insight-card {
-      background: #FBFAF8; border: 1px solid #DDD8CE;
+      background: #FFFFFF; border: 1px solid #DDD8CE;
       border-radius: 14px; padding: 18px 22px;
     }
     .insight-card h4 {
@@ -129,7 +131,7 @@ MODAL_CSS = """
       font-size: 18px; font-weight: 700; color: #14130F; margin-bottom: 6px;
     }
     .insight-card p {
-      font-size: 13.5px; color: #5F5B53; line-height: 1.55; margin: 0;
+      font-size: 13.5px; color: #2D2B26; line-height: 1.55; margin: 0;
     }
 
     /* About Belief Callout */
@@ -137,7 +139,7 @@ MODAL_CSS = """
       background: #FAF8F5; border-left: 3.5px solid #C7074B; border-top: 1px solid #DDD8CE;
       border-right: 1px solid #DDD8CE; border-bottom: 1px solid #DDD8CE;
       border-radius: 0 14px 14px 0; padding: 18px 22px;
-    }
+    }}
     .belief-card .belief-quote {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 16.5px; font-style: italic; color: #14130F; margin-bottom: 10px; line-height: 1.45;
@@ -145,7 +147,7 @@ MODAL_CSS = """
     .commitments-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EDEAE4;
     }
-    .comm-item { font-size: 12px; color: #5F5B53; line-height: 1.4; }
+    .comm-item { font-size: 12px; color: #2D2B26; line-height: 1.4; }
     .comm-item strong { display: block; color: #C7074B; font-size: 11.5px; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.04em; }
 
     /* Lead Magnet Download Box */
@@ -163,7 +165,7 @@ MODAL_CSS = """
       font-size: 19px; font-weight: 700; color: #14130F; line-height: 1.25; margin-bottom: 4px;
     }
     .lm-desc {
-      font-size: 12.5px; color: #5F5B53; line-height: 1.45; margin: 0;
+      font-size: 12.5px; color: #2D2B26; line-height: 1.45; margin: 0;
     }
     .lm-download-btn {
       background: #14130F; color: #FAF8F5; font-weight: 700; font-size: 13px;
@@ -186,7 +188,7 @@ MODAL_CSS = """
     }
     .pitch-cta-wa:hover { background: #A0053C; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(199, 7, 75, 0.4); }
     .pitch-cta-dismiss {
-      background: transparent; border: 1.5px solid #C4BDB0; color: #5F5B53;
+      background: transparent; border: 1.5px solid #C4BDB0; color: #555046;
       padding: 13px 22px; border-radius: 10px; font-weight: 600; font-size: 14px; cursor: pointer;
       transition: all 0.2s ease;
     }
@@ -199,6 +201,167 @@ MODAL_CSS = """
     }
     .demo-pitch-btn:hover { background: #C7074B; color: #FFFFFF; }
 
+    /* Floating Right Corner Lead Magnet Trigger & Pop-out Bubble */
+    .lead-magnet-floating-widget {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 99990;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    .lm-speech-bubble {
+      background: #14130F;
+      color: #FAF8F5;
+      padding: 14px 18px 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 12px 36px rgba(20, 19, 15, 0.35);
+      max-width: 310px;
+      position: relative;
+      cursor: pointer;
+      transform-origin: bottom right;
+      animation: gentleFloat 4s ease-in-out infinite;
+      transition: all 0.25s ease;
+    }
+    .lm-speech-bubble:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 16px 42px rgba(20, 19, 15, 0.45);
+      border-color: rgba(199, 7, 75, 0.6);
+    }
+    .lm-speech-bubble::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      right: 24px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid #14130F;
+    }
+
+    .lm-bubble-close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #D6D0C5;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .lm-bubble-close:hover {
+      background: #C7074B;
+      color: #FFFFFF;
+    }
+
+    .lm-bubble-badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #FFFFFF;
+      background: #C7074B;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+    .lm-bubble-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .lm-bubble-sub {
+      font-size: 11.5px;
+      color: #D6D0C5;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+    .lm-bubble-cta {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #FF5A8D;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .lm-floating-btn {
+      background: #14130F;
+      color: #FAF8F5;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50px;
+      padding: 10px 18px 10px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(20, 19, 15, 0.4);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .lm-floating-btn:hover {
+      background: #C7074B;
+      border-color: #C7074B;
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 12px 28px rgba(199, 7, 75, 0.45);
+    }
+    .lm-btn-icon-wrap {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #C7074B;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+    .lm-floating-btn:hover .lm-btn-icon-wrap {
+      background: #FFFFFF;
+      color: #C7074B;
+    }
+
+    .lm-pulse-ping {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #C7074B;
+      box-shadow: 0 0 0 0 rgba(199, 7, 75, 0.7);
+      animation: pulsePing 2s infinite;
+    }
+
+    @keyframes gentleFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    @keyframes pulsePing {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(199, 7, 75, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(199, 7, 75, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(199, 7, 75, 0); }
+    }
+
     @media (max-width: 768px) {
       .pitch-modal-card { padding: 24px 20px; }
       .founders-row { grid-template-columns: 1fr; gap: 16px; text-align: center; }
@@ -208,6 +371,17 @@ MODAL_CSS = """
       .lm-download-btn { width: 100%; justify-content: center; }
       .pitch-actions { flex-direction: column; align-items: stretch; }
       .pitch-cta-wa, .pitch-cta-dismiss { width: 100%; justify-content: center; text-align: center; }
+      .lead-magnet-floating-widget {
+        bottom: 80px;
+        right: 14px;
+      }
+      .lm-speech-bubble {
+        max-width: 260px;
+        padding: 12px 14px;
+      }
+      .lm-bubble-title { font-size: 12.5px; }
+      .lm-bubble-sub { font-size: 11px; }
+      .lm-floating-btn { font-size: 12px; padding: 8px 14px; }
     }
 """
 
@@ -307,6 +481,22 @@ MODAL_HTML = """
       </div>
     </div>
   </div>
+
+  <!-- Floating Right-Corner Lead Magnet Button & Pop-out Speech Bubble -->
+  <div class="lead-magnet-floating-widget" id="leadMagnetWidget">
+    <div class="lm-speech-bubble" id="lmSpeechBubble" onclick="openPitchModal()">
+      <button class="lm-bubble-close" onclick="closeLeadMagnetBubble(event)" title="Dismiss bubble">✕</button>
+      <span class="lm-bubble-badge">FREE 2-PAGE STRATEGY BRIEFING</span>
+      <div class="lm-bubble-title">Why Top Businesses Win Local Clients</div>
+      <div class="lm-bubble-sub">The 50ms trust decision &amp; why delaying a website costs you clients every week.</div>
+      <div class="lm-bubble-cta">Read Pitch &amp; Download 2-Page PDF →</div>
+    </div>
+    <button class="lm-floating-btn" onclick="openPitchModal()" title="Free 2-Page Executive Guide">
+      <span class="lm-btn-icon-wrap">📄</span>
+      <span>Free 2-Page Guide</span>
+      <span class="lm-pulse-ping"></span>
+    </button>
+  </div>
 """
 
 MODAL_JS = """
@@ -329,6 +519,13 @@ MODAL_JS = """
       }
     }
 
+    function closeLeadMagnetBubble(e) {
+      if (e) e.stopPropagation();
+      const bubble = document.getElementById('lmSpeechBubble');
+      if (bubble) bubble.style.display = 'none';
+      sessionStorage.setItem('uncoded_bubble_dismissed', 'true');
+    }
+
     function handleBackdropClick(e) {
       if (e.target.id === 'uncodedPitchModal') {
         closePitchModal();
@@ -341,13 +538,21 @@ MODAL_JS = """
       }
     });
 
-    // Gentle auto-open for first-time visitors after 2.5s delay
+    // Check if bubble was previously dismissed in session
+    window.addEventListener('DOMContentLoaded', function() {
+      if (sessionStorage.getItem('uncoded_bubble_dismissed')) {
+        const bubble = document.getElementById('lmSpeechBubble');
+        if (bubble) bubble.style.display = 'none';
+      }
+    });
+
+    // Gentle auto-open for first-time visitors after 15 seconds
     window.addEventListener('DOMContentLoaded', function() {
       setTimeout(function() {
         if (!localStorage.getItem('uncoded_pitch_viewed')) {
           openPitchModal();
         }
-      }, 2500);
+      }, 15000);
     });
   </script>
 """
@@ -377,41 +582,22 @@ for file_path in original_demos:
     # Clean out any previous pitch modal CSS
     html = re.sub(r'/\* Founder Pitch.*?\*/.*?\.demo-pitch-btn:hover\s*\{[^}]*\}', '', html, flags=re.DOTALL)
     html = re.sub(r'/\* Uncoded Hub Studio Popup Modal.*?\*/.*?\.pitch-cta-dismiss:hover\s*\{[^}]*\}', '', html, flags=re.DOTALL)
+    html = re.sub(r'/\* Uncoded Hub Studio Popup Modal.*?\*/.*?\.lm-floating-btn\s*\{[^}]*\}\s*\}', '', html, flags=re.DOTALL)
     
     # Inject new CSS before </style>
     if "</style>" in html:
         html = html.replace("</style>", MODAL_CSS + "\n  </style>", 1)
 
-    # Clean out any previous pitch modal HTML
+    # Clean out any previous pitch modal HTML & floating widget HTML
     html = re.sub(r'<!-- (?:Founder Pitch|Uncoded Hub Studio Pitch).*?-->\s*<div class="pitch-modal-backdrop".*?</div>\s*</div>\s*</div>', '', html, flags=re.DOTALL)
+    html = re.sub(r'<!-- Floating Right-Corner Lead Magnet Button.*?-->\s*<div class="lead-magnet-floating-widget".*?</div>\s*</div>', '', html, flags=re.DOTALL)
+    
     # Clean out old script block if present
     html = re.sub(r'<script>\s*// Founder Pitch Modal Functions.*?</script>', '', html, flags=re.DOTALL)
 
     # Inject Modal HTML and JS before </body>
     if "</body>" in html:
         html = html.replace("</body>", MODAL_HTML + "\n" + MODAL_JS + "\n</body>", 1)
-
-    # Enhance top banner if present in public/demos
-    if "Book Your 7-Day Sprint →" in html or "Claim This Website For My Business" in html:
-        # Standardize sprint bar
-        bar_replacement = """<div style="background: #14130F; color: #F5F3EF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; padding: 10px 20px; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 99999; backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.25);">
-    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-      <a href="/portfolio" style="color: #FFFFFF; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 12px; padding: 5px 12px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; transition: all 0.2s ease;">
-        ← Back to Portfolio
-      </a>
-      <span style="color: rgba(245,243,239,0.4); display: inline-block;">|</span>
-      <span style="color: #F5F3EF; font-weight: 500; font-size: 12.5px;">
-        Handcrafted 7-Day Sprint Prototype • Built Exclusively by Uncoded Hub
-      </span>
-      <button class="demo-pitch-btn" onclick="openPitchModal()">✨ Why We Built This Demo</button>
-    </div>
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <a href="https://wa.me/918660819023?text=Hi%20Uncoded%20Hub,%20I%20want%20to%20claim%20this%20website%20for%20my%20business." style="background: #22C55E; color: #0B1C11; font-weight: 700; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" target="_blank">
-        Claim This Website For My Business
-      </a>
-    </div>
-  </div>"""
-        html = re.sub(r'<!-- Top Uncoded Hub Specimen Banner -->.*?</div>\s*</div>', '<!-- Top Uncoded Hub Specimen Banner -->\n  ' + bar_replacement, html, flags=re.DOTALL)
 
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(html)
