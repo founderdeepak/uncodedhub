@@ -1100,6 +1100,8 @@ def render_page(data):
         </a>
       </div>
     </div>
+  </div>
+
   <!-- Floating Right-Corner Lead Magnet Button & Pop-out Speech Bubble -->
   <div class="lead-magnet-floating-widget" id="leadMagnetWidget">
     <div class="lm-speech-bubble" id="lmSpeechBubble" onclick="openPitchModal()">

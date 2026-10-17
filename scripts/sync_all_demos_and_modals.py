@@ -579,28 +579,52 @@ for file_path in original_demos:
     with open(file_path, "r", encoding="utf-8") as f:
         html = f.read()
 
-    # Clean out any previous pitch modal CSS
-    html = re.sub(r'/\* Founder Pitch.*?\*/.*?\.demo-pitch-btn:hover\s*\{[^}]*\}', '', html, flags=re.DOTALL)
-    html = re.sub(r'/\* Uncoded Hub Studio Popup Modal.*?\*/.*?\.pitch-cta-dismiss:hover\s*\{[^}]*\}', '', html, flags=re.DOTALL)
-    html = re.sub(r'/\* Uncoded Hub Studio Popup Modal.*?\*/.*?\.lm-floating-btn\s*\{[^}]*\}\s*\}', '', html, flags=re.DOTALL)
+    # 1. Clean CSS deterministically
+    css_marker = "/* Uncoded Hub Studio Popup Modal */"
+    if css_marker in html:
+        c_start = html.find(css_marker)
+        c_end = html.find("</style>", c_start)
+        if c_end != -1:
+            html = html[:c_start] + html[c_end:]
     
-    # Inject new CSS before </style>
+    # Also clean legacy founder pitch CSS if any
+    legacy_css = "/* Founder Pitch Modal */"
+    if legacy_css in html:
+        c_start = html.find(legacy_css)
+        c_end = html.find("</style>", c_start)
+        if c_end != -1:
+            html = html[:c_start] + html[c_end:]
+
+    # Inject clean MODAL_CSS before </style>
     if "</style>" in html:
         html = html.replace("</style>", MODAL_CSS + "\n  </style>", 1)
 
-    # Clean out any previous pitch modal HTML & floating widget HTML
-    html = re.sub(r'<!-- (?:Founder Pitch|Uncoded Hub Studio Pitch).*?-->\s*<div class="pitch-modal-backdrop".*?</div>\s*</div>\s*</div>', '', html, flags=re.DOTALL)
-    html = re.sub(r'<!-- Floating Right-Corner Lead Magnet Button.*?-->\s*<div class="lead-magnet-floating-widget".*?</div>\s*</div>', '', html, flags=re.DOTALL)
+    # 2. Clean HTML & JS deterministically
+    # Find any previous modal or orphaned snippet before </body>
+    markers = [
+        "<!-- Uncoded Hub Studio Pitch",
+        "<!-- Founder Pitch",
+        "<div class=\"pitch-modal-backdrop\"",
+        "<!-- Founders Introduction Row",
+        "Why We Hand-Built This Live Prototype",
+        "<span class=\"uh-badge-studio\"",
+        "<!-- Floating Right-Corner Lead Magnet Button",
+        "<div class=\"lead-magnet-floating-widget\"",
+    ]
+    positions = [html.find(m) for m in markers if html.find(m) != -1]
     
-    # Clean out old script block if present
-    html = re.sub(r'<script>\s*// Founder Pitch Modal Functions.*?</script>', '', html, flags=re.DOTALL)
+    if positions:
+        earliest_pos = min(positions)
+        body_close = html.rfind("</body>")
+        if body_close != -1 and earliest_pos < body_close:
+            html = html[:earliest_pos] + html[body_close:]
 
-    # Inject Modal HTML and JS before </body>
+    # Inject clean Modal HTML and JS right before </body>
     if "</body>" in html:
         html = html.replace("</body>", MODAL_HTML + "\n" + MODAL_JS + "\n</body>", 1)
 
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(html)
-    print(f"[UPDATED] {file_path}")
+    print(f"[UPDATED CLEANLY] {file_path}")
 
 print("Syncing completed successfully.")
