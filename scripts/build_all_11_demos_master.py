@@ -531,7 +531,7 @@ all_niches.append({
         ("Balinese Deep Tissue Tension Melt", "Warm organic coconut oil, acupressure palm rolling, and rhythmic muscular release for chronic lower back and shoulder knots.", "₹3,800 / 75 min", "Signature Bodywork", "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80"),
         ("Royal Ayurvedic Shirodhara & Abhyanga", "Continuous stream of warm medicated herbal oil over the third eye, accompanied by synchronised full-body circulation massage.", "₹5,200 / 90 min", "Traditional Ayurveda", "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80"),
         ("Couple Sanctuary Romance Ritual", "Private dual therapy suite, eucalyptus steam shower, Himalayan rose salt body polish, and rose petal jacuzzi soak.", "₹9,500 / 120 min", "Private Couple Suite", "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&w=800&q=80"),
-        ("Tibetan Sound Healing & Detox Scrub", "Handcrafted singing bowls acoustic vibration therapy combined with wild lemongrass sea salt exfoliating skin polish.", "₹4,200 / 75 min", "Holistic Healing", "https://images.unsplash.com/photo-1512290900672-1f41d017a584?auto=format&fit=crop&w=800&q=80")
+        ("Tibetan Sound Healing & Detox Scrub", "Handcrafted singing bowls acoustic vibration therapy combined with wild lemongrass sea salt exfoliating skin polish.", "₹4,200 / 75 min", "Holistic Healing", "https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=800&q=80")
     ],
     "interactive_head": "Bespoke Aromatherapy & Ritual Builder",
     "interactive_sub": "Select your tension zone and preferred essential oil blend to preview your tailored therapy journey.",
@@ -1004,7 +1004,7 @@ all_niches.append({
     "services": [
         ("Morning Classical Hatha Flow", "Surya Namaskar sequences, sustained asana holds, and nadi shodhana pranayama to ignite physical vitality.", "₹3,500 / mo", "Daily Morning", "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80"),
         ("Ashtanga Vinyasa Primary Series", "Dynamic breath-synchronized movement, bandhas activation, and core internal heat building for stamina.", "₹4,000 / mo", "Dynamic Strength", "https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?auto=format&fit=crop&w=800&q=80"),
-        ("Candlelight Yin & Tibetan Sound Bath", "Slow meditative connective tissue release supported by bolsters, followed by 30 minutes of singing bowl vibrations.", "₹1,200 / session", "Evening Restorative", "https://images.unsplash.com/photo-1512290900672-1f41d017a584?auto=format&fit=crop&w=800&q=80"),
+        ("Candlelight Yin & Tibetan Sound Bath", "Slow meditative connective tissue release supported by bolsters, followed by 30 minutes of singing bowl vibrations.", "₹1,200 / session", "Evening Restorative", "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80"),
         ("200-Hour Yoga Teacher Training (TTC)", "Comprehensive immersion in Yoga Sutras, anatomy, alignment adjustments, and teaching methodology.", "₹45,000 / course", "Yoga Alliance Cert", "https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&w=800&q=80")
     ],
     "interactive_head": "Interactive Shala Class Timetable Filter",

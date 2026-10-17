@@ -99,7 +99,7 @@ const PROJECTS: Project[] = [
     url: '/demos/executive-coaching.html',
     thumbnail: '/demos/thumbnails/executive-coaching.webp',
     sector: 'Executive Coaching & Advisory',
-    category: 'coaching',
+    category: 'business',
     year: '7-Day Sprint Build',
     summary:
       'Strategic executive sparring and 90-day scaling architecture for high-growth founders and C-suite leaders navigating critical transition windows. Built around diagnostic-first intake and zero-pitch exploratory calls.',
@@ -107,16 +107,164 @@ const PROJECTS: Project[] = [
     themes: 'Bespoke Executive · Thought Leader · Tech Monolith HUD',
     nicheSlug: '/blog/niche/coaches-consultants',
   },
+  {
+    client: 'Apex International Academy',
+    url: '/demos/educational-academy.html',
+    thumbnail: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
+    sector: 'Education & Coaching Academy',
+    category: 'education',
+    year: '7-Day Sprint Build',
+    summary:
+      'Premier academic coaching for STEM, Olympiads, and competitive board examinations. Features smart 15-student capped batches, concept-first IIT/Medical faculty, and an interactive annual scholarship & tuition estimator.',
+    result: '⚡ 0.8s LCP · Capped 15-Student Model · Interactive Scholarship Calculator',
+    themes: 'Oxford Collegiate · Cyber STEM · Campus Emerald',
+    nicheSlug: '/blog/niche/coaching-academy',
+  },
+  {
+    client: 'IronVault Fitness & Strength Club',
+    url: '/demos/gym-fitness-club.html',
+    thumbnail: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80',
+    sector: 'Commercial Gym & Strength Club',
+    category: 'fitness',
+    year: '7-Day Sprint Build',
+    summary:
+      'High-intensity athletic training facility with Eleiko Olympic barbells and capped peak-hour floor capacity. Built with an interactive 1-Day VIP Trial Pass activator and upfront membership pricing matrix.',
+    result: '⚡ 0.7s LCP · Zero Crowding Cap · Instant VIP Pass Activator',
+    themes: 'Industrial Iron · Matte Minimalist · Electric Energy',
+    nicheSlug: '/blog/niche/gym-fitness',
+  },
+  {
+    client: 'Vanguard Advisory Partners',
+    url: '/demos/business-portfolio.html',
+    thumbnail: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
+    sector: 'B2B Corporate & Business Advisory',
+    category: 'business',
+    year: '7-Day Sprint Build',
+    summary:
+      'Institutional strategy consulting and M&A transaction advisory for mid-market enterprises. Highlights proven deal track records, client NDA covenants, and an interactive 6-pillar business diagnostic scorecard.',
+    result: '⚡ 0.7s LCP · C-Suite Diagnostic Engine · Verified Case Studies',
+    themes: 'Savile Row Slate · Canary Wharf Dark · Wall Street Clean',
+    nicheSlug: '/blog/niche/business-consulting',
+  },
+  {
+    client: 'SereneSanctuary Luxury Spa & Ayurveda',
+    url: '/demos/spa-wellness.html',
+    thumbnail: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80',
+    sector: 'Luxury Spa & Holistic Wellness',
+    category: 'wellness',
+    year: '7-Day Sprint Build',
+    summary:
+      'Five-star urban sanctuary featuring traditional Balinese bodywork and authentic Kerala Ayurvedic therapies. Includes an interactive tension-zone ritual builder, private couple suite previews, and upfront treatment fees.',
+    result: '⚡ 0.8s LCP · Tension-Zone Therapy Builder · Transparent Menu',
+    themes: 'Ubud Botanical · Kyoto Minimalist · Charcoal Bathhouse',
+    nicheSlug: '/blog/niche/spa-wellness',
+  },
+  {
+    client: 'LuxeAura Hair & Aesthetics Lounge',
+    url: '/demos/salon-beauty.html',
+    thumbnail: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80',
+    sector: 'High-End Salon & Bridal Beauty',
+    category: 'beauty',
+    year: '7-Day Sprint Build',
+    summary:
+      'Bespoke Balayage, K18 molecular repair, and HD bridal aesthetics studio. Built with hospital-grade autoclave sterilisation disclosures, an interactive bridal estimate calculator, and 1-tap WhatsApp slot booking.',
+    result: '⚡ 0.7s LCP · Interactive Bridal Calculator · 1-Tap Booking',
+    themes: 'Rose Gold Glam · Paris Noir Monolith · Clean Organic Pastel',
+    nicheSlug: '/blog/niche/salon-beauty',
+  },
+  {
+    client: 'ForgePro Elite Private Coaching',
+    url: '/demos/fitness-coach.html',
+    thumbnail: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&q=80',
+    sector: 'Private Fitness Coach & Kinesiology',
+    category: 'fitness',
+    year: '7-Day Sprint Build',
+    summary:
+      'Biomechanical body recomposition and athletic conditioning for busy corporate executives. Features an intake readiness calculator, 12-week verified DEXA scan transformations, and a capped 20-client roster.',
+    result: '⚡ 0.7s LCP · Capped 20-Roster Model · DEXA Transformation Grid',
+    themes: 'Performance Orange · Stealth Graphite · High-Contrast Athletics',
+    nicheSlug: '/blog/niche/fitness-coach',
+  },
+  {
+    client: 'PranaPulse Yoga & Mindfulness Shala',
+    url: '/demos/yoga-meditation.html',
+    thumbnail: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80',
+    sector: 'Authentic Yoga & Breathwork Shala',
+    category: 'wellness',
+    year: '7-Day Sprint Build',
+    summary:
+      'Traditional Hatha, Ashtanga, and restorative sound healing studio with teakwood flooring and certified RYS-200 masters. Features an interactive class timetable filter and instant trial booking.',
+    result: '⚡ 0.8s LCP · Interactive Timetable Filter · Zero Commercial Gimmicks',
+    themes: 'Rishikesh Ochre · Zen Slate Sanctuary · Vedic Dawn Mint',
+    nicheSlug: '/blog/niche/yoga-studio',
+  },
+  {
+    client: 'AuraGrid Interactive Creative Studio',
+    url: '/demos/creative-portfolio.html',
+    thumbnail: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80',
+    sector: 'Creative Design & Brand Engineering',
+    category: 'creative',
+    year: '7-Day Sprint Build',
+    summary:
+      'Multi-disciplinary digital design agency crafting award-calibre identities, high-conversion web systems, and 3D interactions. Includes an interactive project sprint scope estimator and client case studies.',
+    result: '⚡ 0.8s LCP · Interactive Scope Estimator · 100% Lighthouse Score',
+    themes: 'Neo-Brutalist Acid · Swiss Editorial · Cyberpunk Terminal',
+    nicheSlug: '/blog/niche/creative-agency',
+  },
+  {
+    client: 'ApexPulse Comprehensive Diagnostics',
+    url: '/demos/healthcare-diagnostics.html',
+    thumbnail: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80',
+    sector: 'Pathology & Medical Imaging',
+    category: 'healthcare',
+    year: '7-Day Sprint Build',
+    summary:
+      'NABL & CAP accredited diagnostic pathology laboratory offering barcode-tracked sample chains, 6-hour digital report turnaround, and an interactive home phlebotomy package selector.',
+    result: '⚡ 0.7s LCP · NABL Certified Protocol · Home Blood Collection Funnel',
+    themes: 'Clinical Cobalt · Clean Sterile Teal · Midnight Precision',
+    nicheSlug: '/blog/niche/diagnostics-pathology',
+  },
+  {
+    client: 'OmniCare Multi-Speciality Polyclinic',
+    url: '/demos/clinic-polyclinic.html',
+    thumbnail: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80',
+    sector: 'Multi-Speciality Clinic & Day Care',
+    category: 'clinics',
+    year: '7-Day Sprint Build',
+    summary:
+      'Same-day outpatient medical centre featuring on-site digital pharmacy, minor OT, and senior specialists across 6 core departments. Includes an interactive OPD doctor schedule filter and appointment engine.',
+    result: '⚡ 0.8s LCP · Live Doctor Roster Filter · Zero Wait-Time Guarantee',
+    themes: 'Trusted Medical Navy · Healing Sage · Modern Health Minimalist',
+    nicheSlug: '/blog/niche/polyclinic',
+  },
+  {
+    client: 'Dr. Alistair Vance, MS Orthopaedics',
+    url: '/demos/doctor-specialist.html',
+    thumbnail: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1200&q=80',
+    sector: 'Super-Specialist Doctor Practice',
+    category: 'healthcare',
+    year: '7-Day Sprint Build',
+    summary:
+      'Fellowship-trained robotic joint replacement and sports arthroscopy super-specialist. Built around an interactive joint mobility symptom screener, written hospital fee estimates, and cashless TPA insurance guidance.',
+    result: '⚡ 0.7s LCP · Interactive Joint Symptom Screener · Cashless Insurance Desk',
+    themes: 'Harley Surgical Navy · Clean Clinical Slate · Prestige Gold & Midnight',
+    nicheSlug: '/blog/niche/doctor-specialist',
+  },
 ];
 
 const CATEGORIES = [
-  { id: 'all', label: 'All Demos (6)' },
-  { id: 'interiors', label: 'Interiors' },
+  { id: 'all', label: 'All Demos (17)' },
+  { id: 'clinics', label: 'Clinics & Dental' },
+  { id: 'healthcare', label: 'Doctors & Diagnostics' },
+  { id: 'wellness', label: 'Spa & Yoga' },
+  { id: 'fitness', label: 'Gym & Fitness' },
+  { id: 'beauty', label: 'Salon & Beauty' },
+  { id: 'education', label: 'Education & Coaching' },
+  { id: 'business', label: 'Business & Advisory' },
+  { id: 'interiors', label: 'Interiors & Renovation' },
   { id: 'real-estate', label: 'Real Estate' },
-  { id: 'clinics', label: 'Clinics' },
   { id: 'photographers', label: 'Wedding Films' },
-  { id: 'renovation', label: 'Renovation' },
-  { id: 'coaching', label: 'Advisory' },
+  { id: 'creative', label: 'Creative Studio' },
 ];
 
 const SPECIMEN = [
@@ -175,7 +323,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
         <title>Work &amp; Interactive Specimen Builds — Uncoded Hub</title>
         <meta
           name="description"
-          content="Explore six live, interactive specimen websites handcrafted by Uncoded Hub across our core commercial niches. Test speed, multi-theme switchers, and conversion funnels."
+          content="Explore seventeen live, interactive specimen websites handcrafted by Uncoded Hub across our core commercial niches. Test speed, multi-theme switchers, and conversion funnels."
         />
         <link rel="canonical" href="https://uncodedhub.com/portfolio/" />
       </Helmet>
@@ -185,7 +333,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
         <Shell>
           <Reveal>
             <span className="label text-signal font-semibold block mb-3">
-              6 interactive demos · 3 themes each
+              17 interactive demos · 3 themes each (51 live variations)
             </span>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-ink max-w-[18ch] leading-[1.08] tracking-tight">
               Live builds you can test, inspect, and verify{' '}
@@ -194,8 +342,8 @@ export default function Work({ onBook }: { onBook: () => void }) {
           </Reveal>
           <Reveal delay={100}>
             <p className="text-lead text-muted mt-6 max-w-2xl leading-relaxed">
-              We build custom, zero-bloat web systems in seven working days. Below are six fully
-              interactive specimen builds across our core commercial niches — each featuring three
+              We build custom, zero-bloat web systems in seven working days. Below are seventeen fully
+              interactive specimen builds across high-ticket service niches — each featuring three
               live aesthetic switcher themes, verified Lighthouse performance, and tailored conversion funnels.
             </p>
 

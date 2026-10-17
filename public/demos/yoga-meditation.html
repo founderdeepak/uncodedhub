@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prana Shala | Traditional Classical Hatha Yoga & Tibetan Sound Sanctuary</title>
+  <meta name="description" content="Sunlit teakwood shala in Indiranagar. Yoga Alliance certified RYT-500 teachers, morning 6:00 AM asana flows, and restorative Tibetan singing bowl sound baths.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    
+    /* ==========================================================================
+       THEME 1: Teak & Saffron
+       ========================================================================== */
+    :root, body[data-theme="sunlit-teakwood-saffron"] {
+      --bg-primary: #FDFBF7;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #F7F3EA;
+      --text-primary: #261E14;
+      --text-muted: #544636;
+      --text-subtle: #7D6B57;
+      --border-color: #E8DEC9;
+      --accent: #D97706;
+      --accent-hover: #B45309;
+      --accent-contrast: #FFFFFF;
+      --accent-light: rgba(217, 119, 6, 0.12);
+      --badge-bg: #FEF3C7;
+      --badge-text: #92400E;
+      --radius: 12px;
+      --font-heading: 'Cormorant Garamond', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --header-bg: rgba(253, 251, 247, 0.95);
+      --shadow: 0 10px 30px rgba(38, 30, 20, 0.06);
+      --btn-radius: 12px;
+    }
+
+    /* ==========================================================================
+       THEME 2: Moonlit Cosmic
+       ========================================================================== */
+    body[data-theme="celestial-moonlit-dark"] {
+      --bg-primary: #0A0B14;
+      --bg-surface: #121320;
+      --bg-card: #181A2D;
+      --bg-card-hover: #20233B;
+      --text-primary: #F1F5F9;
+      --text-muted: #CBD5E1;
+      --text-subtle: #94A3B8;
+      --border-color: rgba(255, 255, 255, 0.12);
+      --accent: #818CF8;
+      --accent-hover: #A5B4FC;
+      --accent-contrast: #0A0B14;
+      --accent-light: rgba(129, 140, 248, 0.15);
+      --badge-bg: rgba(129, 140, 248, 0.16);
+      --badge-text: #C7D2FE;
+      --radius: 8px;
+      --font-heading: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --header-bg: rgba(10, 11, 20, 0.95);
+      --shadow: 0 20px 48px rgba(0, 0, 0, 0.8);
+      --btn-radius: 8px;
+    }
+
+    /* ==========================================================================
+       THEME 3: Sage Minimal
+       ========================================================================== */
+    body[data-theme="mindful-sage-minimal"] {
+      --bg-primary: #F4F7F4;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #EAF0EA;
+      --text-primary: #1A241A;
+      --text-muted: #3D4F3D;
+      --text-subtle: #667D66;
+      --border-color: #D3E0D3;
+      --accent: #15803D;
+      --accent-hover: #166534;
+      --accent-contrast: #FFFFFF;
+      --accent-light: rgba(21, 128, 61, 0.12);
+      --badge-bg: #DCFCE7;
+      --badge-text: #166534;
+      --radius: 16px;
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --header-bg: rgba(244, 247, 244, 0.95);
+      --shadow: 0 8px 24px rgba(21, 128, 61, 0.06);
+      --btn-radius: 16px;
+    }
+    
+
+    /* Reset & Core Setup */
+    *, *::before, *::after {
+      box-sizing: border-box; margin: 0; padding: 0;
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease, box-shadow 0.25s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      padding-top: 48px;
+      padding-bottom: 90px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, h5 {
+      font-family: var(--font-heading);
+      color: var(--text-primary);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+    p { color: var(--text-muted); margin-bottom: 1rem; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Top Persistent Sprint Bar */
+    .uncoded-demo-bar {
+      position: fixed; top: 0; left: 0; right: 0; height: 48px;
+      background: #0f172a; color: #fff; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; font-size: 13px; font-family: -apple-system, sans-serif;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .demo-pill {
+      background: #3b82f6; color: #fff; font-weight: 700;
+      padding: 4px 10px; border-radius: 20px; font-size: 11px;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .demo-claim-btn {
+      background: #22c55e; color: #0f172a; font-weight: 700;
+      padding: 6px 14px; border-radius: 6px; font-size: 12px;
+      transition: all 0.2s ease;
+    }
+    .demo-claim-btn:hover { background: #4ade80; transform: translateY(-1px); }
+    .demo-pitch-btn {
+      background: rgba(59, 130, 246, 0.22); color: #93c5fd; border: 1px solid rgba(96, 165, 250, 0.4);
+      font-weight: 700; padding: 5px 12px; border-radius: 6px; font-size: 11.5px;
+      cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .demo-pitch-btn:hover { background: rgba(59, 130, 246, 0.38); color: #ffffff; border-color: #93c5fd; }
+
+    /* Founder Pitch / Strategy Cover Letter Pop-up Modal */
+    .pitch-modal-backdrop {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10, 15, 29, 0.82);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      z-index: 100000; display: none; align-items: center; justify-content: center;
+      padding: 20px; opacity: 0; transition: opacity 0.3s ease;
+    }
+    .pitch-modal-backdrop.active {
+      display: flex; opacity: 1;
+    }
+    .pitch-modal-card {
+      background: #0f172a; color: #f8fafc;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 20px; max-width: 780px; width: 100%; max-height: 88vh;
+      overflow-y: auto; padding: 36px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      position: relative; transform: translateY(20px) scale(0.97);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .pitch-modal-backdrop.active .pitch-modal-card {
+      transform: translateY(0) scale(1);
+    }
+    .pitch-close-btn {
+      position: absolute; top: 20px; right: 20px;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff; font-size: 18px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all 0.2s ease;
+    }
+    .pitch-close-btn:hover { background: rgba(255, 255, 255, 0.22); transform: scale(1.08); }
+    .pitch-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px; border-radius: 30px; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      background: rgba(59, 130, 246, 0.18); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3);
+      margin-bottom: 14px;
+    }
+    .pitch-h2 {
+      font-size: 26px; line-height: 1.3; font-weight: 800; color: #ffffff;
+      margin-bottom: 12px; font-family: var(--font-heading);
+    }
+    .pitch-author-bar {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 22px; padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .pitch-author-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6, #06b6d4);
+      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; color: #fff;
+    }
+    .pitch-author-name { font-weight: 700; font-size: 14px; color: #f1f5f9; }
+    .pitch-author-title { font-size: 12px; color: #94a3b8; }
+    .pitch-body {
+      font-size: 15px; line-height: 1.7; color: #cbd5e1; display: flex; flex-direction: column; gap: 16px;
+    }
+    .pitch-body strong { color: #ffffff; }
+    .pitch-highlight-box {
+      background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px; padding: 18px 20px; margin: 4px 0;
+    }
+    .pitch-actions {
+      display: flex; align-items: center; gap: 14px; margin-top: 26px; padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12); flex-wrap: wrap;
+    }
+    .pitch-cta-wa {
+      background: #22c55e; color: #0b1c11; font-weight: 800; font-size: 14px;
+      padding: 13px 26px; border-radius: 10px; text-decoration: none; display: inline-flex;
+      align-items: center; gap: 8px; transition: all 0.2s ease;
+      box-shadow: 0 4px 15px rgba(34, 197, 94, 0.35);
+    }
+    .pitch-cta-wa:hover { background: #4ade80; transform: translateY(-2px); }
+    .pitch-cta-dismiss {
+      background: transparent; border: 1px solid rgba(255, 255, 255, 0.2); color: #cbd5e1;
+      padding: 12px 20px; border-radius: 10px; font-weight: 600; font-size: 14px; cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .pitch-cta-dismiss:hover { background: rgba(255, 255, 255, 0.08); color: #fff; }
+
+    /* Site Navigation */
+    .site-nav {
+      position: sticky; top: 48px; z-index: 900;
+      background: var(--header-bg); backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 0;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .brand-logo {
+      font-family: var(--font-heading); font-size: 22px; font-weight: 800;
+      letter-spacing: -0.02em; color: var(--text-primary);
+    }
+    .brand-sub {
+      font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--accent); font-weight: 700; display: block; margin-top: 2px;
+    }
+    .nav-links { display: flex; gap: 24px; align-items: center; font-size: 14px; font-weight: 600; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 26px; font-size: 15px; font-weight: 700;
+      border-radius: var(--btn-radius); cursor: pointer; border: none;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-primary {
+      background: var(--accent); color: var(--accent-contrast);
+      box-shadow: 0 4px 14px var(--accent-light);
+    }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
+    .btn-secondary {
+      background: var(--bg-card); color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+    .btn-secondary:hover { background: var(--bg-card-hover); border-color: var(--accent); }
+
+    /* Hero Section */
+    .hero { padding: 60px 0 50px; position: relative; }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 50px;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 30px; font-size: 12px;
+      font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      background: var(--badge-bg); color: var(--badge-text);
+      margin-bottom: 20px;
+    }
+    .hero h1 { font-size: clamp(34px, 4.4vw, 56px); margin-bottom: 18px; }
+    .hero p { font-size: 18px; line-height: 1.6; color: var(--text-muted); margin-bottom: 28px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
+    .hero-img-box {
+      position: relative; border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow); border: 1px solid var(--border-color);
+    }
+    .hero-img-box img { width: 100%; height: 460px; object-fit: cover; }
+
+    /* Stats Banner */
+    .stat-banner {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+      margin: 20px 0 60px;
+    }
+    .stat-card {
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius); padding: 22px; text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .stat-val {
+      font-family: var(--font-heading); font-size: 34px; font-weight: 800;
+      color: var(--accent); margin-bottom: 4px; line-height: 1;
+    }
+    .stat-lbl { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-subtle); }
+
+    .trust-strip {
+      display: flex; gap: 24px; align-items: center; justify-content: center;
+      flex-wrap: wrap; padding: 18px; border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color); margin-bottom: 60px;
+    }
+    .trust-logo {
+      font-size: 13px; font-weight: 800; letter-spacing: 0.06em;
+      color: var(--text-subtle); display: flex; align-items: center; gap: 6px;
+    }
+
+    /* Section Headers */
+    .sec-head { text-align: center; max-width: 680px; margin: 0 auto 46px; }
+    .sec-head h2 { font-size: 36px; margin-bottom: 12px; }
+    .sec-head p { font-size: 16px; color: var(--text-muted); }
+
+    /* Services Grid */
+    .srv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-bottom: 80px; }
+    .srv-card {
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column;
+      box-shadow: var(--shadow);
+    }
+    .srv-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+    .srv-img-wrap { height: 180px; overflow: hidden; }
+    .srv-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .srv-card:hover .srv-img { transform: scale(1.05); }
+    .srv-body { padding: 22px; display: flex; flex-direction: column; flex-grow: 1; }
+    .srv-badge {
+      align-self: flex-start; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      background: var(--badge-bg); color: var(--badge-text);
+      padding: 3px 8px; border-radius: 4px; margin-bottom: 10px;
+    }
+    .srv-body h3 { font-size: 20px; margin-bottom: 8px; }
+    .srv-body p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; flex-grow: 1; }
+    .srv-pricing {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-top: 14px; border-top: 1px solid var(--border-color); margin-bottom: 16px;
+    }
+    .srv-pricing span { font-size: 12px; color: var(--text-subtle); }
+    .srv-pricing strong { font-size: 18px; color: var(--text-primary); font-family: var(--font-heading); }
+    .srv-btn { width: 100%; font-size: 14px; padding: 10px; }
+
+    /* Interactive Niche Tool Section */
+    .interactive-sec {
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius); padding: 48px; margin-bottom: 80px;
+      box-shadow: var(--shadow);
+    }
+    .form-group { margin-bottom: 18px; text-align: left; }
+    .form-group label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--text-primary); }
+    .form-ctrl {
+      width: 100%; padding: 12px 16px; border: 1px solid var(--border-color);
+      border-radius: var(--btn-radius); background: var(--bg-card);
+      color: var(--text-primary); font-family: var(--font-body); font-size: 15px; outline: none;
+    }
+    .form-ctrl:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
+
+    /* Process Blueprint */
+    .proc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; margin-bottom: 80px; }
+    .proc-step {
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius); padding: 28px; position: relative;
+    }
+    .proc-num {
+      font-family: var(--font-heading); font-size: 40px; font-weight: 800;
+      color: var(--accent); line-height: 1; margin-bottom: 12px; opacity: 0.9;
+    }
+    .proc-step h3 { font-size: 19px; margin-bottom: 8px; }
+    .proc-step p { font-size: 14px; color: var(--text-muted); margin: 0; }
+
+    /* Testimonials */
+    .rev-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 80px; }
+    .rev-card {
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius); padding: 26px; display: flex; flex-direction: column;
+    }
+    .rev-stars { color: #f59e0b; font-size: 16px; margin-bottom: 12px; }
+    .rev-txt { font-size: 15px; font-style: italic; color: var(--text-muted); margin-bottom: 18px; flex-grow: 1; }
+    .rev-author { display: flex; align-items: center; gap: 12px; }
+    .rev-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--accent); color: var(--accent-contrast);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 15px;
+    }
+    .rev-name { font-weight: 700; font-size: 14px; }
+    .rev-role { font-size: 12px; color: var(--text-subtle); }
+
+    /* FAQ Accordion */
+    .faq-list { max-width: 800px; margin: 0 auto 80px; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius); overflow: hidden;
+    }
+    .faq-q {
+      padding: 18px 24px; font-weight: 700; font-size: 16px; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      list-style: none;
+    }
+    .faq-q::-webkit-details-marker { display: none; }
+    .faq-a { padding: 0 24px 20px; font-size: 15px; color: var(--text-muted); line-height: 1.6; }
+    .faq-icon { font-size: 20px; color: var(--accent); transition: transform 0.2s ease; }
+    .faq-item[open] .faq-icon { transform: rotate(45deg); }
+
+    /* Intake Contact Section */
+    .contact-sec {
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius); padding: 50px; margin-bottom: 80px;
+    }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border-color); padding: 50px 0 20px;
+      font-size: 14px; color: var(--text-subtle); text-align: center;
+    }
+
+    /* Floating 3-Theme Switcher Dock */
+    .theme-dock {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      background: rgba(15, 23, 42, 0.94); backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 40px; padding: 6px 12px;
+      display: flex; align-items: center; gap: 8px; z-index: 2000;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    .theme-dock-lbl {
+      color: #94a3b8; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em; padding: 0 8px;
+    }
+    .theme-opt-btn {
+      background: transparent; border: 1px solid transparent; color: #f1f5f9;
+      font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: 30px;
+      cursor: pointer; display: flex; align-items: center; gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .theme-opt-btn:hover { background: rgba(255,255,255,0.1); }
+    .theme-opt-btn.active {
+      background: #3b82f6; color: #fff; border-color: #60a5fa;
+      box-shadow: 0 2px 10px rgba(59, 130, 246, 0.5);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero-img-box img { height: 320px; }
+      .stat-banner { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+      .interactive-sec { padding: 24px; }
+      .nav-links { display: none; }
+      .theme-dock { width: 92%; justify-content: center; }
+      .theme-dock-lbl { display: none; }
+      .theme-opt-btn { font-size: 11px; padding: 6px 10px; }
+    }
+  </style>
+</head>
+<body data-theme="sunlit-teakwood-saffron">
+
+  <!-- Persistent Client Sprint Demo Bar -->
+  <div class="uncoded-demo-bar">
+    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+      <span class="demo-pill">Yoga & Meditation Studio</span>
+      <span style="color:#cbd5e1; font-weight:500;">Interactive 7-Day Sprint Prototype • Built Exclusively by Uncoded Hub</span>
+      <button class="demo-pitch-btn" onclick="openPitchModal()">✨ Why We Built This Demo</button>
+    </div>
+    <a href="https://wa.me/918660819023?text=Hi%20Uncoded%20Hub,%20I%20want%20to%20claim%20this%20exact%20Yoga & Meditation Studio%20website%20for%20my%20business" class="demo-claim-btn" target="_blank">Claim This Website For My Business</a>
+  </div>
+
+  <!-- Navigation -->
+  <header class="site-nav">
+    <div class="wrap nav-inner">
+      <div>
+        <span class="brand-logo">PRANA SHALA</span>
+        <span class="brand-sub">CLASSICAL HATHA & SOUND SANCTUARY</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#interactive">Interactive Tool</a>
+        <a href="#process">Process</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="btn btn-primary" onclick="scrollToForm()">Book Consultation</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="hero-tag">🕉️ Yoga Alliance USA & AYUSH Accredited Shala</div>
+        <h1>Anchor Your Breath. Reconnect With Inner Peace.</h1>
+        <p>Traditional Classical Hatha, dynamic Ashtanga Vinyasa, and restorative Tibetan sound baths in a sunlit teakwood sanctuary. Guided with reverence for all levels.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="scrollToInteractive()">🗓️ View Weekly Class Timetable</button>
+          <button class="btn btn-secondary" onclick="openWhatsApp()">Reserve Free Trial Mat Pass</button>
+        </div>
+        <div style="font-size:13px; color:var(--text-subtle); display:flex; align-items:center; gap:8px;">
+          <span style="color:#f59e0b;">★★★★★</span> Rated 4.9/5 from 450+ verified local clients
+        </div>
+      </div>
+      <div class="hero-img-box">
+        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80" alt="PRANA SHALA" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- Stat Banner -->
+  <div class="wrap">
+    <div class="stat-banner">
+      
+      <div class="stat-card">
+        <div class="stat-val">15 Yrs</div>
+        <div class="stat-lbl">Traditional Lineage</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">28</div>
+        <div class="stat-lbl">Weekly Shala Classes</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">650+</div>
+        <div class="stat-lbl">Active Practitioners</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">4.97 ★</div>
+        <div class="stat-lbl">380+ Community Reviews</div>
+      </div>
+    </div>
+    <div class="trust-strip">
+      <span style="font-size:12px; text-transform:uppercase; letter-spacing:0.05em; color:var(--accent);">TRUSTED ACCREDITATIONS:</span>
+      <span class="trust-logo">YOGA ALLIANCE RYS-200</span><span class="trust-logo">NATURAL TEAKWOOD FLOORING</span><span class="trust-logo">PROPS & BLOCKS PROVIDED</span><span class="trust-logo">COMMUNITY HERBAL TEA LOUNGE</span>
+    </div>
+  </div>
+
+  <!-- Services Grid -->
+  <section id="services" style="padding: 20px 0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Mindful Practice Disciplines</h2>
+        <p>Rooted in authentic tradition to build flexible strength, calm breathing, and grounded spiritual awareness.</p>
+      </div>
+      <div class="srv-grid">
+        
+      <div class="srv-card">
+        <div class="srv-img-wrap"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Morning Classical Hatha Flow" loading="lazy" class="srv-img"></div>
+        <div class="srv-body">
+          <div class="srv-badge">Daily Morning</div>
+          <h3>Morning Classical Hatha Flow</h3>
+          <p>Surya Namaskar sequences, sustained asana holds, and nadi shodhana pranayama to ignite physical vitality.</p>
+          <div class="srv-pricing">
+            <span>Starting from</span>
+            <strong>₹3,500 / mo</strong>
+          </div>
+          <button class="btn btn-secondary srv-btn" onclick="scrollToForm('Morning Classical Hatha Flow')">Inquire Details &rarr;</button>
+        </div>
+      </div>
+      <div class="srv-card">
+        <div class="srv-img-wrap"><img src="https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?auto=format&fit=crop&w=800&q=80" alt="Ashtanga Vinyasa Primary Series" loading="lazy" class="srv-img"></div>
+        <div class="srv-body">
+          <div class="srv-badge">Dynamic Strength</div>
+          <h3>Ashtanga Vinyasa Primary Series</h3>
+          <p>Dynamic breath-synchronized movement, bandhas activation, and core internal heat building for stamina.</p>
+          <div class="srv-pricing">
+            <span>Starting from</span>
+            <strong>₹4,000 / mo</strong>
+          </div>
+          <button class="btn btn-secondary srv-btn" onclick="scrollToForm('Ashtanga Vinyasa Primary Series')">Inquire Details &rarr;</button>
+        </div>
+      </div>
+      <div class="srv-card">
+        <div class="srv-img-wrap"><img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80" alt="Candlelight Yin & Tibetan Sound Bath" loading="lazy" class="srv-img"></div>
+        <div class="srv-body">
+          <div class="srv-badge">Evening Restorative</div>
+          <h3>Candlelight Yin & Tibetan Sound Bath</h3>
+          <p>Slow meditative connective tissue release supported by bolsters, followed by 30 minutes of singing bowl vibrations.</p>
+          <div class="srv-pricing">
+            <span>Starting from</span>
+            <strong>₹1,200 / session</strong>
+          </div>
+          <button class="btn btn-secondary srv-btn" onclick="scrollToForm('Candlelight Yin & Tibetan Sound Bath')">Inquire Details &rarr;</button>
+        </div>
+      </div>
+      <div class="srv-card">
+        <div class="srv-img-wrap"><img src="https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&w=800&q=80" alt="200-Hour Yoga Teacher Training (TTC)" loading="lazy" class="srv-img"></div>
+        <div class="srv-body">
+          <div class="srv-badge">Yoga Alliance Cert</div>
+          <h3>200-Hour Yoga Teacher Training (TTC)</h3>
+          <p>Comprehensive immersion in Yoga Sutras, anatomy, alignment adjustments, and teaching methodology.</p>
+          <div class="srv-pricing">
+            <span>Starting from</span>
+            <strong>₹45,000 / course</strong>
+          </div>
+          <button class="btn btn-secondary srv-btn" onclick="scrollToForm('200-Hour Yoga Teacher Training (TTC)')">Inquire Details &rarr;</button>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Niche Tool -->
+  <section id="interactive" style="padding: 20px 0;">
+    <div class="wrap">
+      <div class="interactive-sec">
+        <div class="sec-head" style="margin-bottom:30px;">
+          <h2>Interactive Shala Class Timetable Filter</h2>
+          <p>Filter by time of day or practice style to find the perfect session for your schedule.</p>
+        </div>
+        
+      <div style="max-width: 600px; margin: 0 auto; background: var(--bg-card); padding: 30px; border-radius: var(--radius); border: 1px solid var(--border-color);">
+        <div style="display: flex; gap: 10px; margin-bottom: 20px; justify-content: center; flex-wrap: wrap;">
+          <button class="btn btn-primary" id="btnAll" onclick="filterYoga('all')" style="padding: 8px 16px; font-size: 13px;">All Classes</button>
+          <button class="btn btn-secondary" id="btnMorn" onclick="filterYoga('morning')" style="padding: 8px 16px; font-size: 13px;">Morning (6:00 – 9:00 AM)</button>
+          <button class="btn btn-secondary" id="btnEve" onclick="filterYoga('evening')" style="padding: 8px 16px; font-size: 13px;">Evening (6:00 – 8:30 PM)</button>
+        </div>
+        <div id="yogaScheduleList" style="display: flex; flex-direction: column; gap: 12px;">
+          <div class="yoga-slot" style="background: var(--bg-surface); padding: 16px; border-radius: var(--radius); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-weight: 700; color: var(--text-primary);">06:30 AM – 07:45 AM • Classical Hatha Flow</div>
+              <div style="font-size: 12px; color: var(--text-subtle);">Lead Teacher: Acharya Sundaram • All Levels</div>
+            </div>
+            <button class="btn btn-primary" style="padding: 6px 12px; font-size: 12px;" onclick="scrollToForm('06:30 AM Hatha Class')">Reserve Mat</button>
+          </div>
+          <div class="yoga-slot" style="background: var(--bg-surface); padding: 16px; border-radius: var(--radius); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-weight: 700; color: var(--text-primary);">08:00 AM – 09:15 AM • Ashtanga Vinyasa Series</div>
+              <div style="font-size: 12px; color: var(--text-subtle);">Lead Teacher: Meera Swaminathan • Intermediate</div>
+            </div>
+            <button class="btn btn-primary" style="padding: 6px 12px; font-size: 12px;" onclick="scrollToForm('08:00 AM Ashtanga Class')">Reserve Mat</button>
+          </div>
+          <div class="yoga-slot" style="background: var(--bg-surface); padding: 16px; border-radius: var(--radius); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-weight: 700; color: var(--text-primary);">06:30 PM – 07:45 PM • Candlelight Yin & Sound Bath</div>
+              <div style="font-size: 12px; color: var(--text-subtle);">Lead Teacher: Ananya Rao • Restorative</div>
+            </div>
+            <button class="btn btn-primary" style="padding: 6px 12px; font-size: 12px;" onclick="scrollToForm('06:30 PM Sound Bath')">Reserve Mat</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Blueprint -->
+  <section id="process" style="padding: 20px 0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>The Shala Practice Journey</h2>
+        <p>How we welcome seekers from complete beginner stiffness to lifelong grounded practice.</p>
+      </div>
+      <div class="proc-grid">
+        
+      <div class="proc-step">
+        <div class="proc-num">01</div>
+        <h3>Quiet Arrival & Prop Pick</h3>
+        <p>Remove shoes, switch off phones, and select your organic cork mat, wooden blocks, and cotton strap.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">02</div>
+        <h3>Pranayama & Centering</h3>
+        <p>Begin each session with gentle nadi shodhana breathwork and mindful awareness of the present moment.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">03</div>
+        <h3>Aligned Asana Guidance</h3>
+        <p>Experience gentle hands-on anatomical adjustments that honor your body's unique skeletal boundaries.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">04</div>
+        <h3>Deep Savasana Meditation</h3>
+        <p>Absorb the practice in guided stillness with Tibetan singing bowls and warm herbal tea afterwards.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews & Social Proof -->
+  <section id="reviews" style="padding: 20px 0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Reflections From Our Community</h2>
+        <p>Words from practitioners who found calm and physical alignment on our mats.</p>
+      </div>
+      <div class="rev-grid">
+        
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-txt">"I used to think yoga wasn't for me because I couldn't touch my toes. Prana Shala taught me that yoga is about breath, not acrobatics. My work stress has plummeted."</p>
+        <div class="rev-author">
+          <div class="rev-avatar">P</div>
+          <div>
+            <div class="rev-name">Pooja Nair</div>
+            <div class="rev-role">Software Architect & Practitioner • Verified Client</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-txt">"The natural teakwood floor, gentle morning sun, and authentic teachers make this shala sacred. It is the best hour of my entire day."</p>
+        <div class="rev-author">
+          <div class="rev-avatar">G</div>
+          <div>
+            <div class="rev-name">Girish Menon</div>
+            <div class="rev-role">Daily 6:30 AM Hatha Student • Verified Client</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-txt">"The teacher training course changed my life. Authentic philosophy, rigorous anatomical science, and loving spiritual mentorship."</p>
+        <div class="rev-author">
+          <div class="rev-avatar">D</div>
+          <div>
+            <div class="rev-name">Dr. Radhika Sen</div>
+            <div class="rev-role">Graduate, 200-Hour TTC • Verified Client</div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section id="faq" style="padding: 20px 0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about our standards, timelines, fees, and booking guarantee.</p>
+      </div>
+      <div class="faq-list">
+        
+      <details class="faq-item">
+        <summary class="faq-q">I am completely inflexible and have never done yoga. Can I join? <span class="faq-icon">+</span></summary>
+        <div class="faq-a">Yes! Yoga is for creating mobility and peace, not for showing off flexibility. 80% of our new students start with zero experience.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Are mats and props provided at the shala? <span class="faq-icon">+</span></summary>
+        <div class="faq-a">Yes, premium sanitized organic cork mats, wooden blocks, cotton straps, and bolsters are complimentary for all students.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I freeze my monthly pass if I travel? <span class="faq-icon">+</span></summary>
+        <div class="faq-a">Yes, monthly members can freeze their pass for up to 14 days per calendar year with prior WhatsApp notification.</div>
+      </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intake Form Section -->
+  <section id="contact" style="padding: 20px 0;">
+    <div class="wrap">
+      <div class="contact-sec">
+        <div class="contact-grid">
+          <div>
+            <div class="hero-tag" style="margin-bottom:12px;">Direct Inbound Booking</div>
+            <h2 style="font-size:32px; margin-bottom:16px;">Reserve Your Free Trial Mat Pass</h2>
+            <p style="font-size:15px; margin-bottom:24px;">Step into our sunlit shala for your first complimentary class. All props provided.</p>
+            <div style="font-size:14px; color:var(--text-muted); display:flex; flex-direction:column; gap:12px;">
+              <div>📍 <strong>Location:</strong> Prime Central Corridor • Dedicated Parking Available</div>
+              <div>⚡ <strong>Response Time:</strong> Instant WhatsApp Confirmation in &lt; 15 mins</div>
+              <div>🛡️ <strong>Guarantee:</strong> 100% Confidentiality &amp; Certified Standards</div>
+            </div>
+          </div>
+          <div>
+            <form onsubmit="handleFormSubmit(event)" style="background:var(--bg-card); padding:28px; border-radius:var(--radius); border:1px solid var(--border-color);">
+              <div class="form-group">
+                <label>Your Full Name</label>
+                <input type="text" class="form-ctrl" id="fName" placeholder="e.g. Vikramaditya Rao" required>
+              </div>
+              <div class="form-group">
+                <label>Phone / WhatsApp Number</label>
+                <input type="tel" class="form-ctrl" id="fPhone" placeholder="+91 98765 43210" required>
+              </div>
+              <div class="form-group">
+                <label>Service or Consultation Requirement</label>
+                <input type="text" class="form-ctrl" id="fService" placeholder="Select or type service..." value="06:30 AM Classical Hatha Flow">
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;">Submit Consultation Request</button>
+              <div id="formSuccess" style="display:none; margin-top:14px; color:#22c55e; font-weight:700; text-align:center; font-size:14px;">
+                ✓ Request received! Opening WhatsApp confirmation...
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div style="font-family:var(--font-heading); font-size:20px; font-weight:800; margin-bottom:8px;">PRANA SHALA</div>
+      <p style="font-size:13px; max-width:500px; margin:0 auto 20px;">Dedicated flagship presence crafted for local authority. Built with sub-1.5s mobile speed, zero bloated plugins, and 100% code ownership.</p>
+      <div style="font-size:12px; opacity:0.7;">© 2026 PRANA SHALA. Prototype designed by Uncoded Hub 7-Day Sprint.</div>
+    </div>
+  </footer>
+
+  <!-- Floating 3-Theme Switcher Dock -->
+  <div class="theme-dock">
+    <span class="theme-dock-lbl">Design Theme:</span>
+    <button class="theme-opt-btn active" id="btn-sunlit-teakwood-saffron" onclick="setTheme('sunlit-teakwood-saffron')">
+      <span>🕉️</span> Teak & Saffron
+    </button>
+    <button class="theme-opt-btn" id="btn-celestial-moonlit-dark" onclick="setTheme('celestial-moonlit-dark')">
+      <span>🌙</span> Moonlit Cosmic
+    </button>
+    <button class="theme-opt-btn" id="btn-mindful-sage-minimal" onclick="setTheme('mindful-sage-minimal')">
+      <span>🍃</span> Sage Minimal
+    </button>
+  </div>
+
+  <!-- Founder Pitch & Strategy Cover Letter Modal -->
+  <div class="pitch-modal-backdrop" id="uncodedPitchModal" onclick="handleBackdropClick(event)">
+    <div class="pitch-modal-card">
+      <button class="pitch-close-btn" onclick="closePitchModal()" title="Close dialog">✕</button>
+      <div class="pitch-badge">Confidential Founder Pitch • 7-Day Sprint Specimen</div>
+      <h2 class="pitch-h2">Why We Hand-Built This Prototype For Your Business Before Asking For A Rupee</h2>
+      
+      <div class="pitch-author-bar">
+        <div class="pitch-author-avatar">UH</div>
+        <div>
+          <div class="pitch-author-name">Deepak &amp; Geetha</div>
+          <div class="pitch-author-title">Founders &amp; Principal Engineers, Uncoded Hub (Bangalore, India)</div>
+        </div>
+      </div>
+
+      <div class="pitch-body">
+        <p>Dear Business Owner / Practice Director,</p>
+        <p>Most digital agencies pitch generic 40-page PDF decks, throw around buzzwords like "bespoke omni-channel synergy", and demand ₹1.5L–₹3L before proving they understand a single thing about your real customers. <strong>We do the opposite: we do the work first.</strong></p>
+
+        <div class="pitch-highlight-box">
+          <h4 style="color:#60a5fa; margin-bottom:6px; font-size:15px;">1. The Invisible Systems Leak (The Art of Thinking in Systems)</h4>
+          <p style="margin:0; font-size:14px; color:#cbd5e1;">In systems thinking, your customer acquisition operates on stocks and flows. You invest money into Google Maps, local SEO, Instagram, or referrals. That is your <em>inflow</em>. But when a prospective client arrives on a slow WordPress site that takes 4+ seconds to load or has confusing navigation, <strong>over 70% bounce silently</strong>. That is your invisible <em>outflow</em>. Pouring more ad spend into a leaking bucket never fixes the problem—re-engineering the conversion asset does.</p>
+        </div>
+
+        <div class="pitch-highlight-box">
+          <h4 style="color:#60a5fa; margin-bottom:6px; font-size:15px;">2. Direct-Response Conversion Science (Making Websites Win)</h4>
+          <p style="margin:0; font-size:14px; color:#cbd5e1;">This website is engineered with DiPS (Diagnose-Problem-Solution) architecture: sub-1.5s mobile speed, upfront treatment/service clarity, interactive self-qualification tools, and direct 1-tap WhatsApp consultation. It resolves your prospect's unvoiced fears within 50 milliseconds so they reach out to you instead of checking your competitors.</p>
+        </div>
+
+        <div class="pitch-highlight-box">
+          <h4 style="color:#60a5fa; margin-bottom:6px; font-size:15px;">3. Distinct Strategic Identity (Designing Brand Identity)</h4>
+          <p style="margin:0; font-size:14px; color:#cbd5e1;">A brand is the gut feeling a customer has about your business. Notice the floating theme dock at the bottom of this page: you can switch between <strong>3 complete aesthetic directions</strong> in real-time. We craft a distinctive visual language that commands premium pricing and local category leadership.</p>
+        </div>
+
+        <p><strong>Our 7-Day Sprint Guarantee:</strong> You work directly with us (Deepak &amp; Geetha). In 7 working days, we replace all demo content with your real logo, photos, pricing, and phone number, connect your WhatsApp funnel, and hand you 100% code ownership with zero monthly platform lock-ins.</p>
+      </div>
+
+      <div class="pitch-actions">
+        <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha,%20I%20am%20viewing%20the%20Yoga & Meditation Studio%20demo%20and%20want%20to%20discuss%20claiming%20it%20for%20my%20business." class="pitch-cta-wa" target="_blank">
+          Claim This Website on WhatsApp (+91 8660819023) →
+        </a>
+        <button class="pitch-cta-dismiss" onclick="closePitchModal()">Explore Live Demo Specimen ↓</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme Switcher Logic
+    function setTheme(themeId) {
+      document.body.setAttribute('data-theme', themeId);
+      localStorage.setItem('uncoded_theme_yoga', themeId);
+      document.querySelectorAll('.theme-opt-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('btn-' + themeId);
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    // Restore saved theme on load
+    (function() {
+      const saved = localStorage.getItem('uncoded_theme_yoga');
+      if (saved) {
+        setTheme(saved);
+      }
+    })();
+
+    // Navigation & Form helpers
+    function scrollToForm(serviceName) {
+      if (serviceName) {
+        document.getElementById('fService').value = serviceName;
+      }
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function scrollToInteractive() {
+      document.getElementById('interactive').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function openWhatsApp() {
+      window.open("https://wa.me/918660819023?text=" + encodeURIComponent("Hi PRANA SHALA, I would like to inquire about your services."), "_blank");
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('fName').value;
+      const phone = document.getElementById('fPhone').value;
+      const srv = document.getElementById('fService').value;
+      document.getElementById('formSuccess').style.display = 'block';
+      setTimeout(() => {
+        window.open("https://wa.me/918660819023?text=" + encodeURIComponent("Hello! Name: " + name + " | Phone: " + phone + " | Requirement: " + srv), "_blank");
+      }, 800);
+    }
+
+    // Founder Pitch Modal Functions
+    function openPitchModal() {
+      const modal = document.getElementById('uncodedPitchModal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closePitchModal() {
+      const modal = document.getElementById('uncodedPitchModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        localStorage.setItem('uncoded_pitch_viewed', 'true');
+      }
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target.id === 'uncodedPitchModal') {
+        closePitchModal();
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closePitchModal();
+      }
+    });
+
+    // Gentle auto-open for first-time visitors after 2.5s delay
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        if (!localStorage.getItem('uncoded_pitch_viewed')) {
+          openPitchModal();
+        }
+      }, 2500);
+    });
+
+    
+      function filterYoga(type) {
+        // Simple visual toggle feedback
+        document.querySelectorAll('#btnAll, #btnMorn, #btnEve').forEach(b => {
+          b.className = 'btn btn-secondary';
+          b.style.padding = '8px 16px';
+          b.style.fontSize = '13px';
+        });
+        if (type === 'all') document.getElementById('btnAll').className = 'btn btn-primary';
+        if (type === 'morning') document.getElementById('btnMorn').className = 'btn btn-primary';
+        if (type === 'evening') document.getElementById('btnEve').className = 'btn btn-primary';
+      }
+  </script>
+</body>
+</html>

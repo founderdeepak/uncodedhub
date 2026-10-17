@@ -18,9 +18,9 @@ const DESTINATIONS = [
   {
     tag: 'Live specimens',
     title: 'Portfolio & Demos',
-    desc: 'Test 6 fully interactive specimen websites with live theme switchers, audit scores, and booking funnels.',
+    desc: 'Test 17 fully interactive specimen websites with live theme switchers, audit scores, and booking funnels.',
     to: '/portfolio/',
-    cta: 'Test 6 Live Demos →',
+    cta: 'Test 17 Live Demos →',
   },
   {
     tag: 'Turnkey scopes',
@@ -179,7 +179,7 @@ export default function NotFound() {
                     to="/portfolio/"
                     className="w-full block text-center text-xs text-on-ink-muted hover:text-paper py-2 transition-colors"
                   >
-                    Or test our 6 live client demos first →
+                    Or test our 17 live client demos first →
                   </Link>
                 </div>
               </div>

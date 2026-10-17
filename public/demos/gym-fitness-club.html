@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IronVault Athletic Club | 24/7 Strength, Conditioning & Recovery</title>
+  <meta name="description" content="14,000 sq.ft of competition Eleiko plates, Hammer Strength rigs, 40m sprint turf, and cold plunge recovery suites. Bangalore's premier fitness destination.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Space+Grotesk:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    
+    /* ==========================================================================
+       THEME 1: Stealth Dark
+       ========================================================================== */
+    :root, body[data-theme="raw-iron-stealth"] {
+      --bg-primary: #09090B;
+      --bg-surface: #121215;
+      --bg-card: #18181B;
+      --bg-card-hover: #27272A;
+      --text-primary: #FAFAFA;
+      --text-muted: #A1A1AA;
+      --text-subtle: #71717A;
+      --border-color: rgba(255, 255, 255, 0.12);
+      --accent: #E11D48;
+      --accent-hover: #F43F5E;
+      --accent-contrast: #FFFFFF;
+      --accent-light: rgba(225, 29, 72, 0.15);
+      --badge-bg: rgba(225, 29, 72, 0.15);
+      --badge-text: #FB7185;
+      --radius: 8px;
+      --font-heading: 'Syne', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --header-bg: rgba(9, 9, 11, 0.94);
+      --shadow: 0 20px 40px rgba(0,0,0,0.7);
+      --btn-radius: 8px;
+    }
+
+    /* ==========================================================================
+       THEME 2: Nordic Slate
+       ========================================================================== */
+    body[data-theme="nordic-athletic-slate"] {
+      --bg-primary: #F4F6F9;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #F1F5F9;
+      --text-primary: #0F172A;
+      --text-muted: #334155;
+      --text-subtle: #64748B;
+      --border-color: #CBD5E1;
+      --accent: #0284C7;
+      --accent-hover: #0369A1;
+      --accent-contrast: #FFFFFF;
+      --accent-light: rgba(2, 132, 199, 0.12);
+      --badge-bg: #E2E8F0;
+      --badge-text: #0369A1;
+      --radius: 12px;
+      --font-heading: 'Space Grotesk', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --header-bg: rgba(244, 246, 249, 0.95);
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --btn-radius: 12px;
+    }
+
+    /* ==========================================================================
+       THEME 3: Cyber Volt
+       ========================================================================== */
+    body[data-theme="cyber-volt-black"] {
+      --bg-primary: #000000;
+      --bg-surface: #0A0A0A;
+      --bg-card: #111111;
+      --bg-card-hover: #1A1A1A;
+      --text-primary: #FFFFFF;
+      --text-muted: #9CA3AF;
+      --text-subtle: #6B7280;
+      --border-color: #222222;
+      --accent: #84CC16;
+      --accent-hover: #A3E635;
+      --accent-contrast: #000000;
+      --accent-light: rgba(132, 204, 22, 0.15);
+      --badge-bg: #1E293B;
+      --badge-text: #BEF264;
+      --radius: 0px;
+      --font-heading: 'Syne', sans-serif;
+      --font-body: 'Space Grotesk', sans-serif;
+      --header-bg: rgba(0, 0, 0, 0.95);
+      --shadow: 4px 4px 0px #84CC16;
+      --btn-radius: 0px;
+    }
+    
+
+    /* Reset & Core Setup */
+    *, *::before, *::after {
+      box-sizing: border-box; margin: 0; padding: 0;
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease, box-shadow 0.25s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      padding-top: 48px;
+      padding-bottom: 90px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, h5 {
+      font-family: var(--font-heading);
+      color: var(--text-primary);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+    p { color: var(--text-muted); margin-bottom: 1rem; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Top Persistent Sprint Bar */
+    .uncoded-demo-bar {
+      position: fixed; top: 0; left: 0; right: 0; height: 48px;
+      background: #0f172a; color: #fff; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; font-size: 13px; font-family: -apple-system, sans-serif;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .demo-pill {
+      background: #3b82f6; color: #fff; font-weight: 700;
+      padding: 4px 10px; border-radius: 20px; font-size: 11px;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .demo-claim-btn {
+      background: #22c55e; color: #0f172a; font-weight: 700;
+      padding: 6px 14px; border-radius: 6px; font-size: 12px;
+      transition: all 0.2s ease;
+    }
+    .demo-claim-btn:hover { background: #4ade80; transform: translateY(-1px); }
+    .demo-pitch-btn {
+      background: rgba(59, 130, 246, 0.22); color: #93c5fd; border: 1px solid rgba(96, 165, 250, 0.4);
+      font-weight: 700; padding: 5px 12px; border-radius: 6px; font-size: 11.5px;
+      cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .demo-pitch-btn:hover { background: rgba(59, 130, 246, 0.38); color: #ffffff; border-color: #93c5fd; }
+
+    /* Founder Pitch / Strategy Cover Letter Pop-up Modal */
+    .pitch-modal-backdrop {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10, 15, 29, 0.82);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      z-index: 100000; display: none; align-items: center; justify-content: center;
+      padding: 20px; opacity: 0; transition: opacity 0.3s ease;
+    }
+    .pitch-modal-backdrop.active {
+      display: flex; opacity: 1;
+    }
+    .pitch-modal-card {
+      background: #0f172a; color: #f8fafc;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 20px; max-width: 780px; width: 100%; max-height: 88vh;
+      overflow-y: auto; padding: 36px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      position: relative; transform: translateY(20px) scale(0.97);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .pitch-modal-backdrop.active .pitch-modal-card {
+      transform: translateY(0) scale(1);
+    }
+    .pitch-close-btn {
+      position: absolute; top: 20px; right: 20px;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff; font-size: 18px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all 0.2s ease;
+    }
+    .pitch-close-btn:hover { background: rgba(255, 255, 255, 0.22); transform: scale(1.08); }
+    .pitch-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px; border-radius: 30px; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      background: rgba(59, 130, 246, 0.18); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3);
+      margin-bottom: 14px;
+    }
+    .pitch-h2 {
+      font-size: 26px; line-height: 1.3; font-weight: 800; color: #ffffff;
+      margin-bottom: 12px; font-family: var(--font-heading);
+    }
+    .pitch-author-bar {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 22px; padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .pitch-author-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6, #06b6d4);
+      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; color: #fff;
+    }
+    .pitch-author-name { font-weight: 700; font-size: 14px; color: #f1f5f9; }
+    .pitch-author-title { font-size: 12px; color: #94a3b8; }
+    .pitch-body {
+      font-size: 15px; line-height: 1.7; color: #cbd5e1; display: flex; flex-direction: column; gap: 16px;
+    }
+    .pitch-body strong { color: #ffffff; }
+    .pitch-highlight-box {
+      background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px; padding: 18px 20px; margin: 4px 0;
+    }
+    .pitch-actions {
+      display: flex; align-items: center; gap: 14px; margin-top: 26px; padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12); flex-wrap: wrap;
+    }
+    .pitch-cta-wa {
+      background: #22c55e; color: #0b1c11; font-weight: 800; font-size: 14px;
+      padding: 13px 26px; border-radius: 10px; text-decoration: none; display: inline-flex;
+      align-items: center; gap: 8px; transition: all 0.2s ease;
+      box-shadow: 0 4px 15px rgba(34, 197, 94, 0.35);
+    }
+    .pitch-cta-wa:hover { background: #4ade80; transform: translateY(-2px); }
+    .pitch-cta-dismiss {
+      background: transparent; border: 1px solid rgba(255, 255, 255, 0.2); color: #cbd5e1;
+      padding: 12px 20px; border-radius: 10px; font-weight: 600; font-size: 14px; cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .pitch-cta-dismiss:hover { background: rgba(255, 255, 255, 0.08); color: #fff; }
+
+    /* Site Navigation */
+    .site-nav {
+      position: sticky; top: 48px; z-index: 900;
+      background: var(--header-bg); backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 0;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .brand-logo {
+      font-family: var(--font-heading); font-size: 22px; font-weight: 800;
+      letter-spacing: -0.02em; color: var(--text-primary);
+    }
+    .brand-sub {
+      font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--accent); font-weight: 700; display: block; margin-top: 2px;
+    }
+    .nav-links { display: flex; gap: 24px; align-items: center; font-size: 14px; font-weight: 600; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 26px; font-size: 15px; font-weight: 700;
+      border-radius: var(--btn-radius); cursor: pointer; border: none;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-primary {
+      background: var(--accent); color: var(--accent-contrast);
+      box-shadow: 0 4px 14px var(--accent-light);
+    }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
+    .btn-secondary {
+      background: var(--bg-card); color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+    .btn-secondary:hover { background: var(--bg-card-hover); border-color: var(--accent); }
+
+    /* Hero Section */
+    .hero { padding: 60px 0 50px; position: relative; }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 50px;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 30px; font-size: 12px;
+      font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      background: var(--badge-bg); color: var(--badge-text);
+      margin-bottom: 20px;
+    }
+    .hero h1 { font-size: clamp(34px, 4.4vw, 56px); margin-bottom: 18px; }
+    .hero p { font-size: 18px; line-height: 1.6; color: var(--text-muted); margin-bottom: 28px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
+    .hero-img-box {
+      position: relative; border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow); border: 1px solid var(--border-color);
+    }
+    .hero-img-box img { width: 100%; height: 460px; object-fit: cover; }
+
+    /* Stats Banner */
+    .stat-banner {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+      margin: 20px 0 60px;
+    }
+    .stat-card {
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius); padding: 22px; text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .stat-val {
+      font-family: var(--font-heading); font-size: 34px; font-weight: 800;
+      color: var(--accent); margin-bottom: 4px; line-height: 1;
+    }
+    .stat-lbl { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-subtle); }
+
+    .trust-strip {
+      display: flex; gap: 24px; align-items: center; justify-content: center;
+      flex-wrap: wrap; padding: 18px; border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color); margin-bottom: 60px;
+    }
+    .trust-logo {
+      font-size: 13px; font-weight: 800; letter-spacing: 0.06em;
+      color: var(--text-subtle); display: flex; align-items: center; gap: 6px;
+    }
+
+    /* Section Headers */
+    .sec-head { text-align: center; max-width: 680px; margin: 0 auto 46px; }
+    .sec-head h2 { font-size: 36px; margin-bottom: 12px; }
+    .sec-head p { font-size: 16px; color: var(--text-muted); }
+
+    /* Services Grid */
+    .srv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-bottom: 80px; }
+    .srv-card {
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column;
+      box-shadow: var(--shadow);
+    }
+    .srv-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+    .srv-img-wrap { height: 180px; overflow: hidden; }
+    .srv-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .srv-card:hover .srv-img { transform: scale(1.05); }
+    .srv-body { padding: 22px; display: flex; flex-direction: column; flex-grow: 1; }
+    .srv-badge {
+      align-self: flex-start; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      background: var(--badge-bg); color: var(--badge-text);
+      padding: 3px 8px; border-radius: 4px; margin-bottom: 10px;
+    }
+    .srv-body h3 { font-size: 20px; margin-bottom: 8px; }
+    .srv-body p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; flex-grow: 1; }
+    .srv-pricing {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-top: 14px; border-top: 1px solid var(--border-color); margin-bottom: 16px;
+    }
+    .srv-pricing span { font-size: 12px; color: var(--text-subtle); }
+    .srv-pricing strong { font-size: 18px; color: var(--text-primary); font-family: var(--font-heading); }
+    .srv-btn { width: 100%; font-size: 14px; padding: 10px; }
+
+    /* Interactive Niche Tool Section */
+    .interactive-sec {
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius); padding: 48px; margin-bottom: 80px;
+      box-shadow: var(--shadow);
+    }
+    .form-group { margin-bottom: 18px; text-align: left; }
+    .form-group label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--text-primary); }
+    .form-ctrl {
+      width: 100%; padding: 12px 16px; border: 1px solid var(--border-color);
+      border-radius: var(--btn-radius); background: var(--bg-card);
+      color: var(--text-primary); font-family: var(--font-body); font-size: 15px; outline: none;
+    }
+    .form-ctrl:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
+
+    /* Process Blueprint */
+    .proc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; margin-bottom: 80px; }
+    .proc-step {
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius); padding: 28px; position: relative;
+    }
+    .proc-num {
+      font-family: var(--font-heading); font-size: 40px; font-weight: 800;
+      color: var(--accent); line-height: 1; margin-bottom: 12px; opacity: 0.9;
+    }
+    .proc-step h3 { font-size: 19px; margin-bottom: 8px; }
+    .proc-step p { font-size: 14px; color: var(--text-muted); margin: 0; }
+
+    /* Testimonials */
+    .rev-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 80px; }
+    .rev-card {
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius); padding: 26px; display: flex; flex-direction: column;
+    }
+    .rev-stars { color: #f59e0b; font-size: 16px; margin-bottom: 12px; }
+    .rev-txt { font-size: 15px; font-style: italic; color: var(--text-muted); margin-bottom: 18px; flex-grow: 1; }
+    .rev-author { display: flex; align-items: center; gap: 12px; }
+    .rev-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--accent); color: var(--accent-contrast);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 15px;
+    }
+    .rev-name { font-weight: 700; font-size: 14px; }
+    .rev-role { font-size: 12px; color: var(--text-subtle); }
+
+    /* FAQ Accordion */
+    .faq-list { max-width: 800px; margin: 0 auto 80px; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius); overflow: hidden;
+    }
+    .faq-q {
+      padding: 18px 24px; font-weight: 700; font-size: 16px; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      list-style: none;
+    }
+    .faq-q::-webkit-details-marker { display: none; }
+    .faq-a { padding: 0 24px 20px; font-size: 15px; color: var(--text-muted); line-height: 1.6; }
+    .faq-icon { font-size: 20px; color: var(--accent); transition: transform 0.2s ease; }
+    .faq-item[open] .faq-icon { transform: rotate(45deg); }
+
+    /* Intake Contact Section */
+    .contact-sec {
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius); padding: 50px; margin-bottom: 80px;
+    }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border-color); padding: 50px 0 20px;
+      font-size: 14px; color: var(--text-subtle); text-align: center;
+    }
+
+    /* Floating 3-Theme Switcher Dock */
+    .theme-dock {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      background: rgba(15, 23, 42, 0.94); backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 40px; padding: 6px 12px;
+      display: flex; align-items: center; gap: 8px; z-index: 2000;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    .theme-dock-lbl {
+      color: #94a3b8; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em; padding: 0 8px;
+    }
+    .theme-opt-btn {
+      background: transparent; border: 1px solid transparent; color: #f1f5f9;
+      font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: 30px;
+      cursor: pointer; display: flex; align-items: center; gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .theme-opt-btn:hover { background: rgba(255,255,255,0.1); }
+    .theme-opt-btn.active {
+      background: #3b82f6; color: #fff; border-color: #60a5fa;
+      box-shadow: 0 2px 10px rgba(59, 130, 246, 0.5);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero-img-box img { height: 320px; }
+      .stat-banner { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+      .interactive-sec { padding: 24px; }
+      .nav-links { display: none; }
+      .theme-dock { width: 92%; justify-content: center; }
+      .theme-dock-lbl { display: none; }
+      .theme-opt-btn { font-size: 11px; padding: 6px 10px; }
+    }
+  </style>
+</head>
+<body data-theme="raw-iron-stealth">
+
+  <!-- Persistent Client Sprint Demo Bar -->
+  <div class="uncoded-demo-bar">
+    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+      <span class="demo-pill">Gym & Fitness Club</span>
+      <span style="color:#cbd5e1; font-weight:500;">Interactive 7-Day Sprint Prototype • Built Exclusively by Uncoded Hub</span>
+      <button class="demo-pitch-btn" onclick="openPitchModal()">✨ Why We Built This Demo</button>
+    </div>
+    <a href="https://wa.me/918660819023?text=Hi%20Uncoded%20Hub,%20I%20want%20to%20claim%20this%20exact%20Gym & Fitness Club%20website%20for%20my%20business" class="demo-claim-btn" target="_blank">Claim This Website For My Business</a>
+  </div>
+
+  <!-- Navigation -->
+  <header class="site-nav">
+    <div class="wrap nav-inner">
+      <div>
+        <span class="brand-logo">IRONVAULT</span>
+        <span class="brand-sub">ATHLETIC CLUB & RECOVERY</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#interactive">Interactive Tool</a>
+        <a href="#process">Process</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="btn btn-primary" onclick="scrollToForm()">Book Consultation</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="hero-tag">⚡ Bangalore's Premier 24/7 Strength Facility</div>
+        <h1>Built For Serious Lifters & Everyday Athletes</h1>
+        <p>Competition Eleiko plates, 40-meter indoor sprint turf, infrared sauna suites, and certified strength coaches. Escape crowded commercial budget gyms.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="scrollToInteractive()">🎟️ Claim 1-Day Free VIP Pass</button>
+          <button class="btn btn-secondary" onclick="openWhatsApp()">View Membership Plans</button>
+        </div>
+        <div style="font-size:13px; color:var(--text-subtle); display:flex; align-items:center; gap:8px;">
+          <span style="color:#f59e0b;">★★★★★</span> Rated 4.9/5 from 450+ verified local clients
+        </div>
+      </div>
+      <div class="hero-img-box">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80" alt="IRONVAULT" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- Stat Banner -->
+  <div class="wrap">
+    <div class="stat-banner">
+      
+      <div class="stat-card">
+        <div class="stat-val">14,000</div>
+        <div class="stat-lbl">Sq.Ft Training Floor</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">24/7</div>
+        <div class="stat-lbl">Biometric Member Access</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">12</div>
+        <div class="stat-lbl">Competition Power Racks</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">4.9 ★</div>
+        <div class="stat-lbl">Over 650+ Reviews</div>
+      </div>
+    </div>
+    <div class="trust-strip">
+      <span style="font-size:12px; text-transform:uppercase; letter-spacing:0.05em; color:var(--accent);">TRUSTED ACCREDITATIONS:</span>
+      <span class="trust-logo">ELEIKO CERTIFIED</span><span class="trust-logo">HAMMER STRENGTH OFFICIAL</span><span class="trust-logo">CROSSFIT AFFILIATE</span><span class="trust-logo">CONTRAST THERAPY SUITE</span>
+    </div>
+  </div>
+
+  <!-- Services Grid -->
+  <section id="services" style="padding: 20px 0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Engineered Training Zones & Facilities</h2>
+        <p>Zero bottleneck floor planning with dedicated zones for powerlifting, HYROX, sprint conditioning, and luxury sauna recovery.</p>
+      </div>
+      <div class="srv-grid">
+        
+      <div class="srv-card">
+        <div class="srv-img-wrap"><img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="Heavy Strength & Power Racks" loading="lazy" class="srv-img"></div>
+        <div class="srv-body">
+          <div class="srv-badge">Strength Floor</div>
+          <h3>Heavy Strength & Power Racks</h3>
+          <p>Calibrated steel plates, Texas power bars, chalk stations, and deadlift drop platforms.</p>
+          <div class="srv-pricing">
+            <span>Starting from</span>
+            <strong>₹2,500 / mo</strong>
+          </div>
+          <button class="btn btn-secondary srv-btn" onclick="scrollToForm('Heavy Strength & Power Racks')">Inquire Details &rarr;</button>
+        </div>
+      </div>
+      <div class="srv-card">
+        <div class="srv-img-wrap"><img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=800&q=80" alt="40m Functional Turf Track" loading="lazy" class="srv-img"></div>
+        <div class="srv-body">
+          <div class="srv-badge">Conditioning</div>
+          <h3>40m Functional Turf Track</h3>
+          <p>Weighted sled pushes, kettlebells, Plyo boxes, rowing ergs, and high-intensity conditioning.</p>
+          <div class="srv-pricing">
+            <span>Starting from</span>
+            <strong>Included</strong>
+          </div>
+          <button class="btn btn-secondary srv-btn" onclick="scrollToForm('40m Functional Turf Track')">Inquire Details &rarr;</button>
+        </div>
+      </div>
+      <div class="srv-card">
+        <div class="srv-img-wrap"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80" alt="Contrast Therapy & Cold Plunge" loading="lazy" class="srv-img"></div>
+        <div class="srv-body">
+          <div class="srv-badge">Recovery Suite</div>
+          <h3>Contrast Therapy & Cold Plunge</h3>
+          <p>Finnish cedarwood saunas and sub-5°C ice plunges for accelerated central nervous system recovery.</p>
+          <div class="srv-pricing">
+            <span>Starting from</span>
+            <strong>₹1,200 / session</strong>
+          </div>
+          <button class="btn btn-secondary srv-btn" onclick="scrollToForm('Contrast Therapy & Cold Plunge')">Inquire Details &rarr;</button>
+        </div>
+      </div>
+      <div class="srv-card">
+        <div class="srv-img-wrap"><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" alt="1-on-1 Elite Biomechanics Coaching" loading="lazy" class="srv-img"></div>
+        <div class="srv-body">
+          <div class="srv-badge">Personal Training</div>
+          <h3>1-on-1 Elite Biomechanics Coaching</h3>
+          <p>Custom periodization, movement screening, and direct nutritional macro prescription.</p>
+          <div class="srv-pricing">
+            <span>Starting from</span>
+            <strong>₹8,000 / mo</strong>
+          </div>
+          <button class="btn btn-secondary srv-btn" onclick="scrollToForm('1-on-1 Elite Biomechanics Coaching')">Inquire Details &rarr;</button>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Niche Tool -->
+  <section id="interactive" style="padding: 20px 0;">
+    <div class="wrap">
+      <div class="interactive-sec">
+        <div class="sec-head" style="margin-bottom:30px;">
+          <h2>Instant 1-Day VIP Workout Pass Generator</h2>
+          <p>Enter your name and preferred training slot to generate an instant QR barcode guest pass for your phone.</p>
+        </div>
+        
+      <div style="max-width: 550px; margin: 0 auto; background: var(--bg-card); padding: 30px; border-radius: var(--radius); border: 1px solid var(--border-color);">
+        <div class="form-group">
+          <label>Your Full Name</label>
+          <input type="text" id="gName" class="form-ctrl" placeholder="e.g. Rahul Verma" value="Rahul Verma">
+        </div>
+        <div class="form-group">
+          <label>Primary Training Goal</label>
+          <select id="gGoal" class="form-ctrl">
+            <option>Powerlifting & Maximum Strength</option>
+            <option>Hypertrophy & Muscle Building</option>
+            <option>HYROX & Athletic Conditioning</option>
+            <option>Mobility & Contrast Recovery</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Preferred Visit Timing</label>
+          <select id="gSlot" class="form-ctrl">
+            <option>Morning (06:00 AM – 10:00 AM)</option>
+            <option>Afternoon (12:00 PM – 04:00 PM)</option>
+            <option>Evening (05:00 PM – 09:00 PM)</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" style="width:100%; margin-top: 10px;" onclick="genGymPass()">Generate Barcode Guest Pass</button>
+        <div id="gResult" style="display:none; margin-top:20px; background:var(--bg-surface); border:1px dashed var(--accent); padding:20px; border-radius:var(--radius); text-align:center;">
+          <span style="font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); font-weight:700;">DIGITAL PASS ACTIVATED</span>
+          <div style="font-size:26px; font-weight:800; letter-spacing:3px; margin:8px 0; color:var(--text-primary); font-family:var(--font-heading);" id="gCode">IV-7892-PASS</div>
+          <p style="font-size:13px; margin:0; color:var(--text-muted);">Valid for 48 hours. Present at front reception for complimentary locker, towel, and training floor access.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Blueprint -->
+  <section id="process" style="padding: 20px 0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>The IronVault Member Experience</h2>
+        <p>How we guide our members from day one to consistent, long-term personal records.</p>
+      </div>
+      <div class="proc-grid">
+        
+      <div class="proc-step">
+        <div class="proc-num">01</div>
+        <h3>Biometric & Movement Scan</h3>
+        <p>InBody 770 body composition analysis combined with joint mobility and squat mechanics screening.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">02</div>
+        <h3>Target Periodization Plan</h3>
+        <p>Structured 8-week progressive overload block matched directly to your current strength baseline.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">03</div>
+        <h3>Form Execution & Nutrition</h3>
+        <p>Real-time lifting technique adjustments and personalized non-restrictive macronutrient targets.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">04</div>
+        <h3>Recovery & PR Benchmarking</h3>
+        <p>Weekly contrast sauna recovery sessions and monthly rep-max strength benchmarking testing.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews & Social Proof -->
+  <section id="reviews" style="padding: 20px 0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Verified Member Reviews</h2>
+        <p>Real feedback from powerlifters, desk workers, and everyday athletes.</p>
+      </div>
+      <div class="rev-grid">
+        
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-txt">"Cleanest gym in Bangalore by a mile. The equipment is competition-grade, chalk is encouraged, and the atmosphere makes you want to lift heavy."</p>
+        <div class="rev-author">
+          <div class="rev-avatar">K</div>
+          <div>
+            <div class="rev-name">Karan Deshmukh</div>
+            <div class="rev-role">Member for 2 Years • Verified Client</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-txt">"The turf track and cold plunge combination changed my recovery completely. Never waiting for a squat rack even at 7:00 PM."</p>
+        <div class="rev-author">
+          <div class="rev-avatar">P</div>
+          <div>
+            <div class="rev-name">Priya Nambiar</div>
+            <div class="rev-role">CrossFit & HYROX Athlete • Verified Client</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-txt">"Lost 14kg of pure fat in 6 months with their trainer protocol. Zero fluff, pure science and consistency."</p>
+        <div class="rev-author">
+          <div class="rev-avatar">A</div>
+          <div>
+            <div class="rev-name">Anand Kulkarni</div>
+            <div class="rev-role">Senior Software Architect • Verified Client</div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section id="faq" style="padding: 20px 0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about our standards, timelines, fees, and booking guarantee.</p>
+      </div>
+      <div class="faq-list">
+        
+      <details class="faq-item">
+        <summary class="faq-q">Are you open 24 hours including public holidays? <span class="faq-icon">+</span></summary>
+        <div class="faq-a">Yes. Members have 24/7 biometric access 365 days a year with security personnel on site at all times.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is training floor chalk permitted? <span class="faq-icon">+</span></summary>
+        <div class="faq-a">Yes, liquid and block chalk are provided free at all lifting stations and platforms.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How does the 1-Day Free Guest Pass work? <span class="faq-icon">+</span></summary>
+        <div class="faq-a">Generate your pass online, show the code at the front reception, and enjoy complete facility access including lockers and sauna.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Do you offer freeze options if I travel for work? <span class="faq-icon">+</span></summary>
+        <div class="faq-a">Yes, members on quarterly and annual memberships can freeze up to 60 days without penalty.</div>
+      </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intake Form Section -->
+  <section id="contact" style="padding: 20px 0;">
+    <div class="wrap">
+      <div class="contact-sec">
+        <div class="contact-grid">
+          <div>
+            <div class="hero-tag" style="margin-bottom:12px;">Direct Inbound Booking</div>
+            <h2 style="font-size:32px; margin-bottom:16px;">Claim Your Free Consultation & Studio Tour</h2>
+            <p style="font-size:15px; margin-bottom:24px;">Schedule an in-person facility walkthrough and complimentary body composition scan with our head coach.</p>
+            <div style="font-size:14px; color:var(--text-muted); display:flex; flex-direction:column; gap:12px;">
+              <div>📍 <strong>Location:</strong> Prime Central Corridor • Dedicated Parking Available</div>
+              <div>⚡ <strong>Response Time:</strong> Instant WhatsApp Confirmation in &lt; 15 mins</div>
+              <div>🛡️ <strong>Guarantee:</strong> 100% Confidentiality &amp; Certified Standards</div>
+            </div>
+          </div>
+          <div>
+            <form onsubmit="handleFormSubmit(event)" style="background:var(--bg-card); padding:28px; border-radius:var(--radius); border:1px solid var(--border-color);">
+              <div class="form-group">
+                <label>Your Full Name</label>
+                <input type="text" class="form-ctrl" id="fName" placeholder="e.g. Vikramaditya Rao" required>
+              </div>
+              <div class="form-group">
+                <label>Phone / WhatsApp Number</label>
+                <input type="tel" class="form-ctrl" id="fPhone" placeholder="+91 98765 43210" required>
+              </div>
+              <div class="form-group">
+                <label>Service or Consultation Requirement</label>
+                <input type="text" class="form-ctrl" id="fService" placeholder="Select or type service..." value="Annual Strength Membership">
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;">Submit Consultation Request</button>
+              <div id="formSuccess" style="display:none; margin-top:14px; color:#22c55e; font-weight:700; text-align:center; font-size:14px;">
+                ✓ Request received! Opening WhatsApp confirmation...
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div style="font-family:var(--font-heading); font-size:20px; font-weight:800; margin-bottom:8px;">IRONVAULT</div>
+      <p style="font-size:13px; max-width:500px; margin:0 auto 20px;">Dedicated flagship presence crafted for local authority. Built with sub-1.5s mobile speed, zero bloated plugins, and 100% code ownership.</p>
+      <div style="font-size:12px; opacity:0.7;">© 2026 IRONVAULT. Prototype designed by Uncoded Hub 7-Day Sprint.</div>
+    </div>
+  </footer>
+
+  <!-- Floating 3-Theme Switcher Dock -->
+  <div class="theme-dock">
+    <span class="theme-dock-lbl">Design Theme:</span>
+    <button class="theme-opt-btn active" id="btn-raw-iron-stealth" onclick="setTheme('raw-iron-stealth')">
+      <span>⚡</span> Stealth Dark
+    </button>
+    <button class="theme-opt-btn" id="btn-nordic-athletic-slate" onclick="setTheme('nordic-athletic-slate')">
+      <span>🏔️</span> Nordic Slate
+    </button>
+    <button class="theme-opt-btn" id="btn-cyber-volt-black" onclick="setTheme('cyber-volt-black')">
+      <span>🔋</span> Cyber Volt
+    </button>
+  </div>
+
+  <!-- Founder Pitch & Strategy Cover Letter Modal -->
+  <div class="pitch-modal-backdrop" id="uncodedPitchModal" onclick="handleBackdropClick(event)">
+    <div class="pitch-modal-card">
+      <button class="pitch-close-btn" onclick="closePitchModal()" title="Close dialog">✕</button>
+      <div class="pitch-badge">Confidential Founder Pitch • 7-Day Sprint Specimen</div>
+      <h2 class="pitch-h2">Why We Hand-Built This Prototype For Your Business Before Asking For A Rupee</h2>
+      
+      <div class="pitch-author-bar">
+        <div class="pitch-author-avatar">UH</div>
+        <div>
+          <div class="pitch-author-name">Deepak &amp; Geetha</div>
+          <div class="pitch-author-title">Founders &amp; Principal Engineers, Uncoded Hub (Bangalore, India)</div>
+        </div>
+      </div>
+
+      <div class="pitch-body">
+        <p>Dear Business Owner / Practice Director,</p>
+        <p>Most digital agencies pitch generic 40-page PDF decks, throw around buzzwords like "bespoke omni-channel synergy", and demand ₹1.5L–₹3L before proving they understand a single thing about your real customers. <strong>We do the opposite: we do the work first.</strong></p>
+
+        <div class="pitch-highlight-box">
+          <h4 style="color:#60a5fa; margin-bottom:6px; font-size:15px;">1. The Invisible Systems Leak (The Art of Thinking in Systems)</h4>
+          <p style="margin:0; font-size:14px; color:#cbd5e1;">In systems thinking, your customer acquisition operates on stocks and flows. You invest money into Google Maps, local SEO, Instagram, or referrals. That is your <em>inflow</em>. But when a prospective client arrives on a slow WordPress site that takes 4+ seconds to load or has confusing navigation, <strong>over 70% bounce silently</strong>. That is your invisible <em>outflow</em>. Pouring more ad spend into a leaking bucket never fixes the problem—re-engineering the conversion asset does.</p>
+        </div>
+
+        <div class="pitch-highlight-box">
+          <h4 style="color:#60a5fa; margin-bottom:6px; font-size:15px;">2. Direct-Response Conversion Science (Making Websites Win)</h4>
+          <p style="margin:0; font-size:14px; color:#cbd5e1;">This website is engineered with DiPS (Diagnose-Problem-Solution) architecture: sub-1.5s mobile speed, upfront treatment/service clarity, interactive self-qualification tools, and direct 1-tap WhatsApp consultation. It resolves your prospect's unvoiced fears within 50 milliseconds so they reach out to you instead of checking your competitors.</p>
+        </div>
+
+        <div class="pitch-highlight-box">
+          <h4 style="color:#60a5fa; margin-bottom:6px; font-size:15px;">3. Distinct Strategic Identity (Designing Brand Identity)</h4>
+          <p style="margin:0; font-size:14px; color:#cbd5e1;">A brand is the gut feeling a customer has about your business. Notice the floating theme dock at the bottom of this page: you can switch between <strong>3 complete aesthetic directions</strong> in real-time. We craft a distinctive visual language that commands premium pricing and local category leadership.</p>
+        </div>
+
+        <p><strong>Our 7-Day Sprint Guarantee:</strong> You work directly with us (Deepak &amp; Geetha). In 7 working days, we replace all demo content with your real logo, photos, pricing, and phone number, connect your WhatsApp funnel, and hand you 100% code ownership with zero monthly platform lock-ins.</p>
+      </div>
+
+      <div class="pitch-actions">
+        <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha,%20I%20am%20viewing%20the%20Gym & Fitness Club%20demo%20and%20want%20to%20discuss%20claiming%20it%20for%20my%20business." class="pitch-cta-wa" target="_blank">
+          Claim This Website on WhatsApp (+91 8660819023) →
+        </a>
+        <button class="pitch-cta-dismiss" onclick="closePitchModal()">Explore Live Demo Specimen ↓</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme Switcher Logic
+    function setTheme(themeId) {
+      document.body.setAttribute('data-theme', themeId);
+      localStorage.setItem('uncoded_theme_gym', themeId);
+      document.querySelectorAll('.theme-opt-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('btn-' + themeId);
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    // Restore saved theme on load
+    (function() {
+      const saved = localStorage.getItem('uncoded_theme_gym');
+      if (saved) {
+        setTheme(saved);
+      }
+    })();
+
+    // Navigation & Form helpers
+    function scrollToForm(serviceName) {
+      if (serviceName) {
+        document.getElementById('fService').value = serviceName;
+      }
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function scrollToInteractive() {
+      document.getElementById('interactive').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function openWhatsApp() {
+      window.open("https://wa.me/918660819023?text=" + encodeURIComponent("Hi IRONVAULT, I would like to inquire about your services."), "_blank");
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('fName').value;
+      const phone = document.getElementById('fPhone').value;
+      const srv = document.getElementById('fService').value;
+      document.getElementById('formSuccess').style.display = 'block';
+      setTimeout(() => {
+        window.open("https://wa.me/918660819023?text=" + encodeURIComponent("Hello! Name: " + name + " | Phone: " + phone + " | Requirement: " + srv), "_blank");
+      }, 800);
+    }
+
+    // Founder Pitch Modal Functions
+    function openPitchModal() {
+      const modal = document.getElementById('uncodedPitchModal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closePitchModal() {
+      const modal = document.getElementById('uncodedPitchModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        localStorage.setItem('uncoded_pitch_viewed', 'true');
+      }
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target.id === 'uncodedPitchModal') {
+        closePitchModal();
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closePitchModal();
+      }
+    });
+
+    // Gentle auto-open for first-time visitors after 2.5s delay
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        if (!localStorage.getItem('uncoded_pitch_viewed')) {
+          openPitchModal();
+        }
+      }, 2500);
+    });
+
+    
+      function genGymPass() {
+        const code = "IV-" + Math.floor(1000 + Math.random() * 9000) + "-VIP";
+        document.getElementById('gCode').innerText = code;
+        document.getElementById('gResult').style.display = 'block';
+      }
+  </script>
+</body>
+</html>

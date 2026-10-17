@@ -607,7 +607,7 @@ export default function Services({ onBook }: { onBook: () => void }) {
                     to="/portfolio/"
                     className="w-full block text-center text-xs text-on-ink-muted hover:text-paper py-2 transition-colors"
                   >
-                    Or test our 6 live demos first
+                    Or test our 17 live demos first
                   </Link>
                 </div>
               </div>
