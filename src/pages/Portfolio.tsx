@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
@@ -6,265 +6,32 @@ import { LogoMark } from '../components/Logo';
 
 /* ═══════════════════════════════════════════════════════════════════
    PORTFOLIO & INTERACTIVE SPECIMEN BUILDS
-   Cloaked-inspired design:
-   - High-contrast editorial hero with announcement badge
-   - Sector filter pill row
-   - Squircle bento specimen cards (rounded-[28px]) with studio chrome
-   - Cinematic dark chapter: "The 4 Specimen Standards"
-   - Early client position bento
-   - Dual-card closing CTA module
+   World-Class Client Acquisition Experience:
+   - High-contrast editorial hero
+   - 8:2 Specimen Index Grid (Command Deck Quick Jump)
+   - 17 Live Specimen Builds with Continuous 3-Second 3-Theme Changeover
+   - Segmented visual progress bars for each theme
+   - In-Page Interactive Viewport Modal (Desktop / Tablet / Mobile)
+   - The 4 Specimen Standards (Lighthouse speed, copy, semantic markup)
+   - Cloaked-style dual-card founder closing CTA
    ═══════════════════════════════════════════════════════════════════ */
+import { PROJECTS, type Project, type ThemeItem } from '../data/projects';
+export type { Project, ThemeItem };
 
-type Project = {
-  client: string;
-  url: string;
-  thumbnail: string;
-  sector: string;
-  category: string;
-  year: string;
-  summary: string;
-  result?: string;
-  themes: string;
-  nicheSlug: string;
-};
-
-const PROJECTS: Project[] = [
-  {
-    client: 'Meridian Architecture & Interiors',
-    url: '/demos/interior-design.html',
-    thumbnail: '/demos/thumbnails/interior-design.webp',
-    sector: 'Interior Architecture & Studios',
-    category: 'interiors',
-    year: '7-Day Sprint Build',
-    summary:
-      'Turnkey residential interior architecture and private home sanctuaries. Features photorealistic 3D render-to-reality comparisons, 100% transparent trade pricing fee structure, and an interactive 3-style visual theme switcher.',
-    result: '⚡ 0.8s LCP · 100% Lighthouse Performance · Full Diagnostic Booking Funnel',
-    themes: 'Warm Heritage · Obsidian Luxe · Avant-Garde Grid',
-    nicheSlug: '/blog/niche/interior-designers',
-  },
-  {
-    client: 'Marlow & Co. Private Real Estate',
-    url: '/demos/real-estate.html',
-    thumbnail: '/demos/thumbnails/real-estate.webp',
-    sector: 'Prime Real Estate & Private Advisory',
-    category: 'real-estate',
-    year: '7-Day Sprint Build',
-    summary:
-      'Independent prime property advisory and off-market residential acquisitions. Features a capped 8-client roster model, 14-point legal title verification checklist, and strict client NDA confidentiality booking.',
-    result: '⚡ 0.7s LCP · Zero Developer Bias · Verified Title Audit Funnel',
-    themes: 'Heritage Estate · Nocturne Penthouse HUD · Swiss Architectural',
-    nicheSlug: '/blog/niche/real-estate',
-  },
-  {
-    client: 'Willowmere Dental & Facial Aesthetics',
-    url: '/demos/dental-clinic.html',
-    thumbnail: '/demos/thumbnails/dental-clinic.webp',
-    sector: 'Dental Clinics & Facial Aesthetics',
-    category: 'clinics',
-    year: '7-Day Sprint Build',
-    summary:
-      'Specialized anxiety-free dental practice and smile aesthetics website. Built with a patient stop-signal protocol, upfront written treatment fee estimates, Class-B autoclave sterilisation badges, and zero-judgment consultation booking.',
-    result: '⚡ 0.8s LCP · Anxiety-Free Protocol · Complete Pricing Transparency',
-    themes: 'Nordic Sanctuary · Harley Med-Luxe · Swiss Radiance Grid',
-    nicheSlug: '/blog/niche/dental-clinics',
-  },
-  {
-    client: 'Alder & Wren Fine-Art Wedding Films',
-    url: '/demos/wedding-photography.html',
-    thumbnail: '/demos/thumbnails/wedding-photography.webp',
-    sector: 'Wedding Photographers & Films',
-    category: 'photographers',
-    year: '7-Day Sprint Build',
-    summary:
-      'Documentary destination wedding photography and cinematic film studio. Anchored by a strictly 1-wedding-per-weekend contract commitment, guaranteed 48-hour sneak peek delivery, and 4-week full gallery handoff.',
-    result: '⚡ 0.8s LCP · 1-Wedding Rule · 4-Week Delivery Contract Guarantee',
-    themes: 'Fine-Art Editorial · Cinematic Nocturne · Vogue Minimalist',
-    nicheSlug: '/blog/niche/wedding-photographers',
-  },
-  {
-    client: 'Halbrook Studio Precision Renovation',
-    url: '/demos/home-renovation.html',
-    thumbnail: '/demos/thumbnails/home-renovation.webp',
-    sector: 'Modular Kitchens & Full Renovation',
-    category: 'renovation',
-    year: '7-Day Sprint Build',
-    summary:
-      'Precision engineered modular kitchens and civil renovations. Highlights 100% IS:710 Marine BWP plywood standards, Blum German hardware certifications, 10-year written warranty seals, and free laser survey booking.',
-    result: '⚡ 0.8s LCP · IS:710 Marine Plywood · 10-Year Warranty Commitment',
-    themes: 'Industrial Craft · Obsidian Copper · Nordic Living Grid',
-    nicheSlug: '/blog/niche/home-renovation',
-  },
-  {
-    client: 'Naomi Reyes Executive Advisory',
-    url: '/demos/executive-coaching.html',
-    thumbnail: '/demos/thumbnails/executive-coaching.webp',
-    sector: 'Executive Coaching & Advisory',
-    category: 'business',
-    year: '7-Day Sprint Build',
-    summary:
-      'Strategic executive sparring and 90-day scaling architecture for high-growth founders and C-suite leaders navigating critical transition windows. Built around diagnostic-first intake and zero-pitch exploratory calls.',
-    result: '⚡ 0.7s LCP · Diagnostic-First Architecture · Zero-Pitch Protocol',
-    themes: 'Bespoke Executive · Thought Leader · Tech Monolith HUD',
-    nicheSlug: '/blog/niche/coaches-consultants',
-  },
-  {
-    client: 'Apex International Academy',
-    url: '/demos/educational-academy.html',
-    thumbnail: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
-    sector: 'Education & Coaching Academy',
-    category: 'education',
-    year: '7-Day Sprint Build',
-    summary:
-      'Premier academic coaching for STEM, Olympiads, and competitive board examinations. Features smart 15-student capped batches, concept-first IIT/Medical faculty, and an interactive annual scholarship & tuition estimator.',
-    result: '⚡ 0.8s LCP · Capped 15-Student Model · Interactive Scholarship Calculator',
-    themes: 'Oxford Collegiate · Cyber STEM · Campus Emerald',
-    nicheSlug: '/blog/niche/coaching-academy',
-  },
-  {
-    client: 'IronVault Fitness & Strength Club',
-    url: '/demos/gym-fitness-club.html',
-    thumbnail: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80',
-    sector: 'Commercial Gym & Strength Club',
-    category: 'fitness',
-    year: '7-Day Sprint Build',
-    summary:
-      'High-intensity athletic training facility with Eleiko Olympic barbells and capped peak-hour floor capacity. Built with an interactive 1-Day VIP Trial Pass activator and upfront membership pricing matrix.',
-    result: '⚡ 0.7s LCP · Zero Crowding Cap · Instant VIP Pass Activator',
-    themes: 'Industrial Iron · Matte Minimalist · Electric Energy',
-    nicheSlug: '/blog/niche/gym-fitness',
-  },
-  {
-    client: 'Vanguard Advisory Partners',
-    url: '/demos/business-portfolio.html',
-    thumbnail: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
-    sector: 'B2B Corporate & Business Advisory',
-    category: 'business',
-    year: '7-Day Sprint Build',
-    summary:
-      'Institutional strategy consulting and M&A transaction advisory for mid-market enterprises. Highlights proven deal track records, client NDA covenants, and an interactive 6-pillar business diagnostic scorecard.',
-    result: '⚡ 0.7s LCP · C-Suite Diagnostic Engine · Verified Case Studies',
-    themes: 'Savile Row Slate · Canary Wharf Dark · Wall Street Clean',
-    nicheSlug: '/blog/niche/business-consulting',
-  },
-  {
-    client: 'SereneSanctuary Luxury Spa & Ayurveda',
-    url: '/demos/spa-wellness.html',
-    thumbnail: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80',
-    sector: 'Luxury Spa & Holistic Wellness',
-    category: 'wellness',
-    year: '7-Day Sprint Build',
-    summary:
-      'Five-star urban sanctuary featuring traditional Balinese bodywork and authentic Kerala Ayurvedic therapies. Includes an interactive tension-zone ritual builder, private couple suite previews, and upfront treatment fees.',
-    result: '⚡ 0.8s LCP · Tension-Zone Therapy Builder · Transparent Menu',
-    themes: 'Ubud Botanical · Kyoto Minimalist · Charcoal Bathhouse',
-    nicheSlug: '/blog/niche/spa-wellness',
-  },
-  {
-    client: 'LuxeAura Hair & Aesthetics Lounge',
-    url: '/demos/salon-beauty.html',
-    thumbnail: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80',
-    sector: 'High-End Salon & Bridal Beauty',
-    category: 'beauty',
-    year: '7-Day Sprint Build',
-    summary:
-      'Bespoke Balayage, K18 molecular repair, and HD bridal aesthetics studio. Built with hospital-grade autoclave sterilisation disclosures, an interactive bridal estimate calculator, and 1-tap WhatsApp slot booking.',
-    result: '⚡ 0.7s LCP · Interactive Bridal Calculator · 1-Tap Booking',
-    themes: 'Rose Gold Glam · Paris Noir Monolith · Clean Organic Pastel',
-    nicheSlug: '/blog/niche/salon-beauty',
-  },
-  {
-    client: 'ForgePro Elite Private Coaching',
-    url: '/demos/fitness-coach.html',
-    thumbnail: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&q=80',
-    sector: 'Private Fitness Coach & Kinesiology',
-    category: 'fitness',
-    year: '7-Day Sprint Build',
-    summary:
-      'Biomechanical body recomposition and athletic conditioning for busy corporate executives. Features an intake readiness calculator, 12-week verified DEXA scan transformations, and a capped 20-client roster.',
-    result: '⚡ 0.7s LCP · Capped 20-Roster Model · DEXA Transformation Grid',
-    themes: 'Performance Orange · Stealth Graphite · High-Contrast Athletics',
-    nicheSlug: '/blog/niche/fitness-coach',
-  },
-  {
-    client: 'PranaPulse Yoga & Mindfulness Shala',
-    url: '/demos/yoga-meditation.html',
-    thumbnail: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80',
-    sector: 'Authentic Yoga & Breathwork Shala',
-    category: 'wellness',
-    year: '7-Day Sprint Build',
-    summary:
-      'Traditional Hatha, Ashtanga, and restorative sound healing studio with teakwood flooring and certified RYS-200 masters. Features an interactive class timetable filter and instant trial booking.',
-    result: '⚡ 0.8s LCP · Interactive Timetable Filter · Zero Commercial Gimmicks',
-    themes: 'Rishikesh Ochre · Zen Slate Sanctuary · Vedic Dawn Mint',
-    nicheSlug: '/blog/niche/yoga-studio',
-  },
-  {
-    client: 'AuraGrid Interactive Creative Studio',
-    url: '/demos/creative-portfolio.html',
-    thumbnail: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80',
-    sector: 'Creative Design & Brand Engineering',
-    category: 'creative',
-    year: '7-Day Sprint Build',
-    summary:
-      'Multi-disciplinary digital design agency crafting award-calibre identities, high-conversion web systems, and 3D interactions. Includes an interactive project sprint scope estimator and client case studies.',
-    result: '⚡ 0.8s LCP · Interactive Scope Estimator · 100% Lighthouse Score',
-    themes: 'Neo-Brutalist Acid · Swiss Editorial · Cyberpunk Terminal',
-    nicheSlug: '/blog/niche/creative-agency',
-  },
-  {
-    client: 'ApexPulse Comprehensive Diagnostics',
-    url: '/demos/healthcare-diagnostics.html',
-    thumbnail: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80',
-    sector: 'Pathology & Medical Imaging',
-    category: 'healthcare',
-    year: '7-Day Sprint Build',
-    summary:
-      'NABL & CAP accredited diagnostic pathology laboratory offering barcode-tracked sample chains, 6-hour digital report turnaround, and an interactive home phlebotomy package selector.',
-    result: '⚡ 0.7s LCP · NABL Certified Protocol · Home Blood Collection Funnel',
-    themes: 'Clinical Cobalt · Clean Sterile Teal · Midnight Precision',
-    nicheSlug: '/blog/niche/diagnostics-pathology',
-  },
-  {
-    client: 'OmniCare Multi-Speciality Polyclinic',
-    url: '/demos/clinic-polyclinic.html',
-    thumbnail: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80',
-    sector: 'Multi-Speciality Clinic & Day Care',
-    category: 'clinics',
-    year: '7-Day Sprint Build',
-    summary:
-      'Same-day outpatient medical centre featuring on-site digital pharmacy, minor OT, and senior specialists across 6 core departments. Includes an interactive OPD doctor schedule filter and appointment engine.',
-    result: '⚡ 0.8s LCP · Live Doctor Roster Filter · Zero Wait-Time Guarantee',
-    themes: 'Trusted Medical Navy · Healing Sage · Modern Health Minimalist',
-    nicheSlug: '/blog/niche/polyclinic',
-  },
-  {
-    client: 'Dr. Alistair Vance, MS Orthopaedics',
-    url: '/demos/doctor-specialist.html',
-    thumbnail: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1200&q=80',
-    sector: 'Super-Specialist Doctor Practice',
-    category: 'healthcare',
-    year: '7-Day Sprint Build',
-    summary:
-      'Fellowship-trained robotic joint replacement and sports arthroscopy super-specialist. Built around an interactive joint mobility symptom screener, written hospital fee estimates, and cashless TPA insurance guidance.',
-    result: '⚡ 0.7s LCP · Interactive Joint Symptom Screener · Cashless Insurance Desk',
-    themes: 'Harley Surgical Navy · Clean Clinical Slate · Prestige Gold & Midnight',
-    nicheSlug: '/blog/niche/doctor-specialist',
-  },
-];
 
 const CATEGORIES = [
-  { id: 'all', label: 'All Demos (17)' },
-  { id: 'clinics', label: 'Clinics & Dental' },
-  { id: 'healthcare', label: 'Doctors & Diagnostics' },
-  { id: 'wellness', label: 'Spa & Yoga' },
-  { id: 'fitness', label: 'Gym & Fitness' },
-  { id: 'beauty', label: 'Salon & Beauty' },
-  { id: 'education', label: 'Education & Coaching' },
-  { id: 'business', label: 'Business & Advisory' },
-  { id: 'interiors', label: 'Interiors & Renovation' },
-  { id: 'real-estate', label: 'Real Estate' },
+  { id: 'all', label: 'All Specimen Demos (17)' },
+  { id: 'clinics', label: 'Clinics & Polyclinics' },
+  { id: 'healthcare', label: 'Surgeons & Diagnostics' },
+  { id: 'wellness', label: 'Spa & Yoga Studios' },
+  { id: 'fitness', label: 'Gyms & Private Coaches' },
+  { id: 'beauty', label: 'Luxury Salons & Bridal' },
+  { id: 'education', label: 'Academies & Prep' },
+  { id: 'business', label: 'B2B Advisory & Coaching' },
+  { id: 'interiors', label: 'Architects & Renovation' },
+  { id: 'real-estate', label: 'Prime Real Estate' },
   { id: 'photographers', label: 'Wedding Films' },
-  { id: 'creative', label: 'Creative Studio' },
+  { id: 'creative', label: 'Creative Design Studios' },
 ];
 
 const SPECIMEN = [
@@ -309,13 +76,380 @@ const SEQUENCE = [
   },
 ];
 
+/* ───────────────────────────────────────────────────────────────────
+   SPECIMEN CARD WITH CONTINUOUS 3-SECOND THEME CHANGEOVER
+   - 3-segment progress bar filling across 3s
+   - Stacked cross-fading preview images
+   - Interactive manual theme buttons
+   - Direct launch & in-page viewport preview triggers
+   ─────────────────────────────────────────────────────────────────── */
+function SpecimenCard({
+  project,
+  onOpenPreview,
+  isHighlighted,
+}: {
+  project: Project;
+  onOpenPreview: (project: Project, themeIdx: number) => void;
+  isHighlighted?: boolean;
+}) {
+  const [activeTheme, setActiveTheme] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setActiveTheme((prev) => (prev + 1) % project.themes.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [isPaused, project.themes.length]);
+
+  const currentTheme = project.themes[activeTheme];
+
+  return (
+    <div
+      id={`specimen-${project.id}`}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      className={`bg-paper-raised p-6 sm:p-8 border border-rule-strong hover:border-signal/50 card-lift flex flex-col justify-between rounded-[28px] group shadow-sm transition-all duration-300 relative ${
+        isHighlighted ? 'ring-2 ring-signal ring-offset-4 ring-offset-paper' : ''
+      }`}
+    >
+      <div>
+        {/* Studio Window Chrome Header */}
+        <div className="relative mb-5 overflow-hidden border border-rule-strong rounded-[20px] bg-paper shadow-sm group-hover:border-signal/40 transition-colors">
+          {/* Top Browser Bar */}
+          <div className="flex items-center justify-between px-3.5 py-2.5 bg-ink text-paper text-[10px] font-mono border-b border-white/10 select-none">
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-signal inline-block" />
+              <span className="w-2.5 h-2.5 rounded-full bg-amber-400/80 inline-block" />
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/80 inline-block" />
+            </div>
+
+            <div className="flex items-center gap-2 text-white/70">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="truncate max-w-[150px] sm:max-w-[220px]">
+                {project.id}.uncodedhub.com
+              </span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] text-signal-bright font-semibold tracking-wider">
+                AUTO 3s
+              </span>
+            </div>
+          </div>
+
+          {/* 3-Segment Progress Indicator Bar */}
+          <div className="grid grid-cols-3 gap-1 px-3 py-1.5 bg-ink/95 border-b border-white/10">
+            {project.themes.map((t, idx) => (
+              <div
+                key={t.name}
+                onClick={() => setActiveTheme(idx)}
+                className="h-1 rounded-full bg-white/20 overflow-hidden cursor-pointer relative"
+                title={`Theme ${idx + 1}: ${t.name}`}
+              >
+                {activeTheme === idx ? (
+                  <div
+                    key={`active-${activeTheme}`}
+                    className="h-full bg-signal-bright animate-specimen-progress rounded-full"
+                  />
+                ) : activeTheme > idx ? (
+                  <div className="h-full bg-white/60 rounded-full" />
+                ) : (
+                  <div className="h-full bg-transparent" />
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Cross-Fading Thumbnail Preview Stack */}
+          <div className="relative aspect-[16/9] w-full overflow-hidden bg-ink">
+            {project.themes.map((theme, idx) => (
+              <img
+                key={theme.name}
+                src={theme.image}
+                alt={`${project.client} — ${theme.name} Theme`}
+                width={1280}
+                height={720}
+                loading="lazy"
+                decoding="async"
+                className={`absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 ease-out ${
+                  activeTheme === idx
+                    ? 'opacity-100 scale-100 z-10'
+                    : 'opacity-0 scale-[1.03] z-0 pointer-events-none'
+                }`}
+              />
+            ))}
+
+            {/* Bottom floating theme identifier pill inside thumbnail */}
+            <div className="absolute bottom-3 left-3 right-3 z-20 flex items-center justify-between gap-2 pointer-events-none">
+              <div className="bg-ink/85 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15 text-[11px] text-paper flex items-center gap-2 shadow-lg">
+                <span className="font-mono text-signal-bright font-semibold">
+                  Theme 0{activeTheme + 1}/03:
+                </span>
+                <span className="font-medium text-white">{currentTheme.name}</span>
+                <span className="text-white/50 text-[10px]">({currentTheme.style})</span>
+              </div>
+
+              <div className="bg-ink/85 backdrop-blur-md px-2.5 py-1.5 rounded-full border border-white/15 flex items-center gap-1.5 shadow-lg">
+                {currentTheme.palette.map((color, cIdx) => (
+                  <span
+                    key={cIdx}
+                    className="w-2.5 h-2.5 rounded-full border border-white/30"
+                    style={{ backgroundColor: color }}
+                    title={color}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Hover Action Overlay */}
+            <div className="absolute inset-0 bg-ink/30 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center gap-3 backdrop-blur-[2px]">
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="bg-signal hover:bg-signal-bright text-paper text-xs font-semibold px-4 py-2.5 rounded-full shadow-lg transition-transform transform hover:scale-105 inline-flex items-center gap-1.5 cursor-pointer"
+              >
+                <span>Launch Live ↗</span>
+              </a>
+              <button
+                type="button"
+                onClick={() => onOpenPreview(project, activeTheme)}
+                className="bg-ink/90 hover:bg-ink text-paper text-xs font-medium px-4 py-2.5 rounded-full shadow-lg transition-transform transform hover:scale-105 inline-flex items-center gap-1.5 cursor-pointer border border-white/20"
+              >
+                <span>Test Viewport 👁</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Tactile 3-Theme Switcher Buttons */}
+        <div className="mb-4">
+          <div className="text-[10px] font-mono text-muted uppercase tracking-wider mb-1.5 flex items-center justify-between">
+            <span>3 Themes Built Into Specimen:</span>
+            <span className="text-signal font-semibold">Auto-Cycle every 3s</span>
+          </div>
+          <div className="grid grid-cols-3 gap-1.5 p-1 bg-paper rounded-[14px] border border-rule">
+            {project.themes.map((t, idx) => (
+              <button
+                key={t.name}
+                type="button"
+                onClick={() => {
+                  setActiveTheme(idx);
+                  setIsPaused(true);
+                }}
+                className={`py-1.5 px-2 rounded-[10px] text-[11px] font-sans flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+                  activeTheme === idx
+                    ? 'bg-ink text-paper font-semibold shadow-xs'
+                    : 'text-muted hover:text-ink hover:bg-paper-raised'
+                }`}
+              >
+                <span
+                  className="w-2 h-2 rounded-full flex-shrink-0"
+                  style={{ backgroundColor: t.accentHex }}
+                />
+                <span className="truncate">{t.name}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Sector Tag & Client Title */}
+        <div className="mb-3">
+          <span className="card-tag font-mono">{project.sector}</span>
+        </div>
+
+        <h3 className="font-display text-2xl sm:text-3xl text-ink font-medium leading-snug">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="hover:text-signal transition-colors inline-flex items-center gap-1.5"
+          >
+            <span>{project.client}</span>
+            <span className="text-xs text-muted">↗</span>
+          </a>
+        </h3>
+
+        <p className="text-muted leading-relaxed mt-3 text-xs sm:text-sm">
+          {project.summary}
+        </p>
+
+        {/* Value Proof & Conversion Architecture Box */}
+        <div className="mt-5 p-4 bg-paper rounded-[18px] border border-rule text-xs space-y-2.5">
+          <div className="flex items-center gap-2 text-ink font-mono font-medium">
+            <span>{project.result}</span>
+          </div>
+          <div className="text-muted text-[11px] leading-relaxed pt-2 border-t border-rule/60">
+            <strong className="text-ink-soft">Client Acquisition Engine:</strong>{' '}
+            {project.conversionEngine}
+          </div>
+        </div>
+      </div>
+
+      {/* Action Footnotes */}
+      <div className="mt-7 pt-5 border-t border-rule flex items-center justify-between gap-3 flex-wrap">
+        <div className="flex items-center gap-2">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="btn-primary !py-2.5 !px-5 text-xs inline-flex items-center gap-2 group cursor-pointer shadow-sm"
+          >
+            <span>Launch Live Specimen</span>
+            <span className="group-hover:translate-x-0.5 transition-transform">↗</span>
+          </a>
+          <button
+            type="button"
+            onClick={() => onOpenPreview(project, activeTheme)}
+            className="btn-secondary !py-2.5 !px-3.5 text-xs inline-flex items-center gap-1.5 cursor-pointer bg-paper border border-rule-strong hover:border-signal"
+            title="Interactive in-page viewport test"
+          >
+            <span>Viewport 👁</span>
+          </button>
+        </div>
+
+        <Link
+          to={project.nicheSlug}
+          className="text-xs text-muted hover:text-signal transition-colors inline-flex items-center gap-1 link-underline"
+        >
+          Read Industry Blueprint →
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+/* ───────────────────────────────────────────────────────────────────
+   8:2 INDEX GRID TILE WITH MINI VISUAL THUMBNAIL
+   - Live visual screenshot thumbnail
+   - Continuous 3-second theme changeover
+   - Miniature browser chrome with #num
+   - Quick jump to specimen card on click
+   ─────────────────────────────────────────────────────────────────── */
+function IndexTile({
+  project,
+  onClick,
+}: {
+  project: Project;
+  onClick: (project: Project) => void;
+}) {
+  const [activeTheme, setActiveTheme] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveTheme((prev) => (prev + 1) % project.themes.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [project.themes.length]);
+
+  return (
+    <button
+      type="button"
+      onClick={() => onClick(project)}
+      className="group p-2 sm:p-2.5 rounded-[18px] bg-paper border border-rule hover:border-signal hover:bg-paper-raised transition-all text-left flex flex-col justify-between cursor-pointer hover:shadow-md hover:-translate-y-1 active:translate-y-0 overflow-hidden"
+    >
+      {/* Mini Visual Thumbnail Window */}
+      <div className="relative aspect-[16/10] w-full rounded-[10px] overflow-hidden bg-ink border border-rule/60 mb-2">
+        {/* Studio Window Mini Chrome Bar */}
+        <div className="absolute top-0 inset-x-0 h-4 bg-ink/90 backdrop-blur-xs px-1.5 flex items-center justify-between z-20 border-b border-white/10 select-none">
+          <div className="flex items-center gap-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-signal" />
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400/80" />
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/80" />
+          </div>
+          <span className="text-[8px] font-mono text-white/70">#{project.num}</span>
+        </div>
+
+        {/* Cross-fading 3 Theme Screenshots */}
+        {project.themes.map((theme, idx) => (
+          <img
+            key={theme.name}
+            src={theme.image}
+            alt={`${project.client} — ${theme.name}`}
+            width={320}
+            height={200}
+            loading={idx === 0 ? 'eager' : 'lazy'}
+            decoding="async"
+            className={`absolute inset-0 w-full h-full object-cover object-top pt-4 transition-all duration-700 ease-out group-hover:scale-105 ${
+              activeTheme === idx
+                ? 'opacity-100 z-10'
+                : 'opacity-0 z-0 pointer-events-none'
+            }`}
+          />
+        ))}
+
+        {/* Hover Action Overlay */}
+        <div className="absolute inset-0 bg-ink/50 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center pt-3">
+          <span className="bg-signal text-paper text-[9px] font-mono font-semibold px-2 py-0.5 rounded-full shadow-md">
+            Jump to Demo ↗
+          </span>
+        </div>
+
+        {/* Live Theme Dot Indicator in corner */}
+        <div className="absolute bottom-1 right-1 z-20 flex items-center gap-1 bg-ink/80 backdrop-blur-xs px-1.5 py-0.5 rounded text-[8px] font-mono text-white/90 border border-white/10">
+          <span
+            className="w-1.5 h-1.5 rounded-full"
+            style={{ backgroundColor: project.themes[activeTheme].accentHex }}
+          />
+          <span className="text-[7.5px] uppercase font-medium">T{activeTheme + 1}</span>
+        </div>
+      </div>
+
+      {/* Info labels */}
+      <div className="px-0.5 pb-0.5">
+        <div className="flex items-center justify-between gap-1 mb-0.5">
+          <span className="font-sans font-semibold text-xs text-ink group-hover:text-signal transition-colors truncate">
+            {project.shortName}
+          </span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+        </div>
+
+        <div className="flex items-center justify-between text-[10px] text-muted">
+          <span className="truncate max-w-[65px]">{project.category}</span>
+          <span className="text-signal font-mono text-[9px] font-medium shrink-0">
+            3 Themes
+          </span>
+        </div>
+      </div>
+    </button>
+  );
+}
+
 export default function Work({ onBook }: { onBook: () => void }) {
   const [selectedCat, setSelectedCat] = useState('all');
+  const [highlightedId, setHighlightedId] = useState<string | null>(null);
+
+  // In-Page Viewport Modal State
+  const [previewProject, setPreviewProject] = useState<Project | null>(null);
+  const [previewDevice, setPreviewDevice] = useState<'desktop' | 'tablet' | 'mobile'>('desktop');
 
   const filteredProjects =
     selectedCat === 'all'
       ? PROJECTS
       : PROJECTS.filter((p) => p.category === selectedCat);
+
+  const handleIndexClick = (project: Project) => {
+    // If the category is filtered out, reveal it
+    if (selectedCat !== 'all' && project.category !== selectedCat) {
+      setSelectedCat('all');
+    }
+
+    setTimeout(() => {
+      const el = document.getElementById(`specimen-${project.id}`);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setHighlightedId(project.id);
+        setTimeout(() => setHighlightedId(null), 2400);
+      }
+    }, 80);
+  };
+
+  const handleOpenPreview = (project: Project) => {
+    setPreviewProject(project);
+    setPreviewDevice('desktop');
+  };
 
   return (
     <>
@@ -323,32 +457,133 @@ export default function Work({ onBook }: { onBook: () => void }) {
         <title>Work &amp; Interactive Specimen Builds — Uncoded Hub</title>
         <meta
           name="description"
-          content="Explore seventeen live, interactive specimen websites handcrafted by Uncoded Hub across our core commercial niches. Test speed, multi-theme switchers, and conversion funnels."
+          content="Explore seventeen live, interactive specimen websites handcrafted by Uncoded Hub across high-ticket niches. Experience continuous 3-theme changeovers, verified Lighthouse performance, and custom conversion funnels."
         />
         <link rel="canonical" href="https://uncodedhub.com/portfolio/" />
       </Helmet>
 
-      {/* ── Header ─────────────────────────────────────────────── */}
-      <section className="pt-10 md:pt-16 pb-14">
+      {/* ── Editorial Header ───────────────────────────────────── */}
+      <section className="pt-10 md:pt-14 pb-8">
         <Shell>
           <Reveal>
-            <span className="label text-signal font-semibold block mb-3">
-              17 interactive demos · 3 themes each (51 live variations)
-            </span>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-ink max-w-[18ch] leading-[1.08] tracking-tight">
+            <div className="flex items-center gap-2.5 mb-3 flex-wrap">
+              <span className="label text-signal font-semibold">
+                17 Live Specimen Builds · 51 Theme Variations
+              </span>
+              <span className="text-muted text-xs">·</span>
+              <span className="text-xs font-mono text-muted bg-paper-raised px-2.5 py-0.5 rounded-full border border-rule">
+                3-Second Continuous Theme Cycling
+              </span>
+            </div>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-ink max-w-[20ch] leading-[1.08] tracking-tight">
               Live builds you can test, inspect, and verify{' '}
-              <em className="italic hero-signal font-medium">before you commit.</em>
+              <em className="italic hero-signal font-medium">before you commit a single rupee.</em>
             </h1>
           </Reveal>
           <Reveal delay={100}>
-            <p className="text-lead text-muted mt-6 max-w-2xl leading-relaxed">
-              We build custom, zero-bloat web systems in seven working days. Below are seventeen fully
-              interactive specimen builds across high-ticket service niches — each featuring three
-              live aesthetic switcher themes, verified Lighthouse performance, and tailored conversion funnels.
+            <p className="text-lead text-muted mt-5 max-w-3xl leading-relaxed">
+              We engineer zero-bloat, bespoke web systems in seven working days. Below are seventeen
+              fully interactive production specimens across high-ticket service industries. Each
+              specimen features an automatic <strong>3-second continuous theme changeover</strong> (warm
+              heritage, dark luxury, and minimalist grid), sub-0.8s Lighthouse performance, and
+              direct client acquisition architecture.
             </p>
+          </Reveal>
+        </Shell>
+      </section>
 
-            {/* Category Filter Pills (Cloaked style) */}
-            <div className="flex flex-wrap items-center gap-2 mt-8 pt-6 border-t border-rule">
+      {/* ── 6:3 SPECIMEN DIRECTORY INDEX MATRIX ─────────────────── */}
+      <section className="pb-12 pt-2">
+        <Shell>
+          <Reveal delay={120}>
+            <div className="bg-paper-raised p-5 sm:p-7 rounded-[26px] border border-rule-strong shadow-xs">
+              {/* Matrix Header */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 mb-5 border-b border-rule">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-signal animate-ping" />
+                    <span className="font-mono text-xs font-bold text-ink uppercase tracking-wider">
+                      The 6:3 Specimen Index Matrix
+                    </span>
+                    <span className="text-[11px] font-mono text-signal bg-signal/10 px-2 py-0.5 rounded-full">
+                      18 Visual Slots (17 Live Builds + Custom)
+                    </span>
+                  </div>
+                  <p className="text-xs text-muted mt-1">
+                    Visual Directory: Click any thumbnail to jump to its live demo card &amp; 3-theme studio, or request a custom build.
+                  </p>
+                </div>
+                <div className="flex items-center gap-3 text-xs font-mono text-muted">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                    100% Mobile 4G Verified
+                  </span>
+                  <span>·</span>
+                  <span className="text-ink font-medium">51 Themes Total</span>
+                </div>
+              </div>
+
+              {/* 6 Columns x 3 Rows Grid Layout with Visual Thumbnails (18 Slots Total) */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-3.5">
+                {PROJECTS.map((p) => (
+                  <IndexTile
+                    key={p.id}
+                    project={p}
+                    onClick={handleIndexClick}
+                  />
+                ))}
+
+                {/* 18th Slot: Complete 6:3 Grid with Custom Sprint CTA */}
+                <button
+                  type="button"
+                  onClick={onBook}
+                  className="group p-2 sm:p-2.5 rounded-[18px] bg-ink text-paper border border-signal/40 hover:border-signal transition-all text-left flex flex-col justify-between cursor-pointer hover:shadow-lg hover:-translate-y-1 active:translate-y-0 overflow-hidden relative"
+                >
+                  <div className="relative aspect-[16/10] w-full rounded-[10px] overflow-hidden bg-white/[0.06] border border-white/10 mb-2 flex flex-col items-center justify-center p-2.5 text-center">
+                    <div className="w-7 h-7 rounded-full bg-signal/20 border border-signal/50 flex items-center justify-center text-signal-bright font-bold text-sm mb-1 group-hover:scale-110 transition-transform">
+                      +
+                    </div>
+                    <span className="text-[10px] font-mono text-signal-bright font-semibold uppercase tracking-wider">
+                      Your Specimen
+                    </span>
+                    <span className="text-[9px] text-white/60">7-Day Turnaround</span>
+                  </div>
+
+                  <div className="px-0.5 pb-0.5">
+                    <div className="flex items-center justify-between gap-1 mb-0.5">
+                      <span className="font-sans font-semibold text-xs text-paper group-hover:text-signal-bright transition-colors truncate">
+                        Custom Business
+                      </span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-signal-bright shrink-0" />
+                    </div>
+
+                    <div className="flex items-center justify-between text-[10px] text-white/60">
+                      <span className="truncate">Your Industry</span>
+                      <span className="text-signal-bright font-mono text-[9px] font-medium shrink-0">
+                        Book Free →
+                      </span>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </Reveal>
+        </Shell>
+      </section>
+
+      {/* ── Category Filter Pills ──────────────────────────────── */}
+      <section className="pb-8">
+        <Shell>
+          <Reveal delay={150}>
+            <div className="flex items-center justify-between gap-4 flex-wrap mb-4">
+              <span className="text-xs font-mono text-muted uppercase tracking-wider">
+                Filter by Industry Sector:
+              </span>
+              <span className="text-xs text-muted">
+                Showing {filteredProjects.length} of {PROJECTS.length} specimens
+              </span>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
               {CATEGORIES.map((c) => (
                 <button
                   key={c.id}
@@ -371,89 +606,123 @@ export default function Work({ onBook }: { onBook: () => void }) {
       <Section size="default">
         <Shell>
           <div className="grid md:grid-cols-2 gap-8">
-            {filteredProjects.map((p, idx) => (
-              <Reveal
-                key={p.client}
-                delay={idx * 60}
-                className="bg-paper-raised p-6 sm:p-8 border border-rule-strong hover:border-signal/40 card-lift flex flex-col justify-between rounded-[28px] group shadow-sm"
-              >
-                <div>
-                  {/* Thumbnail Studio Window */}
-                  <div className="relative mb-6 overflow-hidden border border-rule-strong rounded-[20px] bg-paper shadow-sm group-hover:border-signal/50 transition-colors">
-                    <div className="flex items-center justify-between px-3.5 py-2 bg-ink text-paper text-[10px] font-mono border-b border-white/10">
-                      <div className="flex items-center gap-1.5">
-                        <span className="w-2 h-2 rounded-full bg-signal" />
-                        <span className="w-2 h-2 rounded-full bg-white/20" />
-                        <span className="w-2 h-2 rounded-full bg-white/20" />
-                      </div>
-                      <span className="text-white/60 text-[10px]">live specimen · {p.sector}</span>
-                      <span className="text-[10px] text-signal-bright font-semibold">3 THEMES</span>
-                    </div>
-                    <a href={p.url} target="_blank" rel="noreferrer noopener" className="block overflow-hidden relative">
-                      <img
-                        src={p.thumbnail}
-                        alt={`${p.client} — 7-Day Sprint Live Specimen Demo`}
-                        width={1280}
-                        height={720}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full aspect-[16/9] object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors flex items-center justify-center">
-                        <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-ink/90 text-paper text-xs font-mono px-4 py-2 rounded-full shadow-lg">
-                          Test Demo Live ↗
-                        </span>
-                      </div>
-                    </a>
-                  </div>
-
-                  <div className="mb-3">
-                    <span className="card-tag">{p.sector}</span>
-                  </div>
-
-                  <h3 className="font-display text-2xl sm:text-3xl text-ink mt-5 font-medium leading-snug">
-                    <a href={p.url} target="_blank" rel="noreferrer noopener" className="hover:text-signal transition-colors inline-flex items-center gap-1.5">
-                      <span>{p.client}</span>
-                      <span className="text-xs text-muted">↗</span>
-                    </a>
-                  </h3>
-
-                  <p className="text-muted leading-relaxed mt-4 text-xs sm:text-sm">
-                    {p.summary}
-                  </p>
-
-                  <div className="mt-6 p-4 bg-paper rounded-[16px] border border-rule text-xs space-y-2">
-                    <div className="flex items-center gap-2 text-ink font-mono font-medium">
-                      <span>{p.result}</span>
-                    </div>
-                    <div className="text-muted text-[11px]">
-                      <strong className="text-ink-soft">3 Themes Switcher:</strong> {p.themes}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-rule flex items-center justify-between gap-4 flex-wrap">
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="btn-primary !py-2.5 !px-5 text-xs inline-flex items-center gap-2 group cursor-pointer"
-                  >
-                    <span>Launch Live Specimen</span>
-                    <span className="group-hover:translate-x-0.5 transition-transform">↗</span>
-                  </a>
-                  <Link
-                    to={p.nicheSlug}
-                    className="text-xs text-muted hover:text-signal transition-colors inline-flex items-center gap-1 link-underline"
-                  >
-                    Read Industry Blueprint →
-                  </Link>
-                </div>
+            {filteredProjects.map((p) => (
+              <Reveal key={p.id}>
+                <SpecimenCard
+                  project={p}
+                  onOpenPreview={handleOpenPreview}
+                  isHighlighted={highlightedId === p.id}
+                />
               </Reveal>
             ))}
           </div>
         </Shell>
       </Section>
+
+      {/* ── In-Page Viewport Modal ─────────────────────────────── */}
+      {previewProject && (
+        <div
+          className="fixed inset-0 z-[99999] bg-ink/80 backdrop-blur-md flex flex-col items-center justify-center p-3 sm:p-6"
+          onClick={() => setPreviewProject(null)}
+        >
+          <div
+            className="w-full max-w-6xl h-[92vh] bg-paper-raised rounded-[24px] border border-rule-strong shadow-2xl flex flex-col overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="px-5 py-3.5 bg-ink text-paper flex items-center justify-between gap-4 border-b border-white/10 flex-wrap">
+              <div className="flex items-center gap-3">
+                <span className="w-3 h-3 rounded-full bg-signal inline-block" />
+                <div>
+                  <h4 className="font-display text-base text-paper font-medium leading-none">
+                    {previewProject.client}
+                  </h4>
+                  <span className="text-[11px] font-mono text-white/60">
+                    Live 7-Day Sprint Build · {previewProject.sector}
+                  </span>
+                </div>
+              </div>
+
+              {/* Device Selector Controls */}
+              <div className="flex items-center gap-1.5 bg-white/10 p-1 rounded-full border border-white/15">
+                <button
+                  type="button"
+                  onClick={() => setPreviewDevice('desktop')}
+                  className={`px-3 py-1 text-xs rounded-full transition-all cursor-pointer ${
+                    previewDevice === 'desktop'
+                      ? 'bg-signal text-paper font-semibold'
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                >
+                  🖥 Desktop
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setPreviewDevice('tablet')}
+                  className={`px-3 py-1 text-xs rounded-full transition-all cursor-pointer ${
+                    previewDevice === 'tablet'
+                      ? 'bg-signal text-paper font-semibold'
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                >
+                  Tablet (768px)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setPreviewDevice('mobile')}
+                  className={`px-3 py-1 text-xs rounded-full transition-all cursor-pointer ${
+                    previewDevice === 'mobile'
+                      ? 'bg-signal text-paper font-semibold'
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                >
+                  📱 Mobile (390px)
+                </button>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex items-center gap-2">
+                <a
+                  href={previewProject.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="text-xs bg-white/15 hover:bg-white/25 text-white px-3.5 py-1.5 rounded-full transition-colors inline-flex items-center gap-1"
+                >
+                  <span>Open Full Window</span>
+                  <span>↗</span>
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setPreviewProject(null)}
+                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-signal text-white flex items-center justify-center text-sm transition-colors cursor-pointer"
+                  title="Close Dialog"
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+
+            {/* Iframe Viewport Frame */}
+            <div className="flex-1 bg-paper-sunk flex items-center justify-center p-2 sm:p-4 overflow-hidden">
+              <div
+                className={`h-full bg-paper rounded-[14px] overflow-hidden shadow-lg border border-rule transition-all duration-300 ${
+                  previewDevice === 'desktop'
+                    ? 'w-full'
+                    : previewDevice === 'tablet'
+                    ? 'w-[768px]'
+                    : 'w-[390px]'
+                }`}
+              >
+                <iframe
+                  src={previewProject.url}
+                  title={`${previewProject.client} Live Preview`}
+                  className="w-full h-full border-0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── Cinematic Dark Chapter: Specimen Standards ──────────── */}
       <section className="bg-ink text-paper py-20 md:py-28 relative overflow-hidden border-y border-white/10">

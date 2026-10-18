@@ -14,6 +14,8 @@ import {
   IconCode,
 } from '../components/Glyphs';
 import { LogoMark } from '../components/Logo';
+import { PROJECTS as DEMO_SPECIMENS } from '../data/projects';
+
 
 /* ═══════════════════════════════════════════════════════════════════
    UNCODED HUB — HOMEPAGE
@@ -91,50 +93,7 @@ const THREE_PILLARS = [
   },
 ];
 
-const DEMO_SPECIMENS = [
-  {
-    client: 'Meridian Architecture & Interiors',
-    url: '/demos/interior-design.html',
-    thumbnail: '/demos/thumbnails/interior-design.webp',
-    sector: 'Interior Architecture & Studios',
-    summary: 'Turnkey residential interior architecture with photorealistic render comparisons and transparent trade fee breakdowns.',
-  },
-  {
-    client: 'Marlow & Co. Private Real Estate',
-    url: '/demos/real-estate.html',
-    thumbnail: '/demos/thumbnails/real-estate.webp',
-    sector: 'Prime Real Estate & Advisory',
-    summary: 'Independent property advisory with a capped 8-client roster model, 14-point title verification, and strict NDA booking.',
-  },
-  {
-    client: 'Willowmere Dental & Facial Aesthetics',
-    url: '/demos/dental-clinic.html',
-    thumbnail: '/demos/thumbnails/dental-clinic.webp',
-    sector: 'Dental Clinics & Aesthetics',
-    summary: 'Boutique cosmetic dental practice featuring anxiety-first patient protocols, pricing brackets, and CBCT 3D diagnostics.',
-  },
-  {
-    client: 'Alder & Wren Fine-Art Wedding Films',
-    url: '/demos/wedding-photography.html',
-    thumbnail: '/demos/thumbnails/wedding-photography.webp',
-    sector: 'Wedding Photographers & Films',
-    summary: 'Cinematic destination wedding films with 4K color grade previews, unbundled package scopes, and date check.',
-  },
-  {
-    client: 'Halbrook Studio Precision Renovation',
-    url: '/demos/home-renovation.html',
-    thumbnail: '/demos/thumbnails/home-renovation.webp',
-    sector: 'Modular Kitchens & Full Renovation',
-    summary: 'Turnkey modular living spaces with daily photographic site logs, itemized BOQ estimates, and delay penalties.',
-  },
-  {
-    client: 'Naomi Reyes Executive Advisory',
-    url: '/demos/executive-coaching.html',
-    thumbnail: '/demos/thumbnails/executive-coaching.webp',
-    sector: 'Executive Coaching & Advisory',
-    summary: 'Confidential 1-on-1 advisory for venture-backed founders and C-suite leaders navigating critical transition windows.',
-  },
-];
+
 
 const BUDGET = [
   { metric: 'Largest Contentful Paint', target: 'Under 1.5s on a 4G connection', value: '<1.5s', Icon: IconTimer },
@@ -148,6 +107,8 @@ const BUDGET = [
 export default function Home({ onBook }: { onBook: () => void }) {
   const [activeTrap, setActiveTrap] = useState<string | null>('junior-dev');
   const [activeDemoIdx, setActiveDemoIdx] = useState(0);
+  const [activeThemeIdx, setActiveThemeIdx] = useState(0);
+  const [rightThemeOverride, setRightThemeOverride] = useState<number | null>(null);
 
   const [isDemoPaused, setIsDemoPaused] = useState(false);
   const [isDemoInView, setIsDemoInView] = useState(false);
@@ -167,21 +128,41 @@ export default function Home({ onBook }: { onBook: () => void }) {
     return () => obs.disconnect();
   }, []);
 
-  /* Auto-rotate Live Demo Specimens smoothly with fixed duration (4.5s) only when visible */
+  /* Auto-rotate Live Demo Specimens: 6s per demo, exactly 2s per theme change */
   useEffect(() => {
     if (isDemoPaused || !isDemoInView) return;
     const timer = setInterval(() => {
-      setActiveDemoIdx((prev) => (prev + 1) % DEMO_SPECIMENS.length);
-    }, 4500);
+      setActiveThemeIdx((prevTheme) => {
+        if (prevTheme < 2) {
+          // Advance to next theme after 2 seconds
+          return prevTheme + 1;
+        } else {
+          // After 3 themes (6 seconds total), advance to next demo and reset to theme 0
+          setActiveDemoIdx((prevDemo) => (prevDemo + 1) % DEMO_SPECIMENS.length);
+          setRightThemeOverride(null);
+          return 0;
+        }
+      });
+    }, 2000);
     return () => clearInterval(timer);
   }, [isDemoPaused, isDemoInView]);
 
   const nextDemo = () => {
     setActiveDemoIdx((prev) => (prev + 1) % DEMO_SPECIMENS.length);
+    setActiveThemeIdx(0);
+    setRightThemeOverride(null);
   };
 
   const prevDemo = () => {
     setActiveDemoIdx((prev) => (prev - 1 + DEMO_SPECIMENS.length) % DEMO_SPECIMENS.length);
+    setActiveThemeIdx(0);
+    setRightThemeOverride(null);
+  };
+
+  const selectDemo = (idx: number) => {
+    setActiveDemoIdx(idx);
+    setActiveThemeIdx(0);
+    setRightThemeOverride(null);
   };
 
   return (
@@ -272,7 +253,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                     className="group inline-flex items-center gap-2 text-xs sm:text-sm font-mono text-ink-soft hover:text-signal transition-colors py-1.5 px-3.5 rounded-full hover:bg-paper-raised border border-rule/60 hover:border-signal/40 shadow-2xs"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
-                    <span>Prefer to see live builds first? Inspect 6 sprint specimens</span>
+                    <span>Prefer to see live builds first? Inspect all 17 live demos (51 themes)</span>
                     <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-signal" aria-hidden="true">↗</span>
                   </Link>
                 </div>
@@ -504,7 +485,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                   to="/portfolio/"
                   className="text-on-ink-muted hover:text-paper text-xs md:text-sm font-medium px-4 py-2 transition-colors"
                 >
-                  Inspect our 6 live demos first
+                  Inspect all 17 live demos (51 themes) first
                 </Link>
               </div>
             </div>
@@ -712,178 +693,563 @@ export default function Home({ onBook }: { onBook: () => void }) {
         </Shell>
       </section>
 
-      {/* ── SECTION 5: Live Specimen Builds Carousel (The 6 Demos) ── */}
-      <Section id="live-demos" size="loose">
-        <Shell>
+      {/* ── SECTION 5: Live Specimen Builds Showcase (Full-Width Dual-Display Studio Console) ── */}
+      <Section id="live-demos" size="tight" className="pt-8 pb-6 sm:pt-10 sm:pb-8 lg:pt-12 lg:pb-10 scroll-mt-20 w-full">
+        <div className="w-full max-w-[1780px] 2xl:max-w-[1880px] mx-auto px-3 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
-              <div>
-                <span className="label text-signal font-semibold block mb-2">
-                  Live demo specimens
+            {/* 1. Ultra-Compact Header Row */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                <span className="label text-signal font-semibold text-[10px] py-0.5 px-2">
+                  17 Builds · 51 Themes
                 </span>
-                <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
+                <h2 className="font-display text-xl sm:text-2xl text-ink font-normal tracking-tight">
                   Test the builds live before you commit.
                 </h2>
-                <p className="text-muted text-base max-w-xl mt-3">
-                  Each build below is a complete, fully functional web application built to our production
-                  standards. Click into any build to test live 3-theme switching and examine the conversion funnel.
-                </p>
+                <span className="text-muted text-xs hidden lg:inline">
+                  — Dual-display simultaneous theme contrast · 2s theme cycle · 6s fleet advance
+                </span>
               </div>
 
-              {/* Carousel navigation buttons and pause toggle */}
-              <div className="flex items-center gap-3">
+              {/* Navigation Controls & Status */}
+              <div className="flex items-center gap-2 shrink-0">
                 <button
                   onClick={() => setIsDemoPaused(!isDemoPaused)}
-                  className="px-3 py-2 rounded-full border border-rule text-[11px] font-mono text-muted hover:text-ink transition-colors cursor-pointer"
+                  className="px-2.5 py-1 rounded-full border border-rule-strong bg-paper hover:bg-paper-raised text-[9px] font-mono text-muted hover:text-ink transition-all cursor-pointer flex items-center gap-1.5 shadow-2xs"
                   title={isDemoPaused ? 'Resume auto-advance' : 'Pause auto-advance'}
                 >
-                  {isDemoPaused ? '▶ RESUME' : '❚❚ PAUSE'}
-                </button>
-                <button
-                  onClick={prevDemo}
-                  className="w-11 h-11 rounded-full border border-rule-strong bg-paper hover:bg-paper-raised text-ink flex items-center justify-center transition-colors cursor-pointer"
-                  aria-label="Previous demo"
-                >
-                  ←
-                </button>
-                <button
-                  onClick={nextDemo}
-                  className="w-11 h-11 rounded-full border border-rule-strong bg-paper hover:bg-paper-raised text-ink flex items-center justify-center transition-colors cursor-pointer"
-                  aria-label="Next demo"
-                >
-                  →
-                </button>
-              </div>
-            </div>
-
-            {/* 6 Auto-Scroll Sector Tab Pills */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 mb-8">
-              {DEMO_SPECIMENS.map((demo, idx) => {
-                const isActive = activeDemoIdx === idx;
-                return (
-                  <button
-                    key={demo.client}
-                    onClick={() => setActiveDemoIdx(idx)}
-                    className={`px-3 py-2.5 rounded-[16px] border text-left transition-all cursor-pointer relative overflow-hidden ${
-                      isActive
-                        ? 'bg-paper-raised border-signal/80 text-ink shadow-sm'
-                        : 'bg-paper-sunken/60 border-rule text-ink-muted hover:text-ink hover:border-rule-strong'
+                  <span
+                    className={`w-1.5 h-1.5 rounded-full ${
+                      isDemoPaused ? 'bg-amber-400' : 'bg-emerald-500 animate-pulse'
                     }`}
+                    aria-hidden="true"
+                  />
+                  <span>{isDemoPaused ? 'RESUME AUTO' : 'PAUSE AUTO'}</span>
+                </button>
+                <div className="flex items-center gap-1">
+                  <button
+                    onClick={prevDemo}
+                    className="w-7 h-7 rounded-full border border-rule-strong bg-paper hover:bg-paper-raised text-ink flex items-center justify-center transition-colors cursor-pointer text-xs shadow-2xs"
+                    aria-label="Previous demo"
+                    title="Previous demo"
                   >
-                    {isActive && isDemoInView && !isDemoPaused && (
-                      <div
-                        className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-signal animate-progress"
-                        style={{ animationDuration: '4500ms' }}
-                      />
-                    )}
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="font-mono text-[10px] text-signal font-semibold">{`0${idx + 1}`}</span>
-                      {isActive && (
-                        <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
-                      )}
-                    </div>
-                    <span className="text-xs font-medium block truncate text-ink">{demo.sector}</span>
+                    ←
                   </button>
-                );
-              })}
+                  <button
+                    onClick={nextDemo}
+                    className="w-7 h-7 rounded-full border border-rule-strong bg-paper hover:bg-paper-raised text-ink flex items-center justify-center transition-colors cursor-pointer text-xs shadow-2xs"
+                    aria-label="Next demo"
+                    title="Next demo"
+                  >
+                    →
+                  </button>
+                </div>
+                <span className="font-mono text-xs text-muted pl-0.5">
+                  <span className="text-signal font-semibold">{String(activeDemoIdx + 1).padStart(2, '0')}</span>/17
+                </span>
+                <Link
+                  to="/portfolio/"
+                  className="hidden md:inline-flex items-center gap-1 text-[11px] font-mono text-muted hover:text-signal transition-colors pl-2"
+                >
+                  <span>All 17 Demos (51 Themes)</span>
+                  <span>→</span>
+                </Link>
+              </div>
             </div>
           </Reveal>
 
-          {/* Current Active Demo Spotlight Card (Pauses auto-scroll on hover) */}
-          <Reveal delay={100}>
+          {/* ── 2. DUAL CINEMA STUDIO DISPLAYS BESIDE EACH OTHER (FULL-WIDTH 2-COLUMN DISPLAY) ── */}
+          <Reveal delay={30}>
             {(() => {
               const currentDemo = DEMO_SPECIMENS[activeDemoIdx];
+              const leftThemeIdx = activeThemeIdx;
+              const rightThemeIdx =
+                rightThemeOverride !== null
+                  ? rightThemeOverride
+                  : (activeThemeIdx + 1) % currentDemo.themes.length;
+
+              const leftTheme = currentDemo.themes[leftThemeIdx] || currentDemo.themes[0];
+              const rightTheme = currentDemo.themes[rightThemeIdx] || currentDemo.themes[1] || currentDemo.themes[0];
+
               return (
                 <div
                   onMouseEnter={() => setIsDemoPaused(true)}
                   onMouseLeave={() => setIsDemoPaused(false)}
-                  className="bg-paper-raised border border-rule-strong rounded-[28px] overflow-hidden shadow-lg grid lg:grid-cols-12 gap-0 items-center transition-all duration-300"
+                  className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5 mb-3"
                 >
-                  {/* Left: Thumbnail Browser Window */}
-                  <div className="lg:col-span-7 bg-ink p-4 sm:p-6 border-b lg:border-b-0 lg:border-r border-rule-strong">
-                    <div className="rounded-[16px] overflow-hidden border border-white/15 bg-paper">
-                      <div className="flex items-center justify-between px-3.5 py-2.5 bg-ink text-paper text-[10px] font-mono border-b border-white/10">
-                        <div className="flex items-center gap-1.5">
-                          <span className="w-2.5 h-2.5 rounded-full bg-signal" />
-                          <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                          <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                        </div>
-                        <span className="text-white/60">{`specimen 0${activeDemoIdx + 1} of 06 · ${currentDemo.sector}`}</span>
-                        <span className="text-signal-bright font-semibold">3 THEMES</span>
+                  {/* ── LEFT STUDIO DISPLAY (PRIMARY AESTHETIC) ── */}
+                  <div className="bg-paper-raised border border-rule-strong hover:border-signal/40 rounded-[20px] overflow-hidden shadow-xl transition-all duration-300 flex flex-col justify-between group/disp1">
+                    {/* Top Window Bar */}
+                    <div className="flex items-center justify-between px-3.5 sm:px-4 py-2 bg-[#121416] text-paper text-xs font-mono border-b border-white/10 select-none">
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-rose-500/90 inline-block" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-amber-400/90 inline-block" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/90 inline-block" />
                       </div>
-                      <a href={currentDemo.url} target="_blank" rel="noreferrer noopener" className="block relative group">
-                        <img
-                          key={currentDemo.thumbnail}
-                          src={currentDemo.thumbnail}
-                          alt={currentDemo.client}
-                          width={960}
-                          height={600}
-                          loading="lazy"
-                          decoding="async"
-                          className="w-full aspect-[16/10] object-cover object-top group-hover:scale-[1.02] transition-transform duration-500 animate-fade-in"
-                        />
-                        <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors flex items-center justify-center">
-                          <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-ink/90 text-paper text-xs font-mono px-4 py-2 rounded-full shadow-lg">
-                            Open Live Demo ↗
-                          </span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* Right: Specimen Details & Launch */}
-                  <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-center justify-between gap-2 mb-3">
-                        <span className="card-tag">
-                          {currentDemo.sector}
-                        </span>
-                        <span className="text-xs text-muted font-medium">
-                          {`Specimen ${activeDemoIdx + 1} of 6`}
+                      <div className="flex items-center gap-1.5 text-white/75 bg-white/5 border border-white/10 px-3 py-0.5 rounded-full text-[10px]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        <span className="truncate max-w-[140px] sm:max-w-[240px]">
+                          uncodedhub.com{currentDemo.url}
                         </span>
                       </div>
-                      <h3 className="font-display text-2xl sm:text-3xl text-ink font-medium mt-1 mb-4">
-                        {currentDemo.client}
-                      </h3>
-                      <p className="text-muted text-sm leading-relaxed mb-6">
-                        {currentDemo.summary}
-                      </p>
-                      <div className="space-y-2 text-xs text-ink/80">
-                        <div className="flex items-center gap-2">
-                          <span className="text-signal font-bold">✓</span>
-                          <span>Interactive 3-style visual theme switcher</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className="text-signal font-bold">✓</span>
-                          <span>Tailored lead conversion questionnaire</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className="text-signal font-bold">✓</span>
-                          <span>99+ Verified Lighthouse mobile performance</span>
-                        </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-signal-bright font-semibold text-[9px] tracking-wider hidden sm:inline">
+                          DISPLAY 01
+                        </span>
+                        <span className="text-[9px] text-white/70 font-mono bg-white/10 px-1.5 py-0.2 rounded font-medium">
+                          {leftTheme.name}
+                        </span>
                       </div>
                     </div>
 
-                    <div className="mt-8 pt-6 border-t border-rule flex items-center justify-between gap-4">
+                    {/* 3-Segment Theme Progress Indicator Bar */}
+                    <div className="grid grid-cols-3 gap-1.5 px-3.5 sm:px-4 py-1.5 bg-[#0e1012] border-b border-white/10">
+                      {currentDemo.themes.map((theme, tIdx) => {
+                        const isCurrent = leftThemeIdx === tIdx;
+                        const isPassed = leftThemeIdx > tIdx;
+                        return (
+                          <button
+                            key={theme.name}
+                            onClick={() => setActiveThemeIdx(tIdx)}
+                            className="text-left group/seg cursor-pointer"
+                            title={`Switch Left Display to Theme ${tIdx + 1}: ${theme.name}`}
+                          >
+                            <div className="h-1.5 rounded-full bg-white/15 overflow-hidden relative">
+                              {isPassed && <div className="h-full w-full bg-signal" />}
+                              {isCurrent && (
+                                <div
+                                  key={`theme-seg-left-${activeDemoIdx}-${leftThemeIdx}`}
+                                  className={`h-full bg-signal ${
+                                    !isDemoPaused && isDemoInView
+                                      ? 'animate-theme-progress-2s'
+                                      : 'w-full'
+                                  }`}
+                                />
+                              )}
+                            </div>
+                            <div className="flex items-center justify-between mt-0.5 text-[8px] sm:text-[9px] font-mono">
+                              <span
+                                className={`truncate ${
+                                  isCurrent
+                                    ? 'text-signal-bright font-semibold'
+                                    : 'text-white/40 group-hover/seg:text-white/70'
+                                }`}
+                              >
+                                T{tIdx + 1}: {theme.name}
+                              </span>
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    {/* Proportional Screen with True 16:9 Aspect Ratio */}
+                    <div className="relative aspect-[16/9] w-full overflow-hidden bg-black select-none group/view">
+                      {currentDemo.themes.map((theme, tIdx) => {
+                        const isThemeActive = leftThemeIdx === tIdx;
+                        return (
+                          <img
+                            key={`left-${currentDemo.id}-${theme.name}`}
+                            src={theme.image}
+                            alt={`${currentDemo.client} - ${theme.name}`}
+                            width={1440}
+                            height={810}
+                            loading={tIdx === 0 ? 'eager' : 'lazy'}
+                            decoding="async"
+                            className={`absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 ease-in-out group-hover/view:scale-[1.01] ${
+                              isThemeActive
+                                ? 'opacity-100 z-10'
+                                : 'opacity-0 z-0 pointer-events-none'
+                            }`}
+                          />
+                        );
+                      })}
+
+                      {/* Floating Theme HUD Badge (Bottom-Left) */}
+                      <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 bg-ink/90 backdrop-blur-md border border-white/20 text-paper rounded-lg px-2.5 py-1 sm:px-3 sm:py-1.5 shadow-xl z-20 flex items-center gap-2.5 pointer-events-none">
+                        <div>
+                          <div className="text-[8px] font-mono uppercase tracking-wider text-signal-bright font-semibold">
+                            T0{leftThemeIdx + 1} · {leftTheme.style}
+                          </div>
+                          <div className="text-[11px] sm:text-xs font-semibold text-white truncate max-w-[130px] sm:max-w-[200px]">
+                            {leftTheme.name}
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-1 border-l border-white/20 pl-2">
+                          {leftTheme.palette.map((color, cIdx) => (
+                            <span
+                              key={cIdx}
+                              className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full border border-black/40 shadow-xs inline-block"
+                              style={{ backgroundColor: color }}
+                              title={color}
+                            />
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Floating Indicator (Top-Right) */}
+                      <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 bg-ink/85 backdrop-blur-md border border-white/15 text-white text-[9px] font-mono px-2 py-0.5 rounded-full z-20 flex items-center gap-1 pointer-events-none shadow-md">
+                        <span className="w-1.5 h-1.5 rounded-full bg-signal animate-ping" />
+                        <span>PRIMARY THEME</span>
+                      </div>
+
+                      {/* Centered Launch Overlay on Hover */}
                       <a
                         href={currentDemo.url}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="btn-primary text-xs py-2.5 px-5 flex items-center gap-1.5"
+                        className="absolute inset-0 bg-ink/0 group-hover/view:bg-ink/20 transition-colors flex items-center justify-center z-25"
                       >
-                        <span>Test this demo live</span>
-                        <span>↗</span>
+                        <span className="opacity-0 group-hover/view:opacity-100 transition-all duration-300 transform group-hover/view:scale-100 scale-95 bg-ink/95 text-paper text-xs font-mono px-3.5 py-1.5 rounded-full shadow-xl border border-white/25 flex items-center gap-1.5">
+                          <span>Launch Live Build ↗</span>
+                        </span>
                       </a>
-                      <Link to="/portfolio/" className="text-xs text-muted hover:text-ink font-medium">
-                        View all 6 demos →
-                      </Link>
+                    </div>
+
+                    {/* Bottom Manual Clickable Bar */}
+                    <div className="flex items-center justify-between gap-2 px-3 py-1.5 bg-[#121416] border-t border-white/10">
+                      <span className="text-[9px] font-mono text-white/50 uppercase tracking-wider pl-0.5 shrink-0">
+                        Theme 01:
+                      </span>
+                      <div className="grid grid-cols-3 gap-1.5 flex-1">
+                        {currentDemo.themes.map((theme, tIdx) => (
+                          <button
+                            key={theme.name}
+                            onClick={() => setActiveThemeIdx(tIdx)}
+                            className={`py-0.5 px-2 rounded-md border text-[10px] font-mono flex items-center justify-between gap-1 transition-all cursor-pointer ${
+                              leftThemeIdx === tIdx
+                                ? 'bg-white/20 border-signal text-white shadow-xs font-semibold'
+                                : 'bg-white/5 border-white/10 text-white/60 hover:text-white hover:bg-white/10'
+                            }`}
+                          >
+                            <span className="truncate">{theme.name}</span>
+                            <div className="flex items-center gap-0.5 shrink-0">
+                              {theme.palette.slice(0, 2).map((col, cIdx) => (
+                                <span
+                                  key={cIdx}
+                                  className="w-1.5 h-1.5 rounded-full border border-black/30"
+                                  style={{ backgroundColor: col }}
+                                />
+                              ))}
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* ── RIGHT STUDIO DISPLAY (CONTRAST AESTHETIC) ── */}
+                  <div className="bg-paper-raised border border-rule-strong hover:border-signal/40 rounded-[20px] overflow-hidden shadow-xl transition-all duration-300 flex flex-col justify-between group/disp2">
+                    {/* Top Window Bar */}
+                    <div className="flex items-center justify-between px-3.5 sm:px-4 py-2 bg-[#121416] text-paper text-xs font-mono border-b border-white/10 select-none">
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-rose-500/90 inline-block" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-amber-400/90 inline-block" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/90 inline-block" />
+                      </div>
+                      <div className="flex items-center gap-1.5 text-white/75 bg-white/5 border border-white/10 px-3 py-0.5 rounded-full text-[10px]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                        <span className="truncate max-w-[140px] sm:max-w-[240px]">
+                          uncodedhub.com{currentDemo.url}?contrast
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-amber-400 font-semibold text-[9px] tracking-wider hidden sm:inline">
+                          DISPLAY 02
+                        </span>
+                        <span className="text-[9px] text-white/70 font-mono bg-white/10 px-1.5 py-0.2 rounded font-medium">
+                          {rightTheme.name}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* 3-Segment Theme Progress Indicator Bar */}
+                    <div className="grid grid-cols-3 gap-1.5 px-3.5 sm:px-4 py-1.5 bg-[#0e1012] border-b border-white/10">
+                      {currentDemo.themes.map((theme, tIdx) => {
+                        const isCurrent = rightThemeIdx === tIdx;
+                        return (
+                          <button
+                            key={theme.name}
+                            onClick={() => setRightThemeOverride(tIdx)}
+                            className="text-left group/seg cursor-pointer"
+                            title={`Switch Right Display to Theme ${tIdx + 1}: ${theme.name}`}
+                          >
+                            <div className="h-1.5 rounded-full bg-white/15 overflow-hidden relative">
+                              {isCurrent ? (
+                                <div className="h-full w-full bg-amber-400" />
+                              ) : (
+                                <div className="h-full bg-transparent" />
+                              )}
+                            </div>
+                            <div className="flex items-center justify-between mt-0.5 text-[8px] sm:text-[9px] font-mono">
+                              <span
+                                className={`truncate ${
+                                  isCurrent
+                                    ? 'text-amber-400 font-semibold'
+                                    : 'text-white/40 group-hover/seg:text-white/70'
+                                }`}
+                              >
+                                T{tIdx + 1}: {theme.name}
+                              </span>
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    {/* Proportional Screen with True 16:9 Aspect Ratio */}
+                    <div className="relative aspect-[16/9] w-full overflow-hidden bg-black select-none group/view">
+                      {currentDemo.themes.map((theme, tIdx) => {
+                        const isThemeActive = rightThemeIdx === tIdx;
+                        return (
+                          <img
+                            key={`right-${currentDemo.id}-${theme.name}`}
+                            src={theme.image}
+                            alt={`${currentDemo.client} - ${theme.name}`}
+                            width={1440}
+                            height={810}
+                            loading="lazy"
+                            decoding="async"
+                            className={`absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 ease-in-out group-hover/view:scale-[1.01] ${
+                              isThemeActive
+                                ? 'opacity-100 z-10'
+                                : 'opacity-0 z-0 pointer-events-none'
+                            }`}
+                          />
+                        );
+                      })}
+
+                      {/* Floating Theme HUD Badge (Bottom-Left) */}
+                      <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 bg-ink/90 backdrop-blur-md border border-white/20 text-paper rounded-lg px-2.5 py-1 sm:px-3 sm:py-1.5 shadow-xl z-20 flex items-center gap-2.5 pointer-events-none">
+                        <div>
+                          <div className="text-[8px] font-mono uppercase tracking-wider text-amber-400 font-semibold">
+                            T0{rightThemeIdx + 1} · {rightTheme.style}
+                          </div>
+                          <div className="text-[11px] sm:text-xs font-semibold text-white truncate max-w-[130px] sm:max-w-[200px]">
+                            {rightTheme.name}
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-1 border-l border-white/20 pl-2">
+                          {rightTheme.palette.map((color, cIdx) => (
+                            <span
+                              key={cIdx}
+                              className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full border border-black/40 shadow-xs inline-block"
+                              style={{ backgroundColor: color }}
+                              title={color}
+                            />
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Floating Indicator (Top-Right) */}
+                      <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 bg-ink/85 backdrop-blur-md border border-white/15 text-white text-[9px] font-mono px-2 py-0.5 rounded-full z-20 flex items-center gap-1 pointer-events-none shadow-md">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                        <span>CONTRAST THEME</span>
+                      </div>
+
+                      {/* Centered Launch Overlay on Hover */}
+                      <a
+                        href={currentDemo.url}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="absolute inset-0 bg-ink/0 group-hover/view:bg-ink/20 transition-colors flex items-center justify-center z-25"
+                      >
+                        <span className="opacity-0 group-hover/view:opacity-100 transition-all duration-300 transform group-hover/view:scale-100 scale-95 bg-ink/95 text-paper text-xs font-mono px-3.5 py-1.5 rounded-full shadow-xl border border-white/25 flex items-center gap-1.5">
+                          <span>Launch Live Build ↗</span>
+                        </span>
+                      </a>
+                    </div>
+
+                    {/* Bottom Manual Clickable Bar */}
+                    <div className="flex items-center justify-between gap-2 px-3 py-1.5 bg-[#121416] border-t border-white/10">
+                      <span className="text-[9px] font-mono text-white/50 uppercase tracking-wider pl-0.5 shrink-0">
+                        Theme 02:
+                      </span>
+                      <div className="grid grid-cols-3 gap-1.5 flex-1">
+                        {currentDemo.themes.map((theme, tIdx) => (
+                          <button
+                            key={theme.name}
+                            onClick={() => setRightThemeOverride(tIdx)}
+                            className={`py-0.5 px-2 rounded-md border text-[10px] font-mono flex items-center justify-between gap-1 transition-all cursor-pointer ${
+                              rightThemeIdx === tIdx
+                                ? 'bg-white/20 border-amber-400 text-white shadow-xs font-semibold'
+                                : 'bg-white/5 border-white/10 text-white/60 hover:text-white hover:bg-white/10'
+                            }`}
+                          >
+                            <span className="truncate">{theme.name}</span>
+                            <div className="flex items-center gap-0.5 shrink-0">
+                              {theme.palette.slice(0, 2).map((col, cIdx) => (
+                                <span
+                                  key={cIdx}
+                                  className="w-1.5 h-1.5 rounded-full border border-black/30"
+                                  style={{ backgroundColor: col }}
+                                />
+                              ))}
+                            </div>
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               );
             })()}
           </Reveal>
-        </Shell>
+
+          {/* ── 3. COMPACT SPECIMEN INTEL BAR (DIRECTLY UNDER THE DUAL DISPLAYS) ── */}
+          <Reveal delay={45}>
+            {(() => {
+              const currentDemo = DEMO_SPECIMENS[activeDemoIdx];
+
+              return (
+                <div className="w-full bg-paper-raised px-3.5 sm:px-5 py-2.5 rounded-[16px] border border-rule-strong shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-2.5 mb-3">
+                  {/* Left: Specimen Number, Client, Sector & Speed Result */}
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                    <span className="card-tag text-[9px] sm:text-[10px] py-0.5 px-2 font-mono">
+                      #{currentDemo.num} {currentDemo.sector}
+                    </span>
+                    <h3 className="font-display text-sm sm:text-base text-ink font-medium">
+                      {currentDemo.client}
+                    </h3>
+                    <span className="px-2 py-0.5 rounded-full bg-signal-wash border border-signal/20 text-[9px] font-mono text-signal font-semibold">
+                      {currentDemo.result.split('·')[0].trim()}
+                    </span>
+                  </div>
+
+                  {/* Middle: Conversion Architecture Highlight */}
+                  <div className="hidden xl:flex items-center gap-2 text-xs text-muted max-w-xl truncate border-l border-rule pl-3">
+                    <span className="font-mono text-[9px] text-signal font-semibold uppercase shrink-0">
+                      Conversion Engine:
+                    </span>
+                    <span className="text-ink truncate font-medium">
+                      {currentDemo.conversionEngine}
+                    </span>
+                  </div>
+
+                  {/* Right: Direct Actions */}
+                  <div className="flex items-center gap-2 shrink-0 self-end md:self-auto">
+                    <a
+                      href={currentDemo.url}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="btn-primary text-xs py-1.5 px-4 flex items-center justify-center gap-1.5 shadow-2xs font-semibold"
+                    >
+                      <span>Test Live Build</span>
+                      <span>↗</span>
+                    </a>
+                    <Link
+                      to="/portfolio/"
+                      className="text-xs text-muted hover:text-signal font-medium transition-colors px-2 py-1"
+                    >
+                      Explore All 17 in Portfolio →
+                    </Link>
+                  </div>
+                </div>
+              );
+            })()}
+          </Reveal>
+
+          {/* ── 4. COMPACT 6:6:5 FLEET MATRIX (WITH THUMBNAIL MINI-PREVIEW) ── */}
+          <Reveal delay={60}>
+            <div>
+              <div className="flex items-center justify-between mb-1.5">
+                <span className="text-[9px] font-mono uppercase tracking-wider text-signal font-semibold">
+                  Fleet Matrix (17 Builds · 6:6:5 Grid)
+                </span>
+                <span className="text-[9px] font-mono text-muted">
+                  Click any sector to switch dual displays above instantly
+                </span>
+              </div>
+
+              {/* 3 Compact Rows of 6 Buttons (6:6:5 + 1 Custom Slot = 18 Total) */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+                {DEMO_SPECIMENS.map((demo, idx) => {
+                  const isActive = activeDemoIdx === idx;
+                  return (
+                    <button
+                      key={demo.id}
+                      id={`home-demo-grid-${idx}`}
+                      onClick={() => selectDemo(idx)}
+                      className={`p-2 rounded-[14px] border text-left transition-all cursor-pointer relative overflow-hidden group ${
+                        isActive
+                          ? 'bg-paper-raised border-signal text-ink shadow-sm ring-1 ring-signal/30'
+                          : 'bg-paper-sunken/60 hover:bg-paper-raised border-rule hover:border-rule-strong text-ink-muted hover:text-ink'
+                      }`}
+                    >
+                      {/* Mini Preview Thumbnail Window */}
+                      <div className="relative aspect-[16/10] w-full rounded-[8px] overflow-hidden bg-black mb-1.5 border border-rule/50">
+                        <img
+                          src={demo.themes[0].image}
+                          alt={`${demo.shortName} preview`}
+                          width={240}
+                          height={150}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute top-1 left-1 bg-ink/80 text-[8px] font-mono text-white px-1 rounded">
+                          #{demo.num}
+                        </div>
+                        {isActive && (
+                          <div className="absolute top-1 right-1 bg-signal text-[7.5px] font-mono text-paper font-semibold px-1 rounded">
+                            ACTIVE
+                          </div>
+                        )}
+                      </div>
+
+                      {/* 6-Second Demo Progress Bar across the active button */}
+                      {isActive && isDemoInView && !isDemoPaused && (
+                        <div
+                          key={`progress-grid-${activeDemoIdx}`}
+                          className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-signal animate-demo-progress-6s"
+                        />
+                      )}
+                      <div className="flex items-center justify-between mb-0.5">
+                        <span className="text-[11px] font-semibold block truncate text-ink group-hover:text-signal transition-colors">
+                          {demo.shortName || demo.client}
+                        </span>
+                        {isActive ? (
+                          <span className="w-1.5 h-1.5 rounded-full bg-signal animate-ping" />
+                        ) : (
+                          <span className="w-1.5 h-1.5 rounded-full bg-rule-strong group-hover:bg-signal/50 transition-colors" />
+                        )}
+                      </div>
+                      <span className="text-[9px] text-muted block truncate">
+                        {demo.sector}
+                      </span>
+                    </button>
+                  );
+                })}
+
+                {/* 18th Slot: Custom Sprint Request completing the 6:6:5 grid */}
+                <button
+                  onClick={onBook}
+                  className="p-2 rounded-[14px] border border-dashed border-signal/50 bg-signal-wash/40 hover:bg-signal-wash text-left transition-all cursor-pointer group flex flex-col justify-between"
+                  title="Book a 7-day custom sprint for your industry"
+                >
+                  <div className="relative aspect-[16/10] w-full rounded-[8px] overflow-hidden bg-signal-wash/60 mb-1.5 border border-dashed border-signal/30 flex items-center justify-center">
+                    <span className="text-signal text-lg font-bold group-hover:scale-110 transition-transform">
+                      +
+                    </span>
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between mb-0.5">
+                      <span className="text-[11px] font-semibold block truncate text-signal">
+                        Your Custom Build
+                      </span>
+                      <span className="text-signal text-[11px] group-hover:translate-x-0.5 transition-transform">
+                        →
+                      </span>
+                    </div>
+                    <span className="text-[9px] text-muted block truncate">
+                      7-Day Sprint Slot
+                    </span>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </Reveal>
+        </div>
       </Section>
 
       {/* ── SECTION 04: The 7-Day Sprint Blueprint (The Process) ────────────────── */}

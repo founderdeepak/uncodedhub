@@ -836,3 +836,35 @@ main > section:not(:first-child):not(.on-ink) {
   content-visibility: auto;
   contain-intrinsic-size: auto 700px;
 }
+
+/* 3-Second Specimen Theme Progress Animation */
+@keyframes specimenProgressAnim {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.animate-specimen-progress {
+  animation: specimenProgressAnim 3s linear infinite;
+}
+
+/* 2-Second Theme Progress Animation */
+@keyframes themeProgress2sAnim {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.animate-theme-progress-2s {
+  animation: themeProgress2sAnim 2s linear forwards;
+}
+
+/* 6-Second Demo Progress Animation */
+@keyframes demoProgress6sAnim {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.animate-demo-progress-6s {
+  animation: demoProgress6sAnim 6s linear forwards;
+}
+
+
