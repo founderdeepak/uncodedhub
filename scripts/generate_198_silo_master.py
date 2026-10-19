@@ -1,0 +1,526 @@
+import os
+import glob
+import re
+import csv
+from datetime import datetime, timedelta
+
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BLOG_DIR = os.path.join(ROOT_DIR, 'src', 'content', 'blog')
+SEO_DIR = os.path.join(ROOT_DIR, 'seo-keyword-research')
+CANVA_DIR = os.path.join(ROOT_DIR, 'CANVA_Business')
+
+os.makedirs(SEO_DIR, exist_ok=True)
+os.makedirs(CANVA_DIR, exist_ok=True)
+
+# 1. Inspect existing posts
+existing_daily_counts = {}
+existing_daily_slots = {}
+
+for fpath in glob.glob(os.path.join(BLOG_DIR, '*.md')):
+    if os.path.basename(fpath) == 'README.md': continue
+    with open(fpath, 'r', encoding='utf-8') as f:
+        content = f.read()
+    m = re.search(r'date:\s*["\']?([^"\'\r\n]+)', content)
+    if m:
+        iso = m.group(1).strip()
+        parts = iso.split('T')
+        date_str = parts[0]
+        slot = parts[1] if len(parts) > 1 else ''
+        existing_daily_counts[date_str] = existing_daily_counts.get(date_str, 0) + 1
+        if date_str not in existing_daily_slots:
+            existing_daily_slots[date_str] = []
+        if slot:
+            existing_daily_slots[date_str].append(slot)
+
+# 2. Time slots requested by user: 9am, 12pm, 3pm, 6pm, 9pm
+TIME_SLOTS = [
+    '09:00:00+05:30', # 9:00 AM
+    '12:00:00+05:30', # 12:00 PM
+    '15:00:00+05:30', # 3:00 PM
+    '18:00:00+05:30', # 6:00 PM
+    '21:00:00+05:30', # 9:00 PM
+]
+
+start_date = datetime(2026, 3, 12)
+end_date = datetime(2026, 10, 19)
+
+all_days = []
+curr = start_date
+while curr <= end_date:
+    all_days.append(curr.strftime('%Y-%m-%d'))
+    curr += timedelta(days=1)
+
+# 3. Schedule 198 slots across available days (max 3 posts per day)
+# Prioritize days that currently have 1 post, then days with 2 posts, then empty days
+day_capacities = {}
+for d in all_days:
+    current_count = existing_daily_counts.get(d, 0)
+    day_capacities[d] = max(0, 3 - current_count)
+
+# Build sorted candidate days: first days with capacity == 2 (current 1 post), then capacity == 1 (current 2 posts)
+sorted_days = sorted(all_days, key=lambda d: (-day_capacities[d], d))
+
+scheduled_slots = []
+post_idx = 0
+
+# We need 198 slots
+# Distribute evenly across the 222 days timeline
+# Let's collect slots up to 3 per day
+available_pool = []
+for d in all_days:
+    c = existing_daily_counts.get(d, 0)
+    for _ in range(3 - c):
+        available_pool.append(d)
+
+print(f"Total available slots across {len(all_days)} days (up to 3/day): {len(available_pool)}")
+
+# Select 198 evenly spaced indices from available_pool
+total_needed = 198
+step = len(available_pool) / total_needed
+selected_dates = [available_pool[int(i * step)] for i in range(total_needed)]
+
+# Now for each selected date, pick a time slot not already used
+daily_assigned_slots = {}
+assigned_schedule = []
+
+for i, d in enumerate(selected_dates):
+    if d not in daily_assigned_slots:
+        daily_assigned_slots[d] = list(existing_daily_slots.get(d, []))
+    
+    # Pick first available time slot from TIME_SLOTS
+    chosen_slot = None
+    for ts in TIME_SLOTS:
+        if ts not in daily_assigned_slots[d]:
+            chosen_slot = ts
+            break
+    if not chosen_slot:
+        chosen_slot = TIME_SLOTS[len(daily_assigned_slots[d]) % len(TIME_SLOTS)]
+    
+    daily_assigned_slots[d].append(chosen_slot)
+    
+    author = 'deepak' if i % 2 == 0 else 'geetha'
+    assigned_schedule.append({
+        'index': i + 1,
+        'date': d,
+        'slot': chosen_slot,
+        'isoTimestamp': f"{d}T{chosen_slot}",
+        'author': author
+    })
+
+print(f"Generated {len(assigned_schedule)} scheduled slots successfully.")
+
+# 4. Define 11 Niches and 18 Articles each
+NICHES_DATA = [
+    {
+        'key': 'educational-academy',
+        'name': 'Educational Academies & Coaching Institutes',
+        'pillar_slug': 'what-an-educational-academy-website-should-include',
+        'canva_style': 'Navy & Academic Amber, Modern Editorial Badges',
+        'topics': [
+            ("What an Educational Academy Website Should Include to Convert High-Fee Enrollments", "what-an-educational-academy-website-should-include", "educational academy website design", "coaching institute website, academy enrollment funnel, high fee student conversions", True),
+            ("Fee Transparency: Why Publishing Course Fee Ranges Multiplies Academy Inquiries", "educational-academy-course-fee-transparency", "coaching fee transparency", "academy fee structure, course pricing website, coaching inquiry conversion", False),
+            ("Curriculum Explorer vs PDF: Replacing Downloadable Brochures with Interactive Modules", "interactive-curriculum-explorer-vs-pdf-brochures", "interactive curriculum website", "coaching syllabus explorer, replace pdf brochure, student course roadmap", False),
+            ("Batch Countdown Funnels: Using Real-Time Seat Availability Timers Ethically", "batch-countdown-funnels-seat-scarcity-for-academies", "batch countdown timer for coaching", "limited seats booking funnel, academy batch start date, coaching admissions urgency", False),
+            ("Demo Class Booking: Converting Cold Website Visitors into Trial Attendees in 30 Seconds", "demo-class-booking-conversion-for-academies", "demo class booking funnel", "free trial coaching class, student lead conversion, trial seat reservation", False),
+            ("Faculty Credentials: Showcasing Degrees & Exam Ranks for Maximum E-E-A-T Authority", "faculty-credentials-showcase-for-coaching-institutes", "faculty credentials on academy website", "iit jee faculty profiles, teacher qualifications E-E-A-T, educator trust signals", False),
+            ("Alumni Results Showcase: Proving Exam Rankers and Placements with Verifiable Scorecards", "alumni-results-and-exam-ranker-showcase", "exam ranker results website", "coaching institute results proof, verified student scorecards, competitive exam success", False),
+            ("WhatsApp Counseling Triage: Automating Instant Student Inquiry Response Times", "whatsapp-counseling-triage-for-educational-institutes", "whatsapp counseling for coaching", "instant student lead routing, academy whatsapp chatbot, admission desk automation", False),
+            ("Local SEO for Academies: Ranking #1 for 'Best Coaching Institute in [City]' on Google Maps", "local-seo-google-maps-for-coaching-academies", "local seo for coaching institutes", "best academy near me, google business profile for coaching, neighborhood student acquisition", False),
+            ("Mobile Speed for Students: Why Sub-Second Loading Cuts Admission Drop-Offs by 50%", "mobile-speed-for-student-admission-websites", "coaching website mobile speed", "student mobile bounce rate, fast academy website, core web vitals for coaching", False),
+            ("Scholarship Assessment Funnels: Designing Entrance Exam Lead Magnets That Actually Convert", "scholarship-assessment-exam-lead-magnets", "scholarship test registration funnel", "coaching entrance test lead magnet, admission assessment quiz, talent search exam website", False),
+            ("Parent Decision Psychology: What Parents Actually Look for Before Paying Term Fees", "parent-decision-psychology-for-academy-admissions", "parent admission psychology", "how parents choose coaching institutes, trust factors in school websites, fees conversion factors", False),
+            ("Custom React vs WordPress: Why Coaching Sites Crash on Result Days & How Jamstack Solves It", "custom-react-vs-wordpress-for-academies-result-day-crashes", "wordpress crash on result day", "high traffic coaching website, react jamstack for schools, zero downtime academy portal", False),
+            ("Video Testimonials: Structuring Student Success Stories That Overcome Parent Skepticism", "student-and-parent-video-testimonials-for-academies", "student video testimonials coaching", "parent interview success stories, authentic student reviews, coaching video case studies", False),
+            ("Branch Multi-Location SEO: Structuring Pages for Academies with 3 to 10 City Branches", "multi-branch-coaching-institute-local-seo", "multi branch academy seo", "multiple center coaching website, location landing pages for institutes, branch finder ux", False),
+            ("Hostel & Campus Tour UX: Virtual Facility Walkthroughs for Residential Coaching Centers", "hostel-and-campus-virtual-tour-for-coaching", "residential coaching campus tour", "hostel facilities web page, virtual campus walkthrough, outstation student boarding proof", False),
+            ("Online Course vs Classroom: Positioning Hybrid and Offline Coaching Models Clearly", "hybrid-and-offline-classroom-course-positioning", "hybrid coaching website ux", "classroom vs online course packages, blended learning landing page, coaching pricing tiers", False),
+            ("The 7-Day Academy Website Sprint: How Uncoded Hub Deploys High-Conversion Portals in One Week", "seven-day-educational-academy-website-sprint", "educational academy web design sprint", "uncoded hub academy blueprint, 7 day coaching website build, fixed price school web design", False),
+        ]
+    },
+    {
+        'key': 'gym-fitness-club',
+        'name': 'Commercial Gyms & Fitness Clubs',
+        'pillar_slug': 'what-a-commercial-gym-website-should-include',
+        'canva_style': 'Carbon Black & Neon Kinetic Lime, High-Contrast Typography',
+        'topics': [
+            ("What a Commercial Gym Website Should Include to Drive Consistent Monthly Memberships", "what-a-commercial-gym-website-should-include", "commercial gym website design", "gym membership conversion, fitness club web features, gym website blueprint", True),
+            ("1-Tap Free Day Pass: Engineering an Instant Workout Pass Engine That Front Desks Love", "instant-free-day-pass-engine-for-gyms", "free day pass gym website", "claim gym trial pass, workout guest pass funnel, gym lead capture widget", False),
+            ("Virtual Equipment Tour: Showcasing Imported Machinery & Floor Layouts for Serious Lifters", "virtual-equipment-tour-and-gym-floor-plan", "gym equipment tour website", "commercial fitness floor plan, imported gym machinery showcase, bodybuilding gym ux", False),
+            ("Live Class Timetable UX: Designing Interactive Spinning, Zumba, and CrossFit Schedules", "interactive-gym-class-timetable-ux", "gym class timetable web schedule", "zumba spin crossfit class booking, live fitness timetable, mobile gym schedule", False),
+            ("Tiered Membership Calculators: Annual vs Monthly Pricing Models That Maximize Cashflow", "tiered-gym-membership-pricing-calculators", "gym membership pricing calculator", "annual vs monthly gym fee, fitness club pricing tiers, transparent gym rates", False),
+            ("Trainer Credentials Showcase: Highlighting Certified S&C Coaches and Kinesiologists", "gym-trainer-credentials-and-certifications-page", "gym personal trainer profiles", "certified strength coach showcase, fitness instructor credentials, personal training upsells", False),
+            ("Locker Room & Hygiene Proof: Visual Cleanliness Audits That Win Over Female Members", "locker-room-hygiene-and-amenities-showcase", "gym cleanliness and amenities proof", "female friendly gym features, steam sauna locker room tour, premium fitness club hygiene", False),
+            ("Local SEO for Gyms: Outranking Commercial Fitness Chains on Google Local Pack", "local-seo-google-maps-domination-for-gyms", "local seo for commercial gyms", "gym near me rank #1, google business profile gym optimization, hyperlocal fitness leads", False),
+            ("WhatsApp Tour Booking: Eliminating Missed Phone Calls at the Gym Reception Desk", "whatsapp-tour-and-membership-desk-routing", "whatsapp booking for gym tour", "front desk automation for gyms, missed phone call lead recovery, fitness chat widget", False),
+            ("Off-Peak Hour Promotions: Creating Flash Landing Pages to Fill Afternoon Gym Lulls", "off-peak-gym-membership-flash-promotions", "off peak gym membership landing page", "fill afternoon gym slots, discount gym passes daytime, capacity utilization fitness", False),
+            ("Corporate Fitness Retainers: Pitching B2B Employee Wellness Memberships on Your Website", "corporate-gym-membership-and-wellness-b2b-pages", "corporate gym membership page", "b2b wellness plans for employers, company fitness perks proposal, executive gym tier", False),
+            ("Member Transformation Stories: Ethical Before/After Galleries with Verified Duration Logs", "verified-member-transformation-galleries-for-gyms", "gym member transformations web gallery", "ethical before after fitness photos, real member weight loss stories, gym social proof", False),
+            ("Mobile-First Thumb Zone UX: Enabling 1-Thumb Class Bookings for Rushed Commuters", "mobile-thumb-zone-ergonomics-for-gym-websites", "gym mobile website ux", "one thumb gym booking, mobile fitness website speed, rush hour class reservations", False),
+            ("Eliminating Aggregator Dependency: Why Gyms Must Stop Paying 25% Commissions to Aggregators", "eliminating-gym-aggregator-dependency-and-commissions", "stop paying gym aggregator fees", "direct gym memberships vs classpass fitternity, own your gym member data, gym margins", False),
+            ("Custom Code vs Wix/Squarespace: Why Heavy Video Backgrounds Cripple Gym Mobile Conversions", "custom-react-vs-wix-squarespace-for-fitness-clubs", "why wix gym websites fail", "gym video background mobile lag, fast react fitness website, gym web design benchmarks", False),
+            ("Nutrition Bar & Supplement Merch: Upselling Members Without Cluttering Core Membership", "nutrition-bar-and-pro-shop-upsell-ux", "gym pro shop and cafe website", "supplement store gym upsells, protein shake bar landing page, ancillary gym revenue", False),
+            ("Annual Membership Renewal Reminders: Automated Web Portals That Cut Membership Churn", "gym-membership-renewal-and-loyalty-portals", "gym member retention web system", "cut gym membership churn, automated renewal landing page, fitness club loyalty rewards", False),
+            ("The 7-Day Gym Website Sprint: How Uncoded Hub Deploys High-Conversion Portals in 7 Days", "seven-day-commercial-gym-website-sprint", "gym web design sprint", "uncoded hub fitness website blueprint, 7 day gym website launch, fixed fee gym web design", False),
+        ]
+    },
+    {
+        'key': 'business-portfolio',
+        'name': 'Enterprise B2B & Corporate Advisory',
+        'pillar_slug': 'what-a-b2b-corporate-consulting-website-should-include',
+        'canva_style': 'Deep Slate, Warm Ochre & Crisp Swiss Typography',
+        'topics': [
+            ("What a B2B Corporate Consulting Website Should Include to Win Multi-Million Retainers", "what-a-b2b-corporate-consulting-website-should-include", "b2b consulting website design", "corporate advisory website, enterprise consulting portfolio, high retainer client acquisition", True),
+            ("RFP Shortlist Architecture: How Enterprise Buyers Secretly Evaluate Consulting Sites", "rfp-shortlist-architecture-for-b2b-consulting", "rfp shortlist consulting website", "how enterprise buyers choose consultants, c-suite vetting process, corporate proposal web audit", False),
+            ("Confidential NDA Case Studies: Showcasing Fortune 500 Impact Without Breaching Client NDAs", "confidential-nda-case-studies-for-b2b-firms", "nda client case studies b2b", "anonymous corporate case study format, enterprise impact metrics, confidential consulting proof", False),
+            ("Executive Leadership Bios: Positioning Managing Partners as Industry Authorities", "executive-leadership-bios-for-advisory-partners", "managing partner bio website", "c-suite authority positioning, consulting partner credentials, board member bio design", False),
+            ("Quantified ROI Case Studies: Moving from 'Soft Advice' to Concrete EBITDA Impact Proof", "quantified-ebitda-roi-case-studies-for-consultants", "consulting roi case study metrics", "ebitda improvement proof, corporate turnaround metrics, quantifiable business impact", False),
+            ("White Paper & Research Gateways: High-Intent Lead Magnets for C-Level Decision Makers", "white-paper-and-industry-research-gateways", "c-level white paper lead magnet", "executive research report landing page, high intent b2b lead generation, corporate insight hub", False),
+            ("Transparent Engagement Frameworks: Retainer, Milestone, and Value-Based Pricing Models", "transparent-b2b-advisory-engagement-frameworks", "b2b consulting engagement models", "retainer vs milestone consulting fees, value based advisory pricing, corporate scope sheets", False),
+            ("Enterprise Security & Compliance: Why B2B Websites Must Comply with SOC2, GDPR, and ISO", "enterprise-security-soc2-gdpr-for-consulting-sites", "b2b website compliance and security", "soc2 compliant website, gdpr privacy for corporate consultants, enterprise vendor vetting", False),
+            ("High-Ticket Discovery Funnels: Replacing Generic Calendly Links with Executive Briefs", "high-ticket-executive-brief-discovery-funnels", "replace calendly for enterprise consulting", "executive intake questionnaire, multi-step b2b discovery form, qualify c-level inquiries", False),
+            ("B2B Editorial Typography: Why Clean Swiss Layouts Command 3x Higher Retainer Credibility", "editorial-swiss-typography-for-corporate-advisory", "b2b corporate website typography", "swiss design corporate credibility, executive typography pairings, premium consulting aesthetic", False),
+            ("Global Multi-Currency Presentation: Structuring Websites for Cross-Border Advisory", "cross-border-b2b-advisory-multi-currency-portals", "international consulting website structure", "cross border advisory tax entity, multi currency enterprise quotes, global b2b expansion", False),
+            ("Keynote & Advisory Board Portals: Positioning Founders for Board Seats and Keynotes", "keynote-speaker-and-board-advisory-portals", "board seat advisory website", "keynote speaker one sheet, managing director speaking fees, governance board candidate page", False),
+            ("Thought Leadership SEO: Ranking for Long-Tail Executive Strategy Queries CEOs Search", "thought-leadership-seo-for-b2b-management-consultants", "executive thought leadership seo", "ceo search queries b2b, management consulting keyword strategy, rank for strategy topics", False),
+            ("Custom React vs Heavy WordPress: Protecting Corporate Websites from Security Breaches", "custom-react-vs-wordpress-for-enterprise-advisory", "enterprise security react vs wordpress", "zero vulnerability static website, stop corporate website defacement, secure b2b web build", False),
+            ("Partner & Associate Recruitment: Attracting Top MBA Talent with a Dedicated Culture Chapter", "attracting-top-tier-mba-talent-consulting-careers", "consulting firm careers page", "attract senior strategy associates, partner track culture page, recruit top consulting talent", False),
+            ("Media Citations & Press Hub: Structuring Bloomberg, Forbes, and Reuters Mentions for E-E-A-T", "media-citations-and-press-hub-architecture", "corporate media press kit website", "bloomberg reuters press mentions, consulting e-e-a-t verification, media quote archive", False),
+            ("Diagnostic Maturity Assessments: Interactive Benchmarking Quizzes That Pre-Qualify Leads", "interactive-diagnostic-maturity-assessments-b2b", "interactive business maturity assessment", "digital diagnostic quiz for enterprise, corporate maturity score lead magnet, b2b audit tool", False),
+            ("The 7-Day Enterprise Website Sprint: Launching High-Prestige Platforms with Deepak & Geetha", "seven-day-enterprise-b2b-website-sprint", "enterprise web design sprint", "uncoded hub b2b advisory blueprint, 7 day corporate website launch, fixed fee consulting web design", False),
+        ]
+    },
+    {
+        'key': 'spa-wellness',
+        'name': 'Luxury Spas & Wellness Retreats',
+        'pillar_slug': 'what-a-luxury-spa-wellness-website-should-include',
+        'canva_style': 'Warm Sage, Botanical Linen & Gold Foil Accents',
+        'topics': [
+            ("What a Luxury Spa Website Should Include to Fill High-Ticket Rejuvenation Rituals", "what-a-luxury-spa-wellness-website-should-include", "luxury spa website design", "wellness retreat website, spa booking conversion, luxury rejuvenation web design", True),
+            ("Sensory Digital Aesthetics: Translating Physical Tranquility and Aromatherapy to Screen", "sensory-digital-aesthetics-for-luxury-spas", "sensory web design for spas", "calming website aesthetic, aromatherapy to digital layout, premium spa web experience", False),
+            ("Interactive Treatment Ritual Menus: Replacing Flat PDFs with Curated Wellness Journeys", "interactive-spa-treatment-ritual-menus", "interactive spa treatment menu", "replace spa pdf price list, curated therapy packages, massage and facial interactive guide", False),
+            ("Therapist Certification & Lineage: Showcasing Ayurvedic Vaidyas and Balinese Healers", "therapist-credentials-and-holistic-lineage-pages", "ayurvedic doctor spa website", "balinese therapist certifications, authentic wellness lineage, holistic healer trust signals", False),
+            ("Day-Package & Couple Retreat Calculators: Grouping Therapies into High-Ticket Escapes", "couple-retreat-and-day-spa-package-calculators", "couple spa package calculator", "full day spa package builder, anniversary retreat packages, luxury spa package pricing", False),
+            ("VIP Deposit Booking Flow: Slashing No-Shows with Automated Advance Payment Integrations", "slashing-spa-no-shows-with-deposit-booking-flows", "spa deposit booking system", "reduce salon spa no shows, advance appointment deposit, seamless spa payment gateway", False),
+            ("Local Luxury SEO: Ranking for 'Best Ayurvedic Spa & Massage in [Area]'", "local-luxury-seo-for-spas-and-wellness-centers", "local seo for luxury spas", "best massage near me ranking, google maps for ayurvedic clinics, luxury wellness search", False),
+            ("Ambient Visual Micro-Interactions: Using Calming Aesthetics Without Slowing Mobile Load", "ambient-visual-micro-interactions-without-speed-lag", "ambient spa website animations", "lightweight spa motion design, zero lag relaxing web effects, core web vitals for spas", False),
+            ("WhatsApp Concierge Integration: Personalizing Treatment Consultations for VIP Guests", "whatsapp-concierge-for-luxury-spa-consultations", "luxury spa whatsapp concierge", "personalized treatment advisory, instant spa booking chat, high net worth spa service", False),
+            ("Gift Card & Voucher Engines: Unlocking 30% Additional Revenue During Festive Seasons", "spa-gift-card-and-experience-voucher-engines", "spa gift card website engine", "wellness gift vouchers online, holiday spa gift sales, instant digital gift certificate", False),
+            ("Corporate Wellness Retreat Packages: Packaging Executive De-Stress Days for Tech Companies", "corporate-wellness-retreat-packages-for-executives", "corporate spa retreat packages", "tech company wellness days, executive stress relief retreats, b2b spa partnership proposal", False),
+            ("Organic Botanical Ingredient Transparency: Spotlighting Pure Cold-Pressed Oils & Herbs", "botanical-ingredient-transparency-and-organic-sourcing", "organic spa ingredients showcase", "cold pressed ayurvedic oils proof, farm to spa ingredient transparency, chemical free treatments", False),
+            ("Mobile Speed on Reserving: Why A 3-Second Delay Destroys Relaxed Luxury Buyer Psychology", "mobile-speed-and-luxury-spa-booking-psychology", "luxury spa mobile website speed", "mobile reservation bounce rates, 1 second spa booking ux, sub second spa checkout", False),
+            ("Custom Engineering vs Fresha/Mindbody: Owning Your Brand Experience Without SaaS Traps", "custom-spa-website-vs-fresha-mindbody-platforms", "custom spa site vs booking platforms", "avoid marketplace commission fees, own customer spa relationship, bespoke spa branding", False),
+            ("Membership & Monthly Wellness Club: Converting Occasional Guests into Recurring Members", "spa-membership-and-monthly-wellness-club-portals", "recurring spa membership website", "monthly wellness subscription model, vip spa club benefits, predictable spa revenue", False),
+            ("Weekend Retreat Itineraries: Step-by-Step Timelines for Residential Sanctuaries", "weekend-wellness-retreat-itinerary-showcase", "wellness retreat itinerary page", "residential yoga spa schedule, 3 day detox retreat plan, retreat accommodation preview", False),
+            ("Hygiene & Sterilization Protocol Pages: Reassuring Cautious First-Time Spa Visitors", "hygiene-sterilization-and-sanitization-protocols-for-spas", "spa hygiene and sanitation proof", "autoclaved spa linen standards, disposable therapy hygiene, cautious guest reassurance", False),
+            ("The 7-Day Luxury Spa Website Sprint: Launching Restorative Digital Sanctuaries in One Week", "seven-day-luxury-spa-website-sprint", "luxury spa web design sprint", "uncoded hub spa blueprint, 7 day wellness website launch, fixed fee spa web development", False),
+        ]
+    },
+    {
+        'key': 'salon-beauty',
+        'name': 'Salons & Bridal Beauty Studios',
+        'pillar_slug': 'what-a-bridal-beauty-salon-website-should-include',
+        'canva_style': 'Rose Champagne & Blush Minimalist Editorial',
+        'topics': [
+            ("What a Bridal Beauty Salon Website Should Include to Lock Premium Wedding Dates", "what-a-bridal-beauty-salon-website-should-include", "bridal salon website design", "bridal makeup artist website, wedding hair and beauty portal, luxury salon web design", True),
+            ("Bridal Lookbook Portals: High-Resolution HD Portfolios Categorized by Wedding Function", "bridal-lookbook-portals-categorized-by-function", "bridal makeup lookbook website", "sangeet wedding reception looks, hd bridal makeup portfolio, function wise bridal gallery", False),
+            ("Transparent Bridal Packages: Detailing Airbrush vs HD Makeup, Draping, and Hair Extensions", "transparent-bridal-beauty-packages-airbrush-vs-hd", "bridal makeup packages pricing", "airbrush vs hd makeup pricing, saree draping package inclusions, bridal hair extensions cost", False),
+            ("Master Stylist Portfolios: Showcasing Individual Artists to Build Personal Trust", "master-stylist-and-makeup-artist-portfolio-pages", "salon master stylist profiles", "senior bridal artist showcase, celebrity makeup artist portfolio, stylist personal branding", False),
+            ("Peak Season Date Availability Engine: Preventing Double-Bookings & Driving Urgency", "peak-season-bridal-date-availability-checker", "wedding date availability checker salon", "check bridal makeup slot online, prevent wedding date collisions, bridal calendar urgency", False),
+            ("Before/After Beauty Sliders: Demonstrating Skin Texture Honesty & Natural Lighting", "before-after-bridal-beauty-sliders-skin-texture-honesty", "before after bridal makeup slider", "unretouched skin texture proof, natural daylight makeup photos, realistic bridal transformation", False),
+            ("Local Map Pack Domination: Ranking #1 for 'Bridal Makeup Studio Near Me'", "local-seo-google-maps-domination-for-beauty-salons", "bridal makeup studio near me seo", "salon google business profile optimization, rank local bridal beauty, neighborhood salon clients", False),
+            ("On-Location vs Studio Bookings: Explaining Destination Wedding Logistics and Travel Terms", "on-location-vs-in-studio-bridal-booking-logistics", "destination bridal makeup logistics page", "on venue bridal artist terms, outstation travel stay policies, destination wedding glam team", False),
+            ("WhatsApp Consultation Triage: Converting Late-Night Bride Inquiries into Studio Visits", "whatsapp-consultation-triage-for-busy-brides", "whatsapp bridal consultation routing", "convert late night bridal dms, instant quote generator for brides, fast salon reply triage", False),
+            ("Hair & Skin Treatment Menus: Keratin, Botoplex, and Hydra-Facial Clear Benefit Guides", "hair-and-skin-treatment-benefit-guides-keratin-hydrafacial", "salon treatment service menu", "keratin vs botoplex hair treatment guide, hydrafacial cost and benefits, salon skincare menu", False),
+            ("Retail Product E-Commerce Integration: Selling Salon-Grade Haircare Directly to Clients", "retail-haircare-product-storefront-for-salons", "salon retail product ecommerce", "sell salon grade shampoo online, professional haircare web store, salon retail revenue", False),
+            ("Video Testimonial Reels: Capturing Real Brides Sharing Emotional Getting-Ready Moments", "bridal-video-testimonial-reels-and-getting-ready-stories", "bridal video testimonial reels", "bride getting ready video reviews, emotional makeup transformations, real bride feedback", False),
+            ("Mobile 4G Speed for Image Galleries: How Next-Gen WebP/AVIF Eliminates Gallery Lag", "mobile-4g-image-optimization-for-beauty-portfolios", "fast loading bridal photo gallery", "webp avif optimization for beauty photos, stop mobile gallery lag, high res beauty loading", False),
+            ("Custom Build vs Instagram Dependency: Why Algorithm Shifts Cost Salons High-End Clients", "custom-website-vs-instagram-dependency-for-salons", "stop relying on instagram for salon leads", "own your salon client list, instagram shadowban protection, sustainable bridal business", False),
+            ("Bridal Party & Family Packages: Upselling Groom and Bridesmaid Grooming Bundles", "bridal-party-and-family-grooming-packages", "bridesmaid makeup packages", "groom wedding grooming bundle, family makeup packages, high volume bridal party quotes", False),
+            ("Trial Session Booking Funnel: Converting Skeptical Brides Through Paid Makeup Trials", "paid-bridal-makeup-trial-booking-funnels", "bridal makeup trial booking page", "convert brides through paid trials, trial session terms and adjustment, bridal trial guarantee", False),
+            ("Post-Care Instructions & Prep Guides: Value That Turns Brides into Lifetime Clients", "bridal-skin-prep-guides-and-post-care-instructions", "pre bridal skincare prep guide", "skin prep before wedding day, post bridal hair maintenance, lifetime salon client retention", False),
+            ("The 7-Day Bridal Salon Website Sprint: Deploying Chic, High-Converting Studios in 7 Days", "seven-day-bridal-salon-website-sprint", "salon web design sprint", "uncoded hub bridal salon blueprint, 7 day beauty website launch, fixed fee salon web design", False),
+        ]
+    },
+    {
+        'key': 'fitness-coach',
+        'name': 'Private Fitness Coaches & Personal Trainers',
+        'pillar_slug': 'what-a-private-fitness-coach-website-should-include',
+        'canva_style': 'Monochrome Carbon, High-Contrast Red & Bold Stat Callouts',
+        'topics': [
+            ("What a Private Fitness Coach Website Should Include to Command ₹50K+ Transformation Fees", "what-a-private-fitness-coach-website-should-include", "fitness coach website design", "personal trainer website, high ticket fitness coaching, 1 on 1 coaching funnel", True),
+            ("The 1-on-1 Coaching Application Funnel: Pre-Qualifying Clients While Filtering Tire-Kickers", "high-ticket-fitness-coaching-application-funnels", "fitness coaching application funnel", "pre qualify personal training clients, filter out lowballers fitness, 1 on 1 intake form", False),
+            ("Verified Transformation Case Studies: Documenting DEXA Scans, Strength & Blood Work Proof", "verified-dexa-and-blood-work-fitness-case-studies", "verified fitness transformation case study", "dexa scan body fat proof, blood panel health transformation, evidence based trainer proof", False),
+            ("Structured 12-Week Roadmap Presentation: Demystifying What Clients Actually Pay For", "structured-12-week-coaching-program-roadmaps", "12 week fitness program curriculum", "phases of personal training roadmap, what clients get in coaching, progressive overload plan", False),
+            ("Video Proof & Client Interview Showcases: Testimonials That Destroy 'Fake Guru' Doubts", "client-video-interviews-and-anti-guru-proof", "personal trainer video reviews", "authentic client interview video, overcome fitness skepticism, real fat loss video reviews", False),
+            ("Macro & Calorie Calculator Lead Magnets: Capturing Targeted Leads Without Paid Ads", "macro-and-tdee-calculator-lead-magnets-for-coaches", "tdee macro calculator lead magnet", "free calorie calculator for personal trainers, organic fitness leads, fitness email capture widget", False),
+            ("High-Ticket Pricing Psychology: Why Top Trainers Never Post Hourly Rates Online", "pricing-psychology-value-vs-hourly-rates-for-trainers", "personal trainer pricing psychology", "why not charge per hour fitness, package based coaching rates, premium trainer fee structuring", False),
+            ("WhatsApp Voice-Note Intake Strategy: Using Direct Audio Messaging to Build Intimate Rapport", "whatsapp-voice-note-intake-funnel-for-coaches", "whatsapp voice note lead triage", "personal trainer audio consultation, warm up cold fitness leads, intimate sales rapport audio", False),
+            ("Local Executive In-Home Training SEO: Capturing Wealthy CEOs Looking for Private Coaching", "local-seo-for-in-home-executive-personal-trainers", "in home personal trainer seo", "executive fitness coach near me, private home trainer for ceos, luxury home gym trainer seo", False),
+            ("Mobile Ergonomics for Clients: Optimizing Web Check-Ins and Workout Log Access", "mobile-ergonomics-for-client-weekly-check-ins", "mobile fitness check in portal", "frictionless weekly bodyweight checkin, mobile client dashboard, responsive coaching checkins", False),
+            ("Nutrition & Supplement Philosophy: Establishing Science-Backed Credibility Against Fads", "science-backed-nutrition-philosophy-against-fads", "evidence based trainer nutrition page", "keto carnivore vs balanced nutrition proof, debunking fitness myths, evidence based coaching", False),
+            ("Custom Website vs Trainerize/Linktree: Creating a Standalone Brand That Outlasts Generic Apps", "custom-trainer-website-vs-trainerize-linktree", "custom fitness website vs generic apps", "brand equity for independent coaches, why linktree loses clients, own your coaching brand", False),
+            ("Semi-Private & Small Group Cohort Pages: Scaling Beyond 1-on-1 Hours with Group Masterclasses", "semi-private-and-small-group-cohort-sales-pages", "small group personal training website", "scale coaching business beyond 1 on 1, fitness mastermind sales page, cohort workout landing page", False),
+            ("Anti-Crash Performance Architecture: Zero Lag, 100/100 Core Web Vitals for Fast Access", "anti-crash-fast-loading-fitness-website-architecture", "high performance fitness website", "core web vitals for personal trainers, fast mobile loading workout pages, react speed fitness", False),
+            ("Client Onboarding Agreement & Waiver UX: Digitizing Liability Forms and Disclaimers", "digital-client-onboarding-agreements-and-waivers", "online fitness liability waiver", "digital par-q readiness form, seamless client onboarding agreement, coaching legal terms", False),
+            ("Corporate Wellness Retainers for Coaches: Pitching Tech Startups on Founder Fitness", "corporate-wellness-retainers-for-fitness-coaches", "corporate fitness coaching proposals", "executive desk health workshops, tech startup fitness retainer, b2b employee wellness coach", False),
+            ("High-Converting Sales Call Booking: Guiding Visitors from Quiz to Call with 80% Show-Ups", "high-converting-sales-call-booking-flow-for-trainers", "fitness sales call booking flow", "increase consultation show up rates, automated sms reminder fitness, pre call preparation page", False),
+            ("The 7-Day Fitness Coach Website Sprint: How Uncoded Hub Builds Elite Trainer Brand Hubs", "seven-day-fitness-coach-website-sprint", "personal trainer web design sprint", "uncoded hub fitness coach blueprint, 7 day trainer website launch, fixed price trainer web design", False),
+        ]
+    },
+    {
+        'key': 'yoga-meditation',
+        'name': 'Yoga Shalas & Meditation Sanctuaries',
+        'pillar_slug': 'what-a-yoga-shala-meditation-website-should-include',
+        'canva_style': 'Terracotta, Sandstone & Mindful Earth Tones',
+        'topics': [
+            ("What a Yoga Shala Website Should Include to Build a Devoted, High-Retention Community", "what-a-yoga-shala-meditation-website-should-include", "yoga shala website design", "meditation sanctuary web design, yoga studio website blueprint, high retention yoga community", True),
+            ("Live Weekly Class Schedule Timetable: Clear Visual Grids with Teacher Badges & Levels", "live-weekly-yoga-class-schedule-timetable-ux", "interactive yoga class schedule", "weekly yoga shala timetable, class level badges beginner to advanced, mobile yoga schedule", False),
+            ("200-Hour & 300-Hour TTC Curriculum Pages: Winning International Teacher Enrollments", "200-hour-and-300-hour-yoga-teacher-training-curriculum-pages", "yoga teacher training website page", "yoga alliance certified ttc curriculum, international yoga student enrollments, ttc course modules", False),
+            ("Drop-In Trial Pass Funnels: Welcoming Beginners with Zero-Friction 3-Class Bundles", "drop-in-trial-pass-funnels-for-yoga-beginners", "yoga studio trial pass funnel", "introductory yoga class pass, convert first time yogis, 3 class intro bundle booking", False),
+            ("Shala Lineage & Teacher Philosophy: Honoring Traditional Ashtanga, Hatha, and Iyengar", "shala-lineage-and-authentic-teacher-philosophy", "authentic yoga lineage page", "ashtanga mysore lineage proof, iyengar hatha tradition, traditional guru student lineage", False),
+            ("Residential Yoga Retreat Booking Engine: Showcasing Itineraries, Meals, and Rooms", "residential-yoga-retreat-booking-engine", "yoga retreat booking website", "all inclusive yoga retreat itinerary, organic sattvic meals showcase, retreat room tiers", False),
+            ("Mindful Visual Architecture: Earth-Toned, Distraction-Free Layouts for Deep Breath", "mindful-earth-toned-visual-web-architecture", "zen mindful web design aesthetic", "distraction free yoga layout, serene typography for meditation, calming color palettes", False),
+            ("Local SEO for Yoga Studios: Dominating Search Results for 'Authentic Yoga Shala Near Me'", "local-seo-domination-for-yoga-studios", "local seo for yoga studios", "authentic yoga shala near me, google business profile for yoga centers, local yogi community", False),
+            ("WhatsApp Studio Community Access: Connecting Seekers Directly with Shala Administrators", "whatsapp-studio-community-and-inquiry-routing", "whatsapp integration for yoga shala", "instant student question routing, shala community whatsapp broadcast, beginner friendly chat", False),
+            ("Sound Bath & Breathwork Workshop Landers: Filling Weekend Immersions in 48 Hours", "sound-bath-and-breathwork-workshop-landing-pages", "sound healing workshop landing page", "pranayama breathwork immersion, weekend sound bath tickets, sold out workshop funnel", False),
+            ("Mobile Timetable Speed: Instant Loading for Practitioners Checking 6:00 AM Schedules", "mobile-speed-for-early-morning-yoga-timetables", "fast loading yoga timetable mobile", "sub second mysore schedule loading, mobile first yoga practitioner ux, zero lag timetable", False),
+            ("Ethical Student Testimonials: Reflecting Mental Clarity, Injury Healing, and Spiritual Growth", "ethical-student-testimonials-for-yoga-studios", "authentic yoga testimonials", "mental clarity and stress reduction reviews, physical healing testimonials, holistic transformation", False),
+            ("Custom React Code vs Mindbody Clutter: Eliminating Third-Party Popups and Friction", "custom-react-yoga-website-vs-mindbody-clutter", "mindbody alternatives for yoga studios", "eliminate booking app login friction, own student member data, smooth custom yoga checkout", False),
+            ("Corporate Mindfulness Seminars: Pitching Stress-Reduction & Ergonomics to Tech Firms", "corporate-mindfulness-and-desk-yoga-proposals", "corporate yoga workshop packages", "stress reduction seminars for companies, desk ergonomics yoga b2b, tech employee wellness", False),
+            ("Virtual Shala Streaming & On-Demand Library: Offering Global Practitioners Hybrid Access", "virtual-shala-on-demand-class-library-portals", "on demand yoga video library", "hybrid yoga membership platform, virtual shala subscription, global practitioner access", False),
+            ("Props & Eco-Mat Merchandise Store: Highlighting Handloom Cotton Straps & Cork Blocks", "eco-friendly-yoga-props-and-merchandise-store", "sustainable yoga props web shop", "organic cotton yoga straps, natural cork blocks store, ancillary revenue for yoga studios", False),
+            ("Meditation for Beginners FAQ: Answering Anxieties for People Who Believe 'I'm Not Flexible'", "meditation-for-beginners-faq-overcoming-anxiety", "yoga for beginners faq", "im not flexible enough for yoga answer, what to wear to first yoga class, beginner shala etiquette", False),
+            ("The 7-Day Yoga Shala Website Sprint: Uncoded Hub's Soulful, High-Performance Launch", "seven-day-yoga-shala-website-sprint", "yoga shala web design sprint", "uncoded hub yoga website blueprint, 7 day yoga sanctuary launch, fixed price yoga web design", False),
+        ]
+    },
+    {
+        'key': 'creative-portfolio',
+        'name': 'Creative Design Studios & Agencies',
+        'pillar_slug': 'what-a-creative-design-agency-website-should-include',
+        'canva_style': 'Electric Cobalt, Stark White & High-Impact Editorial Grid',
+        'topics': [
+            ("What a Creative Design Agency Website Should Include to Win 6-Figure Retainers", "what-a-creative-design-agency-website-should-include", "creative agency website design", "design studio portfolio blueprint, high ticket retainer agency site, creative agency web design", True),
+            ("Interactive Case Study Breakdowns: Dissecting Problem, Strategy, Identity, and Lift", "interactive-case-study-breakdowns-for-agencies", "agency case study design format", "problem strategy identity market lift, deep dive branding case study, interactive agency portfolio", False),
+            ("Deliverable Scope & Pricing Matrices: Transparent Retainer Bands That Anchor High Value", "deliverable-scope-and-pricing-matrices-for-studios", "design agency retainer pricing matrix", "branding scope breakdown, transparent design agency fees, anchor high value retainers", False),
+            ("Interactive Before/After Brand Redesigns: Showing Tangible Contrast in Brand Evolution", "interactive-before-after-brand-redesign-sliders", "brand redesign before after slider", "rebranding case study proof, visual transformation agency portfolio, logo identity evolution", False),
+            ("Kinetic Typography & Micro-Interactions: Proving Craftsmanship Without Jitter or Lag", "kinetic-typography-and-micro-interactions-without-lag", "smooth agency web animations", "60fps kinetic typography, micro interactions without layout shift, high performance agency motion", False),
+            ("Founder & Director Design Manifestos: Articulating a Contrarian Visual Point of View", "founder-and-creative-director-design-manifestos", "creative director manifesto website", "contrarian agency positioning, design studio philosophy page, articulate strong design point of view", False),
+            ("Interactive Project Brief Intake: Capturing Deep Client Context Before Discovery Calls", "interactive-project-brief-intake-form-ux", "creative agency project brief form", "qualify enterprise agency clients, structured design inquiry questionnaire, replace boring contact forms", False),
+            ("Organic Search Engine Authority for Studios: Ranking for 'Boutique Branding Studio [City]'", "seo-for-boutique-branding-studios-and-agencies", "seo for creative design agencies", "boutique branding studio city ranking, rank creative agency on google, high intent inbound leads", False),
+            ("Client Video Reviews with Brand Founders: Highlighting Revenue Growth and Investor Praise", "client-video-reviews-with-brand-founders", "agency client video testimonials", "startup founder review agency, series a brand redesign roi, design impact on venture funding", False),
+            ("Pitch Deck & Presentation Showcases: How Leading Studios Display Brand Guidelines", "brand-guidelines-and-pitch-deck-showcase-ux", "brand guidelines presentation online", "interactive brand style guide, packaging design presentation, digital brand book showcase", False),
+            ("Sub-Second Mobile Performance: Achieving 99+ Lighthouse Scores with 4K Visual Work", "sub-second-mobile-performance-for-visual-portfolios", "agency portfolio core web vitals", "99 lighthouse score design portfolio, 4k image optimization next gen formats, zero lag studio site", False),
+            ("Custom React Engineering vs Webflow/Framer: Why Enterprise Clients Respect Clean Code", "custom-react-vs-webflow-framer-for-agencies", "custom react vs framer webflow for agencies", "enterprise clients respect handcrafted code, no generic page builder limits, studio tech stack", False),
+            ("Agency Award Submissions & Press Showcase: Curating Awwwards, Red Dot, and Fast Co Mentions", "agency-awards-awwwards-and-press-media-hub", "agency awards and press showcase", "awwwards winning website case study, red dot design award proof, press mentions portfolio", False),
+            ("International Timezone Collaboration Models: Reassuring US/UK Clients on Delivery", "international-remote-collaboration-models-for-studios", "working with international design clients", "us uk client remote collaboration, asynchronous design sprints, cross border agency contracts", False),
+            ("Agency Talent Acquisition Pages: Attracting Senior Art Directors with Transparent Pay", "attracting-top-creative-talent-transparent-culture", "creative agency careers page", "attract senior art directors, agency culture without burnout, transparent creative compensation", False),
+            ("White-Label Agency Partnerships: Structuring B2B Alliances with Software Consultancies", "white-label-agency-partnerships-and-alliances", "white label design agency partnerships", "software consultancy design partner, b2b agency subcontracting, steady white label retainers", False),
+            ("De-Risking the Creative Process: How Milestones & Prototypes Prevent Rejection", "de-risking-creative-process-milestones-and-prototypes", "how agencies prevent client revision loops", "milestone based design signoffs, interactive prototypes kill surprises, client alignment systems", False),
+            ("The 7-Day Creative Agency Website Sprint: How Deepak & Geetha Launch Flagships in 7 Days", "seven-day-creative-agency-website-sprint", "creative agency web design sprint", "uncoded hub studio blueprint, 7 day agency portfolio build, fixed fee creative web design", False),
+        ]
+    },
+    {
+        'key': 'healthcare-diagnostics',
+        'name': 'Pathology & Diagnostic Labs',
+        'pillar_slug': 'what-a-diagnostic-pathology-lab-website-should-include',
+        'canva_style': 'Clinical Cyan, Deep Navy & Precision White Badges',
+        'topics': [
+            ("What a Diagnostic & Pathology Lab Website Should Include to Accelerate Patient Trust", "what-a-diagnostic-pathology-lab-website-should-include", "diagnostic lab website design", "pathology lab website blueprint, medical testing web design, patient appointment conversion", True),
+            ("1-Click Home Sample Collection Engine: Streamlining Phlebotomist Visits with Zero Delay", "instant-home-sample-collection-booking-engine", "home sample collection booking online", "book blood test at home, phlebotomist visit scheduling, doorstep sample collection funnel", False),
+            ("Preventive Health Package Comparison Tables: Full Body, Cardiac, and Diabetic Clear Guides", "preventive-health-checkup-package-comparison-tables", "full body health checkup comparison", "preventive health package pricing, diabetic cardiac package guide, pathology test packages", False),
+            ("Pre-Test Fasting & Preparation Guides: Reducing Inaccurate Test Samples with Clarity", "pre-test-fasting-and-preparation-instructions-ux", "blood test fasting instructions online", "accurate sample preparation guide, fasting hours for lipid profile, patient preparation notes", False),
+            ("WhatsApp Test Report Retrieval Flow: Delivering Reports Directly into Patient Phones", "whatsapp-instant-test-report-delivery-flow", "download lab reports on whatsapp", "instant test report notification, automated pdf report delivery, pathology report access", False),
+            ("NABL & CAP Accreditation Badges: Showcasing International Quality Benchmarks for Trust", "nabl-and-cap-accreditation-trust-showcase", "nabl certified diagnostic lab website", "cap accredited pathology lab, clinical accuracy certifications, laboratory quality assurance", False),
+            ("Automated Equipment Showcase: Highlighting Roche, Beckman, and Siemens Chemistry Analyzers", "advanced-automated-analyzers-equipment-showcase", "laboratory automated analyzers showcase", "roche siemens chemistry analyzers proof, robotic pathology equipment, high precision test results", False),
+            ("Hyperlocal SEO for Diagnostic Centers: Dominating Local Neighborhood Searches for Blood Tests", "hyperlocal-seo-for-diagnostic-centers-and-pathology-labs", "blood test near me ranking", "local seo for pathology labs, rank diagnostic center on google maps, neighborhood patient capture", False),
+            ("Doctor Referral & B2B Clinic Portals: Streamlining Patient Referrals from Neighborhood GPs", "doctor-referral-and-b2b-clinic-sample-portals", "doctor referral portal for pathology", "general practitioner test referral, b2b clinic sample pickup, diagnostic lab partnership portal", False),
+            ("Pathology Turnaround Time Guarantees: Publishing Transparent 6-Hour & 12-Hour Windows", "transparent-pathology-turnaround-time-guarantees", "fast lab test turnaround time", "same day blood test reports, 6 hour urgent report delivery, emergency lab reporting standards", False),
+            ("Pediatric & Anxious Patient Phlebotomy Protocols: Reassuring Parents with Painless Proof", "painless-pediatric-phlebotomy-and-anxious-patient-care", "painless blood collection for children", "anxious patient blood test care, butterfly needle pediatric collection, reassure worried parents", False),
+            ("Corporate Pre-Employment Screening: Offering Scalable Health Packages for HR Teams", "corporate-pre-employment-health-screening-packages", "corporate employee health checkup", "b2b pre employment medical tests, annual executive health screening, corporate diagnostic contracts", False),
+            ("Mobile Accessibility for Senior Citizens: High-Contrast Fonts, Large Targets & Voice Search", "senior-citizen-mobile-accessibility-for-health-portals", "senior citizen medical website accessibility", "large text blood test booking, accessible healthcare web design, easy phone booking for seniors", False),
+            ("Custom Engineering vs Aggregator Clutter: Owning Direct Patient Relationships Commission-Free", "custom-lab-website-vs-health-aggregator-platforms", "avoid 1mg pharmeasy commission fees", "own patient diagnostic records, direct booking margins for labs, brand independence healthcare", False),
+            ("Genetic & Molecular Diagnostics Information: Explaining Complex PCR and NGS Tests Clearly", "explaining-genetic-molecular-and-ngs-diagnostic-tests", "molecular diagnostics genetic test pages", "pcr viral load test explanations, next gen sequencing ngs testing, plain english genetic testing", False),
+            ("Transparent Test Pricing Menus: Eliminating Hidden Surcharges and Home Visit Fees", "transparent-diagnostic-test-pricing-no-hidden-fees", "transparent blood test price list", "zero hidden home collection fee, clear lab test cost breakdown, patient financial trust", False),
+            ("Emergency Critical Alert Workflows: Explaining How Panic Values Are Flagged to Doctors", "emergency-critical-value-alert-workflows", "panic value lab reporting protocol", "critical test result notification, direct doctor emergency call, clinical patient safety guarantee", False),
+            ("The 7-Day Diagnostic Lab Website Sprint: Building Clinical Patient Acquisition in 7 Days", "seven-day-diagnostic-lab-website-sprint", "diagnostic lab web design sprint", "uncoded hub pathology website blueprint, 7 day clinical website launch, fixed fee lab web design", False),
+        ]
+    },
+    {
+        'key': 'clinic-polyclinic',
+        'name': 'Multi-Specialty Polyclinics',
+        'pillar_slug': 'what-a-multi-specialty-polyclinic-website-should-include',
+        'canva_style': 'Deep Teal, Soft Medical Mint & Crisp Structural Layout',
+        'topics': [
+            ("What a Multi-Specialty Polyclinic Website Should Include to Streamline Patient Inflow", "what-a-multi-specialty-polyclinic-website-should-include", "polyclinic website design", "multi specialty clinic web design, outpatient department portal, clinic appointment booking", True),
+            ("Specialty-by-Specialty OPD Schedule Matrices: Eliminating Waiting Room Chaos", "specialty-opd-schedule-matrices-reducing-wait-times", "clinic opd doctor timetable", "multi specialty consulting hours, reduce clinic waiting room crowding, doctor schedule grid", False),
+            ("Multi-Doctor Credential Profiles: Showcasing MBBS, MD, and Super-Specialty Training", "multi-doctor-credentials-and-clinical-qualifications", "polyclinic doctor profiles", "specialist doctor qualifications e-e-a-t, visiting consultant credentials, medical council verified", False),
+            ("Department Triage Selectors: Helping Patients Match Symptoms to the Right Department", "interactive-department-triage-and-symptom-selectors", "symptom to specialist triage widget", "which doctor should i see quiz, patient department navigation, orthopedics vs neurology triage", False),
+            ("Instant Appointment Booking with WhatsApp Confirmation: Cutting Phone Bottlenecks by 70%", "instant-clinic-appointment-booking-with-whatsapp-alerts", "polyclinic appointment booking online", "whatsapp appointment confirmation, cut clinic reception phone calls, automated reminder alerts", False),
+            ("In-House Pharmacy & Radiology Synergies: Highlighting X-Ray, Ultrasound, and Pharmacy", "in-house-pharmacy-radiology-and-diagnostic-synergies", "one stop clinic amenities showcase", "in house ultrasound x-ray clinic, pharmacy attached polyclinic, comprehensive outpatient care", False),
+            ("Preventive Family Health Checkup Cards: Structuring Annual Plans for Recurring Visits", "preventive-family-health-cards-and-subscription-plans", "annual family clinic health plan", "preventive outpatient health cards, recurring clinic subscription model, family doctor care plan", False),
+            ("Local Map Pack Domination for Clinics: Ranking for 'Best Polyclinic Near Me'", "local-seo-google-maps-domination-for-polyclinics", "best polyclinic near me seo", "pediatrician near me ranking, google business profile for clinics, local patient search capture", False),
+            ("Patient Feedback & Google Review Integrations: Curating Verified Reviews by Department", "department-wise-verified-patient-reviews-integration", "polyclinic patient reviews showcase", "department specific testimonials, authentic patient recovery feedback, medical social proof", False),
+            ("Pediatric Vaccination Tracking Schedules: Helping Mothers Track Immunization Calendars", "interactive-pediatric-vaccination-tracking-schedules", "child vaccination schedule online", "pediatric immunization tracker, baby vaccine reminder alerts, trusted pediatric clinic tool", False),
+            ("Insurance & TPA Cashless Desk Guides: Clarifying Cashless Protocols & Claims", "tpa-cashless-desk-and-insurance-coverage-guides", "tpa cashless clinic insurance guide", "daycare procedure insurance coverage, mediclaim pre authorization steps, cashless desk clarity", False),
+            ("Senior Citizen Priority Assistance: Highlighting Wheelchair Access, Ramps & Lifts", "senior-citizen-accessibility-and-priority-care-features", "elderly friendly clinic features", "wheelchair accessible polyclinic, geriatric care outpatient facilities, ground floor clinic access", False),
+            ("Sub-Second Emergency Triage Speed: Fast Emergency Numbers & One-Tap Google Maps", "emergency-triage-speed-and-one-tap-directions-ux", "clinic emergency contact web ux", "one tap clinic calling, instant google maps directions, zero delay mobile emergency header", False),
+            ("Custom Code vs Generic Medical WordPress Themes: Preventing Patient Data Breaches", "custom-react-vs-generic-wordpress-medical-themes", "medical website data security", "hipaa data privacy for outpatient clinics, avoid plugin security holes, high speed clinical react", False),
+            ("Minor Daycare Procedure Guides: Endoscopy, Cataract, and Wound Dressing Pages", "minor-daycare-surgical-and-procedure-guides", "daycare procedures polyclinic", "endoscopy daycare guide, minor surgical procedure cost, outpatient wound management care", False),
+            ("Teleconsultation Video Booking Flow: Connecting Remote Patients with Specialists", "teleconsultation-video-consult-booking-workflows", "telemedicine booking for clinics", "remote doctor video consult, online prescription delivery, rural and outstation patient care", False),
+            ("Transparent Consultation Fee Schedules: Eliminating Surprise Desk Billing", "transparent-opd-consultation-fee-schedules", "doctor consultation fee transparency", "first visit vs review consultation fees, zero surprise front desk charges, transparent clinic pricing", False),
+            ("The 7-Day Polyclinic Website Sprint: How Uncoded Hub Engineers Clinical Systems in 7 Days", "seven-day-polyclinic-website-sprint", "polyclinic web design sprint", "uncoded hub clinic blueprint, 7 day polyclinic website launch, fixed fee medical web development", False),
+        ]
+    },
+    {
+        'key': 'doctor-specialist',
+        'name': 'Super-Specialist Doctors & Surgeons',
+        'pillar_slug': 'what-a-doctor-specialist-surgeon-website-should-include',
+        'canva_style': 'Royal Surgical Navy, Platinum Silver & Authoritative Crest',
+        'topics': [
+            ("What a Super-Specialist Doctor & Surgeon Website Should Include to Establish Clinical Authority", "what-a-doctor-specialist-surgeon-website-should-include", "doctor specialist surgeon website design", "surgical practice website, super specialist doctor authority, surgical consultation conversion", True),
+            ("Fellowships & International Surgical Credentials: Highlighting FRCS, FACS, and Apex Training", "fellowships-and-international-surgical-credentials-showcase", "surgical fellowships on doctor website", "frcs facs surgical training showcase, apex international fellowships, super specialist credentials", False),
+            ("Surgical Case Volume Proof: Transparent Logbooks That Validate Clinical Mastery", "transparent-surgical-case-volume-logbooks", "surgeon case volume proof", "5000 successful surgeries logbook, surgical experience validation, high volume specialist trust", False),
+            ("Condition & Symptom Education Guides: Detailed Medical Content That Ranks in AI Overviews", "condition-and-symptom-patient-education-guides", "surgical patient education content", "detailed treatment guides, answer patient anxieties online, rank in google ai overviews", False),
+            ("Minimally Invasive & Robotic Surgery Pages: Demystifying Da Vinci Systems & Laparoscopy", "minimally-invasive-and-robotic-surgery-showcases", "robotic surgery explanation page", "da vinci robotic surgery benefits, laparoscopic vs open surgery comparison, faster surgical recovery", False),
+            ("Second Opinion Tele-Consultation Funnels: Welcoming Outstation & Global Candidates", "second-opinion-tele-consultation-funnels-for-surgeons", "surgical second opinion online", "remote surgical case review, second opinion consultation upload mri, outstation patient funnel", False),
+            ("Ethical Patient Recovery Case Studies: Documenting Real Milestones Under NMC Guidelines", "ethical-patient-recovery-milestones-under-nmc-rules", "nmc compliant patient case studies", "ethical surgical before after documentation, patient recovery timeline proof, medical ethics compliance", False),
+            ("High-Trust Doctor Biography Storytelling: Empathy, Philosophy, and Bedside Manner", "high-trust-doctor-biography-and-bedside-philosophy", "surgeon biography storytelling", "empathetic bedside manner showcase, doctor surgical philosophy, why i became a surgeon", False),
+            ("High-Authority Medical SEO: Ranking for Complex Surgical Keywords in Your Metro", "high-authority-medical-seo-for-super-specialists", "medical seo for specialist surgeons", "joint replacement surgeon in city, rank for complex surgical procedures, high intent patient traffic", False),
+            ("Hospital Affiliations & Operation Theater Privileges: Clarifying Where Surgeries Happen", "hospital-affiliations-and-ot-privileges-clarity", "hospital affiliations doctor website", "visiting consultant hospitals list, apex operation theater facilities, surgical admission guidance", False),
+            ("Patient Preparation & Recovery Handbooks: Downloadable Pre-Op & Post-Op Guides", "downloadable-pre-op-and-post-op-patient-handbooks", "post surgery recovery guides online", "surgical discharge instructions pdf, pre op checklist for patients, reduce post surgical anxiety", False),
+            ("Scientific Publications & Keynote Archive: Showcasing PubMed Citations and Lectures", "scientific-publications-pubmed-citations-and-keynotes", "pubmed research publications doctor", "indexed journal articles showcase, international surgical keynote lectures, clinical academic authority", False),
+            ("WhatsApp Clinical Coordinator Routing: Connecting Anxious Patients with Chief Assistant", "whatsapp-clinical-coordinator-routing-for-patients", "doctor clinical coordinator whatsapp", "triage urgent surgical inquiries, coordinator assisted appointment booking, reduce doctor admin load", False),
+            ("Mobile Speed for Anxious Patients: Instant Loading on Critical 4G Connections", "mobile-speed-for-anxious-patients-seeking-specialists", "doctor website mobile speed", "instant loading medical emergency numbers, sub second surgeon profile load, zero lag clinical design", False),
+            ("Custom Architecture vs Commercial Aggregators: Reclaiming Independence from Practo", "custom-doctor-website-vs-commercial-aggregators", "stop relying on practo justdial algorithms", "reclaim medical practice independence, build owned patient equity, eliminate aggregator fees", False),
+            ("Surgical Risk Transparency: Explaining Success Rates, Candidacy, and Expectations", "surgical-risk-transparency-and-realistic-expectations", "surgical risk explanation for patients", "who is not a candidate for surgery, realistic recovery expectations, informed consent transparency", False),
+            ("International Medical Tourism Packages: Coordinating Visas, Transfers, and Stay", "international-medical-tourism-and-global-patient-desks", "medical tourism surgeon website", "international patient surgical packages, medical visa assistance, airport transfer accommodation desk", False),
+            ("The 7-Day Surgeon Website Sprint: Uncoded Hub's Precision Clinical Launch Model", "seven-day-doctor-specialist-surgeon-website-sprint", "surgeon web design sprint", "uncoded hub surgical website blueprint, 7 day clinical launch model, fixed fee doctor web design", False),
+        ]
+    }
+]
+
+total_articles = sum(len(n['topics']) for n in NICHES_DATA)
+print(f"Total niches: {len(NICHES_DATA)}, Total articles: {total_articles}")
+
+# 5. Build Master Schedule Data
+master_records = []
+post_counter = 0
+
+for niche_idx, niche in enumerate(NICHES_DATA):
+    pillar_slug = niche['pillar_slug']
+    for topic_idx, topic_tuple in enumerate(niche['topics']):
+        title, slug, primary_kw, secondary_kws, is_pillar = topic_tuple
+        sched = assigned_schedule[post_counter]
+        post_counter += 1
+        
+        # Link mapping
+        if is_pillar:
+            upward_link = "Self (Master Pillar Hub)"
+            # Link down to first 3 cluster articles in same niche
+            spokes_sample = [t[1] for t in niche['topics'][1:4]]
+            lateral_links = f"Links down to: {', '.join(spokes_sample)}"
+        else:
+            upward_link = f"Up to Pillar: [{pillar_slug}](/blog/{pillar_slug}/)"
+            # Lateral link to neighbor or previous spoke
+            sibling_slug = niche['topics'][(topic_idx + 1) if topic_idx < len(niche['topics']) - 1 else 1][1]
+            lateral_links = f"Lateral to: [{sibling_slug}](/blog/{sibling_slug}/)"
+
+        master_records.append({
+            'post_number': post_counter,
+            'niche_key': niche['key'],
+            'niche_name': niche['name'],
+            'role': 'Master Pillar Hub' if is_pillar else 'Cluster Spoke',
+            'title': title,
+            'slug': slug,
+            'url': f"https://uncodedhub.com/blog/{slug}/",
+            'primary_keyword': primary_kw,
+            'secondary_keywords': secondary_kws,
+            'author': sched['author'].capitalize(),
+            'author_key': sched['author'],
+            'publish_date': sched['date'],
+            'publish_time': sched['slot'].split('+')[0],
+            'iso_timestamp': sched['isoTimestamp'],
+            'upward_link': upward_link,
+            'lateral_links': lateral_links,
+            'canva_headline': title,
+            'canva_subheading': f"By {sched['author'].capitalize()} · Uncoded Hub Industry Blueprint",
+            'canva_palette': niche['canva_style'],
+            'canva_cta': "Read Full 7-Day Architecture Blueprint"
+        })
+
+# 6. Generate CSV for Canva Bulk Create
+csv_path = os.path.join(CANVA_DIR, '198_blogs_canva_bulk_create.csv')
+with open(csv_path, 'w', newline='', encoding='utf-8') as f:
+    writer = csv.writer(f)
+    writer.writerow([
+        'Post_Number',
+        'Niche_Name',
+        'Niche_Key',
+        'Role',
+        'Article_Title',
+        'Author',
+        'Publish_Date',
+        'Publish_Time',
+        'Primary_Keyword',
+        'URL_Slug',
+        'Canva_Palette_Theme',
+        'Canva_Subheading',
+        'Call_To_Action'
+    ])
+    for r in master_records:
+        writer.writerow([
+            r['post_number'],
+            r['niche_name'],
+            r['niche_key'],
+            r['role'],
+            r['title'],
+            r['author'],
+            r['publish_date'],
+            r['publish_time'],
+            r['primary_keyword'],
+            r['slug'],
+            r['canva_palette'],
+            r['canva_subheading'],
+            r['canva_cta']
+        ])
+
+print(f"Canva Bulk Create CSV written: {csv_path} ({len(master_records)} rows)")
+
+# 7. Generate Master Markdown Document
+md_path = os.path.join(SEO_DIR, '198-new-silo-blogs-master-architecture.md')
+with open(md_path, 'w', encoding='utf-8') as f:
+    f.write("# UNCODED HUB — 198 NEW SILO BLOGS MASTER ARCHITECTURE & PUBLISHING BLUEPRINT\n\n")
+    f.write("**Scope:** 11 New Specialist Niches × 18 High-Intent Blogs = **198 Articles**  \n")
+    f.write(f"**Timeline:** 12/03/2026 to 19/10/2026 ({len(all_days)} Calendar Days)  \n")
+    f.write("**Publishing Velocity:** Maximum 3 posts/day limit across the 200 active publishing days  \n")
+    f.write("**Authorship:** Strict Alternating Co-Founder Bylines (`Deepak` ↔ `Geetha`)  \n")
+    f.write("**Time Slots:** Strict 5 Canonical Publication Windows (`09:00 AM`, `12:00 PM`, `03:00 PM`, `06:00 PM`, `09:00 PM` IST)  \n")
+    f.write("**Canva Integration:** Directly synchronized with `CANVA_Business/198_blogs_canva_bulk_create.csv` for 1-click batch generation  \n\n")
+    f.write("---\n\n")
+    
+    f.write("## 1. THE 4 UNBREAKABLE SILO & E-E-A-T RULES\n\n")
+    f.write("1. **Vertical Linking Integrity:** Every cluster spoke links *up* to its dedicated Niche Pillar within the first 150 words. The Master Pillar links *down* to key cluster spokes.\n")
+    f.write("2. **Lateral In-Silo Isolation:** Articles link *strictly* to sibling articles within their own niche. An Educational Academy post NEVER links to a Commercial Gym or Dental post, preventing crawl equity dilution.\n")
+    f.write("3. **Alternating Founder Authority:** Deepak (Engineering, Core Web Vitals, Jamstack, Systems) and Geetha (Conversion Psychology, UX, Design Systems, Buyer Psychology) alternate author lines to satisfy Google E-E-A-T multi-author guidelines.\n")
+    f.write("4. **Canva Bulk Asset Uniformity:** Every post is paired with a ready-to-render Canva card specification for instant social sharing, Pinterest pin creation, and blog featured thumbnails.\n\n")
+    f.write("---\n\n")
+
+    # Group by niche
+    for niche in NICHES_DATA:
+        nkey = niche['key']
+        nname = niche['name']
+        f.write(f"## SILO: {nname.upper()} (`{nkey}`)\n\n")
+        f.write(f"- **Master Pillar Slug:** `{niche['pillar_slug']}`\n")
+        f.write(f"- **Canva Brand Aesthetic:** {niche['canva_style']}\n")
+        f.write(f"- **Total Articles:** 18 (1 Master Pillar Hub + 17 Cluster Spokes)\n\n")
+        
+        f.write("| # | Date & Slot | Author | Role | Article Title & Slug | Primary Keyword | Internal Links |\n")
+        f.write("| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n")
+        
+        niche_recs = [r for r in master_records if r['niche_key'] == nkey]
+        for r in niche_recs:
+            time_display = r['publish_time'][:5]
+            f.write(f"| **{r['post_number']}** | {r['publish_date']} `{time_display}` | **{r['author']}** | `{r['role']}` | [{r['title']}](https://uncodedhub.com/blog/{r['slug']}/)<br>`{r['slug']}` | `{r['primary_keyword']}` | {r['upward_link']}<br>{r['lateral_links']} |\n")
+        f.write("\n---\n\n")
+
+print(f"Master Markdown blueprint written: {md_path}")
