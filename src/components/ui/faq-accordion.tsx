@@ -25,7 +25,7 @@ type Faq = { q: string; a: string };
 const FAQS: Faq[] = [
   {
     q: 'What is Uncoded Hub and what does the studio build?',
-    a: 'Uncoded Hub is an engineering-first web design and development studio in Bengaluru, India founded by Deepak (engineering) and Geetha (design). We build custom, high-performance business websites for six specialist niches on a fixed-price and seven-day timeline model, backed by a contractual 50% late delivery guarantee and complete client code ownership.',
+    a: 'Uncoded Hub is an engineering-first web design and development studio in Bengaluru, India founded by Deepak (engineering) and Geetha (design). We build custom, high-performance business websites for 17 specialist niches on a fixed-price and seven-day timeline model, backed by a contractual 50% late delivery guarantee and complete client code ownership.',
   },
   {
     q: 'How much does a typical 7-day custom business website cost?',

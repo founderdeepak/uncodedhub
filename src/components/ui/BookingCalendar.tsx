@@ -76,13 +76,25 @@ export const HOSTS: Host[] = [
    no deck, no friction," so the quiz cannot itself become the friction.
    Answers are stored alongside the booking (Supabase + the booking
    sheet), not used to block anyone from booking. */
-const NICHES = [
-  'Interior design & architecture',
-  'Real estate & builders',
-  'Dental & aesthetic clinic',
-  'Wedding & events',
-  'Home renovation & modular kitchen',
-  'Something else',
+export const NICHES = [
+  'Interior Architecture & Studios',
+  'Prime Real Estate & Advisory',
+  'Dental Clinics & Facial Aesthetics',
+  'Wedding Photographers & Films',
+  'Home Renovation & Modular Kitchens',
+  'Executive Coaching & Advisory',
+  'Educational Academies & Coaching',
+  'Commercial Gyms & Fitness Clubs',
+  'Enterprise B2B & Corporate Advisory',
+  'Luxury Spas & Wellness Retreats',
+  'Salons & Bridal Beauty',
+  'Private Fitness Coaches',
+  'Yoga Shalas & Meditation Sanctuaries',
+  'Creative Design Studios & Agencies',
+  'Pathology & Diagnostic Labs',
+  'Multi-Specialty Polyclinics',
+  'Super-Specialist Doctors & Surgeons',
+  'Something else (Custom Sprint)',
 ];
 const WEBSITE_STATUS = [
   'No website yet',
@@ -395,7 +407,7 @@ export function BookingCalendar({ host }: { host: Host }) {
             the 20 minutes, just before it.
           </p>
 
-          <QuizGroup
+          <QuizDropdown
             label="Which best describes your business?"
             options={NICHES}
             value={quiz.niche}
@@ -642,14 +654,52 @@ function QuizGroup({
               type="button"
               onClick={() => onChange(opt)}
               aria-pressed={active}
-              className={`border px-4 py-2 text-[0.875rem] transition-colors ${
-                active ? 'bg-ink text-paper border-ink' : 'border-rule-strong hover:border-ink'
+              className={`border px-4 py-2 text-[0.875rem] transition-colors cursor-pointer ${
+                active ? 'bg-ink text-paper border-ink font-medium shadow-xs' : 'border-rule-strong hover:border-ink'
               }`}
             >
               {opt}
             </button>
           );
         })}
+      </div>
+    </div>
+  );
+}
+
+function QuizDropdown({
+  label,
+  options,
+  value,
+  onChange,
+}: {
+  label: string;
+  options: string[];
+  value: string;
+  onChange: (v: string) => void;
+}) {
+  return (
+    <div className="mt-7">
+      <label htmlFor="quiz-niche-select" className="label text-muted block mb-2.5">
+        {label}
+      </label>
+      <div className="relative">
+        <select
+          id="quiz-niche-select"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className="w-full bg-paper border border-rule-strong hover:border-ink px-4 py-3 text-sm rounded-xl focus:border-ink transition-colors cursor-pointer appearance-none text-ink pr-10 shadow-2xs font-sans"
+        >
+          <option value="" disabled>Select your business sector / niche…</option>
+          {options.map((opt) => (
+            <option key={opt} value={opt}>
+              {opt}
+            </option>
+          ))}
+        </select>
+        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-xs text-muted">
+          ▼
+        </div>
       </div>
     </div>
   );

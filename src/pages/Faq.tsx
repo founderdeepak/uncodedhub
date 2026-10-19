@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Reveal, Shell } from '../components/primitives';
 
 /* ═══════════════════════════════════════════════════════════════════
-   FREQUENTLY ASKED QUESTIONS (28 DETAILED ANSWERS)
+   FREQUENTLY ASKED QUESTIONS (39 DETAILED ANSWERS)
    Cloaked-style editorial UI with live category filter & search
    ═══════════════════════════════════════════════════════════════════ */
 
@@ -308,10 +308,123 @@ const FAQ_ITEMS: FaqItem[] = [
       'Lead forms feature silent honeypot anti-spam traps and client-side time-on-page validation to block automated bots without forcing annoying captchas on real customers.',
     ],
   },
+
+  /* Category 7: 17 Niche Architectures (11 specialized industry systems) */
+  {
+    id: 'niche-educational-academy',
+    category: 'sectors',
+    categoryLabel: '17 NICHES · ACADEMIES & COACHING',
+    question: 'How does Uncoded Hub build conversion engines for Educational Academies and Coaching Institutes?',
+    answer: [
+      'We replace slow, generic PDF course brochures with interactive curriculum explorers, upcoming batch schedules, and instant counseling lead capture funnels.',
+      'Parents and students get clear fee transparency, faculty credentials, alumni placement proofs, and automated WhatsApp counseling triggers that significantly increase demo class registrations.',
+    ],
+  },
+  {
+    id: 'niche-gym-fitness-club',
+    category: 'sectors',
+    categoryLabel: '17 NICHES · GYMS & FITNESS CLUBS',
+    question: 'What conversion architecture is engineered for Commercial Gyms and Fitness Clubs?',
+    answer: [
+      'Instead of passive facility photo dumps, we engineer instant Day-Pass claim engines, floor-by-floor virtual equipment tours, live class schedules, and membership tier calculators.',
+      'Visitors can claim a trial workout or book an onboarding tour in under 30 seconds with immediate WhatsApp/SMS confirmation, eliminating front-desk follow-up delays.',
+    ],
+  },
+  {
+    id: 'niche-business-portfolio',
+    category: 'sectors',
+    categoryLabel: '17 NICHES · ENTERPRISE B2B & ADVISORY',
+    question: 'How do you position Enterprise B2B and Corporate Advisory consultancies to win RFP shortlists?',
+    answer: [
+      'We build authoritative corporate flagships designed to win enterprise decision-maker confidence with structured engagement models, executive partner credentials, case impact ROI metrics, and NDA-protected intake flows.',
+      'Refined editorial typography and sub-second loading performance ensure board members, venture partners, and procurement directors experience peerless prestige.',
+    ],
+  },
+  {
+    id: 'niche-spa-wellness',
+    category: 'sectors',
+    categoryLabel: '17 NICHES · SPAS & WELLNESS RETREATS',
+    question: 'How does the studio craft Luxury Spa and Wellness Retreat digital experiences?',
+    answer: [
+      'We build sensory, serene digital sanctuaries featuring treatment ritual guides, therapist certification spotlights, curated wellness packages, and integrated booking flows.',
+      'Subtle ambient aesthetics, calm typography, and direct WhatsApp concierge routing make reserving a premium rejuvenation session effortless and inviting.',
+    ],
+  },
+  {
+    id: 'niche-salon-beauty',
+    category: 'sectors',
+    categoryLabel: '17 NICHES · SALONS & BRIDAL BEAUTY',
+    question: 'What high-converting features are included for Salons and Bridal Beauty studios?',
+    answer: [
+      'We construct editorial bridal package lookbooks, master stylist portfolio carousels, service-with-pricing menus, and peak-season bridal reservation engines.',
+      'Brides and salon clients can review before/after transformations and secure consultations before sought-after wedding dates and stylists get fully booked.',
+    ],
+  },
+  {
+    id: 'niche-fitness-coach',
+    category: 'sectors',
+    categoryLabel: '17 NICHES · PRIVATE FITNESS COACHES',
+    question: 'How do you turn a Fitness Coach website into a high-ticket client acquisition engine?',
+    answer: [
+      'We replace generic trainer bios with verified client transformation case studies, 1-on-1 coaching application questionnaires, video testimonials, and structured program roadmaps.',
+      'The multi-step intake pre-qualifies committed clients ready to invest in 12-week or 6-month elite body transformations while filtering out price shoppers.',
+    ],
+  },
+  {
+    id: 'niche-yoga-meditation',
+    category: 'sectors',
+    categoryLabel: '17 NICHES · YOGA SHALAS & RETREATS',
+    question: 'How is a Yoga Shala or Meditation Sanctuary website designed for community retention?',
+    answer: [
+      'We engineer tranquil, distraction-free digital spaces with real-time class timetables, teacher training (TTC) curriculum outlines, retreat booking flows, and drop-in pass reservations.',
+      'Mindful editorial design and instant WhatsApp community links welcome practitioners and turn curious first-timers into long-term studio members.',
+    ],
+  },
+  {
+    id: 'niche-creative-portfolio',
+    category: 'sectors',
+    categoryLabel: '17 NICHES · CREATIVE STUDIOS & AGENCIES',
+    question: 'What makes your Creative Design Studio and Agency websites stand out from typical portfolios?',
+    answer: [
+      'We build ultra-fast, motion-refined showcases featuring interactive case-study breakdowns, deliverable scope matrices, before/after slider comparisons, and frictionless project brief forms.',
+      'Zero bloated templates or sluggish page transitions — just crisp, tailored visual storytelling that commands premium 5-figure and 6-figure client engagements.',
+    ],
+  },
+  {
+    id: 'niche-healthcare-diagnostics',
+    category: 'sectors',
+    categoryLabel: '17 NICHES · PATHOLOGY & DIAGNOSTIC LABS',
+    question: 'How do you build patient trust and appointment volume for Pathology and Diagnostic Labs?',
+    answer: [
+      'We build 1-click home sample collection booking funnels, pre-test preparation instructions, preventive health checkup packages, and instant WhatsApp report delivery access.',
+      'NABL accreditation badges, equipment certifications, and clear test turnaround guarantees give anxious patients immediate reassurance and confidence.',
+    ],
+  },
+  {
+    id: 'niche-clinic-polyclinic',
+    category: 'sectors',
+    categoryLabel: '17 NICHES · POLYCLINICS & CLINICAL CENTERS',
+    question: 'What conversion architecture is implemented for Multi-Specialty Polyclinics?',
+    answer: [
+      'We design specialty-by-specialty department navigation, multi-doctor OPD schedule matrices, department triage selectors, and instant appointment booking with automated confirmations.',
+      'Patients quickly find the right specialist, view consulting hours, and reserve time slots without front-desk telephone friction or waiting room uncertainty.',
+    ],
+  },
+  {
+    id: 'niche-doctor-specialist',
+    category: 'sectors',
+    categoryLabel: '17 NICHES · SUPER-SPECIALIST DOCTORS',
+    question: 'How do you establish clinical authority for Super-Specialist Doctors and Surgeons?',
+    answer: [
+      'We build dignified, peer-reviewed medical portfolios featuring surgical case volumes, fellowship credentials, condition guides, patient recovery stories, and second-opinion tele-consultation funnels.',
+      'Ethical, patient-centric design balances clinical authority with empathetic clarity, providing patients and referring physicians complete peace of mind.',
+    ],
+  },
 ];
 
 const CATEGORIES = [
   { key: 'all', label: 'All Questions', count: FAQ_ITEMS.length },
+  { key: 'sectors', label: '17 Niche Architectures', count: 11 },
   { key: 'sprint', label: 'Sprint & Timeline', count: 5 },
   { key: 'pricing', label: 'Pricing & Guarantee', count: 5 },
   { key: 'design', label: 'Design & Aesthetics', count: 5 },
@@ -378,13 +491,13 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
         <title>Frequently Asked Questions — Uncoded Hub | 7-Day Web Design Studio</title>
         <meta
           name="description"
-          content="28 clear, plain-English answers about Uncoded Hub's 7-day custom website sprint, 50% late guarantee, pricing transparency, code ownership, tech stack, and working directly with Deepak & Geetha."
+          content="39 clear, plain-English answers about Uncoded Hub's 7-day custom website sprint, 17 niche conversion architectures, 50% late guarantee, pricing transparency, code ownership, and working directly with Deepak & Geetha."
         />
         <link rel="canonical" href="https://uncodedhub.com/faq/" />
         <meta property="og:title" content="Frequently Asked Questions — Uncoded Hub" />
         <meta
           property="og:description"
-          content="28 detailed answers on our 7-day sprint model, 50% late delivery guarantee, tech stack, pricing, and code ownership."
+          content="39 detailed answers on our 7-day sprint model, 17 niche architectures, 50% late delivery guarantee, tech stack, pricing, and code ownership."
         />
         <meta property="og:url" content="https://uncodedhub.com/faq/" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -396,7 +509,7 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
           <Reveal>
             <div className="max-w-4xl">
               <span className="label text-signal font-semibold block mb-3">
-                Knowledge base · 28 detailed answers
+                Knowledge base · 39 detailed answers
               </span>
 
               <h1 className="font-display text-[2.75rem] sm:text-5xl md:text-6xl text-ink tracking-tight leading-[1.06]">

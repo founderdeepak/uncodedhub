@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
-import { BookingCalendar, HOSTS, Host } from '../components/ui/BookingCalendar';
+import { BookingCalendar, HOSTS, Host, NICHES } from '../components/ui/BookingCalendar';
 import { submitLead } from '../lib/supabase';
 import { LogoMark } from '../components/Logo';
 
@@ -596,13 +596,29 @@ function BriefForm() {
             />
           </div>
         </div>
-        <BriefField
-          label="What does your business do?"
-          name="business"
-          placeholder="e.g. Interior studio, Dental clinic"
-          value={form.business}
-          onChange={(v) => setForm({ ...form, business: v })}
-        />
+        <div>
+          <label htmlFor="brief-business" className="label text-muted block mb-2">
+            Which best describes your business?
+          </label>
+          <div className="relative">
+            <select
+              id="brief-business"
+              value={form.business}
+              onChange={(e) => setForm({ ...form, business: e.target.value })}
+              className="w-full bg-paper border border-rule-strong hover:border-ink px-4 py-2.5 text-sm rounded-xl focus:border-ink transition-colors cursor-pointer appearance-none text-ink pr-10 shadow-2xs font-sans"
+            >
+              <option value="">Select your business sector / niche…</option>
+              {NICHES.map((opt) => (
+                <option key={opt} value={opt}>
+                  {opt}
+                </option>
+              ))}
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-xs text-muted">
+              ▼
+            </div>
+          </div>
+        </div>
       </div>
 
       <div>
