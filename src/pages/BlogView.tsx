@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useParams } from 'react-router-dom';
 import { Reveal, Shell } from '../components/primitives';
@@ -21,6 +21,22 @@ export default function BlogView() {
   const post = slug ? getPostBySlug(slug) : undefined;
   const [copied, setCopied] = useState(false);
   const [tocCollapsed, setTocCollapsed] = useState(false);
+  const [readingProgress, setReadingProgress] = useState(0);
+  const [showMobileCta, setShowMobileCta] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalHeight > 0) {
+        setReadingProgress(Math.min(100, Math.max(0, (scrollY / totalHeight) * 100)));
+      }
+      setShowMobileCta(scrollY > 500);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   if (!post) {
     return (
@@ -159,6 +175,9 @@ export default function BlogView() {
   const shareTwitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     post.title,
   )}&url=${encodeURIComponent(url)}`;
+  const shareWhatsAppUrl = `https://wa.me/?text=${encodeURIComponent(
+    `${post.title}\n\nRead the blueprint: ${url}`
+  )}`;
 
   return (
     <>
@@ -194,6 +213,17 @@ export default function BlogView() {
           <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
         )}
       </Helmet>
+
+      {/* ── Top Reading Progress Bar ── */}
+      <div
+        className="fixed top-0 left-0 right-0 h-[3px] bg-rule-strong/20 z-[100] pointer-events-none"
+        aria-hidden="true"
+      >
+        <div
+          className="h-full bg-signal transition-[width] duration-75 ease-out shadow-[0_0_8px_rgba(199,7,75,0.6)]"
+          style={{ width: `${readingProgress}%` }}
+        />
+      </div>
 
       <article className="pt-10 sm:pt-16 pb-20 bg-paper">
         <Shell width="narrow">
@@ -281,6 +311,14 @@ export default function BlogView() {
             <div className="mt-4 flex items-center justify-between flex-wrap gap-3 pb-6 border-b border-rule text-xs font-mono">
               <div className="flex items-center gap-3 text-muted">
                 <span className="text-[10px] uppercase tracking-wider">Share:</span>
+                <a
+                  href={shareWhatsAppUrl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="hover:text-emerald-500 text-emerald-600 transition-colors flex items-center gap-1 font-medium"
+                >
+                  WhatsApp ↗
+                </a>
                 <a
                   href={shareLinkedInUrl}
                   target="_blank"
@@ -624,6 +662,47 @@ export default function BlogView() {
           </Reveal>
         </Shell>
       </section>
+
+      {/* ── Sticky Mobile Conversion Dock (Appears on Scroll) ── */}
+      <div
+        className={`fixed bottom-4 left-4 right-4 z-[85] md:hidden transition-all duration-300 ease-out transform ${
+          showMobileCta
+            ? 'translate-y-0 opacity-100 pointer-events-auto'
+            : 'translate-y-12 opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="bg-ink/95 backdrop-blur-md border border-white/15 rounded-2xl p-3 shadow-2xl flex items-center justify-between gap-3 text-paper">
+          <div className="min-w-0 flex-1">
+            <div className="text-[10px] font-mono uppercase text-signal tracking-wider truncate">
+              7-Day {NICHES[post.niche] || 'Website'} Sprint
+            </div>
+            <div className="text-xs font-display font-medium text-paper truncate">
+              Direct delivery by Deepak & Geetha
+            </div>
+          </div>
+          <div className="flex items-center gap-2 shrink-0">
+            <a
+              href={`https://wa.me/918778427958?text=${encodeURIComponent(
+                `Hi Deepak, I was reading your guide "${post.title}" and would like to build a 7-day website for my business.`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-medium px-3 py-2 rounded-xl flex items-center gap-1.5 transition-colors shadow-sm"
+            >
+              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.587 1.956.884 3.091.884 3.185 0 5.772-2.587 5.772-5.769.001-3.181-2.587-5.767-5.772-5.767zm7.653 5.767c0 4.22-3.432 7.65-7.653 7.65-1.341 0-2.6-.35-3.697-.965l-4.334 1.137 1.157-4.226a7.616 7.616 0 01-1.077-3.996c0-4.22 3.432-7.65 7.653-7.65 4.222 0 7.651 3.43 7.651 7.65z" />
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+            <Link
+              to="/contact/"
+              className="bg-signal hover:bg-signal-bright text-paper text-[11px] font-medium px-3 py-2 rounded-xl transition-colors shadow-sm"
+            >
+              Book Call
+            </Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

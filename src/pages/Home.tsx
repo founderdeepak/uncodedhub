@@ -5,6 +5,7 @@ import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
 import { FaqAccordion } from '../components/ui/faq-accordion';
 import { LeadMagnetForm } from '../components/ui/LeadMagnetForm';
 import { FloatingLeadMagnetBanner } from '../components/ui/FloatingLeadMagnetBanner';
+import { SpeedRoiCalculator } from '../components/ui/SpeedRoiCalculator';
 import {
   IconTimer,
   IconGauge,
@@ -690,6 +691,15 @@ export default function Home({ onBook }: { onBook: () => void }) {
               </div>
             </Reveal>
           </div>
+        </Shell>
+      </section>
+
+      {/* ── SECTION 4B: Interactive Speed ROI & Revenue Leakage Calculator ── */}
+      <section className="py-16 sm:py-24 bg-paper">
+        <Shell>
+          <Reveal>
+            <SpeedRoiCalculator onBookCall={onBook} />
+          </Reveal>
         </Shell>
       </section>
 
