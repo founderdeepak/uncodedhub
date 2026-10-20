@@ -17,6 +17,12 @@ export default defineConfig({
     },
   },
 
+  server: {
+    watch: {
+      ignored: ['**/New 198 thumbnails/**', '**/*.zip', '**/node_modules/**'],
+    },
+  },
+
   build: {
     target: 'es2020',
     cssCodeSplit: true,

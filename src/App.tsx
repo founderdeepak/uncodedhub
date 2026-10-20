@@ -17,6 +17,7 @@ const Privacy = lazy(() => import('./pages/Privacy'));
 const Blogs = lazy(() => import('./pages/Blogs'));
 const BlogView = lazy(() => import('./pages/BlogView'));
 const AuditChecklist = lazy(() => import('./pages/AuditChecklist'));
+const NicheLanding = lazy(() => import('./pages/NicheLanding'));
 import { EnquiryDock } from './components/EnquiryDock';
 
 /* Paths are unchanged from the previous site so existing links and
@@ -276,6 +277,22 @@ export default function App() {
             element={
               <Suspense fallback={null}>
                 <BlogView />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/for/:niche"
+            element={
+              <Suspense fallback={null}>
+                <NicheLanding onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/services/:niche"
+            element={
+              <Suspense fallback={null}>
+                <NicheLanding onBook={goToBooking} />
               </Suspense>
             }
           />

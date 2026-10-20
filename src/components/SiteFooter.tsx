@@ -25,6 +25,26 @@ const NAV = [
   { label: 'Contact', to: '/contact' },
 ];
 
+const NICHE_LINKS = [
+  { label: 'Interior Designers', to: '/for/interior-designers/' },
+  { label: 'Real Estate Brokers', to: '/for/real-estate/' },
+  { label: 'Dental Clinics', to: '/for/dental-clinics/' },
+  { label: 'Wedding Photographers', to: '/for/wedding-photographers/' },
+  { label: 'Home Renovation', to: '/for/home-renovation/' },
+  { label: 'Coaches & Consultants', to: '/for/coaches-consultants/' },
+  { label: 'Educational Academies', to: '/for/educational-academy/' },
+  { label: 'Gyms & Fitness Clubs', to: '/for/gym-fitness-club/' },
+  { label: 'Corporate Advisory', to: '/for/business-portfolio/' },
+  { label: 'Spas & Wellness', to: '/for/spa-wellness/' },
+  { label: 'Salons & Bridal Beauty', to: '/for/salon-beauty/' },
+  { label: 'Fitness Coaches', to: '/for/fitness-coach/' },
+  { label: 'Yoga & Meditation', to: '/for/yoga-meditation/' },
+  { label: 'Creative Studios', to: '/for/creative-portfolio/' },
+  { label: 'Pathology Diagnostics', to: '/for/healthcare-diagnostics/' },
+  { label: 'Polyclinics', to: '/for/clinic-polyclinic/' },
+  { label: 'Specialist Doctors', to: '/for/doctor-specialist/' },
+];
+
 const SOCIAL = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/uncodedhub/' },
   { label: 'X', href: 'https://x.com/uncodedhub' },
@@ -199,14 +219,14 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-12 gap-12 md:gap-10 pb-16 border-b border-rule-on-ink">
+        <div className="grid md:grid-cols-12 gap-10 pb-16 border-b border-rule-on-ink">
           {/* Studio */}
-          <div className="md:col-span-5">
+          <div className="md:col-span-4">
             <span className="inline-flex items-center gap-3">
               <LogoMark size={44} />
               <span className="font-display text-[1.375rem] leading-none">Uncoded Hub</span>
             </span>
-            <p className="text-on-ink-muted leading-relaxed mt-6 max-w-sm">
+            <p className="text-on-ink-muted leading-relaxed mt-6 max-w-sm text-sm">
               A two-person web design and development studio in Bengaluru, working with
               businesses in India and abroad. Fixed price, seven-day schedule, terms published
               in full.
@@ -214,9 +234,9 @@ export default function SiteFooter() {
           </div>
 
           {/* Navigation */}
-          <nav aria-label="Footer" className="md:col-span-3">
+          <nav aria-label="Footer Pages" className="md:col-span-2">
             <h2 className="label text-on-ink-muted">Pages</h2>
-            <ul className="mt-6 space-y-3">
+            <ul className="mt-6 space-y-2.5 text-sm">
               {NAV.map((l) => (
                 <li key={l.to}>
                   <Link to={l.to} className="link-quiet text-on-ink hover:text-signal-bright">
@@ -227,8 +247,27 @@ export default function SiteFooter() {
             </ul>
           </nav>
 
+          {/* Industries */}
+          <nav aria-label="Industries" className="md:col-span-3">
+            <h2 className="label text-on-ink-muted">Industries</h2>
+            <ul className="mt-6 space-y-2 text-xs">
+              {NICHE_LINKS.slice(0, 8).map((n) => (
+                <li key={n.to}>
+                  <Link to={n.to} className="link-quiet text-on-ink hover:text-signal-bright">
+                    {n.label}
+                  </Link>
+                </li>
+              ))}
+              <li className="pt-1">
+                <Link to="/portfolio/" className="text-signal-bright font-mono text-[11px] hover:underline">
+                  View All 17 Demos →
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
           {/* Contact */}
-          <div className="md:col-span-4">
+          <div className="md:col-span-3">
             <h2 className="label text-on-ink-muted">Get in touch</h2>
             <ul className="mt-6 space-y-3">
               <li>

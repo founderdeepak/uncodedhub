@@ -310,12 +310,23 @@ function SpecimenCard({
           </button>
         </div>
 
-        <Link
-          to={project.nicheSlug}
-          className="text-xs text-muted hover:text-signal transition-colors inline-flex items-center gap-1 link-underline"
-        >
-          Read Industry Blueprint →
-        </Link>
+        <div className="flex items-center gap-3 text-xs">
+          <Link
+            to={`/for/${project.nicheSlug.replace('/blog/niche/', '')}/`}
+            className="text-signal hover:text-ink font-mono font-medium transition-colors inline-flex items-center gap-1"
+          >
+            <span>Bespoke 7-Day Sprint</span>
+            <span>→</span>
+          </Link>
+          <span className="text-muted/40">·</span>
+          <Link
+            to={project.nicheSlug}
+            className="text-muted hover:text-signal transition-colors inline-flex items-center gap-1 link-underline"
+          >
+            <span>Research Silo</span>
+            <span>→</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -85,7 +85,38 @@ export const NICHE_KEYS = [
   'wedding-photographers',
   'home-renovation',
   'coaches-consultants',
+  'educational-academy',
+  'gym-fitness-club',
+  'business-portfolio',
+  'spa-wellness',
+  'salon-beauty',
+  'fitness-coach',
+  'yoga-meditation',
+  'creative-portfolio',
+  'healthcare-diagnostics',
+  'clinic-polyclinic',
+  'doctor-specialist',
   'studio',
+];
+
+export const CLIENT_NICHES = [
+  'interior-designers',
+  'real-estate',
+  'dental-clinics',
+  'wedding-photographers',
+  'home-renovation',
+  'coaches-consultants',
+  'educational-academy',
+  'gym-fitness-club',
+  'business-portfolio',
+  'spa-wellness',
+  'salon-beauty',
+  'fitness-coach',
+  'yoga-meditation',
+  'creative-portfolio',
+  'healthcare-diagnostics',
+  'clinic-polyclinic',
+  'doctor-specialist',
 ];
 
 /** Every route the app actually serves, in the shape prerender.mjs needs:
@@ -96,6 +127,13 @@ export function getAllRoutes() {
     loc,
     lastmod: lastCommitDate(STATIC_ROUTE_FILES[loc]),
   }));
+
+  // Commercial Niche Landing Pages (/for/:niche)
+  const nicheLastmod = lastCommitDate('src/pages/NicheLanding.tsx');
+  for (const clientNiche of CLIENT_NICHES) {
+    routes.push({ loc: `/for/${clientNiche}`, lastmod: nicheLastmod });
+  }
+
   if (posts.length > 0) {
     routes.push({ loc: '/blog' });
     for (const niche of NICHE_KEYS) {
@@ -107,3 +145,4 @@ export function getAllRoutes() {
   }
   return routes;
 }
+

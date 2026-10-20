@@ -287,7 +287,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#15803D',
       },
     ],
-    nicheSlug: '/blog/niche/coaching-academy',
+    nicheSlug: '/blog/niche/educational-academy',
   },
   {
     id: 'gym-fitness-club',
@@ -325,7 +325,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#EAB308',
       },
     ],
-    nicheSlug: '/blog/niche/gym-fitness',
+    nicheSlug: '/blog/niche/gym-fitness-club',
   },
   {
     id: 'business-portfolio',
@@ -363,7 +363,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#0369A1',
       },
     ],
-    nicheSlug: '/blog/niche/business-consulting',
+    nicheSlug: '/blog/niche/business-portfolio',
   },
   {
     id: 'spa-wellness',
@@ -515,7 +515,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#4E7D63',
       },
     ],
-    nicheSlug: '/blog/niche/yoga-studio',
+    nicheSlug: '/blog/niche/yoga-meditation',
   },
   {
     id: 'creative-portfolio',
@@ -553,7 +553,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#06B6D4',
       },
     ],
-    nicheSlug: '/blog/niche/creative-agency',
+    nicheSlug: '/blog/niche/creative-portfolio',
   },
   {
     id: 'healthcare-diagnostics',
@@ -591,7 +591,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#38BDF8',
       },
     ],
-    nicheSlug: '/blog/niche/diagnostics-pathology',
+    nicheSlug: '/blog/niche/healthcare-diagnostics',
   },
   {
     id: 'clinic-polyclinic',
@@ -629,7 +629,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#2563EB',
       },
     ],
-    nicheSlug: '/blog/niche/polyclinic',
+    nicheSlug: '/blog/niche/clinic-polyclinic',
   },
   {
     id: 'doctor-specialist',
