@@ -219,11 +219,9 @@ async function main() {
   process.exit(0);
 }
 
-// Hard ceiling on the whole script. Local runs finish in well under 2
-// minutes; this is generous headroom for CI overhead. Without this, an
-// unexpected hang anywhere (browser launch, a wedged navigation) burns
-// CI minutes indefinitely instead of failing with a clear signal.
-const OVERALL_TIMEOUT_MS = 8 * 60 * 1000;
+// Hard ceiling on the whole script. Set to 15 minutes to comfortably accommodate
+// prerendering 538+ routes while still catching genuine hangs.
+const OVERALL_TIMEOUT_MS = 15 * 60 * 1000;
 let timeoutTimer;
 const timeout = new Promise((_, reject) => {
   timeoutTimer = setTimeout(() => reject(new Error(`prerender.mjs exceeded ${OVERALL_TIMEOUT_MS}ms overall`)), OVERALL_TIMEOUT_MS);
