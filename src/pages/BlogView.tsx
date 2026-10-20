@@ -118,7 +118,7 @@ export default function BlogView() {
         '@type': 'ListItem',
         position: 3,
         name: NICHES[post.niche],
-        item: `https://uncodedhub.com/blog/niche/${post.niche}/`,
+        item: `https://uncodedhub.com/blog/industries/${post.niche}/`,
       },
       {
         '@type': 'ListItem',
@@ -206,7 +206,7 @@ export default function BlogView() {
                 </Link>
                 <span className="text-rule-strong">/</span>
                 <Link
-                  to={`/blog/niche/${post.niche}/`}
+                  to={`/blog/industries/${post.niche}/`}
                   className="text-muted hover:text-ink transition-colors"
                 >
                   {NICHES[post.niche]}
@@ -427,7 +427,7 @@ export default function BlogView() {
                   <span>→</span>
                 </Link>
                 <Link
-                  to={`/blog/niche/${post.niche}/`}
+                  to={`/blog/industries/${post.niche}/`}
                   className="text-xs font-mono text-on-ink-muted hover:text-paper transition-colors"
                 >
                   Browse all {NICHES[post.niche]} guides →
@@ -493,7 +493,7 @@ export default function BlogView() {
                   </h2>
                 </div>
                 <Link
-                  to={`/blog/niche/${post.niche}/`}
+                  to={`/blog/industries/${post.niche}/`}
                   className="text-xs font-medium text-signal hover:underline inline-flex items-center gap-1.5"
                 >
                   View all {nicheTotalCount} {NICHES[post.niche]} guides →

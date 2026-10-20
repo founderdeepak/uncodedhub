@@ -265,6 +265,14 @@ export default function App() {
             }
           />
           <Route
+            path="/blog/industries/:niche"
+            element={
+              <Suspense fallback={null}>
+                <Blogs />
+              </Suspense>
+            }
+          />
+          <Route
             path="/blog/niche/:niche"
             element={
               <Suspense fallback={null}>
@@ -277,6 +285,14 @@ export default function App() {
             element={
               <Suspense fallback={null}>
                 <BlogView />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/web-design/:niche"
+            element={
+              <Suspense fallback={null}>
+                <NicheLanding onBook={goToBooking} />
               </Suspense>
             }
           />

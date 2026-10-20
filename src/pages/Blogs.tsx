@@ -86,7 +86,7 @@ export default function Blogs() {
     ? `Master pillar blueprint and companion guides on website strategy, high-ticket conversions, and local SEO for ${NICHES[activeNiche]}.`
     : 'Practical notes on websites, SEO, and getting found online — written by Deepak & Geetha.';
   const canonicalUrl = isNicheView
-    ? `https://uncodedhub.com/blog/niche/${activeNiche}/`
+    ? `https://uncodedhub.com/blog/industries/${activeNiche}/`
     : 'https://uncodedhub.com/blog/';
 
   return (
@@ -183,7 +183,7 @@ export default function Blogs() {
                   return (
                     <button
                       key={niche}
-                      onClick={() => navigate(`/blog/niche/${niche}/`)}
+                      onClick={() => navigate(`/blog/industries/${niche}/`)}
                       className={`px-5 py-2.5 rounded-full text-xs font-mono transition-all cursor-pointer ${
                         active
                           ? 'bg-ink text-paper font-medium shadow-xs'

@@ -59,7 +59,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#FF3B00',
       },
     ],
-    nicheSlug: '/blog/niche/interior-designers',
+    nicheSlug: '/blog/industries/interior-designers',
   },
   {
     id: 'real-estate',
@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#E11D48',
       },
     ],
-    nicheSlug: '/blog/niche/real-estate',
+    nicheSlug: '/blog/industries/real-estate',
   },
   {
     id: 'dental-clinic',
@@ -135,7 +135,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#0284C7',
       },
     ],
-    nicheSlug: '/blog/niche/dental-clinics',
+    nicheSlug: '/blog/industries/dental-clinics',
   },
   {
     id: 'wedding-photography',
@@ -173,7 +173,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#1A1A1A',
       },
     ],
-    nicheSlug: '/blog/niche/wedding-photographers',
+    nicheSlug: '/blog/industries/wedding-photographers',
   },
   {
     id: 'home-renovation',
@@ -211,7 +211,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#2B4C6F',
       },
     ],
-    nicheSlug: '/blog/niche/home-renovation',
+    nicheSlug: '/blog/industries/home-renovation',
   },
   {
     id: 'executive-coaching',
@@ -249,7 +249,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#10B981',
       },
     ],
-    nicheSlug: '/blog/niche/coaches-consultants',
+    nicheSlug: '/blog/industries/coaches-consultants',
   },
   {
     id: 'educational-academy',
@@ -287,7 +287,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#15803D',
       },
     ],
-    nicheSlug: '/blog/niche/educational-academy',
+    nicheSlug: '/blog/industries/educational-academy',
   },
   {
     id: 'gym-fitness-club',
@@ -325,7 +325,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#EAB308',
       },
     ],
-    nicheSlug: '/blog/niche/gym-fitness-club',
+    nicheSlug: '/blog/industries/gym-fitness-club',
   },
   {
     id: 'business-portfolio',
@@ -363,7 +363,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#0369A1',
       },
     ],
-    nicheSlug: '/blog/niche/business-portfolio',
+    nicheSlug: '/blog/industries/business-portfolio',
   },
   {
     id: 'spa-wellness',
@@ -401,7 +401,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#A89984',
       },
     ],
-    nicheSlug: '/blog/niche/spa-wellness',
+    nicheSlug: '/blog/industries/spa-wellness',
   },
   {
     id: 'salon-beauty',
@@ -439,7 +439,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#8EA89D',
       },
     ],
-    nicheSlug: '/blog/niche/salon-beauty',
+    nicheSlug: '/blog/industries/salon-beauty',
   },
   {
     id: 'fitness-coach',
@@ -477,7 +477,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#E11D48',
       },
     ],
-    nicheSlug: '/blog/niche/fitness-coach',
+    nicheSlug: '/blog/industries/fitness-coach',
   },
   {
     id: 'yoga-meditation',
@@ -515,7 +515,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#4E7D63',
       },
     ],
-    nicheSlug: '/blog/niche/yoga-meditation',
+    nicheSlug: '/blog/industries/yoga-meditation',
   },
   {
     id: 'creative-portfolio',
@@ -553,7 +553,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#06B6D4',
       },
     ],
-    nicheSlug: '/blog/niche/creative-portfolio',
+    nicheSlug: '/blog/industries/creative-portfolio',
   },
   {
     id: 'healthcare-diagnostics',
@@ -591,7 +591,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#38BDF8',
       },
     ],
-    nicheSlug: '/blog/niche/healthcare-diagnostics',
+    nicheSlug: '/blog/industries/healthcare-diagnostics',
   },
   {
     id: 'clinic-polyclinic',
@@ -629,7 +629,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#2563EB',
       },
     ],
-    nicheSlug: '/blog/niche/clinic-polyclinic',
+    nicheSlug: '/blog/industries/clinic-polyclinic',
   },
   {
     id: 'doctor-specialist',
@@ -667,6 +667,6 @@ export const PROJECTS: Project[] = [
         accentHex: '#D97706',
       },
     ],
-    nicheSlug: '/blog/niche/doctor-specialist',
+    nicheSlug: '/blog/industries/doctor-specialist',
   },
 ];

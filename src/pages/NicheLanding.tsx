@@ -129,7 +129,7 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
     }
   };
 
-  const canonicalUrl = `https://uncodedhub.com/for/${config.key}/`;
+  const canonicalUrl = `https://uncodedhub.com/web-design/${config.key}/`;
 
   // JSON-LD Structured Data
   const jsonLd = {
@@ -195,7 +195,7 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
               </Link>
               <span>/</span>
               <Link to="/portfolio/" className="hover:text-ink transition-colors">
-                Industries
+                Web Design
               </Link>
               <span>/</span>
               <span className="text-ink font-medium">{NICHES[config.key]}</span>
@@ -575,7 +575,7 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
                 </h2>
               </div>
               <Link
-                to={`/blog/niche/${config.key}/`}
+                to={`/blog/industries/${config.key}/`}
                 className="font-mono text-xs text-signal hover:text-ink transition-colors flex items-center gap-1.5"
               >
                 <span>Browse all {nichePosts.length} tactical guides</span>
@@ -759,7 +759,7 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
             {otherNiches.map((niche) => (
               <Link
                 key={niche.key}
-                to={`/for/${niche.key}/`}
+                to={`/web-design/${niche.key}/`}
                 className="p-4 rounded-xl bg-paper-sunken border border-rule hover:border-signal/50 hover:bg-paper transition-all text-center flex flex-col items-center justify-center group"
               >
                 <span className="font-display text-sm text-ink group-hover:text-signal transition-colors font-medium">

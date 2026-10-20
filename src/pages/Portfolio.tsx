@@ -312,7 +312,7 @@ function SpecimenCard({
 
         <div className="flex items-center gap-3 text-xs">
           <Link
-            to={`/for/${project.nicheSlug.replace('/blog/niche/', '')}/`}
+            to={`/web-design/${project.nicheSlug.replace('/blog/industries/', '')}/`}
             className="text-signal hover:text-ink font-mono font-medium transition-colors inline-flex items-center gap-1"
           >
             <span>Bespoke 7-Day Sprint</span>

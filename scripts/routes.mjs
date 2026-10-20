@@ -128,16 +128,16 @@ export function getAllRoutes() {
     lastmod: lastCommitDate(STATIC_ROUTE_FILES[loc]),
   }));
 
-  // Commercial Niche Landing Pages (/for/:niche)
+  // High-Intent Commercial Web Design Landing Pages (/web-design/:industry)
   const nicheLastmod = lastCommitDate('src/pages/NicheLanding.tsx');
   for (const clientNiche of CLIENT_NICHES) {
-    routes.push({ loc: `/for/${clientNiche}`, lastmod: nicheLastmod });
+    routes.push({ loc: `/web-design/${clientNiche}`, lastmod: nicheLastmod });
   }
 
   if (posts.length > 0) {
     routes.push({ loc: '/blog' });
     for (const niche of NICHE_KEYS) {
-      routes.push({ loc: `/blog/niche/${niche}` });
+      routes.push({ loc: `/blog/industries/${niche}` });
     }
     for (const p of posts) {
       routes.push({ loc: `/blog/${p.slug}`, lastmod: p.updated || p.date });
