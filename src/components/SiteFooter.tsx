@@ -52,7 +52,11 @@ const SOCIAL = [
   { label: 'YouTube', href: 'https://www.youtube.com/@uncodedhub' },
   { label: 'Threads', href: 'https://www.threads.com/@uncodedhub' },
   { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61580702457181' },
-  { label: 'Pinterest', href: 'https://www.pinterest.com/uncodedhub/' },
+  { label: 'GitHub', href: 'https://github.com/uncodedhub/' },
+  { label: 'Behance', href: 'https://www.behance.net/uncodedhub' },
+  { label: 'Dribbble', href: 'https://dribbble.com/uncoded-hub' },
+  { label: 'ProductHunt', href: 'https://www.producthunt.com/@uncodedhub' },
+  { label: 'Pinterest', href: 'https://in.pinterest.com/uncodedhub/' },
   { label: 'Reddit', href: 'https://www.reddit.com/user/uncodedhub/' },
   { label: 'Google Maps', href: 'https://maps.app.goo.gl/fwvgEPkguRSfkcC49' },
 ];
