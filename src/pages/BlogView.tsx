@@ -243,9 +243,20 @@ export default function BlogView() {
                 </Link>
               </nav>
 
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-raised border border-rule-strong text-[11px] font-mono text-muted shadow-xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" />
-                <span>ARCHITECTURAL BLUEPRINT</span>
+              <div className="flex items-center gap-3">
+                {post.niche !== 'studio' && (
+                  <Link
+                    to={`/web-design/${post.niche}/`}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-signal/10 hover:bg-signal/20 border border-signal/25 text-[11px] font-mono text-signal transition-colors shadow-2xs"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-signal" />
+                    <span>7-Day {NICHES[post.niche]} Platform →</span>
+                  </Link>
+                )}
+                <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-raised border border-rule-strong text-[11px] font-mono text-muted shadow-xs">
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" />
+                  <span>ARCHITECTURAL BLUEPRINT</span>
+                </div>
               </div>
             </div>
 
@@ -464,6 +475,15 @@ export default function BlogView() {
                   <span>Book a 20-minute discovery call</span>
                   <span>→</span>
                 </Link>
+                {post.niche !== 'studio' && (
+                  <Link
+                    to={`/web-design/${post.niche}/`}
+                    className="border border-white/20 hover:border-signal text-paper font-mono text-xs py-3.5 px-6 rounded-full transition-colors flex items-center gap-1.5"
+                  >
+                    <span>7-Day {NICHES[post.niche]} Web Platform</span>
+                    <span>→</span>
+                  </Link>
+                )}
                 <Link
                   to={`/blog/industries/${post.niche}/`}
                   className="text-xs font-mono text-on-ink-muted hover:text-paper transition-colors"
@@ -673,9 +693,18 @@ export default function BlogView() {
       >
         <div className="bg-ink/95 backdrop-blur-md border border-white/15 rounded-2xl p-3 shadow-2xl flex items-center justify-between gap-3 text-paper">
           <div className="min-w-0 flex-1">
-            <div className="text-[10px] font-mono uppercase text-signal tracking-wider truncate">
-              7-Day {NICHES[post.niche] || 'Website'} Sprint
-            </div>
+            {post.niche !== 'studio' ? (
+              <Link
+                to={`/web-design/${post.niche}/`}
+                className="text-[10px] font-mono uppercase text-signal-bright hover:underline tracking-wider truncate block"
+              >
+                7-Day {NICHES[post.niche]} Sprint →
+              </Link>
+            ) : (
+              <div className="text-[10px] font-mono uppercase text-signal tracking-wider truncate">
+                7-Day Website Sprint
+              </div>
+            )}
             <div className="text-xs font-display font-medium text-paper truncate">
               Direct delivery by Deepak & Geetha
             </div>

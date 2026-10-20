@@ -1,10 +1,10 @@
 ---
-title: "Local Luxury SEO: Ranking for"
+title: "Local Luxury SEO: Ranking for High-Ticket Spas & Wellness Retreats"
 niche: "spa-wellness"
 date: "2026-05-22T09:00:00+05:30"
 author: "deepak"
-excerpt: "A strategic breakdown of local luxury seo: ranking for"
-metaDescription: "Local Luxury SEO: Ranking for"
+excerpt: "A strategic breakdown of local luxury SEO for day spas, wellness sanctuaries, and Ayurvedic retreats without discount broker dilution."
+metaDescription: "Master local luxury SEO for spas and wellness retreats. Rank #1 for high-ticket wellness searches and Google Maps without discount broker dilution."
 keywords: "local seo for luxury spas, best massage near me ranking, google maps for ayurvedic clinics, luxury wellness search, uncoded hub blueprint"
 image: "/blog/local-luxury-seo-for-spas-and-wellness-centers.webp"
 ---
