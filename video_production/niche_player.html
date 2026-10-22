@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uncoded Hub — Niche Video Production Player (60s)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #05060b;
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #stage {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: #090c15;
+      overflow: hidden;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.8);
+      transform-origin: center center;
+    }
+
+    /* Background Ambiance */
+    .ambient-glow {
+      position: absolute;
+      width: 900px;
+      height: 900px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(212, 175, 55, 0.08) 50%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 1;
+      top: -200px;
+      left: -200px;
+      transition: all 1s ease;
+    }
+
+    /* Top Global HUD */
+    .top-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(9, 12, 21, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      z-index: 50;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+
+    .brand-logo span { color: #3b82f6; }
+
+    .brand-badge {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #60a5fa;
+    }
+
+    .timer-badge {
+      font-family: 'Space Grotesk', monospace;
+      font-size: 16px;
+      font-weight: 700;
+      background: rgba(255,255,255,0.05);
+      padding: 6px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #e2e8f0;
+    }
+
+    /* Main Viewport Container */
+    .viewport-container {
+      position: absolute;
+      top: 72px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      z-index: 10;
+    }
+
+    /* Left Narrative Stage (40%) */
+    .narrative-stage {
+      width: 720px;
+      height: 100%;
+      padding: 64px 54px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 20;
+      position: relative;
+    }
+
+    .scene-container {
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .scene {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .scene.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .niche-tag {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #d4af37;
+      margin-bottom: 12px;
+    }
+
+    .scene-title {
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .scene-desc {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #94a3b8;
+      margin-bottom: 32px;
+    }
+
+    .metric-pill-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .metric-pill {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 12px 20px;
+      border-radius: 12px;
+    }
+
+    .metric-pill .val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #60a5fa;
+    }
+
+    .metric-pill .lbl {
+      font-size: 11px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 2px;
+    }
+
+    /* Theme Pill Buttons Showcase */
+    .theme-switcher-box {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 10px;
+    }
+
+    .theme-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .theme-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: all 0.3s ease;
+    }
+
+    .theme-item.highlighted {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: #3b82f6;
+      box-shadow: 0 0 24px rgba(59, 130, 246, 0.3);
+      transform: translateX(8px);
+    }
+
+    .theme-name {
+      font-weight: 700;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .theme-meta {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    /* Right Preview Stage (60%) with Device Mockup */
+    .preview-stage {
+      flex: 1;
+      height: 100%;
+      padding: 36px 48px 36px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .device-mockup {
+      width: 100%;
+      height: 100%;
+      background: #111827;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 35px 80px rgba(0,0,0,0.8);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .mockup-header {
+      height: 42px;
+      background: #1e293b;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green { background: #10b981; }
+
+    .mockup-url {
+      flex: 1;
+      margin: 0 16px;
+      background: #0f172a;
+      height: 24px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      font-size: 11px;
+      color: #94a3b8;
+      font-family: monospace;
+    }
+
+    .demo-frame {
+      width: 100%;
+      flex: 1;
+      border: none;
+      background: #fff;
+    }
+
+    /* Scan Sweep Effect for Theme Shift */
+    .sweep-overlay {
+      position: absolute;
+      top: 42px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), #fff, rgba(212, 175, 55, 0.4), transparent);
+      transform: translateX(-100%);
+      pointer-events: none;
+      z-index: 30;
+      display: none;
+    }
+
+    .sweep-overlay.animate {
+      display: block;
+      animation: sweep 0.8s ease-in-out forwards;
+    }
+
+    @keyframes sweep {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* Bottom Timeline Progress Bar */
+    .timeline-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: rgba(255,255,255,0.1);
+      z-index: 60;
+    }
+
+    .timeline-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #3b82f6, #60a5fa, #d4af37);
+      transition: width 0.1s linear;
+    }
+
+    /* Callout Floating Badges */
+    .floating-badge {
+      position: absolute;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      padding: 14px 22px;
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      z-index: 40;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .floating-badge.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .badge-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: #3b82f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .badge-title { font-weight: 700; font-size: 14px; color: #fff; }
+    .badge-sub { font-size: 12px; color: #94a3b8; }
+  </style>
+</head>
+<body>
+
+  <div id="stage">
+    <div class="ambient-glow" id="ambientGlow"></div>
+
+    <!-- Top Global HUD -->
+    <header class="top-bar">
+      <div class="brand-lockup">
+        <div class="brand-logo">UNCODED<span>HUB</span></div>
+        <div class="brand-badge">Sovereign Web Standard · 7-Day Sprint</div>
+      </div>
+      <div class="timer-badge" id="timerBadge">00:00 / 01:00</div>
+    </header>
+
+    <!-- Content Stage -->
+    <div class="viewport-container">
+      
+      <!-- Left Narrative Info -->
+      <div class="narrative-stage">
+        <div class="scene-container">
+          
+          <!-- Scene 1: The Hook & Problem (0s - 12s) -->
+          <div class="scene active" id="scene1">
+            <div class="niche-tag" id="nicheTag">Niche Showcase</div>
+            <h1 class="scene-title" id="scene1Title">Why Most High-Ticket Businesses Lose 70% of Clients on Mobile.</h1>
+            <p class="scene-desc" id="scene1Desc">Bloated WordPress templates, sluggish page loads, and zero bespoke conversion funnels drive premium buyers directly to competitors.</p>
+            <div class="metric-pill-row">
+              <div class="metric-pill">
+                <div class="val" id="metric1Val">0.8s LCP</div>
+                <div class="lbl">Page Speed</div>
+              </div>
+              <div class="metric-pill">
+                <div class="val">100%</div>
+                <div class="lbl">Code Handover</div>
+              </div>
+              <div class="metric-pill">
+                <div class="val">7 Days</div>
+                <div class="lbl">Delivery Guarantee</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scene 2 & 3: The 3 Themes Live (12s - 42s) -->
+          <div class="scene" id="scene2">
+            <div class="niche-tag">The 3 Bespoke Themes</div>
+            <h2 class="scene-title">One Demo. Three Tailored Visual Identies.</h2>
+            <p class="scene-desc">Every business gets bespoke typography, color harmony, and mood systems crafted specifically for their high-ticket audience.</p>
+            
+            <div class="theme-switcher-box">
+              <div class="theme-list" id="themeList">
+                <!-- Injected dynamically -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Scene 4: Conversion Engine & Calculators (42s - 52s) -->
+          <div class="scene" id="scene3">
+            <div class="niche-tag">Turnkey Conversion Engine</div>
+            <h2 class="scene-title">Interactive Value Tools That Pre-Qualify Buyers.</h2>
+            <p class="scene-desc" id="featuresDesc">Equipped with itemized pricing estimators, WhatsApp VIP booking webhooks, and 100/100 Core Web Vitals.</p>
+            <div class="metric-pill-row" id="featurePills">
+              <!-- Feature pills -->
+            </div>
+          </div>
+
+          <!-- Scene 5: Outro & 7-Day Guarantee (52s - 60s) -->
+          <div class="scene" id="scene4">
+            <div class="niche-tag" id="guaranteeTag">Late Means Free</div>
+            <h2 class="scene-title" style="color: #60a5fa;">Your Premium Website Live in 7 Days — Or 100% Free.</h2>
+            <p class="scene-desc" id="ctaDesc">Zero WordPress bloat. Full Git repository transfer. Zero recurring agency maintenance retainers.</p>
+            <div style="background: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 12px; padding: 18px 24px;">
+              <div style="font-weight: 800; font-size: 18px; color: #4ade80;">Claim Your Industry Demo at uncodedhub.com</div>
+              <div style="font-size: 13px; color: #94a3b8; margin-top: 4px;">WhatsApp Direct: +91 93602 93902 · Bangalore, India</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Device Preview Mockup -->
+      <div class="preview-stage">
+        <div class="device-mockup">
+          <div class="mockup-header">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+            <div class="mockup-url" id="mockupUrl">https://demo.uncodedhub.com/live-preview</div>
+          </div>
+          <iframe id="demoIframe" class="demo-frame" src="about:blank"></iframe>
+          <div class="sweep-overlay" id="sweepOverlay"></div>
+        </div>
+
+        <!-- Floating Performance Badge -->
+        <div class="floating-badge" id="floatBadge" style="bottom: 60px; right: 70px;">
+          <div class="badge-icon">⚡</div>
+          <div>
+            <div class="badge-title" id="badgeTitle">100/100 Performance Score</div>
+            <div class="badge-sub" id="badgeSub">Sub-second 0.8s mobile load</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Timeline Progress Bar -->
+    <div class="timeline-bar">
+      <div class="timeline-fill" id="timelineFill"></div>
+    </div>
+
+  </div>
+
+  <script type="module">
+    import { NICHES_VIDEO_CONFIG } from './niche_data.js';
+
+    // Parse ?niche= from URL or default to educational-academy
+    const urlParams = new URLSearchParams(window.location.search);
+    const nicheKey = urlParams.get('niche') || 'educational-academy';
+    const config = NICHES_VIDEO_CONFIG.find(n => n.key === nicheKey) || NICHES_VIDEO_CONFIG[0];
+
+    // Populate DOM from Config
+    document.title = `${config.nicheName} — 60s Showcase Video | Uncoded Hub`;
+    document.getElementById('nicheTag').innerText = config.nicheName;
+    document.getElementById('scene1Title').innerText = config.hookProblem;
+    document.getElementById('mockupUrl').innerText = `https://uncodedhub.com/demo/${config.key}`;
+    document.getElementById('metric1Val').innerText = config.speedMetric;
+    document.getElementById('badgeSub').innerText = `${config.speedMetric} on 4G mobile devices`;
+    document.getElementById('featuresDesc').innerText = `Equipped with ${config.features.join(', ')}. Built on clean React architecture.`;
+    document.getElementById('ctaDesc').innerText = `${config.ctaText} Handcrafted code, zero plugins, full sovereign ownership.`;
+
+    // Populate Themes in UI
+    const themeListEl = document.getElementById('themeList');
+    themeListEl.innerHTML = config.themes.map((t, idx) => `
+      <div class="theme-item ${idx === 0 ? 'highlighted' : ''}" id="themeItem${idx}">
+        <div>
+          <div class="theme-name">Theme 0${idx+1}: ${t.label}</div>
+          <div class="theme-meta">${t.vibe}</div>
+        </div>
+        <div style="font-size: 11px; font-weight: 700; color: #60a5fa;">${t.font}</div>
+      </div>
+    `).join('');
+
+    // Populate Feature Pills
+    const featurePillsEl = document.getElementById('featurePills');
+    featurePillsEl.innerHTML = config.features.map(f => `
+      <div class="metric-pill">
+        <div class="val" style="font-size: 16px; color: #f8fafc;">${f}</div>
+        <div class="lbl">Bespoke Feature</div>
+      </div>
+    `).join('');
+
+    // Load Demo in Iframe
+    const iframe = document.getElementById('demoIframe');
+    iframe.src = `../${config.demoFile}`;
+
+    // Auto-scale stage to fill screen cleanly
+    function autoScale() {
+      const stage = document.getElementById('stage');
+      const scaleX = window.innerWidth / 1920;
+      const scaleY = window.innerHeight / 1080;
+      const scale = Math.min(scaleX, scaleY);
+      stage.style.transform = `scale(${scale})`;
+    }
+    window.addEventListener('resize', autoScale);
+    autoScale();
+
+    // Scene Navigation
+    function showScene(idx) {
+      for (let i = 1; i <= 4; i++) {
+        const sc = document.getElementById(`scene${i}`);
+        if (sc) sc.classList.toggle('active', i === idx);
+      }
+    }
+
+    function highlightTheme(idx) {
+      config.themes.forEach((_, i) => {
+        const item = document.getElementById(`themeItem${i}`);
+        if (item) item.classList.toggle('highlighted', i === idx);
+      });
+
+      // Switch theme inside iframe
+      try {
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        if (iframeDoc && iframeDoc.body) {
+          const themeId = config.themes[idx].id;
+          iframeDoc.body.setAttribute('data-theme', themeId);
+          console.log(`[Theme Switch] Changed to ${themeId}`);
+        }
+      } catch (e) {
+        console.warn('Cannot switch iframe theme (cross-origin):', e);
+      }
+
+      // Trigger visual sweep
+      const sweep = document.getElementById('sweepOverlay');
+      sweep.classList.remove('animate');
+      void sweep.offsetWidth; // reflow
+      sweep.classList.add('animate');
+    }
+
+    // Scroll iframe smoothly
+    function scrollIframe(targetY) {
+      try {
+        const iframeWin = iframe.contentWindow;
+        if (iframeWin) {
+          iframeWin.scrollTo({ top: targetY, behavior: 'smooth' });
+        }
+      } catch (e) {}
+    }
+
+    // 60-Second Timeline Orchestration
+    let startTime = null;
+    let isPlaying = false;
+    let animationFrameId = null;
+    const TOTAL_DURATION = 60000; // 60 seconds
+
+    window.startPlay = function() {
+      console.log('🎬 Starting 60s Niche Video composition...');
+      isPlaying = true;
+      startTime = performance.now();
+      requestAnimationFrame(tick);
+    };
+
+    window.seekTo = function(seconds) {
+      startTime = performance.now() - (seconds * 1000);
+      tick(performance.now());
+    };
+
+    window.isFinished = false;
+
+    function tick(now) {
+      if (!isPlaying) return;
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / TOTAL_DURATION, 1);
+
+      // Update timer & progress bar
+      const currentSec = Math.floor(elapsed / 1000);
+      const minStr = String(Math.floor(currentSec / 60)).padStart(2, '0');
+      const secStr = String(currentSec % 60).padStart(2, '0');
+      document.getElementById('timerBadge').innerText = `${minStr}:${secStr} / 01:00`;
+      document.getElementById('timelineFill').style.width = `${progress * 100}%`;
+
+      // Timeline Keyframes:
+      // 0s - 12s: Scene 1 (Hook Problem & Metrics)
+      if (currentSec < 12) {
+        showScene(1);
+        scrollIframe(0);
+        document.getElementById('floatBadge').classList.remove('visible');
+      }
+      // 12s - 22s: Scene 2 + Theme 1 (Hero & Initial Vibe)
+      else if (currentSec >= 12 && currentSec < 22) {
+        showScene(2);
+        highlightTheme(0);
+        scrollIframe(200);
+        document.getElementById('badgeTitle').innerText = 'Theme 01: ' + config.themes[0].label;
+        document.getElementById('badgeSub').innerText = config.themes[0].font;
+        document.getElementById('floatBadge').classList.add('visible');
+      }
+      // 22s - 32s: Theme 2 Switch (Midnight / Modern / Cyber)
+      else if (currentSec >= 22 && currentSec < 32) {
+        showScene(2);
+        highlightTheme(1);
+        scrollIframe(500);
+        document.getElementById('badgeTitle').innerText = 'Theme 02: ' + config.themes[1].label;
+        document.getElementById('badgeSub').innerText = config.themes[1].font;
+        document.getElementById('floatBadge').classList.add('visible');
+      }
+      // 32s - 42s: Theme 3 Switch (Avant-Garde / Emerald / Warm)
+      else if (currentSec >= 32 && currentSec < 42) {
+        showScene(2);
+        highlightTheme(2);
+        scrollIframe(800);
+        document.getElementById('badgeTitle').innerText = 'Theme 03: ' + config.themes[2].label;
+        document.getElementById('badgeSub').innerText = config.themes[2].font;
+        document.getElementById('floatBadge').classList.add('visible');
+      }
+      // 42s - 52s: Scene 3 (Feature Calculators & Value Pillars)
+      else if (currentSec >= 42 && currentSec < 52) {
+        showScene(3);
+        scrollIframe(1200);
+        document.getElementById('badgeTitle').innerText = '100% Zero-Bloat Performance';
+        document.getElementById('badgeSub').innerText = 'Zero WordPress · 100/100 Core Web Vitals';
+        document.getElementById('floatBadge').classList.add('visible');
+      }
+      // 52s - 60s: Scene 4 (Outro & Irresistible 7-Day Guarantee)
+      else if (currentSec >= 52) {
+        showScene(4);
+        scrollIframe(0);
+        document.getElementById('badgeTitle').innerText = 'Late Means 100% Free';
+        document.getElementById('badgeSub').innerText = 'Guaranteed 7-Day Handover';
+        document.getElementById('floatBadge').classList.add('visible');
+      }
+
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(tick);
+      } else {
+        isPlaying = false;
+        window.isFinished = true;
+        console.log('✅ 60s Niche Video composition complete!');
+      }
+    }
+
+    // Auto-start on load after 1s
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        window.startPlay();
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

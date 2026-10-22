@@ -33,9 +33,12 @@ scripts/mux-brag.mjs
 scripts/render-brag-video.mjs
 brag-output*/
 Google SEO Report/extracted/
+Google SEO Report/extracted-oct11/
 latest 180 thumbnails/
 New 198 thumbnails/
 OpenGraph Images/
+video_production/dist/
+video_production/temp/
 __pycache__/
 *.pyc
 *.zip
