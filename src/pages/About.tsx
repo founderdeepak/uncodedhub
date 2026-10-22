@@ -50,6 +50,24 @@ export default function About({ onBook }: { onBook: () => void }) {
           content="A two-person web design and development studio in Bengaluru. Who does the work, how we work, and what we commit to before you hire us."
         />
         <link rel="canonical" href="https://uncodedhub.com/about/" />
+        <meta property="og:title" content="Studio — Uncoded Hub" />
+        <meta
+          property="og:description"
+          content="A two-person web design and development studio in Bengaluru. Deepak architects the systems; Geetha designs the conversion strategies."
+        />
+        <meta property="og:url" content="https://uncodedhub.com/about/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://uncodedhub.com/og/about.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Deepak & Geetha — Uncoded Hub Studio" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Studio — Uncoded Hub" />
+        <meta
+          name="twitter:description"
+          content="A two-person web design and development studio in Bengaluru. 7-day turnkey delivery, 100% code ownership."
+        />
+        <meta name="twitter:image" content="https://uncodedhub.com/og/about.jpg" />
       </Helmet>
 
       {/* ── Header ─────────────────────────────────────────────── */}

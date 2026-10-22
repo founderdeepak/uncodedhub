@@ -237,6 +237,24 @@ export default function Services({ onBook }: { onBook: () => void }) {
           content="Three scopes, what each one includes in full, what we do not take on, and how pricing works. Fixed price agreed before any work starts."
         />
         <link rel="canonical" href="https://uncodedhub.com/services/" />
+        <meta property="og:title" content="Services and Scopes — Uncoded Hub" />
+        <meta
+          property="og:description"
+          content="Fixed-price, 7-day turnkey web development sprints. Zero platform rent, 100% code ownership."
+        />
+        <meta property="og:url" content="https://uncodedhub.com/services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://uncodedhub.com/og/services.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Fixed-Price Web Sprints & Pricing — Uncoded Hub" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Services and Scopes — Uncoded Hub" />
+        <meta
+          name="twitter:description"
+          content="Three scopes, what each one includes in full, what we do not take on, and how pricing works."
+        />
+        <meta name="twitter:image" content="https://uncodedhub.com/og/services.jpg" />
       </Helmet>
 
       {/* ── Header ─────────────────────────────────────────────── */}

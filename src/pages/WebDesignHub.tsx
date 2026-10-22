@@ -137,6 +137,17 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
         />
         <meta property="og:url" content="https://uncodedhub.com/web-design/" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://uncodedhub.com/og/web-design-hub.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="17 Specialized Industry Web Design Silos — Uncoded Hub" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Web Design Sprints for High-Ticket Industries — Uncoded Hub" />
+        <meta
+          name="twitter:description"
+          content="Bespoke, hand-coded React web platforms engineered for 17 high-ticket service industries."
+        />
+        <meta name="twitter:image" content="https://uncodedhub.com/og/web-design-hub.jpg" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
       </Helmet>

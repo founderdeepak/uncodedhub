@@ -471,6 +471,24 @@ export default function Work({ onBook }: { onBook: () => void }) {
           content="Explore seventeen live, interactive specimen websites handcrafted by Uncoded Hub across high-ticket niches. Experience continuous 3-theme changeovers, verified Lighthouse performance, and custom conversion funnels."
         />
         <link rel="canonical" href="https://uncodedhub.com/portfolio/" />
+        <meta property="og:title" content="Work &amp; Interactive Specimen Builds — Uncoded Hub" />
+        <meta
+          property="og:description"
+          content="Explore seventeen live, interactive specimen websites handcrafted by Uncoded Hub across high-ticket niches."
+        />
+        <meta property="og:url" content="https://uncodedhub.com/portfolio/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://uncodedhub.com/og/portfolio.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="17 Live Interactive Specimen Websites — Uncoded Hub Portfolio" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Work &amp; Interactive Specimen Builds — Uncoded Hub" />
+        <meta
+          name="twitter:description"
+          content="Explore seventeen live, interactive specimen websites handcrafted by Uncoded Hub across high-ticket niches."
+        />
+        <meta name="twitter:image" content="https://uncodedhub.com/og/portfolio.jpg" />
       </Helmet>
 
       {/* ── Editorial Header ───────────────────────────────────── */}

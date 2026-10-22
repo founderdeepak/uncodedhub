@@ -68,6 +68,24 @@ export default function Contact() {
           content="Book a free twenty-minute discovery call directly with Deepak & Geetha, or send a project brief. Slots are displayed in your local timezone."
         />
         <link rel="canonical" href="https://uncodedhub.com/contact/" />
+        <meta property="og:title" content="Book a Discovery Call — Uncoded Hub" />
+        <meta
+          property="og:description"
+          content="Book a free 20-minute architecture teardown directly with founders Deepak & Geetha. Zero pitch decks, zero sales pressure."
+        />
+        <meta property="og:url" content="https://uncodedhub.com/contact/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://uncodedhub.com/og/contact.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Book a Discovery Call with Deepak & Geetha — Uncoded Hub" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Book a Discovery Call — Uncoded Hub" />
+        <meta
+          name="twitter:description"
+          content="Book a free 20-minute architecture teardown directly with founders Deepak & Geetha."
+        />
+        <meta name="twitter:image" content="https://uncodedhub.com/og/contact.jpg" />
       </Helmet>
 
       {/* ── Editorial Hero ──────────────────────────────────────── */}

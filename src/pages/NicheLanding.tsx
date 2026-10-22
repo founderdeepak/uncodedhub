@@ -201,11 +201,14 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
         <meta property="og:description" content={config.metaDescription} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`https://uncodedhub.com${currentTheme.image}`} />
+        <meta property="og:image" content={`https://uncodedhub.com/og/niche-${config.key}.jpg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={`${NICHES[config.key]} 7-Day Web Design Platform — Uncoded Hub`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={config.metaTitle} />
         <meta name="twitter:description" content={config.metaDescription} />
-        <meta name="twitter:image" content={`https://uncodedhub.com${currentTheme.image}`} />
+        <meta name="twitter:image" content={`https://uncodedhub.com/og/niche-${config.key}.jpg`} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
       </Helmet>
