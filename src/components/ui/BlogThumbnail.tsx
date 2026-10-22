@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import { NICHES, type NicheKey } from '../../lib/blog';
 
 /* ═══════════════════════════════════════════════════════════════════
-   BLOG THUMBNAIL — Cloaked-Style Editorial Generative Tile
+   BLOG THUMBNAIL — High-Resolution Asset Renderer with Generative Fallback
+   Displays the actual article illustration from /blog/${slug}.webp
+   or frontmatter image, with fallback to .jpg and Cloaked editorial
+   gradient tile if an image is missing or errors.
    ═══════════════════════════════════════════════════════════════════ */
 
 const THUMB_THEMES: Record<
@@ -161,28 +165,98 @@ const THUMB_THEMES: Record<
   },
 };
 
+export interface BlogThumbnailProps {
+  niche?: NicheKey;
+  slug?: string;
+  title?: string;
+  image?: string;
+  size?: 'card' | 'hero';
+  aspectRatio?: '16/9' | '16/10' | '21/9';
+  className?: string;
+}
+
 export default function BlogThumbnail({
   niche,
+  slug,
+  title,
+  image,
   size = 'card',
+  aspectRatio,
   className = '',
-}: {
-  niche: NicheKey;
-  size?: 'card' | 'hero';
-  className?: string;
-}) {
-  const theme = THUMB_THEMES[niche] || THUMB_THEMES.studio;
+}: BlogThumbnailProps) {
   const isHero = size === 'hero';
+  const effectiveNiche: NicheKey = niche || 'studio';
+  const theme = THUMB_THEMES[effectiveNiche] || THUMB_THEMES.studio;
 
+  // Determine initial image candidate
+  const initialSrc = image || (slug ? `/blog/${slug}.webp` : '');
+  const [currentSrc, setCurrentSrc] = useState<string>(initialSrc);
+  const [hasError, setHasError] = useState<boolean>(!initialSrc);
+
+  const handleImageError = () => {
+    // If WebP failed, attempt JPG fallback once
+    if (currentSrc.endsWith('.webp') && slug) {
+      setCurrentSrc(`/blog/${slug}.jpg`);
+    } else {
+      setHasError(true);
+    }
+  };
+
+  // Determine aspect ratio class
+  const aspectClass = aspectRatio
+    ? aspectRatio === '16/9'
+      ? 'aspect-[16/9]'
+      : aspectRatio === '21/9'
+      ? 'aspect-[21/9]'
+      : 'aspect-[16/10]'
+    : isHero
+    ? 'aspect-[21/9]'
+    : 'aspect-[16/10]';
+
+  // If valid image source is available and has not failed, render real image
+  if (currentSrc && !hasError) {
+    return (
+      <div
+        className={`relative overflow-hidden bg-paper-sunken border border-rule-strong ${
+          isHero ? 'rounded-[28px]' : 'rounded-[20px]'
+        } ${aspectClass} ${className} flex items-center justify-center group/thumb`}
+      >
+        <img
+          src={currentSrc}
+          alt={title || (niche ? `${NICHES[effectiveNiche]} blueprint thumbnail` : 'Article thumbnail')}
+          loading="lazy"
+          decoding="async"
+          onError={handleImageError}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        
+        {/* Subtle hover gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+        {/* Niche Badge */}
+        {niche && NICHES[niche] && (
+          <div className="absolute top-3 left-3 pointer-events-none">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-black/65 backdrop-blur-md text-white border border-white/10 shadow-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-signal" />
+              {NICHES[niche]}
+            </span>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // Fallback: Generative Editorial Architectural Badge
   return (
     <div
       className={`relative overflow-hidden bg-gradient-to-br ${theme.gradient} border border-white/10 ${
-        isHero ? 'rounded-[28px] aspect-[21/9]' : 'rounded-[20px] aspect-[16/10]'
-      } p-6 sm:p-8 flex flex-col justify-between group-hover:border-signal/40 transition-all duration-500 ${className}`}
+        isHero ? 'rounded-[28px]' : 'rounded-[20px]'
+      } ${aspectClass} p-6 sm:p-8 flex flex-col justify-between group-hover:border-signal/40 transition-all duration-500 ${className}`}
       aria-hidden="true"
     >
       {/* Background Architectural Grid Lines */}
       <div className="absolute inset-0 opacity-[0.07] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
-      
+
       {/* Glow Orb */}
       <div className="absolute -top-16 -right-16 w-48 h-48 bg-signal/15 rounded-full blur-[70px] pointer-events-none" />
 
@@ -203,7 +277,7 @@ export default function BlogThumbnail({
           className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider border ${theme.pillBg} ${theme.pillText}`}
         >
           <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
-          {NICHES[niche]}
+          {NICHES[effectiveNiche]}
         </span>
 
         <span className="text-[10px] font-mono text-white/40 tracking-widest">

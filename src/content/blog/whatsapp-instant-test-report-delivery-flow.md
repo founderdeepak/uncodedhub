@@ -58,16 +58,16 @@ Over 75% of your prospective clients evaluate your services on mobile devices wh
 ### 4. Pure Topical Silo Authority
 Organizing all content into dedicated, deeply inter-linked topical silos establishes unquestioned topical authority across search engines. This guarantees your site ranks for hyper-specific, high-buyer-intent queries rather than wasting budget on vanity search terms.
 
-## FAQ: Frequently asked questions
+## Frequently asked questions
 
-### How quickly can a custom website for Pathology Labs & Diagnostic Centers be designed and launched?
-At Uncoded Hub, we build and deploy complete custom platforms within our contractual **7-day sprint model**, backed by a 50% late-delivery discount guarantee.
+**How does automated WhatsApp test report delivery reduce laboratory front-desk overhead?**  
+It eliminates hundreds of daily phone inquiries asking 'Is my report ready?' by pushing authenticated, password-protected PDF reports directly into the patient's WhatsApp inbox the instant the pathologist signs off.
 
-### Why is custom React superior to WordPress or Webflow for this industry?
-Custom React websites built with Vite load in under 1 second, have zero vulnerable plugins to update, and eliminate recurring monthly platform fees while giving you complete code ownership.
+**How do you ensure patient data privacy when delivering medical reports via WhatsApp?**  
+Reports are sent as password-encrypted PDF files (using patient birth year or phone last digits) via official WhatsApp Business API webhooks with zero intermediate server logging.
 
-### Will our team be able to update schedules, packages, and content easily?
-Yes. Every platform is integrated with an intuitive markdown/content dashboard and includes personalized video walkthrough guides, allowing your team to update timetables, fees, and announcements without touching code.
+**Can patients access historical test records through the WhatsApp bot?**  
+Yes. Patients can send 'REPORTS' to receive an instant menu of past cumulative reports, enabling quick sharing with outstation consulting physicians during emergency consultations.
 
 ---
 

@@ -288,21 +288,14 @@ export default function Blogs() {
                 >
                   <div>
                     {/* Visual Tile */}
-                    {post.image ? (
-                      <div className="rounded-[16px] border border-rule-strong mb-5 aspect-[16/10] bg-paper-sunken/80 overflow-hidden flex items-center justify-center p-1.5">
-                        <img
-                          src={post.image}
-                          alt={post.title}
-                          width={880}
-                          height={550}
-                          loading="lazy"
-                          decoding="async"
-                          className="w-full h-full object-contain rounded-[12px] group-hover:scale-[1.02] transition-transform duration-300"
-                        />
-                      </div>
-                    ) : (
-                      <BlogThumbnail niche={post.niche} size="card" className="mb-5" />
-                    )}
+                    <BlogThumbnail
+                      slug={post.slug}
+                      title={post.title}
+                      image={post.image}
+                      niche={post.niche}
+                      size="card"
+                      className="mb-5"
+                    />
 
                     {/* Metadata Header */}
                     <div className="mb-3">

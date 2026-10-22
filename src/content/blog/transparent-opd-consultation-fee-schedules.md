@@ -58,16 +58,16 @@ Over 75% of your prospective clients evaluate your services on mobile devices wh
 ### 4. Pure Topical Silo Authority
 Organizing all content into dedicated, deeply inter-linked topical silos establishes unquestioned topical authority across search engines. This guarantees your site ranks for hyper-specific, high-buyer-intent queries rather than wasting budget on vanity search terms.
 
-## FAQ: Frequently asked questions
+## Frequently asked questions
 
-### How quickly can a custom website for Multi-Specialty Polyclinics & Outpatient Care be designed and launched?
-At Uncoded Hub, we build and deploy complete custom platforms within our contractual **7-day sprint model**, backed by a 50% late-delivery discount guarantee.
+**Why should polyclinics openly publish their OPD consultation fees online?**  
+Fee transparency eliminates awkward billing surprises at the reception desk, sets honest expectations, and positions your clinic as an ethical, patient-centric healthcare destination.
 
-### Why is custom React superior to WordPress or Webflow for this industry?
-Custom React websites built with Vite load in under 1 second, have zero vulnerable plugins to update, and eliminate recurring monthly platform fees while giving you complete code ownership.
+**Will publishing doctor consultation fees cause pricing friction with nearby clinics?**  
+No. Patients evaluate multi-specialty care on specialist reputation, clean facilities, and low wait times. Upfront pricing builds trust and filters out price-sensitive shoppers.
 
-### Will our team be able to update schedules, packages, and content easily?
-Yes. Every platform is integrated with an intuitive markdown/content dashboard and includes personalized video walkthrough guides, allowing your team to update timetables, fees, and announcements without touching code.
+**How should follow-up consultation validity be articulated?**  
+Clearly specify follow-up rules (e.g., 'Complimentary review consultation within 7 days for test report evaluation') to set clear, friendly expectations.
 
 ---
 

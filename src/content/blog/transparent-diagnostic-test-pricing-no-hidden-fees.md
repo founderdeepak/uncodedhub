@@ -58,16 +58,16 @@ Over 75% of your prospective clients evaluate your services on mobile devices wh
 ### 4. Pure Topical Silo Authority
 Organizing all content into dedicated, deeply inter-linked topical silos establishes unquestioned topical authority across search engines. This guarantees your site ranks for hyper-specific, high-buyer-intent queries rather than wasting budget on vanity search terms.
 
-## FAQ: Frequently asked questions
+## Frequently asked questions
 
-### How quickly can a custom website for Pathology Labs & Diagnostic Centers be designed and launched?
-At Uncoded Hub, we build and deploy complete custom platforms within our contractual **7-day sprint model**, backed by a 50% late-delivery discount guarantee.
+**Why does publishing transparent diagnostic test pricing build patient loyalty?**  
+Patients resent arriving at a clinic only to discover added phlebotomy charges, home visit surcharges, and sample handling fees. Upfront, all-inclusive pricing establishes trust before the needle touches the arm.
 
-### Why is custom React superior to WordPress or Webflow for this industry?
-Custom React websites built with Vite load in under 1 second, have zero vulnerable plugins to update, and eliminate recurring monthly platform fees while giving you complete code ownership.
+**Will publishing prices online cause diagnostic labs to lose business to cheap competitors?**  
+No. Serious patients choose labs based on quality, turnaround reliability, and clear equipment standards. Price transparency filters out tire-kickers and establishes institutional confidence.
 
-### Will our team be able to update schedules, packages, and content easily?
-Yes. Every platform is integrated with an intuitive markdown/content dashboard and includes personalized video walkthrough guides, allowing your team to update timetables, fees, and announcements without touching code.
+**How should diagnostic pricing menus be structured for search engine discoverability?**  
+Structure individual test landing pages with Schema.org Offer and Service markup, enabling Google to display exact test pricing directly within local search results and knowledge panels.
 
 ---
 

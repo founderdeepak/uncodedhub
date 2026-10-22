@@ -1,10 +1,9 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
-import { LogoMark } from '../components/Logo';
-import { PROJECTS, type Project } from '../data/projects';
-import { getAllPosts, NICHES, NICHE_PILLAR_SLUGS, type NicheKey } from '../lib/blog';
+import { Reveal, Shell } from '../components/primitives';
+import { PROJECTS } from '../data/projects';
+import { getAllPosts, NICHES, NICHE_PILLAR_SLUGS } from '../lib/blog';
 import { getNicheLandingData, NICHE_LANDING_DATA } from '../data/nicheLandingData';
 import BlogThumbnail from '../components/ui/BlogThumbnail';
 
@@ -166,6 +165,31 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
     },
   };
 
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://uncodedhub.com/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Web Design',
+        item: 'https://uncodedhub.com/web-design/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: NICHES[config.key],
+        item: canonicalUrl,
+      },
+    ],
+  };
+
   return (
     <>
       <Helmet>
@@ -183,6 +207,7 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
         <meta name="twitter:description" content={config.metaDescription} />
         <meta name="twitter:image" content={`https://uncodedhub.com${currentTheme.image}`} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
       </Helmet>
 
       {/* ── Breadcrumb & Announcement Bar ────────────────────────── */}
@@ -194,7 +219,7 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
                 Home
               </Link>
               <span>/</span>
-              <Link to="/portfolio/" className="hover:text-ink transition-colors">
+              <Link to="/web-design/" className="hover:text-ink transition-colors">
                 Web Design
               </Link>
               <span>/</span>
@@ -627,8 +652,11 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
                       <BlogThumbnail
                         slug={masterPillarPost.slug}
                         title={masterPillarPost.title}
+                        image={masterPillarPost.image}
+                        niche={masterPillarPost.niche}
                         aspectRatio="16/9"
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        size="card"
+                        className="w-full h-full"
                       />
                     </Link>
                   </div>
@@ -657,8 +685,11 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
                         <BlogThumbnail
                           slug={post.slug}
                           title={post.title}
+                          image={post.image}
+                          niche={post.niche}
                           aspectRatio="16/9"
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          size="card"
+                          className="w-full h-full"
                         />
                       </Link>
 

@@ -58,16 +58,16 @@ Over 75% of your prospective clients evaluate your services on mobile devices wh
 ### 4. Pure Topical Silo Authority
 Organizing all content into dedicated, deeply inter-linked topical silos establishes unquestioned topical authority across search engines. This guarantees your site ranks for hyper-specific, high-buyer-intent queries rather than wasting budget on vanity search terms.
 
-## FAQ: Frequently asked questions
+## Frequently asked questions
 
-### How quickly can a custom website for Multi-Specialty Polyclinics & Outpatient Care be designed and launched?
-At Uncoded Hub, we build and deploy complete custom platforms within our contractual **7-day sprint model**, backed by a 50% late-delivery discount guarantee.
+**How does Uncoded Hub engineer a complete multi-specialty polyclinic platform in 7 days?**  
+Through our specialized healthcare Jamstack architecture and direct founder collaboration. Deepak & Geetha engineer all department structures, OPD timetables, and triage funnels with zero agency bureaucracy.
 
-### Why is custom React superior to WordPress or Webflow for this industry?
-Custom React websites built with Vite load in under 1 second, have zero vulnerable plugins to update, and eliminate recurring monthly platform fees while giving you complete code ownership.
+**Can a 7-day sprint incorporate 10+ medical departments and 20+ doctor schedules?**  
+Yes. Our agile clinical sprint methodology organizes complex physician rosters, department content, and diagnostic catalogs systematically within the contractual 7-day timeline.
 
-### Will our team be able to update schedules, packages, and content easily?
-Yes. Every platform is integrated with an intuitive markdown/content dashboard and includes personalized video walkthrough guides, allowing your team to update timetables, fees, and announcements without touching code.
+**What guarantee protects clinic directors during the sprint?**  
+Every project is bound by our 'Late Means Free' guarantee: if your custom clinical platform is not fully live and production-ready in 7 business days, you receive an immediate 50% discount.
 
 ---
 

@@ -58,16 +58,16 @@ Over 75% of your prospective clients evaluate your services on mobile devices wh
 ### 4. Pure Topical Silo Authority
 Organizing all content into dedicated, deeply inter-linked topical silos establishes unquestioned topical authority across search engines. This guarantees your site ranks for hyper-specific, high-buyer-intent queries rather than wasting budget on vanity search terms.
 
-## FAQ: Frequently asked questions
+## Frequently asked questions
 
-### How quickly can a custom website for Private Fitness Coaches & Personal Trainers be designed and launched?
-At Uncoded Hub, we build and deploy complete custom platforms within our contractual **7-day sprint model**, backed by a 50% late-delivery discount guarantee.
+**Why is a visual 12-week program roadmap essential on a fitness coaching sales page?**  
+It demystifies the coaching process, showing prospective clients exactly what will happen during Phase 1 (Foundation), Phase 2 (Metabolic Acceleration), and Phase 3 (Lifestyle Mastery).
 
-### Why is custom React superior to WordPress or Webflow for this industry?
-Custom React websites built with Vite load in under 1 second, have zero vulnerable plugins to update, and eliminate recurring monthly platform fees while giving you complete code ownership.
+**How does a structured roadmap eliminate buyer skepticism?**  
+Clients fear that online coaching is just a static PDF workout sheet. Showing weekly progressive phases proves that you provide active, adaptive mentorship every step of the way.
 
-### Will our team be able to update schedules, packages, and content easily?
-Yes. Every platform is integrated with an intuitive markdown/content dashboard and includes personalized video walkthrough guides, allowing your team to update timetables, fees, and announcements without touching code.
+**What milestones should be highlighted along the 12-week timeline?**  
+Initial movement screening, bi-weekly form review calls, phase-based nutrition adjustments, and final lifestyle transition protocols for sustained long-term results.
 
 ---
 

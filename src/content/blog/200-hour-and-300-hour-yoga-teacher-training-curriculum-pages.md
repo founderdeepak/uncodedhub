@@ -58,16 +58,16 @@ Over 75% of your prospective clients evaluate your services on mobile devices wh
 ### 4. Pure Topical Silo Authority
 Organizing all content into dedicated, deeply inter-linked topical silos establishes unquestioned topical authority across search engines. This guarantees your site ranks for hyper-specific, high-buyer-intent queries rather than wasting budget on vanity search terms.
 
-## FAQ: Frequently asked questions
+## Frequently asked questions
 
-### How quickly can a custom website for Traditional Yoga Shalas & Mindfulness Sanctuaries be designed and launched?
-At Uncoded Hub, we build and deploy complete custom platforms within our contractual **7-day sprint model**, backed by a 50% late-delivery discount guarantee.
+**What essential information must a 200-hour or 300-hour yoga teacher training (TTC) curriculum page provide to convert international seekers?**  
+It must clearly detail the Yoga Alliance certification accreditation, modular syllabus breakdown (philosophy, anatomy, sequencing, teaching methodology), lead teacher lineages, residential room photos, and all-inclusive pricing with multiple currency choices.
 
-### Why is custom React superior to WordPress or Webflow for this industry?
-Custom React websites built with Vite load in under 1 second, have zero vulnerable plugins to update, and eliminate recurring monthly platform fees while giving you complete code ownership.
+**How do you address international travel, visa, and accommodation concerns on a TTC landing page?**  
+Include dedicated FAQ accordions addressing airport transfers, student visa guidelines, local climate, pure sattvic/vegan dietary accommodations, and unedited video testimonials from past international graduates.
 
-### Will our team be able to update schedules, packages, and content easily?
-Yes. Every platform is integrated with an intuitive markdown/content dashboard and includes personalized video walkthrough guides, allowing your team to update timetables, fees, and announcements without touching code.
+**Why do international TTC candidates abandon enrollment forms before paying their registration deposit?**  
+Drop-offs are usually triggered by hidden accommodation fees, slow PDF downloads instead of clean web schedules, and generic forms lacking trusted global payment gateways like Stripe or Wise.
 
 ---
 

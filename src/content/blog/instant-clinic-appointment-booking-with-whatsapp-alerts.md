@@ -58,16 +58,16 @@ Over 75% of your prospective clients evaluate your services on mobile devices wh
 ### 4. Pure Topical Silo Authority
 Organizing all content into dedicated, deeply inter-linked topical silos establishes unquestioned topical authority across search engines. This guarantees your site ranks for hyper-specific, high-buyer-intent queries rather than wasting budget on vanity search terms.
 
-## FAQ: Frequently asked questions
+## Frequently asked questions
 
-### How quickly can a custom website for Multi-Specialty Polyclinics & Outpatient Care be designed and launched?
-At Uncoded Hub, we build and deploy complete custom platforms within our contractual **7-day sprint model**, backed by a 50% late-delivery discount guarantee.
+**How does instant digital appointment booking with WhatsApp confirmation cut clinic phone bottlenecks?**  
+It allows patients to select their specialist, choose a convenient time slot, and receive automated WhatsApp confirmation with appointment tokens, reducing front-desk phone calls by over 70%.
 
-### Why is custom React superior to WordPress or Webflow for this industry?
-Custom React websites built with Vite load in under 1 second, have zero vulnerable plugins to update, and eliminate recurring monthly platform fees while giving you complete code ownership.
+**What information should be sent in an automated WhatsApp appointment confirmation?**  
+Doctor name, department, token number, estimated consulting time, Google Maps clinic location, and guidelines on past medical reports to bring.
 
-### Will our team be able to update schedules, packages, and content easily?
-Yes. Every platform is integrated with an intuitive markdown/content dashboard and includes personalized video walkthrough guides, allowing your team to update timetables, fees, and announcements without touching code.
+**How do automated WhatsApp reminders reduce polyclinic appointment no-shows?**  
+Sending reminders 3 hours before the slot with a 1-tap 'Confirm or Reschedule' button keeps the calendar full and allows clinics to reallocate canceled slots immediately.
 
 ---
 

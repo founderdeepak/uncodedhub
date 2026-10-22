@@ -58,16 +58,16 @@ Over 75% of your prospective clients evaluate your services on mobile devices wh
 ### 4. Pure Topical Silo Authority
 Organizing all content into dedicated, deeply inter-linked topical silos establishes unquestioned topical authority across search engines. This guarantees your site ranks for hyper-specific, high-buyer-intent queries rather than wasting budget on vanity search terms.
 
-## FAQ: Frequently asked questions
+## Frequently asked questions
 
-### How quickly can a custom website for Multi-Specialty Polyclinics & Outpatient Care be designed and launched?
-At Uncoded Hub, we build and deploy complete custom platforms within our contractual **7-day sprint model**, backed by a 50% late-delivery discount guarantee.
+**How do preventive family health cards build recurring clinic revenue?**  
+By packaging annual consultations, bi-annual routine blood panels, dental cleanings, and emergency casualty cover into an affordable annual household membership plan.
 
-### Why is custom React superior to WordPress or Webflow for this industry?
-Custom React websites built with Vite load in under 1 second, have zero vulnerable plugins to update, and eliminate recurring monthly platform fees while giving you complete code ownership.
+**What features make a family health plan attractive to local households?**  
+Coverage for up to 4 or 6 family members (including elderly grandparents), priority OPD appointments, discounted pharmacy delivery, and free annual preventive health checkups.
 
-### Will our team be able to update schedules, packages, and content easily?
-Yes. Every platform is integrated with an intuitive markdown/content dashboard and includes personalized video walkthrough guides, allowing your team to update timetables, fees, and announcements without touching code.
+**How should health plans be presented on the website?**  
+Use an interactive plan comparison table highlighting individual versus family savings, with instant online activation via WhatsApp or UPI payment.
 
 ---
 

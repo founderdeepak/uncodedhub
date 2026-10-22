@@ -18,6 +18,7 @@ const Blogs = lazy(() => import('./pages/Blogs'));
 const BlogView = lazy(() => import('./pages/BlogView'));
 const AuditChecklist = lazy(() => import('./pages/AuditChecklist'));
 const NicheLanding = lazy(() => import('./pages/NicheLanding'));
+const WebDesignHub = lazy(() => import('./pages/WebDesignHub'));
 import { EnquiryDock } from './components/EnquiryDock';
 
 /* Paths are unchanged from the previous site so existing links and
@@ -26,6 +27,7 @@ import { EnquiryDock } from './components/EnquiryDock';
    every other page is a liability, not an asset. */
 const NAV = [
   { label: 'Work', path: '/portfolio/' },
+  { label: 'Web Design', path: '/web-design/' },
   { label: 'Services', path: '/services/' },
   { label: 'Studio', path: '/about/' },
   { label: 'FAQ', path: '/faq/' },
@@ -285,6 +287,22 @@ export default function App() {
             element={
               <Suspense fallback={null}>
                 <BlogView />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/web-design"
+            element={
+              <Suspense fallback={null}>
+                <WebDesignHub onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/web-design/"
+            element={
+              <Suspense fallback={null}>
+                <WebDesignHub onBook={goToBooking} />
               </Suspense>
             }
           />

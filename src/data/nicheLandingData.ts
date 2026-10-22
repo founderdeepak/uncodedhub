@@ -1,4 +1,4 @@
-import { NICHES, type NicheKey } from '../lib/blog';
+import { type NicheKey } from '../lib/blog';
 
 export interface CommercialProblem {
   num: string;

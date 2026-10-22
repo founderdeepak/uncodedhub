@@ -58,16 +58,16 @@ Over 75% of your prospective clients evaluate your services on mobile devices wh
 ### 4. Pure Topical Silo Authority
 Organizing all content into dedicated, deeply inter-linked topical silos establishes unquestioned topical authority across search engines. This guarantees your site ranks for hyper-specific, high-buyer-intent queries rather than wasting budget on vanity search terms.
 
-## FAQ: Frequently asked questions
+## Frequently asked questions
 
-### How quickly can a custom website for Multi-Specialty Polyclinics & Outpatient Care be designed and launched?
-At Uncoded Hub, we build and deploy complete custom platforms within our contractual **7-day sprint model**, backed by a 50% late-delivery discount guarantee.
+**How can polyclinics promote one-stop comprehensive care on their website?**  
+Highlight seamless in-house synergies: consulting your physician, completing blood tests or digital X-rays, and collecting prescribed medications under a single roof in under 45 minutes.
 
-### Why is custom React superior to WordPress or Webflow for this industry?
-Custom React websites built with Vite load in under 1 second, have zero vulnerable plugins to update, and eliminate recurring monthly platform fees while giving you complete code ownership.
+**Why do patients prefer polyclinics with integrated diagnostics and pharmacy?**  
+It eliminates multiple trips across town, ensures that consulting physicians can view digital diagnostic images immediately, and prevents medication substitution errors.
 
-### Will our team be able to update schedules, packages, and content easily?
-Yes. Every platform is integrated with an intuitive markdown/content dashboard and includes personalized video walkthrough guides, allowing your team to update timetables, fees, and announcements without touching code.
+**How should diagnostic and pharmacy hours be displayed?**  
+Display live operating badges (e.g., 'Pharmacy: Open 24/7' or 'Radiology: 8:00 AM - 9:00 PM') on every department page to reassure patients arriving for late-evening visits.
 
 ---
 

@@ -58,16 +58,16 @@ Over 75% of your prospective clients evaluate your services on mobile devices wh
 ### 4. Pure Topical Silo Authority
 Organizing all content into dedicated, deeply inter-linked topical silos establishes unquestioned topical authority across search engines. This guarantees your site ranks for hyper-specific, high-buyer-intent queries rather than wasting budget on vanity search terms.
 
-## FAQ: Frequently asked questions
+## Frequently asked questions
 
-### How quickly can a custom website for Creative Studios & Design Agencies be designed and launched?
-At Uncoded Hub, we build and deploy complete custom platforms within our contractual **7-day sprint model**, backed by a 50% late-delivery discount guarantee.
+**How can an image-heavy creative portfolio achieve a 99+ Google Lighthouse score on mobile?**  
+By serving next-gen AVIF and WebP images with responsive `srcset` definitions, aggressive progressive lazy loading, and zero render-blocking JavaScript dependencies.
 
-### Why is custom React superior to WordPress or Webflow for this industry?
-Custom React websites built with Vite load in under 1 second, have zero vulnerable plugins to update, and eliminate recurring monthly platform fees while giving you complete code ownership.
+**Does aggressive image compression ruin the sharpness of high-end graphic design portfolios?**  
+No. Modern compression algorithms like AVIF preserve crisp vector typography, rich color depths, and subtle gradients while reducing file sizes by up to 70% compared to legacy PNGs.
 
-### Will our team be able to update schedules, packages, and content easily?
-Yes. Every platform is integrated with an intuitive markdown/content dashboard and includes personalized video walkthrough guides, allowing your team to update timetables, fees, and announcements without touching code.
+**Why does mobile page speed directly dictate high-ticket agency conversion?**  
+Busy founders and executives browse portfolios on mobile devices between meetings. If your work takes 4 seconds to load, they bounce and review the next agency on their shortlist.
 
 ---
 

@@ -372,7 +372,14 @@ export default function BlogView() {
                 />
               </figure>
             ) : (
-              <BlogThumbnail niche={post.niche} size="hero" className="rounded-[28px]" />
+              <BlogThumbnail
+                slug={post.slug}
+                title={post.title}
+                image={post.image}
+                niche={post.niche}
+                size="hero"
+                className="rounded-[28px]"
+              />
             )}
           </Reveal>
 
@@ -566,21 +573,14 @@ export default function BlogView() {
                       className="group block bg-paper-raised border border-rule-strong rounded-[24px] p-6 shadow-xs hover:border-ink/40 hover:shadow-md transition-all duration-300 h-full flex flex-col justify-between"
                     >
                       <div>
-                        {related.image ? (
-                          <div className="rounded-[16px] border border-rule-strong mb-5 aspect-[16/10] bg-paper-sunken/80 overflow-hidden flex items-center justify-center p-1.5">
-                            <img
-                              src={related.image}
-                              alt={related.title}
-                              width={880}
-                              height={550}
-                              loading="lazy"
-                              decoding="async"
-                              className="w-full h-full object-contain rounded-[12px] group-hover:scale-[1.02] transition-transform duration-300"
-                            />
-                          </div>
-                        ) : (
-                          <BlogThumbnail niche={related.niche} size="card" className="mb-5" />
-                        )}
+                        <BlogThumbnail
+                          slug={related.slug}
+                          title={related.title}
+                          image={related.image}
+                          niche={related.niche}
+                          size="card"
+                          className="mb-5"
+                        />
 
                         <div className="mb-3">
                           <span className="card-tag">

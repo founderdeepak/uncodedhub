@@ -58,16 +58,16 @@ Over 75% of your prospective clients evaluate your services on mobile devices wh
 ### 4. Pure Topical Silo Authority
 Organizing all content into dedicated, deeply inter-linked topical silos establishes unquestioned topical authority across search engines. This guarantees your site ranks for hyper-specific, high-buyer-intent queries rather than wasting budget on vanity search terms.
 
-## FAQ: Frequently asked questions
+## Frequently asked questions
 
-### How quickly can a custom website for Private Fitness Coaches & Personal Trainers be designed and launched?
-At Uncoded Hub, we build and deploy complete custom platforms within our contractual **7-day sprint model**, backed by a 50% late-delivery discount guarantee.
+**How do interactive macro and TDEE calculators generate high-quality coaching leads?**  
+They provide immediate personalized value by calculating daily caloric needs and macronutrient splits, capturing email and WhatsApp details in exchange for a full custom roadmap.
 
-### Why is custom React superior to WordPress or Webflow for this industry?
-Custom React websites built with Vite load in under 1 second, have zero vulnerable plugins to update, and eliminate recurring monthly platform fees while giving you complete code ownership.
+**What is the biggest mistake coaches make with fitness lead magnets?**  
+Giving away generic, unreadable 50-page PDF ebooks that nobody opens. An interactive calculator delivers instant gratification and actionable numbers within 60 seconds.
 
-### Will our team be able to update schedules, packages, and content easily?
-Yes. Every platform is integrated with an intuitive markdown/content dashboard and includes personalized video walkthrough guides, allowing your team to update timetables, fees, and announcements without touching code.
+**How should coaches follow up with calculator leads to convert them into paying clients?**  
+Send a personalized video or voice note reviewing their calculated numbers, explaining how metabolic adaptation works, and inviting them to an audit strategy call.
 
 ---
 

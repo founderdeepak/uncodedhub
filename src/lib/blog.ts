@@ -361,19 +361,36 @@ const rawFiles = import.meta.glob('/src/content/blog/*.md', {
 }) as Record<string, string>;
 
 export function extractFaqs(markdown: string): FaqItem[] {
-  const faqSectionMatch = markdown.match(/##\s*Frequently\s+asked\s+questions[\s\S]*?(?=\n##\s|$)/i);
+  const faqSectionMatch = markdown.match(
+    /##\s*(?:FAQ(?:[:\s-]+Frequently\s+asked\s+questions)?|Frequently\s+asked\s+questions)[\s\S]*?(?=\n##\s(?!#)|$)/i
+  );
   if (!faqSectionMatch) return [];
   const sectionText = faqSectionMatch[0];
   const items: FaqItem[] = [];
-  const regex = /\*\*(.+?\?)\*\*\r?\n([\s\S]+?)(?=\r?\n\r?\n\*\*|\r?\n##|$)/g;
+
+  // Check for H3 format: '### Question?' (used in 198 recent blogs)
+  const h3Regex = /###\s*([^\n#]+?\?)[ \t]*\r?\n([\s\S]+?)(?=\r?\n###\s|\r?\n---|\r?\n##|$)/g;
   let match: RegExpExecArray | null;
-  while ((match = regex.exec(sectionText)) !== null) {
+  while ((match = h3Regex.exec(sectionText)) !== null) {
     const question = match[1].replace(/[*_#]/g, '').trim();
     const answer = match[2].trim().replace(/\r?\n+/g, ' ');
     if (question && answer) {
       items.push({ question, answer });
     }
   }
+
+  if (items.length > 0) return items;
+
+  // Check for Bold format: '**Question?**' (used in 322 blogs)
+  const boldRegex = /\*\*(.+?\?)\*\*[ \t]*\r?\n([\s\S]+?)(?=\r?\n\s*\r?\n\*\*|\r?\n---|\r?\n##|$)/g;
+  while ((match = boldRegex.exec(sectionText)) !== null) {
+    const question = match[1].replace(/[*_#]/g, '').trim();
+    const answer = match[2].trim().replace(/\r?\n+/g, ' ');
+    if (question && answer) {
+      items.push({ question, answer });
+    }
+  }
+
   return items;
 }
 

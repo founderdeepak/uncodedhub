@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
 import { FaqAccordion } from '../components/ui/faq-accordion';
+import { LogoMark } from '../components/Logo';
 import { LeadMagnetForm } from '../components/ui/LeadMagnetForm';
 import { FloatingLeadMagnetBanner } from '../components/ui/FloatingLeadMagnetBanner';
 import { SpeedRoiCalculator } from '../components/ui/SpeedRoiCalculator';
@@ -14,8 +15,94 @@ import {
   IconKeyboard,
   IconCode,
 } from '../components/Glyphs';
-import { LogoMark } from '../components/Logo';
 import { PROJECTS as DEMO_SPECIMENS } from '../data/projects';
+
+const FEATURED_WEB_DESIGN_NICHES = [
+  {
+    key: 'interior-designers',
+    name: 'Interior Designers & Architects',
+    icon: '📐',
+    hook: '3D render vs built photo comparisons, sub-0.8s mobile gallery LCP, and transparent fee estimators.',
+    stat: '0.8s LCP',
+  },
+  {
+    key: 'dental-clinics',
+    name: 'Dental Clinics & Aesthetic Centers',
+    icon: '🦷',
+    hook: 'Anxious patient UX, 2-tap appointment booking, smile makeover sliders, and procedure fee transparency.',
+    stat: '2-Tap Booking',
+  },
+  {
+    key: 'real-estate',
+    name: 'Luxury Real Estate Brokers',
+    icon: '🏛️',
+    hook: 'Exclusive property walkthroughs, floorplan viewers, high-net-worth lead funnels, and RERA compliance proof.',
+    stat: 'HNW Funnels',
+  },
+  {
+    key: 'doctor-specialist',
+    name: 'Super-Specialist Doctors & Surgeons',
+    icon: '🩺',
+    hook: 'Second-opinion tele-consult intake, surgical credential portfolios, hospital OT privileges, and ethical NMC proof.',
+    stat: 'Ethical Medical UX',
+  },
+  {
+    key: 'wedding-photographers',
+    name: 'Wedding Photographers & Filmmakers',
+    icon: '📷',
+    hook: 'Cinematic 4K video reel streaming without mobile lag, package tiering, and date availability calendars.',
+    stat: 'Sub-second 4K Reels',
+  },
+  {
+    key: 'home-renovation',
+    name: 'Home Renovation & Modular Kitchens',
+    icon: '🔨',
+    hook: 'Interactive modular kitchen price estimators, factory CNC virtual tours, and apartment society landing pages.',
+    stat: 'Instant Estimators',
+  },
+  {
+    key: 'clinic-polyclinic',
+    name: 'Multi-Specialty Polyclinics',
+    icon: '🏥',
+    hook: 'Multi-doctor OPD matrices, departmental symptom triage, one-tap emergency routing, and in-house diagnostics.',
+    stat: 'OPD Scheduling',
+  },
+  {
+    key: 'healthcare-diagnostics',
+    name: 'Pathology & Diagnostic Labs',
+    icon: '🔬',
+    hook: 'NABL accreditation authority, home blood sample collection booking, and instant report download portals.',
+    stat: 'Home Collection',
+  },
+  {
+    key: 'business-portfolio',
+    name: 'Corporate Advisory & Legal Portfolios',
+    icon: '💼',
+    hook: 'Editorial Swiss typography, partner leadership credentials, confidential case studies, and RFP intake funnels.',
+    stat: 'Enterprise RFP',
+  },
+  {
+    key: 'coaches-consultants',
+    name: 'High-Ticket Coaches & Consultants',
+    icon: '🎯',
+    hook: 'Application-only discovery funnels, anti-guru proof, quantified ROI case studies, and book launch hubs.',
+    stat: 'High-Ticket Intake',
+  },
+  {
+    key: 'educational-academy',
+    name: 'Educational Academies & Institutes',
+    icon: '🎓',
+    hook: 'Curriculum explorers, exam ranker showcases, batch countdown funnels, and zero-crash admission servers.',
+    stat: 'Admissions Engine',
+  },
+  {
+    key: 'spa-wellness',
+    name: 'Luxury Spas & Wellness Retreats',
+    icon: '🌿',
+    hook: 'Sensory treatment ritual menus, couple package calculators, and instant WhatsApp concierge booking.',
+    stat: 'Ritual Portals',
+  },
+];
 
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -1261,6 +1348,103 @@ export default function Home({ onBook }: { onBook: () => void }) {
           </Reveal>
         </div>
       </Section>
+
+      {/* ── SECTION: Specialized Industry Web Design Sprints ────────────────── */}
+      <section className="py-20 md:py-28 bg-paper border-b border-rule relative overflow-hidden">
+        <Shell>
+          <Reveal>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+              <div>
+                <span className="label text-signal font-semibold mb-2.5 block">
+                  17 SPECIALIZED INDUSTRY SILOS
+                </span>
+                <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
+                  Web design engineered for your exact business.
+                </h2>
+                <p className="text-lead text-muted mt-4 max-w-2xl">
+                  A clinic needs 2-tap patient triage. An architect needs 3D render-to-reality comparisons.
+                  We don't sell generic templates — we handcraft dedicated digital platforms tailored to your industry's buying psychology.
+                </p>
+              </div>
+
+              <Link
+                to="/web-design/"
+                className="btn-primary !py-3 !px-7 text-xs rounded-full inline-flex items-center gap-2 self-start md:self-auto shrink-0 shadow-xs"
+              >
+                <span>Explore All 17 Industries</span>
+                <span>→</span>
+              </Link>
+            </div>
+          </Reveal>
+
+          {/* 12-Card Bento Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {FEATURED_WEB_DESIGN_NICHES.map((niche, idx) => (
+              <Reveal key={niche.key} delay={idx * 20}>
+                <Link
+                  to={`/web-design/${niche.key}/`}
+                  className="group block p-7 rounded-[24px] bg-paper-raised border border-rule-strong hover:border-signal/50 hover:shadow-md transition-all duration-300 h-full flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="w-10 h-10 rounded-xl bg-paper-sunken border border-rule flex items-center justify-center text-lg">
+                        {niche.icon}
+                      </span>
+                      <span className="px-2.5 py-0.5 rounded-full bg-signal-wash border border-signal/20 text-[10px] font-mono text-signal font-semibold">
+                        7-Day Sprint
+                      </span>
+                    </div>
+
+                    <h3 className="font-display text-xl text-ink font-medium mb-2.5 group-hover:text-signal transition-colors">
+                      {niche.name}
+                    </h3>
+
+                    <p className="text-muted text-xs sm:text-sm leading-relaxed mb-6">
+                      {niche.hook}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-rule flex items-center justify-between text-xs font-mono">
+                    <span className="text-muted text-[11px]">{niche.stat}</span>
+                    <span className="text-signal group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-sans font-medium text-xs">
+                      View Platform →
+                    </span>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Remaining 5 Industries Quick-Link Row */}
+          <div className="p-6 rounded-2xl bg-paper-sunken border border-rule flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center gap-2 text-xs">
+              <span className="font-mono text-muted uppercase text-[11px] mr-2">Also Specializing In:</span>
+              <Link to="/web-design/gym-fitness-club/" className="px-3 py-1 rounded-full bg-paper border border-rule text-ink hover:border-signal hover:text-signal transition-colors">
+                Gyms & Fitness Clubs
+              </Link>
+              <Link to="/web-design/salon-beauty/" className="px-3 py-1 rounded-full bg-paper border border-rule text-ink hover:border-signal hover:text-signal transition-colors">
+                Salons & Bridal Beauty
+              </Link>
+              <Link to="/web-design/fitness-coach/" className="px-3 py-1 rounded-full bg-paper border border-rule text-ink hover:border-signal hover:text-signal transition-colors">
+                Private Fitness Coaches
+              </Link>
+              <Link to="/web-design/yoga-meditation/" className="px-3 py-1 rounded-full bg-paper border border-rule text-ink hover:border-signal hover:text-signal transition-colors">
+                Yoga & Meditation Shalas
+              </Link>
+              <Link to="/web-design/creative-portfolio/" className="px-3 py-1 rounded-full bg-paper border border-rule text-ink hover:border-signal hover:text-signal transition-colors">
+                Creative Design Studios
+              </Link>
+            </div>
+
+            <Link
+              to="/web-design/"
+              className="font-mono text-xs text-signal hover:text-ink transition-colors whitespace-nowrap"
+            >
+              View Directory of All 17 →
+            </Link>
+          </div>
+        </Shell>
+      </section>
 
       {/* ── SECTION 04: The 7-Day Sprint Blueprint (The Process) ────────────────── */}
       <section className="py-20 md:py-28 bg-paper-sunken/40 border-y border-rule relative overflow-hidden">

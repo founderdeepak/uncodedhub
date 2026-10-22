@@ -125,17 +125,14 @@ async function renderOnce(page, route) {
   return html;
 }
 
-async function renderRoute(page, route, attempts = 2) {
+async function renderRoute(page, route, attempts = 3) {
   for (let i = 1; i <= attempts; i++) {
     try {
       return await renderOnce(page, route);
     } catch (err) {
-      // A cold lazy-loaded chunk (first hit against localhost after the
-      // preview server just started) occasionally misses the timeout
-      // once; a bare retry on the same page is enough to clear it. Only
-      // the last attempt's error propagates.
       if (i === attempts) throw err;
       console.warn(`  (retrying ${route} after: ${err.message.split('\n')[0]})`);
+      await new Promise((r) => setTimeout(r, 1500));
     }
   }
 }

@@ -58,16 +58,16 @@ Over 75% of your prospective clients evaluate your services on mobile devices wh
 ### 4. Pure Topical Silo Authority
 Organizing all content into dedicated, deeply inter-linked topical silos establishes unquestioned topical authority across search engines. This guarantees your site ranks for hyper-specific, high-buyer-intent queries rather than wasting budget on vanity search terms.
 
-## FAQ: Frequently asked questions
+## Frequently asked questions
 
-### How quickly can a custom website for Pathology Labs & Diagnostic Centers be designed and launched?
-At Uncoded Hub, we build and deploy complete custom platforms within our contractual **7-day sprint model**, backed by a 50% late-delivery discount guarantee.
+**What features do referring doctors expect from a diagnostic lab's digital portal?**  
+Clinicians require instant digital access to patient historical trend charts, abnormal value panic notifications, sample transit tracking, and direct tele-consultation channels with the chief pathologist.
 
-### Why is custom React superior to WordPress or Webflow for this industry?
-Custom React websites built with Vite load in under 1 second, have zero vulnerable plugins to update, and eliminate recurring monthly platform fees while giving you complete code ownership.
+**How does an automated referral portal eliminate clinic front-desk friction?**  
+It replaces unreadable handwritten referral slips and lost courier sheets with digital requisition forms, barcode scanning, and instant confirmation SMS alerts sent to both doctor and patient.
 
-### Will our team be able to update schedules, packages, and content easily?
-Yes. Every platform is integrated with an intuitive markdown/content dashboard and includes personalized video walkthrough guides, allowing your team to update timetables, fees, and announcements without touching code.
+**What privacy and security protocols must a B2B diagnostic portal adhere to?**  
+All clinician logins must enforce role-based access control, HIPAA/DISHA data encryption at rest and in transit, and immutable audit logs to protect sensitive medical history from unauthorized exposure.
 
 ---
 

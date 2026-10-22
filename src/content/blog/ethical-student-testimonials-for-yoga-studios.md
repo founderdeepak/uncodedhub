@@ -58,16 +58,16 @@ Over 75% of your prospective clients evaluate your services on mobile devices wh
 ### 4. Pure Topical Silo Authority
 Organizing all content into dedicated, deeply inter-linked topical silos establishes unquestioned topical authority across search engines. This guarantees your site ranks for hyper-specific, high-buyer-intent queries rather than wasting budget on vanity search terms.
 
-## FAQ: Frequently asked questions
+## Frequently asked questions
 
-### How quickly can a custom website for Traditional Yoga Shalas & Mindfulness Sanctuaries be designed and launched?
-At Uncoded Hub, we build and deploy complete custom platforms within our contractual **7-day sprint model**, backed by a 50% late-delivery discount guarantee.
+**What makes student testimonials on a yoga website genuinely compelling and ethical?**  
+Focusing on authentic personal transformations—such as relief from chronic pain, navigating emotional grief, or discovering quiet mental clarity—rather than superficial athletic yoga poses.
 
-### Why is custom React superior to WordPress or Webflow for this industry?
-Custom React websites built with Vite load in under 1 second, have zero vulnerable plugins to update, and eliminate recurring monthly platform fees while giving you complete code ownership.
+**How do you collect heartfelt reflections without making students feel uncomfortable?**  
+Use simple digital reflection forms sent after 30 days of consistent practice or at the end of a deep retreat, asking open-ended questions about emotional and physical wellbeing.
 
-### Will our team be able to update schedules, packages, and content easily?
-Yes. Every platform is integrated with an intuitive markdown/content dashboard and includes personalized video walkthrough guides, allowing your team to update timetables, fees, and announcements without touching code.
+**Why are video reflections superior to written quotes on retreat landing pages?**  
+Genuine voice inflection, gentle body language, and candid reflections provide emotional proof of the sanctuary's energy that written text alone cannot convey.
 
 ---
 

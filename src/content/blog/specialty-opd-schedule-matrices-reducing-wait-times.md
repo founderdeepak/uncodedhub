@@ -58,16 +58,16 @@ Over 75% of your prospective clients evaluate your services on mobile devices wh
 ### 4. Pure Topical Silo Authority
 Organizing all content into dedicated, deeply inter-linked topical silos establishes unquestioned topical authority across search engines. This guarantees your site ranks for hyper-specific, high-buyer-intent queries rather than wasting budget on vanity search terms.
 
-## FAQ: Frequently asked questions
+## Frequently asked questions
 
-### How quickly can a custom website for Multi-Specialty Polyclinics & Outpatient Care be designed and launched?
-At Uncoded Hub, we build and deploy complete custom platforms within our contractual **7-day sprint model**, backed by a 50% late-delivery discount guarantee.
+**How do interactive OPD schedule matrices eliminate waiting room chaos in polyclinics?**  
+By displaying real-time doctor consulting hours, slot availability, and staggered appointment windows that distribute patient arrivals evenly across morning and evening sessions.
 
-### Why is custom React superior to WordPress or Webflow for this industry?
-Custom React websites built with Vite load in under 1 second, have zero vulnerable plugins to update, and eliminate recurring monthly platform fees while giving you complete code ownership.
+**Why do static noticeboard schedules cause patient frustration?**  
+Doctors frequently adjust hospital rounds or emergency surgery schedules. Digital matrices can be updated in real time, alerting patients before they travel to the clinic.
 
-### Will our team be able to update schedules, packages, and content easily?
-Yes. Every platform is integrated with an intuitive markdown/content dashboard and includes personalized video walkthrough guides, allowing your team to update timetables, fees, and announcements without touching code.
+**What mobile-first filtering options help patients find the right OPD slot?**  
+Filter by specialty, doctor name, day of the week, and morning vs evening consulting slots, allowing patients to match appointments with their work schedules.
 
 ---
 

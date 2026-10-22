@@ -58,16 +58,16 @@ Over 75% of your prospective clients evaluate your services on mobile devices wh
 ### 4. Pure Topical Silo Authority
 Organizing all content into dedicated, deeply inter-linked topical silos establishes unquestioned topical authority across search engines. This guarantees your site ranks for hyper-specific, high-buyer-intent queries rather than wasting budget on vanity search terms.
 
-## FAQ: Frequently asked questions
+## Frequently asked questions
 
-### How quickly can a custom website for Traditional Yoga Shalas & Mindfulness Sanctuaries be designed and launched?
-At Uncoded Hub, we build and deploy complete custom platforms within our contractual **7-day sprint model**, backed by a 50% late-delivery discount guarantee.
+**Why is documenting authentic lineage and parampara essential on a traditional yoga shala website?**  
+Serious seekers and dedicated students look for authentic roots in Ashtanga, Iyengar, Sivananda, or Himalayan traditions. Transparently honoring your teachers establishes deep spiritual credibility.
 
-### Why is custom React superior to WordPress or Webflow for this industry?
-Custom React websites built with Vite load in under 1 second, have zero vulnerable plugins to update, and eliminate recurring monthly platform fees while giving you complete code ownership.
+**How should senior teachers articulate their personal philosophy without sounding dogmatic?**  
+Share honest stories of personal practice, anatomical discernment, and how traditional wisdom applies to modern daily urban stresses in an accessible, humble voice.
 
-### Will our team be able to update schedules, packages, and content easily?
-Yes. Every platform is integrated with an intuitive markdown/content dashboard and includes personalized video walkthrough guides, allowing your team to update timetables, fees, and announcements without touching code.
+**Does showcasing teacher credentials and lineage aid organic search authority?**  
+Yes. Google's E-E-A-T guidelines prioritize genuine experience, certifications, and verified background details over anonymous, commercial content mills.
 
 ---
 
