@@ -169,6 +169,7 @@ export interface BlogThumbnailProps {
   niche?: NicheKey;
   slug?: string;
   title?: string;
+  description?: string;
   image?: string;
   size?: 'card' | 'hero';
   aspectRatio?: '16/9' | '16/10' | '21/9';
@@ -179,6 +180,7 @@ export default function BlogThumbnail({
   niche,
   slug,
   title,
+  description,
   image,
   size = 'card',
   aspectRatio,
@@ -223,7 +225,18 @@ export default function BlogThumbnail({
       >
         <img
           src={currentSrc}
-          alt={title || (niche ? `${NICHES[effectiveNiche]} blueprint thumbnail` : 'Article thumbnail')}
+          alt={
+            title
+              ? `${title} — Uncoded Hub Web Design Blueprint`
+              : `${NICHES[effectiveNiche]} — Architectural Blueprint by Uncoded Hub`
+          }
+          title={
+            description
+              ? `${title || NICHES[effectiveNiche]} — ${description}`
+              : title
+              ? `${title} | Uncoded Hub Blueprint`
+              : `${NICHES[effectiveNiche]} Web Design Blueprint`
+          }
           loading="lazy"
           decoding="async"
           onError={handleImageError}

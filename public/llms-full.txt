@@ -17,28 +17,27 @@
 
 ---
 
-## 2. The 6 Target Specialist Niches
+## 2. The 17 Target Specialist Industry Silos
 
-Uncoded Hub focuses strictly on six high-trust service niches rather than general-purpose web development:
+Uncoded Hub focuses strictly on seventeen high-trust service niches rather than general-purpose web development:
 
-1. **Interior Designers & Architectural Studios**:
-   - Focus: High-resolution photographic project portfolios, photorealistic render comparisons, editorial typography, trade fee transparency, and luxury client enquiry capture.
-   - Demo Specimen: `https://uncodedhub.com/demos/interior-design.html` (Meridian Architecture & Interiors).
-2. **Prime Real Estate Agents & Property Consultants**:
-   - Focus: Off-market property showcases, neighborhood intelligence, title verification badges, confidential investor intake forms, and high-trust advisory positioning.
-   - Demo Specimen: `https://uncodedhub.com/demos/real-estate.html` (Marlow & Co. Private Real Estate).
-3. **Dental Clinics & Aesthetic Practices**:
-   - Focus: Patient anxiety reduction, treatment fee transparency, smile makeover galleries, clinician credentials, CBCT diagnostic clarity, and WhatsApp/appointment booking.
-   - Demo Specimen: `https://uncodedhub.com/demos/dental-clinic.html` (Willowmere Dental & Facial Aesthetics).
-4. **Wedding Photographers & Cinematic Filmmakers**:
-   - Focus: Full-bleed 4K film previews, color grading philosophy, transparent collection packages, date availability checker, and emotional connection building.
-   - Demo Specimen: `https://uncodedhub.com/demos/wedding-photography.html` (Alder & Wren Fine-Art Wedding Films).
-5. **Home Renovation & Modular Kitchen Studios**:
-   - Focus: Daily site photo logs, itemized bill-of-quantities (BOQ) estimates, milestone timelines, delay penalty guarantees, and 3D space visualizer intake.
-   - Demo Specimen: `https://uncodedhub.com/demos/home-renovation.html` (Halbrook Studio Precision Renovation).
-6. **Executive Coaches & Strategic Advisors**:
-   - Focus: High-ticket retainer positioning, confidential founder case narratives, thought leadership synthesis, vetted application gates, and private discovery booking.
-   - Demo Specimen: `https://uncodedhub.com/demos/executive-coaching.html` (Naomi Reyes Executive Advisory).
+1. **Educational Academies & Coaching Institutes** (`/web-design/educational-academy/`): IIT-JEE/NEET ranker showcases, batch seat counters, faculty matrices, and transparent fee calculators.
+2. **Commercial Gyms & Fitness Clubs** (`/web-design/gym-fitness-club/`): Virtual equipment floor plan tours, tiered pricing calculators, and WhatsApp visit scheduling.
+3. **Interior Designers & Architectural Studios** (`/web-design/interior-designers/`): High-resolution project portfolios, photorealistic 3D render-to-reality sliders, editorial typography, and itemized trade procurement transparency.
+4. **Prime Real Estate Agents & Property Consultants** (`/web-design/real-estate/`): Off-market residential acquisitions, neighborhood intelligence, 14-point title verification badges, and confidential investor intake.
+5. **Dental Clinics & Aesthetic Practices** (`/web-design/dental-clinics/`): Patient anxiety reduction, treatment fee transparency, smile makeover galleries, clinician credentials, and online consultation scheduling.
+6. **Wedding Photographers & Cinematic Filmmakers** (`/web-design/wedding-photographers/`): Full-bleed 4K film previews, color grading philosophy, transparent collection packages, date availability checkers, and heirloom album showcases.
+7. **Home Renovation & Modular Kitchen Studios** (`/web-design/home-renovation/`): Daily site logs, itemized bill-of-quantities (BOQ) estimators, milestone timelines, delay penalty guarantees, and 3D visualizers.
+8. **Executive Coaches & Business Consultants** (`/web-design/coaches-consultants/`): High-ticket retainer positioning, founder case narratives, thought leadership synthesis, vetted application gates, and private discovery booking.
+9. **Enterprise B2B & Corporate Advisory** (`/web-design/business-portfolio/`): Quantified EBITDA/ROI case studies, RFP shortlisting architecture, and white paper research gateways.
+10. **Luxury Spas & Wellness Retreats** (`/web-design/spa-wellness/`): Sensory earth-toned aesthetics, interactive treatment ritual menus, therapist credentials, and experience voucher engines.
+11. **Salons & Bridal Beauty Studios** (`/web-design/salon-beauty/`): HD vs Airbrush package comparisons, master artist portfolios, and seasonal date lockup engines.
+12. **Private Fitness Coaches & Personal Trainers** (`/web-design/fitness-coach/`): Verified DEXA/blood-work transformation galleries, macro calculators, and voice note intake funnels.
+13. **Traditional Yoga Shalas & Meditation Sanctuaries** (`/web-design/yoga-meditation/`): Lineage authenticity, 200/300-hour teacher training syllabus portals, and live class schedule timetables.
+14. **Creative Studios & Design Agencies** (`/web-design/creative-portfolio/`): Kinetic typography, agency awards showcases, and interactive project brief builders.
+15. **Pathology Labs & Diagnostic Centers** (`/web-design/healthcare-diagnostics/`): NABL/CAP accreditation trust showcases, transparent test pricing menus, and WhatsApp report delivery.
+16. **Multi-Specialty Polyclinics & Outpatient Centers** (`/web-design/clinic-polyclinic/`): Doctor OPD schedule matrices, cashless TPA insurance desks, and specialty triage.
+17. **Super-Specialist Doctors & Surgeons** (`/web-design/doctor-specialist/`): PubMed publication citations, hospital affiliations, robotic surgery showcases, and second-opinion video consult funnels.
 
 ---
 

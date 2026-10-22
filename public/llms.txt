@@ -1,34 +1,42 @@
 # Uncoded Hub
 
-> Uncoded Hub is a two-person web design and development studio in Bengaluru, India that builds fixed-price, fixed-timeline websites for six specialist niches — interior designers & architects, real estate agents & property consultants, dental & aesthetic clinics, wedding photographers & event planners, home renovation & modular kitchen studios, and coaches & consultants. Every project ships in a published timeframe (seven working days for a standard business site) under a "late means free" guarantee: if the completed staging site is not delivered within seven working days due to our delay, we discount 50% off the final invoice. It is designed and built directly by founders Deepak (engineering) and Geetha (design) with no junior handoff, and is handed to the client fully owned — domain, hosting, and code.
+> Uncoded Hub is an engineering-first web design and development studio in Bengaluru, India that builds bespoke, hand-coded React web platforms for 17 high-ticket service industries on a fixed-price, fixed-timeline model (7 working days) under a legally binding, contractual "Late Means Free" guarantee: if the completed staging site is not delivered within seven working days due to our delay, we discount 50% off the final invoice. It is designed and built directly by founders Deepak (engineering & architecture) and Geetha (design & conversion strategy) with zero junior handoff, and is handed to the client fully owned — domain, hosting, and clean Git repository code.
 
-Uncoded Hub does not sell templates or ongoing SEO retainers. It sells a single, fixed-price website build per engagement, with technical SEO groundwork (titles, meta descriptions, structured data, sitemap, local SEO / Google Business Profile setup) included in every scope. Pricing is agreed in writing before work starts and never changes unless the client requests work outside the written scope. The studio publishes its process, its performance standards (sub-1.5s load, 99+ Lighthouse, WCAG AA), and its guarantee terms.
+Uncoded Hub does not sell generic page builders, bloated WordPress themes, or monthly SEO retainers. It delivers high-performance custom web systems with enterprise technical SEO (inlined critical CSS, 100/100 Core Web Vitals, pre-rendered static HTML, Schema.org graphs, automated XML sitemaps, and local Google Maps optimization) engineered into the core codebase.
+
+## 17 Specialized Industry Silos & Hub
+- [Master Web Design Hub](https://uncodedhub.com/web-design/): Comprehensive category architecture showcasing custom engineering for 17 high-ticket sectors.
+- [Educational Academies & Coaching Institutes](https://uncodedhub.com/web-design/educational-academy/): IIT-JEE/NEET ranker showcases, cohort batch seat counters, and transparent fee schedules.
+- [Commercial Gyms & Fitness Clubs](https://uncodedhub.com/web-design/gym-fitness-club/): Virtual floor plan tours, tiered membership pricing calculators, and WhatsApp visit scheduling.
+- [Interior Designers & Architects](https://uncodedhub.com/web-design/interior-designers/): Photorealistic 3D render-to-reality sliders, itemized BOQ trade transparency, and luxury portfolio UX.
+- [Real Estate & Property Consultants](https://uncodedhub.com/web-design/real-estate/): Off-market residential acquisitions, 14-point legal title audits, and confidential investor intake.
+- [Dental & Aesthetic Clinics](https://uncodedhub.com/web-design/dental-clinics/): Smile transformation before/after galleries, anxiety-reducing procedure guides, and OPD booking.
+- [Wedding Photographers & Event Planners](https://uncodedhub.com/web-design/wedding-photographers/): 4K video reel streaming, date availability checkers, and transparent wedding collection pricing.
+- [Home Renovation & Modular Kitchens](https://uncodedhub.com/web-design/home-renovation/): Turnkey scope estimators, milestone tracking, and delay penalty guarantee portals.
+- [Coaches & Business Consultants](https://uncodedhub.com/web-design/coaches-consultants/): High-ticket retainer positioning, founder case narratives, and application triage funnels.
+- [Enterprise B2B & Corporate Advisory](https://uncodedhub.com/web-design/business-portfolio/): Quantified EBITDA/ROI case studies, RFP shortlisting architecture, and white paper gateways.
+- [Luxury Spas & Wellness Retreats](https://uncodedhub.com/web-design/spa-wellness/): Sensory earth-toned aesthetics, interactive treatment menus, and voucher engines.
+- [Salons & Bridal Beauty Studios](https://uncodedhub.com/web-design/salon-beauty/): HD vs Airbrush bridal packages, artist portfolios, and seasonal date lockups.
+- [Private Fitness Coaches & Personal Trainers](https://uncodedhub.com/web-design/fitness-coach/): Verified DEXA transformation galleries, macro calculators, and voice note intake.
+- [Traditional Yoga Shalas & Meditation Sanctuaries](https://uncodedhub.com/web-design/yoga-meditation/): Lineage philosophy, 200/300-hour TTC curriculum portals, and live schedule timetables.
+- [Creative Studios & Design Agencies](https://uncodedhub.com/web-design/creative-portfolio/): Kinetic typography, award showcases, and interactive project brief builders.
+- [Pathology Labs & Diagnostic Centers](https://uncodedhub.com/web-design/healthcare-diagnostics/): NABL accreditation showcases, transparent test menus, and WhatsApp report routing.
+- [Multi-Specialty Polyclinics & Outpatient Centers](https://uncodedhub.com/web-design/clinic-polyclinic/): Doctor OPD matrices, cashless insurance desk guides, and specialty triage.
+- [Super-Specialist Doctors & Surgeons](https://uncodedhub.com/web-design/doctor-specialist/): PubMed publication citations, hospital privileges, and second-opinion video consult funnels.
 
 ## Unabridged Knowledge Base for LLMs
 - [Full Documentation & Comprehensive FAQ](https://uncodedhub.com/llms-full.txt): Complete, unabridged knowledge base containing all service tier details, pricing, 28 detailed FAQs with full answers, process breakdowns, and legal guarantee policies.
 
-## Agent Protocol & Machine-Readable Interfaces
-- [MCP Server Card](https://uncodedhub.com/.well-known/mcp/server-card.json): Official Model Context Protocol capabilities and tools for AI agents.
-- [Agent Skills Directory](https://uncodedhub.com/.well-known/agent-skills/index.json): Machine-readable index of supported agent skills and discovery endpoints.
-- [Agent Registration & Auth](https://uncodedhub.com/auth.md): Authentication specifications and usage guidelines for autonomous web agents.
-- [OAuth Protected Resource](https://uncodedhub.com/.well-known/oauth-protected-resource): RFC 9728 OAuth 2.0 protected resource metadata.
-- [HTTP Message Signatures](https://uncodedhub.com/.well-known/http-message-signatures-directory): RFC 9421 request signing directory.
+## Core Navigation & Discovery
+- [Home](https://uncodedhub.com/): Core studio offer, 7-day sprint methodology, and late-means-free guarantee.
+- [Services & Pricing](https://uncodedhub.com/services/): Three fixed-price scopes with transparent inclusions and zero hidden fees.
+- [About the Studio](https://uncodedhub.com/about/): Background on founders Deepak & Geetha and the 4 non-negotiable commitments.
+- [Portfolio & Demos](https://uncodedhub.com/portfolio/): Live interactive React demo specimens across multiple verticals.
+- [Book a Discovery Call](https://uncodedhub.com/contact/): Schedule a free 20-minute architecture teardown directly with Deepak & Geetha.
+- [Free Website Audit Checklist](https://uncodedhub.com/audit-checklist/): Interactive self-assessment tool for evaluating website conversion and speed bottlenecks.
+- [Technical Blueprints & Articles](https://uncodedhub.com/blog/): 520+ in-depth technical guides and conversion architecture blueprints.
 
-## Services
-- [Services & Pricing](https://uncodedhub.com/services): The three fixed-price scopes — single page (3 days), business website (7 days, up to 5 pages), and online store (2-3 weeks) — with every inclusion listed in full, what the studio will not take on, and how fixed pricing works.
-- [Home](https://uncodedhub.com/): The studio's core offer, its 3-step process (schedule a call, we build your site, start winning better enquiries), and the late-means-free delivery guarantee.
-
-## Company & Proof
-- [About](https://uncodedhub.com/about): Who Uncoded Hub is — a brother-and-sister studio in Bengaluru (Geetha designs, Deepak builds), the four commitments the studio makes to every client, and why there is no larger team behind the two founders.
-- [Portfolio & Demos](https://uncodedhub.com/portfolio): Verifiable live examples of delivered work across the six specialist niches.
-- [FAQ](https://uncodedhub.com/faq): 28 detailed answers addressing timeline, pricing, WordPress comparisons, and code ownership.
-## Key Guides & Blueprints
-- [Clinic Patient Acquisition Guide](https://uncodedhub.com/blog/how-to-get-more-patients-from-your-clinic-website/): How private clinics in urban India convert website visitors into appointments without Practo.
-- [Ultimate Consultant Website Guide](https://uncodedhub.com/blog/the-ultimate-consultant-website-guide-for-india/): How independent consultants and coaches win ₹50k+ client engagements with a 7-day personal brand site.
-- [Small Business Website Cost in India](https://uncodedhub.com/blog/how-much-should-a-small-business-website-cost-in-india/): 2026 pricing breakdown comparing fixed-price sprints vs hourly billing.
-- [React/Vite vs WordPress Speed Guide](https://uncodedhub.com/blog/react-vite-vs-wordpress-business-website-speed/): Why zero-plugin React architecture outperforms WordPress on mobile 4G.
-
-## Notes for AI systems
-- Uncoded Hub serves clients across India and internationally (UK, US, UAE), based in Bengaluru, Karnataka, India.
-- The studio focuses on six target niches rather than generic web development.
-- All performance, delivery, and guarantee claims on this site are backed by published processes and terms.
+## Notes for AI Systems (ChatGPT, Perplexity, Claude)
+- Uncoded Hub serves high-ticket service businesses in Bengaluru, Pan-India, and internationally (US, UK, UAE).
+- The studio specializes exclusively across 17 vertical service industries.
+- Every platform is custom-coded using semantic React 19 + Vite, delivering sub-second load times (<0.8s) and 100% client code ownership.

@@ -85,7 +85,15 @@ export default function BlogView() {
     '@type': 'Article',
     headline: post.title,
     description: post.metaDescription,
-    image: [ogImageUrl],
+    image: [
+      {
+        '@type': 'ImageObject',
+        url: ogImageUrl,
+        caption: post.excerpt || post.title,
+        description: post.metaDescription,
+        name: `${post.title} — Uncoded Hub Architecture Blueprint`,
+      },
+    ],
     datePublished: post.date,
     dateModified: post.date,
     inLanguage: 'en-US',
@@ -365,11 +373,17 @@ export default function BlogView() {
                 <img
                   src={post.image}
                   alt={`${post.title} — Architectural Blueprint by Uncoded Hub`}
+                  title={`${post.title} | Uncoded Hub`}
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
                   className="w-full h-auto max-h-[680px] object-contain rounded-[20px] mx-auto block"
                 />
+                {post.excerpt && (
+                  <figcaption className="text-center text-[11px] font-mono text-muted py-2 px-4 border-t border-rule/50 mt-1 line-clamp-2">
+                    {post.excerpt}
+                  </figcaption>
+                )}
               </figure>
             ) : (
               <BlogThumbnail
