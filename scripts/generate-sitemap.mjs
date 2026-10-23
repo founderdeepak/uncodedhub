@@ -3,7 +3,7 @@
 // src/content/blog/). Runs as a `prebuild` step (see package.json) so
 // publishing a Markdown post is enough on its own — nobody has to
 // remember to hand-edit the sitemap.
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { getAllRoutes } from './routes.mjs';
@@ -17,10 +17,22 @@ const sitemapPath = path.join(root, 'public', 'sitemap.xml');
 // recrawl prioritization, so every route gets one, not just blog posts.
 const routes = getAllRoutes().filter((r) => r.loc !== '/404');
 
+// Also include all 17 live interactive industry demonstration specimens
+const demoDir = path.join(root, 'public', 'demos');
+try {
+  const demoFiles = readdirSync(demoDir).filter((f) => f.endsWith('.html'));
+  for (const file of demoFiles) {
+    routes.push({
+      loc: `/demos/${file}`,
+      lastmod: '2026-10-23',
+    });
+  }
+} catch {}
+
 const body = routes
   .map((r) => {
     const lastmod = r.lastmod ? `\n    <lastmod>${r.lastmod}</lastmod>` : '';
-    const loc = r.loc.endsWith('/') ? r.loc : `${r.loc}/`;
+    const loc = r.loc.endsWith('/') || r.loc.endsWith('.html') ? r.loc : `${r.loc}/`;
     return `  <url>\n    <loc>https://uncodedhub.com${loc}</loc>${lastmod}\n  </url>`;
   })
   .join('\n');

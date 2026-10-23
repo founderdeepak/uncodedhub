@@ -5,7 +5,6 @@ import { Reveal, Shell } from '../components/primitives';
 import { PROJECTS } from '../data/projects';
 import { getAllPosts, NICHES, NICHE_PILLAR_SLUGS } from '../lib/blog';
 import { getNicheLandingData, NICHE_LANDING_DATA } from '../data/nicheLandingData';
-import BlogThumbnail from '../components/ui/BlogThumbnail';
 
 interface NicheLandingProps {
   onBook?: () => void;
@@ -49,6 +48,78 @@ const SPRINT_STEPS = [
   },
 ];
 
+// Topic Segregation Clusters for All 17 Niches (Silo Architecture)
+const NICHE_TOPIC_CLUSTERS: Record<string, { topic1: string; topic2: string }> = {
+  'interior-designers': {
+    topic1: 'Design Economics, High-End Client Positioning & Fee Transparency',
+    topic2: 'Visual Performance, 3D Renders, Speed & Local Search Authority',
+  },
+  'real-estate': {
+    topic1: 'High-Ticket Client Acquisition, Trust Engineering & Inflow Funnels',
+    topic2: 'Property Portals, Speed Optimization & Hyperlocal SEO Dominance',
+  },
+  'dental-clinics': {
+    topic1: 'Clinical Trust, High-Value Treatments & Patient Conversion Funnels',
+    topic2: 'Local Search Authority, Booking Workflows & Practice Operations',
+  },
+  'home-renovation': {
+    topic1: 'Commercial Scope Transparency, Estimation Calculators & Trust',
+    topic2: 'Hyperlocal Community SEO, Material Proof & High-Speed Mobile UX',
+  },
+  'wedding-photographers': {
+    topic1: 'High-Ticket Booking Psychology, Package Pricing & Client Inquiry Funnels',
+    topic2: '4K Media Streaming, Proofing Galleries & Organic Destination Search',
+  },
+  'coaches-consultants': {
+    topic1: 'Executive Positioning, Retainer Pricing Models & Application Funnels',
+    topic2: 'Authority Content Strategy, Community Portals & High-Conversion UX',
+  },
+  'business-portfolio': {
+    topic1: 'Enterprise B2B Positioning, Advisory Retainers & Executive Authority',
+    topic2: 'Compliance, RFP Shortlist Architecture & Corporate SEO Strategy',
+  },
+  'clinic-polyclinic': {
+    topic1: 'Multi-Specialty Patient Triage, OPD Scheduling & Fee Transparency',
+    topic2: 'Local Map Pack Domination, Emergency UX & Clinical Infrastructure',
+  },
+  'creative-portfolio': {
+    topic1: 'Agency Prestige, Retainer Pricing Banding & Interactive Showcases',
+    topic2: 'Sub-Second Performance, Studio Authority & Global Client Delivery',
+  },
+  'doctor-specialist': {
+    topic1: 'Surgical E-E-A-T Authority, Clinical Portals & Credential Storytelling',
+    topic2: 'AI Overviews, Second-Opinion Funnels & International Patient Care',
+  },
+  'educational-academy': {
+    topic1: 'Admission Conversion Funnels, Result Transparency & Parent Psychology',
+    topic2: 'Branch SEO, Sub-Second Result Infrastructure & Mobile Admissions',
+  },
+  'fitness-coach': {
+    topic1: 'High-Ticket Transformation Pricing, Application Funnels & Nutrition Credibility',
+    topic2: 'Zero-Lag Performance, Verified Case Studies & Executive Retention',
+  },
+  'gym-fitness-club': {
+    topic1: 'Membership Acquisition Funnels, Tiered Pricing & Churn Reduction',
+    topic2: 'Local Pack SEO, Virtual Floor Equipment Tours & B2B Wellness Retainers',
+  },
+  'healthcare-diagnostics': {
+    topic1: 'Home Collection Automation, Transparent Test Menus & Patient Trust',
+    topic2: 'NABL Quality Badging, Hyperlocal Search & Rapid Report Delivery',
+  },
+  'salon-beauty': {
+    topic1: 'Bridal Date Bookings, Transparent Package Tiers & Lookbook Portals',
+    topic2: 'Local Map Domination, 4G Gallery Acceleration & Client Retention',
+  },
+  'spa-wellness': {
+    topic1: 'Luxury Experience Architecture, Ritual Menus & Rejuvenation Packages',
+    topic2: 'Local Luxury SEO, Sensory Aesthetics & Direct VIP Reservation Systems',
+  },
+  'yoga-meditation': {
+    topic1: 'Teacher Training Curriculum Funnels, Shala Lineage & Student Retention',
+    topic2: 'Mindful Visual Architecture, Retainer Workshops & Hybrid Streaming',
+  },
+};
+
 export default function NicheLanding({ onBook }: NicheLandingProps) {
   const { niche: routeSlug } = useParams<{ niche: string }>();
   const navigate = useNavigate();
@@ -87,17 +158,33 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
     return allPosts.filter((p) => p.niche === config.key);
   }, [allPosts, config]);
 
-  const masterPillarPost = useMemo(() => {
-    if (!config) return undefined;
-    const slug = NICHE_PILLAR_SLUGS[config.key];
-    return allPosts.find((p) => p.slug === slug);
-  }, [allPosts, config]);
-
-  const spokeArticles = useMemo(() => {
+  // Master pillar and spoke order: ensure master pillar is #1, followed by rest
+  const orderedPosts = useMemo(() => {
     if (!config) return [];
     const masterSlug = NICHE_PILLAR_SLUGS[config.key];
-    return nichePosts.filter((p) => p.slug !== masterSlug).slice(0, 6);
+    const master = nichePosts.find((p) => p.slug === masterSlug);
+    const rest = nichePosts.filter((p) => p.slug !== masterSlug);
+    return master ? [master, ...rest] : nichePosts;
   }, [nichePosts, config]);
+
+  // Split into 2 parallel topic clusters (e.g. 1..20 and 21..40/41, or 1..9 and 10..18)
+  const splitIndex = useMemo(() => {
+    if (orderedPosts.length >= 40) {
+      return 20;
+    }
+    return Math.ceil(orderedPosts.length / 2);
+  }, [orderedPosts.length]);
+
+  const topic1Posts = useMemo(() => orderedPosts.slice(0, splitIndex), [orderedPosts, splitIndex]);
+  const topic2Posts = useMemo(() => orderedPosts.slice(splitIndex), [orderedPosts, splitIndex]);
+
+  const topicCluster = useMemo(() => {
+    if (!config) return { topic1: 'Conversion Architecture & Positioning', topic2: 'Technical Authority & Acquisition' };
+    return NICHE_TOPIC_CLUSTERS[config.key] || {
+      topic1: 'Conversion Architecture & Client Positioning',
+      topic2: 'Technical Authority, SEO & Acquisition',
+    };
+  }, [config]);
 
   // Other niches for footer exploration
   const otherNiches = useMemo(() => {
@@ -597,150 +684,111 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
               <div>
-                <p className="label text-signal mb-3">Topic Mastery & Technical Blueprints</p>
+                <p className="label text-signal mb-3">Topical Silo Architecture · Complete Knowledge Base</p>
                 <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
-                  Field research for {NICHES[config.key]}.
+                  {NICHES[config.key]} Strategic Playbooks & Topical Silos
                 </h2>
               </div>
               <Link
                 to={`/blog/industries/${config.key}/`}
                 className="font-mono text-xs text-signal hover:text-ink transition-colors flex items-center gap-1.5"
               >
-                <span>Browse all {nichePosts.length} tactical guides</span>
+                <span>Browse all {orderedPosts.length} tactical guides</span>
                 <span>→</span>
               </Link>
             </div>
           </Reveal>
 
-          {/* Master Pillar Feature Card */}
-          {masterPillarPost && (
-            <Reveal>
-              <div className="mb-10 p-8 sm:p-10 rounded-[28px] bg-paper-sunken border-2 border-signal/30 hover:border-signal transition-all shadow-sm">
-                <div className="grid lg:grid-cols-12 gap-8 items-center">
-                  <div className="lg:col-span-8">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="px-3 py-1 rounded-full bg-signal text-paper font-mono text-[11px] font-semibold uppercase tracking-wider">
-                        ★ Master Architectural Pillar
+          {/* Parallel Topic Segregation Columns */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+            {/* Topic 1 Column */}
+            <div className="bg-paper-raised p-6 sm:p-8 rounded-[28px] border border-rule hover:border-signal/40 transition-all shadow-xs flex flex-col">
+              <div className="mb-6 pb-4 border-b border-rule">
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <span className="font-mono text-[11px] font-semibold text-signal uppercase tracking-wider">
+                    Topic 01 · Guides 01–{String(topic1Posts.length).padStart(2, '0')}
+                  </span>
+                  <span className="font-mono text-[11px] text-muted">
+                    {topic1Posts.length} Guides
+                  </span>
+                </div>
+                <h3 className="font-display text-xl sm:text-2xl text-ink font-normal leading-snug">
+                  {topicCluster.topic1}
+                </h3>
+              </div>
+
+              <ol className="divide-y divide-rule/60">
+                {topic1Posts.map((post, idx) => {
+                  const num = idx + 1;
+                  const isMaster = post.slug === NICHE_PILLAR_SLUGS[config.key];
+                  return (
+                    <li key={post.slug} className="py-3 first:pt-0 last:pb-0 flex items-start gap-3.5 group">
+                      <span className="font-mono text-xs font-semibold text-signal w-7 pt-0.5 shrink-0 select-none">
+                        {String(num).padStart(2, '0')}.
                       </span>
-                      <span className="font-mono text-xs text-muted">{masterPillarPost.date}</span>
-                    </div>
-
-                    <h3 className="font-display text-2xl sm:text-3xl text-ink font-normal mb-4 leading-tight">
-                      <Link
-                        to={`/blog/${masterPillarPost.slug}/`}
-                        className="hover:text-signal transition-colors"
-                      >
-                        {masterPillarPost.title}
-                      </Link>
-                    </h3>
-
-                    <p className="text-muted text-sm sm:text-base leading-relaxed mb-6">
-                      {masterPillarPost.excerpt}
-                    </p>
-
-                    <Link
-                      to={`/blog/${masterPillarPost.slug}/`}
-                      className="inline-flex items-center gap-2 font-mono text-xs text-ink uppercase tracking-wider font-semibold hover:text-signal transition-colors"
-                    >
-                      <span>Read the Master Pillar Blueprint</span>
-                      <span>→</span>
-                    </Link>
-                  </div>
-
-                  <div className="lg:col-span-4">
-                    <Link
-                      to={`/blog/${masterPillarPost.slug}/`}
-                      className="block overflow-hidden rounded-2xl border border-rule group aspect-[16/9]"
-                    >
-                      <BlogThumbnail
-                        slug={masterPillarPost.slug}
-                        title={masterPillarPost.title}
-                        image={masterPillarPost.image}
-                        niche={masterPillarPost.niche}
-                        aspectRatio="16/9"
-                        size="card"
-                        className="w-full h-full"
-                      />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          )}
-
-          {/* Spoke Articles Grid */}
-          {spokeArticles.length > 0 && (
-            <div>
-              <p className="font-mono text-xs text-muted uppercase tracking-wider mb-6">
-                Companion Tactical Playbooks & Conversion Deep-Dives
-              </p>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {spokeArticles.map((post) => (
-                  <article
-                    key={post.slug}
-                    className="p-6 rounded-2xl bg-paper-raised border border-rule hover:border-signal/50 transition-all flex flex-col justify-between group shadow-xs"
-                  >
-                    <div>
-                      <Link
-                        to={`/blog/${post.slug}/`}
-                        className="block overflow-hidden rounded-xl mb-4 aspect-[16/9] border border-rule"
-                      >
-                        <BlogThumbnail
-                          slug={post.slug}
-                          title={post.title}
-                          image={post.image}
-                          niche={post.niche}
-                          aspectRatio="16/9"
-                          size="card"
-                          className="w-full h-full"
-                        />
-                      </Link>
-
-                      <p className="font-mono text-[11px] text-muted mb-2">{post.date}</p>
-                      <h4 className="font-medium text-ink text-sm sm:text-base mb-2 group-hover:text-signal transition-colors line-clamp-2">
-                        <Link to={`/blog/${post.slug}/`}>{post.title}</Link>
-                      </h4>
-                      <p className="text-xs text-muted line-clamp-2 leading-relaxed">
-                        {post.excerpt}
-                      </p>
-                    </div>
-
-                    <Link
-                      to={`/blog/${post.slug}/`}
-                      className="mt-4 pt-3 border-t border-rule font-mono text-[11px] text-signal group-hover:text-ink transition-colors flex items-center justify-between"
-                    >
-                      <span>Read Playbook</span>
-                      <span>→</span>
-                    </Link>
-                  </article>
-              </div>
-
-              {/* Complete Silo Crawl Matrix: Connects all articles in this niche */}
-              {nichePosts.length > 6 && (
-                <div className="mt-12 pt-8 border-t border-rule">
-                  <h4 className="font-mono text-xs uppercase tracking-wider text-muted mb-6">
-                    Complete {config.industry} Knowledge Base ({nichePosts.length} In-Depth Guides)
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {nichePosts.slice(6).map((post) => (
-                      <Link
-                        key={post.slug}
-                        to={`/blog/${post.slug}/`}
-                        className="p-3 rounded-lg bg-surface border border-rule/50 hover:border-signal/40 transition-colors flex items-center justify-between group"
-                      >
-                        <span className="text-xs text-ink/80 group-hover:text-ink font-medium line-clamp-1">
+                      <div className="flex-1 min-w-0">
+                        <Link
+                          to={`/blog/${post.slug}/`}
+                          className="text-xs sm:text-sm text-ink/90 group-hover:text-signal transition-colors leading-relaxed font-medium block"
+                        >
                           {post.title}
-                        </span>
-                        <span className="text-[10px] font-mono text-muted group-hover:text-signal ml-2 shrink-0">
-                          →
-                        </span>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
+                          {isMaster && (
+                            <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full bg-signal/10 text-signal font-mono text-[10px] font-semibold uppercase tracking-wider align-middle">
+                              ★ Master Pillar
+                            </span>
+                          )}
+                        </Link>
+                      </div>
+                      <span className="text-[11px] font-mono text-muted/40 group-hover:text-signal opacity-0 group-hover:opacity-100 transition-all shrink-0 ml-1 pt-0.5">
+                        →
+                      </span>
+                    </li>
+                  );
+                })}
+              </ol>
             </div>
-          )}
+
+            {/* Topic 2 Column */}
+            <div className="bg-paper-raised p-6 sm:p-8 rounded-[28px] border border-rule hover:border-signal/40 transition-all shadow-xs flex flex-col">
+              <div className="mb-6 pb-4 border-b border-rule">
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <span className="font-mono text-[11px] font-semibold text-signal uppercase tracking-wider">
+                    Topic 02 · Guides {String(splitIndex + 1).padStart(2, '0')}–{String(orderedPosts.length).padStart(2, '0')}
+                  </span>
+                  <span className="font-mono text-[11px] text-muted">
+                    {topic2Posts.length} Guides
+                  </span>
+                </div>
+                <h3 className="font-display text-xl sm:text-2xl text-ink font-normal leading-snug">
+                  {topicCluster.topic2}
+                </h3>
+              </div>
+
+              <ol start={splitIndex + 1} className="divide-y divide-rule/60">
+                {topic2Posts.map((post, idx) => {
+                  const num = splitIndex + idx + 1;
+                  return (
+                    <li key={post.slug} className="py-3 first:pt-0 last:pb-0 flex items-start gap-3.5 group">
+                      <span className="font-mono text-xs font-semibold text-muted group-hover:text-signal w-7 pt-0.5 shrink-0 select-none transition-colors">
+                        {String(num).padStart(2, '0')}.
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <Link
+                          to={`/blog/${post.slug}/`}
+                          className="text-xs sm:text-sm text-ink/90 group-hover:text-signal transition-colors leading-relaxed font-medium block"
+                        >
+                          {post.title}
+                        </Link>
+                      </div>
+                      <span className="text-[11px] font-mono text-muted/40 group-hover:text-signal opacity-0 group-hover:opacity-100 transition-all shrink-0 ml-1 pt-0.5">
+                        →
+                      </span>
+                    </li>
+                  );
+                })}
+              </ol>
+            </div>
+          </div>
         </Shell>
       </section>
 
