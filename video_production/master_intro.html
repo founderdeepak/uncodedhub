@@ -732,11 +732,14 @@
       }
     }
 
-    // Auto-start on load after 1s
+    // Auto-start on load after 1s unless manual=1 is set
     window.addEventListener('load', () => {
-      setTimeout(() => {
-        window.startPlay();
-      }, 1000);
+      const isManual = new URLSearchParams(window.location.search).get('manual') === '1';
+      if (!isManual) {
+        setTimeout(() => {
+          window.startPlay();
+        }, 1000);
+      }
     });
   </script>
 </body>

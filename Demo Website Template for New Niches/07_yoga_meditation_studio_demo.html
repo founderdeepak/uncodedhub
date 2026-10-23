@@ -1286,14 +1286,14 @@
       }
     });
 
-    // Auto-open for first-time visitors after 15 seconds
+            // Auto-open for first-time visitors after 15 seconds
     window.addEventListener('DOMContentLoaded', function() {
       setTimeout(function() {
         if (!localStorage.getItem('uncoded_pitch_viewed')) {
           openPitchModal();
         }
       }, 15000);
-    });
+    }););
 
     
       function filterYoga(type) {

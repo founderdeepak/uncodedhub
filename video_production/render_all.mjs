@@ -32,15 +32,17 @@ async function renderVideoItem({ type, key, durationSeconds, title }) {
 
   const browser = await chromium.launch({
     headless: true,
-    args: ['--hide-scrollbars', '--disable-gpu']
+    args: ['--hide-scrollbars', '--disable-gpu', '--force-dark-mode']
   });
 
   const sessionDir = path.join(tempDir, `session_${Date.now()}`);
   fs.mkdirSync(sessionDir, { recursive: true });
 
+  const tSessionStart = Date.now();
   const context = await browser.newContext({
     viewport: { width: 1920, height: 1080 },
     deviceScaleFactor: 1,
+    colorScheme: 'dark',
     recordVideo: {
       dir: sessionDir,
       size: { width: 1920, height: 1080 }
@@ -48,29 +50,38 @@ async function renderVideoItem({ type, key, durationSeconds, title }) {
   });
 
   const page = await context.newPage();
+  await page.addInitScript(() => {
+    if (document.documentElement) document.documentElement.style.background = '#030408';
+    if (document.body) document.body.style.background = '#030408';
+  });
   
-  // Build URL (prefer localhost:3000 to avoid file:// CORS iframe restrictions)
+  // Build URL with manual=1 to prevent premature autoplay
   let fileUrl = '';
   try {
     const res = await fetch('http://localhost:3000/video_production/index.html');
     if (res.ok) {
       fileUrl = type === 'master' 
-        ? 'http://localhost:3000/video_production/master_intro.html'
-        : `http://localhost:3000/video_production/niche_player.html?niche=${key}`;
+        ? 'http://localhost:3000/video_production/master_intro.html?manual=1'
+        : `http://localhost:3000/video_production/niche_player.html?niche=${key}&manual=1`;
     }
   } catch (e) {}
 
   if (!fileUrl) {
     if (type === 'master') {
-      fileUrl = 'file:///' + path.join(__dirname, 'master_intro.html').replace(/\\/g, '/');
+      fileUrl = 'file:///' + path.join(__dirname, 'master_intro.html').replace(/\\/g, '/') + '?manual=1';
     } else {
-      fileUrl = 'file:///' + path.join(__dirname, 'niche_player.html').replace(/\\/g, '/') + `?niche=${key}`;
+      fileUrl = 'file:///' + path.join(__dirname, 'niche_player.html').replace(/\\/g, '/') + `?niche=${key}&manual=1`;
     }
   }
 
   console.log(`Loading stage: ${fileUrl}`);
   await page.goto(fileUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
-  await page.waitForTimeout(2000);
+  await page.waitForTimeout(1500); // Wait for fonts and styles to fully paint
+
+  // Mark exact playback start and calculate pre-roll to seek past loading frames
+  const tPlayStart = Date.now();
+  const preRollSec = Math.max(0, (tPlayStart - tSessionStart) / 1000);
+  console.log(`Pre-roll duration: ${preRollSec.toFixed(2)}s (cleanly trimmed via FFmpeg -ss)`);
 
   // Trigger playback
   await page.evaluate(() => {
@@ -78,7 +89,7 @@ async function renderVideoItem({ type, key, durationSeconds, title }) {
   });
 
   console.log(`Recording playback for ${durationSeconds} seconds...`);
-  const recordMs = (durationSeconds + 1) * 1000;
+  const recordMs = (durationSeconds + 2.5) * 1000;
   await page.waitForTimeout(recordMs);
 
   // Close context to flush video to disk
@@ -92,14 +103,14 @@ async function renderVideoItem({ type, key, durationSeconds, title }) {
   }
   const rawWebmPath = path.join(sessionDir, webmFiles[0]);
 
-  console.log(`Converting & Muxing with background score via FFmpeg...`);
+  console.log(`Converting & Muxing with background score via FFmpeg (trimmed pre-roll)...`);
   
   let ffmpegCmd = '';
   if (fs.existsSync(audioTrack)) {
-    // Loop audio track to match video length with smooth fadeout
-    ffmpegCmd = `ffmpeg -y -i "${rawWebmPath}" -stream_loop -1 -i "${audioTrack}" -t ${durationSeconds} -filter_complex "[1:a]volume=0.25,afade=t=out:st=${durationSeconds - 2}:d=2[a]" -c:v libx264 -preset fast -crf 18 -pix_fmt yuv420p -map 0:v -map "[a]" -shortest "${finalMp4Path}"`;
+    // Put -ss after -i for frame-accurate seek past loading frames
+    ffmpegCmd = `ffmpeg -y -i "${rawWebmPath}" -ss ${preRollSec.toFixed(3)} -t ${durationSeconds} -stream_loop -1 -i "${audioTrack}" -filter_complex "[1:a]volume=0.25,afade=t=out:st=${durationSeconds - 2}:d=2[a]" -c:v libx264 -preset fast -crf 18 -pix_fmt yuv420p -map 0:v -map "[a]" -shortest "${finalMp4Path}"`;
   } else {
-    ffmpegCmd = `ffmpeg -y -i "${rawWebmPath}" -t ${durationSeconds} -c:v libx264 -preset fast -crf 18 -pix_fmt yuv420p "${finalMp4Path}"`;
+    ffmpegCmd = `ffmpeg -y -i "${rawWebmPath}" -ss ${preRollSec.toFixed(3)} -t ${durationSeconds} -c:v libx264 -preset fast -crf 18 -pix_fmt yuv420p "${finalMp4Path}"`;
   }
 
   try {

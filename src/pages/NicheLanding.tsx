@@ -713,8 +713,32 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
                       <span>→</span>
                     </Link>
                   </article>
-                ))}
               </div>
+
+              {/* Complete Silo Crawl Matrix: Connects all articles in this niche */}
+              {nichePosts.length > 6 && (
+                <div className="mt-12 pt-8 border-t border-rule">
+                  <h4 className="font-mono text-xs uppercase tracking-wider text-muted mb-6">
+                    Complete {config.industry} Knowledge Base ({nichePosts.length} In-Depth Guides)
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {nichePosts.slice(6).map((post) => (
+                      <Link
+                        key={post.slug}
+                        to={`/blog/${post.slug}/`}
+                        className="p-3 rounded-lg bg-surface border border-rule/50 hover:border-signal/40 transition-colors flex items-center justify-between group"
+                      >
+                        <span className="text-xs text-ink/80 group-hover:text-ink font-medium line-clamp-1">
+                          {post.title}
+                        </span>
+                        <span className="text-[10px] font-mono text-muted group-hover:text-signal ml-2 shrink-0">
+                          →
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </Shell>

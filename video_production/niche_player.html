@@ -550,6 +550,23 @@
 
     // Load Demo in Iframe
     const iframe = document.getElementById('demoIframe');
+    iframe.onload = () => {
+      try {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        if (doc) {
+          const style = doc.createElement('style');
+          style.innerHTML = `
+            #pitchModal, .pitch-modal-backdrop, [id*="pitchModal"], [class*="modal-backdrop"], #lmSpeechBubble {
+              display: none !important;
+              visibility: hidden !important;
+              opacity: 0 !important;
+              pointer-events: none !important;
+            }
+          `;
+          doc.head.appendChild(style);
+        }
+      } catch (e) {}
+    };
     iframe.src = `../${config.demoFile}`;
 
     // Auto-scale stage to fill screen cleanly
@@ -709,11 +726,14 @@
       }
     }
 
-    // Auto-start on load after 1s
+    // Auto-start on load after 1s unless manual=1 is set
     window.addEventListener('load', () => {
-      setTimeout(() => {
-        window.startPlay();
-      }, 1000);
+      const isManual = new URLSearchParams(window.location.search).get('manual') === '1';
+      if (!isManual) {
+        setTimeout(() => {
+          window.startPlay();
+        }, 1000);
+      }
     });
   </script>
 </body>
