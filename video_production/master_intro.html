@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Uncoded Hub — Master Introduction Video (2 Minutes)</title>
+  <title>Uncoded Hub — Master Flagship Introduction (120s Broadcast)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Space+Grotesk:wght@500;700;800&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background: #040509;
+      background: #030408;
       color: #f8fafc;
       font-family: 'Plus Jakarta Sans', sans-serif;
       overflow: hidden;
@@ -25,97 +25,96 @@
       position: relative;
       width: 1920px;
       height: 1080px;
-      background: #07090f;
+      background: #06080e;
       overflow: hidden;
-      box-shadow: 0 30px 100px rgba(0,0,0,0.9);
+      box-shadow: 0 30px 100px rgba(0,0,0,0.95);
       transform-origin: center center;
     }
 
-    /* Ambient Gradients */
-    .glow-1 {
+    /* Cinematic Lighting & Grid */
+    .glow-primary {
       position: absolute;
-      width: 1100px;
-      height: 1100px;
+      width: 1200px;
+      height: 1200px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.18) 0%, rgba(147, 51, 234, 0.08) 45%, transparent 70%);
-      filter: blur(90px);
-      top: -300px;
-      left: -200px;
-      pointer-events: none;
-      z-index: 1;
-      animation: floatSlow 18s ease-in-out infinite alternate;
-    }
-
-    .glow-2 {
-      position: absolute;
-      width: 900px;
-      height: 900px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(34, 197, 94, 0.05) 50%, transparent 70%);
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.16) 0%, rgba(147, 51, 234, 0.08) 40%, transparent 70%);
       filter: blur(100px);
-      bottom: -300px;
-      right: -200px;
+      top: -350px;
+      left: -250px;
       pointer-events: none;
       z-index: 1;
-      animation: floatSlow2 22s ease-in-out infinite alternate;
+      animation: pulseGlow 14s ease-in-out infinite alternate;
     }
 
-    @keyframes floatSlow {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(120px, 80px) scale(1.1); }
-    }
-    @keyframes floatSlow2 {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(-100px, -60px) scale(1.15); }
+    .glow-gold {
+      position: absolute;
+      width: 1000px;
+      height: 1000px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(34, 197, 94, 0.06) 45%, transparent 70%);
+      filter: blur(110px);
+      bottom: -350px;
+      right: -250px;
+      pointer-events: none;
+      z-index: 1;
+      animation: pulseGlow2 18s ease-in-out infinite alternate;
     }
 
-    /* Grid overlay */
-    .grid-bg {
+    @keyframes pulseGlow {
+      0% { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.15) translate(80px, 60px); }
+    }
+    @keyframes pulseGlow2 {
+      0% { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.12) translate(-60px, -50px); }
+    }
+
+    .grid-mesh {
       position: absolute;
       inset: 0;
       background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-      background-size: 64px 64px;
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
       pointer-events: none;
       z-index: 2;
     }
 
-    /* Top HUD Header */
-    .top-header {
+    /* Top HUD Navigation */
+    .top-hud {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 80px;
-      padding: 0 64px;
+      height: 76px;
+      padding: 0 54px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(7, 9, 15, 0.85);
-      backdrop-filter: blur(24px);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      background: rgba(6, 8, 14, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
       z-index: 100;
     }
 
-    .logo-box {
+    .brand-mark {
       display: flex;
       align-items: center;
       gap: 16px;
     }
 
-    .brand-title {
+    .brand-logo-text {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 26px;
       font-weight: 800;
       letter-spacing: -0.02em;
     }
-    .brand-title span { color: #3b82f6; }
+    .brand-logo-text span { color: #3b82f6; }
 
-    .brand-tag {
+    .brand-pill {
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       padding: 5px 14px;
       border-radius: 20px;
@@ -124,293 +123,276 @@
       color: #60a5fa;
     }
 
-    .progress-timer {
-      font-family: 'Space Grotesk', monospace;
-      font-size: 16px;
-      font-weight: 700;
-      padding: 6px 18px;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: #f1f5f9;
-    }
-
-    /* Scene Viewport */
-    .viewport {
-      position: absolute;
-      top: 80px;
-      left: 0;
-      right: 0;
-      bottom: 8px;
-      padding: 64px 80px;
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .scene-wrap {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-
-    .scene {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 60px;
-      opacity: 0;
-      transform: translateY(30px) scale(0.98);
-      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-      pointer-events: none;
-    }
-
-    .scene.active {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      pointer-events: auto;
-    }
-
-    /* Text & Content Elements */
-    .badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .chapter-indicator {
       font-size: 13px;
       font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #d4af37;
-      margin-bottom: 20px;
-    }
-
-    .scene-heading {
-      font-size: 58px;
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.025em;
-      color: #ffffff;
-      margin-bottom: 24px;
-    }
-
-    .scene-sub {
-      font-size: 22px;
-      line-height: 1.6;
-      color: #94a3b8;
-      max-width: 780px;
-      margin-bottom: 36px;
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      width: 100%;
-      margin-top: 16px;
-    }
-
-    .stat-card {
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 32px 28px;
-      transition: all 0.3s ease;
-    }
-
-    .stat-card:hover {
-      border-color: rgba(59, 130, 246, 0.4);
-      transform: translateY(-4px);
-    }
-
-    .stat-val {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 40px;
-      font-weight: 800;
-      color: #60a5fa;
-      margin-bottom: 8px;
-    }
-
-    .stat-lbl {
-      font-size: 16px;
-      font-weight: 700;
-      color: #f1f5f9;
-      margin-bottom: 4px;
-    }
-
-    .stat-desc {
-      font-size: 13px;
-      color: #64748b;
-      line-height: 1.5;
-    }
-
-    /* Comparison Split Screen */
-    .comparison-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      width: 100%;
-    }
-
-    .comp-col {
-      padding: 36px;
-      border-radius: 20px;
-    }
-
-    .comp-broken {
-      background: rgba(239, 68, 68, 0.05);
-      border: 1px solid rgba(239, 68, 68, 0.2);
-    }
-
-    .comp-uncoded {
-      background: rgba(59, 130, 246, 0.08);
-      border: 1px solid rgba(59, 130, 246, 0.3);
-      box-shadow: 0 20px 60px rgba(59, 130, 246, 0.15);
-    }
-
-    .comp-title {
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .comp-broken .comp-title { color: #f87171; }
-    .comp-uncoded .comp-title { color: #60a5fa; }
-
-    .comp-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      font-size: 17px;
-    }
-
-    .comp-list li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    /* Niche Silo Showcase Grid (17 Silos) */
-    .silo-tags-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      max-width: 900px;
-      margin-top: 24px;
-    }
-
-    .silo-tag {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 10px 18px;
-      border-radius: 30px;
-      font-size: 14px;
-      font-weight: 600;
-      color: #cbd5e1;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .silo-tag.active {
-      background: rgba(59, 130, 246, 0.2);
-      border-color: #3b82f6;
-      color: #fff;
-    }
-
-    /* 7-Day Sprint Roadmap Steps */
-    .sprint-timeline {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 14px;
-      width: 100%;
-      margin-top: 28px;
-    }
-
-    .sprint-day {
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px;
-      padding: 20px 14px;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .sprint-day.highlight {
-      border-color: #22c55e;
-      background: rgba(34, 197, 94, 0.15);
-      transform: translateY(-8px);
-      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.2);
-    }
-
-    .sprint-num {
-      font-size: 12px;
-      font-weight: 800;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: #d4af37;
-      margin-bottom: 6px;
     }
 
-    .sprint-name {
-      font-size: 13px;
+    .time-tracker {
+      font-family: 'Space Grotesk', monospace;
+      font-size: 16px;
       font-weight: 700;
-      color: #fff;
-      line-height: 1.3;
+      padding: 6px 16px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #e2e8f0;
     }
 
-    /* Final CTA Screen */
-    .final-cta-box {
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(7, 13, 24, 0.98));
-      border: 1px solid rgba(59, 130, 246, 0.35);
-      border-radius: 24px;
-      padding: 60px;
-      text-align: center;
-      box-shadow: 0 40px 100px rgba(0,0,0,0.8);
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
+    /* Main Broadcast Stage (Split View: Left 45% Narrative, Right 55% Live Showcase) */
+    .broadcast-container {
+      position: absolute;
+      top: 76px;
+      left: 0;
+      right: 0;
+      bottom: 8px;
+      display: flex;
+      z-index: 10;
     }
 
-    .final-btn-row {
+    .narrative-col {
+      width: 780px;
+      height: 100%;
+      padding: 54px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .chapter {
+      position: absolute;
+      top: 54px;
+      left: 60px;
+      right: 60px;
+      bottom: 54px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .chapter.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .chapter-tag {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #d4af37;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chapter-headline {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .chapter-desc {
+      font-size: 18px;
+      line-height: 1.65;
+      color: #94a3b8;
+      margin-bottom: 30px;
+    }
+
+    /* Kinetic Bullet Highlights */
+    .bullet-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .bullet-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+
+    .bullet-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 24px;
-      margin-top: 36px;
+      font-size: 13px;
+      flex-shrink: 0;
     }
 
-    .cta-btn-primary {
+    .bullet-bad { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+    .bullet-good { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); }
+
+    /* Founder Avatar Card */
+    .founder-lockup {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 16px 22px;
+      border-radius: 16px;
+      margin-top: 10px;
+    }
+
+    .founder-info h4 { font-size: 15px; font-weight: 700; color: #fff; }
+    .founder-info p { font-size: 12px; color: #94a3b8; margin-top: 2px; }
+
+    /* Right Studio Preview Col */
+    .preview-col {
+      flex: 1;
+      height: 100%;
+      padding: 40px 60px 40px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .laptop-frame {
+      width: 100%;
+      height: 100%;
+      background: #0f172a;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 35px 90px rgba(0,0,0,0.85);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .laptop-bar {
+      height: 44px;
+      background: #1e293b;
+      display: flex;
+      align-items: center;
+      padding: 0 18px;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .mac-dot { width: 11px; height: 11px; border-radius: 50%; }
+    .mac-red { background: #ef4444; }
+    .mac-yellow { background: #f59e0b; }
+    .mac-green { background: #10b981; }
+
+    .browser-url {
+      flex: 1;
+      margin: 0 16px;
+      background: #0a0f1d;
+      height: 26px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      font-size: 12px;
+      color: #94a3b8;
+      font-family: monospace;
+    }
+
+    .laptop-content {
+      flex: 1;
+      position: relative;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .live-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Floating Metric Callouts */
+    .callout-chip {
+      position: absolute;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      padding: 16px 24px;
+      border-radius: 16px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 50;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .callout-chip.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .chip-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
       background: #3b82f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
       color: #fff;
-      font-weight: 800;
-      font-size: 20px;
-      padding: 18px 42px;
-      border-radius: 12px;
-      text-decoration: none;
-      box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
     }
 
-    .cta-btn-whatsapp {
-      background: #22c55e;
-      color: #0f172a;
-      font-weight: 800;
-      font-size: 20px;
-      padding: 18px 42px;
-      border-radius: 12px;
-      text-decoration: none;
-      box-shadow: 0 15px 35px rgba(34, 197, 94, 0.3);
+    .chip-val { font-size: 18px; font-weight: 800; color: #fff; }
+    .chip-sub { font-size: 12px; color: #94a3b8; margin-top: 2px; }
+
+    /* Sprint Stepper (Day 1 - 7) */
+    .sprint-stepper {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      margin-top: 20px;
     }
+
+    .sprint-col {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 12px 8px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .sprint-col.done {
+      background: rgba(34, 197, 94, 0.15);
+      border-color: #22c55e;
+      box-shadow: 0 0 18px rgba(34, 197, 94, 0.25);
+    }
+
+    .sprint-col .d-num { font-size: 10px; font-weight: 800; color: #d4af37; text-transform: uppercase; }
+    .sprint-col .d-title { font-size: 11px; font-weight: 700; color: #fff; margin-top: 4px; }
+
+    /* Audio Element for Browser Preview */
+    #bgAudio { display: none; }
 
     /* Bottom Global Progress Bar */
-    .timeline-bar {
+    .timeline-strip {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -420,7 +402,7 @@
       z-index: 100;
     }
 
-    .timeline-fill {
+    .timeline-bar-fill {
       height: 100%;
       width: 0%;
       background: linear-gradient(90deg, #3b82f6, #60a5fa, #22c55e, #d4af37);
@@ -431,203 +413,194 @@
 <body>
 
   <div id="stage">
-    <div class="glow-1"></div>
-    <div class="glow-2"></div>
-    <div class="grid-bg"></div>
+    <div class="glow-primary"></div>
+    <div class="glow-gold"></div>
+    <div class="grid-mesh"></div>
 
-    <!-- Top Global Header -->
-    <header class="top-header">
-      <div class="logo-box">
-        <div class="brand-title">UNCODED<span>HUB</span></div>
-        <div class="brand-tag">The Sovereign Web Standard</div>
+    <!-- Background Music for Live Preview -->
+    <audio id="bgAudio" loop preload="auto">
+      <source src="../tools/remotion/packages/template-recorder/public/sounds/utope-rhythmic-reverie.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Top HUD Bar -->
+    <header class="top-hud">
+      <div class="brand-mark">
+        <div class="brand-logo-text">UNCODED<span>HUB</span></div>
+        <div class="brand-pill">The Sovereign Web Standard</div>
       </div>
-      <div class="progress-timer" id="timeDisplay">00:00 / 02:00</div>
+      <div class="chapter-indicator" id="chapterIndicator">Chapter 01: The Agency Trap</div>
+      <div class="time-tracker" id="timeTracker">00:00 / 02:00</div>
     </header>
 
-    <!-- Viewport Container -->
-    <main class="viewport">
-      <div class="scene-wrap">
-
-        <!-- SCENE 1: The Agency Trap (0s - 25s) -->
-        <section class="scene active" id="sec1">
-          <div style="max-width: 650px;">
-            <div class="badge-pill">⚠️ The Broken Status Quo</div>
-            <h1 class="scene-heading">Traditional Web Agencies Are Broken.</h1>
-            <p class="scene-sub">Endless 3-month project delays, $5,000+ bloated WordPress bills, and sluggish mobile sites that crash when real buyers arrive.</p>
-          </div>
-          <div style="flex: 1; max-width: 800px;">
-            <div class="comparison-box">
-              <div class="comp-col comp-broken">
-                <div class="comp-title">❌ Old Agency Model</div>
-                <ul class="comp-list">
-                  <li>🐢 3 to 6 months of delays</li>
-                  <li>💥 40+ vulnerable plugins</li>
-                  <li>🐌 4.2s slow mobile loads</li>
-                  <li>🔒 Vendor lock-in & monthly fees</li>
-                  <li>📉 Generic drag-and-drop templates</li>
-                </ul>
-              </div>
-              <div class="comp-col comp-uncoded">
-                <div class="comp-title">⚡ The Uncoded Hub Standard</div>
-                <ul class="comp-list">
-                  <li>🚀 Guaranteed 7-Day Delivery</li>
-                  <li>🛡️ Zero plugins, zero security flaws</li>
-                  <li>⚡ 0.8s sub-second speed</li>
-                  <li>👑 100% Code ownership forever</li>
-                  <li>🎨 Bespoke React & Vite engineering</li>
-                </ul>
-              </div>
+    <!-- Content Workspace -->
+    <main class="broadcast-container">
+      
+      <!-- Left Narrative Column -->
+      <section class="narrative-col">
+        
+        <!-- CHAPTER 1: The Broken Agency Model (0s - 25s) -->
+        <article class="chapter active" id="ch1">
+          <div class="chapter-tag">⚠️ The Reality of Modern Web Agencies</div>
+          <h1 class="chapter-headline">Why Most Businesses Waste Months & Lakhs on Broken Websites.</h1>
+          <p class="chapter-desc">Traditional web agencies trap you with 3 to 6 months of endless delays, bloated WordPress themes, and $5,000+ invoices for templates that crash on mobile.</p>
+          
+          <div class="bullet-row">
+            <div class="bullet-item">
+              <span class="bullet-icon bullet-bad">✕</span>
+              <span>40+ vulnerable plugins breaking every month</span>
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-icon bullet-bad">✕</span>
+              <span>4.2s slow mobile loads killing 65% of ad traffic</span>
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-icon bullet-bad">✕</span>
+              <span>Held hostage to ongoing monthly agency retainers</span>
             </div>
           </div>
-        </section>
 
-        <!-- SCENE 2: Who We Are & Handcrafted Engineering (25s - 50s) -->
-        <section class="scene" id="sec2">
+          <div style="font-size: 14px; font-weight: 700; color: #f87171;">
+            Stop buying bloated page-builder templates that slow your business down.
+          </div>
+        </article>
+
+        <!-- CHAPTER 2: The Sovereign Standard (25s - 50s) -->
+        <article class="chapter" id="ch2">
+          <div class="chapter-tag">⚡ The Uncoded Hub Solution</div>
+          <h2 class="chapter-headline">100% Handcrafted React & Vite Architecture.</h2>
+          <p class="chapter-desc">We write clean, high-performance semantic code from scratch. Zero WordPress. Zero Elementor. Sub-second global performance with guaranteed 100/100 Core Web Vitals.</p>
+          
+          <div class="bullet-row">
+            <div class="bullet-item">
+              <span class="bullet-icon bullet-good">✓</span>
+              <span>0.8s Largest Contentful Paint worldwide on 4G</span>
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-icon bullet-good">✓</span>
+              <span>Zero-plugin architecture that never breaks or gets hacked</span>
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-icon bullet-good">✓</span>
+              <span>100% Code Ownership: Git repo transfer, zero vendor lock-in</span>
+            </div>
+          </div>
+
+          <div class="founder-lockup">
+            <div style="font-size: 32px;">👨‍💻👩‍🎨</div>
+            <div class="founder-info">
+              <h4>Deepak & Geetha — Founders, Uncoded Hub</h4>
+              <p>Deepak architects the code systems; Geetha designs high-converting UI/UX. Based in Bengaluru.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- CHAPTER 3: 17 Industry Silos & 3 Themes (50s - 75s) -->
+        <article class="chapter" id="ch3">
+          <div class="chapter-tag">🎯 Industry-Specific Silos</div>
+          <h2 class="chapter-headline">Not Generic Sites. 17 Specialized Industry Silos.</h2>
+          <p class="chapter-desc">A dental clinic needs smile makeover comparisons. An interior architect needs render-to-reality sliders. An academy needs scholarship fee calculators.</p>
+          
+          <div class="bullet-row">
+            <div class="bullet-item">
+              <span class="bullet-icon bullet-good">✓</span>
+              <span>Every niche equipped with 3 curated visual themes</span>
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-icon bullet-good">✓</span>
+              <span>Dark Luxury · Clean Minimalist · Bold Vibrant Editorial</span>
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-icon bullet-good">✓</span>
+              <span>Custom font pairings (Cormorant, Space Grotesk, Syne, Outfit)</span>
+            </div>
+          </div>
+
+          <div style="font-size: 14px; font-weight: 700; color: #60a5fa;">
+            Live preview of all 17 industry flagships ready to inspect today.
+          </div>
+        </article>
+
+        <!-- CHAPTER 4: Conversion Engine & 520 Blogs (75s - 100s) -->
+        <article class="chapter" id="ch4">
+          <div class="chapter-tag">🚀 Conversion Arsenal & Google SEO</div>
+          <h2 class="chapter-headline">Interactive Tools That Pre-Qualify High-Ticket Leads.</h2>
+          <p class="chapter-desc">Turn tire-kickers into serious paying clients before they ever message you. Equipped with live calculators, VIP WhatsApp webhooks, and 520+ Schema SEO pillars.</p>
+          
+          <div class="bullet-row">
+            <div class="bullet-item">
+              <span class="bullet-icon bullet-good">✓</span>
+              <span>Itemized ROI, EMI, Renovation & Tuition Calculators</span>
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-icon bullet-good">✓</span>
+              <span>Lead forms push directly to your phone within 2 seconds</span>
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-icon bullet-good">✓</span>
+              <span>520+ Deep SEO Technical Blueprints ranking on Google Page 1</span>
+            </div>
+          </div>
+
+          <div style="font-size: 14px; font-weight: 700; color: #22c55e;">
+            Built-in Schema.org ImageObject structured data for rich search carousels.
+          </div>
+        </article>
+
+        <!-- CHAPTER 5: The 7-Day Sprint & Contact CTA (100s - 120s) -->
+        <article class="chapter" id="ch5">
+          <div class="chapter-tag">⚡ The Sovereign Ironclad Guarantee</div>
+          <h2 class="chapter-headline" style="color: #60a5fa;">Your Premium Website in 7 Days — Or 100% FREE.</h2>
+          <p class="chapter-desc">No corporate excuses. No endless review loops. Discovery to live deployment with 100% Git ownership in exactly 7 days.</p>
+          
+          <!-- Day 1-7 Sprint Roadmap -->
+          <div class="sprint-stepper">
+            <div class="sprint-col done"><div class="d-num">Day 1</div><div class="d-title">Blueprint</div></div>
+            <div class="sprint-col done"><div class="d-num">Day 2</div><div class="d-title">UI Design</div></div>
+            <div class="sprint-col done"><div class="d-num">Day 3</div><div class="d-title">React Code</div></div>
+            <div class="sprint-col done"><div class="d-num">Day 4</div><div class="d-title">Copywriting</div></div>
+            <div class="sprint-col done"><div class="d-num">Day 5</div><div class="d-title">Webhooks</div></div>
+            <div class="sprint-col done"><div class="d-num">Day 6</div><div class="d-title">100/100 QA</div></div>
+            <div class="sprint-col done"><div class="d-num">Day 7</div><div class="d-title">Handover</div></div>
+          </div>
+
+          <div style="background: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.35); border-radius: 14px; padding: 18px 24px; margin-top: 24px;">
+            <div style="font-size: 18px; font-weight: 800; color: #4ade80;">Claim Your Premium Sprint at uncodedhub.com</div>
+            <div style="font-size: 13px; color: #94a3b8; margin-top: 4px;">Direct WhatsApp: +91 93602 93902 · deepak@uncodedhub.com</div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- Right Interactive Preview Display -->
+      <section class="preview-col">
+        <div class="laptop-frame">
+          <div class="laptop-bar">
+            <div class="mac-dot mac-red"></div>
+            <div class="mac-dot mac-yellow"></div>
+            <div class="mac-dot mac-green"></div>
+            <div class="browser-url" id="browserUrl">https://uncodedhub.com/live-architecture</div>
+          </div>
+          <div class="laptop-content">
+            <iframe id="mainDisplayFrame" class="live-iframe" src="../Demo Website Template for New Niches/01_educational_academy_demo.html"></iframe>
+          </div>
+        </div>
+
+        <!-- Floating Metric Chips -->
+        <div class="callout-chip show" id="chip1" style="bottom: 70px; right: 80px;">
+          <div class="chip-icon">⚡</div>
           <div>
-            <div class="badge-pill">💎 Engineering Excellence</div>
-            <h2 class="scene-heading">Handcrafted React & Vite Architecture.</h2>
-            <p class="scene-sub">Led by Deepak (Code Architect) & Geetha (Lead UI/UX Designer). We don't use page builders. We write pure, high-performance semantic code with 100/100 Core Web Vitals.</p>
-            <div class="cards-grid">
-              <div class="stat-card">
-                <div class="stat-val">0.8s</div>
-                <div class="stat-lbl">Global LCP Speed</div>
-                <div class="stat-desc">Sub-second response on 4G mobile devices worldwide.</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-val">100/100</div>
-                <div class="stat-lbl">Google Lighthouse</div>
-                <div class="stat-desc">Perfect scores for Performance, SEO, and Best Practices.</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-val">0 Plugins</div>
-                <div class="stat-lbl">Zero Vulnerabilities</div>
-                <div class="stat-desc">Pure component architecture that never crashes or breaks.</div>
-              </div>
-            </div>
+            <div class="chip-val" id="chipVal">100/100 Lighthouse</div>
+            <div class="chip-sub" id="chipSub">Sub-second 0.8s mobile response</div>
           </div>
-        </section>
+        </div>
 
-        <!-- SCENE 3: 17 Industry Silos & 3 Themes (50s - 75s) -->
-        <section class="scene" id="sec3">
-          <div>
-            <div class="badge-pill">🎯 17 Specialized Industries</div>
-            <h2 class="scene-heading">Not Generic Templates. 17 Specialized Silos.</h2>
-            <p class="scene-sub">From luxury real estate and wedding photography to polyclinics, aesthetic dental studios, and educational institutes. Each equipped with 3 bespoke themes.</p>
-            
-            <div class="silo-tags-cloud" id="siloCloud">
-              <div class="silo-tag active">🏡 Real Estate Brokers</div>
-              <div class="silo-tag active">📸 Luxury Wedding Photographers</div>
-              <div class="silo-tag active">🛋️ Interior Designers & Architects</div>
-              <div class="silo-tag active">🦷 Dental Clinics & Smile Studios</div>
-              <div class="silo-tag active">🎓 Educational Academies</div>
-              <div class="silo-tag active">💪 Gyms & Athletic Clubs</div>
-              <div class="silo-tag active">💼 B2B Enterprise Portfolios</div>
-              <div class="silo-tag active">🌸 Luxury Thermal Spas</div>
-              <div class="silo-tag active">💇 Haute Salons & Studios</div>
-              <div class="silo-tag active">🧘 Yoga & Meditation Shalas</div>
-              <div class="silo-tag active">🏥 Multi-Specialty Clinics</div>
-              <div class="silo-tag active">👨‍⚕️ Super-Specialist Surgeons</div>
-              <div class="silo-tag active">🧪 Diagnostics Laboratories</div>
-              <div class="silo-tag active">🔨 Home Renovation Builders</div>
-              <div class="silo-tag active">🎯 Executive Coaches</div>
-              <div class="silo-tag active">🎨 Creative Directors</div>
-              <div class="silo-tag active">⚡ High-Ticket Fitness Trainers</div>
-            </div>
+      </section>
 
-            <div style="margin-top: 24px; font-size: 16px; color: #60a5fa; font-weight: 700;">
-              ✨ Each with 3 curated themes: Dark Luxury · Clean Minimal · Bold Vibrant High-Contrast
-            </div>
-          </div>
-        </section>
-
-        <!-- SCENE 4: The Conversion Arsenal & SEO (75s - 100s) -->
-        <section class="scene" id="sec4">
-          <div>
-            <div class="badge-pill">🚀 The Conversion Arsenal</div>
-            <h2 class="scene-heading">Pre-Qualify High-Ticket Clients on Autopilot.</h2>
-            <p class="scene-sub">We build interactive financial calculators, direct WhatsApp VIP lead webhooks, and rank on Google with 520+ structured SEO blog pillars.</p>
-            
-            <div class="cards-grid">
-              <div class="stat-card">
-                <div class="stat-val">🧮</div>
-                <div class="stat-lbl">Interactive ROI Calculators</div>
-                <div class="stat-desc">Mortgage, tuition, smile makeover, and turnkey remodel fee estimators.</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-val">📱</div>
-                <div class="stat-lbl">Instant VIP Webhooks</div>
-                <div class="stat-desc">Inquiries land directly in your WhatsApp and CRM within seconds.</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-val">📚</div>
-                <div class="stat-lbl">520+ SEO Pillar Library</div>
-                <div class="stat-desc">Schema.org ImageObject structured data built for Google rankings.</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- SCENE 5: The 7-Day Guarantee & Sprint Roadmap (100s - 120s) -->
-        <section class="scene" id="sec5">
-          <div class="final-cta-box">
-            <div class="badge-pill" style="justify-content: center;">⚡ The Sovereign Promise</div>
-            <h2 class="scene-heading" style="font-size: 48px; margin-bottom: 16px;">
-              Your Website Live in 7 Days — <span style="color: #22c55e;">Or It’s 100% FREE.</span>
-            </h2>
-            <p style="font-size: 18px; color: #94a3b8; max-width: 750px; margin: 0 auto 28px;">
-              No excuses. No agency delays. Discovery to live deployment with full Git repository handover in exactly 7 days.
-            </p>
-
-            <!-- 7-Day Step Progression -->
-            <div class="sprint-timeline">
-              <div class="sprint-day highlight">
-                <div class="sprint-num">Day 1</div>
-                <div class="sprint-name">Blueprint</div>
-              </div>
-              <div class="sprint-day highlight">
-                <div class="sprint-num">Day 2</div>
-                <div class="sprint-name">UI Design</div>
-              </div>
-              <div class="sprint-day highlight">
-                <div class="sprint-num">Day 3</div>
-                <div class="sprint-name">React Code</div>
-              </div>
-              <div class="sprint-day highlight">
-                <div class="sprint-num">Day 4</div>
-                <div class="sprint-name">Copywriting</div>
-              </div>
-              <div class="sprint-day highlight">
-                <div class="sprint-num">Day 5</div>
-                <div class="sprint-name">Webhooks</div>
-              </div>
-              <div class="sprint-day highlight">
-                <div class="sprint-num">Day 6</div>
-                <div class="sprint-name">QA 100/100</div>
-              </div>
-              <div class="sprint-day highlight">
-                <div class="sprint-num">Day 7</div>
-                <div class="sprint-name">Launch & Handover</div>
-              </div>
-            </div>
-
-            <!-- Call to Action Buttons -->
-            <div class="final-btn-row">
-              <a href="https://uncodedhub.com/contact" class="cta-btn-primary">
-                Book Your 7-Day Sprint →
-              </a>
-              <a href="https://wa.me/919360293902" class="cta-btn-whatsapp">
-                💬 WhatsApp Us: +91 93602 93902
-              </a>
-            </div>
-          </div>
-        </section>
-
-      </div>
     </main>
 
-    <!-- Global Timeline Bar -->
-    <div class="timeline-bar">
-      <div class="timeline-fill" id="timeFill"></div>
+    <!-- Bottom Timeline Bar -->
+    <div class="timeline-strip">
+      <div class="timeline-bar-fill" id="barFill"></div>
     </div>
 
   </div>
@@ -637,33 +610,93 @@
     let startTime = null;
     let isPlaying = false;
 
-    // Auto-scale stage to fill screen
-    function autoScale() {
+    // Scale stage to screen
+    function resizeStage() {
       const stage = document.getElementById('stage');
-      const scaleX = window.innerWidth / 1920;
-      const scaleY = window.innerHeight / 1080;
-      const scale = Math.min(scaleX, scaleY);
+      const scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
       stage.style.transform = `scale(${scale})`;
     }
-    window.addEventListener('resize', autoScale);
-    autoScale();
+    window.addEventListener('resize', resizeStage);
+    resizeStage();
 
-    function setScene(id) {
+    const iframe = document.getElementById('mainDisplayFrame');
+    const audio = document.getElementById('bgAudio');
+
+    // Demos to rotate through during 120s
+    const DEMO_ROTATION = [
+      { sec: 0, url: '../Demo Website Template for New Niches/01_educational_academy_demo.html', title: 'https://uncodedhub.com/demo/educational-academy', theme: 'oxford-academic-navy', chipVal: '0.8s LCP Speed', chipSub: 'Zero WordPress Bloat' },
+      { sec: 25, url: '../Demo Website Template for 6 NIches/meridian-interiors-demo.html', title: 'https://uncodedhub.com/demo/interior-designers', theme: 'obsidian-luxe', chipVal: '100% Clean React Code', chipSub: 'Handcrafted by Deepak & Geetha' },
+      { sec: 50, url: '../Demo Website Template for 6 NIches/willowmere-dental-demo.html', title: 'https://uncodedhub.com/demo/dental-clinics', theme: 'smilestudio-luxe', chipVal: '17 Dedicated Silos', chipSub: '3 Curated Themes Per Niche' },
+      { sec: 75, url: '../Demo Website Template for 6 NIches/marlow-realty-demo.html', title: 'https://uncodedhub.com/demo/real-estate', theme: 'manhattan-dark', chipVal: 'Instant VIP Webhooks', chipSub: '520+ Google SEO Pillars' },
+      { sec: 100, url: '../Demo Website Template for New Niches/02_gym_fitness_club_demo.html', title: 'https://uncodedhub.com/contact', theme: 'forge-industrial-black', chipVal: '7-Day Handover Guaranteed', chipSub: 'Late Means 100% Free' }
+    ];
+
+    let currentDemoIdx = 0;
+
+    function setChapter(idx) {
       for (let i = 1; i <= 5; i++) {
-        const sc = document.getElementById(`sec${i}`);
-        if (sc) sc.classList.toggle('active', i === id);
+        const ch = document.getElementById(`ch${i}`);
+        if (ch) ch.classList.toggle('active', i === idx);
       }
+      const indicator = document.getElementById('chapterIndicator');
+      const titles = [
+        'Chapter 01: The Agency Trap',
+        'Chapter 02: Handcrafted React Standard',
+        'Chapter 03: 17 Industry Silos & Themes',
+        'Chapter 04: The Conversion Arsenal & SEO',
+        'Chapter 05: Guaranteed 7-Day Handover'
+      ];
+      if (indicator) indicator.innerText = titles[idx - 1] || '';
+    }
+
+    function updatePreview(currentSec) {
+      // Find matching demo
+      for (let i = DEMO_ROTATION.length - 1; i >= 0; i--) {
+        if (currentSec >= DEMO_ROTATION[i].sec) {
+          if (currentDemoIdx !== i) {
+            currentDemoIdx = i;
+            const item = DEMO_ROTATION[i];
+            iframe.src = item.url;
+            document.getElementById('browserUrl').innerText = item.title;
+            document.getElementById('chipVal').innerText = item.chipVal;
+            document.getElementById('chipSub').innerText = item.chipSub;
+
+            // Apply theme after load
+            iframe.onload = () => {
+              try {
+                const doc = iframe.contentDocument || iframe.contentWindow.document;
+                if (doc && doc.body) doc.body.setAttribute('data-theme', item.theme);
+              } catch (e) {}
+            };
+          }
+          break;
+        }
+      }
+
+      // Smooth scroll iframe
+      try {
+        const win = iframe.contentWindow;
+        if (win) {
+          const scrollTarget = (currentSec % 25) * 60;
+          win.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+        }
+      } catch (e) {}
     }
 
     window.startPlay = function() {
-      console.log('🎬 Starting 120s Uncoded Hub Master Intro Video...');
+      console.log('🎬 Starting 120s Master Flagship Broadcast...');
       isPlaying = true;
       startTime = performance.now();
+      try {
+        audio.currentTime = 0;
+        audio.play().catch(() => {});
+      } catch (e) {}
       requestAnimationFrame(tick);
     };
 
     window.seekTo = function(sec) {
       startTime = performance.now() - (sec * 1000);
+      try { audio.currentTime = sec; } catch (e) {}
       tick(performance.now());
     };
 
@@ -675,40 +708,27 @@
       const progress = Math.min(elapsed / TOTAL_MS, 1);
       const currentSec = Math.floor(elapsed / 1000);
 
-      // Update timer & bar
+      // Timer & progress bar
       const min = String(Math.floor(currentSec / 60)).padStart(2, '0');
       const sec = String(currentSec % 60).padStart(2, '0');
-      document.getElementById('timeDisplay').innerText = `${min}:${sec} / 02:00`;
-      document.getElementById('timeFill').style.width = `${progress * 100}%`;
+      document.getElementById('timeTracker').innerText = `${min}:${sec} / 02:00`;
+      document.getElementById('barFill').style.width = `${progress * 100}%`;
 
-      // Master 2-Minute Keyframe Schedule:
-      // 0s - 25s: Scene 1 (The Broken Agency Trap)
-      if (currentSec < 25) {
-        setScene(1);
-      }
-      // 25s - 50s: Scene 2 (Handcrafted React Engineering & Sub-second speed)
-      else if (currentSec >= 25 && currentSec < 50) {
-        setScene(2);
-      }
-      // 50s - 75s: Scene 3 (17 Industry Silos & 3 Themes per niche)
-      else if (currentSec >= 50 && currentSec < 75) {
-        setScene(3);
-      }
-      // 75s - 100s: Scene 4 (Conversion Arsenal, Calculators, VIP Webhooks & SEO)
-      else if (currentSec >= 75 && currentSec < 100) {
-        setScene(4);
-      }
-      // 100s - 120s: Scene 5 (The 7-Day Guarantee & Final Contact CTA)
-      else if (currentSec >= 100) {
-        setScene(5);
-      }
+      // Chapter Progression:
+      if (currentSec < 25) setChapter(1);
+      else if (currentSec >= 25 && currentSec < 50) setChapter(2);
+      else if (currentSec >= 50 && currentSec < 75) setChapter(3);
+      else if (currentSec >= 75 && currentSec < 100) setChapter(4);
+      else if (currentSec >= 100) setChapter(5);
+
+      updatePreview(currentSec);
 
       if (progress < 1) {
         requestAnimationFrame(tick);
       } else {
         isPlaying = false;
         window.isFinished = true;
-        console.log('✅ 120s Master Video complete!');
+        console.log('✅ Master 120s Flagship Video Complete!');
       }
     }
 

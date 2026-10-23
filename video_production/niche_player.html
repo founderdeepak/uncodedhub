@@ -397,6 +397,11 @@
   <div id="stage">
     <div class="ambient-glow" id="ambientGlow"></div>
 
+    <!-- Audio for previewing -->
+    <audio id="nicheAudio" loop preload="auto">
+      <source src="../tools/remotion/packages/template-recorder/public/sounds/utope-rhythmic-reverie.mp3" type="audio/mpeg">
+    </audio>
+
     <!-- Top Global HUD -->
     <header class="top-bar">
       <div class="brand-lockup">
@@ -611,11 +616,22 @@
       console.log('🎬 Starting 60s Niche Video composition...');
       isPlaying = true;
       startTime = performance.now();
+      try {
+        const audio = document.getElementById('nicheAudio');
+        if (audio) {
+          audio.currentTime = 0;
+          audio.play().catch(() => {});
+        }
+      } catch (e) {}
       requestAnimationFrame(tick);
     };
 
     window.seekTo = function(seconds) {
       startTime = performance.now() - (seconds * 1000);
+      try {
+        const audio = document.getElementById('nicheAudio');
+        if (audio) audio.currentTime = seconds;
+      } catch (e) {}
       tick(performance.now());
     };
 

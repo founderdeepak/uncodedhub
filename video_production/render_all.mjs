@@ -18,6 +18,14 @@ if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
 if (!fs.existsSync(tempDir)) fs.mkdirSync(tempDir, { recursive: true });
 
 async function renderVideoItem({ type, key, durationSeconds, title }) {
+  const outFileName = type === 'master' ? '00_uncodedhub_master_intro_1080p.mp4' : `niche_${key}_showcase_1080p.mp4`;
+  const finalMp4Path = path.join(outputDir, outFileName);
+
+  if (fs.existsSync(finalMp4Path) && !process.argv.includes('--force')) {
+    console.log(`[Skip] Already rendered: ${outFileName} (Use --force to re-render)`);
+    return;
+  }
+
   console.log(`\n============================================================`);
   console.log(`🎬 RENDERING VIDEO: ${title} (${durationSeconds}s)`);
   console.log(`============================================================`);
@@ -41,17 +49,28 @@ async function renderVideoItem({ type, key, durationSeconds, title }) {
 
   const page = await context.newPage();
   
-  // Build URL
+  // Build URL (prefer localhost:3000 to avoid file:// CORS iframe restrictions)
   let fileUrl = '';
-  if (type === 'master') {
-    fileUrl = 'file:///' + path.join(__dirname, 'master_intro.html').replace(/\\/g, '/');
-  } else {
-    fileUrl = 'file:///' + path.join(__dirname, 'niche_player.html').replace(/\\/g, '/') + `?niche=${key}`;
+  try {
+    const res = await fetch('http://localhost:3000/video_production/index.html');
+    if (res.ok) {
+      fileUrl = type === 'master' 
+        ? 'http://localhost:3000/video_production/master_intro.html'
+        : `http://localhost:3000/video_production/niche_player.html?niche=${key}`;
+    }
+  } catch (e) {}
+
+  if (!fileUrl) {
+    if (type === 'master') {
+      fileUrl = 'file:///' + path.join(__dirname, 'master_intro.html').replace(/\\/g, '/');
+    } else {
+      fileUrl = 'file:///' + path.join(__dirname, 'niche_player.html').replace(/\\/g, '/') + `?niche=${key}`;
+    }
   }
 
   console.log(`Loading stage: ${fileUrl}`);
-  await page.goto(fileUrl, { waitUntil: 'networkidle' });
-  await page.waitForTimeout(1000);
+  await page.goto(fileUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
+  await page.waitForTimeout(2000);
 
   // Trigger playback
   await page.evaluate(() => {
@@ -72,8 +91,6 @@ async function renderVideoItem({ type, key, durationSeconds, title }) {
     throw new Error(`Failed to capture video in ${sessionDir}`);
   }
   const rawWebmPath = path.join(sessionDir, webmFiles[0]);
-  const outFileName = type === 'master' ? '00_uncodedhub_master_intro_1080p.mp4' : `niche_${key}_showcase_1080p.mp4`;
-  const finalMp4Path = path.join(outputDir, outFileName);
 
   console.log(`Converting & Muxing with background score via FFmpeg...`);
   
@@ -149,14 +166,18 @@ async function main() {
 
     // Render all 17 niches
     for (const item of NICHES_VIDEO_CONFIG) {
-      await renderVideoItem({
-        type: 'niche',
-        key: item.key,
-        durationSeconds: 60,
-        title: item.nicheName
-      });
+      try {
+        await renderVideoItem({
+          type: 'niche',
+          key: item.key,
+          durationSeconds: 60,
+          title: item.nicheName
+        });
+      } catch (err) {
+        console.error(`[Error] Failed to render ${item.nicheName}:`, err.message);
+      }
     }
-    console.log('\n🎉 ALL 18 BROADCAST VIDEOS SUCCESSFULLY RENDERED TO video_production/dist/!');
+    console.log('\n🎉 ALL 18 BROADCAST VIDEOS SUCCESSFULLY PROCESSED IN video_production/dist/!');
     return;
   }
 

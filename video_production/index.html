@@ -239,14 +239,16 @@
           <h1 class="current-video-title" id="playerTitle">🌟 Uncoded Hub Master Intro (2 Minutes)</h1>
         </div>
         <div class="controls-row">
-          <button class="ctrl-btn" onclick="restartVideo()">🔄 Restart Video</button>
+          <button class="ctrl-btn" id="toggleModeBtn" onclick="togglePlayerMode()">📼 Switch to Rendered MP4</button>
+          <button class="ctrl-btn" onclick="restartVideo()">🔄 Restart</button>
           <button class="ctrl-btn" onclick="openFullscreen()">⛶ Fullscreen</button>
-          <button class="ctrl-btn ctrl-btn-primary" onclick="renderCurrentVideo()">🎥 Render MP4</button>
+          <a class="ctrl-btn ctrl-btn-primary" id="downloadMp4Btn" href="dist/00_uncodedhub_master_intro_1080p.mp4" download style="text-decoration:none;">⬇️ Download MP4</a>
         </div>
       </div>
 
       <div class="player-aspect-wrap" id="playerWrap">
         <iframe id="videoFrame" class="player-iframe" src="master_intro.html"></iframe>
+        <video id="mp4VideoPlayer" class="player-iframe" controls style="display:none; background:#000;"></video>
       </div>
     </div>
 
@@ -270,6 +272,41 @@
       </div>
     `).join('');
 
+    let isMp4Mode = false;
+
+    function getMp4Path(target) {
+      if (target === 'master') return 'dist/00_uncodedhub_master_intro_1080p.mp4';
+      return `dist/niche_${target}_showcase_1080p.mp4`;
+    }
+
+    function updateMediaSrc() {
+      const frame = document.getElementById('videoFrame');
+      const player = document.getElementById('mp4VideoPlayer');
+      const downloadBtn = document.getElementById('downloadMp4Btn');
+      const toggleBtn = document.getElementById('toggleModeBtn');
+      const mp4Path = getMp4Path(currentMode === 'master' ? 'master' : currentNicheKey);
+      
+      downloadBtn.href = mp4Path;
+
+      if (isMp4Mode) {
+        frame.style.display = 'none';
+        player.style.display = 'block';
+        player.src = mp4Path;
+        player.play().catch(() => {});
+        toggleBtn.innerText = '🖥️ Switch to Interactive Stage';
+      } else {
+        player.pause();
+        player.style.display = 'none';
+        frame.style.display = 'block';
+        toggleBtn.innerText = '📼 Switch to Rendered MP4';
+      }
+    }
+
+    window.togglePlayerMode = function() {
+      isMp4Mode = !isMp4Mode;
+      updateMediaSrc();
+    };
+
     window.loadVideo = function(target) {
       document.querySelectorAll('.video-card').forEach(c => c.classList.remove('active'));
       const frame = document.getElementById('videoFrame');
@@ -291,13 +328,20 @@
         document.getElementById('playerSub').innerText = `${conf.brandName} · Live Theme Morphing (100% Handcrafted)`;
         frame.src = `niche_player.html?niche=${target}`;
       }
+      updateMediaSrc();
     };
 
     window.restartVideo = function() {
-      const frame = document.getElementById('videoFrame');
-      const curSrc = frame.src;
-      frame.src = 'about:blank';
-      setTimeout(() => { frame.src = curSrc; }, 100);
+      if (isMp4Mode) {
+        const player = document.getElementById('mp4VideoPlayer');
+        player.currentTime = 0;
+        player.play().catch(() => {});
+      } else {
+        const frame = document.getElementById('videoFrame');
+        const curSrc = frame.src;
+        frame.src = 'about:blank';
+        setTimeout(() => { frame.src = curSrc; }, 100);
+      }
     };
 
     window.openFullscreen = function() {
@@ -305,10 +349,6 @@
       if (wrap.requestFullscreen) {
         wrap.requestFullscreen();
       }
-    };
-
-    window.renderCurrentVideo = function() {
-      alert(`To render this composition into broadcast-quality 1080p MP4:\n\nRun in terminal:\nnode video_production/render_all.mjs ${currentMode === 'master' ? '--master' : '--niche ' + currentNicheKey}`);
     };
   </script>
 </body>
