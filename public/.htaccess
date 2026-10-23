@@ -26,6 +26,10 @@
   RewriteCond %{QUERY_STRING} ^book=true$ [NC]
   RewriteRule ^contact/?$ https://uncodedhub.com/contact/? [L,R=301]
 
+  # 5b. Clean Demo Specimen Routing (maps /demos/<slug>/ internally to /demos/<slug>.html)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^demos/([a-zA-Z0-9_\-]+)/?$ /demos/$1.html [L]
+
   # 6. Canonical Trailing Slash Enforcement (fixes Google Search Console duplicate URL split)
   # Automatically 301 redirects /path -> /path/ for clean canonical consolidation.
   # Excludes real files and paths with asset extensions (.css, .js, .png, .webp, .xml, .txt, etc.)

@@ -54,7 +54,6 @@ const SOCIAL = [
   { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61580702457181' },
   { label: 'GitHub', href: 'https://github.com/uncodedhub/' },
   { label: 'Behance', href: 'https://www.behance.net/uncodedhub' },
-  { label: 'Dribbble', href: 'https://dribbble.com/uncoded-hub' },
   { label: 'ProductHunt', href: 'https://www.producthunt.com/@uncodedhub' },
   { label: 'Pinterest', href: 'https://in.pinterest.com/uncodedhub/' },
   { label: 'Reddit', href: 'https://www.reddit.com/user/uncodedhub/' },
