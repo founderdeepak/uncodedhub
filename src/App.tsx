@@ -19,6 +19,7 @@ const BlogView = lazy(() => import('./pages/BlogView'));
 const AuditChecklist = lazy(() => import('./pages/AuditChecklist'));
 const NicheLanding = lazy(() => import('./pages/NicheLanding'));
 const WebDesignHub = lazy(() => import('./pages/WebDesignHub'));
+const TeamOutreach = lazy(() => import('./pages/TeamOutreach'));
 import { EnquiryDock } from './components/EnquiryDock';
 
 /* Paths are unchanged from the previous site so existing links and
@@ -327,6 +328,22 @@ export default function App() {
             element={
               <Suspense fallback={null}>
                 <NicheLanding onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/team-outreach"
+            element={
+              <Suspense fallback={<div className="min-h-screen bg-[#090B10] flex items-center justify-center font-mono text-xs text-muted">Loading Outreach Command Center...</div>}>
+                <TeamOutreach />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/team-outreach/"
+            element={
+              <Suspense fallback={<div className="min-h-screen bg-[#090B10] flex items-center justify-center font-mono text-xs text-muted">Loading Outreach Command Center...</div>}>
+                <TeamOutreach />
               </Suspense>
             }
           />
