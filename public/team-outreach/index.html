@@ -1035,7 +1035,6 @@
   </div>
 
   <script src="gmaps_data.js"></script>
-  <script src="social_data.js"></script>
   <script>
     const VALID_PINS = ["2026", "9940", "19835"];
     const CORRECT_PIN = "2026";
@@ -1347,6 +1346,27 @@
       document.getElementById("modeSocialBtn").classList.toggle("active", mode === 'social');
       document.getElementById("modeGmapsBtn").classList.toggle("active", mode === 'gmaps');
       document.getElementById("scriptBtn").style.display = mode === 'gmaps' ? 'flex' : 'none';
+
+      if (mode === 'social' && !window.SOCIAL_BATCHES) {
+        const gridEl = document.getElementById("leadsGrid");
+        gridEl.innerHTML = `<div style="grid-column: 1 / -1; padding: 40px; text-align: center; color: var(--text-muted);">
+          ⏳ Loading 17,000 Social DMs database... Please wait...
+        </div>`;
+        const script = document.createElement('script');
+        script.src = 'social_data.js';
+        script.onload = () => {
+          renderNicheTabs();
+          renderControlPills();
+          loadLeads();
+        };
+        script.onerror = () => {
+          renderNicheTabs();
+          renderControlPills();
+          loadLeads();
+        };
+        document.body.appendChild(script);
+        return;
+      }
 
       renderNicheTabs();
       renderControlPills();
