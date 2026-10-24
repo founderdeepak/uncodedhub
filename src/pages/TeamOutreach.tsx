@@ -454,29 +454,71 @@ export default function TeamOutreach() {
           </div>
         </div>
 
-        {/* 17 Niche Tabs */}
-        <div className="mb-8">
-          <p className="font-mono text-xs text-muted uppercase tracking-wider mb-3">
-            Select Target Industry ({NICHES.length} Niches Available):
-          </p>
-          <div className="flex gap-2 overflow-x-auto pb-3 scrollbar-thin">
-            {NICHES.map((niche) => {
+        {/* 17 Niche Selection Command Bar */}
+        <div className="mb-8 p-5 sm:p-6 rounded-2xl bg-[#121622] border border-white/10 shadow-xl">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-white/5">
+            <div>
+              <h2 className="font-display text-lg font-bold text-white flex items-center gap-2">
+                <span>🎯</span>
+                <span>Select Target Industry</span>
+                <span className="px-2 py-0.5 rounded-full bg-signal/15 text-signal font-mono text-xs font-semibold">
+                  17 Niches Available (3,400 Leads)
+                </span>
+              </h2>
+              <p className="text-xs font-mono text-muted mt-0.5">
+                Every niche contains 200 verified businesses (100 BLR · 100 CHN) with direct owner phones & custom demo links.
+              </p>
+            </div>
+
+            {/* Quick Dropdown Selector */}
+            <div className="w-full sm:w-auto min-w-[280px]">
+              <div className="relative">
+                <select
+                  id="nicheQuickSelect"
+                  value={activeNicheId}
+                  onChange={(e) => setActiveNicheId(e.target.value)}
+                  className="w-full bg-[#090B10] text-white border border-white/20 focus:border-signal rounded-xl px-4 py-2.5 font-mono text-xs cursor-pointer focus:outline-none appearance-none pr-8"
+                >
+                  {NICHES.map((niche, idx) => (
+                    <option key={niche.id} value={niche.id} className="bg-[#090B10] text-white py-2">
+                      {String(idx + 1).padStart(2, '0')}. {niche.icon} {niche.name} (200 Leads)
+                    </option>
+                  ))}
+                </select>
+                <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-muted text-xs">
+                  ▼
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* All 17 Niches Fully Visible Matrix Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+            {NICHES.map((niche, idx) => {
               const isActive = niche.id === activeNicheId;
+              const nicheNum = String(idx + 1).padStart(2, '0');
               return (
                 <button
                   key={niche.id}
                   type="button"
                   onClick={() => setActiveNicheId(niche.id)}
-                  className={`px-4 py-2.5 rounded-xl font-mono text-xs whitespace-nowrap transition-all flex items-center gap-2 cursor-pointer shrink-0 border ${
+                  className={`p-2.5 rounded-xl font-mono text-xs transition-all flex flex-col justify-between items-start gap-1.5 cursor-pointer border text-left ${
                     isActive
-                      ? 'bg-signal text-paper border-signal font-bold shadow-lg shadow-signal/20'
-                      : 'bg-[#121622] text-muted hover:text-white border-white/10 hover:border-white/20'
+                      ? 'bg-signal text-paper border-signal font-bold shadow-lg shadow-signal/25 scale-[1.02]'
+                      : 'bg-[#090B10] text-muted hover:text-white border-white/10 hover:border-white/20 hover:bg-white/[0.03]'
                   }`}
                 >
-                  <span>{niche.icon}</span>
-                  <span>{niche.shortName}</span>
-                  <span className={`px-1.5 py-0.2 rounded-md text-[10px] ${isActive ? 'bg-black/20 text-white' : 'bg-white/5 text-muted'}`}>
-                    200
+                  <div className="flex items-center justify-between w-full">
+                    <span className="text-base">{niche.icon}</span>
+                    <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded ${isActive ? 'bg-black/20 text-white' : 'bg-white/5 text-muted'}`}>
+                      #{nicheNum}
+                    </span>
+                  </div>
+                  <span className="line-clamp-2 leading-tight font-sans font-medium text-xs">
+                    {niche.shortName}
+                  </span>
+                  <span className={`text-[10px] ${isActive ? 'text-paper/80 font-bold' : 'text-signal'}`}>
+                    200 leads
                   </span>
                 </button>
               );
