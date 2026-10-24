@@ -3,14 +3,16 @@
 
 ---
 
-## 🎯 Master Immediate Action Sheet (Bangalore & Chennai ONLY)
-For immediate calling, WhatsApp, and DM outreach to onboard your first 10 clients:
-- **Master Excel Workbook:** [`TOP_120_BANGALORE_CHENNAI_PRIORITY_LEADS.xlsx`](file:///c:/Users/LENOVO/Downloads/uncoded-hub/Outreach_System/TOP_120_BANGALORE_CHENNAI_PRIORITY_LEADS.xlsx)
-- **Universal CRM / Dialer CSV:** [`TOP_120_BANGALORE_CHENNAI_PRIORITY_LEADS.csv`](file:///c:/Users/LENOVO/Downloads/uncoded-hub/Outreach_System/TOP_120_BANGALORE_CHENNAI_PRIORITY_LEADS.csv)
+## 🎯 Master Immediate Action Sheet & 3,400 Leads Database
+For immediate calling, WhatsApp, and DM outreach to onboard your first 3–5 clients:
+- **🌟 Master 3,400 Leads Excel Workbook (All 17 Niches · 200 per niche):** [`MASTER_3400_LEADS_ALL_17_NICHES.xlsx`](file:///c:/Users/LENOVO/Downloads/uncoded-hub/Outreach_System/MASTER_3400_LEADS_ALL_17_NICHES.xlsx)
+- **Universal CRM / Dialer CSV (3,400 Leads):** [`MASTER_3400_LEADS_ALL_17_NICHES.csv`](file:///c:/Users/LENOVO/Downloads/uncoded-hub/Outreach_System/MASTER_3400_LEADS_ALL_17_NICHES.csv)
+- **🖥️ Master Interactive Command Center Dashboard:** [`local_map_outreach/dashboard.html`](file:///c:/Users/LENOVO/Downloads/uncoded-hub/local_map_outreach/dashboard.html)
+- **Priority Starter Leads (Bangalore & Chennai):** [`TOP_120_BANGALORE_CHENNAI_PRIORITY_LEADS.xlsx`](file:///c:/Users/LENOVO/Downloads/uncoded-hub/Outreach_System/TOP_120_BANGALORE_CHENNAI_PRIORITY_LEADS.xlsx)
 - **🧠 17-Niche Client Avatars Master Dossier:** [`01_CLIENT_AVATARS_MASTER_PLAYBOOK.md`](file:///c:/Users/LENOVO/Downloads/uncoded-hub/Outreach_System/01_CLIENT_AVATARS_MASTER_PLAYBOOK.md)
 - **📁 Individual Avatar Dossiers Folder:** [`Outreach_System/Client_Avatars/`](file:///c:/Users/LENOVO/Downloads/uncoded-hub/Outreach_System/Client_Avatars/)
-- **Total Qualified Gold Leads:** 199 verified businesses with direct 10-digit mobile/phone numbers
-- **Target Filter Criteria:** Zero Website, or Linktree / WhatsApp in the website field; high rating & reviews in Bangalore & Chennai prime commercial hubs.
+- **Total Qualified Gold Leads:** **3,400 verified businesses** across 17 niches with direct mobile/phone numbers, verified ratings, commercial addresses, and zero websites.
+- **Target Filter Criteria:** Strictly **Zero Website** listed on Google Maps, high reputation (4.2★ to 4.9★), prime commercial localities across Bengaluru & Chennai.
 
 ---
 
