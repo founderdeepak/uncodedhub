@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Saga & B2B Growth Strategy | Dhananjay Joshi Pure Photography</title>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #0a0b0e;
+      --bg-card: #13161c;
+      --bg-elevated: #1a1e27;
+      --accent-gold: #c5a059;
+      --accent-gold-light: #e2c286;
+      --accent-gold-dim: rgba(197, 160, 89, 0.12);
+      --text-main: #f3f4f6;
+      --text-muted: #9aa2ae;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-gold: rgba(197, 160, 89, 0.35);
+      --danger: #ef4444;
+      --success: #10b981;
+      --font-heading: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Header */
+    .top-hero {
+      background: linear-gradient(180deg, #12151c 0%, #0a0b0e 100%);
+      padding: 60px 24px 50px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-gold);
+      position: relative;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-gold-dim);
+      border: 1px solid var(--border-gold);
+      padding: 6px 16px;
+      border-radius: 50px;
+      color: var(--accent-gold-light);
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .top-hero h1 {
+      font-family: var(--font-heading);
+      font-size: 2.8rem;
+      color: #fff;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    .top-hero h1 span {
+      background: linear-gradient(135deg, #fff 30%, var(--accent-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .top-hero p {
+      max-width: 800px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    /* Section Headings */
+    .section-title-wrap {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--accent-gold);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      color: #fff;
+    }
+
+    /* The Real Story: Case Study Comparison */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 70px;
+    }
+    .case-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 36px;
+      border: 1px solid var(--border-subtle);
+      position: relative;
+    }
+    .case-card.danger {
+      border-color: rgba(239, 68, 68, 0.35);
+      background: linear-gradient(180deg, rgba(239, 68, 68, 0.04) 0%, var(--bg-card) 100%);
+    }
+    .case-card.success {
+      border-color: rgba(197, 160, 89, 0.45);
+      background: linear-gradient(180deg, rgba(197, 160, 89, 0.05) 0%, var(--bg-card) 100%);
+    }
+    .case-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .case-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .case-card.danger .case-icon {
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--danger);
+    }
+    .case-card.success .case-icon {
+      background: var(--accent-gold-dim);
+      color: var(--accent-gold-light);
+    }
+    .case-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      color: #fff;
+    }
+    .case-steps {
+      list-style: none;
+      margin-top: 20px;
+    }
+    .case-step-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .step-marker {
+      font-weight: 700;
+      min-width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      margin-top: 2px;
+    }
+    .case-card.danger .step-marker {
+      background: rgba(239, 68, 68, 0.2);
+      color: var(--danger);
+    }
+    .case-card.success .step-marker {
+      background: var(--accent-gold-dim);
+      color: var(--accent-gold-light);
+    }
+    .case-result-box {
+      margin-top: 24px;
+      padding: 16px 20px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .case-card.danger .case-result-box {
+      background: rgba(239, 68, 68, 0.1);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+    .case-card.success .case-result-box {
+      background: var(--accent-gold-dim);
+      color: var(--accent-gold-light);
+      border: 1px solid var(--border-gold);
+    }
+
+    /* The 5-Step Customer Saga Journey */
+    .saga-timeline {
+      position: relative;
+      margin: 40px 0 80px;
+    }
+    .timeline-bar {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 36px;
+      width: 3px;
+      background: linear-gradient(180deg, var(--accent-gold) 0%, rgba(197, 160, 89, 0.1) 100%);
+      z-index: 1;
+    }
+    .saga-card {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      gap: 28px;
+      margin-bottom: 40px;
+    }
+    .saga-number-circle {
+      min-width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 2px solid var(--accent-gold);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 25px rgba(197, 160, 89, 0.2);
+    }
+    .saga-number-circle span:first-child {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      line-height: 1;
+    }
+    .saga-number-circle span:last-child {
+      font-size: 0.6rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #aaa;
+    }
+    .saga-body {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 28px 32px;
+      transition: var(--transition);
+    }
+    .saga-body:hover {
+      border-color: var(--border-gold);
+      transform: translateX(6px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .saga-actor-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-gold);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .saga-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .saga-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .saga-quote {
+      background: var(--bg-elevated);
+      border-left: 3px solid var(--accent-gold);
+      padding: 12px 18px;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.88rem;
+      font-style: italic;
+      color: #e5e7eb;
+    }
+
+    /* 3 Client Personas */
+    .personas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 70px;
+    }
+    .persona-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+    .persona-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+    }
+    .persona-type {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-gold);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .persona-name {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .persona-meta {
+      font-size: 0.82rem;
+      color: #888;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .persona-needs-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ddd;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .persona-needs-list {
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .persona-needs-list li {
+      margin-bottom: 6px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .persona-needs-list li i {
+      color: var(--accent-gold);
+      font-size: 0.75rem;
+    }
+
+    /* Final CTA Callout */
+    .cta-box {
+      background: linear-gradient(135deg, #181d26 0%, #101318 100%);
+      border: 1px solid var(--border-gold);
+      border-radius: 16px;
+      padding: 50px 40px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+    .cta-box h3 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .cta-box p {
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 30px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--accent-gold), #9e7d38);
+      color: #050608 !important;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: 0 6px 25px rgba(197, 160, 89, 0.3);
+    }
+    .btn-gold:hover {
+      background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--accent-gold);
+      border: 1px solid var(--border-gold);
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-outline:hover {
+      background: var(--accent-gold-dim);
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .comparison-grid, .personas-grid {
+        grid-template-columns: 1fr;
+      }
+      .top-hero h1 {
+        font-size: 2.1rem;
+      }
+      .timeline-bar {
+        left: 20px;
+      }
+      .saga-card {
+        gap: 16px;
+      }
+      .saga-number-circle {
+        min-width: 50px;
+        height: 50px;
+      }
+      .saga-number-circle span:first-child {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Hero Header -->
+  <header class="top-hero">
+    <div class="badge">
+      <i class="fa-solid fa-compass-drafting"></i> Exclusive Strategic Dossier
+    </div>
+    <h1>The Customer Saga & <span>B2B Sales Blueprint</span></h1>
+    <p>
+      Prepared specifically for <strong>Dhananjay Joshi</strong>. A clear, step-by-step breakdown of how luxury architects, high-end interior designers, and multi-crore flat owners discover, evaluate, and purchase custom fine art wildlife frames.
+    </p>
+  </header>
+
+  <main class="container">
+
+    <!-- Comparison: The Real ITC Story vs Digital Atelier -->
+    <section>
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Root Cause Analysis</span>
+        <h2 class="section-title">The Real Reason ITC Slipped Away (And How We Fix It)</h2>
+      </div>
+
+      <div class="comparison-grid">
+        <!-- Old Approach -->
+        <div class="case-card danger">
+          <div class="case-header">
+            <div class="case-icon">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--danger); font-weight: 700; letter-spacing: 1px;">The Old Approach</span>
+              <h3 class="case-title">Why the ITC Chennai Opportunity Stalled</h3>
+            </div>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">
+            Dhananjay approached the project with immense passion and world-class photos, but ran into the B2B gatekeeper wall:
+          </p>
+          <ul class="case-steps">
+            <li class="case-step-item">
+              <div class="step-marker">1</div>
+              <div><strong>Builders Cannot Decide Art:</strong> Real estate developers only build empty concrete shells. They outsource 100% of wall decor to interior design firms.</div>
+            </li>
+            <li class="case-step-item">
+              <div class="step-marker">2</div>
+              <div><strong>Foreign / Out-of-State Designers:</strong> The designers on premier projects are based in Mumbai, Singapore, or Italy. You cannot physically visit them with 20 heavy wooden frames.</div>
+            </li>
+            <li class="case-step-item">
+              <div class="step-marker">3</div>
+              <div><strong>WhatsApp / Instagram Look Informal:</strong> When a photographer shares phone numbers or social links, corporate procurement teams perceive him as an "individual hobbyist," not an accredited art supplier.</div>
+            </li>
+            <li class="case-step-item">
+              <div class="step-marker">4</div>
+              <div><strong>Zero Technical Proof of Permanence:</strong> Without a formal specification portal, designers fear the print will fade under indoor LED spotlights in 2 years.</div>
+            </li>
+          </ul>
+          <div class="case-result-box">
+            <i class="fa-solid fa-xmark" style="margin-right: 6px;"></i> Result: Stalled negotiations, zero institutional trust, lost bulk order.
+          </div>
+        </div>
+
+        <!-- New Approach -->
+        <div class="case-card success">
+          <div class="case-header">
+            <div class="case-icon">
+              <i class="fa-solid fa-gem"></i>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700; letter-spacing: 1px;">The Digital Atelier Solution</span>
+              <h3 class="case-title">How the Website Closes the Next Luxury Project</h3>
+            </div>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">
+            The website is not an online store. It is Dhananjay’s <strong>Institutional Spec Dossier & Sales Representative</strong>:
+          </p>
+          <ul class="case-steps">
+            <li class="case-step-item">
+              <div class="step-marker"><i class="fa-solid fa-check"></i></div>
+              <div><strong>Instant Global Credibility:</strong> A single curated link (`dhananjaywildlife.com`) instantly positions him as a master fine art atelier backed by 25 years of printing engineering.</div>
+            </li>
+            <li class="case-step-item">
+              <div class="step-marker"><i class="fa-solid fa-check"></i></div>
+              <div><strong>The Designer's Presentation Pitchbook:</strong> An out-of-state designer can pull out their iPad in front of a flat owner and say: <em>"Here is our recommended living room art from Dhananjay Joshi."</em></div>
+            </li>
+            <li class="case-step-item">
+              <div class="step-marker"><i class="fa-solid fa-check"></i></div>
+              <div><strong>Architectural Specification Sheets:</strong> Archival Matt paper, Belgian Canvas, light-resistant pigments, and solid Teak frames answer procurement checklists in 30 seconds.</div>
+            </li>
+            <li class="case-step-item">
+              <div class="step-marker"><i class="fa-solid fa-check"></i></div>
+              <div><strong>Direct High-Ticket WhatsApp Funnel:</strong> Eliminates bargain hunters. Sends pre-qualified inquiries for 4 to 12 frames directly to his phone.</div>
+            </li>
+          </ul>
+          <div class="case-result-box">
+            <i class="fa-solid fa-check" style="margin-right: 6px;"></i> Result: Institutional clearance, designer partnership, repeat orders across multiple buildings.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The 5-Step Customer Saga (Chronological Journey) -->
+    <section>
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">The Buyer's Journey</span>
+        <h2 class="section-title">The 5-Step Customer Saga (How a ₹1,20,000 Order Happens)</h2>
+      </div>
+
+      <div class="saga-timeline">
+        <div class="timeline-bar"></div>
+
+        <!-- Step 1 -->
+        <div class="saga-card">
+          <div class="saga-number-circle">
+            <span>01</span>
+            <span>Trigger</span>
+          </div>
+          <div class="saga-body">
+            <span class="saga-actor-tag"><i class="fa-solid fa-building"></i> The Genesis</span>
+            <h3 class="saga-title">An HNI Buys a ₹10 Crore Luxury Penthouse in Chennai</h3>
+            <p class="saga-desc">
+              A prominent industrialist or tech founder purchases a 5,000 sq.ft. bare luxury flat. They hire a top-tier Interior Architecture firm with a ₹1.5 Crore interior decoration budget.
+            </p>
+            <div class="saga-quote">
+              "We have 8 massive bare walls in the double-height living room and dining salon. We need statement fine art that feels powerful, organic, and timeless—not commercial digital canvas prints from Amazon."
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="saga-card">
+          <div class="saga-number-circle">
+            <span>02</span>
+            <span>Discovery</span>
+          </div>
+          <div class="saga-body">
+            <span class="saga-actor-tag"><i class="fa-solid fa-magnifying-glass"></i> The Search</span>
+            <h3 class="saga-title">The Senior Architect Searches for Credible Indian Fine Art</h3>
+            <p class="saga-desc">
+              The design team searches Google for <em>"Archival wildlife fine art frames India"</em> or receives a curated introduction link to Dhananjay Joshi's website. They land on the digital atelier.
+            </p>
+            <div class="saga-quote">
+              "Wait, this photographer has 25 years of printing engineering experience and uses light-resistant pigment inks? That solves our biggest fear of colors fading under warm 3000K residential spotlights."
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="saga-card">
+          <div class="saga-number-circle">
+            <span>03</span>
+            <span>Curating</span>
+          </div>
+          <div class="saga-body">
+            <span class="saga-actor-tag"><i class="fa-solid fa-palette"></i> The Interactive Visualizer</span>
+            <h3 class="saga-title">The Interior Designer Curates Frames in the Web Atelier</h3>
+            <p class="saga-desc">
+              Instead of browsing clumsy PDFs, the designer uses Dhananjay's **Interactive Frame Customizer**:
+              testing <em>"The Sovereign" Bengal Tiger</em> in <strong>30x30 Inches</strong> with a <strong>Natural Teakwood</strong> frame, and checking the <strong>Grand Salon Wall Layout</strong>.
+            </p>
+            <div class="saga-quote">
+              "The wall mockups on this website match our 3D architectural renders. We can present this exact collection to our client in tomorrow's review meeting."
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="saga-card">
+          <div class="saga-number-circle">
+            <span>04</span>
+            <span>Presentation</span>
+          </div>
+          <div class="saga-body">
+            <span class="saga-actor-tag"><i class="fa-solid fa-tablet-screen-button"></i> The Pitch</span>
+            <h3 class="saga-title">The Designer Shows the Website on an iPad to the HNI Client</h3>
+            <p class="saga-desc">
+              During the final material selection meeting at the site, the interior designer hands their iPad to the penthouse owner, opening Dhananjay's curated collection.
+            </p>
+            <div class="saga-quote">
+              "Client: 'These tiger and tusker prints look magnificent. And he has national awards? Approved. Order 6 frames for the living room and staircase gallery.'"
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="saga-card">
+          <div class="saga-number-circle">
+            <span>05</span>
+            <span>Closing</span>
+          </div>
+          <div class="saga-body">
+            <span class="saga-actor-tag"><i class="fa-solid fa-handshake"></i> The B2B Deal</span>
+            <h3 class="saga-title">A High-Ticket B2B WhatsApp Order Lands on Dhananjay's Phone</h3>
+            <p class="saga-desc">
+              The interior designer clicks the <strong>B2B Project Inquiry / WhatsApp</strong> button with the project specs pre-filled. Dhananjay receives an inquiry for **6 custom frames totaling ₹1,20,000+**, takes a 50% advance, and delivers the museum pieces.
+            </p>
+            <div class="saga-quote">
+              "Because the experience was seamless, this same architectural firm specifies Dhananjay Joshi for their next 4 upcoming villa projects in ECR and Bangalore."
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The 3 Client Avatars Breakdown -->
+    <section>
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Audience Matrix</span>
+        <h2 class="section-title">The 3 Key Personas Dhananjay Sells To</h2>
+      </div>
+
+      <div class="personas-grid">
+        <!-- Persona 1 -->
+        <div class="persona-card">
+          <div>
+            <span class="persona-type">Primary Buyer (80% Volume)</span>
+            <h4 class="persona-name">The Luxury Interior Architect</h4>
+            <p class="persona-meta">
+              Decorates multi-crore residences, penthouses, and executive suites across Chennai, Bangalore & Mumbai.
+            </p>
+          </div>
+          <div>
+            <div class="persona-needs-title">What They Need From Dhananjay:</div>
+            <ul class="persona-needs-list">
+              <li><i class="fa-solid fa-check"></i> Archival pigment ink guarantee</li>
+              <li><i class="fa-solid fa-check"></i> Sizing up to 30x30" & panoramic</li>
+              <li><i class="fa-solid fa-check"></i> Clean digital lookbook for clients</li>
+              <li><i class="fa-solid fa-check"></i> GST invoices & direct delivery</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Persona 2 -->
+        <div class="persona-card">
+          <div>
+            <span class="persona-type">End Decision Maker</span>
+            <h4 class="persona-name">The Ultra-HNI Flat Owner</h4>
+            <p class="persona-meta">
+              Industrialists, Tech CEOs, and Senior Doctors buying luxury homes in Poes Garden, Boat Club, or ECR.
+            </p>
+          </div>
+          <div>
+            <div class="persona-needs-title">What They Need From Dhananjay:</div>
+            <ul class="persona-needs-list">
+              <li><i class="fa-solid fa-check"></i> Soulful conversation pieces</li>
+              <li><i class="fa-solid fa-check"></i> Authentic photographer story</li>
+              <li><i class="fa-solid fa-check"></i> 100% glare-free Matt Paper</li>
+              <li><i class="fa-solid fa-check"></i> Pride of owning rare Indian art</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Persona 3 -->
+        <div class="persona-card">
+          <div>
+            <span class="persona-type">Institutional Contracts</span>
+            <h4 class="persona-name">Hospitality & Resort Developers</h4>
+            <p class="persona-meta">
+              Chains like ITC, Taj, CGH Earth, or jungle safari lodges in Kabini and Bandhavgarh.
+            </p>
+          </div>
+          <div>
+            <div class="persona-needs-title">What They Need From Dhananjay:</div>
+            <ul class="persona-needs-list">
+              <li><i class="fa-solid fa-check"></i> Bulk orders of 20 to 50 frames</li>
+              <li><i class="fa-solid fa-check"></i> Institutional supplier accreditation</li>
+              <li><i class="fa-solid fa-check"></i> Theme-based corridor collections</li>
+              <li><i class="fa-solid fa-check"></i> Strict dispatch deadlines</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Action Card -->
+    <div class="cta-box">
+      <h3>The Website is Your 24/7 B2B Sales Representative</h3>
+      <p>
+        Without a website, you are an individual photographer with a WhatsApp number trying to reach distant builders.  
+        With this Digital Atelier, you are an accredited **Fine Art Institution** that architects are proud to specify in their multi-crore proposals.
+      </p>
+      <div class="cta-actions">
+        <a href="https://uncodedhub.com/demos/dhananjay-joshi-wildlife.html" target="_blank" class="btn-gold">
+          <i class="fa-solid fa-eye"></i> View Live Atelier Demo
+        </a>
+        <a href="https://wa.me/918682953144?text=Hi%20Deepak,%20I%20reviewed%20the%20Customer%20Saga%20dossier%20and%20let's%20discuss%20the%20next%20steps" class="btn-outline">
+          <i class="fa-brands fa-whatsapp"></i> Discuss Next Steps with Deepak
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>
