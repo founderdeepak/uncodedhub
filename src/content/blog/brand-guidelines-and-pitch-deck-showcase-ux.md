@@ -4,7 +4,7 @@ niche: "creative-portfolio"
 date: "2026-08-20T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of pitch deck & presentation showcases: how leading studios display brand guidelines for Creative Design Studios & Agencies. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Pitch Deck & Presentation Showcases: How Leading Studios Display Brand Guidelines: Architectural blueprint for Creative Design Studios & Agencies. Explore per"
+metaDescription: "Pitch Deck & Presentation Showcases: How Leading Studios Display Brand Guidelines: Architectural blueprint for Creative Design Studios & Agencies."
 keywords: "brand guidelines presentation online, interactive brand style guide, packaging design presentation, digital brand book showcase, uncoded hub blueprint"
 image: "/blog/brand-guidelines-and-pitch-deck-showcase-ux.webp"
 ---

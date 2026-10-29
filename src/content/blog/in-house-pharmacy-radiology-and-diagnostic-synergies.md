@@ -4,7 +4,7 @@ niche: "clinic-polyclinic"
 date: "2026-09-28T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of in-house pharmacy & radiology synergies: highlighting x-ray, ultrasound, and pharmacy for Multi-Specialty Polyclinics. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "In-House Pharmacy & Radiology Synergies: Highlighting X-Ray, Ultrasound, and Pharmacy: Architectural blueprint for Multi-Specialty Polyclinics. Explore perfor"
+metaDescription: "In-House Pharmacy & Radiology Synergies: Highlighting X-Ray, Ultrasound, and Pharmacy: Architectural blueprint for Multi-Specialty Polyclinics."
 keywords: "one stop clinic amenities showcase, in house ultrasound x-ray clinic, pharmacy attached polyclinic, comprehensive outpatient care, uncoded hub blueprint"
 image: "/blog/in-house-pharmacy-radiology-and-diagnostic-synergies.webp"
 ---

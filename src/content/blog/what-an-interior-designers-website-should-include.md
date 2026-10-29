@@ -4,7 +4,7 @@ niche: "interior-designers"
 date: "2026-03-21T08:00:00+05:30"
 author: "deepak"
 excerpt: "What an interior design website needs to turn browsers into booked consultations. A working checklist for design studios in Bengaluru and across India."
-metaDescription: "What an interior design website needs to turn browsers into booked consultations. A working checklist for design studios in Bengaluru and across India."
+metaDescription: "What an interior design website needs to turn browsers into booked consultations. A working checklist for design studios in Bengaluru and across."
 keywords: "interior designers website, interior design website, interior designers website design, high converting web architecture"
 image: "/blog/what-an-interior-designers-website-should-include.webp"
 ---

@@ -4,7 +4,7 @@ niche: "coaches-consultants"
 date: "2026-07-24T16:00:00+05:30"
 author: "deepak"
 excerpt: "Positioning discrete outplacement guidance, board resume structuring, and compensation negotiations. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Positioning discrete outplacement guidance, board resume structuring, and compensation negotiations.... Discover technical benchmarks, conversion frameworks, "
+metaDescription: "Positioning discrete outplacement guidance, board resume structuring, and compensation negotiations.... Discover technical benchmarks, conversion."
 keywords: "c suite career transition coach website, coaches consultants website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/white-collar-career-transition-coaching-landing-page.webp"
 ---

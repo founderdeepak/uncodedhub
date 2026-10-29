@@ -4,7 +4,7 @@ niche: "dental-clinics"
 date: "2026-06-27T08:00:00+05:30"
 author: "geetha"
 excerpt: "National Medical Commission (NMC) and State Dental Council regulations prohibit misleading claims, celebrity endorsements, and sensationalized before/after imagery. Here is how to maintain strict regulatory compliance while building clinical authority."
-metaDescription: "Can doctors show before/after photos in India? Complete 2026 guide to NMC & Dental Council advertising rules, legal photo consent, and avoiding license penalties."
+metaDescription: "Can doctors show before/after photos in India? Complete 2026 guide to NMC & Dental Council advertising rules, legal photo consent, and avoiding license."
 keywords: "medical advertising ethics, nmc advertising guidelines for doctors, dental council advertising ethics, dental clinic web architecture, high converting web architecture"
 image: "/blog/medical-advertising-ethics-before-after-photos-india.webp"
 ---

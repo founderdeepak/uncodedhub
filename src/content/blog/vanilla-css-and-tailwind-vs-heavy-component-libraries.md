@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-08-20T21:00:00+05:30"
 author: "geetha"
 excerpt: "Eliminating runtime CSS-in-JS overhead to maintain sub-100KB initial JavaScript bundles. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Eliminating runtime CSS-in-JS overhead to maintain sub-100KB initial JavaScript bundles.... Discover technical benchmarks, conversion frameworks, and architec"
+metaDescription: "Eliminating runtime CSS-in-JS overhead to maintain sub-100KB initial JavaScript bundles.... Discover technical benchmarks, conversion frameworks."
 keywords: "tailwind css vs material ui bundle size, studio website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/vanilla-css-and-tailwind-vs-heavy-component-libraries.webp"
 ---

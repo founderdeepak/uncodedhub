@@ -4,7 +4,7 @@ niche: "clinic-polyclinic"
 date: "2026-10-06T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of sub-second emergency triage speed: fast emergency numbers & one-tap google maps for Multi-Specialty Polyclinics. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Sub-Second Emergency Triage Speed: Fast Emergency Numbers & One-Tap Google Maps: Architectural blueprint for Multi-Specialty Polyclinics. Explore performance"
+metaDescription: "Sub-Second Emergency Triage Speed: Fast Emergency Numbers & One-Tap Google Maps: Architectural blueprint for Multi-Specialty Polyclinics."
 keywords: "clinic emergency contact web ux, one tap clinic calling, instant google maps directions, zero delay mobile emergency header, uncoded hub blueprint"
 image: "/blog/emergency-triage-speed-and-one-tap-directions-ux.webp"
 ---

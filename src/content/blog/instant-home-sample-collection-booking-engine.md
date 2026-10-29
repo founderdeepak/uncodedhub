@@ -4,7 +4,7 @@ niche: "healthcare-diagnostics"
 date: "2026-09-01T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of 1-click home sample collection engine: streamlining phlebotomist visits with zero delay for Pathology & Diagnostic Labs. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "1-Click Home Sample Collection Engine: Streamlining Phlebotomist Visits with Zero Delay: Architectural blueprint for Pathology & Diagnostic Labs. Explore perf"
+metaDescription: "1-Click Home Sample Collection Engine: Streamlining Phlebotomist Visits with Zero Delay: Architectural blueprint for Pathology & Diagnostic Labs."
 keywords: "home sample collection booking online, book blood test at home, phlebotomist visit scheduling, doorstep sample collection funnel, uncoded hub blueprint"
 image: "/blog/instant-home-sample-collection-booking-engine.webp"
 ---

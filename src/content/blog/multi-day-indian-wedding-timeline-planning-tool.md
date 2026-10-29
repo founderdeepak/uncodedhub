@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-05-23T21:00:00+05:30"
 author: "deepak"
 excerpt: "Downloadable timeline schedules coordinating Haldi, Mehendi, Sangeet, and Reception shoots. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Downloadable timeline schedules coordinating Haldi, Mehendi, Sangeet, and Reception shoots.... Discover technical benchmarks, conversion frameworks, and archi"
+metaDescription: "Downloadable timeline schedules coordinating Haldi, Mehendi, Sangeet, and Reception shoots.... Discover technical benchmarks, conversion frameworks."
 keywords: "indian wedding photography timeline 3 day sangeet, wedding photographers website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/multi-day-indian-wedding-timeline-planning-tool.webp"
 ---

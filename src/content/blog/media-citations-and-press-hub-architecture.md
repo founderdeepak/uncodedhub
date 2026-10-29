@@ -4,7 +4,7 @@ niche: "business-portfolio"
 date: "2026-05-11T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of media citations & press hub: structuring bloomberg, forbes, and reuters mentions for e-e-a-t for Enterprise B2B & Corporate Advisory. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Media Citations & Press Hub: Structuring Bloomberg, Forbes, and Reuters Mentions for E-E-A-T: Architectural blueprint for Enterprise B2B & Corporate Advisory."
+metaDescription: "Media Citations & Press Hub: Structuring Bloomberg, Forbes, and Reuters Mentions for E-E-A-T: Architectural blueprint for Enterprise B2B & Corporate."
 keywords: "corporate media press kit website, bloomberg reuters press mentions, consulting e-e-a-t verification, media quote archive, uncoded hub blueprint"
 image: "/blog/media-citations-and-press-hub-architecture.webp"
 ---

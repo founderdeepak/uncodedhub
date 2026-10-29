@@ -4,7 +4,7 @@ niche: "spa-wellness"
 date: "2026-05-17T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of interactive treatment ritual menus: replacing flat pdfs with curated wellness journeys for Luxury Spas & Wellness Retreats. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Interactive Treatment Ritual Menus: Replacing Flat PDFs with Curated Wellness Journeys: Architectural blueprint for Luxury Spas & Wellness Retreats. Explore p"
+metaDescription: "Interactive Treatment Ritual Menus: Replacing Flat PDFs with Curated Wellness Journeys: Architectural blueprint for Luxury Spas & Wellness Retreats."
 keywords: "interactive spa treatment menu, replace spa pdf price list, curated therapy packages, massage and facial interactive guide, uncoded hub blueprint"
 image: "/blog/interactive-spa-treatment-ritual-menus.webp"
 ---

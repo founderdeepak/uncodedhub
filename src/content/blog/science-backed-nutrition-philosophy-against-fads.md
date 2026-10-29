@@ -4,7 +4,7 @@ niche: "fitness-coach"
 date: "2026-07-09T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of nutrition & supplement philosophy: establishing science-backed credibility against fads for Private Fitness Coaches & Personal Trainers. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Nutrition & Supplement Philosophy: Establishing Science-Backed Credibility Against Fads: Architectural blueprint for Private Fitness Coaches & Personal Traine"
+metaDescription: "Nutrition & Supplement Philosophy: Establishing Science-Backed Credibility Against Fads: Architectural blueprint for Private Fitness Coaches & Personal."
 keywords: "evidence based trainer nutrition page, keto carnivore vs balanced nutrition proof, debunking fitness myths, evidence based coaching, uncoded hub blueprint"
 image: "/blog/science-backed-nutrition-philosophy-against-fads.webp"
 ---

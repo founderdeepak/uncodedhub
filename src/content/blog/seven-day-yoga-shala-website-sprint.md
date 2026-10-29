@@ -4,7 +4,7 @@ niche: "yoga-meditation"
 date: "2026-08-09T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of the 7-day yoga shala website sprint: uncoded hub"
-metaDescription: "The 7-Day Yoga Shala Website Sprint: Uncoded Hub"
+metaDescription: "Guide on the 7-day yoga shala website sprint: uncoded hub by Uncoded Hub. 7-day web design sprint, sub-second React speed, late means 100% free guarantee."
 keywords: "yoga shala web design sprint, uncoded hub yoga website blueprint, 7 day yoga sanctuary launch, fixed price yoga web design, uncoded hub blueprint"
 image: "/blog/seven-day-yoga-shala-website-sprint.webp"
 ---

@@ -4,7 +4,7 @@ niche: "interior-designers"
 date: "2026-06-30T21:00:00+05:30"
 author: "geetha"
 excerpt: "Over 80% of interior design inquiries originate on mobile phones. How to design touch-friendly image carousels, thumb-zone navigation, and instant WhatsApp booking."
-metaDescription: "Over 80% of interior design inquiries originate on mobile phones. How to design touch-friendly image carousels, thumb-zone navigation, and instant WhatsApp booking."
+metaDescription: "Over 80% of interior design inquiries originate on mobile phones. How to design touch-friendly image carousels, thumb-zone navigation, and instant."
 keywords: "mobile interior design, interior design website, interior designers website design, high converting web architecture"
 image: "/blog/mobile-portfolio-ux-interior-designers.webp"
 ---

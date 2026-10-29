@@ -4,7 +4,7 @@ niche: "interior-designers"
 date: "2026-04-08T08:00:00+05:30"
 author: "deepak"
 excerpt: "A deeper look at what actually makes an architecture firm's portfolio site work for the buyers who commission buildings, rather than the peers who admire them."
-metaDescription: "A deeper look at what actually makes an architecture firm's portfolio site work for the buyers who commission buildings, rather than the peers who admire..."
+metaDescription: "A deeper look at what actually makes an architecture firm's portfolio site work for the buyers who commission buildings, rather than the peers."
 keywords: "makes good architecture, interior design website, interior designers website design, high converting web architecture"
 image: "/blog/architecture-portfolio-website-deeper-look.webp"
 ---

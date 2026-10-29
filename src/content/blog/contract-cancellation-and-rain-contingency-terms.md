@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-06-08T21:00:00+05:30"
 author: "deepak"
 excerpt: "Plain-English contract explanations de-risking weather disruptions and date rescheduling. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Plain-English contract explanations de-risking weather disruptions and date rescheduling.... Discover technical benchmarks, conversion frameworks, and archite"
+metaDescription: "Plain-English contract explanations de-risking weather disruptions and date rescheduling.... Discover technical benchmarks, conversion frameworks."
 keywords: "wedding photography contract rain force majeure, wedding photographers website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/contract-cancellation-and-rain-contingency-terms.webp"
 ---

@@ -4,7 +4,7 @@ niche: "clinic-polyclinic"
 date: "2026-09-22T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of what a multi-specialty polyclinic website should include to streamline patient inflow for Multi-Specialty Polyclinics. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "What a Multi-Specialty Polyclinic Website Should Include to Streamline Patient Inflow: Architectural blueprint for Multi-Specialty Polyclinics. Explore perfor"
+metaDescription: "What a Multi-Specialty Polyclinic Website Should Include to Streamline Patient Inflow: Architectural blueprint for Multi-Specialty Polyclinics."
 keywords: "polyclinic website design, multi specialty clinic web design, outpatient department portal, clinic appointment booking, uncoded hub blueprint"
 image: "/blog/what-a-multi-specialty-polyclinic-website-should-include.webp"
 ---

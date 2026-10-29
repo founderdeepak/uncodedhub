@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-06-02T08:00:00+05:30"
 author: "deepak"
 excerpt: "Showcasing floral installations, stage architecture, truss lighting, and table scaping. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Showcasing floral installations, stage architecture, truss lighting, and table scaping.... Discover technical benchmarks, conversion frameworks, and architect"
+metaDescription: "Showcasing floral installations, stage architecture, truss lighting, and table scaping.... Discover technical benchmarks, conversion frameworks."
 keywords: "luxury wedding decor production portfolio website, wedding photographers website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/wedding-decor-and-scenography-portfolio-for-planners.webp"
 ---

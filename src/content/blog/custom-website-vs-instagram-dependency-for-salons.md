@@ -4,7 +4,7 @@ niche: "salon-beauty"
 date: "2026-06-21T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of custom build vs instagram dependency: why algorithm shifts cost salons high-end clients for Salons & Bridal Beauty Studios. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Custom Build vs Instagram Dependency: Why Algorithm Shifts Cost Salons High-End Clients: Architectural blueprint for Salons & Bridal Beauty Studios. Explore p"
+metaDescription: "Custom Build vs Instagram Dependency: Why Algorithm Shifts Cost Salons High-End Clients: Architectural blueprint for Salons & Bridal Beauty Studios."
 keywords: "stop relying on instagram for salon leads, own your salon client list, instagram shadowban protection, sustainable bridal business, uncoded hub blueprint"
 image: "/blog/custom-website-vs-instagram-dependency-for-salons.webp"
 ---

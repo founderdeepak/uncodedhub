@@ -4,7 +4,7 @@ niche: "coaches-consultants"
 date: "2026-08-20T08:00:00+05:30"
 author: "deepak"
 excerpt: "Event organizers, corporate event chairs, and podcast producers don't have time to read your life story. Here is the exact digital Speaker One-Sheet and Media Kit architecture that books ₹2L to ₹10L keynote fees."
-metaDescription: "Architect an authoritative speaker one-sheet and digital press kit. Win high-paying conference keynotes with speech descriptions, sizzle reels, and bio assets."
+metaDescription: "Architect an authoritative speaker one-sheet and digital press kit. Win high-paying conference keynotes with speech descriptions, sizzle reels, and bio."
 keywords: "speaker onesheet media, consulting website architecture, coaches consultants website design, high converting web architecture"
 image: "/blog/speaker-one-sheet-press-kit-website-page.webp"
 ---

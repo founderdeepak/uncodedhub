@@ -4,7 +4,7 @@ niche: "dental-clinics"
 date: "2026-07-14T14:00:00+05:30"
 author: "geetha"
 excerpt: "Why genuinely useful patient education content is one of the best SEO investments a clinic can make, and how it reduces anxiety before the visit even happens."
-metaDescription: "Why genuinely useful patient education content is one of the best SEO investments a clinic can make, and how it reduces anxiety before the visit even happens."
+metaDescription: "Why genuinely useful patient education content is one of the best SEO investments a clinic can make, and how it reduces anxiety before the visit even."
 keywords: "patient education content, dental clinic web architecture, dental clinics website design, high converting web architecture"
 image: "/blog/patient-education-content-clinic-seo.webp"
 ---

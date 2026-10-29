@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-10-01T10:00:00+05:30"
 author: "deepak"
 excerpt: "The 1-to-10 distribution framework: transforming 1,500-word guides into viral slide decks and X threads. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "The 1-to-10 distribution framework: transforming 1,500-word guides into viral slide decks and X thre... Discover technical benchmarks, conversion frameworks, "
+metaDescription: "The 1-to-10 distribution framework: transforming 1,500-word guides into viral slide decks and X thre... Discover technical benchmarks, conversion."
 keywords: "repurpose blog post into linkedin carousel, studio website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/repurposing-longform-blueprints-into-linkedin-carousels.webp"
 ---

@@ -4,7 +4,7 @@ niche: "dental-clinics"
 date: "2026-09-09T21:00:00+05:30"
 author: "deepak"
 excerpt: "Why a skin or dermatology clinic's website needs different priorities than a dental clinic's, even though the two categories often get built the same way."
-metaDescription: "Why a skin or dermatology clinic's website needs different priorities than a dental clinic's, even though the two categories often get built the same way."
+metaDescription: "Why a skin or dermatology clinic's website needs different priorities than a dental clinic's, even though the two categories often get built the same."
 keywords: "website skin clinic, dental clinic web architecture, dental clinics website design, high converting web architecture"
 image: "/blog/website-for-skin-clinic-india.webp"
 ---

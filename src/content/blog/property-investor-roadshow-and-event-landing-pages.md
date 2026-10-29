@@ -4,7 +4,7 @@ niche: "real-estate"
 date: "2026-04-20T19:00:00+05:30"
 author: "geetha"
 excerpt: "RSVP workflows for private ballroom launches and overseas investor roadshows (Dubai, Singapore). Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "RSVP workflows for private ballroom launches and overseas investor roadshows (Dubai, Singapore).... Discover technical benchmarks, conversion frameworks, and "
+metaDescription: "RSVP workflows for private ballroom launches and overseas investor roadshows (Dubai, Singapore).... Discover technical benchmarks, conversion frameworks."
 keywords: "luxury property investor meet landing page, real estate website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/property-investor-roadshow-and-event-landing-pages.webp"
 ---

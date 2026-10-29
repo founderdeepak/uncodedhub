@@ -4,7 +4,7 @@ niche: "dental-clinics"
 date: "2026-05-06T19:00:00+05:30"
 author: "geetha"
 excerpt: "Step-by-step healing timelines, dry socket prevention protocols, and soft-food diets. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Step-by-step healing timelines, dry socket prevention protocols, and soft-food diets.... Discover technical benchmarks, conversion frameworks, and architectur"
+metaDescription: "Step-by-step healing timelines, dry socket prevention protocols, and soft-food diets.... Discover technical benchmarks, conversion frameworks."
 keywords: "impacted wisdom tooth removal recovery guide, dental clinics website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/wisdom-tooth-surgical-extraction-recovery-timeline.webp"
 ---

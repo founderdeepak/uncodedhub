@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-09-24T21:00:00+05:30"
 author: "deepak"
 excerpt: "The specific things a couple looks for before messaging a wedding photographer, beyond just liking the photos, and how to make sure your site has them."
-metaDescription: "The specific things a couple looks for before messaging a wedding photographer, beyond just liking the photos, and how to make sure your site has them."
+metaDescription: "The specific things a couple looks for before messaging a wedding photographer, beyond just liking the photos, and how to make sure your site has."
 keywords: "couples actually check, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/what-couples-check-before-contacting-photographer.webp"
 ---

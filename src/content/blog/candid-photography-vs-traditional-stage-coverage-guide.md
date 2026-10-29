@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-06-11T10:00:00+05:30"
 author: "deepak"
 excerpt: "Educating families on why cinematic candid storytelling demands separate crew coordination. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Educating families on why cinematic candid storytelling demands separate crew coordination.... Discover technical benchmarks, conversion frameworks, and archi"
+metaDescription: "Educating families on why cinematic candid storytelling demands separate crew coordination.... Discover technical benchmarks, conversion frameworks."
 keywords: "candid vs traditional wedding photography difference, wedding photographers website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/candid-photography-vs-traditional-stage-coverage-guide.webp"
 ---

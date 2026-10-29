@@ -4,7 +4,7 @@ niche: "clinic-polyclinic"
 date: "2026-10-08T12:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of the 7-day polyclinic website sprint: how uncoded hub engineers clinical systems in 7 days for Multi-Specialty Polyclinics. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "The 7-Day Polyclinic Website Sprint: How Uncoded Hub Engineers Clinical Systems in 7 Days: Architectural blueprint for Multi-Specialty Polyclinics. Explore pe"
+metaDescription: "The 7-Day Polyclinic Website Sprint: How Uncoded Hub Engineers Clinical Systems in 7 Days: Architectural blueprint for Multi-Specialty Polyclinics."
 keywords: "polyclinic web design sprint, uncoded hub clinic blueprint, 7 day polyclinic website launch, fixed fee medical web development, uncoded hub blueprint"
 image: "/blog/seven-day-polyclinic-website-sprint.webp"
 ---

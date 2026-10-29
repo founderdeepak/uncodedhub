@@ -263,9 +263,9 @@ export default function Contact() {
               <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
                 <div>
                   <span className="label text-signal block mb-2">Verified studio presence</span>
-                  <h3 className="font-display text-2xl sm:text-3xl text-ink font-normal">
+                  <h2 className="font-display text-2xl sm:text-3xl text-ink font-normal">
                     Official channels &amp; profiles
-                  </h3>
+                  </h2>
                 </div>
                 <p className="text-muted text-xs sm:text-sm max-w-md">
                   Follow our live website teardowns, speed benchmarks, design notes, and verified company registry across the web.

@@ -4,7 +4,7 @@ niche: "healthcare-diagnostics"
 date: "2026-09-15T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of mobile accessibility for senior citizens: high-contrast fonts, large targets & voice search for Pathology & Diagnostic Labs. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Mobile Accessibility for Senior Citizens: High-Contrast Fonts, Large Targets & Voice Search: Architectural blueprint for Pathology & Diagnostic Labs. Explore"
+metaDescription: "Mobile Accessibility for Senior Citizens: High-Contrast Fonts, Large Targets & Voice Search: Architectural blueprint for Pathology & Diagnostic Labs."
 keywords: "senior citizen medical website accessibility, large text blood test booking, accessible healthcare web design, easy phone booking for seniors, uncoded hub blueprint"
 image: "/blog/senior-citizen-mobile-accessibility-for-health-portals.webp"
 ---

@@ -4,7 +4,7 @@ niche: "dental-clinics"
 date: "2026-05-23T10:00:00+05:30"
 author: "geetha"
 excerpt: "Why a Google Business Profile and a clinic website need to be built as one connected system rather than two separate efforts, to actually win local search."
-metaDescription: "Why a Google Business Profile and a clinic website need to be built as one connected system rather than two separate efforts, to actually win local search."
+metaDescription: "Why a Google Business Profile and a clinic website need to be built as one connected system rather than two separate efforts, to actually win local."
 keywords: "google business profile, dental clinic web architecture, dental clinics website design, high converting web architecture"
 image: "/blog/google-business-profile-website-local-clinic-seo.webp"
 ---

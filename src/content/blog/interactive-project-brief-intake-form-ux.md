@@ -4,7 +4,7 @@ niche: "creative-portfolio"
 date: "2026-08-17T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of interactive project brief intake: capturing deep client context before discovery calls for Creative Design Studios & Agencies. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Interactive Project Brief Intake: Capturing Deep Client Context Before Discovery Calls: Architectural blueprint for Creative Design Studios & Agencies. Explor"
+metaDescription: "Interactive Project Brief Intake: Capturing Deep Client Context Before Discovery Calls: Architectural blueprint for Creative Design Studios & Agencies."
 keywords: "creative agency project brief form, qualify enterprise agency clients, structured design inquiry questionnaire, replace boring contact forms, uncoded hub blueprint"
 image: "/blog/interactive-project-brief-intake-form-ux.webp"
 ---

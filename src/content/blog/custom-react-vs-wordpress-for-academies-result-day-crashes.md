@@ -4,7 +4,7 @@ niche: "educational-academy"
 date: "2026-03-25T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of custom react vs wordpress: why coaching sites crash on result days & how jamstack solves it for Educational Academies & Coaching Institutes. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Custom React vs WordPress: Why Coaching Sites Crash on Result Days & How Jamstack Solves It: Architectural blueprint for Educational Academies & Coaching Inst"
+metaDescription: "Custom React vs WordPress: Why Coaching Sites Crash on Result Days & How Jamstack Solves It: Architectural blueprint for Educational Academies & Coaching."
 keywords: "wordpress crash on result day, high traffic coaching website, react jamstack for schools, zero downtime academy portal, uncoded hub blueprint"
 image: "/blog/custom-react-vs-wordpress-for-academies-result-day-crashes.webp"
 ---

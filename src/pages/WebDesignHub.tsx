@@ -262,10 +262,10 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
       <section className="py-20 sm:py-28 bg-paper">
         <Shell>
           <div className="flex items-center justify-between mb-10 pb-4 border-b border-rule">
-            <p className="font-mono text-xs text-muted uppercase tracking-wider">
-              Showing {filteredNiches.length} Specialized Industry Platforms
-            </p>
-            <span className="font-mono text-xs text-signal">Deepak & Geetha Personal Delivery</span>
+            <h2 className="font-display text-2xl sm:text-3xl text-ink font-normal tracking-tight">
+              17 Specialized High-Ticket Industry Platforms
+            </h2>
+            <span className="font-mono text-xs text-signal hidden sm:inline">Deepak &amp; Geetha Personal Delivery</span>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">

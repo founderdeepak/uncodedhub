@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-05-31T21:00:00+05:30"
 author: "geetha"
 excerpt: "Editorial lighting studies capturing heirloom jewellery, lehengas, and emotional family moments. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Editorial lighting studies capturing heirloom jewellery, lehengas, and emotional family moments.... Discover technical benchmarks, conversion frameworks, and "
+metaDescription: "Editorial lighting studies capturing heirloom jewellery, lehengas, and emotional family moments.... Discover technical benchmarks, conversion frameworks."
 keywords: "bridal getting ready photo portfolio inspiration, wedding photographers website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/luxury-bridal-and-groom-prep-shoot-lookbook.webp"
 ---

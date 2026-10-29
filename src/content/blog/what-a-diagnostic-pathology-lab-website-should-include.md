@@ -4,7 +4,7 @@ niche: "healthcare-diagnostics"
 date: "2026-08-31T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of what a diagnostic & pathology lab website should include to accelerate patient trust for Pathology & Diagnostic Labs. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "What a Diagnostic & Pathology Lab Website Should Include to Accelerate Patient Trust: Architectural blueprint for Pathology & Diagnostic Labs. Explore perform"
+metaDescription: "What a Diagnostic & Pathology Lab Website Should Include to Accelerate Patient Trust: Architectural blueprint for Pathology & Diagnostic Labs."
 keywords: "diagnostic lab website design, pathology lab website blueprint, medical testing web design, patient appointment conversion, uncoded hub blueprint"
 image: "/blog/what-a-diagnostic-pathology-lab-website-should-include.webp"
 ---

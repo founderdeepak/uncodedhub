@@ -4,7 +4,7 @@ niche: "coaches-consultants"
 date: "2026-09-14T21:00:00+05:30"
 author: "geetha"
 excerpt: "Why a coach's website is where LinkedIn content compounds rather than a competitor to it, and what breaks when the two aren't connected."
-metaDescription: "Why a coach's website is where LinkedIn content compounds rather than a competitor to it, and what breaks when the two aren't connected."
+metaDescription: "Why a coach's website is where LinkedIn content compounds rather than a competitor to it, and what breaks when the two aren't."
 keywords: "website supports replaces, consulting website architecture, coaches consultants website design, high converting web architecture"
 image: "/blog/website-supports-personal-brand-content.webp"
 ---

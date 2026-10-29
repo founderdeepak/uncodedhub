@@ -4,7 +4,7 @@ niche: "coaches-consultants"
 date: "2026-04-27T21:00:00+05:30"
 author: "geetha"
 excerpt: "Why most 'work with me' pages fail at the exact moment they matter most, and how to structure one that converts a warm visitor into a booked call."
-metaDescription: "Structure a high-converting 'Work With Me' page for consultants. The 3-part blueprint, objection-handling framework, and exact copy that converts visitors into booked calls."
+metaDescription: "Structure a high-converting 'Work With Me' page for consultants. The 3-part blueprint, objection-handling framework, and exact copy that converts visitors."
 keywords: "work with me consultant, consultant work with me page, consulting website architecture, coaches consultants website design, high converting web architecture"
 image: "/blog/consultant-work-with-me-page.webp"
 ---

@@ -4,7 +4,7 @@ niche: "doctor-specialist"
 date: "2026-10-13T12:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of high-trust doctor biography storytelling: empathy, philosophy, and bedside manner for Super-Specialist Doctors & Surgeons. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "High-Trust Doctor Biography Storytelling: Empathy, Philosophy, and Bedside Manner: Architectural blueprint for Super-Specialist Doctors & Surgeons. Explore pe"
+metaDescription: "High-Trust Doctor Biography Storytelling: Empathy, Philosophy, and Bedside Manner: Architectural blueprint for Super-Specialist Doctors & Surgeons."
 keywords: "surgeon biography storytelling, empathetic bedside manner showcase, doctor surgical philosophy, why i became a surgeon, uncoded hub blueprint"
 image: "/blog/high-trust-doctor-biography-and-bedside-philosophy.webp"
 ---

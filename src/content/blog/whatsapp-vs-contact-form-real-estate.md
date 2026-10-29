@@ -4,7 +4,7 @@ niche: "real-estate"
 date: "2026-10-03T21:00:00+05:30"
 author: "deepak"
 excerpt: "Why a WhatsApp enquiry button consistently outperforms a contact form for property leads, and how to set one up without losing the ability to qualify buyers."
-metaDescription: "Why a WhatsApp enquiry button consistently outperforms a contact form for property leads, and how to set one up without losing the ability to qualify buyers."
+metaDescription: "Why a WhatsApp enquiry button consistently outperforms a contact form for property leads, and how to set one up without losing the ability to qualify."
 keywords: "whatsapp clicktochat converts, real estate web strategy, real estate website design, high converting web architecture"
 image: "/blog/whatsapp-vs-contact-form-real-estate.webp"
 ---

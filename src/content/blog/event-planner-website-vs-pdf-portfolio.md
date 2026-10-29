@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-05-17T11:00:00+05:30"
 author: "geetha"
 excerpt: "Why a static PDF portfolio quietly limits an event planner's business, and what a real website does instead: searchable, current, and provably capable."
-metaDescription: "Why a static PDF portfolio quietly limits an event planner's business, and what a real website does instead: searchable, current, and provably capable."
+metaDescription: "Why a static PDF portfolio quietly limits an event planner's business, and what a real website does instead: searchable, current, and provably."
 keywords: "event planners website, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/event-planner-website-vs-pdf-portfolio.webp"
 ---

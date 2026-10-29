@@ -4,7 +4,7 @@ niche: "yoga-meditation"
 date: "2026-07-18T12:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of what a yoga shala website should include to build a devoted, high-retention community for Yoga Shalas & Meditation Sanctuaries. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "What a Yoga Shala Website Should Include to Build a Devoted, High-Retention Community: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries. Explo"
+metaDescription: "What a Yoga Shala Website Should Include to Build a Devoted, High-Retention Community: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries."
 keywords: "yoga shala website design, meditation sanctuary web design, yoga studio website blueprint, high retention yoga community, uncoded hub blueprint"
 image: "/blog/what-a-yoga-shala-meditation-website-should-include.webp"
 ---

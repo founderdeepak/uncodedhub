@@ -4,7 +4,7 @@ niche: "salon-beauty"
 date: "2026-06-09T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of master stylist portfolios: showcasing individual artists to build personal trust for Salons & Bridal Beauty Studios. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Master Stylist Portfolios: Showcasing Individual Artists to Build Personal Trust: Architectural blueprint for Salons & Bridal Beauty Studios. Explore performa"
+metaDescription: "Master Stylist Portfolios: Showcasing Individual Artists to Build Personal Trust: Architectural blueprint for Salons & Bridal Beauty Studios."
 keywords: "salon master stylist profiles, senior bridal artist showcase, celebrity makeup artist portfolio, stylist personal branding, uncoded hub blueprint"
 image: "/blog/master-stylist-and-makeup-artist-portfolio-pages.webp"
 ---

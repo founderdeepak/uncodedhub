@@ -4,7 +4,7 @@ niche: "clinic-polyclinic"
 date: "2026-09-23T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of specialty-by-specialty opd schedule matrices: eliminating waiting room chaos for Multi-Specialty Polyclinics. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Specialty-by-Specialty OPD Schedule Matrices: Eliminating Waiting Room Chaos: Architectural blueprint for Multi-Specialty Polyclinics. Explore performance ben"
+metaDescription: "Specialty-by-Specialty OPD Schedule Matrices: Eliminating Waiting Room Chaos: Architectural blueprint for Multi-Specialty Polyclinics."
 keywords: "clinic opd doctor timetable, multi specialty consulting hours, reduce clinic waiting room crowding, doctor schedule grid, uncoded hub blueprint"
 image: "/blog/specialty-opd-schedule-matrices-reducing-wait-times.webp"
 ---

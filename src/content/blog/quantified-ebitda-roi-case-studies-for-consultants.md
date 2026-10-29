@@ -4,7 +4,7 @@ niche: "business-portfolio"
 date: "2026-04-28T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of quantified roi case studies: moving from"
-metaDescription: "Quantified ROI Case Studies: Moving from"
+metaDescription: "Guide on quantified roi case studies: moving from by Uncoded Hub. 7-day web design sprint, sub-second React speed, late means 100% free guarantee."
 keywords: "consulting roi case study metrics, ebitda improvement proof, corporate turnaround metrics, quantifiable business impact, uncoded hub blueprint"
 image: "/blog/quantified-ebitda-roi-case-studies-for-consultants.webp"
 ---

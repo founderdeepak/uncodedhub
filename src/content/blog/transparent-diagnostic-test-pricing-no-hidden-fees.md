@@ -4,7 +4,7 @@ niche: "healthcare-diagnostics"
 date: "2026-09-19T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of transparent test pricing menus: eliminating hidden surcharges and home visit fees for Pathology & Diagnostic Labs. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Transparent Test Pricing Menus: Eliminating Hidden Surcharges and Home Visit Fees: Architectural blueprint for Pathology & Diagnostic Labs. Explore performanc"
+metaDescription: "Transparent Test Pricing Menus: Eliminating Hidden Surcharges and Home Visit Fees: Architectural blueprint for Pathology & Diagnostic Labs."
 keywords: "transparent blood test price list, zero hidden home collection fee, clear lab test cost breakdown, patient financial trust, uncoded hub blueprint"
 image: "/blog/transparent-diagnostic-test-pricing-no-hidden-fees.webp"
 ---

@@ -4,7 +4,7 @@ niche: "salon-beauty"
 date: "2026-06-14T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of on-location vs studio bookings: explaining destination wedding logistics and travel terms for Salons & Bridal Beauty Studios. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "On-Location vs Studio Bookings: Explaining Destination Wedding Logistics and Travel Terms: Architectural blueprint for Salons & Bridal Beauty Studios. Explore"
+metaDescription: "On-Location vs Studio Bookings: Explaining Destination Wedding Logistics and Travel Terms: Architectural blueprint for Salons & Bridal Beauty Studios."
 keywords: "destination bridal makeup logistics page, on venue bridal artist terms, outstation travel stay policies, destination wedding glam team, uncoded hub blueprint"
 image: "/blog/on-location-vs-in-studio-bridal-booking-logistics.webp"
 ---

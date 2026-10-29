@@ -4,7 +4,7 @@ niche: "clinic-polyclinic"
 date: "2026-10-07T12:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of teleconsultation video booking flow: connecting remote patients with specialists for Multi-Specialty Polyclinics. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Teleconsultation Video Booking Flow: Connecting Remote Patients with Specialists: Architectural blueprint for Multi-Specialty Polyclinics. Explore performance"
+metaDescription: "Teleconsultation Video Booking Flow: Connecting Remote Patients with Specialists: Architectural blueprint for Multi-Specialty Polyclinics."
 keywords: "telemedicine booking for clinics, remote doctor video consult, online prescription delivery, rural and outstation patient care, uncoded hub blueprint"
 image: "/blog/teleconsultation-video-consult-booking-workflows.webp"
 ---

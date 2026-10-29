@@ -4,7 +4,7 @@ niche: "real-estate"
 date: "2026-09-03T08:00:00+05:30"
 author: "deepak"
 excerpt: "Why embedding heavy Matterport 3D tours crashes mobile real estate pages, and how to implement lazy-loaded virtual walkthroughs that preserve sub-second speed."
-metaDescription: "Why embedding heavy Matterport 3D tours crashes mobile real estate pages, and how to implement lazy-loaded virtual walkthroughs that preserve sub-second speed."
+metaDescription: "Why embedding heavy Matterport 3D tours crashes mobile real estate pages, and how to implement lazy-loaded virtual walkthroughs that preserve sub-second."
 keywords: "virtual tours interactive, real estate web strategy, real estate website design, high converting web architecture"
 image: "/blog/virtual-property-tours-floor-plans-web-speed.webp"
 ---

@@ -4,7 +4,7 @@ niche: "home-renovation"
 date: "2026-06-23T21:00:00+05:30"
 author: "deepak"
 excerpt: "How local search actually works for a modular kitchen or renovation contractor, and why getting found is a repeatable system rather than a one-time website task."
-metaDescription: "How local search actually works for a modular kitchen or renovation contractor, and why getting found is a repeatable system rather than a one-time..."
+metaDescription: "How local search actually works for a modular kitchen or renovation contractor, and why getting found is a repeatable system rather than."
 keywords: "local gets home, home renovation web design, home renovation website design, high converting web architecture"
 image: "/blog/local-seo-for-home-renovation-business.webp"
 ---

@@ -4,7 +4,7 @@ niche: "dental-clinics"
 date: "2026-05-05T16:00:00+05:30"
 author: "deepak"
 excerpt: "Eliminating patient fear by explaining rotary endodontics, digital apex locators, and lasers. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Eliminating patient fear by explaining rotary endodontics, digital apex locators, and lasers.... Discover technical benchmarks, conversion frameworks, and arc"
+metaDescription: "Eliminating patient fear by explaining rotary endodontics, digital apex locators, and lasers.... Discover technical benchmarks, conversion frameworks."
 keywords: "painless single sitting rct cost and procedure, dental clinics website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/laser-root-canal-treatment-single-sitting-page.webp"
 ---

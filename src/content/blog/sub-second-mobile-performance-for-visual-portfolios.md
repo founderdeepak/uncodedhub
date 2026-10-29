@@ -4,7 +4,7 @@ niche: "creative-portfolio"
 date: "2026-08-22T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of sub-second mobile performance: achieving 99+ lighthouse scores with 4k visual work for Creative Design Studios & Agencies. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Sub-Second Mobile Performance: Achieving 99+ Lighthouse Scores with 4K Visual Work: Architectural blueprint for Creative Design Studios & Agencies. Explore pe"
+metaDescription: "Sub-Second Mobile Performance: Achieving 99+ Lighthouse Scores with 4K Visual Work: Architectural blueprint for Creative Design Studios & Agencies."
 keywords: "agency portfolio core web vitals, 99 lighthouse score design portfolio, 4k image optimization next gen formats, zero lag studio site, uncoded hub blueprint"
 image: "/blog/sub-second-mobile-performance-for-visual-portfolios.webp"
 ---

@@ -4,7 +4,7 @@ niche: "real-estate"
 date: "2026-06-09T16:00:00+05:30"
 author: "geetha"
 excerpt: "How independent property brokers and boutique builders use micro-location SEO pages to rank above national aggregator portals for neighborhood property searches."
-metaDescription: "How independent property brokers and boutique builders use micro-location SEO pages to rank above national aggregator portals for neighborhood property searches."
+metaDescription: "How independent property brokers and boutique builders use micro-location SEO pages to rank above national aggregator portals for neighborhood property."
 keywords: "hyperlocal real estate, real estate web strategy, real estate website design, high converting web architecture"
 image: "/blog/hyperlocal-real-estate-seo-microsites.webp"
 ---

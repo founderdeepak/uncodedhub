@@ -4,7 +4,7 @@ niche: "salon-beauty"
 date: "2026-06-13T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of local map pack domination: ranking #1 for"
-metaDescription: "Local Map Pack Domination: Ranking #1 for"
+metaDescription: "Guide on local map pack domination: ranking #1 for by Uncoded Hub. 7-day web design sprint, sub-second React speed, late means 100% free guarantee."
 keywords: "bridal makeup studio near me seo, salon google business profile optimization, rank local bridal beauty, neighborhood salon clients, uncoded hub blueprint"
 image: "/blog/local-seo-google-maps-domination-for-beauty-salons.webp"
 ---

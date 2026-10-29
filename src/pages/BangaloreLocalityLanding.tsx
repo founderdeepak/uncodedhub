@@ -482,9 +482,9 @@ export default function BangaloreLocalityLanding({ onBook: _onBook }: BangaloreL
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
               <div>
                 <span className="card-tag mb-1">LOCALITY CLUSTERS</span>
-                <h3 className="font-display text-2xl text-ink font-medium">
+                <h2 className="font-display text-2xl text-ink font-medium">
                   Web design in neighboring Bengaluru corridors.
-                </h3>
+                </h2>
               </div>
               <Link
                 to="/web-design/bangalore/"

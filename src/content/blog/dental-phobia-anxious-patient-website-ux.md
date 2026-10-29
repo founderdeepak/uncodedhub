@@ -4,7 +4,7 @@ niche: "dental-clinics"
 date: "2026-05-08T19:00:00+05:30"
 author: "geetha"
 excerpt: "Over 60% of adults experience mild to severe dental anxiety, delaying essential care for years. Here is how trauma-informed website UX, color psychology, and sensory reassurance convert phobic patients into lifelong appointments."
-metaDescription: "Design empathetic website experiences for anxious dental patients. Reduce dental fear through soothing UX, sensory reassurance, and sedation transparency."
+metaDescription: "Design empathetic website experiences for anxious dental patients. Reduce dental fear through soothing UX, sensory reassurance, and sedation."
 keywords: "designing anxious dental, dental clinic web architecture, dental clinics website design, high converting web architecture"
 image: "/blog/dental-phobia-anxious-patient-website-ux.webp"
 ---

@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-08-31T11:00:00+05:30"
 author: "geetha"
 excerpt: "How ultra-lean web engineering slashes data center energy and carbon footprint per page view. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "How ultra-lean web engineering slashes data center energy and carbon footprint per page view.... Discover technical benchmarks, conversion frameworks, and arc"
+metaDescription: "How ultra-lean web engineering slashes data center energy and carbon footprint per page view.... Discover technical benchmarks, conversion frameworks."
 keywords: "eco friendly sustainable website design speed, studio website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/carbon-efficient-minimalist-web-design-principles.webp"
 ---

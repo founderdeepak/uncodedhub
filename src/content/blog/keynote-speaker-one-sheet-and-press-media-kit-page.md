@@ -4,7 +4,7 @@ niche: "coaches-consultants"
 date: "2026-07-12T08:00:00+05:30"
 author: "geetha"
 excerpt: "Downloadable speaker sheets with keynote sizzle reels, speech topics, and past stage photos. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Downloadable speaker sheets with keynote sizzle reels, speech topics, and past stage photos.... Discover technical benchmarks, conversion frameworks, and arch"
+metaDescription: "Downloadable speaker sheets with keynote sizzle reels, speech topics, and past stage photos.... Discover technical benchmarks, conversion frameworks."
 keywords: "keynote speaker press kit one sheet website, coaches consultants website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/keynote-speaker-one-sheet-and-press-media-kit-page.webp"
 ---

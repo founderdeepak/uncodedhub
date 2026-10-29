@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-09-21T08:00:00+05:30"
 author: "deepak"
 excerpt: "Couples planning Indian weddings panic over scheduling: hair and makeup delays, baraat timings, and missing golden hour portraits. Here is how a downloadable Wedding Day Timeline Guide builds an email list of premium couples."
-metaDescription: "Capture couples months in advance with a realistic wedding timeline guide lead magnet. Solve scheduling anxiety and position your studio as the trusted authority."
+metaDescription: "Capture couples months in advance with a realistic wedding timeline guide lead magnet. Solve scheduling anxiety and position your studio as the trusted."
 keywords: "wedding timeline guide, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/wedding-timeline-planning-guide-as-lead-magnet.webp"
 ---

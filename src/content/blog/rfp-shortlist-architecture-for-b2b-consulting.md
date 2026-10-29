@@ -4,7 +4,7 @@ niche: "business-portfolio"
 date: "2026-04-24T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of rfp shortlist architecture: how enterprise buyers secretly evaluate consulting sites for Enterprise B2B & Corporate Advisory. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "RFP Shortlist Architecture: How Enterprise Buyers Secretly Evaluate Consulting Sites: Architectural blueprint for Enterprise B2B & Corporate Advisory. Explore"
+metaDescription: "RFP Shortlist Architecture: How Enterprise Buyers Secretly Evaluate Consulting Sites: Architectural blueprint for Enterprise B2B & Corporate Advisory."
 keywords: "rfp shortlist consulting website, how enterprise buyers choose consultants, c-suite vetting process, corporate proposal web audit, uncoded hub blueprint"
 image: "/blog/rfp-shortlist-architecture-for-b2b-consulting.webp"
 ---

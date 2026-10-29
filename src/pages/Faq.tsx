@@ -488,10 +488,10 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
   return (
     <>
       <Helmet>
-        <title>Frequently Asked Questions — Uncoded Hub | 7-Day Web Design Studio</title>
+        <title>Frequently Asked Questions &amp; 7-Day Sprints — Uncoded Hub</title>
         <meta
           name="description"
-          content="39 clear, plain-English answers about Uncoded Hub's 7-day custom website sprint, 17 niche conversion architectures, 50% late guarantee, pricing transparency, code ownership, and working directly with Deepak & Geetha."
+          content="39 detailed answers about our 7-day website sprint, pricing, 100% late-means-free guarantee, React tech stack, code ownership, and senior founder delivery."
         />
         <link rel="canonical" href="https://uncodedhub.com/faq/" />
         <meta property="og:title" content="Frequently Asked Questions — Uncoded Hub" />

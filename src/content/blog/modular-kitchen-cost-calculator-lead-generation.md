@@ -4,7 +4,7 @@ niche: "home-renovation"
 date: "2026-07-03T16:00:00+05:30"
 author: "geetha"
 excerpt: "Homeowners planning a kitchen overhaul have one urgent question: 'How much will it cost?' Static 'request a quote' forms get ignored. Here is how an interactive modular kitchen cost calculator captures pre-qualified buyer phone leads."
-metaDescription: "Use this modular kitchen cost calculator to estimate 2026 prices in India (L-shape, U-shape, parallel). Plywood, acrylic, PU finishes and hardware cost breakdown."
+metaDescription: "Use this modular kitchen cost calculator to estimate 2026 prices in India (L-shape, U-shape, parallel). Plywood, acrylic, PU finishes and hardware cost."
 keywords: "modular kitchen cost calculator, modular kitchen cost, modular kitchen price estimator, home renovation web design, high converting web architecture"
 image: "/blog/modular-kitchen-cost-calculator-lead-generation.webp"
 ---

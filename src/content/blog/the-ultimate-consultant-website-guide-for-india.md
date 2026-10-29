@@ -4,7 +4,7 @@ niche: "coaches-consultants"
 date: "2026-08-24T14:00:00+05:30"
 author: "geetha"
 excerpt: "How independent consultants, executive coaches, and fractional leaders in India build a personal brand website that pre-qualifies premium clients and books discovery calls."
-metaDescription: "How independent consultants, executive coaches, and fractional leaders in India build a personal brand website that pre-qualifies premium clients and..."
+metaDescription: "How independent consultants, executive coaches, and fractional leaders in India build a personal brand website that pre-qualifies premium clients."
 keywords: "ultimate consultant website, consulting website architecture, coaches consultants website design, high converting web architecture"
 image: "/blog/credible-vs-templated-consultant-website.webp"
 ---

@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-08-04T21:00:00+05:30"
 author: "geetha"
 excerpt: "Serving pure token-efficient Markdown representations of web pages to AI agents automatically. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Serving pure token-efficient Markdown representations of web pages to AI agents automatically.... Discover technical benchmarks, conversion frameworks, and ar"
+metaDescription: "Serving pure token-efficient Markdown representations of web pages to AI agents automatically.... Discover technical benchmarks, conversion frameworks."
 keywords: "http content negotiation accept text markdown, studio website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/markdown-content-negotiation-via-accept-text-markdown.webp"
 ---

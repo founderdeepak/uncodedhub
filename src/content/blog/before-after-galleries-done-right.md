@@ -4,7 +4,7 @@ niche: "home-renovation"
 date: "2026-04-11T11:00:00+05:30"
 author: "deepak"
 excerpt: "Why most before/after galleries fail to build trust, and how to shoot and present them so they actually convince a skeptical homeowner."
-metaDescription: "Why most before/after galleries fail to build trust, and how to shoot and present them so they actually convince a skeptical homeowner."
+metaDescription: "Why most before/after galleries fail to build trust, and how to shoot and present them so they actually convince a skeptical."
 keywords: "beforeafter galleries done, home renovation web design, home renovation website design, high converting web architecture"
 image: "/blog/before-after-galleries-done-right.webp"
 ---

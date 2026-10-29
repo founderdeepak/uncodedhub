@@ -4,7 +4,7 @@ niche: "clinic-polyclinic"
 date: "2026-09-26T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of department triage selectors: helping patients match symptoms to the right department for Multi-Specialty Polyclinics. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Department Triage Selectors: Helping Patients Match Symptoms to the Right Department: Architectural blueprint for Multi-Specialty Polyclinics. Explore perform"
+metaDescription: "Department Triage Selectors: Helping Patients Match Symptoms to the Right Department: Architectural blueprint for Multi-Specialty Polyclinics."
 keywords: "symptom to specialist triage widget, which doctor should i see quiz, patient department navigation, orthopedics vs neurology triage, uncoded hub blueprint"
 image: "/blog/interactive-department-triage-and-symptom-selectors.webp"
 ---

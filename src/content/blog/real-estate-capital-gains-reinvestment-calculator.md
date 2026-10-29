@@ -4,7 +4,7 @@ niche: "real-estate"
 date: "2026-04-13T21:00:00+05:30"
 author: "geetha"
 excerpt: "Lead-generating financial calculators computing LTCG tax liability under Section 54EC bonds. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Lead-generating financial calculators computing LTCG tax liability under Section 54EC bonds.... Discover technical benchmarks, conversion frameworks, and arch"
+metaDescription: "Lead-generating financial calculators computing LTCG tax liability under Section 54EC bonds.... Discover technical benchmarks, conversion frameworks."
 keywords: "capital gains property reinvestment calculator, real estate website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/real-estate-capital-gains-reinvestment-calculator.webp"
 ---

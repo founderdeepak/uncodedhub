@@ -4,7 +4,7 @@ niche: "spa-wellness"
 date: "2026-05-16T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of sensory digital aesthetics: translating physical tranquility and aromatherapy to screen for Luxury Spas & Wellness Retreats. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Sensory Digital Aesthetics: Translating Physical Tranquility and Aromatherapy to Screen: Architectural blueprint for Luxury Spas & Wellness Retreats. Explore"
+metaDescription: "Sensory Digital Aesthetics: Translating Physical Tranquility and Aromatherapy to Screen: Architectural blueprint for Luxury Spas & Wellness Retreats."
 keywords: "sensory web design for spas, calming website aesthetic, aromatherapy to digital layout, premium spa web experience, uncoded hub blueprint"
 image: "/blog/sensory-digital-aesthetics-for-luxury-spas.webp"
 ---

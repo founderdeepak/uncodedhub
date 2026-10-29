@@ -4,7 +4,7 @@ niche: "fitness-coach"
 date: "2026-07-12T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of semi-private & small group cohort pages: scaling beyond 1-on-1 hours with group masterclasses for Private Fitness Coaches & Personal Trainers. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Semi-Private & Small Group Cohort Pages: Scaling Beyond 1-on-1 Hours with Group Masterclasses: Architectural blueprint for Private Fitness Coaches & Personal"
+metaDescription: "Semi-Private & Small Group Cohort Pages: Scaling Beyond 1-on-1 Hours with Group Masterclasses: Architectural blueprint for Private Fitness Coaches &."
 keywords: "small group personal training website, scale coaching business beyond 1 on 1, fitness mastermind sales page, cohort workout landing page, uncoded hub blueprint"
 image: "/blog/semi-private-and-small-group-cohort-sales-pages.webp"
 ---

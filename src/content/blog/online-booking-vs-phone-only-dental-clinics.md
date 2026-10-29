@@ -4,7 +4,7 @@ niche: "dental-clinics"
 date: "2026-07-13T21:00:00+05:30"
 author: "deepak"
 excerpt: "Why online appointment booking reduces no-shows more than it raises raw enquiry volume, and how to set it up without losing the personal touch a call provides."
-metaDescription: "Why online appointment booking reduces no-shows more than it raises raw enquiry volume, and how to set it up without losing the personal touch a call..."
+metaDescription: "Why online appointment booking reduces no-shows more than it raises raw enquiry volume, and how to set it up without losing the personal touch."
 keywords: "online booking phoneonly, dental clinic web architecture, dental clinics website design, high converting web architecture"
 image: "/blog/online-booking-vs-phone-only-dental-clinics.webp"
 ---

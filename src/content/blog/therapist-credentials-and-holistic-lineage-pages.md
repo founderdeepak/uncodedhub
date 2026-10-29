@@ -4,7 +4,7 @@ niche: "spa-wellness"
 date: "2026-05-18T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of therapist certification & lineage: showcasing ayurvedic vaidyas and balinese healers for Luxury Spas & Wellness Retreats. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Therapist Certification & Lineage: Showcasing Ayurvedic Vaidyas and Balinese Healers: Architectural blueprint for Luxury Spas & Wellness Retreats. Explore per"
+metaDescription: "Therapist Certification & Lineage: Showcasing Ayurvedic Vaidyas and Balinese Healers: Architectural blueprint for Luxury Spas & Wellness Retreats."
 keywords: "ayurvedic doctor spa website, balinese therapist certifications, authentic wellness lineage, holistic healer trust signals, uncoded hub blueprint"
 image: "/blog/therapist-credentials-and-holistic-lineage-pages.webp"
 ---

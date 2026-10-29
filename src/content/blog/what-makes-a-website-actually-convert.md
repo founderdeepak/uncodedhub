@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-09-28T08:00:00+05:30"
 author: "geetha"
 excerpt: "The core principles separating a website that generates real enquiries from one that only looks impressive, pulled together across every niche in this system."
-metaDescription: "The core principles separating a website that generates real enquiries from one that only looks impressive, pulled together across every niche in this system."
+metaDescription: "The core principles separating a website that generates real enquiries from one that only looks impressive, pulled together across every niche in this."
 keywords: "makes website actually, web engineering and conversion, studio website design, high converting web architecture"
 image: "/blog/what-makes-a-website-actually-convert.webp"
 ---

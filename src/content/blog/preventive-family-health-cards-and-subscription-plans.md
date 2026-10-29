@@ -4,7 +4,7 @@ niche: "clinic-polyclinic"
 date: "2026-09-29T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of preventive family health checkup cards: structuring annual plans for recurring visits for Multi-Specialty Polyclinics. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Preventive Family Health Checkup Cards: Structuring Annual Plans for Recurring Visits: Architectural blueprint for Multi-Specialty Polyclinics. Explore perfor"
+metaDescription: "Preventive Family Health Checkup Cards: Structuring Annual Plans for Recurring Visits: Architectural blueprint for Multi-Specialty Polyclinics."
 keywords: "annual family clinic health plan, preventive outpatient health cards, recurring clinic subscription model, family doctor care plan, uncoded hub blueprint"
 image: "/blog/preventive-family-health-cards-and-subscription-plans.webp"
 ---

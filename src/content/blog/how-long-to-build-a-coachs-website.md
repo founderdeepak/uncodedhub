@@ -4,7 +4,7 @@ niche: "coaches-consultants"
 date: "2026-06-01T21:00:00+05:30"
 author: "geetha"
 excerpt: "A realistic timeline for building a coaching or consulting authority website, and why content rather than development is almost always the real bottleneck."
-metaDescription: "A realistic timeline for building a coaching or consulting authority website, and why content rather than development is almost always the real bottleneck."
+metaDescription: "A realistic timeline for building a coaching or consulting authority website, and why content rather than development is almost always the real."
 keywords: "long does take, consulting website architecture, coaches consultants website design, high converting web architecture"
 image: "/blog/how-long-to-build-a-coachs-website.webp"
 ---

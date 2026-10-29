@@ -4,7 +4,7 @@ niche: "real-estate"
 date: "2026-07-29T21:00:00+05:30"
 author: "geetha"
 excerpt: "Google benchmarks (under 2.5s LCP) for property listing sites, and why buyers in multiple tabs abandon slow listings before ever seeing photos."
-metaDescription: "A modern real estate website must achieve under 2.5 seconds LCP on mobile. Learn exact Google speed benchmarks, image compression rules, and how speed drives buyer enquiries."
+metaDescription: "A modern real estate website must achieve under 2.5 seconds LCP on mobile. Learn exact Google speed benchmarks, image compression rules, and how speed."
 keywords: "what page load speed should real estate site achieve, real estate website speed, real estate web strategy, property listing page speed, high converting web architecture"
 image: "/blog/real-estate-website-speed.webp"
 ---

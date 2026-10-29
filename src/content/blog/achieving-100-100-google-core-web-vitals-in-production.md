@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-08-16T14:00:00+05:30"
 author: "deepak"
 excerpt: "Zero layout shift (CLS 0.00), LCP under 0.8s, and INP under 50ms using modern static builds. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Zero layout shift (CLS 0.00), LCP under 0.8s, and INP under 50ms using modern static builds.... Discover technical benchmarks, conversion frameworks, and arch"
+metaDescription: "Zero layout shift (CLS 0.00), LCP under 0.8s, and INP under 50ms using modern static builds.... Discover technical benchmarks, conversion frameworks."
 keywords: "how to get 100 core web vitals mobile, studio website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/achieving-100-100-google-core-web-vitals-in-production.webp"
 ---

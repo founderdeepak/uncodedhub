@@ -4,7 +4,7 @@ niche: "clinic-polyclinic"
 date: "2026-10-08T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of transparent consultation fee schedules: eliminating surprise desk billing for Multi-Specialty Polyclinics. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Transparent Consultation Fee Schedules: Eliminating Surprise Desk Billing: Architectural blueprint for Multi-Specialty Polyclinics. Explore performance benchm"
+metaDescription: "Transparent Consultation Fee Schedules: Eliminating Surprise Desk Billing: Architectural blueprint for Multi-Specialty Polyclinics."
 keywords: "doctor consultation fee transparency, first visit vs review consultation fees, zero surprise front desk charges, transparent clinic pricing, uncoded hub blueprint"
 image: "/blog/transparent-opd-consultation-fee-schedules.webp"
 ---

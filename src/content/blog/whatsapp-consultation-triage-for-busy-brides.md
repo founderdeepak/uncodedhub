@@ -4,7 +4,7 @@ niche: "salon-beauty"
 date: "2026-06-15T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of whatsapp consultation triage: converting late-night bride inquiries into studio visits for Salons & Bridal Beauty Studios. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "WhatsApp Consultation Triage: Converting Late-Night Bride Inquiries into Studio Visits: Architectural blueprint for Salons & Bridal Beauty Studios. Explore pe"
+metaDescription: "WhatsApp Consultation Triage: Converting Late-Night Bride Inquiries into Studio Visits: Architectural blueprint for Salons & Bridal Beauty Studios."
 keywords: "whatsapp bridal consultation routing, convert late night bridal dms, instant quote generator for brides, fast salon reply triage, uncoded hub blueprint"
 image: "/blog/whatsapp-consultation-triage-for-busy-brides.webp"
 ---

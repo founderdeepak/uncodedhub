@@ -4,7 +4,7 @@ niche: "home-renovation"
 date: "2026-08-01T08:00:00+05:30"
 author: "geetha"
 excerpt: "How a modular kitchen or renovation business should use its quieter seasonal months, like monsoon in India, to strengthen the website for the busy season ahead."
-metaDescription: "How a modular kitchen or renovation business should use its quieter seasonal months, like monsoon in India, to strengthen the website for the busy season..."
+metaDescription: "How a modular kitchen or renovation business should use its quieter seasonal months, like monsoon in India, to strengthen the website for the busy."
 keywords: "seasonal demand renovation, home renovation web design, home renovation website design, high converting web architecture"
 image: "/blog/renovation-website-seasonal-slow-months.webp"
 ---

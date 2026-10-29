@@ -4,7 +4,7 @@ niche: "yoga-meditation"
 date: "2026-07-25T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of residential yoga retreat booking engine: showcasing itineraries, meals, and rooms for Yoga Shalas & Meditation Sanctuaries. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Residential Yoga Retreat Booking Engine: Showcasing Itineraries, Meals, and Rooms: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries. Explore p"
+metaDescription: "Residential Yoga Retreat Booking Engine: Showcasing Itineraries, Meals, and Rooms: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries."
 keywords: "yoga retreat booking website, all inclusive yoga retreat itinerary, organic sattvic meals showcase, retreat room tiers, uncoded hub blueprint"
 image: "/blog/residential-yoga-retreat-booking-engine.webp"
 ---

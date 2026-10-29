@@ -4,7 +4,7 @@ niche: "educational-academy"
 date: "2026-03-19T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of whatsapp counseling triage: automating instant student inquiry response times for Educational Academies & Coaching Institutes. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "WhatsApp Counseling Triage: Automating Instant Student Inquiry Response Times: Architectural blueprint for Educational Academies & Coaching Institutes. Explor"
+metaDescription: "WhatsApp Counseling Triage: Automating Instant Student Inquiry Response Times: Architectural blueprint for Educational Academies & Coaching Institutes."
 keywords: "whatsapp counseling for coaching, instant student lead routing, academy whatsapp chatbot, admission desk automation, uncoded hub blueprint"
 image: "/blog/whatsapp-counseling-triage-for-educational-institutes.webp"
 ---

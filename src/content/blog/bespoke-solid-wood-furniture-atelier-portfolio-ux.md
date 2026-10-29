@@ -4,7 +4,7 @@ niche: "home-renovation"
 date: "2026-06-23T19:00:00+05:30"
 author: "geetha"
 excerpt: "Showcasing live-edge dining tables, mortise-and-tenon joinery, and natural oil finishes. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Showcasing live-edge dining tables, mortise-and-tenon joinery, and natural oil finishes.... Discover technical benchmarks, conversion frameworks, and architec"
+metaDescription: "Showcasing live-edge dining tables, mortise-and-tenon joinery, and natural oil finishes.... Discover technical benchmarks, conversion frameworks."
 keywords: "custom solid teak wood furniture maker portfolio, home renovation website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/bespoke-solid-wood-furniture-atelier-portfolio-ux.webp"
 ---

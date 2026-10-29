@@ -4,7 +4,7 @@ niche: "home-renovation"
 date: "2026-06-26T08:00:00+05:30"
 author: "geetha"
 excerpt: "Ergonomic design explainers analyzing the golden work triangle (hob, sink, refrigerator). Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Ergonomic design explainers analyzing the golden work triangle (hob, sink, refrigerator).... Discover technical benchmarks, conversion frameworks, and archite"
+metaDescription: "Ergonomic design explainers analyzing the golden work triangle (hob, sink, refrigerator).... Discover technical benchmarks, conversion frameworks."
 keywords: "kitchen island vs peninsula layout small kitchens, home renovation website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/kitchen-island-vs-peninsula-layout-decision-guide.webp"
 ---

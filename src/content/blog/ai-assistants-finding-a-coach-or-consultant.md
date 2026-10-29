@@ -4,7 +4,7 @@ niche: "coaches-consultants"
 date: "2026-03-26T19:00:00+05:30"
 author: "geetha"
 excerpt: "How people are starting to use AI chat tools when looking for a coach or consultant, and what it means for how a coaching website should be built."
-metaDescription: "How people are starting to use AI chat tools when looking for a coach or consultant, and what it means for how a coaching website should be built."
+metaDescription: "How people are starting to use AI chat tools when looking for a coach or consultant, and what it means for how a coaching website should be."
 keywords: "assistants changing people, consulting website architecture, coaches consultants website design, high converting web architecture"
 image: "/blog/ai-assistants-finding-a-coach-or-consultant.webp"
 ---

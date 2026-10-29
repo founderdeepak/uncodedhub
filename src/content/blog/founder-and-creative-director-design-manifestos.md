@@ -4,7 +4,7 @@ niche: "creative-portfolio"
 date: "2026-08-16T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of founder & director design manifestos: articulating a contrarian visual point of view for Creative Design Studios & Agencies. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Founder & Director Design Manifestos: Articulating a Contrarian Visual Point of View: Architectural blueprint for Creative Design Studios & Agencies. Explore"
+metaDescription: "Founder & Director Design Manifestos: Articulating a Contrarian Visual Point of View: Architectural blueprint for Creative Design Studios & Agencies."
 keywords: "creative director manifesto website, contrarian agency positioning, design studio philosophy page, articulate strong design point of view, uncoded hub blueprint"
 image: "/blog/founder-and-creative-director-design-manifestos.webp"
 ---

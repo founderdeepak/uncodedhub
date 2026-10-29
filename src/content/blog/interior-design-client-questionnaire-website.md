@@ -4,7 +4,7 @@ niche: "interior-designers"
 date: "2026-06-12T08:00:00+05:30"
 author: "geetha"
 excerpt: "Why a 4-field contact form invites price-shoppers, and how a structured inquiry questionnaire pre-qualifies project scopes and budgets before the first call."
-metaDescription: "Why a 4-field contact form invites price-shoppers, and how a structured inquiry questionnaire pre-qualifies project scopes and budgets before the first call."
+metaDescription: "Why a 4-field contact form invites price-shoppers, and how a structured inquiry questionnaire pre-qualifies project scopes and budgets before the first."
 keywords: "interior design client, interior design website, interior designers website design, high converting web architecture"
 image: "/blog/interior-design-client-questionnaire-website.webp"
 ---

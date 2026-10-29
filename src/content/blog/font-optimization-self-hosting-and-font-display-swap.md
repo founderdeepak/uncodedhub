@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-08-22T10:00:00+05:30"
 author: "geetha"
 excerpt: "Eliminating external Google Fonts DNS lookups and FOIT (Flash of Invisible Text) on mobile. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Eliminating external Google Fonts DNS lookups and FOIT (Flash of Invisible Text) on mobile.... Discover technical benchmarks, conversion frameworks, and archi"
+metaDescription: "Eliminating external Google Fonts DNS lookups and FOIT (Flash of Invisible Text) on mobile.... Discover technical benchmarks, conversion frameworks."
 keywords: "google fonts performance penalty self hosting, studio website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/font-optimization-self-hosting-and-font-display-swap.webp"
 ---

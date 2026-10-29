@@ -4,7 +4,7 @@ niche: "interior-designers"
 date: "2026-04-01T11:00:00+05:30"
 author: "deepak"
 excerpt: "Setting ₹25L+ minimum project thresholds to eliminate unqualified budget inquiries. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Setting ₹25L+ minimum project thresholds to eliminate unqualified budget inquiries.... Discover technical benchmarks, conversion frameworks, and architecture "
+metaDescription: "Setting ₹25L+ minimum project thresholds to eliminate unqualified budget inquiries.... Discover technical benchmarks, conversion frameworks."
 keywords: "should architects list project budget minimums, interior designers website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/budget-transparency-why-architects-should-publish-ranges.webp"
 ---

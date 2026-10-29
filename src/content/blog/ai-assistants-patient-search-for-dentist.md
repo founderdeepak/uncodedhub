@@ -4,7 +4,7 @@ niche: "dental-clinics"
 date: "2026-03-29T08:00:00+05:30"
 author: "geetha"
 excerpt: "How patients are starting to use AI chat tools when researching a dentist or clinic, and what it means for how clinic websites should be built and written."
-metaDescription: "How patients are starting to use AI chat tools when researching a dentist or clinic, and what it means for how clinic websites should be built and written."
+metaDescription: "How patients are starting to use AI chat tools when researching a dentist or clinic, and what it means for how clinic websites should be built."
 keywords: "assistants changing patients, dental clinic web architecture, dental clinics website design, high converting web architecture"
 image: "/blog/ai-assistants-patient-search-for-dentist.webp"
 ---

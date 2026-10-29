@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-08-05T08:00:00+05:30"
 author: "deepak"
 excerpt: "Broadcasting `api-catalog`, `llms.txt`, and `mcp-server-card` in root HTTP response headers. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Broadcasting `api-catalog`, `llms.txt`, and `mcp-server-card` in root HTTP response headers.... Discover technical benchmarks, conversion frameworks, and arch"
+metaDescription: "Broadcasting `api-catalog`, `llms.txt`, and `mcp-server-card` in root HTTP response headers.... Discover technical benchmarks, conversion frameworks."
 keywords: "rfc 8288 link header api catalog llms txt, studio website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/rfc-8288-link-headers-for-instant-machine-discoverability.webp"
 ---

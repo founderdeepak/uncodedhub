@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-10-04T21:00:00+05:30"
 author: "geetha"
 excerpt: "The real reasons most small business websites are never touched again after launch, and the specific operational fix that actually changes this."
-metaDescription: "The real reasons most small business websites are never touched again after launch, and the specific operational fix that actually changes this."
+metaDescription: "The real reasons most small business websites are never touched again after launch, and the specific operational fix that actually changes."
 keywords: "most small business, web engineering and conversion, studio website design, high converting web architecture"
 image: "/blog/why-websites-never-get-updated-after-launch.webp"
 ---

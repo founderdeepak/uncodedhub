@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-09-19T21:00:00+05:30"
 author: "geetha"
 excerpt: "How to structure and present pricing tiers for wedding photography so they signal value instead of reading like an impersonal restaurant menu."
-metaDescription: "How to structure and present pricing tiers for wedding photography so they signal value instead of reading like an impersonal restaurant menu."
+metaDescription: "How to structure and present pricing tiers for wedding photography so they signal value instead of reading like an impersonal restaurant."
 keywords: "pricing packages wedding, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/wedding-photography-pricing-packages.webp"
 ---

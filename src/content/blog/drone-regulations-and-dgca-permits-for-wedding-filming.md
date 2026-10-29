@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-06-03T10:00:00+05:30"
 author: "geetha"
 excerpt: "Clarifying legal green/yellow airspace zones and safety protocols for aerial cinema. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Clarifying legal green/yellow airspace zones and safety protocols for aerial cinema.... Discover technical benchmarks, conversion frameworks, and architecture"
+metaDescription: "Clarifying legal green/yellow airspace zones and safety protocols for aerial cinema.... Discover technical benchmarks, conversion frameworks."
 keywords: "dgca drone flying rules destination wedding india, wedding photographers website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/drone-regulations-and-dgca-permits-for-wedding-filming.webp"
 ---

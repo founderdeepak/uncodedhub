@@ -5,7 +5,7 @@ date: "2026-05-01T11:00:00+05:30"
 image: "/blog/corporate-event-planner-website-design.webp"
 author: "deepak"
 excerpt: "Corporate procurement officers and marketing directors don't buy romantic storytelling; they buy risk mitigation, vendor compliance, and brand ROI. Here is how to architect a high-ticket corporate event website."
-metaDescription: "Design a high-converting website for corporate event management agencies. Win enterprise galas, product launches, and conferences with procurement-friendly proof."
+metaDescription: "Design a high-converting website for corporate event management agencies. Win enterprise galas, product launches, and conferences."
 keywords: "luxury corporate event, wedding photography website, wedding photographers website design, high converting web architecture"
 ---
 

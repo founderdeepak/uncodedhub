@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-08-29T10:00:00+05:30"
 author: "deepak"
 excerpt: "The very first decision an engaged couple makes is booking their wedding venue. By ranking for specific hotel and heritage property searches, photographers intercept couples at the exact moment they need photography."
-metaDescription: "Intercept newly engaged couples with venue-specific SEO landing pages. Rank for luxury hotels and heritage resorts to win high-budget wedding photography bookings."
+metaDescription: "Intercept newly engaged couples with venue-specific SEO landing pages. Rank for luxury hotels and heritage resorts to win high-budget wedding photography."
 keywords: "venuespecific landing pages, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/venue-specific-seo-wedding-photographers.webp"
 ---

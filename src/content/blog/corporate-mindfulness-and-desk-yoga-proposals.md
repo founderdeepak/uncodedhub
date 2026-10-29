@@ -4,7 +4,7 @@ niche: "yoga-meditation"
 date: "2026-08-03T12:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of corporate mindfulness seminars: pitching stress-reduction & ergonomics to tech firms for Yoga Shalas & Meditation Sanctuaries. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Corporate Mindfulness Seminars: Pitching Stress-Reduction & Ergonomics to Tech Firms: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries. Explor"
+metaDescription: "Corporate Mindfulness Seminars: Pitching Stress-Reduction & Ergonomics to Tech Firms: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries."
 keywords: "corporate yoga workshop packages, stress reduction seminars for companies, desk ergonomics yoga b2b, tech employee wellness, uncoded hub blueprint"
 image: "/blog/corporate-mindfulness-and-desk-yoga-proposals.webp"
 ---

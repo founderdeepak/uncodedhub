@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-06-07T19:00:00+05:30"
 author: "geetha"
 excerpt: "Curated vendor directories (caterers, DJs, makeup artists) creating inbound backlink flywheels. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Curated vendor directories (caterers, DJs, makeup artists) creating inbound backlink flywheels.... Discover technical benchmarks, conversion frameworks, and a"
+metaDescription: "Curated vendor directories (caterers, DJs, makeup artists) creating inbound backlink flywheels.... Discover technical benchmarks, conversion frameworks."
 keywords: "recommended wedding vendors list planner website, wedding photographers website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/wedding-vendor-cross-referral-hub-architecture.webp"
 ---

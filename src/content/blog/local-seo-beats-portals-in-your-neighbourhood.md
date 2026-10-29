@@ -4,7 +4,7 @@ niche: "real-estate"
 date: "2026-06-20T19:00:00+05:30"
 author: "deepak"
 excerpt: "How a real estate agent can outrank 99acres and MagicBricks for hyperlocal searches in their own specific neighbourhood, and why that's genuinely possible."
-metaDescription: "How a real estate agent can outrank 99acres and MagicBricks for hyperlocal searches in their own specific neighbourhood, and why that's genuinely possible."
+metaDescription: "How a real estate agent can outrank 99acres and MagicBricks for hyperlocal searches in their own specific neighbourhood, and why that's genuinely."
 keywords: "local helps real, real estate web strategy, real estate website design, high converting web architecture"
 image: "/blog/local-seo-beats-portals-in-your-neighbourhood.webp"
 ---

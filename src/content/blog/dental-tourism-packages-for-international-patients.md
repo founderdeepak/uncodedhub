@@ -4,7 +4,7 @@ niche: "dental-clinics"
 date: "2026-04-29T21:00:00+05:30"
 author: "geetha"
 excerpt: "Complete concierge guides coordinating 7-day implant trips, hotel stays, and clinic transfers. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Complete concierge guides coordinating 7-day implant trips, hotel stays, and clinic transfers.... Discover technical benchmarks, conversion frameworks, and ar"
+metaDescription: "Complete concierge guides coordinating 7-day implant trips, hotel stays, and clinic transfers.... Discover technical benchmarks, conversion frameworks."
 keywords: "dental tourism india package cost flights stay, dental clinics website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/dental-tourism-packages-for-international-patients.webp"
 ---

@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-06-28T14:00:00+05:30"
 author: "deepak"
 excerpt: "Amateur websites compensate for weak positioning by adding colorful gradients, rotating carousels, and visual clutter. Here is why minimalist, carbon enterprise design projects immediate institutional authority and drives higher conversions."
-metaDescription: "Elevate your business authority with minimalist carbon enterprise design. Eliminate visual clutter, harness high-contrast typography, and command premium fees."
+metaDescription: "Elevate your business authority with minimalist carbon enterprise design. Eliminate visual clutter, harness high-contrast typography, and command premium."
 keywords: "minimalist carbon enterprise, web engineering and conversion, studio website design, high converting web architecture"
 image: "/blog/minimalist-carbon-enterprise-design-small-business.webp"
 ---

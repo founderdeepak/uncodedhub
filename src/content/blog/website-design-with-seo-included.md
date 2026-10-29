@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-09-06T08:00:00+05:30"
 author: "deepak"
 excerpt: "What 'SEO included' in a website design quote should actually cover, and the specific technical items that quietly get skipped when it's just a marketing line."
-metaDescription: "Does your web design package really include SEO? Here is the exact 12-point technical checklist every agency must deliver: schema, CWV, meta & indexing."
+metaDescription: "Does your web design package really include SEO? Here is the exact 12-point technical checklist every agency must deliver: schema, CWV, meta &."
 keywords: "website design included, web engineering and conversion, studio website design, high converting web architecture"
 image: "/blog/website-design-with-seo-included.webp"
 ---

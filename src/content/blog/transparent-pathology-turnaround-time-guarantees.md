@@ -4,7 +4,7 @@ niche: "healthcare-diagnostics"
 date: "2026-09-11T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of pathology turnaround time guarantees: publishing transparent 6-hour & 12-hour windows for Pathology & Diagnostic Labs. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Pathology Turnaround Time Guarantees: Publishing Transparent 6-Hour & 12-Hour Windows: Architectural blueprint for Pathology & Diagnostic Labs. Explore perfor"
+metaDescription: "Pathology Turnaround Time Guarantees: Publishing Transparent 6-Hour & 12-Hour Windows: Architectural blueprint for Pathology & Diagnostic Labs."
 keywords: "fast lab test turnaround time, same day blood test reports, 6 hour urgent report delivery, emergency lab reporting standards, uncoded hub blueprint"
 image: "/blog/transparent-pathology-turnaround-time-guarantees.webp"
 ---

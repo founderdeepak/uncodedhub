@@ -4,7 +4,7 @@ niche: "doctor-specialist"
 date: "2026-10-14T12:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of hospital affiliations & operation theater privileges: clarifying where surgeries happen for Super-Specialist Doctors & Surgeons. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Hospital Affiliations & Operation Theater Privileges: Clarifying Where Surgeries Happen: Architectural blueprint for Super-Specialist Doctors & Surgeons. Expl"
+metaDescription: "Hospital Affiliations & Operation Theater Privileges: Clarifying Where Surgeries Happen: Architectural blueprint for Super-Specialist Doctors & Surgeons."
 keywords: "hospital affiliations doctor website, visiting consultant hospitals list, apex operation theater facilities, surgical admission guidance, uncoded hub blueprint"
 image: "/blog/hospital-affiliations-and-ot-privileges-clarity.webp"
 ---

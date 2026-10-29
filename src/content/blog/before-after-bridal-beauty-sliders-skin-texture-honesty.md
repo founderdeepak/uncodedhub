@@ -4,7 +4,7 @@ niche: "salon-beauty"
 date: "2026-06-11T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of before/after beauty sliders: demonstrating skin texture honesty & natural lighting for Salons & Bridal Beauty Studios. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Before/After Beauty Sliders: Demonstrating Skin Texture Honesty & Natural Lighting: Architectural blueprint for Salons & Bridal Beauty Studios. Explore perfor"
+metaDescription: "Before/After Beauty Sliders: Demonstrating Skin Texture Honesty & Natural Lighting: Architectural blueprint for Salons & Bridal Beauty Studios."
 keywords: "before after bridal makeup slider, unretouched skin texture proof, natural daylight makeup photos, realistic bridal transformation, uncoded hub blueprint"
 image: "/blog/before-after-bridal-beauty-sliders-skin-texture-honesty.webp"
 ---

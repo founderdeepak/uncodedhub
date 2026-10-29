@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-07-19T11:00:00+05:30"
 author: "deepak"
 excerpt: "Couples begin dreaming about their pre-wedding conceptual shoot months before finalizing wedding day contracts. Here is how a dedicated pre-wedding landing page acts as a high-converting front-end acquisition funnel."
-metaDescription: "Capture engaged couples early with dedicated pre-wedding shoot landing pages. Showcase cinematic couple portraits, location guides, and concept themes."
+metaDescription: "Capture engaged couples early with dedicated pre-wedding shoot landing pages. Showcase cinematic couple portraits, location guides, and concept."
 keywords: "prewedding shoot portfolio, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/pre-wedding-shoot-landing-page-conversion.webp"
 ---

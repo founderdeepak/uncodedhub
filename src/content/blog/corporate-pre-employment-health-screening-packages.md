@@ -4,7 +4,7 @@ niche: "healthcare-diagnostics"
 date: "2026-09-13T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of corporate pre-employment screening: offering scalable health packages for hr teams for Pathology & Diagnostic Labs. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Corporate Pre-Employment Screening: Offering Scalable Health Packages for HR Teams: Architectural blueprint for Pathology & Diagnostic Labs. Explore performan"
+metaDescription: "Corporate Pre-Employment Screening: Offering Scalable Health Packages for HR Teams: Architectural blueprint for Pathology & Diagnostic Labs."
 keywords: "corporate employee health checkup, b2b pre employment medical tests, annual executive health screening, corporate diagnostic contracts, uncoded hub blueprint"
 image: "/blog/corporate-pre-employment-health-screening-packages.webp"
 ---

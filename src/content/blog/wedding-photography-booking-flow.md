@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-09-17T16:00:00+05:30"
 author: "geetha"
 excerpt: "Why a beautiful portfolio with a clunky booking process loses weddings to a less polished photographer with a smoother path from interest to signed date."
-metaDescription: "Why a beautiful portfolio with a clunky booking process loses weddings to a less polished photographer with a smoother path from interest to signed date."
+metaDescription: "Why a beautiful portfolio with a clunky booking process loses weddings to a less polished photographer with a smoother path from interest to signed."
 keywords: "booking flow matters, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/wedding-photography-booking-flow.webp"
 ---

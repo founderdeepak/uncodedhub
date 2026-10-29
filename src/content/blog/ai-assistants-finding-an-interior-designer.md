@@ -4,7 +4,7 @@ niche: "interior-designers"
 date: "2026-03-27T14:00:00+05:30"
 author: "deepak"
 excerpt: "How ChatGPT, Perplexity and similar tools are becoming part of how homeowners shortlist interior designers, and what it means for how a studio's site is built."
-metaDescription: "How ChatGPT, Perplexity and similar tools are becoming part of how homeowners shortlist interior designers, and what it means for how a studio's site is..."
+metaDescription: "How ChatGPT, Perplexity and similar tools are becoming part of how homeowners shortlist interior designers, and what it means for how a studio's site."
 keywords: "assistants changing homeowners, interior design website, interior designers website design, high converting web architecture"
 image: "/blog/ai-assistants-finding-an-interior-designer.webp"
 ---

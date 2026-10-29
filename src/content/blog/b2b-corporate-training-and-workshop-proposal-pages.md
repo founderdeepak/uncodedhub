@@ -4,7 +4,7 @@ niche: "coaches-consultants"
 date: "2026-07-09T19:00:00+05:30"
 author: "geetha"
 excerpt: "Presenting curriculum modules, group cohort pricing, and measurable leadership KPIs to HR heads. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Presenting curriculum modules, group cohort pricing, and measurable leadership KPIs to HR heads.... Discover technical benchmarks, conversion frameworks, and "
+metaDescription: "Presenting curriculum modules, group cohort pricing, and measurable leadership KPIs to HR heads.... Discover technical benchmarks, conversion frameworks."
 keywords: "corporate sales training workshop landing page, coaches consultants website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/b2b-corporate-training-and-workshop-proposal-pages.webp"
 ---

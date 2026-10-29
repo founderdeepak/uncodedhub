@@ -4,7 +4,7 @@ niche: "educational-academy"
 date: "2026-03-20T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of local seo for academies: ranking #1 for"
-metaDescription: "Local SEO for Academies: Ranking #1 for"
+metaDescription: "Guide on local seo for academies: ranking #1 for by Uncoded Hub. 7-day web design sprint, sub-second React speed, late means 100% free guarantee."
 keywords: "local seo for coaching institutes, best academy near me, google business profile for coaching, neighborhood student acquisition, uncoded hub blueprint"
 image: "/blog/local-seo-google-maps-for-coaching-academies.webp"
 ---

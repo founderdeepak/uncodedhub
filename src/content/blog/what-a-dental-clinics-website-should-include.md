@@ -4,7 +4,7 @@ niche: "dental-clinics"
 date: "2026-03-15T11:00:00+05:30"
 author: "deepak"
 excerpt: "What a dental or aesthetic clinic website needs to turn searches into booked appointments, rather than calls that never confirm."
-metaDescription: "What a dental or aesthetic clinic website needs to turn searches into booked appointments, rather than calls that never confirm."
+metaDescription: "What a dental or aesthetic clinic website needs to turn searches into booked appointments, rather than calls that never."
 keywords: "dental clinic website, dental clinic web architecture, dental clinics website design, high converting web architecture"
 image: "/blog/what-a-dental-clinics-website-should-include.webp"
 ---

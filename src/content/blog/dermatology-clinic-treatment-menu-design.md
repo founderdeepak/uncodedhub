@@ -4,7 +4,7 @@ niche: "dental-clinics"
 date: "2026-05-10T19:00:00+05:30"
 author: "deepak"
 excerpt: "Aesthetic patients don't think in medical laser brand names; they think in personal skin insecurities like acne scars and dullness. Here is how to structure a treatment menu that guides patients intuitively to high-ticket aesthetic bookings."
-metaDescription: "Design a high-converting dermatology clinic treatment menu. Organize by patient concerns, demystify laser technologies, and drive consultation volume."
+metaDescription: "Design a high-converting dermatology clinic treatment menu. Organize by patient concerns, demystify laser technologies, and drive consultation."
 keywords: "cosmetic dermatology treatment, dental clinic web architecture, dental clinics website design, high converting web architecture"
 image: "/blog/dermatology-clinic-treatment-menu-design.webp"
 ---

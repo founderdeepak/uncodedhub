@@ -4,7 +4,7 @@ niche: "home-renovation"
 date: "2026-03-17T11:00:00+05:30"
 author: "geetha"
 excerpt: "What a modular kitchen, furniture, or home renovation contractor's website needs, for homeowners used to hiring purely on word-of-mouth."
-metaDescription: "What a modular kitchen, furniture, or home renovation contractor's website needs, for homeowners used to hiring purely on word-of-mouth."
+metaDescription: "Modular kitchen and renovation website architecture guide by Uncoded Hub. 7-day web design sprint, sub-second React speed, late means 100% free guarantee."
 keywords: "modular kitchen renovation, home renovation web design, home renovation website design, high converting web architecture"
 image: "/blog/what-a-modular-kitchen-renovation-website-should-include.webp"
 ---

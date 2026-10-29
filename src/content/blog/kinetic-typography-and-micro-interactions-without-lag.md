@@ -4,7 +4,7 @@ niche: "creative-portfolio"
 date: "2026-08-14T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of kinetic typography & micro-interactions: proving craftsmanship without jitter or lag for Creative Design Studios & Agencies. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Kinetic Typography & Micro-Interactions: Proving Craftsmanship Without Jitter or Lag: Architectural blueprint for Creative Design Studios & Agencies. Explore"
+metaDescription: "Kinetic Typography & Micro-Interactions: Proving Craftsmanship Without Jitter or Lag: Architectural blueprint for Creative Design Studios & Agencies."
 keywords: "smooth agency web animations, 60fps kinetic typography, micro interactions without layout shift, high performance agency motion, uncoded hub blueprint"
 image: "/blog/kinetic-typography-and-micro-interactions-without-lag.webp"
 ---

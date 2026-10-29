@@ -4,7 +4,7 @@ niche: "home-renovation"
 date: "2026-07-20T11:00:00+05:30"
 author: "geetha"
 excerpt: "An honest look at whether showing pricing online helps or hurts a modular kitchen or renovation contractor, with the real trade-offs rather than only the upside."
-metaDescription: "An honest look at whether showing pricing online helps or hurts a modular kitchen or renovation contractor, with the real trade-offs rather than only the..."
+metaDescription: "An honest look at whether showing pricing online helps or hurts a modular kitchen or renovation contractor, with the real trade-offs rather than only."
 keywords: "pricing transparency online, home renovation web design, home renovation website design, high converting web architecture"
 image: "/blog/pricing-transparency-renovation-business.webp"
 ---

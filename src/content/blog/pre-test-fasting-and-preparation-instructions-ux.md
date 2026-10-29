@@ -4,7 +4,7 @@ niche: "healthcare-diagnostics"
 date: "2026-09-04T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of pre-test fasting & preparation guides: reducing inaccurate test samples with clarity for Pathology & Diagnostic Labs. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Pre-Test Fasting & Preparation Guides: Reducing Inaccurate Test Samples with Clarity: Architectural blueprint for Pathology & Diagnostic Labs. Explore perform"
+metaDescription: "Pre-Test Fasting & Preparation Guides: Reducing Inaccurate Test Samples with Clarity: Architectural blueprint for Pathology & Diagnostic Labs."
 keywords: "blood test fasting instructions online, accurate sample preparation guide, fasting hours for lipid profile, patient preparation notes, uncoded hub blueprint"
 image: "/blog/pre-test-fasting-and-preparation-instructions-ux.webp"
 ---

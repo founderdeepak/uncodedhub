@@ -4,7 +4,7 @@ niche: "interior-designers"
 date: "2026-07-17T16:00:00+05:30"
 author: "geetha"
 excerpt: "Why a faster, better-structured interior design portfolio changes the kind of enquiries you get, not just the number, and how to measure that shift honestly."
-metaDescription: "Why a faster, better-structured interior design portfolio changes the kind of enquiries you get, not just the number, and how to measure that shift honestly."
+metaDescription: "Why a faster, better-structured interior design portfolio changes the kind of enquiries you get, not just the number, and how to measure that shift."
 keywords: "beforeafter fast wellstructured, interior design website, interior designers website design, high converting web architecture"
 image: "/blog/portfolio-site-enquiry-quality.webp"
 ---

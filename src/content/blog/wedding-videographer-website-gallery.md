@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-09-22T21:00:00+05:30"
 author: "geetha"
 excerpt: "Why a wedding videographer's website can't just be a photographer's gallery template with video swapped in, and what actually needs to change."
-metaDescription: "Why a wedding videographer's website can't just be a photographer's gallery template with video swapped in, and what actually needs to change."
+metaDescription: "Why a wedding videographer's website can't just be a photographer's gallery template with video swapped in, and what actually needs."
 keywords: "videographers website needs, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/wedding-videographer-website-gallery.webp"
 ---

@@ -4,7 +4,7 @@ niche: "dental-clinics"
 date: "2026-05-16T19:00:00+05:30"
 author: "deepak"
 excerpt: "Why burying emergency dental information inside a general services page loses the exact patients who need it most, and what a dedicated page should include."
-metaDescription: "Why burying emergency dental information inside a general services page loses the exact patients who need it most, and what a dedicated page should include."
+metaDescription: "Why burying emergency dental information inside a general services page loses the exact patients who need it most, and what a dedicated page should."
 keywords: "emergency dental care, dental clinic web architecture, dental clinics website design, high converting web architecture"
 image: "/blog/emergency-dental-care-page-strategy.webp"
 ---

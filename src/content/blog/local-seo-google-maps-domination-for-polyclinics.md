@@ -4,7 +4,7 @@ niche: "clinic-polyclinic"
 date: "2026-09-30T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of local map pack domination for clinics: ranking for"
-metaDescription: "Local Map Pack Domination for Clinics: Ranking for"
+metaDescription: "Guide on local map pack domination for clinics: ranking for by Uncoded Hub. 7-day web design sprint, sub-second React speed, late means 100% free guarantee."
 keywords: "best polyclinic near me seo, pediatrician near me ranking, google business profile for clinics, local patient search capture, uncoded hub blueprint"
 image: "/blog/local-seo-google-maps-domination-for-polyclinics.webp"
 ---

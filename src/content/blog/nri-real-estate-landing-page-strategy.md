@@ -4,7 +4,7 @@ niche: "real-estate"
 date: "2026-07-11T10:00:00+05:30"
 author: "geetha"
 excerpt: "How Indian property brokers and builders structure high-ticket landing pages that convert non-resident Indian buyers across different timezones without site visits."
-metaDescription: "How Indian property brokers and builders structure high-ticket landing pages that convert non-resident Indian buyers across different timezones without site visits."
+metaDescription: "How Indian property brokers and builders structure high-ticket landing pages that convert non-resident Indian buyers across different timezones without."
 keywords: "real estate landing, real estate web strategy, real estate website design, high converting web architecture"
 image: "/blog/nri-real-estate-landing-page-strategy.webp"
 ---

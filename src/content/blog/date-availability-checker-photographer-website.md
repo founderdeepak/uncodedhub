@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-05-04T11:00:00+05:30"
 author: "deepak"
 excerpt: "Wedding vendors can only serve one or two couples per auspicious date. An interactive Date Availability Checker harnesses natural scarcity and increases inquiry completion rates by over 40%."
-metaDescription: "Deploy an interactive date availability checker on your wedding photography website. Leverage auspicious date scarcity to generate high-intent inquiries."
+metaDescription: "Deploy an interactive date availability checker on your wedding photography website. Leverage auspicious date scarcity to generate high-intent."
 keywords: "date availability checker, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/date-availability-checker-photographer-website.webp"
 ---

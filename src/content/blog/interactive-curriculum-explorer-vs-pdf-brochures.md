@@ -4,7 +4,7 @@ niche: "educational-academy"
 date: "2026-03-13T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of curriculum explorer vs pdf: replacing downloadable brochures with interactive modules for Educational Academies & Coaching Institutes. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Curriculum Explorer vs PDF: Replacing Downloadable Brochures with Interactive Modules: Architectural blueprint for Educational Academies & Coaching Institutes"
+metaDescription: "Curriculum Explorer vs PDF: Replacing Downloadable Brochures with Interactive Modules: Architectural blueprint for Educational Academies & Coaching."
 keywords: "interactive curriculum website, coaching syllabus explorer, replace pdf brochure, student course roadmap, uncoded hub blueprint"
 image: "/blog/interactive-curriculum-explorer-vs-pdf-brochures.webp"
 ---

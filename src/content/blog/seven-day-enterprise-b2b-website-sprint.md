@@ -4,7 +4,7 @@ niche: "business-portfolio"
 date: "2026-05-14T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of the 7-day enterprise website sprint: launching high-prestige platforms with deepak & geetha for Enterprise B2B & Corporate Advisory. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "The 7-Day Enterprise Website Sprint: Launching High-Prestige Platforms with Deepak & Geetha: Architectural blueprint for Enterprise B2B & Corporate Advisory."
+metaDescription: "The 7-Day Enterprise Website Sprint: Launching High-Prestige Platforms with Deepak & Geetha: Architectural blueprint for Enterprise B2B & Corporate."
 keywords: "enterprise web design sprint, uncoded hub b2b advisory blueprint, 7 day corporate website launch, fixed fee consulting web design, uncoded hub blueprint"
 image: "/blog/seven-day-enterprise-b2b-website-sprint.webp"
 ---

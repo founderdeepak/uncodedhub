@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-08-06T10:00:00+05:30"
 author: "geetha"
 excerpt: "How entity salience, structured JSON-LD, and answer-first headers win citations in generative search. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "How entity salience, structured JSON-LD, and answer-first headers win citations in generative search... Discover technical benchmarks, conversion frameworks, "
+metaDescription: "How entity salience, structured JSON-LD, and answer-first headers win citations in generative search... Discover technical benchmarks, conversion."
 keywords: "how perplexity chatgpt search rank websites, studio website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/how-ai-search-engines-rank-and-cite-source-websites.webp"
 ---

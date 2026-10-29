@@ -4,7 +4,7 @@ niche: "fitness-coach"
 date: "2026-07-18T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of the 7-day fitness coach website sprint: how uncoded hub builds elite trainer brand hubs for Private Fitness Coaches & Personal Trainers. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "The 7-Day Fitness Coach Website Sprint: How Uncoded Hub Builds Elite Trainer Brand Hubs: Architectural blueprint for Private Fitness Coaches & Personal Traine"
+metaDescription: "The 7-Day Fitness Coach Website Sprint: How Uncoded Hub Builds Elite Trainer Brand Hubs: Architectural blueprint for Private Fitness Coaches & Personal."
 keywords: "personal trainer web design sprint, uncoded hub fitness coach blueprint, 7 day trainer website launch, fixed price trainer web design, uncoded hub blueprint"
 image: "/blog/seven-day-fitness-coach-website-sprint.webp"
 ---

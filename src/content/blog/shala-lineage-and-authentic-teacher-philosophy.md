@@ -4,7 +4,7 @@ niche: "yoga-meditation"
 date: "2026-07-24T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of shala lineage & teacher philosophy: honoring traditional ashtanga, hatha, and iyengar for Yoga Shalas & Meditation Sanctuaries. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Shala Lineage & Teacher Philosophy: Honoring Traditional Ashtanga, Hatha, and Iyengar: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries. Explo"
+metaDescription: "Shala Lineage & Teacher Philosophy: Honoring Traditional Ashtanga, Hatha, and Iyengar: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries."
 keywords: "authentic yoga lineage page, ashtanga mysore lineage proof, iyengar hatha tradition, traditional guru student lineage, uncoded hub blueprint"
 image: "/blog/shala-lineage-and-authentic-teacher-philosophy.webp"
 ---

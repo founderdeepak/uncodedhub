@@ -4,7 +4,7 @@ niche: "coaches-consultants"
 date: "2026-06-02T14:00:00+05:30"
 author: "deepak"
 excerpt: "What actually drives the cost of a coaching or consulting authority website, and why the cheapest option is often the most expensive one over time."
-metaDescription: "What actually drives the cost of a coaching or consulting authority website, and why the cheapest option is often the most expensive one over time."
+metaDescription: "What actually drives the cost of a coaching or consulting authority website, and why the cheapest option is often the most expensive one over."
 keywords: "much should coachs, consulting website architecture, coaches consultants website design, high converting web architecture"
 image: "/blog/how-much-should-a-coachs-website-cost.webp"
 ---

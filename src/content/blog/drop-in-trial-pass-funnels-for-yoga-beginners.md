@@ -4,7 +4,7 @@ niche: "yoga-meditation"
 date: "2026-07-22T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of drop-in trial pass funnels: welcoming beginners with zero-friction 3-class bundles for Yoga Shalas & Meditation Sanctuaries. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Drop-In Trial Pass Funnels: Welcoming Beginners with Zero-Friction 3-Class Bundles: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries. Explore"
+metaDescription: "Drop-In Trial Pass Funnels: Welcoming Beginners with Zero-Friction 3-Class Bundles: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries."
 keywords: "yoga studio trial pass funnel, introductory yoga class pass, convert first time yogis, 3 class intro bundle booking, uncoded hub blueprint"
 image: "/blog/drop-in-trial-pass-funnels-for-yoga-beginners.webp"
 ---

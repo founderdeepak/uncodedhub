@@ -4,7 +4,7 @@ niche: "coaches-consultants"
 date: "2026-05-20T16:00:00+05:30"
 author: "geetha"
 excerpt: "Hiring a full-time C-suite executive costs ₹1.5 Cr+ in salary and equity. Fractional leaders provide strategic firepower at a fraction of the cost. Here is how to architect a high-converting Fractional Executive service page."
-metaDescription: "Architect a high-converting service page for Fractional CMOs, COOs, and CTOs. Define scopes, hours, and strategic deliverables to win 6-figure retainers."
+metaDescription: "Architect a high-converting service page for Fractional CMOs, COOs, and CTOs. Define scopes, hours, and strategic deliverables to win 6-figure."
 keywords: "fractional executive retainer, consulting website architecture, coaches consultants website design, high converting web architecture"
 image: "/blog/fractional-cmo-coo-retainer-service-page.webp"
 ---

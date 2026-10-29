@@ -4,7 +4,7 @@ niche: "business-portfolio"
 date: "2026-04-26T12:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of executive leadership bios: positioning managing partners as industry authorities for Enterprise B2B & Corporate Advisory. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Executive Leadership Bios: Positioning Managing Partners as Industry Authorities: Architectural blueprint for Enterprise B2B & Corporate Advisory. Explore per"
+metaDescription: "Executive Leadership Bios: Positioning Managing Partners as Industry Authorities: Architectural blueprint for Enterprise B2B & Corporate Advisory."
 keywords: "managing partner bio website, c-suite authority positioning, consulting partner credentials, board member bio design, uncoded hub blueprint"
 image: "/blog/executive-leadership-bios-for-advisory-partners.webp"
 ---

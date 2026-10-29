@@ -4,7 +4,7 @@ niche: "fitness-coach"
 date: "2026-07-02T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of video proof & client interview showcases: testimonials that destroy"
-metaDescription: "Video Proof & Client Interview Showcases: Testimonials That Destroy"
+metaDescription: "Guide on video proof & client interview showcases (2026 guide) by Uncoded Hub. 7-day web design sprint, sub-second React speed, late means 100% free guarantee."
 keywords: "personal trainer video reviews, authentic client interview video, overcome fitness skepticism, real fat loss video reviews, uncoded hub blueprint"
 image: "/blog/client-video-interviews-and-anti-guru-proof.webp"
 ---

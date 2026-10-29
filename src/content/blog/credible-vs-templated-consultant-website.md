@@ -4,7 +4,7 @@ niche: "coaches-consultants"
 date: "2026-05-03T10:00:00+05:30"
 author: "geetha"
 excerpt: "Why so many coaching and consulting websites feel interchangeable, and the specific choices that make one feel like a real, trustworthy practice instead."
-metaDescription: "Why so many coaching and consulting websites feel interchangeable, and the specific choices that make one feel like a real, trustworthy practice instead."
+metaDescription: "Why so many coaching and consulting websites feel interchangeable, and the specific choices that make one feel like a real, trustworthy practice."
 keywords: "makes consultants website, consulting website architecture, coaches consultants website design, high converting web architecture"
 image: "/blog/credible-vs-templated-consultant-website.webp"
 ---

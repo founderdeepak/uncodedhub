@@ -4,7 +4,7 @@ niche: "home-renovation"
 date: "2026-08-27T16:00:00+05:30"
 author: "geetha"
 excerpt: "Homeowners dread unexpected contractor bills and scope creep during home renovations. Structuring transparent turnkey packages with itemized scopes of work eliminates fear and wins high-budget home remodels."
-metaDescription: "Design high-converting turnkey home renovation package pages. Itemize scopes of work, eliminate billing disputes, and win complete apartment overhauls."
+metaDescription: "Design high-converting turnkey home renovation package pages. Itemize scopes of work, eliminate billing disputes, and win complete apartment."
 keywords: "turnkey home renovation, home renovation web design, home renovation website design, high converting web architecture"
 image: "/blog/turnkey-home-renovation-package-page-design.webp"
 ---

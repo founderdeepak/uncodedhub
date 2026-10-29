@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-08-08T14:00:00+05:30"
 author: "geetha"
 excerpt: "Secure agent authentication architecture using `.well-known/oauth-authorization-server`. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Secure agent authentication architecture using `.well-known/oauth-authorization-server`.... Discover technical benchmarks, conversion frameworks, and architec"
+metaDescription: "Secure agent authentication architecture using `.well-known/oauth-authorization-server`.... Discover technical benchmarks, conversion frameworks."
 keywords: "oauth authorization server metadata rfc 8414, studio website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/oauth-authorization-server-metadata-for-agent-auth.webp"
 ---

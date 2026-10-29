@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-09-06T08:00:00+05:30"
 author: "deepak"
 excerpt: "Real conversion benchmarks: moving service businesses from 1.2% to 4.8% inbound enquiry rates. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Real conversion benchmarks: moving service businesses from 1.2% to 4.8% inbound enquiry rates.... Discover technical benchmarks, conversion frameworks, and ar"
+metaDescription: "Real conversion benchmarks: moving service businesses from 1.2% to 4.8% inbound enquiry rates.... Discover technical benchmarks, conversion frameworks."
 keywords: "average website conversion rate service business, studio website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/website-conversion-rate-benchmarks-for-indian-services.webp"
 ---

@@ -4,7 +4,7 @@ niche: "spa-wellness"
 date: "2026-05-19T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of day-package & couple retreat calculators: grouping therapies into high-ticket escapes for Luxury Spas & Wellness Retreats. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Day-Package & Couple Retreat Calculators: Grouping Therapies into High-Ticket Escapes: Architectural blueprint for Luxury Spas & Wellness Retreats. Explore pe"
+metaDescription: "Day-Package & Couple Retreat Calculators: Grouping Therapies into High-Ticket Escapes: Architectural blueprint for Luxury Spas & Wellness Retreats."
 keywords: "couple spa package calculator, full day spa package builder, anniversary retreat packages, luxury spa package pricing, uncoded hub blueprint"
 image: "/blog/couple-retreat-and-day-spa-package-calculators.webp"
 ---

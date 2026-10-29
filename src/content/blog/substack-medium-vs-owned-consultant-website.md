@@ -4,7 +4,7 @@ niche: "coaches-consultants"
 date: "2026-08-23T21:00:00+05:30"
 author: "deepak"
 excerpt: "Relying entirely on Substack, Medium, or LinkedIn to host your thought leadership builds enterprise value for someone else's platform while leaving you vulnerable to algorithm shifts and fee hikes. Here is why consultants must own their domain."
-metaDescription: "Don't build your intellectual property on rented land. Compare Substack and Medium against an owned website domain for high-ticket consulting authority."
+metaDescription: "Don't build your intellectual property on rented land. Compare Substack and Medium against an owned website domain for high-ticket consulting."
 keywords: "substack medium owning, consulting website architecture, coaches consultants website design, high converting web architecture"
 image: "/blog/substack-medium-vs-owned-consultant-website.webp"
 ---

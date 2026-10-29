@@ -4,7 +4,7 @@ niche: "interior-designers"
 date: "2026-03-26T16:00:00+05:30"
 author: "geetha"
 excerpt: "Password-protected hubs where clients review mood boards, 3D CAD files, and invoices. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Password-protected hubs where clients review mood boards, 3D CAD files, and invoices.... Discover technical benchmarks, conversion frameworks, and architectur"
+metaDescription: "Password-protected hubs where clients review mood boards, 3D CAD files, and invoices.... Discover technical benchmarks, conversion frameworks."
 keywords: "interior design client portal onboarding, interior designers website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/client-onboarding-portal-inside-a-design-website.webp"
 ---

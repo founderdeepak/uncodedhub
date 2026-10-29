@@ -4,7 +4,7 @@ niche: "healthcare-diagnostics"
 date: "2026-09-05T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of whatsapp test report retrieval flow: delivering reports directly into patient phones for Pathology & Diagnostic Labs. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "WhatsApp Test Report Retrieval Flow: Delivering Reports Directly into Patient Phones: Architectural blueprint for Pathology & Diagnostic Labs. Explore perform"
+metaDescription: "WhatsApp Test Report Retrieval Flow: Delivering Reports Directly into Patient Phones: Architectural blueprint for Pathology & Diagnostic Labs."
 keywords: "download lab reports on whatsapp, instant test report notification, automated pdf report delivery, pathology report access, uncoded hub blueprint"
 image: "/blog/whatsapp-instant-test-report-delivery-flow.webp"
 ---

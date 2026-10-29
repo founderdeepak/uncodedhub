@@ -4,7 +4,7 @@ niche: "real-estate"
 date: "2026-06-24T14:00:00+05:30"
 author: "geetha"
 excerpt: "Why high-net-worth buyers bounce from cluttered real estate portals. How minimalist editorial design, exclusivity gates, and private viewings sell ultra-luxury homes."
-metaDescription: "Why high-net-worth buyers bounce from cluttered real estate portals. How minimalist editorial design, exclusivity gates, and private viewings sell ultra-luxury homes."
+metaDescription: "Why high-net-worth buyers bounce from cluttered real estate portals. How minimalist editorial design, exclusivity gates, and private viewings sell."
 keywords: "luxury real estate, real estate web strategy, real estate website design, high converting web architecture"
 image: "/blog/luxury-real-estate-website-design.webp"
 ---

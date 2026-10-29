@@ -4,7 +4,7 @@ niche: "real-estate"
 date: "2026-03-30T21:00:00+05:30"
 author: "deepak"
 excerpt: "How buyers are starting to use AI chat tools alongside Google and portals when researching property, and what it means for a real estate agent's website."
-metaDescription: "How buyers are starting to use AI chat tools alongside Google and portals when researching property, and what it means for a real estate agent's website."
+metaDescription: "How buyers are starting to use AI chat tools alongside Google and portals when researching property, and what it means for a real estate agent's."
 keywords: "assistants changing property, real estate web strategy, real estate website design, high converting web architecture"
 image: "/blog/ai-assistants-property-buyer-search.webp"
 ---

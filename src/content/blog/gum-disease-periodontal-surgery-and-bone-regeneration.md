@@ -4,7 +4,7 @@ niche: "dental-clinics"
 date: "2026-05-15T21:00:00+05:30"
 author: "geetha"
 excerpt: "Clinical clarity on deep scaling, bone grafting, and periodontic flap surgery protocols. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Clinical clarity on deep scaling, bone grafting, and periodontic flap surgery protocols.... Discover technical benchmarks, conversion frameworks, and architec"
+metaDescription: "Clinical clarity on deep scaling, bone grafting, and periodontic flap surgery protocols.... Discover technical benchmarks, conversion frameworks."
 keywords: "laser gum disease treatment flap surgery cost, dental clinics website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/gum-disease-periodontal-surgery-and-bone-regeneration.webp"
 ---

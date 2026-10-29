@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-03-13T19:00:00+05:30"
 author: "deepak"
 excerpt: "Real website cost breakdown in India. Why hourly agencies go over budget, what a fair fixed-price quote includes, and our 7-day delivery guarantee."
-metaDescription: "Real website cost breakdown in India. Why hourly agencies go over budget, what a fair fixed-price quote includes, and our 7-day delivery guarantee."
+metaDescription: "Real website cost breakdown in India. Why hourly agencies go over budget, what a fair fixed-price quote includes, and our 7-day delivery."
 keywords: "cost small business, web engineering and conversion, studio website design, high converting web architecture"
 image: "/blog/how-much-should-a-small-business-website-cost-in-india.webp"
 ---

@@ -4,7 +4,7 @@ niche: "coaches-consultants"
 date: "2026-07-13T10:00:00+05:30"
 author: "deepak"
 excerpt: "Highlighting live advisory calls, guest mentor rosters, and peer network exclusivity. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Highlighting live advisory calls, guest mentor rosters, and peer network exclusivity.... Discover technical benchmarks, conversion frameworks, and architectur"
+metaDescription: "Highlighting live advisory calls, guest mentor rosters, and peer network exclusivity.... Discover technical benchmarks, conversion frameworks."
 keywords: "mastermind cohort group coaching landing page, coaches consultants website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/mastermind-and-cohort-group-coaching-sales-page-ux.webp"
 ---

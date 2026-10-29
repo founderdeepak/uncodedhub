@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-08-15T11:00:00+05:30"
 author: "geetha"
 excerpt: "Why page speed is the highest-leverage, least glamorous fix a wedding photography portfolio can make, and how to find out if yours is losing enquiries."
-metaDescription: "Why page speed is the highest-leverage, least glamorous fix a wedding photography portfolio can make, and how to find out if yours is losing enquiries."
+metaDescription: "Why page speed is the highest-leverage, least glamorous fix a wedding photography portfolio can make, and how to find out if yours is losing."
 keywords: "slowloading photo gallery, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/slow-loading-gallery-loses-wedding-enquiries.webp"
 ---

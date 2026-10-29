@@ -4,7 +4,7 @@ niche: "healthcare-diagnostics"
 date: "2026-09-06T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of nabl & cap accreditation badges: showcasing international quality benchmarks for trust for Pathology & Diagnostic Labs. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "NABL & CAP Accreditation Badges: Showcasing International Quality Benchmarks for Trust: Architectural blueprint for Pathology & Diagnostic Labs. Explore perfo"
+metaDescription: "NABL & CAP Accreditation Badges: Showcasing International Quality Benchmarks for Trust: Architectural blueprint for Pathology & Diagnostic Labs."
 keywords: "nabl certified diagnostic lab website, cap accredited pathology lab, clinical accuracy certifications, laboratory quality assurance, uncoded hub blueprint"
 image: "/blog/nabl-and-cap-accreditation-trust-showcase.webp"
 ---

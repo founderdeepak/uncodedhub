@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-08-29T08:00:00+05:30"
 author: "geetha"
 excerpt: "Why loading entire 200KB icon fonts destroys mobile LCP compared to tree-shaken inline SVGs. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Why loading entire 200KB icon fonts destroys mobile LCP compared to tree-shaken inline SVGs.... Discover technical benchmarks, conversion frameworks, and arch"
+metaDescription: "Why loading entire 200KB icon fonts destroys mobile LCP compared to tree-shaken inline SVGs.... Discover technical benchmarks, conversion frameworks."
 keywords: "svg vs fontawesome web performance, studio website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/svg-inline-icons-vs-heavy-icon-font-libraries.webp"
 ---

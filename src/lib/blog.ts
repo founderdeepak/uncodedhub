@@ -394,6 +394,59 @@ export function extractFaqs(markdown: string): FaqItem[] {
   return items;
 }
 
+export function extractMetaDescription(cleanedBody: string, _title: string, niche: string): string {
+  const paragraphs = cleanedBody.split(/\r?\n\r?\n/);
+  let bestParagraph = '';
+
+  for (const para of paragraphs) {
+    const trimmed = para.trim();
+    if (!trimmed) continue;
+    if (/^[#>\-\*\|`]/.test(trimmed)) continue;
+    if (trimmed.startsWith('![') || trimmed.startsWith('<')) continue;
+
+    const clean = trimmed
+      .replace(/\[(.*?)\]\(.*?\)/g, '$1')
+      .replace(/[*_`#~]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    if (clean.length >= 80) {
+      bestParagraph = clean;
+      break;
+    }
+  }
+
+  if (bestParagraph.length >= 100) {
+    if (bestParagraph.length <= 158 && bestParagraph.length >= 120) {
+      return bestParagraph.endsWith('.') ? bestParagraph : `${bestParagraph}.`;
+    }
+
+    const targetSlice = bestParagraph.slice(0, 155);
+    const lastPunctuation = Math.max(
+      targetSlice.lastIndexOf('. '),
+      targetSlice.lastIndexOf('? '),
+      targetSlice.lastIndexOf('! ')
+    );
+    if (lastPunctuation > 115) {
+      return targetSlice.slice(0, lastPunctuation + 1).trim();
+    }
+    const lastSpace = targetSlice.lastIndexOf(' ');
+    if (lastSpace > 110) {
+      let trimmed = targetSlice.slice(0, lastSpace).trim();
+      trimmed = trimmed.replace(/[,;:\-\s]+$/, '');
+      trimmed = trimmed.replace(
+        /\s+(with|and|or|in|the|a|an|of|to|for|on|by|at|from|is|are|that|which|who|their|your|its)$/i,
+        ''
+      );
+      return `${trimmed}.`;
+    }
+    return `${targetSlice.trim()}.`;
+  }
+
+  const nicheName = NICHES[niche as NicheKey] || 'Service Business';
+  return `Comprehensive web architecture blueprint for ${nicheName.toLowerCase()} practices by Uncoded Hub. 7-day sprint, sub-second React speed, late means free.`;
+}
+
 function loadPosts(): BlogPost[] {
   const posts: BlogPost[] = [];
 
@@ -422,7 +475,10 @@ function loadPosts(): BlogPost[] {
       niche,
       date: data.date,
       excerpt: data.excerpt ?? '',
-      metaDescription: data.metaDescription || data.excerpt || data.title,
+      metaDescription:
+        data.metaDescription ||
+        data.excerpt ||
+        extractMetaDescription(cleanedBody, data.title, niche),
       keywords: data.keywords || undefined,
       image: data.image || undefined,
       html,

@@ -4,7 +4,7 @@ niche: "salon-beauty"
 date: "2026-06-16T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of hair & skin treatment menus: keratin, botoplex, and hydra-facial clear benefit guides for Salons & Bridal Beauty Studios. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Hair & Skin Treatment Menus: Keratin, Botoplex, and Hydra-Facial Clear Benefit Guides: Architectural blueprint for Salons & Bridal Beauty Studios. Explore per"
+metaDescription: "Hair & Skin Treatment Menus: Keratin, Botoplex, and Hydra-Facial Clear Benefit Guides: Architectural blueprint for Salons & Bridal Beauty Studios."
 keywords: "salon treatment service menu, keratin vs botoplex hair treatment guide, hydrafacial cost and benefits, salon skincare menu, uncoded hub blueprint"
 image: "/blog/hair-and-skin-treatment-benefit-guides-keratin-hydrafacial.webp"
 ---

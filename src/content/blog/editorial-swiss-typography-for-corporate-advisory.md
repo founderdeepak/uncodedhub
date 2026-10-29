@@ -4,7 +4,7 @@ niche: "business-portfolio"
 date: "2026-05-04T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of b2b editorial typography: why clean swiss layouts command 3x higher retainer credibility for Enterprise B2B & Corporate Advisory. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "B2B Editorial Typography: Why Clean Swiss Layouts Command 3x Higher Retainer Credibility: Architectural blueprint for Enterprise B2B & Corporate Advisory. Exp"
+metaDescription: "B2B Editorial Typography: Why Clean Swiss Layouts Command 3x Higher Retainer Credibility: Architectural blueprint for Enterprise B2B & Corporate Advisory."
 keywords: "b2b corporate website typography, swiss design corporate credibility, executive typography pairings, premium consulting aesthetic, uncoded hub blueprint"
 image: "/blog/editorial-swiss-typography-for-corporate-advisory.webp"
 ---

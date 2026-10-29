@@ -4,7 +4,7 @@ niche: "home-renovation"
 date: "2026-09-25T21:00:00+05:30"
 author: "geetha"
 excerpt: "The specific things a homeowner checks on a modular kitchen or renovation studio's website before they'll actually request a quote rather than just browse."
-metaDescription: "The specific things a homeowner checks on a modular kitchen or renovation studio's website before they'll actually request a quote rather than just browse."
+metaDescription: "The specific things a homeowner checks on a modular kitchen or renovation studio's website before they'll actually request a quote rather than just."
 keywords: "homeowners look modular, home renovation web design, home renovation website design, high converting web architecture"
 image: "/blog/what-homeowners-look-for-before-requesting-a-quote.webp"
 ---

@@ -4,7 +4,7 @@ niche: "doctor-specialist"
 date: "2026-10-18T12:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of international medical tourism packages: coordinating visas, transfers, and stay for Super-Specialist Doctors & Surgeons. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "International Medical Tourism Packages: Coordinating Visas, Transfers, and Stay: Architectural blueprint for Super-Specialist Doctors & Surgeons. Explore perf"
+metaDescription: "International Medical Tourism Packages: Coordinating Visas, Transfers, and Stay: Architectural blueprint for Super-Specialist Doctors & Surgeons."
 keywords: "medical tourism surgeon website, international patient surgical packages, medical visa assistance, airport transfer accommodation desk, uncoded hub blueprint"
 image: "/blog/international-medical-tourism-and-global-patient-desks.webp"
 ---

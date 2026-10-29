@@ -4,7 +4,7 @@ niche: "home-renovation"
 date: "2026-03-31T19:00:00+05:30"
 author: "geetha"
 excerpt: "How homeowners are starting to use AI chat tools when researching a modular kitchen or renovation contractor, and what it means for a studio's website."
-metaDescription: "How homeowners are starting to use AI chat tools when researching a modular kitchen or renovation contractor, and what it means for a studio's website."
+metaDescription: "How homeowners are starting to use AI chat tools when researching a modular kitchen or renovation contractor, and what it means for a studio's."
 keywords: "assistants changing homeowners, home renovation web design, home renovation website design, high converting web architecture"
 image: "/blog/ai-assistants-renovation-contractor-search.webp"
 ---

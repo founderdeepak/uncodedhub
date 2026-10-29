@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-09-13T21:00:00+05:30"
 author: "deepak"
 excerpt: "The Rule of Three: using decoying, feature callouts, and recommended badges to drive high-tier sales. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "The Rule of Three: using decoying, feature callouts, and recommended badges to drive high-tier sales... Discover technical benchmarks, conversion frameworks, "
+metaDescription: "The Rule of Three: using decoying, feature callouts, and recommended badges to drive high-tier sales... Discover technical benchmarks, conversion."
 keywords: "website pricing page tier psychology, studio website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/framing-pricing-packages-anchoring-and-tier-psychology.webp"
 ---

@@ -4,7 +4,7 @@ niche: "salon-beauty"
 date: "2026-06-19T12:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of mobile 4g speed for image galleries: how next-gen webp/avif eliminates gallery lag for Salons & Bridal Beauty Studios. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Mobile 4G Speed for Image Galleries: How Next-Gen WebP/AVIF Eliminates Gallery Lag: Architectural blueprint for Salons & Bridal Beauty Studios. Explore perfor"
+metaDescription: "Mobile 4G Speed for Image Galleries: How Next-Gen WebP/AVIF Eliminates Gallery Lag: Architectural blueprint for Salons & Bridal Beauty Studios."
 keywords: "fast loading bridal photo gallery, webp avif optimization for beauty photos, stop mobile gallery lag, high res beauty loading, uncoded hub blueprint"
 image: "/blog/mobile-4g-image-optimization-for-beauty-portfolios.webp"
 ---

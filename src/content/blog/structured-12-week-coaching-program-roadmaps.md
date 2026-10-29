@@ -4,7 +4,7 @@ niche: "fitness-coach"
 date: "2026-07-01T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of structured 12-week roadmap presentation: demystifying what clients actually pay for for Private Fitness Coaches & Personal Trainers. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Structured 12-Week Roadmap Presentation: Demystifying What Clients Actually Pay For: Architectural blueprint for Private Fitness Coaches & Personal Trainers."
+metaDescription: "Structured 12-Week Roadmap Presentation: Demystifying What Clients Actually Pay For: Architectural blueprint for Private Fitness Coaches & Personal."
 keywords: "12 week fitness program curriculum, phases of personal training roadmap, what clients get in coaching, progressive overload plan, uncoded hub blueprint"
 image: "/blog/structured-12-week-coaching-program-roadmaps.webp"
 ---

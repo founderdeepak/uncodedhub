@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-04-02T14:00:00+05:30"
 author: "deepak"
 excerpt: "How small business owners are starting to use AI chat tools when researching a web design studio, and what that means for how a studio's own site is built."
-metaDescription: "How small business owners are starting to use AI chat tools when researching a web design studio, and what that means for how a studio's own site is built."
+metaDescription: "How small business owners are starting to use AI chat tools when researching a web design studio, and what that means for how a studio's own site."
 keywords: "assistants changing small, web engineering and conversion, studio website design, high converting web architecture"
 image: "/blog/ai-assistants-web-design-studio-search.webp"
 ---

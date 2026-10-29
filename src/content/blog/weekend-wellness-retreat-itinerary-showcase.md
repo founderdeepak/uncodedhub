@@ -4,7 +4,7 @@ niche: "spa-wellness"
 date: "2026-06-01T12:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of weekend retreat itineraries: step-by-step timelines for residential sanctuaries for Luxury Spas & Wellness Retreats. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Weekend Retreat Itineraries: Step-by-Step Timelines for Residential Sanctuaries: Architectural blueprint for Luxury Spas & Wellness Retreats. Explore performa"
+metaDescription: "Weekend Retreat Itineraries: Step-by-Step Timelines for Residential Sanctuaries: Architectural blueprint for Luxury Spas & Wellness Retreats."
 keywords: "wellness retreat itinerary page, residential yoga spa schedule, 3 day detox retreat plan, retreat accommodation preview, uncoded hub blueprint"
 image: "/blog/weekend-wellness-retreat-itinerary-showcase.webp"
 ---

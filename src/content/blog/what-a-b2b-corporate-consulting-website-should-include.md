@@ -4,7 +4,7 @@ niche: "business-portfolio"
 date: "2026-04-23T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of what a b2b corporate consulting website should include to win multi-million retainers for Enterprise B2B & Corporate Advisory. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "What a B2B Corporate Consulting Website Should Include to Win Multi-Million Retainers: Architectural blueprint for Enterprise B2B & Corporate Advisory. Explor"
+metaDescription: "What a B2B Corporate Consulting Website Should Include to Win Multi-Million Retainers: Architectural blueprint for Enterprise B2B & Corporate Advisory."
 keywords: "b2b consulting website design, corporate advisory website, enterprise consulting portfolio, high retainer client acquisition, uncoded hub blueprint"
 image: "/blog/what-a-b2b-corporate-consulting-website-should-include.webp"
 ---

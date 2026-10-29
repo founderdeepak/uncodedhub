@@ -4,7 +4,7 @@ niche: "doctor-specialist"
 date: "2026-10-12T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of second opinion tele-consultation funnels: welcoming outstation & global candidates for Super-Specialist Doctors & Surgeons. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Second Opinion Tele-Consultation Funnels: Welcoming Outstation & Global Candidates: Architectural blueprint for Super-Specialist Doctors & Surgeons. Explore p"
+metaDescription: "Second Opinion Tele-Consultation Funnels: Welcoming Outstation & Global Candidates: Architectural blueprint for Super-Specialist Doctors & Surgeons."
 keywords: "surgical second opinion online, remote surgical case review, second opinion consultation upload mri, outstation patient funnel, uncoded hub blueprint"
 image: "/blog/second-opinion-tele-consultation-funnels-for-surgeons.webp"
 ---

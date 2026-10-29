@@ -4,7 +4,7 @@ niche: "coaches-consultants"
 date: "2026-08-11T19:00:00+05:30"
 author: "deepak"
 excerpt: "Where the line between free and gated content should sit on a coach's website, and why giving away too little is as costly as giving away too much."
-metaDescription: "Where the line between free and gated content should sit on a coach's website, and why giving away too little is as costly as giving away too much."
+metaDescription: "Where the line between free and gated content should sit on a coach's website, and why giving away too little is as costly as giving away too."
 keywords: "should coach gate, consulting website architecture, coaches consultants website design, high converting web architecture"
 image: "/blog/should-a-coach-gate-content-behind-email-signup.webp"
 ---

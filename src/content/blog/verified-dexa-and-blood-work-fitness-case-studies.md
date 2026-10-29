@@ -4,7 +4,7 @@ niche: "fitness-coach"
 date: "2026-06-29T12:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of verified transformation case studies: documenting dexa scans, strength & blood work proof for Private Fitness Coaches & Personal Trainers. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Verified Transformation Case Studies: Documenting DEXA Scans, Strength & Blood Work Proof: Architectural blueprint for Private Fitness Coaches & Personal Trai"
+metaDescription: "Verified Transformation Case Studies: Documenting DEXA Scans, Strength & Blood Work Proof: Architectural blueprint for Private Fitness Coaches & Personal."
 keywords: "verified fitness transformation case study, dexa scan body fat proof, blood panel health transformation, evidence based trainer proof, uncoded hub blueprint"
 image: "/blog/verified-dexa-and-blood-work-fitness-case-studies.webp"
 ---

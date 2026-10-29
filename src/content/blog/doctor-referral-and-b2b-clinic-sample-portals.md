@@ -4,7 +4,7 @@ niche: "healthcare-diagnostics"
 date: "2026-09-10T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of doctor referral & b2b clinic portals: streamlining patient referrals from neighborhood gps for Pathology & Diagnostic Labs. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Doctor Referral & B2B Clinic Portals: Streamlining Patient Referrals from Neighborhood GPs: Architectural blueprint for Pathology & Diagnostic Labs. Explore p"
+metaDescription: "Doctor Referral & B2B Clinic Portals: Streamlining Patient Referrals from Neighborhood GPs: Architectural blueprint for Pathology & Diagnostic Labs."
 keywords: "doctor referral portal for pathology, general practitioner test referral, b2b clinic sample pickup, diagnostic lab partnership portal, uncoded hub blueprint"
 image: "/blog/doctor-referral-and-b2b-clinic-sample-portals.webp"
 ---

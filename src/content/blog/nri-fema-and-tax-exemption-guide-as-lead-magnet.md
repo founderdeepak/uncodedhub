@@ -4,7 +4,7 @@ niche: "real-estate"
 date: "2026-04-08T10:00:00+05:30"
 author: "deepak"
 excerpt: "Comprehensive legal and tax guides capturing foreign investor property inquiries. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Comprehensive legal and tax guides capturing foreign investor property inquiries.... Discover technical benchmarks, conversion frameworks, and architecture fr"
+metaDescription: "Comprehensive legal and tax guides capturing foreign investor property inquiries.... Discover technical benchmarks, conversion frameworks."
 keywords: "nri property capital gains tax section 54 guide, real estate website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/nri-fema-and-tax-exemption-guide-as-lead-magnet.webp"
 ---

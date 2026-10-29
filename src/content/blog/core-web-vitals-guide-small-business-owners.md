@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-04-30T10:00:00+05:30"
 author: "geetha"
 excerpt: "Demystifying Google's Core Web Vitals (LCP, INP, CLS) in plain business language. Learn why a 0.5-second speed advantage translates directly into lower Google ad costs, higher organic rankings, and more phone calls."
-metaDescription: "Understand Google Core Web Vitals (LCP, INP, CLS) without technical jargon. Discover how sub-second page speed slashes ad spend and boosts conversions."
+metaDescription: "Understand Google Core Web Vitals (LCP, INP, CLS) without technical jargon. Discover how sub-second page speed slashes ad spend and boosts."
 keywords: "core vitals guide, web engineering and conversion, studio website design, high converting web architecture"
 image: "/blog/core-web-vitals-guide-small-business-owners.webp"
 ---

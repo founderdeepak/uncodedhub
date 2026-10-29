@@ -4,7 +4,7 @@ niche: "home-renovation"
 date: "2026-04-05T16:00:00+05:30"
 author: "deepak"
 excerpt: "Thousands of identical apartments in major residential societies (Prestige, Sobha, Brigade) undergo simultaneous interior fit-outs. Creating dedicated society renovation landing pages generates viral resident word-of-mouth."
-metaDescription: "Dominate hyperlocal interior inquiries with apartment society landing pages. Target specific gated communities (Prestige, Sobha, DLF) with floor-plan-accurate case studies."
+metaDescription: "Dominate hyperlocal interior inquiries with apartment society landing pages. Target specific gated communities (Prestige, Sobha, DLF)."
 keywords: "apartment society renovation, home renovation web design, home renovation website design, high converting web architecture"
 image: "/blog/apartment-society-renovation-landing-pages.webp"
 ---

@@ -4,7 +4,7 @@ niche: "coaches-consultants"
 date: "2026-07-14T11:00:00+05:30"
 author: "geetha"
 excerpt: "Driving bulk pre-orders and capturing reader emails through exclusive chapter bonuses. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Driving bulk pre-orders and capturing reader emails through exclusive chapter bonuses.... Discover technical benchmarks, conversion frameworks, and architectu"
+metaDescription: "Driving bulk pre-orders and capturing reader emails through exclusive chapter bonuses.... Discover technical benchmarks, conversion frameworks."
 keywords: "business author book launch landing page design, coaches consultants website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/consultant-book-launch-and-author-authority-landing-page.webp"
 ---

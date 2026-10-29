@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-06-10T08:00:00+05:30"
 author: "geetha"
 excerpt: "Downloadable Google Sheet budget calculators capturing couples 12 months before marriage. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Downloadable Google Sheet budget calculators capturing couples 12 months before marriage.... Discover technical benchmarks, conversion frameworks, and archite"
+metaDescription: "Downloadable Google Sheet budget calculators capturing couples 12 months before marriage.... Discover technical benchmarks, conversion frameworks."
 keywords: "indian wedding budget excel planner template, wedding photographers website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/lead-magnet-the-engaged-couples-wedding-budget-sheet.webp"
 ---

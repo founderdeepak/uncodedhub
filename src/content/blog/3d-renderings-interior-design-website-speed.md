@@ -4,7 +4,7 @@ niche: "interior-designers"
 date: "2026-03-23T19:00:00+05:30"
 author: "geetha"
 excerpt: "Why uploading uncompressed 4K 3D renders crushes mobile website speed, and how prospective clients tell virtual concepts apart from real finished homes."
-metaDescription: "Why uploading uncompressed 4K 3D renders crushes mobile website speed, and how prospective clients tell virtual concepts apart from real finished homes."
+metaDescription: "Why uploading uncompressed 4K 3D renders crushes mobile website speed, and how prospective clients tell virtual concepts apart from real finished."
 keywords: "renders built project, interior design website, interior designers website design, high converting web architecture"
 image: "/blog/3d-renderings-interior-design-website-speed.webp"
 ---

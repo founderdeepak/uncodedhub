@@ -4,7 +4,7 @@ niche: "doctor-specialist"
 date: "2026-10-18T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of surgical risk transparency: explaining success rates, candidacy, and expectations for Super-Specialist Doctors & Surgeons. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Surgical Risk Transparency: Explaining Success Rates, Candidacy, and Expectations: Architectural blueprint for Super-Specialist Doctors & Surgeons. Explore pe"
+metaDescription: "Surgical Risk Transparency: Explaining Success Rates, Candidacy, and Expectations: Architectural blueprint for Super-Specialist Doctors & Surgeons."
 keywords: "surgical risk explanation for patients, who is not a candidate for surgery, realistic recovery expectations, informed consent transparency, uncoded hub blueprint"
 image: "/blog/surgical-risk-transparency-and-realistic-expectations.webp"
 ---

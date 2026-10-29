@@ -5,7 +5,7 @@ date: "2026-08-26T14:00:00+05:30"
 image: "/blog/transparent-renovation-timeline-guarantee-page.webp"
 author: "deepak"
 excerpt: "The universal complaint against interior contractors is endless project delays. Publishing a contractual 'Late Means Free' or daily penalty guarantee on your website transforms client skepticism into immediate sales conviction."
-metaDescription: "De-risk client renovations with a contractual timeline guarantee page. Learn how daily delay penalties and transparent schedules win high-budget fit-outs."
+metaDescription: "De-risk client renovations with a contractual timeline guarantee page. Learn how daily delay penalties and transparent schedules win high-budget."
 keywords: "transparent timeline delay, home renovation web design, home renovation website design, high converting web architecture"
 ---
 

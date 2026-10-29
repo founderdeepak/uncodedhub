@@ -4,7 +4,7 @@ niche: "educational-academy"
 date: "2026-03-12T12:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of fee transparency: why publishing course fee ranges multiplies academy inquiries for Educational Academies & Coaching Institutes. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Fee Transparency: Why Publishing Course Fee Ranges Multiplies Academy Inquiries: Architectural blueprint for Educational Academies & Coaching Institutes. Expl"
+metaDescription: "Fee Transparency: Why Publishing Course Fee Ranges Multiplies Academy Inquiries: Architectural blueprint for Educational Academies & Coaching Institutes."
 keywords: "coaching fee transparency, academy fee structure, course pricing website, coaching inquiry conversion, uncoded hub blueprint"
 image: "/blog/educational-academy-course-fee-transparency.webp"
 ---

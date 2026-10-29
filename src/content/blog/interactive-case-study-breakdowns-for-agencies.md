@@ -4,7 +4,7 @@ niche: "creative-portfolio"
 date: "2026-08-11T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of interactive case study breakdowns: dissecting problem, strategy, identity, and lift for Creative Design Studios & Agencies. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Interactive Case Study Breakdowns: Dissecting Problem, Strategy, Identity, and Lift: Architectural blueprint for Creative Design Studios & Agencies. Explore p"
+metaDescription: "Interactive Case Study Breakdowns: Dissecting Problem, Strategy, Identity, and Lift: Architectural blueprint for Creative Design Studios & Agencies."
 keywords: "agency case study design format, problem strategy identity market lift, deep dive branding case study, interactive agency portfolio, uncoded hub blueprint"
 image: "/blog/interactive-case-study-breakdowns-for-agencies.webp"
 ---

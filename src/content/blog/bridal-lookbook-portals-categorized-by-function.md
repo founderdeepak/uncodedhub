@@ -4,7 +4,7 @@ niche: "salon-beauty"
 date: "2026-06-06T12:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of bridal lookbook portals: high-resolution hd portfolios categorized by wedding function for Salons & Bridal Beauty Studios. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Bridal Lookbook Portals: High-Resolution HD Portfolios Categorized by Wedding Function: Architectural blueprint for Salons & Bridal Beauty Studios. Explore pe"
+metaDescription: "Bridal Lookbook Portals: High-Resolution HD Portfolios Categorized by Wedding Function: Architectural blueprint for Salons & Bridal Beauty Studios."
 keywords: "bridal makeup lookbook website, sangeet wedding reception looks, hd bridal makeup portfolio, function wise bridal gallery, uncoded hub blueprint"
 image: "/blog/bridal-lookbook-portals-categorized-by-function.webp"
 ---

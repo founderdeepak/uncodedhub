@@ -4,7 +4,7 @@ niche: "real-estate"
 date: "2026-06-17T16:00:00+05:30"
 author: "deepak"
 excerpt: "How boutique builders and developers structure Joint Development (JD) showcase pages that convince private landowners to sign exclusive development agreements."
-metaDescription: "How boutique builders and developers structure Joint Development (JD) showcase pages that convince private landowners to sign exclusive development agreements."
+metaDescription: "How boutique builders and developers structure Joint Development (JD) showcase pages that convince private landowners to sign exclusive development."
 keywords: "joint venture landowner, real estate web strategy, real estate website design, high converting web architecture"
 image: "/blog/joint-venture-property-developer-website.webp"
 ---

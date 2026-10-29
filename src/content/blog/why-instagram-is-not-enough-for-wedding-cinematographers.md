@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-06-12T11:00:00+05:30"
 author: "geetha"
 excerpt: "Escaping Instagram compression and algorithm bans by owning high-resolution 4K portfolio real estate. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Escaping Instagram compression and algorithm bans by owning high-resolution 4K portfolio real estate... Discover technical benchmarks, conversion frameworks, "
+metaDescription: "Escaping Instagram compression and algorithm bans by owning high-resolution 4K portfolio real estate... Discover technical benchmarks, conversion."
 keywords: "why wedding photographers need own website, wedding photographers website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/why-instagram-is-not-enough-for-wedding-cinematographers.webp"
 ---

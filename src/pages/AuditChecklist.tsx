@@ -218,10 +218,10 @@ export default function AuditChecklist() {
   return (
     <>
       <Helmet>
-        <title>The Pre-Sold Prospects Audit: 10-Point Trust Diagnostic | Uncoded Hub</title>
+        <title>The Pre-Sold Prospects Audit: 10-Point Website Diagnostic</title>
         <meta
           name="description"
-          content="Score your website against the 10-point conversion and trust diagnostic Uncoded Hub runs for paying clients. Free interactive calculator & 20-minute action checklist."
+          content="Score your website against the 10-point conversion and trust diagnostic used by Uncoded Hub. Free interactive diagnostic matrix &amp; action checklist."
         />
         <link rel="canonical" href="https://uncodedhub.com/audit-checklist/" />
       </Helmet>

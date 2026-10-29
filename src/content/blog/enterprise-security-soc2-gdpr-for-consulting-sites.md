@@ -4,7 +4,7 @@ niche: "business-portfolio"
 date: "2026-05-01T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of enterprise security & compliance: why b2b websites must comply with soc2, gdpr, and iso for Enterprise B2B & Corporate Advisory. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Enterprise Security & Compliance: Why B2B Websites Must Comply with SOC2, GDPR, and ISO: Architectural blueprint for Enterprise B2B & Corporate Advisory. Expl"
+metaDescription: "Enterprise Security & Compliance: Why B2B Websites Must Comply with SOC2, GDPR, and ISO: Architectural blueprint for Enterprise B2B & Corporate Advisory."
 keywords: "b2b website compliance and security, soc2 compliant website, gdpr privacy for corporate consultants, enterprise vendor vetting, uncoded hub blueprint"
 image: "/blog/enterprise-security-soc2-gdpr-for-consulting-sites.webp"
 ---

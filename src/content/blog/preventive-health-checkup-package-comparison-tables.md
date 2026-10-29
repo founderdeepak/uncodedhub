@@ -4,7 +4,7 @@ niche: "healthcare-diagnostics"
 date: "2026-09-03T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of preventive health package comparison tables: full body, cardiac, and diabetic clear guides for Pathology & Diagnostic Labs. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Preventive Health Package Comparison Tables: Full Body, Cardiac, and Diabetic Clear Guides: Architectural blueprint for Pathology & Diagnostic Labs. Explore p"
+metaDescription: "Preventive Health Package Comparison Tables: Full Body, Cardiac, and Diabetic Clear Guides: Architectural blueprint for Pathology & Diagnostic Labs."
 keywords: "full body health checkup comparison, preventive health package pricing, diabetic cardiac package guide, pathology test packages, uncoded hub blueprint"
 image: "/blog/preventive-health-checkup-package-comparison-tables.webp"
 ---

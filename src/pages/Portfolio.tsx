@@ -465,7 +465,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
   return (
     <>
       <Helmet>
-        <title>Website Portfolio &amp; Live Interactive Demos (17 Niches) — Uncoded Hub</title>
+        <title>Website Portfolio &amp; 17 Live Interactive Demos — Uncoded Hub</title>
         <meta
           name="description"
           content="Explore 17 live interactive website specimens handcrafted by Uncoded Hub for interior designers, clinics, real estate, and consultants. Sub-second speed."
@@ -531,9 +531,9 @@ export default function Work({ onBook }: { onBook: () => void }) {
                 <div>
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-signal animate-ping" />
-                    <span className="font-mono text-xs font-bold text-ink uppercase tracking-wider">
+                    <h2 className="font-mono text-xs font-bold text-ink uppercase tracking-wider">
                       The 6:3 Specimen Index Matrix
-                    </span>
+                    </h2>
                     <span className="text-[11px] font-mono text-signal bg-signal/10 px-2 py-0.5 rounded-full">
                       18 Visual Slots (17 Live Builds + Custom)
                     </span>

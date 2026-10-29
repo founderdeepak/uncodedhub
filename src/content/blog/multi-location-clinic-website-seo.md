@@ -4,7 +4,7 @@ niche: "dental-clinics"
 date: "2026-07-06T21:00:00+05:30"
 author: "geetha"
 excerpt: "Expanding a dental brand across multiple branches introduces severe SEO pitfalls: duplicate content, fragmented domain authority, and Google Business Profile cannibalization. Here is the technical blueprint for multi-clinic search dominance."
-metaDescription: "Structure a multi-location dental clinic website. Master subfolder URL hierarchies, unique branch landing pages, and local schema markup to dominate multi-branch search."
+metaDescription: "Structure a multi-location dental clinic website. Master subfolder URL hierarchies, unique branch landing pages, and local schema markup to dominate."
 keywords: "multilocation dental clinic, dental clinic web architecture, dental clinics website design, high converting web architecture"
 image: "/blog/multi-location-clinic-website-seo.webp"
 ---

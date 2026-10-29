@@ -4,7 +4,7 @@ niche: "clinic-polyclinic"
 date: "2026-10-07T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of minor daycare procedure guides: endoscopy, cataract, and wound dressing pages for Multi-Specialty Polyclinics. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Minor Daycare Procedure Guides: Endoscopy, Cataract, and Wound Dressing Pages: Architectural blueprint for Multi-Specialty Polyclinics. Explore performance be"
+metaDescription: "Minor Daycare Procedure Guides: Endoscopy, Cataract, and Wound Dressing Pages: Architectural blueprint for Multi-Specialty Polyclinics."
 keywords: "daycare procedures polyclinic, endoscopy daycare guide, minor surgical procedure cost, outpatient wound management care, uncoded hub blueprint"
 image: "/blog/minor-daycare-surgical-and-procedure-guides.webp"
 ---

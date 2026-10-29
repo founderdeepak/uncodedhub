@@ -4,7 +4,7 @@ niche: "doctor-specialist"
 date: "2026-10-19T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of the 7-day surgeon website sprint: uncoded hub"
-metaDescription: "The 7-Day Surgeon Website Sprint: Uncoded Hub"
+metaDescription: "Guide on the 7-day surgeon website sprint: uncoded hub by Uncoded Hub. 7-day web design sprint, sub-second React speed, late means 100% free guarantee."
 keywords: "surgeon web design sprint, uncoded hub surgical website blueprint, 7 day clinical launch model, fixed fee doctor web design, uncoded hub blueprint"
 image: "/blog/seven-day-doctor-specialist-surgeon-website-sprint.webp"
 ---

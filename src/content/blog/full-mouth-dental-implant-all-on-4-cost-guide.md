@@ -4,7 +4,7 @@ niche: "dental-clinics"
 date: "2026-04-28T19:00:00+05:30"
 author: "deepak"
 excerpt: "Honest surgical pricing, bone grafting transparency, and healing cap schedules. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Honest surgical pricing, bone grafting transparency, and healing cap schedules.... Discover technical benchmarks, conversion frameworks, and architecture from"
+metaDescription: "Honest surgical pricing, bone grafting transparency, and healing cap schedules.... Discover technical benchmarks, conversion frameworks, and architecture."
 keywords: "all on 4 dental implants cost breakdown india, dental clinics website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/full-mouth-dental-implant-all-on-4-cost-guide.webp"
 ---

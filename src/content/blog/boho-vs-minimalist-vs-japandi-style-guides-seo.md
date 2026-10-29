@@ -4,7 +4,7 @@ niche: "interior-designers"
 date: "2026-03-31T10:00:00+05:30"
 author: "geetha"
 excerpt: "Evergreen design style explainers ranking for high-volume residential discovery searches. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Evergreen design style explainers ranking for high-volume residential discovery searches.... Discover technical benchmarks, conversion frameworks, and archite"
+metaDescription: "Evergreen design style explainers ranking for high-volume residential discovery searches.... Discover technical benchmarks, conversion frameworks."
 keywords: "japandi vs wabi sabi interior design guide seo, interior designers website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/boho-vs-minimalist-vs-japandi-style-guides-seo.webp"
 ---

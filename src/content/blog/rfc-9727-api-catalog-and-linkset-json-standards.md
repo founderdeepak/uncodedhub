@@ -4,7 +4,7 @@ niche: "studio"
 date: "2026-07-31T14:00:00+05:30"
 author: "deepak"
 excerpt: "Exposing machine-readable API catalogs via `application/linkset+json` for automated agent indexing. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Exposing machine-readable API catalogs via `application/linkset+json` for automated agent indexing.... Discover technical benchmarks, conversion frameworks, a"
+metaDescription: "Exposing machine-readable API catalogs via `application/linkset+json` for automated agent indexing.... Discover technical benchmarks, conversion."
 keywords: "rfc 9727 api catalog linkset json implementation, studio website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/rfc-9727-api-catalog-and-linkset-json-standards.webp"
 ---

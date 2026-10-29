@@ -4,7 +4,7 @@ niche: "healthcare-diagnostics"
 date: "2026-09-20T12:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of the 7-day diagnostic lab website sprint: building clinical patient acquisition in 7 days for Pathology & Diagnostic Labs. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "The 7-Day Diagnostic Lab Website Sprint: Building Clinical Patient Acquisition in 7 Days: Architectural blueprint for Pathology & Diagnostic Labs. Explore per"
+metaDescription: "The 7-Day Diagnostic Lab Website Sprint: Building Clinical Patient Acquisition in 7 Days: Architectural blueprint for Pathology & Diagnostic Labs."
 keywords: "diagnostic lab web design sprint, uncoded hub pathology website blueprint, 7 day clinical website launch, fixed fee lab web design, uncoded hub blueprint"
 image: "/blog/seven-day-diagnostic-lab-website-sprint.webp"
 ---

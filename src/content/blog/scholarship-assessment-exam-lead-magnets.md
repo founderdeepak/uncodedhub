@@ -4,7 +4,7 @@ niche: "educational-academy"
 date: "2026-03-22T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of scholarship assessment funnels: designing entrance exam lead magnets that actually convert for Educational Academies & Coaching Institutes. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Scholarship Assessment Funnels: Designing Entrance Exam Lead Magnets That Actually Convert: Architectural blueprint for Educational Academies & Coaching Insti"
+metaDescription: "Scholarship Assessment Funnels: Designing Entrance Exam Lead Magnets That Actually Convert: Architectural blueprint for Educational Academies & Coaching."
 keywords: "scholarship test registration funnel, coaching entrance test lead magnet, admission assessment quiz, talent search exam website, uncoded hub blueprint"
 image: "/blog/scholarship-assessment-exam-lead-magnets.webp"
 ---

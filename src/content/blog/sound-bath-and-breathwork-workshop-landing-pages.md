@@ -4,7 +4,7 @@ niche: "yoga-meditation"
 date: "2026-07-30T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of sound bath & breathwork workshop landers: filling weekend immersions in 48 hours for Yoga Shalas & Meditation Sanctuaries. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Sound Bath & Breathwork Workshop Landers: Filling Weekend Immersions in 48 Hours: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries. Explore pe"
+metaDescription: "Sound Bath & Breathwork Workshop Landers: Filling Weekend Immersions in 48 Hours: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries."
 keywords: "sound healing workshop landing page, pranayama breathwork immersion, weekend sound bath tickets, sold out workshop funnel, uncoded hub blueprint"
 image: "/blog/sound-bath-and-breathwork-workshop-landing-pages.webp"
 ---

@@ -4,7 +4,7 @@ niche: "clinic-polyclinic"
 date: "2026-09-24T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of multi-doctor credential profiles: showcasing mbbs, md, and super-specialty training for Multi-Specialty Polyclinics. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Multi-Doctor Credential Profiles: Showcasing MBBS, MD, and Super-Specialty Training: Architectural blueprint for Multi-Specialty Polyclinics. Explore performa"
+metaDescription: "Multi-Doctor Credential Profiles: Showcasing MBBS, MD, and Super-Specialty Training: Architectural blueprint for Multi-Specialty Polyclinics."
 keywords: "polyclinic doctor profiles, specialist doctor qualifications e-e-a-t, visiting consultant credentials, medical council verified, uncoded hub blueprint"
 image: "/blog/multi-doctor-credentials-and-clinical-qualifications.webp"
 ---

@@ -4,7 +4,7 @@ niche: "real-estate"
 date: "2026-09-27T16:00:00+05:30"
 author: "deepak"
 excerpt: "The specific trust signals a buyer looks for before calling a property consultant, beyond a nice listing photo, and how to build them into your site."
-metaDescription: "The specific trust signals a buyer looks for before calling a property consultant, beyond a nice listing photo, and how to build them into your site."
+metaDescription: "The specific trust signals a buyer looks for before calling a property consultant, beyond a nice listing photo, and how to build them into."
 keywords: "makes buyer trust, real estate web strategy, real estate website design, high converting web architecture"
 image: "/blog/what-makes-a-buyer-trust-a-property-consultants-website.webp"
 ---

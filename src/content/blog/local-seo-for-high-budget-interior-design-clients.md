@@ -4,7 +4,7 @@ niche: "interior-designers"
 date: "2026-06-21T11:00:00+05:30"
 author: "geetha"
 excerpt: "Why generic local SEO attracts the wrong enquiries, and how to structure it specifically to reach nearby homeowners with real project budgets."
-metaDescription: "Why generic local SEO attracts the wrong enquiries, and how to structure it specifically to reach nearby homeowners with real project budgets."
+metaDescription: "Why generic local SEO attracts the wrong enquiries, and how to structure it specifically to reach nearby homeowners with real project."
 keywords: "local gets interior, interior design website, interior designers website design, high converting web architecture"
 image: "/blog/local-seo-for-high-budget-interior-design-clients.webp"
 ---

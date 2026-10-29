@@ -4,7 +4,7 @@ niche: "yoga-meditation"
 date: "2026-07-21T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of 200-hour & 300-hour ttc curriculum pages: winning international teacher enrollments for Yoga Shalas & Meditation Sanctuaries. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "200-Hour & 300-Hour TTC Curriculum Pages: Winning International Teacher Enrollments: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries. Explore"
+metaDescription: "200-Hour & 300-Hour TTC Curriculum Pages: Winning International Teacher Enrollments: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries."
 keywords: "yoga teacher training website page, yoga alliance certified ttc curriculum, international yoga student enrollments, ttc course modules, uncoded hub blueprint"
 image: "/blog/200-hour-and-300-hour-yoga-teacher-training-curriculum-pages.webp"
 ---

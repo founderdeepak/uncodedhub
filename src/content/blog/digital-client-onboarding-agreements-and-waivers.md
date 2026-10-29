@@ -4,7 +4,7 @@ niche: "fitness-coach"
 date: "2026-07-14T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of client onboarding agreement & waiver ux: digitizing liability forms and disclaimers for Private Fitness Coaches & Personal Trainers. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Client Onboarding Agreement & Waiver UX: Digitizing Liability Forms and Disclaimers: Architectural blueprint for Private Fitness Coaches & Personal Trainers."
+metaDescription: "Client Onboarding Agreement & Waiver UX: Digitizing Liability Forms and Disclaimers: Architectural blueprint for Private Fitness Coaches & Personal."
 keywords: "online fitness liability waiver, digital par-q readiness form, seamless client onboarding agreement, coaching legal terms, uncoded hub blueprint"
 image: "/blog/digital-client-onboarding-agreements-and-waivers.webp"
 ---

@@ -4,7 +4,7 @@ niche: "home-renovation"
 date: "2026-07-04T08:00:00+05:30"
 author: "deepak"
 excerpt: "Placing minimum project thresholds (e.g. ₹5L minimum) on contact forms to save design hours. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Placing minimum project thresholds (e.g. ₹5L minimum) on contact forms to save design hours.... Discover technical benchmarks, conversion frameworks, and arch"
+metaDescription: "Placing minimum project thresholds (e.g. ₹5L minimum) on contact forms to save design hours.... Discover technical benchmarks, conversion frameworks."
 keywords: "how to filter tire kicker renovation clients, home renovation website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/how-renovation-studios-reduce-unqualified-inquiries.webp"
 ---

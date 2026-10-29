@@ -4,7 +4,7 @@ niche: "clinic-polyclinic"
 date: "2026-10-02T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of patient feedback & google review integrations: curating verified reviews by department for Multi-Specialty Polyclinics. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Patient Feedback & Google Review Integrations: Curating Verified Reviews by Department: Architectural blueprint for Multi-Specialty Polyclinics. Explore perfo"
+metaDescription: "Patient Feedback & Google Review Integrations: Curating Verified Reviews by Department: Architectural blueprint for Multi-Specialty Polyclinics."
 keywords: "polyclinic patient reviews showcase, department specific testimonials, authentic patient recovery feedback, medical social proof, uncoded hub blueprint"
 image: "/blog/department-wise-verified-patient-reviews-integration.webp"
 ---

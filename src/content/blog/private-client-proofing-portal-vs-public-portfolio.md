@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-05-27T11:00:00+05:30"
 author: "geetha"
 excerpt: "Password-protected high-res proofing hubs that protect bride privacy while keeping main site fast. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Password-protected high-res proofing hubs that protect bride privacy while keeping main site fast.... Discover technical benchmarks, conversion frameworks, an"
+metaDescription: "Password-protected high-res proofing hubs that protect bride privacy while keeping main site fast.... Discover technical benchmarks, conversion."
 keywords: "private client photo proofing gallery website, wedding photographers website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/private-client-proofing-portal-vs-public-portfolio.webp"
 ---

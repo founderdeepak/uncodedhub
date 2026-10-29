@@ -4,7 +4,7 @@ niche: "yoga-meditation"
 date: "2026-07-27T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of local seo for yoga studios: dominating search results for"
-metaDescription: "Local SEO for Yoga Studios: Dominating Search Results for"
+metaDescription: "Guide on local seo for yoga studios: dominating search results for by Uncoded Hub. 7-day web design sprint, sub-second React speed, late means 100% free guarantee."
 keywords: "local seo for yoga studios, authentic yoga shala near me, google business profile for yoga centers, local yogi community, uncoded hub blueprint"
 image: "/blog/local-seo-domination-for-yoga-studios.webp"
 ---

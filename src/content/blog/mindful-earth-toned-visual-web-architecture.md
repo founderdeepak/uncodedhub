@@ -4,7 +4,7 @@ niche: "yoga-meditation"
 date: "2026-07-26T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of mindful visual architecture: earth-toned, distraction-free layouts for deep breath for Yoga Shalas & Meditation Sanctuaries. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Mindful Visual Architecture: Earth-Toned, Distraction-Free Layouts for Deep Breath: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries. Explore"
+metaDescription: "Mindful Visual Architecture: Earth-Toned, Distraction-Free Layouts for Deep Breath: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries."
 keywords: "zen mindful web design aesthetic, distraction free yoga layout, serene typography for meditation, calming color palettes, uncoded hub blueprint"
 image: "/blog/mindful-earth-toned-visual-web-architecture.webp"
 ---

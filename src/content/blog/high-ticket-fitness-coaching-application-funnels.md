@@ -4,7 +4,7 @@ niche: "fitness-coach"
 date: "2026-06-29T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of the 1-on-1 coaching application funnel: pre-qualifying clients while filtering tire-kickers for Private Fitness Coaches & Personal Trainers. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "The 1-on-1 Coaching Application Funnel: Pre-Qualifying Clients While Filtering Tire-Kickers: Architectural blueprint for Private Fitness Coaches & Personal Tr"
+metaDescription: "The 1-on-1 Coaching Application Funnel: Pre-Qualifying Clients While Filtering Tire-Kickers: Architectural blueprint for Private Fitness Coaches &."
 keywords: "fitness coaching application funnel, pre qualify personal training clients, filter out lowballers fitness, 1 on 1 intake form, uncoded hub blueprint"
 image: "/blog/high-ticket-fitness-coaching-application-funnels.webp"
 ---

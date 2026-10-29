@@ -4,7 +4,7 @@ niche: "interior-designers"
 date: "2026-09-08T21:00:00+05:30"
 author: "geetha"
 excerpt: "Why a modular or catalog-based interior design business should not copy a bespoke studio's website playbook. The buyer, the decision process and the proof are all different."
-metaDescription: "Why a modular or catalog-based interior design business should not copy a bespoke studio's website playbook. The buyer, the decision process and the proof..."
+metaDescription: "Why a modular or catalog-based interior design business should not copy a bespoke studio's website playbook. The buyer, the decision process and."
 keywords: "modular catalogbased interior, interior design website, interior designers website design, high converting web architecture"
 image: "/blog/website-for-modular-interior-design-business.webp"
 ---

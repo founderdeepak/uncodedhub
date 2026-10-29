@@ -4,7 +4,7 @@ niche: "educational-academy"
 date: "2026-03-21T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of mobile speed for students: why sub-second loading cuts admission drop-offs by 50% for Educational Academies & Coaching Institutes. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Mobile Speed for Students: Why Sub-Second Loading Cuts Admission Drop-Offs by 50%: Architectural blueprint for Educational Academies & Coaching Institutes. Ex"
+metaDescription: "Mobile Speed for Students: Why Sub-Second Loading Cuts Admission Drop-Offs by 50%: Architectural blueprint for Educational Academies & Coaching."
 keywords: "coaching website mobile speed, student mobile bounce rate, fast academy website, core web vitals for coaching, uncoded hub blueprint"
 image: "/blog/mobile-speed-for-student-admission-websites.webp"
 ---

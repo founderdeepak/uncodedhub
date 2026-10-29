@@ -4,7 +4,7 @@ niche: "creative-portfolio"
 date: "2026-08-27T09:00:00+05:30"
 author: "deepak"
 excerpt: "A strategic breakdown of agency talent acquisition pages: attracting senior art directors with transparent pay for Creative Design Studios & Agencies. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Agency Talent Acquisition Pages: Attracting Senior Art Directors with Transparent Pay: Architectural blueprint for Creative Design Studios & Agencies. Explore"
+metaDescription: "Agency Talent Acquisition Pages: Attracting Senior Art Directors with Transparent Pay: Architectural blueprint for Creative Design Studios & Agencies."
 keywords: "creative agency careers page, attract senior art directors, agency culture without burnout, transparent creative compensation, uncoded hub blueprint"
 image: "/blog/attracting-top-creative-talent-transparent-culture.webp"
 ---

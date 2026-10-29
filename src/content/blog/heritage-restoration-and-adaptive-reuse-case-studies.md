@@ -4,7 +4,7 @@ niche: "interior-designers"
 date: "2026-03-22T08:00:00+05:30"
 author: "geetha"
 excerpt: "Presenting conservation permits, structural reinforcement, and vintage craftsmanship. Learn how modern architectural web systems convert high-ticket inquiries with sub-second speed, E-E-A-T authority, and pure topical siloing."
-metaDescription: "Presenting conservation permits, structural reinforcement, and vintage craftsmanship.... Discover technical benchmarks, conversion frameworks, and architectur"
+metaDescription: "Presenting conservation permits, structural reinforcement, and vintage craftsmanship.... Discover technical benchmarks, conversion frameworks."
 keywords: "heritage restoration architect portfolio, interior designers website, high converting web architecture, uncoded hub blueprint"
 image: "/blog/heritage-restoration-and-adaptive-reuse-case-studies.webp"
 ---

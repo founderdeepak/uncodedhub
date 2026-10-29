@@ -4,7 +4,7 @@ niche: "real-estate"
 date: "2026-08-02T16:00:00+05:30"
 author: "deepak"
 excerpt: "What RERA registration numbers, carpet area disclosures, and statutory approvals small builders must showcase to build buyer trust and avoid legal penalties."
-metaDescription: "What RERA registration numbers, carpet area disclosures, and statutory approvals small builders must showcase to build buyer trust and avoid legal penalties."
+metaDescription: "What RERA registration numbers, carpet area disclosures, and statutory approvals small builders must showcase to build buyer trust and avoid legal."
 keywords: "rera compliance builder, real estate web strategy, real estate website design, high converting web architecture"
 image: "/blog/rera-compliance-builder-website-checklist.webp"
 ---

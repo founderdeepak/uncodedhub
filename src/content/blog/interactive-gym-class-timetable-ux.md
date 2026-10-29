@@ -4,7 +4,7 @@ niche: "gym-fitness-club"
 date: "2026-04-05T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of live class timetable ux: designing interactive spinning, zumba, and crossfit schedules for Commercial Gyms & Fitness Clubs. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Live Class Timetable UX: Designing Interactive Spinning, Zumba, and CrossFit Schedules: Architectural blueprint for Commercial Gyms & Fitness Clubs. Explore p"
+metaDescription: "Live Class Timetable UX: Designing Interactive Spinning, Zumba, and CrossFit Schedules: Architectural blueprint for Commercial Gyms & Fitness Clubs."
 keywords: "gym class timetable web schedule, zumba spin crossfit class booking, live fitness timetable, mobile gym schedule, uncoded hub blueprint"
 image: "/blog/interactive-gym-class-timetable-ux.webp"
 ---

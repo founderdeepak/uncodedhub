@@ -4,7 +4,7 @@ niche: "clinic-polyclinic"
 date: "2026-10-05T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of senior citizen priority assistance: highlighting wheelchair access, ramps & lifts for Multi-Specialty Polyclinics. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Senior Citizen Priority Assistance: Highlighting Wheelchair Access, Ramps & Lifts: Architectural blueprint for Multi-Specialty Polyclinics. Explore performanc"
+metaDescription: "Senior Citizen Priority Assistance: Highlighting Wheelchair Access, Ramps & Lifts: Architectural blueprint for Multi-Specialty Polyclinics."
 keywords: "elderly friendly clinic features, wheelchair accessible polyclinic, geriatric care outpatient facilities, ground floor clinic access, uncoded hub blueprint"
 image: "/blog/senior-citizen-accessibility-and-priority-care-features.webp"
 ---

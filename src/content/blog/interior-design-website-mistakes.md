@@ -4,7 +4,7 @@ niche: "interior-designers"
 date: "2026-06-15T16:00:00+05:30"
 author: "geetha"
 excerpt: "The specific, common mistakes that make a genuinely good interior design studio's website read as smaller, newer, or less serious than the studio actually is."
-metaDescription: "The specific, common mistakes that make a genuinely good interior design studio's website read as smaller, newer, or less serious than the studio actually is."
+metaDescription: "The specific, common mistakes that make a genuinely good interior design studio's website read as smaller, newer, or less serious than the studio actually."
 keywords: "website mistakes make, interior design website, interior designers website design, high converting web architecture"
 image: "/blog/interior-design-website-mistakes.webp"
 ---

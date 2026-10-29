@@ -4,7 +4,7 @@ niche: "wedding-photographers"
 date: "2026-05-11T16:00:00+05:30"
 author: "geetha"
 excerpt: "Couples planning multi-crore destination weddings in Udaipur, Goa, or Italy don't hire local studio photographers; they hire visual storytellers who understand travel logistics. Here is how to engineer a destination photography website."
-metaDescription: "Position your studio for luxury destination weddings in Udaipur, Goa, and abroad. Build authority with travel logistics transparency, curated venue portfolios, and luxury positioning."
+metaDescription: "Position your studio for luxury destination weddings in Udaipur, Goa, and abroad. Build authority with travel logistics transparency, curated venue."
 keywords: "destination wedding photography, wedding photography website, wedding photographers website design, high converting web architecture"
 image: "/blog/destination-wedding-photographer-website-strategy.webp"
 ---

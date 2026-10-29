@@ -4,7 +4,7 @@ niche: "yoga-meditation"
 date: "2026-07-20T09:00:00+05:30"
 author: "geetha"
 excerpt: "A strategic breakdown of live weekly class schedule timetable: clear visual grids with teacher badges & levels for Yoga Shalas & Meditation Sanctuaries. Discover technical benchmarks, conversion frameworks, and sub-second web architecture that converts high-value inquiries."
-metaDescription: "Live Weekly Class Schedule Timetable: Clear Visual Grids with Teacher Badges & Levels: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries. Explo"
+metaDescription: "Live Weekly Class Schedule Timetable: Clear Visual Grids with Teacher Badges & Levels: Architectural blueprint for Yoga Shalas & Meditation Sanctuaries."
 keywords: "interactive yoga class schedule, weekly yoga shala timetable, class level badges beginner to advanced, mobile yoga schedule, uncoded hub blueprint"
 image: "/blog/live-weekly-yoga-class-schedule-timetable-ux.webp"
 ---
