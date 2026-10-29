@@ -1,5 +1,5 @@
 ---
-title: "Hair & Skin Treatment Menus: Keratin, Botoplex, and Hydra-Facial Clear Benefit Guides"
+title: "Hair & Skin Treatment Menus (2026 Guide)"
 niche: "salon-beauty"
 date: "2026-06-16T09:00:00+05:30"
 author: "geetha"

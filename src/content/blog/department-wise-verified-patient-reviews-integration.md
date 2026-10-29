@@ -1,5 +1,5 @@
 ---
-title: "Patient Feedback & Google Review Integrations: Curating Verified Reviews by Department"
+title: "Patient Feedback & Google Review Integrations (2026 Guide)"
 niche: "clinic-polyclinic"
 date: "2026-10-02T09:00:00+05:30"
 author: "deepak"

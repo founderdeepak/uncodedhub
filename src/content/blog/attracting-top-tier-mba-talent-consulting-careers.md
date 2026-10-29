@@ -1,5 +1,5 @@
 ---
-title: "Partner & Associate Recruitment: Attracting Top MBA Talent with a Dedicated Culture Chapter"
+title: "Consulting Partner & Associate Recruitment Pages (2026)"
 niche: "business-portfolio"
 date: "2026-05-09T12:00:00+05:30"
 author: "deepak"

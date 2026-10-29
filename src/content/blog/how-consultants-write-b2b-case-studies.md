@@ -1,5 +1,5 @@
 ---
-title: "How B2B Consultants Write Case Studies Without Fluff: Demonstrating Real ROI"
+title: "How B2B Consultants Write Case Studies Without Fluff (2026 Guide)"
 niche: "coaches-consultants"
 date: "2026-05-30T08:00:00+05:30"
 author: "deepak"

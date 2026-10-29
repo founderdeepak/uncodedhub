@@ -1,11 +1,11 @@
 ---
-title: "How Much Should an Interior Design Studio Budget for a Website in India (2026 Pricing Reality)"
+title: "Interior Design Website Cost in India (2026 Price Breakdown)"
 niche: "interior-designers"
 date: "2026-06-14T14:00:00+05:30"
 author: "deepak"
 excerpt: "What actually drives the cost of an interior design studio's website, why a cheap quote is often the most expensive one, and how to evaluate what you're paying for."
-metaDescription: "What actually drives the cost of an interior design studio's website, why a cheap quote is often the most expensive one, and how to evaluate what you're..."
-keywords: "much should interior, interior design website, interior designers website design, high converting web architecture"
+metaDescription: "How much does an interior design website cost in India? Honest 2026 price breakdown from ₹25,000 to ₹1,50,000, case study costs, and red flags in cheap quotes."
+keywords: "interior design website cost india, interior design website cost, much should interior design website cost, interior design website, interior designers website design, high converting web architecture"
 image: "/blog/interior-design-website-cost-india.webp"
 ---
 

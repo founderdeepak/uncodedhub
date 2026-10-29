@@ -1,5 +1,5 @@
 ---
-title: "Batch Countdown Funnels: Using Real-Time Seat Availability Timers Ethically"
+title: "Batch Countdown Funnels: Real-Time Seat Timers (2026)"
 niche: "educational-academy"
 date: "2026-03-14T09:00:00+05:30"
 author: "geetha"

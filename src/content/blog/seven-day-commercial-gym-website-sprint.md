@@ -1,5 +1,5 @@
 ---
-title: "The 7-Day Gym Website Sprint: How Uncoded Hub Deploys High-Conversion Portals in 7 Days"
+title: "The 7-Day Gym Website Sprint (2026 Guide)"
 niche: "gym-fitness-club"
 date: "2026-04-22T09:00:00+05:30"
 author: "geetha"

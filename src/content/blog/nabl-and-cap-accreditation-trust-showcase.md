@@ -1,5 +1,5 @@
 ---
-title: "NABL & CAP Accreditation Badges: Showcasing International Quality Benchmarks for Trust"
+title: "NABL & CAP Accreditation Badges (2026 Guide)"
 niche: "healthcare-diagnostics"
 date: "2026-09-06T09:00:00+05:30"
 author: "geetha"

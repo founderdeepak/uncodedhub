@@ -81,10 +81,10 @@ export default function Blogs() {
   const isNicheView = activeNiche !== 'all';
   const pageTitle = isNicheView
     ? `${NICHES[activeNiche]} Website & SEO Master Guides — Uncoded Hub`
-    : 'Blogs & Industry Blueprints — Uncoded Hub';
+    : 'Web Design & Conversion Blueprints (520+ Guides) — Uncoded Hub';
   const pageDesc = isNicheView
     ? `Master pillar blueprint and companion guides on website strategy, high-ticket conversions, and local SEO for ${NICHES[activeNiche]}.`
-    : 'Practical notes on websites, SEO, and getting found online — written by Deepak & Geetha.';
+    : 'Explore 520+ practical guides on custom website design, conversion rate optimization, local SEO, and sub-second web architecture by Deepak & Geetha.';
   const canonicalUrl = isNicheView
     ? `https://uncodedhub.com/blog/industries/${activeNiche}/`
     : 'https://uncodedhub.com/blog/';

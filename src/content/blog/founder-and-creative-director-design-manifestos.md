@@ -1,5 +1,5 @@
 ---
-title: "Founder & Director Design Manifestos: Articulating a Contrarian Visual Point of View"
+title: "Founder & Director Design Manifestos (2026 Guide)"
 niche: "creative-portfolio"
 date: "2026-08-16T09:00:00+05:30"
 author: "geetha"

@@ -1,5 +1,5 @@
 ---
-title: "Doctor Profile Pages and Video Testimonials: The Clinical Trust Engine"
+title: "Doctor Profile Pages and Video Testimonials (2026 Guide)"
 niche: "dental-clinics"
 date: "2026-08-30T10:00:00+05:30"
 author: "geetha"

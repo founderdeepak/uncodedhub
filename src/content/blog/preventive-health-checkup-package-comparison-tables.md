@@ -1,5 +1,5 @@
 ---
-title: "Preventive Health Package Comparison Tables: Full Body, Cardiac, and Diabetic Clear Guides"
+title: "Preventive Health Package Comparison Tables (2026 Guide)"
 niche: "healthcare-diagnostics"
 date: "2026-09-03T09:00:00+05:30"
 author: "deepak"

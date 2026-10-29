@@ -1,5 +1,5 @@
 ---
-title: "Video Walkthroughs on Interior Design Websites: Boosting On-Page Dwell Time"
+title: "Video Walkthroughs on Interior Design Websites (2026 Guide)"
 niche: "interior-designers"
 date: "2026-09-01T11:00:00+05:30"
 author: "deepak"

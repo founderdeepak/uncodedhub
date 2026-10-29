@@ -1,5 +1,5 @@
 ---
-title: "Luxury Corporate Event Planner Website Architecture: B2B Enterprise Acquisition"
+title: "Luxury Corporate Event Planner Website Architecture (2026 Guide)"
 niche: "wedding-photographers"
 date: "2026-05-01T11:00:00+05:30"
 image: "/blog/corporate-event-planner-website-design.webp"

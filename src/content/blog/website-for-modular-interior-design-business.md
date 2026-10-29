@@ -1,5 +1,5 @@
 ---
-title: "A Modular or Catalog-Based Interior Design Business Needs a Different Website Than a Bespoke Studio"
+title: "A Modular or Catalog-Based Interior Design Business (2026 Guide)"
 niche: "interior-designers"
 date: "2026-09-08T21:00:00+05:30"
 author: "geetha"

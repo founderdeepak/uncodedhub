@@ -1,5 +1,5 @@
 ---
-title: "Virtual 360 Tours and Interactive Floor Plans: Avoiding the Mobile Lag Trap"
+title: "Virtual 360 Tours and Interactive Floor Plans (2026 Guide)"
 niche: "real-estate"
 date: "2026-09-03T08:00:00+05:30"
 author: "deepak"

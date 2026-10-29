@@ -1,5 +1,5 @@
 ---
-title: "Transparent Timeline and Delay Guarantee: De-risking Renovation Projects"
+title: "Transparent Timeline and Delay Guarantee (2026 Guide)"
 niche: "home-renovation"
 date: "2026-08-26T14:00:00+05:30"
 image: "/blog/transparent-renovation-timeline-guarantee-page.webp"

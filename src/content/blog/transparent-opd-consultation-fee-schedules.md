@@ -1,5 +1,5 @@
 ---
-title: "Transparent Consultation Fee Schedules: Eliminating Surprise Desk Billing"
+title: "Transparent Consultation Fee Schedules (2026 Guide)"
 niche: "clinic-polyclinic"
 date: "2026-10-08T09:00:00+05:30"
 author: "deepak"

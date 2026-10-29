@@ -1,5 +1,5 @@
 ---
-title: "Interactive Project Brief Intake: Capturing Deep Client Context Before Discovery Calls"
+title: "Interactive Project Brief Intake (2026 Guide)"
 niche: "creative-portfolio"
 date: "2026-08-17T09:00:00+05:30"
 author: "deepak"

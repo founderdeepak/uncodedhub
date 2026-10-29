@@ -1,5 +1,5 @@
 ---
-title: "Author and Book Launch Landing Page Architecture: The Apex Authority Asset"
+title: "Author and Book Launch Landing Page Architecture (2026 Guide)"
 niche: "coaches-consultants"
 date: "2026-04-15T10:00:00+05:30"
 author: "geetha"

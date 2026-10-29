@@ -1,5 +1,5 @@
 ---
-title: "WhatsApp Concierge Integration: Personalizing Treatment Consultations for VIP Guests"
+title: "WhatsApp Concierge Integration (2026 Guide)"
 niche: "spa-wellness"
 date: "2026-05-24T09:00:00+05:30"
 author: "deepak"

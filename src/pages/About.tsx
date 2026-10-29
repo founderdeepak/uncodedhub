@@ -44,10 +44,10 @@ export default function About({ onBook }: { onBook: () => void }) {
   return (
     <>
       <Helmet>
-        <title>Studio — Uncoded Hub</title>
+        <title>About Uncoded Hub | Boutique Web Design Studio in Bengaluru</title>
         <meta
           name="description"
-          content="A two-person web design and development studio in Bengaluru. Who does the work, how we work, and what we commit to before you hire us."
+          content="Meet Deepak &amp; Geetha, founders of Uncoded Hub. We build bespoke high-performance business websites in 7 business days with a contractual late-means-free guarantee."
         />
         <link rel="canonical" href="https://uncodedhub.com/about/" />
         <meta property="og:title" content="Studio — Uncoded Hub" />

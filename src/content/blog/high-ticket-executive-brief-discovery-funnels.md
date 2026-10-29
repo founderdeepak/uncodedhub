@@ -1,5 +1,5 @@
 ---
-title: "High-Ticket Discovery Funnels: Replacing Generic Calendly Links with Executive Briefs"
+title: "High-Ticket Discovery Funnels (2026 Guide)"
 niche: "business-portfolio"
 date: "2026-05-02T09:00:00+05:30"
 author: "deepak"

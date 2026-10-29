@@ -1,5 +1,5 @@
 ---
-title: "Nutrition & Supplement Philosophy: Establishing Science-Backed Credibility Against Fads"
+title: "Nutrition & Supplement Philosophy (2026 Guide)"
 niche: "fitness-coach"
 date: "2026-07-09T09:00:00+05:30"
 author: "deepak"

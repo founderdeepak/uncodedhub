@@ -1,5 +1,5 @@
 ---
-title: "Hospital Affiliations & Operation Theater Privileges: Clarifying Where Surgeries Happen"
+title: "Hospital Affiliations & Operation Theater Privileges (2026 Guide)"
 niche: "doctor-specialist"
 date: "2026-10-14T12:00:00+05:30"
 author: "geetha"

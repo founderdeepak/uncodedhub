@@ -1,5 +1,5 @@
 ---
-title: "Shala Lineage & Teacher Philosophy: Honoring Traditional Ashtanga, Hatha, and Iyengar"
+title: "Shala Lineage & Teacher Philosophy (2026 Guide)"
 niche: "yoga-meditation"
 date: "2026-07-24T09:00:00+05:30"
 author: "deepak"

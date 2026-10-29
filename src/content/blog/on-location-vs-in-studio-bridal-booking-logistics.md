@@ -1,5 +1,5 @@
 ---
-title: "On-Location vs Studio Bookings: Explaining Destination Wedding Logistics and Travel Terms"
+title: "On-Location vs Studio Bookings (2026 Guide)"
 niche: "salon-beauty"
 date: "2026-06-14T09:00:00+05:30"
 author: "geetha"

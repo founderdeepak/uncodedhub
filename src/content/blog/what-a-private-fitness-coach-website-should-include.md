@@ -1,5 +1,5 @@
 ---
-title: "What a Private Fitness Coach Website Should Include to Command ₹50K+ Transformation Fees"
+title: "Private Fitness Coach Website Architecture (2026 Guide)"
 niche: "fitness-coach"
 date: "2026-06-27T09:00:00+05:30"
 author: "deepak"

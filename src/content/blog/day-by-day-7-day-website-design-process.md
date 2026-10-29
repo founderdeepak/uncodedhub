@@ -1,5 +1,5 @@
 ---
-title: "The Day-by-Day Anatomy of a 7-Day Website Build: Inside the Sprint"
+title: "The Day-by-Day Anatomy of a 7-Day Website Build (2026 Guide)"
 niche: "studio"
 date: "2026-05-05T16:00:00+05:30"
 author: "geetha"

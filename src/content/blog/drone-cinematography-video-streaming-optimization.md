@@ -1,5 +1,5 @@
 ---
-title: "Drone and 4K Wedding Video Streaming Optimization: Speed Meets Cinema"
+title: "Drone and 4K Wedding Video Streaming Optimization (2026 Guide)"
 niche: "wedding-photographers"
 date: "2026-05-14T14:00:00+05:30"
 image: "/blog/drone-cinematography-video-streaming-optimization.webp"

@@ -1,5 +1,5 @@
 ---
-title: "How AI Assistants Are Changing How Patients Search for a Dentist or Clinic"
+title: "How AI Search is Changing Dentist Discovery (2026)"
 niche: "dental-clinics"
 date: "2026-03-29T08:00:00+05:30"
 author: "geetha"

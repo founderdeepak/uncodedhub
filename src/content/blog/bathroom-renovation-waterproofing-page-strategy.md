@@ -1,5 +1,5 @@
 ---
-title: "Bathroom Renovation and Waterproofing: Engineering Technical Superiority"
+title: "Bathroom Renovation and Waterproofing (2026 Guide)"
 niche: "home-renovation"
 date: "2026-04-09T21:00:00+05:30"
 author: "geetha"

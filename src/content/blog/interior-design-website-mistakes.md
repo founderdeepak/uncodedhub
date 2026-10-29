@@ -1,5 +1,5 @@
 ---
-title: "7 Website Mistakes That Make a Design Studio Look Smaller Than It Is"
+title: "7 Website Mistakes That Make a Design Studio Look (2026 Guide)"
 niche: "interior-designers"
 date: "2026-06-15T16:00:00+05:30"
 author: "geetha"

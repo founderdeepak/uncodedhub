@@ -1,5 +1,5 @@
 ---
-title: "Designing for Anxious Dental Patients: UX Patterns That Overcome Dental Phobia"
+title: "Designing for Anxious Dental Patients (2026 Guide)"
 niche: "dental-clinics"
 date: "2026-05-08T19:00:00+05:30"
 author: "geetha"

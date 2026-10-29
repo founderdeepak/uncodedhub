@@ -1,5 +1,5 @@
 ---
-title: "Sub-Second Mobile Performance: Achieving 99+ Lighthouse Scores with 4K Visual Work"
+title: "Sub-Second Mobile Performance (2026 Guide)"
 niche: "creative-portfolio"
 date: "2026-08-22T09:00:00+05:30"
 author: "deepak"

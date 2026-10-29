@@ -1,5 +1,5 @@
 ---
-title: "Senior Citizen Priority Assistance: Highlighting Wheelchair Access, Ramps & Lifts"
+title: "Senior Citizen Priority Assistance (2026 Guide)"
 niche: "clinic-polyclinic"
 date: "2026-10-05T09:00:00+05:30"
 author: "geetha"

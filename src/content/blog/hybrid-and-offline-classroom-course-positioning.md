@@ -1,5 +1,5 @@
 ---
-title: "Online Course vs Classroom: Positioning Hybrid and Offline Coaching Models Clearly"
+title: "Online Course vs Classroom (2026 Guide)"
 niche: "educational-academy"
 date: "2026-03-29T12:00:00+05:30"
 author: "deepak"

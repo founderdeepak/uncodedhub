@@ -1,5 +1,5 @@
 ---
-title: "What a Super-Specialist Doctor & Surgeon Website Should Include to Establish Clinical Authority"
+title: "Super-Specialist Doctor & Surgeon Website (2026 Guide)"
 niche: "doctor-specialist"
 date: "2026-10-09T09:00:00+05:30"
 author: "deepak"

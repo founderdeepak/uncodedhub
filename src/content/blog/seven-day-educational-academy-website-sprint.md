@@ -1,5 +1,5 @@
 ---
-title: "The 7-Day Academy Website Sprint: How Uncoded Hub Deploys High-Conversion Portals in One Week"
+title: "The 7-Day Academy Website Sprint (2026 Guide)"
 niche: "educational-academy"
 date: "2026-03-31T09:00:00+05:30"
 author: "geetha"

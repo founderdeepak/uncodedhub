@@ -1,5 +1,5 @@
 ---
-title: "Patient Education Content: The Clinic SEO Asset That Also Reduces Chair-Side Anxiety"
+title: "Patient Education Content (2026 Guide)"
 niche: "dental-clinics"
 date: "2026-07-14T14:00:00+05:30"
 author: "geetha"

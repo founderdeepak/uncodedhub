@@ -1,5 +1,5 @@
 ---
-title: "Luxury Real Estate & Penthouse Web Design: Selling 5-Crore+ Properties"
+title: "Luxury Real Estate & Penthouse Web Design (2026 Guide)"
 niche: "real-estate"
 date: "2026-06-24T14:00:00+05:30"
 author: "geetha"

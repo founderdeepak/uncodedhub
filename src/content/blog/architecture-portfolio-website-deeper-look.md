@@ -1,5 +1,5 @@
 ---
-title: "What Makes a Good Architecture Portfolio Website: Drawings, Sequence, and the Institutional Buyer"
+title: "What Makes a Good Architecture Portfolio Website (2026)"
 niche: "interior-designers"
 date: "2026-04-08T08:00:00+05:30"
 author: "deepak"

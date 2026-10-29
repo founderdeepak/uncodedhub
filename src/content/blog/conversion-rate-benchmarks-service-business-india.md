@@ -1,11 +1,11 @@
 ---
-title: "Website Conversion Rate Benchmarks for Indian Service Businesses: The Reality"
+title: "Website Conversion Rate Benchmarks in India (2026 Industry Data)"
 niche: "studio"
 date: "2026-04-28T08:00:00+05:30"
 author: "deepak"
 excerpt: "Is a 2% website conversion rate good or terrible? What should architects, clinic owners, builders, and consultants realistically expect from their digital traffic in India? Here are empirical conversion rate benchmarks and the levers that double them."
-metaDescription: "Empirical website conversion rate benchmarks for Indian service businesses. Compare your site's visitor-to-inquiry ratio across clinics, builders, and studios."
-keywords: "website conversion rate, web engineering and conversion, studio website design, high converting web architecture"
+metaDescription: "Real website conversion rate benchmarks for Indian service businesses: Clinics (5-9%), Real Estate (2-4%), Interior Design (3-5%). Learn how top 10% sites double leads."
+keywords: "website conversion rate, conversion rate benchmarks india, service business conversion rate, web engineering and conversion, studio website design, high converting web architecture"
 image: "/blog/conversion-rate-benchmarks-service-business-india.webp"
 ---
 

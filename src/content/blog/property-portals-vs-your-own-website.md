@@ -1,5 +1,5 @@
 ---
-title: "Property Portal Listings vs Your Own Website: Why Serious Buyers Still Check Both"
+title: "Property Portal Listings vs Your Own Website (2026 Guide)"
 niche: "real-estate"
 date: "2026-07-23T16:00:00+05:30"
 author: "geetha"

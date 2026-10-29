@@ -1,5 +1,5 @@
 ---
-title: "Pathology Turnaround Time Guarantees: Publishing Transparent 6-Hour & 12-Hour Windows"
+title: "Pathology Turnaround Time Guarantees (2026 Guide)"
 niche: "healthcare-diagnostics"
 date: "2026-09-11T09:00:00+05:30"
 author: "geetha"

@@ -1,5 +1,5 @@
 ---
-title: "Membership & Monthly Wellness Club: Converting Occasional Guests into Recurring Members"
+title: "Membership & Monthly Wellness Club (2026 Guide)"
 niche: "spa-wellness"
 date: "2026-06-01T09:00:00+05:30"
 author: "deepak"

@@ -1,5 +1,5 @@
 ---
-title: "Date Availability Checker: The Interactive Lead Magnet for Wedding Vendors"
+title: "Date Availability Checker (2026 Guide)"
 niche: "wedding-photographers"
 date: "2026-05-04T11:00:00+05:30"
 author: "deepak"

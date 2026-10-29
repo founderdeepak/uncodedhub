@@ -1,5 +1,5 @@
 ---
-title: "Doctor Referral & B2B Clinic Portals: Streamlining Patient Referrals from Neighborhood GPs"
+title: "Doctor Referral & B2B Clinic Portals (2026 Guide)"
 niche: "healthcare-diagnostics"
 date: "2026-09-10T09:00:00+05:30"
 author: "deepak"

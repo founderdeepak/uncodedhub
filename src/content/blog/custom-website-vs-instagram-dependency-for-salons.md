@@ -1,5 +1,5 @@
 ---
-title: "Custom Build vs Instagram Dependency: Why Algorithm Shifts Cost Salons High-End Clients"
+title: "Custom Build vs Instagram Dependency (2026 Guide)"
 niche: "salon-beauty"
 date: "2026-06-21T09:00:00+05:30"
 author: "geetha"

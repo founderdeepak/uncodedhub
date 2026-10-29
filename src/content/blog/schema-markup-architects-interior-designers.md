@@ -1,5 +1,5 @@
 ---
-title: "Schema Markup for Architects and Interior Designers: Winning Google Rich Snippets"
+title: "Schema Markup for Architects and Interior Designers (2026 Guide)"
 niche: "interior-designers"
 date: "2026-08-04T14:00:00+05:30"
 author: "geetha"

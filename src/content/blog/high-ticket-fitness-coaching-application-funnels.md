@@ -1,5 +1,5 @@
 ---
-title: "The 1-on-1 Coaching Application Funnel: Pre-Qualifying Clients While Filtering Tire-Kickers"
+title: "The 1-on-1 Coaching Application Funnel (2026 Guide)"
 niche: "fitness-coach"
 date: "2026-06-29T09:00:00+05:30"
 author: "geetha"

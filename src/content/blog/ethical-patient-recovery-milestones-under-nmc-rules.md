@@ -1,5 +1,5 @@
 ---
-title: "Ethical Patient Recovery Case Studies: Documenting Real Milestones Under NMC Guidelines"
+title: "Ethical Patient Recovery Case Studies (2026 Guide)"
 niche: "doctor-specialist"
 date: "2026-10-13T09:00:00+05:30"
 author: "deepak"

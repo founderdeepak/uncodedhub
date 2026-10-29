@@ -1,5 +1,5 @@
 ---
-title: "Mobile Accessibility for Senior Citizens: High-Contrast Fonts, Large Targets & Voice Search"
+title: "Mobile Accessibility for Senior Citizens (2026 Guide)"
 niche: "healthcare-diagnostics"
 date: "2026-09-15T09:00:00+05:30"
 author: "deepak"

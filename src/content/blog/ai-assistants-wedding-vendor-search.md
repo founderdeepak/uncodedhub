@@ -1,5 +1,5 @@
 ---
-title: "How AI Assistants Are Changing How Couples Search for Wedding Vendors"
+title: "How AI is Changing Wedding Vendor Search (2026)"
 niche: "wedding-photographers"
 date: "2026-04-03T16:00:00+05:30"
 author: "geetha"

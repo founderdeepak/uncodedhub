@@ -1,5 +1,5 @@
 ---
-title: "Custom Engineering vs Fresha/Mindbody: Owning Your Brand Experience Without SaaS Traps"
+title: "Custom Engineering vs Fresha/Mindbody (2026 Guide)"
 niche: "spa-wellness"
 date: "2026-05-31T09:00:00+05:30"
 author: "geetha"

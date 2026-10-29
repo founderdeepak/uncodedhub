@@ -1,5 +1,5 @@
 ---
-title: "WhatsApp Test Report Retrieval Flow: Delivering Reports Directly into Patient Phones"
+title: "WhatsApp Test Report Retrieval Flow (2026 Guide)"
 niche: "healthcare-diagnostics"
 date: "2026-09-05T09:00:00+05:30"
 author: "deepak"

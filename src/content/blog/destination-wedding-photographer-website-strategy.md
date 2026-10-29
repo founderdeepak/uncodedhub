@@ -1,5 +1,5 @@
 ---
-title: "Destination Wedding Photography Website Strategy: Winning Palace and Beach Commissions"
+title: "Destination Wedding Photography Website Strategy (2026 Guide)"
 niche: "wedding-photographers"
 date: "2026-05-11T16:00:00+05:30"
 author: "geetha"

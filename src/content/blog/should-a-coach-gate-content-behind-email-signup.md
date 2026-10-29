@@ -1,5 +1,5 @@
 ---
-title: "Should a Coach Gate Their Best Content Behind an Email Signup? The Free vs Paid Line on a Website"
+title: "Should a Coach Gate Their Best Content Behind an (2026 Guide)"
 niche: "coaches-consultants"
 date: "2026-08-11T19:00:00+05:30"
 author: "deepak"

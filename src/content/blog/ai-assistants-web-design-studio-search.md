@@ -1,5 +1,5 @@
 ---
-title: "How AI Assistants Are Changing How Small Businesses Search for a Web Design Studio"
+title: "How AI is Changing Web Design Studio Search (2026)"
 niche: "studio"
 date: "2026-04-02T14:00:00+05:30"
 author: "deepak"

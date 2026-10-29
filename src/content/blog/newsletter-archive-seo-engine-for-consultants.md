@@ -1,5 +1,5 @@
 ---
-title: "Email Newsletter Archive: The Overlooked SEO Organic Search Engine"
+title: "The Overlooked SEO Organic Search Engine"
 niche: "coaches-consultants"
 date: "2026-07-10T08:00:00+05:30"
 author: "deepak"

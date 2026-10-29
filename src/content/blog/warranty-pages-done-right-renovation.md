@@ -1,5 +1,5 @@
 ---
-title: "Warranty Pages Done Right: The One Page Homeowners Check Before Signing"
+title: "Warranty Pages Done Right (2026 Guide)"
 niche: "home-renovation"
 date: "2026-09-05T16:00:00+05:30"
 author: "geetha"

@@ -1,5 +1,5 @@
 ---
-title: "Pediatric Vaccination Tracking Schedules: Helping Mothers Track Immunization Calendars"
+title: "Pediatric Vaccination Tracking Schedules (2026 Guide)"
 niche: "clinic-polyclinic"
 date: "2026-10-03T09:00:00+05:30"
 author: "geetha"

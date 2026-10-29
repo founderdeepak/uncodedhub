@@ -1,5 +1,5 @@
 ---
-title: "Mindful Visual Architecture: Earth-Toned, Distraction-Free Layouts for Deep Breath"
+title: "Mindful Visual Architecture (2026 Guide)"
 niche: "yoga-meditation"
 date: "2026-07-26T09:00:00+05:30"
 author: "deepak"

@@ -1,5 +1,5 @@
 ---
-title: "Trial Session Booking Funnel: Converting Skeptical Brides Through Paid Makeup Trials"
+title: "Trial Session Booking Funnel (2026 Guide)"
 niche: "salon-beauty"
 date: "2026-06-24T09:00:00+05:30"
 author: "geetha"

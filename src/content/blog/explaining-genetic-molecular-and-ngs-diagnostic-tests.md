@@ -1,5 +1,5 @@
 ---
-title: "Genetic & Molecular Diagnostics Information: Explaining Complex PCR and NGS Tests Clearly"
+title: "Genetic & Molecular Diagnostics Information (2026 Guide)"
 niche: "healthcare-diagnostics"
 date: "2026-09-17T09:00:00+05:30"
 author: "deepak"

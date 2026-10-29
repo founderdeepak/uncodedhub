@@ -1,5 +1,5 @@
 ---
-title: "How to Structure a Wedding Photography Portfolio So It Ranks and Converts"
+title: "Structure a Wedding Photography Portfolio So It (2026 Guide)"
 niche: "wedding-photographers"
 date: "2026-08-21T16:00:00+05:30"
 author: "geetha"

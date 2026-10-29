@@ -1,5 +1,5 @@
 ---
-title: "High-Ticket Pricing Psychology: Why Top Trainers Never Post Hourly Rates Online"
+title: "High-Ticket Pricing Psychology (2026 Guide)"
 niche: "fitness-coach"
 date: "2026-07-04T09:00:00+05:30"
 author: "deepak"

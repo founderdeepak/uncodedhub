@@ -1,5 +1,5 @@
 ---
-title: "Fellowships & International Surgical Credentials: Highlighting FRCS, FACS, and Apex Training"
+title: "Fellowships & International Surgical Credentials (2026 Guide)"
 niche: "doctor-specialist"
 date: "2026-10-10T09:00:00+05:30"
 author: "geetha"

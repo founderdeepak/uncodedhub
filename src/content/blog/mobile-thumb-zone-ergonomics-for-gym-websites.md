@@ -1,5 +1,5 @@
 ---
-title: "Mobile-First Thumb Zone UX: Enabling 1-Thumb Class Bookings for Rushed Commuters"
+title: "Mobile-First Thumb Zone UX (2026 Guide)"
 niche: "gym-fitness-club"
 date: "2026-04-16T09:00:00+05:30"
 author: "deepak"

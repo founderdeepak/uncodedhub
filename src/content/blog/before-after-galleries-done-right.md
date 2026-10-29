@@ -1,5 +1,5 @@
 ---
-title: "Before/After Galleries Done Right: What Actually Builds Trust for a Renovation Contractor"
+title: "Before/After Galleries Done Right (2026 Guide)"
 niche: "home-renovation"
 date: "2026-04-11T11:00:00+05:30"
 author: "deepak"

@@ -1,5 +1,5 @@
 ---
-title: "200-Hour & 300-Hour TTC Curriculum Pages: Winning International Teacher Enrollments"
+title: "200-Hour & 300-Hour Yoga TTC Curriculum Pages (2026)"
 niche: "yoga-meditation"
 date: "2026-07-21T09:00:00+05:30"
 author: "deepak"

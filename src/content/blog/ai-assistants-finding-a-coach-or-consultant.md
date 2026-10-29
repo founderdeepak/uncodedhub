@@ -1,5 +1,5 @@
 ---
-title: "How AI Assistants Are Changing How People Find a Coach or Consultant"
+title: "How AI Search is Changing Consultant Discovery (2026)"
 niche: "coaches-consultants"
 date: "2026-03-26T19:00:00+05:30"
 author: "geetha"

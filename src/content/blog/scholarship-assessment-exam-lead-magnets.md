@@ -1,5 +1,5 @@
 ---
-title: "Scholarship Assessment Funnels: Designing Entrance Exam Lead Magnets That Actually Convert"
+title: "Scholarship Assessment Funnels (2026 Guide)"
 niche: "educational-academy"
 date: "2026-03-22T09:00:00+05:30"
 author: "deepak"

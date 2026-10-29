@@ -1,5 +1,5 @@
 ---
-title: "Multi-Location Dental Clinic SEO: Domain Architecture and Local Authority at Scale"
+title: "Multi-Location Dental Clinic SEO (2026 Guide)"
 niche: "dental-clinics"
 date: "2026-07-06T21:00:00+05:30"
 author: "geetha"

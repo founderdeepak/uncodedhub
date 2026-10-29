@@ -1,5 +1,5 @@
 ---
-title: "What a Creative Design Agency Website Should Include to Win 6-Figure Retainers"
+title: "Creative Design Agency Website Architecture (2026 Guide)"
 niche: "creative-portfolio"
 date: "2026-08-09T12:00:00+05:30"
 author: "deepak"

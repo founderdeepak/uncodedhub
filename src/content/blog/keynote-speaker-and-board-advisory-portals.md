@@ -1,5 +1,5 @@
 ---
-title: "Keynote & Advisory Board Portals: Positioning Founders for Board Seats and Keynotes"
+title: "Keynote & Advisory Board Portals (2026 Guide)"
 niche: "business-portfolio"
 date: "2026-05-06T09:00:00+05:30"
 author: "geetha"

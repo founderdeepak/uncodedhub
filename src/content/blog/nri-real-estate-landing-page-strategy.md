@@ -1,5 +1,5 @@
 ---
-title: "The NRI Real Estate Landing Page: Converting Overseas Buyers in Dubai, US & UK"
+title: "The NRI Real Estate Landing Page (2026 Guide)"
 niche: "real-estate"
 date: "2026-07-11T10:00:00+05:30"
 author: "geetha"

@@ -1,5 +1,5 @@
 ---
-title: "Website Design With SEO Included: The Exact 12-Point Checklist (2026)"
+title: "Website Design With SEO Included (12-Point Checklist)"
 niche: "studio"
 date: "2026-09-06T08:00:00+05:30"
 author: "deepak"

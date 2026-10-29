@@ -1,5 +1,5 @@
 ---
-title: "Second Opinion Tele-Consultation Funnels: Welcoming Outstation & Global Candidates"
+title: "Second Opinion Tele-Consultation Funnels (2026 Guide)"
 niche: "doctor-specialist"
 date: "2026-10-12T09:00:00+05:30"
 author: "geetha"

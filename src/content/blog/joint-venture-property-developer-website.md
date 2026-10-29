@@ -1,5 +1,5 @@
 ---
-title: "Joint Venture & Landowner Showcase Pages: Securing Prime Development Land"
+title: "Joint Venture & Landowner Showcase Pages (2026 Guide)"
 niche: "real-estate"
 date: "2026-06-17T16:00:00+05:30"
 author: "deepak"

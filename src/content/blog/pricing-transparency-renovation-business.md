@@ -1,5 +1,5 @@
 ---
-title: "Pricing Transparency Online: Does It Help or Hurt a Renovation Business? (An Honest Look)"
+title: "Pricing Transparency Online (2026 Guide)"
 niche: "home-renovation"
 date: "2026-07-20T11:00:00+05:30"
 author: "geetha"

@@ -1,5 +1,5 @@
 ---
-title: "High-Converting Sales Call Booking: Guiding Visitors from Quiz to Call with 80% Show-Ups"
+title: "High-Converting Sales Call Booking (2026 Guide)"
 niche: "fitness-coach"
 date: "2026-07-17T09:00:00+05:30"
 author: "deepak"

@@ -1,5 +1,5 @@
 ---
-title: "Sensory Digital Aesthetics: Translating Physical Tranquility and Aromatherapy to Screen"
+title: "Sensory Digital Aesthetics (2026 Guide)"
 niche: "spa-wellness"
 date: "2026-05-16T09:00:00+05:30"
 author: "geetha"

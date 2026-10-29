@@ -1,5 +1,5 @@
 ---
-title: "In-House Pharmacy & Radiology Synergies: Highlighting X-Ray, Ultrasound, and Pharmacy"
+title: "In-House Pharmacy & Radiology Synergies (2026 Guide)"
 niche: "clinic-polyclinic"
 date: "2026-09-28T09:00:00+05:30"
 author: "geetha"

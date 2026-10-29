@@ -1,5 +1,5 @@
 ---
-title: "Minimally Invasive & Robotic Surgery Pages: Demystifying Da Vinci Systems & Laparoscopy"
+title: "Minimally Invasive & Robotic Surgery Pages (2026 Guide)"
 niche: "doctor-specialist"
 date: "2026-10-11T12:00:00+05:30"
 author: "deepak"

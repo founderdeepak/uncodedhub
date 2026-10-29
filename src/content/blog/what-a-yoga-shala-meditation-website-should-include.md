@@ -1,5 +1,5 @@
 ---
-title: "What a Yoga Shala Website Should Include to Build a Devoted, High-Retention Community"
+title: "Yoga Shala Website Architecture (2026 Guide)"
 niche: "yoga-meditation"
 date: "2026-07-18T12:00:00+05:30"
 author: "deepak"

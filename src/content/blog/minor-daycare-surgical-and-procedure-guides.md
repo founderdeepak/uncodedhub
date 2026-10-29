@@ -1,5 +1,5 @@
 ---
-title: "Minor Daycare Procedure Guides: Endoscopy, Cataract, and Wound Dressing Pages"
+title: "Minor Daycare Procedure Guides (2026 Guide)"
 niche: "clinic-polyclinic"
 date: "2026-10-07T09:00:00+05:30"
 author: "deepak"

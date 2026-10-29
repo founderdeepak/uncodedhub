@@ -1,5 +1,5 @@
 ---
-title: "What a Multi-Specialty Polyclinic Website Should Include to Streamline Patient Inflow"
+title: "Multi-Specialty Polyclinic Website Architecture (2026 Guide)"
 niche: "clinic-polyclinic"
 date: "2026-09-22T09:00:00+05:30"
 author: "deepak"

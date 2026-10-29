@@ -1,5 +1,5 @@
 ---
-title: "Pre-Wedding Shoot Portfolio Architecture: Early-Stage Couple Acquisition"
+title: "Pre-Wedding Shoot Portfolio Architecture (2026 Guide)"
 niche: "wedding-photographers"
 date: "2026-07-19T11:00:00+05:30"
 author: "deepak"

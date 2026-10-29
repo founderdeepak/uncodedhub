@@ -1,5 +1,5 @@
 ---
-title: "The 7-Day Bridal Salon Website Sprint: Deploying Chic, High-Converting Studios in 7 Days"
+title: "The 7-Day Bridal Salon Website Sprint (2026 Guide)"
 niche: "salon-beauty"
 date: "2026-06-26T09:00:00+05:30"
 author: "geetha"

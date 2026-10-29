@@ -1,5 +1,5 @@
 ---
-title: "Specialty-by-Specialty OPD Schedule Matrices: Eliminating Waiting Room Chaos"
+title: "Specialty-by-Specialty OPD Schedule Matrices (2026 Guide)"
 niche: "clinic-polyclinic"
 date: "2026-09-23T09:00:00+05:30"
 author: "geetha"

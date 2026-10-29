@@ -1,5 +1,5 @@
 ---
-title: "Corporate Wellness Retreat Packages: Packaging Executive De-Stress Days for Tech Companies"
+title: "Corporate Wellness Retreat Packages (2026 Guide)"
 niche: "spa-wellness"
 date: "2026-05-27T09:00:00+05:30"
 author: "deepak"

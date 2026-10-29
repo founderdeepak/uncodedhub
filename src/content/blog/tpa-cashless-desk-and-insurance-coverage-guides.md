@@ -1,5 +1,5 @@
 ---
-title: "Insurance & TPA Cashless Desk Guides: Clarifying Cashless Protocols & Claims"
+title: "Insurance & TPA Cashless Desk Guides (2026 Guide)"
 niche: "clinic-polyclinic"
 date: "2026-10-04T09:00:00+05:30"
 author: "deepak"

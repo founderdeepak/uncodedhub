@@ -1,5 +1,5 @@
 ---
-title: "Online Booking vs Phone-Only: What Actually Reduces No-Shows for Small Clinics"
+title: "Online Booking vs Phone-Only (2026 Guide)"
 niche: "dental-clinics"
 date: "2026-07-13T21:00:00+05:30"
 author: "deepak"

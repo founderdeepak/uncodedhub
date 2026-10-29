@@ -1,5 +1,5 @@
 ---
-title: "What an Educational Academy Website Should Include to Convert High-Fee Enrollments"
+title: "Educational Academy Website Architecture (2026 Guide)"
 niche: "educational-academy"
 date: "2026-03-12T09:00:00+05:30"
 author: "deepak"

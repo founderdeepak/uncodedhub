@@ -1,5 +1,5 @@
 ---
-title: "Wedding Decor and Event Production Website Blueprint: Selling Large-Scale Design"
+title: "Wedding Decor and Event Production Website Blueprint (2026 Guide)"
 niche: "wedding-photographers"
 date: "2026-09-15T11:00:00+05:30"
 author: "deepak"

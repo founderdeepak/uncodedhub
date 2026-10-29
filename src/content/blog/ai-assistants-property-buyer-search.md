@@ -1,5 +1,5 @@
 ---
-title: "How AI Assistants Are Changing How Property Buyers Search for an Agent"
+title: "How AI Search is Changing Real Estate Discovery (2026)"
 niche: "real-estate"
 date: "2026-03-30T21:00:00+05:30"
 author: "deepak"

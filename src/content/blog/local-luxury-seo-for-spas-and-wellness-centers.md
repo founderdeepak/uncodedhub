@@ -1,5 +1,5 @@
 ---
-title: "Local Luxury SEO: Ranking for High-Ticket Spas & Wellness Retreats"
+title: "Ranking for High-Ticket Spas & Wellness Retreats"
 niche: "spa-wellness"
 date: "2026-05-22T09:00:00+05:30"
 author: "deepak"

@@ -1,5 +1,5 @@
 ---
-title: "Substack and Medium vs Owning Your Domain: The Platform Trap for Consultants"
+title: "Substack and Medium vs Owning Your Domain (2026 Guide)"
 niche: "coaches-consultants"
 date: "2026-08-23T21:00:00+05:30"
 author: "deepak"

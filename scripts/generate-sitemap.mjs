@@ -29,15 +29,34 @@ try {
   }
 } catch {}
 
+function escapeXml(str) {
+  if (!str) return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 const body = routes
   .map((r) => {
     const lastmod = r.lastmod ? `\n    <lastmod>${r.lastmod}</lastmod>` : '';
     const loc = r.loc.endsWith('/') || r.loc.endsWith('.html') ? r.loc : `${r.loc}/`;
-    return `  <url>\n    <loc>https://uncodedhub.com${loc}</loc>${lastmod}\n  </url>`;
+    
+    let imageXml = '';
+    if (r.image) {
+      const imgLoc = r.image.startsWith('http') ? r.image : `https://uncodedhub.com${r.image}`;
+      const titleTag = r.title ? `\n      <image:title>${escapeXml(r.title)}</image:title>` : '';
+      const captionTag = r.caption ? `\n      <image:caption>${escapeXml(r.caption)}</image:caption>` : (titleTag ? `\n      <image:caption>${escapeXml(r.title)}</image:caption>` : '');
+      imageXml = `\n    <image:image>\n      <image:loc>${imgLoc}</image:loc>${titleTag}${captionTag}\n    </image:image>`;
+    }
+
+    return `  <url>\n    <loc>https://uncodedhub.com${loc}</loc>${lastmod}${imageXml}\n  </url>`;
   })
   .join('\n');
 
-const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
+const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${body}\n</urlset>\n`;
 
 writeFileSync(sitemapPath, xml);
 const postCount = routes.filter((r) => r.loc.startsWith('/blog/')).length;

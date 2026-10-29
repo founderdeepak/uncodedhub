@@ -1,5 +1,5 @@
 ---
-title: "Preventive Family Health Checkup Cards: Structuring Annual Plans for Recurring Visits"
+title: "Preventive Family Health Checkup Cards (2026 Guide)"
 niche: "clinic-polyclinic"
 date: "2026-09-29T09:00:00+05:30"
 author: "deepak"

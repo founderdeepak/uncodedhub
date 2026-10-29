@@ -1,5 +1,5 @@
 ---
-title: "International Medical Tourism Packages: Coordinating Visas, Transfers, and Stay"
+title: "International Medical Tourism Packages (2026 Guide)"
 niche: "doctor-specialist"
 date: "2026-10-18T12:00:00+05:30"
 author: "deepak"

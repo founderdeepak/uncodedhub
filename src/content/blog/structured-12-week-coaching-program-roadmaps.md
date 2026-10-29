@@ -1,5 +1,5 @@
 ---
-title: "Structured 12-Week Roadmap Presentation: Demystifying What Clients Actually Pay For"
+title: "Structured 12-Week Roadmap Presentation (2026 Guide)"
 niche: "fitness-coach"
 date: "2026-07-01T09:00:00+05:30"
 author: "geetha"

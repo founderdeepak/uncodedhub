@@ -1,5 +1,5 @@
 ---
-title: "How to Brief a Web Design Studio So the Project Actually Goes Fast"
+title: "How to Brief a Web Design Studio So the Project (2026 Guide)"
 niche: "studio"
 date: "2026-06-05T19:00:00+05:30"
 author: "deepak"

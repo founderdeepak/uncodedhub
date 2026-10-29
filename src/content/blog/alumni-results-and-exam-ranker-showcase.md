@@ -1,5 +1,5 @@
 ---
-title: "Alumni Results Showcase: Proving Exam Rankers and Placements with Verifiable Scorecards"
+title: "Academy Alumni Results & Exam Ranker Showcase (2026)"
 niche: "educational-academy"
 date: "2026-03-18T09:00:00+05:30"
 author: "deepak"

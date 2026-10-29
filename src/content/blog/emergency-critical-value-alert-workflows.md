@@ -1,5 +1,5 @@
 ---
-title: "Emergency Critical Alert Workflows: Explaining How Panic Values Are Flagged to Doctors"
+title: "Emergency Critical Alert Workflows (2026 Guide)"
 niche: "healthcare-diagnostics"
 date: "2026-09-20T09:00:00+05:30"
 author: "deepak"

@@ -1,5 +1,5 @@
 ---
-title: "What Information a Website Needs to Reduce Time-Wasting Enquiries for a Renovation Studio"
+title: "What Information a Website Needs to Reduce (2026 Guide)"
 niche: "home-renovation"
 date: "2026-07-30T08:00:00+05:30"
 author: "deepak"

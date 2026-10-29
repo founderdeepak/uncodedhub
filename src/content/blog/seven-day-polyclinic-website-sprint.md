@@ -1,5 +1,5 @@
 ---
-title: "The 7-Day Polyclinic Website Sprint: How Uncoded Hub Engineers Clinical Systems in 7 Days"
+title: "The 7-Day Polyclinic Website Sprint (2026 Guide)"
 niche: "clinic-polyclinic"
 date: "2026-10-08T12:00:00+05:30"
 author: "geetha"

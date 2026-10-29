@@ -1,5 +1,5 @@
 ---
-title: "Speaker One-Sheet and Media Press Kit Architecture: Winning Paid Keynotes"
+title: "Speaker One-Sheet and Media Press Kit Architecture (2026 Guide)"
 niche: "coaches-consultants"
 date: "2026-08-20T08:00:00+05:30"
 author: "deepak"

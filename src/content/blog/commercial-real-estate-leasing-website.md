@@ -1,5 +1,5 @@
 ---
-title: "Commercial Real Estate & Office Space Leasing Websites: The B2B Architecture"
+title: "Commercial Real Estate & Office Space Leasing (2026 Guide)"
 niche: "real-estate"
 date: "2026-04-25T14:00:00+05:30"
 author: "deepak"

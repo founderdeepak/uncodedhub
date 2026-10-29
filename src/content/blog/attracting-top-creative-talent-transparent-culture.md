@@ -1,5 +1,5 @@
 ---
-title: "Agency Talent Acquisition Pages: Attracting Senior Art Directors with Transparent Pay"
+title: "Agency Talent Acquisition Pages: Attracting Senior Talent"
 niche: "creative-portfolio"
 date: "2026-08-27T09:00:00+05:30"
 author: "deepak"

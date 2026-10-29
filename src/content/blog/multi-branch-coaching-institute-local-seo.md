@@ -1,5 +1,5 @@
 ---
-title: "Branch Multi-Location SEO: Structuring Pages for Academies with 3 to 10 City Branches"
+title: "Branch Multi-Location SEO (2026 Guide)"
 niche: "educational-academy"
 date: "2026-03-28T09:00:00+05:30"
 author: "deepak"

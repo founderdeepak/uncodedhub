@@ -1,5 +1,5 @@
 ---
-title: "Instant Appointment Booking with WhatsApp Confirmation: Cutting Phone Bottlenecks by 70%"
+title: "Instant Appointment Booking with WhatsApp (2026 Guide)"
 niche: "clinic-polyclinic"
 date: "2026-09-27T09:00:00+05:30"
 author: "deepak"

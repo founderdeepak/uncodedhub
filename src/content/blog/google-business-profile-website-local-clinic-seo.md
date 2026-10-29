@@ -1,5 +1,5 @@
 ---
-title: "Google Business Profile + Website: How They Work Together for Local Clinic SEO"
+title: "Google Business Profile + Website (2026 Guide)"
 niche: "dental-clinics"
 date: "2026-05-23T10:00:00+05:30"
 author: "geetha"

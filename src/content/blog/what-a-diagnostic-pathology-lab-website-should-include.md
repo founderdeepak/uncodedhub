@@ -1,5 +1,5 @@
 ---
-title: "What a Diagnostic & Pathology Lab Website Should Include to Accelerate Patient Trust"
+title: "Diagnostic & Pathology Lab Website Architecture (2026 Guide)"
 niche: "healthcare-diagnostics"
 date: "2026-08-31T09:00:00+05:30"
 author: "deepak"

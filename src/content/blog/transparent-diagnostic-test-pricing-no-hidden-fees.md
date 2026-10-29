@@ -1,5 +1,5 @@
 ---
-title: "Transparent Test Pricing Menus: Eliminating Hidden Surcharges and Home Visit Fees"
+title: "Transparent Test Pricing Menus (2026 Guide)"
 niche: "healthcare-diagnostics"
 date: "2026-09-19T09:00:00+05:30"
 author: "geetha"

@@ -1,5 +1,5 @@
 ---
-title: "Bespoke Furniture Maker Commission Pages: Selling Custom Artisanal Craft"
+title: "Bespoke Furniture Maker Commission Pages (2026 Guide)"
 niche: "home-renovation"
 date: "2026-04-12T16:00:00+05:30"
 image: "/blog/bespoke-furniture-commissions-portfolio-page.webp"

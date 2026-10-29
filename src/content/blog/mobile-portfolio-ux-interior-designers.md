@@ -1,5 +1,5 @@
 ---
-title: "Mobile UX for Interior Design Websites: Designing for the 80% Smartphone Visitor"
+title: "Mobile UX for Interior Design Websites (2026 Guide)"
 niche: "interior-designers"
 date: "2026-06-30T21:00:00+05:30"
 author: "geetha"

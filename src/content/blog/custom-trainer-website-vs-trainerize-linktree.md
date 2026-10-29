@@ -1,5 +1,5 @@
 ---
-title: "Custom Website vs Trainerize/Linktree: Creating a Standalone Brand That Outlasts Generic Apps"
+title: "Custom Website vs Trainerize/Linktree (2026 Guide)"
 niche: "fitness-coach"
 date: "2026-07-10T09:00:00+05:30"
 author: "geetha"

@@ -1,5 +1,5 @@
 ---
-title: "How AI Assistants Are Changing How Homeowners Find an Interior Designer"
+title: "How AI Search is Changing Interior Designer Discovery (2026)"
 niche: "interior-designers"
 date: "2026-03-27T14:00:00+05:30"
 author: "deepak"

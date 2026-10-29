@@ -1,5 +1,5 @@
 ---
-title: "WhatsApp Lead Capture and Instant CRM Architecture: The 5-Minute Lead Rule"
+title: "WhatsApp Lead Capture and Instant CRM Architecture (2026 Guide)"
 niche: "studio"
 date: "2026-10-01T14:00:00+05:30"
 author: "geetha"

@@ -1,5 +1,5 @@
 ---
-title: "The Ultimate Consultant Website Guide for India (How to Win ₹50,000+ Engagements)"
+title: "The Ultimate Consultant Website Guide for India (How (2026 Guide)"
 niche: "coaches-consultants"
 date: "2026-08-24T14:00:00+05:30"
 author: "geetha"

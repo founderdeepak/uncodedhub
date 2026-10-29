@@ -1,5 +1,5 @@
 ---
-title: "Before/After Beauty Sliders: Demonstrating Skin Texture Honesty & Natural Lighting"
+title: "Before/After Beauty Sliders (2026 Guide)"
 niche: "salon-beauty"
 date: "2026-06-11T09:00:00+05:30"
 author: "geetha"

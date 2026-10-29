@@ -1,5 +1,5 @@
 ---
-title: "The 7-Day Diagnostic Lab Website Sprint: Building Clinical Patient Acquisition in 7 Days"
+title: "The 7-Day Diagnostic Lab Website Sprint (2026 Guide)"
 niche: "healthcare-diagnostics"
 date: "2026-09-20T12:00:00+05:30"
 author: "geetha"

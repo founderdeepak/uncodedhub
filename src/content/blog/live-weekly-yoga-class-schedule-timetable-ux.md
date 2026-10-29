@@ -1,5 +1,5 @@
 ---
-title: "Live Weekly Class Schedule Timetable: Clear Visual Grids with Teacher Badges & Levels"
+title: "Live Weekly Class Schedule Timetable (2026 Guide)"
 niche: "yoga-meditation"
 date: "2026-07-20T09:00:00+05:30"
 author: "geetha"

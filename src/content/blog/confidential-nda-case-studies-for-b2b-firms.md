@@ -1,5 +1,5 @@
 ---
-title: "Confidential NDA Case Studies: Showcasing Fortune 500 Impact Without Breaching Client NDAs"
+title: "Confidential NDA Case Studies (2026 Guide)"
 niche: "business-portfolio"
 date: "2026-04-26T09:00:00+05:30"
 author: "deepak"

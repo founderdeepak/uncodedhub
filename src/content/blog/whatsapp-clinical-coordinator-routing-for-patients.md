@@ -1,5 +1,5 @@
 ---
-title: "WhatsApp Clinical Coordinator Routing: Connecting Anxious Patients with Chief Assistant"
+title: "WhatsApp Clinical Coordinator Routing (2026 Guide)"
 niche: "doctor-specialist"
 date: "2026-10-16T09:00:00+05:30"
 author: "deepak"

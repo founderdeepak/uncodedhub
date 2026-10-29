@@ -19,6 +19,8 @@ const BlogView = lazy(() => import('./pages/BlogView'));
 const AuditChecklist = lazy(() => import('./pages/AuditChecklist'));
 const NicheLanding = lazy(() => import('./pages/NicheLanding'));
 const WebDesignHub = lazy(() => import('./pages/WebDesignHub'));
+const BangaloreHub = lazy(() => import('./pages/BangaloreHub'));
+const BangaloreLocalityLanding = lazy(() => import('./pages/BangaloreLocalityLanding'));
 const TeamOutreach = lazy(() => import('./pages/TeamOutreach'));
 import { EnquiryDock } from './components/EnquiryDock';
 
@@ -304,6 +306,30 @@ export default function App() {
             element={
               <Suspense fallback={null}>
                 <WebDesignHub onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/web-design/bangalore/"
+            element={
+              <Suspense fallback={null}>
+                <BangaloreHub onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/web-design/bangalore/:locality/"
+            element={
+              <Suspense fallback={null}>
+                <BangaloreLocalityLanding onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/web-design/bangalore/:locality/:niche/"
+            element={
+              <Suspense fallback={null}>
+                <BangaloreLocalityLanding onBook={goToBooking} />
               </Suspense>
             }
           />

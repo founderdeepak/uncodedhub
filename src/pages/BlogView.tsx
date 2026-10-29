@@ -89,6 +89,8 @@ export default function BlogView() {
       {
         '@type': 'ImageObject',
         url: ogImageUrl,
+        width: 1200,
+        height: 675,
         caption: post.excerpt || post.title,
         description: post.metaDescription,
         name: `${post.title} — Uncoded Hub Architecture Blueprint`,
@@ -97,6 +99,11 @@ export default function BlogView() {
     datePublished: post.date,
     dateModified: post.date,
     inLanguage: 'en-US',
+    isAccessibleForFree: true,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '.executive-summary p', '.prose-article > p:first-of-type'],
+    },
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': url,
@@ -207,6 +214,9 @@ export default function BlogView() {
         <meta property="article:published_time" content={post.date} />
         <meta property="article:section" content={NICHES[post.niche]} />
         <meta property="article:author" content={post.author.name} />
+        {/* AISEO & AEO direct crawler directives */}
+        <meta name="ai-content-declaration" content="human-authored-expert-architecture" />
+        <meta name="ai-citations-permitted" content="true" />
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@uncodedhub" />
@@ -233,7 +243,11 @@ export default function BlogView() {
         />
       </div>
 
-      <article className="pt-10 sm:pt-16 pb-20 bg-paper">
+      <article
+        className="pt-10 sm:pt-16 pb-20 bg-paper"
+        itemScope
+        itemType="https://schema.org/Article"
+      >
         <Shell width="narrow">
           <Reveal>
             {/* ── Breadcrumb & Top Pill ── */}
@@ -269,13 +283,21 @@ export default function BlogView() {
             </div>
 
             {/* ── Article Heading ── */}
-            <h1 className="font-display text-3xl sm:text-5xl md:text-6xl text-ink font-normal tracking-tight leading-[1.08] mb-8">
+            <h1
+              itemProp="headline"
+              className="font-display text-3xl sm:text-5xl md:text-6xl text-ink font-normal tracking-tight leading-[1.08] mb-8"
+            >
               {post.title}
             </h1>
 
             {/* ── Author Byline & Timing Meta Row ── */}
             <div className="flex flex-wrap items-center justify-between gap-y-4 gap-x-6 py-6 border-y border-rule">
-              <div className="flex items-center gap-3.5">
+              <div
+                className="flex items-center gap-3.5"
+                itemProp="author"
+                itemScope
+                itemType="https://schema.org/Person"
+              >
                 <img
                   src={post.author.avatar}
                   alt={`${post.author.name} — ${post.author.role}`}
@@ -283,6 +305,7 @@ export default function BlogView() {
                   loading="eager"
                   width="40"
                   height="40"
+                  itemProp="image"
                 />
                 <div>
                   <div className="flex items-center gap-2">
@@ -290,21 +313,22 @@ export default function BlogView() {
                       href={post.author.linkedin}
                       target="_blank"
                       rel="noreferrer noopener"
+                      itemProp="url"
                       className="font-medium text-sm text-ink hover:text-signal transition-colors inline-flex items-center gap-1"
                     >
-                      {post.author.name}
+                      <span itemProp="name">{post.author.name}</span>
                       <span className="text-[10px] text-muted">↗</span>
                     </a>
                     <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-paper-raised border border-rule text-signal">
                       Verified Author
                     </span>
                   </div>
-                  <p className="text-[11px] font-mono text-muted mt-0.5">{post.author.role}</p>
+                  <p className="text-[11px] font-mono text-muted mt-0.5" itemProp="jobTitle">{post.author.role}</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-3 text-xs font-mono text-muted">
-                <time dateTime={post.date}>
+                <time dateTime={post.date} itemProp="datePublished">
                   {new Date(post.date).toLocaleDateString('en-IN', {
                     day: 'numeric',
                     month: 'short',
@@ -377,10 +401,16 @@ export default function BlogView() {
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
+                  width="1200"
+                  height="675"
+                  itemProp="image"
                   className="w-full h-auto max-h-[680px] object-contain rounded-[20px] mx-auto block"
                 />
                 {post.excerpt && (
-                  <figcaption className="text-center text-[11px] font-mono text-muted py-2 px-4 border-t border-rule/50 mt-1 line-clamp-2">
+                  <figcaption
+                    itemProp="caption"
+                    className="text-center text-[11px] font-mono text-muted py-2 px-4 border-t border-rule/50 mt-1 line-clamp-2"
+                  >
                     {post.excerpt}
                   </figcaption>
                 )}
@@ -400,11 +430,17 @@ export default function BlogView() {
           {/* ── Executive Summary / Key Takeaways Bento Card ── */}
           {post.excerpt && (
             <Reveal delay={60} className="mt-10">
-              <div className="p-8 rounded-[24px] bg-paper-sunken border border-rule-strong shadow-xs">
+              <div
+                className="executive-summary p-8 rounded-[24px] bg-paper-sunken border border-rule-strong shadow-xs"
+                data-ai-summary="true"
+              >
                 <span className="card-tag mb-3">
                   Executive summary · Key takeaways
                 </span>
-                <p className="text-ink text-sm sm:text-base leading-relaxed">
+                <p
+                  itemProp="abstract"
+                  className="text-ink text-sm sm:text-base leading-relaxed"
+                >
                   {post.excerpt}
                 </p>
               </div>
@@ -468,7 +504,11 @@ export default function BlogView() {
 
           {/* ── Article Content ── */}
           <Reveal delay={80} className="mt-14 pt-14 border-t border-rule">
-            <div className="prose-article" dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div
+              className="prose-article"
+              itemProp="articleBody"
+              dangerouslySetInnerHTML={{ __html: post.html }}
+            />
           </Reveal>
 
           {/* ── In-Article Fast-Track Conversion Bento ── */}

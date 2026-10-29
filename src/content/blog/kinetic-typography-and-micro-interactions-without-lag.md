@@ -1,5 +1,5 @@
 ---
-title: "Kinetic Typography & Micro-Interactions: Proving Craftsmanship Without Jitter or Lag"
+title: "Kinetic Typography & Micro-Interactions (2026 Guide)"
 niche: "creative-portfolio"
 date: "2026-08-14T09:00:00+05:30"
 author: "deepak"

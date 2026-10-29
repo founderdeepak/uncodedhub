@@ -1,5 +1,5 @@
 ---
-title: "Google Local Services Ads and Landing Page Synchronization for Clinics"
+title: "Google Local Services Ads and Landing Page (2026 Guide)"
 niche: "dental-clinics"
 date: "2026-05-24T19:00:00+05:30"
 author: "deepak"

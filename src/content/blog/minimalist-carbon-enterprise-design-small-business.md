@@ -1,5 +1,5 @@
 ---
-title: "Minimalist Carbon Enterprise Design: Why Less Visual Clutter Converts More"
+title: "Minimalist Carbon Enterprise Design (2026 Guide)"
 niche: "studio"
 date: "2026-06-28T14:00:00+05:30"
 author: "deepak"

@@ -1,5 +1,5 @@
 ---
-title: "Corporate Mindfulness Seminars: Pitching Stress-Reduction & Ergonomics to Tech Firms"
+title: "Corporate Mindfulness Seminars (2026 Guide)"
 niche: "yoga-meditation"
 date: "2026-08-03T12:00:00+05:30"
 author: "geetha"

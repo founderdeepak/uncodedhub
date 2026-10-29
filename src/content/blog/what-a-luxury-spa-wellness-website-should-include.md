@@ -1,5 +1,5 @@
 ---
-title: "What a Luxury Spa Website Should Include to Fill High-Ticket Rejuvenation Rituals"
+title: "Luxury Spa Website Architecture (2026 Guide)"
 niche: "spa-wellness"
 date: "2026-05-15T09:00:00+05:30"
 author: "deepak"

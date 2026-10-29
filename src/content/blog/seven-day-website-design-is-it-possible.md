@@ -1,11 +1,11 @@
 ---
-title: "Website Designing in 7 Days: How We Build & Launch Custom Sites"
+title: "7-Day Website Design: How We Build & Launch Custom Sites on Time"
 niche: "studio"
 date: "2026-08-10T21:00:00+05:30"
 author: "geetha"
 excerpt: "Can a custom business website be built in 7 days? How our sprint process works, the pre-sprint checklist, and our binding 'late means free' guarantee."
-metaDescription: "Can professional custom website designing really be finished in 7 days? Learn our day-by-day sprint architecture, live milestone deliverables, and 'late means free' guarantee."
-keywords: "7day website design, web engineering and conversion, studio website design, high converting web architecture"
+metaDescription: "Can a custom business website be built in 7 days? Learn our day-by-day sprint architecture, client preparation checklist, and contractual late-means-free guarantee."
+keywords: "7 day website design, website designing in 7 days, website in 7 days, 7day website design, studio website design, high converting web architecture"
 image: "/blog/seven-day-website-design-is-it-possible.webp"
 ---
 

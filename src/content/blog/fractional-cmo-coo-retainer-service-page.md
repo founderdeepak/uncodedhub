@@ -1,5 +1,5 @@
 ---
-title: "Fractional Executive and Retainer Service Page Architecture: Selling Leadership as a Service"
+title: "Selling Leadership as a Service"
 niche: "coaches-consultants"
 date: "2026-05-20T16:00:00+05:30"
 author: "geetha"

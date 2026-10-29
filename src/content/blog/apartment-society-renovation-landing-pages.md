@@ -1,5 +1,5 @@
 ---
-title: "Apartment Society Renovation Pages: Hyperlocal SEO for Gated Communities"
+title: "Apartment Society Renovation Pages: Hyperlocal SEO (2026)"
 niche: "home-renovation"
 date: "2026-04-05T16:00:00+05:30"
 author: "deepak"

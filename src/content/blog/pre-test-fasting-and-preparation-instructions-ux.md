@@ -1,5 +1,5 @@
 ---
-title: "Pre-Test Fasting & Preparation Guides: Reducing Inaccurate Test Samples with Clarity"
+title: "Pre-Test Fasting & Preparation Guides (2026 Guide)"
 niche: "healthcare-diagnostics"
 date: "2026-09-04T09:00:00+05:30"
 author: "geetha"

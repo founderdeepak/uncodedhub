@@ -1,5 +1,5 @@
 ---
-title: "Corporate Wellness Retainers for Coaches: Pitching Tech Startups on Founder Fitness"
+title: "Corporate Wellness Retainers for Coaches (2026 Guide)"
 niche: "fitness-coach"
 date: "2026-07-15T09:00:00+05:30"
 author: "geetha"

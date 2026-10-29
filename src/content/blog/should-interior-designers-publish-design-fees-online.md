@@ -1,5 +1,5 @@
 ---
-title: "Should Interior Designers Publish Design Fees Online? An Honest Look"
+title: "Should Interior Designers Publish Design Fees (2026 Guide)"
 niche: "interior-designers"
 date: "2026-08-14T19:00:00+05:30"
 author: "deepak"

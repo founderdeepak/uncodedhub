@@ -1,5 +1,5 @@
 ---
-title: "Weekend Retreat Itineraries: Step-by-Step Timelines for Residential Sanctuaries"
+title: "Weekend Retreat Itineraries (2026 Guide)"
 niche: "spa-wellness"
 date: "2026-06-01T12:00:00+05:30"
 author: "geetha"

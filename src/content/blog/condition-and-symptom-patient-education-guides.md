@@ -1,5 +1,5 @@
 ---
-title: "Condition & Symptom Education Guides: Detailed Medical Content That Ranks in AI Overviews"
+title: "Condition & Symptom Education Guides (2026 Guide)"
 niche: "doctor-specialist"
 date: "2026-10-11T09:00:00+05:30"
 author: "geetha"

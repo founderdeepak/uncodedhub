@@ -1,5 +1,5 @@
 ---
-title: "Local Executive In-Home Training SEO: Capturing Wealthy CEOs Looking for Private Coaching"
+title: "Local Executive In-Home Training SEO (2026 Guide)"
 niche: "fitness-coach"
 date: "2026-07-07T09:00:00+05:30"
 author: "deepak"

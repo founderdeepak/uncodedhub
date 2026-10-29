@@ -1,5 +1,5 @@
 ---
-title: "Custom React vs Heavy WordPress: Protecting Corporate Websites from Security Breaches"
+title: "Custom React vs Heavy WordPress (2026 Guide)"
 niche: "business-portfolio"
 date: "2026-05-09T09:00:00+05:30"
 author: "geetha"

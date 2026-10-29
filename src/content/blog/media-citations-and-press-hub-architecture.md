@@ -1,5 +1,5 @@
 ---
-title: "Media Citations & Press Hub: Structuring Bloomberg, Forbes, and Reuters Mentions for E-E-A-T"
+title: "Media Citations & Press Hub (2026 Guide)"
 niche: "business-portfolio"
 date: "2026-05-11T09:00:00+05:30"
 author: "geetha"

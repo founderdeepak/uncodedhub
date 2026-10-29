@@ -1,17 +1,20 @@
 ---
-title: "What a Consultant's 'Work With Me' Page Should Actually Say"
+title: "Work With Me Consultant Page (2026 Guide)"
 niche: "coaches-consultants"
 date: "2026-04-27T21:00:00+05:30"
 author: "geetha"
 excerpt: "Why most 'work with me' pages fail at the exact moment they matter most, and how to structure one that converts a warm visitor into a booked call."
-metaDescription: "Why most 'work with me' pages fail at the exact moment they matter most, and how to structure one that converts a warm visitor into a booked call."
-keywords: "consultants work page, consulting website architecture, coaches consultants website design, high converting web architecture"
+metaDescription: "Structure a high-converting 'Work With Me' page for consultants. The 3-part blueprint, objection-handling framework, and exact copy that converts visitors into booked calls."
+keywords: "work with me consultant, consultant work with me page, consulting website architecture, coaches consultants website design, high converting web architecture"
 image: "/blog/consultant-work-with-me-page.webp"
 ---
 
 By the time a visitor reaches a Work With Me page, they aren't being introduced to the practice. They're deciding whether to act. Most of these pages don't seem to know that. They repeat the homepage's positioning, list a few services, and end with a generic contact form, treating the most decision-ready visitor on the entire site the same as someone who just landed for the first time.
 
-## The short answer
+## What a Consultant 'Work With Me' Page Must Actually Say
+
+> [!TIP]
+> A high-converting consultant work with me page requires three components: **(1) A clear engagement sequence**, **(2) Direct pre-emption of cost and timeline hesitations**, and **(3) A singular, high-contrast booking CTA**.
 
 A Work With Me page should assume the visitor already believes the underlying idea and needs exactly three things to act. A clear description of what happens when they work with you. A specific answer to their remaining hesitations. And one obvious next step. Repeating the homepage's introductory pitch here wastes the page's real job.
 

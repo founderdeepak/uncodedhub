@@ -1,5 +1,5 @@
 ---
-title: "Executive Leadership Bios: Positioning Managing Partners as Industry Authorities"
+title: "Executive Leadership Bios (2026 Guide)"
 niche: "business-portfolio"
 date: "2026-04-26T12:00:00+05:30"
 author: "geetha"

@@ -1,5 +1,5 @@
 ---
-title: "What a Bridal Beauty Salon Website Should Include to Lock Premium Wedding Dates"
+title: "Bridal Beauty Salon Website Architecture (2026 Guide)"
 niche: "salon-beauty"
 date: "2026-06-06T09:00:00+05:30"
 author: "deepak"

@@ -1,5 +1,5 @@
 ---
-title: "Custom React vs WordPress: Why Coaching Sites Crash on Result Days & How Jamstack Solves It"
+title: "Custom React vs WordPress (2026 Guide)"
 niche: "educational-academy"
 date: "2026-03-25T09:00:00+05:30"
 author: "deepak"

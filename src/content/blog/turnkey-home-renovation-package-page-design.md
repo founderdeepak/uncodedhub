@@ -1,5 +1,5 @@
 ---
-title: "Turnkey Home Renovation Package Page Design: Eliminating Scope Anxiety"
+title: "Turnkey Home Renovation Package Page Design (2026 Guide)"
 niche: "home-renovation"
 date: "2026-08-27T16:00:00+05:30"
 author: "geetha"

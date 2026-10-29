@@ -1,5 +1,5 @@
 ---
-title: "The Real Cost Breakdown of a Small Business Website in India in 2026"
+title: "The Real Cost Breakdown of a Small Business Website (2026 Guide)"
 niche: "studio"
 date: "2026-08-18T14:00:00+05:30"
 author: "geetha"

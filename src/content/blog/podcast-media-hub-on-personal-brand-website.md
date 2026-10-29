@@ -1,5 +1,5 @@
 ---
-title: "Podcast and Media Appearances Hub: Compounding Third-Party Authority"
+title: "Podcast and Media Appearances Hub (2026 Guide)"
 niche: "coaches-consultants"
 date: "2026-07-16T11:00:00+05:30"
 author: "deepak"

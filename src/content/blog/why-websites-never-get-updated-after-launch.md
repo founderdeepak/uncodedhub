@@ -1,5 +1,5 @@
 ---
-title: "Why Most Small Business Websites Never Get Updated After Launch (And What Actually Fixes That)"
+title: "Why Small Business Websites Never Get Updated After (2026 Guide)"
 niche: "studio"
 date: "2026-10-04T21:00:00+05:30"
 author: "geetha"

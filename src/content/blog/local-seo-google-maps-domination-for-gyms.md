@@ -1,5 +1,5 @@
 ---
-title: "Local SEO for Gyms: Outranking Commercial Fitness Chains on Google Local Pack"
+title: "Outranking Commercial Fitness Chains on Google Local Pack"
 niche: "gym-fitness-club"
 date: "2026-04-10T09:00:00+05:30"
 author: "geetha"

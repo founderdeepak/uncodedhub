@@ -1,5 +1,5 @@
 ---
-title: "Video Testimonials: Structuring Student Success Stories That Overcome Parent Skepticism"
+title: "Video Testimonials: Structuring Student Success (2026 Guide)"
 niche: "educational-academy"
 date: "2026-03-26T09:00:00+05:30"
 author: "geetha"

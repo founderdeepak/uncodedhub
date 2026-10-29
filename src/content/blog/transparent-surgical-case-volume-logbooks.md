@@ -1,5 +1,5 @@
 ---
-title: "Surgical Case Volume Proof: Transparent Logbooks That Validate Clinical Mastery"
+title: "Surgical Case Volume Proof (2026 Guide)"
 niche: "doctor-specialist"
 date: "2026-10-10T12:00:00+05:30"
 author: "deepak"

@@ -1,5 +1,5 @@
 ---
-title: "Mobile 4G Speed for Image Galleries: How Next-Gen WebP/AVIF Eliminates Gallery Lag"
+title: "Mobile 4G Speed for Image Galleries (2026 Guide)"
 niche: "salon-beauty"
 date: "2026-06-19T12:00:00+05:30"
 author: "deepak"

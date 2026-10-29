@@ -1,5 +1,5 @@
 ---
-title: "White Paper & Research Gateways: High-Intent Lead Magnets for C-Level Decision Makers"
+title: "White Paper & Research Gateways (2026 Guide)"
 niche: "business-portfolio"
 date: "2026-04-29T09:00:00+05:30"
 author: "geetha"

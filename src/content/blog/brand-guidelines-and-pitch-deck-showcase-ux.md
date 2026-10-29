@@ -1,5 +1,5 @@
 ---
-title: "Pitch Deck & Presentation Showcases: How Leading Studios Display Brand Guidelines"
+title: "Pitch Deck & Presentation Showcases (2026 Guide)"
 niche: "creative-portfolio"
 date: "2026-08-20T09:00:00+05:30"
 author: "geetha"

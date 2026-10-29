@@ -1,5 +1,5 @@
 ---
-title: "Bridal Party & Family Packages: Upselling Groom and Bridesmaid Grooming Bundles"
+title: "Bridal Party & Family Packages (2026 Guide)"
 niche: "salon-beauty"
 date: "2026-06-22T09:00:00+05:30"
 author: "deepak"

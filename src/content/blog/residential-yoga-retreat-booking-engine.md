@@ -1,5 +1,5 @@
 ---
-title: "Residential Yoga Retreat Booking Engine: Showcasing Itineraries, Meals, and Rooms"
+title: "Residential Yoga Retreat Booking Engine (2026 Guide)"
 niche: "yoga-meditation"
 date: "2026-07-25T09:00:00+05:30"
 author: "geetha"

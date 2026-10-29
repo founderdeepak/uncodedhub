@@ -1,5 +1,5 @@
 ---
-title: "Meditation for Beginners FAQ: Answering Anxieties for People Who Believe"
+title: "Meditation for Beginners FAQ (2026 Guide)"
 niche: "yoga-meditation"
 date: "2026-08-07T09:00:00+05:30"
 author: "deepak"

@@ -1,5 +1,5 @@
 ---
-title: "Off-Peak Hour Promotions: Creating Flash Landing Pages to Fill Afternoon Gym Lulls"
+title: "Creating Flash Landing Pages to Fill Afternoon Gym Lulls"
 niche: "gym-fitness-club"
 date: "2026-04-12T09:00:00+05:30"
 author: "geetha"

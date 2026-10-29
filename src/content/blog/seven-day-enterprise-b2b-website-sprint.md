@@ -1,5 +1,5 @@
 ---
-title: "The 7-Day Enterprise Website Sprint: Launching High-Prestige Platforms with Deepak & Geetha"
+title: "The 7-Day Enterprise Website Sprint (2026 Guide)"
 niche: "business-portfolio"
 date: "2026-05-14T09:00:00+05:30"
 author: "geetha"

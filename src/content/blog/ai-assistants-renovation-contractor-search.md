@@ -1,5 +1,5 @@
 ---
-title: "How AI Assistants Are Changing How Homeowners Search for a Renovation Contractor"
+title: "How AI is Changing Renovation Contractor Search (2026)"
 niche: "home-renovation"
 date: "2026-03-31T19:00:00+05:30"
 author: "geetha"

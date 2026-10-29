@@ -1,5 +1,5 @@
 ---
-title: "Client Proofing Galleries vs Public Portfolio Architecture: Protecting Speed and SEO"
+title: "Client Proofing Galleries vs Public Portfolio (2026 Guide)"
 niche: "wedding-photographers"
 date: "2026-04-19T11:00:00+05:30"
 author: "deepak"

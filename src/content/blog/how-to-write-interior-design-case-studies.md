@@ -1,5 +1,5 @@
 ---
-title: "How to Write Interior Design Case Studies That Sell Premium Projects"
+title: "How to Write Interior Design Case Studies That Sell (2026 Guide)"
 niche: "interior-designers"
 date: "2026-06-08T21:00:00+05:30"
 author: "deepak"

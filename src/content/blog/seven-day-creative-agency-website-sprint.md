@@ -1,5 +1,5 @@
 ---
-title: "The 7-Day Creative Agency Website Sprint: How Deepak & Geetha Launch Flagships in 7 Days"
+title: "The 7-Day Creative Agency Website Sprint (2026 Guide)"
 niche: "creative-portfolio"
 date: "2026-08-30T09:00:00+05:30"
 author: "geetha"

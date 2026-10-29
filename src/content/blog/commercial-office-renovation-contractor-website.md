@@ -1,5 +1,5 @@
 ---
-title: "Commercial Office Fit-Out and Retail Renovation: Winning B2B Contracts"
+title: "Commercial Office Fit-Out and Retail Renovation (2026 Guide)"
 niche: "home-renovation"
 date: "2026-04-24T14:00:00+05:30"
 author: "geetha"

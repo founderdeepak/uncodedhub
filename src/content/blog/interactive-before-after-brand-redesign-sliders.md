@@ -1,5 +1,5 @@
 ---
-title: "Interactive Before/After Brand Redesigns: Showing Tangible Contrast in Brand Evolution"
+title: "Interactive Before/After Brand Redesigns (2026 Guide)"
 niche: "creative-portfolio"
 date: "2026-08-13T09:00:00+05:30"
 author: "geetha"

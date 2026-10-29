@@ -1,5 +1,5 @@
 ---
-title: "Patient Preparation & Recovery Handbooks: Downloadable Pre-Op & Post-Op Guides"
+title: "Patient Preparation & Recovery Handbooks (2026 Guide)"
 niche: "doctor-specialist"
 date: "2026-10-15T09:00:00+05:30"
 author: "deepak"

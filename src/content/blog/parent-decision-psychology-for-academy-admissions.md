@@ -1,5 +1,5 @@
 ---
-title: "Parent Decision Psychology: What Parents Actually Look for Before Paying Term Fees"
+title: "Parent Decision Psychology (2026 Guide)"
 niche: "educational-academy"
 date: "2026-03-24T09:00:00+05:30"
 author: "geetha"

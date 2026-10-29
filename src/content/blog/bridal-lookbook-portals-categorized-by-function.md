@@ -1,5 +1,5 @@
 ---
-title: "Bridal Lookbook Portals: High-Resolution HD Portfolios Categorized by Wedding Function"
+title: "Bridal Lookbook Portals: High-Resolution HD (2026 Guide)"
 niche: "salon-beauty"
 date: "2026-06-06T12:00:00+05:30"
 author: "geetha"

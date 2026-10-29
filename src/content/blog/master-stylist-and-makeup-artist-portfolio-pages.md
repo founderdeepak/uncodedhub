@@ -1,5 +1,5 @@
 ---
-title: "Master Stylist Portfolios: Showcasing Individual Artists to Build Personal Trust"
+title: "Master Stylist Portfolios (2026 Guide)"
 niche: "salon-beauty"
 date: "2026-06-09T09:00:00+05:30"
 author: "geetha"

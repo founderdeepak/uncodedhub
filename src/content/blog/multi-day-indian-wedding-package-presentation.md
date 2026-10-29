@@ -1,5 +1,5 @@
 ---
-title: "Multi-Day Indian Wedding Package Presentation: Clarity Over Confusion"
+title: "Multi-Day Indian Wedding Package Presentation (2026 Guide)"
 niche: "wedding-photographers"
 date: "2026-07-04T08:00:00+05:30"
 author: "deepak"

@@ -1,5 +1,5 @@
 ---
-title: "Virtual Kitchen Design Consultation Booking: Streamlining First Appointments"
+title: "Virtual Kitchen Design Consultation Booking (2026 Guide)"
 niche: "home-renovation"
 date: "2026-09-02T11:00:00+05:30"
 author: "geetha"

@@ -1,5 +1,5 @@
 ---
-title: "RFP Shortlist Architecture: How Enterprise Buyers Secretly Evaluate Consulting Sites"
+title: "RFP Shortlist Architecture (2026 Guide)"
 niche: "business-portfolio"
 date: "2026-04-24T09:00:00+05:30"
 author: "geetha"

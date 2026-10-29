@@ -1,5 +1,5 @@
 ---
-title: "Deliverable Scope & Pricing Matrices: Transparent Retainer Bands That Anchor High Value"
+title: "Deliverable Scope & Pricing Matrices (2026 Guide)"
 niche: "creative-portfolio"
 date: "2026-08-12T09:00:00+05:30"
 author: "deepak"

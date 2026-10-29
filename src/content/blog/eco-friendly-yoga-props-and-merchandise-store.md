@@ -1,5 +1,5 @@
 ---
-title: "Props & Eco-Mat Merchandise Store: Highlighting Handloom Cotton Straps & Cork Blocks"
+title: "Props & Eco-Mat Merchandise Store (2026 Guide)"
 niche: "yoga-meditation"
 date: "2026-08-06T09:00:00+05:30"
 author: "geetha"

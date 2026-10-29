@@ -1,5 +1,5 @@
 ---
-title: "Pediatric & Anxious Patient Phlebotomy Protocols: Reassuring Parents with Painless Proof"
+title: "Pediatric & Anxious Patient Phlebotomy Protocols (2026 Guide)"
 niche: "healthcare-diagnostics"
 date: "2026-09-12T09:00:00+05:30"
 author: "deepak"

@@ -1,5 +1,5 @@
 ---
-title: "Why an Instagram Page Is Not a Substitute for a Website for Interior Designers"
+title: "Why an Instagram Page Is Not a Substitute for a (2026 Guide)"
 niche: "interior-designers"
 date: "2026-06-11T16:00:00+05:30"
 author: "deepak"

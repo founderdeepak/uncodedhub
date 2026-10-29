@@ -1,5 +1,5 @@
 ---
-title: "Therapist Certification & Lineage: Showcasing Ayurvedic Vaidyas and Balinese Healers"
+title: "Therapist Certification & Lineage (2026 Guide)"
 niche: "spa-wellness"
 date: "2026-05-18T09:00:00+05:30"
 author: "geetha"

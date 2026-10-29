@@ -1,5 +1,5 @@
 ---
-title: "Interactive Case Study Breakdowns: Dissecting Problem, Strategy, Identity, and Lift"
+title: "Interactive Case Study Breakdowns (2026 Guide)"
 niche: "creative-portfolio"
 date: "2026-08-11T09:00:00+05:30"
 author: "geetha"

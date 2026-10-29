@@ -1,11 +1,11 @@
 ---
-title: "Clear Aligners and Invisalign Landing Page Architecture: Converting High-Ticket Dental Inquiries"
+title: "Invisalign & Clear Aligners Landing Page: 6-Stage Dental Funnel"
 niche: "dental-clinics"
 date: "2026-04-16T14:00:00+05:30"
 author: "deepak"
 excerpt: "Clear aligners represent high-ticket elective care where patients compare aesthetic promises and installment transparency. Here is the 6-part landing page architecture that converts hesitant adult patients."
-metaDescription: "Convert adult ortho patients with high-ticket landing page architecture for clear aligners and Invisalign. Includes pricing transparency and 3D preview flows."
-keywords: "clear aligners invisalign, dental clinic web architecture, dental clinics website design, high converting web architecture"
+metaDescription: "Convert adult ortho patients with high-ticket Invisalign landing page architecture. Discover the 6-stage funnel, EMI transparency tables, and 3D smile scan flows."
+keywords: "invisalign landing, clear aligners landing page, invisalign landing page architecture, dental clinic web architecture, dental clinics website design, high converting web architecture"
 image: "/blog/clear-aligners-landing-page-conversion.webp"
 ---
 

@@ -8,6 +8,7 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { BANGALORE_LOCALITIES } from '../src/data/bangaloreLocalities.ts';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const blogDir = path.join(root, 'src', 'content', 'blog');
@@ -74,7 +75,14 @@ export function getBlogPosts() {
       const raw = readFileSync(path.join(blogDir, file), 'utf-8');
       const data = parseFrontmatter(raw);
       if (data.draft === 'true' || !data.title || !data.date) return null;
-      return { slug: file.replace(/\.md$/, ''), date: data.date, updated: data.updated || null };
+      return {
+        slug: file.replace(/\.md$/, ''),
+        date: data.date,
+        updated: data.updated || null,
+        title: data.title,
+        excerpt: data.excerpt || null,
+        image: data.image || null,
+      };
     })
     .filter(Boolean);
 }
@@ -135,13 +143,28 @@ export function getAllRoutes() {
     routes.push({ loc: `/web-design/${clientNiche}`, lastmod: nicheLastmod });
   }
 
+  // Master Bangalore City Hub & 25 Locality Hubs + 100 Flagship Spoke Landing Pages
+  routes.push({ loc: '/web-design/bangalore', lastmod: '2026-10-29' });
+  for (const loc of Object.values(BANGALORE_LOCALITIES)) {
+    routes.push({ loc: `/web-design/bangalore/${loc.slug}`, lastmod: '2026-10-29' });
+    for (const niche of loc.niches) {
+      routes.push({ loc: `/web-design/bangalore/${loc.slug}/${niche.nicheKey}`, lastmod: '2026-10-29' });
+    }
+  }
+
   if (posts.length > 0) {
     routes.push({ loc: '/blog' });
     for (const niche of NICHE_KEYS) {
       routes.push({ loc: `/blog/industries/${niche}` });
     }
     for (const p of posts) {
-      routes.push({ loc: `/blog/${p.slug}`, lastmod: p.updated || p.date });
+      routes.push({
+        loc: `/blog/${p.slug}`,
+        lastmod: p.updated || p.date,
+        image: p.image,
+        title: p.title,
+        caption: p.excerpt,
+      });
     }
   }
   return routes;

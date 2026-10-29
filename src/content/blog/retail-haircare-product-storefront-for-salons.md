@@ -1,5 +1,5 @@
 ---
-title: "Retail Product E-Commerce Integration: Selling Salon-Grade Haircare Directly to Clients"
+title: "Retail Product E-Commerce Integration (2026 Guide)"
 niche: "salon-beauty"
 date: "2026-06-17T09:00:00+05:30"
 author: "deepak"

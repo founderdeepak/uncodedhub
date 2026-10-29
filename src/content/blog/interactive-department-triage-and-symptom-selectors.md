@@ -1,5 +1,5 @@
 ---
-title: "Department Triage Selectors: Helping Patients Match Symptoms to the Right Department"
+title: "Department Triage Selectors (2026 Guide)"
 niche: "clinic-polyclinic"
 date: "2026-09-26T09:00:00+05:30"
 author: "geetha"

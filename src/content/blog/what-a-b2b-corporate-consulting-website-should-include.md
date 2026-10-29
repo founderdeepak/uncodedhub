@@ -1,5 +1,5 @@
 ---
-title: "What a B2B Corporate Consulting Website Should Include to Win Multi-Million Retainers"
+title: "B2B Corporate Consulting Website Architecture (2026 Guide)"
 niche: "business-portfolio"
 date: "2026-04-23T09:00:00+05:30"
 author: "deepak"

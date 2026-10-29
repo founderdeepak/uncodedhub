@@ -1,5 +1,5 @@
 ---
-title: "B2B Editorial Typography: Why Clean Swiss Layouts Command 3x Higher Retainer Credibility"
+title: "B2B Editorial Typography: Why Clean Swiss Layouts (2026 Guide)"
 niche: "business-portfolio"
 date: "2026-05-04T09:00:00+05:30"
 author: "geetha"

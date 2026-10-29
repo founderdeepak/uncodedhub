@@ -1,5 +1,5 @@
 ---
-title: "Live Class Timetable UX: Designing Interactive Spinning, Zumba, and CrossFit Schedules"
+title: "Live Class Timetable UX: Designing Interactive (2026 Guide)"
 niche: "gym-fitness-club"
 date: "2026-04-05T09:00:00+05:30"
 author: "geetha"

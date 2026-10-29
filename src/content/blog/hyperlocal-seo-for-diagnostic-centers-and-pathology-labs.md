@@ -1,5 +1,5 @@
 ---
-title: "Hyperlocal SEO for Diagnostic Centers: Dominating Local Neighborhood Searches for Blood Tests"
+title: "Hyperlocal SEO for Diagnostic Centers (2026 Guide)"
 niche: "healthcare-diagnostics"
 date: "2026-09-09T09:00:00+05:30"
 author: "geetha"

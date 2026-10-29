@@ -1,5 +1,5 @@
 ---
-title: "Trainer Credentials Showcase: Highlighting Certified S&C Coaches and Kinesiologists"
+title: "Trainer Credentials Showcase (2026 Guide)"
 niche: "gym-fitness-club"
 date: "2026-04-07T09:00:00+05:30"
 author: "geetha"

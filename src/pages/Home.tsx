@@ -256,10 +256,10 @@ export default function Home({ onBook }: { onBook: () => void }) {
   return (
     <>
       <Helmet>
-        <title>Uncoded Hub — Let Your Website Sell Before You Do</title>
+        <title>Website Designing in 7 Days | Custom Business Websites — Uncoded Hub</title>
         <meta
           name="description"
-          content="Fixed-price, 7-day websites for high-value local businesses — interior designers, real estate agents, clinics, photographers &amp; consultants. On time or free."
+          content="Custom high-performance business websites designed and launched in 7 days. Zero WordPress bloat, sub-second speed, built-in SEO. Late means free. Book your sprint."
         />
         <link rel="canonical" href="https://uncodedhub.com/" />
       </Helmet>

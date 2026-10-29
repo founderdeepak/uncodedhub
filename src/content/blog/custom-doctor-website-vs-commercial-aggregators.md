@@ -1,5 +1,5 @@
 ---
-title: "Custom Architecture vs Commercial Aggregators: Reclaiming Independence from Practo"
+title: "Custom Architecture vs Commercial Aggregators (2026 Guide)"
 niche: "doctor-specialist"
 date: "2026-10-17T12:00:00+05:30"
 author: "deepak"

@@ -1,5 +1,5 @@
 ---
-title: "Hyperlocal Real Estate SEO: Outranking 99acres in Your Own Neighborhood"
+title: "Hyperlocal Real Estate SEO (2026 Guide)"
 niche: "real-estate"
 date: "2026-06-09T16:00:00+05:30"
 author: "geetha"

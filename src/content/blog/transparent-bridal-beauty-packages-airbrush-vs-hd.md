@@ -1,5 +1,5 @@
 ---
-title: "Transparent Bridal Packages: Detailing Airbrush vs HD Makeup, Draping, and Hair Extensions"
+title: "Transparent Bridal Packages (2026 Guide)"
 niche: "salon-beauty"
 date: "2026-06-08T09:00:00+05:30"
 author: "deepak"

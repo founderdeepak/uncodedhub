@@ -1,5 +1,5 @@
 ---
-title: "Seasonal Demand for Renovation: What a Website Should Do During the Slow Months"
+title: "Seasonal Demand for Renovation (2026 Guide)"
 niche: "home-renovation"
 date: "2026-08-01T08:00:00+05:30"
 author: "geetha"

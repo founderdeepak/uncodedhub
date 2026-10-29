@@ -62,10 +62,10 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Book a Discovery Call — Uncoded Hub</title>
+        <title>Book a 20-Min Discovery Call | 7-Day Sprint Intake — Uncoded Hub</title>
         <meta
           name="description"
-          content="Book a free twenty-minute discovery call directly with Deepak & Geetha, or send a project brief. Slots are displayed in your local timezone."
+          content="Book a 20-minute discovery call directly with founders Deepak &amp; Geetha. Discuss your website goals, pricing, and 7-day sprint schedule with zero sales pressure."
         />
         <link rel="canonical" href="https://uncodedhub.com/contact/" />
         <meta property="og:title" content="Book a Discovery Call — Uncoded Hub" />

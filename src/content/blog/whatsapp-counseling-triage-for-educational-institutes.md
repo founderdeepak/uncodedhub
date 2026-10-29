@@ -1,5 +1,5 @@
 ---
-title: "WhatsApp Counseling Triage: Automating Instant Student Inquiry Response Times"
+title: "WhatsApp Counseling Triage (2026 Guide)"
 niche: "educational-academy"
 date: "2026-03-19T09:00:00+05:30"
 author: "geetha"

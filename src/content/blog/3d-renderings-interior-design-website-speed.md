@@ -1,5 +1,5 @@
 ---
-title: "3D Renders vs Built Project Photography: The Hidden Speed Cost on Design Sites"
+title: "3D Renders vs Built Photos: Website Speed for Designers (2026)"
 niche: "interior-designers"
 date: "2026-03-23T19:00:00+05:30"
 author: "geetha"

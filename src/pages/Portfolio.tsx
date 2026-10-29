@@ -465,10 +465,10 @@ export default function Work({ onBook }: { onBook: () => void }) {
   return (
     <>
       <Helmet>
-        <title>Work &amp; Interactive Specimen Builds — Uncoded Hub</title>
+        <title>Website Portfolio &amp; Live Interactive Demos (17 Niches) — Uncoded Hub</title>
         <meta
           name="description"
-          content="Explore seventeen live, interactive specimen websites handcrafted by Uncoded Hub across high-ticket niches. Experience continuous 3-theme changeovers, verified Lighthouse performance, and custom conversion funnels."
+          content="Explore 17 live interactive website specimens handcrafted by Uncoded Hub for interior designers, clinics, real estate, and consultants. Sub-second speed."
         />
         <link rel="canonical" href="https://uncodedhub.com/portfolio/" />
         <meta property="og:title" content="Work &amp; Interactive Specimen Builds — Uncoded Hub" />

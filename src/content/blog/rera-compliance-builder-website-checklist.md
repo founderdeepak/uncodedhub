@@ -1,5 +1,5 @@
 ---
-title: "RERA Compliance on Builder Websites: What Small Developers Must Display"
+title: "RERA Compliance on Builder Websites (2026 Guide)"
 niche: "real-estate"
 date: "2026-08-02T16:00:00+05:30"
 author: "deepak"

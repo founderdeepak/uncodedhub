@@ -1,5 +1,5 @@
 ---
-title: "Verified Transformation Case Studies: Documenting DEXA Scans, Strength & Blood Work Proof"
+title: "Verified Transformation Case Studies (2026 Guide)"
 niche: "fitness-coach"
 date: "2026-06-29T12:00:00+05:30"
 author: "deepak"

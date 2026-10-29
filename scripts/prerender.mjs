@@ -20,7 +20,7 @@ import { getAllRoutes } from './routes.mjs';
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const distDir = path.join(root, 'dist');
 const PORT = 4319; // arbitrary, unlikely to collide with dev's 3000 or preview's default 4173
-const BASE = `http://localhost:${PORT}`;
+const BASE = `http://127.0.0.1:${PORT}`;
 // A path guaranteed not to match any real route, so the app renders
 // its NotFound page — captured to dist/404.html for Apache's
 // ErrorDocument directive (see public/.htaccess).
@@ -158,7 +158,7 @@ async function main() {
   const viteBin = path.resolve(root, 'node_modules/vite/bin/vite.js');
   const preview = spawn(
     process.execPath,
-    [viteBin, 'preview', '--port', String(PORT), '--strictPort'],
+    [viteBin, 'preview', '--host', '127.0.0.1', '--port', String(PORT), '--strictPort'],
     { cwd: root, stdio: 'pipe', detached: process.platform !== 'win32' },
   );
   previewProc = preview;

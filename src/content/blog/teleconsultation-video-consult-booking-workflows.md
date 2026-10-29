@@ -1,5 +1,5 @@
 ---
-title: "Teleconsultation Video Booking Flow: Connecting Remote Patients with Specialists"
+title: "Teleconsultation Video Booking Flow (2026 Guide)"
 niche: "clinic-polyclinic"
 date: "2026-10-07T12:00:00+05:30"
 author: "geetha"

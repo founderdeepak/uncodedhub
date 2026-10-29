@@ -1,5 +1,5 @@
 ---
-title: "Interactive Treatment Ritual Menus: Replacing Flat PDFs with Curated Wellness Journeys"
+title: "Interactive Treatment Ritual Menus (2026 Guide)"
 niche: "spa-wellness"
 date: "2026-05-17T09:00:00+05:30"
 author: "deepak"

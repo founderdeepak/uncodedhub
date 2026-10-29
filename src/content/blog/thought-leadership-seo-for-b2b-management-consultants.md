@@ -1,5 +1,5 @@
 ---
-title: "Thought Leadership SEO: Ranking for Long-Tail Executive Strategy Queries CEOs Search"
+title: "Ranking for Long-Tail Executive Strategy Queries CEOs Search"
 niche: "business-portfolio"
 date: "2026-05-08T09:00:00+05:30"
 author: "deepak"

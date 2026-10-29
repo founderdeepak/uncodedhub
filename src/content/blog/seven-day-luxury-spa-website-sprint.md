@@ -1,5 +1,5 @@
 ---
-title: "The 7-Day Luxury Spa Website Sprint: Launching Restorative Digital Sanctuaries in One Week"
+title: "The 7-Day Luxury Spa Website Sprint (2026 Guide)"
 niche: "spa-wellness"
 date: "2026-06-04T09:00:00+05:30"
 author: "geetha"

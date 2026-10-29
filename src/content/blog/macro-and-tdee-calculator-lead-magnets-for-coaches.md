@@ -1,5 +1,5 @@
 ---
-title: "Macro & Calorie Calculator Lead Magnets: Capturing Targeted Leads Without Paid Ads"
+title: "Macro & Calorie Calculator Lead Magnets (2026 Guide)"
 niche: "fitness-coach"
 date: "2026-07-03T09:00:00+05:30"
 author: "geetha"

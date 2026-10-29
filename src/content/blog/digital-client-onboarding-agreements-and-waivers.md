@@ -1,5 +1,5 @@
 ---
-title: "Client Onboarding Agreement & Waiver UX: Digitizing Liability Forms and Disclaimers"
+title: "Client Onboarding Agreement & Waiver UX (2026 Guide)"
 niche: "fitness-coach"
 date: "2026-07-14T09:00:00+05:30"
 author: "deepak"

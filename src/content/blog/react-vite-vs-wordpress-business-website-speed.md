@@ -1,5 +1,5 @@
 ---
-title: "React, Vite and Tailwind vs WordPress: Measured Speed and Security Benchmarks"
+title: "React, Vite and Tailwind vs WordPress (2026 Guide)"
 niche: "studio"
 date: "2026-07-26T08:00:00+05:30"
 author: "geetha"

@@ -1,5 +1,5 @@
 ---
-title: "SEO for Luxury Turnkey Architects in India: Ranking for 50-Lakh+ Projects"
+title: "SEO for Luxury Turnkey Architects in India (2026 Guide)"
 niche: "interior-designers"
 date: "2026-08-08T19:00:00+05:30"
 author: "deepak"

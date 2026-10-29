@@ -1,5 +1,5 @@
 ---
-title: "Sub-Second Emergency Triage Speed: Fast Emergency Numbers & One-Tap Google Maps"
+title: "Sub-Second Emergency Triage Speed (2026 Guide)"
 niche: "clinic-polyclinic"
 date: "2026-10-06T09:00:00+05:30"
 author: "deepak"

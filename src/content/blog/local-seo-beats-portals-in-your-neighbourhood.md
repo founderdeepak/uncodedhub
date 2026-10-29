@@ -1,5 +1,5 @@
 ---
-title: "How Local SEO Helps a Real Estate Agent Get Found Before the Big Portals in Their Own Neighbourhood"
+title: "How Local SEO Helps a Real Estate Agent Get Found (2026 Guide)"
 niche: "real-estate"
 date: "2026-06-20T19:00:00+05:30"
 author: "deepak"

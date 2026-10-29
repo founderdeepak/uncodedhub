@@ -1,5 +1,5 @@
 ---
-title: "WhatsApp Tour Booking: Eliminating Missed Phone Calls at the Gym Reception Desk"
+title: "Eliminating Missed Phone Calls at the Gym Reception Desk"
 niche: "gym-fitness-club"
 date: "2026-04-11T09:00:00+05:30"
 author: "deepak"

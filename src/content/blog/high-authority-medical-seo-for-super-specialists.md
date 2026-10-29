@@ -1,5 +1,5 @@
 ---
-title: "High-Authority Medical SEO: Ranking for Complex Surgical Keywords in Your Metro"
+title: "High-Authority Medical SEO (2026 Guide)"
 niche: "doctor-specialist"
 date: "2026-10-14T09:00:00+05:30"
 author: "deepak"

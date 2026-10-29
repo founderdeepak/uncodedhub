@@ -1,5 +1,5 @@
 ---
-title: "What an Aesthetic/Cosmetic Clinic Must Show Online to Build Trust Before a Consultation"
+title: "Aesthetic Clinic Trust: What to Show Before Consultation (2026)"
 niche: "dental-clinics"
 date: "2026-03-24T21:00:00+05:30"
 author: "deepak"

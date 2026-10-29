@@ -1,5 +1,5 @@
 ---
-title: "Cosmetic Dermatology Treatment Menu Design: Converting Browsers into Consultations"
+title: "Cosmetic Dermatology Treatment Menu Design (2026 Guide)"
 niche: "dental-clinics"
 date: "2026-05-10T19:00:00+05:30"
 author: "deepak"

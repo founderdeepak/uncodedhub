@@ -1,5 +1,5 @@
 ---
-title: "Venue-Specific SEO Landing Pages: Capturing Engaged Couples Post-Booking"
+title: "Venue-Specific SEO Landing Pages (2026 Guide)"
 niche: "wedding-photographers"
 date: "2026-08-29T10:00:00+05:30"
 author: "deepak"

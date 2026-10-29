@@ -1,5 +1,5 @@
 ---
-title: "Drop-In Trial Pass Funnels: Welcoming Beginners with Zero-Friction 3-Class Bundles"
+title: "Drop-In Trial Pass Funnels (2026 Guide)"
 niche: "yoga-meditation"
 date: "2026-07-22T09:00:00+05:30"
 author: "geetha"

@@ -1,5 +1,5 @@
 ---
-title: "How to Audit Your Business Website Before Planning a Redesign: The 10-Point Checklist"
+title: "How to Audit Your Business Website Before Planning a (2026 Guide)"
 niche: "studio"
 date: "2026-06-04T19:00:00+05:30"
 author: "geetha"

@@ -1,5 +1,5 @@
 ---
-title: "Mobile Speed for Anxious Patients: Instant Loading on Critical 4G Connections"
+title: "Mobile Speed for Anxious Patients (2026 Guide)"
 niche: "doctor-specialist"
 date: "2026-10-17T09:00:00+05:30"
 author: "geetha"

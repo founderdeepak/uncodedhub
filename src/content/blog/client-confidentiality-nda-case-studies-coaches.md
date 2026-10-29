@@ -1,5 +1,5 @@
 ---
-title: "Client Confidentiality, NDAs and Executive Testimonials: Proving Mastery Safely"
+title: "Client Confidentiality, NDAs and Executive (2026 Guide)"
 niche: "coaches-consultants"
 date: "2026-04-18T10:00:00+05:30"
 author: "geetha"

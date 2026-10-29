@@ -1,5 +1,5 @@
 ---
-title: "Agency Award Submissions & Press Showcase: Curating Awwwards, Red Dot, and Fast Co Mentions"
+title: "Design Agency Awards & Press Showcase: Awwwards & Red Dot"
 niche: "creative-portfolio"
 date: "2026-08-24T09:00:00+05:30"
 author: "deepak"

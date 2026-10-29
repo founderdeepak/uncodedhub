@@ -1,5 +1,5 @@
 ---
-title: "Curriculum Explorer vs PDF: Replacing Downloadable Brochures with Interactive Modules"
+title: "Curriculum Explorer vs PDF (2026 Guide)"
 niche: "educational-academy"
 date: "2026-03-13T09:00:00+05:30"
 author: "deepak"

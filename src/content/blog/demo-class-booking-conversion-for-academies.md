@@ -1,5 +1,5 @@
 ---
-title: "Demo Class Booking: Converting Cold Website Visitors into Trial Attendees in 30 Seconds"
+title: "Demo Class Booking: Converting Cold Website Visitors (2026 Guide)"
 niche: "educational-academy"
 date: "2026-03-15T09:00:00+05:30"
 author: "deepak"

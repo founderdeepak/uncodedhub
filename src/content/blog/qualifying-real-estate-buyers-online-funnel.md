@@ -1,5 +1,5 @@
 ---
-title: "Qualifying Real Estate Leads Online: How to Stop Chasing Dead Enquiries"
+title: "Qualifying Real Estate Leads Online (2026 Guide)"
 niche: "real-estate"
 date: "2026-07-25T21:00:00+05:30"
 author: "deepak"

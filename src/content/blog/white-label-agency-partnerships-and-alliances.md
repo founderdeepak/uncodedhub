@@ -1,5 +1,5 @@
 ---
-title: "White-Label Agency Partnerships: Structuring B2B Alliances with Software Consultancies"
+title: "White-Label Agency Partnerships (2026 Guide)"
 niche: "creative-portfolio"
 date: "2026-08-27T12:00:00+05:30"
 author: "geetha"

@@ -1,5 +1,5 @@
 ---
-title: "Surgical Risk Transparency: Explaining Success Rates, Candidacy, and Expectations"
+title: "Surgical Risk Transparency (2026 Guide)"
 niche: "doctor-specialist"
 date: "2026-10-18T09:00:00+05:30"
 author: "geetha"

@@ -1,5 +1,5 @@
 ---
-title: "The 7-Day Fitness Coach Website Sprint: How Uncoded Hub Builds Elite Trainer Brand Hubs"
+title: "The 7-Day Fitness Coach Website Sprint (2026 Guide)"
 niche: "fitness-coach"
 date: "2026-07-18T09:00:00+05:30"
 author: "geetha"

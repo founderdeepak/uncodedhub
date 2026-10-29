@@ -1,5 +1,5 @@
 ---
-title: "Day-Package & Couple Retreat Calculators: Grouping Therapies into High-Ticket Escapes"
+title: "Day-Package & Couple Retreat Calculators (2026 Guide)"
 niche: "spa-wellness"
 date: "2026-05-19T09:00:00+05:30"
 author: "deepak"

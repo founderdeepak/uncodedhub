@@ -1,5 +1,5 @@
 ---
-title: "Corporate Fitness Retainers: Pitching B2B Employee Wellness Memberships on Your Website"
+title: "Corporate Fitness Retainers (2026 Guide)"
 niche: "gym-fitness-club"
 date: "2026-04-13T09:00:00+05:30"
 author: "deepak"

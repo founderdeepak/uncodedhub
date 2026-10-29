@@ -1,5 +1,5 @@
 ---
-title: "Mastermind and Group Coaching Sales Page Design: Transitioning from 1:1 to Scale"
+title: "Mastermind and Group Coaching Sales Page Design (2026 Guide)"
 niche: "coaches-consultants"
 date: "2026-06-25T11:00:00+05:30"
 author: "deepak"

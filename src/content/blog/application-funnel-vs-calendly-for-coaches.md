@@ -1,5 +1,5 @@
 ---
-title: "Application Funnels vs Open Calendly Links: Protecting High-Ticket Authority"
+title: "Application Funnels vs Calendly for High-Ticket Coaches (2026)"
 niche: "coaches-consultants"
 date: "2026-04-06T11:00:00+05:30"
 author: "geetha"

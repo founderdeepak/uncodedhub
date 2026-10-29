@@ -1,5 +1,5 @@
 ---
-title: "Automated Equipment Showcase: Highlighting Roche, Beckman, and Siemens Chemistry Analyzers"
+title: "Diagnostic Lab Equipment Showcase: Analyzers Guide (2026)"
 niche: "healthcare-diagnostics"
 date: "2026-09-07T09:00:00+05:30"
 author: "deepak"

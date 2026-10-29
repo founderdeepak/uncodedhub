@@ -1,5 +1,5 @@
 ---
-title: "Semi-Private & Small Group Cohort Pages: Scaling Beyond 1-on-1 Hours with Group Masterclasses"
+title: "Semi-Private & Small Group Cohort Pages (2026 Guide)"
 niche: "fitness-coach"
 date: "2026-07-12T09:00:00+05:30"
 author: "deepak"

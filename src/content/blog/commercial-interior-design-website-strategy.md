@@ -1,5 +1,5 @@
 ---
-title: "Commercial vs Residential Interior Design: Why One Website Cannot Serve Both"
+title: "Commercial vs Residential Interior Design (2026 Guide)"
 niche: "interior-designers"
 date: "2026-04-22T14:00:00+05:30"
 author: "deepak"

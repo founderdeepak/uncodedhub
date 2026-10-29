@@ -1,5 +1,5 @@
 ---
-title: "Pricing Packages for Wedding Photography: How to Present Tiers Without Looking Like a Menu"
+title: "Pricing Packages for Wedding Photography (2026 Guide)"
 niche: "wedding-photographers"
 date: "2026-09-19T21:00:00+05:30"
 author: "geetha"

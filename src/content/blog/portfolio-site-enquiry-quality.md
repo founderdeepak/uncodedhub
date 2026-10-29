@@ -1,5 +1,5 @@
 ---
-title: "Before/After: What a Fast, Well-Structured Portfolio Site Does to Enquiry Quality (Not Just Volume)"
+title: "Before/After: What a Fast, Well-Structured Portfolio (2026 Guide)"
 niche: "interior-designers"
 date: "2026-07-17T16:00:00+05:30"
 author: "geetha"

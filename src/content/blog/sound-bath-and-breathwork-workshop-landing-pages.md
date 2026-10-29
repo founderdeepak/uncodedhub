@@ -1,5 +1,5 @@
 ---
-title: "Sound Bath & Breathwork Workshop Landers: Filling Weekend Immersions in 48 Hours"
+title: "Sound Bath & Breathwork Workshop Landers (2026 Guide)"
 niche: "yoga-meditation"
 date: "2026-07-30T09:00:00+05:30"
 author: "geetha"

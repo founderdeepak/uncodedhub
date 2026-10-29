@@ -1,5 +1,5 @@
 ---
-title: "WhatsApp Consultation Triage: Converting Late-Night Bride Inquiries into Studio Visits"
+title: "WhatsApp Consultation Triage (2026 Guide)"
 niche: "salon-beauty"
 date: "2026-06-15T09:00:00+05:30"
 author: "deepak"

@@ -1,5 +1,5 @@
 ---
-title: "Enterprise Security & Compliance: Why B2B Websites Must Comply with SOC2, GDPR, and ISO"
+title: "Enterprise Security & Compliance (2026 Guide)"
 niche: "business-portfolio"
 date: "2026-05-01T09:00:00+05:30"
 author: "geetha"

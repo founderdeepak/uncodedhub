@@ -1,5 +1,5 @@
 ---
-title: "Faculty Credentials: Showcasing Degrees & Exam Ranks for Maximum E-E-A-T Authority"
+title: "Faculty Credentials: Showcasing Degrees & Exam Ranks (2026 Guide)"
 niche: "educational-academy"
 date: "2026-03-16T09:00:00+05:30"
 author: "geetha"

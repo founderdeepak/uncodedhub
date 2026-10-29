@@ -1,5 +1,5 @@
 ---
-title: "The Interior Design Client Questionnaire: How to Filter Inquiries on Your Website"
+title: "The Interior Design Client Questionnaire (2026 Guide)"
 niche: "interior-designers"
 date: "2026-06-12T08:00:00+05:30"
 author: "geetha"

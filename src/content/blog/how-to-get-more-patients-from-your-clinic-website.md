@@ -1,5 +1,5 @@
 ---
-title: "How to Get More Patients From Your Clinic Website (Without Relying on Practo)"
+title: "How to Get More Patients From Your Clinic Website (2026 Guide)"
 niche: "dental-clinics"
 date: "2026-06-07T10:00:00+05:30"
 author: "geetha"

@@ -1,5 +1,5 @@
 ---
-title: "Multi-Doctor Credential Profiles: Showcasing MBBS, MD, and Super-Specialty Training"
+title: "Multi-Doctor Credential Profiles (2026 Guide)"
 niche: "clinic-polyclinic"
 date: "2026-09-24T09:00:00+05:30"
 author: "deepak"

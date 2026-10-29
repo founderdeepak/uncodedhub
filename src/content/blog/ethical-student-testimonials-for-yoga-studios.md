@@ -1,5 +1,5 @@
 ---
-title: "Ethical Student Testimonials: Reflecting Mental Clarity, Injury Healing, and Spiritual Growth"
+title: "Ethical Student Testimonials (2026 Guide)"
 niche: "yoga-meditation"
 date: "2026-08-01T09:00:00+05:30"
 author: "geetha"

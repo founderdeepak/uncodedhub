@@ -1,5 +1,5 @@
 ---
-title: "Wedding Day Timeline Guide: The Lead Magnet That Captures Early-Stage Couples"
+title: "Wedding Day Timeline Guide (2026 Guide)"
 niche: "wedding-photographers"
 date: "2026-09-21T08:00:00+05:30"
 author: "deepak"
