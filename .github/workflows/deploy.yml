@@ -56,3 +56,6 @@ jobs:
             -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.HOSTINGER_SSH_PORT }}" \
             dist/ \
             "${{ secrets.HOSTINGER_SSH_USER }}@${{ secrets.HOSTINGER_SSH_HOST }}:${{ secrets.HOSTINGER_REMOTE_PATH }}/"
+
+      - name: Notify IndexNow (Bing, Yandex, Seznam)
+        run: node scripts/submit-indexnow.mjs || true
