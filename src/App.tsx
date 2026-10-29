@@ -22,7 +22,7 @@ const WebDesignHub = lazy(() => import('./pages/WebDesignHub'));
 const BangaloreHub = lazy(() => import('./pages/BangaloreHub'));
 const BangaloreLocalityLanding = lazy(() => import('./pages/BangaloreLocalityLanding'));
 const TeamOutreach = lazy(() => import('./pages/TeamOutreach'));
-import { EnquiryDock } from './components/EnquiryDock';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 /* Paths are unchanged from the previous site so existing links and
    indexed URLs keep working; only the labels are new. /blog only joins
@@ -386,7 +386,7 @@ export default function App() {
 
       <SiteFooter />
       <ScrollToTop />
-      <EnquiryDock />
+      <FloatingWhatsApp />
     </div>
   );
 }

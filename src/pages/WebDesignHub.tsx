@@ -5,6 +5,7 @@ import { Reveal, Shell } from '../components/primitives';
 import { NICHES, NICHE_PILLAR_SLUGS } from '../lib/blog';
 import { NICHE_LANDING_DATA } from '../data/nicheLandingData';
 import { BANGALORE_LOCALITIES } from '../data/bangaloreLocalities';
+import { PROJECTS } from '../data/projects';
 
 /* ═══════════════════════════════════════════════════════════════════
    WEB DESIGN HUB — Master Silo Apex for 17 Specialized Industries
@@ -226,13 +227,13 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
       <section className="py-8 bg-paper-sunken border-b border-rule sticky top-[4.25rem] z-30 backdrop-blur-md bg-paper/95">
         <Shell>
           <div className="flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between">
-            {/* Category Pills */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
+            {/* Category Pills - No horizontal scroller, all categories visible */}
+            <div className="flex flex-wrap items-center gap-2">
               {CATEGORIES.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-4 py-2 rounded-full font-mono text-xs whitespace-nowrap transition-all cursor-pointer ${
+                  className={`px-4 py-2 rounded-full font-mono text-xs transition-all cursor-pointer ${
                     selectedCategory === cat.id
                       ? 'bg-ink text-paper font-semibold shadow-xs'
                       : 'bg-paper border border-rule text-muted hover:text-ink hover:border-rule-strong'
@@ -273,11 +274,52 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
               const config = NICHE_LANDING_DATA[key];
               const pillarSlug = NICHE_PILLAR_SLUGS[key];
               const icon = INDUSTRY_ICONS[key] || '⚡';
+              const project = PROJECTS.find((p) => p.id === config.projectId);
+              const thumbnail = project?.themes[0]?.image;
 
               return (
                 <Reveal key={key} delay={idx * 30}>
-                  <div className="p-8 rounded-[24px] bg-paper-raised border border-rule-strong hover:border-signal/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-full group">
+                  <div className="p-6 sm:p-7 rounded-[26px] bg-paper-raised border border-rule-strong hover:border-signal/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full group">
                     <div>
+                      {/* Visual Specimen Preview Window */}
+                      {thumbnail && (
+                        <Link
+                          to={`/web-design/${key}/`}
+                          className="relative aspect-[16/10] w-full rounded-[16px] overflow-hidden bg-ink border border-rule-strong mb-5 group-hover:border-signal/40 block shadow-xs transition-colors"
+                        >
+                          {/* Mini Browser Bar */}
+                          <div className="absolute top-0 inset-x-0 h-5 bg-ink/90 backdrop-blur-xs px-2.5 flex items-center justify-between z-20 border-b border-white/10 select-none">
+                            <div className="flex items-center gap-1.5">
+                              <span className="w-1.5 h-1.5 rounded-full bg-signal inline-block" />
+                              <span className="w-1.5 h-1.5 rounded-full bg-amber-400/80 inline-block" />
+                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/80 inline-block" />
+                            </div>
+                            <span className="text-[9px] font-mono text-white/70">
+                              {key}.uncodedhub.com
+                            </span>
+                            <span className="text-[9px] font-mono text-signal-bright font-semibold">
+                              LIVE DEMO
+                            </span>
+                          </div>
+
+                          <img
+                            src={thumbnail}
+                            alt={`${NICHES[key]} specimen web platform`}
+                            width={480}
+                            height={300}
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-full object-cover object-top pt-5 transition-transform duration-500 ease-out group-hover:scale-105"
+                          />
+
+                          <div className="absolute inset-0 bg-ink/40 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center pt-4">
+                            <span className="bg-signal text-paper text-xs font-mono font-semibold px-3 py-1 rounded-full shadow-md">
+                              View {NICHES[key]} Demo ↗
+                            </span>
+                          </div>
+                        </Link>
+                      )}
+
                       {/* Top Meta Header */}
                       <div className="flex items-center justify-between mb-4">
                         <span className="w-10 h-10 rounded-xl bg-paper-sunken border border-rule flex items-center justify-center text-lg">
