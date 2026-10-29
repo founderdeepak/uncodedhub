@@ -573,6 +573,57 @@ export default function Services({ onBook }: { onBook: () => void }) {
         </Shell>
       </Section>
 
+      {/* ── Specialized Industry & Bengaluru Local Sprints ───────── */}
+      <section className="py-16 bg-paper border-t border-rule">
+        <Shell>
+          <Reveal>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-8 rounded-[24px] bg-paper-sunken border border-rule flex flex-col justify-between">
+                <div>
+                  <span className="card-tag mb-2">INDUSTRY PLATFORMS</span>
+                  <h3 className="font-display text-2xl text-ink font-medium">
+                    17 Specialized Industry Sprints
+                  </h3>
+                  <p className="text-muted text-xs sm:text-sm mt-2 leading-relaxed">
+                    A dental clinic needs 2-tap triage. An architect needs 3D render-to-reality comparisons. Explore our 17 dedicated industry website platforms.
+                  </p>
+                </div>
+                <div className="mt-6">
+                  <Link
+                    to="/web-design/"
+                    className="btn-primary !py-2.5 !px-5 text-xs rounded-full inline-flex items-center gap-1.5 shadow-xs"
+                  >
+                    <span>Explore 17 Industry Silos</span>
+                    <span>→</span>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="p-8 rounded-[24px] bg-paper-sunken border border-rule flex flex-col justify-between">
+                <div>
+                  <span className="card-tag mb-2">LOCAL BENGALURU STUDIO</span>
+                  <h3 className="font-display text-2xl text-ink font-medium">
+                    Web Design in Bangalore
+                  </h3>
+                  <p className="text-muted text-xs sm:text-sm mt-2 leading-relaxed">
+                    Local commercial sprints across 25 Bangalore localities including Indiranagar, Koramangala, Whitefield, HSR Layout, and Jayanagar.
+                  </p>
+                </div>
+                <div className="mt-6">
+                  <Link
+                    to="/web-design/bangalore/"
+                    className="border border-rule-strong hover:border-signal text-ink hover:text-signal font-mono text-xs py-2.5 px-5 rounded-full transition-colors bg-paper inline-flex items-center gap-1.5"
+                  >
+                    <span>Explore 25 Bangalore Hubs</span>
+                    <span>→</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </Shell>
+      </section>
+
       {/* ── Cloaked-Style Dual-Card Closing CTA ─────────────────── */}
       <section className="bg-ink text-paper py-20 border-t border-white/10">
         <Shell>

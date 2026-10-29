@@ -5,6 +5,7 @@ import { Reveal, Shell } from '../components/primitives';
 import { PROJECTS } from '../data/projects';
 import { getAllPosts, NICHES, NICHE_PILLAR_SLUGS } from '../lib/blog';
 import { getNicheLandingData, NICHE_LANDING_DATA } from '../data/nicheLandingData';
+import { BANGALORE_LOCALITIES } from '../data/bangaloreLocalities';
 
 interface NicheLandingProps {
   onBook?: () => void;
@@ -216,6 +217,12 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
   };
 
   const canonicalUrl = `https://uncodedhub.com/web-design/${config.key}/`;
+
+  const bangaloreLocalitiesForNiche = useMemo(() => {
+    return Object.values(BANGALORE_LOCALITIES).filter((loc) =>
+      loc.niches.some((n) => n.nicheKey === config.key)
+    );
+  }, [config.key]);
 
   // JSON-LD Structured Data
   const jsonLd = {
@@ -843,6 +850,69 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
               </div>
             </div>
           </Reveal>
+        </Shell>
+      </section>
+
+      {/* ── Hyperlocal Bengaluru Presence for this Niche ───────────── */}
+      <section className="py-16 bg-paper-sunken border-t border-rule">
+        <Shell>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <p className="font-mono text-xs text-signal uppercase tracking-wider font-semibold">
+                📍 Bengaluru Local Studio
+              </p>
+              <h3 className="font-display text-2xl text-ink font-medium mt-1">
+                Looking for {NICHES[config.key]} web design in Bangalore?
+              </h3>
+            </div>
+            <Link
+              to="/web-design/bangalore/"
+              className="btn-primary !py-2.5 !px-5 text-xs rounded-full inline-flex items-center gap-1.5 self-start sm:self-auto shrink-0 shadow-xs"
+            >
+              <span>Explore Bangalore Master Hub</span>
+              <span>→</span>
+            </Link>
+          </div>
+
+          <p className="text-muted text-xs sm:text-sm max-w-2xl mb-8 leading-relaxed">
+            Headquartered in Bengaluru, Deepak &amp; Geetha engineer high-speed digital platforms tailored to local commercial regulations, local landmarks, and high-intent patients &amp; clients across Bangalore.
+          </p>
+
+          {bangaloreLocalitiesForNiche.length > 0 ? (
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+              {bangaloreLocalitiesForNiche.map((loc) => (
+                <Link
+                  key={loc.slug}
+                  to={`/web-design/bangalore/${loc.slug}/${config.key}/`}
+                  className="p-4 rounded-xl bg-paper-raised border border-rule hover:border-signal/50 hover:bg-paper transition-all group flex flex-col justify-between"
+                >
+                  <div>
+                    <span className="text-[10px] font-mono text-muted block mb-1">
+                      {loc.zone} · PIN {loc.pincode}
+                    </span>
+                    <span className="font-display text-sm text-ink group-hover:text-signal transition-colors font-medium block">
+                      {loc.name}
+                    </span>
+                  </div>
+                  <span className="text-[11px] font-mono text-signal mt-3 block">
+                    View Local Spoke →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className="p-6 rounded-2xl bg-paper-raised border border-rule flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
+              <span className="text-muted">
+                We deliver 7-day sprints for {NICHES[config.key]} across all 25 commercial corridors in Bangalore including Indiranagar, Whitefield, Koramangala, and HSR Layout.
+              </span>
+              <Link
+                to="/web-design/bangalore/"
+                className="text-signal hover:underline shrink-0 font-medium"
+              >
+                Browse All 25 Localities →
+              </Link>
+            </div>
+          )}
         </Shell>
       </section>
 

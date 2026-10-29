@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { Reveal, Shell } from '../components/primitives';
-import { BANGALORE_LOCALITIES } from '../data/bangaloreLocalities';
+import { BANGALORE_LOCALITIES, BangaloreLocality } from '../data/bangaloreLocalities';
 
 interface BangaloreLocalityLandingProps {
   onBook?: () => void;
@@ -13,6 +13,17 @@ export default function BangaloreLocalityLanding({ onBook: _onBook }: BangaloreL
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   const locality = localitySlug ? BANGALORE_LOCALITIES[localitySlug.toLowerCase()] : null;
+
+  const neighboringLocalities = useMemo(() => {
+    if (!locality) return [];
+    const sameZone = Object.values(BANGALORE_LOCALITIES).filter(
+      (l) => l.slug !== locality.slug && l.zone === locality.zone
+    );
+    const otherZones = Object.values(BANGALORE_LOCALITIES).filter(
+      (l) => l.slug !== locality.slug && l.zone !== locality.zone
+    );
+    return [...sameZone, ...otherZones].slice(0, 4);
+  }, [locality]);
 
   if (!locality) {
     return <Navigate to="/web-design/bangalore/" replace />;
@@ -147,13 +158,21 @@ export default function BangaloreLocalityLanding({ onBook: _onBook }: BangaloreL
           <Reveal>
             {/* Breadcrumb row */}
             <nav aria-label="Breadcrumb" className="inline-flex items-center gap-2 text-xs font-mono mb-6 flex-wrap">
-              <Link to="/web-design/bangalore/" className="text-signal hover:underline">
-                ← Bangalore Hub
+              <Link to="/" className="text-muted hover:text-ink transition-colors">
+                Home
+              </Link>
+              <span className="text-rule-strong">/</span>
+              <Link to="/web-design/" className="text-muted hover:text-ink transition-colors">
+                Web Design
+              </Link>
+              <span className="text-rule-strong">/</span>
+              <Link to="/web-design/bangalore/" className="text-muted hover:text-ink transition-colors">
+                Bangalore
               </Link>
               <span className="text-rule-strong">/</span>
               <Link
                 to={`/web-design/bangalore/${locality.slug}/`}
-                className={activeNiche ? 'text-muted hover:text-ink' : 'text-ink font-medium'}
+                className={activeNiche ? 'text-muted hover:text-ink transition-colors' : 'text-ink font-medium'}
               >
                 {locality.name}
               </Link>
@@ -452,6 +471,71 @@ export default function BangaloreLocalityLanding({ onBook: _onBook }: BangaloreL
                 </div>
               ))}
             </div>
+          </Reveal>
+        </Shell>
+      </section>
+
+      {/* ── Nearby Localities Cross-Links ── */}
+      <section className="py-16 bg-paper-sunken border-b border-rule">
+        <Shell>
+          <Reveal>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+              <div>
+                <span className="card-tag mb-1">LOCALITY CLUSTERS</span>
+                <h3 className="font-display text-2xl text-ink font-medium">
+                  Web design in neighboring Bengaluru corridors.
+                </h3>
+              </div>
+              <Link
+                to="/web-design/bangalore/"
+                className="font-mono text-xs text-signal hover:underline inline-flex items-center gap-1"
+              >
+                <span>View all 25 Bangalore hubs</span>
+                <span>→</span>
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {neighboringLocalities.map((neighbor: BangaloreLocality) => (
+                <Link
+                  key={neighbor.slug}
+                  to={`/web-design/bangalore/${neighbor.slug}/`}
+                  className="p-5 rounded-2xl bg-paper-raised border border-rule hover:border-signal/50 hover:shadow-xs transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="flex items-center justify-between text-[10px] font-mono text-muted mb-1">
+                      <span>{neighbor.zone}</span>
+                      <span className="text-signal/80 font-serif">{neighbor.kannadaName}</span>
+                    </div>
+                    <span className="font-display text-base text-ink font-medium group-hover:text-signal transition-colors block">
+                      {neighbor.name}
+                    </span>
+                    <span className="text-[11px] text-muted block mt-1 line-clamp-1">
+                      {neighbor.keyLandmarks[0]}
+                    </span>
+                  </div>
+                  <div className="mt-3 pt-2 border-t border-rule/60 flex items-center justify-between text-[10px] font-mono text-muted">
+                    <span>{neighbor.niches.length} Sectors</span>
+                    <span className="text-signal group-hover:translate-x-0.5 transition-transform">Explore →</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            {activeNiche && (
+              <div className="mt-8 p-4 rounded-xl bg-paper border border-rule flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono">
+                <span className="text-muted">
+                  Looking for our full national {activeNiche.name} capabilities and case studies?
+                </span>
+                <Link
+                  to={`/web-design/${activeNiche.nicheKey}/`}
+                  className="text-signal hover:underline shrink-0 font-medium inline-flex items-center gap-1"
+                >
+                  <span>National {activeNiche.name} Platform</span>
+                  <span>→</span>
+                </Link>
+              </div>
+            )}
           </Reveal>
         </Shell>
       </section>

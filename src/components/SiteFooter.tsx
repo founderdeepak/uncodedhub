@@ -16,6 +16,7 @@ const LEAD_MAGNET_SECRET = import.meta.env.VITE_LEAD_MAGNET_SECRET || '';
 
 const NAV = [
   { label: 'Work', to: '/portfolio' },
+  { label: 'Web Design', to: '/web-design/' },
   { label: 'Services', to: '/services' },
   { label: 'Studio', to: '/about' },
   { label: 'FAQ', to: '/faq' },
@@ -307,6 +308,62 @@ export default function SiteFooter() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        {/* Bengaluru Locality Hubs SEO Corridor */}
+        <div className="py-8 border-b border-rule-on-ink text-xs">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-signal-bright" />
+              <span className="label text-on-ink font-semibold">Bengaluru Web Design Hub &amp; Local Corridors</span>
+            </div>
+            <Link
+              to="/web-design/bangalore/"
+              className="text-signal-bright font-mono text-[11px] hover:underline inline-flex items-center gap-1"
+            >
+              <span>Explore Master Bangalore Hub (All 25 Localities)</span>
+              <span>→</span>
+            </Link>
+          </div>
+
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-[11px] text-on-ink-muted">
+            {[
+              { name: 'Indiranagar', slug: 'indiranagar' },
+              { name: 'Koramangala', slug: 'koramangala' },
+              { name: 'Whitefield', slug: 'whitefield' },
+              { name: 'HSR Layout', slug: 'hsr-layout' },
+              { name: 'Jayanagar', slug: 'jayanagar' },
+              { name: 'MG Road', slug: 'mg-road' },
+              { name: 'Bellandur', slug: 'bellandur' },
+              { name: 'Marathahalli', slug: 'marathahalli' },
+              { name: 'Domlur', slug: 'domlur' },
+              { name: 'Malleshwaram', slug: 'malleshwaram' },
+              { name: 'Electronic City', slug: 'electronic-city' },
+              { name: 'Sadashivanagar', slug: 'sadashivanagar' },
+              { name: 'Hebbal', slug: 'hebbal' },
+              { name: 'Sarjapur Road', slug: 'sarjapur-road' },
+              { name: 'Richmond Town', slug: 'richmond-town' },
+              { name: 'Halasuru', slug: 'halasuru' },
+              { name: 'BTM Layout', slug: 'btm-layout' },
+              { name: 'Banashankari', slug: 'banashankari' },
+              { name: 'Rajajinagar', slug: 'rajajinagar' },
+              { name: 'Kalyan Nagar', slug: 'kalyan-nagar' },
+            ].map((loc) => (
+              <Link
+                key={loc.slug}
+                to={`/web-design/bangalore/${loc.slug}/`}
+                className="hover:text-signal-bright transition-colors"
+              >
+                Web Design {loc.name}
+              </Link>
+            ))}
+            <Link
+              to="/web-design/bangalore/"
+              className="text-signal-bright font-medium hover:underline"
+            >
+              + 5 More Localities →
+            </Link>
           </div>
         </div>
 

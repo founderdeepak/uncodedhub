@@ -80,6 +80,31 @@ export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
     ],
   };
 
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://uncodedhub.com/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Web Design',
+        item: 'https://uncodedhub.com/web-design/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Bangalore Web Design Hub',
+        item: 'https://uncodedhub.com/web-design/bangalore/',
+      },
+    ],
+  };
+
   return (
     <>
       <Helmet>
@@ -100,10 +125,37 @@ export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://uncodedhub.com/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
       </Helmet>
 
+      {/* ── Breadcrumb Navigation ────────────────────────────────── */}
+      <div className="bg-paper border-b border-rule pt-20 sm:pt-24 pb-3">
+        <Shell>
+          <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-muted">
+              <Link to="/" className="hover:text-ink transition-colors">
+                Home
+              </Link>
+              <span>/</span>
+              <Link to="/web-design/" className="hover:text-ink transition-colors">
+                Web Design
+              </Link>
+              <span>/</span>
+              <span className="text-ink font-medium">Bangalore Hub</span>
+            </nav>
+
+            <Link
+              to="/web-design/"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-signal/10 hover:bg-signal/20 text-signal font-mono text-[11px] transition-colors"
+            >
+              <span>← All 17 National Industry Sprints</span>
+            </Link>
+          </div>
+        </Shell>
+      </div>
+
       {/* ── Editorial Bangalore Hero ── */}
-      <section className="pt-24 sm:pt-32 pb-16 bg-paper relative overflow-hidden border-b border-rule">
+      <section className="pt-12 sm:pt-16 pb-16 bg-paper relative overflow-hidden border-b border-rule">
         <div className="absolute top-0 right-0 w-[36rem] h-[36rem] bg-signal/10 rounded-full blur-[100px] pointer-events-none -z-10" />
 
         <Shell>
@@ -348,6 +400,33 @@ export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
                 No localities matching "{searchQuery}". Try searching by area name, landmark, or pincode.
               </div>
             )}
+          </Reveal>
+        </Shell>
+      </section>
+
+      {/* ── National Industry Sprints Cross-Link ── */}
+      <section className="py-16 bg-paper-sunken border-b border-rule">
+        <Shell>
+          <Reveal>
+            <div className="p-8 rounded-[24px] bg-paper-raised border border-rule-strong flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div>
+                <span className="card-tag mb-2">LOOKING BEYOND BENGALURU?</span>
+                <h3 className="font-display text-2xl text-ink font-medium">
+                  We build specialized web platforms for 17 high-ticket industries pan-India.
+                </h3>
+                <p className="text-muted text-xs sm:text-sm mt-2 max-w-2xl leading-relaxed">
+                  From aesthetic dental practices and luxury interior studios to corporate advisory firms and coaching businesses, explore our 17 bespoke national industry silos.
+                </p>
+              </div>
+
+              <Link
+                to="/web-design/"
+                className="btn-primary !py-3 !px-6 text-xs rounded-full whitespace-nowrap inline-flex items-center gap-2 shrink-0 shadow-xs"
+              >
+                <span>Explore All 17 Industries</span>
+                <span>→</span>
+              </Link>
+            </div>
           </Reveal>
         </Shell>
       </section>

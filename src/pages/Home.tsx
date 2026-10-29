@@ -1443,6 +1443,36 @@ export default function Home({ onBook }: { onBook: () => void }) {
               View Directory of All 17 →
             </Link>
           </div>
+
+          {/* Bengaluru City Local Sprint Feature Card */}
+          <div className="mt-6 p-6 rounded-2xl bg-paper-raised border border-rule-strong hover:border-signal/40 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <span className="w-12 h-12 rounded-xl bg-signal/10 border border-signal/20 text-signal flex items-center justify-center text-xl shrink-0">
+                📍
+              </span>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="font-display text-base text-ink font-medium">
+                    Web Design in Bangalore · 25 Localities
+                  </span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-signal-wash text-signal border border-signal/20">
+                    Local Sprints
+                  </span>
+                </div>
+                <p className="text-muted text-xs mt-1">
+                  Targeted React websites for clinics, architects &amp; founders in Indiranagar, Koramangala, Whitefield, HSR Layout &amp; beyond.
+                </p>
+              </div>
+            </div>
+
+            <Link
+              to="/web-design/bangalore/"
+              className="btn-primary !py-2.5 !px-5 text-xs rounded-full inline-flex items-center gap-1.5 self-start md:self-auto shrink-0 shadow-xs"
+            >
+              <span>Explore Bangalore Hub</span>
+              <span>→</span>
+            </Link>
+          </div>
         </Shell>
       </section>
 

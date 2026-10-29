@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Reveal, Shell } from '../components/primitives';
 import { NICHES, NICHE_PILLAR_SLUGS } from '../lib/blog';
 import { NICHE_LANDING_DATA } from '../data/nicheLandingData';
+import { BANGALORE_LOCALITIES } from '../data/bangaloreLocalities';
 
 /* ═══════════════════════════════════════════════════════════════════
    WEB DESIGN HUB — Master Silo Apex for 17 Specialized Industries
@@ -164,9 +165,17 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
               <span className="text-ink font-medium">Web Design</span>
             </nav>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-signal/10 text-signal font-mono text-[11px]">
-              <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" />
-              <span>17 Specialized Industry Silos · 7-Day Sprint Guarantee</span>
+            <div className="flex flex-wrap items-center gap-3">
+              <Link
+                to="/web-design/bangalore/"
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-signal/10 hover:bg-signal/20 text-signal font-mono text-[11px] transition-colors"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" />
+                <span>📍 Bangalore Local Studio &amp; 25 Localities →</span>
+              </Link>
+              <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper border border-rule text-muted font-mono text-[11px]">
+                <span>17 Industry Silos · 7-Day Guarantee</span>
+              </div>
             </div>
           </div>
         </Shell>
@@ -331,6 +340,73 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
               );
             })}
           </div>
+        </Shell>
+      </section>
+
+      {/* ── Bengaluru City & 25 Localities Showcase ───────────────── */}
+      <section className="py-20 sm:py-28 bg-paper-sunken border-t border-rule">
+        <Shell>
+          <Reveal>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+              <div className="max-w-2xl">
+                <span className="card-tag mb-3">HYPERLOCAL BENGALURU WEB ENGINEERING</span>
+                <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
+                  Web design across 25 Bangalore localities.
+                </h2>
+                <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
+                  Headquartered in Bengaluru, senior founders Deepak &amp; Geetha build bespoke, sub-second React platforms for local clinics, interior design studios, real estate brokerages, and tech firms across every major commercial corridor in the city.
+                </p>
+              </div>
+
+              <Link
+                to="/web-design/bangalore/"
+                className="btn-primary !py-3 !px-6 text-xs rounded-full inline-flex items-center gap-2 self-start md:self-auto shrink-0 shadow-xs"
+              >
+                <span>Explore Bangalore Master Hub</span>
+                <span>→</span>
+              </Link>
+            </div>
+
+            {/* Top Localities Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+              {Object.values(BANGALORE_LOCALITIES).map((loc) => (
+                <Link
+                  key={loc.slug}
+                  to={`/web-design/bangalore/${loc.slug}/`}
+                  className="p-4 rounded-2xl bg-paper-raised border border-rule hover:border-signal/50 hover:shadow-xs transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="flex items-center justify-between text-[11px] font-mono text-muted mb-1.5">
+                      <span>{loc.pincode}</span>
+                      <span className="text-[10px] text-signal/80 font-serif">{loc.kannadaName}</span>
+                    </div>
+                    <span className="font-display text-base text-ink font-medium group-hover:text-signal transition-colors block">
+                      {loc.name}
+                    </span>
+                    <span className="text-[11px] text-muted block mt-1 line-clamp-1">
+                      {loc.techParksAndHubs[0] || loc.keyLandmarks[0]}
+                    </span>
+                  </div>
+                  <div className="mt-3 pt-2.5 border-t border-rule/60 flex items-center justify-between text-[10px] font-mono text-muted">
+                    <span>{loc.niches.length} Sectors</span>
+                    <span className="text-signal group-hover:translate-x-0.5 transition-transform">View →</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-8 p-4 rounded-xl bg-paper border border-rule flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono">
+              <span className="text-muted">
+                ⚡ <strong>7-Day Delivery Contract:</strong> Every Bengaluru locality sprint is delivered directly by Deepak &amp; Geetha with on-time or 100% free guarantee.
+              </span>
+              <Link
+                to="/web-design/bangalore/"
+                className="text-signal hover:underline shrink-0 font-medium"
+              >
+                View Bengaluru Hub &amp; Interactive Map →
+              </Link>
+            </div>
+          </Reveal>
         </Shell>
       </section>
 
