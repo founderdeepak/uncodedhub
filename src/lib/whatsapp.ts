@@ -85,3 +85,4 @@ export function getWhatsAppUrl(pathname: string): string {
   const message = getWhatsAppMessage(pathname);
   return `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
 }
+
