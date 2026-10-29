@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { Reveal, Shell } from '../components/primitives';
 import { BANGALORE_LOCALITIES, BangaloreLocality } from '../data/bangaloreLocalities';
+import { NICHE_PILLAR_SLUGS, getPostBySlug, getPostsByNiche, NicheKey } from '../lib/blog';
 
 interface BangaloreLocalityLandingProps {
   onBook?: () => void;
@@ -33,6 +34,17 @@ export default function BangaloreLocalityLanding({ onBook: _onBook }: BangaloreL
   const activeNiche = nicheSlug
     ? locality.niches.find((n) => n.nicheKey === nicheSlug.toLowerCase()) || null
     : null;
+
+  // Master pillar article for this niche
+  const pillarSlug = activeNiche ? NICHE_PILLAR_SLUGS[activeNiche.nicheKey as NicheKey] : null;
+  const pillarPost = pillarSlug ? getPostBySlug(pillarSlug) : null;
+
+  // Curated high-intent buyer articles for this niche
+  const nicheArticles = useMemo(() => {
+    if (!activeNiche) return [];
+    const allNichePosts = getPostsByNiche(activeNiche.nicheKey as NicheKey);
+    return allNichePosts.filter((p) => p.slug !== pillarSlug).slice(0, 3);
+  }, [activeNiche, pillarSlug]);
 
   const pageUrl = activeNiche
     ? `https://uncodedhub.com/web-design/bangalore/${locality.slug}/${activeNiche.nicheKey}/`
@@ -406,6 +418,192 @@ export default function BangaloreLocalityLanding({ onBook: _onBook }: BangaloreL
           </Reveal>
         </Shell>
       </section>
+
+      {/* ── Master Industry Blueprints & Strategic Conversion Guides ── */}
+      {activeNiche ? (
+        <section className="py-20 bg-paper-raised border-b border-rule">
+          <Shell>
+            <Reveal>
+              <div className="max-w-3xl mb-12">
+                <span className="card-tag mb-3">ENGINEERING BLUEPRINTS & BUYER INTENT RESEARCH</span>
+                <h2 className="font-display text-3xl sm:text-4xl text-ink font-normal leading-tight">
+                  Strategic {activeNiche.name} Architecture & Conversion Guides.
+                </h2>
+                <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
+                  Deep technical tear-downs, compliance frameworks, and conversion benchmarks published specifically for {activeNiche.name.toLowerCase()} founders and senior directors in {locality.name}.
+                </p>
+              </div>
+
+              {/* Master Pillar Feature Card */}
+              {pillarPost && (
+                <div className="mb-10 p-8 sm:p-10 rounded-[28px] bg-paper-sunken border border-signal/30 shadow-sm relative overflow-hidden">
+                  <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <span className="text-[11px] font-mono px-3 py-1 rounded-full bg-signal text-white font-semibold">
+                      MASTER PILLAR BLUEPRINT
+                    </span>
+                    <span className="text-xs font-mono text-muted">
+                      {pillarPost.readingMinutes} min read
+                    </span>
+                    <span className="text-xs font-mono text-muted">•</span>
+                    <span className="text-xs font-mono text-signal">
+                      Foundational {activeNiche.name} Architecture
+                    </span>
+                  </div>
+
+                  <h3 className="font-display text-2xl sm:text-3xl text-ink font-medium leading-snug">
+                    <Link
+                      to={`/blog/${pillarPost.slug}/`}
+                      className="hover:text-signal transition-colors"
+                    >
+                      {pillarPost.title}
+                    </Link>
+                  </h3>
+
+                  <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed max-w-4xl">
+                    {pillarPost.excerpt}
+                  </p>
+
+                  <div className="mt-8 pt-6 border-t border-rule flex flex-wrap items-center justify-between gap-4">
+                    <Link
+                      to={`/blog/${pillarPost.slug}/`}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-signal text-white text-xs font-mono font-semibold hover:bg-signal/90 transition-colors shadow-xs"
+                    >
+                      <span>Read Complete Architecture Blueprint</span>
+                      <span>→</span>
+                    </Link>
+
+                    <Link
+                      to={`/web-design/${activeNiche.nicheKey}/`}
+                      className="text-xs font-mono text-muted hover:text-signal transition-colors inline-flex items-center gap-1"
+                    >
+                      <span>Explore Global {activeNiche.name} Web Platform</span>
+                      <span>→</span>
+                    </Link>
+                  </div>
+                </div>
+              )}
+
+              {/* High-Intent Conversion Articles */}
+              {nicheArticles.length > 0 && (
+                <div>
+                  <h3 className="font-mono text-xs uppercase tracking-wider text-muted mb-6">
+                    In-Depth Conversion Tear-Downs & Decision Guides for {locality.name}
+                  </h3>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    {nicheArticles.map((article) => (
+                      <div
+                        key={article.slug}
+                        className="p-6 rounded-[20px] bg-paper-raised border border-rule-strong hover:border-signal/50 transition-all duration-200 flex flex-col justify-between shadow-xs"
+                      >
+                        <div>
+                          <div className="flex items-center justify-between gap-2 mb-3">
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-signal/10 text-signal border border-signal/20">
+                              BUYER GUIDE
+                            </span>
+                            <span className="text-[11px] font-mono text-muted">
+                              {article.readingMinutes} min read
+                            </span>
+                          </div>
+                          <h4 className="font-display text-lg text-ink font-medium leading-snug">
+                            <Link
+                              to={`/blog/${article.slug}/`}
+                              className="hover:text-signal transition-colors"
+                            >
+                              {article.title}
+                            </Link>
+                          </h4>
+                          <p className="text-muted text-xs mt-3 leading-relaxed line-clamp-3">
+                            {article.excerpt}
+                          </p>
+                        </div>
+                        <div className="mt-6 pt-4 border-t border-rule">
+                          <Link
+                            to={`/blog/${article.slug}/`}
+                            className="text-xs font-mono text-signal hover:underline inline-flex items-center gap-1 font-medium"
+                          >
+                            <span>Read Guide</span>
+                            <span>→</span>
+                          </Link>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </Reveal>
+          </Shell>
+        </section>
+      ) : (
+        /* Locality Hub View: Showcase Master Blueprints for all 5 sectors */
+        <section className="py-20 bg-paper-raised border-b border-rule">
+          <Shell>
+            <Reveal>
+              <div className="max-w-3xl mb-12">
+                <span className="card-tag mb-3">INDUSTRY BLUEPRINTS & RESEARCH</span>
+                <h2 className="font-display text-3xl sm:text-4xl text-ink font-normal leading-tight">
+                  Master Technical Architecture Guides for {locality.name}.
+                </h2>
+                <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
+                  Before we write a single line of React code, our builds are informed by these foundational engineering standards and conversion teardowns:
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {locality.niches.map((niche) => {
+                  const pSlug = NICHE_PILLAR_SLUGS[niche.nicheKey as NicheKey];
+                  const post = pSlug ? getPostBySlug(pSlug) : null;
+                  return (
+                    <div
+                      key={niche.nicheKey}
+                      className="p-6 rounded-[22px] bg-paper-sunken border border-rule-strong hover:border-signal/40 transition-all duration-200 flex flex-col justify-between shadow-xs"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="text-2xl">{niche.icon}</span>
+                          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-signal/10 text-signal border border-signal/20">
+                            MASTER BLUEPRINT
+                          </span>
+                        </div>
+                        <h3 className="font-display text-xl text-ink font-medium leading-snug">
+                          {post ? (
+                            <Link to={`/blog/${post.slug}/`} className="hover:text-signal transition-colors">
+                              {post.title}
+                            </Link>
+                          ) : (
+                            <span>{niche.name} Engineering Blueprint</span>
+                          )}
+                        </h3>
+                        <p className="text-muted text-xs mt-3 leading-relaxed line-clamp-3">
+                          {post?.excerpt || niche.subheadline}
+                        </p>
+                      </div>
+
+                      <div className="mt-6 pt-4 border-t border-rule space-y-2">
+                        {post && (
+                          <Link
+                            to={`/blog/${post.slug}/`}
+                            className="text-xs font-mono text-signal hover:underline flex items-center justify-between font-medium"
+                          >
+                            <span>Read Architecture Guide</span>
+                            <span>→</span>
+                          </Link>
+                        )}
+                        <Link
+                          to={`/web-design/bangalore/${locality.slug}/${niche.nicheKey}/`}
+                          className="text-xs font-mono text-muted hover:text-ink flex items-center justify-between"
+                        >
+                          <span>{locality.name} {niche.name} Service</span>
+                          <span>→</span>
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </Reveal>
+          </Shell>
+        </section>
+      )}
 
       {/* ── 7-Day Sprint Protocol ── */}
       <section className="py-20 bg-paper-sunken border-b border-rule">
