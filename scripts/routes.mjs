@@ -8,10 +8,11 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { BANGALORE_LOCALITIES } from '../src/data/bangaloreLocalities.ts';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const blogDir = path.join(root, 'src', 'content', 'blog');
+const bangaloreLocalitiesFile = path.join(root, 'src', 'data', 'bangaloreLocalities.json');
+const BANGALORE_LOCALITIES = JSON.parse(readFileSync(bangaloreLocalitiesFile, 'utf-8'));
 
 // Each static route's source file, so its sitemap <lastmod> can come
 // from a real git commit date instead of being omitted or guessed.
