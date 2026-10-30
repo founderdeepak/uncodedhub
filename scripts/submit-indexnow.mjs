@@ -3,7 +3,7 @@
 import { getAllRoutes } from './routes.mjs';
 
 const host = 'uncodedhub.com';
-const key = '68aa08d650ec000f6594562ae6d4ca25';
+const key = '053a9cd8e5d94a87a086ed1013135f55';
 const keyLocation = `https://${host}/${key}.txt`;
 
 const urlList = getAllRoutes().map((r) => `https://${host}${r.loc}`);
