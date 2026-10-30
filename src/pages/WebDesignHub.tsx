@@ -273,34 +273,11 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
               const config = NICHE_LANDING_DATA[key];
               const pillarSlug = NICHE_PILLAR_SLUGS[key];
               const icon = INDUSTRY_ICONS[key] || '⚡';
-              const ogImage = `/og/niche-${key}.webp`;
 
               return (
                 <Reveal key={key} delay={idx * 30}>
-                  <div className="p-6 sm:p-7 rounded-[26px] bg-paper-raised border border-rule-strong hover:border-signal/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full group">
+                  <div className="p-8 rounded-[24px] bg-paper-raised border border-rule-strong hover:border-signal/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-full group">
                     <div>
-                      {/* Open Graph Platform Banner */}
-                      <Link
-                        to={`/web-design/${key}/`}
-                        className="relative aspect-[16/9] w-full rounded-[16px] overflow-hidden bg-ink border border-rule-strong mb-5 group-hover:border-signal/50 block shadow-xs transition-all"
-                      >
-                        <img
-                          src={ogImage}
-                          alt={`${NICHES[key]} website design platform by Uncoded Hub`}
-                          width={600}
-                          height={338}
-                          loading="lazy"
-                          decoding="async"
-                          className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                        />
-
-                        <div className="absolute inset-0 bg-ink/30 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
-                          <span className="bg-signal text-paper text-xs font-mono font-semibold px-3 py-1 rounded-full shadow-md">
-                            Explore {NICHES[key]} Platform →
-                          </span>
-                        </div>
-                      </Link>
-
                       {/* Top Meta Header */}
                       <div className="flex items-center justify-between mb-4">
                         <span className="w-10 h-10 rounded-xl bg-paper-sunken border border-rule flex items-center justify-center text-lg">
