@@ -1,28 +1,25 @@
-// Regenerates public/sitemap.xml from the routes in routes.mjs (static
-// pages + whatever non-draft posts currently exist in
-// src/content/blog/). Runs as a `prebuild` step (see package.json) so
-// publishing a Markdown post is enough on its own — nobody has to
-// remember to hand-edit the sitemap.
+// Regenerates sitemaps in standard organized index hierarchy:
+// - public/sitemap_index.xml (Master index)
+// - public/page-sitemap.xml (Core pages, commercial hubs, 150 Bangalore locality & spoke landing pages)
+// - public/post-sitemap.xml (All 520+ technical blog articles & architecture blueprints)
+// - public/sitemap.xml (Master index alias for universal search engine compatibility)
+// Runs as a `prebuild` step (see package.json).
 import { writeFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { getAllRoutes } from './routes.mjs';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
-const sitemapPath = path.join(root, 'public', 'sitemap.xml');
+const publicDir = path.join(root, 'public');
 
-// <priority> and <changefreq> are both explicitly ignored by Google
-// (and have been for years) — omitted rather than carried as dead
-// weight. <lastmod> is kept: it's the one hint crawlers still use for
-// recrawl prioritization, so every route gets one, not just blog posts.
-const routes = getAllRoutes().filter((r) => r.loc !== '/404');
+const allRoutes = getAllRoutes().filter((r) => r.loc !== '/404');
 
-// Also include all 17 live interactive industry demonstration specimens
-const demoDir = path.join(root, 'public', 'demos');
+// Also include live interactive industry demonstration specimens
+const demoDir = path.join(publicDir, 'demos');
 try {
   const demoFiles = readdirSync(demoDir).filter((f) => f.endsWith('.html'));
   for (const file of demoFiles) {
-    routes.push({
+    allRoutes.push({
       loc: `/demos/${file}`,
       lastmod: '2026-10-23',
     });
@@ -39,25 +36,74 @@ function escapeXml(str) {
     .replace(/'/g, '&apos;');
 }
 
-const body = routes
-  .map((r) => {
-    const lastmod = r.lastmod ? `\n    <lastmod>${r.lastmod}</lastmod>` : '';
-    const loc = r.loc.endsWith('/') || r.loc.endsWith('.html') ? r.loc : `${r.loc}/`;
-    
-    let imageXml = '';
-    if (r.image) {
-      const imgLoc = r.image.startsWith('http') ? r.image : `https://uncodedhub.com${r.image}`;
-      const titleTag = r.title ? `\n      <image:title>${escapeXml(r.title)}</image:title>` : '';
-      const captionTag = r.caption ? `\n      <image:caption>${escapeXml(r.caption)}</image:caption>` : (titleTag ? `\n      <image:caption>${escapeXml(r.title)}</image:caption>` : '');
-      imageXml = `\n    <image:image>\n      <image:loc>${imgLoc}</image:loc>${titleTag}${captionTag}\n    </image:image>`;
-    }
+function buildUrlXml(routes) {
+  const body = routes
+    .map((r) => {
+      const lastmod = r.lastmod ? `\n    <lastmod>${r.lastmod}</lastmod>` : '';
+      const loc = r.loc.endsWith('/') || r.loc.endsWith('.html') ? r.loc : `${r.loc}/`;
 
-    return `  <url>\n    <loc>https://uncodedhub.com${loc}</loc>${lastmod}${imageXml}\n  </url>`;
-  })
-  .join('\n');
+      let imageXml = '';
+      if (r.image) {
+        const imgLoc = r.image.startsWith('http') ? r.image : `https://uncodedhub.com${r.image}`;
+        const titleTag = r.title ? `\n      <image:title>${escapeXml(r.title)}</image:title>` : '';
+        const captionTag = r.caption
+          ? `\n      <image:caption>${escapeXml(r.caption)}</image:caption>`
+          : titleTag
+          ? `\n      <image:caption>${escapeXml(r.title)}</image:caption>`
+          : '';
+        imageXml = `\n    <image:image>\n      <image:loc>${imgLoc}</image:loc>${titleTag}${captionTag}\n    </image:image>`;
+      }
 
-const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${body}\n</urlset>\n`;
+      return `  <url>\n    <loc>https://uncodedhub.com${loc}</loc>${lastmod}${imageXml}\n  </url>`;
+    })
+    .join('\n');
 
-writeFileSync(sitemapPath, xml);
-const postCount = routes.filter((r) => r.loc.startsWith('/blog/')).length;
-console.log(`sitemap.xml written with ${routes.length} URLs (${postCount} blog posts).`);
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${body}\n</urlset>\n`;
+}
+
+// Separate into Post routes (individual blog articles) and Page routes (core, niches, locality hubs/spokes)
+const isPostRoute = (r) => {
+  if (!r.loc.startsWith('/blog/')) return false;
+  if (r.loc.startsWith('/blog/industries/')) return false;
+  return true;
+};
+
+const postRoutes = allRoutes.filter(isPostRoute);
+const pageRoutes = allRoutes.filter((r) => !isPostRoute(r));
+
+// 1. Generate page-sitemap.xml
+const pageSitemapXml = buildUrlXml(pageRoutes);
+writeFileSync(path.join(publicDir, 'page-sitemap.xml'), pageSitemapXml, 'utf-8');
+
+// 2. Generate post-sitemap.xml
+const postSitemapXml = buildUrlXml(postRoutes);
+writeFileSync(path.join(publicDir, 'post-sitemap.xml'), postSitemapXml, 'utf-8');
+
+// Determine latest lastmod for the index
+const today = new Date().toISOString().split('T')[0];
+const latestPageMod = (pageRoutes.map((r) => r.lastmod).filter(Boolean).sort().pop() || today).split('T')[0];
+const latestPostMod = (postRoutes.map((r) => r.lastmod).filter(Boolean).sort().pop() || today).split('T')[0];
+
+// 3. Generate sitemap_index.xml & sitemap.xml
+const sitemapIndexXml = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://uncodedhub.com/page-sitemap.xml</loc>
+    <lastmod>${latestPageMod}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://uncodedhub.com/post-sitemap.xml</loc>
+    <lastmod>${latestPostMod}</lastmod>
+  </sitemap>
+</sitemapindex>
+`;
+
+writeFileSync(path.join(publicDir, 'sitemap_index.xml'), sitemapIndexXml, 'utf-8');
+writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapIndexXml, 'utf-8');
+
+console.log(`Generated:
+  - page-sitemap.xml (${pageRoutes.length} URLs)
+  - post-sitemap.xml (${postRoutes.length} URLs)
+  - sitemap_index.xml (Master Index)
+  - sitemap.xml (Universal Index)
+Total URLs: ${allRoutes.length}`);

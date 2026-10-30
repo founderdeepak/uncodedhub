@@ -82,6 +82,7 @@ Disallow: /
 #   ai-train=no   content must NOT be used for training foundation models
 
 # Sitemaps & Feeds
+Sitemap: https://uncodedhub.com/sitemap_index.xml
 Sitemap: https://uncodedhub.com/sitemap.xml
 Sitemap: https://uncodedhub.com/rss.xml
 
