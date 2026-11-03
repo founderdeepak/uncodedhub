@@ -84,27 +84,29 @@
       z-index: 10;
     }
 
-    /* Top Studio Bar */
+    /* Top Studio Bar (Full Width) */
     .top-banner {
       background: linear-gradient(90deg, #111319 0%, #171a23 100%);
       border-bottom: 1px solid var(--border-subtle);
       font-size: 0.78rem;
-      padding: 8px 0;
+      padding: 8px 40px;
       color: var(--text-muted);
+      width: 100%;
     }
     .top-banner-inner {
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 16px;
-      white-space: nowrap;
-      overflow: hidden;
+      white-space: nowrap !important;
     }
     .top-left, .top-right {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       flex-shrink: 0;
+      white-space: nowrap !important;
     }
     .badge-pill {
       display: inline-flex;
@@ -117,7 +119,8 @@
       border-radius: 100px;
       font-size: 0.74rem;
       font-weight: 600;
-      white-space: nowrap;
+      white-space: nowrap !important;
+      flex-shrink: 0;
     }
     .status-live-dot {
       width: 8px;
@@ -134,22 +137,25 @@
       50% { opacity: 0.5; transform: scale(0.85); }
     }
 
-    /* Header / Sticky Navigation */
+    /* Header / Sticky Navigation (Full Width Edge-to-Edge) */
     header {
       position: sticky;
       top: 0;
-      background: rgba(13, 15, 19, 0.95);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: rgba(13, 15, 19, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-subtle);
       z-index: 100;
-      padding: 14px 0;
+      padding: 14px 40px;
+      width: 100%;
     }
-    .nav-inner {
+    .nav-inner-full {
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 20px;
+      white-space: nowrap !important;
     }
     .brand {
       display: flex;
@@ -158,54 +164,68 @@
       text-decoration: none;
       color: var(--text-main);
       flex-shrink: 0;
-      white-space: nowrap;
+      white-space: nowrap !important;
     }
     .brand-icon {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       background: linear-gradient(135deg, var(--accent-amber) 0%, #a46d29 100%);
-      border-radius: 10px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: #0d0f13;
       box-shadow: 0 4px 16px rgba(229, 166, 85, 0.28);
       flex-shrink: 0;
     }
+    .brand-text {
+      white-space: nowrap !important;
+    }
     .brand-text h1 {
       font-family: var(--font-heading);
-      font-size: 1.3rem;
+      font-size: 1.32rem;
       font-weight: 700;
       letter-spacing: 0.02em;
       line-height: 1.1;
-      white-space: nowrap;
+      white-space: nowrap !important;
     }
     .brand-text span {
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       color: var(--accent-amber);
       text-transform: uppercase;
       letter-spacing: 0.12em;
       font-family: var(--font-mono);
       display: block;
-      white-space: nowrap;
+      white-space: nowrap !important;
     }
 
-    /* Menu Links */
+    /* Menu Links - Full Width & Strictly Single Line */
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: clamp(16px, 1.8vw, 32px);
       list-style: none;
-      white-space: nowrap;
+      white-space: nowrap !important;
+      flex-wrap: nowrap !important;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links li {
+      white-space: nowrap !important;
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
     }
     .nav-links a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       font-weight: 500;
       transition: var(--transition);
-      white-space: nowrap;
+      white-space: nowrap !important;
+      display: inline-block;
+      padding: 6px 0;
     }
     .nav-links a:hover {
       color: var(--accent-amber);
@@ -216,6 +236,14 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      flex-shrink: 0;
+      white-space: nowrap !important;
+    }
+    .header-actions .btn {
+      white-space: nowrap !important;
+      display: inline-flex !important;
+      align-items: center;
+      gap: 8px;
       flex-shrink: 0;
     }
     .mobile-menu-btn {
@@ -230,6 +258,7 @@
       cursor: pointer;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
 
     /* Mobile Drawer */
@@ -1127,16 +1156,22 @@
     }
 
     /* Responsive Queries */
-    @media (max-width: 1120px) {
+    @media (max-width: 1260px) {
+      header {
+        padding: 12px 24px;
+      }
+      .top-banner {
+        padding: 8px 24px;
+      }
       .nav-links {
-        gap: 18px;
+        gap: 16px;
       }
       .nav-links a {
         font-size: 0.84rem;
       }
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 1080px) {
       .nav-links {
         display: none;
       }
@@ -1175,14 +1210,14 @@
 
   <div class="spotlight"></div>
 
-  <!-- Top Studio Bar (Single Line Guaranteed) -->
+  <!-- Top Studio Bar (Full Width & Single Line Guaranteed) -->
   <div class="top-banner">
-    <div class="container top-banner-inner">
+    <div class="top-banner-inner">
       <div class="top-left">
         <span class="badge-pill">
           <i class="fa-solid fa-star"></i> 4.9★ Top Rated
         </span>
-        <span class="top-location">📍 Malleshpalya Main Rd, Bengaluru</span>
+        <span class="top-location">📍 Malleshpalya Main Rd (Beside Apple Multi-Speciality Clinic), Bengaluru</span>
       </div>
       <div class="top-right">
         <span><span class="status-live-dot"></span> Open Today: 9:30 AM – 9:30 PM</span>
@@ -1193,9 +1228,9 @@
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Header (Full Width & Every Menu Link on a Single Line) -->
   <header>
-    <div class="container nav-inner">
+    <div class="nav-inner-full">
       <!-- Brand -->
       <a href="#" class="brand">
         <div class="brand-icon">
@@ -1203,20 +1238,22 @@
         </div>
         <div class="brand-text">
           <h1>Shutter Bug Studioz</h1>
-          <span>Photography &amp; Custom Framing</span>
+          <span>Photography &amp; Custom Framing Lab</span>
         </div>
       </a>
 
-      <!-- Clean 5-Item Navigation (Strictly Non-Wrapping Single Line) -->
+      <!-- Full Menu Links (Strictly Single Line per Link) -->
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
-        <li><a href="#visa-tool">Visa Photos</a></li>
-        <li><a href="#frame-tool">Framing Lab</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#visa-tool">Visa Photo Specs</a></li>
+        <li><a href="#frame-tool">Frame Visualizer</a></li>
         <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#location">Location</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#location">Studio Location</a></li>
       </ul>
 
-      <!-- Right Header Actions -->
+      <!-- Right Header Actions (Single Line Button) -->
       <div class="header-actions">
         <a href="https://wa.me/919900911929?text=Hi%20Shutter%20Bug%20Studioz%2C%20I%20would%20like%20to%20enquire%20about%20your%20photography%20services%20and%20framing." target="_blank" rel="noopener" class="btn btn-amber">
           <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
