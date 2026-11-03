@@ -303,5 +303,413 @@ export const SOLUTIONS_DATA: Record<string, SolutionItem> = {
       },
     ],
   },
+
+  'speed-optimization': {
+    slug: 'speed-optimization',
+    badge: '⚡ CORE WEB VITALS & MOBILE SPEED OVERHAUL',
+    targetKeyword: 'website speed optimization services',
+    metaTitle: 'Website Speed Optimization Services for Business | Uncoded Hub',
+    metaDescription:
+      'Website speed optimization services that fix failing Core Web Vitals. Transform slow WordPress sites into sub-second 100/100 Lighthouse speed in 7 days.',
+    headline: 'Fix Failing Core Web Vitals & Accelerate Your Website Under 1s.',
+    subheadline:
+      'A 1-second delay in page load time costs you 7% of your conversions. We eliminate render-blocking CSS, bloated JavaScript, and server latency to deliver instant sub-second speed.',
+    verdictSummary:
+      'Speed is not a cosmetic feature; it is an algorithmic Google ranking factor and your primary conversion bottleneck. We strip out bloated theme builder assets and rewrite critical paths to achieve 98–100/100 Google Lighthouse scores.',
+    stat: {
+      value: '0.6s LCP',
+      label: 'Guaranteed Largest Contentful Paint',
+    },
+    diagnosticTitle: 'Signs Your Slow Website Is Costing You Revenue',
+    diagnostics: [
+      {
+        symptom: 'Google PageSpeed Insights score is below 50 on mobile.',
+        cause: 'Render-blocking theme assets, unoptimized images, and excessive plugin scripts.',
+        cure: 'Hand-coded Vite architecture with critical inline CSS and automated WebP compression.',
+      },
+      {
+        symptom: 'High bounce rate on mobile cellular connections.',
+        cause: 'Slow Time to First Byte (TTFB) and heavy client-side JavaScript execution.',
+        cure: 'Edge-cached global CDN delivery with sub-200ms server response times.',
+      },
+      {
+        symptom: 'Failing Cumulative Layout Shift (CLS) on Google Search Console.',
+        cause: 'Unsized image containers, dynamic font pop-ins, and late-injected ad scripts.',
+        cure: 'Fixed aspect-ratio containers and preloaded modern font subsets.',
+      },
+    ],
+    features: [
+      {
+        title: 'Complete Bloat Removal & Asset Tree-Shaking',
+        description:
+          'Purge unused CSS, remove legacy jQuery libraries, and eliminate unnecessary database queries to shrink your total page weight below 300KB.',
+        deliverable: 'Ultra-lightweight production bundle',
+      },
+      {
+        title: 'Edge CDN Caching & Sub-Second LCP',
+        description:
+          'Distribute your static assets across 300+ global edge nodes so visitors connect to the physically closest data center in their city.',
+        deliverable: 'Global Edge network configuration',
+      },
+      {
+        title: 'Core Web Vitals Passing Guarantee',
+        description:
+          'We guarantee all 3 Core Web Vitals (LCP, FID/INP, CLS) enter Google’s green passing zone on real-world mobile audits.',
+        deliverable: 'Verified Lighthouse audit report',
+      },
+    ],
+    faq: [
+      {
+        question: 'Can you speed up my existing WordPress site without rebuilding it?',
+        answer:
+          'While caching plugins can help temporarily, WordPress themes and page builders carry deep structural bloat. For true sub-second speeds, a clean hand-coded frontend rebuild delivers permanent 100/100 scores.',
+      },
+      {
+        question: 'Will faster speed improve my Google Ads performance?',
+        answer:
+          'Yes. Google Ads directly factors landing page speed into your Quality Score. Faster pages earn higher ad positions at significantly lower Cost-Per-Click (CPC).',
+      },
+    ],
+  },
+
+  'local-seo-architecture': {
+    slug: 'local-seo-architecture',
+    badge: '⚡ HYPERLOCAL DOMINATION & MAP PACK ARCHITECTURE',
+    targetKeyword: 'seo friendly website development',
+    metaTitle: 'SEO Friendly Website Development for Local Businesses | Uncoded Hub',
+    metaDescription:
+      'SEO friendly website development engineered to rank in Google Maps 3-Pack and local search. Structured JSON-LD schema, locality clusters, and zero bloat.',
+    headline: 'Websites Engineered to Dominate Local Google Search & Maps.',
+    subheadline:
+      'Capture high-intent customers searching for your services in your city. We build pure semantic HTML, locality landing clusters, and local business schema that search engines reward.',
+    verdictSummary:
+      'Ranking #1 in your city requires clean semantic code, structured JSON-LD local business data, and localized silo pages. We build organic discovery into your site architecture from day one.',
+    stat: {
+      value: '3-Pack',
+      label: 'Google Maps Local Pack Visibility Focus',
+    },
+    diagnosticTitle: 'Why Most Business Websites Are Invisible in Local Search',
+    diagnostics: [
+      {
+        symptom: 'Competitors appear in the Google Maps 3-Pack while you are buried on page 2.',
+        cause: 'Missing schema markup and inconsistent Name, Address, and Phone (NAP) citations.',
+        cure: 'Deep JSON-LD schema linking your Google Business Profile directly to your domain.',
+      },
+      {
+        symptom: 'Your website only ranks when people search your exact business name.',
+        cause: 'Thin content without dedicated commercial landing pages for high-value services.',
+        cure: 'Silo architecture targeting specific commercial queries (e.g. "dental implants Indiranagar").',
+      },
+      {
+        symptom: 'Local visitors land on your site but leave without calling.',
+        cause: 'No prominent click-to-call, WhatsApp buttons, or clear locality service radiuses.',
+        cure: 'Persistent mobile contact drawers and direct localized consultation routing.',
+      },
+    ],
+    features: [
+      {
+        title: 'Deep Local Business JSON-LD Schema',
+        description:
+          'Embed verified geographical coordinates, opening hours, accepted insurance/payments, and area-served polygons directly into machine-readable code.',
+        deliverable: 'Custom structured data schema implementation',
+      },
+      {
+        title: 'Hyperlocal Corridor Landing Clusters',
+        description:
+          'Architect focused sub-pages for key residential and commercial neighborhoods without triggering duplicate content penalties.',
+        deliverable: 'Programmatic local SEO landing framework',
+      },
+      {
+        title: 'Google Business Profile 1-Click Integration',
+        description:
+          'Sync your website directly with your GBP review feed, Google Maps directions, and click-to-call mobile triggers.',
+        deliverable: 'Unified local search presence',
+      },
+    ],
+    faq: [
+      {
+        question: 'How long does it take to see results in local search?',
+        answer:
+          'With clean semantic code and instant crawlability, Google typically indexes new local pages within 72 hours. Ranking momentum builds steadily as local citations and user engagements accumulate.',
+      },
+      {
+        question: 'Do you set up my Google Business Profile as well?',
+        answer:
+          'Yes. Our local SEO sprint includes optimizing your primary GBP categories, services menu, and website link integration.',
+      },
+    ],
+  },
+
+  'portfolio-websites': {
+    slug: 'portfolio-websites',
+    badge: '⚡ HIGH-TICKET SPECIMEN & MONOGRAPH ARCHITECTURE',
+    targetKeyword: 'portfolio website design services',
+    metaTitle: 'Portfolio Website Design Services for High-Ticket Studios | Uncoded Hub',
+    metaDescription:
+      'Portfolio website design services for architects, interior designers, and luxury creators. Editorial typography, sub-second 4K galleries, and pre-qualifying funnels.',
+    headline: 'Portfolios That Position You as the Uncontested Premium Choice.',
+    subheadline:
+      'When you pitch ₹15 Lakh to ₹1 Crore projects, your website must look like an architectural monograph, not a generic blog. High-res imagery, interactive sliders, and zero lag.',
+    verdictSummary:
+      'High-net-worth clients judge your attention to detail within 3 seconds of landing on your portfolio. We build custom editorial galleries that load 4K imagery instantly and filter out tire-kickers.',
+    stat: {
+      value: '0.8s',
+      label: 'High-Res 4K Image Render Speed',
+    },
+    diagnosticTitle: 'Why Traditional Portfolios Hurt Premium Positioning',
+    diagnostics: [
+      {
+        symptom: 'Heavy 4K project photos take 5+ seconds to load, appearing blurry on mobile.',
+        cause: 'Uncompressed raw image uploads and un-cached server hosting.',
+        cure: 'Responsive picture elements serving modern WebP/AVIF formats at exact viewport dimensions.',
+      },
+      {
+        symptom: 'Tire-kickers waste your time asking for free drawings or cheap quotes.',
+        cause: 'Lack of upfront scope transparency, client qualification gates, or project minimums.',
+        cure: 'Interactive trade-fee estimator and mandatory project budget intake filters.',
+      },
+      {
+        symptom: 'Your website looks like an off-the-shelf template used by hundreds of students.',
+        cause: 'Cookie-cutter Squarespace or Behance portfolio layouts without unique identity.',
+        cure: 'Bespoke editorial grid layouts, custom typography pairing, and monograph craftsmanship.',
+      },
+    ],
+    features: [
+      {
+        title: 'Sub-Second Responsive 4K Image Pipeline',
+        description:
+          'Automatically compress and serve photographs calibrated to Retina displays, ensuring crystal-clear architectural details without mobile lag.',
+        deliverable: 'High-speed editorial gallery engine',
+      },
+      {
+        title: 'Interactive Before/After Specimen Sliders',
+        description:
+          'Allow prospective clients to drag across raw site photos vs finished luxury handovers to see the magnitude of your craftsmanship.',
+        deliverable: 'Custom interactive comparison sliders',
+      },
+      {
+        title: 'Client Pre-Qualification Intake Protocol',
+        description:
+          'Screen project scopes, execution timelines, and budget expectations before confirming a consultation call.',
+        deliverable: 'High-ticket commission application gate',
+      },
+    ],
+    faq: [
+      {
+        question: 'Can I add new projects to my portfolio easily?',
+        answer:
+          'Yes. We build lightweight project templates where adding a new case study requires simply uploading photos and filling in scope details in a clean file.',
+      },
+      {
+        question: 'Will our photos be protected from theft?',
+        answer:
+          'We disable right-click inspect on primary galleries, strip EXIF metadata, and serve optimized web assets that prevent high-resolution print piracy.',
+      },
+    ],
+  },
+
+  'multi-location-websites': {
+    slug: 'multi-location-websites',
+    badge: '⚡ MULTI-BRANCH LOCALITY & PSEO SILO ARCHITECTURE',
+    targetKeyword: 'multi location business website design',
+    metaTitle: 'Multi Location Business Website Design & Branch SEO | Uncoded Hub',
+    metaDescription:
+      'Custom multi-location business website design for clinics, salons, and multi-branch companies. Clean URL silos, localized schema, and zero duplicate content penalties.',
+    headline: 'Scale Across Multiple Cities & Branches Without SEO Cannibalization.',
+    subheadline:
+      'Operating across 3 to 15 locations? We architect clean branch landing pages with dedicated local schema, Google Business Profile links, and localized team rosters.',
+    verdictSummary:
+      'Most multi-location sites copy and paste the same text with different city names, triggering Google duplicate content penalties. We engineer dynamic, programmatic local silos with verified local signals.',
+    stat: {
+      value: '100%',
+      label: 'Unique Locality Silo Separation',
+    },
+    diagnosticTitle: 'Common Traps in Multi-Location Web Architecture',
+    diagnostics: [
+      {
+        symptom: 'Google indexes Branch A but ignores Branch B and Branch C.',
+        cause: 'Duplicate content penalty caused by swapping only city names across identical pages.',
+        cure: 'Locality-specific case studies, neighborhood references, and unique branch team profiles.',
+      },
+      {
+        symptom: 'Clients book appointments at the wrong clinic or salon branch.',
+        cause: 'Clunky global calendar without clear geolocation or branch selection UX.',
+        cure: 'Geolocation-aware branch selector directing inquiries to the nearest operational team.',
+      },
+      {
+        symptom: 'Updating phone numbers or hours requires editing 20 individual pages.',
+        cause: 'Hard-coded location details scattered across messy WordPress page builders.',
+        cure: 'Centralized structured JSON data store powering all branch pages from a single source.',
+      },
+    ],
+    features: [
+      {
+        title: 'Siloed Branch Landing Architecture',
+        description:
+          'Engineered sub-directories (e.g. `/locations/indiranagar/`) with localized schema, verified operating hours, and dedicated contact buttons.',
+        deliverable: 'Scalable multi-branch route system',
+      },
+      {
+        title: 'Smart Locality Distance & Map Routing',
+        description:
+          'Auto-detect user proximity or provide a clean neighborhood search so clients immediately find their closest branch.',
+        deliverable: 'Interactive branch locator module',
+      },
+      {
+        title: 'Centralized Operations Data Model',
+        description:
+          'Manage doctors, staff, hours, and branch addresses from one structured data file with zero manual page duplication.',
+        deliverable: 'Single-source-of-truth location config',
+      },
+    ],
+    faq: [
+      {
+        question: 'How many branches can this architecture handle?',
+        answer:
+          'Our architecture scales effortlessly from 2 branches to 100+ locations with zero slowdown in page speed or crawl performance.',
+      },
+      {
+        question: 'Will each branch have its own Google Business Profile link?',
+        answer:
+          'Yes. Each branch page links directly to its unique GBP review link, CID map pin, and verified local telephone number.',
+      },
+    ],
+  },
+
+  'corporate-b2b-websites': {
+    slug: 'corporate-b2b-websites',
+    badge: '⚡ ENTERPRISE RFP & ADVISORY POSITIONING',
+    targetKeyword: 'corporate website development company',
+    metaTitle: 'Corporate Website Development Company for B2B Firms | Uncoded Hub',
+    metaDescription:
+      'Corporate website development for B2B consultancies, advisory firms, and enterprise services. Pass procurement diligence, showcase partner pedigree, and win RFPs.',
+    headline: 'Corporate Websites Engineered to Pass Enterprise Diligence.',
+    subheadline:
+      'Enterprise buyers do not buy from consumer-looking agency templates. We craft institutional digital flagships for B2B consulting, legal, and advisory firms that command high retainers.',
+    verdictSummary:
+      'Winning 7-figure corporate contracts requires satisfying enterprise procurement committees and compliance boards. We build institutional credibility, partner authority profiles, and secure client intakes.',
+    stat: {
+      value: '₹1L–₹5L+',
+      label: 'Target Retainer Positioning',
+    },
+    diagnosticTitle: 'Why B2B Websites Get Screened Out of Enterprise RFPs',
+    diagnostics: [
+      {
+        symptom: 'Enterprise clients visit your site, but never invite you to submit an RFP.',
+        cause: 'Consumer-grade styling, missing compliance disclosures, and lack of verified partner pedigree.',
+        cure: 'Institutional visual hierarchy, leadership biographies, and governance transparency.',
+      },
+      {
+        symptom: 'Prospects question your fee structure during sales conversations.',
+        cause: 'Weak positioning that fails to communicate your proprietary methodology or measurable EBITDA impact.',
+        cure: 'Proprietary framework showcases, quantified case studies, and enterprise proof metrics.',
+      },
+      {
+        symptom: 'Enterprise IT teams flag security concerns during diligence.',
+        cause: 'Vulnerable WordPress plugins, outdated PHP versions, or unsecured third-party form widgets.',
+        cure: 'Static serverless edge deployment with A+ security headers and zero database attack surface.',
+      },
+    ],
+    features: [
+      {
+        title: 'Institutional Partner & Practice Area Architecture',
+        description:
+          'Dedicated profiles for managing partners, verified advisory credentials, published whitepapers, and sector expertise.',
+        deliverable: 'Corporate governance & practice area modules',
+      },
+      {
+        title: 'Quantified Case Studies & ROI Metrics',
+        description:
+          'Present client outcomes with clear before/after EBITDA impact, operational savings, and risk mitigation data.',
+        deliverable: 'Enterprise case study presentation framework',
+      },
+      {
+        title: 'Enterprise Security & Compliance Guarantee',
+        description:
+          'Strict Content Security Policy (CSP), automated SSL, zero third-party tracking cookies, and 100% code ownership.',
+        deliverable: 'IT security diligence compliance checklist',
+      },
+    ],
+    faq: [
+      {
+        question: 'Can you work with our internal legal and compliance team?',
+        answer:
+          'Yes. We ensure all statutory disclaimers, bar council compliance (for legal firms), and regulatory filings are integrated cleanly.',
+      },
+      {
+        question: 'Do you write the corporate copywriting?',
+        answer:
+          'Yes. Geetha leads research and interviews your leadership team to distill complex advisory capabilities into concise, executive-level messaging.',
+      },
+    ],
+  },
+
+  'payment-enabled-websites': {
+    slug: 'payment-enabled-websites',
+    badge: '⚡ DIRECT CHECKOUT & RETAINER PAYMENT ARCHITECTURE',
+    targetKeyword: 'custom website design with payment gateway',
+    metaTitle: 'Custom Website Design With Payment Gateway Integration | Uncoded Hub',
+    metaDescription:
+      'Custom website design with direct payment gateway integration (Stripe, Razorpay, UPI). Collect consultation deposits and retainers with zero monthly app fees.',
+    headline: 'Collect Deposits, Fees & Retainers Directly On-Site.',
+    subheadline:
+      'Eliminate manual bank transfer chasing. We integrate clean, single-tap payment gateways directly into your service funnels with automated receipts and zero SaaS fees.',
+    verdictSummary:
+      'Third-party e-commerce platforms like Shopify take transaction commissions and force slow checkout redirects. We code native payment triggers directly into your custom React pages for maximum completion.',
+    stat: {
+      value: '0%',
+      label: 'Platform Transaction Surcharges',
+    },
+    diagnosticTitle: 'Why Clunky Payment Links Kill High-Ticket Conversions',
+    diagnostics: [
+      {
+        symptom: 'Clients agree to work with you on the call, but never complete the payment link.',
+        cause: 'Delayed manual invoicing and complicated multi-step payment portals.',
+        cure: 'Direct 1-tap checkout integrated on your booking confirmation page.',
+      },
+      {
+        symptom: 'Paying \$50+/month for third-party checkout software or Shopify apps.',
+        cause: 'Reliance on SaaS middlemen when payment gateways offer direct modern APIs.',
+        cure: 'Native API integration with Razorpay, Stripe, or UPI at 0 monthly subscription cost.',
+      },
+      {
+        symptom: 'High cart or deposit abandonment on mobile phones.',
+        cause: 'Slow checkout redirection and lack of instant mobile UPI app triggers.',
+        cure: 'Sub-second mobile checkout with native Google Pay, PhonePe, and Apple Pay support.',
+      },
+    ],
+    features: [
+      {
+        title: 'Direct Multi-Gateway Integration (Stripe & Razorpay)',
+        description:
+          'Accept domestic UPI, credit cards, debit cards, net banking, and international wire transfers with automated tax-compliant invoicing.',
+        deliverable: 'Bespoke checkout payment engine',
+      },
+      {
+        title: 'Instant Automated WhatsApp & Email Receipts',
+        description:
+          'Trigger instant payment confirmations and calendar booking links to the client via WhatsApp and email upon successful transaction.',
+        deliverable: 'Automated receipt & onboarding webhook',
+      },
+      {
+        title: 'Zero Recurring Platform Fees',
+        description:
+          'You pay only your standard payment processor transaction rate (e.g. 2%). Zero Uncoded Hub markups and zero monthly app subscriptions.',
+        deliverable: 'Permanent fee-free checkout architecture',
+      },
+    ],
+    faq: [
+      {
+        question: 'Which payment gateways do you support?',
+        answer:
+          'We support Razorpay, Cashfree, and PayU for Indian domestic UPI and cards, and Stripe and Wise for international USD, GBP, and EUR transactions.',
+      },
+      {
+        question: 'Is customer payment information secure on custom code?',
+        answer:
+          'Yes. We use tokenized PCI-DSS compliant checkout SDKs where sensitive card data never touches your server and is processed directly by the banking gateway.',
+      },
+    ],
+  },
 };
 

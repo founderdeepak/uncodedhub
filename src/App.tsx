@@ -24,6 +24,8 @@ const BangaloreLocalityLanding = lazy(() => import('./pages/BangaloreLocalityLan
 const TeamOutreach = lazy(() => import('./pages/TeamOutreach'));
 const AlternativesHub = lazy(() => import('./pages/AlternativesHub'));
 const AlternativeLanding = lazy(() => import('./pages/AlternativeLanding'));
+const SolutionsHub = lazy(() => import('./pages/SolutionsHub'));
+const SolutionLanding = lazy(() => import('./pages/SolutionLanding'));
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 /* Paths are unchanged from the previous site so existing links and
@@ -340,6 +342,38 @@ export default function App() {
             element={
               <Suspense fallback={null}>
                 <AlternativeLanding onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/solutions"
+            element={
+              <Suspense fallback={null}>
+                <SolutionsHub onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/solutions/"
+            element={
+              <Suspense fallback={null}>
+                <SolutionsHub onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/solutions/:slug"
+            element={
+              <Suspense fallback={null}>
+                <SolutionLanding onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/solutions/:slug/"
+            element={
+              <Suspense fallback={null}>
+                <SolutionLanding onBook={goToBooking} />
               </Suspense>
             }
           />

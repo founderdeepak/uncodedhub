@@ -20,6 +20,7 @@ const COMPANY_LINKS = [
   { label: 'Engineering Services', to: '/services/' },
   { label: 'Web Design Architecture', to: '/web-design/' },
   { label: 'Compare Alternatives', to: '/alternatives/' },
+  { label: 'Problem Solutions', to: '/solutions/' },
   { label: 'About Deepak & Geetha', to: '/about/' },
   { label: 'Pricing & FAQ', to: '/faq/' },
   { label: 'Contact Studio', to: '/contact/' },
