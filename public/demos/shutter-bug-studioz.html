@@ -3,37 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shutter Bug Studioz | Premium Photography, Custom Framing & Heirloom Gifts | Malleshpalya, Bengaluru</title>
-  <meta name="description" content="Award-winning neighbourhood photography studio in Malleshpalya, Bengaluru. Specialized in weddings, newborn & kids portraits, official country-compliant visa photos, archival framing & personalized photo gifts.">
+  <title>Shutter Bug Studioz | Premium Photography, Biometric Visas & Custom Framing Lab | Malleshpalya, Bengaluru</title>
+  <meta name="description" content="Top-rated photography studio & custom framing lab in Malleshpalya, Bengaluru. Specialized in newborn & toddler shoots, wedding stories, 10-minute embassy-guaranteed visa photos, and archival framing.">
   <meta name="robots" content="noindex, nofollow, noarchive">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- FontAwesome -->
+  <!-- FontAwesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
-      --bg-dark: #0f1115;
-      --bg-surface: #171a21;
-      --bg-surface-elevated: #1f232c;
-      --bg-card: #252a35;
-      --accent-amber: #e6a756;
-      --accent-amber-light: #f5c78e;
-      --accent-amber-glow: rgba(230, 167, 86, 0.16);
-      --accent-rose: #d96b6b;
-      --text-main: #f3f5f8;
-      --text-muted: #9ba3af;
+      --bg-dark: #0d0f13;
+      --bg-surface: #14171f;
+      --bg-surface-elevated: #1c202a;
+      --bg-card: #232834;
+      --accent-amber: #e5a655;
+      --accent-amber-light: #f7ce95;
+      --accent-amber-glow: rgba(229, 166, 85, 0.16);
+      --accent-green: #10b981;
+      --text-main: #f3f5f9;
+      --text-muted: #9ca3af;
       --text-dim: #6b7280;
       --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-amber: rgba(230, 167, 86, 0.35);
-      --font-heading: 'Playfair Display', serif;
-      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --border-amber: rgba(229, 166, 85, 0.35);
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
-      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.35);
     }
 
     * {
@@ -53,19 +54,20 @@
       line-height: 1.6;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      padding-bottom: 70px; /* Space for mobile sticky action bar */
     }
 
-    /* Ambient Spotlight */
+    /* Ambient Lighting */
     .spotlight {
       position: fixed;
-      width: 700px;
-      height: 700px;
+      width: 750px;
+      height: 750px;
       border-radius: 50%;
-      background: radial-gradient(circle, var(--accent-amber-glow) 0%, rgba(15,17,21,0) 70%);
+      background: radial-gradient(circle, var(--accent-amber-glow) 0%, rgba(13,15,19,0) 70%);
       pointer-events: none;
       z-index: 0;
-      top: -150px;
-      right: 10%;
+      top: -200px;
+      right: 5%;
     }
 
     /* Container */
@@ -79,10 +81,10 @@
 
     /* Top Studio Bar */
     .top-banner {
-      background: linear-gradient(90deg, #171a21 0%, #1e222b 100%);
+      background: linear-gradient(90deg, #12141a 0%, #191c24 100%);
       border-bottom: 1px solid var(--border-subtle);
       font-size: 0.8rem;
-      padding: 10px 0;
+      padding: 9px 0;
       color: var(--text-muted);
     }
     .top-banner-inner {
@@ -97,24 +99,37 @@
       align-items: center;
       gap: 6px;
       padding: 3px 10px;
-      background: rgba(230, 167, 86, 0.12);
+      background: rgba(229, 166, 85, 0.12);
       border: 1px solid var(--border-amber);
       color: var(--accent-amber-light);
       border-radius: 100px;
       font-size: 0.75rem;
       font-weight: 600;
     }
+    .status-live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent-green);
+      display: inline-block;
+      box-shadow: 0 0 8px var(--accent-green);
+      animation: pulseGreen 2s infinite;
+    }
+    @keyframes pulseGreen {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
 
-    /* Navigation */
+    /* Header / Sticky Navigation */
     header {
       position: sticky;
       top: 0;
-      background: rgba(15, 17, 21, 0.94);
+      background: rgba(13, 15, 19, 0.94);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-subtle);
       z-index: 100;
-      padding: 18px 0;
+      padding: 16px 0;
     }
     .nav-inner {
       display: flex;
@@ -131,15 +146,14 @@
     .brand-icon {
       width: 44px;
       height: 44px;
-      background: linear-gradient(135deg, var(--accent-amber) 0%, #9c6c28 100%);
+      background: linear-gradient(135deg, var(--accent-amber) 0%, #a46d29 100%);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.25rem;
-      color: #0f1115;
-      font-weight: bold;
-      box-shadow: 0 4px 16px rgba(230, 167, 86, 0.3);
+      color: #0d0f13;
+      box-shadow: 0 4px 18px rgba(229, 166, 85, 0.3);
     }
     .brand-text h1 {
       font-family: var(--font-heading);
@@ -173,11 +187,13 @@
     .nav-links a:hover {
       color: var(--accent-amber);
     }
+
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 22px;
+      padding: 11px 24px;
       border-radius: 100px;
       font-size: 0.88rem;
       font-weight: 600;
@@ -187,13 +203,13 @@
       border: none;
     }
     .btn-amber {
-      background: linear-gradient(135deg, var(--accent-amber) 0%, #d8963f 100%);
-      color: #0f1115;
-      box-shadow: 0 4px 20px rgba(230, 167, 86, 0.28);
+      background: linear-gradient(135deg, var(--accent-amber) 0%, #cb8c38 100%);
+      color: #0d0f13;
+      box-shadow: 0 4px 20px rgba(229, 166, 85, 0.28);
     }
     .btn-amber:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 26px rgba(230, 167, 86, 0.42);
+      box-shadow: 0 6px 28px rgba(229, 166, 85, 0.45);
       color: #000;
     }
     .btn-outline {
@@ -204,12 +220,12 @@
     .btn-outline:hover {
       border-color: var(--accent-amber);
       color: var(--accent-amber);
-      background: rgba(230, 167, 86, 0.05);
+      background: rgba(229, 166, 85, 0.06);
     }
 
-    /* Hero Section */
+    /* Hero Section (Wes McDowell 5-Second Grunt Test Layout) */
     .hero {
-      padding: 80px 0 60px;
+      padding: 70px 0 50px;
       position: relative;
     }
     .hero-grid {
@@ -227,14 +243,14 @@
       color: var(--accent-amber);
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
     .hero-title {
       font-family: var(--font-heading);
       font-size: 3.4rem;
       line-height: 1.12;
       font-weight: 700;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       letter-spacing: -0.02em;
     }
     .hero-title em {
@@ -243,34 +259,34 @@
       font-weight: 500;
     }
     .hero-lead {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       color: var(--text-muted);
       line-height: 1.65;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
       max-width: 580px;
     }
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
-      margin-bottom: 40px;
+      margin-bottom: 36px;
     }
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-      padding-top: 32px;
+      padding-top: 28px;
       border-top: 1px solid var(--border-subtle);
     }
     .stat-item h4 {
       font-family: var(--font-heading);
-      font-size: 1.9rem;
+      font-size: 1.85rem;
       color: var(--text-main);
       line-height: 1;
       margin-bottom: 6px;
     }
     .stat-item span {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.06em;
@@ -282,9 +298,9 @@
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 28px;
-      padding: 30px;
+      padding: 26px;
       position: relative;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+      box-shadow: var(--shadow-card);
     }
     .hero-card::after {
       content: '';
@@ -303,7 +319,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
     .mosaic-tile {
       height: 140px;
@@ -315,23 +331,23 @@
       border: 1px solid rgba(255,255,255,0.1);
       display: flex;
       align-items: flex-end;
-      padding: 10px;
+      padding: 12px;
     }
     .mosaic-tile::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 40%, rgba(15,17,21,0.85) 100%);
+      background: linear-gradient(180deg, transparent 35%, rgba(13,15,19,0.85) 100%);
     }
     .mosaic-label {
       position: relative;
       z-index: 2;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       font-weight: 600;
       color: #fff;
     }
     .quick-guarantee-pill {
-      background: rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.03);
       border: 1px solid var(--border-subtle);
       padding: 14px 18px;
       border-radius: 18px;
@@ -341,11 +357,11 @@
       font-size: 0.85rem;
     }
 
-    /* Core Pillars Grid */
+    /* Section Headers */
     .section-title-wrap {
       text-align: center;
-      max-width: 680px;
-      margin: 0 auto 50px;
+      max-width: 720px;
+      margin: 0 auto 46px;
     }
     .section-tag {
       font-family: var(--font-mono);
@@ -354,7 +370,7 @@
       letter-spacing: 0.14em;
       color: var(--accent-amber);
       margin-bottom: 12px;
-      display: block;
+      display: inline-block;
     }
     .section-title {
       font-family: var(--font-heading);
@@ -366,13 +382,152 @@
     .section-desc {
       color: var(--text-muted);
       font-size: 1rem;
+      line-height: 1.6;
     }
 
+    /* Wes McDowell Principle: Problem / Agitation / Solution Section */
+    .pain-point-section {
+      padding: 40px 0 70px;
+    }
+    .pain-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 20px;
+    }
+    .pain-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 22px;
+      padding: 28px;
+      position: relative;
+      transition: var(--transition);
+    }
+    .pain-card:hover {
+      border-color: var(--border-amber);
+      transform: translateY(-3px);
+    }
+    .pain-tag {
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.1);
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+    .sol-tag {
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.1);
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+    .pain-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+    .pain-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .pain-divider {
+      height: 1px;
+      background: var(--border-subtle);
+      margin: 16px 0;
+    }
+    .pain-sol {
+      font-size: 0.88rem;
+      color: var(--accent-amber-light);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.5;
+    }
+
+    /* Wes McDowell 3-Step Plan Section */
+    .how-it-works-section {
+      background: linear-gradient(180deg, #12151c 0%, #0d0f13 100%);
+      padding: 70px 0;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      position: relative;
+    }
+    .step-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      padding: 32px 28px;
+      position: relative;
+    }
+    .step-number {
+      font-family: var(--font-mono);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: rgba(229, 166, 85, 0.25);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .step-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+    .step-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* Organized Services Navigation Tabs */
+    .services-nav-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .tab-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      padding: 10px 22px;
+      border-radius: 100px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .tab-btn:hover,
+    .tab-btn.active {
+      background: var(--accent-amber);
+      color: #0d0f13;
+      font-weight: 600;
+      border-color: var(--accent-amber);
+      box-shadow: 0 4px 16px rgba(229, 166, 85, 0.25);
+    }
+
+    /* Services Grid */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 24px;
-      margin-bottom: 80px;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 26px;
+      margin-bottom: 40px;
     }
     .service-card {
       background: var(--bg-surface);
@@ -382,26 +537,40 @@
       transition: var(--transition);
       position: relative;
       display: flex;
-      flex-col: column;
+      flex-direction: column;
       justify-content: space-between;
     }
     .service-card:hover {
       transform: translateY(-4px);
       border-color: var(--border-amber);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+      box-shadow: var(--shadow-card);
+    }
+    .service-category-badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-amber);
+      background: rgba(229, 166, 85, 0.08);
+      border: 1px solid var(--border-amber);
+      padding: 3px 10px;
+      border-radius: 100px;
+      display: inline-block;
+      margin-bottom: 16px;
+      align-self: flex-start;
     }
     .service-icon-wrap {
-      width: 54px;
-      height: 54px;
+      width: 52px;
+      height: 52px;
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-subtle);
-      border-radius: 16px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       color: var(--accent-amber);
-      margin-bottom: 22px;
+      margin-bottom: 18px;
     }
     .service-card h3 {
       font-family: var(--font-heading);
@@ -421,12 +590,12 @@
       border-top: 1px solid var(--border-subtle);
     }
     .service-features li {
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       color: var(--text-main);
       margin-bottom: 8px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
     .service-features li i {
       color: var(--accent-amber);
@@ -436,19 +605,19 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-top: 16px;
+      padding-top: 18px;
       border-top: 1px solid var(--border-subtle);
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.82rem;
     }
 
-    /* Interactive Tool 1: Country Visa Photo Spec Tool */
+    /* Visa Photo Specification Engine */
     .tool-box {
-      background: linear-gradient(145deg, #181c24 0%, #13151b 100%);
+      background: linear-gradient(145deg, #171b23 0%, #12141a 100%);
       border: 1px solid var(--border-amber);
       border-radius: 28px;
       padding: 44px;
-      margin-bottom: 100px;
+      margin-bottom: 80px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.3);
     }
     .tool-header {
@@ -457,23 +626,23 @@
       align-items: flex-end;
       flex-wrap: wrap;
       gap: 20px;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
       border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 24px;
+      padding-bottom: 22px;
     }
     .country-selector-pills {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
     }
     .country-pill {
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-subtle);
       color: var(--text-muted);
-      padding: 10px 18px;
+      padding: 9px 18px;
       border-radius: 12px;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       font-weight: 500;
       cursor: pointer;
       transition: var(--transition);
@@ -481,14 +650,13 @@
     .country-pill:hover,
     .country-pill.active {
       background: var(--accent-amber);
-      color: #0f1115;
+      color: #0d0f13;
       font-weight: 600;
       border-color: var(--accent-amber);
     }
-
     .spec-card-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
     .spec-box {
@@ -499,7 +667,7 @@
     }
     .spec-box span {
       display: block;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       font-family: var(--font-mono);
       color: var(--accent-amber);
       text-transform: uppercase;
@@ -507,12 +675,12 @@
       margin-bottom: 6px;
     }
     .spec-box h4 {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       color: var(--text-main);
       font-weight: 600;
     }
 
-    /* Interactive Tool 2: Framing & Keepsake Visualizer */
+    /* Framing Visualizer Canvas */
     .frame-calculator-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -521,13 +689,13 @@
       border: 1px solid var(--border-subtle);
       border-radius: 28px;
       padding: 40px;
-      margin-bottom: 100px;
+      margin-bottom: 80px;
     }
     .frame-preview-canvas {
-      background: #11141a;
-      border: 2px dashed rgba(255,255,255,0.15);
+      background: #0f1116;
+      border: 2px dashed rgba(255,255,255,0.12);
       border-radius: 20px;
-      height: 380px;
+      height: 400px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -537,15 +705,15 @@
       transition: var(--transition);
     }
     .virtual-frame {
-      width: 240px;
-      height: 300px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+      width: 250px;
+      height: 310px;
+      box-shadow: 0 24px 45px rgba(0,0,0,0.7);
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       transition: var(--transition);
-      background: #1a1e26;
+      background: #181b22;
       border-radius: 6px;
     }
     .virtual-matting {
@@ -556,11 +724,12 @@
       align-items: center;
       justify-content: center;
       box-shadow: inset 0 2px 8px rgba(0,0,0,0.25);
+      transition: var(--transition);
     }
     .virtual-art {
       width: 80%;
       height: 80%;
-      background: linear-gradient(135deg, #2b313e 0%, #15181f 100%);
+      background: linear-gradient(135deg, #282e3b 0%, #14161d 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -594,7 +763,7 @@
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-subtle);
       color: var(--text-main);
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       cursor: pointer;
       transition: var(--transition);
     }
@@ -606,12 +775,12 @@
       font-weight: 600;
     }
 
-    /* Testimonials / Trust Badges */
+    /* Reviews Section */
     .reviews-carousel {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 24px;
-      margin-bottom: 80px;
+      margin-bottom: 70px;
     }
     .review-bubble {
       background: var(--bg-surface);
@@ -650,13 +819,55 @@
       border: 1px solid var(--border-subtle);
     }
 
-    /* Malleshpalya Local SEO & Map Section */
+    /* Wes McDowell FAQ Accordion */
+    .faq-section {
+      padding: 20px 0 80px;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 24px;
+      transition: var(--transition);
+    }
+    .faq-item:hover {
+      border-color: var(--border-amber);
+    }
+    .faq-item h4 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: var(--text-main);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .faq-item h4 i {
+      color: var(--accent-amber);
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+    .faq-item p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      padding-left: 24px;
+    }
+
+    /* Malleshpalya Studio Hub */
     .local-hub-strip {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 28px;
       padding: 40px;
-      margin-bottom: 80px;
+      margin-bottom: 70px;
     }
     .local-hub-grid {
       display: grid;
@@ -668,7 +879,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 18px;
+      margin-top: 16px;
     }
     .local-tag {
       font-size: 0.75rem;
@@ -680,18 +891,15 @@
       font-family: var(--font-mono);
     }
 
-    /* Uncoded Hub Watermark / Architecture Badge */
-    .uncoded-badge-strip {
-      background: #090a0d;
-      border: 1px solid rgba(230, 167, 86, 0.25);
-      border-radius: 18px;
-      padding: 20px 28px;
-      margin-bottom: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
+    /* Final Conversion Banner */
+    .cta-banner {
+      background: linear-gradient(135deg, #1e2430 0%, #13161e 100%);
+      border: 1px solid var(--border-amber);
+      border-radius: 28px;
+      padding: 50px 40px;
+      text-align: center;
+      margin-bottom: 60px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
     }
 
     /* Footer */
@@ -704,7 +912,7 @@
     }
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
       gap: 36px;
       margin-bottom: 48px;
     }
@@ -731,22 +939,67 @@
       color: var(--accent-amber);
     }
 
-    /* Mobile Responsive */
-    @media (max-width: 900px) {
+    /* Mobile Sticky Action Bar */
+    .mobile-action-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(13, 15, 19, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border-subtle);
+      padding: 10px 16px;
+      z-index: 999;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .mobile-action-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 12px;
+      border-radius: 12px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .mobile-btn-call {
+      background: var(--bg-surface-elevated);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+    }
+    .mobile-btn-whatsapp {
+      background: #25d366;
+      color: #0d0f13;
+      font-weight: 700;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 960px) {
       .hero-grid,
       .frame-calculator-grid,
       .local-hub-grid,
-      .footer-grid {
+      .footer-grid,
+      .pain-card-grid,
+      .steps-grid,
+      .faq-grid {
         grid-template-columns: 1fr;
       }
       .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.6rem;
       }
       .nav-links {
         display: none;
       }
       .spec-card-grid {
         grid-template-columns: 1fr;
+      }
+      .mobile-action-bar {
+        display: flex;
       }
     }
   </style>
@@ -765,7 +1018,7 @@
         <span>📍 Malleshpalya Main Rd (Beside Apple Multi-Speciality Clinic), Bengaluru</span>
       </div>
       <div style="display: flex; align-items: center; gap: 16px;">
-        <span>🕒 Open Today: 9:30 AM – 9:30 PM</span>
+        <span><span class="status-live-dot"></span> Open Today: 9:30 AM – 9:30 PM</span>
         <a href="tel:+919900911929" style="color: var(--accent-amber); font-weight: 600; text-decoration: none;">
           <i class="fa-solid fa-phone"></i> +91 99009 11929
         </a>
@@ -788,41 +1041,43 @@
 
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#visa-tool">Visa Photo Specs</a></li>
         <li><a href="#frame-tool">Frame Visualizer</a></li>
         <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#location">Studio Location</a></li>
       </ul>
 
       <div style="display: flex; gap: 12px;">
-        <a href="https://wa.me/919900911929?text=Hi%20Shutter%20Bug%20Studioz%2C%20I%20would%20like%20to%20book%20a%20photography%20session%20%2F%20order%20prints." target="_blank" rel="noopener" class="btn btn-amber">
+        <a href="https://wa.me/919900911929?text=Hi%20Shutter%20Bug%20Studioz%2C%20I%20would%20like%20to%20enquire%20about%20your%20photography%20services%20and%20framing." target="_blank" rel="noopener" class="btn btn-amber">
           <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (Wes McDowell Grunt Test: What You Do, Benefit, Clear CTA) -->
   <section class="hero">
     <div class="container">
       <div class="hero-grid">
         <div>
           <span class="hero-eyebrow">
-            <i class="fa-solid fa-circle-check"></i> Serving Malleshpalya, Kaggadasapura &amp; East Bengaluru
+            <i class="fa-solid fa-shield-halved"></i> 100% Embassy Acceptance · 8+ Years in Malleshpalya
           </span>
           <h2 class="hero-title">
-            Preserving life's sweetest milestones in <em>timeless, handcrafted art.</em>
+            Stunning Portraits, Flawless Visa Photos &amp; <em>Archival Frames.</em>
           </h2>
           <p class="hero-lead">
-            From patient newborn &amp; toddler portraits to grand wedding albums, country-compliant visa photos in 10 minutes, and bespoke Italian framing. Your trusted neighbourhood studio since 2016.
+            Whether you need 10-minute biometric visa photos with guaranteed embassy compliance, a gentle and joyful milestone shoot for your little one, or custom framing for your family treasures — our certified studio lab in Malleshpalya brings warmth and museum precision to every memory.
           </p>
 
           <div class="hero-actions">
-            <a href="https://wa.me/919900911929?text=Hi%20Shutter%20Bug%20Studioz%2C%20I%20want%20to%20enquire%20about%20a%20photoshoot%20package." class="btn btn-amber" target="_blank">
-              <i class="fa-regular fa-calendar-check"></i> Book Studio Session
+            <a href="https://wa.me/919900911929?text=Hi%20Shutter%20Bug%20Studioz%2C%20I%20would%20like%20to%20book%20a%20session%20or%20get%20a%20quote." class="btn btn-amber" target="_blank">
+              <i class="fa-regular fa-calendar-check"></i> Book Session / Free Consultation
             </a>
             <a href="#frame-tool" class="btn btn-outline">
-              <i class="fa-solid fa-crop-simple"></i> Calculate Framing Price
+              <i class="fa-solid fa-crop-simple"></i> Try Custom Frame Visualizer
             </a>
           </div>
 
@@ -836,13 +1091,13 @@
               <span>Express Visa Photos</span>
             </div>
             <div class="stat-item">
-              <h4>8+ Years</h4>
-              <span>Malleshpalya Legacy</span>
+              <h4>100%</h4>
+              <span>Acceptance Guarantee</span>
             </div>
           </div>
         </div>
 
-        <!-- Hero Card -->
+        <!-- Hero Showcase Card -->
         <div class="hero-card">
           <div class="hero-card-inner">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
@@ -850,31 +1105,31 @@
                 FEATURED STUDIO WORK
               </span>
               <span style="font-size: 0.75rem; color: #10b981; background: rgba(16,185,129,0.1); padding: 3px 8px; border-radius: 6px;">
-                ● Studio Open Today
+                ● Walk-ins Welcome Today
               </span>
             </div>
 
             <div class="mosaic-preview">
               <div class="mosaic-tile" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80');">
-                <span class="mosaic-label">Weddings &amp; Pre-Wedding</span>
+                <span class="mosaic-label">Weddings &amp; Candid Events</span>
               </div>
               <div class="mosaic-tile" style="background-image: url('https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=600&q=80');">
-                <span class="mosaic-label">Kids &amp; Cake Smash</span>
+                <span class="mosaic-label">Toddler &amp; Cake Smash</span>
               </div>
-              <div class="mosaic-tile" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80');">
-                <span class="mosaic-label">Portraits &amp; Family</span>
+              <div class="mosaic-tile" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80');">
+                <span class="mosaic-label">Corporate &amp; Matrimonial</span>
               </div>
               <div class="mosaic-tile" style="background-image: url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80');">
-                <span class="mosaic-label">Custom Photo Frames</span>
+                <span class="mosaic-label">Custom Teak &amp; Canvas</span>
               </div>
             </div>
 
             <div class="quick-guarantee-pill">
               <div>
                 <strong style="display: block; font-size: 0.9rem; color: var(--text-main);">Walk-in or Book Ahead</strong>
-                <span style="color: var(--text-muted); font-size: 0.75rem;">Passport, Visa &amp; Frame orders ready same day</span>
+                <span style="color: var(--text-muted); font-size: 0.75rem;">Visa biometrics ready in 10 mins · Bespoke frames crafted in-house</span>
               </div>
-              <a href="tel:+919900911929" class="btn-amber" style="padding: 6px 14px; font-size: 0.78rem; text-decoration: none; border-radius: 8px;">
+              <a href="tel:+919900911929" class="btn-amber" style="padding: 7px 15px; font-size: 0.78rem; text-decoration: none; border-radius: 8px;">
                 Call Now
               </a>
             </div>
@@ -884,139 +1139,236 @@
     </div>
   </section>
 
-  <!-- Core Services Matrix -->
-  <section id="services" style="padding: 80px 0;">
+  <!-- Wes McDowell Principle: Problem / Agitation / Solution -->
+  <section class="pain-point-section">
     <div class="container">
       <div class="section-title-wrap">
-        <span class="section-tag">COMPLETE IMAGING &amp; PRINTING SOLUTIONS</span>
-        <h2 class="section-title">Everything your memories deserve, under one roof.</h2>
-        <p class="section-desc">We combine gentle, professional studio lighting with lab-grade printing and artisan album binding in Malleshpalya.</p>
+        <span class="section-tag">THE SHUTTER BUG DIFFERENCE</span>
+        <h2 class="section-title">Why most studio visits are stressful — and how we make yours effortless.</h2>
+        <p class="section-desc">You shouldn't have to worry about rejected visa photos, rushed kids shoots, or cheap fading frames.</p>
       </div>
 
-      <div class="services-grid">
-        <!-- Service 1 -->
-        <div class="service-card">
-          <div>
-            <div class="service-icon-wrap">
-              <i class="fa-solid fa-ring"></i>
-            </div>
-            <h3>Wedding &amp; Pre-Wedding Photography</h3>
-            <p>From intimate traditional rituals to grand wedding celebrations and romantic pre-wedding shoots across Karnataka. Captured with dual-camera coverage and natural emotional storytelling.</p>
-            <ul class="service-features">
-              <li><i class="fa-solid fa-check"></i> Candid &amp; Traditional Dual Photographers</li>
-              <li><i class="fa-solid fa-check"></i> Full HD Cinematic Highlights Film</li>
-              <li><i class="fa-solid fa-check"></i> Handcrafted Flush-Mount Leatherette Albums</li>
-              <li><i class="fa-solid fa-check"></i> Color-Corrected High-Res Deliverables</li>
-            </ul>
-          </div>
-          <div class="service-footer">
-            <span style="color: var(--accent-amber);">Starting ₹25,000</span>
-            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20am%20enquiring%20about%20Wedding%20Photography%20packages." target="_blank" style="color: var(--text-main); text-decoration: underline;">Inquire Package →</a>
+      <div class="pain-card-grid">
+        <div class="pain-card">
+          <span class="pain-tag"><i class="fa-solid fa-triangle-exclamation"></i> The Common Frustration</span>
+          <h3>Rejected Visa Photographs</h3>
+          <p>Standing in long consulate queues only to have your visa application rejected due to minor lighting glare, shadow flaws, or incorrect chin dimensions.</p>
+          <div class="pain-divider"></div>
+          <span class="sol-tag"><i class="fa-solid fa-circle-check"></i> Our Studio Guarantee</span>
+          <div class="pain-sol">
+            <strong>100% Embassy Acceptance:</strong> We calibrate calibrated biometric lighting for US, Schengen, Canada, UK, and Australia with zero-glare verification. If an embassy ever rejects it, we re-shoot for free.
           </div>
         </div>
 
-        <!-- Service 2 -->
-        <div class="service-card">
+        <div class="pain-card">
+          <span class="pain-tag"><i class="fa-solid fa-triangle-exclamation"></i> The Common Frustration</span>
+          <h3>Rushed, Awkward Photoshoots</h3>
+          <p>Restless toddlers forced to sit still under harsh lights while photographers rush through slots, leaving you with stiff poses and stressed-out kids.</p>
+          <div class="pain-divider"></div>
+          <span class="sol-tag"><i class="fa-solid fa-circle-check"></i> Our Studio Guarantee</span>
+          <div class="pain-sol">
+            <strong>Patience-First Studio Environment:</strong> Sanitized, comfortable, temperature-controlled studio stocked with toys and props. We play, take snack breaks, and wait for genuine, candid laughter.
+          </div>
+        </div>
+
+        <div class="pain-card">
+          <span class="pain-tag"><i class="fa-solid fa-triangle-exclamation"></i> The Common Frustration</span>
+          <h3>Fading Prints &amp; Warped Frames</h3>
+          <p>Precious family milestones trapped on phone screens or framed in flimsy internet mouldings that fade, bubble, and warp after one monsoon.</p>
+          <div class="pain-divider"></div>
+          <span class="sol-tag"><i class="fa-solid fa-circle-check"></i> Our Studio Guarantee</span>
+          <div class="pain-sol">
+            <strong>Artisan In-House Archival Lab:</strong> Natural seasoned teakwood, Italian mouldings, acid-free museum matboards, and 380 GSM canvas wraps engineered to stay vibrant for generations.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wes McDowell 3-Step Plan: How It Works -->
+  <section id="how-it-works" class="how-it-works-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">FRICTIONLESS EXPERIENCE</span>
+        <h2 class="section-title">Your simple 3-step path to timeless memories.</h2>
+        <p class="section-desc">We respect your time. Whether you walk in or book ahead, our process is clear and relaxed.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3>Walk-In or Choose Your Need</h3>
+          <p>Drop into our Malleshpalya studio for 10-minute biometric visa photos, or message us on WhatsApp to discuss your wedding, baby milestone, or custom framing vision.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3>Enjoy Relaxed Craftsmanship</h3>
+          <p>Experience gentle lighting, unhurried guidance, and specialized props. For custom framing, preview your art live and choose from museum-grade matboards and Teakwood mouldings.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3>Receive Heirloom Deliverables</h3>
+          <p>Walk out with instant compliant prints &amp; digital soft copies, or take home handcrafted leatherette albums and ready-to-hang gallery wall frames.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="https://wa.me/919900911929?text=Hi%20Shutter%20Bug%20Studioz%2C%20I%20have%20a%20query%20about%20your%20services." target="_blank" class="btn btn-amber">
+          <i class="fa-brands fa-whatsapp"></i> Speak Directly With Our Studio Lead
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Properly Organized Core Services (Categorized & Interactive) -->
+  <section id="services" style="padding: 80px 0;">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">COMPREHENSIVE STUDIO SUITE</span>
+        <h2 class="section-title">Organized for every occasion, under one roof.</h2>
+        <p class="section-desc">Browse our core capabilities across celebration shoots, daily biometric lab services, and bespoke archival framing.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="services-nav-tabs">
+        <button class="tab-btn active" onclick="filterServices('all')">All Services</button>
+        <button class="tab-btn" onclick="filterServices('milestones')">Milestones &amp; Weddings</button>
+        <button class="tab-btn" onclick="filterServices('biometrics')">Biometrics &amp; Headshots</button>
+        <button class="tab-btn" onclick="filterServices('framing')">Custom Framing &amp; Gifts</button>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1: Weddings -->
+        <div class="service-card" data-category="milestones">
           <div>
+            <span class="service-category-badge">Milestone &amp; Event</span>
+            <div class="service-icon-wrap">
+              <i class="fa-solid fa-ring"></i>
+            </div>
+            <h3>Wedding &amp; Pre-Wedding Storytelling</h3>
+            <p>From intimate traditional ceremonies to grand wedding banquets and romantic outdoor pre-wedding shoots. Captured with dual-camera coverage, candid timing, and natural emotional depth.</p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-check"></i> Candid &amp; Traditional Dual Photographers</li>
+              <li><i class="fa-solid fa-check"></i> Cinematic 4K Teaser &amp; Highlights Film</li>
+              <li><i class="fa-solid fa-check"></i> Handcrafted Flush-Mount Leatherette Albums</li>
+              <li><i class="fa-solid fa-check"></i> Complete Color-Graded Digital Archives</li>
+            </ul>
+          </div>
+          <div class="service-footer">
+            <span style="color: var(--accent-amber);"><i class="fa-solid fa-calendar-check"></i> Tailored Event Coverage</span>
+            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20am%20enquiring%20about%20Wedding%20Photography%20services." target="_blank" style="color: var(--text-main); text-decoration: underline; font-weight: 600;">Request Brochure →</a>
+          </div>
+        </div>
+
+        <!-- Service 2: Newborn & Toddlers -->
+        <div class="service-card" data-category="milestones">
+          <div>
+            <span class="service-category-badge">Kids &amp; Maternity</span>
             <div class="service-icon-wrap">
               <i class="fa-solid fa-baby"></i>
             </div>
             <h3>Newborn, Baby &amp; Kids Photography</h3>
-            <p>Renowned for extraordinary patience with restless toddlers and shy infants. Our studio is temperature-controlled, sanitized, and stocked with playful props, cozy wraps, and cake-smash setups.</p>
+            <p>Renowned across Malleshpalya for extraordinary patience with restless toddlers and delicate infants. Temperature-controlled, sanitized studio equipped with creative props, cozy wraps, and cake-smash themes.</p>
             <ul class="service-features">
-              <li><i class="fa-solid fa-check"></i> Zero Rush: Up to 2-Hour Relaxed Sessions</li>
-              <li><i class="fa-solid fa-check"></i> Props, Baskets, Gowns &amp; Costumes Included</li>
-              <li><i class="fa-solid fa-check"></i> Sibling &amp; Parent Inclusion at No Extra Cost</li>
+              <li><i class="fa-solid fa-check"></i> Unhurried Sessions with Snack &amp; Play Breaks</li>
+              <li><i class="fa-solid fa-check"></i> Themed Baskets, Costumes &amp; Cake-Smash Setups</li>
+              <li><i class="fa-solid fa-check"></i> Sibling &amp; Parent Inclusion at No Added Charge</li>
               <li><i class="fa-solid fa-check"></i> High-Resolution Retouched Digital Gallery</li>
             </ul>
           </div>
           <div class="service-footer">
-            <span style="color: var(--accent-amber);">Starting ₹4,999</span>
-            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20am%20interested%20in%20a%20Baby%20%2F%20Kids%20photoshoot." target="_blank" style="color: var(--text-main); text-decoration: underline;">Book Session →</a>
+            <span style="color: var(--accent-amber);"><i class="fa-solid fa-heart"></i> Props &amp; Outfits Included</span>
+            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20would%20like%20to%20book%20a%20Baby%20%2F%20Kids%20photoshoot." target="_blank" style="color: var(--text-main); text-decoration: underline; font-weight: 600;">Reserve Studio Slot →</a>
           </div>
         </div>
 
-        <!-- Service 3 -->
-        <div class="service-card">
+        <!-- Service 3: Biometric Visa & Passport -->
+        <div class="service-card" data-category="biometrics">
           <div>
+            <span class="service-category-badge">Express Walk-In</span>
             <div class="service-icon-wrap">
               <i class="fa-solid fa-passport"></i>
             </div>
             <h3>Biometric Visa &amp; Passport Photos</h3>
-            <p>Guaranteed 100% acceptance for US, Schengen, UK, Canada, Australia, Singapore, and OCI applications. We verify background luminescence, head-to-chin ratios, and neutral expressions.</p>
+            <p>Strictly compliant with US (DS-160), Schengen (27 European countries), UK, Canada PR, Australia, Singapore, and Indian Passport/OCI standards. Calibrated background illumination with zero-shadow verification.</p>
             <ul class="service-features">
-              <li><i class="fa-solid fa-check"></i> Ready in Under 10 Minutes (Walk-in)</li>
-              <li><i class="fa-solid fa-check"></i> Digital Soft Copy Emailed to Your Phone</li>
-              <li><i class="fa-solid fa-check"></i> 8 or 16 High-Gloss Waterproof Prints</li>
-              <li><i class="fa-solid fa-check"></i> Free Re-shot if Rejected by Embassy</li>
+              <li><i class="fa-solid fa-check"></i> Ready in Under 10 Minutes (No Prior Appointment)</li>
+              <li><i class="fa-solid fa-check"></i> Instant WhatsApp &amp; Email Delivery of Digital Soft Copies</li>
+              <li><i class="fa-solid fa-check"></i> Waterproof Biometric Prints on Lab Photo Paper</li>
+              <li><i class="fa-solid fa-check"></i> 100% Embassy Acceptance Guarantee or Free Reshoot</li>
             </ul>
           </div>
           <div class="service-footer">
-            <span style="color: var(--accent-amber);">Express ₹150 – ₹350</span>
-            <span style="color: #10b981;">Walk-in Available</span>
+            <span style="color: #10b981;"><i class="fa-solid fa-bolt"></i> 10-Minute Walk-In</span>
+            <a href="#visa-tool" style="color: var(--text-main); text-decoration: underline; font-weight: 600;">Check Country Specs →</a>
           </div>
         </div>
 
-        <!-- Service 4 -->
-        <div class="service-card">
+        <!-- Service 4: Custom Framing & Canvas -->
+        <div class="service-card" data-category="framing">
           <div>
+            <span class="service-category-badge">Artisan Lab</span>
             <div class="service-icon-wrap">
               <i class="fa-solid fa-crop-simple"></i>
             </div>
-            <h3>Custom Framing &amp; Canvas Art</h3>
-            <p>Protect your memories with in-house bespoke framing. Choose from rich Teakwood, Italian synthetic mouldings, sleek black gallery profiles, float frames, and 350 GSM artist canvas prints.</p>
+            <h3>Custom Framing &amp; Fine Art Canvas</h3>
+            <p>In-house bespoke framing preserving your family heirlooms and fine art. Choose from rich Teakwood, sleek modern gallery profiles, champagne foil mouldings, floating acrylic mounts, and 380 GSM textured canvas wraps.</p>
             <ul class="service-features">
-              <li><i class="fa-solid fa-check"></i> 100% Acid-Free Museum Matboard Options</li>
-              <li><i class="fa-solid fa-check"></i> Anti-Reflective Acrylic &amp; Float Mounts</li>
-              <li><i class="fa-solid fa-check"></i> Custom Sizes from 4x6" to 40x60"</li>
-              <li><i class="fa-solid fa-check"></i> Family Collages &amp; Wall Index Grids</li>
+              <li><i class="fa-solid fa-check"></i> 100% Acid-Free Museum Matboard Borders</li>
+              <li><i class="fa-solid fa-check"></i> UV-Protective Acrylic &amp; Anti-Glare Glass</li>
+              <li><i class="fa-solid fa-check"></i> Custom Dimensions from Compact 4x6" to 40x60"</li>
+              <li><i class="fa-solid fa-check"></i> Multi-Photo Family Collage &amp; Gallery Wall Layouts</li>
             </ul>
           </div>
           <div class="service-footer">
-            <span style="color: var(--accent-amber);">From ₹450 onwards</span>
-            <a href="#frame-tool" style="color: var(--text-main); text-decoration: underline;">Open Estimator →</a>
+            <span style="color: var(--accent-amber);"><i class="fa-solid fa-palette"></i> In-House Custom Sizing</span>
+            <a href="#frame-tool" style="color: var(--text-main); text-decoration: underline; font-weight: 600;">Launch Visualizer →</a>
           </div>
         </div>
 
-        <!-- Service 5 -->
-        <div class="service-card">
+        <!-- Service 5: Keepsakes & Gifts -->
+        <div class="service-card" data-category="framing">
           <div>
+            <span class="service-category-badge">Personalized Keepsakes</span>
             <div class="service-icon-wrap">
               <i class="fa-solid fa-gem"></i>
             </div>
-            <h3>Personalized Keepsakes &amp; Photo Gifts</h3>
-            <p>Turn personal photos into unforgettable anniversary, birthday, or corporate gifts. Handcrafted 3D laser crystals, sublimated natural stone slates, customized tiles, mugs, and mousepads.</p>
+            <h3>Personalized Keepsakes &amp; 3D Crystals</h3>
+            <p>Transform your cherished photos into one-of-a-kind anniversary, birthday, and retirement gifts. Handcrafted 3D subsurface laser-etched crystals, chiseled natural rock slates, ceramic photo tiles, and corporate mementos.</p>
             <ul class="service-features">
-              <li><i class="fa-solid fa-check"></i> Subsurface 3D Laser Etched Crystals</li>
-              <li><i class="fa-solid fa-check"></i> Natural Chiseled Rock Slates</li>
-              <li><i class="fa-solid fa-check"></i> Ceramic Photo Tiles with Wood Stands</li>
-              <li><i class="fa-solid fa-check"></i> 24 to 48 Hour Fast Turnaround</li>
+              <li><i class="fa-solid fa-check"></i> Subsurface 3D Laser Etched Optical Crystals</li>
+              <li><i class="fa-solid fa-check"></i> Natural Mountain Rock Slates with Rustic Edges</li>
+              <li><i class="fa-solid fa-check"></i> High-Gloss Sublimation Tiles with Wooden Stands</li>
+              <li><i class="fa-solid fa-check"></i> Fast 24 to 48 Hour Studio Turnaround</li>
             </ul>
           </div>
           <div class="service-footer">
-            <span style="color: var(--accent-amber);">From ₹350 onwards</span>
-            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20would%20like%20to%20order%20a%20personalized%20photo%20gift." target="_blank" style="color: var(--text-main); text-decoration: underline;">Order Gift →</a>
+            <span style="color: var(--accent-amber);"><i class="fa-solid fa-gift"></i> Quick 24-48h Delivery</span>
+            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20would%20like%20to%20order%20a%20personalized%20photo%20gift." target="_blank" style="color: var(--text-main); text-decoration: underline; font-weight: 600;">Order via WhatsApp →</a>
           </div>
         </div>
 
-        <!-- Service 6 -->
-        <div class="service-card">
+        <!-- Service 6: Executive Headshots & Matrimonial -->
+        <div class="service-card" data-category="biometrics">
           <div>
+            <span class="service-category-badge">Executive &amp; Family</span>
             <div class="service-icon-wrap">
               <i class="fa-solid fa-user-tie"></i>
             </div>
             <h3>Executive Headshots &amp; Family Portraits</h3>
-            <p>Clean, crisp professional headshots for LinkedIn, corporate bios, medical boards, and matrimony profiles. Plus warm, multigenerational family portrait sessions with studio backdrops.</p>
+            <p>Commanding, clean portraits for corporate leadership, LinkedIn profiles, doctors, tech executives, and matrimonial portfolios. Plus warm multigenerational family shoots celebrating anniversaries and housewarmings.</p>
             <ul class="service-features">
-              <li><i class="fa-solid fa-check"></i> High-End Skin Retouching (Natural Finish)</li>
-              <li><i class="fa-solid fa-check"></i> Multiple Wardrobe Changes Supported</li>
-              <li><i class="fa-solid fa-check"></i> Choice of Charcoal, Cream, or Studio Backdrops</li>
-              <li><i class="fa-solid fa-check"></i> Same-Day Digital Delivery Available</li>
+              <li><i class="fa-solid fa-check"></i> Natural Non-Plastic Skin Texture Retouching</li>
+              <li><i class="fa-solid fa-check"></i> Wardrobe Changes &amp; Posing Coaching Included</li>
+              <li><i class="fa-solid fa-check"></i> Premium Textured Charcoal, Cream &amp; Neutral Backdrops</li>
+              <li><i class="fa-solid fa-check"></i> Same-Day Delivery of High-Resolution Files</li>
             </ul>
           </div>
           <div class="service-footer">
-            <span style="color: var(--accent-amber);">Starting ₹1,200</span>
-            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20need%20a%20Professional%20Headshot%20%2F%20Family%20Portrait." target="_blank" style="color: var(--text-main); text-decoration: underline;">Schedule Slot →</a>
+            <span style="color: var(--accent-amber);"><i class="fa-solid fa-user-check"></i> Natural Retouching</span>
+            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20need%20a%20Professional%20Headshot%20%2F%20Family%20Portrait%20slot." target="_blank" style="color: var(--text-main); text-decoration: underline; font-weight: 600;">Schedule Session →</a>
           </div>
         </div>
       </div>
@@ -1034,7 +1386,7 @@
               Official Visa &amp; Passport Photo Standards
             </h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 6px;">
-              Select your destination country to view the exact biometric dimensions, background requirements, and print formats supported at our Malleshpalya studio.
+              Select your destination country to verify the exact biometric dimensions, background standards, and print formats calibrated at our Malleshpalya studio.
             </p>
           </div>
           <div>
@@ -1049,7 +1401,7 @@
           <button class="country-pill active" onclick="selectCountry('usa')">🇺🇸 United States (US Visa / DS-160)</button>
           <button class="country-pill" onclick="selectCountry('schengen')">🇪🇺 Schengen / Europe (27 Countries)</button>
           <button class="country-pill" onclick="selectCountry('uk')">🇬🇧 United Kingdom (UK Visa &amp; Passport)</button>
-          <button class="country-pill" onclick="selectCountry('canada')">🇨🇦 Canada (Visa / Permanent Residency)</button>
+          <button class="country-pill" onclick="selectCountry('canada')">🇨🇦 Canada (Visa &amp; Permanent Residency)</button>
           <button class="country-pill" onclick="selectCountry('australia')">🇦🇺 Australia (Biometric Visa)</button>
           <button class="country-pill" onclick="selectCountry('singapore')">🇸🇬 Singapore (ICA E-Visa)</button>
           <button class="country-pill" onclick="selectCountry('india')">🇮🇳 India (Passport &amp; OCI Card)</button>
@@ -1066,7 +1418,7 @@
             <h4 id="specBackground">Pure Off-White / Plain White, Zero Shadows</h4>
           </div>
           <div class="spec-box">
-            <span>Biometric Requirement</span>
+            <span>Biometric Proportion</span>
             <h4 id="specHead">Head 1" to 1 3/8" (50%–69% of frame)</h4>
           </div>
           <div class="spec-box">
@@ -1074,8 +1426,8 @@
             <h4 id="specRules">No glasses permitted. Neutral expression with eyes open.</h4>
           </div>
           <div class="spec-box">
-            <span>Format Deliverables</span>
-            <h4 id="specFormat">6 Physical Prints + Square Digital JPEG (600x600 px)</h4>
+            <span>Deliverables Provided</span>
+            <h4 id="specFormat">Physical Prints + Digital Soft Copy Emailed/WhatsApped</h4>
           </div>
           <div class="spec-box" style="border-color: var(--border-amber); background: var(--accent-amber-glow);">
             <span>Studio Guarantee</span>
@@ -1083,33 +1435,33 @@
           </div>
         </div>
 
-        <div style="margin-top: 24px; text-align: center;">
+        <div style="margin-top: 26px; text-align: center;">
           <a href="https://wa.me/919900911929?text=Hi%2C%20I%20am%20coming%20for%20Visa%20Photographs%20at%20Malleshpalya%20studio." target="_blank" class="btn btn-amber">
-            <i class="fa-solid fa-person-walking"></i> Walk-in Right Now — Directions &amp; Confirmation
+            <i class="fa-solid fa-person-walking"></i> Walk-in Right Now — Send WhatsApp Notice
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Tool 2: Custom Framing & Keepsake Visualizer -->
+  <!-- Interactive Tool 2: Custom Framing & Keepsake Visualizer (Zero Pricing) -->
   <section id="frame-tool" style="padding: 20px 0 80px;">
     <div class="container">
       <div class="section-title-wrap">
-        <span class="section-tag">BESPOKE FRAMING ESTIMATOR</span>
+        <span class="section-tag">BESPOKE FRAMING &amp; CANVAS LAB</span>
         <h2 class="section-title">Preview your photo in handcrafted frames.</h2>
-        <p class="section-desc">Choose a moulding finish and dimensions to calculate your custom frame estimate in seconds.</p>
+        <p class="section-desc">Select moulding materials, dimensions, and matboard options to visualize your custom piece in real-time.</p>
       </div>
 
       <div class="frame-calculator-grid">
         <!-- Visual Preview Canvas -->
         <div class="frame-preview-canvas" id="frameCanvas">
-          <div class="virtual-frame" id="visualFrame" style="border: 14px solid #1a1e26;">
+          <div class="virtual-frame" id="visualFrame" style="border: 14px solid #111317;">
             <div class="virtual-matting">
               <div class="virtual-art">
                 <i class="fa-solid fa-image" style="font-size: 2rem; margin-bottom: 8px;"></i>
                 <strong id="previewArtTitle">Your Treasured Photo</strong>
-                <span id="previewArtSize" style="font-size: 0.75rem; color: var(--text-muted);">Selected: 12x18 Inches</span>
+                <span id="previewArtSize" style="font-size: 0.75rem; color: var(--text-muted);">Selected: 12x18 Inches (Gallery Matte Black)</span>
               </div>
             </div>
           </div>
@@ -1122,13 +1474,13 @@
         <div>
           <!-- Frame Material -->
           <div class="selection-group">
-            <label>1. Select Frame Material &amp; Moulding</label>
+            <label>1. Select Moulding Style &amp; Material</label>
             <div class="select-options">
-              <button class="option-btn active" onclick="setFrameType('black', '#111317', 12, 'Gallery Matte Black', 450)">Matte Black</button>
-              <button class="option-btn" onclick="setFrameType('teak', '#85512b', 18, 'Natural Teakwood', 750)">Rich Teakwood</button>
-              <button class="option-btn" onclick="setFrameType('gold', '#cba358', 16, 'Champagne Gold Foil', 850)">Luxe Gold</button>
-              <button class="option-btn" onclick="setFrameType('white', '#f0f0f0', 14, 'Minimalist Studio White', 500)">Studio White</button>
-              <button class="option-btn" onclick="setFrameType('canvas', '#24201d', 4, 'Floating Canvas Wrap', 950)">Canvas Wrap</button>
+              <button class="option-btn active" onclick="setFrameType('black', '#111317', 12, 'Gallery Matte Black')">Matte Black</button>
+              <button class="option-btn" onclick="setFrameType('teak', '#85512b', 18, 'Natural Teakwood')">Rich Teakwood</button>
+              <button class="option-btn" onclick="setFrameType('gold', '#cba358', 16, 'Champagne Luxe Gold')">Luxe Gold</button>
+              <button class="option-btn" onclick="setFrameType('white', '#f0f0f0', 14, 'Minimalist Studio White')">Studio White</button>
+              <button class="option-btn" onclick="setFrameType('canvas', '#24201d', 4, 'Floating Canvas Wrap')">Canvas Wrap</button>
             </div>
           </div>
 
@@ -1136,11 +1488,11 @@
           <div class="selection-group">
             <label>2. Select Dimensions (Inches)</label>
             <div class="select-options">
-              <button class="option-btn" onclick="setFrameSize('6x8', 0.8)">6 x 8"</button>
-              <button class="option-btn" onclick="setFrameSize('8x12', 1.0)">8 x 12" (A4)</button>
-              <button class="option-btn active" onclick="setFrameSize('12x18', 1.5)">12 x 18" (A3+)</button>
-              <button class="option-btn" onclick="setFrameSize('16x24', 2.1)">16 x 24"</button>
-              <button class="option-btn" onclick="setFrameSize('20x30', 2.8)">20 x 30" (Statement)</button>
+              <button class="option-btn" onclick="setFrameSize('6x8')">6 x 8" (Desk)</button>
+              <button class="option-btn" onclick="setFrameSize('8x12')">8 x 12" (A4 Standard)</button>
+              <button class="option-btn active" onclick="setFrameSize('12x18')">12 x 18" (A3+ Wall)</button>
+              <button class="option-btn" onclick="setFrameSize('16x24')">16 x 24" (Gallery)</button>
+              <button class="option-btn" onclick="setFrameSize('20x30')">20 x 30" (Statement Piece)</button>
             </div>
           </div>
 
@@ -1153,35 +1505,41 @@
             </div>
           </div>
 
-          <!-- Price Display & WhatsApp Order -->
+          <!-- Spec Summary Box & Direct WhatsApp Action (Zero Pricing) -->
           <div style="background: var(--bg-card); border: 1px solid var(--border-amber); border-radius: 18px; padding: 22px; margin-top: 24px;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
-              <span style="font-size: 0.85rem; color: var(--text-muted);">Estimated In-House Price:</span>
-              <strong id="calculatedPrice" style="font-family: var(--font-heading); font-size: 2rem; color: var(--accent-amber);">₹1,125</strong>
+            <div style="margin-bottom: 14px;">
+              <span style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--accent-amber); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 4px;">
+                Selected Custom Configuration:
+              </span>
+              <strong id="configSummaryText" style="font-size: 1.05rem; color: var(--text-main); display: block;">
+                12x18 Inches · Gallery Matte Black · Museum Matboard Included
+              </strong>
             </div>
-            <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 16px;">
-              Includes ultra-high-resolution photo printing + protective acrylic glass + hanging hardware.
+            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 18px;">
+              Includes ultra-high-resolution archival photo printing + UV-resistant protective acrylic glass + precision corner joining &amp; heavy-duty hanging hardware.
             </p>
             <button onclick="orderCustomFrame()" class="btn btn-amber" style="width: 100%; justify-content: center;">
-              <i class="fa-brands fa-whatsapp"></i> Order This Custom Frame via WhatsApp
+              <i class="fa-brands fa-whatsapp"></i> Get Custom Quote &amp; Send Photo on WhatsApp
             </button>
+            <span style="display: block; text-align: center; font-size: 0.74rem; color: var(--text-muted); margin-top: 8px;">
+              Fast response · Send your photo for a free digital proof and tailored quote
+            </span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Verified Customer Reviews Section -->
-  <section id="reviews" style="padding: 40px 0 80px;">
+  <!-- Verified Customer Reviews Section (Wes McDowell Social Proof) -->
+  <section id="reviews" style="padding: 30px 0 70px;">
     <div class="container">
       <div class="section-title-wrap">
-        <span class="section-tag">VERIFIED LOCAL FEEDBACK</span>
-        <h2 class="section-title">Loved by Bengaluru families for 8+ years.</h2>
-        <p class="section-desc">Over 375+ authentic reviews across Justdial (4.9/5) and Magicpin (4.9/5).</p>
+        <span class="section-tag">VERIFIED LOCAL SOCIAL PROOF</span>
+        <h2 class="section-title">Trusted by Bengaluru families for 8+ years.</h2>
+        <p class="section-desc">Over 375+ genuine reviews across Justdial (4.9/5) and Magicpin (4.9/5).</p>
       </div>
 
       <div class="reviews-carousel">
-        <!-- Review 1 -->
         <div class="review-bubble">
           <div class="review-stars">
             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -1198,13 +1556,12 @@
           </div>
         </div>
 
-        <!-- Review 2 -->
         <div class="review-bubble">
           <div class="review-stars">
             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
           </div>
           <p class="review-text">
-            “The way they approach you and design the wedding album is fantastic. They allowed us to customize every spread and pick the exact leather finish. High quality at an economical rate.”
+            “The way they approach you and design the wedding album is fantastic. They allowed us to customize every spread and pick the exact leather finish. High quality craftsmanship!”
           </p>
           <div class="reviewer-meta">
             <div class="reviewer-avatar">R</div>
@@ -1215,7 +1572,6 @@
           </div>
         </div>
 
-        <!-- Review 3 -->
         <div class="review-bubble">
           <div class="review-stars">
             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -1235,8 +1591,51 @@
     </div>
   </section>
 
-  <!-- Local SEO & Studio Location Strip -->
-  <section id="location" style="padding: 20px 0 80px;">
+  <!-- Wes McDowell Principle: Frequently Asked Questions (Overcoming Friction) -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">FREQUENTLY ASKED QUESTIONS</span>
+        <h2 class="section-title">Answers to help you plan your visit.</h2>
+        <p class="section-desc">Quick clarifications on timing, photo submissions, and studio appointments.</p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4><i class="fa-solid fa-circle-question"></i> Do I need an appointment for Visa or Passport photos?</h4>
+          <p>No appointment is necessary! You can simply walk into our Malleshpalya studio during working hours (9:30 AM – 9:30 PM). Your photos will be shot, cropped to country specs, printed, and emailed/WhatsApped to you in under 10 minutes.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4><i class="fa-solid fa-circle-question"></i> How long does a baby or toddler photoshoot take?</h4>
+          <p>We typically allocate 1 to 2 hours with zero rush. We understand children need time to get comfortable, feed, or change outfits. Our studio is temperature-controlled and sanitized specifically for newborns and toddlers.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4><i class="fa-solid fa-circle-question"></i> Can I bring existing digital photos for custom framing?</h4>
+          <p>Yes, absolutely. You can bring your photos on a pen drive or simply WhatsApp them to us. Our lab will assess resolution, enhance colors if needed, and assist you in selecting the ideal moulding and matboard size.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4><i class="fa-solid fa-circle-question"></i> What if my visa photo gets rejected by the embassy?</h4>
+          <p>We offer a strict 100% Embassy Acceptance Guarantee. If any consulate or visa center flags your photo, we will re-shoot and provide new physical and digital sets immediately at zero additional cost.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4><i class="fa-solid fa-circle-question"></i> How quickly can I get custom frames or 3D crystals?</h4>
+          <p>Standard framing and canvas prints are completed in-house within 2 to 3 days. Express same-day or 24-hour turnaround is also available for urgent gifting requirements upon request.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4><i class="fa-solid fa-circle-question"></i> What are your studio timings and parking options?</h4>
+          <p>We are open Monday through Saturday from 9:30 AM to 9:30 PM, and Sundays from 10:30 AM to 9:30 PM. Convenient two-wheeler and four-wheeler parking is available right outside the studio beside Apple Clinic on Malleshpalya Main Road.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Studio Hub & Map Section -->
+  <section id="location" style="padding: 20px 0 60px;">
     <div class="container">
       <div class="local-hub-strip">
         <div class="local-hub-grid">
@@ -1245,11 +1644,11 @@
             <h3 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 16px;">
               Conveniently located in Malleshpalya, East Bengaluru.
             </h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.6;">
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 22px; line-height: 1.6;">
               <strong>Exact Address:</strong> Sri Sai Ram Nilaya, 263/1, Beside Apple Multi-Speciality Clinic, Maruthi Nagar, Malleshpalya, New Thippasandra, Bengaluru, Karnataka 560075.
             </p>
 
-            <div style="margin-bottom: 20px;">
+            <div style="margin-bottom: 24px;">
               <strong style="font-size: 0.85rem; color: var(--accent-amber); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-mono);">
                 Serving Surrounding Corridors:
               </strong>
@@ -1260,7 +1659,7 @@
                 <span class="local-tag">CV Raman Nagar</span>
                 <span class="local-tag">Vimanapura / HAL</span>
                 <span class="local-tag">Indiranagar (10 Mins)</span>
-                <span class="local-tag">Binnamangala</span>
+                <span class="local-tag">GM Palya</span>
                 <span class="local-tag">Marathahalli ORR</span>
               </div>
             </div>
@@ -1297,26 +1696,20 @@
         </div>
       </div>
 
-      <!-- Uncoded Hub Demo Architecture Banner -->
-      <div class="uncoded-badge-strip">
-        <div style="display: flex; align-items: center; gap: 14px;">
-          <div style="width: 36px; height: 36px; border-radius: 8px; background: #c7074b; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">
-            UH
-          </div>
-          <div>
-            <strong style="font-size: 0.9rem; color: #fff; display: block;">Interactive Client Specimen by Uncoded Hub</strong>
-            <span style="font-size: 0.75rem; color: var(--text-muted);">
-              Engineered by Deepak &amp; Geetha · 0.8s mobile load time · Zero WordPress bloat · 7-Day sprint delivery
-            </span>
-          </div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-amber);">
-            Special Word-of-Mouth Package: ₹25,000 (Flat ₹10K Off)
-          </span>
-          <a href="https://uncodedhub.com/contact/" style="font-size: 0.8rem; color: #fff; text-decoration: underline;" target="_blank">
-            Uncoded Hub Studio →
+      <!-- High-Converting Bottom CTA Banner -->
+      <div class="cta-banner">
+        <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 14px; color: #fff;">
+          Ready to capture or preserve your next memory?
+        </h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 30px;">
+          Walk into our Malleshpalya studio today or send your photos on WhatsApp for a custom framing quotation and appointment booking.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="https://wa.me/919900911929?text=Hi%20Shutter%20Bug%20Studioz%2C%20I%20would%20like%20to%20connect%20regarding%20a%20photoshoot%20or%20framing." target="_blank" rel="noopener" class="btn btn-amber" style="padding: 13px 30px; font-size: 0.95rem;">
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp (+91 99009 11929)
+          </a>
+          <a href="tel:+919900911929" class="btn btn-outline" style="padding: 13px 26px; font-size: 0.95rem;">
+            <i class="fa-solid fa-phone"></i> Call Studio Directly
           </a>
         </div>
       </div>
@@ -1333,34 +1726,34 @@
               <i class="fa-solid fa-camera-retro"></i>
             </div>
             <div class="brand-text">
-              <h2 style="font-family: var(--font-heading); font-size: 1.3rem;">Shutter Bug Studioz</h2>
+              <h3 style="font-family: var(--font-heading); font-size: 1.3rem;">Shutter Bug Studioz</h3>
               <span>Malleshpalya, Bengaluru</span>
             </div>
           </div>
           <p style="font-size: 0.85rem; line-height: 1.6; max-width: 320px;">
-            Preserving life's most precious occasions through professional photography, bespoke albums, country-compliant visa portraits, and custom archival framing.
+            Preserving life's most precious occasions through gentle milestone photography, bespoke albums, country-compliant visa portraits, and custom archival framing.
           </p>
         </div>
 
         <div class="footer-col">
           <h4>Photography</h4>
           <ul>
-            <li><a href="#services">Weddings &amp; Receptions</a></li>
-            <li><a href="#services">Baby &amp; Kids Shoots</a></li>
-            <li><a href="#services">Maternity Portraits</a></li>
-            <li><a href="#services">Corporate Headshots</a></li>
-            <li><a href="#services">Event Celebrations</a></li>
+            <li><a href="#services">Weddings &amp; Pre-Wedding</a></li>
+            <li><a href="#services">Baby &amp; Kids Portraits</a></li>
+            <li><a href="#services">Maternity &amp; Family Shoots</a></li>
+            <li><a href="#services">Executive Headshots</a></li>
+            <li><a href="#services">Candid Celebrations</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Lab &amp; Gifts</h4>
+          <h4>Lab &amp; Framing</h4>
           <ul>
-            <li><a href="#visa-tool">10-Min Visa Photos</a></li>
-            <li><a href="#frame-tool">Custom Teak Frames</a></li>
+            <li><a href="#visa-tool">10-Min Biometric Visas</a></li>
+            <li><a href="#frame-tool">Rich Teakwood Frames</a></li>
             <li><a href="#frame-tool">Canvas Gallery Wraps</a></li>
-            <li><a href="#services">3D Photo Crystals</a></li>
-            <li><a href="#services">Stone Slate Prints</a></li>
+            <li><a href="#services">3D Laser Crystals</a></li>
+            <li><a href="#services">Natural Stone Slates</a></li>
           </ul>
         </div>
 
@@ -1369,54 +1762,83 @@
           <p style="margin-bottom: 8px;">📍 Beside Apple Clinic, Maruthi Nagar, Malleshpalya, Bengaluru 560075</p>
           <p style="margin-bottom: 8px;">📞 <a href="tel:+919900911929" style="color: var(--accent-amber); text-decoration: none;">+91 99009 11929</a></p>
           <p style="margin-bottom: 8px;">💬 <a href="https://wa.me/919900911929" target="_blank" style="color: #25d366; text-decoration: none;">WhatsApp: +91 99009 11929</a></p>
+          <p style="font-size: 0.78rem; color: #10b981; margin-top: 10px;">● Open Today: 9:30 AM – 9:30 PM</p>
         </div>
       </div>
 
       <div style="border-top: 1px solid var(--border-subtle); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.78rem;">
         <p>© 2026 Shutter Bug Studioz. All rights reserved.</p>
-        <p>Interactive Demo Specimen engineered by <a href="https://uncodedhub.com/" target="_blank" style="color: var(--accent-amber); text-decoration: none; font-weight: 600;">Uncoded Hub</a></p>
+        <p>Interactive Specimen designed by <a href="https://uncodedhub.com/" target="_blank" style="color: var(--accent-amber); text-decoration: none; font-weight: 600;">Uncoded Hub</a></p>
       </div>
     </div>
   </footer>
 
+  <!-- Mobile Sticky Action Bar (Wes McDowell High-Conversion Anchor) -->
+  <div class="mobile-action-bar">
+    <a href="tel:+919900911929" class="mobile-action-btn mobile-btn-call">
+      <i class="fa-solid fa-phone"></i> Call Studio
+    </a>
+    <a href="https://wa.me/919900911929?text=Hi%20Shutter%20Bug%20Studioz%2C%20I%20would%20like%20to%20enquire%20about%20a%20photoshoot%20or%20framing." target="_blank" rel="noopener" class="mobile-action-btn mobile-btn-whatsapp">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+    </a>
+    <a href="https://maps.google.com/?q=Shutter+Bug+Studio+Malleshpalya+Bengaluru" target="_blank" rel="noopener" class="mobile-action-btn mobile-btn-call">
+      <i class="fa-solid fa-location-dot"></i> Directions
+    </a>
+  </div>
+
   <!-- Interactive JavaScript Engine -->
   <script>
-    // 1. Visa Specification Lookup Engine
+    // 1. Service Filter Tabs
+    function filterServices(category) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const cards = document.querySelectorAll('.service-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 2. Visa Specification Lookup Engine
     const countryData = {
       usa: {
         dim: '2 x 2 inches (51 x 51 mm)',
         bg: 'Pure Off-White / Plain White, Zero Shadows',
         head: 'Head between 1" and 1 3/8" (50%–69% of frame)',
         rules: 'No eyeglasses permitted. Neutral expression with both eyes clearly visible.',
-        format: '6 Physical Glossy Prints + Square Digital JPEG (600x600 px)'
+        format: 'Physical Glossy Prints + Square Digital JPEG (600x600 px)'
       },
       schengen: {
         dim: '35 x 45 mm (European Biometric Standard)',
         bg: 'Light Grey or Light Blue (Never pure white)',
         head: 'Face height 32–36 mm (70%–80% of total area)',
         rules: 'Direct eye gaze, mouth closed, neutral expression, no reflections.',
-        format: '8 Physical Biometric Prints + Cropped Digital Copy'
+        format: '8 Biometric Prints + Cropped Digital Copy for VFS Appointment'
       },
       uk: {
         dim: '35 x 45 mm (UK Passport & Visa)',
         bg: 'Plain Light Grey or Cream Background',
         head: 'Crown to chin between 29 mm and 34 mm',
         rules: 'No head coverings unless religious/medical. No hair covering eyes.',
-        format: '8 Official UK Specification Prints + Digital Photo Code Ready'
+        format: '8 Official UK Prints + Digital Photo Code Ready'
       },
       canada: {
         dim: '50 x 70 mm (Canadian Visa & PR)',
         bg: 'Plain White or Light-Coloured Background',
         head: 'Chin to crown between 31 mm and 36 mm',
         rules: 'Must include studio stamp and date photo was taken on reverse.',
-        format: '4 Canadian Standard Prints with official studio back-stamp'
+        format: 'Official Canadian Prints with mandatory studio back-stamp'
       },
       australia: {
         dim: '35 x 45 mm to 40 x 50 mm',
         bg: 'Plain White or Very Light Grey',
         head: 'Chin to crown between 32 mm and 36 mm',
         rules: 'Clear facial boundary, natural skin tone, no digital alteration.',
-        format: '8 Australian High-Res Biometric Photographic Prints'
+        format: 'Australian Biometric Prints + Digital Copy'
       },
       singapore: {
         dim: '35 x 45 mm (ICA E-Visa Standard)',
@@ -1430,7 +1852,7 @@
         bg: 'Plain White Background (Dark clothing recommended)',
         head: 'Face occupying 70% to 80% of vertical picture',
         rules: 'Both ears visible, frontal view, neutral facial expression.',
-        format: '8 Waterproof Prints + Passport Seva Kendra Compliant Digital'
+        format: 'Waterproof Prints + Passport Seva Kendra Compliant File'
       }
     };
 
@@ -1448,31 +1870,28 @@
       document.getElementById('specFormat').textContent = data.format;
     }
 
-    // 2. Framing Visualizer & Calculator Engine
+    // 3. Framing Visualizer Engine (Zero Fixed Pricing)
     let currentFrame = {
       type: 'Gallery Matte Black',
-      basePrice: 450,
       borderSize: 12,
       borderColor: '#111317',
-      sizeMultiplier: 1.5,
       sizeName: '12x18 Inches',
       hasMatting: true
     };
 
-    function updateCalculator() {
-      const matPrice = currentFrame.hasMatting ? 250 : 0;
-      const total = Math.round((currentFrame.basePrice * currentFrame.sizeMultiplier) + matPrice);
-      document.getElementById('calculatedPrice').textContent = '₹' + total.toLocaleString('en-IN');
-
+    function updateVisualizer() {
       const visual = document.getElementById('visualFrame');
       visual.style.border = `${currentFrame.borderSize}px solid ${currentFrame.borderColor}`;
       document.getElementById('previewArtSize').textContent = `Selected: ${currentFrame.sizeName} (${currentFrame.type})`;
 
       const mattingEl = visual.querySelector('.virtual-matting');
       mattingEl.style.background = currentFrame.hasMatting ? '#fbfbfb' : 'transparent';
+
+      const mattingLabel = currentFrame.hasMatting ? 'Museum Matboard Included' : 'Full-Bleed Print (No Border)';
+      document.getElementById('configSummaryText').textContent = `${currentFrame.sizeName} · ${currentFrame.type} · ${mattingLabel}`;
     }
 
-    function setFrameType(id, color, width, label, base) {
+    function setFrameType(id, color, width, label) {
       const group = event.target.closest('.select-options');
       group.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
       event.target.classList.add('active');
@@ -1480,18 +1899,16 @@
       currentFrame.type = label;
       currentFrame.borderColor = color;
       currentFrame.borderSize = width;
-      currentFrame.basePrice = base;
-      updateCalculator();
+      updateVisualizer();
     }
 
-    function setFrameSize(size, mult) {
+    function setFrameSize(size) {
       const group = event.target.closest('.select-options');
       group.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
       event.target.classList.add('active');
 
       currentFrame.sizeName = size + ' Inches';
-      currentFrame.sizeMultiplier = mult;
-      updateCalculator();
+      updateVisualizer();
     }
 
     function setMatting(val) {
@@ -1500,17 +1917,18 @@
       event.target.classList.add('active');
 
       currentFrame.hasMatting = val;
-      updateCalculator();
+      updateVisualizer();
     }
 
     function orderCustomFrame() {
-      const msg = `Hi Shutter Bug Studioz, I configured a custom frame on your website:\n- Style: ${currentFrame.type}\n- Size: ${currentFrame.sizeName}\n- Matting: ${currentFrame.hasMatting ? 'Yes' : 'No'}\n- Estimated Price: ${document.getElementById('calculatedPrice').textContent}\n\nCould you please confirm order details and photo upload?`;
+      const matText = currentFrame.hasMatting ? 'Include White Museum Matboard' : 'Full-Bleed Print (No Border)';
+      const msg = `Hi Shutter Bug Studioz, I configured a custom frame on your website:\n\n• Moulding Style: ${currentFrame.type}\n• Frame Dimensions: ${currentFrame.sizeName}\n• Matboard Option: ${matText}\n\nCould you please share the custom quote and where I can upload/send my photo for a proof?`;
       const url = `https://wa.me/919900911929?text=${encodeURIComponent(msg)}`;
       window.open(url, '_blank');
     }
 
-    // Initialize
-    updateCalculator();
+    // Initialize visualizer on load
+    updateVisualizer();
   </script>
 </body>
 </html>
