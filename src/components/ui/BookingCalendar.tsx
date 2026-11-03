@@ -257,7 +257,7 @@ export function BookingCalendar({ host }: { host: Host }) {
   /* ── Submit ────────────────────────────────────────────────────── */
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!slot) return;
+    if (!slot || isNaN(slot.getTime()) || slot.getFullYear() < 2025) return;
     setBusy(true);
     setFailed(false);
     setConflict(false);
@@ -329,7 +329,7 @@ export function BookingCalendar({ host }: { host: Host }) {
       name: form.name,
       email: form.email,
       phone: form.phone,
-      business_type: form.business || 'Discovery booking',
+      business_type: form.business ? (`Discovery booking - ${form.business}`) : 'Discovery booking',
       project_details: details,
     });
     if (stored) ok = true;

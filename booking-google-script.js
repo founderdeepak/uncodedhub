@@ -218,18 +218,19 @@ function doPost(e) {
     if (data.start_time) {
       startTime = new Date(data.start_time);
     } else {
-      var time24 = timeStr || "08:00";
-      if (time24.indexOf('AM') > -1 || time24.indexOf('PM') > -1) {
-        var parts = time24.split(' ');
+      var time24 = (timeStr || "08:00").trim();
+      if (/am|pm/i.test(time24)) {
+        var parts = time24.split(/\s+/);
         var timeParts = parts[0].split(':');
-        var hours = parseInt(timeParts[0]);
-        var minutes = parseInt(timeParts[1]);
-        var ampm = parts[1];
+        var hours = parseInt(timeParts[0], 10);
+        var minutes = parseInt(timeParts[1] || '0', 10);
+        var ampm = (parts[1] || '').toUpperCase();
         if (ampm === 'PM' && hours < 12) hours += 12;
         if (ampm === 'AM' && hours === 12) hours = 0;
         time24 = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0');
       }
-      var dateTimeStr = dateStr + 'T' + time24 + ':00';
+      // Explicitly append +05:30 offset so server timezone (UTC / US) doesn't cause a time shift
+      var dateTimeStr = dateStr + 'T' + time24 + ':00+05:30';
       startTime = new Date(dateTimeStr);
     }
 
