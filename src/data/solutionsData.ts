@@ -304,3 +304,4 @@ export const SOLUTIONS_DATA: Record<string, SolutionItem> = {
     ],
   },
 };
+

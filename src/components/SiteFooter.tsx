@@ -21,6 +21,7 @@ const COMPANY_LINKS = [
   { label: 'Web Design Architecture', to: '/web-design/' },
   { label: 'Compare Alternatives', to: '/alternatives/' },
   { label: 'Problem Solutions', to: '/solutions/' },
+  { label: 'Global Sprints (US/UK/UAE)', to: '/global/' },
   { label: 'About Deepak & Geetha', to: '/about/' },
   { label: 'Pricing & FAQ', to: '/faq/' },
   { label: 'Contact Studio', to: '/contact/' },

@@ -26,6 +26,8 @@ const AlternativesHub = lazy(() => import('./pages/AlternativesHub'));
 const AlternativeLanding = lazy(() => import('./pages/AlternativeLanding'));
 const SolutionsHub = lazy(() => import('./pages/SolutionsHub'));
 const SolutionLanding = lazy(() => import('./pages/SolutionLanding'));
+const GlobalHub = lazy(() => import('./pages/GlobalHub'));
+const GlobalCountryLanding = lazy(() => import('./pages/GlobalCountryLanding'));
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 /* Paths are unchanged from the previous site so existing links and
@@ -374,6 +376,102 @@ export default function App() {
             element={
               <Suspense fallback={null}>
                 <SolutionLanding onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/global"
+            element={
+              <Suspense fallback={null}>
+                <GlobalHub onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/global/"
+            element={
+              <Suspense fallback={null}>
+                <GlobalHub onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/global/:country"
+            element={
+              <Suspense fallback={null}>
+                <GlobalCountryLanding onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/global/:country/"
+            element={
+              <Suspense fallback={null}>
+                <GlobalCountryLanding onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/us"
+            element={
+              <Suspense fallback={null}>
+                <GlobalCountryLanding onBook={goToBooking} countryCode="us" />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/us/"
+            element={
+              <Suspense fallback={null}>
+                <GlobalCountryLanding onBook={goToBooking} countryCode="us" />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/uk"
+            element={
+              <Suspense fallback={null}>
+                <GlobalCountryLanding onBook={goToBooking} countryCode="uk" />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/uk/"
+            element={
+              <Suspense fallback={null}>
+                <GlobalCountryLanding onBook={goToBooking} countryCode="uk" />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/uae"
+            element={
+              <Suspense fallback={null}>
+                <GlobalCountryLanding onBook={goToBooking} countryCode="uae" />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/uae/"
+            element={
+              <Suspense fallback={null}>
+                <GlobalCountryLanding onBook={goToBooking} countryCode="uae" />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/au"
+            element={
+              <Suspense fallback={null}>
+                <GlobalCountryLanding onBook={goToBooking} countryCode="au" />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/au/"
+            element={
+              <Suspense fallback={null}>
+                <GlobalCountryLanding onBook={goToBooking} countryCode="au" />
               </Suspense>
             }
           />
