@@ -365,3 +365,4 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
   },
 };
+

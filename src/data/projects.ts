@@ -214,10 +214,10 @@ export const PROJECTS: Project[] = [
     nicheSlug: '/blog/industries/home-renovation',
   },
   {
-    id: 'berjin-tank-cleaning',
+    id: 'home-services',
     num: '18',
-    client: 'AquaClean Pro by Berjin Raj',
-    shortName: 'Tank & Pool Cleaning',
+    client: 'AquaClean Pro Sanitation Services',
+    shortName: 'Home Services',
     url: '/demos/berjin-tank-cleaning.html',
     sector: 'Home Services & Water Sanitation',
     category: 'services',

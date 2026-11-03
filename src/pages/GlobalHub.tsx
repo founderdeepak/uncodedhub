@@ -219,3 +219,4 @@ export default function GlobalHub({ onBook }: GlobalHubProps) {
     </>
   );
 }
+
