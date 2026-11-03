@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AquaClean Pro by Berjin Raj | Professional Water Tank & Swimming Pool Cleaning Services</title>
+  <meta name="description" content="Certified 6-stage scientific water tank cleaning, underground sump descaling, and swimming pool deep maintenance. High-pressure jet washing and food-grade disinfection for homes, apartments, and commercial properties.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #0a0d14;
+      --bg-surface: #111622;
+      --bg-surface-elevated: #182030;
+      --bg-card: #1f2a3e;
+      --primary-cyan: #06b6d4;
+      --primary-cyan-light: #67e8f9;
+      --primary-cyan-glow: rgba(6, 182, 212, 0.18);
+      --accent-blue: #2563eb;
+      --accent-green: #10b981;
+      --accent-amber: #f59e0b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-cyan: rgba(6, 182, 212, 0.35);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 74px; /* Space for mobile sticky action bar */
+    }
+
+    .nowrap {
+      white-space: nowrap !important;
+    }
+
+    /* Ambient Glow */
+    .spotlight-cyan {
+      position: fixed;
+      width: 750px;
+      height: 750px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--primary-cyan-glow) 0%, rgba(10,13,20,0) 70%);
+      pointer-events: none;
+      z-index: 0;
+      top: -200px;
+      right: 5%;
+    }
+
+    /* Full Width Header & Banner */
+    .top-banner {
+      background: linear-gradient(90deg, #0e131d 0%, #161e2e 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.78rem;
+      padding: 9px 36px;
+      color: var(--text-muted);
+      width: 100%;
+    }
+    .top-banner-inner {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      white-space: nowrap !important;
+    }
+    .top-left, .top-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+      white-space: nowrap !important;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 12px;
+      background: rgba(6, 182, 212, 0.12);
+      border: 1px solid var(--border-cyan);
+      color: var(--primary-cyan-light);
+      border-radius: 100px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      white-space: nowrap !important;
+    }
+    .status-live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent-green);
+      display: inline-block;
+      box-shadow: 0 0 8px var(--accent-green);
+      animation: pulseGreen 2s infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulseGreen {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(10, 13, 20, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 100;
+      padding: 14px 36px;
+      width: 100%;
+    }
+    .nav-inner-full {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      white-space: nowrap !important;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+      flex-shrink: 0;
+      white-space: nowrap !important;
+    }
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--primary-cyan) 0%, var(--accent-blue) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(6, 182, 212, 0.35);
+      flex-shrink: 0;
+    }
+    .brand-text h1 {
+      font-family: var(--font-heading);
+      font-size: 1.32rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      white-space: nowrap !important;
+    }
+    .brand-text span {
+      font-size: 0.72rem;
+      color: var(--primary-cyan-light);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-family: var(--font-mono);
+      display: block;
+      white-space: nowrap !important;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(14px, 1.8vw, 28px);
+      list-style: none;
+      white-space: nowrap !important;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links li {
+      white-space: nowrap !important;
+      display: inline-flex;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: var(--transition);
+      white-space: nowrap !important;
+      display: inline-block;
+      padding: 6px 0;
+    }
+    .nav-links a:hover {
+      color: var(--primary-cyan-light);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      white-space: nowrap !important;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 100px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      white-space: nowrap !important;
+      flex-shrink: 0;
+    }
+    .btn-cyan {
+      background: linear-gradient(135deg, var(--primary-cyan) 0%, #0891b2 100%);
+      color: #041017;
+      box-shadow: 0 4px 20px rgba(6, 182, 212, 0.35);
+    }
+    .btn-cyan:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 26px rgba(6, 182, 212, 0.55);
+      color: #000;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+    }
+    .btn-outline:hover {
+      border-color: var(--primary-cyan);
+      color: var(--primary-cyan-light);
+      background: rgba(6, 182, 212, 0.08);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 65px 0 50px;
+      position: relative;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--primary-cyan-light);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+      white-space: nowrap;
+    }
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 4vw, 3.5rem);
+      line-height: 1.12;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero-title em {
+      font-style: normal;
+      background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-lead {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 30px;
+      max-width: 580px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding-top: 26px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .stat-item h4 {
+      font-family: var(--font-heading);
+      font-size: 1.85rem;
+      color: var(--text-main);
+      line-height: 1;
+      margin-bottom: 6px;
+      white-space: nowrap;
+    }
+    .stat-item span {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-family: var(--font-mono);
+      white-space: nowrap;
+      display: block;
+    }
+
+    /* Hero Real Work Photo Card */
+    .hero-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 28px;
+      padding: 16px;
+      position: relative;
+      box-shadow: var(--shadow-card);
+    }
+    .hero-card::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 29px;
+      background: linear-gradient(180deg, var(--border-cyan) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .hero-image-wrap {
+      width: 100%;
+      height: 380px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      background: #0f172a;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .hero-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(10, 13, 20, 0.9) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+    }
+    .real-photo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.5);
+      color: #6ee7b7;
+      padding: 5px 12px;
+      border-radius: 100px;
+      font-size: 0.76rem;
+      font-family: var(--font-mono);
+      margin-bottom: 8px;
+      align-self: flex-start;
+    }
+
+    /* Section Headers */
+    .section-title-wrap {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 46px;
+    }
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--primary-cyan-light);
+      margin-bottom: 10px;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.1rem, 3.2vw, 2.7rem);
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    /* The Unseen Problem (Agitation) */
+    .danger-section {
+      padding: 40px 0 75px;
+    }
+    .danger-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .danger-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 22px;
+      padding: 28px;
+      position: relative;
+      transition: var(--transition);
+    }
+    .danger-card:hover {
+      border-color: var(--border-cyan);
+      transform: translateY(-3px);
+    }
+    .danger-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: #f87171;
+      margin-bottom: 18px;
+    }
+    .danger-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+    .danger-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .solution-pill {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.82rem;
+      color: var(--primary-cyan-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+
+    /* 6-Stage Process (How It Works) */
+    .process-section {
+      background: linear-gradient(180deg, #0e121b 0%, #0a0d14 100%);
+      padding: 75px 0;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .stages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .stage-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 28px 24px;
+      position: relative;
+    }
+    .stage-num {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: rgba(6, 182, 212, 0.3);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .stage-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+    .stage-card p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    /* Services Grid */
+    .services-section {
+      padding: 75px 0;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 26px;
+    }
+    .service-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      padding: 32px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .service-card:hover {
+      border-color: var(--border-cyan);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+    }
+    .service-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary-cyan-light);
+      background: rgba(6, 182, 212, 0.08);
+      border: 1px solid var(--border-cyan);
+      padding: 3px 10px;
+      border-radius: 100px;
+      display: inline-block;
+      margin-bottom: 16px;
+      align-self: flex-start;
+      white-space: nowrap;
+    }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--primary-cyan);
+      margin-bottom: 18px;
+    }
+    .service-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .service-features {
+      list-style: none;
+      margin-bottom: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .service-features li {
+      font-size: 0.85rem;
+      color: var(--text-main);
+      margin-bottom: 9px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .service-features li i {
+      color: var(--primary-cyan);
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+    .service-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-subtle);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+    }
+
+    /* Interactive Tank & Pool Cost Estimator */
+    .calculator-box {
+      background: linear-gradient(145deg, #131926 0%, #0e121a 100%);
+      border: 1px solid var(--border-cyan);
+      border-radius: 28px;
+      padding: 42px;
+      margin-bottom: 80px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .calc-group {
+      margin-bottom: 20px;
+    }
+    .calc-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      white-space: nowrap;
+    }
+    .calc-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .calc-btn {
+      padding: 9px 16px;
+      border-radius: 12px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .calc-btn:hover, .calc-btn.active {
+      background: rgba(6, 182, 212, 0.2);
+      border-color: var(--primary-cyan);
+      color: var(--primary-cyan-light);
+    }
+    .estimate-summary {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    /* Testimonials / Trust Badges */
+    .testimonials-section {
+      padding: 30px 0 75px;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .review-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 26px;
+    }
+    .review-stars {
+      color: #f59e0b;
+      margin-bottom: 12px;
+      font-size: 0.85rem;
+    }
+    .review-text {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .reviewer-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--bg-surface-elevated);
+      color: var(--primary-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border: 1px solid var(--border-subtle);
+      flex-shrink: 0;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 20px 0 75px;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 24px;
+    }
+    .faq-item h4 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      color: var(--text-main);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .faq-item h4 i {
+      color: var(--primary-cyan);
+      font-size: 0.9rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .faq-item p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      padding-left: 24px;
+    }
+
+    /* Bottom Conversion Banner */
+    .cta-banner {
+      background: linear-gradient(135deg, #121c2d 0%, #0d131f 100%);
+      border: 1px solid var(--border-cyan);
+      border-radius: 28px;
+      padding: 48px 36px;
+      text-align: center;
+      margin-bottom: 50px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    /* Footer */
+    footer {
+      background: #06080d;
+      border-top: 1px solid var(--border-subtle);
+      padding: 55px 0 28px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 36px;
+      margin-bottom: 42px;
+    }
+    .footer-col h4 {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      white-space: nowrap;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 9px;
+    }
+    .footer-col ul li a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .footer-col ul li a:hover {
+      color: var(--primary-cyan);
+    }
+
+    /* Mobile Sticky Action Bar */
+    .mobile-action-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10, 13, 20, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border-subtle);
+      padding: 10px 16px;
+      z-index: 999;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .mobile-action-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 11px 12px;
+      border-radius: 12px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .mobile-btn-call {
+      background: var(--bg-surface-elevated);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+    }
+    .mobile-btn-whatsapp {
+      background: #25d366;
+      color: #041017;
+    }
+
+    /* Responsive Queries */
+    @media (max-width: 980px) {
+      .nav-links {
+        display: none;
+      }
+      .hero-grid,
+      .calc-grid,
+      .danger-grid,
+      .stages-grid,
+      .reviews-grid,
+      .faq-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .hero-actions .btn {
+        justify-content: center;
+      }
+      .mobile-action-bar {
+        display: flex;
+      }
+      .top-location {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="spotlight-cyan"></div>
+
+  <!-- Top Studio Bar (Full Width & Non-Wrapping) -->
+  <div class="top-banner">
+    <div class="top-banner-inner">
+      <div class="top-left">
+        <span class="badge-pill">
+          <i class="fa-solid fa-certificate"></i> Certified 6-Stage Deep Sanitization
+        </span>
+        <span class="top-location">📍 Serving Apartments, Villas, Gated Societies &amp; Commercial Properties</span>
+      </div>
+      <div class="top-right">
+        <span><span class="status-live-dot"></span> Same-Day Slots Available</span>
+        <a href="tel:+919900911929" style="color: var(--primary-cyan-light); font-weight: 700; text-decoration: none;" class="nowrap">
+          <i class="fa-solid fa-phone"></i> Call for Booking
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header (Full Width & Single Line) -->
+  <header>
+    <div class="nav-inner-full">
+      <a href="#" class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="brand-text">
+          <h1>AquaClean Pro</h1>
+          <span>By Berjin Raj · Water Tank &amp; Pool Cleaning</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#process">6-Stage Process</a></li>
+        <li><a href="#calculator">Instant Estimator</a></li>
+        <li><a href="#pools">Swimming Pools</a></li>
+        <li><a href="#reviews">Customer Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <a href="https://wa.me/919900911929?text=Hi%20Berjin%20Raj%2C%20I%20would%20like%20to%20book%20Water%20Tank%20%2F%20Pool%20Cleaning." target="_blank" rel="noopener" class="btn btn-cyan">
+          <i class="fa-brands fa-whatsapp"></i> Book on WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="hero-eyebrow">
+            <i class="fa-solid fa-shield-virus"></i> 100% Food-Grade &amp; Odorless Germicidal Sanitization
+          </span>
+          <h2 class="hero-title">
+            Crystal-Clear, Bacteria-Free Water For Your <em>Family &amp; Pool.</em>
+          </h2>
+          <p class="hero-lead">
+            Protect your health from sludge, algae, and harmful bacteria. We provide specialized high-pressure rotary jet washing, underground sump descaling, and swimming pool chemical rebalancing across residential apartments and commercial facilities.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://wa.me/919900911929?text=Hi%20Berjin%2C%20I%20need%20a%20quote%20for%20Water%20Tank%20Cleaning." class="btn btn-cyan" target="_blank">
+              <i class="fa-solid fa-calendar-check"></i> Book Tank Cleaning Now
+            </a>
+            <a href="#calculator" class="btn btn-outline">
+              <i class="fa-solid fa-calculator"></i> Calculate Tank / Pool Estimate
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4>100%</h4>
+              <span>Sludge Extraction</span>
+            </div>
+            <div class="stat-item">
+              <h4>6-Stage</h4>
+              <span>Deep Disinfection</span>
+            </div>
+            <div class="stat-item">
+              <h4>4.9 ★</h4>
+              <span>Verified Clean Proof</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Card with Real Work Photo -->
+        <div class="hero-card">
+          <div class="hero-image-wrap">
+            <img src="/demos/berjin-tank-cleaning-hero.jpg" alt="Berjin Raj Technician High-Pressure Water Tank Cleaning" loading="eager">
+            <div class="hero-image-overlay">
+              <span class="real-photo-badge">
+                <i class="fa-solid fa-circle-check"></i> Actual On-Site Pressure Jetting
+              </span>
+              <strong style="color: #fff; font-size: 1.15rem; font-family: var(--font-heading);">
+                High-Pressure Rotary Jet Descaling
+              </strong>
+              <span style="color: var(--text-muted); font-size: 0.84rem;">
+                Removes tough algae, sediment, and bio-film without damaging tank plastic or concrete walls.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem / Danger Section -->
+  <section class="danger-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">THE HIDDEN HEALTH THREAT</span>
+        <h2 class="section-title">Is your overhead tank hiding toxic sludge?</h2>
+        <p class="section-desc">Over 80% of municipal and tanker water leaves thick mineral sediment, rust, and bacterial biofilm at the bottom of your tank.</p>
+      </div>
+
+      <div class="danger-grid">
+        <div class="danger-card">
+          <div class="danger-icon">
+            <i class="fa-solid fa-biohazard"></i>
+          </div>
+          <h3>Harmful Bacteria &amp; Biofilm</h3>
+          <p>Stagnant water tanks breed E. coli, coliform bacteria, and amoeba that cause severe gastrointestinal infections, skin allergies, and persistent hair fall.</p>
+          <div class="solution-pill">
+            <i class="fa-solid fa-circle-check"></i> UV &amp; Food-Grade Disinfection Kills 99.9% Pathogens
+          </div>
+        </div>
+
+        <div class="danger-card">
+          <div class="danger-icon">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <h3>Algae &amp; Chemical Deposits</h3>
+          <p>Sunlight exposure on overhead Sintex tanks accelerates thick green algae growth, producing foul odor, yellowish tap water, and pipe blockages.</p>
+          <div class="solution-pill">
+            <i class="fa-solid fa-circle-check"></i> High-Pressure Rotary Scrubbing Leaves Walls Spotless
+          </div>
+        </div>
+
+        <div class="danger-card">
+          <div class="danger-icon">
+            <i class="fa-solid fa-water"></i>
+          </div>
+          <h3>Cloudy Swimming Pools</h3>
+          <p>Unbalanced pH levels and clogged pool filters cause cloudy, stinging water and stubborn black algae blooms that regular chlorine tablets cannot fix.</p>
+          <div class="solution-pill">
+            <i class="fa-solid fa-circle-check"></i> Deep Vacuuming, Tile Descaling &amp; Complete Water Balance
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6-Stage Scientific Process -->
+  <section id="process" class="process-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">SCIENTIFIC PURIFICATION</span>
+        <h2 class="section-title">Our 6-stage deep cleaning methodology.</h2>
+        <p class="section-desc">We never use toxic harsh acids or amateur mop cleaning. Our mechanized process guarantees 100% pure water.</p>
+      </div>
+
+      <div class="stages-grid">
+        <div class="stage-card">
+          <div class="stage-num">01</div>
+          <h3>Mechanized Dewatering</h3>
+          <p>High-capacity automatic submersible pumps drain stagnant dirty water from the tank down to the last millimeter without flooding your terrace.</p>
+        </div>
+
+        <div class="stage-card">
+          <div class="stage-num">02</div>
+          <h3>Sludge &amp; Silt Extraction</h3>
+          <p>Specialized heavy-duty industrial vacuum cleaners extract thick layers of settled mud, iron rust, and dirt from deep tank corners.</p>
+        </div>
+
+        <div class="stage-card">
+          <div class="stage-num">03</div>
+          <h3>High-Pressure Rotary Jet Wash</h3>
+          <p>Rotary high-pressure water nozzles strip away stubborn algae, calcified moss, and bio-film from walls and ceilings without scrubbing damage.</p>
+        </div>
+
+        <div class="stage-card">
+          <div class="stage-num">04</div>
+          <h3>Vacuum Slurry Removal</h3>
+          <p>All detached grime, algae particles, and suspended sediment are vacuumed out completely, leaving zero dirty residue behind.</p>
+        </div>
+
+        <div class="stage-card">
+          <div class="stage-num">05</div>
+          <h3>Antibacterial Spraying</h3>
+          <p>Certified food-grade, odorless antibacterial disinfectant is misted across all interior surfaces to destroy invisible spore colonies.</p>
+        </div>
+
+        <div class="stage-card">
+          <div class="stage-num">06</div>
+          <h3>UV Germicidal Radiator</h3>
+          <p>Final ultraviolet radiation kills any remaining suspended airborne bacteria, making the tank 100% sterile and ready for fresh refill.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Services Grid -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">SPECIALIZED SERVICE CAPABILITIES</span>
+        <h2 class="section-title">Clean water solutions for every property.</h2>
+        <p class="section-desc">From independent villa tanks to 50,000L apartment sumps and community swimming pools.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div>
+            <span class="service-tag">Most Popular for Homes</span>
+            <div class="service-icon">
+              <i class="fa-solid fa-house-chimney-window"></i>
+            </div>
+            <h3>Overhead Sintex &amp; Plastic Tank Cleaning</h3>
+            <p>Complete 6-stage mechanized cleaning for rooftop plastic, Sintex, and stainless steel tanks. Removes stubborn algae, insect residue, and silt.</p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-check"></i> Capacities from 500L to 5,000L+</li>
+              <li><i class="fa-solid fa-check"></i> High-pressure jet descaling (zero wall scratches)</li>
+              <li><i class="fa-solid fa-check"></i> Food-grade safe disinfectant</li>
+              <li><i class="fa-solid fa-check"></i> Completed in under 60 minutes</li>
+            </ul>
+          </div>
+          <div class="service-footer">
+            <span style="color: var(--primary-cyan-light);"><i class="fa-solid fa-clock"></i> Same-Day Service</span>
+            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20want%20to%20clean%20my%20Overhead%20Water%20Tank." target="_blank" style="color: #fff; text-decoration: underline;">Book Slot →</a>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div>
+            <span class="service-tag">Villas &amp; Apartments</span>
+            <div class="service-icon">
+              <i class="fa-solid fa-cubes-stacked"></i>
+            </div>
+            <h3>Underground Concrete Sump Deep Scrub</h3>
+            <p>Underground water sumps collect the heaviest mud from borewell and tanker deliveries. We descale cement walls and extract thick settled sludge.</p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-check"></i> Concrete, tiled, and masonry sumps</li>
+              <li><i class="fa-solid fa-check"></i> Industrial high-suction slurry vacuum</li>
+              <li><i class="fa-solid fa-check"></i> Anti-fungal wall treatment</li>
+              <li><i class="fa-solid fa-check"></i> Full odor and muck elimination</li>
+            </ul>
+          </div>
+          <div class="service-footer">
+            <span style="color: var(--primary-cyan-light);"><i class="fa-solid fa-building"></i> 5,000L to 50,000L+</span>
+            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20need%20Underground%20Sump%20Cleaning%20details." target="_blank" style="color: #fff; text-decoration: underline;">Inquire Quote →</a>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card" id="pools">
+          <div>
+            <span class="service-tag">Pool Maintenance</span>
+            <div class="service-icon">
+              <i class="fa-solid fa-water-ladder"></i>
+            </div>
+            <h3>Swimming Pool Scrubbing &amp; Water Balance</h3>
+            <p>Complete pool care for villas, clubhouses, resorts, and schools. Underwater vacuuming, tile descaling, filter media backwash, and pH chemical rebalancing.</p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-check"></i> Deep vacuuming &amp; surface leaf skimming</li>
+              <li><i class="fa-solid fa-check"></i> Tile waterline stain &amp; calcium removal</li>
+              <li><i class="fa-solid fa-check"></i> Chlorine, pH &amp; alkalinity stabilization</li>
+              <li><i class="fa-solid fa-check"></i> Monthly AMC maintenance plans available</li>
+            </ul>
+          </div>
+          <div class="service-footer">
+            <span style="color: var(--primary-cyan-light);"><i class="fa-solid fa-calendar-days"></i> One-Time / AMC</span>
+            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20am%20enquiring%20about%20Swimming%20Pool%20Cleaning." target="_blank" style="color: #fff; text-decoration: underline;">Pool Consultation →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Tank / Pool Cleaning Estimator -->
+  <section id="calculator" style="padding: 20px 0 80px;">
+    <div class="container">
+      <div class="calculator-box">
+        <div class="calc-grid">
+          <div>
+            <span class="section-tag">INSTANT ESTIMATE GENERATOR</span>
+            <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 14px;">
+              Configure your cleaning requirement in seconds.
+            </h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">
+              Select your service type and tank capacity to get an exact customized estimate with zero hidden charges.
+            </p>
+
+            <div class="calc-group">
+              <label>1. Select Service Type</label>
+              <div class="calc-options">
+                <button class="calc-btn active" onclick="setService('Overhead Tank Cleaning')">Overhead Tank</button>
+                <button class="calc-btn" onclick="setService('Underground Sump Cleaning')">Underground Sump</button>
+                <button class="calc-btn" onclick="setService('Sump + Overhead Combo')">Sump + Tank Combo</button>
+                <button class="calc-btn" onclick="setService('Swimming Pool Deep Clean')">Swimming Pool</button>
+              </div>
+            </div>
+
+            <div class="calc-group">
+              <label>2. Select Capacity / Size</label>
+              <div class="calc-options">
+                <button class="calc-btn active" onclick="setSize('1,000 Litres (Standard Home)')">1,000L (Home)</button>
+                <button class="calc-btn" onclick="setSize('2,000 Litres (Large Home)')">2,000L</button>
+                <button class="calc-btn" onclick="setSize('5,000 Litres (Villa / Small Apt)')">5,000L</button>
+                <button class="calc-btn" onclick="setSize('10,000L to 30,000L (Apartment Sump)')">10,000L+</button>
+                <button class="calc-btn" onclick="setSize('Swimming Pool Custom Size')">Pool Custom</button>
+              </div>
+            </div>
+
+            <div class="calc-group">
+              <label>3. Property Type</label>
+              <div class="calc-options">
+                <button class="calc-btn active" onclick="setProperty('Independent House / Villa')">Villa / House</button>
+                <button class="calc-btn" onclick="setProperty('Apartment Society (RWA)')">Apartment (RWA)</button>
+                <button class="calc-btn" onclick="setProperty('Commercial / Hotel / School')">Commercial</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary Box -->
+          <div class="estimate-summary">
+            <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--primary-cyan-light); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 6px;">
+              Selected Configuration
+            </span>
+            <h3 id="calcSummaryTitle" style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 12px; color: #fff;">
+              Overhead Tank Cleaning · 1,000L (Home)
+            </h3>
+            <p id="calcPropertyText" style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 20px;">
+              Property: Independent House / Villa
+            </p>
+
+            <div style="background: rgba(6,182,212,0.08); border: 1px solid var(--border-cyan); border-radius: 14px; padding: 14px; margin-bottom: 20px; font-size: 0.8rem; color: var(--text-muted); text-align: left;">
+              <strong style="color: #fff; display: block; margin-bottom: 4px;"><i class="fa-solid fa-circle-check" style="color: var(--primary-cyan);"></i> Includes Full Package:</strong>
+              • Dewatering + Sludge Vacuuming<br>
+              • High-Pressure Rotary Jet Wall Scrub<br>
+              • Food-Grade Disinfectant Misting
+            </div>
+
+            <button onclick="requestEstimateWhatsApp()" class="btn btn-cyan" style="width: 100%; justify-content: center;">
+              <i class="fa-brands fa-whatsapp"></i> Get Price &amp; Slot on WhatsApp
+            </button>
+            <span style="display: block; font-size: 0.74rem; color: var(--text-dim); margin-top: 8px;">
+              Instant response · Free on-site inspection for apartments
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verified Customer Reviews -->
+  <section id="reviews" class="testimonials-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">VERIFIED SERVICE FEEDBACK</span>
+        <h2 class="section-title">Loved by homeowners &amp; apartment associations.</h2>
+        <p class="section-desc">See what our customers say about our punctuality, clean machinery, and water clarity.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            “Berjin Raj and his team did an outstanding job on our 2,000L Sintex tank. The pressure jet washer pulled out years of black sludge and algae. Water looks crystal clear now with zero bad smell!”
+          </p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">K</div>
+            <div>
+              <strong style="display: block; color: var(--text-main);">Karthik N.</strong>
+              <span style="color: var(--text-muted); font-size: 0.75rem;">Independent Villa Owner · 2,000L Overhead Tank</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            “We hired them for our 40-unit apartment underground sump (25,000L). They completed the dewatering, rotary jet scrub, and UV treatment in record time without disturbing residents. Highly professional.”
+          </p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">M</div>
+            <div>
+              <strong style="display: block; color: var(--text-main);">Manjunath R.</strong>
+              <span style="color: var(--text-muted); font-size: 0.75rem;">Apartment Association Secretary · 25,000L Sump</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            “Our resort swimming pool had severe tile stains and cloudy green tint before a wedding weekend. Berjin balanced the chemicals, vacuumed the floor, and made the water sparkling clean in one day!”
+          </p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">A</div>
+            <div>
+              <strong style="display: block; color: var(--text-main);">Anand Kumar</strong>
+              <span style="color: var(--text-muted); font-size: 0.75rem;">Resort &amp; Villa Manager · Swimming Pool Care</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">FREQUENTLY ASKED QUESTIONS</span>
+        <h2 class="section-title">Common questions about tank &amp; pool cleaning.</h2>
+        <p class="section-desc">Everything you need to know before booking your cleaning appointment.</p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4><i class="fa-solid fa-circle-question"></i> How long does water tank cleaning take?</h4>
+          <p>For standard overhead plastic tanks (500L–2,000L), our mechanized 6-stage cleaning takes approximately 45 to 60 minutes. Underground concrete sumps typically take 1.5 to 3 hours depending on capacity.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4><i class="fa-solid fa-circle-question"></i> Do I need to empty the tank before you arrive?</h4>
+          <p>No, please do not empty it completely! We use high-capacity automatic submersible pumps to drain the residual dirty water, and we utilize a small bucket of water for our pressure jet machinery.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4><i class="fa-solid fa-circle-question"></i> Are the cleaning chemicals safe for drinking water?</h4>
+          <p>Yes, absolutely. We strictly use food-grade, government-approved antibacterial sanitizers that leave zero toxic chemical odor or taste. The tank can be refilled with drinking water immediately after cleaning.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4><i class="fa-solid fa-circle-question"></i> How often should a water tank be cleaned?</h4>
+          <p>Health and municipal standards recommend cleaning overhead tanks and underground sumps at least once every 6 months to prevent toxic bacterial biofilm, sludge, and mosquito breeding.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4><i class="fa-solid fa-circle-question"></i> What swimming pool cleaning services do you provide?</h4>
+          <p>We provide deep scrubbing, underwater vacuuming, tile stain descaling, backwash filtration, and water chemical rebalancing (pH, chlorine, clarifier). Both one-time cleans and monthly AMC contracts are available.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4><i class="fa-solid fa-circle-question"></i> Do you offer discounts for apartments &amp; bulk tanks?</h4>
+          <p>Yes! We offer attractive group discount pricing for apartment complexes, gated villa communities, and commercial facilities when multiple tanks or sumps are booked together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Banner -->
+  <div class="container">
+    <div class="cta-banner">
+      <h2 style="font-family: var(--font-heading); font-size: 2.4rem; margin-bottom: 12px; color: #fff;">
+        Ready for pure, healthy water in your home?
+      </h2>
+      <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 28px;">
+        Book your appointment today with Berjin Raj. Same-day service available across residential and commercial properties.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+        <a href="https://wa.me/919900911929?text=Hi%20Berjin%20Raj%2C%20I%20would%20like%20to%20book%20a%20Water%20Tank%20%2F%20Pool%20cleaning%20slot." target="_blank" rel="noopener" class="btn btn-cyan" style="padding: 13px 30px; font-size: 0.95rem;">
+          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp for Booking
+        </a>
+        <a href="tel:+919900911929" class="btn btn-outline" style="padding: 13px 26px; font-size: 0.95rem;">
+          <i class="fa-solid fa-phone"></i> Call Direct
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="margin-bottom: 14px;">
+            <div class="brand-icon">
+              <i class="fa-solid fa-droplet"></i>
+            </div>
+            <div class="brand-text">
+              <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">AquaClean Pro</h3>
+              <span>By Berjin Raj B V</span>
+            </div>
+          </div>
+          <p style="font-size: 0.85rem; line-height: 1.6; max-width: 320px;">
+            Professional 6-stage mechanized water tank cleaning, underground sump descaling, and swimming pool deep maintenance for homes, apartments, and commercial facilities.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Tank Services</h4>
+          <ul>
+            <li><a href="#services">Overhead Sintex Cleaning</a></li>
+            <li><a href="#services">Underground Sump Descaling</a></li>
+            <li><a href="#services">Apartment Tank AMC</a></li>
+            <li><a href="#services">High-Pressure Rotary Jetting</a></li>
+            <li><a href="#services">UV Germicidal Disinfection</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pool Care</h4>
+          <ul>
+            <li><a href="#pools">Underwater Vacuuming</a></li>
+            <li><a href="#pools">Tile Stain &amp; Scale Removal</a></li>
+            <li><a href="#pools">Chemical pH Stabilization</a></li>
+            <li><a href="#pools">Sand Filter Backwash</a></li>
+            <li><a href="#pools">Clubhouse &amp; Villa Pool AMC</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Contact</h4>
+          <p style="margin-bottom: 8px;">👤 <strong>Berjin Raj B V</strong></p>
+          <p style="margin-bottom: 8px;">📞 <a href="tel:+919900911929" style="color: var(--primary-cyan-light); text-decoration: none;">Call for Booking</a></p>
+          <p style="margin-bottom: 8px;">💬 <a href="https://wa.me/919900911929" target="_blank" style="color: #25d366; text-decoration: none;">WhatsApp: Instant Quote</a></p>
+          <p style="font-size: 0.78rem; color: #10b981; margin-top: 10px;">● Operating: Mon – Sun (7:00 AM – 8:00 PM)</p>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.76rem;">
+        <p>© 2026 AquaClean Pro by Berjin Raj B V. All rights reserved.</p>
+        <p>Engineered by <a href="https://uncodedhub.com/" target="_blank" style="color: var(--primary-cyan-light); text-decoration: none; font-weight: 600;">Uncoded Hub</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Sticky Action Bar -->
+  <div class="mobile-action-bar">
+    <a href="tel:+919900911929" class="mobile-action-btn mobile-btn-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/919900911929?text=Hi%20Berjin%20Raj%2C%20I%20would%20like%20to%20book%20Water%20Tank%20%2F%20Pool%20cleaning." target="_blank" rel="noopener" class="mobile-action-btn mobile-btn-whatsapp">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp Quote
+    </a>
+  </div>
+
+  <script>
+    let currentEstimate = {
+      service: 'Overhead Tank Cleaning',
+      size: '1,000 Litres (Standard Home)',
+      property: 'Independent House / Villa'
+    };
+
+    function updateEstimateSummary() {
+      document.getElementById('calcSummaryTitle').textContent = `${currentEstimate.service} · ${currentEstimate.size}`;
+      document.getElementById('calcPropertyText').textContent = `Property: ${currentEstimate.property}`;
+    }
+
+    function setService(name) {
+      const parent = event.target.closest('.calc-options');
+      parent.querySelectorAll('.calc-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      currentEstimate.service = name;
+      updateEstimateSummary();
+    }
+
+    function setSize(name) {
+      const parent = event.target.closest('.calc-options');
+      parent.querySelectorAll('.calc-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      currentEstimate.size = name;
+      updateEstimateSummary();
+    }
+
+    function setProperty(name) {
+      const parent = event.target.closest('.calc-options');
+      parent.querySelectorAll('.calc-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      currentEstimate.property = name;
+      updateEstimateSummary();
+    }
+
+    function requestEstimateWhatsApp() {
+      const msg = `Hi Berjin Raj, I would like to get a quote for water cleaning:\n\n• Service: ${currentEstimate.service}\n• Capacity: ${currentEstimate.size}\n• Property Type: ${currentEstimate.property}\n\nCould you please share availability and pricing?`;
+      const url = `https://wa.me/919900911929?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>

@@ -2,6 +2,24 @@
 
 This document tracks direct, high-touch, and referral prospects for Uncoded Hub bespoke web development and local SEO systems.
 
+## 3. Berjin Raj B V — AquaClean Pro (Water Tank & Swimming Pool Cleaning)
+
+- **Client Name / Contact Person:** Berjin Raj B V
+- **Business / Niche:** Home Services — Water Tank Cleaning & Swimming Pool Deep Maintenance
+- **Source:** Leadzo Qualified Inbound (Ready to hire now / Urgent need / Ongoing maintenance requested)
+- **Services Covered:**
+  1. Overhead Sintex & Plastic Tank Cleaning (500L to 5,000L+)
+  2. Underground Concrete Sump Deep Scrub (5,000L to 50,000L+)
+  3. Swimming Pool Deep Cleaning & Chemical pH Rebalance
+  4. 6-Stage Mechanized Jet Washing & UV Disinfection
+  5. Residential & Apartment RWA Annual Maintenance Contracts (AMC)
+- **Interactive Live Demo:**
+  - URL: `https://uncodedhub.com/demos/berjin-tank-cleaning.html`
+  - Real Work Assets: Real on-site rotary pressure jetting photo embedded (`public/demos/berjin-tank-cleaning-hero.jpg`).
+  - Interactive Tool: Live Tank & Pool Capacity Calculator with direct WhatsApp booking.
+- **Hosting Strategy:** GitHub Pages custom domain deployment.
+- **Status:** **Demo Ready & Pitch Dispatched**
+
 ---
 
 ## 1. Shutter Bug Studioz (Malleshpalya, Bengaluru)
@@ -32,6 +50,24 @@ This document tracks direct, high-touch, and referral prospects for Uncoded Hub 
 - **Deliverables Scope:** Master Studio Platform + 6 Dedicated Service Landing Pages (Weddings, Kids/Cake-smash, 10-Min Visa, Custom Framing, Keepsakes/3D Crystals, Executive Headshots).
 - **Status:** **Client Agreed & Ready to Proceed (Onboarding Questionnaire Prepared)**
 
+## 3. Berjin Raj B V — AquaClean Pro (Water Tank & Swimming Pool Cleaning)
+
+- **Client Name / Contact Person:** Berjin Raj B V
+- **Business / Niche:** Home Services — Water Tank Cleaning & Swimming Pool Deep Maintenance
+- **Source:** Leadzo Qualified Inbound (Ready to hire now / Urgent need / Ongoing maintenance requested)
+- **Services Covered:**
+  1. Overhead Sintex & Plastic Tank Cleaning (500L to 5,000L+)
+  2. Underground Concrete Sump Deep Scrub (5,000L to 50,000L+)
+  3. Swimming Pool Deep Cleaning & Chemical pH Rebalance
+  4. 6-Stage Mechanized Jet Washing & UV Disinfection
+  5. Residential & Apartment RWA Annual Maintenance Contracts (AMC)
+- **Interactive Live Demo:**
+  - URL: `https://uncodedhub.com/demos/berjin-tank-cleaning.html`
+  - Real Work Assets: Real on-site rotary pressure jetting photo embedded (`public/demos/berjin-tank-cleaning-hero.jpg`).
+  - Interactive Tool: Live Tank & Pool Capacity Calculator with direct WhatsApp booking.
+- **Hosting Strategy:** GitHub Pages custom domain deployment.
+- **Status:** **Demo Ready & Pitch Dispatched**
+
 ---
 
 ## 2. Dhananjay Joshi (Wildlife & Fine Art Photography)
@@ -49,6 +85,24 @@ This document tracks direct, high-touch, and referral prospects for Uncoded Hub 
   - Warm, peer-to-peer founder follow-up from Deepak & Geetha.
   - Low pressure, honoring his shooting calendar while keeping the interactive prototype accessible.
 - **Status:** **Follow-Up Queued**
+
+## 3. Berjin Raj B V — AquaClean Pro (Water Tank & Swimming Pool Cleaning)
+
+- **Client Name / Contact Person:** Berjin Raj B V
+- **Business / Niche:** Home Services — Water Tank Cleaning & Swimming Pool Deep Maintenance
+- **Source:** Leadzo Qualified Inbound (Ready to hire now / Urgent need / Ongoing maintenance requested)
+- **Services Covered:**
+  1. Overhead Sintex & Plastic Tank Cleaning (500L to 5,000L+)
+  2. Underground Concrete Sump Deep Scrub (5,000L to 50,000L+)
+  3. Swimming Pool Deep Cleaning & Chemical pH Rebalance
+  4. 6-Stage Mechanized Jet Washing & UV Disinfection
+  5. Residential & Apartment RWA Annual Maintenance Contracts (AMC)
+- **Interactive Live Demo:**
+  - URL: `https://uncodedhub.com/demos/berjin-tank-cleaning.html`
+  - Real Work Assets: Real on-site rotary pressure jetting photo embedded (`public/demos/berjin-tank-cleaning-hero.jpg`).
+  - Interactive Tool: Live Tank & Pool Capacity Calculator with direct WhatsApp booking.
+- **Hosting Strategy:** GitHub Pages custom domain deployment.
+- **Status:** **Demo Ready & Pitch Dispatched**
 
 ---
 
