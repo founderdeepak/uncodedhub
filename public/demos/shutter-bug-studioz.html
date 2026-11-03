@@ -33,7 +33,7 @@
       --font-heading: 'Playfair Display', Georgia, serif;
       --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
-      --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.35);
     }
 
@@ -54,7 +54,7 @@
       line-height: 1.6;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
-      padding-bottom: 70px; /* Space for mobile sticky action bar */
+      padding-bottom: 72px; /* Space for mobile sticky action bar */
     }
 
     /* Ambient Lighting */
@@ -70,9 +70,14 @@
       right: 5%;
     }
 
+    /* Global Anti-Wrap Discipline for Clean UI */
+    .nowrap {
+      white-space: nowrap;
+    }
+
     /* Container */
     .container {
-      max-width: 1220px;
+      max-width: 1260px;
       margin: 0 auto;
       padding: 0 24px;
       position: relative;
@@ -81,18 +86,25 @@
 
     /* Top Studio Bar */
     .top-banner {
-      background: linear-gradient(90deg, #12141a 0%, #191c24 100%);
+      background: linear-gradient(90deg, #111319 0%, #171a23 100%);
       border-bottom: 1px solid var(--border-subtle);
-      font-size: 0.8rem;
-      padding: 9px 0;
+      font-size: 0.78rem;
+      padding: 8px 0;
       color: var(--text-muted);
     }
     .top-banner-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
+      gap: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .top-left, .top-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
     }
     .badge-pill {
       display: inline-flex;
@@ -103,8 +115,9 @@
       border: 1px solid var(--border-amber);
       color: var(--accent-amber-light);
       border-radius: 100px;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       font-weight: 600;
+      white-space: nowrap;
     }
     .status-live-dot {
       width: 8px;
@@ -114,6 +127,7 @@
       display: inline-block;
       box-shadow: 0 0 8px var(--accent-green);
       animation: pulseGreen 2s infinite;
+      flex-shrink: 0;
     }
     @keyframes pulseGreen {
       0%, 100% { opacity: 1; transform: scale(1); }
@@ -124,17 +138,18 @@
     header {
       position: sticky;
       top: 0;
-      background: rgba(13, 15, 19, 0.94);
+      background: rgba(13, 15, 19, 0.95);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-subtle);
       z-index: 100;
-      padding: 16px 0;
+      padding: 14px 0;
     }
     .nav-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
     }
     .brand {
       display: flex;
@@ -142,40 +157,47 @@
       gap: 12px;
       text-decoration: none;
       color: var(--text-main);
+      flex-shrink: 0;
+      white-space: nowrap;
     }
     .brand-icon {
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       background: linear-gradient(135deg, var(--accent-amber) 0%, #a46d29 100%);
-      border-radius: 12px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       color: #0d0f13;
-      box-shadow: 0 4px 18px rgba(229, 166, 85, 0.3);
+      box-shadow: 0 4px 16px rgba(229, 166, 85, 0.28);
+      flex-shrink: 0;
     }
     .brand-text h1 {
       font-family: var(--font-heading);
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 700;
       letter-spacing: 0.02em;
       line-height: 1.1;
+      white-space: nowrap;
     }
     .brand-text span {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: var(--accent-amber);
       text-transform: uppercase;
       letter-spacing: 0.12em;
       font-family: var(--font-mono);
       display: block;
+      white-space: nowrap;
     }
 
+    /* Menu Links */
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 28px;
       list-style: none;
+      white-space: nowrap;
     }
     .nav-links a {
       color: var(--text-muted);
@@ -183,9 +205,67 @@
       font-size: 0.88rem;
       font-weight: 500;
       transition: var(--transition);
+      white-space: nowrap;
     }
     .nav-links a:hover {
       color: var(--accent-amber);
+    }
+
+    /* Header Actions */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: rgba(13, 15, 19, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 24px;
+      z-index: 99;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .mobile-drawer.active {
+      display: block;
+    }
+    .mobile-drawer ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .mobile-drawer ul li a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
     /* Buttons */
@@ -193,7 +273,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 11px 24px;
+      padding: 11px 22px;
       border-radius: 100px;
       font-size: 0.88rem;
       font-weight: 600;
@@ -201,6 +281,8 @@
       cursor: pointer;
       transition: var(--transition);
       border: none;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .btn-amber {
       background: linear-gradient(135deg, var(--accent-amber) 0%, #cb8c38 100%);
@@ -223,9 +305,9 @@
       background: rgba(229, 166, 85, 0.06);
     }
 
-    /* Hero Section (Wes McDowell 5-Second Grunt Test Layout) */
+    /* Hero Section (Wes McDowell Grunt Test Layout) */
     .hero {
-      padding: 70px 0 50px;
+      padding: 60px 0 45px;
       position: relative;
     }
     .hero-grid {
@@ -244,11 +326,12 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       margin-bottom: 16px;
+      white-space: nowrap;
     }
     .hero-title {
       font-family: var(--font-heading);
-      font-size: 3.4rem;
-      line-height: 1.12;
+      font-size: clamp(2.3rem, 3.8vw, 3.3rem);
+      line-height: 1.14;
       font-weight: 700;
       margin-bottom: 20px;
       letter-spacing: -0.02em;
@@ -259,23 +342,23 @@
       font-weight: 500;
     }
     .hero-lead {
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       color: var(--text-muted);
       line-height: 1.65;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
       max-width: 580px;
     }
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 36px;
+      gap: 14px;
+      margin-bottom: 34px;
     }
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-      padding-top: 28px;
+      padding-top: 26px;
       border-top: 1px solid var(--border-subtle);
     }
     .stat-item h4 {
@@ -284,13 +367,16 @@
       color: var(--text-main);
       line-height: 1;
       margin-bottom: 6px;
+      white-space: nowrap;
     }
     .stat-item span {
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.06em;
       font-family: var(--font-mono);
+      white-space: nowrap;
+      display: block;
     }
 
     /* Hero Showcase Card */
@@ -298,7 +384,7 @@
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 28px;
-      padding: 26px;
+      padding: 24px;
       position: relative;
       box-shadow: var(--shadow-card);
     }
@@ -319,11 +405,11 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
     .mosaic-tile {
-      height: 140px;
-      border-radius: 16px;
+      height: 135px;
+      border-radius: 14px;
       background-size: cover;
       background-position: center;
       position: relative;
@@ -331,7 +417,7 @@
       border: 1px solid rgba(255,255,255,0.1);
       display: flex;
       align-items: flex-end;
-      padding: 12px;
+      padding: 10px 12px;
     }
     .mosaic-tile::before {
       content: '';
@@ -345,61 +431,62 @@
       font-size: 0.78rem;
       font-weight: 600;
       color: #fff;
+      white-space: nowrap;
     }
     .quick-guarantee-pill {
       background: rgba(255,255,255,0.03);
       border: 1px solid var(--border-subtle);
-      padding: 14px 18px;
-      border-radius: 18px;
+      padding: 12px 16px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 0.85rem;
+      gap: 12px;
     }
 
     /* Section Headers */
     .section-title-wrap {
       text-align: center;
       max-width: 720px;
-      margin: 0 auto 46px;
+      margin: 0 auto 42px;
     }
     .section-tag {
       font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       text-transform: uppercase;
       letter-spacing: 0.14em;
       color: var(--accent-amber);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: inline-block;
+      white-space: nowrap;
     }
     .section-title {
       font-family: var(--font-heading);
-      font-size: 2.6rem;
+      font-size: clamp(2.1rem, 3.2vw, 2.6rem);
       line-height: 1.18;
       letter-spacing: -0.01em;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .section-desc {
       color: var(--text-muted);
-      font-size: 1rem;
+      font-size: 0.98rem;
       line-height: 1.6;
     }
 
-    /* Wes McDowell Principle: Problem / Agitation / Solution Section */
+    /* Wes McDowell: Problem / Agitation / Solution Section */
     .pain-point-section {
-      padding: 40px 0 70px;
+      padding: 30px 0 65px;
     }
     .pain-card-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 20px;
+      gap: 22px;
     }
     .pain-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      border-radius: 22px;
-      padding: 28px;
+      border-radius: 20px;
+      padding: 26px;
       position: relative;
       transition: var(--transition);
     }
@@ -415,8 +502,9 @@
       padding: 4px 10px;
       border-radius: 6px;
       display: inline-block;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       font-weight: 600;
+      white-space: nowrap;
     }
     .sol-tag {
       font-size: 0.72rem;
@@ -426,17 +514,18 @@
       padding: 4px 10px;
       border-radius: 6px;
       display: inline-block;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       font-weight: 600;
+      white-space: nowrap;
     }
     .pain-card h3 {
       font-family: var(--font-heading);
-      font-size: 1.35rem;
-      margin-bottom: 12px;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
       color: var(--text-main);
     }
     .pain-card p {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
       line-height: 1.6;
     }
@@ -446,94 +535,108 @@
       margin: 16px 0;
     }
     .pain-sol {
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: var(--accent-amber-light);
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
       line-height: 1.5;
     }
 
     /* Wes McDowell 3-Step Plan Section */
     .how-it-works-section {
-      background: linear-gradient(180deg, #12151c 0%, #0d0f13 100%);
-      padding: 70px 0;
+      background: linear-gradient(180deg, #11141b 0%, #0d0f13 100%);
+      padding: 65px 0;
       border-top: 1px solid var(--border-subtle);
       border-bottom: 1px solid var(--border-subtle);
     }
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      position: relative;
+      gap: 24px;
     }
     .step-card {
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-subtle);
-      border-radius: 24px;
-      padding: 32px 28px;
+      border-radius: 22px;
+      padding: 30px 24px;
       position: relative;
     }
     .step-number {
       font-family: var(--font-mono);
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 800;
-      color: rgba(229, 166, 85, 0.25);
+      color: rgba(229, 166, 85, 0.28);
       line-height: 1;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
+      white-space: nowrap;
     }
     .step-card h3 {
       font-family: var(--font-heading);
-      font-size: 1.4rem;
-      margin-bottom: 10px;
+      font-size: 1.35rem;
+      margin-bottom: 8px;
       color: var(--text-main);
     }
     .step-card p {
       color: var(--text-muted);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       line-height: 1.6;
     }
 
-    /* Organized Services Navigation Tabs */
-    .services-nav-tabs {
+    /* Organized Services Filter Bar (Silky Smooth Single Row / Horizontal Scroll) */
+    .services-nav-tabs-wrapper {
+      width: 100%;
+      margin-bottom: 36px;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 40px;
+    }
+    .services-nav-tabs {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 6px;
+      border-radius: 100px;
+      border: 1px solid var(--border-subtle);
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      max-width: 100%;
+    }
+    .services-nav-tabs::-webkit-scrollbar {
+      display: none;
     }
     .tab-btn {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
+      background: transparent;
+      border: none;
       color: var(--text-muted);
-      padding: 10px 22px;
+      padding: 9px 20px;
       border-radius: 100px;
-      font-size: 0.88rem;
-      font-weight: 500;
+      font-size: 0.85rem;
+      font-weight: 600;
       cursor: pointer;
       transition: var(--transition);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
-    .tab-btn:hover,
+    .tab-btn:hover {
+      color: var(--text-main);
+    }
     .tab-btn.active {
       background: var(--accent-amber);
       color: #0d0f13;
-      font-weight: 600;
-      border-color: var(--accent-amber);
-      box-shadow: 0 4px 16px rgba(229, 166, 85, 0.25);
+      box-shadow: 0 4px 14px rgba(229, 166, 85, 0.25);
     }
 
     /* Services Grid */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 26px;
+      gap: 24px;
       margin-bottom: 40px;
     }
     .service-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      border-radius: 24px;
-      padding: 32px;
+      border-radius: 22px;
+      padding: 30px;
       transition: var(--transition);
       position: relative;
       display: flex;
@@ -558,39 +661,41 @@
       display: inline-block;
       margin-bottom: 16px;
       align-self: flex-start;
+      white-space: nowrap;
     }
     .service-icon-wrap {
-      width: 52px;
-      height: 52px;
+      width: 48px;
+      height: 48px;
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-subtle);
-      border-radius: 14px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       color: var(--accent-amber);
-      margin-bottom: 18px;
+      margin-bottom: 16px;
+      flex-shrink: 0;
     }
     .service-card h3 {
       font-family: var(--font-heading);
-      font-size: 1.55rem;
-      margin-bottom: 12px;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
     }
     .service-card p {
       color: var(--text-muted);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       line-height: 1.6;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
     .service-features {
       list-style: none;
-      margin-bottom: 24px;
-      padding-top: 16px;
+      margin-bottom: 22px;
+      padding-top: 14px;
       border-top: 1px solid var(--border-subtle);
     }
     .service-features li {
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       color: var(--text-main);
       margin-bottom: 8px;
       display: flex;
@@ -600,24 +705,45 @@
     .service-features li i {
       color: var(--accent-amber);
       font-size: 0.75rem;
+      flex-shrink: 0;
     }
     .service-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-top: 18px;
+      gap: 12px;
+      padding-top: 16px;
       border-top: 1px solid var(--border-subtle);
+    }
+    .service-footer-tag {
       font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent-amber);
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .service-footer-cta {
       font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-main);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+    .service-footer-cta:hover {
+      color: var(--accent-amber);
     }
 
     /* Visa Photo Specification Engine */
     .tool-box {
       background: linear-gradient(145deg, #171b23 0%, #12141a 100%);
       border: 1px solid var(--border-amber);
-      border-radius: 28px;
-      padding: 44px;
-      margin-bottom: 80px;
+      border-radius: 26px;
+      padding: 38px;
+      margin-bottom: 75px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.3);
     }
     .tool-header {
@@ -625,77 +751,89 @@
       justify-content: space-between;
       align-items: flex-end;
       flex-wrap: wrap;
-      gap: 20px;
-      margin-bottom: 30px;
+      gap: 16px;
+      margin-bottom: 26px;
       border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 22px;
+      padding-bottom: 20px;
     }
     .country-selector-pills {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-bottom: 4px;
+    }
+    .country-selector-pills::-webkit-scrollbar {
+      display: none;
     }
     .country-pill {
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-subtle);
       color: var(--text-muted);
-      padding: 9px 18px;
+      padding: 8px 16px;
       border-radius: 12px;
-      font-size: 0.84rem;
-      font-weight: 500;
+      font-size: 0.82rem;
+      font-weight: 600;
       cursor: pointer;
       transition: var(--transition);
+      white-space: nowrap;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
     .country-pill:hover,
     .country-pill.active {
       background: var(--accent-amber);
       color: #0d0f13;
-      font-weight: 600;
       border-color: var(--accent-amber);
     }
     .spec-card-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 18px;
     }
     .spec-box {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      padding: 20px;
+      border-radius: 14px;
+      padding: 18px;
     }
     .spec-box span {
       display: block;
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-family: var(--font-mono);
       color: var(--accent-amber);
       text-transform: uppercase;
       letter-spacing: 0.08em;
       margin-bottom: 6px;
+      white-space: nowrap;
     }
     .spec-box h4 {
-      font-size: 1.12rem;
+      font-size: 1.08rem;
       color: var(--text-main);
       font-weight: 600;
+      line-height: 1.35;
     }
 
     /* Framing Visualizer Canvas */
     .frame-calculator-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 36px;
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      border-radius: 28px;
-      padding: 40px;
-      margin-bottom: 80px;
+      border-radius: 26px;
+      padding: 36px;
+      margin-bottom: 75px;
     }
     .frame-preview-canvas {
       background: #0f1116;
       border: 2px dashed rgba(255,255,255,0.12);
-      border-radius: 20px;
-      height: 400px;
+      border-radius: 18px;
+      height: 390px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -705,8 +843,8 @@
       transition: var(--transition);
     }
     .virtual-frame {
-      width: 250px;
-      height: 310px;
+      width: 240px;
+      height: 300px;
       box-shadow: 0 24px 45px rgba(0,0,0,0.7);
       display: flex;
       align-items: center;
@@ -735,37 +873,41 @@
       align-items: center;
       justify-content: center;
       color: var(--accent-amber);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       text-align: center;
-      padding: 10px;
+      padding: 8px;
       border-radius: 3px;
     }
     .selection-group {
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
     .selection-group label {
       display: block;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-family: var(--font-mono);
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-muted);
-      margin-bottom: 10px;
+      margin-bottom: 9px;
+      white-space: nowrap;
     }
     .select-options {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
     }
     .option-btn {
-      padding: 8px 16px;
+      padding: 8px 14px;
       border-radius: 10px;
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-subtle);
       color: var(--text-main);
-      font-size: 0.84rem;
+      font-size: 0.82rem;
+      font-weight: 500;
       cursor: pointer;
       transition: var(--transition);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .option-btn:hover,
     .option-btn.active {
@@ -779,26 +921,26 @@
     .reviews-carousel {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-      margin-bottom: 70px;
+      gap: 22px;
+      margin-bottom: 65px;
     }
     .review-bubble {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      border-radius: 22px;
-      padding: 28px;
+      border-radius: 20px;
+      padding: 26px;
       position: relative;
     }
     .review-stars {
       color: #f59e0b;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       font-size: 0.85rem;
     }
     .review-text {
-      font-size: 0.94rem;
+      font-size: 0.92rem;
       color: var(--text-main);
       line-height: 1.6;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
     .reviewer-meta {
       display: flex;
@@ -807,8 +949,8 @@
       font-size: 0.82rem;
     }
     .reviewer-avatar {
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: var(--bg-surface-elevated);
       display: flex;
@@ -817,16 +959,17 @@
       font-weight: bold;
       color: var(--accent-amber);
       border: 1px solid var(--border-subtle);
+      flex-shrink: 0;
     }
 
-    /* Wes McDowell FAQ Accordion */
+    /* Wes McDowell FAQ Grid */
     .faq-section {
-      padding: 20px 0 80px;
+      padding: 20px 0 75px;
     }
     .faq-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 18px;
       max-width: 1080px;
       margin: 0 auto;
     }
@@ -834,7 +977,7 @@
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 18px;
-      padding: 24px;
+      padding: 22px;
       transition: var(--transition);
     }
     .faq-item:hover {
@@ -842,8 +985,8 @@
     }
     .faq-item h4 {
       font-family: var(--font-heading);
-      font-size: 1.2rem;
-      margin-bottom: 10px;
+      font-size: 1.15rem;
+      margin-bottom: 8px;
       color: var(--text-main);
       display: flex;
       align-items: flex-start;
@@ -851,89 +994,93 @@
     }
     .faq-item h4 i {
       color: var(--accent-amber);
-      font-size: 0.9rem;
-      margin-top: 4px;
+      font-size: 0.88rem;
+      margin-top: 3px;
+      flex-shrink: 0;
     }
     .faq-item p {
       color: var(--text-muted);
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       line-height: 1.6;
-      padding-left: 24px;
+      padding-left: 22px;
     }
 
-    /* Malleshpalya Studio Hub */
+    /* Studio Location Hub */
     .local-hub-strip {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      border-radius: 28px;
-      padding: 40px;
-      margin-bottom: 70px;
+      border-radius: 26px;
+      padding: 38px;
+      margin-bottom: 65px;
     }
     .local-hub-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 36px;
       align-items: center;
     }
     .local-tag-list {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 16px;
+      margin-top: 14px;
     }
     .local-tag {
-      font-size: 0.75rem;
-      padding: 4px 12px;
+      font-size: 0.74rem;
+      padding: 4px 10px;
       background: rgba(255,255,255,0.04);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
       color: var(--text-muted);
       font-family: var(--font-mono);
+      white-space: nowrap;
     }
 
     /* Final Conversion Banner */
     .cta-banner {
-      background: linear-gradient(135deg, #1e2430 0%, #13161e 100%);
+      background: linear-gradient(135deg, #1b202a 0%, #12141c 100%);
       border: 1px solid var(--border-amber);
-      border-radius: 28px;
-      padding: 50px 40px;
+      border-radius: 26px;
+      padding: 46px 36px;
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.4);
     }
 
     /* Footer */
     footer {
-      background: #090a0d;
+      background: #08090c;
       border-top: 1px solid var(--border-subtle);
-      padding: 60px 0 30px;
-      font-size: 0.85rem;
+      padding: 55px 0 28px;
+      font-size: 0.84rem;
       color: var(--text-muted);
     }
     .footer-grid {
       display: grid;
       grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-      gap: 36px;
-      margin-bottom: 48px;
+      gap: 32px;
+      margin-bottom: 42px;
     }
     .footer-col h4 {
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--text-main);
-      margin-bottom: 18px;
+      margin-bottom: 16px;
+      white-space: nowrap;
     }
     .footer-col ul {
       list-style: none;
     }
     .footer-col ul li {
-      margin-bottom: 10px;
+      margin-bottom: 9px;
     }
     .footer-col ul li a {
       color: var(--text-muted);
       text-decoration: none;
       transition: var(--transition);
+      white-space: nowrap;
     }
     .footer-col ul li a:hover {
       color: var(--accent-amber);
@@ -960,12 +1107,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 11px 12px;
+      gap: 7px;
+      padding: 10px 12px;
       border-radius: 12px;
       font-size: 0.82rem;
       font-weight: 600;
       text-decoration: none;
+      white-space: nowrap;
     }
     .mobile-btn-call {
       background: var(--bg-surface-elevated);
@@ -978,8 +1126,23 @@
       font-weight: 700;
     }
 
-    /* Responsive Breakpoints */
-    @media (max-width: 960px) {
+    /* Responsive Queries */
+    @media (max-width: 1120px) {
+      .nav-links {
+        gap: 18px;
+      }
+      .nav-links a {
+        font-size: 0.84rem;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: flex;
+      }
       .hero-grid,
       .frame-calculator-grid,
       .local-hub-grid,
@@ -989,17 +1152,21 @@
       .faq-grid {
         grid-template-columns: 1fr;
       }
-      .hero-title {
-        font-size: 2.6rem;
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
       }
-      .nav-links {
-        display: none;
+      .hero-actions .btn {
+        justify-content: center;
       }
       .spec-card-grid {
         grid-template-columns: 1fr;
       }
       .mobile-action-bar {
         display: flex;
+      }
+      .top-location {
+        display: none;
       }
     }
   </style>
@@ -1008,18 +1175,18 @@
 
   <div class="spotlight"></div>
 
-  <!-- Top Studio Bar -->
+  <!-- Top Studio Bar (Single Line Guaranteed) -->
   <div class="top-banner">
     <div class="container top-banner-inner">
-      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <div class="top-left">
         <span class="badge-pill">
-          <i class="fa-solid fa-star"></i> 4.9★ Top-Rated Photography Studio
+          <i class="fa-solid fa-star"></i> 4.9★ Top Rated
         </span>
-        <span>📍 Malleshpalya Main Rd (Beside Apple Multi-Speciality Clinic), Bengaluru</span>
+        <span class="top-location">📍 Malleshpalya Main Rd, Bengaluru</span>
       </div>
-      <div style="display: flex; align-items: center; gap: 16px;">
+      <div class="top-right">
         <span><span class="status-live-dot"></span> Open Today: 9:30 AM – 9:30 PM</span>
-        <a href="tel:+919900911929" style="color: var(--accent-amber); font-weight: 600; text-decoration: none;">
+        <a href="tel:+919900911929" style="color: var(--accent-amber); font-weight: 600; text-decoration: none;" class="nowrap">
           <i class="fa-solid fa-phone"></i> +91 99009 11929
         </a>
       </div>
@@ -1029,41 +1196,58 @@
   <!-- Header -->
   <header>
     <div class="container nav-inner">
+      <!-- Brand -->
       <a href="#" class="brand">
         <div class="brand-icon">
           <i class="fa-solid fa-camera-retro"></i>
         </div>
         <div class="brand-text">
           <h1>Shutter Bug Studioz</h1>
-          <span>Photography &amp; Custom Framing Lab</span>
+          <span>Photography &amp; Custom Framing</span>
         </div>
       </a>
 
+      <!-- Clean 5-Item Navigation (Strictly Non-Wrapping Single Line) -->
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#visa-tool">Visa Photo Specs</a></li>
-        <li><a href="#frame-tool">Frame Visualizer</a></li>
+        <li><a href="#visa-tool">Visa Photos</a></li>
+        <li><a href="#frame-tool">Framing Lab</a></li>
         <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#location">Studio Location</a></li>
+        <li><a href="#location">Location</a></li>
       </ul>
 
-      <div style="display: flex; gap: 12px;">
+      <!-- Right Header Actions -->
+      <div class="header-actions">
         <a href="https://wa.me/919900911929?text=Hi%20Shutter%20Bug%20Studioz%2C%20I%20would%20like%20to%20enquire%20about%20your%20photography%20services%20and%20framing." target="_blank" rel="noopener" class="btn btn-amber">
           <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
         </a>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars" id="menuIcon"></i>
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <ul>
+        <li><a href="#services" onclick="closeMobileMenu()">Services <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem; color: var(--accent-amber);"></i></a></li>
+        <li><a href="#visa-tool" onclick="closeMobileMenu()">Visa Photos &amp; Specs <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem; color: var(--accent-amber);"></i></a></li>
+        <li><a href="#frame-tool" onclick="closeMobileMenu()">Custom Framing Visualizer <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem; color: var(--accent-amber);"></i></a></li>
+        <li><a href="#how-it-works" onclick="closeMobileMenu()">How It Works <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem; color: var(--accent-amber);"></i></a></li>
+        <li><a href="#reviews" onclick="closeMobileMenu()">Customer Reviews <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem; color: var(--accent-amber);"></i></a></li>
+        <li><a href="#faq" onclick="closeMobileMenu()">FAQ <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem; color: var(--accent-amber);"></i></a></li>
+        <li><a href="#location" onclick="closeMobileMenu()">Studio Directions <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem; color: var(--accent-amber);"></i></a></li>
+      </ul>
     </div>
   </header>
 
-  <!-- Hero Section (Wes McDowell Grunt Test: What You Do, Benefit, Clear CTA) -->
+  <!-- Hero Section (Wes McDowell 5-Second Grunt Test Layout) -->
   <section class="hero">
     <div class="container">
       <div class="hero-grid">
         <div>
           <span class="hero-eyebrow">
-            <i class="fa-solid fa-shield-halved"></i> 100% Embassy Acceptance · 8+ Years in Malleshpalya
+            <i class="fa-solid fa-shield-halved"></i> 100% Embassy Acceptance · 8+ Years Legacy
           </span>
           <h2 class="hero-title">
             Stunning Portraits, Flawless Visa Photos &amp; <em>Archival Frames.</em>
@@ -1073,11 +1257,11 @@
           </p>
 
           <div class="hero-actions">
-            <a href="https://wa.me/919900911929?text=Hi%20Shutter%20Bug%20Studioz%2C%20I%20would%20like%20to%20book%20a%20session%20or%20get%20a%20quote." class="btn btn-amber" target="_blank">
-              <i class="fa-regular fa-calendar-check"></i> Book Session / Free Consultation
+            <a href="https://wa.me/919900911929?text=Hi%20Shutter%20Bug%20Studioz%2C%20I%20would%20like%20to%20book%20a%20session%20or%20get%20a%20free%20consultation." class="btn btn-amber" target="_blank">
+              <i class="fa-regular fa-calendar-check"></i> Book Studio Session
             </a>
             <a href="#frame-tool" class="btn btn-outline">
-              <i class="fa-solid fa-crop-simple"></i> Try Custom Frame Visualizer
+              <i class="fa-solid fa-crop-simple"></i> Try Frame Visualizer
             </a>
           </div>
 
@@ -1100,11 +1284,11 @@
         <!-- Hero Showcase Card -->
         <div class="hero-card">
           <div class="hero-card-inner">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-              <span style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--accent-amber); font-weight: 600;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <span style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--accent-amber); font-weight: 600;" class="nowrap">
                 FEATURED STUDIO WORK
               </span>
-              <span style="font-size: 0.75rem; color: #10b981; background: rgba(16,185,129,0.1); padding: 3px 8px; border-radius: 6px;">
+              <span style="font-size: 0.72rem; color: #10b981; background: rgba(16,185,129,0.1); padding: 3px 8px; border-radius: 6px;" class="nowrap">
                 ● Walk-ins Welcome Today
               </span>
             </div>
@@ -1126,10 +1310,10 @@
 
             <div class="quick-guarantee-pill">
               <div>
-                <strong style="display: block; font-size: 0.9rem; color: var(--text-main);">Walk-in or Book Ahead</strong>
-                <span style="color: var(--text-muted); font-size: 0.75rem;">Visa biometrics ready in 10 mins · Bespoke frames crafted in-house</span>
+                <strong style="display: block; font-size: 0.88rem; color: var(--text-main);">Walk-in or Book Ahead</strong>
+                <span style="color: var(--text-muted); font-size: 0.74rem;">Visa biometrics ready in 10 mins · Frames crafted in-house</span>
               </div>
-              <a href="tel:+919900911929" class="btn-amber" style="padding: 7px 15px; font-size: 0.78rem; text-decoration: none; border-radius: 8px;">
+              <a href="tel:+919900911929" class="btn-amber" style="padding: 7px 14px; font-size: 0.78rem; text-decoration: none; border-radius: 8px;">
                 Call Now
               </a>
             </div>
@@ -1144,7 +1328,7 @@
     <div class="container">
       <div class="section-title-wrap">
         <span class="section-tag">THE SHUTTER BUG DIFFERENCE</span>
-        <h2 class="section-title">Why most studio visits are stressful — and how we make yours effortless.</h2>
+        <h2 class="section-title">Why studio visits are often stressful — and how we fix it.</h2>
         <p class="section-desc">You shouldn't have to worry about rejected visa photos, rushed kids shoots, or cheap fading frames.</p>
       </div>
 
@@ -1156,7 +1340,7 @@
           <div class="pain-divider"></div>
           <span class="sol-tag"><i class="fa-solid fa-circle-check"></i> Our Studio Guarantee</span>
           <div class="pain-sol">
-            <strong>100% Embassy Acceptance:</strong> We calibrate calibrated biometric lighting for US, Schengen, Canada, UK, and Australia with zero-glare verification. If an embassy ever rejects it, we re-shoot for free.
+            <strong>100% Embassy Acceptance:</strong> Calibrated biometric lighting for US, Schengen, Canada, UK, and Australia. If an embassy ever rejects it, we re-shoot for free.
           </div>
         </div>
 
@@ -1167,7 +1351,7 @@
           <div class="pain-divider"></div>
           <span class="sol-tag"><i class="fa-solid fa-circle-check"></i> Our Studio Guarantee</span>
           <div class="pain-sol">
-            <strong>Patience-First Studio Environment:</strong> Sanitized, comfortable, temperature-controlled studio stocked with toys and props. We play, take snack breaks, and wait for genuine, candid laughter.
+            <strong>Patience-First Studio:</strong> Sanitized, comfortable, temperature-controlled studio with toys and props. We play, take snack breaks, and capture candid laughter.
           </div>
         </div>
 
@@ -1178,7 +1362,7 @@
           <div class="pain-divider"></div>
           <span class="sol-tag"><i class="fa-solid fa-circle-check"></i> Our Studio Guarantee</span>
           <div class="pain-sol">
-            <strong>Artisan In-House Archival Lab:</strong> Natural seasoned teakwood, Italian mouldings, acid-free museum matboards, and 380 GSM canvas wraps engineered to stay vibrant for generations.
+            <strong>Artisan In-House Lab:</strong> Natural seasoned teakwood, Italian mouldings, acid-free museum matboards, and 380 GSM canvas engineered to stay vibrant for generations.
           </div>
         </div>
       </div>
@@ -1214,16 +1398,16 @@
         </div>
       </div>
 
-      <div style="text-align: center; margin-top: 40px;">
+      <div style="text-align: center; margin-top: 36px;">
         <a href="https://wa.me/919900911929?text=Hi%20Shutter%20Bug%20Studioz%2C%20I%20have%20a%20query%20about%20your%20services." target="_blank" class="btn btn-amber">
-          <i class="fa-brands fa-whatsapp"></i> Speak Directly With Our Studio Lead
+          <i class="fa-brands fa-whatsapp"></i> Speak With Our Studio Lead
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Properly Organized Core Services (Categorized & Interactive) -->
-  <section id="services" style="padding: 80px 0;">
+  <!-- Properly Organized Core Services (Silky Non-Wrapping Tabs) -->
+  <section id="services" style="padding: 70px 0;">
     <div class="container">
       <div class="section-title-wrap">
         <span class="section-tag">COMPREHENSIVE STUDIO SUITE</span>
@@ -1231,12 +1415,14 @@
         <p class="section-desc">Browse our core capabilities across celebration shoots, daily biometric lab services, and bespoke archival framing.</p>
       </div>
 
-      <!-- Category Filter Tabs -->
-      <div class="services-nav-tabs">
-        <button class="tab-btn active" onclick="filterServices('all')">All Services</button>
-        <button class="tab-btn" onclick="filterServices('milestones')">Milestones &amp; Weddings</button>
-        <button class="tab-btn" onclick="filterServices('biometrics')">Biometrics &amp; Headshots</button>
-        <button class="tab-btn" onclick="filterServices('framing')">Custom Framing &amp; Gifts</button>
+      <!-- Category Filter Tabs: Silky Non-Wrapping Horizontal Pill Bar -->
+      <div class="services-nav-tabs-wrapper">
+        <div class="services-nav-tabs">
+          <button class="tab-btn active" onclick="filterServices('all')">All Services</button>
+          <button class="tab-btn" onclick="filterServices('milestones')">Weddings &amp; Milestones</button>
+          <button class="tab-btn" onclick="filterServices('biometrics')">Visa &amp; Headshots</button>
+          <button class="tab-btn" onclick="filterServices('framing')">Custom Framing &amp; Gifts</button>
+        </div>
       </div>
 
       <div class="services-grid">
@@ -1257,8 +1443,8 @@
             </ul>
           </div>
           <div class="service-footer">
-            <span style="color: var(--accent-amber);"><i class="fa-solid fa-calendar-check"></i> Tailored Event Coverage</span>
-            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20am%20enquiring%20about%20Wedding%20Photography%20services." target="_blank" style="color: var(--text-main); text-decoration: underline; font-weight: 600;">Request Brochure →</a>
+            <span class="service-footer-tag"><i class="fa-solid fa-calendar-check"></i> Tailored Event Coverage</span>
+            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20am%20enquiring%20about%20Wedding%20Photography%20services." target="_blank" class="service-footer-cta">Request Brochure →</a>
           </div>
         </div>
 
@@ -1279,8 +1465,8 @@
             </ul>
           </div>
           <div class="service-footer">
-            <span style="color: var(--accent-amber);"><i class="fa-solid fa-heart"></i> Props &amp; Outfits Included</span>
-            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20would%20like%20to%20book%20a%20Baby%20%2F%20Kids%20photoshoot." target="_blank" style="color: var(--text-main); text-decoration: underline; font-weight: 600;">Reserve Studio Slot →</a>
+            <span class="service-footer-tag"><i class="fa-solid fa-heart"></i> Props &amp; Outfits Included</span>
+            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20would%20like%20to%20book%20a%20Baby%20%2F%20Kids%20photoshoot." target="_blank" class="service-footer-cta">Reserve Studio Slot →</a>
           </div>
         </div>
 
@@ -1294,15 +1480,15 @@
             <h3>Biometric Visa &amp; Passport Photos</h3>
             <p>Strictly compliant with US (DS-160), Schengen (27 European countries), UK, Canada PR, Australia, Singapore, and Indian Passport/OCI standards. Calibrated background illumination with zero-shadow verification.</p>
             <ul class="service-features">
-              <li><i class="fa-solid fa-check"></i> Ready in Under 10 Minutes (No Prior Appointment)</li>
-              <li><i class="fa-solid fa-check"></i> Instant WhatsApp &amp; Email Delivery of Digital Soft Copies</li>
+              <li><i class="fa-solid fa-check"></i> Ready in Under 10 Minutes (No Appointment)</li>
+              <li><i class="fa-solid fa-check"></i> WhatsApp &amp; Email Delivery of Soft Copies</li>
               <li><i class="fa-solid fa-check"></i> Waterproof Biometric Prints on Lab Photo Paper</li>
               <li><i class="fa-solid fa-check"></i> 100% Embassy Acceptance Guarantee or Free Reshoot</li>
             </ul>
           </div>
           <div class="service-footer">
-            <span style="color: #10b981;"><i class="fa-solid fa-bolt"></i> 10-Minute Walk-In</span>
-            <a href="#visa-tool" style="color: var(--text-main); text-decoration: underline; font-weight: 600;">Check Country Specs →</a>
+            <span class="service-footer-tag" style="color: #10b981;"><i class="fa-solid fa-bolt"></i> 10-Minute Walk-In</span>
+            <a href="#visa-tool" class="service-footer-cta">Check Country Specs →</a>
           </div>
         </div>
 
@@ -1323,8 +1509,8 @@
             </ul>
           </div>
           <div class="service-footer">
-            <span style="color: var(--accent-amber);"><i class="fa-solid fa-palette"></i> In-House Custom Sizing</span>
-            <a href="#frame-tool" style="color: var(--text-main); text-decoration: underline; font-weight: 600;">Launch Visualizer →</a>
+            <span class="service-footer-tag"><i class="fa-solid fa-palette"></i> In-House Custom Sizing</span>
+            <a href="#frame-tool" class="service-footer-cta">Launch Visualizer →</a>
           </div>
         </div>
 
@@ -1345,8 +1531,8 @@
             </ul>
           </div>
           <div class="service-footer">
-            <span style="color: var(--accent-amber);"><i class="fa-solid fa-gift"></i> Quick 24-48h Delivery</span>
-            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20would%20like%20to%20order%20a%20personalized%20photo%20gift." target="_blank" style="color: var(--text-main); text-decoration: underline; font-weight: 600;">Order via WhatsApp →</a>
+            <span class="service-footer-tag"><i class="fa-solid fa-gift"></i> Quick 24-48h Delivery</span>
+            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20would%20like%20to%20order%20a%20personalized%20photo%20gift." target="_blank" class="service-footer-cta">Order via WhatsApp →</a>
           </div>
         </div>
 
@@ -1367,8 +1553,8 @@
             </ul>
           </div>
           <div class="service-footer">
-            <span style="color: var(--accent-amber);"><i class="fa-solid fa-user-check"></i> Natural Retouching</span>
-            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20need%20a%20Professional%20Headshot%20%2F%20Family%20Portrait%20slot." target="_blank" style="color: var(--text-main); text-decoration: underline; font-weight: 600;">Schedule Session →</a>
+            <span class="service-footer-tag"><i class="fa-solid fa-user-check"></i> Natural Retouching</span>
+            <a href="https://wa.me/919900911929?text=Hi%2C%20I%20need%20a%20Professional%20Headshot%20%2F%20Family%20Portrait%20slot." target="_blank" class="service-footer-cta">Schedule Session →</a>
           </div>
         </div>
       </div>
@@ -1385,26 +1571,26 @@
             <h3 style="font-family: var(--font-heading); font-size: 2.2rem; line-height: 1.2;">
               Official Visa &amp; Passport Photo Standards
             </h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 6px;">
+            <p style="color: var(--text-muted); font-size: 0.94rem; margin-top: 6px;">
               Select your destination country to verify the exact biometric dimensions, background standards, and print formats calibrated at our Malleshpalya studio.
             </p>
           </div>
           <div>
-            <span class="badge-pill" style="font-size: 0.85rem; padding: 6px 14px;">
+            <span class="badge-pill" style="font-size: 0.82rem; padding: 6px 14px;">
               <i class="fa-solid fa-bolt"></i> Ready in 10 Minutes Walk-in
             </span>
           </div>
         </div>
 
-        <!-- Country Selectors -->
+        <!-- Country Selectors (Clean Non-Wrapping Pills) -->
         <div class="country-selector-pills">
-          <button class="country-pill active" onclick="selectCountry('usa')">🇺🇸 United States (US Visa / DS-160)</button>
-          <button class="country-pill" onclick="selectCountry('schengen')">🇪🇺 Schengen / Europe (27 Countries)</button>
-          <button class="country-pill" onclick="selectCountry('uk')">🇬🇧 United Kingdom (UK Visa &amp; Passport)</button>
-          <button class="country-pill" onclick="selectCountry('canada')">🇨🇦 Canada (Visa &amp; Permanent Residency)</button>
-          <button class="country-pill" onclick="selectCountry('australia')">🇦🇺 Australia (Biometric Visa)</button>
-          <button class="country-pill" onclick="selectCountry('singapore')">🇸🇬 Singapore (ICA E-Visa)</button>
-          <button class="country-pill" onclick="selectCountry('india')">🇮🇳 India (Passport &amp; OCI Card)</button>
+          <button class="country-pill active" onclick="selectCountry('usa')">🇺🇸 USA (DS-160)</button>
+          <button class="country-pill" onclick="selectCountry('schengen')">🇪🇺 Schengen / EU</button>
+          <button class="country-pill" onclick="selectCountry('uk')">🇬🇧 UK Passport</button>
+          <button class="country-pill" onclick="selectCountry('canada')">🇨🇦 Canada PR</button>
+          <button class="country-pill" onclick="selectCountry('australia')">🇦🇺 Australia</button>
+          <button class="country-pill" onclick="selectCountry('singapore')">🇸🇬 Singapore</button>
+          <button class="country-pill" onclick="selectCountry('india')">🇮🇳 India / OCI</button>
         </div>
 
         <!-- Spec Dynamic Output -->
@@ -1445,7 +1631,7 @@
   </section>
 
   <!-- Interactive Tool 2: Custom Framing & Keepsake Visualizer (Zero Pricing) -->
-  <section id="frame-tool" style="padding: 20px 0 80px;">
+  <section id="frame-tool" style="padding: 20px 0 75px;">
     <div class="container">
       <div class="section-title-wrap">
         <span class="section-tag">BESPOKE FRAMING &amp; CANVAS LAB</span>
@@ -1461,11 +1647,11 @@
               <div class="virtual-art">
                 <i class="fa-solid fa-image" style="font-size: 2rem; margin-bottom: 8px;"></i>
                 <strong id="previewArtTitle">Your Treasured Photo</strong>
-                <span id="previewArtSize" style="font-size: 0.75rem; color: var(--text-muted);">Selected: 12x18 Inches (Gallery Matte Black)</span>
+                <span id="previewArtSize" style="font-size: 0.74rem; color: var(--text-muted);" class="nowrap">Selected: 12x18 Inches (Gallery Matte Black)</span>
               </div>
             </div>
           </div>
-          <div style="position: absolute; bottom: 16px; font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-muted);">
+          <div style="position: absolute; bottom: 14px; font-size: 0.72rem; font-family: var(--font-mono); color: var(--text-muted);" class="nowrap">
             Real-time visual simulation · In-house crafted in Malleshpalya
           </div>
         </div>
@@ -1489,10 +1675,10 @@
             <label>2. Select Dimensions (Inches)</label>
             <div class="select-options">
               <button class="option-btn" onclick="setFrameSize('6x8')">6 x 8" (Desk)</button>
-              <button class="option-btn" onclick="setFrameSize('8x12')">8 x 12" (A4 Standard)</button>
-              <button class="option-btn active" onclick="setFrameSize('12x18')">12 x 18" (A3+ Wall)</button>
+              <button class="option-btn" onclick="setFrameSize('8x12')">8 x 12" (A4)</button>
+              <button class="option-btn active" onclick="setFrameSize('12x18')">12 x 18" (A3+)</button>
               <button class="option-btn" onclick="setFrameSize('16x24')">16 x 24" (Gallery)</button>
-              <button class="option-btn" onclick="setFrameSize('20x30')">20 x 30" (Statement Piece)</button>
+              <button class="option-btn" onclick="setFrameSize('20x30')">20 x 30" (Statement)</button>
             </div>
           </div>
 
@@ -1506,22 +1692,22 @@
           </div>
 
           <!-- Spec Summary Box & Direct WhatsApp Action (Zero Pricing) -->
-          <div style="background: var(--bg-card); border: 1px solid var(--border-amber); border-radius: 18px; padding: 22px; margin-top: 24px;">
-            <div style="margin-bottom: 14px;">
-              <span style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--accent-amber); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 4px;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-amber); border-radius: 18px; padding: 22px; margin-top: 22px;">
+            <div style="margin-bottom: 12px;">
+              <span style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--accent-amber); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 4px;" class="nowrap">
                 Selected Custom Configuration:
               </span>
-              <strong id="configSummaryText" style="font-size: 1.05rem; color: var(--text-main); display: block;">
+              <strong id="configSummaryText" style="font-size: 1rem; color: var(--text-main); display: block; line-height: 1.4;">
                 12x18 Inches · Gallery Matte Black · Museum Matboard Included
               </strong>
             </div>
             <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 18px;">
-              Includes ultra-high-resolution archival photo printing + UV-resistant protective acrylic glass + precision corner joining &amp; heavy-duty hanging hardware.
+              Includes ultra-high-resolution photo printing + UV-resistant protective acrylic glass + precision corner joining &amp; heavy-duty hanging hardware.
             </p>
             <button onclick="orderCustomFrame()" class="btn btn-amber" style="width: 100%; justify-content: center;">
               <i class="fa-brands fa-whatsapp"></i> Get Custom Quote &amp; Send Photo on WhatsApp
             </button>
-            <span style="display: block; text-align: center; font-size: 0.74rem; color: var(--text-muted); margin-top: 8px;">
+            <span style="display: block; text-align: center; font-size: 0.74rem; color: var(--text-muted); margin-top: 8px;" class="nowrap">
               Fast response · Send your photo for a free digital proof and tailored quote
             </span>
           </div>
@@ -1531,7 +1717,7 @@
   </section>
 
   <!-- Verified Customer Reviews Section (Wes McDowell Social Proof) -->
-  <section id="reviews" style="padding: 30px 0 70px;">
+  <section id="reviews" style="padding: 25px 0 65px;">
     <div class="container">
       <div class="section-title-wrap">
         <span class="section-tag">VERIFIED LOCAL SOCIAL PROOF</span>
@@ -1550,8 +1736,8 @@
           <div class="reviewer-meta">
             <div class="reviewer-avatar">P</div>
             <div>
-              <strong style="display: block; color: var(--text-main);">Pooja K.</strong>
-              <span style="color: var(--text-muted); font-size: 0.75rem;">Verified Customer · Kids &amp; Family Portrait</span>
+              <strong style="display: block; color: var(--text-main);" class="nowrap">Pooja K.</strong>
+              <span style="color: var(--text-muted); font-size: 0.74rem;" class="nowrap">Verified Customer · Kids &amp; Family Portrait</span>
             </div>
           </div>
         </div>
@@ -1566,8 +1752,8 @@
           <div class="reviewer-meta">
             <div class="reviewer-avatar">R</div>
             <div>
-              <strong style="display: block; color: var(--text-main);">Rahul &amp; Sneha M.</strong>
-              <span style="color: var(--text-muted); font-size: 0.75rem;">Verified Customer · Wedding Album Design</span>
+              <strong style="display: block; color: var(--text-main);" class="nowrap">Rahul &amp; Sneha M.</strong>
+              <span style="color: var(--text-muted); font-size: 0.74rem;" class="nowrap">Verified Customer · Wedding Album Design</span>
             </div>
           </div>
         </div>
@@ -1582,8 +1768,8 @@
           <div class="reviewer-meta">
             <div class="reviewer-avatar">V</div>
             <div>
-              <strong style="display: block; color: var(--text-main);">Vinay S.</strong>
-              <span style="color: var(--text-muted); font-size: 0.75rem;">Verified Customer · Express Visa Photography</span>
+              <strong style="display: block; color: var(--text-main);" class="nowrap">Vinay S.</strong>
+              <span style="color: var(--text-muted); font-size: 0.74rem;" class="nowrap">Verified Customer · Express Visa Photography</span>
             </div>
           </div>
         </div>
@@ -1591,7 +1777,7 @@
     </div>
   </section>
 
-  <!-- Wes McDowell Principle: Frequently Asked Questions (Overcoming Friction) -->
+  <!-- Wes McDowell Principle: Frequently Asked Questions -->
   <section id="faq" class="faq-section">
     <div class="container">
       <div class="section-title-wrap">
@@ -1603,7 +1789,7 @@
       <div class="faq-grid">
         <div class="faq-item">
           <h4><i class="fa-solid fa-circle-question"></i> Do I need an appointment for Visa or Passport photos?</h4>
-          <p>No appointment is necessary! You can simply walk into our Malleshpalya studio during working hours (9:30 AM – 9:30 PM). Your photos will be shot, cropped to country specs, printed, and emailed/WhatsApped to you in under 10 minutes.</p>
+          <p>No appointment is necessary! You can simply walk into our Malleshpalya studio during working hours (9:30 AM – 9:30 PM). Your photos will be shot, cropped to country specs, printed, and delivered in under 10 minutes.</p>
         </div>
 
         <div class="faq-item">
@@ -1641,15 +1827,15 @@
         <div class="local-hub-grid">
           <div>
             <span class="section-tag">VISIT OUR NEIGHBOURHOOD STUDIO</span>
-            <h3 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 16px;">
+            <h3 style="font-family: var(--font-heading); font-size: 2.1rem; margin-bottom: 14px;">
               Conveniently located in Malleshpalya, East Bengaluru.
             </h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 22px; line-height: 1.6;">
+            <p style="color: var(--text-muted); font-size: 0.94rem; margin-bottom: 20px; line-height: 1.6;">
               <strong>Exact Address:</strong> Sri Sai Ram Nilaya, 263/1, Beside Apple Multi-Speciality Clinic, Maruthi Nagar, Malleshpalya, New Thippasandra, Bengaluru, Karnataka 560075.
             </p>
 
-            <div style="margin-bottom: 24px;">
-              <strong style="font-size: 0.85rem; color: var(--accent-amber); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-mono);">
+            <div style="margin-bottom: 22px;">
+              <strong style="font-size: 0.82rem; color: var(--accent-amber); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-mono);" class="nowrap">
                 Serving Surrounding Corridors:
               </strong>
               <div class="local-tag-list">
@@ -1664,7 +1850,7 @@
               </div>
             </div>
 
-            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
               <a href="https://maps.google.com/?q=Shutter+Bug+Studio+Malleshpalya+Bengaluru" target="_blank" rel="noopener" class="btn btn-amber">
                 <i class="fa-solid fa-location-dot"></i> Open in Google Maps
               </a>
@@ -1674,22 +1860,22 @@
             </div>
           </div>
 
-          <div style="background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 28px;">
-            <h4 style="font-family: var(--font-mono); font-size: 0.9rem; text-transform: uppercase; color: var(--accent-amber); margin-bottom: 16px;">
+          <div style="background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 26px;">
+            <h4 style="font-family: var(--font-mono); font-size: 0.88rem; text-transform: uppercase; color: var(--accent-amber); margin-bottom: 14px;" class="nowrap">
               Studio Operating Hours
             </h4>
-            <div style="font-size: 0.88rem; line-height: 2;">
+            <div style="font-size: 0.86rem; line-height: 2;">
               <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding: 6px 0;">
-                <span>Monday – Saturday</span>
-                <strong style="color: var(--text-main);">9:30 AM – 9:30 PM</strong>
+                <span class="nowrap">Monday – Saturday</span>
+                <strong style="color: var(--text-main);" class="nowrap">9:30 AM – 9:30 PM</strong>
               </div>
               <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding: 6px 0;">
-                <span>Sunday</span>
-                <strong style="color: var(--text-main);">10:30 AM – 9:30 PM</strong>
+                <span class="nowrap">Sunday</span>
+                <strong style="color: var(--text-main);" class="nowrap">10:30 AM – 9:30 PM</strong>
               </div>
               <div style="display: flex; justify-content: space-between; padding: 6px 0;">
-                <span>Accepted Payments</span>
-                <span style="color: var(--text-muted);">UPI, GPay, PhonePe, Cards, Cash</span>
+                <span class="nowrap">Accepted Payments</span>
+                <span style="color: var(--text-muted);" class="nowrap">UPI, GPay, Cards, Cash</span>
               </div>
             </div>
           </div>
@@ -1698,17 +1884,17 @@
 
       <!-- High-Converting Bottom CTA Banner -->
       <div class="cta-banner">
-        <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 14px; color: #fff;">
+        <h2 style="font-family: var(--font-heading); font-size: 2.3rem; margin-bottom: 12px; color: #fff;">
           Ready to capture or preserve your next memory?
         </h2>
-        <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 30px;">
+        <p style="color: var(--text-muted); font-size: 1rem; max-width: 600px; margin: 0 auto 26px;">
           Walk into our Malleshpalya studio today or send your photos on WhatsApp for a custom framing quotation and appointment booking.
         </p>
-        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-          <a href="https://wa.me/919900911929?text=Hi%20Shutter%20Bug%20Studioz%2C%20I%20would%20like%20to%20connect%20regarding%20a%20photoshoot%20or%20framing." target="_blank" rel="noopener" class="btn btn-amber" style="padding: 13px 30px; font-size: 0.95rem;">
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a href="https://wa.me/919900911929?text=Hi%20Shutter%20Bug%20Studioz%2C%20I%20would%20like%20to%20connect%20regarding%20a%20photoshoot%20or%20framing." target="_blank" rel="noopener" class="btn btn-amber" style="padding: 12px 28px; font-size: 0.92rem;">
             <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp (+91 99009 11929)
           </a>
-          <a href="tel:+919900911929" class="btn btn-outline" style="padding: 13px 26px; font-size: 0.95rem;">
+          <a href="tel:+919900911929" class="btn btn-outline" style="padding: 12px 24px; font-size: 0.92rem;">
             <i class="fa-solid fa-phone"></i> Call Studio Directly
           </a>
         </div>
@@ -1721,16 +1907,16 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="brand" style="margin-bottom: 16px;">
+          <div class="brand" style="margin-bottom: 14px;">
             <div class="brand-icon">
               <i class="fa-solid fa-camera-retro"></i>
             </div>
             <div class="brand-text">
-              <h3 style="font-family: var(--font-heading); font-size: 1.3rem;">Shutter Bug Studioz</h3>
+              <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">Shutter Bug Studioz</h3>
               <span>Malleshpalya, Bengaluru</span>
             </div>
           </div>
-          <p style="font-size: 0.85rem; line-height: 1.6; max-width: 320px;">
+          <p style="font-size: 0.84rem; line-height: 1.6; max-width: 320px;">
             Preserving life's most precious occasions through gentle milestone photography, bespoke albums, country-compliant visa portraits, and custom archival framing.
           </p>
         </div>
@@ -1759,14 +1945,14 @@
 
         <div class="footer-col">
           <h4>Studio Contact</h4>
-          <p style="margin-bottom: 8px;">📍 Beside Apple Clinic, Maruthi Nagar, Malleshpalya, Bengaluru 560075</p>
-          <p style="margin-bottom: 8px;">📞 <a href="tel:+919900911929" style="color: var(--accent-amber); text-decoration: none;">+91 99009 11929</a></p>
-          <p style="margin-bottom: 8px;">💬 <a href="https://wa.me/919900911929" target="_blank" style="color: #25d366; text-decoration: none;">WhatsApp: +91 99009 11929</a></p>
-          <p style="font-size: 0.78rem; color: #10b981; margin-top: 10px;">● Open Today: 9:30 AM – 9:30 PM</p>
+          <p style="margin-bottom: 7px;">📍 Beside Apple Clinic, Maruthi Nagar, Malleshpalya, Bengaluru 560075</p>
+          <p style="margin-bottom: 7px;">📞 <a href="tel:+919900911929" style="color: var(--accent-amber); text-decoration: none;" class="nowrap">+91 99009 11929</a></p>
+          <p style="margin-bottom: 7px;">💬 <a href="https://wa.me/919900911929" target="_blank" style="color: #25d366; text-decoration: none;" class="nowrap">WhatsApp: +91 99009 11929</a></p>
+          <p style="font-size: 0.78rem; color: #10b981; margin-top: 8px;" class="nowrap">● Open Today: 9:30 AM – 9:30 PM</p>
         </div>
       </div>
 
-      <div style="border-top: 1px solid var(--border-subtle); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.78rem;">
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.76rem;">
         <p>© 2026 Shutter Bug Studioz. All rights reserved.</p>
         <p>Interactive Specimen designed by <a href="https://uncodedhub.com/" target="_blank" style="color: var(--accent-amber); text-decoration: none; font-weight: 600;">Uncoded Hub</a></p>
       </div>
@@ -1788,7 +1974,29 @@
 
   <!-- Interactive JavaScript Engine -->
   <script>
-    // 1. Service Filter Tabs
+    // 1. Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileDrawer');
+      const icon = document.getElementById('menuIcon');
+      drawer.classList.toggle('active');
+      if (drawer.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    }
+
+    function closeMobileMenu() {
+      const drawer = document.getElementById('mobileDrawer');
+      const icon = document.getElementById('menuIcon');
+      drawer.classList.remove('active');
+      icon.classList.remove('fa-xmark');
+      icon.classList.add('fa-bars');
+    }
+
+    // 2. Service Filter Tabs
     function filterServices(category) {
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
@@ -1803,7 +2011,7 @@
       });
     }
 
-    // 2. Visa Specification Lookup Engine
+    // 3. Visa Specification Lookup Engine
     const countryData = {
       usa: {
         dim: '2 x 2 inches (51 x 51 mm)',
@@ -1870,7 +2078,7 @@
       document.getElementById('specFormat').textContent = data.format;
     }
 
-    // 3. Framing Visualizer Engine (Zero Fixed Pricing)
+    // 4. Framing Visualizer Engine (Zero Pricing)
     let currentFrame = {
       type: 'Gallery Matte Black',
       borderSize: 12,
