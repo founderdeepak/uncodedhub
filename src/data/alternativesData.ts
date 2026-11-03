@@ -284,3 +284,4 @@ export const ALTERNATIVES_DATA: Record<string, AlternativeItem> = {
     ],
   },
 };
+
