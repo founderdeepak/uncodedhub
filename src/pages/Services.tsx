@@ -225,8 +225,58 @@ const ONGOING = [
   },
 ];
 
+const INTENT_PATHWAYS = [
+  {
+    id: 'first-site',
+    badge: 'New Business',
+    icon: '🌱',
+    title: 'Build My First Website',
+    subtitle: 'Zero site today? Get a bespoke, publication-grade digital flagship in a 7-day sprint.',
+    scopeTarget: '02',
+    actionLabel: 'See 7-Day Sprint',
+  },
+  {
+    id: 'redesign',
+    badge: 'WordPress Migration',
+    icon: '🔄',
+    title: 'Redesign Outdated Site',
+    subtitle: 'Replace bloated, sluggish plugins with sub-second hand-coded React. 100% SEO preserved.',
+    scopeTarget: '02',
+    actionLabel: 'See Redesign Scope',
+  },
+  {
+    id: 'landing-page',
+    badge: 'Paid Ads & Leads',
+    icon: '🎯',
+    title: 'High-Converting Landing Page',
+    subtitle: 'Laser-focused single-page funnels with click-to-WhatsApp for direct high-intent leads.',
+    scopeTarget: '01',
+    actionLabel: 'See Single Page',
+  },
+  {
+    id: 'industry-niches',
+    badge: '17 Vertical Niches',
+    icon: '🏛️',
+    title: 'Specialized Industry Solutions',
+    subtitle: 'Architects, dentists, doctors, coaches, luxury studios. Pre-built with custom tools.',
+    externalLink: '/web-design/',
+    actionLabel: 'Browse 17 Niches →',
+  },
+];
+
 export default function Services({ onBook }: { onBook: () => void }) {
   const [activeDayIdx, setActiveDayIdx] = useState(0);
+  const [selectedPathway, setSelectedPathway] = useState<string | null>(null);
+
+  const handlePathwayClick = (p: typeof INTENT_PATHWAYS[0]) => {
+    setSelectedPathway(p.id);
+    if (p.scopeTarget) {
+      const el = document.getElementById(`scope-${p.scopeTarget}`);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+  };
 
   return (
     <>
@@ -279,13 +329,82 @@ export default function Services({ onBook }: { onBook: () => void }) {
         </Shell>
       </section>
 
+      {/* ── 4 Client Intent Pathways ────────────────────────────── */}
+      <section className="pb-12">
+        <Shell>
+          <div className="bg-paper-raised/60 border border-rule-strong rounded-[28px] p-6 sm:p-10">
+            <div className="max-w-2xl mb-8">
+              <span className="label text-signal font-semibold block mb-2">
+                Where are you starting from?
+              </span>
+              <h2 className="font-display text-2xl sm:text-3xl text-ink font-medium">
+                Choose your project pathway.
+              </h2>
+              <p className="text-sm text-muted mt-2 leading-relaxed">
+                Every business arrives with a different challenge. Select your current situation to see how we tackle it:
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {INTENT_PATHWAYS.map((p) => {
+                const isSelected = selectedPathway === p.id;
+                return (
+                  <div
+                    key={p.id}
+                    onClick={() => handlePathwayClick(p)}
+                    className={`rounded-2xl p-5 border transition-all cursor-pointer flex flex-col justify-between ${
+                      isSelected
+                        ? 'border-signal bg-paper shadow-md ring-1 ring-signal'
+                        : 'border-rule bg-paper hover:border-rule-strong hover:shadow-sm'
+                    }`}
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-2xl">{p.icon}</span>
+                        <span className="text-[10px] font-mono uppercase tracking-wider text-muted bg-paper-sunk px-2 py-0.5 rounded-full border border-rule">
+                          {p.badge}
+                        </span>
+                      </div>
+                      <h3 className="font-display text-base text-ink font-semibold">{p.title}</h3>
+                      <p className="text-xs text-muted mt-2 leading-relaxed">{p.subtitle}</p>
+                    </div>
+
+                    <div className="mt-5 pt-3 border-t border-rule/60 flex items-center justify-between">
+                      {p.externalLink ? (
+                        <Link
+                          to={p.externalLink}
+                          className="text-xs font-medium text-signal hover:text-signal-bright flex items-center gap-1"
+                        >
+                          <span>{p.actionLabel}</span>
+                        </Link>
+                      ) : (
+                        <button
+                          type="button"
+                          className="text-xs font-medium text-signal hover:text-signal-bright flex items-center gap-1 cursor-pointer"
+                        >
+                          <span>{p.actionLabel}</span>
+                          <span>↓</span>
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </Shell>
+      </section>
+
       {/* ── Scopes Bento Cards ───────────────────────────────────── */}
       <Section size="default">
         <Shell>
           <div className="space-y-10">
             {SCOPES.map((s, i) => (
               <Reveal key={s.id} delay={i * 80}>
-                <div className="bg-paper-raised border border-rule-strong rounded-[28px] p-8 sm:p-12 shadow-sm hover:shadow-md transition-shadow grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                <div
+                  id={`scope-${s.id}`}
+                  className="bg-paper-raised border border-rule-strong rounded-[28px] p-8 sm:p-12 shadow-sm hover:shadow-md transition-shadow grid lg:grid-cols-12 gap-8 lg:gap-12 items-start"
+                >
                   {/* Left Column: Scope Info & CTA */}
                   <div className="lg:col-span-5 flex flex-col justify-between h-full">
                     <div>

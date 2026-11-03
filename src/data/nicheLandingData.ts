@@ -91,9 +91,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: 'Automated consultation calendar integration',
       },
     ],
-    metaTitle: 'Bespoke Websites for Interior Designers & Architects | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Luxury Interior Architecture Website Designer | Uncoded Hub',
     metaDescription:
-      'Hand-coded, sub-second web platforms for luxury interior architects & studios. 3D render-to-reality showcases, itemized procurement transparency, and zero WordPress bloat.',
+      'Luxury interior architecture website design engineered for sub-second speed, 3D render-to-reality showcases, and monograph-grade portfolio rendering in 7 days.',
     keywords: [
       'interior design website',
       'architect portfolio website',
@@ -165,9 +165,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: 'Pre-consultation education module',
       },
     ],
-    metaTitle: 'Bespoke Websites for Real Estate Advisors & Brokers | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Real Estate Developer Portfolio Website Design | Uncoded Hub',
     metaDescription:
-      'Independent luxury web platforms for prime property consultants and brokerages. 14-point title verification audits, off-market vaults, and zero portal dependency.',
+      'Real estate developer portfolio website design engineered to command multi-crore trust. High-net-worth buyer funnels, 14-point title proof, and 7-day launch.',
     keywords: [
       'real estate website design',
       'luxury property consultant website',
@@ -239,9 +239,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: 'Clinical-grade aesthetic comparison grid',
       },
     ],
-    metaTitle: 'Bespoke Websites for Dental Clinics & Aesthetic Practices | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Custom Dental Clinic Website Design | 7-Day Sprint | Uncoded Hub',
     metaDescription:
-      'Specialized web platforms for cosmetic dentists & clinics. Patient stop-signal protocols, upfront fee calculators, Class-B sterilisation proof, and 7-day launch.',
+      'Custom dental clinic website design engineered to dissolve patient anxiety. Upfront treatment fee calculators, 2-tap WhatsApp booking, and sub-second mobile speed.',
     keywords: [
       'dental clinic website design',
       'cosmetic dentist web platform',
@@ -313,9 +313,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: 'Pre-qualification wedding pricing tier matrix',
       },
     ],
-    metaTitle: 'Bespoke Websites for Wedding Photographers & Filmmakers | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Wedding Photographer Portfolio Website Design | Uncoded Hub',
     metaDescription:
-      'Luxury web platforms for destination wedding photographers & cinematographers. 0.7s LCP 4K galleries, HLS video streaming, and seasonal date booking funnels.',
+      'Wedding photographer portfolio website design engineered for 4K video reel streaming without lag, package tiering, and custom lab framing visualizers in 7 days.',
     keywords: [
       'wedding photographer website design',
       'destination wedding portfolio',
@@ -387,9 +387,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: 'Hyperlocal residential credibility modules',
       },
     ],
-    metaTitle: 'Bespoke Websites for Home Renovation & Modular Kitchens | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Modular Kitchen Manufacturer Website Design | Uncoded Hub',
     metaDescription:
-      'High-converting web platforms for home remodelers & modular kitchen contractors. Material transparency disclosures, before/after sliders, and 7-day launch.',
+      'Modular kitchen manufacturer website design with interactive trade fee calculators, factory CNC virtual tours, and sub-second mobile quotation funnels.',
     keywords: [
       'renovation contractor website design',
       'modular kitchen website',
@@ -461,9 +461,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: 'Proof-driven client case study library',
       },
     ],
-    metaTitle: 'Bespoke Websites for Coaches & Consultants | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Executive Coaching Website Design Sprint | 7 Days | Uncoded Hub',
     metaDescription:
-      'High-authority web platforms for executive coaches & strategy consultants. Multi-step application funnels, proprietary framework showcases, and 7-day launch.',
+      'Executive coaching website design sprint engineered for C-suite authority. Application funnels, quantified ROI proof, and zero developer babysitting.',
     keywords: [
       'executive coach website design',
       'consultant portfolio website',
@@ -535,9 +535,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: 'Instant demo reservation funnel',
       },
     ],
-    metaTitle: 'Bespoke Websites for Educational Academies & Coaching | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Coaching Institute Website Design | Zero Crash | Uncoded Hub',
     metaDescription:
-      'High-converting web platforms for educational institutes & coaching academies. Real-time batch navigators, verified ranker vaults, and 7-day launch.',
+      'Coaching institute website design with zero-crash admission servers, batch countdown funnels, and student ranker showcases built in 7 working days.',
     keywords: [
       'educational institute website design',
       'coaching academy web platform',
@@ -609,9 +609,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: 'Membership pricing comparison table',
       },
     ],
-    metaTitle: 'Bespoke Websites for Gyms & Fitness Clubs | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Commercial Gym Website Design | Membership Booking | Uncoded Hub',
     metaDescription:
-      'High-energy web platforms for commercial gyms & strength clubs. Peak-hour capacity HUDs, upfront membership pricing, 1-day VIP passes, and 7-day launch.',
+      'Commercial gym website design engineered with virtual facility tours, membership booking engines, and frictionless day-pass trials in 7 days.',
     keywords: [
       'gym website design',
       'fitness club web platform',
@@ -683,9 +683,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: 'Senior leadership credibility module',
       },
     ],
-    metaTitle: 'Bespoke Websites for Corporate Advisory & B2B Consulting | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Hand Coded Website Design Agency for B2B | Uncoded Hub',
     metaDescription:
-      'Institutional web platforms for M&A advisors and corporate consultants. Deal tombstones, C-suite diagnostics, strict confidentiality, and 7-day launch.',
+      'Hand coded website design agency for enterprise B2B and corporate advisory. Swiss typography, partner credentials, and RFP intake funnels in 7 days.',
     keywords: [
       'corporate advisory website design',
       'management consulting web platform',
@@ -757,9 +757,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: 'Comprehensive luxury spa treatment menu',
       },
     ],
-    metaTitle: 'Bespoke Websites for Luxury Spas & Wellness Retreats | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Luxury Wellness Retreat Website Design | Calm UX | Uncoded Hub',
     metaDescription:
-      'Calming web platforms for luxury spas & Ayurvedic retreats. Tension-zone treatment builders, private suite previews, transparent menus, and 7-day launch.',
+      'Luxury wellness retreat website design with tranquil aesthetic, appointment deposit workflows, and signature package showcases built in 7 days.',
     keywords: [
       'spa website design',
       'luxury wellness retreat website',
@@ -831,9 +831,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: 'Individual stylist credibility profiles',
       },
     ],
-    metaTitle: 'Bespoke Websites for Salons & Bridal Beauty Studios | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Bridal Beauty Salon Website Design | Bookings | Uncoded Hub',
     metaDescription:
-      'High-fashion web platforms for luxury hair salons & bridal artists. Unretouched skin sliders, bridal quote estimators, 1-tap WhatsApp booking, and 7-day launch.',
+      'Bridal beauty salon website design engineered with portfolio lookbooks, bridal package consultation calendars, and instant WhatsApp booking in 7 days.',
     keywords: [
       'salon website design',
       'bridal makeup artist website',
@@ -905,9 +905,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: '12-week transformation methodology breakdown',
       },
     ],
-    metaTitle: 'Bespoke Websites for Private Fitness Coaches | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Private Fitness Coach Website Design | High Ticket | Uncoded Hub',
     metaDescription:
-      'High-converting web platforms for elite personal trainers & fitness coaches. Capped-roster intake audits, DEXA progress vaults, and 7-day launch.',
+      'Private fitness coach website design engineered for high-ticket 1-on-1 client acquisition, application intake, and transformation proof in 7 days.',
     keywords: [
       'fitness coach website design',
       'personal trainer website',
@@ -979,9 +979,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: 'New student orientation guide',
       },
     ],
-    metaTitle: 'Bespoke Websites for Yoga Shalas & Meditation Sanctuaries | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Yoga Studio Website Design with Class Schedule | Uncoded Hub',
     metaDescription:
-      'Authentic web platforms for yoga shalas & meditation studios. Class capacity timetables, 200-hour TTC curriculum explorers, and 7-day launch.',
+      'Yoga studio website design with live class schedules, teacher lineage bios, drop-in pass booking, and calming aesthetic built in 7 working days.',
     keywords: [
       'yoga studio website design',
       'yoga shala web platform',
@@ -1053,9 +1053,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: 'Studio manifesto & client onboarding guide',
       },
     ],
-    metaTitle: 'Bespoke Websites for Creative Studios & Design Agencies | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Boutique Design Studio Portfolio Website Design | Uncoded Hub',
     metaDescription:
-      'High-performance web platforms for creative agencies & studios. 100/100 Lighthouse scores, interactive scope estimators, and 7-day launch.',
+      'Boutique design studio portfolio website design with dark-mode editorial typography, interactive client case studies, and sub-second speed in 7 days.',
     keywords: [
       'creative agency website design',
       'design studio portfolio',
@@ -1127,9 +1127,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: 'Encrypted patient report lookup portal',
       },
     ],
-    metaTitle: 'Bespoke Websites for Pathology & Diagnostic Labs | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Diagnostic Lab Website Design with Home Collection | Uncoded Hub',
     metaDescription:
-      'Medical-grade web platforms for diagnostic labs & pathology centres. Home phlebotomy booking funnels, automated equipment showcases, and 7-day launch.',
+      'Diagnostic lab website design with home blood sample collection booking, NABL accreditation badges, and instant test report downloads in 7 days.',
     keywords: [
       'diagnostic lab website design',
       'pathology lab web platform',
@@ -1201,9 +1201,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: 'Full-service facility walkthrough',
       },
     ],
-    metaTitle: 'Bespoke Websites for Multi-Specialty Polyclinics | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Multispecialty Clinic Website Development | Uncoded Hub',
     metaDescription:
-      'High-converting web platforms for polyclinics & outpatient centres. Live doctor schedules, department navigators, zero-wait booking, and 7-day launch.',
+      'Multispecialty clinic website development engineered with department symptom triage, multi-doctor OPD matrices, and 1-tap booking in 7 days.',
     keywords: [
       'polyclinic website design',
       'multi specialty clinic web platform',
@@ -1275,9 +1275,9 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
         deliverable: 'Surgical authority & academic credentials vault',
       },
     ],
-    metaTitle: 'Bespoke Websites for Super-Specialist Doctors & Surgeons | Built in 7 Days — Uncoded Hub',
+    metaTitle: 'Specialist Surgeon Private Practice Website Design | Uncoded Hub',
     metaDescription:
-      'Prestige web platforms for specialist surgeons & physicians. Pre-consultation symptom screeners, transparent hospital fee guides, and 7-day launch.',
+      'Specialist surgeon private practice website design with medical schema, surgical CV credentials, second-opinion intake, and ethical proof in 7 days.',
     keywords: [
       'doctor website design',
       'surgeon portfolio website',

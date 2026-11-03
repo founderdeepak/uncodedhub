@@ -15,7 +15,7 @@ Traditional SEO agencies spend months writing 3,000–5,000 word blog posts targ
 ### The Defensive Power of Bottom-of-Funnel (BOFU) Compact Keywords
 Compact Keywords target **decision-stage buyers** who already know their problem and are searching for a specific solution, but don't yet know the brand that will deliver it.
 * **Conversion Rate:** Dramatically higher (often 5%–15%+ direct enquiry rate).
-* **Length:** Only **400 to 500 words** per page (average ~415 words; can rank with as few as 215 words).
+* **Length:** Demonstrates that even **~415 words** can rank #1 (sometimes as few as 215 words). Comprehensive pages can be 1,000 to 2,500+ words when depth, pricing, and case studies are required. Google ranks search intent fulfillment, not raw word count.
 * **Domain Authority:** Can rank at **#1 with low DA (15–25)** against massive corporate websites because of exact search intent satisfaction.
 * **Durability:** Withstands Google algorithm changes for 4–5+ years completely untouched.
 
@@ -168,3 +168,4 @@ When an existing page underperforms, **never guess**. Record every iteration:
 * **Why the Change was Made** (e.g., CTR low, impressions stuck at position 14, keyword in H1 sounded unnatural)
 * **Exact Changes Made** (e.g., changed Page Title from X to Y, added CTA button above the fold)
 * **Result (30 Days Later)** (e.g., jumped from position 18 to #1)
+
