@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shutter Bug Studioz — Complete Client Onboarding & Fundamentals Questionnaire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #0c0e12;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      margin: 0;
+      padding: 30px 16px 80px;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+    .action-bar {
+      max-width: 900px;
+      margin: 0 auto 24px;
+      background: #161922;
+      border: 1px solid rgba(229, 166, 85, 0.4);
+      color: #fff;
+      padding: 18px 26px;
+      border-radius: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+    .action-btn {
+      background: linear-gradient(135deg, #e5a655 0%, #cb8c38 100%);
+      color: #0d0f13;
+      font-weight: 700;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(229, 166, 85, 0.45);
+    }
+    .doc-page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 60px 75px;
+      border-radius: 8px;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.4);
+      color: #222;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24pt;
+      color: #11141a;
+      margin-bottom: 8px;
+      border-bottom: 2px solid #e5a655;
+      padding-bottom: 12px;
+      line-height: 1.2;
+    }
+    .doc-meta {
+      font-size: 9.5pt;
+      color: #666;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .callout-box {
+      background: #fdf8f0;
+      border-left: 4px solid #e5a655;
+      padding: 14px 18px;
+      margin-bottom: 28px;
+      border-radius: 0 8px 8px 0;
+      font-size: 10.5pt;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 14pt;
+      color: #11141a;
+      margin-top: 34px;
+      margin-bottom: 12px;
+      background: #f4f6f9;
+      padding: 9px 15px;
+      border-radius: 6px;
+      border-left: 3px solid #11141a;
+    }
+    h3 {
+      font-size: 11pt;
+      color: #333;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    table.q-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 22px;
+      font-size: 9.5pt;
+    }
+    table.q-table th {
+      background-color: #eaeef3;
+      color: #222;
+      text-align: left;
+      padding: 10px 12px;
+      border: 1px solid #dcdfe4;
+      font-weight: 700;
+    }
+    table.q-table td {
+      padding: 10px 12px;
+      border: 1px solid #dcdfe4;
+      vertical-align: top;
+    }
+    .q-col {
+      width: 42%;
+      font-weight: 600;
+      color: #222;
+    }
+    .ans-col {
+      width: 58%;
+      background: #fafbfc;
+      color: #555;
+      font-style: italic;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 10pt;
+    }
+    .checkbox {
+      width: 16px;
+      height: 16px;
+      border: 2px solid #888;
+      border-radius: 3px;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+      .doc-page {
+        padding: 30px 20px;
+      }
+      h1 {
+        font-size: 18pt;
+      }
+      table.q-table th, table.q-table td {
+        padding: 8px;
+        font-size: 8.5pt;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Toolbar -->
+  <div class="action-bar">
+    <div>
+      <strong style="display: block; font-size: 1.05rem; color: #fff;">
+        <i class="fa-solid fa-file-lines" style="color: #e5a655; margin-right: 6px;"></i> Shutter Bug Studioz — Google Doc Exporter
+      </strong>
+      <span style="font-size: 0.82rem; color: #9ba3af;">
+        Step 1: Click "Copy All for Google Docs" &nbsp;➔&nbsp; Step 2: Open <a href="https://docs.new" target="_blank" style="color: #e5a655; text-decoration: underline;">docs.new</a> &nbsp;➔&nbsp; Step 3: Paste (Ctrl+V)
+      </span>
+    </div>
+    <div style="display: flex; gap: 12px;">
+      <a href="https://docs.new" target="_blank" class="action-btn" style="background: rgba(255,255,255,0.08); color: #fff; text-decoration: none; border: 1px solid rgba(255,255,255,0.25);">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open docs.new
+      </a>
+      <button class="action-btn" onclick="copyDocument()">
+        <i class="fa-regular fa-copy"></i> Copy All for Google Docs
+      </button>
+    </div>
+  </div>
+
+  <!-- Formatted Google Doc Canvas -->
+  <div class="doc-page" id="docContent">
+    <h1>Shutter Bug Studioz — Client Onboarding &amp; Business Fundamentals Questionnaire</h1>
+    <div class="doc-meta">
+      <strong>Client:</strong> Krishna Reddy sir &nbsp;|&nbsp; 
+      <strong>Business:</strong> Shutter Bug Studioz (Malleshpalya, Bengaluru) &nbsp;|&nbsp; 
+      <strong>Deliverable:</strong> Master Studio Platform + Dedicated High-Converting Service Landing Pages &nbsp;|&nbsp; 
+      <strong>Agency:</strong> Uncoded Hub
+    </div>
+
+    <div class="callout-box">
+      <strong>Dear Krishna Reddy sir,</strong><br>
+      Please take 5–10 minutes to fill in this questionnaire right in this Google Doc. Your answers will help us map all your services, define your geographical coverage (local, Bengaluru, outstation, and destination states), and craft high-ranking landing pages that bring you paying customers year-round.
+    </div>
+
+    <h2>Part 1: Service Inventory &amp; Offerings (How Many Services Offered)</h2>
+    <p style="font-size: 9.5pt; color: #555; margin-bottom: 12px;">
+      Please confirm which services Shutter Bug Studioz offers and your typical style/deliverables:
+    </p>
+
+    <table class="q-table">
+      <tr>
+        <th style="width: 32%;">Service Line</th>
+        <th style="width: 20%;">Type</th>
+        <th style="width: 16%;">Offered?</th>
+        <th style="width: 32%;">Notes / Packages</th>
+      </tr>
+      <tr>
+        <td><strong>1. Wedding &amp; Reception Photography</strong></td>
+        <td>On-Location</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., Full day candid + traditional ]</td>
+      </tr>
+      <tr>
+        <td><strong>2. Pre-Wedding &amp; Outdoor Shoots</strong></td>
+        <td>Outdoor / Studio</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., Resort &amp; scenic outdoor spots ]</td>
+      </tr>
+      <tr>
+        <td><strong>3. Engagement &amp; Roka Ceremonies</strong></td>
+        <td>On-Location</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., Half-day / Full-day coverage ]</td>
+      </tr>
+      <tr>
+        <td><strong>4. Newborn &amp; Infant Shoots (0–30 Days)</strong></td>
+        <td>In-Studio</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., Sanitized wraps, baskets, heating ]</td>
+      </tr>
+      <tr>
+        <td><strong>5. Baby Milestones (6–9 Months Sitting)</strong></td>
+        <td>In-Studio</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., Fun props, toys, sibling shots ]</td>
+      </tr>
+      <tr>
+        <td><strong>6. 1st Birthday Cake-Smash Shoots</strong></td>
+        <td>In-Studio</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., Themed setup &amp; messy cake fun ]</td>
+      </tr>
+      <tr>
+        <td><strong>7. Maternity &amp; Mom-to-Be Shoots</strong></td>
+        <td>Studio / Outdoor</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., Gowns, artistic lighting, couple ]</td>
+      </tr>
+      <tr>
+        <td><strong>8. Family &amp; Multigenerational Portraits</strong></td>
+        <td>In-Studio</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., Grandparents to kids portrait ]</td>
+      </tr>
+      <tr>
+        <td><strong>9. 10-Minute Visa &amp; Passport Photos</strong></td>
+        <td>In-Studio (Walk-in)</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., Embassy compliance guaranteed ]</td>
+      </tr>
+      <tr>
+        <td><strong>10. Executive Headshots (LinkedIn / Corporate)</strong></td>
+        <td>In-Studio</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., Professional corporate portraits ]</td>
+      </tr>
+      <tr>
+        <td><strong>11. Matrimonial Portfolio Shoots</strong></td>
+        <td>In-Studio</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., Traditional &amp; Western looks ]</td>
+      </tr>
+      <tr>
+        <td><strong>12. Bespoke Teakwood &amp; Acrylic Framing</strong></td>
+        <td>In-House Lab</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., Custom framing 6x8" to 40x60" ]</td>
+      </tr>
+      <tr>
+        <td><strong>13. Fine Art Canvas Gallery Wraps</strong></td>
+        <td>In-House Lab</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., 380 GSM cotton canvas prints ]</td>
+      </tr>
+      <tr>
+        <td><strong>14. 3D Laser Crystals &amp; Photo Keepsakes</strong></td>
+        <td>In-House Lab</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., 3D crystals, stone slates, mugs ]</td>
+      </tr>
+      <tr>
+        <td><strong>15. Old Photo Restoration &amp; Digital Retouching</strong></td>
+        <td>In-House Lab</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., Restoring damaged family prints ]</td>
+      </tr>
+      <tr>
+        <td><strong>16. Housewarming, Upanayana &amp; Sacred Rituals</strong></td>
+        <td>On-Location</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., Traditional pooja coverage ]</td>
+      </tr>
+      <tr>
+        <td><strong>17. Corporate Events &amp; Annual Days</strong></td>
+        <td>On-Location</td>
+        <td>[ Yes / No ]</td>
+        <td class="ans-col">[ e.g., Corporate seminars &amp; parties ]</td>
+      </tr>
+    </table>
+
+    <h2>Part 2: Geographic Reach &amp; Outstation Travel Policy (Cities &amp; States)</h2>
+    <p style="font-size: 9.5pt; color: #555; margin-bottom: 12px;">
+      Please specify which locations you serve so we can build geographic landing pages that capture search traffic:
+    </p>
+
+    <table class="q-table">
+      <tr>
+        <th style="width: 32%;">Territory / Level</th>
+        <th style="width: 38%;">Specific Areas / Cities Covered</th>
+        <th style="width: 30%;">Travel &amp; Delivery Terms</th>
+      </tr>
+      <tr>
+        <td><strong>1. Immediate Local Hub (0–5 km)</strong></td>
+        <td>Malleshpalya, Kaggadasapura, CV Raman Nagar, GM Palya, New Thippasandra, Vimanapura / HAL, Binnamangala</td>
+        <td class="ans-col">[ Fast walk-in service &amp; local framing delivery ]</td>
+      </tr>
+      <tr>
+        <td><strong>2. Greater Bengaluru (City-Wide)</strong></td>
+        <td>Indiranagar, Marathahalli, Whitefield, HSR Layout, Koramangala, Bellandur, JP Nagar, Jayanagar, Hebbal, Yelahanka</td>
+        <td class="ans-col">[ We travel anywhere across Bangalore for events ]</td>
+      </tr>
+      <tr>
+        <td><strong>3. Karnataka Outstation Cities</strong></td>
+        <td>Mysuru, Mangaluru, Hubballi, Belagavi, Coorg, Chikmagalur, Udupi, Hassan, Davanagere, Shimoga</td>
+        <td class="ans-col">[ Available for weddings across Karnataka ]</td>
+      </tr>
+      <tr>
+        <td><strong>4. Other States (Pan-India / Destinations)</strong></td>
+        <td>Andhra Pradesh (Tirupati, Vijayawada, Vizag), Telangana (Hyderabad), Tamil Nadu (Chennai, Coimbatore), Kerala, Goa</td>
+        <td class="ans-col">[ Available for destination weddings ]</td>
+      </tr>
+      <tr>
+        <td><strong>5. Outstation Travel Policy</strong></td>
+        <td>How do you charge for outstation travel and hotel stay?</td>
+        <td class="ans-col">[ e.g., Client arranges travel + stay / Included in quote ]</td>
+      </tr>
+    </table>
+
+    <h2>Part 3: Specific Landing Page Questions</h2>
+
+    <h3>3.1 Wedding &amp; Pre-Wedding Page</h3>
+    <table class="q-table">
+      <tr>
+        <td class="q-col"><strong>Dual Coverage:</strong> Do you deploy separate Candid and Traditional photographers?</td>
+        <td class="ans-col">[ e.g., Yes, dedicated 2-camera team ]</td>
+      </tr>
+      <tr>
+        <td class="q-col"><strong>Cinematography:</strong> What video deliverables do couples get? (4K teaser, full film, drone)?</td>
+        <td class="ans-col">[ e.g., 3-5 min cinematic teaser + 45-min full HD highlight film + drone ]</td>
+      </tr>
+      <tr>
+        <td class="q-col"><strong>Handcrafted Albums:</strong> What album finishes do you provide?</td>
+        <td class="ans-col">[ e.g., Flush-mount Italian leatherette album with 35–40 spreads ]</td>
+      </tr>
+      <tr>
+        <td class="q-col"><strong>Turnaround:</strong> When are soft copies and final albums handed over?</td>
+        <td class="ans-col">[ Soft copies in 7 days, printed album in 2–3 weeks ]</td>
+      </tr>
+    </table>
+
+    <h3>3.2 Newborn, Baby &amp; Kids Page</h3>
+    <table class="q-table">
+      <tr>
+        <td class="q-col"><strong>Studio Props &amp; Safety:</strong> What props and hygiene measures are in place?</td>
+        <td class="ans-col">[ Sanitized wraps, wooden baskets, costumes, temperature-controlled room ]</td>
+      </tr>
+      <tr>
+        <td class="q-col"><strong>Family Inclusion:</strong> Are parents &amp; siblings included at no extra charge?</td>
+        <td class="ans-col">[ Yes, family shots warmly included ]</td>
+      </tr>
+      <tr>
+        <td class="q-col"><strong>Session Duration:</strong> How much time do you take?</td>
+        <td class="ans-col">[ 1.5 to 2 hours relaxed with feeding and play breaks ]</td>
+      </tr>
+    </table>
+
+    <h3>3.3 10-Minute Biometric Visa &amp; Passport Page</h3>
+    <table class="q-table">
+      <tr>
+        <td class="q-col"><strong>Top Visas:</strong> Which embassy requirements do you handle daily?</td>
+        <td class="ans-col">[ US DS-160, Schengen (Europe), UK, Canada PR, Australia, Singapore, India OCI ]</td>
+      </tr>
+      <tr>
+        <td class="q-col"><strong>Turnaround &amp; Walk-ins:</strong> Can clients walk in without appointment and get it in 10 mins?</td>
+        <td class="ans-col">[ Yes, 100% walk-in friendly, printed and sent to WhatsApp in under 10 minutes ]</td>
+      </tr>
+      <tr>
+        <td class="q-col"><strong>Guarantee:</strong> Can we highlight your 100% Embassy Acceptance Guarantee?</td>
+        <td class="ans-col">[ Yes, 100% acceptance guaranteed or free re-shoot ]</td>
+      </tr>
+    </table>
+
+    <h3>3.4 Custom Framing &amp; Canvas Wraps Page</h3>
+    <table class="q-table">
+      <tr>
+        <td class="q-col"><strong>Frame Mouldings:</strong> What materials and profiles do you craft in-house?</td>
+        <td class="ans-col">[ Natural Teakwood, Matte Black Gallery, Champagne Gold, Studio White, Floating Canvas ]</td>
+      </tr>
+      <tr>
+        <td class="q-col"><strong>Most Popular Sizes:</strong> What frame dimensions do customers order most?</td>
+        <td class="ans-col">[ 6x8", 8x12" (A4), 12x18" (A3+), 16x24", 20x30", 24x36", and custom wall grids ]</td>
+      </tr>
+      <tr>
+        <td class="q-col"><strong>Canvas Prints:</strong> Do you stretch 380 GSM textured cotton canvas on wood bars?</td>
+        <td class="ans-col">[ Yes, archival gallery wrap canvas prints ]</td>
+      </tr>
+      <tr>
+        <td class="q-col"><strong>Turnaround:</strong> How fast is custom framing ready?</td>
+        <td class="ans-col">[ Standard: 2–3 days | Same-day express available for urgent orders ]</td>
+      </tr>
+    </table>
+
+    <h3>3.5 Personalized Photo Gifts &amp; Keepsakes Page</h3>
+    <table class="q-table">
+      <tr>
+        <td class="q-col"><strong>Gift Items:</strong> What custom keepsakes can clients order?</td>
+        <td class="ans-col">[ 3D Subsurface Laser Crystals, Natural Rock Slates, Ceramic Photo Tiles, Mugs, Keychains ]</td>
+      </tr>
+      <tr>
+        <td class="q-col"><strong>Turnaround:</strong> How fast can gifts be picked up?</td>
+        <td class="ans-col">[ 24 to 48 hours ]</td>
+      </tr>
+    </table>
+
+    <h3>3.6 Executive Headshots &amp; Matrimonial Portraits Page</h3>
+    <table class="q-table">
+      <tr>
+        <td class="q-col"><strong>Studio Backdrops &amp; Outfits:</strong> Backdrops available and outfit changes allowed?</td>
+        <td class="ans-col">[ Charcoal grey, pure white, warm cream backdrops. Multiple outfit changes supported ]</td>
+      </tr>
+      <tr>
+        <td class="q-col"><strong>Retouching &amp; Delivery:</strong> Delivery speed and retouching style?</td>
+        <td class="ans-col">[ Natural non-plastic skin texture retouching. Soft copies delivered same day ]</td>
+      </tr>
+    </table>
+
+    <h2>Part 4: Photos &amp; Portfolio Assets Checklist</h2>
+    <p style="font-size: 9.5pt; color: #555; margin-bottom: 14px;">
+      Please upload the following into a Google Drive folder or share via WhatsApp:
+    </p>
+    <div class="checklist-item"><span class="checkbox"></span> <strong>Studio Logo:</strong> High-res PNG or clear photo of shop board</div>
+    <div class="checklist-item"><span class="checkbox"></span> <strong>Wedding &amp; Pre-Wedding:</strong> 10–12 high-res sample photos</div>
+    <div class="checklist-item"><span class="checkbox"></span> <strong>Newborn &amp; Kids:</strong> 8–10 baby, toddler, and cake-smash photos</div>
+    <div class="checklist-item"><span class="checkbox"></span> <strong>Custom Framing:</strong> 4–6 photos of framed portraits or shop framing corner</div>
+    <div class="checklist-item"><span class="checkbox"></span> <strong>Personalized Gifts:</strong> 4–6 photos of 3D crystals, stone slates, and photo tiles</div>
+    <div class="checklist-item"><span class="checkbox"></span> <strong>Headshots &amp; Matrimony:</strong> 3–4 executive portrait samples</div>
+  </div>
+
+  <script>
+    function copyDocument() {
+      const doc = document.getElementById('docContent');
+      const range = document.createRange();
+      range.selectNode(doc);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      
+      try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+          alert('✅ Questionnaire copied to clipboard with full formatting!\n\n1. Open docs.new in your browser.\n2. Press Ctrl + V to paste.\n3. All tables, colors, and answer boxes will paste perfectly into Google Docs!');
+        } else {
+          alert('Please press Ctrl + C to copy.');
+        }
+      } catch (err) {
+        alert('Please press Ctrl + C to copy.');
+      }
+      window.getSelection().removeAllRanges();
+    }
+  </script>
+</body>
+</html>

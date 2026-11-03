@@ -1,94 +1,94 @@
-# Shutter Bug Studioz — Client Onboarding & Service Landing Pages Questionnaire
+# Shutter Bug Studioz — Complete Client Onboarding & Fundamentals Questionnaire
 
 **Client Name:** Krishna Reddy sir  
 **Business:** Shutter Bug Studio / Shutter Bug Studioz  
-**Location:** Malleshpalya, Bengaluru  
-**Target Output:** 6 Dedicated High-Converting SEO Landing Pages for each service line + Master Studio Platform
+**Location:** Sri Sai Ram Nilaya, 263/1, Beside Apple Clinic, Maruthi Nagar, Malleshpalya, Bengaluru – 560075  
+**Project Objective:** Build dedicated, high-converting SEO landing pages for every service + Master Studio Web Platform to dominate East Bengaluru & outstation wedding bookings.
 
 ---
 
-## Instructions for Client / Project Lead
-Dear Krishna Reddy sir, to build tailored, high-ranking landing pages that showcase your craftsmanship and drive daily WhatsApp bookings from Malleshpalya and East Bengaluru, please share your inputs for the following quick questions. You can reply directly on WhatsApp with short bullet points or voice notes!
+## Part 1: Business Fundamentals, Geographic Reach & Coverage
+
+### 1.1 Complete Service Inventory (How Many Services Offered)
+*Please tick or confirm which of the following services Shutter Bug Studioz provides:*
+
+| # | Service Category | In-Studio / On-Location | Do You Offer This? (Yes/No) | Typical Starting Package / Notes |
+|---|------------------|--------------------------|-----------------------------|----------------------------------|
+| 1 | **Wedding & Reception Photography** | On-Location | [ Yes ] | [ e.g., Dual photographer, full day ] |
+| 2 | **Pre-Wedding & Post-Wedding Shoots** | Outdoor / Studio | [ Yes ] | [ e.g., Resort / outdoor spots ] |
+| 3 | **Engagement & Roka Ceremonies** | On-Location | [ Yes ] | [ Half-day / Full-day ] |
+| 4 | **Newborn & Infant Photography (0–30 Days)** | In-Studio | [ Yes ] | [ Sanitized wraps & baskets ] |
+| 5 | **Baby Milestones (6–9 Months Sitting)** | In-Studio | [ Yes ] | [ Props & toys provided ] |
+| 6 | **1st Birthday Cake-Smash Photography** | In-Studio | [ Yes ] | [ Themed setups & backdrops ] |
+| 7 | **Maternity & Mom-to-Be Shoots** | Studio / Outdoor | [ Yes ] | [ Gowns & creative lighting ] |
+| 8 | **Family & Multigenerational Portraits** | In-Studio | [ Yes ] | [ Studio backdrops ] |
+| 9 | **10-Minute Biometric Visa & Passport Photos** | In-Studio (Walk-in) | [ Yes ] | [ Embassy guaranteed ] |
+| 10 | **Executive Headshots (LinkedIn / Corporate)** | In-Studio | [ Yes ] | [ Natural skin retouching ] |
+| 11 | **Matrimonial Portfolio Shoots** | In-Studio | [ Yes ] | [ Traditional & Western looks ] |
+| 12 | **Bespoke Teakwood & Acrylic Framing** | In-House Lab | [ Yes ] | [ Custom sizes ] |
+| 13 | **Fine Art Canvas Gallery Wraps** | In-House Lab | [ Yes ] | [ 380 GSM textured cotton ] |
+| 14 | **3D Subsurface Laser Crystals & Photo Gifts** | In-House Lab | [ Yes ] | [ Crystals, slates, tiles, mugs ] |
+| 15 | **Old Photo Restoration & Archival Printing** | In-House Lab | [ Yes ] | [ Digital retouching of old faded prints ] |
+| 16 | **Housewarming, Upanayana & Sacred Events** | On-Location | [ Yes ] | [ Traditional ritual coverage ] |
+| 17 | **Corporate Events, Conferences & Annual Days**| On-Location | [ Yes ] | [ Corporate event coverage ] |
 
 ---
 
-### Part 1: Studio General Details & Brand Story
-1. **Year Established:** Which year did Shutter Bug Studioz start in Malleshpalya?
-2. **Team Strength:** How many photographers, editors, and framing craftsmen work at the studio?
-3. **Core Geographic Catchment:** Besides Malleshpalya, which nearby localities do your clients come from?  
-   *(e.g., Kaggadasapura, CV Raman Nagar, GM Palya, New Thippasandra, Vimanapura / HAL, Indiranagar)*
-4. **Studio Opening Hours:** Confirm operating hours: Monday–Saturday (9:30 AM – 9:30 PM) & Sunday (10:30 AM – 9:30 PM)?
-5. **Parking Availability:** Is two-wheeler and car parking easy right outside the studio beside Apple Clinic?
+### 1.2 Geographic Coverage & Travel Policy (Cities & States Covered)
+
+| Coverage Level | Specific Areas / Cities Covered | Travel & Accommodation Details |
+|----------------|----------------------------------|--------------------------------|
+| **Immediate Local Corridor (0–5 km)** | Malleshpalya, Kaggadasapura, CV Raman Nagar, GM Palya, New Thippasandra, Vimanapura / HAL, Binnamangala | Local studio walk-ins & fast delivery |
+| **Greater Bengaluru (City-Wide)** | Indiranagar, Marathahalli, Whitefield, HSR Layout, Koramangala, Bellandur, JP Nagar, Jayanagar, Hebbal, Yelahanka | We travel anywhere across Bangalore for weddings & events |
+| **Karnataka Outstation Cities** | Mysuru, Mangaluru, Hubballi, Belagavi, Coorg, Chikmagalur, Udupi, Hassan, Davanagere | Available for outstation destination shoots |
+| **Other States Covered (Pan-India)** | Andhra Pradesh (Tirupati, Vijayawada, Vizag), Telangana (Hyderabad), Tamil Nadu (Chennai, Coimbatore), Kerala, Goa | Available for outstation & destination weddings |
+| **Travel Logistics Policy** | [ Client provides travel + hotel stay for team / Included in outstation package ] | [ Confirm how you charge travel/lodging ] |
 
 ---
 
-### Part 2: Service Page 1 — Wedding & Pre-Wedding Photography
-1. **Coverage Styles:** Do you offer dual-coverage (both Candid emotional storytelling + Traditional family group photography)?
-2. **Cinematography & Video:** Do you provide 4K cinematic teasers, wedding highlight films, and drone coverage?
-3. **Albums & Binding:** What types of albums do you craft? (e.g., Handcrafted flush-mount leatherette albums, matte velvet pages, metallic finish)?
-4. **Typical Turnaround:** How soon do couples receive their digital photos and final printed album?
-5. **Portfolio Assets Needed:** 10–15 high-res photos from recent weddings and outdoor pre-wedding shoots.
+## Part 2: Detailed Breakdown for Each Landing Page
+
+### Page 1: Wedding & Pre-Wedding Photography
+- **Dual Coverage:** Do you provide dedicated Candid + Traditional photographers?
+- **Video & Drone:** What cinematography options do you offer? (4K cinematic teaser, 30-min highlight film, full ceremony recording, drone aerial coverage)?
+- **Handcrafted Albums:** What finishes? (Flush-mount leatherette, metallic luster, acrylic cover, velvet matte)?
+- **Turnaround Time:** Soft copies via drive within ___ days; final printed album within ___ weeks.
+
+### Page 2: Newborn, Baby & Toddler Photography
+- **Safety & Hygiene:** How is the studio prepped for infants? (Temperature-controlled room, UV-sanitized wraps, safe props).
+- **Themes & Props:** Available sets (e.g., Wooden rustic baskets, fairy tale wings, moon/star props, colorful balloons, cake-smash backdrop).
+- **Session Pace:** 1.5 to 2 hours with relaxed breaks for feeding, diaper change, and baby comfort.
+- **Family Inclusion:** Are parents and siblings included in photos at no extra charge?
+
+### Page 3: 10-Minute Biometric Visa & Passport Photos
+- **Countries Handled:** US DS-160, Schengen (27 European nations), UK Passport, Canada PR, Australia, Singapore, India Passport & OCI Card.
+- **Speed Guarantee:** 100% walk-in friendly — prints + digital soft copy delivered in under 10 minutes.
+- **Embassy Guarantee:** 100% acceptance guarantee. Free instant re-shoot if any embassy flags it.
+
+### Page 4: Custom Framing, Archival Prints & Canvas Gallery Wraps
+- **Frame Types In-House:** Natural Seasoned Teakwood, Gallery Matte Black, Champagne Luxe Gold, Studio White, Floating Canvas Wraps.
+- **Popular Sizes:** 6x8", 8x12" (A4), 12x18" (A3+), 16x24", 20x30", 24x36", and custom wall grids.
+- **Glass / Acrylic:** Clear glass, Anti-glare glass, UV-resistant acrylic.
+- **Canvas Prints:** 380 GSM textured cotton canvas on solid wooden stretcher bars.
+- **Turnaround:** Standard 2–3 days; same-day or 24-hr express available for urgent orders.
+
+### Page 5: Personalized Photo Gifts & Keepsakes
+- **Products:** 3D subsurface laser-etched optical crystals, natural rock slates, glossy ceramic tiles with wooden stands, customized coffee mugs.
+- **Ordering Ease:** Customers can simply WhatsApp their photos for a free digital layout proof.
+- **Turnaround:** 24 to 48 hours fast pickup.
+
+### Page 6: Executive Headshots & Matrimonial Portraits
+- **Backdrops:** Textured charcoal grey, clean corporate white, warm studio cream.
+- **Retouching:** Natural non-plastic skin texture retouching, blemish removal, and color calibration.
+- **Delivery:** High-resolution digital files delivered same day via WhatsApp/Drive.
 
 ---
 
-### Part 3: Service Page 2 — Newborn, Baby & Toddler Photography
-1. **Age Milestones Covered:** What sessions do you specialize in?  
-   *(e.g., Newborn 7–20 days, Sitting milestone 6–9 months, 1st Birthday Cake-Smash, Family toddler shoots)*
-2. **Studio Amenities & Props:** Do you provide sanitized baskets, costumes, wraps, blankets, and cake-smash setup props at the studio?
-3. **Family Inclusion:** Are parents and older siblings included in the baby photoshoot at no extra charge?
-4. **Session Duration:** How much time do you dedicate per baby shoot? (e.g., 1.5 to 2 hours with relaxed feeding/snack breaks)?
-5. **Portfolio Assets Needed:** 8–10 high-res photos of babies, toddlers, and cake-smash sessions.
-
----
-
-### Part 4: Service Page 3 — 10-Minute Biometric Visa & Passport Photos
-1. **Top Countries Requested:** Which visa photos do IT professionals and families walk in for most often?  
-   *(e.g., US DS-160, Schengen European VFS, UK Passport, Canada PR, Australia, Singapore, India Passport / OCI)*
-2. **Walk-in Speed:** Can clients walk in without an appointment and get prints + WhatsApp soft copies in under 10 minutes?
-3. **Print Count:** How many physical glossy prints are usually handed over? (e.g., 6 or 8 prints)?
-4. **Acceptance Guarantee:** Can we highlight your **"100% Embassy Acceptance Guarantee — Free Re-shoot if flagged"**?
-
----
-
-### Part 5: Service Page 4 — Custom Framing, Archival Prints & Canvas Wraps
-1. **Frame Mouldings & Materials:** What frame profiles do you carry in-house?  
-   *(e.g., Seasoned Teakwood, Matte Black Gallery profiles, Champagne Gold foil, Minimalist White, Acrylic Float frames)*
-2. **Most Popular Sizes:** Which dimensions do customers order most?  
-   *(e.g., 6x8" desk, 8x12" A4, 12x18" wall, 16x24" gallery, 20x30" statement portraits, or full custom wall index grids)*
-3. **Glass & Protection:** Do you provide standard clear glass, anti-reflective glass, and UV-protective acrylic?
-4. **Canvas Printing:** Do you stretch prints onto real wooden bars with 380 GSM textured cotton canvas?
-5. **Turnaround Time:** How many days for a standard custom frame? Is same-day/24-hour express available for urgent gifts?
-6. **Portfolio Assets Needed:** 4–6 clear photos of framed pictures on walls or sample mouldings in your shop.
-
----
-
-### Part 6: Service Page 5 — Personalized Photo Gifts & Keepsakes
-1. **Gift Products Offered:** Which customized gifts can customers order from you?  
-   *(e.g., 3D Subsurface Laser Crystals, Natural Chiseled Stone Slates, Ceramic Photo Tiles with Wood Stands, Custom Mugs, Keychains)*
-2. **Photo Submission:** Can customers just send photos via WhatsApp to get them designed and printed?
-3. **Turnaround:** How quickly can gifts be picked up? (e.g., 24 to 48 hours)?
-4. **Portfolio Assets Needed:** 4–6 photos of finished 3D crystals, stone slates, and photo tiles.
-
----
-
-### Part 7: Service Page 6 — Executive Headshots & Matrimonial Profiles
-1. **Use Cases:** Do you shoot for LinkedIn, corporate bios, doctors/executives, and matrimonial profiles?
-2. **Backdrop Options:** What studio backdrops do you have? (e.g., Textured charcoal grey, clean white, warm cream)?
-3. **Skin Retouching Policy:** Do you provide natural texture skin retouching (avoiding plastic/fake looks)?
-4. **Wardrobe Changes:** Are multiple outfit changes allowed during the session?
-
----
-
-### Part 8: Asset Collection Checklist
-Please upload the following to a Google Drive folder or send via WhatsApp:
-- [ ] Studio Logo file (PNG or JPEG, or high-res photo of shop board)
-- [ ] 10–15 Wedding & Pre-Wedding photographs
-- [ ] 8–10 Baby, Toddler & Cake-Smash photographs
-- [ ] 4–6 Custom Framed pictures or shop workshop photos
-- [ ] 4–6 Personalized Gifts & 3D Crystals photos
-- [ ] 4–6 Professional Headshot & Matrimonial sample photos
-- [ ] Any specific price ranges or package names you want featured (or we keep it as "Request Instant WhatsApp Quote")
-
----
-
-*Compiled by Uncoded Hub Executive Operations for Shutter Bug Studioz Web Sprint*
+## Part 3: Photo Assets & Logo Checklist
+Please drop the following into a Google Drive folder or send via WhatsApp:
+- [ ] Studio Logo (PNG or clear photo of shop board)
+- [ ] 10–12 Best Wedding & Pre-wedding photos
+- [ ] 8–10 Best Baby, Newborn & Cake-smash photos
+- [ ] 4–6 Custom Framing samples & workshop photos
+- [ ] 4–6 Personalized Gifts & 3D Crystal samples
+- [ ] 3–4 Executive Headshots / Matrimonial portrait samples
