@@ -6,8 +6,9 @@ This document tracks direct, high-touch, and referral prospects for Uncoded Hub 
 
 ## 1. Shutter Bug Studioz (Malleshpalya, Bengaluru)
 
-- **Client Name / Business:** Shutter Bug Studio / Shutter Bug Studioz
-- **Source:** Word of mouth referral (Genuine founder-friendly lead)
+- **Client Name / Contact Person:** Krishna Reddy (Founder / Owner)
+- **Business:** Shutter Bug Studio / Shutter Bug Studioz
+- **Source:** Word of mouth referral (Direct discussion — Ready to onboard)
 - **Primary Contact:** `+91 99009 11929`
 - **Location:** Sri Sai Ram Nilaya, 263/1, beside Apple Clinic, Maruthi Nagar, Malleshpalya, New Thippasandra, Bengaluru, Karnataka 560075
 - **Google My Business:** [GMB Profile Link](https://share.google/wjWDVRGr4D6fid0qr)
