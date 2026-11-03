@@ -29,7 +29,8 @@ This document tracks direct, high-touch, and referral prospects for Uncoded Hub 
   - **Standard Quote:** ₹35,000
   - **Word-of-Mouth Courtesy Discount:** -₹10,000
   - **Special Closing Offer:** **₹25,000** (All-inclusive, 7-Day Sprint Guarantee, WhatsApp booking automation, Zero recurring maintenance lock-in).
-- **Status:** **Demo Ready & Pitch Queued**
+- **Deliverables Scope:** Master Studio Platform + 6 Dedicated Service Landing Pages (Weddings, Kids/Cake-smash, 10-Min Visa, Custom Framing, Keepsakes/3D Crystals, Executive Headshots).
+- **Status:** **Client Agreed & Ready to Proceed (Onboarding Questionnaire Prepared)**
 
 ---
 
