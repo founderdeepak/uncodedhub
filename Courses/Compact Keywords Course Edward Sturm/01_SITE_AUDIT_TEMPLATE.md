@@ -38,3 +38,4 @@ Use this template to audit any client or internal website. It focuses on the **2
    * Pages with **Crawl Depth > 3**.
    * Orphan pages (pages with **0 Inlinks**).
    * Thin content pages (**Word Count < 200**).
+

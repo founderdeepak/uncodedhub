@@ -66,3 +66,4 @@ Every BOFU landing page must have:
 * **Breadcrumb Navigation:** `Home > Services > [Page Title]`
 * **Contextual Inlinks:** At least 2 links from relevant blog articles pointing to the BOFU page with natural partial-match anchor text.
 * **Reciprocal Outlinks:** The BOFU page should link back to the main `/services/` hub and link out to 1 high-authority external benchmark (e.g., Google PageSpeed Insights, W3C standard).
+

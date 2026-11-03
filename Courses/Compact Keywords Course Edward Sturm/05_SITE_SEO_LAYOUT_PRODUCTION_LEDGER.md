@@ -35,3 +35,4 @@ Use this ledger to draft, review, and track the exact production fields of every
 | **H2-4 (Sentence case)**| Built from scratch in 7 days with zero maintenance headaches | Everything included in your studio's custom digital build |
 | **Content Notes** | Add interactive before/after smile showcase mockup and trust badges. | Emphasize magazine typography, floorplan viewer, and high-res project photography. |
 | **Done / Live?** | Live | Live |
+

@@ -84,3 +84,4 @@ We analyzed 3 categories of competitors:
 | `hand coded website vs wordpress cost` | `/alternatives/wordpress/` | Value evaluation | 14 | Extreme |
 | `7 day web design sprint pricing` | `/pricing/` | Ready to hire | 7 | Extreme |
 | `fixed price website development packages` | `/pricing/` | Wants no hourly surprises | 15 | High |
+

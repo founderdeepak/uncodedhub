@@ -399,6 +399,83 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
     ],
   },
 
+  'home-services': {
+    key: 'home-services',
+    projectId: 'berjin-tank-cleaning',
+    heroBadge: '⚡ 7-DAY BESPOKE PRODUCTION SPRINT · HOME SERVICES & CONTRACTORS',
+    headline: 'Websites for Home Service Contractors That Turn Urgent Searches Into Booked Jobs.',
+    subheadline:
+      'High-speed, hand-coded digital booking platforms for water tank cleaners, swimming pool maintenance, HVAC technicians, and property contractors. Direct WhatsApp booking, upfront price estimators, and verified proof.',
+    targetAudience: [
+      'Water tank & underground sump cleaning contractors',
+      'Swimming pool maintenance & filtration specialists',
+      'HVAC, AC repair & deep cleaning technicians',
+      'Waterproofing, plumbing & civil maintenance contractors',
+    ],
+    stats: [
+      { value: '0.6s LCP', label: 'Instant emergency mobile load' },
+      { value: '1-Tap', label: 'Direct WhatsApp booking engine' },
+      { value: '100%', label: 'Upfront rate card transparency' },
+      { value: '7 Days', label: 'Turnkey website deployment' },
+    ],
+    problems: [
+      {
+        num: '01',
+        problem: 'Homeowners and apartment RWAs are wary of unverified, fly-by-night workers who arrive without safety gear or insurance.',
+        solution: 'Prominent display of verified technician safety protocols, commercial equipment badging, and client insurance coverage.',
+        metric: 'Eliminates contractor mistrust',
+      },
+      {
+        num: '02',
+        problem: 'Tired of endless phone tag and vague "I will visit and quote" answers that lead to customer drop-off.',
+        solution: 'Interactive service cost calculator with transparent per-litre or square-foot pricing and instant WhatsApp quote delivery.',
+        metric: 'Instant price clarity',
+      },
+      {
+        num: '03',
+        problem: 'Before/after photos on WhatsApp look blurry and fail to convince luxury villa owners and residential society boards.',
+        solution: 'High-resolution before/after interactive cleaning sliders showing real sludge descaling and crystal-clear water results.',
+        metric: 'Unmistakable visual proof',
+      },
+      {
+        num: '04',
+        problem: 'Contractors waste money driving to low-ticket jobs located across the city.',
+        solution: 'Hyperlocal locality cluster filters routing inquiries specifically to your targeted high-density residential corridors.',
+        metric: 'Cuts wasted travel by 65%',
+      },
+    ],
+    conversionPillars: [
+      {
+        title: 'Scientific 6-Stage Process Showcase',
+        desc: 'Visual breakdown of high-pressure jet descaling, sludge vacuuming, and food-grade UV/antibacterial sanitization.',
+        deliverable: 'Scientific procedure credibility modules',
+      },
+      {
+        title: 'Instant WhatsApp One-Tap Quote',
+        desc: 'Smart booking engine capturing tank capacity, location, and preferred slot with zero friction.',
+        deliverable: 'High-conversion booking funnel',
+      },
+      {
+        title: 'Apartment Society & Commercial Roster',
+        desc: 'Dedicated section detailing past completed residential societies, building trust with facility managers and RWAs.',
+        deliverable: 'Hyperlocal commercial proof blocks',
+      },
+    ],
+    metaTitle: 'Home Services Website Design & Emergency Booking Systems | Uncoded Hub',
+    metaDescription:
+      'Home services website design with 1-tap emergency booking, upfront service rate cards, before/after proof sliders, and sub-second mobile performance.',
+    keywords: [
+      'home services website design',
+      'water tank cleaning website',
+      'contractor website design',
+      'swimming pool cleaning website',
+      'hvac website development',
+      'pest control website design',
+      'plumber website design',
+      'high converting contractor landing page',
+    ],
+  },
+
   'coaches-consultants': {
     key: 'coaches-consultants',
     projectId: 'executive-coaching',
@@ -1312,6 +1389,17 @@ export function getNicheLandingData(slugOrKey: string): NicheLandingConfig | und
     'wedding-photography': 'wedding-photographers',
     'renovation': 'home-renovation',
     'modular-kitchen': 'home-renovation',
+    'home-services': 'home-services',
+    'contractor': 'home-services',
+    'contractors': 'home-services',
+    'tank-cleaning': 'home-services',
+    'water-tank-cleaning': 'home-services',
+    'pool-cleaning': 'home-services',
+    'swimming-pool-cleaning': 'home-services',
+    'cleaning-services': 'home-services',
+    'hvac': 'home-services',
+    'pest-control': 'home-services',
+    'plumbing': 'home-services',
     'coaching': 'coaches-consultants',
     'consultants': 'coaches-consultants',
     'coaching-academy': 'educational-academy',

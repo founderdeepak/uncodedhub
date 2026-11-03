@@ -65,3 +65,4 @@ Uncoded Hub already has 17 specialized industry platforms engineered in [`src/da
 * **The Core Problem:** Generic hospital directories hide their private brand; outdated templates fail to establish peer-reviewed authority.
 * **Our 415-Word Solution:** Medical schema markup, CV/publication showcase, procedure breakdown visualizers, and direct second-opinion consultation booking.
 * **On-Page Grader Verification:** Target Moz score: **98/100**.
+

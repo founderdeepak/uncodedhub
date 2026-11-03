@@ -67,6 +67,10 @@ const NICHE_TOPIC_CLUSTERS: Record<string, { topic1: string; topic2: string }> =
     topic1: 'Commercial Scope Transparency, Estimation Calculators & Trust',
     topic2: 'Hyperlocal Community SEO, Material Proof & High-Speed Mobile UX',
   },
+  'home-services': {
+    topic1: 'Emergency Dispatch UX, Transparent Quotations & Contractor Trust',
+    topic2: 'Hyperlocal Local Pack Domination, Before/After Proof & WhatsApp Booking',
+  },
   'wedding-photographers': {
     topic1: 'High-Ticket Booking Psychology, Package Pricing & Client Inquiry Funnels',
     topic2: '4K Media Streaming, Proofing Galleries & Organic Destination Search',

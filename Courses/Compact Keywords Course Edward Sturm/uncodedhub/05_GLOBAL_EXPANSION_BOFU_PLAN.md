@@ -40,3 +40,4 @@ When deploying global landing pages:
 1. **Currency & Timezone Localization:** Automatically display pricing in USD ($) / GBP (£) / AUD ($) / AED alongside local appointment times via our `BookingCalendar` component.
 2. **Direct Video Proof:** Include video walkthroughs showing live mobile PageSpeed tests (0.6s LCP) and interactive before/after portfolio sliders.
 3. **Zero Risk Guarantee:** Highlight our contractual *"7-Day Delivery or It's Free"* guarantee prominently in the hero section.
+

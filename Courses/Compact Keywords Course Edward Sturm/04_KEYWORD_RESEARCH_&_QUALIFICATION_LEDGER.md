@@ -39,3 +39,4 @@ Use this ledger to record, filter, and prioritize compact keywords before drafti
 1. **Lacks Buyer Intent:** Keywords starting with "how to", "what is", or "best [x] list" belong to TOFU / affiliates. Deprioritize.
 2. **High Domain Authority Dominance:** If all top 3 positions are owned by Wikipedia, Government sites, or DA 85+ portals without room to satisfy search intent, deprioritize.
 3. **Mismatched Intent:** If the user is looking to download free code templates rather than hire a professional studio, discard immediately.
+

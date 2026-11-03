@@ -44,3 +44,4 @@ Every locality page adheres strictly to our high-converting compact structure:
 * **Section 2 (Fixed 7-Day Sprint):** In-person or virtual kickoff in Bengaluru; live deployment in 7 business days.
 * **Section 3 (Local Case Studies & Address):** Uncoded Hub’s local presence and contact options (WhatsApp / Google Meet).
 * **Terminal CTA:** *Book Your Discovery Call*
+

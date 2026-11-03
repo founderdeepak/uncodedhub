@@ -99,3 +99,4 @@ Schedule a complimentary 20-minute strategy call with founders Deepak & Geetha. 
 - [ ] Target keyword is in the **Meta Description**.
 - [ ] Tone is **neutral, confident, and factual** (zero exaggerated hype).
 - [ ] Moz On-Page Grader score is **96–98** (Never artificially force 100).
+
