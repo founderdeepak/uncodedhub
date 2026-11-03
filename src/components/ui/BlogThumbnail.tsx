@@ -51,6 +51,14 @@ const THUMB_THEMES: Record<
     code: 'REN.03',
     motif: 'Scope & Costing',
   },
+  'home-services': {
+    gradient: 'from-[#0f172a] via-[#082f49] to-[#0369a1]',
+    pillBg: 'bg-sky-500/20 border-sky-400/40',
+    pillText: 'text-sky-300',
+    ghostText: 'Services',
+    code: 'SRV.05',
+    motif: 'Sanitation & Svc',
+  },
   'interior-designers': {
     gradient: 'from-[#21161d] via-[#140c11] to-[#2d1b26]',
     pillBg: 'bg-fuchsia-500/20 border-fuchsia-400/40',
