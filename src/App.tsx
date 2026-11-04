@@ -35,8 +35,6 @@ import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 const NAV = [
   { label: 'Work', path: '/portfolio/' },
   { label: 'Web Design', path: '/web-design/' },
-  { label: 'Solutions', path: '/solutions/' },
-  { label: 'Alternatives', path: '/alternatives/' },
   { label: 'Services', path: '/services/' },
   { label: 'Studio', path: '/about/' },
   { label: 'FAQ', path: '/faq/' },
@@ -121,25 +119,25 @@ export default function App() {
             <Logo />
           </Link>
 
-          <nav aria-label="Primary" className="hidden lg:flex items-center gap-5 xl:gap-7">
+          <nav aria-label="Primary" className="hidden md:flex items-center gap-7 lg:gap-8">
             {NAV.map((item) => (
               <NavLink
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) =>
-                  `text-[0.875rem] xl:text-[0.9375rem] link-quiet ${isActive ? 'text-signal font-medium' : 'text-ink-soft hover:text-ink'}`
+                  `text-[0.9375rem] link-quiet ${isActive ? 'text-signal font-medium' : 'text-ink-soft hover:text-ink'}`
                 }
               >
                 {item.label}
               </NavLink>
             ))}
-            <button onClick={goToBooking} className="btn-primary !px-5 !py-2 text-xs xl:text-sm">
+            <button onClick={goToBooking} className="btn-primary !px-6 !py-2.5 text-sm">
               Book a call
             </button>
           </nav>
 
           <button
-            className="lg:hidden label text-ink-soft py-2 px-3 border border-rule rounded-sm"
+            className="md:hidden label text-ink-soft py-2"
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
             onClick={() => setMenuOpen((v) => !v)}
@@ -161,7 +159,7 @@ export default function App() {
       <div
         id="mobile-nav"
         aria-hidden={!menuOpen}
-        className={`mobile-nav ${menuOpen ? 'mobile-nav-open' : ''} fixed inset-0 z-[99] bg-paper lg:hidden pt-[6.5rem] flex flex-col`}
+        className={`mobile-nav ${menuOpen ? 'mobile-nav-open' : ''} fixed inset-0 z-[99] bg-paper md:hidden pt-[6.5rem] flex flex-col`}
       >
         <nav aria-label="Mobile" className="flex-1 px-6 pt-8 flex flex-col">
           {NAV.map((item, i) => (

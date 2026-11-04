@@ -27,29 +27,29 @@ const COMPANY_LINKS = [
 ];
 
 const ALTERNATIVE_LINKS = [
-  { label: 'Webflow Alternative', to: '/alternatives/webflow/' },
-  { label: 'Framer Alternative', to: '/alternatives/framer/' },
-  { label: 'WordPress vs Custom Code', to: '/alternatives/wordpress/' },
-  { label: 'Shopify Alternative', to: '/alternatives/shopify/' },
+  { label: 'Webflow Alternative (Zero Lock-In)', to: '/alternatives/webflow/' },
+  { label: 'Framer Alternative (Zero Hydration Lag)', to: '/alternatives/framer/' },
+  { label: 'WordPress vs Custom React Code', to: '/alternatives/wordpress/' },
+  { label: 'Shopify Alternative (Zero App Subscriptions)', to: '/alternatives/shopify/' },
   { label: 'Wix & Squarespace Alternatives', to: '/alternatives/wix-squarespace/' },
-  { label: 'Traditional Agencies Alternative', to: '/alternatives/traditional-agencies/' },
+  { label: 'Traditional Agency Alternative (7-Day Sprints)', to: '/alternatives/traditional-agencies/' },
   { label: 'Freelancer Marketplaces Alternative', to: '/alternatives/freelancer-marketplaces/' },
-  { label: 'HubSpot CMS Alternative', to: '/alternatives/hubspot-cms/' },
-  { label: 'Offshore Dev Shops Alternative', to: '/alternatives/offshore-dev-shops/' },
-  { label: 'In-House Developer Alternative', to: '/alternatives/in-house-developer/' },
+  { label: 'HubSpot CMS Alternative (Zero Enterprise Tax)', to: '/alternatives/hubspot-cms/' },
+  { label: 'Offshore Dev Shops Alternative (Co-Founder Led)', to: '/alternatives/offshore-dev-shops/' },
+  { label: 'In-House Developer Alternative (On-Demand Team)', to: '/alternatives/in-house-developer/' },
 ];
 
 const SOLUTION_LINKS = [
-  { label: 'Website Speed Optimization', to: '/solutions/speed-optimization/' },
+  { label: 'Website Speed Optimization (100/100 CWV)', to: '/solutions/speed-optimization/' },
   { label: 'Outdated Website Redesign', to: '/solutions/website-redesign/' },
-  { label: 'Lead Generation Websites', to: '/solutions/lead-generation-websites/' },
-  { label: 'Appointment Booking Websites', to: '/solutions/booking-websites/' },
-  { label: 'High-Converting Landing Pages', to: '/solutions/high-converting-landing-pages/' },
-  { label: 'Local SEO Architecture', to: '/solutions/local-seo-architecture/' },
-  { label: 'Enterprise & Corporate B2B Sites', to: '/solutions/corporate-b2b-websites/' },
-  { label: 'Multi-Location Web Architecture', to: '/solutions/multi-location-websites/' },
-  { label: 'Payment-Enabled Websites', to: '/solutions/payment-enabled-websites/' },
-  { label: 'Portfolio Showcase Websites', to: '/solutions/portfolio-websites/' },
+  { label: 'Lead Generation Conversion Architecture', to: '/solutions/lead-generation-websites/' },
+  { label: 'Appointment & Booking Engine Websites', to: '/solutions/booking-websites/' },
+  { label: 'Paid Ad Landing Page Optimization', to: '/solutions/high-converting-landing-pages/' },
+  { label: 'Local SEO & Geo-Targeted Architecture', to: '/solutions/local-seo-architecture/' },
+  { label: 'Enterprise & Corporate B2B Websites', to: '/solutions/corporate-b2b-websites/' },
+  { label: 'Multi-Location & Franchise Web Architecture', to: '/solutions/multi-location-websites/' },
+  { label: 'Payment-Enabled & Direct Checkout Websites', to: '/solutions/payment-enabled-websites/' },
+  { label: 'High-Ticket Portfolio & Case Study Showcase', to: '/solutions/portfolio-websites/' },
 ];
 
 const INDUSTRY_LINKS = [
@@ -503,72 +503,73 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        {/* ── 2b. Problem-Based Solutions Directory (Unified SEO Strip) ── */}
-        <div className="py-8 border-t border-rule-on-ink text-xs">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-on-ink flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-signal-bright" />
-              Engineered Web Solutions (Problem-Based Architecture)
-            </span>
-            <Link
-              to="/solutions/"
-              className="text-signal-bright font-mono text-xs hover:underline inline-flex items-center gap-1 font-medium"
-            >
-              <span>Explore All Solutions Hub</span>
-              <span>→</span>
-            </Link>
-          </div>
-
-          <p className="text-xs text-on-ink-muted leading-relaxed">
-            <strong className="text-on-ink font-medium mr-2">Targeted Solutions:</strong>
-            {SOLUTION_LINKS.map((sol, i) => (
-              <span key={sol.to}>
+        {/* ── 2b. Solutions & Alternatives Matrix (Vertical Side-by-Side) ── */}
+        <div className="py-10 border-t border-rule-on-ink text-xs">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
+            
+            {/* Column 1: Problem-Based Solutions */}
+            <div>
+              <div className="flex items-center justify-between gap-3 mb-5 pb-3 border-b border-white/10">
+                <span className="text-xs font-mono font-semibold uppercase tracking-wider text-on-ink flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-signal-bright" />
+                  Engineered Web Solutions
+                </span>
                 <Link
-                  to={sol.to}
-                  className="hover:text-signal-bright transition-colors"
+                  to="/solutions/"
+                  className="text-signal-bright font-mono text-xs hover:underline inline-flex items-center gap-1 font-medium"
                 >
-                  {sol.label}
+                  <span>Solutions Hub</span>
+                  <span>→</span>
                 </Link>
-                {i < SOLUTION_LINKS.length - 1 && (
-                  <span className="text-on-ink-muted/40 mx-2">·</span>
-                )}
-              </span>
-            ))}
-          </p>
-        </div>
+              </div>
 
-        {/* ── 2c. Architectural Comparisons & Alternatives Directory (Unified SEO Strip) ── */}
-        <div className="py-8 border-t border-rule-on-ink text-xs">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-on-ink flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-signal-bright" />
-              Compare Alternatives (Custom Code vs CMS & Agencies)
-            </span>
-            <Link
-              to="/alternatives/"
-              className="text-signal-bright font-mono text-xs hover:underline inline-flex items-center gap-1 font-medium"
-            >
-              <span>Explore All Alternatives Hub</span>
-              <span>→</span>
-            </Link>
-          </div>
+              <ul className="space-y-2.5">
+                {SOLUTION_LINKS.map((sol) => (
+                  <li key={sol.to}>
+                    <Link
+                      to={sol.to}
+                      className="text-sm text-on-ink-muted hover:text-signal-bright transition-colors flex items-center justify-between group py-0.5"
+                    >
+                      <span className="group-hover:translate-x-1 transition-transform">{sol.label}</span>
+                      <span className="text-on-ink-muted/30 group-hover:text-signal-bright text-xs">→</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <p className="text-xs text-on-ink-muted leading-relaxed">
-            <strong className="text-on-ink font-medium mr-2">Compare Approaches:</strong>
-            {ALTERNATIVE_LINKS.map((alt, i) => (
-              <span key={alt.to}>
+            {/* Column 2: Architectural Comparisons & Alternatives */}
+            <div>
+              <div className="flex items-center justify-between gap-3 mb-5 pb-3 border-b border-white/10">
+                <span className="text-xs font-mono font-semibold uppercase tracking-wider text-on-ink flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-signal-bright" />
+                  Compare Alternatives
+                </span>
                 <Link
-                  to={alt.to}
-                  className="hover:text-signal-bright transition-colors"
+                  to="/alternatives/"
+                  className="text-signal-bright font-mono text-xs hover:underline inline-flex items-center gap-1 font-medium"
                 >
-                  {alt.label}
+                  <span>Alternatives Hub</span>
+                  <span>→</span>
                 </Link>
-                {i < ALTERNATIVE_LINKS.length - 1 && (
-                  <span className="text-on-ink-muted/40 mx-2">·</span>
-                )}
-              </span>
-            ))}
-          </p>
+              </div>
+
+              <ul className="space-y-2.5">
+                {ALTERNATIVE_LINKS.map((alt) => (
+                  <li key={alt.to}>
+                    <Link
+                      to={alt.to}
+                      className="text-sm text-on-ink-muted hover:text-signal-bright transition-colors flex items-center justify-between group py-0.5"
+                    >
+                      <span className="group-hover:translate-x-1 transition-transform">{alt.label}</span>
+                      <span className="text-on-ink-muted/30 group-hover:text-signal-bright text-xs">→</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
         </div>
 
         {/* ── 3. Serving Every Corridor in Bengaluru (Unified SEO Strip) ── */}
