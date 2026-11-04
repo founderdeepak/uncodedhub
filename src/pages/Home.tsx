@@ -1473,6 +1473,91 @@ export default function Home({ onBook }: { onBook: () => void }) {
               <span>→</span>
             </Link>
           </div>
+
+          {/* Dual Exploration Row: Solutions & Alternatives */}
+          <div className="mt-6 grid md:grid-cols-2 gap-6">
+            {/* Solutions Card */}
+            <div className="p-7 rounded-[24px] bg-paper-raised border border-rule-strong hover:border-signal/40 transition-all flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="w-10 h-10 rounded-xl bg-signal/10 border border-signal/20 text-signal flex items-center justify-center text-lg">
+                    🛠️
+                  </span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-signal-wash border border-signal/20 text-[10px] font-mono text-signal font-semibold">
+                    10 Business Problems
+                  </span>
+                </div>
+                <h3 className="font-display text-xl text-ink font-medium mb-2">
+                  Engineered Solutions
+                </h3>
+                <p className="text-muted text-xs sm:text-sm leading-relaxed mb-4">
+                  Solve concrete website bottlenecks: sub-800ms speed optimization, outdated site redesigns, appointment booking engines, and lead generation architecture.
+                </p>
+                <div className="flex flex-wrap gap-1.5 mb-6">
+                  <Link to="/solutions/speed-optimization/" className="px-2.5 py-1 rounded-md bg-paper border border-rule text-xs text-ink hover:text-signal hover:border-signal transition-colors">
+                    Speed &amp; CWV
+                  </Link>
+                  <Link to="/solutions/website-redesign/" className="px-2.5 py-1 rounded-md bg-paper border border-rule text-xs text-ink hover:text-signal hover:border-signal transition-colors">
+                    Redesign
+                  </Link>
+                  <Link to="/solutions/lead-generation-websites/" className="px-2.5 py-1 rounded-md bg-paper border border-rule text-xs text-ink hover:text-signal hover:border-signal transition-colors">
+                    Lead Gen
+                  </Link>
+                  <Link to="/solutions/booking-websites/" className="px-2.5 py-1 rounded-md bg-paper border border-rule text-xs text-ink hover:text-signal hover:border-signal transition-colors">
+                    Booking
+                  </Link>
+                </div>
+              </div>
+              <Link
+                to="/solutions/"
+                className="text-signal hover:underline inline-flex items-center gap-1.5 font-medium text-xs font-mono"
+              >
+                <span>Explore All 10 Solutions</span>
+                <span>→</span>
+              </Link>
+            </div>
+
+            {/* Alternatives Card */}
+            <div className="p-7 rounded-[24px] bg-paper-raised border border-rule-strong hover:border-signal/40 transition-all flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="w-10 h-10 rounded-xl bg-signal/10 border border-signal/20 text-signal flex items-center justify-center text-lg">
+                    ⚖️
+                  </span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-signal-wash border border-signal/20 text-[10px] font-mono text-signal font-semibold">
+                    10 Architectural Comparisons
+                  </span>
+                </div>
+                <h3 className="font-display text-xl text-ink font-medium mb-2">
+                  Compare Alternatives
+                </h3>
+                <p className="text-muted text-xs sm:text-sm leading-relaxed mb-4">
+                  Honest side-by-side technical evaluations: Hand-coded React vs Webflow, Framer, WordPress, Shopify, Wix, and bloated 3-month agency retainers.
+                </p>
+                <div className="flex flex-wrap gap-1.5 mb-6">
+                  <Link to="/alternatives/webflow/" className="px-2.5 py-1 rounded-md bg-paper border border-rule text-xs text-ink hover:text-signal hover:border-signal transition-colors">
+                    Webflow
+                  </Link>
+                  <Link to="/alternatives/framer/" className="px-2.5 py-1 rounded-md bg-paper border border-rule text-xs text-ink hover:text-signal hover:border-signal transition-colors">
+                    Framer
+                  </Link>
+                  <Link to="/alternatives/wordpress/" className="px-2.5 py-1 rounded-md bg-paper border border-rule text-xs text-ink hover:text-signal hover:border-signal transition-colors">
+                    WordPress
+                  </Link>
+                  <Link to="/alternatives/shopify/" className="px-2.5 py-1 rounded-md bg-paper border border-rule text-xs text-ink hover:text-signal hover:border-signal transition-colors">
+                    Shopify
+                  </Link>
+                </div>
+              </div>
+              <Link
+                to="/alternatives/"
+                className="text-signal hover:underline inline-flex items-center gap-1.5 font-medium text-xs font-mono"
+              >
+                <span>Explore All 10 Comparisons</span>
+                <span>→</span>
+              </Link>
+            </div>
+          </div>
         </Shell>
       </section>
 
