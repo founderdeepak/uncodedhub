@@ -149,8 +149,12 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
 
   // Find matching demo project
   const project = useMemo(() => {
-    if (!config) return undefined;
-    return PROJECTS.find((p) => p.id === config.projectId);
+    if (!config) return PROJECTS[0];
+    return (
+      PROJECTS.find((p) => p.id === config.projectId) ||
+      PROJECTS.find((p) => p.id === 'home-renovation') ||
+      PROJECTS[0]
+    );
   }, [config]);
 
   // Active theme index for demo specimen

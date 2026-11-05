@@ -401,7 +401,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 
   'home-services': {
     key: 'home-services',
-    projectId: 'home-services',
+    projectId: 'home-renovation',
     heroBadge: '⚡ 7-DAY BESPOKE PRODUCTION SPRINT · HOME SERVICES & CONTRACTORS',
     headline: 'Websites for Home Service Contractors That Turn Urgent Searches Into Booked Jobs.',
     subheadline:
