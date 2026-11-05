@@ -1,117 +1,121 @@
-# Custom React E-Commerce Architecture & Sales Playbook
-**Engineered by Uncoded Hub · For High-Ticket Garment & Retail Prospects**
+# Uncoded Hub — E-Commerce Architecture, Rate Card & Proposal Playbook
+**Production Operations Framework · Approved Studio Standard**
 
 ---
 
-## 1. Executive Overview: The E-Commerce Market Opportunity
+## 1. Executive Strategy: Scope & Economics
 
-### Why Indian D2C Garment Brands Are Frustrated with WordPress & Shopify
-1. **The WordPress/WooCommerce Trap:**
-   - 4 to 7 seconds mobile page load times (shoppers browsing on Instagram ads bounce immediately).
-   - Heavy SQL database queries and 30+ conflicting plugins (Elementor, WooCommerce, WP Rocket, Cart Abandonment, YITH).
-   - Regular plugin breakage, security vulnerabilities, and checkout crashes during festive sales.
-2. **The Shopify App Tax Trap:**
-   - $39/mo base fee + $200–$500/mo in recurring app subscriptions (currency converters, size charts, WhatsApp notifications, custom checkout fields).
-   - High 2% transaction fee unless using Shopify Payments (which has limitations in India).
-   - Generic template look that makes a boutique garment brand look like a dropshipping site.
-
-### The Uncoded Hub Custom Code Value Proposition:
-> **"Sub-800ms speed on mobile, zero monthly plugin fees, luxury bespoke branding, and a dead-simple merchant dashboard for your staff to manage orders and stock in 1 tap."**
+E-commerce web development at Uncoded Hub is governed by three operational rules:
+1. **Differentiate by capability and automation, not just product count.** A 20-product store with multi-variant matrices and automated logistics requires more engineering than a 200-product flat catalog.
+2. **Strictly separate website engineering from manual data entry.** The code platform is built to support catalogue expansion; uploading, image editing, and formatting client products is a defined, billable service.
+3. **Monthly retainers must have hard hourly caps.** No unlimited commitments. Subscriptions cover defined hours, product allotments, and maintenance tasks.
 
 ---
 
-## 2. Technical Architecture: How Custom E-Commerce Works
+## 2. Core E-Commerce Rate Card
+
+*All rates are exclusive of applicable GST. Hosting, domain, payment gateway platform fees, and third-party API message charges belong to the client.*
+
+### Package 1: Essential Commerce
+**Fee:** ₹59,000 (One-time development)  
+**Timeline:** 15–20 working days  
+**Target:** Boutiques, single-designer labels, and emerging retail stores.
+* Custom-designed mobile-first storefront.
+* Core architecture: Home, Shop, Product Detail, About, and Contact pages.
+* Product categorization, instant search, and breadcrumbs.
+* Slide-out shopping bag and streamlined checkout.
+* Payment gateway integration (Razorpay / Cashfree for UPI, Cards, Netbanking).
+* Standard Cash on Delivery (COD) configuration.
+* Direct WhatsApp inquiry and order confirmation button.
+* On-page technical SEO foundations (meta tags, schema, OpenGraph).
+* Initial setup of **up to 30 flagship products** (client provides photos/details).
+* 1-hour recorded staff training session on managing orders.
+
+---
+
+### Package 2: Growth Commerce ⭐ (Recommended)
+**Fee:** ₹89,000 (One-time development)  
+**Timeline:** 20–25 working days  
+**Target:** Established garment shops (10–29 staff) scaling pan-India sales.
+* **Everything in Essential Commerce, plus:**
+* Multi-variant matrix engineering (dynamic color swatches, size selectors XS–XXL).
+* Advanced faceted product filtering (by Category, Price, Occasion, Fabric).
+* Promotional coupon and discount engine (percentage, flat, festive codes).
+* **Automated Courier Integration (Shiprocket / Delhivery API):** Automatic order sync, AWB generation, and printable shipping labels.
+* Real-time low-stock alerts (*"Only 3 units left in M"*).
+* Google Analytics 4 & Meta Pixel conversion tracking integration.
+* Initial setup of **up to 75 products with variants**.
+* Staff training on courier dispatch and stock management.
+
+---
+
+### Package 3: Premium Commerce
+**Fee:** ₹1,39,000 (One-time development)  
+**Timeline:** 25–35 working days  
+**Target:** High-volume brands requiring CRM synchronization and advanced customer workflows.
+* **Everything in Growth Commerce, plus:**
+* Advanced multi-tier sorting and layered faceted navigation.
+* **Bitrix24 CRM Deal Pipeline Integration:** Orders flow into a 4-stage Kanban board (`New` ➔ `Packing` ➔ `Dispatched` ➔ `Delivered`) with mobile app push notifications.
+* Customer account area: Order history, saved delivery addresses, and tracking links.
+* Dynamic promotional banner manager for festive sales.
+* Abandoned-cart capture workflow (subject to WhatsApp Business API policy and Meta message charges).
+* Initial setup of **up to 150 products with variants**.
+* Priority bug-fix support for 30 days post-launch.
+
+---
+
+### Package 4: Bespoke Custom Commerce Engine
+**Fee:** Starting from ₹1,50,000 – ₹2,50,000+ (Custom Scoped)  
+**Timeline:** 35–45 working days  
+**Target:** Enterprise D2C brands requiring custom database architecture, headless React/Next.js infrastructure, wholesale B2B tiers, or custom ERP integrations.
+
+---
+
+## 3. Product Catalog Setup & Data Entry Add-Ons
+
+*Rates assume client provides usable images and accurate product specs. Extensive image background removal, color correction, or copywriting is quoted separately.*
+
+| Service | Price | Deliverable |
+| :--- | :---: | :--- |
+| **Additional 50 Standard Products** | ₹5,000 | Flat products without complex variants. |
+| **Additional 50 Products with Variants** | ₹7,500 | Multi-size and multi-color matrix configuration. |
+| **Additional 50 Products (Full Styling)** | ₹12,500 | Image cropping, background cleanup, variant tagging, and product descriptions. |
+| **Bulk CSV Import & Data Formatting** | From ₹5,000 | Cleansing client spreadsheet data and programmatic database import. |
+
+---
+
+## 4. Monthly Website Care & Commerce Retainers
+
+*Retainers are billed monthly in advance and have explicit hour allocations to protect studio capacity.*
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                 CUSTOMER STOREFRONT                         │
-│   Custom React 19 / Vite / Tailwind UI                      │
-│   • Sub-0.5s Initial Paint · 100/100 Lighthouse             │
-│   • Dynamic Color Swatches & Real-Time Size Inventory       │
-│   • Slide-Out Instant Bag & Coupon Engine                   │
-└──────────────────────────────┬──────────────────────────────┘
-                               │ HTTPS / REST API
-┌──────────────────────────────▼──────────────────────────────┐
-│                    PAYMENT GATEWAY (RAZORPAY)               │
-│   • 1-Tap UPI (GPay, PhonePe, Paytm, CRED) — 0% MDR         │
-│   • Cards, Netbanking & Verified Cash on Delivery (COD)     │
-└──────────────────────────────┬──────────────────────────────┘
-                               │ Webhook (200ms Acknowledgement)
-┌──────────────────────────────▼──────────────────────────────┐
-│                   MERCHANT BACK-OFFICE                      │
-│   1. Supabase (PostgreSQL Database)                         │
-│      - Products Table (SKU, Price, Stock, Colors, Sizes)    │
-│      - Orders Table (Customer, Address, Items, Status)      │
-│   2. Shiprocket / Delhivery Automated Courier API           │
-│      - Instant AWB Generation & Shipping Label Printing     │
-│   3. WhatsApp Business Cloud Webhook                        │
-│      - Instant Order Confirmation & Tracking to Customer    │
-└─────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 1. WEBSITE CARE             │ 2. COMMERCE MANAGEMENT   │ 3. COMMERCE GROWTH │
+│ ₹3,000 / month              │ ₹7,500 / month           │ ₹12,500 / month    │
+├─────────────────────────────┼──────────────────────────┼────────────────────┤
+│ • Security & health checks  │ • Everything in Care     │ • Everything in Mgt│
+│ • Backups & dependency fixes│ • Up to 20 product       │ • Up to 50 product │
+│ • Bug fixes for built code  │   uploads / month        │   uploads / month  │
+│ • Up to 2 hours minor work  │ • 2 promotional banners  │ • 4 promo banners  │
+│                             │ • Coupon configuration   │ • On-page SEO sync │
+│                             │ • Up to 5 hours support  │ • Up to 10 hrs work│
+└─────────────────────────────┴──────────────────────────┴────────────────────┘
 ```
 
 ---
 
-## 3. Recommended Hosting Infrastructure & Cost Breakdown
+## 5. Standard Terms, Conditions & Milestone Policy
 
-| Component | Recommended Provider | Monthly Cost | Annual Cost | Why |
-| :--- | :--- | :---: | :---: | :--- |
-| **Storefront & Admin Hosting** | **Hostinger Business Cloud** or **Vercel Pro** | ₹500 – ₹1,500/mo | ₹6,000 – ₹18,000 | Ultra-fast Edge CDN, SSL included, zero downtime, handles 50,000+ monthly visits effortlessly. |
-| **Database & Auth** | **Supabase (Managed PostgreSQL)** | ₹0 (Free Tier) or ₹2,000/mo | ₹0 – ₹24,000 | Free tier easily supports 50,000 monthly active users and 500MB data. Scalable with 1 click. |
-| **Payment Gateway** | **Razorpay / Cashfree** | ₹0 setup fee | 0% on UPI, 2% on Cards | Industry gold standard in India with highest checkout success rate. |
-| **Shipping Logistics** | **Shiprocket** | Pay-as-you-go | ₹35–₹65 per garment shipment | Auto-syncs orders, assigns Bluedart/Delhivery/DTDC automatically. |
-| **Domain** | **Hostinger / Cloudflare** | — | ₹899/year | Clean `.com` or `.in`. |
-
-**Total Operating Cost for Client:** Only ~₹1,000 to ₹2,500/month (vs ₹15,000–₹25,000/month on Shopify + Apps).
-
----
-
-## 4. The 20-Product Interactive Specimen Demo
-
-We have built a live, interactive e-commerce specimen for you:
-* **Live Specimen URL:** `https://uncodedhub.com/demos/garments-ecommerce.html`
-* **Features included in the demo:**
-  1. **20 Handcrafted Apparel Products:** Shirts, Suits, Streetwear, Sarees, Lehengas, Jackets, Jeans, Boots.
-  2. **Variant Selection:** Interactive color swatches that switch preview tags, multi-size selector (XS to XXL), and real-time low stock counter.
-  3. **Cart & Bag Engine:** Quantity stepper, coupon discount calculation (`FIRST10`), subtotal & GST breakdown.
-  4. **1-Tap Checkout Simulator:** Instant UPI (GPay/PhonePe) and Cash on Delivery (COD) toggle.
-  5. **Merchant Admin Back-Office:** Toggle at the top switch between the customer store and the owner's dashboard (Live KPI revenue, order status dispatcher, 1-click WhatsApp customer contact, and real-time stock editor).
-
----
-
-## 5. Sales Call Script: How to Pitch & Close This Lead
-
-### Step 1: Immediate Opening (First 30 Seconds)
-> *"Hello [Client Name], this is Deepak from Uncoded Hub in Bengaluru. I received your inquiry regarding building a professional online store for your garment business.  
->  
-> I noticed you’re looking to launch as soon as possible with high-intent product sales. Are you currently selling from a physical retail store, or are you scaling up from Instagram/WhatsApp orders?"*
-
-### Step 2: The Agitation & Diagnostic (Finding Pain Points)
-> *"Most garment store owners come to us after trying traditional WordPress or templates and getting frustrated because:  
-> 1. Mobile load times take 5+ seconds, and over 50% of ad traffic bounces before seeing the clothes.  
-> 2. Customers get confused selecting colors or sizes and drop off before checkout.  
-> 3. Inventory updates on WordPress are clunky and slow.*  
->  
-> *Is your priority having an ultra-fast website where mobile shoppers can checkout via UPI in 2 taps, with a simple dashboard where your staff can add new collections easily?"*
-
-### Step 3: The Live Demo Anchor (WhatsApp Drop)
-> *"Let me share a quick live prototype we engineered specifically for luxury garment boutiques right on your WhatsApp.  
->  
-> Open: **https://uncodedhub.com/demos/garments-ecommerce.html**  
->  
-> Notice how it loads in under 0.5 seconds on your phone. Click any shirt or suit—change the color, pick a size, and click 'Proceed to Checkout'.  
-> Now click the amber button at the top: 'Switch to Merchant Admin View'. That is the clean dashboard your team gets to view orders, print shipping labels, and message customers on WhatsApp in 1 tap."*
-
-### Step 4: Pricing & Retainer Proposal
-* **The Package (₹1,50,000 – ₹1,80,000):**
-  - Bespoke React storefront tailored to their brand aesthetic.
-  - Up to 100 initial products categorized with size/color variants.
-  - Razorpay payment gateway integration (UPI, Credit Cards, Netbanking, COD).
-  - Shiprocket / Delhivery courier automation.
-  - Custom merchant admin panel for mobile/desktop.
-  - 10-day guaranteed sprint delivery.
-* **The Monthly Retainer (₹10,000/month):**
-  - Weekly new collection uploads (up to 20 new SKUs/week).
-  - 24/7 uptime & speed monitoring.
-  - Festive promotional banners and discount coupon management.
-  - Database backups and hosting maintenance.
-
+1. **Payment Milestones (50 / 30 / 20):**
+   * **50% Advance:** Due upon agreement signing to reserve engineering sprint capacity.
+   * **30% Milestone:** Due upon delivery and review of the staging store with sample catalog and checkout flow.
+   * **20% Final Balance:** Due prior to final domain point, live payment gateway activation, and source code/admin handover.
+2. **Timeline Clock:**
+   * Working day timelines commence only after the client provides all required foundational assets: brand logo, initial product imagery, product spreadsheet, and payment gateway credentials.
+3. **Change-Request Policy:**
+   * Any feature or integration requested outside the agreed scope (e.g. multi-currency, loyalty points, custom ERP integration) will be assessed, quoted, and billed separately before development begins.
+4. **Third-Party Subscriptions & Fees:**
+   * Payment gateway transaction charges (e.g. Razorpay standard 2% + GST) are deducted directly by the provider.
+   * Hosting server fees, domain registrations, Shiprocket courier postage, and WhatsApp Meta message fees are paid directly by the client.
+5. **No Guarantees on Uncontrollables:**
+   * Uncoded Hub guarantees technical uptime, sub-second speed targets, and functional execution. Specific sales volume, conversion rates, and organic Google rankings are dependent on external market factors and cannot be contractually guaranteed.
