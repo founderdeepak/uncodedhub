@@ -30,6 +30,10 @@
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^demos/([a-zA-Z0-9_\-]+)/?$ /demos/$1.html [L]
 
+  # 5c. Private Client Demo Routing (maps /client/demo/<slug>/ internally to /client/demo/$1.html)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^client/demo/([a-zA-Z0-9_\-]+)/?$ /client/demo/$1.html [L]
+
   # 6. Canonical Trailing Slash Enforcement (fixes Google Search Console duplicate URL split)
   # Automatically 301 redirects /path -> /path/ for clean canonical consolidation.
   # Excludes real files and paths with asset extensions (.css, .js, .png, .webp, .xml, .txt, etc.)

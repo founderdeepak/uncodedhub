@@ -14,10 +14,30 @@ const publicDir = path.join(root, 'public');
 
 const allRoutes = getAllRoutes().filter((r) => r.loc !== '/404');
 
-// Also include live interactive industry demonstration specimens
+// Exactly 17 Core Industry Demonstration Specimens to be indexed
+const CORE_17_DEMOS = new Set([
+  'business-portfolio.html',
+  'clinic-polyclinic.html',
+  'creative-portfolio.html',
+  'dental-clinic.html',
+  'doctor-specialist.html',
+  'educational-academy.html',
+  'executive-coaching.html',
+  'fitness-coach.html',
+  'gym-fitness-club.html',
+  'healthcare-diagnostics.html',
+  'home-renovation.html',
+  'interior-design.html',
+  'real-estate.html',
+  'salon-beauty.html',
+  'spa-wellness.html',
+  'wedding-photography.html',
+  'yoga-meditation.html',
+]);
+
 const demoDir = path.join(publicDir, 'demos');
 try {
-  const demoFiles = readdirSync(demoDir).filter((f) => f.endsWith('.html'));
+  const demoFiles = readdirSync(demoDir).filter((f) => CORE_17_DEMOS.has(f));
   for (const file of demoFiles) {
     allRoutes.push({
       loc: `/demos/${file}`,

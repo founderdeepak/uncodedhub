@@ -7,7 +7,8 @@
 User-agent: *
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
-Disallow: /demos/
+Allow: /demos/
+Disallow: /client/
 
 # Dedicated AI Answer Engines & Grounding Bots (Explicitly Allowed)
 User-agent: GPTBot

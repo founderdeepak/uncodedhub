@@ -1,0 +1,2397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- STRICTLY PRIVATE CLIENT DEMO - NO INDEXING -->
+  <title>Astro Agam — Discover Clarity Through Astrology | Official Platform</title>
+  <meta name="description" content="Guidance for a balanced life with the wisdom of Vedic Astrology, Vastu and Spiritual Sciences with Astro Agam, Udaipur, Rajasthan.">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23060B18' stroke='%23D4AF37' stroke-width='4'/><path d='M50 20 C58 35 78 45 78 64 C78 78 65 84 50 84 C35 84 22 78 22 64 C22 45 42 35 50 20 Z' fill='none' stroke='%23F6E6B4' stroke-width='3'/><circle cx='50' cy='58' r='5' fill='%23D4AF37'/></svg>">
+
+  <!-- Google Fonts: Editorial Luxury Royalty -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       ROYAL COSMIC PALETTE & EXACT TOKENS (9.8+ DESIGN TIER)
+       Deep Midnight Indigo (#060B18), Radiant Gold (#D4AF37),
+       Warm Ivory Silk Cards (#FAF6EE), Sacred Amber Accents
+       ========================================================================== */
+    :root {
+      --bg-midnight: #060B18;
+      --bg-midnight-elevated: #0B1226;
+      --bg-glass-panel: rgba(13, 21, 40, 0.82);
+      --bg-glass-pill: rgba(17, 28, 54, 0.7);
+
+      --gold-primary: #D4AF37;
+      --gold-light: #F7E7B8;
+      --gold-warm: #E6C364;
+      --gold-bright: #FFE894;
+      --gold-deep: #A37E22;
+      --gold-border: rgba(212, 175, 55, 0.4);
+      --gold-border-subtle: rgba(212, 175, 55, 0.22);
+      --gold-glow: rgba(212, 175, 55, 0.32);
+
+      --ivory-card-bg: #FAF6EE;
+      --ivory-card-border: #EADBCA;
+      --ivory-text-dark: #1E1A15;
+      --ivory-text-muted: #564F44;
+
+      --text-white: #FFFFFF;
+      --text-light: #F1F5F9;
+      --text-muted: #94A3B8;
+      --text-gold-soft: #ECD299;
+
+      --gold-btn-gradient: linear-gradient(135deg, #FFE894 0%, #D4AF37 50%, #B58A18 100%);
+      --gold-btn-hover: linear-gradient(135deg, #FFF1BD 0%, #E2BE4E 50%, #C49B27 100%);
+
+      --font-display: 'Cinzel', Georgia, serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+
+      --shadow-cosmic: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.2);
+      --shadow-card: 0 12px 36px rgba(0, 0, 0, 0.45);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-midnight);
+      color: var(--text-light);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+    }
+
+    /* Ambient Starlight Background */
+    .starlight-ambient {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        radial-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 1px),
+        radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 52px 52px, 130px 130px;
+      background-position: 0 0, 65px 65px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.85;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--text-white);
+      letter-spacing: 0.015em;
+      line-height: 1.25;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 28px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      border: 1px solid transparent;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .btn-gold {
+      background: var(--gold-btn-gradient);
+      color: #151004;
+      box-shadow: 0 6px 22px rgba(212, 175, 55, 0.38);
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+    .btn-gold:hover {
+      background: var(--gold-btn-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(212, 175, 55, 0.6);
+      color: #0A0802;
+    }
+
+    .btn-outline-dark {
+      background: rgba(14, 23, 44, 0.6);
+      color: var(--text-white);
+      border: 1.5px solid rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(8px);
+    }
+    .btn-outline-dark:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--gold-primary);
+      color: var(--gold-bright);
+      transform: translateY(-2px);
+    }
+
+    /* SVGs */
+    .svg-icon {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+      display: block;
+    }
+    .svg-stroke {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      display: block;
+    }
+
+    /* ==========================================================================
+       1. TOP HEADER / NAVIGATION & SCROLL PROGRESS BAR
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(6, 11, 24, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--gold-border-subtle);
+      padding: 14px 0;
+    }
+
+    /* Golden Scroll Progress Bar directly anchored to header bottom */
+    .scroll-progress-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, #967015 0%, #D4AF37 40%, #FFE894 85%, #FFFFFF 100%);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.95), 0 0 4px #FFE894;
+      z-index: 105;
+      pointer-events: none;
+      transition: width 0.08s ease-out;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-lotus-icon {
+      width: 44px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold-primary);
+      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
+    }
+
+    .brand-text-block {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: #F7E7B8;
+      line-height: 1.1;
+    }
+    .brand-tagline {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: #CBB782;
+      text-transform: capitalize;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      list-style: none;
+    }
+    .nav-menu a {
+      color: #D1D5DB;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      transition: color 0.2s ease;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--gold-bright);
+    }
+    .nav-menu a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gold-primary);
+      box-shadow: 0 0 10px var(--gold-primary);
+      border-radius: 2px;
+    }
+
+    .header-cta-btn {
+      padding: 10px 22px;
+      font-size: 0.84rem;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--gold-border);
+      color: var(--gold-bright);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       2. HERO SECTION (YOGI IN GLOWING ZODIAC WHEEL)
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      padding: 55px 0 40px;
+      overflow: hidden;
+      background: radial-gradient(circle at 75% 45%, #14203D 0%, #060B18 68%, #03060E 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      max-width: 530px;
+    }
+
+    .hero-brand-name {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4.5vw, 4rem);
+      font-weight: 700;
+      color: var(--text-white);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .hero-italic-headline {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(2.3rem, 4.2vw, 3.6rem);
+      font-weight: 600;
+      color: #E6C364;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      text-shadow: 0 2px 18px rgba(212, 175, 55, 0.35);
+    }
+
+    .hero-lead-text {
+      font-size: 1.1rem;
+      color: #CBD5E1;
+      line-height: 1.75;
+      margin-bottom: 34px;
+      max-width: 480px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Hero Right Visual: High-Definition Meditating Yogi in Zodiac Wheel */
+    .hero-visual-container {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .hero-visual-card {
+      position: relative;
+      width: 100%;
+      max-width: 580px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.85), 0 0 36px rgba(212, 175, 55, 0.28);
+      border: 1.5px solid rgba(212, 175, 55, 0.45);
+      background: #080E1E;
+    }
+
+    .hero-visual-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transform: scale(1.01);
+      transition: transform 0.6s ease;
+    }
+    .hero-visual-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .hero-visual-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      box-shadow: inset 0 0 40px rgba(6, 11, 24, 0.5);
+      pointer-events: none;
+    }
+
+    /* ==========================================================================
+       3. 5 SERVICES QUICK-NAV STRIP
+       Vedic Astrology & Kundli | Vastu | Numerology | Pooja & Rituals | Spiritual Guidance
+       ========================================================================== */
+    .services-quick-bar {
+      margin-top: 25px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .services-bar-inner {
+      background: var(--bg-glass-panel);
+      backdrop-filter: blur(18px);
+      border: 1px solid var(--gold-border);
+      border-radius: 18px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+    }
+
+    .service-nav-col {
+      padding: 22px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 12px;
+      text-decoration: none;
+      position: relative;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .service-nav-col:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 15%;
+      bottom: 15%;
+      width: 1px;
+      background: rgba(212, 175, 55, 0.22);
+    }
+
+    .service-nav-col:hover {
+      background: rgba(212, 175, 55, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .service-nav-icon {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-bright);
+      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
+      transition: transform 0.25s ease;
+    }
+    .service-nav-col:hover .service-nav-icon {
+      transform: scale(1.15);
+      color: #FFF2B2;
+    }
+
+    .service-nav-label {
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #E2E8F0;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+    }
+
+    /* ==========================================================================
+       4. ABOUT ASTRO AGAM (PORTRAIT WITH GOLDEN HALO ON LEFT)
+       ========================================================================== */
+    .about-section {
+      padding: 85px 0 75px;
+      position: relative;
+      background: radial-gradient(circle at 30% 50%, #0F182E 0%, #060B18 80%);
+      border-top: 1px solid var(--gold-border-subtle);
+      border-bottom: 1px solid var(--gold-border-subtle);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    /* Left: Astro Agam High-Definition Portrait with Halo */
+    .about-portrait-frame {
+      position: relative;
+      max-width: 480px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 2px solid var(--gold-primary);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85), 0 0 40px rgba(212, 175, 55, 0.3);
+      background: #080E1E;
+    }
+    .about-portrait-frame img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .about-portrait-frame:hover img {
+      transform: scale(1.02);
+    }
+
+    /* Right: Bio & Badges */
+    .about-content {
+      position: relative;
+    }
+
+    .about-lotus-floret {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 14px;
+      display: inline-block;
+      color: var(--gold-primary);
+    }
+
+    .about-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 3.4vw, 2.9rem);
+      font-weight: 700;
+      color: #F7E7B8;
+      margin-bottom: 18px;
+      letter-spacing: 0.02em;
+    }
+
+    .about-bio-lead {
+      font-size: 1.05rem;
+      color: #CBD5E1;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .about-badges-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .about-badge-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: rgba(14, 23, 44, 0.6);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .about-badge-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--gold-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-bright);
+      flex-shrink: 0;
+      padding: 8px;
+    }
+
+    .about-badge-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #F1F5F9;
+      line-height: 1.3;
+    }
+
+    /* ==========================================================================
+       5. TESTIMONIALS SECTION ("WHAT OUR CLIENTS SAY")
+       ✦ ——— What Our Clients Say ——— ✦
+       3 Ivory Silk Cards with Studio Avatars
+       ========================================================================== */
+    .testimonials-section {
+      padding: 70px 0 75px;
+      position: relative;
+    }
+
+    .section-filigree-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 40px;
+    }
+
+    .filigree-line {
+      flex: 1;
+      max-width: 240px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary));
+    }
+    .filigree-line.right {
+      background: linear-gradient(90deg, var(--gold-primary), transparent);
+    }
+
+    .filigree-diamond {
+      color: var(--gold-primary);
+      font-size: 0.8rem;
+    }
+
+    .section-gold-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+      font-weight: 700;
+      color: #F7E7B8;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-ivory-card {
+      background: var(--ivory-card-bg);
+      border: 1px solid var(--ivory-card-border);
+      border-radius: 18px;
+      padding: 26px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+      transition: all 0.28s ease;
+    }
+    .testimonial-ivory-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.25);
+    }
+
+    .testimonial-avatar-wrap {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid #D4AF37;
+      flex-shrink: 0;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+    .testimonial-avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .testimonial-card-content {
+      flex: 1;
+    }
+
+    .testimonial-quote-text {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ivory-text-dark);
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-author-name {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #2D261C;
+      margin-bottom: 4px;
+    }
+
+    .testimonial-stars {
+      color: #E5A117;
+      font-size: 0.88rem;
+      letter-spacing: 3px;
+    }
+
+    /* ==========================================================================
+       6. EXPLORE OUR SERVICES (5 HD PHOTOGRAPHIC CARDS)
+       Kundli | Vastu | Numerology 8 | Pooja Diya | Spiritual Guidance
+       ========================================================================== */
+    .services-showcase-section {
+      padding: 50px 0 75px;
+      position: relative;
+    }
+
+    .services-showcase-header {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+    .services-showcase-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      color: #E6C364;
+      margin-bottom: 6px;
+    }
+    .services-showcase-subtitle {
+      font-size: 0.96rem;
+      color: #94A3B8;
+    }
+
+    .services-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .service-photo-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1.5px solid var(--gold-border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      background: #080E1E;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+    }
+    .service-photo-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold-bright);
+      box-shadow: 0 18px 45px rgba(212, 175, 55, 0.3);
+    }
+
+    .service-photo-img-wrap {
+      width: 100%;
+      aspect-ratio: 1.15 / 1;
+      overflow: hidden;
+      position: relative;
+    }
+    .service-photo-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .service-photo-card:hover .service-photo-img-wrap img {
+      transform: scale(1.08);
+    }
+
+    .service-photo-footer {
+      padding: 12px 10px;
+      text-align: center;
+      background: rgba(10, 16, 32, 0.95);
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .service-photo-label {
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #F1F5F9;
+      line-height: 1.25;
+    }
+
+    /* ==========================================================================
+       7. SIGNATURE POSITIVITY BANNER (PURPLE LOTUS & DUAL CTA)
+       ========================================================================== */
+    .positivity-banner-section {
+      padding: 20px 0 50px;
+      position: relative;
+    }
+
+    .positivity-banner-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1.5px solid var(--gold-primary);
+      background: radial-gradient(circle at 50% 50%, #151F3D 0%, #070C1B 100%);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7), 0 0 30px rgba(212, 175, 55, 0.2);
+      padding: 24px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .positivity-left-content {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      max-width: 440px;
+    }
+
+    .positivity-lotus-sigil {
+      width: 48px;
+      height: 48px;
+      color: var(--gold-primary);
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6));
+    }
+
+    .positivity-quote-text {
+      font-family: var(--font-serif);
+      font-size: 1.28rem;
+      font-weight: 600;
+      color: #F7E7B8;
+      line-height: 1.4;
+    }
+
+    /* Center Blooming Lotus Visual */
+    .positivity-center-visual {
+      width: 140px;
+      height: 90px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--gold-border);
+      box-shadow: 0 0 20px rgba(186, 104, 200, 0.4);
+      flex-shrink: 0;
+    }
+    .positivity-center-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .btn-positivity-cta {
+      padding: 12px 28px;
+      font-size: 0.92rem;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       8. FOOTER BAR (VERIFIED COORDINATES & REAL SOCIALS)
+       ========================================================================== */
+    .footer-bar {
+      border-top: 1px solid var(--gold-border);
+      background: #040711;
+      padding: 24px 0;
+      position: relative;
+      z-index: 10;
+    }
+
+    .footer-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-left-contacts {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .footer-contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #CBD5E1;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-contact-item:hover {
+      color: var(--gold-bright);
+    }
+    .footer-contact-icon {
+      width: 18px;
+      height: 18px;
+      color: var(--gold-primary);
+      display: inline-flex;
+    }
+
+    .footer-right-actions {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .footer-social-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .footer-social-label {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: #94A3B8;
+    }
+
+    .social-icon-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #CBD5E1;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      padding: 7px;
+    }
+    .social-icon-circle:hover {
+      background: var(--gold-primary);
+      color: #060B18;
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+    }
+    .social-icon-circle.yt:hover {
+      background: #FF0000;
+      color: #FFFFFF;
+      border-color: #FF0000;
+    }
+    .social-icon-circle.in:hover {
+      background: #0A66C2;
+      color: #FFFFFF;
+      border-color: #0A66C2;
+    }
+    .social-icon-circle.ig:hover {
+      background: #E1306C;
+      color: #FFFFFF;
+      border-color: #E1306C;
+    }
+
+    /* Sub-footer Copyright */
+    .footer-sub-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: #020409;
+      padding: 14px 0;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #64748B;
+    }
+    .footer-sub-bar a {
+      color: #94A3B8;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+    .footer-sub-bar a:hover {
+      color: var(--gold-primary);
+    }
+
+    /* ==========================================================================
+       9. INTERACTIVE CONSULTATION INTAKE MODAL
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 6, 14, 0.88);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .modal-backdrop.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-dialog {
+      background: radial-gradient(circle at 50% 0%, #172448 0%, #070D1A 90%);
+      border: 2px solid var(--gold-primary);
+      border-radius: 22px;
+      width: 100%;
+      max-width: 580px;
+      padding: 34px;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(212, 175, 55, 0.35);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--gold-border);
+      color: #F1F5F9;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .modal-close-btn:hover {
+      background: var(--gold-primary);
+      color: #060B18;
+    }
+
+    .modal-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      color: #F7E7B8;
+      margin-bottom: 6px;
+    }
+    .modal-subtitle {
+      font-size: 0.9rem;
+      color: #94A3B8;
+    }
+
+    .intake-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .form-group-full {
+      grid-column: 1 / -1;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #E2E8F0;
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background: rgba(6, 11, 24, 0.85);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 10px;
+      padding: 10px 14px;
+      color: #FFFFFF;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.35);
+    }
+    .form-textarea {
+      min-height: 70px;
+      resize: vertical;
+    }
+
+    .modal-submit-btn {
+      width: 100%;
+      padding: 14px;
+      font-size: 0.98rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .modal-privacy-notice {
+      text-align: center;
+      font-size: 0.76rem;
+      color: #64748B;
+      margin-top: 12px;
+    }
+
+    /* Floating Quick WhatsApp Anchor */
+    .floating-wa-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 99;
+      background: #25D366;
+      color: #FFFFFF;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 14px;
+    }
+    .floating-wa-btn:hover {
+      transform: scale(1.1) rotate(6deg);
+      box-shadow: 0 14px 34px rgba(37, 211, 102, 0.65);
+    }
+
+    /* ==========================================================================
+       CELESTIAL CUSTOM CURSOR & SPARKLE CANVAS
+       ========================================================================== */
+    @media (hover: hover) and (pointer: fine) {
+      body, a, button, select, input, textarea {
+        cursor: none !important;
+      }
+
+      .cursor-dot {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        background: #FFE894;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 100000;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 10px #FFE894, 0 0 20px #D4AF37;
+        transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+      }
+
+      .cursor-ring {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        border: 1.5px solid rgba(212, 175, 55, 0.7);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transform: translate(-50%, -50%);
+        transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                    height 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                    border-color 0.25s ease, 
+                    background 0.25s ease, 
+                    box-shadow 0.25s ease;
+      }
+
+      .cursor-ring.active-hover {
+        width: 52px;
+        height: 52px;
+        border-color: #FFE894;
+        background: rgba(212, 175, 55, 0.14);
+        box-shadow: 0 0 22px rgba(212, 175, 55, 0.6), inset 0 0 12px rgba(212, 175, 55, 0.25);
+      }
+
+      .cursor-dot.active-hover {
+        width: 12px;
+        height: 12px;
+        background: #FFFFFF;
+        box-shadow: 0 0 14px #FFFFFF, 0 0 26px #FFE894;
+      }
+    }
+
+    #celestial-sparkle-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 99998;
+    }
+
+    /* ==========================================================================
+       MOBILE NAVIGATION DRAWER & BACKDROP
+       ========================================================================== */
+    .mobile-drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 7, 16, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .mobile-drawer-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 82%;
+      max-width: 340px;
+      background: radial-gradient(circle at 100% 0%, #172448 0%, #070D1C 100%);
+      border-left: 1px solid var(--gold-border);
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.85);
+      z-index: 1001;
+      transform: translateX(100%);
+      display: none;
+      flex-direction: column;
+      padding: 24px 20px;
+      overflow-y: auto;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mobile-drawer.active {
+      display: flex;
+      transform: translateX(0);
+    }
+
+    .mobile-drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--gold-border-subtle);
+      margin-bottom: 24px;
+    }
+
+    .mobile-drawer-close {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--gold-border);
+      color: #F1F5F9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .mobile-drawer-close:hover {
+      background: var(--gold-primary);
+      color: #060B18;
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .mobile-nav-list a {
+      color: #E2E8F0;
+      text-decoration: none;
+      font-size: 1.02rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+    .mobile-nav-list a:hover,
+    .mobile-nav-list a:active {
+      background: rgba(212, 175, 55, 0.12);
+      color: var(--gold-bright);
+    }
+
+    .mobile-drawer-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 20px;
+      border-top: 1px solid var(--gold-border-subtle);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1100px) {
+      .services-bar-inner {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .services-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .about-portrait-frame {
+        max-width: 440px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .header-cta-btn {
+        display: none !important;
+      }
+      .site-header {
+        padding: 10px 0;
+      }
+      .brand-title {
+        font-size: 1.1rem;
+      }
+      .brand-tagline {
+        font-size: 0.64rem;
+      }
+      .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+      }
+      .nav-menu {
+        display: none;
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 32px;
+      }
+      .hero-content {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      .hero-lead-text {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-cta-group {
+        justify-content: center;
+      }
+      .hero-visual-container {
+        justify-content: center;
+      }
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      .services-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .positivity-banner-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .positivity-left-content {
+        flex-direction: column;
+      }
+      .footer-bar-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+      .footer-left-contacts {
+        justify-content: center;
+      }
+      .footer-right-actions {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        padding: 0 16px;
+      }
+      .hero-section {
+        padding: 38px 0 24px;
+      }
+      .hero-brand-name {
+        font-size: 2.15rem;
+      }
+      .hero-italic-headline {
+        font-size: 1.9rem;
+        margin-bottom: 14px;
+      }
+      .hero-lead-text {
+        font-size: 0.96rem;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+      .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+      }
+      .hero-cta-group .btn {
+        width: 100%;
+      }
+      .hero-visual-card {
+        max-width: 330px;
+        border-radius: 18px;
+      }
+      .services-bar-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .service-nav-col:last-child {
+        grid-column: 1 / -1;
+      }
+      .service-nav-col {
+        padding: 16px 8px;
+      }
+      .about-section {
+        padding: 55px 0 45px;
+      }
+      .about-portrait-frame {
+        max-width: 300px;
+        border-radius: 18px;
+      }
+      .about-heading {
+        font-size: 1.9rem;
+        text-align: center;
+      }
+      .about-bio-lead {
+        font-size: 0.94rem;
+        text-align: center;
+      }
+      .about-badges-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .about-content {
+        text-align: center;
+      }
+      .about-content .btn {
+        width: 100%;
+      }
+      .testimonials-section {
+        padding: 50px 0 55px;
+      }
+      .testimonial-ivory-card {
+        padding: 18px 16px;
+        gap: 14px;
+      }
+      .testimonial-avatar-wrap {
+        width: 52px;
+        height: 52px;
+      }
+      .testimonial-quote-text {
+        font-size: 0.95rem;
+      }
+      .services-showcase-section {
+        padding: 45px 0 55px;
+      }
+      .services-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .service-photo-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 240px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .positivity-banner-card {
+        padding: 22px 18px;
+        gap: 18px;
+      }
+      .positivity-quote-text {
+        font-size: 1.15rem;
+      }
+      .btn-positivity-cta {
+        width: 100%;
+      }
+      .intake-form-grid {
+        grid-template-columns: 1fr;
+      }
+      .section-filigree-header {
+        gap: 8px;
+      }
+      .filigree-line {
+        max-width: 50px;
+      }
+      .floating-wa-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 16px;
+        right: 16px;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Ambient Particles -->
+  <div class="starlight-ambient"></div>
+
+  <!-- ==========================================================================
+       1. TOP HEADER / NAVIGATION & SCROLL PROGRESS BAR
+       ========================================================================== -->
+  <header class="site-header">
+    <!-- Golden Scroll Progress Bar (Filled proportionally as user scrolls) -->
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
+    <div class="container header-inner">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo-wrap">
+        <div class="brand-lotus-icon">
+          <svg viewBox="0 0 100 80" class="svg-stroke">
+            <path d="M50 8 C40 30 25 45 10 55 C25 60 42 55 50 42 C58 55 75 60 90 55 C75 45 60 30 50 8 Z" />
+            <path d="M50 24 C44 42 34 54 24 62 C38 66 46 60 50 52 C54 60 62 66 76 62 C66 54 56 42 50 24 Z" />
+            <circle cx="50" cy="65" r="4" fill="#D4AF37" />
+          </svg>
+        </div>
+        <div class="brand-text-block">
+          <span class="brand-title">ASTRO AGAM</span>
+          <span class="brand-tagline">Discover Clarity · Live in Harmony</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services <svg style="width:10px;height:10px;margin-left:4px;" viewBox="0 0 24 24" class="svg-stroke"><polyline points="6 9 12 15 18 9"/></svg></a></li>
+          <li><a href="#services-showcase">Insights</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#services-showcase">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header CTAs (Desktop Button + Mobile Drawer Toggle) -->
+      <div style="display:flex; align-items:center; gap:12px;">
+        <button class="btn btn-gold header-cta-btn" onclick="openBookingModal('General Vedic Consultation')">
+          <svg style="width:16px;height:16px;" viewBox="0 0 24 24" class="svg-stroke">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          Book a Consultation
+        </button>
+        
+        <button class="mobile-menu-btn" onclick="openMobileDrawer()" aria-label="Open Navigation Menu">
+          <svg style="width:20px;height:20px;" viewBox="0 0 24 24" class="svg-stroke">
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MOBILE NAVIGATION DRAWER & BACKDROP OVERLAY
+       ========================================================================== -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop" onclick="closeMobileDrawer()"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo-wrap">
+        <div class="brand-lotus-icon" style="width:34px; height:28px;">
+          <svg viewBox="0 0 100 80" class="svg-stroke">
+            <path d="M50 8 C40 30 25 45 10 55 C25 60 42 55 50 42 C58 55 75 60 90 55 C75 45 60 30 50 8 Z" />
+            <path d="M50 24 C44 42 34 54 24 62 C38 66 46 60 50 52 C54 60 62 66 76 62 C66 54 56 42 50 24 Z" />
+            <circle cx="50" cy="65" r="4" fill="#D4AF37" />
+          </svg>
+        </div>
+        <div class="brand-text-block">
+          <span class="brand-title" style="font-size:1.1rem;">ASTRO AGAM</span>
+          <span class="brand-tagline" style="font-size:0.62rem;">Guidance · Harmony</span>
+        </div>
+      </div>
+      <button class="mobile-drawer-close" onclick="closeMobileDrawer()" aria-label="Close Menu">
+        <svg viewBox="0 0 24 24" class="svg-stroke" style="width:20px;height:20px;">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-body">
+      <ul class="mobile-nav-list">
+        <li><a href="#home" onclick="closeMobileDrawer()"><span>🌌</span> Home</a></li>
+        <li><a href="#about" onclick="closeMobileDrawer()"><span>📜</span> About Astro Agam</a></li>
+        <li><a href="#services" onclick="closeMobileDrawer()"><span>☸️</span> Our Services</a></li>
+        <li><a href="#services-showcase" onclick="closeMobileDrawer()"><span>📖</span> Explore Insights</a></li>
+        <li><a href="#testimonials" onclick="closeMobileDrawer()"><span>💬</span> Testimonials</a></li>
+        <li><a href="#contact" onclick="closeMobileDrawer()"><span>📍</span> Contact &amp; Location</a></li>
+      </ul>
+
+      <div class="mobile-drawer-actions">
+        <button class="btn btn-gold" style="width:100%; justify-content:center;" onclick="closeMobileDrawer(); openBookingModal('Mobile Drawer CTA');">
+          <svg style="width:16px;height:16px;" viewBox="0 0 24 24" class="svg-stroke">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          Book a Consultation
+        </button>
+
+        <a href="https://wa.me/918107911911?text=Namaste%20Astro%20Agam%20ji,%20I%20would%20like%20to%20consult%20with%20you." target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark" style="width:100%; justify-content:center;">
+          <svg style="width:18px; height:18px; color:#25D366; fill:currentColor;" viewBox="0 0 24 24">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.03 7.38C8.84 7.38 8.52 7.45 8.26 7.74C8 8.03 7.24 8.74 7.24 10.19C7.24 11.64 8.3 13.04 8.44 13.23C8.58 13.43 10.45 16.48 13.43 17.65C15.9 18.62 16.4 18.42 16.94 18.37C17.48 18.32 18.67 17.66 18.92 16.98C19.17 16.3 19.17 15.72 19.1 15.59C19.03 15.47 18.84 15.4 18.55 15.26C18.26 15.11 16.85 14.41 16.59 14.32C16.33 14.22 16.14 14.17 15.95 14.46C15.76 14.75 15.21 15.4 15.04 15.59C14.88 15.79 14.71 15.81 14.42 15.67C14.13 15.52 13.2 15.22 12.1 14.24C11.24 13.47 10.66 12.52 10.49 12.23C10.33 11.94 10.47 11.78 10.62 11.64C10.75 11.51 10.91 11.3 11.06 11.13C11.21 10.96 11.26 10.84 11.36 10.64C11.46 10.45 11.41 10.28 11.33 10.13C11.26 9.99 10.69 8.59 10.45 8.03C10.22 7.48 9.98 7.56 9.81 7.55C9.64 7.54 9.45 7.54 9.26 7.54L9.03 7.38Z" />
+          </svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <div style="margin-top:20px; text-align:center;">
+        <p style="font-size:0.78rem; color:#94A3B8; margin-bottom:4px;">📍 Udaipur, Rajasthan</p>
+        <p style="font-size:0.82rem; color:#D4AF37; font-weight:700;">📞 +91 81079 11911</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       2. HERO SECTION (YOGI IN GLOWING CELESTIAL ZODIAC WHEEL)
+       ========================================================================== -->
+  <section class="hero-section" id="home">
+    <div class="container hero-grid">
+      
+      <!-- Left Copy -->
+      <div class="hero-content">
+        <h1 class="hero-brand-name">Astro Agam</h1>
+        <div class="hero-italic-headline">Discover Clarity<br>Through Astrology</div>
+        <p class="hero-lead-text">
+          Guidance for a balanced life with the wisdom of Vedic Astrology, Vastu and Spiritual Sciences.
+        </p>
+
+        <div class="hero-cta-group">
+          <button class="btn btn-gold" onclick="openBookingModal('Hero Consultation Button')">
+            Book a Consultation &rarr;
+          </button>
+          
+          <a href="https://wa.me/918107911911?text=Namaste%20Astro%20Agam%20ji,%20I%20would%20like%20to%20consult%20with%20you%20regarding%20my%20Kundli%20and%20life%20guidance." target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark">
+            <svg style="width:18px; height:18px; color:#25D366; fill:currentColor;" viewBox="0 0 24 24">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.03 7.38C8.84 7.38 8.52 7.45 8.26 7.74C8 8.03 7.24 8.74 7.24 10.19C7.24 11.64 8.3 13.04 8.44 13.23C8.58 13.43 10.45 16.48 13.43 17.65C15.9 18.62 16.4 18.42 16.94 18.37C17.48 18.32 18.67 17.66 18.92 16.98C19.17 16.3 19.17 15.72 19.1 15.59C19.03 15.47 18.84 15.4 18.55 15.26C18.26 15.11 16.85 14.41 16.59 14.32C16.33 14.22 16.14 14.17 15.95 14.46C15.76 14.75 15.21 15.4 15.04 15.59C14.88 15.79 14.71 15.81 14.42 15.67C14.13 15.52 13.2 15.22 12.1 14.24C11.24 13.47 10.66 12.52 10.49 12.23C10.33 11.94 10.47 11.78 10.62 11.64C10.75 11.51 10.91 11.3 11.06 11.13C11.21 10.96 11.26 10.84 11.36 10.64C11.46 10.45 11.41 10.28 11.33 10.13C11.26 9.99 10.69 8.59 10.45 8.03C10.22 7.48 9.98 7.56 9.81 7.55C9.64 7.54 9.45 7.54 9.26 7.54L9.03 7.38Z" />
+            </svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Visual: High-Definition Meditating Yogi in Zodiac Wheel -->
+      <div class="hero-visual-container">
+        <div class="hero-visual-card">
+          <img src="assets/hero-yogi-zodiac-hd.jpg" alt="Meditating Yogi under Cosmic Zodiac Wheel" loading="eager" />
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==========================================================================
+         3. 5 SERVICES QUICK-NAV STRIP
+         ========================================================================== -->
+    <div class="container services-quick-bar" id="services">
+      <div class="services-bar-inner">
+        
+        <!-- 1. Vedic Astrology & Kundli -->
+        <a href="#services-showcase" onclick="openBookingModal('Vedic Astrology & Kundli'); return false;" class="service-nav-col">
+          <div class="service-nav-icon">
+            <svg viewBox="0 0 24 24" class="svg-stroke">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/>
+            </svg>
+          </div>
+          <span class="service-nav-label">Vedic Astrology<br>&amp; Kundli</span>
+        </a>
+
+        <!-- 2. Vastu Consultation -->
+        <a href="#services-showcase" onclick="openBookingModal('Vastu Consultation'); return false;" class="service-nav-col">
+          <div class="service-nav-icon">
+            <svg viewBox="0 0 24 24" class="svg-stroke">
+              <path d="M12 3L2 12h3v8h14v-8h3L12 3z"/>
+              <path d="M9 20v-6h6v6"/>
+            </svg>
+          </div>
+          <span class="service-nav-label">Vastu<br>Consultation</span>
+        </a>
+
+        <!-- 3. Numerology -->
+        <a href="#services-showcase" onclick="openBookingModal('Numerology'); return false;" class="service-nav-col">
+          <div class="service-nav-icon">
+            <svg viewBox="0 0 24 24" class="svg-stroke">
+              <circle cx="12" cy="12" r="9"/>
+              <circle cx="12" cy="12" r="3.5"/>
+              <path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>
+            </svg>
+          </div>
+          <span class="service-nav-label">Numerology</span>
+        </a>
+
+        <!-- 4. Pooja & Rituals -->
+        <a href="#services-showcase" onclick="openBookingModal('Pooja & Rituals'); return false;" class="service-nav-col">
+          <div class="service-nav-icon">
+            <svg viewBox="0 0 24 24" class="svg-stroke">
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+            </svg>
+          </div>
+          <span class="service-nav-label">Pooja &amp;<br>Rituals</span>
+        </a>
+
+        <!-- 5. Spiritual Guidance -->
+        <a href="#services-showcase" onclick="openBookingModal('Spiritual Guidance'); return false;" class="service-nav-col">
+          <div class="service-nav-icon">
+            <svg viewBox="0 0 24 24" class="svg-stroke">
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/>
+              <path d="M12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+          <span class="service-nav-label">Spiritual<br>Guidance</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. ABOUT ASTRO AGAM (PORTRAIT WITH GOLDEN HALO ON LEFT)
+       ========================================================================== -->
+  <section class="about-section" id="about">
+    <div class="container about-grid">
+      
+      <!-- Left: High-Definition Studio Portrait of Astro Agam with Halo -->
+      <div class="about-portrait-frame">
+        <img src="assets/astro-agam-portrait-hd.jpg" alt="Astro Agam — Astrologer Udaipur" loading="lazy" />
+      </div>
+
+      <!-- Right: Biography & Royal Knowledge Pillars -->
+      <div class="about-content">
+        <div class="about-lotus-floret">
+          <svg viewBox="0 0 100 80" class="svg-stroke">
+            <path d="M50 10 C40 32 25 45 12 55 C26 60 42 55 50 42 C58 55 74 60 88 55 C75 45 60 32 50 10 Z" />
+            <path d="M50 26 C44 42 34 54 24 62 C38 66 46 60 50 52 C54 60 62 66 76 62 C66 54 56 42 50 26 Z" />
+          </svg>
+        </div>
+
+        <h2 class="about-heading">About Astro Agam</h2>
+        <p class="about-bio-lead">
+          With years of experience in astrology and spiritual guidance, Astro Agam helps individuals and families find clarity, balance and positivity in life. Your journey towards a harmonious and successful life begins here.
+        </p>
+
+        <!-- 4 Badges Grid -->
+        <div class="about-badges-grid">
+          
+          <div class="about-badge-card">
+            <div class="about-badge-icon">
+              <svg viewBox="0 0 24 24" class="svg-stroke">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 8v8M8 12h8"/>
+              </svg>
+            </div>
+            <span class="about-badge-title">Deep Knowledge of Vedic Sciences</span>
+          </div>
+
+          <div class="about-badge-card">
+            <div class="about-badge-icon">
+              <svg viewBox="0 0 24 24" class="svg-stroke">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <span class="about-badge-title">Personalised Guidance</span>
+          </div>
+
+          <div class="about-badge-card">
+            <div class="about-badge-icon">
+              <svg viewBox="0 0 24 24" class="svg-stroke">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <span class="about-badge-title">Positive &amp; Practical Solutions</span>
+          </div>
+
+          <div class="about-badge-card">
+            <div class="about-badge-icon">
+              <svg viewBox="0 0 24 24" class="svg-stroke">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>
+              </svg>
+            </div>
+            <span class="about-badge-title">Spiritual Approach</span>
+          </div>
+
+        </div>
+
+        <button class="btn btn-gold" onclick="openBookingModal('About Astro Agam Consultation')">
+          Know More About Me &rarr;
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. TESTIMONIALS SECTION ("WHAT OUR CLIENTS SAY")
+       ✦ ——— What Our Clients Say ——— ✦
+       3 Ivory Silk Cards with Crisp Studio Portraits
+       ========================================================================== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      
+      <!-- Filigree Header -->
+      <div class="section-filigree-header">
+        <span class="filigree-diamond">&#9670;</span>
+        <div class="filigree-line"></div>
+        <h2 class="section-gold-heading">What Our Clients Say</h2>
+        <div class="filigree-line right"></div>
+        <span class="filigree-diamond">&#9670;</span>
+      </div>
+
+      <!-- 3 Ivory Testimonial Cards -->
+      <div class="testimonials-grid">
+        
+        <!-- Card 1: Anita Chouhan -->
+        <div class="testimonial-ivory-card">
+          <div class="testimonial-avatar-wrap">
+            <img src="assets/avatar-anita-hd.jpg" alt="Anita Chouhan Client Review" loading="lazy" />
+          </div>
+          <div class="testimonial-card-content">
+            <p class="testimonial-quote-text">&ldquo;Astro Agam&rsquo;s guidance gave me clarity in a very confusing phase of life.&rdquo;</p>
+            <div class="testimonial-author-name">Anita Chouhan</div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+        </div>
+
+        <!-- Card 2: Kavan Kothari -->
+        <div class="testimonial-ivory-card">
+          <div class="testimonial-avatar-wrap">
+            <img src="assets/avatar-kavan-hd.jpg" alt="Kavan Kothari Client Review" loading="lazy" />
+          </div>
+          <div class="testimonial-card-content">
+            <p class="testimonial-quote-text">&ldquo;A truly knowledgeable and kind advisor. Highly recommended!&rdquo;</p>
+            <div class="testimonial-author-name">Kavan Kothari</div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+        </div>
+
+        <!-- Card 3: Raideep -->
+        <div class="testimonial-ivory-card">
+          <div class="testimonial-avatar-wrap">
+            <img src="assets/avatar-raideep-hd.jpg" alt="Raideep Client Review" loading="lazy" />
+          </div>
+          <div class="testimonial-card-content">
+            <p class="testimonial-quote-text">&ldquo;His positive approach and deep insights really make a difference.&rdquo;</p>
+            <div class="testimonial-author-name">Raideep</div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. EXPLORE OUR SERVICES (5 HD PHOTOGRAPHIC CARDS)
+       ========================================================================== -->
+  <section class="services-showcase-section" id="services-showcase">
+    <div class="container">
+      
+      <div class="services-showcase-header">
+        <h3 class="services-showcase-title">Explore Our Services</h3>
+        <p class="services-showcase-subtitle">Personalised solutions for a better tomorrow</p>
+      </div>
+
+      <div class="services-cards-grid">
+        
+        <!-- 1. Astrology & Kundli -->
+        <a href="#booking" onclick="openBookingModal('Vedic Astrology & Kundli'); return false;" class="service-photo-card">
+          <div class="service-photo-img-wrap">
+            <img src="assets/service-zodiac-hd.jpg" alt="Vedic Astrology & Kundli Reading" loading="lazy" />
+          </div>
+          <div class="service-photo-footer">
+            <span class="service-photo-label">Astrology &amp;<br>Kundli</span>
+          </div>
+        </a>
+
+        <!-- 2. Vastu Consultation -->
+        <a href="#booking" onclick="openBookingModal('Vastu Consultation'); return false;" class="service-photo-card">
+          <div class="service-photo-img-wrap">
+            <img src="assets/service-vastu-hd.jpg" alt="Vastu Consultation" loading="lazy" />
+          </div>
+          <div class="service-photo-footer">
+            <span class="service-photo-label">Vastu<br>Consultation</span>
+          </div>
+        </a>
+
+        <!-- 3. Numerology -->
+        <a href="#booking" onclick="openBookingModal('Numerology'); return false;" class="service-photo-card">
+          <div class="service-photo-img-wrap">
+            <img src="assets/service-numerology-hd.jpg" alt="Numerology Analysis" loading="lazy" />
+          </div>
+          <div class="service-photo-footer">
+            <span class="service-photo-label">Numerology</span>
+          </div>
+        </a>
+
+        <!-- 4. Pooja & Rituals -->
+        <a href="#booking" onclick="openBookingModal('Pooja & Rituals'); return false;" class="service-photo-card">
+          <div class="service-photo-img-wrap">
+            <img src="assets/service-pooja-hd.jpg" alt="Pooja & Sacred Rituals" loading="lazy" />
+          </div>
+          <div class="service-photo-footer">
+            <span class="service-photo-label">Pooja &amp;<br>Rituals</span>
+          </div>
+        </a>
+
+        <!-- 5. Spiritual Guidance -->
+        <a href="#booking" onclick="openBookingModal('Spiritual Guidance'); return false;" class="service-photo-card">
+          <div class="service-photo-img-wrap">
+            <img src="assets/service-meditation-hd.jpg" alt="Spiritual Guidance & Meditation" loading="lazy" />
+          </div>
+          <div class="service-photo-footer">
+            <span class="service-photo-label">Spiritual<br>Guidance</span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. SIGNATURE POSITIVITY BANNER (PURPLE LOTUS & DUAL CTA)
+       ========================================================================== -->
+  <section class="positivity-banner-section">
+    <div class="container">
+      <div class="positivity-banner-card">
+        
+        <!-- Left: Lotus Icon + Quote -->
+        <div class="positivity-left-content">
+          <div class="positivity-lotus-sigil">
+            <svg viewBox="0 0 100 80" class="svg-stroke">
+              <path d="M50 8 C40 30 25 45 10 55 C25 60 42 55 50 42 C58 55 75 60 90 55 C75 45 60 30 50 8 Z" />
+              <path d="M50 24 C44 42 34 54 24 62 C38 66 46 60 50 52 C54 60 62 66 76 62 C66 54 56 42 50 24 Z" />
+              <circle cx="50" cy="65" r="4" fill="#D4AF37" />
+            </svg>
+          </div>
+          <div class="positivity-quote-text">
+            Let the wisdom of astrology bring positivity to your life.
+          </div>
+        </div>
+
+        <!-- Center: Blooming Purple Lotus HD Visual -->
+        <div class="positivity-center-visual">
+          <img src="assets/banner-lotus-hd.jpg" alt="Sacred Lotus of Positivity" loading="lazy" />
+        </div>
+
+        <!-- Right: Button -->
+        <button class="btn btn-gold btn-positivity-cta" onclick="openBookingModal('Positivity Banner Consultation')">
+          Get in Touch &rarr;
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. FOOTER BAR (VERIFIED COORDINATES & REAL SOCIALS)
+       ========================================================================== -->
+  <footer class="footer-bar" id="contact">
+    <div class="container footer-bar-inner">
+      
+      <!-- Left Contacts -->
+      <div class="footer-left-contacts">
+        <span class="footer-contact-item">
+          <span class="footer-contact-icon">
+            <svg viewBox="0 0 24 24" class="svg-stroke">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </span>
+          Udaipur, Rajasthan
+        </span>
+        
+        <a href="tel:+918107911911" class="footer-contact-item">
+          <span class="footer-contact-icon">
+            <svg viewBox="0 0 24 24" class="svg-stroke">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </span>
+          +91 81079 11911
+        </a>
+
+        <a href="mailto:agamkhiria@gmail.com" class="footer-contact-item">
+          <span class="footer-contact-icon">
+            <svg viewBox="0 0 24 24" class="svg-stroke">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </span>
+          agamkhiria@gmail.com
+        </a>
+      </div>
+
+      <!-- Right Socials & Actions -->
+      <div class="footer-right-actions">
+        <div class="footer-social-group">
+          <span class="footer-social-label">Follow Us :</span>
+          
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-circle" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" class="svg-icon">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-circle ig" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" class="svg-stroke">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+
+          <a href="https://www.youtube.com/@astroagam" target="_blank" rel="noopener noreferrer" class="social-icon-circle yt" aria-label="YouTube (160K+ Followers)">
+            <svg viewBox="0 0 24 24" class="svg-icon">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43zM9.75 15.02V8.48l5.75 3.27-5.75 3.27z"/>
+            </svg>
+          </a>
+
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-circle in" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" class="svg-icon">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Sub-Footer Copyright -->
+  <div class="footer-sub-bar">
+    <div class="container">
+      &copy; 2026 Astro Agam. All Rights Reserved. &bull; 
+      <a href="javascript:void(0)" onclick="alert('Privacy Policy: All client birth chart records and personal readings are held under strict confidentiality.');">Privacy Policy</a> | 
+      <a href="javascript:void(0)" onclick="alert('Terms & Conditions: Consultations provided by Astro Agam in Udaipur, Rajasthan.');">Terms &amp; Conditions</a> &bull;
+      <span>Private Demo Preview for Client Review</span>
+    </div>
+  </div>
+
+  <!-- Floating Direct WhatsApp Button -->
+  <a href="https://wa.me/918107911911?text=Namaste%20Astro%20Agam%20ji,%20I%20would%20like%20to%20book%20a%20consultation%20with%20you." target="_blank" rel="noopener noreferrer" class="floating-wa-btn" title="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" class="svg-icon">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.03 7.38C8.84 7.38 8.52 7.45 8.26 7.74C8 8.03 7.24 8.74 7.24 10.19C7.24 11.64 8.3 13.04 8.44 13.23C8.58 13.43 10.45 16.48 13.43 17.65C15.9 18.62 16.4 18.42 16.94 18.37C17.48 18.32 18.67 17.66 18.92 16.98C19.17 16.3 19.17 15.72 19.1 15.59C19.03 15.47 18.84 15.4 18.55 15.26C18.26 15.11 16.85 14.41 16.59 14.32C16.33 14.22 16.14 14.17 15.95 14.46C15.76 14.75 15.21 15.4 15.04 15.59C14.88 15.79 14.71 15.81 14.42 15.67C14.13 15.52 13.2 15.22 12.1 14.24C11.24 13.47 10.66 12.52 10.49 12.23C10.33 11.94 10.47 11.78 10.62 11.64C10.75 11.51 10.91 11.3 11.06 11.13C11.21 10.96 11.26 10.84 11.36 10.64C11.46 10.45 11.41 10.28 11.33 10.13C11.26 9.99 10.69 8.59 10.45 8.03C10.22 7.48 9.98 7.56 9.81 7.55C9.64 7.54 9.45 7.54 9.26 7.54L9.03 7.38Z" />
+    </svg>
+  </a>
+
+  <!-- ==========================================================================
+       9. INTERACTIVE CONSULTATION BOOKING MODAL
+       Pre-formats birth intake details directly to Astro Agam's WhatsApp
+       ========================================================================== -->
+  <div class="modal-backdrop" id="bookingModal" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeBookingModal()" aria-label="Close">
+        <svg viewBox="0 0 24 24" class="svg-stroke" style="width:20px;height:20px;">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <h3 class="modal-title">Book a Consultation</h3>
+        <p class="modal-subtitle">Direct Vedic Guidance with Astro Agam &bull; Udaipur, Rajasthan</p>
+      </div>
+
+      <form id="consultationForm" onsubmit="handleFormSubmit(event)">
+        <div class="intake-form-grid">
+          
+          <div>
+            <label class="form-label" for="clientName">Full Name *</label>
+            <input type="text" id="clientName" class="form-input" placeholder="e.g. Rahul Sharma" required />
+          </div>
+
+          <div>
+            <label class="form-label" for="clientPhone">WhatsApp Number *</label>
+            <input type="tel" id="clientPhone" class="form-input" placeholder="e.g. +91 98765 43210" required />
+          </div>
+
+          <div>
+            <label class="form-label" for="clientDob">Date of Birth *</label>
+            <input type="date" id="clientDob" class="form-input" required />
+          </div>
+
+          <div>
+            <label class="form-label" for="clientTob">Exact Time of Birth *</label>
+            <input type="time" id="clientTob" class="form-input" required />
+          </div>
+
+          <div class="form-group-full">
+            <label class="form-label" for="clientPob">Place of Birth (City, State) *</label>
+            <input type="text" id="clientPob" class="form-input" placeholder="e.g. Udaipur, Rajasthan" required />
+          </div>
+
+          <div class="form-group-full">
+            <label class="form-label" for="clientService">Service Required *</label>
+            <select id="clientService" class="form-select">
+              <option value="Vedic Astrology & Kundli Reading">Vedic Astrology &amp; Complete Kundli Reading</option>
+              <option value="Kundali Matching for Marriage">Kundali Matching for Marriage</option>
+              <option value="Vastu Consultation (Home / Office)">Vastu Consultation (Home / Office)</option>
+              <option value="Numerology Analysis">Numerology Analysis</option>
+              <option value="Career & Business Guidance">Career &amp; Business Guidance</option>
+              <option value="Relationship & Life Guidance">Relationship &amp; Life Guidance</option>
+              <option value="Palmistry Session">Palmistry Session</option>
+              <option value="Pooja & Vedic Ritual Guidance">Pooja &amp; Vedic Ritual Guidance</option>
+              <option value="Spiritual Guidance & Meditation">Spiritual Guidance &amp; Meditation</option>
+            </select>
+          </div>
+
+          <div class="form-group-full">
+            <label class="form-label" for="clientQuestion">Your Question or Focus Area (Optional)</label>
+            <textarea id="clientQuestion" class="form-textarea" placeholder="Briefly describe what clarity or guidance you are seeking..."></textarea>
+          </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-gold modal-submit-btn">
+          <svg style="width:20px; height:20px; fill:currentColor;" viewBox="0 0 24 24">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.03 7.38C8.84 7.38 8.52 7.45 8.26 7.74C8 8.03 7.24 8.74 7.24 10.19C7.24 11.64 8.3 13.04 8.44 13.23C8.58 13.43 10.45 16.48 13.43 17.65C15.9 18.62 16.4 18.42 16.94 18.37C17.48 18.32 18.67 17.66 18.92 16.98C19.17 16.3 19.17 15.72 19.1 15.59C19.03 15.47 18.84 15.4 18.55 15.26C18.26 15.11 16.85 14.41 16.59 14.32C16.33 14.22 16.14 14.17 15.95 14.46C15.76 14.75 15.21 15.4 15.04 15.59C14.88 15.79 14.71 15.81 14.42 15.67C14.13 15.52 13.2 15.22 12.1 14.24C11.24 13.47 10.66 12.52 10.49 12.23C10.33 11.94 10.47 11.78 10.62 11.64C10.75 11.51 10.91 11.3 11.06 11.13C11.21 10.96 11.26 10.84 11.36 10.64C11.46 10.45 11.41 10.28 11.33 10.13C11.26 9.99 10.69 8.59 10.45 8.03C10.22 7.48 9.98 7.56 9.81 7.55C9.64 7.54 9.45 7.54 9.26 7.54L9.03 7.38Z" />
+          </svg>
+          Send to Astro Agam on WhatsApp
+        </button>
+
+        <p class="modal-privacy-notice">
+          100% Confidential &bull; Your birth details are sent directly to Astro Agam's official number (+91 81079 11911).
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript Interactions -->
+  <script>
+    /* ==========================================================================
+       GOLDEN SCROLL PROGRESS BAR
+       Updates smoothly as the page is scrolled
+       ========================================================================== */
+    function updateScrollProgress() {
+      const progressBar = document.getElementById('scrollProgressBar');
+      if (!progressBar) return;
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      progressBar.style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+    }
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    document.addEventListener('scroll', updateScrollProgress, { passive: true });
+    window.addEventListener('resize', updateScrollProgress, { passive: true });
+    document.addEventListener('DOMContentLoaded', updateScrollProgress);
+
+    /* ==========================================================================
+       MOBILE NAVIGATION DRAWER
+       ========================================================================== */
+    function openMobileDrawer() {
+      const drawer = document.getElementById('mobileDrawer');
+      const backdrop = document.getElementById('mobileDrawerBackdrop');
+      if (drawer && backdrop) {
+        drawer.classList.add('active');
+        backdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeMobileDrawer() {
+      const drawer = document.getElementById('mobileDrawer');
+      const backdrop = document.getElementById('mobileDrawerBackdrop');
+      if (drawer && backdrop) {
+        drawer.classList.remove('active');
+        backdrop.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function openBookingModal(serviceName) {
+      const modal = document.getElementById('bookingModal');
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      if (serviceName) {
+        const select = document.getElementById('clientService');
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].text.toLowerCase().includes(serviceName.toLowerCase()) || 
+              select.options[i].value.toLowerCase().includes(serviceName.toLowerCase())) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('bookingModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function closeModalOnBackdrop(e) {
+      if (e.target.id === 'bookingModal') {
+        closeBookingModal();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeBookingModal();
+    });
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('clientName').value.trim();
+      const phone = document.getElementById('clientPhone').value.trim();
+      const dob = document.getElementById('clientDob').value;
+      const tob = document.getElementById('clientTob').value;
+      const pob = document.getElementById('clientPob').value.trim();
+      const service = document.getElementById('clientService').value;
+      const question = document.getElementById('clientQuestion').value.trim();
+
+      const msg = 
+`*New Consultation Booking — Astro Agam Website*
+----------------------------------------
+*Name:* ${name}
+*Phone:* ${phone}
+*Date of Birth:* ${dob}
+*Time of Birth:* ${tob}
+*Place of Birth:* ${pob}
+*Service:* ${service}
+${question ? `*Question/Query:* ${question}` : ''}
+----------------------------------------
+_Sent via official website preview_`;
+
+      const encoded = encodeURIComponent(msg);
+      const waUrl = `https://wa.me/918107911911?text=${encoded}`;
+      window.open(waUrl, '_blank');
+      closeBookingModal();
+    }
+  </script>
+
+  <!-- Celestial Custom Cursor & Sparkle Trail Elements -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <canvas id="celestial-sparkle-canvas"></canvas>
+
+  <script>
+    /* ==========================================================================
+       CELESTIAL SPARKLE MOUSE TRAIL SYSTEM
+       Golden Stardust and Twinkling 4-Point Stars
+       ========================================================================== */
+    (function initCelestialSparkles() {
+      if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+      const dot = document.getElementById('cursorDot');
+      const ring = document.getElementById('cursorRing');
+      const canvas = document.getElementById('celestial-sparkle-canvas');
+      if (!dot || !ring || !canvas) return;
+
+      const ctx = canvas.getContext('2d');
+      let width = canvas.width = window.innerWidth;
+      let height = canvas.height = window.innerHeight;
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 2;
+      let ringX = mouseX;
+      let ringY = mouseY;
+      let hasMoved = false;
+
+      const particles = [];
+      const goldPalette = ['#FFE894', '#F7E7B8', '#D4AF37', '#FFFFFF', '#E6C364', '#FFDF79'];
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        hasMoved = true;
+
+        dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+
+        // Spawn 2 to 3 celestial sparkle particles per mouse stride
+        const spawnCount = Math.random() > 0.4 ? 3 : 2;
+        for (let i = 0; i < spawnCount; i++) {
+          particles.push(spawnSparkle(mouseX, mouseY));
+        }
+      });
+
+      // Interactive Elements Hover Magnet & Glow
+      const interactiveElements = document.querySelectorAll('a, button, select, input, textarea, .service-nav-col, .service-photo-card, .testimonial-ivory-card, .modal-close-btn, .floating-wa-btn');
+      interactiveElements.forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+          ring.classList.add('active-hover');
+          dot.classList.add('active-hover');
+        });
+        el.addEventListener('mouseleave', () => {
+          ring.classList.remove('active-hover');
+          dot.classList.remove('active-hover');
+        });
+      });
+
+      function spawnSparkle(x, y) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 1.6 + 0.3;
+        return {
+          x: x + (Math.random() - 0.5) * 6,
+          y: y + (Math.random() - 0.5) * 6,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed + 0.25, // gentle celestial drift
+          size: Math.random() * 5 + 2.5,
+          color: goldPalette[Math.floor(Math.random() * goldPalette.length)],
+          alpha: 1,
+          decay: Math.random() * 0.022 + 0.014,
+          rotation: Math.random() * Math.PI,
+          rotSpeed: (Math.random() - 0.5) * 0.12,
+          isStar: Math.random() > 0.35 // 65% diamond star, 35% stardust orb
+        };
+      }
+
+      function drawStar(c, cx, cy, spikes, outerR, innerR, fill, alpha, rotAngle) {
+        c.save();
+        c.beginPath();
+        c.translate(cx, cy);
+        c.rotate(rotAngle);
+        c.fillStyle = fill;
+        c.shadowColor = fill;
+        c.shadowBlur = 8;
+        c.globalAlpha = Math.max(0, alpha);
+
+        let rot = Math.PI / 2 * 3;
+        let x = 0;
+        let y = 0;
+        const step = Math.PI / spikes;
+
+        c.moveTo(0, -outerR);
+        for (let i = 0; i < spikes; i++) {
+          x = Math.cos(rot) * outerR;
+          y = Math.sin(rot) * outerR;
+          c.lineTo(x, y);
+          rot += step;
+
+          x = Math.cos(rot) * innerR;
+          y = Math.sin(rot) * innerR;
+          c.lineTo(x, y);
+          rot += step;
+        }
+        c.lineTo(0, -outerR);
+        c.closePath();
+        c.fill();
+        c.restore();
+      }
+
+      function animate() {
+        if (hasMoved) {
+          // Smooth spring physics for outer ring cursor
+          ringX += (mouseX - ringX) * 0.18;
+          ringY += (mouseY - ringY) * 0.18;
+          ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+        }
+
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = particles.length - 1; i >= 0; i--) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          p.alpha -= p.decay;
+          p.rotation += p.rotSpeed;
+          p.size *= 0.985;
+
+          if (p.alpha <= 0 || p.size <= 0.4) {
+            particles.splice(i, 1);
+            continue;
+          }
+
+          if (p.isStar) {
+            drawStar(ctx, p.x, p.y, 4, p.size, p.size * 0.32, p.color, p.alpha, p.rotation);
+          } else {
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size * 0.6, 0, Math.PI * 2);
+            ctx.fillStyle = p.color;
+            ctx.shadowColor = p.color;
+            ctx.shadowBlur = 8;
+            ctx.globalAlpha = Math.max(0, p.alpha);
+            ctx.fill();
+            ctx.restore();
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      requestAnimationFrame(animate);
+    })();
+  </script>
+
+</body>
+</html>
