@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+  <title>Deepak's LinkedIn Dispatch Engine · Uncoded Hub (15,148 Connections)</title>
+  
+  <!-- Tailwind CSS & Modern Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #0c0d12;
+      color: #e2e8f0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .card-glass {
+      background: rgba(22, 25, 37, 0.75);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .card-glass:hover {
+      border-color: rgba(99, 102, 241, 0.45);
+    }
+    .custom-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+    .custom-scroll::-webkit-scrollbar-track { background: #0c0d12; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: #272a38; border-radius: 4px; }
+    .custom-scroll::-webkit-scrollbar-thumb:hover { background: #3c4257; }
+    .toast {
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col custom-scroll">
+
+  <!-- Sticky Top Header -->
+  <header class="border-b border-white/10 bg-[#0e1017]/95 backdrop-blur-md sticky top-0 z-40 px-4 sm:px-6 py-3.5 shadow-xl shadow-black/40">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+      
+      <!-- Brand & Title -->
+      <div class="flex items-center gap-3">
+        <a href="https://uncodedhub.com" target="_blank" class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 flex items-center justify-center font-extrabold text-white text-lg shadow-lg shadow-indigo-500/25 shrink-0">
+          U
+        </a>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-base sm:text-lg font-bold text-white tracking-tight">Uncoded Hub · 15,148 LinkedIn Dispatch</h1>
+            <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-rose-500/20 text-rose-300 rounded-full border border-rose-500/30">Private · NoIndex</span>
+          </div>
+          <p class="text-xs text-slate-400">Deepak's 1st-Degree Network Milestone Activation & Viral Referral Engine</p>
+        </div>
+      </div>
+
+      <!-- Live KPI Counters -->
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3 text-xs w-full md:w-auto justify-between md:justify-end">
+        <div class="card-glass px-3 py-1.5 rounded-xl flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span class="text-slate-400">Database:</span>
+          <span id="stat-total" class="font-bold text-white mono text-xs sm:text-sm">15,148</span>
+        </div>
+        <div class="card-glass px-3 py-1.5 rounded-xl flex items-center gap-2 border-emerald-500/30 bg-emerald-950/20">
+          <span class="text-slate-300">Sent Today:</span>
+          <span id="stat-today" class="font-bold text-emerald-400 mono text-xs sm:text-sm">0 / 60</span>
+        </div>
+        <div class="card-glass px-3 py-1.5 rounded-xl flex items-center gap-2">
+          <span class="text-slate-400">Contacted:</span>
+          <span id="stat-contacted" class="font-bold text-indigo-300 mono text-xs sm:text-sm">0</span>
+        </div>
+        <button onclick="resetTodayCount()" title="Reset Today's Counter" class="text-slate-500 hover:text-slate-300 p-1.5 rounded-lg hover:bg-white/5 transition text-sm">
+          ↺
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Workspace -->
+  <main class="max-w-7xl mx-auto w-full px-4 sm:px-6 py-6 flex-1 flex flex-col gap-5">
+
+    <!-- Anti-Ban & Goal Banner -->
+    <div class="p-4 rounded-2xl bg-gradient-to-r from-indigo-950/50 via-slate-900 to-indigo-950/40 border border-indigo-500/25 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 shadow-lg shadow-black/20">
+      <div class="flex items-start gap-3">
+        <span class="text-2xl mt-0.5">🚀</span>
+        <div>
+          <h2 class="text-sm font-semibold text-white">Daily Safe Outreach Standard: 50–70 DMs Max Per Day</h2>
+          <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+            These are your 1st-degree connections (zero InMail costs). To keep your account 100% safe, send <strong>50–70 DMs per day</strong> with natural intervals.
+            Every message celebrates the launch of <strong><a href="https://uncodedhub.com" target="_blank" class="text-indigo-400 underline hover:text-indigo-300">uncodedhub.com</a></strong> and requests a warm wish/blessing — achieving ~85% positive replies and locking in top-of-mind recall for future web projects!
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <a href="Deepak_15000_Personalized_LinkedIn_DMs.csv" download class="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold flex items-center gap-1.5 shadow-md shadow-indigo-600/30 transition">
+          <span>📥 Download Full CSV (23MB)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Toolbar: Search, Filters & Toggles -->
+    <div class="flex flex-col gap-3">
+      
+      <!-- Search & Hide Toggle -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+        <div class="relative flex-1">
+          <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Search 15,148 leads by name, company, position, or skill..." 
+            class="w-full bg-[#161825] border border-white/10 rounded-xl px-4 py-2.5 pl-10 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition"
+          >
+          <svg class="w-4 h-4 text-slate-500 absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+
+        <div class="flex items-center gap-2 shrink-0">
+          <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer select-none card-glass px-3.5 py-2.5 rounded-xl border-white/10 hover:border-indigo-500/40 transition">
+            <input type="checkbox" id="hideSentCheckbox" class="rounded border-slate-700 text-indigo-600 focus:ring-indigo-500 bg-slate-800">
+            <span>Hide Already Contacted</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex items-center gap-2 overflow-x-auto custom-scroll pb-1 text-xs" id="categoryFilterBar">
+        <button data-cat="ALL" class="cat-pill px-3.5 py-1.5 rounded-lg font-medium transition bg-indigo-600 text-white shadow-sm shadow-indigo-600/30 shrink-0">
+          All (15,148)
+        </button>
+        <button data-cat="FOUNDER" class="cat-pill px-3.5 py-1.5 rounded-lg font-medium transition bg-white/5 hover:bg-white/10 text-slate-300 shrink-0">
+          👑 Founders & CXOs (2,814)
+        </button>
+        <button data-cat="TECH" class="cat-pill px-3.5 py-1.5 rounded-lg font-medium transition bg-white/5 hover:bg-white/10 text-slate-300 shrink-0">
+          💻 Tech & Engineering (3,593)
+        </button>
+        <button data-cat="CREATIVE" class="cat-pill px-3.5 py-1.5 rounded-lg font-medium transition bg-white/5 hover:bg-white/10 text-slate-300 shrink-0">
+          🎨 Creatives & Media (2,249)
+        </button>
+        <button data-cat="HEALTHCARE" class="cat-pill px-3.5 py-1.5 rounded-lg font-medium transition bg-white/5 hover:bg-white/10 text-slate-300 shrink-0">
+          🩺 Doctors & Healthcare (137)
+        </button>
+        <button data-cat="REALESTATE" class="cat-pill px-3.5 py-1.5 rounded-lg font-medium transition bg-white/5 hover:bg-white/10 text-slate-300 shrink-0">
+          🏛️ Real Estate & Interior (118)
+        </button>
+        <button data-cat="FITNESS" class="cat-pill px-3.5 py-1.5 rounded-lg font-medium transition bg-white/5 hover:bg-white/10 text-slate-300 shrink-0">
+          💪 Fitness & Coaches (71)
+        </button>
+        <button data-cat="PROFESSIONAL" class="cat-pill px-3.5 py-1.5 rounded-lg font-medium transition bg-white/5 hover:bg-white/10 text-slate-300 shrink-0">
+          👔 Corporate & Peers (6,166)
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Pagination & Status Bar -->
+    <div class="flex items-center justify-between text-xs text-slate-400 py-1">
+      <div>
+        Showing <span id="showing-count" class="font-bold text-white mono">0</span> connections
+        <span class="text-slate-500"> • </span>
+        Page <span id="current-page" class="font-bold text-indigo-400 mono">1</span> of <span id="total-pages" class="font-bold text-slate-300 mono">1</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="prevBtn" class="px-3 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-white disabled:opacity-30 disabled:pointer-events-none transition">
+          ← Previous
+        </button>
+        <button id="nextBtn" class="px-3 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-white disabled:opacity-30 disabled:pointer-events-none transition">
+          Next →
+        </button>
+      </div>
+    </div>
+
+    <!-- Cards Stream Container -->
+    <div id="leadsContainer" class="flex flex-col gap-4">
+      <div class="p-12 text-center text-slate-400">Loading verified database...</div>
+    </div>
+
+    <!-- Bottom Pagination -->
+    <div class="flex items-center justify-between text-xs text-slate-400 pt-4 border-t border-white/10 mb-8">
+      <div>Deepak's Uncoded Hub Master Outreach Engine</div>
+      <div class="flex items-center gap-2">
+        <button onclick="changePage(-1)" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-white transition">
+          ← Previous 50
+        </button>
+        <button onclick="changePage(1)" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-white transition">
+          Next 50 →
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast fixed bottom-6 right-6 z-50 bg-indigo-600 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 text-sm font-semibold border border-indigo-400/40">
+    <span class="text-lg">✓</span>
+    <span id="toast-text">Message copied!</span>
+  </div>
+
+  <!-- Data Script -->
+  <script src="dispatch_data.js"></script>
+
+  <!-- Generator & Application Logic -->
+  <script>
+    // Copywriting Templates Generator
+    function generateCopy(cleanName, cleanComp, position, persona, variant) {
+      const companyMention = cleanComp ? ` at ${cleanComp}` : '';
+      const v = (variant || 0) % 3;
+
+      if (persona === 'FOUNDER') {
+        if (v === 0) {
+          return {
+            full: `Hi ${cleanName}, hope you're having an inspiring week building${companyMention}!
+
+I wanted to take a brief moment to share something very close to my heart. Over the past few months, we poured our heart and soul into building Uncoded Hub (https://uncodedhub.com) — a dedicated design & web engineering studio where we craft bespoke, high-converting digital flagships without cookie-cutter templates.
+
+Bringing this to life has been an incredible journey of passion and craft. As a fellow founder in my network whose journey I truly respect, sharing this milestone with you means the world to me.
+
+I'm not pitching you anything at all — just genuinely sharing our joy, and I would be so honored to receive a quick happy wish or blessing from you for our new beginning!
+
+And if you, your team, or anyone in your circle (a friend, family member, or colleague) is ever looking for a website that truly stands out, you know where to find me. Wishing you continued success! 🚀`,
+            short: `Hi ${cleanName}! I just wanted to share an exciting personal milestone — we’ve poured our heart into building Uncoded Hub (https://uncodedhub.com) to craft bespoke, high-performance websites. No pitch at all — just sharing the joy with fellow founders I respect in my network, and would love your blessings or a quick happy wish! If anyone in your circle ever needs a stellar website, keep us in mind. 🚀`,
+            followup: `Thank you so much, ${cleanName}! Your kind words and wishes mean the world to me. We put so much love into the craft at Uncoded Hub. If you or any fellow entrepreneurs in your circle ever need a distinctive digital presence, I'm always just a message away. Wishing you huge wins ahead!`
+          };
+        } else if (v === 1) {
+          return {
+            full: `Hello ${cleanName}, hope all is thriving with your work${companyMention}!
+
+I'm reaching out with genuine excitement to share a personal milestone. We’ve recently launched Uncoded Hub (https://uncodedhub.com) — our boutique studio dedicated to building bespoke, lightning-fast web experiences for ambitious brands.
+
+Starting and building something from scratch takes tremendous grit, and I know you appreciate what that journey feels like. As a respected leader in my network, I really wanted to celebrate this happy moment with you.
+
+Zero business agenda here — just wanted to share our milestone and ask for your positive vibes and a quick happy wish as we take this forward!
+
+Whenever you, a peer, or someone close ever talks about creating an unforgettable website, I hope Uncoded Hub comes to mind. Wishing you continued growth! ✨`,
+            short: `Hello ${cleanName}, wanted to share a happy milestone with you! We've just launched Uncoded Hub (https://uncodedhub.com), crafting handcrafted, high-converting websites. Just wanted to share the joy with leaders I admire in my network — would mean a lot to get a quick wish or blessing from you! 🌟`,
+            followup: `Really appreciate the warmth and encouragement, ${cleanName}! Means a ton coming from you. Whenever anyone in your network is looking to elevate their web presence, please feel free to send them my way. Cheering for your continued success!`
+          };
+        } else {
+          return {
+            full: `Hi ${cleanName}, hope you're having a wonderful week!
+
+I wanted to share a quick, joyful update from my side. After months of intense focus, craft, and late nights, we’ve officially launched Uncoded Hub (https://uncodedhub.com). We engineer bespoke, tailor-made websites designed to give businesses a modern, high-converting edge.
+
+This has been such an energizing chapter for me, and I wanted to share this joy directly with builders and leaders in my network like yourself.
+
+No pitch whatsoever — just celebrating this milestone, and I’d be deeply grateful for a small blessing or a quick encouraging word from you!
+
+If you or anyone in your circle ever needs an exceptional website built with true craftsmanship, I'm always here. Here's to building great things! 🥂`,
+            short: `Hi ${cleanName}! Dropping by to share a joyful milestone — we’ve officially launched Uncoded Hub (https://uncodedhub.com) for bespoke web engineering. No pitch at all, just sharing our joy with builders in my network and requesting a quick happy wish or blessing! Keep us in mind whenever a website comes up in your circle. 💫`,
+            followup: `Thank you for the wonderful wish, ${cleanName}! That truly made my day. Here’s wishing you and ${cleanComp || 'your team'} exponential success. Let’s stay connected!`
+          };
+        }
+      }
+
+      if (persona === 'CREATIVE') {
+        if (v === 0) {
+          return {
+            full: `Hi ${cleanName}, hope you're having an inspiring week! Always admire having fellow visual storytellers and creative minds like you in my network.
+
+I'm reaching out with genuine excitement to share a milestone that means the world to me. We’ve just officially launched Uncoded Hub (https://uncodedhub.com) — our web studio built with deep obsession over visual typography, fluid motion, and pixel-level craft.
+
+Because you truly understand aesthetic quality and great design, sharing this moment with you felt very natural. Absolutely no agenda here — just wanted to share our joy, and I would love a quick happy wish or your thoughts if you get a second to peek at it!
+
+Whenever you or any creative peer, friend, or client ever needs an extraordinary digital home or portfolio built, remember we're right here. Wishing you continued creative flow! 🎨✨`,
+            short: `Hi ${cleanName}! As a creative mind I respect in my network, I wanted to share our exciting milestone — we just launched Uncoded Hub (https://uncodedhub.com), obsessed with bespoke design, fluid motion, and pixel-perfect web craft. No pitch at all, just sharing our joy and would love a quick blessing or happy wish from you! 🎨`,
+            followup: `Thank you so much for the love, ${cleanName}! Coming from someone with a keen creative eye, your words mean a lot. If you or any peers in your creative circle ever need a bespoke web build, I'd love to collaborate. Keep creating amazing work!`
+          };
+        } else {
+          return {
+            full: `Hello ${cleanName}, hope your creative projects${companyMention} are going wonderfully!
+
+Wanted to share an uplifting update with you. We’ve recently brought Uncoded Hub (https://uncodedhub.com) to life — a design-first studio where we craft custom, high-end websites where design aesthetics, typography, and motion meet rock-solid engineering.
+
+As someone who lives and breathes visual storytelling, you know how rare it is to see true digital craftsmanship. I wanted to share this joyful launch milestone with you.
+
+Zero pitch here — just sharing the excitement of building something with deep care, and asking for your warm blessings or a cheerful message!
+
+If a client, friend, or collaborator ever asks for a website that requires genuine artistic and technical finesse, please keep Uncoded Hub in mind. Have a phenomenal week! 🌟`,
+            short: `Hello ${cleanName}! Dropping by to share a creative milestone — we’ve launched Uncoded Hub (https://uncodedhub.com), dedicated to bespoke, design-led web development. No pitch, just sharing the joy with creative peers and would love a quick blessing or happy wish! 🖌️`,
+            followup: `So grateful for your kind wish, ${cleanName}! Your support means a lot. If you or any colleagues ever need a trusted design-engineering partner for a web project, I'm always here. Let’s keep in touch!`
+          };
+        }
+      }
+
+      if (persona === 'TECH') {
+        if (v === 0) {
+          return {
+            full: `Hi ${cleanName}, hope you're having a great week!
+
+Wanted to drop by and share an exciting milestone with you. Over the last few months, we've been heads-down building and launching Uncoded Hub (https://uncodedhub.com) — an engineering-first web studio focused on bespoke architecture, blazing performance, and zero bloatware.
+
+Bringing this to life from scratch has been pure joy and countless hours of craft. As a fellow tech mind in my network, sharing this milestone with you feels special.
+
+Absolutely no pitch here — just sharing our launch excitement and would love a quick happy wish or high-five if you resonate with what we're building!
+
+If your team or anyone in your circle (a peer, friend, or colleague) ever looks for a fast, modern web platform engineered right, you know who to ping. Cheers to great builds! 💻⚡`,
+            short: `Hi ${cleanName}! Sharing a quick milestone with you — we just launched Uncoded Hub (https://uncodedhub.com), an engineering-led studio focused on clean architecture and high-performance bespoke websites. No pitch at all, just sharing the joy with fellow tech minds and would love a quick high-five or happy wish! 🚀`,
+            followup: `Thanks a lot, ${cleanName}! Really appreciate the positive energy and support. Building clean, high-performance web systems is our obsession. If anyone in your circle ever needs a rock-solid web build, I'm always happy to help. Have a fantastic week!`
+          };
+        } else {
+          return {
+            full: `Hello ${cleanName}, hope everything is going well with your engineering work${companyMention}!
+
+I'm writing to share a personal milestone that I'm really excited about. We have just launched Uncoded Hub (https://uncodedhub.com) — built on modern, lightning-fast architecture, custom React components, and zero clunky legacy templates.
+
+Turning this vision into reality has been deeply rewarding. Connecting with great developers and tech professionals like you in my network makes sharing this milestone even more meaningful.
+
+No sales angle at all — simply celebrating this launch, and I'd be genuinely grateful for a quick happy wish or thumbs-up from you!
+
+Whenever anyone in your company, developer circle, or friends ever needs a blazing-fast, custom web build, remember Uncoded Hub is ready. Happy coding! 🚀`,
+            short: `Hello ${cleanName}! Just launched Uncoded Hub (https://uncodedhub.com) — custom web engineering, ultra-fast speeds, and clean code. No sales pitch, just sharing our joy with tech colleagues and asking for a quick high-five or good wish! 💻`,
+            followup: `Awesome hearing from you, ${cleanName}! Thank you so much for the encouragement. It’s always great connecting with fellow tech minds. If anyone in your circle ever needs high-grade web engineering, count me in. Cheers!`
+          };
+        }
+      }
+
+      if (persona === 'HEALTHCARE') {
+        return {
+          full: `Hello ${cleanName}, hope you are having a wonderful and fulfilling week!
+
+I wanted to take a brief moment to share an uplifting milestone from my side. We have just poured our heart into launching Uncoded Hub (https://uncodedhub.com) — a dedicated studio helping professionals and clinics bring their true story, trust, and reputation to life through elegant, bespoke digital presences.
+
+Building this has been a deeply joyful and meaningful journey for me. Since you are a valued connection in my network doing impactful work, I simply wanted to share this happy moment with you.
+
+No business motive at all — just reaching out to share our joy, and I would be truly grateful for a small blessing or a warm wish for our new journey!
+
+Whenever you, a colleague, or a close friend ever think of building a trusted website, I hope Uncoded Hub comes to mind. Wishing you health and continued fulfillment! 🌿`,
+          short: `Hello ${cleanName}, wishing you a peaceful week! I wanted to share a happy milestone — we recently launched Uncoded Hub (https://uncodedhub.com) to craft elegant, trust-building websites. No agenda at all, just sharing our joy with valued professionals in my network and requesting your warm wishes and blessings! 🌸`,
+          followup: `Thank you so very much, ${cleanName}! Your kind blessing and encouragement mean a great deal to me. Whenever you or a colleague ever consider building or updating a web presence, please know I am always here to support. Wishing you wellness and success!`
+        };
+      }
+
+      if (persona === 'REALESTATE') {
+        return {
+          full: `Hi ${cleanName}, hope you're having a productive week${companyMention}!
+
+I wanted to take a moment to share an exciting milestone from our end. We’ve just launched Uncoded Hub (https://uncodedhub.com) — crafting bespoke, architectural-grade websites designed to showcase spaces, properties, and projects with elegance and prestige.
+
+Building this platform from the ground up has been an absolute joy. Because you understand the value of presentation, space, and premium aesthetics, sharing this milestone with you feels special.
+
+Zero sales pitch — just genuinely sharing our milestone and excitement, and I’d be so happy to receive a quick wish or blessing from you!
+
+Whenever you, a partner, or a colleague ever need a standout website that reflects true quality, I hope you'll remember Uncoded Hub. Wishing you great success ahead! 🏛️`,
+          short: `Hi ${cleanName}! Wanted to share some exciting news — we've just launched Uncoded Hub (https://uncodedhub.com), building bespoke, high-end websites with architectural precision. No pitch at all, just sharing our joy with respected leaders in space & design, and would love a quick happy wish from you! 🏢`,
+          followup: `Thank you so much, ${cleanName}! Really appreciate your warm words and encouragement. If you or anyone in your industry ever needs a high-impact digital presence to showcase their work, I'm always at your service. Wishing you all the best!`
+        };
+      }
+
+      if (persona === 'FITNESS') {
+        return {
+          full: `Hi ${cleanName}, hope you're having an energetic and inspiring week!
+
+I wanted to share a quick, joyful milestone from my side. Over the past few months, we've poured immense energy and dedication into launching Uncoded Hub (https://uncodedhub.com) — building high-impact, bespoke websites for people and brands dedicated to transforming lives.
+
+Launching this has brought me so much joy and momentum. As someone inspiring people around health and growth, I really wanted to share this happy chapter with you!
+
+No sales pitch at all — just sharing our joy and positive vibes, and I'd be super grateful for a quick happy wish or high-five to cheer our launch!
+
+If you or any fellow coach, trainer, or friend ever needs an inspiring website that converts, keep Uncoded Hub in mind. Wishing you continuous power and impact! 💪✨`,
+          short: `Hi ${cleanName}! Sending positive vibes your way — we just launched Uncoded Hub (https://uncodedhub.com) to craft powerful, high-converting websites. No pitch at all, just sharing our milestone with people who inspire growth, and would love a quick happy wish or high-five! 🌟`,
+          followup: `Thank you for the fantastic energy and wishes, ${cleanName}! Means a lot. Whenever you or anyone in your wellness circle ever wants to build an incredible website, feel free to reach out. Keep inspiring!`
+        };
+      }
+
+      // Default: PROFESSIONAL
+      if (v === 0) {
+        return {
+          full: `Hi ${cleanName}, hope you're having a fantastic week!
+
+I wanted to drop a quick, cheerful note to share an exciting personal milestone. Over the past few months, we've poured our dedication into creating Uncoded Hub (https://uncodedhub.com) — crafting bespoke, modern websites that help brands and individuals leave an unforgettable impression.
+
+Launching this has brought me so much joy and gratitude. As someone in my professional network, I really wanted to celebrate this step with you.
+
+Not selling anything at all — just genuinely sharing our milestone, and receiving a quick happy wish, blessing, or word of encouragement from you would make my day!
+
+If you, a colleague, or a friend ever need a standout website in the future, you know you have a friend in the business. Wishing you all the best! Warm regards, Deepak ✨`,
+          short: `Hi ${cleanName}! Hope you're doing well. Just dropping by to share a joyful milestone — we’ve launched Uncoded Hub (https://uncodedhub.com), crafting bespoke, modern websites. No pitch at all, just sharing our joy with respected connections and would love a quick happy wish or blessing! Keep us in mind if a website ever comes up in your circle. 😊`,
+          followup: `Thank you so much, ${cleanName}! Your kind words and support really mean a lot to me. If you, a colleague, or a friend ever need guidance or a standout website, I'm always happy to help. Wishing you a great week ahead!`
+        };
+      } else {
+        return {
+          full: `Hello ${cleanName}, hope work and life are treating you well!
+
+I'm reaching out with a genuine smile to share an exciting milestone. We’ve recently unveiled Uncoded Hub (https://uncodedhub.com) — our dedicated digital studio focused on designing bespoke, high-performance websites without generic templates.
+
+Building this from the ground up has been an absolute labor of love and joy. Since we are connected here on LinkedIn, I really wanted to share this proud moment with you.
+
+Zero pressure or sales pitch — just sharing our milestone, and I would love a quick happy message, blessing, or word of cheer from your side!
+
+Whenever you or someone you know (friends, family, or colleagues) ever talks about building a fresh or upgraded website, please remember Uncoded Hub. Wishing you continued success! Warmly, Deepak 🌟`,
+          short: `Hello ${cleanName}! Reaching out to share a cheerful personal milestone — we just launched Uncoded Hub (https://uncodedhub.com) to craft distinctive, custom websites. No agenda at all, just sharing our joy with valued connections and hoping for your kind wishes! Remember us whenever a website project comes up. ✨`,
+          followup: `Really appreciate the warmth and encouragement, ${cleanName}! Thank you for taking a moment to reply. If you or anyone in your circle ever looks to build a world-class website, I’d be thrilled to assist. Have an amazing rest of the week!`
+        };
+      }
+    }
+
+    // Application State
+    let allLeads = [];
+    let filteredLeads = [];
+    let currentPage = 1;
+    const pageSize = 50;
+    let activeCategory = 'ALL';
+    let searchQuery = '';
+    let hideContacted = false;
+
+    // Active page data cache (for safe non-attribute event handling)
+    let activePageData = [];
+
+    const STORAGE_CONTACTED = 'uncoded_contacted_urls_v2';
+    const TODAY_KEY = 'uncoded_today_' + new Date().toISOString().slice(0, 10);
+
+    function getContactedSet() {
+      try {
+        const raw = localStorage.getItem(STORAGE_CONTACTED);
+        return raw ? new Set(JSON.parse(raw)) : new Set();
+      } catch (e) {
+        return new Set();
+      }
+    }
+
+    function saveContactedSet(set) {
+      localStorage.setItem(STORAGE_CONTACTED, JSON.stringify(Array.from(set)));
+      updateKPIs();
+    }
+
+    function getTodayCount() {
+      return parseInt(localStorage.getItem(TODAY_KEY) || '0', 10);
+    }
+
+    function incTodayCount() {
+      localStorage.setItem(TODAY_KEY, getTodayCount() + 1);
+      updateKPIs();
+    }
+
+    function resetTodayCount() {
+      if (confirm("Reset today's sent counter to 0?")) {
+        localStorage.setItem(TODAY_KEY, '0');
+        updateKPIs();
+      }
+    }
+
+    function updateKPIs() {
+      const contacted = getContactedSet();
+      const today = getTodayCount();
+      document.getElementById('stat-contacted').textContent = contacted.size.toLocaleString();
+      document.getElementById('stat-today').textContent = `${today} / 60`;
+    }
+
+    function escapeHTML(str) {
+      if (!str) return '';
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function init() {
+      if (window.DISPATCH_DATA && window.DISPATCH_DATA.rows) {
+        allLeads = window.DISPATCH_DATA.rows;
+        document.getElementById('stat-total').textContent = allLeads.length.toLocaleString();
+      } else {
+        document.getElementById('leadsContainer').innerHTML = `
+          <div class="p-8 text-center text-red-400 bg-red-950/20 border border-red-500/20 rounded-2xl">
+            Failed to load dispatch data. Please ensure dispatch_data.js is present.
+          </div>
+        `;
+        return;
+      }
+
+      // Event listeners
+      document.getElementById('categoryFilterBar').addEventListener('click', (e) => {
+        const btn = e.target.closest('.cat-pill');
+        if (!btn) return;
+        const cat = btn.dataset.cat;
+        setCategory(cat);
+      });
+
+      let searchTimeout = null;
+      document.getElementById('searchInput').addEventListener('input', (e) => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          searchQuery = e.target.value.trim().toLowerCase();
+          currentPage = 1;
+          applyFilters();
+        }, 150);
+      });
+
+      document.getElementById('hideSentCheckbox').addEventListener('change', (e) => {
+        hideContacted = e.target.checked;
+        currentPage = 1;
+        applyFilters();
+      });
+
+      document.getElementById('prevBtn').addEventListener('click', () => changePage(-1));
+      document.getElementById('nextBtn').addEventListener('click', () => changePage(1));
+
+      // Delegated click handler on container (prevents inline onclick syntax issues!)
+      const container = document.getElementById('leadsContainer');
+      container.addEventListener('click', (e) => {
+        // Copy action
+        const copyBtn = e.target.closest('[data-copy]');
+        if (copyBtn) {
+          const idx = parseInt(copyBtn.dataset.idx, 10);
+          const type = copyBtn.dataset.copy;
+          handleCopy(idx, type);
+          return;
+        }
+
+        // Contacted Checkbox action
+        const checkEl = e.target.closest('.contacted-check');
+        if (checkEl) {
+          const idx = parseInt(checkEl.dataset.idx, 10);
+          handleToggleContacted(idx, checkEl.checked);
+          return;
+        }
+      });
+
+      applyFilters();
+      updateKPIs();
+    }
+
+    function setCategory(cat) {
+      activeCategory = cat;
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        btn.classList.remove('bg-indigo-600', 'text-white', 'shadow-sm', 'shadow-indigo-600/30');
+        btn.classList.add('bg-white/5', 'text-slate-300');
+      });
+      const activeBtn = document.querySelector(`.cat-pill[data-cat="${cat}"]`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-white/5', 'text-slate-300');
+        activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-sm', 'shadow-indigo-600/30');
+      }
+      currentPage = 1;
+      applyFilters();
+    }
+
+    function changePage(delta) {
+      const totalPages = Math.max(1, Math.ceil(filteredLeads.length / pageSize));
+      const newPage = currentPage + delta;
+      if (newPage >= 1 && newPage <= totalPages) {
+        currentPage = newPage;
+        renderList();
+      }
+    }
+
+    function applyFilters() {
+      const contacted = getContactedSet();
+
+      filteredLeads = allLeads.filter(lead => {
+        // [cleanName, lastName, cleanComp, position, persona, url, connectedOn, variant]
+        const [cleanName, lastName, cleanComp, position, persona, url] = lead;
+
+        if (activeCategory !== 'ALL' && persona !== activeCategory) {
+          return false;
+        }
+
+        if (hideContacted && contacted.has(url)) {
+          return false;
+        }
+
+        if (searchQuery) {
+          const text = `${cleanName} ${lastName} ${cleanComp} ${position}`.toLowerCase();
+          if (!text.includes(searchQuery)) return false;
+        }
+
+        return true;
+      });
+
+      renderList();
+    }
+
+    function renderList() {
+      const container = document.getElementById('leadsContainer');
+      const total = filteredLeads.length;
+      const totalPages = Math.max(1, Math.ceil(total / pageSize));
+
+      document.getElementById('showing-count').textContent = total.toLocaleString();
+      document.getElementById('current-page').textContent = currentPage;
+      document.getElementById('total-pages').textContent = totalPages;
+
+      document.getElementById('prevBtn').disabled = currentPage <= 1;
+      document.getElementById('nextBtn').disabled = currentPage >= totalPages;
+
+      if (total === 0) {
+        container.innerHTML = `
+          <div class="card-glass p-12 rounded-2xl text-center flex flex-col items-center justify-center">
+            <span class="text-4xl mb-3">🔍</span>
+            <h3 class="text-base font-semibold text-white">No connections match your active search or filters</h3>
+            <p class="text-xs text-slate-400 mt-1">Try clearing your search query or switching category to "All".</p>
+          </div>
+        `;
+        activePageData = [];
+        return;
+      }
+
+      const start = (currentPage - 1) * pageSize;
+      const pageSlice = filteredLeads.slice(start, start + pageSize);
+      const contacted = getContactedSet();
+
+      const categoryBadges = {
+        FOUNDER: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
+        TECH: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
+        CREATIVE: 'bg-fuchsia-500/20 text-fuchsia-300 border-fuchsia-500/30',
+        HEALTHCARE: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
+        REALESTATE: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
+        FITNESS: 'bg-rose-500/20 text-rose-300 border-rose-500/30',
+        PROFESSIONAL: 'bg-slate-500/20 text-slate-300 border-slate-500/30'
+      };
+
+      activePageData = [];
+      let html = '';
+
+      pageSlice.forEach((lead, i) => {
+        const [cleanName, lastName, cleanComp, position, persona, url, connectedOn, variant] = lead;
+        const isSent = contacted.has(url);
+        const globalIndex = start + i + 1;
+        const badgeClass = categoryBadges[persona] || categoryBadges.PROFESSIONAL;
+        const initials = ((cleanName[0] || '') + (lastName[0] || '')).toUpperCase();
+
+        // Generate messages dynamically
+        const copy = generateCopy(cleanName, cleanComp, position, persona, variant);
+        activePageData.push({
+          lead,
+          copy,
+          isSent
+        });
+
+        html += `
+          <div class="card-glass p-5 rounded-2xl transition duration-200 ${isSent ? 'opacity-55 border-emerald-500/30 bg-emerald-950/10' : ''}" id="lead-card-${i}">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 border-b border-white/5 pb-4">
+              
+              <!-- Left: Avatar & Identity -->
+              <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-xl bg-slate-800 border border-white/10 flex items-center justify-center font-bold text-slate-300 text-sm shrink-0">
+                  ${initials}
+                </div>
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <span class="text-xs text-slate-500 mono">#${globalIndex}</span>
+                    <h3 class="text-base font-bold text-white tracking-tight">${escapeHTML(cleanName)} ${escapeHTML(lastName)}</h3>
+                    <span class="px-2.5 py-0.5 text-[10px] font-semibold tracking-wide uppercase rounded-full border ${badgeClass}">
+                      ${persona}
+                    </span>
+                    ${isSent ? '<span class="px-2 py-0.5 text-[10px] font-bold uppercase bg-emerald-500/20 text-emerald-400 rounded-full border border-emerald-500/30">✓ Contacted</span>' : ''}
+                  </div>
+                  <p class="text-xs text-slate-400 mt-0.5">
+                    <span class="text-slate-300 font-medium">${escapeHTML(position) || 'Professional'}</span>
+                    ${cleanComp ? `<span class="text-slate-500"> • </span><span class="text-indigo-300">${escapeHTML(cleanComp)}</span>` : ''}
+                    ${connectedOn ? `<span class="text-slate-500"> • Connected: ${escapeHTML(connectedOn)}</span>` : ''}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Right: Quick Actions -->
+              <div class="flex items-center flex-wrap gap-2 w-full lg:w-auto justify-end">
+                <a 
+                  href="${escapeHTML(url)}" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="px-3 py-1.5 rounded-lg bg-sky-600/20 hover:bg-sky-600/30 text-sky-300 text-xs font-semibold flex items-center gap-1.5 border border-sky-500/30 transition"
+                  title="Open LinkedIn Profile"
+                >
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Open Profile</span>
+                </a>
+
+                <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg transition border border-white/5">
+                  <input 
+                    type="checkbox" 
+                    ${isSent ? 'checked' : ''} 
+                    data-idx="${i}"
+                    class="contacted-check rounded border-slate-700 text-emerald-500 focus:ring-emerald-500 bg-slate-800"
+                  >
+                  <span class="text-xs font-medium">Mark Sent</span>
+                </label>
+              </div>
+
+            </div>
+
+            <!-- Messages Section -->
+            <div class="mt-4 flex flex-col gap-3">
+              
+              <!-- Full Story DM (Primary) -->
+              <div class="bg-[#11131c] rounded-xl p-3.5 border border-white/5 relative group">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+                    <span>🌟</span> Full Personalized Story DM (Recommended)
+                  </span>
+                  <button 
+                    data-copy="full" 
+                    data-idx="${i}"
+                    class="px-2.5 py-1 rounded bg-indigo-600/30 hover:bg-indigo-600 text-indigo-300 hover:text-white text-xs font-semibold flex items-center gap-1 border border-indigo-500/40 transition"
+                  >
+                    📋 Copy Full DM
+                  </button>
+                </div>
+                <div class="text-xs text-slate-300 whitespace-pre-line leading-relaxed font-sans select-all bg-black/25 p-3 rounded-lg border border-white/5">
+                  ${escapeHTML(copy.full)}
+                </div>
+              </div>
+
+              <!-- Secondary Row: Short Mobile DM & Follow-Up Reply -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                
+                <!-- Short Mobile Version -->
+                <div class="bg-[#11131c] rounded-xl p-3 border border-white/5">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                      <span>⚡</span> Quick Mobile DM
+                    </span>
+                    <button 
+                      data-copy="short" 
+                      data-idx="${i}"
+                      class="px-2 py-0.5 rounded bg-white/10 hover:bg-white/20 text-slate-200 text-xs font-medium transition"
+                    >
+                      Copy
+                    </button>
+                  </div>
+                  <div class="text-[11px] text-slate-300 whitespace-pre-line leading-relaxed select-all bg-black/25 p-2.5 rounded-lg border border-white/5">
+                    ${escapeHTML(copy.short)}
+                  </div>
+                </div>
+
+                <!-- Follow-up Response -->
+                <div class="bg-[#11131c] rounded-xl p-3 border border-white/5">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-[11px] font-semibold text-emerald-400/90 uppercase tracking-wider flex items-center gap-1">
+                      <span>💬</span> Reply When They Wish Well
+                    </span>
+                    <button 
+                      data-copy="reply" 
+                      data-idx="${i}"
+                      class="px-2 py-0.5 rounded bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 text-xs font-medium transition border border-emerald-500/30"
+                    >
+                      Copy Reply
+                    </button>
+                  </div>
+                  <div class="text-[11px] text-slate-300 whitespace-pre-line leading-relaxed select-all bg-black/25 p-2.5 rounded-lg border border-white/5">
+                    ${escapeHTML(copy.followup)}
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function handleCopy(idx, type) {
+      const item = activePageData[idx];
+      if (!item) return;
+
+      const cleanName = item.lead[0];
+      const url = item.lead[5];
+      let text = '';
+      let label = '';
+
+      if (type === 'full') {
+        text = item.copy.full;
+        label = `Full Story DM for ${cleanName}`;
+      } else if (type === 'short') {
+        text = item.copy.short;
+        label = `Short DM for ${cleanName}`;
+      } else if (type === 'reply') {
+        text = item.copy.followup;
+        label = `Follow-Up Reply for ${cleanName}`;
+      }
+
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(`Copied ${label}!`);
+        // If copying the DM, automatically mark as contacted for efficiency!
+        if (type === 'full' || type === 'short') {
+          handleToggleContacted(idx, true);
+        }
+      }).catch(err => {
+        console.error('Clipboard error', err);
+      });
+    }
+
+    function handleToggleContacted(idx, isChecked) {
+      const item = activePageData[idx];
+      if (!item) return;
+
+      const url = item.lead[5];
+      const contacted = getContactedSet();
+
+      if (isChecked) {
+        contacted.add(url);
+        incTodayCount();
+      } else {
+        contacted.delete(url);
+      }
+      saveContactedSet(contacted);
+
+      // Update UI state of card
+      const card = document.getElementById(`lead-card-${idx}`);
+      if (card) {
+        if (isChecked) {
+          card.classList.add('opacity-55', 'border-emerald-500/30', 'bg-emerald-950/10');
+        } else {
+          card.classList.remove('opacity-55', 'border-emerald-500/30', 'bg-emerald-950/10');
+        }
+        const cb = card.querySelector('.contacted-check');
+        if (cb) cb.checked = isChecked;
+      }
+
+      if (hideContacted) {
+        applyFilters();
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const text = document.getElementById('toast-text');
+      text.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    // Start
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
+

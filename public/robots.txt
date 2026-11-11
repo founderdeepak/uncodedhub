@@ -9,6 +9,8 @@ Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 Allow: /demos/
 Disallow: /client/
+Disallow: /linkedin-dispatch/
+Disallow: /team-outreach/
 
 # Dedicated AI Answer Engines & Grounding Bots (Explicitly Allowed)
 User-agent: GPTBot
