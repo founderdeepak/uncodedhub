@@ -21,9 +21,9 @@ function scan(dir) {
       }
     } else if (/\.(html|jsx|tsx|js|ts|json|md)$/.test(e.name)) {
       const content = fs.readFileSync(full, 'utf8');
-      const hrefRegex = /href=["'](https?:\/\/uncodedhub\.com)?(\/[a-zA-Z0-9_\-\/]+)["']/g;
+      const linkRegex = /(?:href|to)=["'](https?:\/\/uncodedhub\.com)?(\/[a-zA-Z0-9_\-\/]+)["']/g;
       let match;
-      while ((match = hrefRegex.exec(content)) !== null) {
+      while ((match = linkRegex.exec(content)) !== null) {
         const url = match[2];
         if (!url.endsWith('/') && !/\.[a-z0-9]{1,5}$/i.test(url) && url !== '/') {
           missingTrailingSlash.push({

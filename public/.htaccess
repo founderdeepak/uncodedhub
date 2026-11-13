@@ -17,10 +17,17 @@
   RewriteCond %{REQUEST_URI} ^/\.well-known/
   RewriteRule ^ - [L]
 
-  # 4. Specific alias redirects (fixes potential 404s from GSC)
+  # 4. Specific alias redirects & legacy URL migration (fixes GSC 404s and duplicate canonicals)
   RewriteRule ^audit/?$ https://uncodedhub.com/audit-checklist/ [L,R=301]
   RewriteRule ^sitemap/?$ https://uncodedhub.com/sitemap.xml [L,R=301]
   RewriteRule ^(feed|rss)/?$ https://uncodedhub.com/rss.xml [L,R=301]
+
+  # 4b. Consolidate legacy /for/:niche and /services/:niche URLs to canonical /web-design/:niche/
+  RewriteRule ^for/([a-zA-Z0-9_\-]+)/?$ https://uncodedhub.com/web-design/$1/ [L,R=301]
+  RewriteRule ^services/(interior-designers|real-estate|dental-clinics|wedding-photographers|home-renovation|home-services|coaches-consultants|educational-academy|gym-fitness-club|business-portfolio|spa-wellness|salon-beauty|fitness-coach|yoga-meditation|creative-portfolio|healthcare-diagnostics|clinic-polyclinic|doctor-specialist)/?$ https://uncodedhub.com/web-design/$1/ [L,R=301]
+
+  # 4c. Consolidate legacy /blog/niche/:niche to canonical /blog/industries/:niche/
+  RewriteRule ^blog/niche/([a-zA-Z0-9_\-]+)/?$ https://uncodedhub.com/blog/industries/$1/ [L,R=301]
 
   # 5. Clean query parameter canonicalization (?book=true -> /contact/)
   RewriteCond %{QUERY_STRING} ^book=true$ [NC]

@@ -2384,5 +2384,91 @@
         "answer": "7 business days. If we do not launch your website on Day 7, you pay nothing."
       }
     ]
+  },
+  "jigani": {
+    "slug": "jigani",
+    "name": "Jigani Industrial Area",
+    "kannadaName": "ಜಿಗಣಿ ಕೈಗಾರಿಕಾ ಪ್ರದೇಶ",
+    "zone": "South Bengaluru",
+    "pincode": "560105",
+    "coordinates": {
+      "lat": 12.7842,
+      "lng": 77.6391
+    },
+    "metroLine": "Yellow Line (Bommasandra Metro Station Corridor)",
+    "keyLandmarks": [
+      "Jigani APC Circle",
+      "OTIS Circle",
+      "Anekal Main Road",
+      "Bommasandra Link Road",
+      "Jigani Phase 1 & 2 Industrial Area"
+    ],
+    "techParksAndHubs": [
+      "Jigani Industrial Corridor",
+      "Bommasandra Industrial Estate",
+      "Biocon Park Hub"
+    ],
+    "commercialProfile": "South Bengaluru’s heavyweight manufacturing, industrial electrical, precision engineering, and granite/hardware trade corridor. Home to over 1,500 industrial units, OEM suppliers, and B2B wholesale distributors.",
+    "painPointHook": "Industrial buyers, procurement officers, and project contractors search suppliers directly on Google and WhatsApp. If your industrial business relies on an outdated paper catalogue or has no mobile-responsive product showcase, buyers bounce immediately to competitors with instant online quote calculators.",
+    "niches": [
+      {
+        "nicheKey": "business-portfolio",
+        "name": "Industrial Manufacturers & Electrical Suppliers",
+        "icon": "⚡",
+        "headline": "B2B Industrial & Electrical Supplier Websites in Jigani",
+        "subheadline": "Sub-second B2B catalogue loading, 1-tap WhatsApp RFQ quotation funnels, and interactive industrial product specs.",
+        "localHook": "Engineered for electrical wholesale suppliers, switchgear dealers, and industrial accessories distributors across Jigani Phase 1, Phase 2, and OTIS Circle.",
+        "statBadge": "0.7s LCP · Instant WhatsApp RFQ",
+        "targetPrice": "₹45,000"
+      },
+      {
+        "nicheKey": "home-services",
+        "name": "Precision Engineering & Fabrication Works",
+        "icon": "⚙️",
+        "headline": "Precision Engineering & Fabrication Websites in Jigani",
+        "subheadline": "Showcase CNC machinery, ISO quality certifications, and client spec sheets with zero mobile lag.",
+        "localHook": "Helping precision machine shops and fabrication plants near APC Circle capture lucrative corporate OEM purchase contracts.",
+        "statBadge": "ISO Showcase · Specification UX",
+        "targetPrice": "₹50,000"
+      },
+      {
+        "nicheKey": "home-renovation",
+        "name": "Granite, Marble & Architectural Hardware Hubs",
+        "icon": "🏛️",
+        "headline": "Granite, Marble & Stone Exporter Websites in Jigani",
+        "subheadline": "High-definition 4K slab visualizers, live warehouse inventory calculators, and export consultation funnels.",
+        "localHook": "Showcasing premium Jigani granite processing units and natural stone exporters to national builders and architects.",
+        "statBadge": "4K Stone Visualizer · Export Funnel",
+        "targetPrice": "₹55,000"
+      },
+      {
+        "nicheKey": "coaches-consultants",
+        "name": "Industrial Safety, Compliance & Logistics Advisors",
+        "icon": "📋",
+        "headline": "Industrial Consulting & Compliance Websites in Jigani",
+        "subheadline": "High-trust corporate advisory presentation, statutory compliance checklists, and C-level retainer booking.",
+        "localHook": "Positioning EHS auditors, factory compliance specialists, and industrial supply-chain advisors across South Bengaluru.",
+        "statBadge": "Verified Retainers · Corporate Trust",
+        "targetPrice": "₹45,000"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can you visit our factory or industrial facility in Jigani before starting?",
+        "answer": "Yes. We are based in Bengaluru and regularly visit industrial facilities, fabrication plants, and manufacturing units across Jigani Phase 1, Phase 2, and Bommasandra for on-site discovery, product photo review, and machinery workflow capture."
+      },
+      {
+        "question": "How do you build B2B industrial websites that actually generate OEM quote inquiries?",
+        "answer": "Traditional WordPress templates are bloated and fail to provide fast technical specifications. We hand-code clean React platforms featuring 1-tap WhatsApp RFQ quotation funnels, sub-second downloadable PDF spec sheets, and high-trust ISO certification credentials that convert corporate procurement managers."
+      },
+      {
+        "question": "What is your contractual 7-day launch guarantee for Jigani manufacturers?",
+        "answer": "If your industrial website is not live on your domain with 100/100 performance scores within 7 business days from kickoff, the entire build is 100% free of charge under our strict Late-Means-Free contract."
+      },
+      {
+        "question": "Do you provide Karnataka GST tax invoices for business accounting?",
+        "answer": "Yes. All contracts receive official corporate tax invoices with registered Karnataka GSTIN, providing full input tax credit (ITC) for your company."
+      }
+    ]
   }
 }
