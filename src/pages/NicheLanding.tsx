@@ -922,32 +922,32 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
       </section>
 
       {/* ── Transparent 3-Tier Investment Packages ────────────────── */}
-      <section className="py-20 sm:py-28 bg-paper-sunken border-b border-rule">
+      <section className="py-20 sm:py-28 bg-paper-sunken border-b border-rule" id="pricing-packages">
         <Shell>
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <p className="label text-signal mb-3">Transparent Commercial Investment</p>
+              <p className="label text-signal mb-3">Transparent Commercial Pricing · {NICHES[config.key]} Packages</p>
               <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight mb-4">
-                Fixed-scope pricing. Zero surprise invoices.
+                Website design cost &amp; packages for {NICHES[config.key].toLowerCase()} businesses.
               </h2>
               <p className="text-muted text-sm sm:text-base leading-relaxed">
-                We believe in 100% upfront pricing transparency. Choose the tier that matches your current growth stage. Every tier comes with our 7-day delivery guarantee, zero monthly retainers, and 100% source code ownership.
+                Whether researching <strong>website design cost for small business</strong> in the {NICHES[config.key].toLowerCase()} space, comparing <strong>professional website design packages</strong>, or budgeting for a <strong>website redesign cost</strong>, we offer 100% upfront pricing clarity. Every package includes our contractual 7-day delivery guarantee, zero monthly retainers, and 100% source code ownership.
               </p>
             </div>
           </Reveal>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {/* Tier 1: Starter Launchpad */}
             <Reveal delay={0.05}>
               <div className="p-8 sm:p-10 rounded-[28px] bg-paper border border-rule h-full flex flex-col justify-between hover:border-signal/50 transition-all shadow-xs">
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-mono text-xs uppercase tracking-wider text-muted font-semibold">Tier 01</span>
-                    <span className="font-mono text-xs px-2.5 py-1 rounded-full bg-paper-sunken border border-rule text-muted">7-Day Sprint</span>
+                    <span className="font-mono text-xs uppercase tracking-wider text-muted font-semibold">Tier 01 · Affordable Package</span>
+                    <span className="font-mono text-xs px-2.5 py-1 rounded-full bg-paper-sunken border border-rule text-muted">3-Day Sprint</span>
                   </div>
                   <h3 className="font-display text-2xl text-ink font-medium mb-2">Starter Launchpad</h3>
                   <p className="text-xs text-muted mb-6 leading-relaxed">
-                    Perfect for emerging {NICHES[config.key].toLowerCase()} practitioners seeking an immediate, credibility-establishing digital presence.
+                    Single-page high-converting digital presence for emerging {NICHES[config.key].toLowerCase()} practitioners seeking rapid credibility.
                   </p>
                   <div className="mb-6 pb-6 border-b border-rule">
                     <div className="flex items-baseline gap-2">
@@ -963,7 +963,7 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="text-signal font-bold">✓</span>
-                      <span>Sub-0.8s mobile LCP guarantee</span>
+                      <span>Sub-0.8s mobile LCP performance guarantee</span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="text-signal font-bold">✓</span>
@@ -997,12 +997,12 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
                 </div>
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-mono text-xs uppercase tracking-wider text-signal font-semibold">Tier 02</span>
-                    <span className="font-mono text-xs px-2.5 py-1 rounded-full bg-signal/10 border border-signal/20 text-signal font-semibold">7–10 Day Sprint</span>
+                    <span className="font-mono text-xs uppercase tracking-wider text-signal font-semibold">Tier 02 · Full Platform</span>
+                    <span className="font-mono text-xs px-2.5 py-1 rounded-full bg-signal/10 border border-signal/20 text-signal font-semibold">7-Day Sprint</span>
                   </div>
                   <h3 className="font-display text-2xl text-ink font-medium mb-2">Authority Growth Engine</h3>
                   <p className="text-xs text-muted mb-6 leading-relaxed">
-                    Our flagship end-to-end platform engineered for established {NICHES[config.key].toLowerCase()} practices that need to capture market dominance.
+                    Our flagship multi-page platform engineered for established {NICHES[config.key].toLowerCase()} practices that need to capture market dominance.
                   </p>
                   <div className="mb-6 pb-6 border-b border-rule">
                     <div className="flex items-baseline gap-2">
@@ -1022,15 +1022,19 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="text-signal font-bold">✓</span>
+                      <span>3 Distinct visual aesthetic options (Theme Switcher)</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
                       <span>Complete E-E-A-T Schema &amp; Google Rich Snippets</span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="text-signal font-bold">✓</span>
-                      <span>Verified Google Review badge integration</span>
+                      <span>Google Search Console &amp; Analytics setup</span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="text-signal font-bold">✓</span>
-                      <span>Google Search Console &amp; Analytics setup</span>
+                      <span>Contractual 7-day guarantee: On time or 100% free</span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="text-signal font-bold">✓</span>
@@ -1053,7 +1057,7 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
               <div className="p-8 sm:p-10 rounded-[28px] bg-paper border border-rule h-full flex flex-col justify-between hover:border-signal/50 transition-all shadow-xs">
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-mono text-xs uppercase tracking-wider text-muted font-semibold">Tier 03</span>
+                    <span className="font-mono text-xs uppercase tracking-wider text-muted font-semibold">Tier 03 · Enterprise</span>
                     <span className="font-mono text-xs px-2.5 py-1 rounded-full bg-paper-sunken border border-rule text-muted">14-Day Sprint</span>
                   </div>
                   <h3 className="font-display text-2xl text-ink font-medium mb-2">Bespoke Enterprise</h3>
@@ -1104,6 +1108,73 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
               </div>
             </Reveal>
           </div>
+
+          {/* ── Buying Decision Guide: Hourly Rate vs Fixed-Price Sprint ── */}
+          <Reveal>
+            <div className="max-w-4xl mx-auto bg-paper border border-rule rounded-[24px] p-6 sm:p-8 shadow-xs">
+              <div className="mb-6">
+                <span className="label text-signal font-semibold block mb-1">
+                  Buying Decision Economics · {NICHES[config.key]}
+                </span>
+                <h3 className="font-display text-xl sm:text-2xl text-ink font-normal">
+                  Website Designer Hourly Rate vs. Uncoded Hub 7-Day Sprint
+                </h3>
+                <p className="text-muted text-xs sm:text-sm mt-1 leading-relaxed">
+                  Why paying an hourly rate for {NICHES[config.key].toLowerCase()} website design causes unexpected budget overruns, and why our fixed-price quotation protects your bottom line.
+                </p>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-xs sm:text-sm border-collapse">
+                  <thead>
+                    <tr className="border-b border-rule bg-paper-sunken text-xs font-mono uppercase tracking-wider text-muted">
+                      <th className="p-3.5 font-semibold">Pricing Model</th>
+                      <th className="p-3.5 font-semibold">Cost Expectation</th>
+                      <th className="p-3.5 font-semibold">Timeline Risk</th>
+                      <th className="p-3.5 font-semibold">Incentive Structure</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-rule">
+                    <tr>
+                      <td className="p-3.5 font-semibold text-ink">Freelancer Hourly Rate</td>
+                      <td className="p-3.5 font-mono text-muted">₹1,500 – ₹4,000 / hr</td>
+                      <td className="p-3.5 text-muted">Unpredictable (No hard completion cap)</td>
+                      <td className="p-3.5 text-red-600 font-medium">Slower work equals higher fees</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3.5 font-semibold text-ink">Traditional Digital Agency</td>
+                      <td className="p-3.5 font-mono text-muted">₹1,50,000+ + ₹15k/mo retainers</td>
+                      <td className="p-3.5 text-muted">8 to 16 weeks of endless meetings</td>
+                      <td className="p-3.5 text-amber-600 font-medium">Over-engineered to justify retainers</td>
+                    </tr>
+                    <tr className="bg-signal/5">
+                      <td className="p-3.5 font-bold text-signal">⚡ Uncoded Hub 7-Day Sprint</td>
+                      <td className="p-3.5 font-mono font-bold text-signal">₹35,000 – ₹55,000 (Fixed Price)</td>
+                      <td className="p-3.5 font-bold text-signal">Contractual 7 Days (Late = 100% Free)</td>
+                      <td className="p-3.5 text-emerald-700 font-semibold">100% Aligned: Rapid delivery of working asset</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-rule flex flex-wrap items-center justify-between gap-4">
+                <span className="text-xs font-mono text-muted">
+                  Need a custom website development quotation for your {NICHES[config.key].toLowerCase()} practice?
+                </span>
+                <a
+                  href={`https://wa.me/918660819023?text=${encodeURIComponent(
+                    `Hi Deepak & Geetha, I am reviewing your ${NICHES[config.key]} website packages and would like a fixed written quotation.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-mono font-semibold text-signal hover:text-ink transition-colors flex items-center gap-1"
+                >
+                  <span>Request Instant Quotation on WhatsApp (+91 86608 19023)</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </Reveal>
         </Shell>
       </section>
 
@@ -1342,6 +1413,22 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
               {
                 q: `How does this website rank on Google and attract high-ticket ${NICHES[config.key]} clients?`,
                 a: `Every build incorporates our proprietary high-commercial-intent bottom-of-funnel search optimization architecture. We target non-branded, buyer-intent queries (such as "${NICHES[config.key].toLowerCase()} website design", "hire specialist for ${NICHES[config.key].toLowerCase()}", and local geography permutations). We inject full LocalBusiness, ProfessionalService, and Service schema markup in JSON-LD, ensure 100/100 Core Web Vitals, and architect the site to rank in both traditional Google Search and AI Overviews.`,
+              },
+              {
+                q: `What is the realistic website design cost for small business in the ${NICHES[config.key]} industry?`,
+                a: `For ${NICHES[config.key].toLowerCase()} practices, our affordable website design packages start at ₹35,000 for a focused single-page launchpad and ₹55,000 for our flagship 5-page Authority Growth Engine (which includes interactive conversion tools and 3 design styles). There are zero hidden fees, zero monthly retainers, and you own 100% of the code and domain forever.`,
+              },
+              {
+                q: `What does a website redesign cost, and how do you protect our existing Google rankings?`,
+                a: `A complete website redesign for an established ${NICHES[config.key].toLowerCase()} site typically costs between ₹45,000 and ₹75,000. We perform a rigorous pre-migration technical audit, preserving every single indexed URL with 301 server redirects, carrying over your metadata, and upgrading the architecture to sub-0.8s hand-coded React. Your search rankings and backlinks are 100% preserved.`,
+              },
+              {
+                q: `Why choose professional website design packages over paying a website designer hourly rate?`,
+                a: `Paying an hourly rate (typically ₹1,500 to ₹4,000/hr) creates misaligned incentives where slower work increases your bill, and endless revisions lead to budget creep. Our fixed-price packages give you complete commercial certainty: one fixed figure agreed in writing on Day 1, with a binding 7-day completion guarantee: if we are late by even one hour, your build is 100% free.`,
+              },
+              {
+                q: `How do I request an itemized website development quotation for my ${NICHES[config.key].toLowerCase()} practice?`,
+                a: `You can request an exact written quotation in a 20-minute discovery call with co-founders Deepak and Geetha, or by messaging our direct studio desk on WhatsApp at +91 86608 19023. We review your requirements, select your optimal package tier, and deliver a fixed-scope milestone agreement within 2 hours.`,
               },
             ].map((faq, idx) => {
               const isOpen = activeFaq === idx;
