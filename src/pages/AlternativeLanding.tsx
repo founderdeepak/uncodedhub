@@ -102,7 +102,7 @@ export default function AlternativeLanding({ onBook }: AlternativeLandingProps) 
           </Reveal>
         </Shell>
 
-        {/* Edward Sturm Intent Discovery Box (First 100 Words Core Verdict) */}
+        {/* High-Intent Discovery Box (First 100 Words Core Verdict) */}
         <Shell className="mt-4">
           <Reveal>
             <div className="p-6 sm:p-8 rounded-2xl bg-signal/5 border border-signal/20 relative overflow-hidden">

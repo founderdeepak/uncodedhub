@@ -401,7 +401,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 
   'home-services': {
     key: 'home-services',
-    projectId: 'home-renovation',
+    projectId: 'home-services',
     heroBadge: '⚡ 7-DAY BESPOKE PRODUCTION SPRINT · HOME SERVICES & CONTRACTORS',
     headline: 'Websites for Home Service Contractors That Turn Urgent Searches Into Booked Jobs.',
     subheadline:
@@ -1448,7 +1448,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'architects': {
   "key": "architects",
-  "projectId": "interior-design",
+  "projectId": "architects",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · ARCHITECTURAL STUDIOS",
   "headline": "Websites for Architects That Prove Your Structural Vision Before You Present.",
   "subheadline": "Bespoke, publication-grade digital portfolios engineered for architectural ateliers and urban planners. Full-screen 4K project monographs, 3D CAD/render-to-reality sliders, and sub-second image loading.",
@@ -1858,7 +1858,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'hotels-resorts': {
   "key": "hotels-resorts",
-  "projectId": "spa-wellness",
+  "projectId": "hotels-resorts",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · LUXURY HOSPITALITY",
   "headline": "Websites for Luxury Boutique Resorts That Win Direct Bookings and Slash OTA Fees.",
   "subheadline": "Bespoke, cinematic digital destinations engineered for boutique luxury resorts, heritage palaces, and private villas. Direct reservation engines, 360-degree virtual suite tours, and zero OTA commissions.",
@@ -1940,7 +1940,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'marketing-agencies': {
   "key": "marketing-agencies",
-  "projectId": "creative-portfolio",
+  "projectId": "marketing-agencies",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · AGENCY DIGITAL ASSETS",
   "headline": "Websites for Marketing Agencies That Prove Your ROI Before You Pitch.",
   "subheadline": "High-performance, editorial digital platforms engineered for digital marketing, performance media, and creative agencies. Verified ROAS case studies, interactive retainer calculators, and zero-lag animations.",
@@ -2022,7 +2022,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'recruitment-agencies': {
   "key": "recruitment-agencies",
-  "projectId": "business-portfolio",
+  "projectId": "recruitment-agencies",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · RECRUITMENT & STAFFING",
   "headline": "Websites for Recruitment Agencies That Attract Top Employers and Elite Candidates.",
   "subheadline": "Dual-track, ultra-responsive digital platforms engineered for executive search firms, IT staffing agencies, and global headhunters. Employer talent inquiry funnels, searchable live job boards, and 1-click resume apply.",
@@ -2104,7 +2104,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'ecommerce-brands': {
   "key": "ecommerce-brands",
-  "projectId": "creative-portfolio",
+  "projectId": "ecommerce-brands",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · D2C E-COMMERCE",
   "headline": "Storefronts for D2C Brands That Eliminate Cart Abandonment with Sub-Second Speed.",
   "subheadline": "Headless, ultra-fast e-commerce platforms engineered for direct-to-consumer lifestyle, wellness, and luxury goods brands. Instant mobile checkouts, zero app bloat, and sub-second product pages.",
@@ -2186,7 +2186,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'landscaping': {
   "key": "landscaping",
-  "projectId": "interior-design",
+  "projectId": "landscaping",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · LANDSCAPE & OUTDOOR",
   "headline": "Websites for Landscape Architects That Showcase Living Art and Win Estate Projects.",
   "subheadline": "Bespoke, visual-first digital portfolios hand-crafted for landscape architects, outdoor living designers, and garden contractors. Day-to-night lighting sliders, climate plant encyclopedias, and estate project intake.",
@@ -2268,7 +2268,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'event-planners': {
   "key": "event-planners",
-  "projectId": "wedding-photographers",
+  "projectId": "event-planners",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · EVENT PRODUCTION",
   "headline": "Websites for Luxury Event Planners That Sell Grandeur and Secure Mega-Budgets.",
   "subheadline": "Cinematic, high-conversion digital assets engineered for luxury wedding planners, corporate summit producers, and event scenographers. Full-screen highlight reels, venue capacity matrices, and live date checkers.",
@@ -2350,7 +2350,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'veterinary-clinics': {
   "key": "veterinary-clinics",
-  "projectId": "clinic-polyclinic",
+  "projectId": "veterinary-clinics",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · VETERINARY & ANIMAL CARE",
   "headline": "Websites for Veterinary Hospitals That Comfort Anxious Pet Parents and Book Consults.",
   "subheadline": "Compassionate, clinical digital platforms hand-crafted for veterinary hospitals, pet surgical clinics, and 24/7 animal care centers. Emergency triage hotlines, pet vaccination trackers, and online appointment booking.",
@@ -2432,7 +2432,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'automotive-garages': {
   "key": "automotive-garages",
-  "projectId": "business-portfolio",
+  "projectId": "automotive-garages",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · AUTOMOTIVE & DETAILING",
   "headline": "Websites for Luxury Automotive Studios That Sell High-Ticket PPF & Precision Repairs.",
   "subheadline": "Precision, high-octane digital platforms engineered for luxury car detailing studios, European car workshops, and performance tuners. Paint correction before/after sliders, PPF package calculators, and service booking.",
@@ -2514,7 +2514,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'cleaning-services': {
   "key": "cleaning-services",
-  "projectId": "home-services",
+  "projectId": "cleaning-services",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · FACILITY & CLEANING",
   "headline": "Websites for Deep Cleaning Companies That Close Residential & Commercial AMCs.",
   "subheadline": "Spotless, high-converting digital platforms engineered for professional deep cleaning companies and facility management providers. Instant square-foot pricing calculators, staff verification badges, and recurring booking.",
@@ -2596,7 +2596,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'manufacturing-oems': {
   "key": "manufacturing-oems",
-  "projectId": "business-portfolio",
+  "projectId": "manufacturing-oems",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · INDUSTRIAL MANUFACTURING",
   "headline": "Websites for Industrial Manufacturers That Win Global RFQs and Pass Vendor Audits.",
   "subheadline": "Engineered, high-performance digital flagships hand-crafted for precision manufacturing plants, machine shops, and industrial OEMs. Machine capacity tables, ISO/AS9100 certificate downloads, and secure CAD drawing RFQs.",
@@ -2678,7 +2678,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'financial-advisors': {
   "key": "financial-advisors",
-  "projectId": "business-portfolio",
+  "projectId": "financial-advisors",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · WEALTH & ADVISORY",
   "headline": "Websites for Wealth Managers That Inspire Fiduciary Trust and Grow High-Net-Worth AUM.",
   "subheadline": "Sober, prestigious digital platforms hand-crafted for Registered Investment Advisors (RIAs), wealth managers, and family office consultancies. Fiduciary disclosures, retirement runway calculators, and confidential HNI intake.",
@@ -2760,7 +2760,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'logistics-transport': {
   "key": "logistics-transport",
-  "projectId": "business-portfolio",
+  "projectId": "logistics-transport",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · SUPPLY CHAIN & FREIGHT",
   "headline": "Websites for Logistics Companies That Win Enterprise Shipping Contracts.",
   "subheadline": "Industrial, high-velocity digital platforms engineered for freight forwarders, third-party logistics (3PL) providers, and transport fleets. Real-time shipment tracking, freight quote calculators, and port network maps.",
@@ -2842,7 +2842,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'jewellery-stores': {
   "key": "jewellery-stores",
-  "projectId": "creative-portfolio",
+  "projectId": "jewellery-stores",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · FINE JEWELLERY",
   "headline": "Websites for Fine Jewellery Ateliers That Radiate Luxury and Book Bridal Consults.",
   "subheadline": "Bespoke, luminous digital flagships crafted for certified diamond jewellers, heritage gold boutiques, and bespoke bridal ateliers. Ultra-crisp 4K macro zoom, live gold rate tickers, and private salon appointments.",
@@ -2924,7 +2924,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'coworking-spaces': {
   "key": "coworking-spaces",
-  "projectId": "business-portfolio",
+  "projectId": "coworking-spaces",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · SHARED WORKSPACES",
   "headline": "Websites for Co-Working Spaces That Fill Desks and Book Meeting Rooms.",
   "subheadline": "Vibrant, high-conversion digital platforms engineered for co-working operators, serviced offices, and managed business hubs. 360-degree virtual cabin tours, real-time meeting room booking, and day pass checkout.",
@@ -3006,7 +3006,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'immigration-consultants': {
   "key": "immigration-consultants",
-  "projectId": "business-portfolio",
+  "projectId": "immigration-consultants",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · IMMIGRATION & VISAS",
   "headline": "Websites for Immigration Consultants That Prove Visa Success and Sign Retainers.",
   "subheadline": "Authoritative, high-trust digital platforms engineered for immigration consultants, visa attorneys, and study abroad advisors. Interactive CRS points calculators, verified passport visa logs, and consultation booking.",
@@ -3088,7 +3088,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'solar-companies': {
   "key": "solar-companies",
-  "projectId": "business-portfolio",
+  "projectId": "solar-companies",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · SOLAR & RENEWABLES",
   "headline": "Websites for Solar EPCs That Calculate Bill Savings and Close Rooftop Contracts.",
   "subheadline": "Engineering-grade, high-conversion digital assets engineered for commercial and residential solar EPC contractors. Interactive monthly electricity bill savings calculators, net-metering guides, and subsidy paperwork funnels.",
@@ -3170,7 +3170,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'bakeries-patisseries': {
   "key": "bakeries-patisseries",
-  "projectId": "business-portfolio",
+  "projectId": "bakeries-patisseries",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · BAKERIES & PATISSERIES",
   "headline": "Websites for Artisanal Patisseries That Sell Out Pre-Orders and Masterclasses.",
   "subheadline": "Delectable, visual-first digital storefronts crafted for artisanal sourdough bakeries, luxury wedding cake studios, and French patisseries. Daily pre-order menus, custom cake order forms, and masterclass registration.",
@@ -3252,7 +3252,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'breweries-bars': {
   "key": "breweries-bars",
-  "projectId": "business-portfolio",
+  "projectId": "breweries-bars",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · BREWERIES & NIGHTLIFE",
   "headline": "Websites for Craft Breweries & Taprooms That Pack Weekend Crowds and Promote Live Gigs.",
   "subheadline": "Atmospheric, high-energy digital platforms engineered for craft microbreweries, rooftop taprooms, and cocktail lounges. Live tap lists with IBU/ABV specs, weekend gig line-ups, and table reservation engines.",
@@ -3334,7 +3334,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'security-surveillance': {
   "key": "security-surveillance",
-  "projectId": "business-portfolio",
+  "projectId": "security-surveillance",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · SECURITY & SURVEILLANCE",
   "headline": "Websites for Security Companies That Win Commercial Manned Guarding & CCTV Contracts.",
   "subheadline": "Commanding, high-trust digital platforms engineered for manned guarding agencies, electronic access control installers, and commercial CCTV surveillance contractors. PSARA compliance badges and security audit intake.",
@@ -3416,7 +3416,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'hvac-contractors': {
   "key": "hvac-contractors",
-  "projectId": "home-services",
+  "projectId": "hvac-contractors",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · HVAC & COOLING",
   "headline": "Websites for HVAC Contractors That Close Commercial VRV Projects & Maintenance AMCs.",
   "subheadline": "Engineered, high-conversion digital platforms hand-crafted for commercial HVAC contractors, centralized VRV/VRF installers, and industrial chiller technicians. CFM airflow sizing calculators, equipment specs, and AMC booking.",
@@ -3498,7 +3498,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'pest-control': {
   "key": "pest-control",
-  "projectId": "home-services",
+  "projectId": "pest-control",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · PEST MANAGEMENT",
   "headline": "Websites for Pest Control Companies That Lock Annual Retainers & Urgent Dispatches.",
   "subheadline": "Clean, trust-focused digital platforms engineered for professional pest control operators and termite treatment specialists. Non-toxic chemical certifications, pre-construction reticulation diagrams, and online AMC booking.",
@@ -3580,7 +3580,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'packers-movers': {
   "key": "packers-movers",
-  "projectId": "home-services",
+  "projectId": "packers-movers",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · RELOCATION SERVICES",
   "headline": "Websites for Packers & Movers That Prove Reliability and Stop Fraud Suspicions.",
   "subheadline": "High-trust, conversion-engineered digital platforms hand-crafted for professional relocation companies and inter-state logistics fleets. Instant moving cost estimators, GPS fleet tracking proof, and transit insurance clarity.",
@@ -3662,7 +3662,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'caterers': {
   "key": "caterers",
-  "projectId": "business-portfolio",
+  "projectId": "caterers",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · GOURMET CATERING",
   "headline": "Websites for Gourmet Caterers That Showcase Live Stations and Book Grand Banquets.",
   "subheadline": "Delectable, high-conversion digital platforms engineered for luxury wedding caterers, corporate culinary teams, and banquet event specialists. Interactive menu curators, live station video reels, and per-plate cost estimators.",
@@ -3744,7 +3744,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'daycares-preschools': {
   "key": "daycares-preschools",
-  "projectId": "educational-academy",
+  "projectId": "daycares-preschools",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · EARLY CHILDHOOD",
   "headline": "Websites for Montessori Preschools That Comfort Parents and Fill Admissions.",
   "subheadline": "Nurturing, high-trust digital campuses hand-crafted for Montessori preschools, early learning academies, and corporate daycares. Live CCTV access assurances, curriculum philosophies, and campus tour scheduling.",
@@ -3826,7 +3826,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'driving-schools': {
   "key": "driving-schools",
-  "projectId": "educational-academy",
+  "projectId": "driving-schools",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · DRIVING ACADEMIES",
   "headline": "Websites for Motor Driving Schools That Fill Batches and Streamline Licensing.",
   "subheadline": "Clear, confidence-inspiring digital platforms engineered for motor driving schools and commercial driving academies. Dual-control vehicle fleet showcases, RTO licensing paperwork guides, and online slot booking.",
@@ -3908,7 +3908,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'optometry-eyewear': {
   "key": "optometry-eyewear",
-  "projectId": "clinic-polyclinic",
+  "projectId": "optometry-eyewear",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · OPTOMETRY & EYEWEAR",
   "headline": "Websites for Optometrists & Eyewear Boutiques That Book Eye Tests & Sell Frames.",
   "subheadline": "Visionary, high-precision digital storefronts crafted for independent optometry clinics and luxury designer eyewear boutiques. Digital prescription booking, frame shape visualizer guides, and luxury brand showcases.",

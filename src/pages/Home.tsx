@@ -341,7 +341,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                     className="group inline-flex items-center gap-2 text-xs sm:text-sm font-mono text-ink-soft hover:text-signal transition-colors py-1.5 px-3.5 rounded-full hover:bg-paper-raised border border-rule/60 hover:border-signal/40 shadow-2xs"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
-                    <span>Prefer to see live builds first? Inspect all 17 live demos (51 themes)</span>
+                    <span>Prefer to see live builds first? Inspect all 50 live demos</span>
                     <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-signal" aria-hidden="true">↗</span>
                   </Link>
                 </div>
@@ -573,7 +573,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                   to="/portfolio/"
                   className="text-on-ink-muted hover:text-paper text-xs md:text-sm font-medium px-4 py-2 transition-colors"
                 >
-                  Inspect all 17 live demos (51 themes) first
+                  Inspect all 50 live industry demos first
                 </Link>
               </div>
             </div>
@@ -798,7 +798,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
               <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                 <span className="label text-signal font-semibold text-[10px] py-0.5 px-2">
-                  17 Builds · 51 Themes
+                  50 Builds · Live Demos
                 </span>
                 <h2 className="font-display text-xl sm:text-2xl text-ink font-normal tracking-tight">
                   Test the builds live before you commit.
@@ -842,13 +842,13 @@ export default function Home({ onBook }: { onBook: () => void }) {
                   </button>
                 </div>
                 <span className="font-mono text-xs text-muted pl-0.5">
-                  <span className="text-signal font-semibold">{String(activeDemoIdx + 1).padStart(2, '0')}</span>/17
+                  <span className="text-signal font-semibold">{String(activeDemoIdx + 1).padStart(2, '0')}</span>/{DEMO_SPECIMENS.length}
                 </span>
                 <Link
                   to="/portfolio/"
                   className="hidden md:inline-flex items-center gap-1 text-[11px] font-mono text-muted hover:text-signal transition-colors pl-2"
                 >
-                  <span>All 17 Demos (51 Themes)</span>
+                  <span>All 50 Demos</span>
                   <span>→</span>
                 </Link>
               </div>
@@ -1238,7 +1238,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                       to="/portfolio/"
                       className="text-xs text-muted hover:text-signal font-medium transition-colors px-2 py-1"
                     >
-                      Explore All 17 in Portfolio →
+                      Explore All 50 in Portfolio →
                     </Link>
                   </div>
                 </div>
@@ -1246,12 +1246,12 @@ export default function Home({ onBook }: { onBook: () => void }) {
             })()}
           </Reveal>
 
-          {/* ── 4. COMPACT 6:6:5 FLEET MATRIX (WITH THUMBNAIL MINI-PREVIEW) ── */}
+          {/* ── 4. COMPACT FLEET MATRIX (WITH THUMBNAIL MINI-PREVIEW) ── */}
           <Reveal delay={60}>
             <div>
               <div className="flex items-center justify-between mb-1.5">
                 <span className="text-[9px] font-mono uppercase tracking-wider text-signal font-semibold">
-                  Fleet Matrix (17 Builds · 6:6:5 Grid)
+                  Fleet Matrix ({DEMO_SPECIMENS.length} Builds)
                 </span>
                 <span className="text-[9px] font-mono text-muted">
                   Click any sector to switch dual displays above instantly
@@ -1356,7 +1356,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
               <div>
                 <span className="label text-signal font-semibold mb-2.5 block">
-                  17 SPECIALIZED INDUSTRY SILOS
+                  50 SPECIALIZED INDUSTRY SILOS
                 </span>
                 <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
                   Web design engineered for your exact business.
@@ -1371,7 +1371,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
                 to="/web-design/"
                 className="btn-primary !py-3 !px-7 text-xs rounded-full inline-flex items-center gap-2 self-start md:self-auto shrink-0 shadow-xs"
               >
-                <span>Explore All 17 Industries</span>
+                <span>Explore All 50 Industries</span>
                 <span>→</span>
               </Link>
             </div>
@@ -1440,7 +1440,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
               to="/web-design/"
               className="font-mono text-xs text-signal hover:text-ink transition-colors whitespace-nowrap"
             >
-              View Directory of All 17 →
+              View Directory of All 50 →
             </Link>
           </div>
 
@@ -1453,7 +1453,7 @@ export default function Home({ onBook }: { onBook: () => void }) {
               <div>
                 <div className="flex items-center gap-2">
                   <span className="font-display text-base text-ink font-medium">
-                    Web Design in Bangalore · 25 Localities
+                    Web Design in Bangalore · 100 Localities
                   </span>
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-signal-wash text-signal border border-signal/20">
                     Local Sprints

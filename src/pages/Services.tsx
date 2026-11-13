@@ -255,12 +255,12 @@ const INTENT_PATHWAYS = [
   },
   {
     id: 'industry-niches',
-    badge: '17 Vertical Niches',
+    badge: '50 Vertical Niches',
     icon: '🏛️',
     title: 'Specialized Industry Solutions',
     subtitle: 'Architects, dentists, doctors, coaches, luxury studios. Pre-built with custom tools.',
     externalLink: '/web-design/',
-    actionLabel: 'Browse 17 Niches →',
+    actionLabel: 'Browse 50 Niches →',
   },
 ];
 
@@ -701,10 +701,10 @@ export default function Services({ onBook }: { onBook: () => void }) {
                 <div>
                   <span className="card-tag mb-2">INDUSTRY PLATFORMS</span>
                   <h3 className="font-display text-2xl text-ink font-medium">
-                    17 Specialized Industry Sprints
+                    50 Specialized Industry Sprints
                   </h3>
                   <p className="text-muted text-xs sm:text-sm mt-2 leading-relaxed">
-                    A dental clinic needs 2-tap triage. An architect needs 3D render-to-reality comparisons. Explore our 17 dedicated industry website platforms.
+                    A dental clinic needs 2-tap triage. An architect needs 3D render-to-reality comparisons. Explore our 50 dedicated industry website platforms.
                   </p>
                 </div>
                 <div className="mt-6">
@@ -712,7 +712,7 @@ export default function Services({ onBook }: { onBook: () => void }) {
                     to="/web-design/"
                     className="btn-primary !py-2.5 !px-5 text-xs rounded-full inline-flex items-center gap-1.5 shadow-xs"
                   >
-                    <span>Explore 17 Industry Silos</span>
+                    <span>Explore 50 Industry Silos</span>
                     <span>→</span>
                   </Link>
                 </div>
@@ -725,7 +725,7 @@ export default function Services({ onBook }: { onBook: () => void }) {
                     Web Design in Bangalore
                   </h3>
                   <p className="text-muted text-xs sm:text-sm mt-2 leading-relaxed">
-                    Local commercial sprints across 25 Bangalore localities including Indiranagar, Koramangala, Whitefield, HSR Layout, and Jayanagar.
+                    Local commercial sprints across 100 Bangalore localities including Indiranagar, Koramangala, Whitefield, HSR Layout, and Jayanagar.
                   </p>
                 </div>
                 <div className="mt-6">
@@ -733,7 +733,7 @@ export default function Services({ onBook }: { onBook: () => void }) {
                     to="/web-design/bangalore/"
                     className="border border-rule-strong hover:border-signal text-ink hover:text-signal font-mono text-xs py-2.5 px-5 rounded-full transition-colors bg-paper inline-flex items-center gap-1.5"
                   >
-                    <span>Explore 25 Bangalore Hubs</span>
+                    <span>Explore 100 Bangalore Hubs</span>
                     <span>→</span>
                   </Link>
                 </div>
@@ -795,7 +795,7 @@ export default function Services({ onBook }: { onBook: () => void }) {
                     to="/portfolio/"
                     className="w-full block text-center text-xs text-on-ink-muted hover:text-paper py-2 transition-colors"
                   >
-                    Or test our 17 live demos first
+                    Or test our 50 live demos first
                   </Link>
                 </div>
               </div>

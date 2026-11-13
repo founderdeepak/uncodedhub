@@ -9,7 +9,7 @@ interface BangaloreHubProps {
 }
 
 const ZONES = [
-  { id: 'all', label: 'All 25 Localities' },
+  { id: 'all', label: 'All 100 Localities' },
   { id: 'East Bengaluru', label: 'East (Indiranagar, Whitefield, ORR)' },
   { id: 'South Bengaluru', label: 'South (Koramangala, HSR, Jayanagar)' },
   { id: 'Central Bengaluru', label: 'Central (MG Road, CBD, Lavelle Rd)' },
@@ -189,7 +189,7 @@ export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
                 href="#localities"
                 className="border border-rule-strong hover:border-ink text-ink font-mono text-xs py-4 px-6 rounded-full transition-colors bg-paper-raised"
               >
-                Explore 25 Bangalore Localities ↓
+                Explore 100 Bangalore Localities ↓
               </a>
             </div>
 
@@ -284,7 +284,7 @@ export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
         </Shell>
       </section>
 
-      {/* ── 25 Localities Directory ── */}
+      {/* ── 100 Localities Directory ── */}
       <section id="localities" className="py-20 bg-paper">
         <Shell>
           <Reveal>
@@ -423,7 +423,7 @@ export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
                 to="/web-design/"
                 className="btn-primary !py-3 !px-6 text-xs rounded-full whitespace-nowrap inline-flex items-center gap-2 shrink-0 shadow-xs"
               >
-                <span>Explore All 17 Industries</span>
+                <span>Explore All 50 Industries</span>
                 <span>→</span>
               </Link>
             </div>
@@ -462,7 +462,7 @@ export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
                   to="/portfolio/"
                   className="border border-white/20 hover:border-signal text-paper font-mono text-xs py-4 px-6 rounded-full transition-colors"
                 >
-                  View 17 Industry Live Demos →
+                  View 50 Industry Live Demos →
                 </Link>
               </div>
 

@@ -117,7 +117,7 @@ export default function GlobalCountryLanding({ onBook, countryCode }: GlobalCoun
           </Reveal>
         </Shell>
 
-        {/* Edward Sturm Intent Discovery Box (First 100 Words) */}
+        {/* High-Intent Discovery Box (First 100 Words) */}
         <Shell className="mt-4">
           <Reveal>
             <div className="p-6 sm:p-8 rounded-2xl bg-signal/5 border border-signal/20 relative overflow-hidden">

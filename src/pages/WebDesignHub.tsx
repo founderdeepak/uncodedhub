@@ -16,7 +16,7 @@ interface WebDesignHubProps {
 }
 
 const CATEGORIES = [
-  { id: 'all', label: 'All 17 Industries' },
+  { id: 'all', label: 'All 50 Industries' },
   { id: 'design-realestate', label: 'Architecture & Real Estate' },
   { id: 'healthcare', label: 'Healthcare & Clinics' },
   { id: 'lifestyle-wellness', label: 'Wellness & Fitness' },
@@ -173,10 +173,10 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-signal/10 hover:bg-signal/20 text-signal font-mono text-[11px] transition-colors"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" />
-                <span>📍 Bangalore Local Studio &amp; 25 Localities →</span>
+                <span>📍 Bangalore Local Studio &amp; 100 Localities →</span>
               </Link>
               <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper border border-rule text-muted font-mono text-[11px]">
-                <span>17 Industry Silos · 7-Day Guarantee</span>
+                <span>50 Industry Silos · 7-Day Guarantee</span>
               </div>
             </div>
           </div>
@@ -265,7 +265,7 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
         <Shell>
           <div className="flex items-center justify-between mb-10 pb-4 border-b border-rule">
             <h2 className="font-display text-2xl sm:text-3xl text-ink font-normal tracking-tight">
-              17 Specialized High-Ticket Industry Platforms
+              50 Specialized High-Ticket Industry Platforms
             </h2>
             <span className="font-mono text-xs text-signal hidden sm:inline">Deepak &amp; Geetha Personal Delivery</span>
           </div>
@@ -345,7 +345,7 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
         </Shell>
       </section>
 
-      {/* ── Bengaluru City & 25 Localities Showcase ───────────────── */}
+      {/* ── Bengaluru City & 100 Localities Showcase ───────────────── */}
       <section className="py-20 sm:py-28 bg-paper-sunken border-t border-rule">
         <Shell>
           <Reveal>
@@ -353,7 +353,7 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
               <div className="max-w-2xl">
                 <span className="card-tag mb-3">HYPERLOCAL BENGALURU WEB ENGINEERING</span>
                 <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
-                  Web design across 25 Bangalore localities.
+                  Web design across 100 Bangalore localities.
                 </h2>
                 <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
                   Headquartered in Bengaluru, senior founders Deepak &amp; Geetha build bespoke, sub-second React platforms for local clinics, interior design studios, real estate brokerages, and tech firms across every major commercial corridor in the city.

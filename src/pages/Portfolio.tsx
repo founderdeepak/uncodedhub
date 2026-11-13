@@ -9,7 +9,7 @@ import { LogoMark } from '../components/Logo';
    World-Class Client Acquisition Experience:
    - High-contrast editorial hero
    - 8:2 Specimen Index Grid (Command Deck Quick Jump)
-   - 17 Live Specimen Builds with Continuous 3-Second 3-Theme Changeover
+   - 50 Live Specimen Builds with Continuous 3-Second 3-Theme Changeover
    - Segmented visual progress bars for each theme
    - In-Page Interactive Viewport Modal (Desktop / Tablet / Mobile)
    - The 4 Specimen Standards (Lighthouse speed, copy, semantic markup)
@@ -20,7 +20,7 @@ export type { Project, ThemeItem };
 
 
 const CATEGORIES = [
-  { id: 'all', label: 'All Specimen Demos (17)' },
+  { id: 'all', label: 'All Specimen Demos (50)' },
   { id: 'clinics', label: 'Clinics & Polyclinics' },
   { id: 'healthcare', label: 'Surgeons & Diagnostics' },
   { id: 'wellness', label: 'Spa & Yoga Studios' },
@@ -465,28 +465,28 @@ export default function Work({ onBook }: { onBook: () => void }) {
   return (
     <>
       <Helmet>
-        <title>Website Portfolio &amp; 17 Live Interactive Demos — Uncoded Hub</title>
+        <title>Website Portfolio &amp; 50 Live Interactive Demos — Uncoded Hub</title>
         <meta
           name="description"
-          content="Explore 17 live interactive website specimens handcrafted by Uncoded Hub for interior designers, clinics, real estate, and consultants. Sub-second speed."
+          content="Explore 50 live interactive website specimens handcrafted by Uncoded Hub for interior designers, clinics, real estate, and consultants. Sub-second speed."
         />
         <link rel="canonical" href="https://uncodedhub.com/portfolio/" />
         <meta property="og:title" content="Work &amp; Interactive Specimen Builds — Uncoded Hub" />
         <meta
           property="og:description"
-          content="Explore seventeen live, interactive specimen websites handcrafted by Uncoded Hub across high-ticket niches."
+          content="Explore fifty live, interactive specimen websites handcrafted by Uncoded Hub across high-ticket niches."
         />
         <meta property="og:url" content="https://uncodedhub.com/portfolio/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://uncodedhub.com/og/portfolio.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="17 Live Interactive Specimen Websites — Uncoded Hub Portfolio" />
+        <meta property="og:image:alt" content="50 Live Interactive Specimen Websites — Uncoded Hub Portfolio" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Work &amp; Interactive Specimen Builds — Uncoded Hub" />
         <meta
           name="twitter:description"
-          content="Explore seventeen live, interactive specimen websites handcrafted by Uncoded Hub across high-ticket niches."
+          content="Explore fifty live, interactive specimen websites handcrafted by Uncoded Hub across high-ticket niches."
         />
         <meta name="twitter:image" content="https://uncodedhub.com/og/portfolio.jpg" />
       </Helmet>
@@ -497,7 +497,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
           <Reveal>
             <div className="flex items-center gap-2.5 mb-3 flex-wrap">
               <span className="label text-signal font-semibold">
-                17 Live Specimen Builds · 51 Theme Variations
+                50 Live Specimen Builds · Bespoke Aesthetics
               </span>
               <span className="text-muted text-xs">·</span>
               <span className="text-xs font-mono text-muted bg-paper-raised px-2.5 py-0.5 rounded-full border border-rule">
@@ -511,7 +511,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
           </Reveal>
           <Reveal delay={100}>
             <p className="text-lead text-muted mt-5 max-w-3xl leading-relaxed">
-              We engineer zero-bloat, bespoke web systems in seven working days. Below are seventeen
+              We engineer zero-bloat, bespoke web systems in seven working days. Below are fifty
               fully interactive production specimens across high-ticket service industries. Each
               specimen features an automatic <strong>3-second continuous theme changeover</strong> (warm
               heritage, dark luxury, and minimalist grid), sub-0.8s Lighthouse performance, and
@@ -532,10 +532,10 @@ export default function Work({ onBook }: { onBook: () => void }) {
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-signal animate-ping" />
                     <h2 className="font-mono text-xs font-bold text-ink uppercase tracking-wider">
-                      The 6:3 Specimen Index Matrix
+                      The Specimen Index Matrix
                     </h2>
                     <span className="text-[11px] font-mono text-signal bg-signal/10 px-2 py-0.5 rounded-full">
-                      18 Visual Slots (17 Live Builds + Custom)
+                      50 Visual Slots (50 Live Builds + Custom)
                     </span>
                   </div>
                   <p className="text-xs text-muted mt-1">

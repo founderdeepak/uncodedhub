@@ -454,7 +454,7 @@ export default function TeamOutreach() {
           </div>
         </div>
 
-        {/* 17 Niche Selection Command Bar */}
+        {/* Outreach Niche Selection Command Bar */}
         <div className="mb-8 p-5 sm:p-6 rounded-2xl bg-[#121622] border border-white/10 shadow-xl">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-white/5">
             <div>
@@ -462,7 +462,7 @@ export default function TeamOutreach() {
                 <span>🎯</span>
                 <span>Select Target Industry</span>
                 <span className="px-2 py-0.5 rounded-full bg-signal/15 text-signal font-mono text-xs font-semibold">
-                  17 Niches Available (3,400 Leads)
+                  {NICHES.length} Outreach Campaigns ({ (NICHES.length * 200).toLocaleString() } Verified Leads)
                 </span>
               </h2>
               <p className="text-xs font-mono text-muted mt-0.5">
@@ -492,7 +492,7 @@ export default function TeamOutreach() {
             </div>
           </div>
 
-          {/* All 17 Niches Fully Visible Matrix Grid */}
+          {/* Outreach Campaign Matrix Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
             {NICHES.map((niche, idx) => {
               const isActive = niche.id === activeNicheId;

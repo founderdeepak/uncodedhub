@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom Montessori Academy | Early Childhood Development & Safe Daycare Haven</title>
+  <meta name="description" content="Certified AMI Montessori curriculum, CCTV parent live stream, pediatric nutritionist meals, and sensory motor play yards.">
+  <link rel="canonical" href="https://uncodedhub.com/demos/daycares-preschools.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #059669;
+      --accent: #34D399;
+      --bg-dark: #06140D;
+      --bg-card: #0C2619;
+      --text-main: #F4EFEA;
+      --text-muted: #9E958C;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(255, 255, 255, 0.15);
+      --font-display: 'Cinzel', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-mono: 'Space Grotesk', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Top Studio Bar */
+    .studio-bar {
+      background: #000;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-muted);
+    }
+    .studio-bar a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .studio-bar a:hover { text-decoration: underline; }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; }
+    .brand-wrap { display: flex; flex-direction: column; }
+    .logo {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #fff;
+      text-decoration: none;
+    }
+    .brand-sub { font-size: 10px; font-family: var(--font-mono); color: var(--accent); letter-spacing: 1px; text-transform: uppercase; }
+    nav { display: flex; gap: 24px; align-items: center; }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary { background: var(--accent); color: #000; font-weight: 700; }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px;
+      position: relative;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      max-width: 900px;
+      color: #fff;
+    }
+    .hero p {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
+
+    /* Metrics Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      padding: 30px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 60px;
+    }
+    .metric-card { text-align: left; }
+    .metric-num {
+      font-family: var(--font-mono);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .metric-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* Interactive Widget Section */
+    .widget-section {
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
+    }
+    .widget-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-accent);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    .widget-header { margin-bottom: 28px; }
+    .widget-tag { font-family: var(--font-mono); font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .widget-title { font-family: var(--font-display); font-size: 26px; color: #fff; margin-bottom: 8px; }
+    .widget-desc { font-size: 14px; color: var(--text-muted); }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: #fff;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-control {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .form-control:focus { border-color: var(--accent); }
+
+    .calc-result-box {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .res-label { font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); text-transform: uppercase; }
+    .res-val { font-size: 28px; font-family: var(--font-mono); font-weight: 700; color: var(--accent); }
+
+    /* Features Grid */
+    .features-section { padding: 60px 0 80px; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .feature-card:hover { transform: translateY(-2px); border-color: var(--border-accent); }
+    .feature-card h3 { font-family: var(--font-display); font-size: 18px; color: #fff; margin-bottom: 10px; }
+    .feature-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      background: #000;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- Studio Top Banner -->
+  <div class="studio-bar">
+    <div>
+      <span>⚡ Interactive Production Specimen</span>
+      <span style="opacity: 0.5; margin: 0 8px;">·</span>
+      <span>Engineered by Uncoded Hub ↗</span>
+    </div>
+    <div>
+      <a href="https://uncodedhub.com/" target="_blank">View 7-Day Sprint Details →</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <div class="brand-wrap">
+        <a href="#" class="logo">Bloom Montessori</a>
+        <span class="brand-sub">Early Childhood Academy</span>
+      </div>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#interactive-tool">Interactive Estimator</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="https://wa.me/918660819023?text=Hi%20Uncoded%20Hub,%20I%20am%20exploring%20the%20Bloom%20Montessori%20specimen%20and%20want%20to%20build%20a%20similar%20high-converting%20website." target="_blank" class="btn btn-primary">Book Consultation →</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="overview">
+    <div class="container">
+      <div class="hero-badge">
+        <span>⚡ 7-DAY DEPLOYMENT SPRINT</span>
+        <span>·</span>
+        <span>0.4s LCP CACHED SPEED</span>
+      </div>
+      <h1>Where Curiosity Thrives in a Safe, Loving Environment.</h1>
+      <p>Certified AMI Montessori curriculum, CCTV parent live stream, pediatric nutritionist meals, and sensory motor play yards.</p>
+      
+      <div class="hero-actions">
+        <a href="#interactive-tool" class="btn btn-primary">Launch Interactive Estimator ↓</a>
+        <a href="https://wa.me/918660819023?text=Hi%20Uncoded%20Hub,%20I%20am%20inquiring%20about%20a%20website%20for%20my%20business%20in%20the%20Early%20Childhood%20Academy%20space." target="_blank" class="btn" style="background: rgba(255,255,255,0.06); color: #fff; border: 1px solid var(--border);">
+          WhatsApp Studio Team ↗
+        </a>
+      </div>
+
+      <!-- Metrics -->
+      <div class="metrics-grid">
+        
+        <div class="metric-card">
+          <div class="metric-num">1:5</div>
+          <div class="metric-label">Low Adult-to-Child Ratio</div>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-num">100%</div>
+          <div class="metric-label">CCTV Live App Stream for Parents</div>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-num">AMI</div>
+          <div class="metric-label">Certified Montessori Teachers</div>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-num">Organic</div>
+          <div class="metric-label">Fresh In-House Pediatric Kitchen</div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Estimator Widget -->
+  <section class="widget-section" id="interactive-tool">
+    <div class="container">
+      <div class="widget-box">
+        <div class="widget-header">
+          <div class="widget-tag">High-Intent Client Intake Engine</div>
+          <h2 class="widget-title">Child Age Group Program Matcher & Campus Tour Scheduler</h2>
+          <p class="widget-desc">Choose your child’s age and daycare schedule (half-day or full-day) to view curriculum highlights and book a visit.</p>
+        </div>
+
+        <form id="calcForm" onsubmit="handleInquiry(event)">
+          <div class="calc-grid">
+            <div class="form-group">
+              <label for="scopeParam">Project Scope / Typology</label>
+              <select id="scopeParam" class="form-control" onchange="calculateValue()">
+                <option value="standard">Standard Commercial / Residential Package</option>
+                <option value="premium" selected>Bespoke Multi-Tier Flagship Project</option>
+                <option value="enterprise">Full Turnkey Enterprise Retainer</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="scaleParam">Scale / Area / Team Size</label>
+              <select id="scaleParam" class="form-control" onchange="calculateValue()">
+                <option value="compact">Compact / Boutique Tier (1 - 3 Units / Sprints)</option>
+                <option value="medium" selected>Standard Scale (4 - 8 Units / Sprints)</option>
+                <option value="large">High-Volume Scale (9+ Units / Master Execution)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="timelineParam">Deployment Horizon</label>
+              <select id="timelineParam" class="form-control" onchange="calculateValue()">
+                <option value="urgent">Immediate (7-Day Fast Track)</option>
+                <option value="standard" selected>Scheduled (14 - 21 Days)</option>
+                <option value="quarterly">Quarterly Planning Cycle</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calc-result-box">
+            <div>
+              <div class="res-label">Estimated Engagement Value & SLA</div>
+              <div class="res-val" id="resAmount">₹1,25,000 – ₹2,40,000</div>
+              <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Includes 100% full intellectual property & code ownership transfer.</div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="padding: 14px 28px;">
+              Request Formal Scope on WhatsApp →
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities -->
+  <section class="features-section" id="capabilities">
+    <div class="container">
+      <div style="text-align: center; max-width: 650px; margin: 0 auto;">
+        <div class="widget-tag">Architectural Standards</div>
+        <h2 style="font-family: var(--font-display); font-size: 32px; color: #fff; margin-bottom: 12px;">Engineered for Conversion</h2>
+        <p style="font-size: 15px; color: var(--text-muted);">Zero bloated WordPress plugins. Hand-crafted responsive code with sub-second performance.</p>
+      </div>
+
+      <div class="features-grid">
+        
+        <div class="feature-card">
+          <h3>Self-Directed Montessori Hands-On Learning</h3>
+          <p>Wooden sensory apparatus and practical life exercises fostering natural independence and cognitive joy.</p>
+        </div>
+        
+        <div class="feature-card">
+          <h3>Child-Safe Padded Outdoor Play Sanctuaries</h3>
+          <p>Shock-absorbing turf, sand exploration pits, and gentle climbing structures developing gross motor skills.</p>
+        </div>
+        
+        <div class="feature-card">
+          <h3>Complete Emotional Safety & Warmth</h3>
+          <p>Nurturing educators trained in positive discipline, gentle toilet-training transitions, and speech development.</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p style="margin-bottom: 8px;">
+        Bloom Montessori · Interactive Industry Specimen · Built by <a href="https://uncodedhub.com/" target="_blank">Uncoded Hub</a>
+      </p>
+      <p style="color: #665; font-size: 11px;">
+        100% Handcrafted Web Systems. Sub-second performance. Bangalore & Global Delivery.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function calculateValue() {
+      const scope = document.getElementById('scopeParam').value;
+      const scale = document.getElementById('scaleParam').value;
+      let min = 75000;
+      let max = 150000;
+
+      if (scope === 'premium') { min += 50000; max += 90000; }
+      else if (scope === 'enterprise') { min += 120000; max += 220000; }
+
+      if (scale === 'medium') { min = Math.round(min * 1.3); max = Math.round(max * 1.3); }
+      else if (scale === 'large') { min = Math.round(min * 1.8); max = Math.round(max * 1.8); }
+
+      document.getElementById('resAmount').innerText = '₹' + min.toLocaleString('en-IN') + ' – ₹' + max.toLocaleString('en-IN');
+    }
+
+    function handleInquiry(e) {
+      e.preventDefault();
+      const scope = document.getElementById('scopeParam').selectedOptions[0].text;
+      const scale = document.getElementById('scaleParam').selectedOptions[0].text;
+      const timeline = document.getElementById('timelineParam').selectedOptions[0].text;
+      const est = document.getElementById('resAmount').innerText;
+
+      const msg = "Hi Uncoded Hub,%0A" +
+        "I am exploring the Bloom%20Montessori specimen demo.%0A" +
+        "• Scope: " + encodeURIComponent(scope) + "%0A" +
+        "• Scale: " + encodeURIComponent(scale) + "%0A" +
+        "• Timeline: " + encodeURIComponent(timeline) + "%0A" +
+        "• Estimated Range: " + encodeURIComponent(est) + "%0A" +
+        "I would like to discuss building a website with this architecture for my business.";
+
+      window.open('https://wa.me/' + '918660819023' + '?text=' + msg, '_blank');
+    }
+  </script>
+</body>
+</html>

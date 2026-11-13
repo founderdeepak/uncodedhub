@@ -755,7 +755,7 @@ export default function BangaloreLocalityLanding({ onBook: _onBook }: BangaloreL
                 to="/web-design/bangalore/"
                 className="font-mono text-xs text-signal hover:underline inline-flex items-center gap-1"
               >
-                <span>View all 25 Bangalore hubs</span>
+                <span>View all 100 Bangalore hubs</span>
                 <span>→</span>
               </Link>
             </div>
@@ -847,7 +847,7 @@ export default function BangaloreLocalityLanding({ onBook: _onBook }: BangaloreL
                   to="/web-design/bangalore/"
                   className="border border-white/20 hover:border-signal text-paper font-mono text-xs py-4 px-6 rounded-full transition-colors"
                 >
-                  Browse all 25 Bangalore Hubs →
+                  Browse all 100 Bangalore Hubs →
                 </Link>
               </div>
 

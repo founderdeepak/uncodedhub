@@ -309,11 +309,11 @@ const FAQ_ITEMS: FaqItem[] = [
     ],
   },
 
-  /* Category 7: 17 Niche Architectures (11 specialized industry systems) */
+  /* Category 7: 50 Niche Architectures (specialized industry systems) */
   {
     id: 'niche-educational-academy',
     category: 'sectors',
-    categoryLabel: '17 NICHES · ACADEMIES & COACHING',
+    categoryLabel: '50 NICHES · ACADEMIES & COACHING',
     question: 'How does Uncoded Hub build conversion engines for Educational Academies and Coaching Institutes?',
     answer: [
       'We replace slow, generic PDF course brochures with interactive curriculum explorers, upcoming batch schedules, and instant counseling lead capture funnels.',
@@ -323,7 +323,7 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'niche-gym-fitness-club',
     category: 'sectors',
-    categoryLabel: '17 NICHES · GYMS & FITNESS CLUBS',
+    categoryLabel: '50 NICHES · GYMS & FITNESS CLUBS',
     question: 'What conversion architecture is engineered for Commercial Gyms and Fitness Clubs?',
     answer: [
       'Instead of passive facility photo dumps, we engineer instant Day-Pass claim engines, floor-by-floor virtual equipment tours, live class schedules, and membership tier calculators.',
@@ -333,7 +333,7 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'niche-business-portfolio',
     category: 'sectors',
-    categoryLabel: '17 NICHES · ENTERPRISE B2B & ADVISORY',
+    categoryLabel: '50 NICHES · ENTERPRISE B2B & ADVISORY',
     question: 'How do you position Enterprise B2B and Corporate Advisory consultancies to win RFP shortlists?',
     answer: [
       'We build authoritative corporate flagships designed to win enterprise decision-maker confidence with structured engagement models, executive partner credentials, case impact ROI metrics, and NDA-protected intake flows.',
@@ -343,7 +343,7 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'niche-spa-wellness',
     category: 'sectors',
-    categoryLabel: '17 NICHES · SPAS & WELLNESS RETREATS',
+    categoryLabel: '50 NICHES · SPAS & WELLNESS RETREATS',
     question: 'How does the studio craft Luxury Spa and Wellness Retreat digital experiences?',
     answer: [
       'We build sensory, serene digital sanctuaries featuring treatment ritual guides, therapist certification spotlights, curated wellness packages, and integrated booking flows.',
@@ -353,7 +353,7 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'niche-salon-beauty',
     category: 'sectors',
-    categoryLabel: '17 NICHES · SALONS & BRIDAL BEAUTY',
+    categoryLabel: '50 NICHES · SALONS & BRIDAL BEAUTY',
     question: 'What high-converting features are included for Salons and Bridal Beauty studios?',
     answer: [
       'We construct editorial bridal package lookbooks, master stylist portfolio carousels, service-with-pricing menus, and peak-season bridal reservation engines.',
@@ -363,7 +363,7 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'niche-fitness-coach',
     category: 'sectors',
-    categoryLabel: '17 NICHES · PRIVATE FITNESS COACHES',
+    categoryLabel: '50 NICHES · PRIVATE FITNESS COACHES',
     question: 'How do you turn a Fitness Coach website into a high-ticket client acquisition engine?',
     answer: [
       'We replace generic trainer bios with verified client transformation case studies, 1-on-1 coaching application questionnaires, video testimonials, and structured program roadmaps.',
@@ -373,7 +373,7 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'niche-yoga-meditation',
     category: 'sectors',
-    categoryLabel: '17 NICHES · YOGA SHALAS & RETREATS',
+    categoryLabel: '50 NICHES · YOGA SHALAS & RETREATS',
     question: 'How is a Yoga Shala or Meditation Sanctuary website designed for community retention?',
     answer: [
       'We engineer tranquil, distraction-free digital spaces with real-time class timetables, teacher training (TTC) curriculum outlines, retreat booking flows, and drop-in pass reservations.',
@@ -383,7 +383,7 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'niche-creative-portfolio',
     category: 'sectors',
-    categoryLabel: '17 NICHES · CREATIVE STUDIOS & AGENCIES',
+    categoryLabel: '50 NICHES · CREATIVE STUDIOS & AGENCIES',
     question: 'What makes your Creative Design Studio and Agency websites stand out from typical portfolios?',
     answer: [
       'We build ultra-fast, motion-refined showcases featuring interactive case-study breakdowns, deliverable scope matrices, before/after slider comparisons, and frictionless project brief forms.',
@@ -393,7 +393,7 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'niche-healthcare-diagnostics',
     category: 'sectors',
-    categoryLabel: '17 NICHES · PATHOLOGY & DIAGNOSTIC LABS',
+    categoryLabel: '50 NICHES · PATHOLOGY & DIAGNOSTIC LABS',
     question: 'How do you build patient trust and appointment volume for Pathology and Diagnostic Labs?',
     answer: [
       'We build 1-click home sample collection booking funnels, pre-test preparation instructions, preventive health checkup packages, and instant WhatsApp report delivery access.',
@@ -403,7 +403,7 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'niche-clinic-polyclinic',
     category: 'sectors',
-    categoryLabel: '17 NICHES · POLYCLINICS & CLINICAL CENTERS',
+    categoryLabel: '50 NICHES · POLYCLINICS & CLINICAL CENTERS',
     question: 'What conversion architecture is implemented for Multi-Specialty Polyclinics?',
     answer: [
       'We design specialty-by-specialty department navigation, multi-doctor OPD schedule matrices, department triage selectors, and instant appointment booking with automated confirmations.',
@@ -413,7 +413,7 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'niche-doctor-specialist',
     category: 'sectors',
-    categoryLabel: '17 NICHES · SUPER-SPECIALIST DOCTORS',
+    categoryLabel: '50 NICHES · SUPER-SPECIALIST DOCTORS',
     question: 'How do you establish clinical authority for Super-Specialist Doctors and Surgeons?',
     answer: [
       'We build dignified, peer-reviewed medical portfolios featuring surgical case volumes, fellowship credentials, condition guides, patient recovery stories, and second-opinion tele-consultation funnels.',
@@ -424,7 +424,7 @@ const FAQ_ITEMS: FaqItem[] = [
 
 const CATEGORIES = [
   { key: 'all', label: 'All Questions', count: FAQ_ITEMS.length },
-  { key: 'sectors', label: '17 Niche Architectures', count: 11 },
+  { key: 'sectors', label: '50 Niche Architectures', count: 11 },
   { key: 'sprint', label: 'Sprint & Timeline', count: 5 },
   { key: 'pricing', label: 'Pricing & Guarantee', count: 5 },
   { key: 'design', label: 'Design & Aesthetics', count: 5 },
@@ -497,7 +497,7 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
         <meta property="og:title" content="Frequently Asked Questions — Uncoded Hub" />
         <meta
           property="og:description"
-          content="39 detailed answers on our 7-day sprint model, 17 niche architectures, 50% late delivery guarantee, tech stack, pricing, and code ownership."
+          content="39 detailed answers on our 7-day sprint model, 50 niche architectures, 50% late delivery guarantee, tech stack, pricing, and code ownership."
         />
         <meta property="og:url" content="https://uncodedhub.com/faq/" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

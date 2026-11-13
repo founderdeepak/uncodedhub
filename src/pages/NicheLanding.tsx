@@ -49,7 +49,7 @@ const SPRINT_STEPS = [
   },
 ];
 
-// Topic Segregation Clusters for All 17 Niches (Silo Architecture)
+// Topic Segregation Clusters for Specialized Industry Niches (Silo Architecture)
 const NICHE_TOPIC_CLUSTERS: Record<string, { topic1: string; topic2: string }> = {
   'interior-designers': {
     topic1: 'Design Economics, High-End Client Positioning & Fee Transparency',
@@ -642,7 +642,7 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
         </Shell>
       </section>
 
-      {/* ── 4 Website Architecture Typologies (Wes McDowell Framework) ─ */}
+      {/* ── 4 Website Architecture Typologies ────────────────────── */}
       <section className="py-20 sm:py-28 bg-paper border-b border-rule">
         <Shell>
           <Reveal>
@@ -1107,7 +1107,7 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
         </Shell>
       </section>
 
-      {/* ── Wes McDowell 3-Step Simple Buying Plan ──────────────────── */}
+      {/* ── 3-Step Simple Buying Plan ─────────────────────────────── */}
       <section className="py-20 sm:py-28 bg-paper border-b border-rule">
         <Shell>
           <Reveal>
@@ -1341,7 +1341,7 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
               },
               {
                 q: `How does this website rank on Google and attract high-ticket ${NICHES[config.key]} clients?`,
-                a: `Every build incorporates Edward Sturm's high-commercial-intent search optimization principles. We target non-branded, buyer-intent queries (such as "${NICHES[config.key].toLowerCase()} website design", "hire specialist for ${NICHES[config.key].toLowerCase()}", and local geography permutations). We inject full LocalBusiness, ProfessionalService, and Service schema markup in JSON-LD, ensure 100/100 Core Web Vitals, and architect the site to rank in both traditional Google Search and AI Overviews.`,
+                a: `Every build incorporates our proprietary high-commercial-intent bottom-of-funnel search optimization architecture. We target non-branded, buyer-intent queries (such as "${NICHES[config.key].toLowerCase()} website design", "hire specialist for ${NICHES[config.key].toLowerCase()}", and local geography permutations). We inject full LocalBusiness, ProfessionalService, and Service schema markup in JSON-LD, ensure 100/100 Core Web Vitals, and architect the site to rank in both traditional Google Search and AI Overviews.`,
               },
             ].map((faq, idx) => {
               const isOpen = activeFaq === idx;
@@ -1478,13 +1478,13 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
           ) : (
             <div className="p-6 rounded-2xl bg-paper-raised border border-rule flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
               <span className="text-muted">
-                We deliver 7-day sprints for {NICHES[config.key]} across all 25 commercial corridors in Bangalore including Indiranagar, Whitefield, Koramangala, and HSR Layout.
+                We deliver 7-day sprints for {NICHES[config.key]} across all 100 commercial corridors in Bangalore including Indiranagar, Whitefield, Koramangala, and HSR Layout.
               </span>
               <Link
                 to="/web-design/bangalore/"
                 className="text-signal hover:underline shrink-0 font-medium"
               >
-                Browse All 25 Localities →
+                Browse All 100 Localities →
               </Link>
             </div>
           )}
@@ -1502,7 +1502,7 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
               to="/portfolio/"
               className="font-mono text-xs text-signal hover:text-ink transition-colors"
             >
-              View all 17 interactive live demos →
+              View all 50 interactive live demos →
             </Link>
           </div>
 

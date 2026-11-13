@@ -401,7 +401,7 @@ export default function SiteFooter() {
                   to="/portfolio/"
                   className="text-xs font-mono text-signal-bright hover:underline inline-flex items-center gap-1 font-medium"
                 >
-                  <span>All 17 Demos</span>
+                  <span>All 50 Demos</span>
                   <span>→</span>
                 </Link>
               </li>
@@ -583,7 +583,7 @@ export default function SiteFooter() {
               to="/web-design/bangalore/"
               className="text-signal-bright font-mono text-xs hover:underline inline-flex items-center gap-1 font-medium"
             >
-              <span>Explore Master Bangalore Hub (All 25 Localities)</span>
+              <span>Explore Master Bangalore Hub (All 100 Localities)</span>
               <span>→</span>
             </Link>
           </div>
