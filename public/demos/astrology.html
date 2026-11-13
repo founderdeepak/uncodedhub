@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astraea Vedic Sansthan | Authentic Jyotish &amp; Kundali Advisory | Demo Specimen</title>
+  <meta name="description" content="Live interactive Vedic astrology demo. Precision Kundali birth chart intake, Zoom consultation scheduler, and authentic Jyotish advisory architecture.">
+  <link rel="canonical" href="https://uncodedhub.com/demos/astrology.html">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #090614;
+      --bg-surface: #120D26;
+      --bg-card: #1B1438;
+      --text-main: #F7F5FC;
+      --text-muted: #A39CC2;
+      --gold: #F4C430;
+      --gold-hover: #FFD700;
+      --violet: #8B5CF6;
+      --border: #2D2354;
+      --font-serif: 'Cinzel', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'Space Grotesk', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    .studio-bar {
+      background: #04020A;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+    }
+    .studio-bar a { color: var(--gold); text-decoration: none; font-weight: 600; }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      background: rgba(9, 6, 20, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 90;
+    }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; }
+    .logo {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+    .logo span { color: var(--gold); }
+    nav { display: flex; gap: 24px; align-items: center; }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--gold); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-family: var(--font-mono);
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      font-weight: 700;
+    }
+    .btn-gold { background: var(--gold); color: #090614; }
+    .btn-gold:hover { background: var(--gold-hover); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero {
+      padding: 90px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 350px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 16px;
+      background: rgba(244, 196, 48, 0.1);
+      border: 1px solid rgba(244, 196, 48, 0.3);
+      color: var(--gold);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      margin-bottom: 24px;
+      border-radius: 999px;
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 5.5vw, 62px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 36px;
+      font-size: 16px;
+      color: var(--text-muted);
+    }
+
+    .panchang-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 40px 0 60px;
+      padding: 20px;
+      border-radius: 16px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+    }
+    .panchang-item { text-align: center; }
+    .panchang-val {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .panchang-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      margin-top: 4px;
+    }
+
+    /* Intake Section */
+    .intake-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--gold);
+      border-radius: 20px;
+      padding: 40px;
+      margin: 40px 0;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 14px;
+    }
+    .form-control:focus { outline: none; border-color: var(--gold); }
+
+    /* Consultation Tiers */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin: 40px 0;
+    }
+    .tier-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 32px;
+      border-radius: 16px;
+      transition: all 0.25s;
+    }
+    .tier-card.featured {
+      border-color: var(--gold);
+      background: linear-gradient(145deg, #1C153B 0%, #120D26 100%);
+    }
+    .tier-price {
+      font-family: var(--font-serif);
+      font-size: 36px;
+      color: var(--gold);
+      font-weight: 700;
+      margin: 12px 0;
+    }
+    .tier-features { list-style: none; margin: 20px 0; font-size: 13px; color: var(--text-muted); }
+    .tier-features li { margin-bottom: 8px; display: flex; gap: 8px; }
+    .tier-features li span { color: var(--gold); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 50px 0 30px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .panchang-bar { grid-template-columns: repeat(2, 1fr); }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="studio-bar">
+    <div><strong>Specimen Platform</strong> · High-Conversion Vedic Astrological Architecture</div>
+    <div>Engineered by <a href="https://uncodedhub.com/web-design/astrology/">Uncoded Hub ↗</a> · 7-Day Sprint</div>
+  </div>
+
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo">ASTRAEA <span>VEDIC</span></a>
+      <nav>
+        <a href="#panchang">Daily Panchang</a>
+        <a href="#services">Consultation Tiers</a>
+        <a href="#intake">Kundali Intake</a>
+      </nav>
+      <a href="#intake" class="btn btn-gold">Book Session</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="badge">🪐 AUTHENTIC PARASHARA JYOTISH · PRIVATE CONSULTATIONS</div>
+      <h1>Sub-Second Kundali Intake.<br>Zero Fluff. Direct Zoom Booking.</h1>
+      <p>
+        Architected for traditional Vedic astrologers, Jyotish Acharyas, and spiritual counselors. Capture accurate birth data, avoid back-and-forth WhatsApp delays, and collect prepaid Zoom appointments effortlessly.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="#intake" class="btn btn-gold">Submit Birth Details for Reading</a>
+        <a href="#services" class="btn btn-outline">Explore Consultation Tiers</a>
+      </div>
+
+      <!-- Daily Planetary Panchang Ticker -->
+      <div class="panchang-bar" id="panchang">
+        <div class="panchang-item">
+          <div class="panchang-val">Shukla Paksha</div>
+          <div class="panchang-label">Current Tithi</div>
+        </div>
+        <div class="panchang-item">
+          <div class="panchang-val">Rohini Nakshatra</div>
+          <div class="panchang-label">Active Constellation</div>
+        </div>
+        <div class="panchang-item">
+          <div class="panchang-val">11:45 AM – 1:15 PM</div>
+          <div class="panchang-label">Today's Rahu Kaalam</div>
+        </div>
+        <div class="panchang-item">
+          <div class="panchang-val">Abhijit Muhurat</div>
+          <div class="panchang-label">Auspicious Window</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultation Tiers -->
+  <section id="services" class="container">
+    <div style="text-align: center; margin-bottom: 36px;">
+      <h2 style="font-family: var(--font-serif); font-size: 36px; margin-bottom: 8px;">Private Consultation Tiers</h2>
+      <p style="color: var(--text-muted); font-size: 14px;">Pre-paid confidential video consultations conducted personally by Acharya Ji.</p>
+    </div>
+
+    <div class="tier-grid">
+      <div class="tier-card">
+        <h3 style="font-family: var(--font-serif); font-size: 20px;">Express Transit Focus</h3>
+        <p style="color: var(--text-muted); font-size: 13px;">Quick resolution for one urgent life decision.</p>
+        <div class="tier-price">₹2,500</div>
+        <ul class="tier-features">
+          <li><span>✓</span> 30-Minute 1-on-1 Zoom Session</li>
+          <li><span>✓</span> Current Mahadasha &amp; Antardasha Analysis</li>
+          <li><span>✓</span> Single Life Domain (Career / Marriage / Health)</li>
+          <li><span>✓</span> Practical Vedic Remedies &amp; Mantras</li>
+        </ul>
+        <a href="#intake" class="btn btn-outline" style="width: 100%; justify-content: center;">Select Express →</a>
+      </div>
+
+      <div class="tier-card featured">
+        <span style="font-size: 10px; font-family: var(--font-mono); color: var(--gold); letter-spacing: 1px; text-transform: uppercase;">Most Requested</span>
+        <h3 style="font-family: var(--font-serif); font-size: 20px; margin-top: 4px;">Comprehensive Kundali Deep-Dive</h3>
+        <p style="color: var(--text-muted); font-size: 13px;">Full 12-house life blueprint &amp; timing analysis.</p>
+        <div class="tier-price">₹4,500</div>
+        <ul class="tier-features">
+          <li><span>✓</span> 60-Minute Comprehensive Private Conference</li>
+          <li><span>✓</span> Full D1, D9 (Navamsha) &amp; D10 (Dashamsha) Charts</li>
+          <li><span>✓</span> Next 3-Year Career &amp; Financial Predictions</li>
+          <li><span>✓</span> Genuine Gemstone (Ratna) Certification Advice</li>
+          <li><span>✓</span> High-Definition Audio Recording of Session</li>
+        </ul>
+        <a href="#intake" class="btn btn-gold" style="width: 100%; justify-content: center;">Select Deep-Dive →</a>
+      </div>
+
+      <div class="tier-card">
+        <h3 style="font-family: var(--font-serif); font-size: 20px;">Kundali Milan &amp; Compatibility</h3>
+        <p style="color: var(--text-muted); font-size: 13px;">In-depth Ashtakoota &amp; Dosha matching for couples.</p>
+        <div class="tier-price">₹5,500</div>
+        <ul class="tier-features">
+          <li><span>✓</span> 45-Minute Dual Chart Compatibility Analysis</li>
+          <li><span>✓</span> 36 Guna Milan &amp; Nadi / Manglik Dosha Verification</li>
+          <li><span>✓</span> Psychological &amp; Longevity Harmony Audit</li>
+          <li><span>✓</span> Written PDF Report Delivered in 24 Hours</li>
+        </ul>
+        <a href="#intake" class="btn btn-outline" style="width: 100%; justify-content: center;">Select Milan →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kundali Birth Intake Form -->
+  <section id="intake" class="container">
+    <div class="intake-box">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <h2 style="font-family: var(--font-serif); font-size: 32px; margin-bottom: 8px;">Submit Birth Details for Reading</h2>
+        <p style="color: var(--text-muted); font-size: 14px;">Precision birth coordinates are calculated automatically. Details kept 100% confidential.</p>
+      </div>
+
+      <form id="astroForm" onsubmit="handleAstroSubmit(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" class="form-control" placeholder="Rohan Mehra" id="astroName" required>
+          </div>
+          <div class="form-group">
+            <label>Date of Birth</label>
+            <input type="date" class="form-control" id="astroDob" required>
+          </div>
+          <div class="form-group">
+            <label>Exact Time of Birth (AM/PM)</label>
+            <input type="time" class="form-control" id="astroTob" required>
+          </div>
+          <div class="form-group">
+            <label>Place of Birth (City, State, Country)</label>
+            <input type="text" class="form-control" placeholder="Bengaluru, Karnataka, India" id="astroPob" required>
+          </div>
+        </div>
+
+        <div class="form-grid" style="margin-top: 16px;">
+          <div class="form-group">
+            <label>Primary Focus of Inquiry</label>
+            <select class="form-control" id="astroFocus">
+              <option value="Career & Business Expansion">Career / Promotion / Business Venture</option>
+              <option value="Marriage & Relationship Harmony">Marriage / Kundali Milan / Relationships</option>
+              <option value="Financial Growth & Investment">Financial Wealth / Property Purchases</option>
+              <option value="Health & Mahadasha Transitions">Health / Sade Sati / Rahu Mahadasha</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Selected Reading Tier</label>
+            <select class="form-control" id="astroTier">
+              <option value="Comprehensive Kundali (₹4,500)" selected>Comprehensive Kundali Deep-Dive (₹4,500)</option>
+              <option value="Express Transit (₹2,500)">Express Transit Focus (₹2,500)</option>
+              <option value="Kundali Milan (₹5,500)">Kundali Milan &amp; Compatibility (₹5,500)</option>
+            </select>
+          </div>
+          <div class="form-group" style="grid-column: span 2;">
+            <label>WhatsApp Number for Zoom Link Delivery</label>
+            <input type="tel" class="form-control" placeholder="+91 86608 19023" id="astroPhone" required>
+          </div>
+        </div>
+
+        <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+          <div style="font-size: 12px; color: var(--gold); font-family: var(--font-mono);">
+            🔒 Vedic Calculations strictly based on Lahiri Ayanamsha
+          </div>
+          <button type="submit" class="btn btn-gold" style="padding: 14px 32px;">
+            Book Consultation on WhatsApp →
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p style="margin-bottom: 8px;">
+        Astraea Vedic Sansthan · Bengaluru &amp; Global Zoom Consultations · Direct: +91 86608 19023
+      </p>
+      <p style="font-size: 11px; color: #665;">
+        Demonstration Specimen built by Uncoded Hub. 100% Handcrafted React &amp; Tailwind. Zero WordPress bloat.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function handleAstroSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('astroName').value;
+      const dob = document.getElementById('astroDob').value;
+      const tob = document.getElementById('astroTob').value;
+      const pob = document.getElementById('astroPob').value;
+      const focus = document.getElementById('astroFocus').value;
+      const tier = document.getElementById('astroTier').value;
+
+      const msg = `Vedic Jyotish Consultation Booking:%0A` +
+        `• Name: ${encodeURIComponent(name)}%0A` +
+        `• Date of Birth: ${dob}%0A` +
+        `• Time of Birth: ${tob}%0A` +
+        `• Place of Birth: ${encodeURIComponent(pob)}%0A` +
+        `• Reading Tier: ${encodeURIComponent(tier)}%0A` +
+        `• Primary Inquiry: ${encodeURIComponent(focus)}%0A` +
+        `Please confirm slot availability for Zoom session.`;
+
+      window.open(`https://wa.me/918660819023?text=${msg}`, '_blank');
+    }
+  </script>
+</body>
+</html>
+

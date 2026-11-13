@@ -4,6 +4,7 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import { Reveal, Shell } from '../components/primitives';
 import { BANGALORE_LOCALITIES, BangaloreLocality } from '../data/bangaloreLocalities';
 import { NICHE_PILLAR_SLUGS, getPostBySlug, getPostsByNiche, NicheKey } from '../lib/blog';
+import { PROJECTS } from '../data/projects';
 
 interface BangaloreLocalityLandingProps {
   onBook?: () => void;
@@ -45,6 +46,15 @@ export default function BangaloreLocalityLanding({ onBook: _onBook }: BangaloreL
     const allNichePosts = getPostsByNiche(activeNiche.nicheKey as NicheKey);
     return allNichePosts.filter((p) => p.slug !== pillarSlug).slice(0, 3);
   }, [activeNiche, pillarSlug]);
+
+  const matchingProject = useMemo(() => {
+    if (!activeNiche) return null;
+    return (
+      PROJECTS.find((p) => p.id === activeNiche.nicheKey || p.nicheSlug.includes(activeNiche.nicheKey)) ||
+      PROJECTS.find((p) => p.sector.toLowerCase().includes(activeNiche.name.toLowerCase())) ||
+      null
+    );
+  }, [activeNiche]);
 
   const pageUrl = activeNiche
     ? `https://uncodedhub.com/web-design/bangalore/${locality.slug}/${activeNiche.nicheKey}/`
@@ -332,6 +342,57 @@ export default function BangaloreLocalityLanding({ onBook: _onBook }: BangaloreL
                       </li>
                     </ul>
                   </div>
+                </div>
+
+                {matchingProject && (
+                  <div className="mt-8 p-5 rounded-2xl bg-paper border border-signal/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
+                    <div className="flex items-center gap-3">
+                      <span className="w-2.5 h-2.5 rounded-full bg-signal animate-pulse shrink-0" />
+                      <div>
+                        <p className="font-mono text-xs font-semibold text-ink">
+                          Live Interactive Specimen Available: {matchingProject.client}
+                        </p>
+                        <p className="text-[11px] text-muted font-mono mt-0.5">
+                          {matchingProject.conversionEngine}
+                        </p>
+                      </div>
+                    </div>
+                    <a
+                      href={matchingProject.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 rounded-full bg-signal text-paper font-mono text-xs uppercase tracking-wider font-semibold hover:bg-ink transition-all shrink-0 self-start sm:self-auto"
+                    >
+                      Launch Live Demo ↗
+                    </a>
+                  </div>
+                )}
+
+                {/* 3-Tier Investment Tiers for this locality */}
+                <div className="mt-8 pt-6 border-t border-rule">
+                  <p className="font-mono text-xs text-signal uppercase tracking-wider font-semibold mb-4">
+                    Transparent Commercial Packages for {activeNiche.name} in {locality.name}
+                  </p>
+                  <div className="grid sm:grid-cols-3 gap-4">
+                    <div className="p-4 rounded-xl bg-paper border border-rule">
+                      <span className="text-[10px] font-mono text-muted uppercase block">Starter Local</span>
+                      <p className="font-display text-xl font-bold text-ink mt-1">₹30,000</p>
+                      <p className="text-[11px] text-muted mt-2">Single flagship landing page, 7-day delivery, sub-0.8s speed, Google Map pack schema.</p>
+                    </div>
+                    <div className="p-4 rounded-xl bg-paper border-2 border-signal relative shadow-sm">
+                      <span className="text-[10px] font-mono text-signal uppercase font-bold block">Authority Engine ★</span>
+                      <p className="font-display text-xl font-bold text-ink mt-1">₹45,000</p>
+                      <p className="text-[11px] text-muted mt-2">Full multi-page platform, interactive booking / estimator tool, E-E-A-T schema, review badging.</p>
+                    </div>
+                    <div className="p-4 rounded-xl bg-paper border border-rule">
+                      <span className="text-[10px] font-mono text-muted uppercase block">Bespoke Enterprise</span>
+                      <p className="font-display text-xl font-bold text-ink mt-1">₹75,000+</p>
+                      <p className="text-[11px] text-muted mt-2">Multi-location routing, client portal / document vault, custom web application architecture.</p>
+                    </div>
+                  </div>
+                  <p className="text-[11px] font-mono text-muted mt-3">
+                    * All packages include 100% code ownership, ₹0/month hosting fees, and formal Karnataka GST tax invoices (18% ITC credit).
+                  </p>
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-rule flex flex-wrap items-center justify-between gap-4">
@@ -771,6 +832,17 @@ export default function BangaloreLocalityLanding({ onBook: _onBook }: BangaloreL
                   <span>Schedule your 20-min call</span>
                   <span>→</span>
                 </Link>
+                <a
+                  href={`https://wa.me/918660819023?text=${encodeURIComponent(
+                    `Hi Deepak, I run a business in ${locality.name}, Bangalore and would like to discuss a 7-day website sprint.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/10 hover:bg-white/20 text-paper font-mono text-xs py-4 px-6 rounded-full transition-colors border border-white/20 flex items-center gap-2"
+                >
+                  <span>Chat on WhatsApp</span>
+                  <span>↗</span>
+                </a>
                 <Link
                   to="/web-design/bangalore/"
                   className="border border-white/20 hover:border-signal text-paper font-mono text-xs py-4 px-6 rounded-full transition-colors"

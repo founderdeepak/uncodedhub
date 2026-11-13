@@ -159,6 +159,7 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
 
   // Active theme index for demo specimen
   const [activeTheme, setActiveTheme] = useState(0);
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   // Get articles belonging to this niche silo
   const allPosts = useMemo(() => getAllPosts(), []);
@@ -641,6 +642,133 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
         </Shell>
       </section>
 
+      {/* ── 4 Website Architecture Typologies (Wes McDowell Framework) ─ */}
+      <section className="py-20 sm:py-28 bg-paper border-b border-rule">
+        <Shell>
+          <Reveal>
+            <div className="max-w-3xl mb-16">
+              <p className="label text-signal mb-3">Architectural Blueprint</p>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight mb-4">
+                The 4 website architectures we engineer for {NICHES[config.key]}.
+              </h2>
+              <p className="text-muted text-sm sm:text-base leading-relaxed">
+                A high-converting website is never an arbitrary arrangement of pretty images. Depending on your current revenue model and growth bottlenecks, we engineer your platform around one of four proven architectural frameworks:
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <Reveal delay={0.05}>
+              <div className="bg-paper-raised p-8 rounded-[28px] border border-rule-strong h-full flex flex-col justify-between hover:border-signal/50 transition-all">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-mono text-xs px-2.5 py-1 rounded-full bg-signal/10 border border-signal/20 text-signal font-semibold">
+                      Model 01 · Acquisition Funnel
+                    </span>
+                    <span className="font-mono text-xs text-muted">Direct ROI Focus</span>
+                  </div>
+                  <h3 className="font-display text-2xl text-ink font-medium mb-3">
+                    High-Converting Landing Page &amp; Campaign Engine
+                  </h3>
+                  <p className="text-sm text-muted leading-relaxed mb-6">
+                    A hyper-focused, single-destination conversion machine engineered specifically for Google Ads, Meta campaigns, and high-intent buyer search queries. Eliminates distracting multi-tier navigation in favor of a single clear narrative: Problem, Villain, Solution, Proof, and frictionless WhatsApp / Calendar booking.
+                  </p>
+                  <ul className="space-y-2 text-xs font-mono text-ink/80 mb-6">
+                    <li className="flex items-center gap-2"><span className="text-signal font-bold">✓</span> Zero navigational leaks or bounce friction</li>
+                    <li className="flex items-center gap-2"><span className="text-signal font-bold">✓</span> Dynamic headline matching your exact PPC keywords</li>
+                    <li className="flex items-center gap-2"><span className="text-signal font-bold">✓</span> Sticky mobile conversion bar with click-to-WhatsApp</li>
+                  </ul>
+                </div>
+                <div className="pt-4 border-t border-rule font-mono text-xs text-signal">
+                  Ideal for: Rapid customer acquisition &amp; targeted service promotions
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <div className="bg-paper-raised p-8 rounded-[28px] border border-rule-strong h-full flex flex-col justify-between hover:border-signal/50 transition-all">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-mono text-xs px-2.5 py-1 rounded-full bg-signal/10 border border-signal/20 text-signal font-semibold">
+                      Model 02 · Enterprise Authority
+                    </span>
+                    <span className="font-mono text-xs text-muted">Brand &amp; E-E-A-T Pillar</span>
+                  </div>
+                  <h3 className="font-display text-2xl text-ink font-medium mb-3">
+                    Corporate Authority Flagship Headquarters
+                  </h3>
+                  <p className="text-sm text-muted leading-relaxed mb-6">
+                    A comprehensive multi-page digital headquarters designed to position your {NICHES[config.key].toLowerCase()} practice as the undisputed premier authority in your geographic corridor. Houses deep practitioner credentials, case study dossiers, methodology teardowns, and Google Helpful Content topic silos.
+                  </p>
+                  <ul className="space-y-2 text-xs font-mono text-ink/80 mb-6">
+                    <li className="flex items-center gap-2"><span className="text-signal font-bold">✓</span> Structured schema markup for Google Knowledge Graph</li>
+                    <li className="flex items-center gap-2"><span className="text-signal font-bold">✓</span> Deep case study proof dossiers with quantifiable outcomes</li>
+                    <li className="flex items-center gap-2"><span className="text-signal font-bold">✓</span> Dedicated pages for every specialized sub-service</li>
+                  </ul>
+                </div>
+                <div className="pt-4 border-t border-rule font-mono text-xs text-signal">
+                  Ideal for: High-ticket retainers, multi-partner firms &amp; premium practices
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <div className="bg-paper-raised p-8 rounded-[28px] border border-rule-strong h-full flex flex-col justify-between hover:border-signal/50 transition-all">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-mono text-xs px-2.5 py-1 rounded-full bg-signal/10 border border-signal/20 text-signal font-semibold">
+                      Model 03 · Operational Speed
+                    </span>
+                    <span className="font-mono text-xs text-muted">Zero Phone Delay</span>
+                  </div>
+                  <h3 className="font-display text-2xl text-ink font-medium mb-3">
+                    Direct Interactive Booking &amp; Dispatch Engine
+                  </h3>
+                  <p className="text-sm text-muted leading-relaxed mb-6">
+                    Eliminates the dreaded phone-tag barrier by letting prospective clients self-qualify, select time slots, and confirm appointments 24/7. Equipped with automated reminder sequences, timezone handling, and instant WhatsApp booking notifications directly to your management desk.
+                  </p>
+                  <ul className="space-y-2 text-xs font-mono text-ink/80 mb-6">
+                    <li className="flex items-center gap-2"><span className="text-signal font-bold">✓</span> Synchronized with Google Calendar / Outlook in real-time</li>
+                    <li className="flex items-center gap-2"><span className="text-signal font-bold">✓</span> Pre-qualification intake questionnaire before confirmation</li>
+                    <li className="flex items-center gap-2"><span className="text-signal font-bold">✓</span> Automated WhatsApp SMS confirmation &amp; reminder pings</li>
+                  </ul>
+                </div>
+                <div className="pt-4 border-t border-rule font-mono text-xs text-signal">
+                  Ideal for: Clinics, consultation practices, salons &amp; reservation venues
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.2}>
+              <div className="bg-paper-raised p-8 rounded-[28px] border border-rule-strong h-full flex flex-col justify-between hover:border-signal/50 transition-all">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-mono text-xs px-2.5 py-1 rounded-full bg-signal/10 border border-signal/20 text-signal font-semibold">
+                      Model 04 · Trust Engineering
+                    </span>
+                    <span className="font-mono text-xs text-muted">Client Onboarding</span>
+                  </div>
+                  <h3 className="font-display text-2xl text-ink font-medium mb-3">
+                    Client Document Vault &amp; Estimation Portal
+                  </h3>
+                  <p className="text-sm text-muted leading-relaxed mb-6">
+                    Empowers prospective clients to calculate fee estimates, explore transparent rate cards, or upload project blueprints and diagnostic records securely. Drastically reduces sales cycle friction by answering the #1 unspoken question: "How much will this cost me, and how does it work?"
+                  </p>
+                  <ul className="space-y-2 text-xs font-mono text-ink/80 mb-6">
+                    <li className="flex items-center gap-2"><span className="text-signal font-bold">✓</span> Interactive cost calculator tailored to your service tiers</li>
+                    <li className="flex items-center gap-2"><span className="text-signal font-bold">✓</span> End-to-end encrypted file intake for drawings &amp; briefs</li>
+                    <li className="flex items-center gap-2"><span className="text-signal font-bold">✓</span> Automated PDF proposal or scope generation on submission</li>
+                  </ul>
+                </div>
+                <div className="pt-4 border-t border-rule font-mono text-xs text-signal">
+                  Ideal for: Contractors, legal advocates, CA firms &amp; bespoke studios
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </Shell>
+      </section>
+
       {/* ── The 7-Day Sprint Roadmap ──────────────────────────────── */}
       <section className="py-20 sm:py-28 bg-paper-sunken border-b border-rule">
         <Shell>
@@ -689,6 +817,371 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
                 </div>
               </div>
             ))}
+          </div>
+        </Shell>
+      </section>
+
+      {/* ── Head-to-Head Comparison Matrix ────────────────────────── */}
+      <section className="py-20 sm:py-28 bg-paper border-b border-rule">
+        <Shell>
+          <Reveal>
+            <div className="max-w-3xl mb-16">
+              <p className="label text-signal mb-3">Architectural Reality Check</p>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight mb-4">
+                Why bespoke hand-coded React crushes WordPress and DIY builders.
+              </h2>
+              <p className="text-muted text-sm sm:text-base leading-relaxed">
+                Most agencies push WordPress because it lets junior freelancers stack 40 plugins and bill you monthly maintenance retainers forever. Here is the unvarnished engineering reality:
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse bg-paper rounded-[24px] overflow-hidden border border-rule shadow-xs">
+              <thead>
+                <tr className="border-b border-rule bg-paper-raised text-xs font-mono uppercase tracking-wider text-muted">
+                  <th className="p-5 sm:p-6 font-semibold">Evaluation Criteria</th>
+                  <th className="p-5 sm:p-6 font-semibold text-signal bg-signal/5 border-x border-rule">
+                    ⚡ Uncoded Hub (Hand-Coded React)
+                  </th>
+                  <th className="p-5 sm:p-6 font-semibold">Traditional WordPress Agency</th>
+                  <th className="p-5 sm:p-6 font-semibold">DIY Builders (Wix / Squarespace)</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-rule text-xs sm:text-sm">
+                <tr>
+                  <td className="p-5 sm:p-6 font-medium text-ink">
+                    Mobile Page Speed (LCP)
+                    <span className="block text-xs font-mono text-muted mt-1">First impression on 4G/5G phones</span>
+                  </td>
+                  <td className="p-5 sm:p-6 font-mono font-bold text-signal bg-signal/5 border-x border-rule">
+                    ⚡ 0.4s – 0.8s (Instantaneous)
+                  </td>
+                  <td className="p-5 sm:p-6 font-mono text-muted">4.2s – 9.5s (High bounce rate)</td>
+                  <td className="p-5 sm:p-6 font-mono text-muted">3.5s – 6.0s (Heavy JavaScript)</td>
+                </tr>
+                <tr>
+                  <td className="p-5 sm:p-6 font-medium text-ink">
+                    Security &amp; Vulnerabilities
+                    <span className="block text-xs font-mono text-muted mt-1">Vulnerability to malware &amp; hacks</span>
+                  </td>
+                  <td className="p-5 sm:p-6 font-mono font-bold text-signal bg-signal/5 border-x border-rule">
+                    🔒 Zero Databases · Zero Plugin CVEs
+                  </td>
+                  <td className="p-5 sm:p-6 font-mono text-muted">High Risk · 30+ Vulnerable Plugins</td>
+                  <td className="p-5 sm:p-6 font-mono text-muted">Proprietary Closed Garden</td>
+                </tr>
+                <tr>
+                  <td className="p-5 sm:p-6 font-medium text-ink">
+                    Code &amp; Asset Ownership
+                    <span className="block text-xs font-mono text-muted mt-1">Can you take your site anywhere?</span>
+                  </td>
+                  <td className="p-5 sm:p-6 font-mono font-bold text-signal bg-signal/5 border-x border-rule">
+                    ✓ 100% Yours Forever (Clean Git Repo)
+                  </td>
+                  <td className="p-5 sm:p-6 font-mono text-muted">Held hostage to agency hosting</td>
+                  <td className="p-5 sm:p-6 font-mono text-muted">Zero code export · 100% lock-in</td>
+                </tr>
+                <tr>
+                  <td className="p-5 sm:p-6 font-medium text-ink">
+                    Ongoing Monthly Retainers
+                    <span className="block text-xs font-mono text-muted mt-1">Hidden maintenance expenses</span>
+                  </td>
+                  <td className="p-5 sm:p-6 font-mono font-bold text-signal bg-signal/5 border-x border-rule">
+                    ₹0 / month (Hosted on global edge)
+                  </td>
+                  <td className="p-5 sm:p-6 font-mono text-muted">₹5,000 – ₹15,000 / mo maintenance</td>
+                  <td className="p-5 sm:p-6 font-mono text-muted">₹1,500 – ₹3,500 / mo subscription</td>
+                </tr>
+                <tr>
+                  <td className="p-5 sm:p-6 font-medium text-ink">
+                    Technical SEO &amp; Schema
+                    <span className="block text-xs font-mono text-muted mt-1">Google rich snippet indexation</span>
+                  </td>
+                  <td className="p-5 sm:p-6 font-mono font-bold text-signal bg-signal/5 border-x border-rule">
+                    ✓ Hand-Crafted JSON-LD Schema
+                  </td>
+                  <td className="p-5 sm:p-6 font-mono text-muted">Bloated generic Yoast output</td>
+                  <td className="p-5 sm:p-6 font-mono text-muted">Limited automated metadata</td>
+                </tr>
+                <tr>
+                  <td className="p-5 sm:p-6 font-medium text-ink">
+                    Production Delivery Speed
+                    <span className="block text-xs font-mono text-muted mt-1">Kickoff call to live domain</span>
+                  </td>
+                  <td className="p-5 sm:p-6 font-mono font-bold text-signal bg-signal/5 border-x border-rule">
+                    🚀 Guaranteed 7 Days (Late means free)
+                  </td>
+                  <td className="p-5 sm:p-6 font-mono text-muted">6 to 14 weeks of agency delays</td>
+                  <td className="p-5 sm:p-6 font-mono text-muted">DIY: 3 months of trial &amp; error</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </Shell>
+      </section>
+
+      {/* ── Transparent 3-Tier Investment Packages ────────────────── */}
+      <section className="py-20 sm:py-28 bg-paper-sunken border-b border-rule">
+        <Shell>
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <p className="label text-signal mb-3">Transparent Commercial Investment</p>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight mb-4">
+                Fixed-scope pricing. Zero surprise invoices.
+              </h2>
+              <p className="text-muted text-sm sm:text-base leading-relaxed">
+                We believe in 100% upfront pricing transparency. Choose the tier that matches your current growth stage. Every tier comes with our 7-day delivery guarantee, zero monthly retainers, and 100% source code ownership.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Tier 1: Starter Launchpad */}
+            <Reveal delay={0.05}>
+              <div className="p-8 sm:p-10 rounded-[28px] bg-paper border border-rule h-full flex flex-col justify-between hover:border-signal/50 transition-all shadow-xs">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-mono text-xs uppercase tracking-wider text-muted font-semibold">Tier 01</span>
+                    <span className="font-mono text-xs px-2.5 py-1 rounded-full bg-paper-sunken border border-rule text-muted">7-Day Sprint</span>
+                  </div>
+                  <h3 className="font-display text-2xl text-ink font-medium mb-2">Starter Launchpad</h3>
+                  <p className="text-xs text-muted mb-6 leading-relaxed">
+                    Perfect for emerging {NICHES[config.key].toLowerCase()} practitioners seeking an immediate, credibility-establishing digital presence.
+                  </p>
+                  <div className="mb-6 pb-6 border-b border-rule">
+                    <div className="flex items-baseline gap-2">
+                      <span className="font-display text-4xl sm:text-5xl font-bold text-ink">₹35,000</span>
+                      <span className="text-xs font-mono text-muted">/ one-time</span>
+                    </div>
+                    <span className="text-xs font-mono text-signal mt-1 block">≈ $490 USD · Zero ongoing fees</span>
+                  </div>
+                  <ul className="space-y-3 text-xs sm:text-sm text-ink/90 font-mono mb-8">
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Single high-converting flagship page</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Sub-0.8s mobile LCP guarantee</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Direct WhatsApp click-to-chat funnel</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Google Business Local schema markup</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>100% clean Git repository handover</span>
+                    </li>
+                  </ul>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleBooking}
+                  className="w-full py-3.5 rounded-full bg-paper-raised border border-rule-strong hover:border-ink text-ink font-mono text-xs tracking-wider uppercase font-semibold transition-all cursor-pointer text-center"
+                >
+                  Commission Starter Sprint →
+                </button>
+              </div>
+            </Reveal>
+
+            {/* Tier 2: Authority Growth Engine (Recommended) */}
+            <Reveal delay={0.1}>
+              <div className="p-8 sm:p-10 rounded-[28px] bg-paper-raised border-2 border-signal relative h-full flex flex-col justify-between shadow-xl">
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-signal text-paper font-mono text-[11px] font-bold uppercase tracking-wider shadow-sm">
+                  ★ Most Popular · Highest ROI
+                </div>
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-mono text-xs uppercase tracking-wider text-signal font-semibold">Tier 02</span>
+                    <span className="font-mono text-xs px-2.5 py-1 rounded-full bg-signal/10 border border-signal/20 text-signal font-semibold">7–10 Day Sprint</span>
+                  </div>
+                  <h3 className="font-display text-2xl text-ink font-medium mb-2">Authority Growth Engine</h3>
+                  <p className="text-xs text-muted mb-6 leading-relaxed">
+                    Our flagship end-to-end platform engineered for established {NICHES[config.key].toLowerCase()} practices that need to capture market dominance.
+                  </p>
+                  <div className="mb-6 pb-6 border-b border-rule">
+                    <div className="flex items-baseline gap-2">
+                      <span className="font-display text-4xl sm:text-5xl font-bold text-ink">₹55,000</span>
+                      <span className="text-xs font-mono text-muted">/ one-time</span>
+                    </div>
+                    <span className="text-xs font-mono text-signal mt-1 block">≈ $750 USD · Zero ongoing fees</span>
+                  </div>
+                  <ul className="space-y-3 text-xs sm:text-sm text-ink/90 font-mono mb-8">
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Full multi-page platform (Up to 5 Pages)</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Interactive conversion tool (Booking / Estimator / Menu)</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Complete E-E-A-T Schema &amp; Google Rich Snippets</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Verified Google Review badge integration</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Google Search Console &amp; Analytics setup</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>14 Days dedicated founder post-launch support</span>
+                    </li>
+                  </ul>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleBooking}
+                  className="w-full py-4 rounded-full bg-signal text-paper font-mono text-xs tracking-wider uppercase font-semibold hover:bg-ink transition-all cursor-pointer text-center shadow-md"
+                >
+                  Commission Growth Engine →
+                </button>
+              </div>
+            </Reveal>
+
+            {/* Tier 3: Bespoke Enterprise Platform */}
+            <Reveal delay={0.15}>
+              <div className="p-8 sm:p-10 rounded-[28px] bg-paper border border-rule h-full flex flex-col justify-between hover:border-signal/50 transition-all shadow-xs">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-mono text-xs uppercase tracking-wider text-muted font-semibold">Tier 03</span>
+                    <span className="font-mono text-xs px-2.5 py-1 rounded-full bg-paper-sunken border border-rule text-muted">14-Day Sprint</span>
+                  </div>
+                  <h3 className="font-display text-2xl text-ink font-medium mb-2">Bespoke Enterprise</h3>
+                  <p className="text-xs text-muted mb-6 leading-relaxed">
+                    Custom web application architecture for multi-location groups, high-volume clinics, and corporate enterprises.
+                  </p>
+                  <div className="mb-6 pb-6 border-b border-rule">
+                    <div className="flex items-baseline gap-2">
+                      <span className="font-display text-4xl sm:text-5xl font-bold text-ink">₹85,000+</span>
+                      <span className="text-xs font-mono text-muted">/ bespoke</span>
+                    </div>
+                    <span className="text-xs font-mono text-signal mt-1 block">≈ $1,150+ USD · Milestone scope</span>
+                  </div>
+                  <ul className="space-y-3 text-xs sm:text-sm text-ink/90 font-mono mb-8">
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Multi-location / multi-practitioner directory routing</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Custom client portal &amp; encrypted file upload vault</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Headless CMS or dynamic database architecture</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Custom CRM, ERP, and payment gateway webhooks</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>Full corporate Karnataka GST tax invoice with ITC</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-signal font-bold">✓</span>
+                      <span>30-Day priority founder SLA &amp; growth warranty</span>
+                    </li>
+                  </ul>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleBooking}
+                  className="w-full py-3.5 rounded-full bg-paper-raised border border-rule-strong hover:border-ink text-ink font-mono text-xs tracking-wider uppercase font-semibold transition-all cursor-pointer text-center"
+                >
+                  Discuss Enterprise Scope →
+                </button>
+              </div>
+            </Reveal>
+          </div>
+        </Shell>
+      </section>
+
+      {/* ── Wes McDowell 3-Step Simple Buying Plan ──────────────────── */}
+      <section className="py-20 sm:py-28 bg-paper border-b border-rule">
+        <Shell>
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <p className="label text-signal mb-3">Frictionless Path to Delivery</p>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight mb-4">
+                3 simple steps to your new {NICHES[config.key]} platform.
+              </h2>
+              <p className="text-muted text-sm sm:text-base leading-relaxed">
+                Zero sales reps. Zero endless bureaucratic meetings. You collaborate directly with Deepak (lead systems engineer) and Geetha (conversion designer) from Day 1 to live launch.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Reveal delay={0.05}>
+              <div className="bg-paper-raised p-8 rounded-[28px] border border-rule h-full flex flex-col justify-between shadow-xs">
+                <div>
+                  <span className="w-12 h-12 rounded-2xl bg-signal/10 text-signal flex items-center justify-center font-mono text-lg font-bold mb-6">
+                    01
+                  </span>
+                  <p className="font-mono text-xs text-signal uppercase tracking-wider font-semibold mb-2">Step 01 · 20 Minutes</p>
+                  <h3 className="font-display text-xl text-ink font-medium mb-3">
+                    20-Min Architecture Discovery Sprint
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                    We audit your current website or new venture concept, pinpoint your conversion leaks, map your ideal customer profile, and confirm your 7-day sprint calendar lock. Zero sales pressure.
+                  </p>
+                </div>
+                <div className="pt-6 mt-6 border-t border-rule text-xs font-mono text-muted">
+                  Output: Scope Document &amp; Fixed-Price Agreement
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <div className="bg-paper-raised p-8 rounded-[28px] border border-rule h-full flex flex-col justify-between shadow-xs">
+                <div>
+                  <span className="w-12 h-12 rounded-2xl bg-signal/10 text-signal flex items-center justify-center font-mono text-lg font-bold mb-6">
+                    02
+                  </span>
+                  <p className="font-mono text-xs text-signal uppercase tracking-wider font-semibold mb-2">Step 02 · 7 Days</p>
+                  <h3 className="font-display text-xl text-ink font-medium mb-3">
+                    7-Day Precision Sprint Execution
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                    Geetha crafts the bespoke visual typography and layout; Deepak codes the clean React components. You receive a private live development staging link on Day 3 to review progress in real-time.
+                  </p>
+                </div>
+                <div className="pt-6 mt-6 border-t border-rule text-xs font-mono text-muted">
+                  Output: 100% Hand-Crafted React Platform Staging
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <div className="bg-paper-raised p-8 rounded-[28px] border border-rule h-full flex flex-col justify-between shadow-xs">
+                <div>
+                  <span className="w-12 h-12 rounded-2xl bg-signal/10 text-signal flex items-center justify-center font-mono text-lg font-bold mb-6">
+                    03
+                  </span>
+                  <p className="font-mono text-xs text-signal uppercase tracking-wider font-semibold mb-2">Step 03 · Launch Day</p>
+                  <h3 className="font-display text-xl text-ink font-medium mb-3">
+                    Sub-Second Launch &amp; Handover
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                    Zero-downtime DNS cutover, Google Search Console indexing, JSON-LD schema verification, and 100% code repository handover to you. If we're late by even one hour, your build is 100% free.
+                  </p>
+                </div>
+                <div className="pt-6 mt-6 border-t border-rule text-xs font-mono text-muted">
+                  Output: Live Domain, Google Indexing &amp; Git Repository
+                </div>
+              </div>
+            </Reveal>
           </div>
         </Shell>
       </section>
@@ -808,6 +1301,78 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
         </Shell>
       </section>
       )}
+
+      {/* ── Comprehensive BOFU Objection-Busting FAQs ────────────── */}
+      <section className="py-20 sm:py-28 bg-paper border-b border-rule">
+        <Shell>
+          <Reveal>
+            <div className="max-w-3xl mb-16">
+              <p className="label text-signal mb-3">Honest Engineering Answers</p>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight mb-4">
+                Frequently asked questions for {NICHES[config.key]} web design.
+              </h2>
+              <p className="text-muted text-sm sm:text-base leading-relaxed">
+                Everything you need to know about our technology, deliverables, timelines, and commercial guarantees before you commission your build.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="max-w-4xl space-y-4">
+            {[
+              {
+                q: `Why hand-coded React instead of WordPress, Elementor, or Webflow for my ${NICHES[config.key]} website?`,
+                a: `WordPress and visual page builders load between 35 and 60 bloated JavaScript and CSS files on every page visit, resulting in sluggish 4 to 8-second mobile load times. Google penalizes slow websites in search rankings, and over 53% of mobile users abandon pages that take more than 3 seconds. By hand-coding in React with Tailwind CSS, we eliminate all databases, PHP interpreters, and vulnerable plugins. Your site loads in 0.4 to 0.8 seconds on 4G mobile devices, has zero security vulnerabilities, and costs ₹0/month to host on global edge networks.`,
+              },
+              {
+                q: `How can you genuinely build a custom ${NICHES[config.key]} website in just 7 days without cutting corners?`,
+                a: `Traditional agencies take 3 to 6 months because of endless bureaucracy, account managers, and junior interns juggling 15 client projects simultaneously. At Uncoded Hub, Deepak and Geetha take on a maximum of two client production sprints at any given time. Because we operate in single-threaded focus without agency overhead, we accomplish in 7 days what fragmented agencies drag out over a quarter. We provide a binding contract guarantee: if your website is not live on your domain in 7 days, your entire build is 100% free.`,
+              },
+              {
+                q: `What materials or assets do I need to prepare before our 7-day sprint begins?`,
+                a: `During our 20-minute kickoff discovery call on Day 1, we guide you through our simple asset checklist. All we need is your logo (or brand name), high-resolution photos of your practice, clinic, projects, or team (if available; otherwise we source bespoke editorial photography), your primary service list, and any existing credentials. We write all the high-converting copy and craft the conversion strategy for you.`,
+              },
+              {
+                q: `Do you charge ongoing monthly maintenance, hosting, or retainer fees?`,
+                a: `No. Unlike WordPress agencies that lock you into ₹5,000 to ₹15,000 monthly maintenance contracts just to update plugins and prevent site crashes, our static React platforms have zero server moving parts, zero database vulnerabilities, and require zero routine maintenance. We deploy your site on high-speed global edge networks (Vercel or Cloudflare CDN) where standard hosting is completely free forever.`,
+              },
+              {
+                q: `Who owns the domain, code, design, and intellectual property once completed?`,
+                a: `You own 100% of everything, forever. Upon final delivery and launch, we hand over the full clean Git source code repository, all graphic assets, and DNS configurations. You are never trapped in a proprietary walled garden or forced into a retainer. If you ever want your in-house team to update it in the future, any modern web developer can read our clean, well-commented code.`,
+              },
+              {
+                q: `How does this website rank on Google and attract high-ticket ${NICHES[config.key]} clients?`,
+                a: `Every build incorporates Edward Sturm's high-commercial-intent search optimization principles. We target non-branded, buyer-intent queries (such as "${NICHES[config.key].toLowerCase()} website design", "hire specialist for ${NICHES[config.key].toLowerCase()}", and local geography permutations). We inject full LocalBusiness, ProfessionalService, and Service schema markup in JSON-LD, ensure 100/100 Core Web Vitals, and architect the site to rank in both traditional Google Search and AI Overviews.`,
+              },
+            ].map((faq, idx) => {
+              const isOpen = activeFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className="rounded-2xl bg-paper-raised border border-rule overflow-hidden transition-all shadow-xs"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setActiveFaq(isOpen ? null : idx)}
+                    className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-paper transition-colors"
+                  >
+                    <span className="font-display text-lg text-ink font-medium leading-snug">
+                      {faq.q}
+                    </span>
+                    <span className="font-mono text-lg text-signal shrink-0 w-8 h-8 rounded-full bg-paper-sunken border border-rule flex items-center justify-center font-bold">
+                      {isOpen ? '−' : '+'}
+                    </span>
+                  </button>
+                  {isOpen && (
+                    <div className="px-6 pb-6 pt-2 border-t border-rule/60 text-xs sm:text-sm text-muted leading-relaxed font-sans">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </Shell>
+      </section>
 
       {/* ── Closing Commercial Conversion CTA ────────────────────── */}
       <section className="py-24 sm:py-32 bg-[#0E0C0A] text-paper relative overflow-hidden">

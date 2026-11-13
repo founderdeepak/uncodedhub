@@ -1366,7 +1366,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 
   'restaurants': {
   "key": "restaurants",
-  "projectId": "business-portfolio",
+  "projectId": "restaurant",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · RESTAURANT & HOSPITALITY",
   "headline": "Websites for Fine Dining & Craft Restaurants That Fill Tables Without 30% Commissions.",
   "subheadline": "Bespoke, sub-second digital flagships engineered for independent restaurants, cafes, and hospitality venues. Fast HTML mobile menus, zero-commission direct table reservations, and zero PDF download lag.",
@@ -1530,7 +1530,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'law-firms': {
   "key": "law-firms",
-  "projectId": "business-portfolio",
+  "projectId": "law-firm",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · LEGAL & ADVOCACY",
   "headline": "Websites for Law Firms That Win High-Stakes Retainers and Honor Bar Ethics.",
   "subheadline": "Prestigious, dispassionate digital platforms hand-crafted for corporate law firms, advocates, and legal consultancies. Strict Bar Council compliance, discrete partner case intake, and military-grade security.",
@@ -1612,7 +1612,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'accounting-firms': {
   "key": "accounting-firms",
-  "projectId": "business-portfolio",
+  "projectId": "accounting-firm",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · ACCOUNTING & AUDIT",
   "headline": "Websites for Chartered Accountants That Establish Authority and Streamline Audits.",
   "subheadline": "Bespoke, ultra-secure digital platforms engineered for Chartered Accountants, CPA firms, and tax consultancies. Statutory compliance trackers, secure client document vaults, and statutory audit lead capture.",
@@ -1694,7 +1694,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'construction-companies': {
   "key": "construction-companies",
-  "projectId": "home-renovation",
+  "projectId": "construction",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · CIVIL CONSTRUCTION",
   "headline": "Websites for Construction Companies That Win Tenders and Prove Plant Capabilities.",
   "subheadline": "Heavy-duty, high-speed digital assets engineered for civil engineering contractors, commercial builders, and turnkey EPC firms. Live construction site progress feeds, machinery inventories, and BOQ quote estimators.",
@@ -1776,7 +1776,7 @@ export const NICHE_LANDING_DATA: Record<Exclude<NicheKey, 'studio'>, NicheLandin
 },
   'astrology-vastu': {
   "key": "astrology-vastu",
-  "projectId": "business-portfolio",
+  "projectId": "astrology",
   "heroBadge": "⚡ 7-DAY BESPOKE PRODUCTION SPRINT · ASTROLOGY & VASTU",
   "headline": "Websites for Astrologers & Vastu Masters That Fill Consultation Calendars Globally.",
   "subheadline": "Sacred, high-converting digital sanctuaries crafted for Vedic astrologers, numerologists, and Vastu consultants. Birth chart (Kundali) intake engines, floorplan upload portals, and international payments.",

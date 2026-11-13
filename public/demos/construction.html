@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Turnkey Infrastructure &amp; Civil Engineering | Demo Specimen</title>
+  <meta name="description" content="Live interactive civil construction demo. Interactive BOQ turnkey cost estimator, milestone drone tracking portal, and material transparency matrix.">
+  <link rel="canonical" href="https://uncodedhub.com/demos/construction.html">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0A0D14;
+      --bg-surface: #111827;
+      --bg-card: #1F2937;
+      --text-main: #F9FAFB;
+      --text-muted: #9CA3AF;
+      --amber: #F59E0B;
+      --amber-hover: #D97706;
+      --border: #374151;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'Space Grotesk', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    .studio-bar {
+      background: #000;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+    }
+    .studio-bar a { color: var(--amber); text-decoration: none; font-weight: 600; }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      background: rgba(10, 13, 20, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 90;
+    }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; }
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+    .logo span { color: var(--amber); }
+    nav { display: flex; gap: 24px; align-items: center; }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--amber); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-family: var(--font-mono);
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      font-weight: 700;
+    }
+    .btn-amber { background: var(--amber); color: #000; }
+    .btn-amber:hover { background: var(--amber-hover); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+    }
+    .btn-outline:hover { border-color: var(--amber); color: var(--amber); }
+
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 16px;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--amber);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      margin-bottom: 24px;
+      border-radius: 6px;
+    }
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(34px, 5.5vw, 58px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 36px;
+      font-size: 16px;
+      color: var(--text-muted);
+    }
+
+    /* Estimator Card */
+    .calculator-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--amber);
+      border-radius: 16px;
+      padding: 40px;
+      margin: 40px 0;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .control-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .slider {
+      width: 100%;
+      height: 8px;
+      background: var(--bg-card);
+      border-radius: 4px;
+      outline: none;
+      accent-color: var(--amber);
+    }
+    .estimate-result {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+    }
+    .est-number {
+      font-family: var(--font-heading);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--amber);
+      line-height: 1.1;
+    }
+
+    /* Milestone Radar */
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 40px 0;
+    }
+    .timeline-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      position: relative;
+    }
+    .timeline-card.done { border-color: #10B981; }
+    .timeline-card.active { border-color: var(--amber); }
+    .timeline-status {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .status-done { background: rgba(16, 185, 129, 0.15); color: #10B981; }
+    .status-active { background: rgba(245, 158, 11, 0.15); color: var(--amber); }
+
+    /* Material Matrix */
+    .material-matrix {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 40px 0;
+    }
+    .mat-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .mat-brand { font-family: var(--font-heading); font-size: 18px; color: var(--text-main); font-weight: 700; }
+    .mat-spec { font-size: 12px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 4px; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 50px 0 30px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .calc-grid { grid-template-columns: 1fr; }
+      .material-matrix { grid-template-columns: repeat(2, 1fr); }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="studio-bar">
+    <div><strong>Specimen Platform</strong> · Turnkey Civil Contracting &amp; Transparency Architecture</div>
+    <div>Engineered by <a href="https://uncodedhub.com/web-design/construction-contractors/">Uncoded Hub ↗</a> · 7-Day Sprint</div>
+  </div>
+
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo">APEX <span>CIVIL</span> INFRA</a>
+      <nav>
+        <a href="#estimator">BOQ Cost Estimator</a>
+        <a href="#milestones">Drone Tracking</a>
+        <a href="#materials">Material Specifications</a>
+      </nav>
+      <a href="#estimator" class="btn btn-amber">Get Accurate BOQ</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="badge">🏗 TURNKEY GENERAL CONTRACTING · COMMERCIAL &amp; RESIDENTIAL</div>
+      <h1>Sub-Second BOQ Calculators.<br>Zero Cost Escalation. Live Drone Audits.</h1>
+      <p>
+        Architected for civil construction companies, luxury villa builders, and industrial infrastructure contractors. Eliminate client mistrust with 100% transparent itemized rate cards and live site milestone updates.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="#estimator" class="btn btn-amber">Calculate Turnkey Project Cost</a>
+        <a href="#milestones" class="btn btn-outline">Inspect Drone Milestone Portal</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive BOQ Calculator -->
+  <section id="estimator" class="container">
+    <div class="calculator-box">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <h2 style="font-family: var(--font-heading); font-size: 32px; margin-bottom: 8px;">Interactive Turnkey Construction Estimator</h2>
+        <p style="color: var(--text-muted); font-size: 14px;">Instant structural &amp; finish calculation based on live Bengaluru market steel and cement rates.</p>
+      </div>
+
+      <div class="calc-grid">
+        <div>
+          <div style="margin-bottom: 24px;">
+            <div class="control-label">
+              <span>Built-Up Area (Sq.Ft)</span>
+              <strong id="areaDisplay" style="color: var(--amber);">3,500 Sq.Ft</strong>
+            </div>
+            <input type="range" class="slider" id="sqftSlider" min="1500" max="10000" step="250" value="3500" oninput="updateEstimate()">
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 12px; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase;">Structure Typology</label>
+            <select id="typologySelect" class="slider" style="height: auto; padding: 10px; background: var(--bg-card); color: #fff; border: 1px solid var(--border);" onchange="updateEstimate()">
+              <option value="2400">Luxury Residential Villa (₹2,400 / sqft)</option>
+              <option value="2100">Commercial Corporate Office (₹2,100 / sqft)</option>
+              <option value="1950">Multi-Family Residential Complex (₹1,950 / sqft)</option>
+              <option value="1500">Industrial Pre-Engineered Warehouse (₹1,500 / sqft)</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 12px;">
+            <label style="display: block; font-size: 12px; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase;">Material Grade Tier</label>
+            <select id="gradeSelect" class="slider" style="height: auto; padding: 10px; background: var(--bg-card); color: #fff; border: 1px solid var(--border);" onchange="updateEstimate()">
+              <option value="1.0">Standard Premium (UltraTech + Tata Tiscon + Somany Tiles)</option>
+              <option value="1.2" selected>Architectural Luxury (Italian Marble + Jaquar Artize + Teak Wood)</option>
+              <option value="1.45">Ultra-Luxe Sanctuaries (Full Home Automation + Double Glazed Façade)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="estimate-result">
+          <span style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px;">Turnkey Budget Estimate</span>
+          <div class="est-number" id="totalEstimate">₹1.00 Cr</div>
+          <p style="font-size: 12px; color: var(--text-muted); margin: 12px 0 20px;">
+            Includes structural RCC civil works, MEP, interior finishes, and municipal compliance sign-offs.
+          </p>
+          <button class="btn btn-amber" style="width: 100%; justify-content: center;" onclick="requestDetailedBOQ()">
+            Download Itemized 28-Page BOQ on WhatsApp →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Drone Tracking Simulation -->
+  <section id="milestones" class="container">
+    <div style="text-align: center; margin: 60px 0 30px;">
+      <h2 style="font-family: var(--font-heading); font-size: 32px; margin-bottom: 8px;">Client Live Drone Milestone Audit</h2>
+      <p style="color: var(--text-muted); font-size: 14px;">Every project receives private cloud dashboard access with 4K weekly drone ortho-mosaics.</p>
+    </div>
+
+    <div class="timeline-grid">
+      <div class="timeline-card done">
+        <span class="timeline-status status-done">✓ 100% Completed</span>
+        <h3 style="font-size: 16px; margin-bottom: 6px;">Raft Foundation &amp; Soil Piling</h3>
+        <p style="font-size: 12px; color: var(--text-muted);">M25 grade ready-mix concrete tested with cube compressive strength certificates.</p>
+      </div>
+      <div class="timeline-card done">
+        <span class="timeline-status status-done">✓ 100% Completed</span>
+        <h3 style="font-size: 16px; margin-bottom: 6px;">RCC Frame Cast Floor 1 &amp; 2</h3>
+        <p style="font-size: 12px; color: var(--text-muted);">Tata Tiscon 550D rebar placement verified against structural engineering blueprints.</p>
+      </div>
+      <div class="timeline-card active">
+        <span class="timeline-status status-active">● Active Stage (65%)</span>
+        <h3 style="font-size: 16px; margin-bottom: 6px;">AAC Blockwork &amp; MEP Conduits</h3>
+        <p style="font-size: 12px; color: var(--text-muted);">Internal partition walls and concealed electrical CPVC plumbing runs in progress.</p>
+      </div>
+      <div class="timeline-card">
+        <span class="timeline-status" style="background: rgba(255,255,255,0.05); color: var(--text-muted);">Upcoming Stage</span>
+        <h3 style="font-size: 16px; margin-bottom: 6px;">Waterproofing &amp; Flooring</h3>
+        <p style="font-size: 12px; color: var(--text-muted);">Dr. Fixit 10-year warranted terrace membrane and 1200x1800mm vitrified tiles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Material Brands -->
+  <section id="materials" class="container">
+    <div style="text-align: center; margin: 60px 0 20px;">
+      <h2 style="font-family: var(--font-heading); font-size: 28px;">Zero Substitute Material Guarantee</h2>
+    </div>
+
+    <div class="material-matrix">
+      <div class="mat-card">
+        <div class="mat-brand">TATA TISCON</div>
+        <div class="mat-spec">550D Primary Steel Rebar</div>
+      </div>
+      <div class="mat-card">
+        <div class="mat-brand">ULTRATECH</div>
+        <div class="mat-spec">Grade 53 OPC Cement</div>
+      </div>
+      <div class="mat-card">
+        <div class="mat-brand">JAQUAR ARTIZE</div>
+        <div class="mat-spec">Concealed Brass Thermostats</div>
+      </div>
+      <div class="mat-card">
+        <div class="mat-brand">SAINT-GOBAIN</div>
+        <div class="mat-spec">Acoustic DGU Toughened Glass</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p style="margin-bottom: 8px;">
+        Apex Infrastructure &amp; Civil Engineering · Hebbal Industrial Corridor, Bengaluru · Phone: +91 86608 19023
+      </p>
+      <p style="font-size: 11px; color: #665;">
+        Demonstration Specimen built by Uncoded Hub. 100% Handcrafted React &amp; Tailwind. Zero WordPress bloat.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function updateEstimate() {
+      const area = parseInt(document.getElementById('sqftSlider').value);
+      const rate = parseFloat(document.getElementById('typologySelect').value);
+      const multiplier = parseFloat(document.getElementById('gradeSelect').value);
+
+      document.getElementById('areaDisplay').innerText = area.toLocaleString() + ' Sq.Ft';
+      const total = area * rate * multiplier;
+
+      let formatted = '';
+      if (total >= 10000000) {
+        formatted = '₹' + (total / 10000000).toFixed(2) + ' Cr';
+      } else {
+        formatted = '₹' + (total / 100000).toFixed(2) + ' Lakh';
+      }
+
+      document.getElementById('totalEstimate').innerText = formatted;
+    }
+
+    function requestDetailedBOQ() {
+      const area = document.getElementById('areaDisplay').innerText;
+      const total = document.getElementById('totalEstimate').innerText;
+      const type = document.getElementById('typologySelect').options[document.getElementById('typologySelect').selectedIndex].text;
+
+      const msg = `Turnkey Construction Estimation Inquiry:%0A` +
+        `• Area: ${encodeURIComponent(area)}%0A` +
+        `• Typology: ${encodeURIComponent(type)}%0A` +
+        `• Estimated Budget: ${encodeURIComponent(total)}%0A` +
+        `Requesting comprehensive itemized Bill of Quantities (BOQ) and site visit.`;
+
+      window.open(`https://wa.me/918660819023?text=${msg}`, '_blank');
+    }
+
+    updateEstimate();
+  </script>
+</body>
+</html>
+
