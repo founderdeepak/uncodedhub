@@ -3,399 +3,1767 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ascent &amp; Ledger | Chartered Accountants &amp; Corporate Tax Advisory | Demo Specimen</title>
-  <meta name="description" content="Live interactive accounting &amp; CA firm demo. Statutory compliance calendar radar, corporate retainer calculator, and secure document vault intake.">
+  <title>Ascent &amp; Ledger Chartered Accountants | Statutory Audit &amp; Corporate Tax Advisory</title>
+  <meta name="description" content="Explore the chartered accountancy and corporate tax firm demo by Uncoded Hub. Statutory tax filing radar, interactive monthly retainer calculator, and client vault.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://uncodedhub.com/demos/accounting-firm.html">
+  <link rel="alternate" hreflang="en" href="https://uncodedhub.com/demos/accounting-firm.html">
+  <link rel="alternate" hreflang="x-default" href="https://uncodedhub.com/demos/accounting-firm.html">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:site_name" content="Uncoded Hub">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://uncodedhub.com/demos/accounting-firm.html">
+  <meta property="og:title" content="Ascent &amp; Ledger Chartered Accountants | Statutory Audit &amp; Corporate Tax Advisory">
+  <meta property="og:description" content="Explore the chartered accountancy and corporate tax firm demo by Uncoded Hub. Statutory tax filing radar, interactive monthly retainer calculator, and client vault.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:image:alt" content="Ascent &amp; Ledger Specimen">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@uncodedhub">
+  <meta name="twitter:creator" content="@uncodedhub">
+  <meta name="twitter:title" content="Ascent &amp; Ledger Chartered Accountants | Statutory Audit &amp; Corporate Tax Advisory">
+  <meta name="twitter:description" content="Explore the chartered accountancy and corporate tax firm demo by Uncoded Hub. Statutory tax filing radar, interactive monthly retainer calculator, and client vault.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://uncodedhub.com/demos/accounting-firm.html",
+        "url": "https://uncodedhub.com/demos/accounting-firm.html",
+        "name": "Ascent & Ledger Chartered Accountants | Statutory Audit & Corporate Tax Advisory",
+        "description": "Explore the chartered accountancy and corporate tax firm demo by Uncoded Hub. Statutory tax filing radar, interactive monthly retainer calculator, and client vault.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://uncodedhub.com/#website",
+          "url": "https://uncodedhub.com/",
+          "name": "Uncoded Hub"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://uncodedhub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Demos", "item": "https://uncodedhub.com/portfolio/" },
+            { "@type": "ListItem", "position": 3, "name": "Ascent & Ledger", "item": "https://uncodedhub.com/demos/accounting-firm.html" }
+          ]
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Ascent & Ledger Chartered Accountants | Statutory Audit & Corporate Tax Advisory",
+        "headline": "Ascent & Ledger Chartered Accountants | Statutory Audit & Corporate Tax Advisory",
+        "description": "Explore the chartered accountancy and corporate tax firm demo by Uncoded Hub. Statutory tax filing radar, interactive monthly retainer calculator, and client vault.",
+        "creator": {
+          "@type": "Organization",
+          "name": "Uncoded Hub",
+          "url": "https://uncodedhub.com"
+        },
+        "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts Preconnect & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --bg-dark: #070B19;
+    /* ==========================================================================
+       CSS DESIGN SYSTEM & THEME TOKENS (3 RADICALLY DIFFERENT AESTHETICS)
+       ========================================================================== */
+    :root, body[data-theme="swiss-navy"] {
+      --bg-primary: #070B19;
       --bg-surface: #0E162E;
-      --bg-card: #152042;
-      --text-main: #F8FAFC;
+      --bg-card: #142042;
+      --bg-card-subtle: #1C2C59;
+      --text-primary: #F8FAFC;
       --text-muted: #94A3B8;
-      --cyan: #00D2FF;
-      --cyan-glow: rgba(0, 210, 255, 0.15);
-      --border: #1E2D5A;
+      --text-subtle: rgba(255, 255, 255, 0.45);
+      --border-color: #253869;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --accent: #00D2FF;
+      --accent-hover: #38BDF8;
+      --accent-contrast: #070B19;
+      --accent-light: #00D2FF22;
+      --badge-bg: #00D2FF1e;
+      --badge-text: #00D2FF;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --font-heading: 'Cinzel', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --card-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+      --header-bg: #070B19ee;
+      --input-bg: #142042;
+    }
+
+    body[data-theme="ivory-ledger"] {
+      --bg-primary: #F8F6F2;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #EFEAE1;
+      --text-primary: #111827;
+      --text-muted: #4B5563;
+      --text-subtle: #7A6F65;
+      --border-color: #DDD4C4;
+      --border-subtle: rgba(0, 0, 0, 0.08);
+      --accent: #0D9488;
+      --accent-hover: #0F766E;
+      --accent-contrast: #FFFFFF;
+      --accent-light: #0D94881e;
+      --badge-bg: #0D948814;
+      --badge-text: #0D9488;
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --card-shadow: 0 12px 30px rgba(40, 30, 20, 0.06);
+      --header-bg: #F8F6F2ee;
+      --input-bg: #FFFFFF;
+    }
+
+    body[data-theme="cyber-fintech"] {
+      --bg-primary: #09090B;
+      --bg-surface: #121215;
+      --bg-card: #18181D;
+      --bg-card-subtle: #22222A;
+      --text-primary: #FFFFFF;
+      --text-muted: #A1A1AA;
+      --text-subtle: #8A8A8A;
+      --border-color: #10B981;
+      --border-subtle: #10B98155;
+      --accent: #10B981;
+      --accent-hover: #059669;
+      --accent-contrast: #000000;
+      --accent-light: #10B98124;
+      --badge-bg: #10B981;
+      --badge-text: #000000;
+      --radius-sm: 0px;
+      --radius-md: 0px;
+      --radius-lg: 0px;
       --font-heading: 'Space Grotesk', sans-serif;
-      --font-body: 'Plus Jakarta Sans', sans-serif;
-      --font-mono: 'Space Grotesk', monospace;
+      --font-body: 'Space Grotesk', -apple-system, sans-serif;
+      --card-shadow: 6px 6px 0px #10B981;
+      --header-bg: #09090B;
+      --input-bg: #121215;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Base Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease, box-shadow 0.25s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background: var(--bg-dark);
-      color: var(--text-main);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
       font-family: var(--font-body);
-      line-height: 1.6;
+      font-size: 16px;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      padding-bottom: 90px;
     }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    .studio-bar {
-      background: #03060E;
-      border-bottom: 1px solid var(--border);
-      padding: 10px 24px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      display: flex;
-      justify-content: space-between;
-      color: var(--text-muted);
-    }
-    .studio-bar a { color: var(--cyan); text-decoration: none; font-weight: 600; }
-
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      background: rgba(7, 11, 25, 0.95);
-      backdrop-filter: blur(12px);
-      z-index: 90;
-    }
-    .header-inner { display: flex; justify-content: space-between; align-items: center; }
-    .logo {
+    h1, h2, h3, h4, h5, h6 {
       font-family: var(--font-heading);
-      font-size: 22px;
+      color: var(--text-primary);
+      line-height: 1.18;
       font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--text-main);
-      text-decoration: none;
+      letter-spacing: -0.02em;
     }
-    .logo span { color: var(--cyan); }
-    nav { display: flex; gap: 24px; align-items: center; }
-    nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 13px;
-      transition: color 0.2s;
-    }
-    nav a:hover { color: var(--cyan); }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 22px;
-      border-radius: 6px;
-      font-size: 13px;
-      font-family: var(--font-mono);
-      text-decoration: none;
-      transition: all 0.2s;
-      cursor: pointer;
-      border: none;
-      font-weight: 700;
-    }
-    .btn-cyan { background: var(--cyan); color: #070B19; }
-    .btn-cyan:hover { background: #38bdf8; transform: translateY(-1px); }
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text-main);
-    }
-    .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
 
-    .hero {
-      padding: 80px 0 60px;
-      text-align: center;
-      position: relative;
+    p {
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
     }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Badges & Indicators */
     .badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 5px 16px;
-      background: rgba(0, 210, 255, 0.1);
-      border: 1px solid rgba(0, 210, 255, 0.3);
-      color: var(--cyan);
-      font-family: var(--font-mono);
-      font-size: 11px;
-      margin-bottom: 24px;
-      border-radius: 6px;
-    }
-    .hero h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(34px, 5.5vw, 58px);
+      gap: 7px;
+      padding: 6px 14px;
+      font-size: 12px;
       font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      border-radius: var(--radius-sm);
+      margin-bottom: 18px;
     }
-    .hero p {
-      max-width: 680px;
-      margin: 0 auto 36px;
-      font-size: 16px;
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+      font-family: var(--font-body);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--accent-contrast);
+      box-shadow: 0 4px 14px var(--accent-light);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border-color: var(--border-color);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    /* Sticky Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-title {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+    }
+
+    .brand-sub {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(34px, 4.2vw, 56px);
+      margin-bottom: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-text p.subhead {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 32px;
       color: var(--text-muted);
     }
 
-    /* Radar Bar */
-    .radar-bar {
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
-      margin: 40px 0 60px;
-      padding: 20px;
-      border-radius: 12px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-    }
-    .radar-item { text-align: center; }
-    .radar-val {
-      font-family: var(--font-heading);
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--cyan);
-    }
-    .radar-label {
-      font-size: 11px;
-      color: var(--text-muted);
-      font-family: var(--font-mono);
-      margin-top: 4px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
     }
 
-    /* Retainer Calculator */
-    .calculator-box {
-      background: var(--bg-surface);
-      border: 1px solid var(--cyan);
-      border-radius: 16px;
-      padding: 40px;
-      margin: 40px 0;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    .stat-val {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1.1;
+      margin-bottom: 4px;
     }
-    .calc-grid {
+
+    .stat-lbl {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-img-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      aspect-ratio: 4 / 3.4;
+    }
+
+    .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-quote-card {
+      position: absolute;
+      bottom: -24px;
+      left: -20px;
+      right: 20px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .hero-quote-text {
+      font-size: 13.5px;
+      font-style: italic;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+
+    .hero-quote-author {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* Painful Reality Section (3 Traps) */
+    .section-reality {
+      padding: 90px 0;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      background: var(--bg-surface);
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 50px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(28px, 3.4vw, 44px);
+      margin-bottom: 16px;
+    }
+
+    .section-head p {
+      font-size: 16.5px;
+      color: var(--text-muted);
+    }
+
+    .traps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .trap-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      position: relative;
+      box-shadow: var(--card-shadow);
+    }
+
+    .trap-num {
+      font-family: var(--font-heading);
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 14px;
+      opacity: 0.85;
+    }
+
+    .trap-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .trap-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* Comparison Grid */
+    .section-comparison {
+      padding: 90px 0;
+    }
+
+    .comp-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 28px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .comp-col {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .comp-col.bad {
+      border-color: rgba(239, 68, 68, 0.35);
+      background: var(--bg-card-subtle);
+    }
+
+    .comp-col.good {
+      border-color: var(--accent);
+      position: relative;
+    }
+
+    .comp-title {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .comp-col.bad .comp-title {
+      color: #EF4444;
+    }
+
+    .comp-col.good .comp-title {
+      color: var(--accent);
+    }
+
+    .comp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .comp-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14.5px;
+      line-height: 1.55;
+      color: var(--text-muted);
+    }
+
+    .comp-icon {
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 1.3;
+      flex-shrink: 0;
+    }
+
+    .comp-col.bad .comp-icon {
+      color: #EF4444;
+    }
+
+    .comp-col.good .comp-icon {
+      color: var(--accent);
+    }
+
+    /* Portfolio Showcase */
+    .section-portfolio {
+      padding: 90px 0;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-img-box {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .project-card:hover .project-img-box img {
+      transform: scale(1.04);
+    }
+
+    .project-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--bg-surface);
+      color: var(--text-primary);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .project-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .project-category {
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .project-title {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+
+    .project-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .project-meta {
+      font-size: 12px;
+      color: var(--text-subtle);
+      border-top: 1px solid var(--border-color);
+      padding-top: 12px;
+      font-weight: 600;
+    }
+
+    /* Process Roadmap */
+    .section-process {
+      padding: 90px 0;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .process-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+    }
+
+    .process-num {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .process-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .process-card p {
+      font-size: 13.5px;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* Testimonials */
+    .section-testimonials {
+      padding: 90px 0;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .testi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .testi-quote {
+      font-size: 16px;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    .testi-author-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .testi-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .testi-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .testi-role {
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    /* Inbound Consultation CTA Section */
+    .section-cta {
+      padding: 90px 0;
+    }
+
+    .cta-container {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 50px;
+      background: var(--bg-surface);
+      border: 1.5px solid var(--accent);
+      border-radius: var(--radius-lg);
+      padding: 50px;
+      box-shadow: var(--card-shadow);
       align-items: center;
     }
+
+    .cta-text h2 {
+      font-size: clamp(28px, 3.2vw, 42px);
+      margin-bottom: 16px;
+    }
+
+    .cta-text p {
+      font-size: 16px;
+      margin-bottom: 26px;
+    }
+
+    .form-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
     .form-group label {
       display: block;
-      font-size: 12px;
-      font-family: var(--font-mono);
-      color: var(--text-muted);
-      margin-bottom: 8px;
-      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-primary);
     }
+
     .form-control {
       width: 100%;
       padding: 12px 14px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--text-main);
-      font-size: 14px;
-    }
-    .form-control:focus { outline: none; border-color: var(--cyan); }
-    .estimate-result {
-      background: var(--bg-dark);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 30px;
-      text-align: center;
-    }
-    .est-number {
-      font-family: var(--font-heading);
-      font-size: 44px;
-      font-weight: 700;
-      color: var(--cyan);
-      line-height: 1.1;
+      font-size: 14.5px;
+      font-family: var(--font-body);
+      background: var(--input-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      outline: none;
     }
 
-    /* Compliance Pillars */
-    .pillar-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin: 40px 0;
+    .form-control:focus {
+      border-color: var(--accent);
     }
-    .pillar-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      padding: 28px;
-      border-radius: 10px;
-      transition: all 0.25s;
-    }
-    .pillar-card:hover { border-color: var(--cyan); transform: translateY(-2px); }
-    .pillar-title { font-family: var(--font-heading); font-size: 18px; margin-bottom: 8px; }
-    .pillar-desc { font-size: 13px; color: var(--text-muted); }
 
+    /* Footer */
     footer {
-      border-top: 1px solid var(--border);
-      padding: 50px 0 30px;
+      border-top: 1px solid var(--border-color);
+      padding: 40px 0;
+      background: var(--bg-surface);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    /* ==========================================================================
+       FLOATING 3-THEME INTERACTIVE PREVIEW SWITCHER PILL
+       ========================================================================== */
+    .theme-controller {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(14, 14, 14, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1.5px solid rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      padding: 7px 12px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .tc-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #A3A3A3;
+      padding: 0 8px;
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .tc-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22C55E;
+      animation: tcPulse 2s infinite ease-in-out;
+    }
+
+    @keyframes tcPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .tc-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: #E5E5E5;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .tc-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
+    }
+
+    .tc-btn.active {
+      background: #FFFFFF;
+      color: #0A0A0A;
+      font-weight: 800;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Founder Pitch Modal */
+    .pitch-modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .pitch-modal-backdrop.active {
+      display: flex;
+    }
+
+    .pitch-modal-card {
+      background: #0E0D0C;
+      color: #FAF8F5;
+      border: 1.5px solid rgba(220, 185, 120, 0.35);
+      border-radius: 20px;
+      max-width: 780px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+      position: relative;
+      padding: 36px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .pitch-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #FAF8F5;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .uh-popup-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+    }
+
+    .uh-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .uh-brand-logo-img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+    }
+
+    .uh-brand-name {
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .uh-brand-sub {
+      font-size: 11px;
+      color: #A39B8E;
+    }
+
+    .uh-badge-studio {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(229, 195, 120, 0.14);
+      color: #E5C378;
+      border: 1px solid rgba(229, 195, 120, 0.3);
+    }
+
+    .founders-row {
+      display: flex;
+      gap: 22px;
+      margin-bottom: 24px;
+    }
+
+    .founders-photos {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .founder-pic-box {
       text-align: center;
-      color: var(--text-muted);
+    }
+
+    .founder-pic {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid #E5C378;
+      object-fit: cover;
+      margin-bottom: 4px;
+    }
+
+    .founder-name {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .founder-role {
+      display: block;
+      font-size: 9.5px;
+      color: #A39B8E;
+    }
+
+    .founders-intro h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #FAF8F5;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    .founders-intro p {
+      font-size: 13.5px;
+      color: #D5CEC2;
+      margin-bottom: 0;
+    }
+
+    .pitch-body {
+      font-size: 14px;
+      color: #D5CEC2;
+      line-height: 1.65;
+    }
+
+    .insight-card {
+      background: #181512;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 18px;
+      margin: 16px 0;
+    }
+
+    .insight-card h4 {
+      font-size: 14px;
+      color: #E5C378;
+      margin-bottom: 6px;
+    }
+
+    .insight-card p {
+      margin-bottom: 0;
       font-size: 13px;
     }
 
-    @media (max-width: 768px) {
-      .calc-grid { grid-template-columns: 1fr; }
-      .radar-bar { grid-template-columns: repeat(2, 1fr); }
-      nav { display: none; }
+    .belief-card {
+      background: #181512;
+      border: 1px solid rgba(220, 185, 120, 0.25);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 18px 0;
+    }
+
+    .belief-quote {
+      font-style: italic;
+      color: #FAF8F5;
+      font-size: 13.5px;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .commitments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .comm-item {
+      font-size: 12px;
+      color: #A39B8E;
+      line-height: 1.45;
+    }
+
+    .comm-item strong {
+      display: block;
+      color: #FAF8F5;
+      font-size: 12.5px;
+      margin-bottom: 3px;
+    }
+
+    .pitch-actions {
+      display: flex;
+      gap: 14px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .pitch-cta-wa {
+      background: #25D366;
+      color: #0A0A0A;
+      font-weight: 800;
+      padding: 12px 22px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+    }
+
+    .pitch-cta-dismiss {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FAF8F5;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13.5px;
+    }
+
+    /* Floating Lead Magnet Widget */
+    .lead-magnet-floating-widget {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 998;
+    }
+
+    .lm-floating-btn {
+      background: #181512;
+      color: #FAF8F5;
+      border: 1.5px solid #E5C378;
+      border-radius: 999px;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      font-size: 13px;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .lm-pulse-ping {
+      width: 8px;
+      height: 8px;
+      background: #E5C378;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid, .comp-grid, .cta-container, .testi-grid {
+        grid-template-columns: 1fr;
+      }
+      .traps-grid, .portfolio-grid, .process-grid {
+        grid-template-columns: 1fr;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .nav-links {
+        display: none;
+      }
+      .theme-controller {
+        width: 92%;
+        justify-content: center;
+      }
     }
   </style>
 </head>
-<body>
+<body data-theme="swiss-navy">
 
-  <div class="studio-bar">
-    <div><strong>Specimen Platform</strong> · Chartered Accountancy &amp; Corporate Compliance</div>
-    <div>Engineered by <a href="https://uncodedhub.com/web-design/accounting-firms/">Uncoded Hub ↗</a> · 7-Day Sprint</div>
-  </div>
-
+  <!-- Sticky Header -->
   <header>
-    <div class="container header-inner">
-      <a href="#" class="logo">ASCENT <span>&amp;</span> LEDGER</a>
-      <nav>
-        <a href="#radar">Tax Calendar</a>
-        <a href="#retainer">Retainer Estimator</a>
-        <a href="#pillars">Practice Advisory</a>
+    <div class="wrap nav-inner">
+      <div class="brand-group">
+        <div>
+          <div class="brand-title">Ascent &amp; Ledger</div>
+          <div class="brand-sub">Chartered Accountants &amp; Tax Counsel</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#reality">Why Us</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Consultation</a>
       </nav>
-      <a href="#retainer" class="btn btn-cyan">Retainer Estimate</a>
+      <div>
+        <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px;">Book Consultation</a>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <div class="badge">📊 CHARTERED ACCOUNTANTS · CORPORATE TAX &amp; AUDIT ADVISORY</div>
-      <h1>Sub-Second Retainer Calculators.<br>Zero Compliance Penalties. Big 4 Rigor.</h1>
-      <p>
-        Architected for chartered accountancy practices, corporate tax counsels, and virtual CFO firms. Automate client onboarding, eliminate filing deadline anxiety, and capture high-retainer enterprise mandates.
-      </p>
-      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-        <a href="#retainer" class="btn btn-cyan">Calculate Corporate Retainer</a>
-        <a href="#radar" class="btn btn-outline">Review Statutory Tax Radar</a>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Zero Penalty Guarantee · Big-4 Partner Alumni · Real-Time Compliance
+        </div>
+        <h1>Zero Statutory Compliance Penalties. Strategic Corporate Tax Architecture.</h1>
+        <p class="subhead">Transfer pricing audits, GST appellate litigation, cross-border remittance structuring, and fractional CFO governance for high-growth enterprises.</p>
+        <div class="hero-cta-group">
+          <a href="#contact" class="btn btn-primary">Book Priority Consultation &rarr;</a>
+          <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha%2C%20I%20am%20viewing%20the%20Ascent%20%26%20Ledger%20demo%20and%20would%20like%20to%20discuss%20building%20our%20website." target="_blank" rel="noopener noreferrer" class="btn btn-outline">WhatsApp Direct Desk &rarr;</a>
+        </div>
+        <div class="stats-grid">
+          
+          <div>
+            <div class="stat-val">₹320Cr+</div>
+            <div class="stat-lbl">Annual Tax Handled</div>
+          </div>
+          
+          <div>
+            <div class="stat-val">0 Late</div>
+            <div class="stat-lbl">Statutory Filing Deadlines</div>
+          </div>
+          
+          <div>
+            <div class="stat-val">14.2%</div>
+            <div class="stat-lbl">Avg. Legal Tax Optimization</div>
+          </div>
+          
+          <div>
+            <div class="stat-val">100%</div>
+            <div class="stat-lbl">CAG &amp; ICAI Standards</div>
+          </div>
+          
+        </div>
       </div>
-
-      <!-- Statutory Radar Ticker -->
-      <div class="radar-bar" id="radar">
-        <div class="radar-item">
-          <div class="radar-val">20th of Month</div>
-          <div class="radar-label">GSTR-3B Monthly Return</div>
+      <div class="hero-visual">
+        <div class="hero-img-wrap">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Corporate Tax Spreadsheets Financial Balance Sheet and Luxury Fountain Pen" loading="eager" width="800" height="680">
         </div>
-        <div class="radar-item">
-          <div class="radar-val">15th December</div>
-          <div class="radar-label">Advance Tax Q3 Installment</div>
-        </div>
-        <div class="radar-item">
-          <div class="radar-val">Form AOC-4</div>
-          <div class="radar-label">MCA Annual Financial Filing</div>
-        </div>
-        <div class="radar-item">
-          <div class="radar-val">Section 44AB</div>
-          <div class="radar-label">Statutory Tax Audit Threshold</div>
+        <div class="hero-quote-card">
+          <div class="hero-quote-text">&quot;Ascent &amp; Ledger restructured our overseas holding entity and slashed our effective corporate tax liability by 14% while ensuring 100% RBI compliance.&quot;</div>
+          <div class="hero-quote-author">— Nitin Singhal, Co-Founder &amp; CFO, HyperScale Cloud</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Retainer Estimator -->
-  <section id="retainer" class="container">
-    <div class="calculator-box">
-      <div style="text-align: center; margin-bottom: 32px;">
-        <h2 style="font-family: var(--font-heading); font-size: 32px; margin-bottom: 8px;">Interactive Corporate Retainer Estimator</h2>
-        <p style="color: var(--text-muted); font-size: 14px;">Instant monthly accounting, GST reconciliation, TDS filings, and payroll advisory estimate.</p>
-      </div>
-
-      <div class="calc-grid">
-        <div>
-          <div class="form-group" style="margin-bottom: 20px;">
-            <label>Corporate Legal Entity</label>
-            <select class="form-control" id="entityType" onchange="calcRetainer()">
-              <option value="pvt" selected>Private Limited Company (Pvt Ltd)</option>
-              <option value="llp">Limited Liability Partnership (LLP)</option>
-              <option value="tech">D2C / Venture-Backed Tech Startup</option>
-              <option value="sole">Sole Proprietorship / Partnership</option>
-            </select>
-          </div>
-
-          <div class="form-group" style="margin-bottom: 20px;">
-            <label>Annual Gross Turnover</label>
-            <select class="form-control" id="turnoverTier" onchange="calcRetainer()">
-              <option value="12000">Seed Stage (Under ₹1 Crore)</option>
-              <option value="18000" selected>Growth Scale (₹1 Crore – ₹5 Crores)</option>
-              <option value="28000">Established SME (₹5 Crores – ₹25 Crores)</option>
-              <option value="42000">Enterprise Scale (₹25 Crores+)</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label>Monthly Transaction Volume</label>
-            <select class="form-control" id="txVolume" onchange="calcRetainer()">
-              <option value="0">Under 100 Invoices / Month</option>
-              <option value="4000" selected>100 – 500 Invoices / Month</option>
-              <option value="8000">500 – 2,000 Invoices / Month (High Volume)</option>
-            </select>
-          </div>
+  <!-- The Painful Reality / 3 Traps Section -->
+  <section class="section-reality" id="reality">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          The Tax Exposure Risk
         </div>
+        <h2>Why 72% of Mid-Market Companies Face Crippling Tax Notices</h2>
+        <p>Opaque bookkeepers and transactional accountants fail to catch GST input credit mismatches and complex transfer pricing liabilities until the Tax Department freezes accounts.</p>
+      </div>
+      <div class="traps-grid">
+        
+        <div class="trap-card">
+          <div class="trap-num">01</div>
+          <div class="trap-title">The Transactional Bookkeeper Trap</div>
+          <p class="trap-desc">Accountants who merely punch historical numbers rather than proactively advising on impending TDS, advance tax, and capital gains exposures.</p>
+        </div>
+        
+        <div class="trap-card">
+          <div class="trap-num">02</div>
+          <div class="trap-title">Ghost GST Input Credit Mismatches</div>
+          <p class="trap-desc">Unreconciled GSTR-2B vs 3B filings resulting in departmental demand notices with 18% compounding interest penalties.</p>
+        </div>
+        
+        <div class="trap-card">
+          <div class="trap-num">03</div>
+          <div class="trap-title">Dangerous FEMA &amp; Angel Tax Exposure</div>
+          <p class="trap-desc">Mishandling cross-border shareholder loans or overseas subsidiary royalties leading to severe Enforcement Directorate scrutiny.</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
 
-        <div class="estimate-result">
-          <span style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px;">Estimated Advisory Retainer</span>
-          <div class="est-number" id="retainerDisplay">₹22,000 / mo</div>
-          <p style="font-size: 12px; color: var(--text-muted); margin: 12px 0 20px;">
-            Includes monthly ledger closing, 100% GSTR-2B invoice matching, TDS returns, and ROC secretarial compliance.
-          </p>
-          <button class="btn btn-cyan" style="width: 100%; justify-content: center;" onclick="sendRetainerInquiry()">
-            Lock Corporate Retainer on WhatsApp →
-          </button>
+  <!-- The Direct Comparison Grid -->
+  <section class="section-comparison" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          The Commercial Choice
+        </div>
+        <h2>Why Discerning Clients Choose Our Standard</h2>
+        <p>A direct, uncompromising comparison between generic market offerings and our precision engineering.</p>
+      </div>
+      <div class="comp-grid">
+        <div class="comp-col bad">
+          <div class="comp-title">× Traditional Local Accountants</div>
+          <ul class="comp-list">
+            
+            <li class="comp-item">
+              <span class="comp-icon">✕</span>
+              <span>Messy Excel file exchanges over WhatsApp with zero encrypted security</span>
+            </li>
+            
+            <li class="comp-item">
+              <span class="comp-icon">✕</span>
+              <span>Reactive tax planning that scrambles only in March after the fiscal year is over</span>
+            </li>
+            
+            <li class="comp-item">
+              <span class="comp-icon">✕</span>
+              <span>Missed statutory filing deadlines leading to director disqualification warnings</span>
+            </li>
+            
+            <li class="comp-item">
+              <span class="comp-icon">✕</span>
+              <span>Zero experience in cross-border transfer pricing or ESOP valuation models</span>
+            </li>
+            
+          </ul>
+        </div>
+        <div class="comp-col good">
+          <div class="comp-title">✓ The Ascent &amp; Ledger Standard</div>
+          <ul class="comp-list">
+            
+            <li class="comp-item">
+              <span class="comp-icon">✓</span>
+              <span>Dedicated partner oversight from senior ex-Big-4 Chartered Accountants</span>
+            </li>
+            
+            <li class="comp-item">
+              <span class="comp-icon">✓</span>
+              <span>Real-time automated GST 2B reconciliation preventing blocked input tax credits</span>
+            </li>
+            
+            <li class="comp-item">
+              <span class="comp-icon">✓</span>
+              <span>Proactive quarterly tax optimization sprints keeping cash flow inside your firm</span>
+            </li>
+            
+            <li class="comp-item">
+              <span class="comp-icon">✓</span>
+              <span>Bank-grade encrypted client portal for confidential balance sheet document exchange</span>
+            </li>
+            
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Practice Pillars -->
-  <section id="pillars" class="container">
-    <div style="text-align: center; margin-bottom: 36px;">
-      <h2 style="font-family: var(--font-heading); font-size: 32px; margin-bottom: 8px;">Advisory &amp; Compliance Spectrum</h2>
-    </div>
-
-    <div class="pillar-grid">
-      <div class="pillar-card">
-        <h3 class="pillar-title">Virtual CFO &amp; Strategic Advisory</h3>
-        <p class="pillar-desc">Unit economics modeling, investor reporting, burn-rate optimization, and board-level financial stewardship.</p>
+  <!-- Portfolio Showcase -->
+  <section class="section-portfolio" id="portfolio">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Advisory Practice Areas
+        </div>
+        <h2>Institutional Financial Governance</h2>
+        <p>Comprehensive statutory compliance, corporate restructuring, and transaction advisory delivered with rigorous audit defensibility.</p>
       </div>
-      <div class="pillar-card">
-        <h3 class="pillar-title">GST Litigation &amp; Audit Defense</h3>
-        <p class="pillar-desc">DRC-01 notice replies, departmental summons handling, input tax credit dispute resolution, and GST Appellate Tribunal representation.</p>
-      </div>
-      <div class="pillar-card">
-        <h3 class="pillar-title">International Tax &amp; Transfer Pricing</h3>
-        <p class="pillar-desc">Cross-border software export 10AA compliance, DTAA treaty relief, Form 15CA/CB remittances, and transfer pricing benchmarking studies.</p>
-      </div>
-      <div class="pillar-card">
-        <h3 class="pillar-title">Due Diligence &amp; M&amp;A Valuations</h3>
-        <p class="pillar-desc">Registered valuer DCF reports, buy-side financial due diligence, cap-table restructuring, and startup ESOP pool design.</p>
+      <div class="portfolio-grid">
+        
+        <div class="project-card">
+          <div class="project-img-box">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Series-B Startup Due Diligence &amp; Valuation" loading="lazy" width="600" height="375">
+            <span class="project-tag">Valuation Audit</span>
+          </div>
+          <div class="project-body">
+            <div class="project-category">Transaction Advisory</div>
+            <h3 class="project-title">Series-B Startup Due Diligence &amp; Valuation</h3>
+            <p class="project-desc">Executing forensic financial due diligence, Rule 11UA fair market valuation, and clean legal closing reports.</p>
+            <div class="project-meta">VC Tech &bull; ₹85Cr Round</div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-img-box">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Cross-Border Transfer Pricing &amp; DTAA Structuring" loading="lazy" width="600" height="375">
+            <span class="project-tag">Transfer Pricing</span>
+          </div>
+          <div class="project-body">
+            <div class="project-category">International Tax</div>
+            <h3 class="project-title">Cross-Border Transfer Pricing &amp; DTAA Structuring</h3>
+            <p class="project-desc">Structuring international arm’s length royalties and withholding tax credits under India-US DTAA treaties.</p>
+            <div class="project-meta">Multinational SaaS &bull; 6 Jurisdictions</div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-img-box">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="₹18Cr GST Dispute Resolution &amp; Appellate Stay" loading="lazy" width="600" height="375">
+            <span class="project-tag">Appellate Victory</span>
+          </div>
+          <div class="project-body">
+            <div class="project-category">Litigation Defense</div>
+            <h3 class="project-title">₹18Cr GST Dispute Resolution &amp; Appellate Stay</h3>
+            <p class="project-desc">Securing unconditional stay against arbitrary show-cause notice before GST Appellate Tribunal.</p>
+            <div class="project-meta">Commercial Taxes Tribunal &bull; Full Dismissal</div>
+          </div>
+        </div>
+        
       </div>
     </div>
   </section>
 
+  <!-- The 3-Step Process -->
+  <section class="section-process" id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Onboarding Protocol
+        </div>
+        <h2>The 3-Step Financial Health Sprint</h2>
+        <p>Transition your books into an audit-proof institutional powerhouse within 7 days.</p>
+      </div>
+      <div class="process-grid">
+        
+        <div class="process-card">
+          <div class="process-num">01</div>
+          <h3>Forensic Books &amp; Tax Gap Audit</h3>
+          <p>We scan the past 3 years of filings to identify hidden GST mismatches, unclaimed input tax, and penalty exposures.</p>
+        </div>
+        
+        <div class="process-card">
+          <div class="process-num">02</div>
+          <h3>Statutory Radar System Setup</h3>
+          <p>Integrating your ERP with automated compliance calendars tracking all 36 annual statutory filing deadlines.</p>
+        </div>
+        
+        <div class="process-card">
+          <div class="process-num">03</div>
+          <h3>Monthly Retainer &amp; Board Advisory</h3>
+          <p>Monthly MIS review, board financial pack preparation, and continuous tax optimization counsel.</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Testimonials -->
+  <section class="section-testimonials">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Client Verification
+        </div>
+        <h2>Direct Words from Long-Standing Patrons</h2>
+        <p>Unfiltered feedback from clients whose projects and reputations depend on our execution.</p>
+      </div>
+      <div class="testi-grid">
+        
+        <div class="testi-card">
+          <div class="testi-quote">"Ascent &amp; Ledger uncovered ₹24 Lakhs of unclaimed GST input credits in our first month alone. Their proactive tax structuring has been a game-changer."</div>
+          <div class="testi-author-row">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=150&amp;q=80" alt="Varun Somani" class="testi-avatar" loading="lazy" width="64" height="64">
+            <div>
+              <div class="testi-name">Varun Somani</div>
+              <div class="testi-role">Founder &amp; CEO, Somani MedTech</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testi-card">
+          <div class="testi-quote">"Their statutory audit was so clean that our Series A institutional investors closed diligence in 9 days without raising a single red flag."</div>
+          <div class="testi-author-row">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=150&amp;q=80" alt="Priyanka Nambiar" class="testi-avatar" loading="lazy" width="64" height="64">
+            <div>
+              <div class="testi-name">Priyanka Nambiar</div>
+              <div class="testi-role">Chief Financial Officer, AgroGrow</div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Inbound Consultation CTA Section -->
+  <section class="section-cta" id="contact">
+    <div class="wrap">
+      <div class="cta-container">
+        <div class="cta-text">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Priority Reservation
+          </div>
+          <h2>Request a Confidential Tax &amp; Audit Healthcheck</h2>
+          <p>Our senior partners review your statutory standing and identify tax optimization opportunities under complete NDA.</p>
+          <div style="background: var(--bg-card-subtle); padding: 22px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 24px;">
+            <h4 style="font-size: 15px; margin-bottom: 8px; color: var(--accent);">&#9733; The Consultation Protocol:</h4>
+            <ul style="font-size: 14px; color: var(--text-muted); list-style-position: inside; line-height: 1.8;">
+              <li>Comprehensive technical &amp; requirements diagnostic</li>
+              <li>Transparent itemized cost modeling with zero hidden markups</li>
+              <li>Guaranteed execution milestone delivery schedule</li>
+            </ul>
+          </div>
+        </div>
+        <div class="form-box">
+          <h3 style="font-size: 22px; margin-bottom: 18px;">Schedule Priority Intake</h3>
+          <div id="demo-success-box" style="display:none; text-align:center; padding: 36px 20px; background: var(--bg-card); border: 1.5px solid var(--accent); border-radius: var(--radius-md);">
+            <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--accent-light); color: var(--accent); display: inline-flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 14px; border: 1.5px solid var(--accent);">✓</div>
+            <h4 style="font-size: 20px; color: var(--text-primary); margin-bottom: 8px;">Inquiry Registered</h4>
+            <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Thank you! Your intake request has been registered in this live demo simulation. In production, inquiry alerts trigger instant SMS &amp; WhatsApp routing.</p>
+            <button type="button" onclick="resetDemoInquiry()" class="btn btn-outline" style="font-size: 13px; padding: 8px 18px;">Submit Another Inquiry</button>
+          </div>
+          <form id="demo-form" onsubmit="handleDemoInquiry(event)">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" class="form-control" placeholder="e.g. Anand Murthy" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp Number</label>
+              <input type="tel" id="phone" class="form-control" placeholder="+91 98765 43210" required>
+            </div>
+            <div class="form-group">
+              <label for="details">Project Scope &amp; Timeline</label>
+              <textarea id="details" class="form-control" rows="3" placeholder="Tell us about your requirements, timeline, or key objectives..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 15px;">Request Tax Review on WhatsApp →</button>
+            <p style="font-size: 12px; color: var(--text-subtle); text-align: center; margin-top: 10px; margin-bottom: 0;">Strict confidentiality guaranteed. Zero unsolicited marketing calls.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <div class="container">
-      <p style="margin-bottom: 8px;">
-        Ascent &amp; Ledger · Chartered Accountants · MG Road Commercial District, Bengaluru · Direct: +91 86608 19023
-      </p>
-      <p style="font-size: 11px; color: #556;">
-        Demonstration Specimen built by Uncoded Hub. 100% Handcrafted React &amp; Tailwind. Zero WordPress bloat.
-      </p>
+    <div class="wrap footer-inner">
+      <div>
+        <div class="brand-title" style="font-size: 18px;">ASCENT &amp; LEDGER</div>
+        <p style="font-size: 12px; margin: 4px 0 0; color: var(--text-subtle);">Ledger Chambers, MG Road, Bengaluru 560001 · Tax Desk: +91 86608 19023</p>
+      </div>
+      <div style="font-size: 13px; color: var(--text-subtle); text-align: right;">
+        &copy; 2026 Ascent &amp; Ledger. Live commercial specimen engineered by <a href="https://uncodedhub.com" style="color: var(--accent); font-weight: 700;">Uncoded Hub</a>.
+      </div>
     </div>
   </footer>
 
+  <!-- Floating 3-Theme Controller Pill -->
+  <div class="theme-controller" role="region" aria-label="Theme Controller">
+    <div class="tc-label">
+      <span class="tc-dot"></span>
+      3 Layout Styles
+    </div>
+    <button class="tc-btn active" data-theme="swiss-navy" onclick="switchTheme('swiss-navy', this)">
+      <span>&#9632; Swiss Financial Navy</span>
+    </button>
+    <button class="tc-btn" data-theme="ivory-ledger" onclick="switchTheme('ivory-ledger', this)">
+      <span>&#9670; Ivory Auditor Ledger</span>
+    </button>
+    <button class="tc-btn" data-theme="cyber-fintech" onclick="switchTheme('cyber-fintech', this)">
+      <span>&#9650; Cyber FinTech Monochrome</span>
+    </button>
+  </div>
+
+  <!-- Uncoded Hub Studio Pitch & Cover Letter Modal -->
+  <div class="pitch-modal-backdrop" id="uncodedPitchModal" onclick="handleBackdropClick(event)">
+    <div class="pitch-modal-card">
+      <button class="pitch-close-btn" onclick="closePitchModal()" title="Close dialog">✕</button>
+      
+      <div class="uh-popup-header">
+        <div class="uh-brand-group">
+          <img src="/logo-medium.webp" alt="Uncoded Hub" class="uh-brand-logo-img">
+          <div>
+            <div class="uh-brand-name">Uncoded Hub</div>
+            <div class="uh-brand-sub">Two-Person Studio · Bengaluru</div>
+          </div>
+        </div>
+        <span class="uh-badge-studio">7-Day Sprint Prototype</span>
+      </div>
+
+      <div class="founders-row">
+        <div class="founders-photos">
+          <div class="founder-pic-box">
+            <img src="/deepak.webp" alt="Deepak, co-founder" class="founder-pic">
+            <span class="founder-name">Deepak</span>
+            <span class="founder-role">Engineering</span>
+          </div>
+          <div class="founder-pic-box">
+            <img src="/geetha.webp" alt="Geetha, co-founder" class="founder-pic">
+            <span class="founder-name">Geetha</span>
+            <span class="founder-role">Design &amp; Strategy</span>
+          </div>
+        </div>
+        <div class="founders-intro">
+          <h2>Why We Hand-Built This Live Prototype For Your Business Before Asking For A Rupee.</h2>
+          <p>A personal note from Deepak &amp; Geetha to the founder or practice director reviewing this website.</p>
+        </div>
+      </div>
+
+      <div class="pitch-body">
+        <p>Dear Founder / Business Owner,</p>
+        <p>Most digital agencies pitch generic 40-page PDF decks, throw around corporate jargon, and demand lakhs before proving they understand a single thing about your real clients. <strong>We do the opposite: we do the work first.</strong></p>
+
+        <div class="insight-card">
+          <h4>The 50-Millisecond Silent Decision</h4>
+          <p>When a prospective client or patient searches for your service in your city, they don't judge your years of dedication or credentials on paper. <strong>They judge you in the first 50 milliseconds based on visual certainty.</strong> In high-ticket services, clients do not buy a service—they buy <em>relief from the fear of making an expensive mistake</em>. If your site takes 4+ seconds to load, breaks on mobile, or looks like a template from 2018, over 70% bounce silently and hire the competitor who looks established.</p>
+        </div>
+
+        <div class="insight-card">
+          <h4>What This Live Prototype Solves For Your Business</h4>
+          <p>We didn't build an aesthetic brochure. We built a high-conversion client acquisition engine: sub-second load time on Indian mobile 4G networks, upfront service clarity, interactive self-qualification tools, and direct 1-tap WhatsApp consultation. It answers your prospect's unvoiced fears before they ever hesitate.</p>
+        </div>
+
+        <div class="belief-card">
+          <div class="belief-quote">
+            "Uncoded Hub is a brother and sister who got tired of watching competent, high-quality businesses lose work to worse competitors simply because the competitor had a faster, clearer website."
+          </div>
+          <div class="commitments-grid">
+            <div class="comm-item">
+              <strong>1. Senior Delivery Only</strong>
+              No hidden junior team, no account managers. Deepak and Geetha engineer and design every single line.
+            </div>
+            <div class="comm-item">
+              <strong>2. 7-Day Turnaround</strong>
+              Live and launched in 7 working days flat—not 3 months of agency delays.
+            </div>
+            <div class="comm-item">
+              <strong>3. 100% Asset Ownership</strong>
+              Domain, hosting, code, and content in your name from day one with zero monthly platform lock-ins.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pitch-actions">
+        <button class="pitch-cta-dismiss" onclick="closePitchModal()">Explore Live Demo Specimen ↓</button>
+        <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha%2C%20I%20am%20viewing%20the%20Ascent%20%26%20Ledger%20demo%20and%20would%20like%20to%20discuss%20building%20our%20website." class="pitch-cta-wa" target="_blank" rel="noopener noreferrer">
+          Claim This Website on WhatsApp (+91 86608 19023) →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Lead Magnet Button -->
+  <div class="lead-magnet-floating-widget" id="leadMagnetWidget">
+    <button class="lm-floating-btn" onclick="openPitchModal()" title="Free 3-Page Executive Guide">
+      <span class="lm-btn-icon-wrap">📄</span>
+      <span>Free Studio Briefing</span>
+      <span class="lm-pulse-ping"></span>
+    </button>
+  </div>
+
   <script>
-    function calcRetainer() {
-      const base = parseInt(document.getElementById('turnoverTier').value);
-      const volume = parseInt(document.getElementById('txVolume').value);
-      const total = base + volume;
-      document.getElementById('retainerDisplay').innerText = '₹' + total.toLocaleString('en-IN') + ' / mo';
+    // Theme Switcher Logic
+    function switchTheme(themeName, btnElement) {
+      document.body.setAttribute('data-theme', themeName);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElement) {
+        btnElement.classList.add('active');
+      }
+      try {
+        localStorage.setItem('accounting-firm.html_active_theme', themeName);
+      } catch (err) {}
     }
 
-    function sendRetainerInquiry() {
-      const entity = document.getElementById('entityType').options[document.getElementById('entityType').selectedIndex].text;
-      const retainer = document.getElementById('retainerDisplay').innerText;
+    try {
+      const savedTheme = localStorage.getItem('accounting-firm.html_active_theme');
+      if (savedTheme) {
+        const targetBtn = document.querySelector(`.tc-btn[data-theme="${savedTheme}"]`);
+        if (targetBtn) {
+          switchTheme(savedTheme, targetBtn);
+        }
+      }
+    } catch (err) {}
 
-      const msg = `Corporate Retainer Consultation Inquiry:%0A` +
-        `• Entity: ${encodeURIComponent(entity)}%0A` +
-        `• Estimated Retainer: ${encodeURIComponent(retainer)}%0A` +
-        `Requesting preliminary scope meeting and engagement letter draft.`;
-
-      window.open(`https://wa.me/918660819023?text=${msg}`, '_blank');
+    // Form Handling Simulation
+    function handleDemoInquiry(e) {
+      e.preventDefault();
+      const form = document.getElementById('demo-form');
+      const successBox = document.getElementById('demo-success-box');
+      if (form && successBox) {
+        form.style.display = 'none';
+        successBox.style.display = 'block';
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     }
+
+    function resetDemoInquiry() {
+      const form = document.getElementById('demo-form');
+      const successBox = document.getElementById('demo-success-box');
+      if (form && successBox) {
+        form.reset();
+        form.style.display = 'block';
+        successBox.style.display = 'none';
+      }
+    }
+
+    // Pitch Modal Logic
+    function openPitchModal() {
+      const modal = document.getElementById('uncodedPitchModal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closePitchModal() {
+      const modal = document.getElementById('uncodedPitchModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target.id === 'uncodedPitchModal') {
+        closePitchModal();
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closePitchModal();
+      }
+    });
   </script>
 </body>
 </html>
-
