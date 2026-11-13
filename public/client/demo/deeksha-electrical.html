@@ -55,7 +55,7 @@
     .custom-scroll::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
     .custom-scroll::-webkit-scrollbar-thumb:hover { background: #475569; }
     .card-industrial {
-      background: rgba(30, 41, 59, 0.7);
+      background: rgba(30, 41, 59, 0.75);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.08);
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -63,7 +63,7 @@
     .card-industrial:hover {
       border-color: rgba(245, 158, 11, 0.45);
       transform: translateY(-2px);
-      box-shadow: 0 12px 30px -10px rgba(245, 158, 11, 0.15);
+      box-shadow: 0 12px 30px -10px rgba(245, 158, 11, 0.18);
     }
     .badge-amber {
       background: rgba(245, 158, 11, 0.12);
@@ -83,9 +83,6 @@
     .toast.show {
       transform: translateY(0);
       opacity: 1;
-    }
-    .glow-amber {
-      box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.4);
     }
   </style>
 </head>
@@ -171,7 +168,7 @@
     </div>
   </header>
 
-  <!-- Hero Section with Real Products & Jigani Local Trust -->
+  <!-- Hero Section with Real Stock Photos & Jigani Local Trust -->
   <section class="relative overflow-hidden pt-8 pb-14 border-b border-slate-800">
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-500/10 via-slate-900/40 to-transparent pointer-events-none"></div>
 
@@ -232,14 +229,19 @@
 
         </div>
 
-        <!-- Right: Real Photo Collage Showcase -->
+        <!-- Right: Real Photo Collage Showcase (Using Relative Paths) -->
         <div class="lg:col-span-5 relative">
           
           <div class="relative bg-slate-900 border border-slate-700/80 rounded-2xl p-3 shadow-2xl overflow-hidden group">
             
             <!-- Real Photo 1: Surya Wires -->
             <div class="relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-950">
-              <img src="/client/demo/assets/deeksha/surya-wires.jpg" alt="Surya Turbo Flex Wires Stock at Deeksha Electrical Jigani" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              <img 
+                src="assets/deeksha/surya-wires.jpg" 
+                alt="Surya Turbo Flex Wires Stock at Deeksha Electrical Jigani" 
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                onerror="this.src='/client/demo/assets/deeksha/surya-wires.jpg'"
+              >
               <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent flex flex-col justify-end p-4">
                 <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500 text-slate-950 w-fit mb-1">GENUINE SURYA WIRES</span>
                 <p class="text-xs font-bold text-white">Turbo Flex 1.0, 1.5, 2.5, 4.0 sq mm Fresh Coils in Stock</p>
@@ -249,15 +251,30 @@
             <!-- Mini Thumbnails Row with Limit Switches & Sensors -->
             <div class="grid grid-cols-3 gap-2 mt-2">
               <div class="relative rounded-lg overflow-hidden aspect-video bg-slate-950 border border-slate-700/60">
-                <img src="/client/demo/assets/deeksha/limit-switches-board.jpg" alt="Limit Switches Board" class="w-full h-full object-cover">
+                <img 
+                  src="assets/deeksha/limit-switches-board.jpg" 
+                  alt="Limit Switches Board" 
+                  class="w-full h-full object-cover"
+                  onerror="this.src='/client/demo/assets/deeksha/limit-switches-board.jpg'"
+                >
                 <span class="absolute bottom-1 left-1 text-[9px] font-bold bg-black/80 px-1 py-0.5 rounded text-amber-300">BC-9 Switches</span>
               </div>
               <div class="relative rounded-lg overflow-hidden aspect-video bg-slate-950 border border-slate-700/60">
-                <img src="/client/demo/assets/deeksha/automation-sensors.jpg" alt="Proximity & Optical Sensors" class="w-full h-full object-cover">
+                <img 
+                  src="assets/deeksha/automation-sensors.jpg" 
+                  alt="Proximity & Optical Sensors" 
+                  class="w-full h-full object-cover"
+                  onerror="this.src='/client/demo/assets/deeksha/automation-sensors.jpg'"
+                >
                 <span class="absolute bottom-1 left-1 text-[9px] font-bold bg-black/80 px-1 py-0.5 rounded text-cyan-300">Proximity Sensors</span>
               </div>
               <div class="relative rounded-lg overflow-hidden aspect-video bg-slate-950 border border-slate-700/60">
-                <img src="/client/demo/assets/deeksha/catalog-components-chart.jpg" alt="Catalog Components" class="w-full h-full object-cover">
+                <img 
+                  src="assets/deeksha/catalog-components-chart.jpg" 
+                  alt="Catalog Components" 
+                  class="w-full h-full object-cover"
+                  onerror="this.src='/client/demo/assets/deeksha/catalog-components-chart.jpg'"
+                >
                 <span class="absolute bottom-1 left-1 text-[9px] font-bold bg-black/80 px-1 py-0.5 rounded text-emerald-300">Full Catalog</span>
               </div>
             </div>
@@ -291,7 +308,7 @@
             Browse Products & Request Instant Quotation
           </h2>
           <p class="text-xs sm:text-sm text-slate-400 mt-1">
-            Real prices, wholesale slabs, and instant WhatsApp ordering for factories & contractors.
+            Real prices, wholesale slabs, and instant WhatsApp ordering for factories & contractors in Jigani.
           </p>
         </div>
 
@@ -325,7 +342,7 @@
           👁️ Proximity & Automation Sensors (5)
         </button>
         <button onclick="setCategory('CONNECTORS')" data-category="CONNECTORS" class="cat-btn px-4 py-2 rounded-xl font-bold bg-slate-800 hover:bg-slate-700 text-slate-300 shrink-0 border border-slate-700">
-          🔌 Connectors & Temperature Controllers (4)
+          🔌 Connectors & Controllers (4)
         </button>
         <button onclick="setCategory('SWITCHGEAR')" data-category="SWITCHGEAR" class="cat-btn px-4 py-2 rounded-xl font-bold bg-slate-800 hover:bg-slate-700 text-slate-300 shrink-0 border border-slate-700">
           🛡️ MCCB & Power Switchgear (4)
@@ -334,7 +351,7 @@
 
       <!-- Products Grid -->
       <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        <!-- Rendered by JavaScript -->
+        <!-- Rendered dynamically by JavaScript with dedicated cropped images -->
       </div>
 
     </div>
@@ -445,7 +462,12 @@
       <div class="lg:col-span-5 flex flex-col items-center">
         <div class="relative bg-slate-900 border border-amber-500/30 rounded-2xl p-3 shadow-2xl max-w-sm w-full">
           <div class="rounded-xl overflow-hidden aspect-[4/5] bg-black">
-            <img src="/client/demo/assets/deeksha/visiting-card.jpg" alt="Deeksha Electrical Official Visiting Card" class="w-full h-full object-contain">
+            <img 
+              src="assets/deeksha/visiting-card.jpg" 
+              alt="Deeksha Electrical Official Visiting Card" 
+              class="w-full h-full object-contain"
+              onerror="this.src='/client/demo/assets/deeksha/visiting-card.jpg'"
+            >
           </div>
           <div class="text-center pt-3 pb-1">
             <span class="text-xs font-bold text-amber-400">Official Business Credential</span>
@@ -555,7 +577,7 @@
     <span id="toastText">Item added to RFQ Cart!</span>
   </div>
 
-  <!-- Comprehensive Product Catalog Data & App Logic -->
+  <!-- Comprehensive Product Catalog Data with Dedicated Cropped Images & Relative Paths -->
   <script>
     const PRODUCTS = [
       // 1. Surya Wires & Flexible Cables
@@ -569,7 +591,8 @@
         unit: 'Coil (90m)',
         badge: 'Top Seller',
         badgeType: 'amber',
-        image: '/client/demo/assets/deeksha/surya-wires.jpg',
+        image: 'assets/deeksha/products/wire-1-0.jpg',
+        fallback: 'assets/deeksha/surya-wires.jpg',
         inStock: true
       },
       {
@@ -582,7 +605,8 @@
         unit: 'Coil (90m)',
         badge: 'Industrial Standard',
         badgeType: 'amber',
-        image: '/client/demo/assets/deeksha/surya-wires.jpg',
+        image: 'assets/deeksha/products/wire-1-5.jpg',
+        fallback: 'assets/deeksha/surya-wires.jpg',
         inStock: true
       },
       {
@@ -595,7 +619,8 @@
         unit: 'Coil (90m)',
         badge: 'High Current',
         badgeType: 'amber',
-        image: '/client/demo/assets/deeksha/surya-wires.jpg',
+        image: 'assets/deeksha/products/wire-2-5.jpg',
+        fallback: 'assets/deeksha/surya-wires.jpg',
         inStock: true
       },
       {
@@ -608,7 +633,8 @@
         unit: 'Coil (90m)',
         badge: 'Heavy Industrial',
         badgeType: 'amber',
-        image: '/client/demo/assets/deeksha/surya-wires.jpg',
+        image: 'assets/deeksha/products/wire-4-0.jpg',
+        fallback: 'assets/deeksha/surya-wires.jpg',
         inStock: true
       },
 
@@ -623,7 +649,8 @@
         unit: 'Piece',
         badge: 'ISI Certified',
         badgeType: 'cyan',
-        image: '/client/demo/assets/deeksha/limit-switches-board.jpg',
+        image: 'assets/deeksha/products/switch-bc9.jpg',
+        fallback: 'assets/deeksha/limit-switches-board.jpg',
         inStock: true
       },
       {
@@ -636,7 +663,8 @@
         unit: 'Piece',
         badge: 'Tool Grade',
         badgeType: 'cyan',
-        image: '/client/demo/assets/deeksha/limit-switches-board.jpg',
+        image: 'assets/deeksha/products/switch-bc9-t.jpg',
+        fallback: 'assets/deeksha/limit-switches-board.jpg',
         inStock: true
       },
       {
@@ -649,7 +677,8 @@
         unit: 'Piece',
         badge: 'High Demand',
         badgeType: 'amber',
-        image: '/client/demo/assets/deeksha/catalog-components-chart.jpg',
+        image: 'assets/deeksha/products/switch-me8108.jpg',
+        fallback: 'assets/deeksha/catalog-components-chart.jpg',
         inStock: true
       },
       {
@@ -662,7 +691,8 @@
         unit: 'Piece',
         badge: 'Precision',
         badgeType: 'cyan',
-        image: '/client/demo/assets/deeksha/limit-switches-board.jpg',
+        image: 'assets/deeksha/products/switch-cee-em45.jpg',
+        fallback: 'assets/deeksha/limit-switches-board.jpg',
         inStock: true
       },
       {
@@ -675,7 +705,8 @@
         unit: 'Piece',
         badge: 'OEM Choice',
         badgeType: 'cyan',
-        image: '/client/demo/assets/deeksha/catalog-components-chart.jpg',
+        image: 'assets/deeksha/products/switch-z15g.jpg',
+        fallback: 'assets/deeksha/catalog-components-chart.jpg',
         inStock: true
       },
       {
@@ -688,7 +719,8 @@
         unit: 'Piece',
         badge: 'Enclosed',
         badgeType: 'cyan',
-        image: '/client/demo/assets/deeksha/catalog-components-chart.jpg',
+        image: 'assets/deeksha/products/switch-d4mc.jpg',
+        fallback: 'assets/deeksha/catalog-components-chart.jpg',
         inStock: true
       },
       {
@@ -701,7 +733,8 @@
         unit: 'Piece',
         badge: 'Heavy Plant',
         badgeType: 'cyan',
-        image: '/client/demo/assets/deeksha/catalog-components-chart.jpg',
+        image: 'assets/deeksha/products/switch-wlca.jpg',
+        fallback: 'assets/deeksha/catalog-components-chart.jpg',
         inStock: true
       },
 
@@ -716,7 +749,8 @@
         unit: 'Piece',
         badge: 'Automation',
         badgeType: 'cyan',
-        image: '/client/demo/assets/deeksha/automation-sensors.jpg',
+        image: 'assets/deeksha/products/sensor-prox-m12.jpg',
+        fallback: 'assets/deeksha/automation-sensors.jpg',
         inStock: true
       },
       {
@@ -729,7 +763,8 @@
         unit: 'Piece',
         badge: 'Heavy Sensor',
         badgeType: 'cyan',
-        image: '/client/demo/assets/deeksha/automation-sensors.jpg',
+        image: 'assets/deeksha/products/sensor-prox-m18.jpg',
+        fallback: 'assets/deeksha/automation-sensors.jpg',
         inStock: true
       },
       {
@@ -742,7 +777,8 @@
         unit: 'Set',
         badge: 'Optical',
         badgeType: 'amber',
-        image: '/client/demo/assets/deeksha/automation-sensors.jpg',
+        image: 'assets/deeksha/products/sensor-photoelectric.jpg',
+        fallback: 'assets/deeksha/automation-sensors.jpg',
         inStock: true
       },
       {
@@ -755,7 +791,8 @@
         unit: 'Piece',
         badge: 'High Speed',
         badgeType: 'cyan',
-        image: '/client/demo/assets/deeksha/automation-sensors.jpg',
+        image: 'assets/deeksha/products/sensor-slot-u.jpg',
+        fallback: 'assets/deeksha/automation-sensors.jpg',
         inStock: true
       },
       {
@@ -768,7 +805,8 @@
         unit: 'Piece',
         badge: 'Level Control',
         badgeType: 'cyan',
-        image: '/client/demo/assets/deeksha/catalog-components-chart.jpg',
+        image: 'assets/deeksha/products/sensor-float.jpg',
+        fallback: 'assets/deeksha/catalog-components-chart.jpg',
         inStock: true
       },
 
@@ -783,7 +821,8 @@
         unit: 'Pair',
         badge: 'Quick Connect',
         badgeType: 'cyan',
-        image: '/client/demo/assets/deeksha/catalog-components-chart.jpg',
+        image: 'assets/deeksha/products/conn-aviation.jpg',
+        fallback: 'assets/deeksha/catalog-components-chart.jpg',
         inStock: true
       },
       {
@@ -796,7 +835,8 @@
         unit: 'Piece',
         badge: 'IP68 Sealed',
         badgeType: 'cyan',
-        image: '/client/demo/assets/deeksha/catalog-components-chart.jpg',
+        image: 'assets/deeksha/products/conn-waterproof.jpg',
+        fallback: 'assets/deeksha/catalog-components-chart.jpg',
         inStock: true
       },
       {
@@ -809,7 +849,8 @@
         unit: 'Piece',
         badge: 'Digital PID',
         badgeType: 'amber',
-        image: '/client/demo/assets/deeksha/catalog-components-chart.jpg',
+        image: 'assets/deeksha/products/ctrl-temp-c100.jpg',
+        fallback: 'assets/deeksha/catalog-components-chart.jpg',
         inStock: true
       },
       {
@@ -822,7 +863,8 @@
         unit: 'Piece',
         badge: 'Plant Utility',
         badgeType: 'amber',
-        image: '/client/demo/assets/deeksha/catalog-components-chart.jpg',
+        image: 'assets/deeksha/products/cable-drum.jpg',
+        fallback: 'assets/deeksha/catalog-components-chart.jpg',
         inStock: true
       },
 
@@ -837,7 +879,8 @@
         unit: 'Piece',
         badge: 'Power Distribution',
         badgeType: 'amber',
-        image: '/client/demo/assets/deeksha/catalog-components-chart.jpg',
+        image: 'assets/deeksha/products/mccb-63a.jpg',
+        fallback: 'assets/deeksha/catalog-components-chart.jpg',
         inStock: true
       },
       {
@@ -850,7 +893,8 @@
         unit: 'Piece',
         badge: 'Main Incomer',
         badgeType: 'amber',
-        image: '/client/demo/assets/deeksha/catalog-components-chart.jpg',
+        image: 'assets/deeksha/products/mccb-100a.jpg',
+        fallback: 'assets/deeksha/catalog-components-chart.jpg',
         inStock: true
       },
       {
@@ -863,7 +907,8 @@
         unit: 'Piece',
         badge: 'Heavy Plant',
         badgeType: 'amber',
-        image: '/client/demo/assets/deeksha/catalog-components-chart.jpg',
+        image: 'assets/deeksha/products/mccb-250a.jpg',
+        fallback: 'assets/deeksha/catalog-components-chart.jpg',
         inStock: true
       },
       {
@@ -876,7 +921,8 @@
         unit: 'Piece',
         badge: 'Pneumatics',
         badgeType: 'cyan',
-        image: '/client/demo/assets/deeksha/catalog-components-chart.jpg',
+        image: 'assets/deeksha/products/valve-pneumatic.jpg',
+        fallback: 'assets/deeksha/catalog-components-chart.jpg',
         inStock: true
       }
     ];
@@ -932,17 +978,19 @@
       }
 
       grid.innerHTML = filtered.map(p => {
-        const inCartItem = cart.find(item => item.id === p.id);
-        const qty = inCartItem ? inCartItem.qty : 1;
-
         return `
           <div class="card-industrial rounded-2xl p-4 flex flex-col justify-between group">
             
             <div>
-              <!-- Product Image Thumbnail -->
-              <div class="rounded-xl overflow-hidden aspect-[4/3] bg-slate-950 relative border border-slate-800">
-                <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                <span class="absolute top-2.5 left-2.5 text-[10px] font-bold px-2 py-0.5 rounded-full ${p.badgeType === 'amber' ? 'badge-amber' : 'badge-cyan'}">
+              <!-- Product Image Thumbnail with Relative Path & Fallback -->
+              <div class="rounded-xl overflow-hidden aspect-[4/3] bg-slate-950 relative border border-slate-800 flex items-center justify-center">
+                <img 
+                  src="${p.image}" 
+                  alt="${p.name}" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  onerror="this.onerror=null; this.src='${p.fallback}';"
+                >
+                <span class="absolute top-2.5 left-2.5 text-[10px] font-bold px-2 py-0.5 rounded-full ${p.badgeType === 'amber' ? 'badge-amber' : 'badge-cyan'} shadow">
                   ${p.badge}
                 </span>
                 <span class="absolute bottom-2 right-2 text-[9px] font-bold bg-emerald-950/90 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded">
