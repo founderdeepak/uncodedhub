@@ -8,25 +8,26 @@ import { NICHES, type NicheKey } from '../../lib/blog';
    gradient tile if an image is missing or errors.
    ═══════════════════════════════════════════════════════════════════ */
 
-const THUMB_THEMES: Record<
-  NicheKey,
-  {
-    gradient: string;
-    pillBg: string;
-    pillText: string;
-    ghostText: string;
-    code: string;
-    motif: string;
-  }
-> = {
-  studio: {
-    gradient: 'from-[#1a1714] via-[#0e0c0a] to-[#251f1a]',
-    pillBg: 'bg-signal/20 border-signal/40',
-    pillText: 'text-signal-bright',
-    ghostText: 'Studio',
-    code: 'SYS.00',
-    motif: 'Engineering & Craft',
-  },
+interface ThumbTheme {
+  gradient: string;
+  pillBg: string;
+  pillText: string;
+  ghostText: string;
+  code: string;
+  motif: string;
+}
+
+const DEFAULT_THEME: ThumbTheme = {
+  gradient: 'from-[#1a1714] via-[#0e0c0a] to-[#251f1a]',
+  pillBg: 'bg-signal/20 border-signal/40',
+  pillText: 'text-signal-bright',
+  ghostText: 'Studio',
+  code: 'SYS.00',
+  motif: 'Engineering & Craft',
+};
+
+const THUMB_THEMES: Partial<Record<NicheKey, ThumbTheme>> = {
+  studio: DEFAULT_THEME,
   'coaches-consultants': {
     gradient: 'from-[#181a20] via-[#0f1117] to-[#21242e]',
     pillBg: 'bg-blue-500/20 border-blue-400/40',
@@ -196,7 +197,7 @@ export default function BlogThumbnail({
 }: BlogThumbnailProps) {
   const isHero = size === 'hero';
   const effectiveNiche: NicheKey = niche || 'studio';
-  const theme = THUMB_THEMES[effectiveNiche] || THUMB_THEMES.studio;
+  const theme = (effectiveNiche && THUMB_THEMES[effectiveNiche]) || DEFAULT_THEME;
 
   // Determine initial image candidate
   const initialSrc = image || (slug ? `/blog/${slug}.webp` : '');

@@ -694,6 +694,7 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
       </section>
 
       {/* ── Deep Knowledge Silo & Master Pillar Hub (SEO Core) ────── */}
+      {orderedPosts.length > 0 && (
       <section className="py-20 sm:py-28 bg-paper border-b border-rule">
         <Shell>
           <Reveal>
@@ -806,6 +807,7 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
           </div>
         </Shell>
       </section>
+      )}
 
       {/* ── Closing Commercial Conversion CTA ────────────────────── */}
       <section className="py-24 sm:py-32 bg-[#0E0C0A] text-paper relative overflow-hidden">

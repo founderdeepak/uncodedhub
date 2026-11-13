@@ -19,6 +19,7 @@ import { compileAsciiToSvgDiagram } from './diagram-renderer';
    ═══════════════════════════════════════════════════════════════════ */
 
 export const NICHES = {
+  // Core 18 Established Commercial Niches
   'interior-designers': 'Interior Designers & Architects',
   'real-estate': 'Real Estate & Property Consultants',
   'dental-clinics': 'Dental & Aesthetic Clinics',
@@ -37,6 +38,41 @@ export const NICHES = {
   'healthcare-diagnostics': 'Pathology & Diagnostic Labs',
   'clinic-polyclinic': 'Multi-Specialty Polyclinics',
   'doctor-specialist': 'Super-Specialist Doctors & Surgeons',
+
+  // 32 New High-Intent Commercial Industry Hubs (50 Total)
+  'restaurants': 'Restaurants, Cafes & Fine Dining',
+  'architects': 'Architects & Architectural Studios',
+  'law-firms': 'Law Firms & Legal Advocates',
+  'accounting-firms': 'Chartered Accountants & CPA Firms',
+  'construction-companies': 'Construction Companies & Civil Builders',
+  'astrology-vastu': 'Astrologers, Numerologists & Vastu Consultants',
+  'hotels-resorts': 'Hotels, Boutique Resorts & Luxury Stays',
+  'marketing-agencies': 'Marketing & Performance Agencies',
+  'recruitment-agencies': 'Recruitment & Staffing Agencies',
+  'ecommerce-brands': 'E-Commerce Brands & D2C Storefronts',
+  'landscaping': 'Landscape Architects & Garden Designers',
+  'event-planners': 'Event Management & Wedding Decorators',
+  'veterinary-clinics': 'Veterinary Clinics & Animal Hospitals',
+  'automotive-garages': 'Luxury Car Care & Auto Detailing',
+  'cleaning-services': 'Cleaning Services & Facility Management',
+  'manufacturing-oems': 'Precision Manufacturing & Industrial OEMs',
+  'financial-advisors': 'Wealth Management & Financial Advisors',
+  'logistics-transport': 'Logistics, Freight & Transport',
+  'jewellery-stores': 'Luxury Jewellery & Diamond Ateliers',
+  'coworking-spaces': 'Co-Working Spaces & Managed Offices',
+  'immigration-consultants': 'Immigration & Visa Consultants',
+  'solar-companies': 'Solar EPC & Renewable Contractors',
+  'bakeries-patisseries': 'Artisanal Bakeries & Patisseries',
+  'breweries-bars': 'Craft Breweries & Taprooms',
+  'security-surveillance': 'Security & CCTV Surveillance Contractors',
+  'hvac-contractors': 'HVAC & Centralized AC Contractors',
+  'pest-control': 'Commercial & Residential Pest Control',
+  'packers-movers': 'Packers, Movers & Relocation Services',
+  'caterers': 'Gourmet Wedding & Corporate Caterers',
+  'daycares-preschools': 'Montessori Preschools & Daycares',
+  'driving-schools': 'Motor Driving Schools & Academies',
+  'optometry-eyewear': 'Optometry Clinics & Eyewear Boutiques',
+
   studio: 'Studio Notes',
 } as const;
 
@@ -493,7 +529,7 @@ function loadPosts(): BlogPost[] {
   return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-export const NICHE_PILLAR_SLUGS: Record<NicheKey, string> = {
+export const NICHE_PILLAR_SLUGS: Partial<Record<NicheKey, string>> = {
   'interior-designers': 'what-an-interior-designers-website-should-include',
   'real-estate': 'what-a-real-estate-agents-website-should-include',
   'dental-clinics': 'what-a-dental-clinics-website-should-include',
