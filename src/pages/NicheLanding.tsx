@@ -840,7 +840,7 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
                 </button>
 
                 <a
-                  href={`https://wa.me/919940191835?text=${encodeURIComponent(
+                  href={`https://wa.me/918660819023?text=${encodeURIComponent(
                     `Hi Deepak, I run a ${NICHES[config.key]} practice and would like to discuss a 7-day website sprint.`
                   )}`}
                   target="_blank"
