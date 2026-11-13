@@ -88,6 +88,12 @@ export default function BangaloreLocalityLanding({ onBook: _onBook }: BangaloreL
       { '@type': 'Person', name: 'Deepak', jobTitle: 'Technical Co-Founder' },
       { '@type': 'Person', name: 'Geetha', jobTitle: 'Design Co-Founder' },
     ],
+    ...(activeNiche?.publishedAt || locality.publishedAt
+      ? {
+          datePublished: activeNiche?.publishedAt || locality.publishedAt,
+          dateModified: activeNiche?.publishedAt || locality.publishedAt,
+        }
+      : {}),
   };
 
   const breadcrumbsJsonLd = {

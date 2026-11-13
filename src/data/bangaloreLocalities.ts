@@ -9,6 +9,7 @@ export interface LocalNicheConfig {
   localHook: string;
   statBadge: string;
   targetPrice: string;
+  publishedAt?: string;
 }
 
 export interface BangaloreLocality {
@@ -31,6 +32,7 @@ export interface BangaloreLocality {
     question: string;
     answer: string;
   }>;
+  publishedAt?: string;
 }
 
 export const BANGALORE_LOCALITIES = rawData as unknown as Record<string, BangaloreLocality>;

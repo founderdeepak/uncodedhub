@@ -168,12 +168,15 @@ export function getAllRoutes() {
     routes.push({ loc: `/web-design/${clientNiche}`, lastmod: nicheLastmod });
   }
 
-  // Master Bangalore City Hub & 26 Locality Hubs + 104 Flagship Spoke Landing Pages
-  routes.push({ loc: '/web-design/bangalore', lastmod: '2026-10-29' });
+  // Master Bangalore City Hub & 63 Locality Hubs + 378 Spoke Landing Pages (Wave 1)
+  routes.push({ loc: '/web-design/bangalore', lastmod: '2026-11-13' });
   for (const loc of Object.values(BANGALORE_LOCALITIES)) {
-    routes.push({ loc: `/web-design/bangalore/${loc.slug}`, lastmod: '2026-10-29' });
+    routes.push({ loc: `/web-design/bangalore/${loc.slug}`, lastmod: loc.publishedAt || '2026-11-13' });
     for (const niche of loc.niches) {
-      routes.push({ loc: `/web-design/bangalore/${loc.slug}/${niche.nicheKey}`, lastmod: '2026-10-29' });
+      routes.push({
+        loc: `/web-design/bangalore/${loc.slug}/${niche.nicheKey}`,
+        lastmod: niche.publishedAt || loc.publishedAt || '2026-11-13',
+      });
     }
   }
 
