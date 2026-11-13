@@ -303,3 +303,4 @@ console.log('Successfully upgraded existing 26 localities to 6 niches!');
 
 // Write the file to disk
 fs.writeFileSync(localitiesPath, JSON.stringify(existingData, null, 2), 'utf8');
+

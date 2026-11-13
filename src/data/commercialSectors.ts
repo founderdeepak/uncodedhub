@@ -26,3 +26,4 @@ export const COMMERCIAL_SECTORS_BY_ID: Record<string, CommercialSector> = COMMER
 export const SECTOR_CATEGORIES = Array.from(
   new Set(COMMERCIAL_SECTORS.map((s) => s.category))
 );
+

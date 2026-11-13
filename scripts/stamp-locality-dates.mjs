@@ -54,3 +54,4 @@ writeFileSync(localitiesPath, JSON.stringify(localities, null, 2) + '\n', 'utf-8
 console.log(`Successfully stamped ${totalEntries} dates across ${localityKeys.length} localities.`);
 console.log(`First entry: ${timestamps[0]}`);
 console.log(`Last entry: ${timestamps[timestamps.length - 1]}`);
+

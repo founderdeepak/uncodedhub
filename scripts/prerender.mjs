@@ -176,34 +176,65 @@ async function main() {
   const browser = await chromium.launch({ args: ['--no-sandbox', '--disable-dev-shm-usage'] });
   try {
     await waitForServer(BASE + '/');
-    let page = await browser.newPage();
     const attachHandlers = (p) => {
       p.on('pageerror', (err) => console.error('  [PAGE ERROR]', err.message));
       p.on('console', (msg) => {
         if (msg.type() === 'error') console.error('  [PAGE CONSOLE ERROR]', msg.text());
       });
     };
-    attachHandlers(page);
 
-    for (let i = 0; i < routes.length; i++) {
-      if (i > 0 && i % 25 === 0) {
-        await page.close().catch(() => {});
-        page = await browser.newPage();
-        attachHandlers(page);
+    // Render non-root routes concurrently across worker pages to finish in ~4-5 minutes
+    const concurrentRoutes = allRoutes.filter((r) => r !== '/');
+    const CONCURRENCY = 4;
+    let nextIdx = 0;
+    let completedCount = 0;
+
+    async function worker(workerId) {
+      let page = await browser.newPage();
+      attachHandlers(page);
+      let pagesRenderedOnThisPage = 0;
+
+      while (true) {
+        const i = nextIdx++;
+        if (i >= concurrentRoutes.length) break;
+        const route = concurrentRoutes[i];
+
+        if (pagesRenderedOnThisPage > 0 && pagesRenderedOnThisPage % 25 === 0) {
+          await page.close().catch(() => {});
+          page = await browser.newPage();
+          attachHandlers(page);
+        }
+
+        const html = await renderRoute(page, route);
+        pagesRenderedOnThisPage++;
+        const outPath = outputPathFor(route);
+        mkdirSync(path.dirname(outPath), { recursive: true });
+        writeFileSync(outPath, html);
+        completedCount++;
+        if (completedCount % 50 === 0 || completedCount === concurrentRoutes.length) {
+          console.log(`[Worker Pool] Rendered ${completedCount}/${concurrentRoutes.length} (${Math.round((completedCount / concurrentRoutes.length) * 100)}%)`);
+        }
       }
-      const route = routes[i];
-      const html = await renderRoute(page, route);
-      if (route === NOT_FOUND_PROBE) {
-        writeFileSync(path.join(distDir, '404.html'), html);
-        console.log(`  (404) -> 404.html`);
-        continue;
-      }
-      const outPath = outputPathFor(route);
-      mkdirSync(path.dirname(outPath), { recursive: true });
-      writeFileSync(outPath, html);
+
+      await page.close().catch(() => {});
     }
 
-    await page.close().catch(() => {});
+    const workers = Array.from({ length: CONCURRENCY }, (_, id) => worker(id));
+    await Promise.all(workers);
+
+    // Render 404 probe and root route sequentially
+    const singlePage = await browser.newPage();
+    attachHandlers(singlePage);
+
+    const notFoundHtml = await renderRoute(singlePage, NOT_FOUND_PROBE);
+    writeFileSync(path.join(distDir, '404.html'), notFoundHtml);
+    console.log(`  (404) -> 404.html`);
+
+    const rootHtml = await renderRoute(singlePage, '/');
+    writeFileSync(path.join(distDir, 'index.html'), rootHtml);
+    console.log(`  [/] -> index.html`);
+
+    await singlePage.close().catch(() => {});
   } catch (err) {
     console.error('--- vite preview output ---\n' + previewOutput);
     throw err;
@@ -216,9 +247,9 @@ async function main() {
   process.exit(0);
 }
 
-// Hard ceiling on the whole script. Set to 15 minutes to comfortably accommodate
-// prerendering 538+ routes while still catching genuine hangs.
-const OVERALL_TIMEOUT_MS = 15 * 60 * 1000;
+// Hard ceiling on the whole script. Set to 25 minutes to comfortably accommodate
+// prerendering 1296+ routes with worker pool while still catching genuine hangs.
+const OVERALL_TIMEOUT_MS = 25 * 60 * 1000;
 let timeoutTimer;
 const timeout = new Promise((_, reject) => {
   timeoutTimer = setTimeout(() => reject(new Error(`prerender.mjs exceeded ${OVERALL_TIMEOUT_MS}ms overall`)), OVERALL_TIMEOUT_MS);

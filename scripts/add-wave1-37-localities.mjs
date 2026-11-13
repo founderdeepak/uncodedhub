@@ -789,3 +789,4 @@ for (const item of REMAINING_WAVE1_DEFS) {
 
 fs.writeFileSync(localitiesPath, JSON.stringify(data, null, 2), 'utf8');
 console.log(`Successfully updated ${localitiesPath}. Total localities count is now: ${Object.keys(data).length}`);
+

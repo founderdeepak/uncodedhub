@@ -168,7 +168,7 @@ export function getAllRoutes() {
     routes.push({ loc: `/web-design/${clientNiche}`, lastmod: nicheLastmod });
   }
 
-  // Master Bangalore City Hub & 63 Locality Hubs + 378 Spoke Landing Pages (Wave 1)
+  // Master Bangalore City Hub & 100 Locality Hubs + 600 Spoke Landing Pages (Full 100-Locality Grid)
   routes.push({ loc: '/web-design/bangalore', lastmod: '2026-11-13' });
   for (const loc of Object.values(BANGALORE_LOCALITIES)) {
     routes.push({ loc: `/web-design/bangalore/${loc.slug}`, lastmod: loc.publishedAt || '2026-11-13' });

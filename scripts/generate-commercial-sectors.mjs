@@ -879,3 +879,4 @@ const sectors = [
 
 writeFileSync(targetJson, JSON.stringify(sectors, null, 2) + '\n', 'utf-8');
 console.log(`Successfully generated ${sectors.length} commercial sectors in ${targetJson}`);
+
