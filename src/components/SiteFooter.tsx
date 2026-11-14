@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { LogoMark } from './Logo';
 import { hasBlogPosts } from '../lib/blogNav';
 import { getWhatsAppUrl } from '../lib/whatsapp';
+import { NICHES } from '../lib/blog';
 import { BANGALORE_LOCALITIES } from '../data/bangaloreLocalities';
 
 const LEAD_MAGNET_SCRIPT_URL =
@@ -10,10 +11,10 @@ const LEAD_MAGNET_SCRIPT_URL =
 const LEAD_MAGNET_SECRET = import.meta.env.VITE_LEAD_MAGNET_SECRET || '';
 
 /* ═══════════════════════════════════════════════════════════════════
-   SITE FOOTER
-   Architecturally balanced footer with calibrated typographic scale,
-   clear section divisions, verified channel cards, and comprehensive
-   Bengaluru regional coverage.
+   SITE FOOTER — LUXURY ARCHITECTURAL INDEX ARCHITECTURE (OPTION 4)
+   Crafted with editorial precision: curated top navigation, dedicated
+   7 client services, premier portfolio demo gateway, and an expandable
+   architectural drawer housing 50 industry silos & 100 Bengaluru corridors.
    ═══════════════════════════════════════════════════════════════════ */
 
 const SERVICE_LINKS = [
@@ -74,6 +75,14 @@ const INDUSTRY_LINKS = [
   { label: 'Gyms, Fitness & Wellness', to: '/web-design/gym-fitness-club/' },
 ];
 
+const ALL_50_NICHES = (Object.keys(NICHES) as (keyof typeof NICHES)[])
+  .filter((k) => k !== 'studio')
+  .map((k) => ({
+    slug: k,
+    name: NICHES[k],
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
 const ALL_BENGALURU_LOCALITIES = Object.values(BANGALORE_LOCALITIES).sort((a, b) =>
   a.name.localeCompare(b.name)
 );
@@ -85,6 +94,8 @@ export default function SiteFooter() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const [trap, setTrap] = useState('');
+  const [indexTab, setIndexTab] = useState<'niches' | 'localities'>('niches');
+  const [isIndexExpanded, setIsIndexExpanded] = useState(false);
   const startedAt = useRef(Date.now());
 
   const handleAuditSubmit = async (e: React.FormEvent) => {
@@ -548,40 +559,163 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        {/* ── 3. Serving Every Corridor in Bengaluru (All 100 Localities) ── */}
-        <div className="py-10 border-t border-rule-on-ink text-xs">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-            <div>
-              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-on-ink flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-signal-bright" />
-                Serving 100 Hyperlocal Corridors Across Bengaluru
+        {/* ── 3. Architectural Index Drawer: 50 Niches & 100 Corridors (Option 4) ── */}
+        <div className="py-12 border-t border-rule-on-ink text-xs">
+          
+          {/* Live Demos Showcase Strip — One Premier Link to All 50 Demos */}
+          <div className="mb-8 p-4 sm:p-5 rounded-[18px] bg-white/[0.03] border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <span className="w-8 h-8 rounded-xl bg-signal/15 text-signal-bright flex items-center justify-center shrink-0 font-mono text-sm">
+                🎮
               </span>
-              <p className="text-on-ink-muted text-xs mt-1">
-                Pincodes 560001–560103 · Bespoke React platforms delivered directly by Deepak &amp; Geetha with 7-day guarantee
-              </p>
+              <div>
+                <span className="text-on-ink font-medium block">
+                  Interactive Specimen Showcase: 50 Live Industry Demos
+                </span>
+                <span className="text-[11px] text-on-ink-muted">
+                  Every industry platform includes 3 live switchable visual themes (Modern Luxe, Minimal Editorial, High-Contrast).
+                </span>
+              </div>
             </div>
+
             <Link
-              to="/web-design/bangalore/"
-              className="text-signal-bright font-mono text-xs hover:underline inline-flex items-center gap-1.5 font-medium shrink-0"
+              to="/portfolio/"
+              className="bg-white/10 hover:bg-signal-bright hover:text-paper text-on-ink px-4 py-2 rounded-full font-mono text-xs transition-colors shrink-0 flex items-center gap-1.5 self-start sm:self-auto"
             >
-              <span>Explore Master Bangalore Hub &amp; Map</span>
+              <span>Explore All 50 Demos in Portfolio</span>
               <span>→</span>
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-2 text-xs">
-            {ALL_BENGALURU_LOCALITIES.map((loc) => (
-              <Link
-                key={loc.slug}
-                to={`/web-design/bangalore/${loc.slug}/`}
-                className="text-on-ink-muted hover:text-signal-bright transition-colors truncate flex items-center gap-1.5 py-0.5 group"
-                title={`${loc.name}, Bengaluru (${loc.pincode})`}
+          {/* Directory Header with Luxury Tab Switcher & Drawer Toggle */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div>
+              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-signal-bright block mb-1">
+                ARCHITECTURAL DIRECTORY
+              </span>
+              <h3 className="font-display text-xl sm:text-2xl text-on-ink font-normal tracking-tight">
+                50 Specialized Industry Silos &amp; 100 Bengaluru Corridors
+              </h3>
+              <p className="text-on-ink-muted text-xs mt-1">
+                Bespoke React platforms engineered by senior founders Deepak &amp; Geetha with 7-day guarantee.
+              </p>
+            </div>
+
+            {/* Interactive Tab Switcher & Drawer Toggle */}
+            <div className="flex flex-wrap items-center gap-2 self-start md:self-auto">
+              <div className="inline-flex p-1 rounded-full bg-white/[0.04] border border-white/10">
+                <button
+                  type="button"
+                  onClick={() => setIndexTab('niches')}
+                  className={`px-3.5 py-1.5 rounded-full font-mono text-xs transition-all cursor-pointer ${
+                    indexTab === 'niches'
+                      ? 'bg-signal-bright text-paper font-semibold shadow-xs'
+                      : 'text-on-ink-muted hover:text-on-ink'
+                  }`}
+                >
+                  50 Industry Silos ({ALL_50_NICHES.length})
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setIndexTab('localities')}
+                  className={`px-3.5 py-1.5 rounded-full font-mono text-xs transition-all cursor-pointer ${
+                    indexTab === 'localities'
+                      ? 'bg-signal-bright text-paper font-semibold shadow-xs'
+                      : 'text-on-ink-muted hover:text-on-ink'
+                  }`}
+                >
+                  100 Bengaluru Corridors ({ALL_BENGALURU_LOCALITIES.length})
+                </button>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setIsIndexExpanded(!isIndexExpanded)}
+                className="px-3.5 py-1.5 rounded-full border border-white/15 text-on-ink-muted hover:text-on-ink hover:border-white/30 font-mono text-xs transition-colors cursor-pointer"
               >
-                <span className="text-signal-bright/40 group-hover:text-signal-bright text-[10px] font-mono transition-colors shrink-0">📍</span>
-                <span className="truncate">{loc.name}</span>
-              </Link>
-            ))}
+                {isIndexExpanded ? 'Collapse ↑' : 'Expand All ↓'}
+              </button>
+            </div>
           </div>
+
+          {/* 50 Industry Niches Container */}
+          <div className={indexTab === 'niches' ? 'block' : 'hidden'}>
+            <div className="flex items-center justify-between mb-3 text-[11px] font-mono text-on-ink-muted">
+              <span>National &amp; Global Industry Specializations</span>
+              <Link to="/web-design/" className="text-signal-bright hover:underline">
+                View Master Web Design Hub →
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-2 text-xs">
+              {(isIndexExpanded ? ALL_50_NICHES : ALL_50_NICHES.slice(0, 15)).map((niche) => (
+                <Link
+                  key={niche.slug}
+                  to={`/web-design/${niche.slug}/`}
+                  className="text-on-ink-muted hover:text-signal-bright transition-colors truncate flex items-center gap-1.5 py-0.5 group"
+                  title={niche.name}
+                >
+                  <span className="text-signal-bright/40 group-hover:text-signal-bright text-[10px] font-mono transition-colors shrink-0">
+                    📐
+                  </span>
+                  <span className="truncate">{niche.name}</span>
+                </Link>
+              ))}
+            </div>
+
+            {!isIndexExpanded && (
+              <div className="mt-4 text-center">
+                <button
+                  type="button"
+                  onClick={() => setIsIndexExpanded(true)}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 hover:border-signal-bright text-xs text-on-ink-muted hover:text-on-ink font-mono transition-colors cursor-pointer"
+                >
+                  <span>+35 More Specialized Industry Silos</span>
+                  <span className="text-signal-bright">↓ Expand Complete Directory</span>
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* 100 Bengaluru Localities Container */}
+          <div className={indexTab === 'localities' ? 'block' : 'hidden'}>
+            <div className="flex items-center justify-between mb-3 text-[11px] font-mono text-on-ink-muted">
+              <span>Serving Pincodes 560001–560103 Across All 5 Zones</span>
+              <Link to="/web-design/bangalore/" className="text-signal-bright hover:underline">
+                View Master Bangalore Hub &amp; Map →
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-2 text-xs">
+              {(isIndexExpanded ? ALL_BENGALURU_LOCALITIES : ALL_BENGALURU_LOCALITIES.slice(0, 20)).map((loc) => (
+                <Link
+                  key={loc.slug}
+                  to={`/web-design/bangalore/${loc.slug}/`}
+                  className="text-on-ink-muted hover:text-signal-bright transition-colors truncate flex items-center gap-1.5 py-0.5 group"
+                  title={`${loc.name}, Bengaluru (${loc.pincode})`}
+                >
+                  <span className="text-signal-bright/40 group-hover:text-signal-bright text-[10px] font-mono transition-colors shrink-0">
+                    📍
+                  </span>
+                  <span className="truncate">{loc.name}</span>
+                </Link>
+              ))}
+            </div>
+
+            {!isIndexExpanded && (
+              <div className="mt-4 text-center">
+                <button
+                  type="button"
+                  onClick={() => setIsIndexExpanded(true)}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 hover:border-signal-bright text-xs text-on-ink-muted hover:text-on-ink font-mono transition-colors cursor-pointer"
+                >
+                  <span>+80 More Bengaluru Neighborhoods</span>
+                  <span className="text-signal-bright">↓ Expand Complete Directory</span>
+                </button>
+              </div>
+            )}
+          </div>
+
         </div>
 
         {/* ── 4. Decorative Studio Wordmark Graphic ── */}
