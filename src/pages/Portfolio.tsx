@@ -1,87 +1,202 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
 import { LogoMark } from '../components/Logo';
-
-/* ═══════════════════════════════════════════════════════════════════
-   PORTFOLIO & INTERACTIVE SPECIMEN BUILDS
-   World-Class Client Acquisition Experience:
-   - High-contrast editorial hero
-   - 8:2 Specimen Index Grid (Command Deck Quick Jump)
-   - 50 Live Specimen Builds with Continuous 3-Second 3-Theme Changeover
-   - Segmented visual progress bars for each theme
-   - In-Page Interactive Viewport Modal (Desktop / Tablet / Mobile)
-   - The 4 Specimen Standards (Lighthouse speed, copy, semantic markup)
-   - Cloaked-style dual-card founder closing CTA
-   ═══════════════════════════════════════════════════════════════════ */
 import { PROJECTS, type Project, type ThemeItem } from '../data/projects';
 export type { Project, ThemeItem };
 
+/* ═══════════════════════════════════════════════════════════════════
+   PORTFOLIO & 50 LIVE INTERACTIVE SPECIMEN BUILDS
+   Ultra-Luxury Editorial Showcase for High-Ticket Buying Groups:
+   - 7 Curated Luxury Industry Sectors covering all 50 live demos
+   - Real-time instant search & keyword filtering
+   - 50 Visual Specimen Index Matrix with 3s live theme cross-fades
+   - 150 Unique hand-coded themes with authentic color swatches
+   - In-Page Interactive Viewport Modal (Desktop 1440px / Tablet 768px / Mobile 390px)
+   - The 4 Production Engineering Standards (Lighthouse speed, copy, structure, zero bloat)
+   - Direct founder engagement closing CTA
+   ═══════════════════════════════════════════════════════════════════ */
 
-const CATEGORIES = [
-  { id: 'all', label: 'All Specimen Demos (50)' },
-  { id: 'clinics', label: 'Clinics & Polyclinics' },
-  { id: 'healthcare', label: 'Surgeons & Diagnostics' },
-  { id: 'wellness', label: 'Spa & Yoga Studios' },
-  { id: 'fitness', label: 'Gyms & Private Coaches' },
-  { id: 'beauty', label: 'Luxury Salons & Bridal' },
-  { id: 'education', label: 'Academies & Prep' },
-  { id: 'business', label: 'B2B Advisory & Coaching' },
-  { id: 'interiors', label: 'Architects & Renovation' },
-  { id: 'real-estate', label: 'Prime Real Estate' },
-  { id: 'photographers', label: 'Wedding Films' },
-  { id: 'creative', label: 'Creative Design Studios' },
+export interface LuxurySector {
+  id: string;
+  label: string;
+  shortLabel: string;
+  count: number;
+  description: string;
+  projectIds?: string[];
+}
+
+export const LUXURY_SECTORS: LuxurySector[] = [
+  {
+    id: 'all',
+    label: 'All 50 Demos',
+    shortLabel: 'All Demos',
+    count: 50,
+    description: 'Complete collection of 50 production-grade live specimens with 150 unique aesthetic themes',
+  },
+  {
+    id: 'healthcare',
+    label: 'Medical, Clinics & Healthcare',
+    shortLabel: 'Medical & Clinics',
+    count: 7,
+    description: 'Dental studios, multi-speciality polyclinics, surgical orthopaedics, diagnostic imaging & vet hospitals',
+    projectIds: [
+      'dental-clinic',
+      'clinic-polyclinic',
+      'doctor-specialist',
+      'healthcare-diagnostics',
+      'veterinary-clinics',
+      'optometry-eyewear',
+      'spa-wellness',
+    ],
+  },
+  {
+    id: 'architecture',
+    label: 'Architecture, Estates & Development',
+    shortLabel: 'Architecture & Estates',
+    count: 8,
+    description: 'Turnkey interior architecture, prime estates, civil contracting, landscape design & flex coworking',
+    projectIds: [
+      'interior-design',
+      'real-estate',
+      'home-renovation',
+      'construction',
+      'architects',
+      'landscaping',
+      'coworking-spaces',
+      'solar-companies',
+    ],
+  },
+  {
+    id: 'corporate',
+    label: 'Corporate, Legal & Capital Advisory',
+    shortLabel: 'Legal & Capital',
+    count: 8,
+    description: 'Commercial litigation, statutory chartered accountancy, fiduciary wealth, executive search & global visas',
+    projectIds: [
+      'executive-coaching',
+      'business-portfolio',
+      'law-firm',
+      'accounting-firm',
+      'marketing-agencies',
+      'recruitment-agencies',
+      'financial-advisors',
+      'immigration-consultants',
+    ],
+  },
+  {
+    id: 'hospitality',
+    label: 'Hospitality, Dining & Celebrations',
+    shortLabel: 'Hospitality & Dining',
+    count: 7,
+    description: 'Wood-fired charcoal kitchens, boutique heritage resorts, French boulangeries, craft breweries & luxury weddings',
+    projectIds: [
+      'restaurant',
+      'hotels-resorts',
+      'event-planners',
+      'bakeries-patisseries',
+      'breweries-bars',
+      'caterers',
+      'wedding-photography',
+    ],
+  },
+  {
+    id: 'lifestyle',
+    label: 'Luxury Retail, Beauty & Wellness',
+    shortLabel: 'Luxury & Wellness',
+    count: 7,
+    description: 'Hallmarked jewellery ateliers, luxury bridal aesthetics, elite strength clubs, authentic yoga shalas & D2C apothecary',
+    projectIds: [
+      'gym-fitness-club',
+      'salon-beauty',
+      'fitness-coach',
+      'yoga-meditation',
+      'creative-portfolio',
+      'ecommerce-brands',
+      'jewellery-stores',
+    ],
+  },
+  {
+    id: 'services',
+    label: 'Industrial, Logistics & Prime Services',
+    shortLabel: 'Industrial & Trade',
+    count: 13,
+    description: 'Aerospace CNC tooling, interstate freight logistics, cleanroom sanitization, VRV HVAC, zero-damage moving & academies',
+    projectIds: [
+      'astrology',
+      'automotive-garages',
+      'cleaning-services',
+      'manufacturing-oems',
+      'logistics-transport',
+      'security-surveillance',
+      'hvac-contractors',
+      'pest-control',
+      'packers-movers',
+      'daycares-preschools',
+      'driving-schools',
+      'home-services',
+      'educational-academy',
+    ],
+  },
 ];
 
-const SPECIMEN = [
+const SPECIMEN_STANDARDS = [
   {
     n: '01',
-    label: 'Speed',
-    body: 'Run Google Lighthouse on any demo. There is no 3D scene, no bloated animation framework, and no third-party script beyond analytics — because every extra byte is paid for in seconds of your prospect’s attention.',
+    label: 'Sub-Second Speed',
+    badge: '0.4s – 0.8s LCP',
+    body: 'Run Google Lighthouse or WebPageTest on any of the 50 specimens. Zero bloat, zero heavy tracking scripts, and zero unnecessary runtime dependencies. Every byte is dedicated to immediate prospect engagement.',
   },
   {
     n: '02',
-    label: 'Typography',
-    body: 'Two typefaces — Fraunces for headlines and data values, Inter for everything else — and one accent colour. Hierarchy here is made from deliberate size and whitespace.',
+    label: 'Bespoke Editorial Typography',
+    badge: 'Dual-Scale Hierarchy',
+    body: 'Deliberate typography pairing (Fraunces & Inter) with calibrated optical sizes, fluid line heights, and mathematically harmonized whitespace. Hierarchy is earned through proportion rather than visual clutter.',
   },
   {
     n: '03',
-    label: 'Structure',
-    body: 'Semantic HTML landmarks, a skip link, visible focus states on every control, and text that passes WCAG AA contrast throughout. You can navigate the entire build with a keyboard alone.',
+    label: 'Semantic Accessibility & Structure',
+    badge: 'WCAG AA Compliant',
+    body: 'Strict semantic HTML5 landmarks, native skip navigation, visible focus indicators on every control, and 100% compliant contrast ratios. Fully navigable via keyboard, screen reader, or touch gestures.',
   },
   {
     n: '04',
-    label: 'Copy',
-    body: 'Read any demo copy and count the times we use empty words like "world-class", "cutting-edge", or "bespoke solutions". The count is zero. Every claim is concrete and verifiable.',
+    label: 'Zero-Fluff Conversion Architecture',
+    badge: 'Direct Inbound Engine',
+    body: 'Every demo is powered by a real client acquisition mechanism: interactive fee calculators, title verification intake, WhatsApp table reservation engines, or multi-step discovery flows with zero placeholder text.',
   },
 ];
 
-const SEQUENCE = [
+const SPRINT_SEQUENCE = [
   {
-    step: 'Before you pay anything',
-    body: 'A twenty-minute discovery call and a written scope: the pages, the features, the fixed price, and the launch date. If we think a week is the wrong shape for your project, that is the conversation where we say so.',
+    step: 'Day 01 — Strategic Scope & Discovery',
+    badge: 'Zero Rupee Risk',
+    body: 'A focused twenty-minute discovery consultation and a written scope: required pages, technical conversion engine, fixed-price contract, and guaranteed launch date. If a 7-day sprint is not the right fit, we state it upfront.',
   },
   {
-    step: 'Before you pay the balance',
-    body: 'The full copy deck on day two and the complete design on day four. You see the real website, with your real words in it, while there is still time to adjust direction.',
+    step: 'Day 02–04 — Copy Deck & Visual Architecture',
+    badge: 'Interactive Review',
+    body: 'You review the full industry copy deck on day two and the complete responsive UI layout on day four. You test real specimen flows and messaging while strategic revisions can still be made seamlessly.',
   },
   {
-    step: 'Before it goes live',
-    body: 'A private staging link you can test on your own phone and send to anyone whose opinion you trust, plus verified Google Lighthouse performance reports.',
+    step: 'Day 05–06 — Staging & Core Web Vitals Audit',
+    badge: 'Private Staging',
+    body: 'A private staging link delivered directly to your device for team review, cross-browser verification across iOS, Android, and Desktop, complete with verified 100/100 Google Lighthouse performance audits.',
   },
   {
-    step: 'After it goes live',
-    body: 'Thirty days of priority support, a recorded walkthrough so you can edit content yourself, and all source code. The site is yours — zero platform lock-in.',
+    step: 'Day 07 — Production Deployment & Handover',
+    badge: '100% Code Ownership',
+    body: 'DNS switch, SSL certification, Google Search Console indexing verification, 30 days of priority founder support, and all clean source code. Zero ongoing platform tax, zero vendor lock-in.',
   },
 ];
 
 /* ───────────────────────────────────────────────────────────────────
    SPECIMEN CARD WITH CONTINUOUS 3-SECOND THEME CHANGEOVER
-   - 3-segment progress bar filling across 3s
-   - Stacked cross-fading preview images
-   - Interactive manual theme buttons
-   - Direct launch & in-page viewport preview triggers
+   - 3-segment progress indicator
+   - Cross-fading 100% unique thumbnail images
+   - Interactive manual theme buttons with accent swatches
+   - Direct live demo link + in-page viewport simulator trigger
    ─────────────────────────────────────────────────────────────────── */
 function SpecimenCard({
   project,
@@ -99,11 +214,11 @@ function SpecimenCard({
     if (isPaused) return;
     const interval = setInterval(() => {
       setActiveTheme((prev) => (prev + 1) % project.themes.length);
-    }, 3000);
+    }, 3200);
     return () => clearInterval(interval);
   }, [isPaused, project.themes.length]);
 
-  const currentTheme = project.themes[activeTheme];
+  const currentTheme = project.themes[activeTheme] || project.themes[0];
 
   return (
     <div
@@ -111,7 +226,7 @@ function SpecimenCard({
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       className={`bg-paper-raised p-6 sm:p-8 border border-rule-strong hover:border-signal/50 card-lift flex flex-col justify-between rounded-[28px] group shadow-sm transition-all duration-300 relative ${
-        isHighlighted ? 'ring-2 ring-signal ring-offset-4 ring-offset-paper' : ''
+        isHighlighted ? 'ring-2 ring-signal ring-offset-4 ring-offset-paper scale-[1.01]' : ''
       }`}
     >
       <div>
@@ -120,12 +235,12 @@ function SpecimenCard({
           {/* Top Browser Bar */}
           <div className="flex items-center justify-between px-3.5 py-2.5 bg-ink text-paper text-[10px] font-mono border-b border-white/10 select-none">
             <div className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-signal inline-block" />
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-400/80 inline-block" />
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/80 inline-block" />
+              <span className="w-2.5 h-2.5 rounded-full bg-rose-500/90 inline-block" />
+              <span className="w-2.5 h-2.5 rounded-full bg-amber-400/90 inline-block" />
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/90 inline-block" />
             </div>
 
-            <div className="flex items-center gap-2 text-white/70">
+            <div className="flex items-center gap-2 text-white/80">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               <span className="truncate max-w-[150px] sm:max-w-[220px]">
                 {project.id}.uncodedhub.com
@@ -133,7 +248,7 @@ function SpecimenCard({
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="text-[10px] text-signal-bright font-semibold tracking-wider">
+              <span className="text-[10px] text-signal-bright font-semibold tracking-wider font-mono">
                 AUTO 3s
               </span>
             </div>
@@ -146,7 +261,7 @@ function SpecimenCard({
                 key={t.name}
                 onClick={() => setActiveTheme(idx)}
                 className="h-1 rounded-full bg-white/20 overflow-hidden cursor-pointer relative"
-                title={`Theme ${idx + 1}: ${t.name}`}
+                title={`Theme ${idx + 1}: ${t.name} (${t.style})`}
               >
                 {activeTheme === idx ? (
                   <div
@@ -154,7 +269,7 @@ function SpecimenCard({
                     className="h-full bg-signal-bright animate-specimen-progress rounded-full"
                   />
                 ) : activeTheme > idx ? (
-                  <div className="h-full bg-white/60 rounded-full" />
+                  <div className="h-full bg-white/70 rounded-full" />
                 ) : (
                   <div className="h-full bg-transparent" />
                 )}
@@ -162,7 +277,7 @@ function SpecimenCard({
             ))}
           </div>
 
-          {/* Cross-Fading Thumbnail Preview Stack */}
+          {/* Cross-Fading Unique Thumbnail Stack */}
           <div className="relative aspect-[16/9] w-full overflow-hidden bg-ink">
             {project.themes.map((theme, idx) => (
               <img
@@ -187,8 +302,12 @@ function SpecimenCard({
                 <span className="font-mono text-signal-bright font-semibold">
                   Theme 0{activeTheme + 1}/03:
                 </span>
-                <span className="font-medium text-white">{currentTheme.name}</span>
-                <span className="text-white/50 text-[10px]">({currentTheme.style})</span>
+                <span className="font-medium text-white truncate max-w-[120px] sm:max-w-none">
+                  {currentTheme.name}
+                </span>
+                <span className="text-white/60 text-[10px] hidden sm:inline">
+                  ({currentTheme.style})
+                </span>
               </div>
 
               <div className="bg-ink/85 backdrop-blur-md px-2.5 py-1.5 rounded-full border border-white/15 flex items-center gap-1.5 shadow-lg">
@@ -204,7 +323,7 @@ function SpecimenCard({
             </div>
 
             {/* Hover Action Overlay */}
-            <div className="absolute inset-0 bg-ink/30 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center gap-3 backdrop-blur-[2px]">
+            <div className="absolute inset-0 bg-ink/40 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center gap-3 backdrop-blur-[2px]">
               <a
                 href={project.url}
                 target="_blank"
@@ -227,8 +346,8 @@ function SpecimenCard({
         {/* Tactile 3-Theme Switcher Buttons */}
         <div className="mb-4">
           <div className="text-[10px] font-mono text-muted uppercase tracking-wider mb-1.5 flex items-center justify-between">
-            <span>3 Themes Built Into Specimen:</span>
-            <span className="text-signal font-semibold">Auto-Cycle every 3s</span>
+            <span>3 Handcrafted Theme Variations:</span>
+            <span className="text-signal font-semibold">Auto-Cycles every 3s</span>
           </div>
           <div className="grid grid-cols-3 gap-1.5 p-1 bg-paper rounded-[14px] border border-rule">
             {project.themes.map((t, idx) => (
@@ -246,7 +365,7 @@ function SpecimenCard({
                 }`}
               >
                 <span
-                  className="w-2 h-2 rounded-full flex-shrink-0"
+                  className="w-2 h-2 rounded-full shrink-0"
                   style={{ backgroundColor: t.accentHex }}
                 />
                 <span className="truncate">{t.name}</span>
@@ -256,8 +375,9 @@ function SpecimenCard({
         </div>
 
         {/* Sector Tag & Client Title */}
-        <div className="mb-3">
-          <span className="card-tag font-mono">{project.sector}</span>
+        <div className="flex items-center justify-between gap-2 mb-2.5 flex-wrap">
+          <span className="card-tag font-mono text-[11px]">{project.sector}</span>
+          <span className="text-muted/60 font-mono text-xs">Specimen #{project.num}</span>
         </div>
 
         <h3 className="font-display text-2xl sm:text-3xl text-ink font-medium leading-snug">
@@ -312,7 +432,11 @@ function SpecimenCard({
 
         <div className="flex items-center gap-3 text-xs">
           <Link
-            to={`/web-design/${project.nicheSlug.replace('/blog/industries/', '')}/`}
+            to={
+              project.nicheSlug.startsWith('/web-design/')
+                ? project.nicheSlug
+                : `/web-design/${project.nicheSlug.replace('/blog/industries/', '')}/`
+            }
             className="text-signal hover:text-ink font-mono font-medium transition-colors inline-flex items-center gap-1"
           >
             <span>Bespoke 7-Day Sprint</span>
@@ -320,7 +444,11 @@ function SpecimenCard({
           </Link>
           <span className="text-muted/40">·</span>
           <Link
-            to={project.nicheSlug}
+            to={
+              project.nicheSlug.startsWith('/blog/industries/')
+                ? project.nicheSlug
+                : `/blog/industries/${project.id}`
+            }
             className="text-muted hover:text-signal transition-colors inline-flex items-center gap-1 link-underline"
           >
             <span>Research Silo</span>
@@ -333,7 +461,7 @@ function SpecimenCard({
 }
 
 /* ───────────────────────────────────────────────────────────────────
-   8:2 INDEX GRID TILE WITH MINI VISUAL THUMBNAIL
+   INDEX TILE IN THE 50-SPECIMEN DIRECTORY MATRIX
    - Live visual screenshot thumbnail
    - Continuous 3-second theme changeover
    - Miniature browser chrome with #num
@@ -351,7 +479,7 @@ function IndexTile({
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveTheme((prev) => (prev + 1) % project.themes.length);
-    }, 3000);
+    }, 3200);
     return () => clearInterval(timer);
   }, [project.themes.length]);
 
@@ -402,7 +530,7 @@ function IndexTile({
         <div className="absolute bottom-1 right-1 z-20 flex items-center gap-1 bg-ink/80 backdrop-blur-xs px-1.5 py-0.5 rounded text-[8px] font-mono text-white/90 border border-white/10">
           <span
             className="w-1.5 h-1.5 rounded-full"
-            style={{ backgroundColor: project.themes[activeTheme].accentHex }}
+            style={{ backgroundColor: project.themes[activeTheme]?.accentHex || '#2563EB' }}
           />
           <span className="text-[7.5px] uppercase font-medium">T{activeTheme + 1}</span>
         </div>
@@ -429,22 +557,67 @@ function IndexTile({
 }
 
 export default function Work({ onBook }: { onBook: () => void }) {
-  const [selectedCat, setSelectedCat] = useState('all');
+  const [selectedSector, setSelectedSector] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
   const [highlightedId, setHighlightedId] = useState<string | null>(null);
 
   // In-Page Viewport Modal State
   const [previewProject, setPreviewProject] = useState<Project | null>(null);
   const [previewDevice, setPreviewDevice] = useState<'desktop' | 'tablet' | 'mobile'>('desktop');
 
-  const filteredProjects =
-    selectedCat === 'all'
-      ? PROJECTS
-      : PROJECTS.filter((p) => p.category === selectedCat);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  // Filter projects based on selected luxury sector and live search query
+  const filteredProjects = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+
+    return PROJECTS.filter((p) => {
+      // 1. Sector match
+      let sectorMatch = true;
+      if (selectedSector !== 'all') {
+        const sector = LUXURY_SECTORS.find((s) => s.id === selectedSector);
+        if (sector && sector.projectIds) {
+          sectorMatch = sector.projectIds.includes(p.id);
+        } else {
+          sectorMatch = p.category === selectedSector;
+        }
+      }
+
+      if (!sectorMatch) return false;
+
+      // 2. Query search
+      if (!q) return true;
+
+      const searchableText = [
+        p.id,
+        p.client,
+        p.shortName,
+        p.sector,
+        p.category,
+        p.summary,
+        p.result,
+        p.conversionEngine,
+        ...p.themes.map((t) => `${t.name} ${t.style}`),
+      ]
+        .join(' ')
+        .toLowerCase();
+
+      return searchableText.includes(q);
+    });
+  }, [selectedSector, searchQuery]);
 
   const handleIndexClick = (project: Project) => {
-    // If the category is filtered out, reveal it
-    if (selectedCat !== 'all' && project.category !== selectedCat) {
-      setSelectedCat('all');
+    // If the project is filtered out by sector or search, reset filters
+    const currentSector = LUXURY_SECTORS.find((s) => s.id === selectedSector);
+    const isVisible =
+      (selectedSector === 'all' || (currentSector?.projectIds?.includes(project.id) ?? false)) &&
+      (!searchQuery ||
+        project.client.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        project.sector.toLowerCase().includes(searchQuery.toLowerCase()));
+
+    if (!isVisible) {
+      setSelectedSector('all');
+      setSearchQuery('');
     }
 
     setTimeout(() => {
@@ -452,9 +625,9 @@ export default function Work({ onBook }: { onBook: () => void }) {
       if (el) {
         el.scrollIntoView({ behavior: 'smooth', block: 'center' });
         setHighlightedId(project.id);
-        setTimeout(() => setHighlightedId(null), 2400);
+        setTimeout(() => setHighlightedId(null), 2500);
       }
-    }, 80);
+    }, 100);
   };
 
   const handleOpenPreview = (project: Project) => {
@@ -468,13 +641,13 @@ export default function Work({ onBook }: { onBook: () => void }) {
         <title>Website Portfolio &amp; 50 Live Interactive Demos — Uncoded Hub</title>
         <meta
           name="description"
-          content="Explore 50 live interactive website specimens handcrafted by Uncoded Hub for interior designers, clinics, real estate, and consultants. Sub-second speed."
+          content="Explore fifty live interactive website specimens handcrafted by Uncoded Hub across 50 high-ticket industries. 150 unique aesthetic themes, sub-second speed, zero platform lock-in."
         />
         <link rel="canonical" href="https://uncodedhub.com/portfolio/" />
-        <meta property="og:title" content="Work &amp; Interactive Specimen Builds — Uncoded Hub" />
+        <meta property="og:title" content="Work &amp; 50 Interactive Specimen Builds — Uncoded Hub" />
         <meta
           property="og:description"
-          content="Explore fifty live, interactive specimen websites handcrafted by Uncoded Hub across high-ticket niches."
+          content="Fifty live, interactive specimen websites handcrafted by Uncoded Hub with 150 unique themes across high-ticket industries."
         />
         <meta property="og:url" content="https://uncodedhub.com/portfolio/" />
         <meta property="og:type" content="website" />
@@ -483,10 +656,10 @@ export default function Work({ onBook }: { onBook: () => void }) {
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="50 Live Interactive Specimen Websites — Uncoded Hub Portfolio" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Work &amp; Interactive Specimen Builds — Uncoded Hub" />
+        <meta name="twitter:title" content="Work &amp; 50 Interactive Specimen Builds — Uncoded Hub" />
         <meta
           name="twitter:description"
-          content="Explore fifty live, interactive specimen websites handcrafted by Uncoded Hub across high-ticket niches."
+          content="Fifty live, interactive specimen websites handcrafted by Uncoded Hub with 150 unique themes across high-ticket industries."
         />
         <meta name="twitter:image" content="https://uncodedhub.com/og/portfolio.jpg" />
       </Helmet>
@@ -497,31 +670,35 @@ export default function Work({ onBook }: { onBook: () => void }) {
           <Reveal>
             <div className="flex items-center gap-2.5 mb-3 flex-wrap">
               <span className="label text-signal font-semibold">
-                50 Live Specimen Builds · Bespoke Aesthetics
+                50 Live Production Builds · 150 Unique Themes
               </span>
               <span className="text-muted text-xs">·</span>
               <span className="text-xs font-mono text-muted bg-paper-raised px-2.5 py-0.5 rounded-full border border-rule">
                 3-Second Continuous Theme Cycling
               </span>
+              <span className="text-muted text-xs">·</span>
+              <span className="text-xs font-mono text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                100% Unique Visual Assets
+              </span>
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-ink max-w-[20ch] leading-[1.08] tracking-tight">
-              Live builds you can test, inspect, and verify{' '}
+              Fifty live builds you can test, inspect, and verify{' '}
               <em className="italic hero-signal font-medium">before you commit a single rupee.</em>
             </h1>
           </Reveal>
           <Reveal delay={100}>
             <p className="text-lead text-muted mt-5 max-w-3xl leading-relaxed">
-              We engineer zero-bloat, bespoke web systems in seven working days. Below are fifty
-              fully interactive production specimens across high-ticket service industries. Each
-              specimen features an automatic <strong>3-second continuous theme changeover</strong> (warm
-              heritage, dark luxury, and minimalist grid), sub-0.8s Lighthouse performance, and
-              direct client acquisition architecture.
+              We engineer zero-bloat, bespoke web systems in seven working days. Below is our complete archive of
+              fifty fully interactive production specimens spanning premium healthcare, architecture, legal advisory,
+              fine dining, luxury retail, and industrial services. Every specimen features an automatic{' '}
+              <strong>3-second continuous theme changeover</strong> (150 completely unique aesthetic themes with
+              dedicated color palettes), sub-0.8s Lighthouse performance, and direct client acquisition architecture.
             </p>
           </Reveal>
         </Shell>
       </section>
 
-      {/* ── 6:3 SPECIMEN DIRECTORY INDEX MATRIX ─────────────────── */}
+      {/* ── 50 SPECIMEN DIRECTORY INDEX MATRIX ─────────────────── */}
       <section className="pb-12 pt-2">
         <Shell>
           <Reveal delay={120}>
@@ -532,37 +709,33 @@ export default function Work({ onBook }: { onBook: () => void }) {
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-signal animate-ping" />
                     <h2 className="font-mono text-xs font-bold text-ink uppercase tracking-wider">
-                      The Specimen Index Matrix
+                      The 50 Specimen Index Matrix
                     </h2>
                     <span className="text-[11px] font-mono text-signal bg-signal/10 px-2 py-0.5 rounded-full">
-                      50 Visual Slots (50 Live Builds + Custom)
+                      50 Live Builds + 1 Custom Slot
                     </span>
                   </div>
                   <p className="text-xs text-muted mt-1">
                     Visual Directory: Click any thumbnail to jump to its live demo card &amp; 3-theme studio, or request a custom build.
                   </p>
                 </div>
-                <div className="flex items-center gap-3 text-xs font-mono text-muted">
+                <div className="flex items-center gap-3 text-xs font-mono text-muted flex-wrap">
                   <span className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-500" />
                     100% Mobile 4G Verified
                   </span>
                   <span>·</span>
-                  <span className="text-ink font-medium">51 Themes Total</span>
+                  <span className="text-ink font-medium">150 Unique Themes (3 Per Build)</span>
                 </div>
               </div>
 
-              {/* 6 Columns x 3 Rows Grid Layout with Visual Thumbnails (18 Slots Total) */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-3.5">
+              {/* 50 Interactive Demo Tiles + 1 Custom Slot */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-3.5">
                 {PROJECTS.map((p) => (
-                  <IndexTile
-                    key={p.id}
-                    project={p}
-                    onClick={handleIndexClick}
-                  />
+                  <IndexTile key={p.id} project={p} onClick={handleIndexClick} />
                 ))}
 
-                {/* 18th Slot: Complete 6:3 Grid with Custom Sprint CTA */}
+                {/* 51st Slot: Custom Sprint Booking Tile */}
                 <button
                   type="button"
                   onClick={onBook}
@@ -600,33 +773,99 @@ export default function Work({ onBook }: { onBook: () => void }) {
         </Shell>
       </section>
 
-      {/* ── Category Filter Pills ──────────────────────────────── */}
-      <section className="pb-8">
+      {/* ── Luxury Sectors Filter & Live Command Search Deck ─────── */}
+      <section className="pb-8 sticky top-16 z-30 bg-paper/95 backdrop-blur-md pt-2 border-b border-rule/50">
         <Shell>
           <Reveal delay={150}>
-            <div className="flex items-center justify-between gap-4 flex-wrap mb-4">
-              <span className="text-xs font-mono text-muted uppercase tracking-wider">
-                Filter by Industry Sector:
-              </span>
-              <span className="text-xs text-muted">
-                Showing {filteredProjects.length} of {PROJECTS.length} specimens
-              </span>
+            {/* Top row: Sector labels + Search bar */}
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+              <div>
+                <span className="text-xs font-mono text-muted uppercase tracking-wider block">
+                  Curated High-Ticket Industry Sectors:
+                </span>
+                <span className="text-xs text-ink-soft">
+                  Showing {filteredProjects.length} of {PROJECTS.length} specimens across 7 buying groups
+                </span>
+              </div>
+
+              {/* Instant Search Bar */}
+              <div className="relative w-full md:w-80">
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search 50 industries, engines, or styles..."
+                  className="w-full text-xs font-sans px-3.5 py-2 pl-8 rounded-full bg-paper-raised border border-rule-strong focus:border-signal focus:outline-hidden text-ink placeholder:text-muted/70 transition-colors shadow-xs"
+                />
+                <span className="absolute left-3 top-2.5 text-xs text-muted pointer-events-none">🔍</span>
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-3 top-2 text-xs text-muted hover:text-ink cursor-pointer"
+                    title="Clear search"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
             </div>
+
+            {/* Sector Filter Tabs */}
             <div className="flex flex-wrap items-center gap-2">
-              {CATEGORIES.map((c) => (
+              {LUXURY_SECTORS.map((s) => {
+                const isActive = selectedSector === s.id;
+                return (
+                  <button
+                    key={s.id}
+                    onClick={() => setSelectedSector(s.id)}
+                    className={`text-xs font-sans px-3.5 py-2 rounded-full transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
+                      isActive
+                        ? 'bg-signal text-paper font-semibold shadow-sm'
+                        : 'bg-paper-raised border border-rule-strong text-ink-soft hover:text-ink hover:border-signal/40'
+                    }`}
+                  >
+                    <span>{s.shortLabel}</span>
+                    <span
+                      className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${
+                        isActive ? 'bg-white/25 text-white' : 'bg-paper text-muted'
+                      }`}
+                    >
+                      {s.count}
+                    </span>
+                  </button>
+                );
+              })}
+
+              {(selectedSector !== 'all' || searchQuery) && (
                 <button
-                  key={c.id}
-                  onClick={() => setSelectedCat(c.id)}
-                  className={`text-xs font-sans px-4 py-2 rounded-full transition-all duration-200 cursor-pointer ${
-                    selectedCat === c.id
-                      ? 'bg-signal text-paper font-semibold shadow-sm'
-                      : 'bg-paper-raised border border-rule-strong text-ink-soft hover:text-ink hover:border-signal/40'
-                  }`}
+                  type="button"
+                  onClick={() => {
+                    setSelectedSector('all');
+                    setSearchQuery('');
+                  }}
+                  className="text-xs font-mono text-signal hover:text-ink underline ml-2 cursor-pointer"
                 >
-                  {c.label}
+                  Reset all filters
                 </button>
-              ))}
+              )}
             </div>
+
+            {/* Active Sector Description Banner */}
+            {selectedSector !== 'all' && (
+              <div className="mt-3 p-3 bg-paper rounded-[16px] border border-rule text-xs text-muted flex items-center justify-between gap-3">
+                <span>
+                  <strong className="text-ink">
+                    {LUXURY_SECTORS.find((s) => s.id === selectedSector)?.label}:
+                  </strong>{' '}
+                  {LUXURY_SECTORS.find((s) => s.id === selectedSector)?.description}
+                </span>
+                <span className="font-mono text-[11px] text-signal shrink-0">
+                  {filteredProjects.length} Specimens Active
+                </span>
+              </div>
+            )}
           </Reveal>
         </Shell>
       </section>
@@ -634,28 +873,57 @@ export default function Work({ onBook }: { onBook: () => void }) {
       {/* ── Real projects / Interactive Demos Bento Grid ─────────── */}
       <Section size="default">
         <Shell>
-          <div className="grid md:grid-cols-2 gap-8">
-            {filteredProjects.map((p) => (
-              <Reveal key={p.id}>
-                <SpecimenCard
-                  project={p}
-                  onOpenPreview={handleOpenPreview}
-                  isHighlighted={highlightedId === p.id}
-                />
-              </Reveal>
-            ))}
-          </div>
+          {filteredProjects.length === 0 ? (
+            <div className="text-center py-20 bg-paper-raised rounded-[28px] border border-rule-strong p-8">
+              <span className="text-3xl mb-3 block">🔍</span>
+              <h3 className="font-display text-2xl text-ink font-medium">No matching specimens found</h3>
+              <p className="text-muted text-sm max-w-md mx-auto mt-2">
+                We did not find any specimen matching "{searchQuery}". You can reset filters or request a bespoke 7-day build for your specific industry.
+              </p>
+              <div className="mt-6 flex items-center justify-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedSector('all');
+                    setSearchQuery('');
+                  }}
+                  className="btn-secondary !py-2 !px-4 text-xs cursor-pointer"
+                >
+                  Clear search query
+                </button>
+                <button
+                  type="button"
+                  onClick={onBook}
+                  className="btn-primary !py-2 !px-4 text-xs cursor-pointer"
+                >
+                  Request Custom Specimen →
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 gap-8">
+              {filteredProjects.map((p) => (
+                <Reveal key={p.id}>
+                  <SpecimenCard
+                    project={p}
+                    onOpenPreview={handleOpenPreview}
+                    isHighlighted={highlightedId === p.id}
+                  />
+                </Reveal>
+              ))}
+            </div>
+          )}
         </Shell>
       </Section>
 
-      {/* ── In-Page Viewport Modal ─────────────────────────────── */}
+      {/* ── In-Page Viewport Modal (Desktop / Tablet / Mobile) ─────── */}
       {previewProject && (
         <div
           className="fixed inset-0 z-[99999] bg-ink/80 backdrop-blur-md flex flex-col items-center justify-center p-3 sm:p-6"
           onClick={() => setPreviewProject(null)}
         >
           <div
-            className="w-full max-w-6xl h-[92vh] bg-paper-raised rounded-[24px] border border-rule-strong shadow-2xl flex flex-col overflow-hidden"
+            className="w-full max-w-6xl h-[92vh] bg-paper-raised rounded-[24px] border border-rule-strong shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
@@ -694,7 +962,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
                       : 'text-white/70 hover:text-white'
                   }`}
                 >
-                  Tablet (768px)
+                  📱 Tablet (768px)
                 </button>
                 <button
                   type="button"
@@ -705,7 +973,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
                       : 'text-white/70 hover:text-white'
                   }`}
                 >
-                  📱 Mobile (390px)
+                  📲 Mobile (390px)
                 </button>
               </div>
 
@@ -724,7 +992,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
                   type="button"
                   onClick={() => setPreviewProject(null)}
                   className="w-8 h-8 rounded-full bg-white/10 hover:bg-signal text-white flex items-center justify-center text-sm transition-colors cursor-pointer"
-                  title="Close Dialog"
+                  title="Close Dialog (Esc)"
                 >
                   ✕
                 </button>
@@ -732,9 +1000,9 @@ export default function Work({ onBook }: { onBook: () => void }) {
             </div>
 
             {/* Iframe Viewport Frame */}
-            <div className="flex-1 bg-paper-sunk flex items-center justify-center p-2 sm:p-4 overflow-hidden">
+            <div className="flex-1 bg-paper-sunk flex items-center justify-center p-2 sm:p-4 overflow-hidden relative">
               <div
-                className={`h-full bg-paper rounded-[14px] overflow-hidden shadow-lg border border-rule transition-all duration-300 ${
+                className={`h-full bg-paper rounded-[14px] overflow-hidden shadow-lg border border-rule transition-all duration-300 relative ${
                   previewDevice === 'desktop'
                     ? 'w-full'
                     : previewDevice === 'tablet'
@@ -764,27 +1032,31 @@ export default function Work({ onBook }: { onBook: () => void }) {
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="label text-signal-bright block mb-3">
-                Zero fabricated proof
+                Zero fabricated claims
               </span>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-paper font-normal leading-tight">
-                The engineering standards{' '}
-                <em className="text-signal-bright italic font-medium">you can verify.</em>
+                The four engineering standards{' '}
+                <em className="text-signal-bright italic font-medium">you can verify in your console.</em>
               </h2>
               <p className="text-on-ink-muted text-sm md:text-base leading-relaxed mt-5">
                 Every site we build is held to stated performance and positioning standards.
-                You don't have to take our word for it — open your browser console and inspect the source.
+                You don't have to take our word for it — open Chrome DevTools, inspect the network payloads,
+                and run an audit on any of our 50 live specimens.
               </p>
             </div>
           </Reveal>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {SPECIMEN.map((s, idx) => (
+            {SPECIMEN_STANDARDS.map((s, idx) => (
               <Reveal key={s.n} delay={idx * 70}>
                 <div className="p-6 sm:p-8 rounded-[24px] bg-white/[0.04] backdrop-blur-md border border-white/10 flex flex-col justify-between h-full">
                   <div>
-                    <span className="inline-block text-[11px] font-semibold px-2.5 py-1 rounded-[6px] bg-signal/20 text-signal-bright mb-4">
-                      {s.label}
-                    </span>
+                    <div className="flex items-center justify-between gap-2 mb-4">
+                      <span className="inline-block text-[11px] font-semibold px-2.5 py-1 rounded-[6px] bg-signal/20 text-signal-bright">
+                        {s.label}
+                      </span>
+                      <span className="text-[10px] font-mono text-white/50">{s.badge}</span>
+                    </div>
                     <p className="text-on-ink-muted text-xs sm:text-sm leading-relaxed">{s.body}</p>
                   </div>
                 </div>
@@ -800,18 +1072,23 @@ export default function Work({ onBook }: { onBook: () => void }) {
           <Reveal>
             <SectionHead
               index="02"
-              eyebrow="Zero risk"
+              eyebrow="Zero Risk Engineering"
               title="You see the work before you are committed to it."
               intro="Hiring a studio with no public portfolio is a real risk, and pretending otherwise would be insulting. So the project is structured so that you are never far from an exit."
             />
           </Reveal>
 
           <div className="grid md:grid-cols-2 gap-6 mt-14">
-            {SEQUENCE.map((s, i) => (
+            {SPRINT_SEQUENCE.map((s, i) => (
               <Reveal key={s.step} delay={i * 70}>
                 <div className="bg-paper-raised p-8 rounded-[24px] border border-rule-strong shadow-xs flex flex-col justify-between h-full">
                   <div>
-                    <span className="card-tag mb-4">{s.step}</span>
+                    <div className="flex items-center justify-between gap-2 mb-4">
+                      <span className="card-tag">{s.step}</span>
+                      <span className="text-[11px] font-mono text-signal bg-signal/10 px-2 py-0.5 rounded-full">
+                        {s.badge}
+                      </span>
+                    </div>
                     <p className="text-muted text-xs sm:text-sm leading-relaxed">{s.body}</p>
                   </div>
                 </div>
@@ -838,7 +1115,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
                   </h3>
                   <p className="text-on-ink-muted text-sm leading-relaxed mt-4 max-w-md">
                     "Who else have you built this for?" is a fair question and we will answer it straight.
-                    Judge us by our live specimens and our published guarantee.
+                    Judge us by our 50 live specimens and our published 100% money-back guarantee.
                   </p>
                 </div>
 
@@ -846,6 +1123,8 @@ export default function Work({ onBook }: { onBook: () => void }) {
                   <span>● Deepak &amp; Geetha</span>
                   <span>·</span>
                   <span>Direct delivery</span>
+                  <span>·</span>
+                  <span>+91 86608 19023</span>
                 </div>
               </div>
 
