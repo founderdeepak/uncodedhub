@@ -39,8 +39,8 @@ export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
     url: 'https://uncodedhub.com/web-design/bangalore/',
     description:
       'Bespoke, sub-second business websites built in 7 business days by senior founders Deepak & Geetha in Bengaluru. Zero WordPress bloat, built-in local SEO, late-means-free guarantee.',
-    priceRange: '₹30,000 - ₹55,000',
-    telephone: '+91-80-UNCODED',
+    priceRange: '₹35,000 - ₹85,000',
+    telephone: '+91 86608 19023',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Bengaluru',
@@ -148,7 +148,7 @@ export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
               to="/web-design/"
               className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-signal/10 hover:bg-signal/20 text-signal font-mono text-[11px] transition-colors"
             >
-              <span>← All 17 National Industry Sprints</span>
+              <span>← All 50 National Industry Sprints</span>
             </Link>
           </div>
         </Shell>
@@ -412,10 +412,10 @@ export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
               <div>
                 <span className="card-tag mb-2">LOOKING BEYOND BENGALURU?</span>
                 <h3 className="font-display text-2xl text-ink font-medium">
-                  We build specialized web platforms for 17 high-ticket industries pan-India.
+                  We build specialized web platforms for 50 high-ticket industries pan-India.
                 </h3>
                 <p className="text-muted text-xs sm:text-sm mt-2 max-w-2xl leading-relaxed">
-                  From aesthetic dental practices and luxury interior studios to corporate advisory firms and coaching businesses, explore our 17 bespoke national industry silos.
+                  From aesthetic dental practices and luxury interior studios to corporate advisory firms and coaching businesses, explore our 50 bespoke national industry silos.
                 </p>
               </div>
 

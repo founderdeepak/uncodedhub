@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { LogoMark } from './Logo';
 import { hasBlogPosts } from '../lib/blogNav';
 import { getWhatsAppUrl } from '../lib/whatsapp';
+import { BANGALORE_LOCALITIES } from '../data/bangaloreLocalities';
 
 const LEAD_MAGNET_SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycbxjs7uylG1UuDne9_rCCd8YfZKp9RRE5vIFK9_Ctq8MMWfur0100fBDwAaTZd2l3_iq/exec';
@@ -15,14 +16,24 @@ const LEAD_MAGNET_SECRET = import.meta.env.VITE_LEAD_MAGNET_SECRET || '';
    Bengaluru regional coverage.
    ═══════════════════════════════════════════════════════════════════ */
 
+const SERVICE_LINKS = [
+  { label: 'Custom Website Design (UI/UX)', to: '/services/#design' },
+  { label: 'Custom Web Development', to: '/services/#development' },
+  { label: 'Website Redesign & Migration', to: '/services/#redesign' },
+  { label: 'Landing Pages & Lead Funnels', to: '/services/#landing-pages' },
+  { label: 'E-Commerce Storefronts', to: '/services/#ecommerce' },
+  { label: 'Speed & Core Web Vitals (100 CWV)', to: '/services/#optimization' },
+  { label: 'Website Care & Support', to: '/services/#maintenance' },
+];
+
 const COMPANY_LINKS = [
   { label: 'Work & Portfolio', to: '/portfolio/' },
-  { label: 'Engineering Services', to: '/services/' },
-  { label: 'Web Design Architecture', to: '/web-design/' },
+  { label: 'About Deepak & Geetha', to: '/about/' },
   { label: 'Compare Alternatives', to: '/alternatives/' },
   { label: 'Problem Solutions', to: '/solutions/' },
-  { label: 'About Deepak & Geetha', to: '/about/' },
-  { label: 'Pricing & FAQ', to: '/faq/' },
+  { label: 'Pricing & Sprints', to: '/services/#pricing' },
+  { label: '10-Point Pre-Sold Audit', to: '/audit-checklist/' },
+  ...(hasBlogPosts ? [{ label: 'Master Pillar Guides', to: '/blog/' }] : []),
   { label: 'Contact Studio', to: '/contact/' },
 ];
 
@@ -56,49 +67,16 @@ const INDUSTRY_LINKS = [
   { label: 'Dental & Aesthetic Clinics', to: '/web-design/dental-clinics/' },
   { label: 'Real Estate & Builders', to: '/web-design/real-estate/' },
   { label: 'Interior Designers & Architects', to: '/web-design/interior-designers/' },
-  { label: 'Home Services & Contractors', to: '/web-design/home-services/' },
-  { label: 'Home Renovation & Modular Kitchens', to: '/web-design/home-renovation/' },
-  { label: 'Super-Specialist Doctors', to: '/web-design/doctor-specialist/' },
-  { label: 'Commercial Gyms & Fitness', to: '/web-design/gym-fitness-club/' },
-  { label: 'Corporate Advisory & B2B', to: '/web-design/business-portfolio/' },
+  { label: 'Restaurants & Hospitality', to: '/web-design/restaurants/' },
+  { label: 'Law Firms & Legal Advocates', to: '/web-design/law-firms/' },
+  { label: 'Home Renovation & Services', to: '/web-design/home-renovation/' },
+  { label: 'Doctors & Super-Specialists', to: '/web-design/doctor-specialist/' },
+  { label: 'Gyms, Fitness & Wellness', to: '/web-design/gym-fitness-club/' },
 ];
 
-const RESOURCE_LINKS = [
-  { label: '10-Point Pre-Sold Audit', to: '/audit-checklist/' },
-  ...(hasBlogPosts ? [{ label: 'Master Pillar Blueprints', to: '/blog/' }] : []),
-  { label: '7-Day Sprint Guarantee', to: '/terms/' },
-  { label: 'Privacy & Client Rights', to: '/privacy/' },
-  { label: 'Global Sitemap', to: '/sitemap.xml', external: true },
-  { label: 'Studio RSS Feed', to: '/rss.xml', external: true },
-];
-
-const BENGALURU_LOCALITIES = [
-  { name: 'Indiranagar', slug: 'indiranagar' },
-  { name: 'Koramangala', slug: 'koramangala' },
-  { name: 'Whitefield', slug: 'whitefield' },
-  { name: 'HSR Layout', slug: 'hsr-layout' },
-  { name: 'Jayanagar', slug: 'jayanagar' },
-  { name: 'MG Road', slug: 'mg-road' },
-  { name: 'Bellandur', slug: 'bellandur' },
-  { name: 'Marathahalli', slug: 'marathahalli' },
-  { name: 'Domlur', slug: 'domlur' },
-  { name: 'Malleshwaram', slug: 'malleshwaram' },
-  { name: 'Electronic City', slug: 'electronic-city' },
-  { name: 'Sadashivanagar', slug: 'sadashivanagar' },
-  { name: 'Hebbal', slug: 'hebbal' },
-  { name: 'Sarjapur Road', slug: 'sarjapur-road' },
-  { name: 'Richmond Town', slug: 'richmond-town' },
-  { name: 'Halasuru', slug: 'halasuru' },
-  { name: 'BTM Layout', slug: 'btm-layout' },
-  { name: 'Banashankari', slug: 'banashankari' },
-  { name: 'Rajajinagar', slug: 'rajajinagar' },
-  { name: 'Kalyan Nagar', slug: 'kalyan-nagar' },
-  { name: 'Yelahanka', slug: 'yelahanka' },
-  { name: 'Frazer Town', slug: 'frazer-town' },
-  { name: 'Ulsoor', slug: 'ulsoor' },
-  { name: 'Basavanagudi', slug: 'basavanagudi' },
-  { name: 'Vijayanagar', slug: 'vijayanagar' },
-];
+const ALL_BENGALURU_LOCALITIES = Object.values(BANGALORE_LOCALITIES).sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
 
 export default function SiteFooter() {
   const location = useLocation();
@@ -361,13 +339,13 @@ export default function SiteFooter() {
             </div>
           </div>
 
-          {/* Column 2: Company Navigation (2 cols) */}
-          <nav aria-label="Company Links" className="lg:col-span-2">
+          {/* Column 2: What We Build — Services (2 cols) */}
+          <nav aria-label="Services" className="lg:col-span-2">
             <span className="text-xs font-mono font-semibold uppercase tracking-wider text-on-ink block mb-5">
-              Company
+              Services
             </span>
             <ul className="space-y-3">
-              {COMPANY_LINKS.map((link) => (
+              {SERVICE_LINKS.map((link) => (
                 <li key={link.to}>
                   <Link
                     to={link.to}
@@ -396,41 +374,39 @@ export default function SiteFooter() {
                   </Link>
                 </li>
               ))}
-              <li className="pt-1">
+              <li className="pt-2 flex flex-col gap-1.5 border-t border-white/10">
                 <Link
                   to="/portfolio/"
                   className="text-xs font-mono text-signal-bright hover:underline inline-flex items-center gap-1 font-medium"
                 >
-                  <span>All 50 Demos</span>
+                  <span>All 50 Demos (3 Themes)</span>
+                  <span>→</span>
+                </Link>
+                <Link
+                  to="/web-design/"
+                  className="text-xs font-mono text-on-ink-muted hover:text-signal-bright inline-flex items-center gap-1 font-medium"
+                >
+                  <span>All 50 Industry Silos</span>
                   <span>→</span>
                 </Link>
               </li>
             </ul>
           </nav>
 
-          {/* Column 4: Engineering Resources (2 cols) */}
-          <nav aria-label="Resources" className="lg:col-span-2">
+          {/* Column 4: Company & Trust (2 cols) */}
+          <nav aria-label="Company Links" className="lg:col-span-2">
             <span className="text-xs font-mono font-semibold uppercase tracking-wider text-on-ink block mb-5">
-              Resources
+              Company
             </span>
             <ul className="space-y-3">
-              {RESOURCE_LINKS.map((link) => (
+              {COMPANY_LINKS.map((link) => (
                 <li key={link.to}>
-                  {link.external ? (
-                    <a
-                      href={link.to}
-                      className="text-sm text-on-ink-muted hover:text-signal-bright transition-colors block"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      to={link.to}
-                      className="text-sm text-on-ink-muted hover:text-signal-bright transition-colors block"
-                    >
-                      {link.label}
-                    </Link>
-                  )}
+                  <Link
+                    to={link.to}
+                    className="text-sm text-on-ink-muted hover:text-signal-bright transition-colors block"
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -572,38 +548,40 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        {/* ── 3. Serving Every Corridor in Bengaluru (Unified SEO Strip) ── */}
-        <div className="py-8 border-t border-rule-on-ink text-xs">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-on-ink flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-signal-bright" />
-              Serving High-Ticket Sectors Across Bengaluru
-            </span>
+        {/* ── 3. Serving Every Corridor in Bengaluru (All 100 Localities) ── */}
+        <div className="py-10 border-t border-rule-on-ink text-xs">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-on-ink flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-signal-bright" />
+                Serving 100 Hyperlocal Corridors Across Bengaluru
+              </span>
+              <p className="text-on-ink-muted text-xs mt-1">
+                Pincodes 560001–560103 · Bespoke React platforms delivered directly by Deepak &amp; Geetha with 7-day guarantee
+              </p>
+            </div>
             <Link
               to="/web-design/bangalore/"
-              className="text-signal-bright font-mono text-xs hover:underline inline-flex items-center gap-1 font-medium"
+              className="text-signal-bright font-mono text-xs hover:underline inline-flex items-center gap-1.5 font-medium shrink-0"
             >
-              <span>Explore Master Bangalore Hub (All 100 Localities)</span>
+              <span>Explore Master Bangalore Hub &amp; Map</span>
               <span>→</span>
             </Link>
           </div>
 
-          <p className="text-xs text-on-ink-muted leading-relaxed">
-            <strong className="text-on-ink font-medium mr-2">Core Service Areas:</strong>
-            {BENGALURU_LOCALITIES.map((loc, i) => (
-              <span key={loc.slug}>
-                <Link
-                  to={`/web-design/bangalore/${loc.slug}/`}
-                  className="hover:text-signal-bright transition-colors"
-                >
-                  {loc.name}
-                </Link>
-                {i < BENGALURU_LOCALITIES.length - 1 && (
-                  <span className="text-on-ink-muted/40 mx-2">·</span>
-                )}
-              </span>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-2 text-xs">
+            {ALL_BENGALURU_LOCALITIES.map((loc) => (
+              <Link
+                key={loc.slug}
+                to={`/web-design/bangalore/${loc.slug}/`}
+                className="text-on-ink-muted hover:text-signal-bright transition-colors truncate flex items-center gap-1.5 py-0.5 group"
+                title={`${loc.name}, Bengaluru (${loc.pincode})`}
+              >
+                <span className="text-signal-bright/40 group-hover:text-signal-bright text-[10px] font-mono transition-colors shrink-0">📍</span>
+                <span className="truncate">{loc.name}</span>
+              </Link>
             ))}
-          </p>
+          </div>
         </div>
 
         {/* ── 4. Decorative Studio Wordmark Graphic ── */}

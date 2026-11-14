@@ -7,7 +7,7 @@ import { NICHE_LANDING_DATA } from '../data/nicheLandingData';
 import { BANGALORE_LOCALITIES } from '../data/bangaloreLocalities';
 
 /* ═══════════════════════════════════════════════════════════════════
-   WEB DESIGN HUB — Master Silo Apex for 17 Specialized Industries
+   WEB DESIGN HUB — Master Silo Apex for 50 Specialized Industries
    Canonical: https://uncodedhub.com/web-design/
    ═══════════════════════════════════════════════════════════════════ */
 
@@ -17,53 +17,129 @@ interface WebDesignHubProps {
 
 const CATEGORIES = [
   { id: 'all', label: 'All 50 Industries' },
-  { id: 'design-realestate', label: 'Architecture & Real Estate' },
-  { id: 'healthcare', label: 'Healthcare & Clinics' },
-  { id: 'lifestyle-wellness', label: 'Wellness & Fitness' },
-  { id: 'coaching-advisory', label: 'Advisory & Academies' },
-  { id: 'creative-events', label: 'Creative & Events' },
+  { id: 'architecture-realestate', label: 'Architecture & Real Estate' },
+  { id: 'healthcare-clinical', label: 'Healthcare & Medical' },
+  { id: 'hospitality-food', label: 'Hospitality & Dining' },
+  { id: 'wellness-lifestyle', label: 'Wellness & Fitness' },
+  { id: 'corporate-legal-finance', label: 'Corporate, Legal & Finance' },
+  { id: 'services-industrial-retail', label: 'Services, Industry & Retail' },
 ];
 
 const NICHE_CATEGORY_MAP: Record<string, string> = {
-  'interior-designers': 'design-realestate',
-  'real-estate': 'design-realestate',
-  'home-renovation': 'design-realestate',
-  'home-services': 'design-realestate',
-  'dental-clinics': 'healthcare',
-  'doctor-specialist': 'healthcare',
-  'clinic-polyclinic': 'healthcare',
-  'healthcare-diagnostics': 'healthcare',
-  'spa-wellness': 'lifestyle-wellness',
-  'yoga-meditation': 'lifestyle-wellness',
-  'gym-fitness-club': 'lifestyle-wellness',
-  'fitness-coach': 'lifestyle-wellness',
-  'salon-beauty': 'lifestyle-wellness',
-  'coaches-consultants': 'coaching-advisory',
-  'business-portfolio': 'coaching-advisory',
-  'educational-academy': 'coaching-advisory',
-  'wedding-photographers': 'creative-events',
-  'creative-portfolio': 'creative-events',
+  // Architecture & Real Estate (9)
+  'interior-designers': 'architecture-realestate',
+  'real-estate': 'architecture-realestate',
+  'architects': 'architecture-realestate',
+  'construction-companies': 'architecture-realestate',
+  'home-renovation': 'architecture-realestate',
+  'home-services': 'architecture-realestate',
+  'landscaping': 'architecture-realestate',
+  'solar-companies': 'architecture-realestate',
+  'hvac-contractors': 'architecture-realestate',
+
+  // Healthcare & Medical (6)
+  'dental-clinics': 'healthcare-clinical',
+  'doctor-specialist': 'healthcare-clinical',
+  'clinic-polyclinic': 'healthcare-clinical',
+  'healthcare-diagnostics': 'healthcare-clinical',
+  'veterinary-clinics': 'healthcare-clinical',
+  'optometry-eyewear': 'healthcare-clinical',
+
+  // Hospitality & Dining (5)
+  'restaurants': 'hospitality-food',
+  'hotels-resorts': 'hospitality-food',
+  'bakeries-patisseries': 'hospitality-food',
+  'breweries-bars': 'hospitality-food',
+  'caterers': 'hospitality-food',
+
+  // Wellness, Beauty & Fitness (5)
+  'spa-wellness': 'wellness-lifestyle',
+  'yoga-meditation': 'wellness-lifestyle',
+  'gym-fitness-club': 'wellness-lifestyle',
+  'fitness-coach': 'wellness-lifestyle',
+  'salon-beauty': 'wellness-lifestyle',
+
+  // Corporate, Legal & Finance (10)
+  'law-firms': 'corporate-legal-finance',
+  'accounting-firms': 'corporate-legal-finance',
+  'financial-advisors': 'corporate-legal-finance',
+  'business-portfolio': 'corporate-legal-finance',
+  'recruitment-agencies': 'corporate-legal-finance',
+  'immigration-consultants': 'corporate-legal-finance',
+  'marketing-agencies': 'corporate-legal-finance',
+  'coworking-spaces': 'corporate-legal-finance',
+  'coaches-consultants': 'corporate-legal-finance',
+  'educational-academy': 'corporate-legal-finance',
+
+  // Services, Industry & Retail (15)
+  'wedding-photographers': 'services-industrial-retail',
+  'event-planners': 'services-industrial-retail',
+  'creative-portfolio': 'services-industrial-retail',
+  'ecommerce-brands': 'services-industrial-retail',
+  'jewellery-stores': 'services-industrial-retail',
+  'cleaning-services': 'services-industrial-retail',
+  'pest-control': 'services-industrial-retail',
+  'packers-movers': 'services-industrial-retail',
+  'automotive-garages': 'services-industrial-retail',
+  'manufacturing-oems': 'services-industrial-retail',
+  'logistics-transport': 'services-industrial-retail',
+  'security-surveillance': 'services-industrial-retail',
+  'daycares-preschools': 'services-industrial-retail',
+  'driving-schools': 'services-industrial-retail',
+  'astrology-vastu': 'services-industrial-retail',
 };
 
 const INDUSTRY_ICONS: Record<string, string> = {
   'interior-designers': '📐',
   'real-estate': '🏛️',
-  'dental-clinics': '🦷',
-  'wedding-photographers': '📷',
+  'architects': '🏛️',
+  'construction-companies': '🏗️',
   'home-renovation': '🔨',
   'home-services': '💧',
+  'landscaping': '🌳',
+  'solar-companies': '☀️',
+  'hvac-contractors': '❄️',
+  'dental-clinics': '🦷',
+  'doctor-specialist': '🩺',
+  'clinic-polyclinic': '🏥',
+  'healthcare-diagnostics': '🔬',
+  'veterinary-clinics': '🐾',
+  'optometry-eyewear': '👓',
+  'restaurants': '🍽️',
+  'hotels-resorts': '🏨',
+  'bakeries-patisseries': '🥐',
+  'breweries-bars': '🍺',
+  'caterers': '🍱',
+  'spa-wellness': '🌿',
+  'yoga-meditation': '🧘',
+  'gym-fitness-club': '⚡',
+  'fitness-coach': '🏋️',
+  'salon-beauty': '✨',
+  'law-firms': '⚖️',
+  'accounting-firms': '📊',
+  'financial-advisors': '📈',
+  'business-portfolio': '💼',
+  'recruitment-agencies': '🤝',
+  'immigration-consultants': '✈️',
+  'marketing-agencies': '🚀',
+  'coworking-spaces': '🏢',
   'coaches-consultants': '🎯',
   'educational-academy': '🎓',
-  'gym-fitness-club': '⚡',
-  'business-portfolio': '💼',
-  'spa-wellness': '🌿',
-  'salon-beauty': '✨',
-  'fitness-coach': '🏋️',
-  'yoga-meditation': '🧘',
+  'wedding-photographers': '📷',
+  'event-planners': '🎉',
   'creative-portfolio': '🎨',
-  'healthcare-diagnostics': '🔬',
-  'clinic-polyclinic': '🏥',
-  'doctor-specialist': '🩺',
+  'ecommerce-brands': '🛍️',
+  'jewellery-stores': '💎',
+  'cleaning-services': '✨',
+  'pest-control': '🛡️',
+  'packers-movers': '📦',
+  'automotive-garages': '🏎️',
+  'manufacturing-oems': '⚙️',
+  'logistics-transport': '🚛',
+  'security-surveillance': '📹',
+  'daycares-preschools': '🧸',
+  'driving-schools': '🚗',
+  'astrology-vastu': '🔮',
 };
 
 export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
@@ -95,7 +171,7 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
     '@type': 'ItemList',
     name: 'Specialized Web Design Sprints by Industry — Uncoded Hub',
     description:
-      'Explore bespoke, sub-second web design and development platforms engineered for 17 high-ticket industries in India and worldwide.',
+      'Explore bespoke, sub-second web design and development platforms engineered for 50 high-ticket industries in India and worldwide.',
     url: 'https://uncodedhub.com/web-design/',
     itemListElement: allNiches.map((key, index) => ({
       '@type': 'ListItem',
@@ -127,13 +203,13 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
   return (
     <>
       <Helmet>
-        <title>Web Design Sprints for High-Ticket Industries — Uncoded Hub</title>
+        <title>Web Design Sprints for 50 High-Ticket Industries — Uncoded Hub</title>
         <meta
           name="description"
-          content="Bespoke, hand-coded React web platforms engineered for 17 high-ticket service industries. 7-day fixed delivery sprint, 99+ Core Web Vitals, 100% code ownership."
+          content="Bespoke, hand-coded React web platforms engineered for 50 high-ticket service industries. 7-day fixed delivery sprint, 99+ Core Web Vitals, 3 switchable themes, 100% code ownership."
         />
         <link rel="canonical" href="https://uncodedhub.com/web-design/" />
-        <meta property="og:title" content="Web Design Sprints for High-Ticket Industries — Uncoded Hub" />
+        <meta property="og:title" content="Web Design Sprints for 50 High-Ticket Industries — Uncoded Hub" />
         <meta
           property="og:description"
           content="Sub-second, custom-coded React platforms delivered in 7 working days — guaranteed on time, or 100% free."
@@ -143,12 +219,12 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
         <meta property="og:image" content="https://uncodedhub.com/og/web-design-hub.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="17 Specialized Industry Web Design Silos — Uncoded Hub" />
+        <meta property="og:image:alt" content="50 Specialized Industry Web Design Silos — Uncoded Hub" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Web Design Sprints for High-Ticket Industries — Uncoded Hub" />
+        <meta name="twitter:title" content="Web Design Sprints for 50 High-Ticket Industries — Uncoded Hub" />
         <meta
           name="twitter:description"
-          content="Bespoke, hand-coded React web platforms engineered for 17 high-ticket service industries."
+          content="Bespoke, hand-coded React web platforms engineered for 50 high-ticket service industries."
         />
         <meta name="twitter:image" content="https://uncodedhub.com/og/web-design-hub.jpg" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
@@ -285,9 +361,14 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
                         <span className="w-10 h-10 rounded-xl bg-paper-sunken border border-rule flex items-center justify-center text-lg">
                           {icon}
                         </span>
-                        <span className="px-2.5 py-1 rounded-full bg-signal/10 text-signal font-mono text-[10px] font-semibold uppercase tracking-wider">
-                          7-Day Sprint
-                        </span>
+                        <div className="flex items-center gap-1.5">
+                          <span className="px-2 py-0.5 rounded-full bg-paper border border-rule text-muted font-mono text-[9px] uppercase tracking-wider">
+                            3 Themes
+                          </span>
+                          <span className="px-2.5 py-1 rounded-full bg-signal/10 text-signal font-mono text-[10px] font-semibold uppercase tracking-wider">
+                            7-Day Sprint
+                          </span>
+                        </div>
                       </div>
 
                       {/* Title */}
@@ -317,8 +398,18 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
                         to={`/web-design/${key}/`}
                         className="btn-primary !py-2.5 !px-4 text-center justify-center w-full !text-xs rounded-xl shadow-xs"
                       >
-                        Explore 7-Day Sprint & Demo →
+                        Explore 7-Day Sprint →
                       </Link>
+
+                      <a
+                        href={`/demos/${key}/`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 rounded-xl bg-paper border border-rule hover:border-signal/50 text-ink hover:text-signal text-center text-xs font-mono transition-colors flex items-center justify-center gap-1.5 group/demo"
+                      >
+                        <span>🎮 Test Live Demo (3 Themes)</span>
+                        <span className="text-signal group-hover/demo:translate-x-0.5 transition-transform">↗</span>
+                      </a>
 
                       <div className="flex items-center justify-between pt-1 text-[11px] text-muted">
                         {pillarSlug && (
@@ -493,7 +584,7 @@ export default function WebDesignHub({ onBook: _onBook }: WebDesignHubProps) {
                   Book Discovery Call →
                 </Link>
                 <a
-                  href="https://wa.me/918778427958?text=Hi%20Deepak%20and%20Geetha,%20I%20would%20like%20to%20discuss%20a%207-day%20website%20sprint."
+                  href="https://wa.me/918660819023?text=Hi%20Deepak%20and%20Geetha,%20I%20would%20like%20to%20discuss%20a%207-day%20website%20sprint."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-8 py-4 rounded-full border border-rule hover:border-ink text-ink font-mono text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2"
