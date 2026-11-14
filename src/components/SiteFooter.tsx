@@ -75,6 +75,70 @@ const INDUSTRY_LINKS = [
   { label: 'Gyms, Fitness & Wellness', to: '/web-design/gym-fitness-club/' },
 ];
 
+const NICHE_ICONS: Record<string, string> = {
+  // Architecture & Real Estate
+  'interior-designers': '📐',
+  'real-estate': '🏢',
+  'architects': '🏛️',
+  'construction-companies': '🏗️',
+  'home-renovation': '🔨',
+  'home-services': '💧',
+  'landscaping': '🌳',
+  'solar-companies': '☀️',
+  'hvac-contractors': '❄️',
+
+  // Healthcare & Medical
+  'dental-clinics': '🦷',
+  'doctor-specialist': '🩺',
+  'clinic-polyclinic': '🏥',
+  'healthcare-diagnostics': '🔬',
+  'veterinary-clinics': '🐾',
+  'optometry-eyewear': '👓',
+
+  // Hospitality & Food
+  'restaurants': '🍽️',
+  'hotels-resorts': '🏨',
+  'bakeries-patisseries': '🥐',
+  'breweries-bars': '🍺',
+  'caterers': '🍱',
+
+  // Wellness & Fitness
+  'spa-wellness': '🌿',
+  'yoga-meditation': '🧘',
+  'gym-fitness-club': '⚡',
+  'fitness-coach': '🏋️',
+  'salon-beauty': '✨',
+
+  // Corporate, Legal & Finance
+  'law-firms': '⚖️',
+  'accounting-firms': '📊',
+  'financial-advisors': '📈',
+  'business-portfolio': '💼',
+  'recruitment-agencies': '🤝',
+  'immigration-consultants': '✈️',
+  'marketing-agencies': '🚀',
+  'coworking-spaces': '🏢',
+  'coaches-consultants': '🎯',
+  'educational-academy': '🎓',
+
+  // Trade, Services & Retail
+  'wedding-photographers': '📷',
+  'event-planners': '🎉',
+  'creative-portfolio': '🎨',
+  'ecommerce-brands': '🛍️',
+  'jewellery-stores': '💎',
+  'cleaning-services': '🧹',
+  'pest-control': '🛡️',
+  'packers-movers': '📦',
+  'automotive-garages': '🏎️',
+  'manufacturing-oems': '⚙️',
+  'logistics-transport': '🚛',
+  'security-surveillance': '📹',
+  'daycares-preschools': '🧸',
+  'driving-schools': '🚗',
+  'astrology-vastu': '🔮',
+};
+
 const ALL_50_NICHES = (Object.keys(NICHES) as (keyof typeof NICHES)[])
   .filter((k) => k !== 'studio')
   .map((k) => ({
@@ -648,19 +712,22 @@ export default function SiteFooter() {
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-2 text-xs">
-              {(isIndexExpanded ? ALL_50_NICHES : ALL_50_NICHES.slice(0, 15)).map((niche) => (
-                <Link
-                  key={niche.slug}
-                  to={`/web-design/${niche.slug}/`}
-                  className="text-on-ink-muted hover:text-signal-bright transition-colors truncate flex items-center gap-1.5 py-0.5 group"
-                  title={niche.name}
-                >
-                  <span className="text-signal-bright/40 group-hover:text-signal-bright text-[10px] font-mono transition-colors shrink-0">
-                    📐
-                  </span>
-                  <span className="truncate">{niche.name}</span>
-                </Link>
-              ))}
+              {(isIndexExpanded ? ALL_50_NICHES : ALL_50_NICHES.slice(0, 15)).map((niche) => {
+                const icon = NICHE_ICONS[niche.slug] || '✦';
+                return (
+                  <Link
+                    key={niche.slug}
+                    to={`/web-design/${niche.slug}/`}
+                    className="text-on-ink-muted hover:text-signal-bright transition-colors truncate flex items-center gap-2 py-0.5 group"
+                    title={niche.name}
+                  >
+                    <span className="text-[12px] opacity-75 group-hover:opacity-100 group-hover:scale-110 transition-all shrink-0">
+                      {icon}
+                    </span>
+                    <span className="truncate">{niche.name}</span>
+                  </Link>
+                );
+              })}
             </div>
 
             {!isIndexExpanded && (
