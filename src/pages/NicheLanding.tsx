@@ -6,6 +6,7 @@ import { PROJECTS } from '../data/projects';
 import { getAllPosts, NICHES, NICHE_PILLAR_SLUGS } from '../lib/blog';
 import { getNicheLandingData, NICHE_LANDING_DATA } from '../data/nicheLandingData';
 import { BANGALORE_LOCALITIES } from '../data/bangaloreLocalities';
+import { useGeoPricing } from '../lib/geoPricing';
 
 interface NicheLandingProps {
   onBook?: () => void;
@@ -128,6 +129,7 @@ const NICHE_TOPIC_CLUSTERS: Record<string, { topic1: string; topic2: string }> =
 export default function NicheLanding({ onBook }: NicheLandingProps) {
   const { niche: routeSlug } = useParams<{ niche: string }>();
   const navigate = useNavigate();
+  const { region, selectRegion, allRegions, isInternational } = useGeoPricing();
 
   // Scroll to top when changing niche
   useEffect(() => {
@@ -933,6 +935,31 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
               <p className="text-muted text-sm sm:text-base leading-relaxed">
                 Whether researching <strong>website design cost for small business</strong> in the {NICHES[config.key].toLowerCase()} space, comparing <strong>professional website design packages</strong>, or budgeting for a <strong>website redesign cost</strong>, we offer 100% upfront pricing clarity. Every package includes our contractual 7-day delivery guarantee, zero monthly retainers, and 100% source code ownership.
               </p>
+
+              {/* Dynamic Currency & Region Switcher */}
+              <div className="mt-8 inline-flex items-center gap-3 p-1.5 sm:px-4 sm:py-2 rounded-full bg-paper border border-rule-strong shadow-xs">
+                <span className="text-xs font-mono text-muted flex items-center gap-1.5">
+                  <span className="text-base">{region.flag}</span>
+                  <span className="hidden sm:inline">Pricing localized for:</span>
+                </span>
+                <select
+                  aria-label="Select pricing currency"
+                  value={region.code}
+                  onChange={(e) => selectRegion(e.target.value)}
+                  className="bg-transparent font-mono text-xs text-ink font-semibold border-none outline-none cursor-pointer"
+                >
+                  {allRegions.map((r) => (
+                    <option key={r.code} value={r.code}>
+                      {r.flag} {r.name} ({r.currencyCode})
+                    </option>
+                  ))}
+                </select>
+                {isInternational && (
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-signal/10 text-signal font-bold uppercase">
+                    International Sprint
+                  </span>
+                )}
+              </div>
             </div>
           </Reveal>
 
@@ -951,10 +978,12 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
                   </p>
                   <div className="mb-6 pb-6 border-b border-rule">
                     <div className="flex items-baseline gap-2">
-                      <span className="font-display text-4xl sm:text-5xl font-bold text-ink">₹35,000</span>
+                      <span className="font-display text-4xl sm:text-5xl font-bold text-ink">{region.pricing.starter}</span>
                       <span className="text-xs font-mono text-muted">/ one-time</span>
                     </div>
-                    <span className="text-xs font-mono text-signal mt-1 block">≈ $490 USD · Zero ongoing fees</span>
+                    <span className="text-xs font-mono text-signal mt-1 block">
+                      {isInternational ? `${region.currencyCode} · Direct Founder Sprint` : '≈ $490 USD · Zero ongoing fees'}
+                    </span>
                   </div>
                   <ul className="space-y-3 text-xs sm:text-sm text-ink/90 font-mono mb-8">
                     <li className="flex items-start gap-2.5">
@@ -1006,10 +1035,12 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
                   </p>
                   <div className="mb-6 pb-6 border-b border-rule">
                     <div className="flex items-baseline gap-2">
-                      <span className="font-display text-4xl sm:text-5xl font-bold text-ink">₹55,000</span>
+                      <span className="font-display text-4xl sm:text-5xl font-bold text-ink">{region.pricing.growth}</span>
                       <span className="text-xs font-mono text-muted">/ one-time</span>
                     </div>
-                    <span className="text-xs font-mono text-signal mt-1 block">≈ $750 USD · Zero ongoing fees</span>
+                    <span className="text-xs font-mono text-signal mt-1 block">
+                      {isInternational ? `${region.currencyCode} · Contractual 7-day guarantee` : '≈ $750 USD · Zero ongoing fees'}
+                    </span>
                   </div>
                   <ul className="space-y-3 text-xs sm:text-sm text-ink/90 font-mono mb-8">
                     <li className="flex items-start gap-2.5">
@@ -1066,10 +1097,12 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
                   </p>
                   <div className="mb-6 pb-6 border-b border-rule">
                     <div className="flex items-baseline gap-2">
-                      <span className="font-display text-4xl sm:text-5xl font-bold text-ink">₹85,000+</span>
+                      <span className="font-display text-4xl sm:text-5xl font-bold text-ink">{region.pricing.bespoke}</span>
                       <span className="text-xs font-mono text-muted">/ bespoke</span>
                     </div>
-                    <span className="text-xs font-mono text-signal mt-1 block">≈ $1,150+ USD · Milestone scope</span>
+                    <span className="text-xs font-mono text-signal mt-1 block">
+                      {isInternational ? `${region.currencyCode} · Milestone scope` : '≈ $1,150+ USD · Milestone scope'}
+                    </span>
                   </div>
                   <ul className="space-y-3 text-xs sm:text-sm text-ink/90 font-mono mb-8">
                     <li className="flex items-start gap-2.5">
@@ -1137,21 +1170,29 @@ export default function NicheLanding({ onBook }: NicheLandingProps) {
                   <tbody className="divide-y divide-rule">
                     <tr>
                       <td className="p-3.5 font-semibold text-ink">Freelancer Hourly Rate</td>
-                      <td className="p-3.5 font-mono text-muted">₹1,500 – ₹4,000 / hr</td>
+                      <td className="p-3.5 font-mono text-muted">
+                        {isInternational ? `$45 – $100 / hr (${region.currencyCode})` : '₹1,500 – ₹4,000 / hr'}
+                      </td>
                       <td className="p-3.5 text-muted">Unpredictable (No hard completion cap)</td>
                       <td className="p-3.5 text-red-600 font-medium">Slower work equals higher fees</td>
                     </tr>
                     <tr>
-                      <td className="p-3.5 font-semibold text-ink">Traditional Digital Agency</td>
-                      <td className="p-3.5 font-mono text-muted">₹1,50,000+ + ₹15k/mo retainers</td>
-                      <td className="p-3.5 text-muted">8 to 16 weeks of endless meetings</td>
+                      <td className="p-3.5 font-semibold text-ink">
+                        {isInternational ? `Traditional ${region.name} Agency` : 'Traditional Digital Agency'}
+                      </td>
+                      <td className="p-3.5 font-mono text-muted">{region.hourlyVsSprint.localAgencyRate}</td>
+                      <td className="p-3.5 text-muted">{region.hourlyVsSprint.localTimeline}</td>
                       <td className="p-3.5 text-amber-600 font-medium">Over-engineered to justify retainers</td>
                     </tr>
                     <tr className="bg-signal/5">
                       <td className="p-3.5 font-bold text-signal">⚡ Uncoded Hub 7-Day Sprint</td>
-                      <td className="p-3.5 font-mono font-bold text-signal">₹35,000 – ₹55,000 (Fixed Price)</td>
+                      <td className="p-3.5 font-mono font-bold text-signal">
+                        {region.hourlyVsSprint.uncodedHubRate} (Fixed Price)
+                      </td>
                       <td className="p-3.5 font-bold text-signal">Contractual 7 Days (Late = 100% Free)</td>
-                      <td className="p-3.5 text-emerald-700 font-semibold">100% Aligned: Rapid delivery of working asset</td>
+                      <td className="p-3.5 text-emerald-700 font-semibold">
+                        100% Aligned: {region.hourlyVsSprint.savings}
+                      </td>
                     </tr>
                   </tbody>
                 </table>

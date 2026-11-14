@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Reveal, Shell } from '../components/primitives';
+import { useGeoPricing } from '../lib/geoPricing';
 
 /* ═══════════════════════════════════════════════════════════════════
    UNCODED HUB — CLIENT-CENTRIC SERVICE ARCHITECTURE & BUYING DECISION GUIDE
@@ -171,6 +172,7 @@ const CLIENT_SERVICES: ServiceCategory[] = [
 
 const PRICING_PACKAGES = [
   {
+    id: 'starter' as const,
     tier: 'Tier 01 · Single Page / Campaign',
     name: 'Starter Launchpad',
     priceINR: '₹35,000',
@@ -189,6 +191,7 @@ const PRICING_PACKAGES = [
     ctaText: 'Book Starter Sprint',
   },
   {
+    id: 'growth' as const,
     tier: 'Tier 02 · Full Business Platform (Most Popular)',
     name: 'Authority Growth Engine',
     priceINR: '₹55,000',
@@ -210,6 +213,7 @@ const PRICING_PACKAGES = [
     ctaText: 'Claim 7-Day Sprint Slot',
   },
   {
+    id: 'bespoke' as const,
     tier: 'Tier 03 · Bespoke Application / Multi-Location',
     name: 'Enterprise Bespoke',
     priceINR: '₹85,000+',
@@ -258,6 +262,7 @@ const PRICING_FAQS = [
 
 export default function Services({ onBook }: { onBook: () => void }) {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const { region, selectRegion, allRegions, isInternational } = useGeoPricing();
 
   const toggleFaq = (idx: number) => {
     setActiveFaq(activeFaq === idx ? null : idx);
@@ -463,74 +468,112 @@ export default function Services({ onBook }: { onBook: () => void }) {
               <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
                 Whether evaluating <strong>website design cost for small business</strong>, comparing <strong>professional website design packages</strong>, or replacing hourly developer rates with predictable fixed sprints, here is our 100% transparent pricing structure.
               </p>
+
+              {/* Dynamic Currency & Region Switcher */}
+              <div className="mt-8 inline-flex items-center gap-3 p-1.5 sm:px-4 sm:py-2 rounded-full bg-paper border border-rule-strong shadow-xs">
+                <span className="text-xs font-mono text-muted flex items-center gap-1.5">
+                  <span className="text-base">{region.flag}</span>
+                  <span className="hidden sm:inline">Pricing localized for:</span>
+                </span>
+                <select
+                  aria-label="Select pricing currency"
+                  value={region.code}
+                  onChange={(e) => selectRegion(e.target.value)}
+                  className="bg-transparent font-mono text-xs text-ink font-semibold border-none outline-none cursor-pointer"
+                >
+                  {allRegions.map((r) => (
+                    <option key={r.code} value={r.code}>
+                      {r.flag} {r.name} ({r.currencyCode})
+                    </option>
+                  ))}
+                </select>
+                {isInternational && (
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-signal/10 text-signal font-bold uppercase">
+                    International Sprint
+                  </span>
+                )}
+              </div>
             </div>
           </Reveal>
 
           {/* 3 Core Fixed-Price Packages */}
           <div className="grid lg:grid-cols-3 gap-8 mb-20">
-            {PRICING_PACKAGES.map((pkg, idx) => (
-              <Reveal key={pkg.name} delay={idx * 80}>
-                <div
-                  className={`p-8 sm:p-10 rounded-[28px] h-full flex flex-col justify-between transition-all ${
-                    pkg.popular
-                      ? 'bg-paper-raised border-2 border-signal relative shadow-xl'
-                      : 'bg-paper border border-rule hover:border-signal/50 shadow-xs'
-                  }`}
-                >
-                  {pkg.popular && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-signal text-paper font-mono text-[11px] font-bold uppercase tracking-wider shadow-sm">
-                      ★ Most Popular · Highest ROI
-                    </div>
-                  )}
+            {PRICING_PACKAGES.map((pkg, idx) => {
+              const packagePrice =
+                pkg.id === 'starter'
+                  ? region.pricing.starter
+                  : pkg.id === 'growth'
+                  ? region.pricing.growth
+                  : region.pricing.bespoke;
 
-                  <div>
-                    <span className="font-mono text-xs uppercase tracking-wider text-muted font-semibold block mb-2">
-                      {pkg.tier}
-                    </span>
-                    <h3 className="font-display text-2xl sm:text-3xl text-ink font-medium mb-3">
-                      {pkg.name}
-                    </h3>
-                    <p className="text-xs text-muted mb-6 leading-relaxed">
-                      {pkg.scopeDesc}
-                    </p>
+              const packageSubtext = isInternational
+                ? `${region.currencyCode} · Direct Founder Sprint`
+                : pkg.priceUSD;
 
-                    <div className="mb-6 pb-6 border-b border-rule">
-                      <div className="flex items-baseline gap-2">
-                        <span className="font-display text-4xl sm:text-5xl font-bold text-ink">
-                          {pkg.priceINR}
-                        </span>
-                        <span className="text-xs font-mono text-muted">/ one-time</span>
-                      </div>
-                      <div className="flex items-center justify-between text-xs font-mono text-signal mt-1">
-                        <span>{pkg.priceUSD}</span>
-                        <span className="text-muted">⏱ {pkg.timeline}</span>
-                      </div>
-                    </div>
-
-                    <ul className="space-y-3 text-xs sm:text-sm text-ink/90 font-mono mb-8">
-                      {pkg.features.map((feat, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-2.5 leading-snug">
-                          <span className="text-signal font-bold">✓</span>
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={onBook}
-                    className={`w-full py-3.5 rounded-full font-mono text-xs tracking-wider uppercase font-semibold transition-all cursor-pointer text-center ${
+              return (
+                <Reveal key={pkg.name} delay={idx * 80}>
+                  <div
+                    className={`p-8 sm:p-10 rounded-[28px] h-full flex flex-col justify-between transition-all ${
                       pkg.popular
-                        ? 'bg-signal text-paper hover:bg-ink shadow-md'
-                        : 'bg-paper-raised border border-rule-strong hover:border-ink text-ink'
+                        ? 'bg-paper-raised border-2 border-signal relative shadow-xl'
+                        : 'bg-paper border border-rule hover:border-signal/50 shadow-xs'
                     }`}
                   >
-                    {pkg.ctaText} →
-                  </button>
-                </div>
-              </Reveal>
-            ))}
+                    {pkg.popular && (
+                      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-signal text-paper font-mono text-[11px] font-bold uppercase tracking-wider shadow-sm">
+                        ★ Most Popular · Highest ROI
+                      </div>
+                    )}
+
+                    <div>
+                      <span className="font-mono text-xs uppercase tracking-wider text-muted font-semibold block mb-2">
+                        {pkg.tier}
+                      </span>
+                      <h3 className="font-display text-2xl sm:text-3xl text-ink font-medium mb-3">
+                        {pkg.name}
+                      </h3>
+                      <p className="text-xs text-muted mb-6 leading-relaxed">
+                        {pkg.scopeDesc}
+                      </p>
+
+                      <div className="mb-6 pb-6 border-b border-rule">
+                        <div className="flex items-baseline gap-2">
+                          <span className="font-display text-4xl sm:text-5xl font-bold text-ink">
+                            {packagePrice}
+                          </span>
+                          <span className="text-xs font-mono text-muted">/ one-time</span>
+                        </div>
+                        <div className="flex items-center justify-between text-xs font-mono text-signal mt-1">
+                          <span>{packageSubtext}</span>
+                          <span className="text-muted">⏱ {pkg.timeline}</span>
+                        </div>
+                      </div>
+
+                      <ul className="space-y-3 text-xs sm:text-sm text-ink/90 font-mono mb-8">
+                        {pkg.features.map((feat, fIdx) => (
+                          <li key={fIdx} className="flex items-start gap-2.5 leading-snug">
+                            <span className="text-signal font-bold">✓</span>
+                            <span>{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={onBook}
+                      className={`w-full py-3.5 rounded-full font-mono text-xs tracking-wider uppercase font-semibold transition-all cursor-pointer text-center ${
+                        pkg.popular
+                          ? 'bg-signal text-paper hover:bg-ink shadow-md'
+                          : 'bg-paper-raised border border-rule-strong hover:border-ink text-ink'
+                      }`}
+                    >
+                      {pkg.ctaText} →
+                    </button>
+                  </div>
+                </Reveal>
+              );
+            })}
           </div>
 
           {/* ── Market Comparison Matrix: Hourly Rate vs Agency vs Uncoded Hub ── */}
@@ -561,21 +604,31 @@ export default function Services({ onBook }: { onBook: () => void }) {
                   <tbody className="divide-y divide-rule">
                     <tr>
                       <td className="p-4 font-semibold text-ink">Freelancer Hourly Rate</td>
-                      <td className="p-4 font-mono text-muted">₹1,500 – ₹4,000 / hr ($40–$100/hr)</td>
+                      <td className="p-4 font-mono text-muted">
+                        {isInternational
+                          ? `$45 – $100 / hr (${region.currencyCode})`
+                          : '₹1,500 – ₹4,000 / hr ($40–$100/hr)'}
+                      </td>
                       <td className="p-4 text-muted">High (No hard delivery cap)</td>
                       <td className="p-4 text-red-600 font-medium">Misaligned: Slower work generates higher bills</td>
                     </tr>
                     <tr>
-                      <td className="p-4 font-semibold text-ink">Traditional Digital Agency</td>
-                      <td className="p-4 font-mono text-muted">₹1,50,000 – ₹5,00,000 + ₹15k/mo retainers</td>
-                      <td className="p-4 text-muted">8 to 16 weeks of bureaucratic delays</td>
+                      <td className="p-4 font-semibold text-ink">
+                        {isInternational ? `Traditional ${region.name} Agency` : 'Traditional Digital Agency'}
+                      </td>
+                      <td className="p-4 font-mono text-muted">{region.hourlyVsSprint.localAgencyRate}</td>
+                      <td className="p-4 text-muted">{region.hourlyVsSprint.localTimeline}</td>
                       <td className="p-4 text-amber-600 font-medium">Complex scopes to lock in long-term retainer fees</td>
                     </tr>
                     <tr className="bg-signal/5">
                       <td className="p-4 font-bold text-signal">⚡ Uncoded Hub 7-Day Sprint</td>
-                      <td className="p-4 font-mono font-bold text-signal">₹35,000 – ₹55,000 (Fixed Milestone)</td>
+                      <td className="p-4 font-mono font-bold text-signal">
+                        {region.hourlyVsSprint.uncodedHubRate} (Fixed Milestone)
+                      </td>
                       <td className="p-4 font-bold text-signal">Guaranteed 7 Days (Late means 100% free)</td>
-                      <td className="p-4 text-emerald-700 font-semibold">100% Aligned: Fast, flawless delivery before final 50%</td>
+                      <td className="p-4 text-emerald-700 font-semibold">
+                        100% Aligned: {region.hourlyVsSprint.savings}
+                      </td>
                     </tr>
                   </tbody>
                 </table>

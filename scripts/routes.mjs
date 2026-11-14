@@ -212,10 +212,13 @@ export function getAllRoutes() {
     }
   }
 
-  // International High-Intent BOFU Market Hubs (/markets/:market)
-  const GLOBAL_MARKETS = ['us', 'uk', 'uae', 'au'];
+  // International High-Intent BOFU Market Hubs (/markets/:market) — Top 20 Global Economic Capitals
+  const GLOBAL_MARKETS = [
+    'us', 'uk', 'ca', 'au', 'nz', 'ie', 'uae', 'sg', 'qa', 'sa',
+    'kw', 'bh', 'ch', 'de', 'nl', 'se', 'no', 'dk', 'za', 'my'
+  ];
   for (const market of GLOBAL_MARKETS) {
-    routes.push({ loc: `/markets/${market}`, lastmod: '2026-11-13' });
+    routes.push({ loc: `/markets/${market}`, lastmod: '2026-11-14' });
   }
 
   if (posts.length > 0) {

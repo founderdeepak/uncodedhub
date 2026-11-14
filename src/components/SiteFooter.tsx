@@ -5,6 +5,8 @@ import { hasBlogPosts } from '../lib/blogNav';
 import { getWhatsAppUrl } from '../lib/whatsapp';
 import { NICHES } from '../lib/blog';
 import { BANGALORE_LOCALITIES } from '../data/bangaloreLocalities';
+import { GLOBAL_MARKETS_DATA } from '../data/globalMarketsData';
+import { useGeoPricing } from '../lib/geoPricing';
 
 const LEAD_MAGNET_SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycbxjs7uylG1UuDne9_rCCd8YfZKp9RRE5vIFK9_Ctq8MMWfur0100fBDwAaTZd2l3_iq/exec';
@@ -14,7 +16,7 @@ const LEAD_MAGNET_SECRET = import.meta.env.VITE_LEAD_MAGNET_SECRET || '';
    SITE FOOTER — LUXURY ARCHITECTURAL INDEX ARCHITECTURE (OPTION 4)
    Crafted with editorial precision: curated top navigation, dedicated
    7 client services, premier portfolio demo gateway, and an expandable
-   architectural drawer housing 50 industry silos & 100 Bengaluru corridors.
+   architectural drawer housing 20 global hubs, 50 niches & 100 corridors.
    ═══════════════════════════════════════════════════════════════════ */
 
 const SERVICE_LINKS = [
@@ -151,14 +153,21 @@ const ALL_BENGALURU_LOCALITIES = Object.values(BANGALORE_LOCALITIES).sort((a, b)
   a.name.localeCompare(b.name)
 );
 
+const ALL_20_GLOBAL_MARKETS = Object.values(GLOBAL_MARKETS_DATA).sort((a, b) =>
+  a.countryName.localeCompare(b.countryName)
+);
+
 export default function SiteFooter() {
   const location = useLocation();
   const whatsappUrl = getWhatsAppUrl(location.pathname);
+  const { isInternational, region, selectRegion, allRegions } = useGeoPricing();
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const [trap, setTrap] = useState('');
-  const [indexTab, setIndexTab] = useState<'niches' | 'localities'>('niches');
+  const [indexTab, setIndexTab] = useState<'markets' | 'niches' | 'localities'>(() =>
+    isInternational ? 'markets' : 'niches'
+  );
   const [isIndexExpanded, setIsIndexExpanded] = useState(false);
   const startedAt = useRef(Date.now());
 
@@ -651,23 +660,51 @@ export default function SiteFooter() {
             </Link>
           </div>
 
-          {/* Directory Header with Luxury Tab Switcher & Drawer Toggle */}
+          {/* Directory Header with Luxury Tab Switcher, Currency Selector & Drawer Toggle */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 pb-4 border-b border-white/10">
             <div>
               <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-signal-bright block mb-1">
-                ARCHITECTURAL DIRECTORY
+                ARCHITECTURAL DIRECTORY &amp; GLOBAL REACH
               </span>
               <h3 className="font-display text-xl sm:text-2xl text-on-ink font-normal tracking-tight">
-                50 Specialized Industry Silos &amp; 100 Bengaluru Corridors
+                20 Global Economic Hubs, 50 Industry Silos &amp; 100 Bengaluru Corridors
               </h3>
               <p className="text-on-ink-muted text-xs mt-1">
                 Bespoke React platforms engineered by senior founders Deepak &amp; Geetha with 7-day guarantee.
               </p>
             </div>
 
-            {/* Interactive Tab Switcher & Drawer Toggle */}
+            {/* Interactive Tab Switcher, Currency Switcher & Drawer Toggle */}
             <div className="flex flex-wrap items-center gap-2 self-start md:self-auto">
+              {/* Region & Currency Quick Switcher */}
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-on-ink-muted">
+                <span className="text-xs">{region.flag}</span>
+                <select
+                  aria-label="Select Local Currency & Region"
+                  value={region.code}
+                  onChange={(e) => selectRegion(e.target.value)}
+                  className="bg-transparent text-on-ink text-xs font-mono border-none outline-none cursor-pointer pr-1"
+                >
+                  {allRegions.map((r) => (
+                    <option key={r.code} value={r.code} className="bg-[#12100E] text-white">
+                      {r.flag} {r.name} ({r.currencyCode})
+                    </option>
+                  ))}
+                </select>
+              </div>
+
               <div className="inline-flex p-1 rounded-full bg-white/[0.04] border border-white/10">
+                <button
+                  type="button"
+                  onClick={() => setIndexTab('markets')}
+                  className={`px-3.5 py-1.5 rounded-full font-mono text-xs transition-all cursor-pointer ${
+                    indexTab === 'markets'
+                      ? 'bg-signal-bright text-paper font-semibold shadow-xs'
+                      : 'text-on-ink-muted hover:text-on-ink'
+                  }`}
+                >
+                  🌍 20 Global Hubs ({ALL_20_GLOBAL_MARKETS.length})
+                </button>
                 <button
                   type="button"
                   onClick={() => setIndexTab('niches')}
@@ -677,7 +714,7 @@ export default function SiteFooter() {
                       : 'text-on-ink-muted hover:text-on-ink'
                   }`}
                 >
-                  50 Industry Silos ({ALL_50_NICHES.length})
+                  📐 50 Industry Silos ({ALL_50_NICHES.length})
                 </button>
                 <button
                   type="button"
@@ -688,7 +725,7 @@ export default function SiteFooter() {
                       : 'text-on-ink-muted hover:text-on-ink'
                   }`}
                 >
-                  100 Bengaluru Corridors ({ALL_BENGALURU_LOCALITIES.length})
+                  📍 Bengaluru Studio ({ALL_BENGALURU_LOCALITIES.length})
                 </button>
               </div>
 
@@ -700,6 +737,56 @@ export default function SiteFooter() {
                 {isIndexExpanded ? 'Collapse ↑' : 'Expand All ↓'}
               </button>
             </div>
+          </div>
+
+          {/* 20 Global Markets Container */}
+          <div className={indexTab === 'markets' ? 'block' : 'hidden'}>
+            <div className="flex items-center justify-between mb-3 text-[11px] font-mono text-on-ink-muted">
+              <span>Tier-1 &amp; Tier-2 International Economic Hubs · Direct 7-Day Founder Sprints</span>
+              <Link to="/services/#pricing-guide" className="text-signal-bright hover:underline">
+                View Global Sprints &amp; Pricing Matrix →
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 text-xs">
+              {(isIndexExpanded ? ALL_20_GLOBAL_MARKETS : ALL_20_GLOBAL_MARKETS.slice(0, 10)).map((market) => (
+                <Link
+                  key={market.slug}
+                  to={`/markets/${market.slug}/`}
+                  className="p-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-signal-bright/60 hover:bg-white/[0.06] transition-all group flex flex-col justify-between"
+                  title={`${market.countryName} Web Design Studio — ${market.complianceBadge}`}
+                >
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-lg">{market.flag}</span>
+                    <span className="font-mono text-[10px] text-signal-bright uppercase font-semibold">
+                      {market.currencyCode}
+                    </span>
+                  </div>
+                  <span className="text-on-ink font-medium truncate group-hover:text-signal-bright transition-colors block">
+                    {market.countryName}
+                  </span>
+                  <span className="text-[11px] font-mono text-on-ink-muted truncate">
+                    {market.complianceBadge}
+                  </span>
+                  <span className="text-[10px] font-mono text-signal-bright/80 mt-1 block">
+                    From {market.pricing.foundational}
+                  </span>
+                </Link>
+              ))}
+            </div>
+
+            {!isIndexExpanded && (
+              <div className="mt-4 text-center">
+                <button
+                  type="button"
+                  onClick={() => setIsIndexExpanded(true)}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 hover:border-signal-bright text-xs text-on-ink-muted hover:text-on-ink font-mono transition-colors cursor-pointer"
+                >
+                  <span>+10 More International Economic Hubs</span>
+                  <span className="text-signal-bright">↓ Expand Complete Directory</span>
+                </button>
+              </div>
+            )}
           </div>
 
           {/* 50 Industry Niches Container */}
