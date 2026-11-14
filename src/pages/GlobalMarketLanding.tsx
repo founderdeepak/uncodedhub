@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Reveal, Shell } from '../components/primitives';
 import { GLOBAL_MARKETS_DATA, GlobalMarket } from '../data/globalMarketsData';
+import { getCitiesForMarket } from '../data/globalCityData';
 
 interface GlobalMarketLandingProps {
   onBook?: () => void;
@@ -72,6 +73,7 @@ export default function GlobalMarketLanding({ onBook }: GlobalMarketLandingProps
   };
 
   const otherMarkets = Object.values(GLOBAL_MARKETS_DATA).filter((m) => m.slug !== data.slug);
+  const marketCities = data ? getCitiesForMarket(data.slug) : [];
 
   return (
     <>
@@ -263,6 +265,78 @@ export default function GlobalMarketLanding({ onBook }: GlobalMarketLandingProps
             </Reveal>
           </Shell>
         </section>
+
+        {/* ── 10 Premier City Economic Corridors ────────────────────── */}
+        {marketCities.length > 0 && (
+          <section className="py-16 sm:py-24 bg-paper/60 border-t border-rule">
+            <Shell>
+              <Reveal>
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                  <div className="max-w-2xl">
+                    <span className="text-xs font-mono uppercase tracking-widest text-signal block mb-2">
+                      Local Commercial Beachheads
+                    </span>
+                    <h2 className="text-2xl sm:text-4xl font-serif font-light text-ink">
+                      10 Premier Economic Corridors in {data.countryName}
+                    </h2>
+                    <p className="text-sm sm:text-base text-ink-soft mt-3">
+                      Tailored web engineering for the highest-revenue business hubs in {data.countryName}. Click any city to inspect local agency rates, corridors &amp; live sprint dates.
+                    </p>
+                  </div>
+                  <span className="text-xs font-mono px-3.5 py-1.5 rounded-full bg-signal/10 border border-signal/20 text-signal font-semibold self-start md:self-auto">
+                    {marketCities.length} Dedicated City Hubs
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {marketCities.map((city) => (
+                    <Link
+                      key={city.slug}
+                      to={`/markets/${data.slug}/${city.slug}/`}
+                      className="p-6 bg-canvas border border-rule hover:border-signal/60 rounded-[8px] transition-all group flex flex-col justify-between shadow-xs hover:shadow-md"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between mb-3">
+                          <span className="font-mono text-xs text-signal font-semibold">
+                            {city.stateOrRegion}
+                          </span>
+                          <span className="text-xs font-mono text-ink-muted">
+                            {city.timezoneCode}
+                          </span>
+                        </div>
+                        <h3 className="text-xl font-serif font-medium text-ink group-hover:text-signal transition-colors mb-2">
+                          {city.cityName}
+                        </h3>
+                        <p className="text-xs text-ink-soft leading-relaxed mb-4">
+                          {city.heroTagline}
+                        </p>
+                        <div className="flex flex-wrap gap-1.5 mb-6">
+                          {city.corridors.slice(0, 3).map((c, i) => (
+                            <span
+                              key={i}
+                              className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-paper border border-rule/70 text-ink-soft"
+                            >
+                              {c}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="pt-4 border-t border-rule/50 flex items-center justify-between">
+                        <span className="text-xs font-mono text-signal font-semibold">
+                          From {city.uncodedHubSprintPrice}
+                        </span>
+                        <span className="text-xs font-mono text-ink-muted group-hover:text-signal transition-colors">
+                          Explore City Hub →
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </Reveal>
+            </Shell>
+          </section>
+        )}
 
         {/* ── Top Priority Sectors ─────────────────────────────────────── */}
         <section className="py-16 sm:py-24">

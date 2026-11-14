@@ -667,7 +667,7 @@ export default function SiteFooter() {
                 ARCHITECTURAL DIRECTORY &amp; GLOBAL REACH
               </span>
               <h3 className="font-display text-xl sm:text-2xl text-on-ink font-normal tracking-tight">
-                20 Global Economic Hubs, 50 Industry Silos &amp; 100 Bengaluru Corridors
+                20 Global Economic Hubs (200 Metros), 50 Industry Silos &amp; 100 Bengaluru Corridors
               </h3>
               <p className="text-on-ink-muted text-xs mt-1">
                 Bespoke React platforms engineered by senior founders Deepak &amp; Geetha with 7-day guarantee.
@@ -703,7 +703,7 @@ export default function SiteFooter() {
                       : 'text-on-ink-muted hover:text-on-ink'
                   }`}
                 >
-                  🌍 20 Global Hubs ({ALL_20_GLOBAL_MARKETS.length})
+                  🌍 20 Global Hubs &amp; 200 Metros
                 </button>
                 <button
                   type="button"
@@ -769,7 +769,7 @@ export default function SiteFooter() {
                     {market.complianceBadge}
                   </span>
                   <span className="text-[10px] font-mono text-signal-bright/80 mt-1 block">
-                    From {market.pricing.foundational}
+                    From {market.pricing.foundational} · 10 Metros
                   </span>
                 </Link>
               ))}

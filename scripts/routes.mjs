@@ -221,6 +221,18 @@ export function getAllRoutes() {
     routes.push({ loc: `/markets/${market}`, lastmod: '2026-11-14' });
   }
 
+  // 200 Premier International City Economic Corridors (/markets/:market/:city)
+  try {
+    const globalCityFile = path.join(root, 'src', 'data', 'globalCityData.ts');
+    const cityContent = readFileSync(globalCityFile, 'utf-8');
+    const cityKeys = [...cityContent.matchAll(/'([a-z0-9-]+)\/([a-z0-9-]+)':/g)].map(
+      (m) => `${m[1]}/${m[2]}`
+    );
+    for (const key of cityKeys) {
+      routes.push({ loc: `/markets/${key}`, lastmod: '2026-11-14' });
+    }
+  } catch {}
+
   if (posts.length > 0) {
     routes.push({ loc: '/blog' });
     for (const niche of NICHE_KEYS) {

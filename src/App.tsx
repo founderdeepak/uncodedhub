@@ -27,6 +27,7 @@ const AlternativeLanding = lazy(() => import('./pages/AlternativeLanding'));
 const SolutionsHub = lazy(() => import('./pages/SolutionsHub'));
 const SolutionLanding = lazy(() => import('./pages/SolutionLanding'));
 const GlobalMarketLanding = lazy(() => import('./pages/GlobalMarketLanding'));
+const GlobalCityLanding = lazy(() => import('./pages/GlobalCityLanding'));
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 /* Paths are unchanged from the previous site so existing links and
@@ -391,6 +392,22 @@ export default function App() {
             element={
               <Suspense fallback={null}>
                 <GlobalMarketLanding onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/markets/:market/:city"
+            element={
+              <Suspense fallback={null}>
+                <GlobalCityLanding onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/markets/:market/:city/"
+            element={
+              <Suspense fallback={null}>
+                <GlobalCityLanding onBook={goToBooking} />
               </Suspense>
             }
           />
