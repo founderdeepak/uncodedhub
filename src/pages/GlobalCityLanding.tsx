@@ -203,8 +203,8 @@ export default function GlobalCityLanding({ onBook }: GlobalCityLandingProps) {
 
                 <p className="text-base sm:text-xl text-ink-soft leading-relaxed max-w-3xl mb-8 font-light">
                   Hand-crafted React web design engineered by senior founders Deepak &amp; Geetha.
-                  Replacing {cityData.cityName}&rsquo;s {cityData.localAgencyRate} agency retainers with our predictable{' '}
-                  <strong className="text-ink font-medium">{cityData.uncodedHubSprintPrice}</strong> fixed sprint and binding 7-day delivery guarantee.
+                  Replacing {cityData.cityName}&rsquo;s traditional agency overhead with our focused 7-working-day sprint. Projects typically start from{' '}
+                  <strong className="text-ink font-medium">{cityData.uncodedHubSprintPrice}</strong> with an exact written fixed quote agreed after our 20-minute discovery call.
                 </p>
 
                 {/* Key Corridors Pill Grid */}
@@ -231,7 +231,7 @@ export default function GlobalCityLanding({ onBook }: GlobalCityLandingProps) {
                     onClick={handleConsultation}
                     className="bg-signal hover:bg-signal-bright text-paper font-mono text-xs tracking-wider uppercase font-semibold py-4 px-8 rounded-full transition-all cursor-pointer shadow-md hover:scale-[1.02]"
                   >
-                    Lock 7-Day Sprint in {cityData.cityName} →
+                    Book Free 20-Min Discovery Call →
                   </button>
                   <Link
                     to="/portfolio/"
@@ -314,7 +314,7 @@ export default function GlobalCityLanding({ onBook }: GlobalCityLandingProps) {
 
                 <div className="mt-6 pt-4 border-t border-rule flex flex-wrap items-center justify-between text-xs font-mono text-muted">
                   <span>⏱ Overlap: {cityData.overlapHours}</span>
-                  <span className="text-signal font-semibold">Contractual Guarantee: Live on {sprintDates.day7} or 100% Free</span>
+                  <span className="text-signal font-semibold">Contractual Guarantee: Live in 7 working days or 100% Free</span>
                 </div>
               </div>
             </Reveal>
@@ -367,15 +367,18 @@ export default function GlobalCityLanding({ onBook }: GlobalCityLandingProps) {
                     <tr className="bg-signal/5">
                       <td className="p-4 font-bold text-signal">⚡ Uncoded Hub 7-Day Sprint</td>
                       <td className="p-4 font-mono font-bold text-signal">
-                        {cityData.uncodedHubSprintPrice}
+                        Typically from {cityData.uncodedHubSprintPrice}*
                       </td>
-                      <td className="p-4 font-bold text-signal">Guaranteed 7 Days (Late = 100% Free)</td>
+                      <td className="p-4 font-bold text-signal">Guaranteed 7 Working Days (Late = 100% Free)</td>
                       <td className="p-4 text-emerald-700 font-semibold">
                         100% Aligned: {cityData.savings}
                       </td>
                     </tr>
                   </tbody>
                 </table>
+                <div className="p-4 bg-paper-sunken border-t border-rule text-center text-xs font-mono text-muted">
+                  *Estimated starting guidelines — exact fixed quote agreed in writing after 20-min discovery call based on your scope.
+                </div>
               </div>
             </Reveal>
           </Shell>

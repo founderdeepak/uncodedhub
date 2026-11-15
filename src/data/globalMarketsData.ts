@@ -52,7 +52,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       'Hand-coded custom web development for US private practices, clinics, and studios. Sub-second speed, ADA & HIPAA compliant, delivered in 7 days for $1,800–$3,800.',
     headline: 'Bespoke 7-Day Web Design Sprints for US Businesses.',
     subheadline:
-      'Skip the $15,000 quote and 12-week drag of traditional US digital agencies. We engineer custom, sub-second web platforms for American clinics, architects, and founders in 7 calendar days.',
+      'Skip the $15,000 quote and 12-week drag of traditional US digital agencies. We engineer custom, sub-second web platforms for American clinics, architects, and founders in 7 working days.',
     complianceBadge: '🛡️ ADA & WCAG 2.1 AA COMPLIANT · HIPAA-READY PATIENT ARCHITECTURE',
     timezoneProtocol:
       'Asynchronous sprint delivery with daily 5-minute Loom video updates recorded for US Eastern (EST) and Pacific (PST) morning review.',
@@ -65,7 +65,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '$12,000 – $30,000',
       localTimeline: '10 to 16 Weeks',
       uncodedHubRate: '$1,800 – $3,800',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save $10,000+ & Launch 8 Weeks Faster',
     },
     topSectors: [
@@ -151,7 +151,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '£8,000 – £22,000',
       localTimeline: '8 to 14 Weeks',
       uncodedHubRate: '£1,500 – £2,900',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save £6,000+ & Launch 2 Months Ahead',
     },
     topSectors: [
@@ -219,7 +219,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       'High-speed, hand-coded web design for Canadian practices, builders, and professionals in Toronto, Vancouver, and Calgary. Delivered in 7 days for $2,500–$4,800 CAD.',
     headline: 'Bespoke 7-Day Web Design Sprints for Canadian Businesses.',
     subheadline:
-      'Tired of Toronto agency quotes exceeding $20,000 CAD? We deliver hand-crafted, sub-second React platforms for Canadian builders, clinics, and professional firms in 7 calendar days.',
+      'Tired of Toronto agency quotes exceeding $20,000 CAD? We deliver hand-crafted, sub-second React platforms for Canadian builders, clinics, and professional firms in 7 working days.',
     complianceBadge: '🛡️ PIPEDA COMPLIANT · AODA ACCESSIBILITY READY · ZERO BLOATWARE',
     timezoneProtocol:
       'Seamless timezone coordination across Eastern (EST) and Pacific (PST) with daily video updates and scheduled morning sync calls.',
@@ -232,7 +232,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '$14,000 – $28,000 CAD',
       localTimeline: '8 to 14 Weeks',
       uncodedHubRate: '$2,500 – $4,800 CAD',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save $10,000+ CAD with Fixed Guarantees',
     },
     topSectors: [
@@ -298,7 +298,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '$10,000 – $25,000 AUD',
       localTimeline: '8 to 14 Weeks',
       uncodedHubRate: '$2,500 – $4,800 AUD',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save $8,000+ AUD with Fixed Guarantees',
     },
     topSectors: [
@@ -364,7 +364,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '$9,000 – $20,000 NZD',
       localTimeline: '8 to 12 Weeks',
       uncodedHubRate: '$2,800 – $5,200 NZD',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save $6,000+ NZD & Launch On Time',
     },
     topSectors: [
@@ -423,7 +423,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '€8,000 – €20,000 EUR',
       localTimeline: '8 to 14 Weeks',
       uncodedHubRate: '€1,600 – €3,200 EUR',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save €6,000+ & Launch 2 Months Sooner',
     },
     topSectors: [
@@ -482,7 +482,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '25,000 – 60,000 AED',
       localTimeline: '8 to 12 Weeks',
       uncodedHubRate: '6,500 – 14,000 AED',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save 20,000+ AED & Zero Freelance Flake',
     },
     topSectors: [
@@ -553,7 +553,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '$10,000 – $25,000 SGD',
       localTimeline: '8 to 14 Weeks',
       uncodedHubRate: '$2,500 – $4,800 SGD',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save $8,000+ SGD with Fixed Deliverables',
     },
     topSectors: [
@@ -612,7 +612,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '25,000 – 55,000 QAR',
       localTimeline: '8 to 14 Weeks',
       uncodedHubRate: '6,500 – 13,000 QAR',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save 18,000+ QAR & Launch in 7 Days',
     },
     topSectors: [
@@ -653,7 +653,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       'Hand-crafted digital platforms for Riyadh and Jeddah contracting, medical, and corporate consulting firms. Bilingual ready, delivered in 7 days for 7,000–15,000 SAR.',
     headline: 'High-Speed Web Platforms for Saudi Arabia’s Vision 2030 Boom.',
     subheadline:
-      'Elevate your commercial profile in Riyadh and Jeddah. We engineer high-performance, bilingual web platforms for contractors, clinics, and advisory firms in 7 calendar days.',
+      'Elevate your commercial profile in Riyadh and Jeddah. We engineer high-performance, bilingual web platforms for contractors, clinics, and advisory firms in 7 working days.',
     complianceBadge: '🇸🇦 VISION 2030 ENTERPRISE STANDARDS · BILINGUAL ARABIC/ENGLISH',
     timezoneProtocol:
       'Saudi Arabia (AST) is 2.5 hours behind India, providing full workday collaboration throughout Riyadh and Jeddah business hours.',
@@ -666,7 +666,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '25,000 – 65,000 SAR',
       localTimeline: '8 to 16 Weeks',
       uncodedHubRate: '7,000 – 15,000 SAR',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save 20,000+ SAR & Fixed Deadlines',
     },
     topSectors: [
@@ -720,7 +720,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '2,500 – 6,500 KWD',
       localTimeline: '8 to 12 Weeks',
       uncodedHubRate: '550 – 1,200 KWD',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save 1,800+ KWD with Guaranteed 7-Day Launch',
     },
     topSectors: [
@@ -774,7 +774,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '3,000 – 7,500 BHD',
       localTimeline: '8 to 12 Weeks',
       uncodedHubRate: '700 – 1,500 BHD',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save 2,200+ BHD & Launch On Time',
     },
     topSectors: [
@@ -828,7 +828,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '12,000 – 35,000 CHF',
       localTimeline: '10 to 16 Weeks',
       uncodedHubRate: '2,000 – 4,500 CHF',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save 10,000+ CHF with Guaranteed Launch Date',
     },
     topSectors: [
@@ -887,7 +887,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '€10,000 – €28,000 EUR',
       localTimeline: '10 to 16 Weeks',
       uncodedHubRate: '€1,800 – €3,800 EUR',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save €8,000+ EUR & Launch 2 Months Sooner',
     },
     topSectors: [
@@ -946,7 +946,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '€8,000 – €22,000 EUR',
       localTimeline: '8 to 12 Weeks',
       uncodedHubRate: '€1,600 – €3,400 EUR',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save €6,000+ EUR & Zero Freelancer Flake',
     },
     topSectors: [
@@ -1000,7 +1000,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '90,000 – 240,000 SEK',
       localTimeline: '8 to 14 Weeks',
       uncodedHubRate: '20,000 – 42,000 SEK',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save 70,000+ SEK with Guaranteed Delivery',
     },
     topSectors: [
@@ -1054,7 +1054,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '90,000 – 250,000 NOK',
       localTimeline: '10 to 14 Weeks',
       uncodedHubRate: '20,000 – 45,000 NOK',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save 70,000+ NOK with Fixed Guarantees',
     },
     topSectors: [
@@ -1108,7 +1108,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: '60,000 – 170,000 DKK',
       localTimeline: '8 to 12 Weeks',
       uncodedHubRate: '14,000 – 30,000 DKK',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save 45,000+ DKK & Launch in 7 Days',
     },
     topSectors: [
@@ -1162,7 +1162,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: 'R80,000 – R240,000 ZAR',
       localTimeline: '8 to 14 Weeks',
       uncodedHubRate: 'R32,000 – R68,000 ZAR',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save R50,000+ ZAR with Guaranteed Launch',
     },
     topSectors: [
@@ -1203,7 +1203,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       'High-performance web development for Kuala Lumpur medical tourism, property developers, and tech firms. Delivered in 7 days for RM7,500–RM16,500 MYR.',
     headline: 'Bespoke 7-Day Web Design Sprints for Malaysian Enterprises.',
     subheadline:
-      'Skip sluggish local agency delivery. We engineer custom-coded, ultra-fast web platforms for Kuala Lumpur clinics, property developers, and tech innovators in 7 calendar days.',
+      'Skip sluggish local agency delivery. We engineer custom-coded, ultra-fast web platforms for Kuala Lumpur clinics, property developers, and tech innovators in 7 working days.',
     complianceBadge: '🇲🇾 PDPA COMPLIANT · KUALA LUMPUR EDGE ROUTED · WHATSAPP EQUIPPED',
     timezoneProtocol:
       'Malaysia (MYT) is 2.5 hours ahead of India, ensuring synchronous working alignment throughout your normal business day.',
@@ -1216,7 +1216,7 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
       localAgencyRate: 'RM25,000 – RM65,000 MYR',
       localTimeline: '8 to 14 Weeks',
       uncodedHubRate: 'RM7,500 – RM16,500 MYR',
-      uncodedHubTimeline: 'Fixed 7 Calendar Days',
+      uncodedHubTimeline: 'Fixed 7 Working Days',
       savings: 'Save RM15,000+ MYR with Contractual 7-Day Launch',
     },
     topSectors: [

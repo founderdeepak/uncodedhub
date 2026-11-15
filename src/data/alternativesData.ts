@@ -701,7 +701,7 @@ export const ALTERNATIVES_DATA: Record<string, AlternativeItem> = {
       },
       {
         criterion: 'Turnaround Time',
-        uncodedHub: '⚡ Fixed 7 calendar days',
+        uncodedHub: '⚡ Fixed 7 working days',
         competitor: '🐢 6 to 12 weeks of scope renegotiations',
         advantage: 'uncoded',
       },

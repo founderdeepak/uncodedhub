@@ -131,29 +131,29 @@ export default function GlobalMarketLanding({ onBook }: GlobalMarketLandingProps
                   {onBook ? (
                     <button
                       onClick={onBook}
-                      className="btn-primary !px-8 !py-4 text-base font-medium shadow-sm hover:shadow transition-all"
+                      className="btn-primary !px-8 !py-4 text-sm font-medium shadow-sm hover:shadow transition-all"
                     >
-                      Book a Discovery Call
+                      Book Free 20-Minute Discovery Call →
                     </button>
                   ) : (
                     <Link
                       to="/contact/"
-                      className="btn-primary !px-8 !py-4 text-base font-medium shadow-sm hover:shadow transition-all"
+                      className="btn-primary !px-8 !py-4 text-sm font-medium shadow-sm hover:shadow transition-all"
                     >
-                      Book a Discovery Call
+                      Book Free 20-Minute Discovery Call →
                     </Link>
                   )}
                   <a
-                    href="#comparison"
-                    className="px-6 py-4 border border-rule hover:border-ink/40 text-ink-soft hover:text-ink rounded-[3px] text-sm font-medium transition-colors"
+                    href="#pricing"
+                    className="px-6 py-4 border border-rule hover:border-ink/40 text-ink-soft hover:text-ink rounded-full text-xs font-mono transition-colors"
                   >
-                    Compare Local vs Uncoded Hub ↓
+                    View Pricing Guidelines ↓
                   </a>
                   <a
                     href={`https://wa.me/918660819023?text=Hi%20Deepak%20and%20Geetha,%20I'm%20based%20in%20${encodeURIComponent(data.countryName)}%20and%20interested%20in%20a%207-day%20web%20sprint.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-emerald-600 hover:text-emerald-700 px-4 py-3"
+                    className="inline-flex items-center gap-2 text-xs font-mono text-emerald-600 hover:text-emerald-700 px-4 py-3"
                   >
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                     Quick Chat on WhatsApp
@@ -161,22 +161,22 @@ export default function GlobalMarketLanding({ onBook }: GlobalMarketLandingProps
                 </div>
 
                 {/* Micro Guarantees */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-12 mt-12 border-t border-rule/60 text-xs font-mono text-ink-muted">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-10 mt-10 border-t border-rule/60 text-xs font-mono text-ink-muted">
                   <div>
-                    <span className="block text-ink font-semibold text-sm">7 Days</span>
-                    <span>Guaranteed Delivery</span>
+                    <span className="block text-ink font-semibold text-sm">7 Working Days</span>
+                    <span>Sprint Timeline*</span>
                   </div>
                   <div>
-                    <span className="block text-ink font-semibold text-sm">&lt; 0.7s LCP</span>
+                    <span className="block text-ink font-semibold text-sm">&lt; 0.8s LCP</span>
                     <span>Global Edge CDN</span>
                   </div>
                   <div>
-                    <span className="block text-ink font-semibold text-sm">Late Means Free</span>
+                    <span className="block text-ink font-semibold text-sm">On Time or Free</span>
                     <span>Contractual Guarantee</span>
                   </div>
                   <div>
-                    <span className="block text-ink font-semibold text-sm">100% Code Handover</span>
-                    <span>Zero CMS Lock-In</span>
+                    <span className="block text-ink font-semibold text-sm">100% Ownership</span>
+                    <span>Zero Vendor Lock-In</span>
                   </div>
                 </div>
               </div>
@@ -191,27 +191,27 @@ export default function GlobalMarketLanding({ onBook }: GlobalMarketLandingProps
               <div className="max-w-4xl mx-auto">
                 <div className="text-center max-w-2xl mx-auto mb-12">
                   <span className="text-xs font-mono uppercase tracking-widest text-signal block mb-2">
-                    Transparent Economics
+                    Comparative Economics
                   </span>
                   <h2 className="text-2xl sm:text-4xl font-serif font-light text-ink">
-                    Why {data.countryName} Businesses Work With Us
+                    Why {data.countryName} Businesses Choose Uncoded Hub
                   </h2>
                   <p className="text-sm sm:text-base text-ink-soft mt-3">
                     Skip bloated agency overhead, layers of non-technical account managers, and endless billing delays.
                   </p>
                 </div>
 
-                <div className="bg-canvas border border-rule rounded-[4px] shadow-sm overflow-hidden">
-                  <div className="grid grid-cols-2 divide-x divide-rule">
+                <div className="bg-canvas border border-rule rounded-2xl shadow-sm overflow-hidden">
+                  <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-rule">
                     <div className="p-6 sm:p-8 bg-paper/40">
                       <span className="text-xs font-mono uppercase tracking-wider text-ink-muted block mb-1">
-                        Traditional {data.countryName} Agency
+                        Typical {data.countryName} Agency
                       </span>
                       <p className="text-xl sm:text-2xl font-serif text-ink mb-6">The High-Overhead Model</p>
                       <ul className="space-y-4 text-sm text-ink-soft">
                         <li className="flex items-start gap-2">
                           <span className="text-red-500 font-bold">✕</span>
-                          <span><strong>Cost:</strong> {data.localComparison.localAgencyRate}</span>
+                          <span><strong>Estimated Cost:</strong> {data.localComparison.localAgencyRate} (Industry Average)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-red-500 font-bold">✕</span>
@@ -223,7 +223,7 @@ export default function GlobalMarketLanding({ onBook }: GlobalMarketLandingProps
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-red-500 font-bold">✕</span>
-                          <span>Heavy WordPress/Webflow plugins requiring constant paid maintenance</span>
+                          <span>Heavy WordPress/Webflow plugins requiring constant paid maintenance retainers</span>
                         </li>
                       </ul>
                     </div>
@@ -233,23 +233,23 @@ export default function GlobalMarketLanding({ onBook }: GlobalMarketLandingProps
                         <span className="text-xs font-mono uppercase tracking-wider text-signal font-semibold">
                           Uncoded Hub 7-Day Sprint
                         </span>
-                        <span className="text-[10px] font-mono bg-signal text-paper px-2 py-0.5 rounded-[2px]">
-                          FASTER &amp; LEANER
+                        <span className="text-[10px] font-mono bg-signal text-paper px-2 py-0.5 rounded-full">
+                          FOUNDER LED
                         </span>
                       </div>
-                      <p className="text-xl sm:text-2xl font-serif text-ink mb-6">Direct Founder Engineering</p>
+                      <p className="text-xl sm:text-2xl font-serif text-ink mb-6">Direct Senior Engineering</p>
                       <ul className="space-y-4 text-sm text-ink">
                         <li className="flex items-start gap-2">
                           <span className="text-emerald-600 font-bold">✓</span>
-                          <span><strong>Fixed Rate:</strong> {data.localComparison.uncodedHubRate}</span>
+                          <span><strong>Estimated Rate:</strong> Typically {data.localComparison.uncodedHubRate}*</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-emerald-600 font-bold">✓</span>
-                          <span><strong>Timeline:</strong> {data.localComparison.uncodedHubTimeline}</span>
+                          <span><strong>Timeline:</strong> 7 Working Days (Agreed Scope)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-emerald-600 font-bold">✓</span>
-                          <span>Work directly with Deepak (lead architect) &amp; Geetha (conversion lead)</span>
+                          <span>Work directly with Deepak (lead architect) &amp; Geetha (creative director)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-emerald-600 font-bold">✓</span>
@@ -260,7 +260,7 @@ export default function GlobalMarketLanding({ onBook }: GlobalMarketLandingProps
                   </div>
 
                   <div className="bg-signal text-paper px-6 py-4 text-center font-mono text-xs sm:text-sm font-medium tracking-wide">
-                    🎯 Bottom Line: {data.localComparison.savings}
+                    🎯 Bottom Line: {data.localComparison.savings} · *Exact fixed quote agreed after 20-min discovery call
                   </div>
                 </div>
               </div>
@@ -423,64 +423,76 @@ export default function GlobalMarketLanding({ onBook }: GlobalMarketLandingProps
         </section>
 
         {/* ── Transparent Pricing in Local Currency ────────────────────── */}
-        <section className="py-16 sm:py-24">
+        <section id="pricing" className="py-16 sm:py-24 scroll-mt-20">
           <Shell>
             <Reveal>
-              <div className="text-center max-w-2xl mx-auto mb-14">
+              <div className="text-center max-w-3xl mx-auto mb-14">
                 <span className="text-xs font-mono uppercase tracking-widest text-signal block mb-2">
-                  Fixed Pricing · {data.currencyCode}
+                  Estimated Guidelines · {data.currencyCode}
                 </span>
                 <h2 className="text-2xl sm:text-4xl font-serif font-light text-ink">
-                  Guaranteed 7-Day Sprint Packages
+                  7-Day Sprint Investment Guidelines
                 </h2>
-                <p className="text-sm sm:text-base text-ink-soft mt-3">
-                  100% fixed-fee contract. No hourly change-order surprises, no monthly retainer traps.
+                <p className="text-sm sm:text-base text-ink-soft mt-3 leading-relaxed">
+                  Projects typically range from <strong>{data.pricing.foundational}</strong> to <strong>{data.pricing.bespoke}</strong>.
+                  Every project receives an exact written fixed quote after our 20-minute discovery call based on your agreed scope — no hourly surprises, no hidden change orders.
                 </p>
+                <div className="inline-flex items-center gap-2 mt-4 px-3 py-1 rounded-full bg-signal/10 border border-signal/20 text-xs font-mono text-signal">
+                  <span>ℹ️</span>
+                  <span>Estimated starting ranges — exact fixed quote agreed after 20-min discovery call</span>
+                </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 {/* Foundational */}
-                <div className="p-8 bg-paper border border-rule rounded-[4px] flex flex-col justify-between">
+                <div className="p-8 bg-paper border border-rule rounded-2xl flex flex-col justify-between shadow-xs">
                   <div>
                     <span className="text-xs font-mono text-ink-muted uppercase tracking-wider block mb-1">
                       Foundational Sprint
                     </span>
-                    <p className="text-2xl sm:text-3xl font-serif text-ink font-normal mb-2">
-                      {data.pricing.foundational}
-                    </p>
+                    <div className="mb-2">
+                      <span className="text-xs font-mono text-muted block">Typically from</span>
+                      <p className="text-2xl sm:text-3xl font-serif text-ink font-normal">
+                        {data.pricing.foundational}
+                      </p>
+                    </div>
                     <p className="text-xs text-ink-soft mb-6 pb-6 border-b border-rule">
                       High-converting 5-page digital flagship for independent consultants, clinics, or studios.
                     </p>
                     <ul className="space-y-3 text-xs text-ink-soft font-mono">
                       <li className="flex items-center gap-2">✓ Hand-coded React + Vite</li>
-                      <li className="flex items-center gap-2">✓ Sub-0.7s Mobile LCP</li>
-                      <li className="flex items-center gap-2">✓ 7-Day Delivery Guarantee</li>
-                      <li className="flex items-center gap-2">✓ 1-Tap Booking / Form UX</li>
+                      <li className="flex items-center gap-2">✓ Sub-0.8s Mobile LCP</li>
+                      <li className="flex items-center gap-2">✓ 7 Working Days Delivery</li>
+                      <li className="flex items-center gap-2">✓ 1-Tap Booking / WhatsApp UX</li>
                       <li className="flex items-center gap-2">✓ Full Code Ownership Handover</li>
                     </ul>
                   </div>
                   <div className="pt-8">
-                    <Link
-                      to="/contact/"
-                      className="block w-full text-center py-3 px-4 border border-ink/20 hover:border-ink text-xs font-mono uppercase tracking-wider text-ink rounded-[2px] transition-colors"
+                    <button
+                      type="button"
+                      onClick={onBook || (() => (window.location.href = '/contact/#book'))}
+                      className="block w-full text-center py-3 px-4 border border-ink/20 hover:border-ink text-xs font-mono uppercase tracking-wider text-ink rounded-full transition-colors cursor-pointer"
                     >
-                      Book Foundational Sprint
-                    </Link>
+                      Book 20-Min Discovery Call
+                    </button>
                   </div>
                 </div>
 
                 {/* Growth (Featured) */}
-                <div className="p-8 bg-paper border-2 border-signal shadow-md rounded-[4px] flex flex-col justify-between relative">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-signal text-paper px-3 py-0.5 rounded-[2px] text-[10px] font-mono tracking-wider uppercase font-semibold">
+                <div className="p-8 bg-paper border-2 border-signal shadow-md rounded-2xl flex flex-col justify-between relative">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-signal text-paper px-3 py-0.5 rounded-full text-[10px] font-mono tracking-wider uppercase font-semibold">
                     Most Popular for {data.countryName}
                   </div>
                   <div>
                     <span className="text-xs font-mono text-signal uppercase tracking-wider block mb-1">
                       Commercial Growth Sprint
                     </span>
-                    <p className="text-2xl sm:text-3xl font-serif text-ink font-normal mb-2">
-                      {data.pricing.growth}
-                    </p>
+                    <div className="mb-2">
+                      <span className="text-xs font-mono text-signal block">Typically from</span>
+                      <p className="text-2xl sm:text-3xl font-serif text-ink font-normal">
+                        {data.pricing.growth}
+                      </p>
+                    </div>
                     <p className="text-xs text-ink-soft mb-6 pb-6 border-b border-rule">
                       Complete authority engine with localized programmatic SEO hubs and automated intake.
                     </p>
@@ -494,26 +506,30 @@ export default function GlobalMarketLanding({ onBook }: GlobalMarketLandingProps
                     </ul>
                   </div>
                   <div className="pt-8">
-                    <Link
-                      to="/contact/"
-                      className="block w-full text-center py-3 px-4 bg-signal hover:bg-signal-bright text-xs font-mono uppercase tracking-wider text-paper font-semibold rounded-[2px] transition-colors shadow-xs"
+                    <button
+                      type="button"
+                      onClick={onBook || (() => (window.location.href = '/contact/#book'))}
+                      className="block w-full text-center py-3 px-4 bg-signal hover:bg-signal-bright text-xs font-mono uppercase tracking-wider text-paper font-semibold rounded-full transition-colors shadow-xs cursor-pointer"
                     >
-                      Book Growth Sprint
-                    </Link>
+                      Book 20-Min Discovery Call
+                    </button>
                   </div>
                 </div>
 
                 {/* Bespoke */}
-                <div className="p-8 bg-paper border border-rule rounded-[4px] flex flex-col justify-between">
+                <div className="p-8 bg-paper border border-rule rounded-2xl flex flex-col justify-between shadow-xs">
                   <div>
                     <span className="text-xs font-mono text-ink-muted uppercase tracking-wider block mb-1">
                       Enterprise &amp; Bespoke
                     </span>
-                    <p className="text-2xl sm:text-3xl font-serif text-ink font-normal mb-2">
-                      {data.pricing.bespoke}
-                    </p>
+                    <div className="mb-2">
+                      <span className="text-xs font-mono text-muted block">Typically from</span>
+                      <p className="text-2xl sm:text-3xl font-serif text-ink font-normal">
+                        {data.pricing.bespoke}
+                      </p>
+                    </div>
                     <p className="text-xs text-ink-soft mb-6 pb-6 border-b border-rule">
-                      Multi-location platforms, custom interactive 3D visualizers, or custom web portals.
+                      Multi-location platforms, custom interactive visualizers, or bespoke client portals.
                     </p>
                     <ul className="space-y-3 text-xs text-ink-soft font-mono">
                       <li className="flex items-center gap-2">✓ <strong>Everything in Growth</strong></li>
@@ -524,12 +540,13 @@ export default function GlobalMarketLanding({ onBook }: GlobalMarketLandingProps
                     </ul>
                   </div>
                   <div className="pt-8">
-                    <Link
-                      to="/contact/"
-                      className="block w-full text-center py-3 px-4 border border-ink/20 hover:border-ink text-xs font-mono uppercase tracking-wider text-ink rounded-[2px] transition-colors"
+                    <button
+                      type="button"
+                      onClick={onBook || (() => (window.location.href = '/contact/#book'))}
+                      className="block w-full text-center py-3 px-4 border border-ink/20 hover:border-ink text-xs font-mono uppercase tracking-wider text-ink rounded-full transition-colors cursor-pointer"
                     >
                       Discuss Enterprise Scope
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -637,34 +654,47 @@ export default function GlobalMarketLanding({ onBook }: GlobalMarketLandingProps
         </section>
 
         {/* ── Final Direct Call To Action ─────────────────────────────── */}
-        <section className="py-16 sm:py-24 bg-ink text-paper">
-          <Shell>
+        <section className="py-20 sm:py-28 bg-ink text-paper text-center relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-signal/15 rounded-full blur-[100px] pointer-events-none -z-10" />
+
+          <Shell width="narrow">
             <Reveal>
               <div className="max-w-3xl mx-auto text-center">
-                <span className="text-xs font-mono uppercase tracking-widest text-signal block mb-3">
-                  Ready to Launch in 7 Calendar Days?
+                <span className="text-xs font-mono uppercase tracking-widest text-signal block mb-3 font-semibold">
+                  Fixed 7-Working-Day Sprint Commitment
                 </span>
                 <h2 className="text-3xl sm:text-5xl font-serif font-light mb-6 tracking-tight">
-                  Stop Waiting on 12-Week Agency Timelines.
+                  Stop Waiting on 16-Week Agency Timelines.
                 </h2>
                 <p className="text-paper/70 text-sm sm:text-base leading-relaxed mb-8 max-w-xl mx-auto">
-                  Get your custom, sub-second web platform live in exactly one week. Transparent {data.currencyCode} pricing, direct founder communication, and our strict "Late Means Free" contractual guarantee.
+                  Get your custom, sub-second web platform live in exactly seven working days. Transparent {data.currencyCode} pricing guidelines, direct founder communication with Deepak &amp; Geetha, and our contractual &ldquo;On Time or 100% Free&rdquo; guarantee.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
-                  <Link
-                    to="/contact/"
-                    className="btn-primary !bg-signal !text-paper hover:!bg-signal-bright !px-8 !py-4 text-base font-medium shadow-md transition-all"
+                  <button
+                    type="button"
+                    onClick={onBook || (() => (window.location.href = '/contact/#book'))}
+                    className="btn-primary !bg-signal !text-paper hover:!bg-signal-bright !px-8 !py-4 text-sm font-medium shadow-md transition-all cursor-pointer"
                   >
-                    Schedule Your Free Discovery Call
-                  </Link>
+                    Schedule Free 20-Minute Discovery Call →
+                  </button>
                   <a
                     href={`https://wa.me/918660819023?text=Hi%20Deepak%20and%20Geetha,%20I'm%20based%20in%20${encodeURIComponent(data.countryName)}%20and%20interested%20in%20a%207-day%20web%20sprint.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-4 border border-white/20 hover:border-white/60 text-paper rounded-[3px] text-sm font-mono transition-colors"
+                    className="px-6 py-4 border border-white/20 hover:border-white/60 text-paper rounded-full text-xs font-mono transition-colors"
                   >
-                    WhatsApp Founder Directly
+                    WhatsApp Co-Founders Directly ↗
                   </a>
+                </div>
+
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs font-mono text-on-ink-muted">
+                  <span>✓ 7 Working Days</span>
+                  <span>·</span>
+                  <span>✓ On Time or 100% Free</span>
+                  <span>·</span>
+                  <span>✓ Native {data.currencyCode} Invoicing</span>
+                  <span>·</span>
+                  <span>✓ 100% Code Handover</span>
                 </div>
               </div>
             </Reveal>

@@ -216,7 +216,7 @@ export default function GlobalHub({ onBook }: GlobalHubProps) {
         />
         <meta
           property="og:description"
-          content="Custom hand-coded web platforms for international businesses in 7 calendar days. Native USD, GBP, EUR, AED, AUD pricing with local compliance."
+          content="Custom hand-coded web platforms for international businesses in 7 working days. Native USD, GBP, EUR, AED, AUD pricing with local compliance."
         />
         <meta property="og:url" content="https://uncodedhub.com/markets/" />
         <meta property="og:type" content="website" />
@@ -491,6 +491,10 @@ export default function GlobalHub({ onBook }: GlobalHubProps) {
               <p className="text-muted text-sm sm:text-base mt-3 leading-relaxed">
                 Every country edition includes tailored local currency pricing, regulatory compliance (ADA, GDPR, DSGVO, HIPAA), and industry benchmarks built for your market.
               </p>
+              <div className="inline-flex items-center gap-2 mt-4 px-3.5 py-1.5 rounded-full bg-signal/10 border border-signal/20 text-xs font-mono text-signal">
+                <span>ℹ️</span>
+                <span>*Estimated starting guidelines — exact fixed quote agreed after 20-min discovery call based on your agreed scope</span>
+              </div>
             </div>
           </Reveal>
 
@@ -586,7 +590,7 @@ export default function GlobalHub({ onBook }: GlobalHubProps) {
                             </div>
                           </div>
                           <span className="text-[11px] font-mono text-signal font-semibold px-2.5 py-1 rounded-full bg-signal/10 border border-signal/20 shrink-0">
-                            From {market.pricing.foundational}
+                            Typically from {market.pricing.foundational}*
                           </span>
                         </div>
 
@@ -598,15 +602,15 @@ export default function GlobalHub({ onBook }: GlobalHubProps) {
                         {/* Local Agency Comparison Box */}
                         <div className="p-4 rounded-2xl bg-paper-sunken border border-rule mb-5 space-y-2 text-xs font-mono">
                           <div className="flex items-center justify-between">
-                            <span className="text-muted">Local Agency Typical:</span>
+                            <span className="text-muted">Typical Local Agency:</span>
                             <span className="text-red-500 line-through">
                               {market.localComparison.localAgencyRate}
                             </span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-muted">Uncoded Hub Sprint:</span>
+                            <span className="text-muted">Estimated Sprint:</span>
                             <span className="text-signal font-semibold">
-                              {market.pricing.foundational} – {market.pricing.bespoke}
+                              {market.pricing.foundational} – {market.pricing.bespoke}*
                             </span>
                           </div>
                           <div className="pt-2 border-t border-rule/60 text-[11px] text-emerald-600 font-medium">
