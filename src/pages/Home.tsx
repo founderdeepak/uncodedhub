@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Reveal, Shell } from '../components/primitives';
 import { LeadMagnetForm } from '../components/ui/LeadMagnetForm';
+import { IconGauge, IconTimer } from '../components/Glyphs';
 import { PROJECTS, Project } from '../data/projects';
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -143,82 +144,236 @@ export default function Home({ onBook }: HomeProps) {
       </Helmet>
 
       {/* ── 01. Hero Section ─────────────────────────────────────────── */}
-      <section className="pt-12 sm:pt-20 pb-16 sm:pb-24 bg-paper relative overflow-hidden border-b border-rule">
-        <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-signal/5 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <section id="hero" className="pt-10 sm:pt-16 pb-16 sm:pb-24 bg-paper relative overflow-hidden border-b border-rule">
+        {/* Subtle warm ambient tint */}
+        <div
+          aria-hidden="true"
+          className="absolute top-0 right-1/4 w-[38rem] h-[38rem] rounded-full pointer-events-none"
+          style={{ background: 'radial-gradient(circle, rgba(199, 7, 75, 0.06) 0%, transparent 70%)' }}
+        />
 
         <Shell>
           <Reveal>
-            <div className="max-w-4xl">
-              <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="card-tag">FOUNDER-LED WEB STUDIO</span>
-                <span className="text-xs font-mono text-muted">·</span>
-                <span className="text-xs font-mono text-signal">Deepak &amp; Geetha Direct Delivery</span>
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+              {/* Left Column: Heading, Subhead, Primary Booking CTA */}
+              <div className="lg:col-span-6 flex flex-col justify-center">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-raised border border-rule-strong text-ink text-xs font-medium mb-6 shadow-sm w-fit">
+                  <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
+                  <span className="font-semibold text-signal">7-day sprint builds</span>
+                  <span className="text-muted">·</span>
+                  <span className="text-muted">Zero bloatware</span>
+                  <span className="text-muted">·</span>
+                  <span className="text-ink font-mono text-[11px]">Deepak &amp; Geetha</span>
+                </div>
+
+                <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-ink leading-[1.08] tracking-tight font-normal">
+                  Let your website <br />
+                  <em className="italic hero-signal font-normal">sell before you do.</em>
+                </h1>
+
+                <p className="text-lead text-muted max-w-lg mt-6 leading-relaxed">
+                  You can&apos;t close clients who bounce before your page finishes loading. We build
+                  custom, high-conversion websites for ambitious businesses in seven working days.
+                  Work directly with founders Deepak and Geetha. On time, or your build is 100% free.
+                </p>
+
+                {/* High-Converting Bespoke 20-Min Discovery Call CTA */}
+                <div className="mt-8 flex flex-col items-start gap-4">
+                  <button
+                    type="button"
+                    onClick={handleBooking}
+                    className="btn-hero-cta group cursor-pointer"
+                  >
+                    <span className="flex items-center gap-2.5">
+                      <span className="w-2 h-2 rounded-full bg-paper/90 animate-pulse" aria-hidden="true" />
+                      <span>Book Your Free 20-Min Call</span>
+                    </span>
+                    <span className="btn-hero-cta-badge" aria-hidden="true">
+                      →
+                    </span>
+                  </button>
+
+                  {/* Direct Founder Trust Indicators */}
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[0.8125rem] text-muted">
+                    <span className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
+                        <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                      </svg>
+                      <span>Direct call with Deepak &amp; Geetha</span>
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
+                        <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                      </svg>
+                      <span>No sales pitch · Pure diagnosis</span>
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
+                        <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                      </svg>
+                      <span>On time or 100% free</span>
+                    </span>
+                  </div>
+
+                  {/* 50 Demo Site as Link Button at Bottom */}
+                  <div className="pt-2">
+                    <a
+                      href="#demos"
+                      className="group inline-flex items-center gap-2 text-xs sm:text-sm font-mono text-ink-soft hover:text-signal transition-colors py-1.5 px-3.5 rounded-full hover:bg-paper-raised border border-rule/60 hover:border-signal/40 shadow-2xs"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
+                      <span>Prefer to see live builds first? Inspect 50 live demos</span>
+                      <span className="group-hover:translate-y-0.5 transition-transform text-signal" aria-hidden="true">↓</span>
+                    </a>
+                  </div>
+                </div>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-6xl md:text-7xl text-ink font-normal tracking-tight leading-[1.08] mb-6">
-                Let your website sell <br />
-                <span className="text-signal italic font-serif">before you do.</span>
-              </h1>
+              {/* Right Column: Cloaked-Style Squircle Hero Card with Conversion Health Meter */}
+              <div className="lg:col-span-6">
+                <div className="relative group">
+                  {/* Outer Ambient Glow */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute -inset-2 rounded-[32px] opacity-60 group-hover:opacity-90 transition-opacity duration-700 pointer-events-none"
+                    style={{ background: 'radial-gradient(circle at 20% 80%, rgba(199, 7, 75, 0.18) 0%, transparent 70%)' }}
+                  />
 
-              <p className="text-base sm:text-xl text-muted font-normal leading-relaxed max-w-3xl mb-8">
-                Your website should build trust, explain why customers should choose you, and make
-                it easy for them to get in touch. We build custom websites for ambitious businesses
-                in India and around the world. Work directly with founders Deepak and Geetha, with a
-                clear scope, fixed price, and a focused seven-working-day build for projects that fit
-                the sprint.
-              </p>
+                  {/* Main Rounded Squircle Card */}
+                  <div className="relative bg-paper-raised border border-rule-strong rounded-[28px] overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.09)] transition-transform duration-500 ease-out group-hover:scale-[1.01]">
+                    {/* Browser chrome top bar */}
+                    <div className="bg-ink px-4 py-2.5 flex items-center justify-between border-b border-white/10">
+                      <div className="flex items-center gap-1.5" aria-hidden="true">
+                        <span className="w-2.5 h-2.5 rounded-full bg-signal" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
+                        <span className="font-mono text-[11px] text-white/70">
+                          Client Specimen · Verified 7-Day Sprint Build
+                        </span>
+                      </div>
+                      <span className="text-[10px] font-mono text-signal-bright font-semibold">7-DAY BUILD</span>
+                    </div>
 
-              <div className="flex flex-wrap items-center gap-4 mb-4">
-                <button
-                  type="button"
-                  onClick={handleBooking}
-                  className="btn-primary !px-8 !py-4 text-xs sm:text-sm rounded-full shadow-md cursor-pointer inline-flex items-center gap-2"
-                >
-                  <span>Book Your Free 20-Minute Call</span>
-                  <span>→</span>
-                </button>
+                    {/* Visual Media with Conversion Health Meter Overlay */}
+                    <div className="relative aspect-[16/11] overflow-hidden bg-paper">
+                      <picture>
+                        <source media="(max-width: 767px)" srcSet="/hero-section-mobile.webp" />
+                        <img
+                          src="/hero-section.webp"
+                          alt="Business owner reviewing his high-converting custom website delivered by Uncoded Hub"
+                          width={1200}
+                          height={800}
+                          loading="eager"
+                          fetchPriority="high"
+                          decoding="async"
+                          className="w-full h-full object-cover object-[70%_25%]"
+                        />
+                      </picture>
 
-                <a
-                  href="#demos"
-                  className="px-6 py-4 rounded-full border border-rule hover:border-signal text-ink font-mono text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 bg-paper-sunken"
-                >
-                  <span>Explore Our 50 Live Demos</span>
-                  <span>↓</span>
-                </a>
+                      {/* Gradient scrim for overlay contrast */}
+                      <div
+                        aria-hidden="true"
+                        className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent pointer-events-none"
+                      />
+
+                      {/* Floating Cloaked-Style "Conversion Standard" Gauge Meter */}
+                      <div className="absolute top-4 right-4 bg-ink/95 border border-white/15 p-3 rounded-[16px] text-paper shadow-xl max-w-[200px]">
+                        <div className="flex items-center justify-between pb-1 mb-2 border-b border-white/10">
+                          <span className="text-[10px] font-semibold text-white/70">Studio standard</span>
+                          <span className="text-[10px] font-semibold text-emerald-400">99 / 100</span>
+                        </div>
+                        {/* Gauge Arc */}
+                        <div className="relative w-full h-12 flex items-center justify-center">
+                          <svg className="w-24 h-12 overflow-visible" viewBox="0 0 100 50">
+                            <path
+                              d="M 10 50 A 40 40 0 0 1 90 50"
+                              fill="none"
+                              stroke="rgba(255,255,255,0.15)"
+                              strokeWidth="8"
+                              strokeLinecap="round"
+                            />
+                            <path
+                              d="M 10 50 A 40 40 0 0 1 88 45"
+                              fill="none"
+                              stroke="url(#gaugeGrad)"
+                              strokeWidth="8"
+                              strokeLinecap="round"
+                            />
+                            <defs>
+                              <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="#c7074b" />
+                                <stop offset="70%" stopColor="#10b981" />
+                                <stop offset="100%" stopColor="#34d399" />
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                          <div className="absolute bottom-0 text-center">
+                            <span className="text-xs font-mono font-bold text-white">Pre-Sold Standard</span>
+                          </div>
+                        </div>
+                        <p className="text-[9px] text-white/60 text-center mt-1">Contractually verified on mobile 4G</p>
+                      </div>
+
+                      {/* Floating Bottom Metric Bar */}
+                      <div className="absolute bottom-4 left-4 right-4 bg-paper/96 border border-rule-strong/80 p-3 rounded-[14px] shadow-lg flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <span className="w-8 h-8 rounded-full bg-signal-wash text-signal flex items-center justify-center shrink-0">
+                            <IconGauge className="w-4 h-4" />
+                          </span>
+                          <div>
+                            <p className="text-xs font-semibold text-ink leading-tight">Lighthouse 99 · 0.8s Load Speed</p>
+                            <p className="text-[11px] text-muted">Zero bloatware · Handcrafted React &amp; Vite</p>
+                          </div>
+                        </div>
+                        <span className="label text-[10px] bg-signal text-paper px-2.5 py-1 rounded-full font-semibold">
+                          VERIFIED
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Bottom editorial info strip */}
+                    <div className="px-5 py-3 bg-paper border-t border-rule flex items-center justify-between text-xs">
+                      <span className="text-muted flex items-center gap-1.5">
+                        <IconTimer className="w-3.5 h-3.5 text-signal" />
+                        <span>Fixed 7 working days</span>
+                      </span>
+                      <span className="font-mono text-signal font-semibold">On time or 100% free</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 3 Clean Proof Metrics Strip */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-10 mt-12 border-t border-rule">
+              <div className="p-4 rounded-2xl bg-paper-sunken border border-rule">
+                <span className="font-display text-3xl text-signal font-normal block mb-1">
+                  7 Working Days*
+                </span>
+                <span className="text-xs text-muted font-mono leading-relaxed block">
+                  *For projects that fit the agreed sprint scope. On time or 100% free.
+                </span>
               </div>
 
-              <p className="text-xs font-mono text-muted mb-10">
-                No sales pitch. Just an honest conversation about what your business needs.
-              </p>
+              <div className="p-4 rounded-2xl bg-paper-sunken border border-rule">
+                <span className="font-display text-3xl text-ink font-normal block mb-1">
+                  100% Client Ownership
+                </span>
+                <span className="text-xs text-muted font-mono leading-relaxed block">
+                  You own all clean code, domain records, and assets outright with zero lock-in.
+                </span>
+              </div>
 
-              {/* 3 Clean Proof Metrics */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-rule">
-                <div className="p-4 rounded-2xl bg-paper-sunken border border-rule">
-                  <span className="font-display text-3xl text-signal font-normal block mb-1">
-                    7 Working Days*
-                  </span>
-                  <span className="text-xs text-muted font-mono leading-relaxed block">
-                    *For projects that fit the agreed sprint scope. On time or 100% free.
-                  </span>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-paper-sunken border border-rule">
-                  <span className="font-display text-3xl text-ink font-normal block mb-1">
-                    100% Client Ownership
-                  </span>
-                  <span className="text-xs text-muted font-mono leading-relaxed block">
-                    You own all clean code, domain records, and Figma assets outright.
-                  </span>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-paper-sunken border border-rule">
-                  <span className="font-display text-3xl text-ink font-normal block mb-1">
-                    2 Founders
-                  </span>
-                  <span className="text-xs text-muted font-mono leading-relaxed block">
-                    Deepak &amp; Geetha personally design and code your project. Zero junior handoffs.
-                  </span>
-                </div>
+              <div className="p-4 rounded-2xl bg-paper-sunken border border-rule">
+                <span className="font-display text-3xl text-ink font-normal block mb-1">
+                  2 Senior Founders
+                </span>
+                <span className="text-xs text-muted font-mono leading-relaxed block">
+                  Deepak &amp; Geetha personally design and code your project. Zero junior handoffs.
+                </span>
               </div>
             </div>
           </Reveal>
