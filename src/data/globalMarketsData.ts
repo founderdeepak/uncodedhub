@@ -109,20 +109,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'How do payments work for US clients?',
+        question: "How do payments work for US clients?",
         answer:
-          'We invoice via Stripe in USD ($). You can pay seamlessly using any US business credit card, ACH bank transfer, or wire transfer with instant tax-compliant invoicing and W-8BEN compliance.',
+          "We invoice via Stripe in USD ($). You can pay seamlessly using any US business credit card, ACH bank transfer, or wire transfer with instant tax-compliant invoicing and W-8BEN compliance.",
       },
       {
-        question: 'How do you handle timezone communication between the US and your studio?',
+        question: "How do you handle timezone communication between the US and your studio?",
         answer:
-          'We operate an async-first workflow. Every evening US time, you receive a concise Loom video walkthrough showing exactly what was built that day. We also hold live Zoom onboarding and final handover calls scheduled during US morning hours.',
+          "We operate an async-first precision protocol. Every evening US time, you receive a concise Loom video walkthrough showing exactly what was built that day. We also hold live Zoom onboarding and final handover calls scheduled during US morning hours.",
       },
       {
-        question: 'Are your websites ADA / WCAG compliant for US law?',
+        question: "Are your websites ADA / WCAG compliant for US law?",
         answer:
-          'Yes. We enforce semantic HTML5, keyboard navigation tab-stops, high-contrast ratios, and screen-reader accessibility labels to satisfy WCAG 2.1 AA standards and mitigate digital accessibility liability.',
+          "Yes. We enforce semantic HTML5, keyboard navigation tab-stops, high-contrast ratios, and screen-reader accessibility labels to satisfy WCAG 2.1 AA standards and mitigate digital accessibility liability.",
       },
+      {
+        question: "How does your 7-working-day contractual delivery guarantee work?",
+        answer:
+          "Your project launches in exactly 7 working days from our agreed start date. If we miss the deadline by even one hour, your entire build is 100% free with an immediate deposit refund. You also receive 100% full source code ownership, GitHub repository transfer, and automated deployment pipelines with zero vendor lock-in.",
+      }
     ],
   },
 
@@ -195,15 +200,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Can UK businesses pay via BACS or card?',
+        question: "Can UK businesses pay via BACS or card?",
         answer:
-          'Yes. We accept UK bank transfers (BACS/Faster Payments) via Wise and major credit cards via Stripe, denominated in GBP (£) with reverse-charge VAT-compliant invoicing.',
+          "Yes. We accept UK bank transfers (BACS / Faster Payments) via Wise and major credit cards via Stripe, denominated in GBP (£) with reverse-charge VAT-compliant commercial invoicing.",
       },
       {
-        question: 'What is the working hour overlap with the UK?',
+        question: "What is the working hour overlap with the UK?",
         answer:
-          'India is just 4.5 hours ahead of GMT (3.5 hours during BST). Our afternoons directly mirror your UK morning working hours, ensuring swift real-time Slack/WhatsApp communication.',
+          "India is just 4.5 hours ahead of GMT (3.5 hours during BST). Our afternoons directly mirror your UK morning working hours (9:00 AM – 1:30 PM UK time), ensuring swift real-time Slack/WhatsApp communication alongside daily 5-minute Loom updates.",
       },
+      {
+        question: "Are your websites GDPR and UK Data Protection Act compliant?",
+        answer:
+          "Yes. We engineer 100% GDPR-native codebases with zero invasive tracking scripts, privacy-first analytics, clean cookie-free architecture, and complete ICO compliance.",
+      },
+      {
+        question: "How does your 7-working-day delivery guarantee operate?",
+        answer:
+          "Your platform is live on staging by Day 3, with final production launch locked on Day 7. If late by even one hour, your entire build is 100% free. You retain full GitHub repository transfer and 100% intellectual property ownership.",
+      }
     ],
   },
 
@@ -266,10 +281,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Are your websites compliant with Ontario’s AODA requirements?',
+        question: "Can Canadian businesses pay in CAD via EFT or credit card?",
         answer:
-          'Yes. All our codebases comply with WCAG 2.0/2.1 Level AA as required by Ontario’s Accessibility for Ontarians with Disabilities Act (AODA).',
+          "Yes. Invoicing is processed directly in Canadian Dollars (CAD) via Stripe or international EFT/wire transfer with Canadian GST/HST commercial invoice compliance.",
       },
+      {
+        question: "How do you coordinate across North American timezones (EST to PST)?",
+        answer:
+          "Daily morning Loom video updates are delivered to your inbox before 9:00 AM Toronto/Vancouver time, with live Zoom syncs scheduled during your business morning and instant Slack access.",
+      },
+      {
+        question: "Are your websites compliant with PIPEDA and Ontario’s AODA requirements?",
+        answer:
+          "Yes. All our codebases comply with WCAG 2.1 Level AA as required by Ontario’s Accessibility for Ontarians with Disabilities Act (AODA) and Canadian federal PIPEDA privacy laws.",
+      },
+      {
+        question: "How does the 7-working-day contractual guarantee work?",
+        answer:
+          "We contractually guarantee delivery in 7 working days. If we miss delivery by an hour due to our delay, your sprint is 100% free with an immediate milestone refund. You retain 100% clean source code with zero ongoing platform lock-in.",
+      }
     ],
   },
 
@@ -332,10 +362,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Can Australian clients pay in AUD?',
+        question: "Can Australian clients pay in AUD via PayID, Osko, or card?",
         answer:
-          'Yes. Invoicing is processed directly in Australian Dollars (AUD) via Stripe or international bank transfer.',
+          "Yes. Invoicing is processed directly in Australian Dollars (AUD) via Stripe, PayID, Osko, or direct international bank transfer with GST-compliant commercial invoices.",
       },
+      {
+        question: "What is the timezone overlap between Australia (AEST/AWST) and Bangalore?",
+        answer:
+          "Perth (AWST) is just 2.5 hours ahead, and Sydney/Melbourne (AEST) are 4.5–5.5 hours ahead. We have extensive afternoon/evening overlap with your workday, supported by daily asynchronous Loom video walkthroughs.",
+      },
+      {
+        question: "Are your platforms compliant with the Australian Privacy Act and Core Web Vitals?",
+        answer:
+          "Yes. We adhere to the Australian Privacy Principles (APPs), deploy on Sydney and Melbourne edge CDN nodes for sub-600ms load times, and guarantee 95–100 Google Core Web Vitals.",
+      },
+      {
+        question: "How does the 7-working-day contractual guarantee work?",
+        answer:
+          "If we do not launch your agreed scope in 7 working days, your entire website build is 100% free. You own the complete React codebase and DNS setup outright with zero ongoing retainers.",
+      }
     ],
   },
 
@@ -392,9 +437,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Can New Zealand businesses pay in NZD?',
-        answer: 'Yes. Invoices are denominated in NZD ($) and payable via credit card or direct bank transfer.',
+        question: "Can New Zealand businesses pay in NZD?",
+        answer:
+          "Yes. Invoices are denominated in NZD ($) and payable via credit card or direct bank transfer with GST-compliant invoice documentation.",
       },
+      {
+        question: "How does communication work across New Zealand timezones (NZST)?",
+        answer:
+          "We provide daily morning Loom videos waiting for your review, plus dedicated late-afternoon NZST sync windows and direct founder messaging via WhatsApp and Slack.",
+      },
+      {
+        question: "Are your websites compliant with the New Zealand Privacy Act 2020?",
+        answer:
+          "Yes. We follow NZ Privacy Act guidelines, enforce zero third-party cookie bloat, and cache assets on Auckland edge nodes for sub-second page loads across Spark and One NZ networks.",
+      },
+      {
+        question: "What is your 7-working-day contractual delivery guarantee?",
+        answer:
+          "Live in 7 working days or 100% free. If we miss the deadline, we refund your deposit immediately and complete the site at zero cost. You own all IP and repository code.",
+      }
     ],
   },
 
@@ -451,9 +512,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Are invoices compliant with Irish and EU VAT regulations?',
-        answer: 'Yes. Invoices are issued in EUR (€) with reverse charge VAT mechanisms for EU businesses.',
+        question: "Are invoices compliant with Irish and EU VAT regulations?",
+        answer:
+          "Yes. Invoices are issued in EUR (€) with reverse-charge VAT mechanisms (VIES verified) for registered Irish and EU corporate entities.",
       },
+      {
+        question: "What is the working hour overlap with Dublin (IST/GMT)?",
+        answer:
+          "Bangalore is 4.5 hours ahead of Irish time (5.5 hrs during winter). Our afternoon directly aligns with your Dublin morning for live Slack/Zoom syncs, supported by daily evening Loom recordings.",
+      },
+      {
+        question: "Are your websites EU GDPR-native?",
+        answer:
+          "Yes. Zero unsolicited marketing trackers, no annoying cookie-banner bloat, clean semantic code, and hosting on Dublin and Frankfurt AWS/Cloudflare edge servers.",
+      },
+      {
+        question: "How does the 7-working-day guarantee protect Irish businesses?",
+        answer:
+          "Fixed 7 working days timeline. If delayed by our studio, your entire website build is free. Full GitHub repo transfer and zero vendor lock-in.",
+      }
     ],
   },
 
@@ -516,15 +593,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Can UAE businesses pay locally in AED?',
+        question: "Can UAE businesses pay locally in AED via corporate wire or card?",
         answer:
-          'Yes. We accept corporate wire transfers, Stripe credit cards, and Wise transfers in AED with formal tax invoices.',
+          "Yes. We accept UAE corporate bank wire transfers, Stripe credit cards, and Wise transfers in AED with official commercial invoices.",
       },
       {
-        question: 'Do you build bilingual English and Arabic websites?',
+        question: "How does timezone and communication work with Dubai and Abu Dhabi?",
         answer:
-          'Yes. We support RTL (Right-to-Left) Arabic layouts alongside English with seamless language toggle and localized SEO tags.',
+          "GST (UTC+4) is only 1.5 hours behind India (UTC+5:30). We share virtually identical business hours (9:00 AM – 5:00 PM GST) with instant WhatsApp concierge access to founders Deepak and Geetha.",
       },
+      {
+        question: "Do you build bilingual English and Arabic websites with RTL support?",
+        answer:
+          "Yes. We engineer high-performance bilingual platforms with authentic RTL (Right-to-Left) typography, seamless language switching, and localized UAE SEO markup.",
+      },
+      {
+        question: "How does the contractual 7-working-day guarantee work?",
+        answer:
+          "If your site isn’t live on staging by Day 3 and launched by Day 7, you pay zero AED. You retain 100% source code ownership and zero agency retainer obligations.",
+      }
     ],
   },
 
@@ -581,9 +668,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Can Singapore companies pay in SGD via PayNow or FAST?',
-        answer: 'Yes. Invoices are denominated in SGD ($) with direct PayNow / FAST corporate transfer and Stripe card options.',
+        question: "Can Singapore companies pay in SGD via PayNow or FAST?",
+        answer:
+          "Yes. Invoices are denominated in SGD ($) with direct PayNow / FAST corporate transfer options and Stripe business cards, complete with IRAS-ready commercial invoices.",
       },
+      {
+        question: "What is the timezone overlap between Singapore (SGT) and your studio?",
+        answer:
+          "Singapore (SGT, UTC+8) is only 2.5 hours ahead of Bangalore (IST, UTC+5:30). We have full 6-hour daily workday overlap with instant WhatsApp/Slack response times.",
+      },
+      {
+        question: "Are your platforms compliant with Singapore’s PDPA and Cybersecurity standards?",
+        answer:
+          "Yes. Engineered strictly to Singapore Personal Data Protection Act (PDPA) standards, hosted on Singapore edge CDN points with sub-400ms APAC latency.",
+      },
+      {
+        question: "What is your 7-working-day contractual delivery guarantee?",
+        answer:
+          "Delivered on time in 7 working days, or 100% free. No junior handoffs, no scope bloat, and complete ownership of your React codebase.",
+      }
     ],
   },
 
@@ -635,9 +738,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'How do payments work for Qatar clients?',
-        answer: 'Payments are accepted in QAR via international wire transfer or Stripe corporate cards with formal commercial invoices.',
+        question: "How do payments work for Qatar clients?",
+        answer:
+          "Invoiced in QAR via international corporate wire transfer or Stripe cards with formal commercial invoices suitable for Qatar corporate tax records.",
       },
+      {
+        question: "What is the communication overlap with Doha (AST, UTC+3)?",
+        answer:
+          "Qatar is just 2.5 hours behind India. Our working hours almost completely overlap with your Doha workday (9:30 AM – 4:00 PM AST) with dedicated VIP WhatsApp concierge support.",
+      },
+      {
+        question: "Do you support Arabic RTL layouts and high-speed Gulf hosting?",
+        answer:
+          "Yes. We build responsive bilingual English/Arabic platforms with native RTL layouts, cached on Gulf edge nodes for sub-0.6s loading across Ooredoo and Vodafone Qatar.",
+      },
+      {
+        question: "How does your 7-working-day delivery guarantee operate?",
+        answer:
+          "Fixed 7 working days milestone schedule. If we miss launch date, your entire build is 100% free with an immediate deposit refund. Complete source code and DNS ownership handed over.",
+      }
     ],
   },
 
@@ -689,9 +808,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Can Saudi companies pay via SAR bank transfer?',
-        answer: 'Yes. We support direct international wire transfers in SAR and major corporate cards with commercial invoices.',
+        question: "Can Saudi companies pay via SAR bank transfer or corporate card?",
+        answer:
+          "Yes. Invoices are issued in SAR with direct international wire transfer to commercial accounts or Stripe corporate cards, fully compliant with ZATCA commercial standards.",
       },
+      {
+        question: "How do you coordinate with businesses in Riyadh and Jeddah?",
+        answer:
+          "Saudi Arabia (AST, UTC+3) is only 2.5 hours behind India. We provide live collaboration from 10:00 AM to 4:30 PM Saudi time via WhatsApp, Slack, and Zoom, plus daily Loom videos.",
+      },
+      {
+        question: "Are your websites aligned with Vision 2030 digital benchmarks and RTL Arabic?",
+        answer:
+          "Yes. We build modern, elegant bilingual platforms (Arabic RTL and English) with enterprise-grade security and sub-second performance across STC and Mobily networks.",
+      },
+      {
+        question: "What is your contractual 7-working-day guarantee?",
+        answer:
+          "Guaranteed live launch in 7 working days or your build is 100% free. You own 100% of the custom React source code with zero ongoing agency retainers.",
+      }
     ],
   },
 
@@ -743,9 +878,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'How do Kuwait businesses remit payment?',
-        answer: 'We accept international wire transfers in KWD/USD and all major corporate credit cards via Stripe.',
+        question: "How do Kuwait businesses remit payment?",
+        answer:
+          "We accept international wire transfers in KWD or USD and all major corporate credit cards via Stripe with full commercial invoice documentation.",
       },
+      {
+        question: "What is the working hour overlap with Kuwait City (AST, UTC+3)?",
+        answer:
+          "Kuwait is 2.5 hours behind Bangalore. We offer seamless real-time coordination from 9:30 AM to 4:00 PM Kuwait time with direct founder WhatsApp and phone access.",
+      },
+      {
+        question: "Do you optimize for Kuwait’s mobile-first market and WhatsApp commerce?",
+        answer:
+          "Yes. All platforms feature sub-0.5s mobile speed on Zain and Ooredoo networks, bilingual Arabic/English support, and 1-tap WhatsApp VIP lead capture.",
+      },
+      {
+        question: "How does your 7-working-day delivery guarantee work?",
+        answer:
+          "Completed in 7 working days or 100% free. If we miss our delivery commitment, your deposit is returned in full and we finish the site without charge.",
+      }
     ],
   },
 
@@ -797,9 +948,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Can Bahrain clients pay in BHD?',
-        answer: 'Yes. Invoices are denominated in BHD or USD with direct wire and card payment options.',
+        question: "Can Bahrain clients pay in BHD via wire or card?",
+        answer:
+          "Yes. Invoices are denominated in BHD or USD with direct bank wire and Stripe card payment options, compliant with Bahrain NBR commercial invoicing.",
       },
+      {
+        question: "What is the communication overlap with Manama (AST, UTC+3)?",
+        answer:
+          "Bahrain is 2.5 hours behind Bangalore. You have full workday live access to Deepak and Geetha via WhatsApp and Zoom, backed by daily evening Loom video updates.",
+      },
+      {
+        question: "Are your platforms compliant with Bahrain Personal Data Protection Law (PDPL)?",
+        answer:
+          "Yes. Built with zero tracking vulnerabilities, strict SSL/TLS encryption, and optimized for sub-second delivery across Batelco and Zain networks.",
+      },
+      {
+        question: "What is your contractual 7-working-day guarantee?",
+        answer:
+          "Live in 7 working days or 100% free. You receive full GitHub repository access, DNS delegation, and complete intellectual property ownership.",
+      }
     ],
   },
 
@@ -856,9 +1023,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Can Swiss companies pay in CHF via IBAN transfer?',
-        answer: 'Yes. We provide Swiss IBAN bank transfer details and Stripe card payments in CHF with commercial invoices.',
+        question: "Can Swiss companies pay in CHF via IBAN transfer or card?",
+        answer:
+          "Yes. We provide Swiss IBAN bank transfer details and Stripe card payments in CHF with formal commercial invoices suitable for Swiss Cantonal tax authorities.",
       },
+      {
+        question: "How do you coordinate with Zurich and Geneva across timezones?",
+        answer:
+          "Central European Time (CET, UTC+1) is 4.5 hours behind India (3.5 hrs CEST). Our afternoons directly overlap with your business morning (8:30 AM – 2:00 PM CET) for live Slack/Zoom syncs, plus daily Loom videos.",
+      },
+      {
+        question: "Are your websites compliant with the revised Swiss FADP (nDSG) and GDPR?",
+        answer:
+          "Yes. Engineered to strict Swiss Federal Act on Data Protection (FADP) and EU GDPR standards: zero invasive cookie banners, no third-party data tracking, and Zurich edge CDN caching.",
+      },
+      {
+        question: "How does your 7-working-day contractual delivery guarantee work?",
+        answer:
+          "Strict 7 working days milestone delivery. If late by even one hour, your entire sprint is 100% free with an immediate refund. You own 100% clean source code with zero platform lock-in.",
+      }
     ],
   },
 
@@ -915,9 +1098,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Do you provide legally required German Impressum and Datenschutz templates?',
-        answer: 'Yes. Every German platform includes dedicated, compliant Impressum and Datenschutz structures ready for your legal counsel.',
+        question: "Can German businesses pay in EUR with reverse-charge VAT?",
+        answer:
+          "Yes. Invoices are denominated in EUR (€) with reverse-charge VAT (Steuerschuldnerschaft des Leistungsempfängers) for German USt-IdNr holders, payable via SEPA or corporate card.",
       },
+      {
+        question: "What is the working hour overlap with Berlin, Frankfurt, and Munich?",
+        answer:
+          "Germany is 4.5 hours behind India (3.5 hrs CEST). We offer dedicated daily overlap from 8:30 AM to 2:00 PM German time for live Slack/Zoom coordination, alongside daily German-time Loom progress reports.",
+      },
+      {
+        question: "Do you provide legally required German Impressum and Datenschutz templates?",
+        answer:
+          "Yes. Every platform built for the German market includes 100% DSGVO-compliant structures, dedicated Impressum and Datenschutzerklärung routing, and zero third-party font or cookie leaks.",
+      },
+      {
+        question: "What is your 7-working-day contractual delivery guarantee?",
+        answer:
+          "Live in 7 working days or 100% free. Contractually binding timeline with zero excuses. You receive full GitHub source code transfer and deployment automation.",
+      }
     ],
   },
 
@@ -969,9 +1168,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Can Dutch companies pay via iDEAL or SEPA?',
-        answer: 'Yes. Invoices are in EUR (€) and can be settled via SEPA bank transfer or corporate card with reverse-charge VAT.',
+        question: "Can Dutch companies pay via SEPA or credit card with EU VAT?",
+        answer:
+          "Yes. Invoices are in EUR (€) and can be settled via SEPA direct business transfer or corporate card with reverse-charge VAT for Dutch BTW-registered entities.",
       },
+      {
+        question: "How does communication work between Amsterdam and Bangalore?",
+        answer:
+          "CET is 4.5 hours behind IST. We provide direct live collaboration during your Dutch morning (8:30 AM – 2:00 PM CET) via Slack and WhatsApp, plus end-of-day Loom video demos.",
+      },
+      {
+        question: "Are your platforms compliant with Dutch AVG / EU GDPR standards?",
+        answer:
+          "Yes. Compliant with the Dutch Algemene verordening gegevensbescherming (AVG), routing through the Amsterdam Internet Exchange (AMS-IX) for ultra-low <0.4s response times.",
+      },
+      {
+        question: "How does the 7-working-day delivery guarantee protect Dutch clients?",
+        answer:
+          "Guaranteed launch in 7 working days or your build is 100% free. Zero agency markups, zero middle managers, and 100% code ownership on your chosen hosting.",
+      }
     ],
   },
 
@@ -1023,9 +1238,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Can Swedish businesses pay in SEK via Bankgiro or card?',
-        answer: 'Yes. Invoices are denominated in SEK (or EUR) with international wire and Stripe corporate card options.',
+        question: "Can Swedish businesses pay in SEK via bank transfer or card?",
+        answer:
+          "Yes. Invoices are denominated in SEK (or EUR) payable via international IBAN bank transfer or Stripe business card with Swedish Moms reverse-charge compliance.",
       },
+      {
+        question: "How do you coordinate across timezones with Stockholm and Gothenburg?",
+        answer:
+          "Sweden (CET, UTC+1) is 4.5 hours behind India. We provide real-time coordination during your Swedish morning (8:30 AM – 2:00 PM CET) via Slack, plus daily recorded Loom video progress updates.",
+      },
+      {
+        question: "Are your websites built to Nordic design standards and Dataskyddsförordningen (GDPR)?",
+        answer:
+          "Yes. Built with clean Nordic aesthetic discipline, 100/100 Core Web Vitals speed, zero cookie clutter, and full GDPR compliance cached on Stockholm edge nodes.",
+      },
+      {
+        question: "How does your 7-working-day delivery guarantee work?",
+        answer:
+          "Completed in 7 working days or 100% free. If we miss the deadline, your deposit is refunded immediately and we complete the platform at no charge. You own all IP and repository code.",
+      }
     ],
   },
 
@@ -1077,9 +1308,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Can Norwegian clients pay in NOK?',
-        answer: 'Yes. Invoices are denominated in NOK with direct IBAN wire transfer and Stripe card payments.',
+        question: "Can Norwegian clients pay in NOK via bank wire or card?",
+        answer:
+          "Yes. Invoices are denominated in NOK with direct international IBAN wire transfer and Stripe corporate card payments, complete with tax-compliant commercial invoicing.",
       },
+      {
+        question: "What is the communication overlap with Oslo and Bergen?",
+        answer:
+          "Norway (CET, UTC+1) has a 4.5-hour time difference with Bangalore. We provide extensive daily morning overlap (8:30 AM – 2:00 PM Oslo time) for live syncs, backed by daily Loom video walkthroughs.",
+      },
+      {
+        question: "Are your platforms compliant with Norwegian GDPR (Personopplysningsloven)?",
+        answer:
+          "Yes. Full compliance with Norwegian data privacy laws, zero unapproved tracking cookies, and sub-500ms edge hosting performance across Nordic telecom networks.",
+      },
+      {
+        question: "What is your 7-working-day contractual delivery guarantee?",
+        answer:
+          "Live in 7 working days or 100% free. Contractually backed with full milestone refund if late. You receive 100% source code ownership and zero lock-in.",
+      }
     ],
   },
 
@@ -1131,9 +1378,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Can Danish companies pay in DKK?',
-        answer: 'Yes. Invoicing is processed in DKK via international bank wire or Stripe with reverse-charge VAT.',
+        question: "Can Danish companies pay in DKK via bank transfer or card?",
+        answer:
+          "Yes. Invoices are issued in DKK payable via international bank transfer or Stripe with reverse-charge EU VAT compliance for Danish CVR entities.",
       },
+      {
+        question: "How does communication work between Copenhagen and your studio?",
+        answer:
+          "Denmark (CET, UTC+1) is 4.5 hours behind India. We offer direct live coordination during Danish morning hours (8:30 AM – 2:00 PM CET) via Slack and WhatsApp, plus daily Loom videos.",
+      },
+      {
+        question: "Do your websites embody Danish design principles and GDPR standards?",
+        answer:
+          "Yes. We combine Danish functional minimalism with hand-coded React performance, zero cookie clutter, and ultra-fast Copenhagen edge routing.",
+      },
+      {
+        question: "How does the 7-working-day delivery guarantee operate?",
+        answer:
+          "Fixed 7 working days delivery or 100% free. If we do not launch on time, you pay nothing. Complete source code and DNS ownership handed over to you.",
+      }
     ],
   },
 
@@ -1185,9 +1448,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Can South African clients pay via EFT in ZAR?',
-        answer: 'Yes. Invoices are denominated in ZAR (or USD) with EFT bank transfer and credit card options.',
+        question: "Can South African clients pay via EFT in ZAR?",
+        answer:
+          "Yes. Invoices are denominated in ZAR (R) or USD with direct electronic funds transfer (EFT) and credit card options with SARS-compliant commercial invoices.",
       },
+      {
+        question: "What is the timezone overlap between South Africa (SAST) and Bangalore?",
+        answer:
+          "South Africa (SAST, UTC+2) is just 3.5 hours behind Bangalore. We share nearly the entire workday (9:00 AM – 3:30 PM SAST) for immediate WhatsApp and Slack communication, plus daily Loom video updates.",
+      },
+      {
+        question: "Are your websites compliant with the South African POPIA Act?",
+        answer:
+          "Yes. Built strictly to Protection of Personal Information Act (POPIA) standards, with local edge CDN points in Johannesburg and Cape Town for lightning-fast speeds on Vodacom and MTN.",
+      },
+      {
+        question: "How does the 7-working-day delivery guarantee work?",
+        answer:
+          "Your website is live in 7 working days or your build is 100% free. No junior handoffs, no unexpected scope bills, and full source code ownership on GitHub.",
+      }
     ],
   },
 
@@ -1239,9 +1518,25 @@ export const GLOBAL_MARKETS_DATA: Record<string, GlobalMarket> = {
     ],
     faq: [
       {
-        question: 'Can Malaysian businesses pay in MYR via DuitNow or wire?',
-        answer: 'Yes. Invoices are in MYR or USD with direct bank transfer and credit card options.',
+        question: "Can Malaysian businesses pay in MYR via bank transfer or card?",
+        answer:
+          "Yes. Invoices are issued in MYR (RM) or USD with direct bank transfer, DuitNow-compatible corporate wires, and credit card options with official SST-compliant invoicing.",
       },
+      {
+        question: "What is the working hour overlap between Kuala Lumpur (MYT) and your studio?",
+        answer:
+          "Malaysia (MYT, UTC+8) is only 2.5 hours ahead of Bangalore. We share a massive 6-hour daily working window for real-time WhatsApp and Zoom support, plus morning Loom updates.",
+      },
+      {
+        question: "Are your platforms compliant with Malaysia’s Personal Data Protection Act (PDPA)?",
+        answer:
+          "Yes. Built to PDPA standards with localized WhatsApp lead integrations, and cached on Kuala Lumpur edge CDN nodes for sub-0.5s loading on CelcomDigi and Maxis.",
+      },
+      {
+        question: "What is your 7-working-day contractual delivery guarantee?",
+        answer:
+          "Live in 7 working days or 100% free. If we miss the deadline, your deposit is refunded immediately and we finish the platform at zero cost. Complete source code and domain ownership is yours.",
+      }
     ],
   },
 };
