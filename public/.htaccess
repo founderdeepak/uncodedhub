@@ -34,6 +34,9 @@
   RewriteRule ^global/([a-zA-Z0-9_\-]+)/?$ https://uncodedhub.com/markets/$1/ [L,R=301]
   RewriteRule ^global/?$ https://uncodedhub.com/markets/ [L,R=301]
 
+  # 4e. Consolidate 600 legacy locality+niche combination URLs to canonical locality hubs
+  RewriteRule ^web-design/bangalore/([a-zA-Z0-9_\-]+)/([a-zA-Z0-9_\-]+)/?$ https://uncodedhub.com/web-design/bangalore/$1/ [L,R=301]
+
   # 5. Clean query parameter canonicalization (?book=true -> /contact/)
   RewriteCond %{QUERY_STRING} ^book=true$ [NC]
   RewriteRule ^contact/?$ https://uncodedhub.com/contact/? [L,R=301]

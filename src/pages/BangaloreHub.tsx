@@ -512,7 +512,7 @@ export default function BangaloreHub({ onBook }: BangaloreHubProps) {
                         {loc.niches.slice(0, 3).map((niche) => (
                           <Link
                             key={niche.nicheKey}
-                            to={`/web-design/bangalore/${loc.slug}/${niche.nicheKey}/`}
+                            to={`/web-design/${niche.nicheKey}/`}
                             className="flex items-center justify-between text-xs font-mono text-ink-soft hover:text-signal transition-colors py-1 px-2 rounded-lg hover:bg-paper-sunken"
                           >
                             <span className="flex items-center gap-1.5 truncate">

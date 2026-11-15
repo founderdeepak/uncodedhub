@@ -201,16 +201,10 @@ export function getAllRoutes() {
     routes.push({ loc: `/web-design/${clientNiche}`, lastmod: nicheLastmod });
   }
 
-  // Master Bangalore City Hub & 100 Locality Hubs + 600 Spoke Landing Pages (Full 100-Locality Grid)
+  // Master Bangalore City Hub & 100 Locality Hubs (Consolidated High-Authority Local Architecture)
   routes.push({ loc: '/web-design/bangalore', lastmod: '2026-11-13' });
   for (const loc of Object.values(BANGALORE_LOCALITIES)) {
     routes.push({ loc: `/web-design/bangalore/${loc.slug}`, lastmod: loc.publishedAt || '2026-11-13' });
-    for (const niche of loc.niches) {
-      routes.push({
-        loc: `/web-design/bangalore/${loc.slug}/${niche.nicheKey}`,
-        lastmod: niche.publishedAt || loc.publishedAt || '2026-11-13',
-      });
-    }
   }
 
   // International High-Intent BOFU Market Hubs (/markets/:market) — Top 20 Global Economic Capitals

@@ -31,6 +31,11 @@ export default function BangaloreLocalityLanding({ onBook: _onBook }: BangaloreL
     return <Navigate to="/web-design/bangalore/" replace />;
   }
 
+  // Redirect legacy /web-design/bangalore/:locality/:niche to canonical locality hub
+  if (nicheSlug) {
+    return <Navigate to={`/web-design/bangalore/${locality.slug}/`} replace />;
+  }
+
   // If a niche param is passed, find the matching niche config in this locality
   const activeNiche = nicheSlug
     ? locality.niches.find((n) => n.nicheKey === nicheSlug.toLowerCase()) || null
@@ -452,7 +457,7 @@ export default function BangaloreLocalityLanding({ onBook: _onBook }: BangaloreL
 
                       <h3 className="font-display text-2xl text-ink font-medium">
                         <Link
-                          to={`/web-design/bangalore/${locality.slug}/${niche.nicheKey}/`}
+                          to={`/web-design/${niche.nicheKey}/`}
                           className="hover:text-signal transition-colors"
                         >
                           {niche.name}
@@ -471,7 +476,7 @@ export default function BangaloreLocalityLanding({ onBook: _onBook }: BangaloreL
                     <div className="mt-8 pt-4 border-t border-rule flex items-center justify-between text-xs font-mono">
                       <span className="text-muted">Target: {niche.targetPrice}</span>
                       <Link
-                        to={`/web-design/bangalore/${locality.slug}/${niche.nicheKey}/`}
+                        to={`/web-design/${niche.nicheKey}/`}
                         className="text-signal hover:underline inline-flex items-center gap-1 font-medium"
                       >
                         <span>View {niche.name} Platform</span>
@@ -656,10 +661,10 @@ export default function BangaloreLocalityLanding({ onBook: _onBook }: BangaloreL
                           </Link>
                         )}
                         <Link
-                          to={`/web-design/bangalore/${locality.slug}/${niche.nicheKey}/`}
+                          to={`/web-design/${niche.nicheKey}/`}
                           className="text-xs font-mono text-muted hover:text-ink flex items-center justify-between"
                         >
-                          <span>{locality.name} {niche.name} Service</span>
+                          <span>{niche.name} Industry Platform</span>
                           <span>→</span>
                         </Link>
                       </div>
