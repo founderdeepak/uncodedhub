@@ -25,7 +25,7 @@ const DESTINATIONS = [
   {
     tag: 'Turnkey scopes',
     title: 'Services & Delivery',
-    desc: 'Three fixed-scope packages: single page, business website, and online store. On time or 50% discount.',
+    desc: 'Three fixed-scope packages: single page, business website, and online store. On time or 100% free guarantee.',
     to: '/services/',
     cta: 'Review 3 Scopes →',
   },

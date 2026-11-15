@@ -89,10 +89,10 @@ const FAQ_ITEMS: FaqItem[] = [
     id: 'pricing-guarantee-details',
     category: 'pricing',
     categoryLabel: 'GUARANTEE · ACCOUNTABILITY',
-    question: 'How does the 50% "Late Means Free" Delivery Guarantee actually work?',
+    question: 'How does the contractual "On Time, or 100% Free" Delivery Guarantee actually work?',
     answer: [
       'Our guarantee is simple, contractual, and published in full in our Terms of Service.',
-      'If Uncoded Hub fails to deliver your fully functional staging website within seven working days due to our own delay, we instantly discount 50% off your final invoice. We put our own revenue on the line to prove our commitment to execution discipline.',
+      'If Uncoded Hub fails to deliver your fully functional staging website within the agreed sprint due to our own delay, we issue an immediate 100% full refund of your deposit, and you retain the complete codebase, design files, and platform assets free of charge. We put our own revenue on the line to prove our commitment to execution discipline.',
     ],
   },
   {
@@ -497,7 +497,7 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
         <meta property="og:title" content="Frequently Asked Questions — Uncoded Hub" />
         <meta
           property="og:description"
-          content="39 detailed answers on our 7-day sprint model, 50 niche architectures, 50% late delivery guarantee, tech stack, pricing, and code ownership."
+          content="39 detailed answers on our 7-day sprint model, 50 niche architectures, contractual on-time or 100% free guarantee, tech stack, pricing, and code ownership."
         />
         <meta property="og:url" content="https://uncodedhub.com/faq/" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -519,7 +519,7 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
               <div className="mt-6 text-base sm:text-lg text-ink-muted leading-relaxed max-w-2xl">
                 <p>
                   No sales talk, no agency jargon. Plain answers on our seven-day sprint model,
-                  the 50% late delivery guarantee, code ownership, tech stack, and working directly with{' '}
+                  the contractual on-time or 100% free guarantee, code ownership, tech stack, and working directly with{' '}
                   <strong className="text-ink font-semibold">Deepak &amp; Geetha</strong>.
                 </p>
               </div>

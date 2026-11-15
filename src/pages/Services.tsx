@@ -5,267 +5,216 @@ import { Reveal, Shell } from '../components/primitives';
 import { useGeoPricing } from '../lib/geoPricing';
 
 /* ═══════════════════════════════════════════════════════════════════
-   UNCODED HUB — CLIENT-CENTRIC SERVICE ARCHITECTURE & BUYING DECISION GUIDE
-   Organized strictly by what clients BUY, not by internal developer tools:
-   1. Website Design (UI/UX, Responsive, Custom Visual Architecture)
-   2. Website Development (Clean React, Zero Bloat, Custom Integrations)
-   3. Website Redesign (Modernization, 1:1 SEO Preservation, Migration)
-   4. Landing Pages (High-Intent PPC, Google Ads, Lead Generation)
-   5. E-Commerce (Direct WhatsApp/UPI Checkout, Catalogues, Stores)
-   6. Website Optimization (Sub-0.8s LCP, Core Web Vitals, Conversion Tuning)
-   7. Website Maintenance (Zero-Retainer Care, Uptime, Security Backups)
-   
-   Featuring an authoritative Buying-Decision & Pricing Guide targeting:
-   - website design cost for small business
-   - business website development cost
-   - website design packages for businesses
-   - custom website development pricing
-   - affordable website design packages
-   - website development quotation
-   - hire a website design agency
-   - website designer hourly rate
-   - website redesign cost
-   - professional website design packages
+   UNCODED HUB — SERVICES & PRICING BUYING GUIDE
+   Canonical: https://uncodedhub.com/services/
+
+   Core Positioning:
+   "Three Scopes. No Surprises."
+   "A Clear Plan. A Fixed Price. A Website Built Around Your Business."
+
+   Structure:
+   1. Hero: Three Scopes. No Surprises.
+   2. Choose Your Pathway: Not sure which website you need? Start here.
+   3. Three Service Packages: Single Page, Business Website, Online Store.
+   4. Our 5-Step Process: Discovery to Launch & Handover.
+   5. Clear Pricing: Fixed price and 50/50 payment terms.
+   6. Contractual Guarantee: On time, or 100% free.
+   7. Where We Draw the Line: What we don't offer.
+   8. After Launch: Your Website. Your Business. Your Control.
+   9. Why Uncoded Hub: Direct senior execution with Deepak & Geetha.
+   10. FAQs & Final Conversion CTA.
    ═══════════════════════════════════════════════════════════════════ */
 
-interface ServiceCategory {
-  id: string;
-  num: string;
-  title: string;
-  shortDesc: string;
-  tagline: string;
-  whatClientsBuy: string;
-  deliverables: string[];
-  idealFor: string;
-  timeline: string;
-  investmentTier: string;
+interface ServicesProps {
+  onBook?: () => void;
 }
 
-const CLIENT_SERVICES: ServiceCategory[] = [
+const SERVICE_PACKAGES = [
   {
-    id: 'website-design',
-    num: '01',
-    title: 'Website Design (UI/UX & Brand Aesthetics)',
-    shortDesc: 'Custom visual identity, responsive multi-breakpoint layouts, and high-conversion design systems.',
-    tagline: 'Visual Certainty in the First 50 Milliseconds',
-    whatClientsBuy:
-      'High-ticket clients do not buy design for art’s sake; they buy visual authority that eliminates the fear of making an expensive mistake. We craft bespoke typography lockups, palette harmonies, and 3 distinct aesthetic options tailored to your market.',
-    deliverables: [
-      'Bespoke desktop, tablet, and mobile Figma / browser UI layouts',
-      '3 distinct visual aesthetic directions (Obsidian Luxe, Heritage Light, Avant-Garde)',
-      'Custom typography hierarchy and high-contrast accessibility tokens',
-      'Interactive prototype walkthrough with zero generic template defaults',
-    ],
-    idealFor: 'Practices, luxury studios, boutique agencies, and high-ticket service firms.',
-    timeline: 'Included in 7-Day Sprint',
-    investmentTier: 'Part of all Core Packages',
-  },
-  {
-    id: 'website-development',
-    num: '02',
-    title: 'Website Development (Hand-Coded & Custom Engineering)',
-    shortDesc: 'Custom hand-coded React architecture, private database hooks, and seamless third-party integrations.',
-    tagline: 'Zero Bloatware · Sub-Second Performance',
-    whatClientsBuy:
-      'Enterprise-grade speed and reliability without the technical debt of 45 conflicting WordPress plugins. Clean, semantic React code that loads in under 0.8 seconds on 4G phones and costs ₹0/month to host on global edge servers.',
-    deliverables: [
-      'Hand-crafted semantic React + Tailwind CSS code base',
-      'Zero server vulnerabilities, zero PHP interpreters, zero database crashes',
-      'Direct API integrations (Supabase, Calendly, WhatsApp webhooks, CRM)',
-      '100% full source code ownership transferred via clean Git repository',
-    ],
-    idealFor: 'Businesses wanting a durable, ultra-fast platform they own 100% forever.',
-    timeline: 'Included in 7-Day Sprint',
-    investmentTier: 'From ₹35,000 to ₹85,000+',
-  },
-  {
-    id: 'website-redesign',
-    num: '03',
-    title: 'Website Redesign & Platform Migration',
-    shortDesc: 'Modernizing outdated, sluggish websites with guaranteed 1:1 SEO ranking preservation.',
-    tagline: 'From Clunky WordPress to Lightning-Fast React',
-    whatClientsBuy:
-      'A complete modernization of an old, embarrassing website without losing a single organic Google keyword or backlink. We audit existing URL structures, map 301 redirects, and replace slow page builders with instant-load React architecture.',
-    deliverables: [
-      'Comprehensive pre-migration SEO crawl and URL redirect mapping',
-      'Sub-0.8s mobile Core Web Vitals score (LCP, INP, CLS)',
-      'Modern editorial layout overhaul with elevated positioning copy',
-      'Preservation of all legacy Google Search Console rankings and authority',
-    ],
-    idealFor: 'Businesses with 3+ year old sites losing conversions to modern rivals.',
-    timeline: '7 to 10 Working Days',
-    investmentTier: 'Website Redesign Package: ₹45,000 – ₹75,000',
-  },
-  {
-    id: 'landing-pages',
-    num: '04',
-    title: 'High-Converting Landing Pages (Lead Generation)',
-    shortDesc: 'Laser-focused single-destination campaign pages engineered for Google Ads and paid campaigns.',
-    tagline: 'Zero Leakage · High Commercial Intent Funnels',
-    whatClientsBuy:
-      'A focused conversion machine that turns expensive Google Ads or social campaign clicks into qualified phone calls and WhatsApp inquiries. Zero distracting navigation menus, compelling hook copy, and immediate interactive booking.',
-    deliverables: [
-      'Single bespoke high-intent page with dynamic headline matching',
-      'Direct click-to-WhatsApp and calendar consultation scheduling',
-      'Google Tag Manager, Meta Pixel, and conversion event tracking',
-      'Tested across real 4G mobile devices for zero drop-off speed',
-    ],
-    idealFor: 'Ad campaigns, new service launches, and single-offer high-intent funnels.',
+    id: 'single-page',
+    tierNum: '01 · Fast Launch',
+    name: 'Single Page Website',
+    tagline: 'For one clear offer and one clear customer action.',
     timeline: '3 Working Days',
-    investmentTier: 'Starter Campaign: ₹35,000 (≈ $490 USD)',
-  },
-  {
-    id: 'ecommerce',
-    num: '05',
-    title: 'E-Commerce & Digital Storefronts',
-    shortDesc: 'High-speed product catalogues, 1-click Express WhatsApp checkout, and payment gateway integration.',
-    tagline: 'Frictionless Checkout · Zero Monthly Shopify App Rent',
-    whatClientsBuy:
-      'A sleek, mobile-optimized online store that does not suffer from sluggish Shopify app bloat. Direct Razorpay, Stripe, and UPI payment processing with automated instant order confirmations via WhatsApp and email.',
+    idealFor: 'Landing pages, Google Ads campaigns, and businesses needing a focused online presence.',
     deliverables: [
-      'Lightning-fast product catalog, category filters, and live search',
-      'Razorpay, Stripe & UPI payment gateway integrations',
-      '1-Click WhatsApp Express Order option for frictionless Indian buyer checkout',
-      'Admin training session and clean order management dashboard',
-    ],
-    idealFor: 'D2C boutique brands, artisanal bakeries, jewellery designers, and specialty retailers.',
-    timeline: '2 to 3 Weeks (Quoted per catalog size)',
-    investmentTier: 'Bespoke Store: ₹75,000 – ₹1,20,000+',
-  },
-  {
-    id: 'website-optimization',
-    num: '06',
-    title: 'Website Speed & Conversion Optimization',
-    shortDesc: 'Core Web Vitals acceleration, mobile UX friction audits, and high-ticket conversion tuning.',
-    tagline: 'Lighthouse 95+ · Sub-0.8s LCP Guarantee',
-    whatClientsBuy:
-      'Slashing bounce rates by cutting page load times from 6 seconds down to under 1 second. We audit user friction, optimize heavy images into modern WebP format, streamline checkout funnels, and boost Google SEO signals.',
-    deliverables: [
-      'Complete Core Web Vitals diagnostic (LCP, FID/INP, CLS)',
-      'Next-gen image compression, asset minification, and edge caching',
-      'Mobile viewport friction audit and tap-target usability fix',
-      'Written performance guarantee: 95+ mobile Lighthouse rating',
-    ],
-    idealFor: 'Existing websites with high traffic but disappointing inquiry rates.',
-    timeline: '3 to 5 Working Days',
-    investmentTier: 'Speed & Conversion Audit Sprint: ₹25,000 – ₹45,000',
-  },
-  {
-    id: 'website-maintenance',
-    num: '07',
-    title: 'Website Care & Ongoing Platform Support',
-    shortDesc: 'Optional proactive uptime monitoring, automated cloud backups, and content updates.',
-    tagline: 'Zero Retainer Traps · 100% Client Independence',
-    whatClientsBuy:
-      'Total peace of mind with zero mandatory monthly retainers. Because our static React platforms have no databases to crash or plugins to hack, ongoing maintenance is minimal. We offer optional care plans for busy founders who want priority content updates.',
-    deliverables: [
-      '24/7 uptime monitoring with instant DNS failover protection',
-      'Automated weekly code and asset cloud backups',
-      'Dedicated priority turnaround for monthly copy, image, and service updates',
-      'Zero cancellation penalties—cancel or pause anytime with 1 click',
-    ],
-    idealFor: 'Busy business owners who want a dedicated webmaster without hiring full-time staff.',
-    timeline: 'Continuous Ongoing Support',
-    investmentTier: 'Optional Peace of Mind: ₹5,000 / month (or ₹0 with self-hosting)',
-  },
-];
-
-const PRICING_PACKAGES = [
-  {
-    id: 'starter' as const,
-    tier: 'Tier 01 · Launchpad',
-    name: 'Essential Website',
-    priceINR: '₹35,000',
-    priceUSD: '≈ $490 USD',
-    timeline: '3–5 Working Days',
-    scopeDesc: 'Custom responsive design, core pages, and focused conversion architecture for solopreneurs, single-service campaigns, or new launches.',
-    features: [
-      'Custom mobile-first layout (up to 3 pages)',
-      'Bespoke copy deck written from your discovery intake',
+      'One custom-designed responsive page (mobile + desktop)',
+      'High-converting copy written from your discovery intake',
+      'Enquiry form & direct click-to-WhatsApp routing',
+      'Google Analytics 4 & on-page technical SEO groundwork',
       'Sub-0.8s mobile LCP performance guarantee',
-      'Direct WhatsApp click-to-chat & calendar booking funnel',
-      'On-page technical SEO & Schema.org LocalBusiness markup',
-      '100% full source code ownership in clean Git repository',
-      '30-Day post-launch priority bug warranty',
+      'One focused revision round',
+      '100% source code ownership in clean Git repository',
     ],
-    ctaText: 'Book Essential Sprint',
+    popular: false,
+    ctaText: 'Book Single Page Sprint',
   },
   {
-    id: 'growth' as const,
-    tier: 'Tier 02 · Full Business Platform (Recommended)',
-    name: 'Growth Website',
-    priceINR: '₹55,000',
-    priceUSD: '≈ $750 USD',
+    id: 'business-website',
+    tierNum: '02 · Most Popular',
+    name: 'Business Website',
+    tagline: 'For businesses that need to build trust and generate qualified enquiries.',
     timeline: '7 Working Days (Contractual Guarantee)',
-    scopeDesc: 'The definitive digital flagship for established businesses, practices, and studios that need to dominate their market and win high-ticket clients.',
-    popular: true,
-    features: [
-      'Full multi-page architecture (Up to 5–8 bespoke pages)',
-      'High-ticket positioning copy crafted before visual design begins',
-      'Interactive conversion feature (Booking / Cost Estimator / Menu)',
-      '3 Switchable visual aesthetic themes (e.g. Obsidian Luxe vs Heritage)',
-      'Full Local / International SEO & Google Business Profile alignment',
-      'Google Search Console & Google Analytics 4 tracking configured',
-      'Recorded video walkthrough so your team can update text easily',
-      'Contractual 7-day guarantee: Live on time or the build is 100% free',
-      '30 Days of direct founder support with Deepak & Geetha',
+    idealFor: 'Practices, studios, boutique agencies, and high-ticket service firms wanting local market authority.',
+    deliverables: [
+      'Up to five custom-designed pages (expandable to 8)',
+      'Complete website copywriting crafted from scratch',
+      'Conversion-focused enquiry and booking flows',
+      '3 switchable visual aesthetic styles (e.g. Obsidian vs Heritage)',
+      'Local & technical SEO groundwork + Schema.org markup',
+      'Google Analytics 4 & Search Console configuration',
+      'Two collaborative revision rounds',
+      'Contractual 7-day guarantee: On time or 100% free',
+      '30-day post-launch direct founder support',
     ],
+    popular: true,
     ctaText: 'Claim 7-Day Sprint Slot',
   },
   {
-    id: 'bespoke' as const,
-    tier: 'Tier 03 · Application / Multi-Location',
-    name: 'Bespoke Digital Experience',
-    priceINR: '₹85,000+',
-    priceUSD: '≈ $1,150+ USD',
-    timeline: '10–14 Working Days',
-    scopeDesc: 'Advanced web application architecture for multi-location clinics, large firms, or high-volume transactional platforms requiring bespoke engineering.',
-    features: [
-      'Unlimited custom pages and multi-location directory routing',
-      'Headless CMS or dynamic database architecture (Supabase / PostgreSQL)',
-      'Custom client document vault or secure encrypted file upload portal',
-      'Third-party ERP, CRM, and webhook automation pipeline',
-      'Corporate Karnataka GST tax invoice with full ITC compliance',
-      'Full E-E-A-T topical authority sitemap & structured schema',
-      '60 Days of priority SLA founder warranty and quarterly strategy reviews',
+    id: 'online-store',
+    tierNum: '03 · E-Commerce',
+    name: 'Online Store',
+    tagline: 'For businesses ready to sell products online with zero sluggish app bloat.',
+    timeline: '2–3 Weeks',
+    idealFor: 'D2C boutique brands, artisanal bakeries, jewellery designers, and specialty retailers.',
+    deliverables: [
+      'High-speed product catalogue with live search & filters',
+      'Razorpay, Stripe & UPI payment gateway integrations',
+      '1-Click WhatsApp Express Order option for frictionless checkout',
+      'Automated instant order notifications (email & WhatsApp)',
+      'Abandoned-cart recovery funnels',
+      'Clean admin dashboard & staff video training walkthrough',
+      '30-day priority post-launch founder warranty',
     ],
-    ctaText: 'Discuss Bespoke Scope',
+    popular: false,
+    ctaText: 'Discuss Online Store Scope',
   },
 ];
 
-const PRICING_FAQS = [
+const PROJECT_PATHWAYS = [
   {
-    q: 'What is the real website design cost for small business in 2026?',
-    a: 'In India, low-end freelancers charge ₹10,000 to ₹25,000 for slow, generic WordPress templates that fail to convert high-ticket clients. Traditional agencies charge ₹1,50,000 to ₹5,00,000 with 3-month delays and monthly retainers. At Uncoded Hub, our professional website design packages range from ₹35,000 (single campaign launchpad) to ₹55,000 (complete 5-page business flagship in a 7-day sprint), with zero ongoing retainer traps. You get hand-coded React performance, bespoke copy, and 100% asset ownership.',
+    situation: 'Starting a new business or practice?',
+    recommendation: 'Business Website (7 Days)',
+    badge: 'Authority Flagship',
+    summary: 'Get a professional website that explains what you do, builds trust, and helps high-ticket customers contact you.',
   },
   {
-    q: 'How does a fixed-price sprint compare to a website designer hourly rate?',
-    a: 'Hiring on an hourly rate ($40 to $120/hour or ₹1,500 to ₹4,500/hour) creates an inherent conflict of interest: the slower the designer or developer works, the more money they make. Scope creep and unexpected revisions quickly double your initial budget. Uncoded Hub operates strictly on fixed-price project milestones: you agree to one fixed quotation before any work begins, and that number never changes whether the sprint takes 4 days or 9 days.',
+    situation: 'Running a campaign or launching a single offer?',
+    recommendation: 'Single Page Website (3 Days)',
+    badge: 'Conversion Funnel',
+    summary: 'Get a focused landing page designed around one offer and one clear customer action, optimized for paid ads.',
   },
   {
-    q: 'What does a website redesign cost, and will I lose my Google rankings?',
-    a: 'A typical business website redesign at Uncoded Hub costs between ₹45,000 and ₹75,000 depending on page count. Crucially, we enforce 1:1 technical SEO preservation: every legacy indexed URL is preserved or mapped via 301 server redirects, title tags and meta descriptions are carried over, and rich Schema.org structured data is added. Your site modernizes from a sluggish 5-second WordPress site to a 0.4s React platform without dropping organic rank.',
+    situation: 'Ready to sell products directly online?',
+    recommendation: 'Online Store (2–3 Weeks)',
+    badge: 'Frictionless E-Commerce',
+    summary: 'Build an ultra-fast online store with product catalogues, inventory, seamless payments, and automated notifications.',
   },
   {
-    q: 'How do I get an exact website development quotation for my business?',
-    a: 'You can receive an exact, itemized written quotation in a single 20-minute discovery call with co-founders Deepak and Geetha. We do not send vague 40-page sales decks. We review your current assets, map the exact conversion path you need, and provide a fixed price and a contractual launch date before you commit a single rupee.',
-  },
-  {
-    q: 'Are there any hidden fees or ongoing monthly charges after launch?',
-    a: 'None. Traditional agencies charge ₹5,000 to ₹15,000 every month for "plugin updates and maintenance." Because Uncoded Hub hand-codes clean React without vulnerable plugins or heavy databases, your site can be hosted completely free on global edge networks (Cloudflare or Vercel) forever. You own the code, the domain, and the hosting account in your own name.',
-  },
-  {
-    q: 'Why should I hire a website design agency like Uncoded Hub instead of a cheap freelancer or DIY builder (Wix/Squarespace)?',
-    a: 'DIY builders (Wix, Squarespace) trap you in proprietary subscriptions, output bloated JavaScript that loads slowly on mobile, and prevent you from ever exporting your code. Low-cost freelancers often abandon projects midway or produce broken mobile layouts. Uncoded Hub gives you senior co-founder delivery (Deepak on engineering, Geetha on design), sub-second mobile speeds, and a binding 7-day completion guarantee: if we are late by even one hour, your build is 100% free.',
+    situation: 'Need a fresh start or complete website redesign?',
+    recommendation: 'Business Website or Custom Scope',
+    badge: '1:1 SEO Preservation',
+    summary: 'Let’s review your existing website first and decide whether a planned redesign (with 1:1 SEO preservation) or a clean build makes more sense.',
   },
 ];
 
-export default function Services({ onBook }: { onBook: () => void }) {
+const PROCESS_STEPS = [
+  {
+    num: '01',
+    title: 'Discovery',
+    duration: '20-Minute Video Call',
+    desc: 'We learn about your business, your target customers, and what you want your website to achieve. Zero questionnaires or blank screens.',
+  },
+  {
+    num: '02',
+    title: 'Scope & Pricing',
+    duration: 'Same-Day Scope Sheet',
+    desc: 'We agree on the exact pages, features, launch timeline, and fixed project price in writing before a single rupee or dollar is exchanged.',
+  },
+  {
+    num: '03',
+    title: 'Design & Development',
+    duration: 'Single-Threaded Execution',
+    desc: 'Geetha leads the visual design direction; Deepak handles custom React development. You receive private staging preview links.',
+  },
+  {
+    num: '04',
+    title: 'Review & Refinement',
+    duration: 'Collaborative Iteration',
+    desc: 'You review the live working platform and provide feedback within the agreed revision rounds to ensure pixel-perfect alignment.',
+  },
+  {
+    num: '05',
+    title: 'Launch & Handover',
+    duration: 'Production Deployment',
+    desc: 'Upon staging approval and final milestone payment, we launch to your domain, hand over 100% of the Git files, and begin your 30-day warranty.',
+  },
+];
+
+const BOUNDARIES = [
+  {
+    title: 'Native Mobile Apps',
+    desc: 'We focus strictly on websites and responsive web applications, not native iOS or Android app store applications.',
+  },
+  {
+    title: 'Monthly SEO Link-Building Retainers',
+    desc: 'We build rock-solid technical SEO foundations and Schema.org markup, but do not sell recurring backlink packages.',
+  },
+  {
+    title: 'Paid Advertising Campaign Management',
+    desc: 'We build high-converting landing pages and tracking systems, but do not manage monthly Google or Meta ad spend.',
+  },
+  {
+    title: 'Broken Website Takeovers & Patchwork',
+    desc: 'We assess existing sites, but decline patching fragile legacy codebases. When repairing an old site is impractical, a fresh build saves time and money.',
+  },
+  {
+    title: 'Oversized Multi-Month Software',
+    desc: 'If your project requires an ERP or massive complex system outside our standard scopes, we will tell you honestly and create a separate phase-based plan.',
+  },
+];
+
+const SERVICES_FAQS = [
+  {
+    q: 'How does your fixed-price policy work? Are there really no surprise additions?',
+    a: 'Every project receives one fixed price based on an agreed written scope sheet before any work begins. That number never changes. If you request additional pages or custom features during the build, we quote those as separate add-ons and only begin once you approve. You will always know what you are paying for.',
+  },
+  {
+    q: 'What is the payment milestone structure?',
+    a: 'We work on a straightforward 50/50 milestone model: 50% reservation deposit upon signing the scope sheet to reserve your dedicated sprint slot on our calendar, and the remaining 50% balance is payable upon completion of staging review, prior to public DNS switchover and final repository transfer.',
+  },
+  {
+    q: 'How does the contractual 7-day guarantee work?',
+    a: 'Before we accept your deposit, we establish a binding launch date. If Uncoded Hub misses the agreed launch milestone due to our own delay, you receive an immediate 100% full refund of your deposit, and you retain the complete codebase, design files, and platform assets completely free.',
+  },
+  {
+    q: 'Do I actually own 100% of my website after launch?',
+    a: 'Yes, completely and unconditionally. Unlike agencies that lock you into proprietary CMS builders or monthly hosting retainers, your domain, hosting account, and clean GitHub repository are in your own name. Because our React sites have no heavy databases or PHP plugins, you can host your site for ₹0 to $5/month on global edge networks like Cloudflare or Vercel forever.',
+  },
+  {
+    q: 'What is the difference between a planned website redesign and a broken-site takeover?',
+    a: 'We gladly accept planned website modernizations—migrating an established business from a sluggish WordPress or Wix site to modern React while preserving 1:1 Google rankings and backlinks. However, we decline taking over broken, hacked, or abandoned spaghetti-code websites for piecemeal bug patching; such sites are far better served by a clean, fresh build.',
+  },
+  {
+    q: 'What happens after launch if I need changes or ongoing updates?',
+    a: 'Every package includes 30 days of direct founder support for bug fixes and adjustments. After that, you are completely free: you own the code and can edit it yourself, hire any developer, or commission small fixed-price mini-sprints with us. We also offer optional website care plans for busy founders who want priority updates.',
+  },
+];
+
+export default function Services({ onBook }: ServicesProps) {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const { region, selectRegion, allRegions, isInternational } = useGeoPricing();
 
   const toggleFaq = (idx: number) => {
     setActiveFaq(activeFaq === idx ? null : idx);
+  };
+
+  const handleBooking = () => {
+    if (onBook) {
+      onBook();
+    } else {
+      window.location.href = '/contact/#book';
+    }
   };
 
   const jsonLd = {
@@ -277,7 +226,7 @@ export default function Services({ onBook }: { onBook: () => void }) {
         url: 'https://uncodedhub.com/services/',
         name: 'Website Design & Development Services & Pricing Packages — Uncoded Hub',
         description:
-          'Explore our 7 client-centric web design and development services. Transparent pricing packages from ₹35,000 to ₹85,000 with a 7-day contractual delivery guarantee.',
+          'Three scopes. No surprises. Transparent website design and development packages: Single Page (3 days), Business Website (7 days), and Online Store (2–3 weeks).',
         isPartOf: {
           '@type': 'WebSite',
           '@id': 'https://uncodedhub.com/#website',
@@ -286,8 +235,35 @@ export default function Services({ onBook }: { onBook: () => void }) {
         },
       },
       {
+        '@type': 'OfferCatalog',
+        name: 'Uncoded Hub Website Packages',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            name: 'Single Page Website',
+            price: '35000',
+            priceCurrency: 'INR',
+            description: 'One custom-designed page, copywriting, inquiry form, delivered in 3 working days.',
+          },
+          {
+            '@type': 'Offer',
+            name: 'Business Website',
+            price: '55000',
+            priceCurrency: 'INR',
+            description: 'Complete 5-page digital flagship, booking flows, 3 themes, 7-day on-time guarantee.',
+          },
+          {
+            '@type': 'Offer',
+            name: 'Online Store',
+            price: '85000',
+            priceCurrency: 'INR',
+            description: 'High-speed product catalogue, payment gateways, automated notifications, 2–3 weeks.',
+          },
+        ],
+      },
+      {
         '@type': 'FAQPage',
-        mainEntity: PRICING_FAQS.map((faq) => ({
+        mainEntity: SERVICES_FAQS.map((faq) => ({
           '@type': 'Question',
           name: faq.q,
           acceptedAnswer: {
@@ -302,20 +278,20 @@ export default function Services({ onBook }: { onBook: () => void }) {
   return (
     <>
       <Helmet>
-        <title>Website Design Services, Packages & Costs — Uncoded Hub</title>
+        <title>Website Design Services, Packages & Fixed Pricing — Uncoded Hub</title>
         <meta
           name="description"
-          content="Explore our 7 client-focused website services: custom design, development, redesign, landing pages, e-commerce, speed optimization & maintenance. Transparent pricing packages from ₹35,000."
+          content="Three scopes. No surprises. Fixed-price web design packages: Single Page (3 days), Business Website (7 days), and Online Store (2–3 weeks). Delivered directly by Deepak & Geetha."
         />
         <meta
           name="keywords"
-          content="website design services, website development company, website redesign services, landing page design, ecommerce website development, website speed optimization, website design cost for small business, business website development cost, website design packages for businesses, custom website development pricing, affordable website design packages, website development quotation, hire a website design agency, website designer hourly rate, website redesign cost, professional website design packages"
+          content="website design services, fixed price website packages, 7 day website sprint, business website cost, website development pricing, single page website, ecommerce development, Uncoded Hub services"
         />
         <link rel="canonical" href="https://uncodedhub.com/services/" />
-        <meta property="og:title" content="Website Design Services, Packages & Costs — Uncoded Hub" />
+        <meta property="og:title" content="Website Design Services, Packages & Fixed Pricing — Uncoded Hub" />
         <meta
           property="og:description"
-          content="7 client-focused web design services with fixed-price packages from ₹35,000. 7-Day sprint guarantee, zero retainers, 100% code ownership."
+          content="Three scopes. No surprises. A clear plan, a fixed price, and a website built around your business."
         />
         <meta property="og:url" content="https://uncodedhub.com/services/" />
         <meta property="og:type" content="website" />
@@ -324,156 +300,221 @@ export default function Services({ onBook }: { onBook: () => void }) {
         <meta name="twitter:title" content="Website Design Services & Pricing Packages — Uncoded Hub" />
         <meta
           name="twitter:description"
-          content="Organized by what clients buy: design, development, redesign, landing pages, e-commerce & speed optimization."
+          content="Three scopes. No surprises. Fixed-price website design and development packages."
         />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      {/* ── Editorial Header ─────────────────────────────────────────── */}
-      <section className="pt-10 md:pt-16 pb-16 bg-paper border-b border-rule">
+      {/* ── Breadcrumb & Ribbon ────────────────────────────────────────── */}
+      <div className="bg-paper border-b border-rule pt-20 sm:pt-24 pb-3">
+        <Shell>
+          <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-muted">
+              <Link to="/" className="hover:text-ink transition-colors">
+                Home
+              </Link>
+              <span>/</span>
+              <span className="text-ink font-medium">Services &amp; Pricing</span>
+            </nav>
+
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-signal/10 text-signal font-mono text-[11px]">
+                <span>⚡ Fixed Project Price · 50/50 Payment Terms</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-paper border border-rule text-ink font-mono text-[11px]">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span>On Time or 100% Free Guarantee</span>
+              </div>
+            </div>
+          </div>
+        </Shell>
+      </div>
+
+      {/* ── 01. Hero: Three Scopes. No Surprises. ────────────────────── */}
+      <section className="pt-12 sm:pt-20 pb-16 sm:pb-24 bg-paper relative overflow-hidden border-b border-rule">
+        <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-signal/5 rounded-full blur-[140px] pointer-events-none -z-10" />
+
         <Shell>
           <Reveal>
-            <span className="label text-signal font-semibold block mb-3">
-              Client-First Service Architecture · Fixed-Price Sprints
-            </span>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-ink max-w-[18ch] leading-[1.08] tracking-tight">
-              Organized by what you buy. <br />
-              <em className="italic hero-signal font-medium">Zero technical mystery.</em>
-            </h1>
-          </Reveal>
-          <Reveal delay={100}>
-            <p className="text-lead text-muted mt-6 max-w-3xl leading-relaxed">
-              Most web agencies organize their services around developer jargon and billable hours. We structure our offerings strictly around <strong>business outcomes</strong>: acquiring customers, establishing undeniable authority, modernizing outdated systems, and speeding up slow mobile funnels.
-            </p>
-          </Reveal>
-          <Reveal delay={150}>
-            <div className="flex flex-wrap items-center gap-4 mt-8">
-              <a
-                href="#pricing-guide"
-                className="btn-primary !py-3 !px-6 text-xs sm:text-sm rounded-full inline-flex items-center gap-2 shadow-sm"
-              >
-                <span>View Pricing &amp; Package Costs</span>
-                <span>↓</span>
-              </a>
-              <button
-                type="button"
-                onClick={onBook}
-                className="border border-rule-strong hover:border-signal text-ink font-mono text-xs py-3 px-6 rounded-full transition-colors bg-paper-raised cursor-pointer"
-              >
-                Request Fixed Quotation →
-              </button>
+            <div className="max-w-4xl">
+              <span className="label text-signal font-semibold block mb-3">
+                PRODUCTIZED BOUTIQUE STUDIO · FIXED-PRICE PACKAGES
+              </span>
+
+              <h1 className="font-display text-4xl sm:text-6xl md:text-7xl text-ink font-normal tracking-tight leading-[1.05] mb-4">
+                Three Scopes. No Surprises.
+              </h1>
+
+              <p className="font-display text-2xl sm:text-3xl text-signal font-normal mb-6">
+                A Clear Plan. A Fixed Price. A Website Built Around Your Business.
+              </p>
+
+              <p className="text-muted text-base sm:text-lg leading-relaxed max-w-3xl mb-8">
+                Whether you need a focused landing page, a complete business website, or a fully functional online store, we make the process simple. Choose the service that fits your needs. We’ll agree on exactly what’s included, how long it will take, and what it will cost before work begins. No confusing hourly bills. No surprise charges. No endless agency delays.
+              </p>
+
+              {/* Three Ways to Work Summary Chips */}
+              <div className="grid sm:grid-cols-3 gap-3 mb-10">
+                <a
+                  href="#single-page"
+                  className="p-4 rounded-2xl bg-paper-sunken border border-rule hover:border-signal/50 transition-colors flex flex-col justify-between group"
+                >
+                  <span className="text-[11px] font-mono uppercase text-muted tracking-wider block mb-1">
+                    01 · Single Page
+                  </span>
+                  <span className="font-display text-base text-ink font-medium group-hover:text-signal transition-colors block">
+                    3 Working Days
+                  </span>
+                  <span className="text-xs text-muted block mt-1">One focused page for one clear offer.</span>
+                </a>
+
+                <a
+                  href="#business-website"
+                  className="p-4 rounded-2xl bg-paper-sunken border-2 border-signal/40 hover:border-signal transition-colors flex flex-col justify-between group relative"
+                >
+                  <span className="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full bg-signal text-paper font-mono text-[9px] uppercase tracking-wider font-bold">
+                    Recommended
+                  </span>
+                  <span className="text-[11px] font-mono uppercase text-signal tracking-wider block mb-1">
+                    02 · Business Website
+                  </span>
+                  <span className="font-display text-base text-ink font-medium group-hover:text-signal transition-colors block">
+                    7 Working Days
+                  </span>
+                  <span className="text-xs text-muted block mt-1">Complete custom digital flagship.</span>
+                </a>
+
+                <a
+                  href="#online-store"
+                  className="p-4 rounded-2xl bg-paper-sunken border border-rule hover:border-signal/50 transition-colors flex flex-col justify-between group"
+                >
+                  <span className="text-[11px] font-mono uppercase text-muted tracking-wider block mb-1">
+                    03 · Online Store
+                  </span>
+                  <span className="font-display text-base text-ink font-medium group-hover:text-signal transition-colors block">
+                    2–3 Weeks
+                  </span>
+                  <span className="text-xs text-muted block mt-1">Frictionless e-commerce storefront.</span>
+                </a>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-4 mb-6">
+                <button
+                  type="button"
+                  onClick={handleBooking}
+                  className="btn-primary !px-8 !py-4 text-sm rounded-full shadow-md cursor-pointer inline-flex items-center gap-2"
+                >
+                  <span>Book Your Free 20-Minute Discovery Call</span>
+                  <span>→</span>
+                </button>
+
+                <a
+                  href="#packages-comparison"
+                  className="px-6 py-4 rounded-full border border-rule-strong hover:border-signal text-ink font-mono text-xs uppercase tracking-wider transition-colors bg-paper-raised inline-flex items-center gap-2"
+                >
+                  <span>Compare Packages &amp; Pricing</span>
+                  <span>↓</span>
+                </a>
+
+                <a
+                  href="https://wa.me/918660819023?text=Hi%20Deepak%20and%20Geetha,%20I'd%20like%20to%20discuss%20which%20website%20package%20fits%20my%20business."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-mono text-muted hover:text-signal transition-colors inline-flex items-center gap-1.5 px-3 py-2"
+                >
+                  <span>💬 WhatsApp: +91 86608 19023</span>
+                  <span>↗</span>
+                </a>
+              </div>
+
+              <p className="text-xs font-mono text-muted">
+                Not sure which one is right for you? That’s what the free discovery call is for.
+              </p>
             </div>
           </Reveal>
         </Shell>
       </section>
 
-      {/* ── 7 Client-Facing Service Categories ──────────────────────── */}
-      <section className="py-20 sm:py-28 bg-paper border-b border-rule" id="service-catalog">
+      {/* ── 02. Choose Your Pathway (Find the Right Starting Point) ─────── */}
+      <section className="py-20 sm:py-28 bg-paper-sunken border-b border-rule" id="pathways">
         <Shell>
           <Reveal>
-            <div className="max-w-3xl mb-16">
-              <span className="label text-signal font-semibold block mb-2.5">
-                The 7 Core Service Offerings
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
-                Everything your business needs to win online.
+            <div className="max-w-3xl mb-12">
+              <span className="card-tag mb-3">DECISION ARCHITECTURE</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
+                Not sure which website you need? Start here.
               </h2>
-              <p className="text-muted text-base mt-4 leading-relaxed">
-                Whether you need a full digital flagship, an urgent campaign landing page, a WordPress-to-React migration, or an e-commerce storefront, every service is delivered in our focused 7-day senior sprint model.
+              <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
+                Every business is at a different stage. Here is how our three core scopes map directly to your commercial situation:
               </p>
             </div>
           </Reveal>
 
-          <div className="space-y-10">
-            {CLIENT_SERVICES.map((s, idx) => (
-              <Reveal key={s.id} delay={idx * 50}>
-                <div
-                  id={s.id}
-                  className="bg-paper-raised border border-rule-strong rounded-[28px] p-8 sm:p-12 shadow-sm hover:shadow-md transition-shadow grid lg:grid-cols-12 gap-8 lg:gap-12 items-start"
-                >
-                  {/* Left Column: Outcome, Who Buys & Timeline */}
-                  <div className="lg:col-span-5 flex flex-col justify-between h-full">
-                    <div>
-                      <div className="flex items-center justify-between gap-3 mb-4">
-                        <span className="card-tag">{s.tagline}</span>
-                        <span className="font-mono text-xs text-muted font-bold">Service {s.num}</span>
-                      </div>
-
-                      <h3 className="font-display text-2xl sm:text-3xl text-ink font-medium mt-1 leading-snug">
-                        {s.title}
-                      </h3>
-
-                      <p className="text-xs font-mono text-signal mt-2">{s.investmentTier}</p>
-
-                      <p className="text-muted leading-relaxed mt-4 text-sm">
-                        {s.whatClientsBuy}
-                      </p>
-
-                      <div className="mt-5 p-4 rounded-xl bg-paper-sunken border border-rule">
-                        <span className="text-[11px] font-semibold text-ink block mb-1">
-                          Ideal Profile:
-                        </span>
-                        <p className="text-xs text-muted leading-relaxed mb-0">{s.idealFor}</p>
-                      </div>
-                    </div>
-
-                    <div className="mt-8 pt-6 border-t border-rule flex items-center justify-between">
-                      <span className="text-xs font-mono text-muted">
-                        Timeline: <strong className="text-ink">{s.timeline}</strong>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {PROJECT_PATHWAYS.map((p, idx) => (
+              <Reveal key={p.situation} delay={idx * 40}>
+                <div className="p-7 rounded-[24px] bg-paper border border-rule hover:border-signal/50 transition-all shadow-xs flex flex-col justify-between h-full">
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="px-2.5 py-1 rounded-full bg-signal/10 text-signal font-mono text-[10px] uppercase font-bold tracking-wider">
+                        {p.badge}
                       </span>
-                      <button
-                        type="button"
-                        onClick={onBook}
-                        className="bg-signal hover:bg-signal-bright text-paper font-mono text-xs py-2 px-4 rounded-full transition-colors cursor-pointer"
-                      >
-                        Inquire →
-                      </button>
+                      <span className="text-xs font-mono text-muted">Situation 0{idx + 1}</span>
                     </div>
+
+                    <h3 className="font-display text-xl text-ink font-medium mb-3">
+                      {p.situation}
+                    </h3>
+
+                    <p className="text-muted text-xs sm:text-sm leading-relaxed mb-6">
+                      {p.summary}
+                    </p>
                   </div>
 
-                  {/* Right Column: Key Deliverables Included */}
-                  <div className="lg:col-span-7 bg-paper p-6 sm:p-8 rounded-[22px] border border-rule">
-                    <span className="label text-signal font-semibold text-xs block mb-4">
-                      Tangible Deliverables Included
+                  <div className="pt-4 border-t border-rule flex items-center justify-between text-xs font-mono">
+                    <span className="text-muted">
+                      Recommended: <strong className="text-ink">{p.recommendation}</strong>
                     </span>
-                    <ul className="space-y-3.5">
-                      {s.deliverables.map((item, dIdx) => (
-                        <li key={dIdx} className="flex gap-3 items-start text-xs sm:text-sm text-ink-soft leading-relaxed">
-                          <span className="w-4 h-4 rounded-full bg-signal/10 text-signal flex items-center justify-center shrink-0 mt-0.5 font-bold text-[10px]">
-                            ✓
-                          </span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <a
+                      href="#packages-comparison"
+                      className="text-signal hover:underline inline-flex items-center gap-1 font-semibold"
+                    >
+                      <span>View Scope</span>
+                      <span>→</span>
+                    </a>
                   </div>
                 </div>
               </Reveal>
             ))}
           </div>
+
+          <div className="mt-8 p-5 rounded-2xl bg-paper border border-rule text-xs font-mono text-muted max-w-4xl mx-auto flex items-start gap-3">
+            <span className="text-signal text-base shrink-0">💡</span>
+            <p className="mb-0 leading-relaxed">
+              <strong>Planning a website redesign?</strong> We audit your existing website’s performance, keyword rankings, and URL structure first to ensure guaranteed 1:1 SEO ranking preservation. We decline patching fragile legacy code, but we execute smooth, flawless modernizations into fast React.
+            </p>
+          </div>
         </Shell>
       </section>
 
-      {/* ── Pricing & Buying Decision Guide (Master Commercial BOFU Section) ── */}
-      <section className="py-20 sm:py-28 bg-paper-sunken border-b border-rule scroll-mt-24" id="pricing-guide">
+      {/* ── 03. Three Packages Side-by-Side Comparison ─────────────────── */}
+      <section className="py-20 sm:py-28 bg-paper border-b border-rule scroll-mt-24" id="packages-comparison">
         <Shell>
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="label text-signal font-semibold block mb-2.5">
-                Pricing &amp; Buying-Decision Guide
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
-                Transparent website design packages &amp; costs.
+              <span className="card-tag mb-3">THREE PROVEN OFFERS</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
+                Choose the right website for your business.
               </h2>
               <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
-                Whether evaluating <strong>website design cost for small business</strong>, comparing <strong>professional website design packages</strong>, or replacing hourly developer rates with predictable fixed sprints, here is our 100% transparent pricing structure.
+                Whether you need a focused landing page, a complete business website, or an online store, we have a clear, fixed-price starting point.
               </p>
 
-              {/* Dynamic Currency & Region Switcher */}
-              <div className="mt-8 inline-flex items-center gap-3 p-1.5 sm:px-4 sm:py-2 rounded-full bg-paper border border-rule-strong shadow-xs">
+              {/* Currency & Region Switcher */}
+              <div className="mt-8 inline-flex items-center gap-3 p-1.5 sm:px-4 sm:py-2 rounded-full bg-paper-raised border border-rule-strong shadow-xs">
                 <span className="text-xs font-mono text-muted flex items-center gap-1.5">
                   <span className="text-base">{region.flag}</span>
-                  <span className="hidden sm:inline">Pricing localized for:</span>
+                  <span className="hidden sm:inline">Indicative pricing currency:</span>
                 </span>
                 <select
                   aria-label="Select pricing currency"
@@ -496,26 +537,23 @@ export default function Services({ onBook }: { onBook: () => void }) {
             </div>
           </Reveal>
 
-          {/* 3 Core Fixed-Price Packages */}
-          <div className="grid lg:grid-cols-3 gap-8 mb-20">
-            {PRICING_PACKAGES.map((pkg, idx) => {
-              const packagePrice =
-                pkg.id === 'starter'
+          {/* Three Packages Cards */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+            {SERVICE_PACKAGES.map((pkg, idx) => {
+              const indicativePrice =
+                pkg.id === 'single-page'
                   ? region.pricing.starter
-                  : pkg.id === 'growth'
+                  : pkg.id === 'business-website'
                   ? region.pricing.growth
                   : region.pricing.bespoke;
 
-              const packageSubtext = isInternational
-                ? `${region.currencyCode} · Direct Founder Sprint`
-                : pkg.priceUSD;
-
               return (
-                <Reveal key={pkg.name} delay={idx * 80}>
+                <Reveal key={pkg.id} delay={idx * 60}>
                   <div
-                    className={`p-8 sm:p-10 rounded-[28px] h-full flex flex-col justify-between transition-all ${
+                    id={pkg.id}
+                    className={`p-8 sm:p-10 rounded-[28px] h-full flex flex-col justify-between transition-all scroll-mt-28 ${
                       pkg.popular
-                        ? 'bg-paper-raised border-2 border-signal relative shadow-xl'
+                        ? 'bg-paper-raised border-2 border-signal relative shadow-xl ring-4 ring-signal/5'
                         : 'bg-paper border border-rule hover:border-signal/50 shadow-xs'
                     }`}
                   >
@@ -527,33 +565,42 @@ export default function Services({ onBook }: { onBook: () => void }) {
 
                     <div>
                       <span className="font-mono text-xs uppercase tracking-wider text-muted font-semibold block mb-2">
-                        {pkg.tier}
+                        {pkg.tierNum}
                       </span>
-                      <h3 className="font-display text-2xl sm:text-3xl text-ink font-medium mb-3">
+                      <h3 className="font-display text-2xl sm:text-3xl text-ink font-medium mb-2">
                         {pkg.name}
                       </h3>
-                      <p className="text-xs text-muted mb-6 leading-relaxed">
-                        {pkg.scopeDesc}
+                      <p className="text-xs text-signal font-mono mb-4">{pkg.timeline}</p>
+
+                      <p className="text-muted text-xs sm:text-sm mb-6 leading-relaxed">
+                        {pkg.tagline}
                       </p>
 
                       <div className="mb-6 pb-6 border-b border-rule">
                         <div className="flex items-baseline gap-2">
                           <span className="font-display text-4xl sm:text-5xl font-bold text-ink">
-                            {packagePrice}
+                            {indicativePrice}
                           </span>
-                          <span className="text-xs font-mono text-muted">/ one-time</span>
+                          <span className="text-xs font-mono text-muted">/ starting</span>
                         </div>
-                        <div className="flex items-center justify-between text-xs font-mono text-signal mt-1">
-                          <span>{packageSubtext}</span>
-                          <span className="text-muted">⏱ {pkg.timeline}</span>
-                        </div>
+                        <span className="text-[11px] font-mono text-muted block mt-1">
+                          Exact fixed price confirmed in writing on discovery call
+                        </span>
                       </div>
 
+                      <div className="mb-6 p-3.5 rounded-xl bg-paper-sunken border border-rule text-xs font-mono text-ink-soft">
+                        <strong className="block text-ink mb-1">Ideal For:</strong>
+                        <span>{pkg.idealFor}</span>
+                      </div>
+
+                      <span className="label text-signal font-semibold text-xs block mb-3">
+                        Deliverables Included:
+                      </span>
                       <ul className="space-y-3 text-xs sm:text-sm text-ink/90 font-mono mb-8">
-                        {pkg.features.map((feat, fIdx) => (
-                          <li key={fIdx} className="flex items-start gap-2.5 leading-snug">
+                        {pkg.deliverables.map((item, dIdx) => (
+                          <li key={dIdx} className="flex items-start gap-2.5 leading-snug">
                             <span className="text-signal font-bold">✓</span>
-                            <span>{feat}</span>
+                            <span>{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -561,7 +608,7 @@ export default function Services({ onBook }: { onBook: () => void }) {
 
                     <button
                       type="button"
-                      onClick={onBook}
+                      onClick={handleBooking}
                       className={`w-full py-3.5 rounded-full font-mono text-xs tracking-wider uppercase font-semibold transition-all cursor-pointer text-center ${
                         pkg.popular
                           ? 'bg-signal text-paper hover:bg-ink shadow-md'
@@ -576,125 +623,357 @@ export default function Services({ onBook }: { onBook: () => void }) {
             })}
           </div>
 
-          {/* ── Market Comparison Matrix: Hourly Rate vs Agency vs Uncoded Hub ── */}
+          {/* Reassurance Callout Box */}
           <Reveal>
-            <div className="max-w-4xl mx-auto bg-paper border border-rule rounded-[28px] p-6 sm:p-10 shadow-xs mb-20">
-              <div className="mb-8">
-                <span className="label text-signal font-semibold block mb-1">
-                  Buying Decision Economics
-                </span>
-                <h3 className="font-display text-2xl sm:text-3xl text-ink font-normal">
-                  Website Designer Hourly Rate vs. Fixed-Price Sprint
-                </h3>
-                <p className="text-muted text-xs sm:text-sm mt-2 leading-relaxed">
-                  Why traditional time-and-materials billing hurts clients, and why fixed-scope deliverables deliver guaranteed ROI.
-                </p>
+            <div className="p-6 sm:p-8 rounded-2xl bg-paper-sunken border border-rule max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-xs font-mono">
+              <div className="text-muted leading-relaxed">
+                🛡️ <strong>Get a fixed price for your project:</strong> Your exact price depends on the agreed pages, features, and integrations. We will provide an exact, itemized written quote during your free 20-minute discovery call before you commit to anything.
               </div>
+              <button
+                type="button"
+                onClick={handleBooking}
+                className="btn-primary !py-2.5 !px-5 text-xs rounded-full shrink-0 shadow-xs cursor-pointer"
+              >
+                Request Written Quote →
+              </button>
+            </div>
+          </Reveal>
+        </Shell>
+      </section>
 
-              <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs sm:text-sm border-collapse">
-                  <thead>
-                    <tr className="border-b border-rule bg-paper-sunken text-xs font-mono uppercase tracking-wider text-muted">
-                      <th className="p-4 font-semibold">Model</th>
-                      <th className="p-4 font-semibold">Typical Cost Range</th>
-                      <th className="p-4 font-semibold">Timeline Risk</th>
-                      <th className="p-4 font-semibold">Incentive Alignment</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-rule">
-                    <tr>
-                      <td className="p-4 font-semibold text-ink">Freelancer Hourly Rate</td>
-                      <td className="p-4 font-mono text-muted">
-                        {isInternational
-                          ? `$45 – $100 / hr (${region.currencyCode})`
-                          : '₹1,500 – ₹4,000 / hr ($40–$100/hr)'}
-                      </td>
-                      <td className="p-4 text-muted">High (No hard delivery cap)</td>
-                      <td className="p-4 text-red-600 font-medium">Misaligned: Slower work generates higher bills</td>
-                    </tr>
-                    <tr>
-                      <td className="p-4 font-semibold text-ink">
-                        {isInternational ? `Traditional ${region.name} Agency` : 'Traditional Digital Agency'}
-                      </td>
-                      <td className="p-4 font-mono text-muted">{region.hourlyVsSprint.localAgencyRate}</td>
-                      <td className="p-4 text-muted">{region.hourlyVsSprint.localTimeline}</td>
-                      <td className="p-4 text-amber-600 font-medium">Complex scopes to lock in long-term retainer fees</td>
-                    </tr>
-                    <tr className="bg-signal/5">
-                      <td className="p-4 font-bold text-signal">⚡ Uncoded Hub 7-Day Sprint</td>
-                      <td className="p-4 font-mono font-bold text-signal">
-                        {region.hourlyVsSprint.uncodedHubRate} (Fixed Milestone)
-                      </td>
-                      <td className="p-4 font-bold text-signal">Guaranteed 7 Days (Late means 100% free)</td>
-                      <td className="p-4 text-emerald-700 font-semibold">
-                        100% Aligned: {region.hourlyVsSprint.savings}
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+      {/* ── 04. Our 5-Step Process (From Discovery to Launch) ─────────── */}
+      <section className="py-20 sm:py-28 bg-[#0E0C0A] text-paper relative overflow-hidden border-t border-white/10" id="our-process">
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 w-96 h-96 bg-signal/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+
+        <Shell>
+          <Reveal>
+            <div className="max-w-3xl mb-16">
+              <span className="text-signal font-mono text-xs font-semibold uppercase tracking-wider block mb-3">
+                EXECUTION RIGOR · ZERO BUREAUCRACY
+              </span>
+              <h2 className="font-display text-3xl sm:text-5xl text-paper font-normal tracking-tight mb-4">
+                What happens after you get in touch?
+              </h2>
+              <p className="text-paper/70 text-sm sm:text-base leading-relaxed">
+                We believe in extreme transparency. Here is the exact step-by-step path from your initial inquiry to a fully live, high-performing website.
+              </p>
             </div>
           </Reveal>
 
-          {/* ── Comprehensive Buying & Pricing FAQs (Accordion) ───────── */}
-          <div className="max-w-4xl mx-auto">
-            <Reveal>
-              <div className="text-center max-w-2xl mx-auto mb-12">
-                <span className="label text-signal font-semibold block mb-2">
-                  Transparent Answers
-                </span>
-                <h3 className="font-display text-2xl sm:text-4xl text-ink font-normal">
-                  Common questions on costs, quotations &amp; hiring.
-                </h3>
-              </div>
-            </Reveal>
-
-            <div className="space-y-4">
-              {PRICING_FAQS.map((faq, idx) => {
-                const isOpen = activeFaq === idx;
-                return (
-                  <div
-                    key={idx}
-                    className="p-6 rounded-[20px] bg-paper border border-rule transition-all shadow-xs"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => toggleFaq(idx)}
-                      className="w-full flex items-center justify-between text-left gap-4 cursor-pointer"
-                    >
-                      <h4 className="font-display text-base sm:text-lg text-ink font-medium">
-                        {faq.q}
-                      </h4>
-                      <span className="text-signal text-lg font-mono shrink-0">
-                        {isOpen ? '−' : '+'}
-                      </span>
-                    </button>
-                    {isOpen && (
-                      <p className="text-xs sm:text-sm text-muted mt-4 leading-relaxed pt-4 border-t border-rule">
-                        {faq.a}
-                      </p>
-                    )}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-16">
+            {PROCESS_STEPS.map((step, idx) => (
+              <Reveal key={step.num} delay={idx * 40}>
+                <div className="p-6 rounded-[20px] bg-white/[0.04] border border-white/10 h-full flex flex-col justify-between hover:border-signal/40 transition-colors">
+                  <div>
+                    <span className="text-signal font-mono text-xl font-bold block mb-2">
+                      {step.num}
+                    </span>
+                    <h3 className="text-paper font-display text-lg font-medium mb-1">
+                      {step.title}
+                    </h3>
+                    <span className="text-paper/40 font-mono text-[11px] block mb-3">
+                      {step.duration}
+                    </span>
+                    <p className="text-paper/60 text-xs leading-relaxed">
+                      {step.desc}
+                    </p>
                   </div>
-                );
-              })}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal>
+            <div className="p-8 rounded-[24px] bg-white/[0.06] border border-white/10 max-w-3xl mx-auto text-center">
+              <h3 className="font-display text-2xl text-paper font-normal mb-3">
+                Ready to take Step 01?
+              </h3>
+              <p className="text-paper/70 text-xs sm:text-sm mb-6 leading-relaxed">
+                Book a 20-minute discovery call directly with Deepak &amp; Geetha. No sales decks, no junior reps.
+              </p>
+              <button
+                type="button"
+                onClick={handleBooking}
+                className="btn-primary !py-3.5 !px-8 text-xs rounded-full shadow-lg cursor-pointer"
+              >
+                Schedule Step 01 Discovery Call →
+              </button>
+            </div>
+          </Reveal>
+        </Shell>
+      </section>
+
+      {/* ── 05. Clear Pricing: Fixed Price and 50/50 Terms ────────────── */}
+      <section className="py-20 sm:py-28 bg-paper border-b border-rule" id="pricing-terms">
+        <Shell>
+          <Reveal>
+            <div className="max-w-3xl mb-14">
+              <span className="card-tag mb-3">PAYMENT ARCHITECTURE</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
+                Clear pricing. No surprises.
+              </h2>
+              <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
+                We don’t believe in confusing hourly bills, open-ended time-and-materials contracts, or unexpected charges. Every project starts with a clear discussion about what you need, followed by one fixed written price covering the agreed scope.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="p-6 rounded-[22px] bg-paper-sunken border border-rule">
+              <span className="w-8 h-8 rounded-full bg-signal/10 text-signal flex items-center justify-center font-mono font-bold text-xs mb-4">
+                01
+              </span>
+              <h3 className="font-display text-lg text-ink font-medium mb-2">
+                One Fixed Project Price
+              </h3>
+              <p className="text-muted text-xs leading-relaxed">
+                Know exactly what your website will cost before work begins. One number, agreed in writing.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-[22px] bg-paper-sunken border border-rule">
+              <span className="w-8 h-8 rounded-full bg-signal/10 text-signal flex items-center justify-center font-mono font-bold text-xs mb-4">
+                02
+              </span>
+              <h3 className="font-display text-lg text-ink font-medium mb-2">
+                50% to Get Started
+              </h3>
+              <p className="text-muted text-xs leading-relaxed">
+                Your first payment reserves your dedicated sprint slot in our calendar and initiates asset intake.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-[22px] bg-paper-sunken border border-rule">
+              <span className="w-8 h-8 rounded-full bg-signal/10 text-signal flex items-center justify-center font-mono font-bold text-xs mb-4">
+                03
+              </span>
+              <h3 className="font-display text-lg text-ink font-medium mb-2">
+                50% After Staging Review
+              </h3>
+              <p className="text-muted text-xs leading-relaxed">
+                Pay the remaining balance only upon completion of staging review, prior to public live launch.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-[22px] bg-paper-sunken border border-rule">
+              <span className="w-8 h-8 rounded-full bg-signal/10 text-signal flex items-center justify-center font-mono font-bold text-xs mb-4">
+                04
+              </span>
+              <h3 className="font-display text-lg text-ink font-medium mb-2">
+                No Surprise Additions
+              </h3>
+              <p className="text-muted text-xs leading-relaxed">
+                Any work outside the original scope is quoted separately and only begins with your explicit approval.
+              </p>
             </div>
           </div>
         </Shell>
       </section>
 
-      {/* ── Specialized Industry Silos & Locality Cross-Links ─────────── */}
-      <section className="py-16 bg-paper border-b border-rule">
+      {/* ── 06. Contractual 7-Day Guarantee: On Time or Free ──────────── */}
+      <section className="py-16 bg-paper-sunken border-b border-rule">
+        <Shell>
+          <Reveal>
+            <div className="p-8 sm:p-12 rounded-[28px] bg-paper border-2 border-signal/60 max-w-4xl mx-auto shadow-md">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div>
+                  <span className="px-3 py-1 rounded-full bg-signal text-paper font-mono text-[11px] font-bold uppercase tracking-wider inline-block mb-3">
+                    Contractual Commitment
+                  </span>
+                  <h3 className="font-display text-2xl sm:text-3xl text-ink font-normal">
+                    Our 7-Day Delivery Guarantee: On Time, or 100% Free.
+                  </h3>
+                  <p className="text-muted text-xs sm:text-sm mt-3 max-w-2xl leading-relaxed">
+                    Before we accept your deposit, we establish a binding launch milestone. If Uncoded Hub misses the agreed launch milestone due to our own delay, you receive an immediate <strong>100% refund of your deposit</strong>, and you retain the complete codebase, design files, and platform assets free of charge.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleBooking}
+                  className="btn-primary !py-3.5 !px-6 text-xs rounded-full shrink-0 shadow-xs cursor-pointer self-start md:self-auto"
+                >
+                  Reserve Your Sprint Cohort →
+                </button>
+              </div>
+            </div>
+          </Reveal>
+        </Shell>
+      </section>
+
+      {/* ── 07. Where We Draw the Line (What We Don't Offer) ───────────── */}
+      <section className="py-20 sm:py-28 bg-paper border-b border-rule" id="boundaries">
+        <Shell>
+          <Reveal>
+            <div className="max-w-3xl mb-12">
+              <span className="card-tag mb-3">SELECTIVE SPECIALIZATION</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
+                We're a specialist web studio. Here's where we draw the line.
+              </h2>
+              <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
+                We believe that doing everything makes an agency mediocre at everything. By maintaining strict boundaries, we deliver world-class websites with guaranteed speed and zero bloat.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {BOUNDARIES.map((b, idx) => (
+              <Reveal key={b.title} delay={idx * 30}>
+                <div className="p-6 rounded-[22px] bg-paper-sunken border border-rule h-full flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-5 h-5 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-xs">
+                        ✕
+                      </span>
+                      <h3 className="font-display text-lg text-ink font-medium">
+                        {b.title}
+                      </h3>
+                    </div>
+                    <p className="text-muted text-xs leading-relaxed">
+                      {b.desc}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+
+            <div className="p-6 rounded-[22px] bg-signal/5 border border-signal/20 h-full flex flex-col justify-between">
+              <div>
+                <span className="text-signal font-mono text-xs uppercase font-bold tracking-wider block mb-2">
+                  ⚡ What We Excel At
+                </span>
+                <h3 className="font-display text-lg text-ink font-medium mb-2">
+                  High-Performance Custom Websites
+                </h3>
+                <p className="text-ink-soft text-xs leading-relaxed">
+                  Sub-second mobile speed, editorial design, high-converting enquiry funnels, and 100% clean code ownership.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Shell>
+      </section>
+
+      {/* ── 08. After Launch: Your Website. Your Business. Your Control. ─ */}
+      <section className="py-20 sm:py-28 bg-paper-sunken border-b border-rule" id="after-launch">
+        <Shell>
+          <Reveal>
+            <div className="max-w-3xl mb-12">
+              <span className="card-tag mb-3">CLIENT INDEPENDENCE</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
+                Your Website. Your Business. Your Control.
+              </h2>
+              <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
+                We don’t want you to feel dependent on us just to own and operate your website. You get complete independence from day one.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="p-8 rounded-[24px] bg-paper border border-rule shadow-xs">
+              <span className="text-signal font-mono text-xs font-semibold uppercase tracking-wider block mb-3">
+                01 · Total Ownership
+              </span>
+              <h3 className="font-display text-xl text-ink font-medium mb-3">
+                You Own Your Website
+              </h3>
+              <p className="text-muted text-xs sm:text-sm leading-relaxed">
+                Your domain, hosting account, and complete GitHub repository are registered in your own name. No proprietary platform lock-in, and zero hostage holding.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-[24px] bg-paper border border-rule shadow-xs">
+              <span className="text-signal font-mono text-xs font-semibold uppercase tracking-wider block mb-3">
+                02 · Included Warranty
+              </span>
+              <h3 className="font-display text-xl text-ink font-medium mb-3">
+                30-Day Post-Launch Support
+              </h3>
+              <p className="text-muted text-xs sm:text-sm leading-relaxed">
+                Every project includes 30 days of direct founder support with Deepak &amp; Geetha for bug fixes, adjustments, and team questions.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-[24px] bg-paper border border-rule shadow-xs">
+              <span className="text-signal font-mono text-xs font-semibold uppercase tracking-wider block mb-3">
+                03 · Room to Grow
+              </span>
+              <h3 className="font-display text-xl text-ink font-medium mb-3">
+                Transparent Future Work
+              </h3>
+              <p className="text-muted text-xs sm:text-sm leading-relaxed">
+                Need new pages, features, or integrations later? We quote those as small, transparent mini-sprints. Optional monthly care plans are available for busy founders.
+              </p>
+            </div>
+          </div>
+        </Shell>
+      </section>
+
+      {/* ── 09. Why Uncoded Hub: Direct Senior Execution ───────────────── */}
+      <section className="py-20 sm:py-28 bg-paper border-b border-rule" id="why-uncoded-hub">
+        <Shell>
+          <Reveal>
+            <div className="max-w-3xl mb-14">
+              <span className="card-tag mb-3">BOUTIQUE FOUNDER DELIVERY</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
+                Why Uncoded Hub: Direct senior execution.
+              </h2>
+              <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
+                When you hire Uncoded Hub, you work directly with the two senior founders who personally craft your website.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="p-8 rounded-[26px] bg-paper-sunken border border-rule flex items-start gap-5">
+              <div className="w-14 h-14 rounded-2xl bg-signal/10 border border-signal/20 flex items-center justify-center font-display text-2xl font-bold text-signal shrink-0">
+                D
+              </div>
+              <div>
+                <h3 className="font-display text-xl text-ink font-medium">Deepak</h3>
+                <span className="text-xs font-mono text-signal uppercase tracking-wider block mb-2">
+                  Co-Founder &amp; Technical Architect
+                </span>
+                <p className="text-muted text-xs sm:text-sm leading-relaxed">
+                  Deepak personally engineers your custom React codebase, tunes performance for 99+ Core Web Vitals, sets up edge hosting, and ensures zero bloatware.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-8 rounded-[26px] bg-paper-sunken border border-rule flex items-start gap-5">
+              <div className="w-14 h-14 rounded-2xl bg-signal/10 border border-signal/20 flex items-center justify-center font-display text-2xl font-bold text-signal shrink-0">
+                G
+              </div>
+              <div>
+                <h3 className="font-display text-xl text-ink font-medium">Geetha</h3>
+                <span className="text-xs font-mono text-signal uppercase tracking-wider block mb-2">
+                  Co-Founder &amp; Head of Design
+                </span>
+                <p className="text-muted text-xs sm:text-sm leading-relaxed">
+                  Geetha personally directs your visual brand identity, bespoke typography lockups, palette harmonies, 3 switchable aesthetic themes, and conversion psychology.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-paper border border-rule text-xs font-mono text-muted text-center max-w-2xl mx-auto">
+            ⚡ <strong>Single-Threaded Production:</strong> We accept a maximum of 2 active sprints at any time to guarantee undivided attention and flawless on-time delivery.
+          </div>
+        </Shell>
+      </section>
+
+      {/* ── 10. Supporting Industry & Locality Hubs ───────────────────── */}
+      <section className="py-16 bg-paper-sunken border-b border-rule">
         <Shell>
           <Reveal>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="p-8 rounded-[24px] bg-paper-sunken border border-rule flex flex-col justify-between">
+              <div className="p-8 rounded-[24px] bg-paper border border-rule flex flex-col justify-between">
                 <div>
-                  <span className="card-tag mb-2">50 COMMERCIAL NICHES</span>
+                  <span className="card-tag mb-2">50 INDUSTRY PLATFORMS</span>
                   <h3 className="font-display text-2xl text-ink font-medium">
-                    Industry-Specific Website Solutions
+                    A Website Built Around How Your Business Works
                   </h3>
                   <p className="text-muted text-xs sm:text-sm mt-2 leading-relaxed">
-                    Dental clinics need patient triage; architects need 3D render-to-reality showcases; restaurants need zero-commission table holds. Explore our 50 bespoke industry platforms with live interactive specimens.
+                    Explore our 50 specialized industry platforms featuring 3 switchable visual themes, interactive functional tools, and live working specimens.
                   </p>
                 </div>
                 <div className="mt-6">
@@ -702,20 +981,20 @@ export default function Services({ onBook }: { onBook: () => void }) {
                     to="/web-design/"
                     className="btn-primary !py-2.5 !px-5 text-xs rounded-full inline-flex items-center gap-1.5 shadow-xs"
                   >
-                    <span>Browse 50 Industry Niches</span>
+                    <span>Browse 50 Industry Demonstrations</span>
                     <span>→</span>
                   </Link>
                 </div>
               </div>
 
-              <div className="p-8 rounded-[24px] bg-paper-sunken border border-rule flex flex-col justify-between">
+              <div className="p-8 rounded-[24px] bg-paper border border-rule flex flex-col justify-between">
                 <div>
-                  <span className="card-tag mb-2">LOCAL BENGALURU HUBS</span>
+                  <span className="card-tag mb-2">LOCAL BENGALURU STUDIO</span>
                   <h3 className="font-display text-2xl text-ink font-medium">
-                    Web Design in Bangalore
+                    Web Design Across 100 Bangalore Localities
                   </h3>
                   <p className="text-muted text-xs sm:text-sm mt-2 leading-relaxed">
-                    Targeted commercial sprints across 100 Bangalore localities including Indiranagar, Koramangala, Whitefield, HSR Layout, Jayanagar, and MG Road.
+                    Headquartered in Bengaluru, we offer local studio alignment across Indiranagar, Koramangala, Whitefield, HSR Layout, Jayanagar, and MG Road.
                   </p>
                 </div>
                 <div className="mt-6">
@@ -723,7 +1002,7 @@ export default function Services({ onBook }: { onBook: () => void }) {
                     to="/web-design/bangalore/"
                     className="border border-rule-strong hover:border-signal text-ink hover:text-signal font-mono text-xs py-2.5 px-5 rounded-full transition-colors bg-paper inline-flex items-center gap-1.5"
                   >
-                    <span>Explore 100 Bangalore Localities</span>
+                    <span>Explore Bangalore Local Hub</span>
                     <span>→</span>
                   </Link>
                 </div>
@@ -733,39 +1012,94 @@ export default function Services({ onBook }: { onBook: () => void }) {
         </Shell>
       </section>
 
-      {/* ── Closing Dual-Card CTA ────────────────────────────────────── */}
-      <section className="bg-ink text-paper py-20 border-t border-white/10">
+      {/* ── 11. Frequently Asked Questions ───────────────────────────── */}
+      <section className="py-20 sm:py-28 bg-paper border-b border-rule">
         <Shell>
           <Reveal>
-            <div className="grid md:grid-cols-12 gap-8 items-center bg-white/[0.03] border border-white/10 rounded-[32px] p-8 sm:p-12">
-              <div className="md:col-span-8">
-                <span className="inline-block text-[11px] font-semibold px-3 py-1 rounded-full bg-signal/20 text-signal-bright mb-3">
-                  Direct Founder Discovery
-                </span>
-                <h2 className="font-display text-3xl sm:text-4xl text-paper font-normal leading-tight">
-                  Ready for a website that works as hard as your business?
-                </h2>
-                <p className="text-on-ink-muted text-sm sm:text-base mt-4 leading-relaxed max-w-xl">
-                  Leave the 20-minute discovery call with a fixed written scope, an exact transparent quotation, and a contractual 7-day launch date. No account managers, no junior handoffs.
-                </p>
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <span className="card-tag mb-3">TRANSPARENT ANSWERS</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-muted text-sm sm:text-base mt-3 leading-relaxed">
+                Clear answers on pricing, payment terms, delivery guarantees, and project scopes.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="max-w-4xl mx-auto space-y-4">
+            {SERVICES_FAQS.map((faq, idx) => {
+              const isOpen = activeFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className="p-6 rounded-[20px] bg-paper-sunken border border-rule transition-all shadow-xs"
+                >
+                  <button
+                    type="button"
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full flex items-center justify-between text-left gap-4 cursor-pointer"
+                  >
+                    <h4 className="font-display text-base sm:text-lg text-ink font-medium">
+                      {faq.q}
+                    </h4>
+                    <span className="text-signal text-lg font-mono shrink-0">
+                      {isOpen ? '−' : '+'}
+                    </span>
+                  </button>
+                  {isOpen && (
+                    <p className="text-xs sm:text-sm text-muted mt-4 leading-relaxed pt-4 border-t border-rule font-sans">
+                      {faq.a}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </Shell>
+      </section>
+
+      {/* ── 12. Closing Conversion CTA ───────────────────────────────── */}
+      <section className="py-24 sm:py-32 bg-paper text-center">
+        <Shell>
+          <Reveal>
+            <div className="max-w-3xl mx-auto">
+              <div className="w-14 h-14 rounded-2xl bg-signal/10 text-signal inline-flex items-center justify-center font-mono text-2xl mb-6 border border-signal/20">
+                ⚡
               </div>
-              <div className="md:col-span-4 flex flex-col sm:flex-row md:flex-col gap-3">
+
+              <h2 className="font-display text-4xl sm:text-6xl text-ink font-normal tracking-tight mb-4 leading-tight">
+                Let's work out what your business needs.
+              </h2>
+
+              <p className="text-muted text-base sm:text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
+                Twenty minutes with Deepak and Geetha. Tell us about your business, what you’re trying to achieve, and what you need from your website. You’ll leave with a clear direction, an agreed scope, a fixed price, and a proposed delivery date. Or we’ll tell you honestly if we’re not the right fit.
+              </p>
+
+              <div className="flex flex-wrap items-center justify-center gap-4">
                 <button
                   type="button"
-                  onClick={onBook}
-                  className="bg-signal hover:bg-signal-bright text-paper font-mono text-xs uppercase tracking-wider py-4 px-6 rounded-full transition-colors font-semibold text-center cursor-pointer shadow-md"
+                  onClick={handleBooking}
+                  className="btn-primary !px-9 !py-4 text-sm rounded-full shadow-lg cursor-pointer inline-flex items-center gap-2"
                 >
-                  Book Discovery Call →
+                  <span>Book Your Free 20-Minute Discovery Call</span>
+                  <span>→</span>
                 </button>
+
                 <a
-                  href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha,%20I%20reviewed%20your%20services%20and%20want%20to%20request%20a%20fixed%20quotation%20for%20my%20business."
+                  href="https://wa.me/918660819023?text=Hi%20Deepak%20and%20Geetha,%20I'd%20like%20to%20discuss%20a%20website%20project%20for%20my%20business."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border border-white/20 hover:border-white text-paper font-mono text-xs uppercase tracking-wider py-4 px-6 rounded-full transition-colors text-center"
+                  className="px-8 py-4 rounded-full border border-rule-strong hover:border-ink text-ink font-mono text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 bg-paper-raised"
                 >
-                  WhatsApp Direct Desk ↗
+                  <span>WhatsApp Co-Founders Directly</span>
+                  <span>↗</span>
                 </a>
               </div>
+
+              <p className="text-muted font-mono text-xs mt-6">
+                Direct phone: +91 86608 19023 · 100% Free Consultation · Zero Obligation
+              </p>
             </div>
           </Reveal>
         </Shell>

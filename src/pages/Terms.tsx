@@ -22,11 +22,11 @@ const TERMS_SECTIONS = [
   },
   {
     index: '02',
-    title: 'The 50% "Late means free" delivery guarantee',
+    title: 'The contractual "On time, or 100% free" delivery guarantee',
     tag: 'Guarantee & accountability',
     points: [
       'We commit to delivering your fully functional staging website within seven working days from the scheduled kickoff date.',
-      'If Uncoded Hub misses the agreed launch milestone due to our own delay, we immediately apply a 50% discount to your final invoice.',
+      'If Uncoded Hub misses the agreed launch milestone due to our own delay, you receive an immediate 100% refund of your deposit, and you retain the complete codebase, design files, and assets free of charge.',
       'Delays caused by missing client assets (e.g. text copy, high-resolution photography, domain DNS access, payment gateway approvals) or client-requested mid-sprint scope changes pause the sprint timer until provided.',
     ],
   },
