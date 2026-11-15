@@ -1,553 +1,555 @@
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
-import { FaqAccordion } from '../components/ui/faq-accordion';
-import { LogoMark } from '../components/Logo';
+import { Reveal, Shell } from '../components/primitives';
 import { LeadMagnetForm } from '../components/ui/LeadMagnetForm';
-import { FloatingLeadMagnetBanner } from '../components/ui/FloatingLeadMagnetBanner';
-import { SpeedRoiCalculator } from '../components/ui/SpeedRoiCalculator';
-import {
-  IconTimer,
-  IconGauge,
-  IconLayers,
-  IconContrast,
-  IconKeyboard,
-  IconCode,
-} from '../components/Glyphs';
-import { PROJECTS as DEMO_SPECIMENS } from '../data/projects';
-
-const FEATURED_WEB_DESIGN_NICHES = [
-  {
-    key: 'interior-designers',
-    name: 'Interior Designers & Architects',
-    icon: '📐',
-    hook: '3D render vs built photo comparisons, sub-0.8s mobile gallery LCP, and transparent fee estimators.',
-    stat: '0.8s LCP',
-  },
-  {
-    key: 'dental-clinics',
-    name: 'Dental Clinics & Aesthetic Centers',
-    icon: '🦷',
-    hook: 'Anxious patient UX, 2-tap appointment booking, smile makeover sliders, and procedure fee transparency.',
-    stat: '2-Tap Booking',
-  },
-  {
-    key: 'real-estate',
-    name: 'Luxury Real Estate Brokers',
-    icon: '🏛️',
-    hook: 'Exclusive property walkthroughs, floorplan viewers, high-net-worth lead funnels, and RERA compliance proof.',
-    stat: 'HNW Funnels',
-  },
-  {
-    key: 'doctor-specialist',
-    name: 'Super-Specialist Doctors & Surgeons',
-    icon: '🩺',
-    hook: 'Second-opinion tele-consult intake, surgical credential portfolios, hospital OT privileges, and ethical NMC proof.',
-    stat: 'Ethical Medical UX',
-  },
-  {
-    key: 'wedding-photographers',
-    name: 'Wedding Photographers & Filmmakers',
-    icon: '📷',
-    hook: 'Cinematic 4K video reel streaming without mobile lag, package tiering, and date availability calendars.',
-    stat: 'Sub-second 4K Reels',
-  },
-  {
-    key: 'home-renovation',
-    name: 'Home Renovation & Modular Kitchens',
-    icon: '🔨',
-    hook: 'Interactive modular kitchen price estimators, factory CNC virtual tours, and apartment society landing pages.',
-    stat: 'Instant Estimators',
-  },
-  {
-    key: 'clinic-polyclinic',
-    name: 'Multi-Specialty Polyclinics',
-    icon: '🏥',
-    hook: 'Multi-doctor OPD matrices, departmental symptom triage, one-tap emergency routing, and in-house diagnostics.',
-    stat: 'OPD Scheduling',
-  },
-  {
-    key: 'healthcare-diagnostics',
-    name: 'Pathology & Diagnostic Labs',
-    icon: '🔬',
-    hook: 'NABL accreditation authority, home blood sample collection booking, and instant report download portals.',
-    stat: 'Home Collection',
-  },
-  {
-    key: 'business-portfolio',
-    name: 'Corporate Advisory & Legal Portfolios',
-    icon: '💼',
-    hook: 'Editorial Swiss typography, partner leadership credentials, confidential case studies, and RFP intake funnels.',
-    stat: 'Enterprise RFP',
-  },
-  {
-    key: 'coaches-consultants',
-    name: 'High-Ticket Coaches & Consultants',
-    icon: '🎯',
-    hook: 'Application-only discovery funnels, anti-guru proof, quantified ROI case studies, and book launch hubs.',
-    stat: 'High-Ticket Intake',
-  },
-  {
-    key: 'educational-academy',
-    name: 'Educational Academies & Institutes',
-    icon: '🎓',
-    hook: 'Curriculum explorers, exam ranker showcases, batch countdown funnels, and zero-crash admission servers.',
-    stat: 'Admissions Engine',
-  },
-  {
-    key: 'spa-wellness',
-    name: 'Luxury Spas & Wellness Retreats',
-    icon: '🌿',
-    hook: 'Sensory treatment ritual menus, couple package calculators, and instant WhatsApp concierge booking.',
-    stat: 'Ritual Portals',
-  },
-];
-
+import { PROJECTS, Project } from '../data/projects';
 
 /* ═══════════════════════════════════════════════════════════════════
    UNCODED HUB — HOMEPAGE
-   Structure inspired by Cloaked's high-contrast, editorial SaaS architecture:
-   - 50/50 Asymmetric Hero with Interactive Audit Pill & Live Health Meter
-   - Cinematic Dark Chapter: "The Agency Reality / 3 Traps"
-   - 3-Pillar Solution with Split Interactive Notification Showcase
-   - Credential Verification Strip
-   - High-Voltage Signal Bento Cards (7 Days / 100% / 99+ Speed)
-   - Interactive Live Demo Specimen Showcase
-   - The Better Enquiry Blueprint & Guarantee Terms
-   - Studio Founders (Deepak & Geetha)
-   - Lead Magnet 10-Point Audit
-   - Cloaked-Style Dual-Card Closing CTA Module
+   Customer-focused, grounded, high-trust studio homepage:
+   01 Header: Clean navigation & single booking CTA (in App.tsx)
+   02 Hero: Customer desire, solution, and clear 20-min call CTA
+   03 Trust Strip: 3 clean metrics (7 Days*, 100% Ownership, 2 Founders)
+   04 Customer Problem: Why getting a good website shouldn't be difficult
+   05 The Uncoded Hub Solution: 3 clear customer benefits
+   06 Sample Enquiry Demonstration: Realistic WhatsApp & booking flows
+   07 Featured Demos: 6 diverse industry examples + link to all 50
+   08 How It Works: 3 simple stages + contractual on-time guarantee
+   09 Proof & Engineering Standards: Real tests & genuine work
+   10 Meet the Founders: Deepak & Geetha, authentic story
+   11 Regional Hubs: Bengaluru & Global markets introduction
+   12 Homepage FAQs: 8 essential buying questions
+   13 Free Website Audit: Single, high-value lead magnet
+   14 Final CTA: Book 20-min call or send project brief
    ═══════════════════════════════════════════════════════════════════ */
 
-const TRUST_BAR = [
-  { label: 'Mobile performance', value: '99/100', sub: 'Zero bloatware' },
-  { label: 'Contractual delivery', value: '7 days', sub: 'Late means free' },
-  { label: 'Total ownership', value: '100% yours', sub: 'Zero license lock-in' },
-  { label: 'Senior founders', value: 'Deepak & Geetha', sub: 'No junior hand-off' },
+interface HomeProps {
+  onBook?: () => void;
+}
+
+const FEATURED_DEMO_IDS = [
+  'interior-design',
+  'dental-clinic',
+  'gym-fitness-club',
+  'financial-advisors',
+  'caterers',
+  'real-estate',
 ];
 
-const AGENCY_TRAPS = [
+const HOMEPAGE_FAQS = [
   {
-    id: 'junior-dev',
-    tag: 'The bait & switch',
-    title: 'The junior dev hand-off',
-    description:
-      'Agency founders pitch you with charisma, polished case studies, and corporate charisma. The moment the contract is signed, the senior team vanishes. Your project is assigned to a 22-year-old intern who is juggling eight client accounts simultaneously.',
-    contrast: 'With Uncoded Hub: Geetha designs, Deepak builds. The people on the discovery call build your website.',
-    badge: 'Intern assigned',
-    badgeTone: 'signal',
+    q: 'What does Uncoded Hub build?',
+    a: 'We design and build bespoke, high-converting websites for ambitious service businesses, medical clinics, architecture practices, and growing companies in India and around the world. Every site is custom hand-coded using modern React with tailored copywriting, mobile-first design, and conversion-focused booking flows.',
   },
   {
-    id: 'timeline-creep',
-    tag: 'The schedule delay',
-    title: 'The 4-month timeline creep',
-    description:
-      'A standard 5-page site stretches into endless review cycles, missing launch deadlines, and vague excuses about "internal bandwidth." You spend months chasing updates instead of closing high-value clients.',
-    contrast: 'With Uncoded Hub: Exactly 7 working days. If we miss our agreed deadline, the entire build is 100% free.',
-    badge: 'Delayed 12 weeks',
-    badgeTone: 'warning',
+    q: 'How much does a website cost?',
+    a: 'We offer transparent, fixed pricing published upfront. In India, our sprints range from ₹35,000 for single-page flagships to ₹85,000 for full custom business platforms. For international clients, sprints range from $1,800 to $3,800 USD (or equivalent in GBP, EUR, AED, AUD). There are no hidden fees, hourly surprises, or monthly maintenance lock-ins.',
   },
   {
-    id: 'plugin-patchwork',
-    tag: 'The maintenance trap',
-    title: 'The WordPress plugin patchwork',
-    description:
-      'Agencies assemble 35+ third-party WordPress plugins that fight each other, slow mobile load times to 6+ seconds, and break every time an update runs. Then they lock you into a ₹25,000/month "maintenance contract" just to fix bugs.',
-    contrast: 'With Uncoded Hub: Handcrafted React & Vite architecture. 0.8s load times. Zero plugins, zero security patching.',
-    badge: '38 active plugins',
-    badgeTone: 'error',
-  },
-];
-
-const THREE_PILLARS = [
-  {
-    num: '01',
-    title: 'Turnkey copywriting & positioning',
-    p: 'We write your entire site from a single 20-minute discovery call. No questionnaires, no blank screens, and no generic marketing fluff. We articulate your exact competitive edge.',
-    pill: 'Zero blank screens',
+    q: 'How does the seven-working-day process work?',
+    a: 'Once we align on your scope and receive your core assets on Day 1, your sprint begins. Day 1 is strategic planning and architecture. Days 2–5 are visual design and custom engineering with daily 5-minute video updates. Days 6–7 are cross-device testing, speed audits, and live launch. You work directly with founders Deepak and Geetha throughout.',
   },
   {
-    num: '02',
-    title: 'Zero-bloat speed architecture',
-    p: 'Engineered with clean React, Vite, and modern semantic CSS. Scores 99+ on Google Lighthouse and loads in under 1 second on mobile 4G anywhere in the world.',
-    pill: 'Sub-1.0s mobile load',
+    q: 'What do you need from me to get started?',
+    a: 'Very little. We start with a focused 20-minute discovery call to understand your business, ideal customers, and goals. After that, we just need your logo, high-resolution photos (or we source curated imagery), service details, and domain access. We handle the copywriting, layout, and technical build.',
   },
   {
-    num: '03',
-    title: '7-day contractual guarantee',
-    p: 'A fixed timeline, a fixed price agreed in writing, and a contractual promise: if we are late by even one day, the build is 100% free and you keep everything.',
-    pill: 'Late means free',
+    q: 'Who will actually work on my website?',
+    a: 'Deepak and Geetha directly. Geetha handles the design direction, visual typography, and messaging. Deepak handles the engineering, speed architecture, and interactive features. We do not use account managers, junior temps, or outsourced agencies.',
+  },
+  {
+    q: 'Who owns my website and code?',
+    a: 'You do — 100%. Upon completion, we hand over the full clean source code, connect your custom domain, and transfer all assets. You own everything outright with zero vendor lock-in and zero hostage retainers.',
+  },
+  {
+    q: 'Do you work with businesses outside India?',
+    a: 'Yes. Over half of our work is for international clients across the US, UK, Australia, UAE, Canada, and Europe. We invoice in your native currency (USD, GBP, EUR, AED, AUD) and communicate asynchronously via Loom video updates and scheduled meetings in your timezone.',
+  },
+  {
+    q: 'What happens after launch?',
+    a: 'Every project includes 30 days of direct founder support for any minor tweaks, questions, or bug fixes. Because our code is clean and standardized, any competent developer in the world can maintain it, or you can hire us for ongoing feature sprints.',
   },
 ];
 
+export default function Home({ onBook }: HomeProps) {
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
-
-const BUDGET = [
-  { metric: 'Largest Contentful Paint', target: 'Under 1.5s on a 4G connection', value: '<1.5s', Icon: IconTimer },
-  { metric: 'Lighthouse performance', target: '90 or above on mobile', value: '99+', Icon: IconGauge },
-  { metric: 'Cumulative Layout Shift', target: 'Under 0.1', value: '<0.05', Icon: IconLayers },
-  { metric: 'Colour contrast', target: 'WCAG AA on every text style', value: 'AA', Icon: IconContrast },
-  { metric: 'Keyboard access', target: 'Every control reachable and visibly focused', value: '100%', Icon: IconKeyboard },
-  { metric: 'Third-party scripts', target: 'None beyond analytics, unless you ask', value: '0', Icon: IconCode },
-];
-
-export default function Home({ onBook }: { onBook: () => void }) {
-  const [activeTrap, setActiveTrap] = useState<string | null>('junior-dev');
-  const [activeDemoIdx, setActiveDemoIdx] = useState(0);
-  const [activeThemeIdx, setActiveThemeIdx] = useState(0);
-  const [rightThemeOverride, setRightThemeOverride] = useState<number | null>(null);
-
-  const [isDemoPaused, setIsDemoPaused] = useState(false);
-  const [isDemoInView, setIsDemoInView] = useState(false);
-
-  useEffect(() => {
-    const el = document.getElementById('live-demos');
-    if (!el || typeof IntersectionObserver === 'undefined') {
-      return;
+  const handleBooking = () => {
+    if (onBook) {
+      onBook();
+    } else {
+      window.location.href = '/contact/#book';
     }
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        setIsDemoInView(entry.isIntersecting);
-      },
-      { rootMargin: '150px' }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
+  };
+
+  const toggleFaq = (idx: number) => {
+    setActiveFaq(activeFaq === idx ? null : idx);
+  };
+
+  // 6 Featured Demos for the clean homepage grid
+  const featuredDemos = useMemo(() => {
+    return FEATURED_DEMO_IDS.map((id) => PROJECTS.find((p) => p.id === id)).filter(
+      Boolean
+    ) as Project[];
   }, []);
 
-  /* Auto-rotate Live Demo Specimens: 6s per demo, exactly 2s per theme change */
-  useEffect(() => {
-    if (isDemoPaused || !isDemoInView) return;
-    const timer = setInterval(() => {
-      setActiveThemeIdx((prevTheme) => {
-        if (prevTheme < 2) {
-          // Advance to next theme after 2 seconds
-          return prevTheme + 1;
-        } else {
-          // After 3 themes (6 seconds total), advance to next demo and reset to theme 0
-          setActiveDemoIdx((prevDemo) => (prevDemo + 1) % DEMO_SPECIMENS.length);
-          setRightThemeOverride(null);
-          return 0;
-        }
-      });
-    }, 2000);
-    return () => clearInterval(timer);
-  }, [isDemoPaused, isDemoInView]);
-
-  const nextDemo = () => {
-    setActiveDemoIdx((prev) => (prev + 1) % DEMO_SPECIMENS.length);
-    setActiveThemeIdx(0);
-    setRightThemeOverride(null);
-  };
-
-  const prevDemo = () => {
-    setActiveDemoIdx((prev) => (prev - 1 + DEMO_SPECIMENS.length) % DEMO_SPECIMENS.length);
-    setActiveThemeIdx(0);
-    setRightThemeOverride(null);
-  };
-
-  const selectDemo = (idx: number) => {
-    setActiveDemoIdx(idx);
-    setActiveThemeIdx(0);
-    setRightThemeOverride(null);
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Uncoded Hub',
+    description:
+      'Custom websites built for ambitious businesses in India and around the world. Direct senior founder engineering by Deepak & Geetha in a 7-working-day sprint.',
+    url: 'https://uncodedhub.com/',
+    telephone: '+91 86608 19023',
+    priceRange: '₹35,000 - ₹85,000 / $1,800 - $3,800 USD',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Bengaluru',
+      addressRegion: 'Karnataka',
+      addressCountry: 'IN',
+    },
+    founder: [
+      {
+        '@type': 'Person',
+        name: 'Deepak Ravi',
+        jobTitle: 'Co-Founder & Web Systems Architect',
+      },
+      {
+        '@type': 'Person',
+        name: 'Geetha',
+        jobTitle: 'Co-Founder & Creative Director',
+      },
+    ],
   };
 
   return (
     <>
       <Helmet>
-        <title>Website Design in 7 Days | Custom Sites — Uncoded Hub</title>
+        <title>Uncoded Hub — Custom Websites Built for Businesses That Think Bigger</title>
         <meta
           name="description"
-          content="Custom high-performance business websites designed and launched in 7 days. Zero WordPress bloat, sub-second speed, built-in SEO. Late means 100% free."
+          content="We build custom websites for ambitious businesses in India and around the world. Work directly with founders Deepak & Geetha in a focused 7-working-day sprint. On time or 100% free."
         />
         <link rel="canonical" href="https://uncodedhub.com/" />
+        <meta property="og:title" content="Uncoded Hub — Custom Websites Built for Businesses That Think Bigger" />
+        <meta
+          property="og:description"
+          content="Work directly with founders Deepak & Geetha. Fixed scope, fixed price, and a focused 7-working-day build. Explore 50 live industry demos."
+        />
+        <meta property="og:url" content="https://uncodedhub.com/" />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      {/* ── Hero Section (Cloaked 50/50 Layout) ─────────────────── */}
-      <section id="hero" className="relative overflow-hidden pt-10 md:pt-16 pb-16 md:pb-24">
-        {/* Subtle warm ambient tint */}
-        <div
-          aria-hidden="true"
-          className="absolute top-0 right-1/4 w-[38rem] h-[38rem] rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(199, 7, 75, 0.06) 0%, transparent 70%)' }}
-        />
+      {/* ── 01. Hero Section ─────────────────────────────────────────── */}
+      <section className="pt-12 sm:pt-20 pb-16 sm:pb-24 bg-paper relative overflow-hidden border-b border-rule">
+        <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-signal/5 rounded-full blur-[140px] pointer-events-none -z-10" />
 
         <Shell>
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-            {/* Left Column: Heading, Subhead, Primary Booking CTA */}
-            <div className="lg:col-span-6 flex flex-col justify-center">
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-paper-raised border border-rule-strong text-ink text-xs font-medium mb-6 shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-signal" aria-hidden="true" />
-                  <span className="font-semibold text-signal">7-day sprint builds</span>
-                  <span className="text-muted">·</span>
-                  <span className="text-muted">Zero bloatware</span>
-                </div>
+          <Reveal>
+            <div className="max-w-4xl">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="card-tag">FOUNDER-LED WEB STUDIO</span>
+                <span className="text-xs font-mono text-muted">·</span>
+                <span className="text-xs font-mono text-signal">Deepak &amp; Geetha Direct Delivery</span>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-ink leading-[1.08] tracking-tight font-normal">
-                Let your website <br />
-                <em className="italic hero-signal font-normal">sell before you do.</em>
+              <h1 className="font-display text-4xl sm:text-6xl md:text-7xl text-ink font-normal tracking-tight leading-[1.08] mb-6">
+                Let your website sell <br />
+                <span className="text-signal italic font-serif">before you do.</span>
               </h1>
 
-              <p className="text-lead text-muted max-w-lg mt-6 leading-relaxed">
-                You can't close clients who bounce before your page finishes loading. We build
-                custom, high-conversion websites for high-ticket local businesses in seven working days.
-                On time, or the build is free.
+              <p className="text-base sm:text-xl text-muted font-normal leading-relaxed max-w-3xl mb-8">
+                Your website should build trust, explain why customers should choose you, and make
+                it easy for them to get in touch. We build custom websites for ambitious businesses
+                in India and around the world. Work directly with founders Deepak and Geetha, with a
+                clear scope, fixed price, and a focused seven-working-day build for projects that fit
+                the sprint.
               </p>
 
-              {/* High-Converting Bespoke 20-Min Discovery Call CTA */}
-              <div className="mt-8 flex flex-col items-start gap-4">
+              <div className="flex flex-wrap items-center gap-4 mb-4">
                 <button
-                  onClick={onBook}
-                  className="btn-hero-cta group"
+                  type="button"
+                  onClick={handleBooking}
+                  className="btn-primary !px-8 !py-4 text-xs sm:text-sm rounded-full shadow-md cursor-pointer inline-flex items-center gap-2"
                 >
-                  <span className="flex items-center gap-2.5">
-                    <span className="w-2 h-2 rounded-full bg-paper/90" aria-hidden="true" />
-                    <span>Book Your Free 20-Min Call</span>
-                  </span>
-                  <span className="btn-hero-cta-badge" aria-hidden="true">
-                    →
-                  </span>
+                  <span>Book Your Free 20-Minute Call</span>
+                  <span>→</span>
                 </button>
 
-                {/* Direct Founder Trust Indicators */}
-                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[0.8125rem] text-muted">
-                  <span className="flex items-center gap-1.5">
-                    <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
-                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
-                    </svg>
-                    <span>Direct call with Deepak &amp; Geetha</span>
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
-                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
-                    </svg>
-                    <span>No sales pitch · Pure diagnosis</span>
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <svg className="w-3.5 h-3.5 text-signal shrink-0" viewBox="0 0 16 16" fill="currentColor">
-                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
-                    </svg>
-                    <span>Late-means-free guarantee</span>
-                  </span>
-                </div>
-
-                {/* 6 Demo Site as Link Button at Bottom */}
-                <div className="pt-2">
-                  <Link
-                    to="/portfolio/"
-                    className="group inline-flex items-center gap-2 text-xs sm:text-sm font-mono text-ink-soft hover:text-signal transition-colors py-1.5 px-3.5 rounded-full hover:bg-paper-raised border border-rule/60 hover:border-signal/40 shadow-2xs"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
-                    <span>Prefer to see live builds first? Inspect all 50 live demos</span>
-                    <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-signal" aria-hidden="true">↗</span>
-                  </Link>
-                </div>
+                <a
+                  href="#demos"
+                  className="px-6 py-4 rounded-full border border-rule hover:border-signal text-ink font-mono text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 bg-paper-sunken"
+                >
+                  <span>Explore Our 50 Live Demos</span>
+                  <span>↓</span>
+                </a>
               </div>
-            </div>
 
-            {/* Right Column: Cloaked-Style Squircle Hero Card with Conversion Health Meter */}
-            <div className="lg:col-span-6">
-              <div>
-                <div className="relative group">
-                  {/* Outer Ambient Glow */}
-                  <div
-                    aria-hidden="true"
-                    className="absolute -inset-2 rounded-[32px] opacity-60 group-hover:opacity-90 transition-opacity duration-700 pointer-events-none"
-                    style={{ background: 'radial-gradient(circle at 20% 80%, rgba(199, 7, 75, 0.18) 0%, transparent 70%)' }}
-                  />
+              <p className="text-xs font-mono text-muted mb-10">
+                No sales pitch. Just an honest conversation about what your business needs.
+              </p>
 
-                  {/* Main Rounded Squircle Card */}
-                  <div className="relative bg-paper-raised border border-rule-strong rounded-[28px] overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.09)] transition-transform duration-500 ease-out group-hover:scale-[1.01]">
-                    {/* Browser chrome top bar */}
-                    <div className="bg-ink px-4 py-2.5 flex items-center justify-between border-b border-white/10">
-                      <div className="flex items-center gap-1.5" aria-hidden="true">
-                        <span className="w-2.5 h-2.5 rounded-full bg-signal" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
-                        <span className="font-mono text-[11px] text-white/70">
-                          Client Specimen · Verified 7-Day Sprint Build
-                        </span>
-                      </div>
-                      <span className="text-[10px] font-mono text-signal-bright font-semibold">7-DAY BUILD</span>
-                    </div>
+              {/* 3 Clean Proof Metrics */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-rule">
+                <div className="p-4 rounded-2xl bg-paper-sunken border border-rule">
+                  <span className="font-display text-3xl text-signal font-normal block mb-1">
+                    7 Working Days*
+                  </span>
+                  <span className="text-xs text-muted font-mono leading-relaxed block">
+                    *For projects that fit the agreed sprint scope. On time or 100% free.
+                  </span>
+                </div>
 
-                    {/* Visual Media with Conversion Health Meter Overlay */}
-                    <div className="relative aspect-[16/11] overflow-hidden bg-paper">
-                      <picture>
-                        <source media="(max-width: 767px)" srcSet="/hero-section-mobile.webp" />
-                        <img
-                          src="/hero-section.webp"
-                          alt="Business owner reviewing his high-converting custom website delivered by Uncoded Hub"
-                          width={1200}
-                          height={800}
-                          loading="eager"
-                          fetchPriority="high"
-                          decoding="async"
-                          className="w-full h-full object-cover object-[70%_25%]"
-                        />
-                      </picture>
+                <div className="p-4 rounded-2xl bg-paper-sunken border border-rule">
+                  <span className="font-display text-3xl text-ink font-normal block mb-1">
+                    100% Client Ownership
+                  </span>
+                  <span className="text-xs text-muted font-mono leading-relaxed block">
+                    You own all clean code, domain records, and Figma assets outright.
+                  </span>
+                </div>
 
-                      {/* Gradient scrim for overlay contrast */}
-                      <div
-                        aria-hidden="true"
-                        className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent pointer-events-none"
-                      />
-
-                      {/* Floating Cloaked-Style "Conversion Standard" Gauge Meter */}
-                      <div className="absolute top-4 right-4 bg-ink/95 border border-white/15 p-3 rounded-[16px] text-paper shadow-xl max-w-[200px]">
-                        <div className="flex items-center justify-between pb-1 mb-2 border-b border-white/10">
-                          <span className="text-[10px] font-semibold text-white/70">Studio standard</span>
-                          <span className="text-[10px] font-semibold text-emerald-400">99 / 100</span>
-                        </div>
-                        {/* Gauge Arc */}
-                        <div className="relative w-full h-12 flex items-center justify-center">
-                          <svg className="w-24 h-12 overflow-visible" viewBox="0 0 100 50">
-                            <path
-                              d="M 10 50 A 40 40 0 0 1 90 50"
-                              fill="none"
-                              stroke="rgba(255,255,255,0.15)"
-                              strokeWidth="8"
-                              strokeLinecap="round"
-                            />
-                            <path
-                              d="M 10 50 A 40 40 0 0 1 88 45"
-                              fill="none"
-                              stroke="url(#gaugeGrad)"
-                              strokeWidth="8"
-                              strokeLinecap="round"
-                            />
-                            <defs>
-                              <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stopColor="#c7074b" />
-                                <stop offset="70%" stopColor="#10b981" />
-                                <stop offset="100%" stopColor="#34d399" />
-                              </linearGradient>
-                            </defs>
-                          </svg>
-                          <div className="absolute bottom-0 text-center">
-                            <span className="text-xs font-mono font-bold text-white">Pre-Sold Standard</span>
-                          </div>
-                        </div>
-                        <p className="text-[9px] text-white/60 text-center mt-1">Contractually verified on mobile 4G</p>
-                      </div>
-
-                      {/* Floating Bottom Metric Bar */}
-                      <div className="absolute bottom-4 left-4 right-4 bg-paper/96 border border-rule-strong/80 p-3 rounded-[14px] shadow-lg flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <span className="w-8 h-8 rounded-full bg-signal-wash text-signal flex items-center justify-center shrink-0">
-                            <IconGauge className="w-4 h-4" />
-                          </span>
-                          <div>
-                            <p className="text-xs font-semibold text-ink leading-tight">Lighthouse 99 · 0.8s Load Speed</p>
-                            <p className="text-[11px] text-muted">Zero bloatware · Handcrafted React & Vite</p>
-                          </div>
-                        </div>
-                        <span className="label text-[10px] bg-signal text-paper px-2.5 py-1 rounded-full font-semibold">
-                          VERIFIED
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Bottom editorial info strip */}
-                    <div className="px-5 py-3 bg-paper border-t border-rule flex items-center justify-between text-xs">
-                      <span className="text-muted flex items-center gap-1.5">
-                        <IconTimer className="w-3.5 h-3.5 text-signal" />
-                        <span>Delivery: <strong className="text-ink font-medium">7 working days</strong></span>
-                      </span>
-                      <span className="text-muted">
-                        Guarantee: <strong className="text-signal font-medium">Late means free</strong>
-                      </span>
-                    </div>
-                  </div>
+                <div className="p-4 rounded-2xl bg-paper-sunken border border-rule">
+                  <span className="font-display text-3xl text-ink font-normal block mb-1">
+                    2 Founders
+                  </span>
+                  <span className="text-xs text-muted font-mono leading-relaxed block">
+                    Deepak &amp; Geetha personally design and code your project. Zero junior handoffs.
+                  </span>
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
+        </Shell>
+      </section>
 
-          {/* 4-Pillar Trust Strip under Hero */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14">
-            {TRUST_BAR.map((t) => (
-              <div key={t.label} className="bg-paper-raised p-4 rounded-[16px] border border-rule-strong shadow-xs flex flex-col justify-between">
-                <span className="text-[11px] font-semibold text-muted">{t.label}</span>
-                <div className="font-display text-xl text-ink font-medium mt-1.5">{t.value}</div>
-                <div className="text-xs text-muted mt-0.5">{t.sub}</div>
+      {/* ── 02. The Customer Problem (Agency Reality) ────────────────── */}
+      <section className="py-20 sm:py-28 bg-paper-sunken border-b border-rule">
+        <Shell>
+          <Reveal>
+            <div className="max-w-3xl mb-12">
+              <span className="card-tag mb-3">WHY WE BUILT UNCODED HUB</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight mb-6">
+                Getting a good website shouldn&apos;t be this difficult.
+              </h2>
+              <div className="text-base sm:text-lg text-muted leading-relaxed space-y-4 font-normal">
+                <p>
+                  You&apos;ve probably heard the stories. Projects that take months. Prices that
+                  keep changing. People who sell you the project but disappear when the actual work
+                  begins.
+                </p>
+                <p>
+                  <strong className="text-ink font-medium">That&apos;s not how we work.</strong> You
+                  speak directly with the people building your website. Deepak handles the
+                  engineering. Geetha handles the design. Your scope and price are agreed before work
+                  begins. Your website belongs to you.
+                </p>
+                <p>
+                  No unnecessary hand-offs. No confusing process. Just two people taking
+                  responsibility for your project.
+                </p>
               </div>
-            ))}
+            </div>
+          </Reveal>
+
+          {/* 3 Contrast Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Reveal delay={0.05}>
+              <div className="p-6 sm:p-8 rounded-3xl bg-paper border border-rule h-full flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-mono text-signal block mb-2">01 · Direct Contact</span>
+                  <h3 className="font-display text-xl text-ink font-medium mb-3">
+                    Direct Founder Accountability
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                    You never deal with account executives or junior middlemen. You collaborate
+                    directly with the two senior specialists who write every line of code and design
+                    every screen.
+                  </p>
+                </div>
+                <div className="pt-6 mt-6 border-t border-rule text-xs font-mono text-signal">
+                  ✓ Direct Slack &amp; Loom communication
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <div className="p-6 sm:p-8 rounded-3xl bg-paper border border-rule h-full flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-mono text-signal block mb-2">02 · Fixed Schedule</span>
+                  <h3 className="font-display text-xl text-ink font-medium mb-3">
+                    Fixed 7-Day Sprint Protocol
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                    Instead of dragging your project across 4 months of status calls, we agree on a
+                    tight, fixed scope and deliver your complete website in seven working days.
+                  </p>
+                </div>
+                <div className="pt-6 mt-6 border-t border-rule text-xs font-mono text-signal">
+                  ✓ On time or 100% free guarantee
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <div className="p-6 sm:p-8 rounded-3xl bg-paper border border-rule h-full flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-mono text-signal block mb-2">03 · Zero Lock-In</span>
+                  <h3 className="font-display text-xl text-ink font-medium mb-3">
+                    100% Client Ownership
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                    We don&apos;t hold your digital assets hostage. You receive your complete clean
+                    GitHub repository, domain credentials, and design files with zero monthly maintenance
+                    traps.
+                  </p>
+                </div>
+                <div className="pt-6 mt-6 border-t border-rule text-xs font-mono text-signal">
+                  ✓ Full source code &amp; IP transfer
+                </div>
+              </div>
+            </Reveal>
           </div>
         </Shell>
       </section>
 
-      {/* ── SECTION 2: The Cinematic Dark Chapter ("The Agency Reality") ──
-          Directly inspired by Cloaked's dark "Data Parasites" section:
-          High contrast pitch background, 3 floating glass cards with warning states. */}
-      <section className="bg-ink text-paper py-20 md:py-28 relative overflow-hidden border-y border-white/10">
-        {/* Ambient atmospheric red orb in dark space */}
-        <div
-          aria-hidden="true"
-          className="absolute -top-24 left-1/3 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(199, 7, 75, 0.16) 0%, transparent 70%)' }}
-        />
-
+      {/* ── 03. The Uncoded Hub Solution (3 Clear Benefits) ──────────── */}
+      <section className="py-20 sm:py-28 bg-paper border-b border-rule">
         <Shell>
           <Reveal>
-            <div className="text-center max-w-3xl mx-auto">
-              <span className="label text-signal-bright mb-3 block">
-                The agency reality
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-paper font-normal leading-tight tracking-tight">
-                Traditional web agencies put your business <em className="text-signal-bright italic font-medium">at risk.</em>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="card-tag mb-3">WHAT YOU GET</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
+                A website built around your business goals.
               </h2>
-              <p className="text-on-ink-muted text-base md:text-lg mt-5 leading-relaxed">
-                You do great work. But traditional agencies make getting a website painful, expensive,
-                and notoriously unreliable. Here is what happens behind the glossy sales deck:
+              <p className="text-muted text-sm sm:text-base mt-3 leading-relaxed">
+                Technical excellence is our delivery method. A digital presence that builds trust
+                and wins more customers is what you&apos;re actually buying.
               </p>
             </div>
           </Reveal>
 
-          {/* 3 Dark Floating Glass Bento Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mt-14">
-            {AGENCY_TRAPS.map((trap, idx) => {
-              const isSelected = activeTrap === trap.id;
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Reveal delay={0.05}>
+              <div className="p-8 rounded-3xl bg-paper-sunken border border-rule h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-signal/10 border border-signal/20 text-signal flex items-center justify-center text-xl mb-6">
+                    ✍️
+                  </div>
+                  <h3 className="font-display text-2xl text-ink font-medium mb-3">
+                    Your message, made clear
+                  </h3>
+                  <p className="text-sm text-muted leading-relaxed">
+                    We help explain what your business does, who you help, and why customers should
+                    choose you. Clear headlines, persuasive positioning, and zero confusing buzzwords.
+                  </p>
+                </div>
+                <div className="mt-8 pt-6 border-t border-rule text-xs font-mono text-ink-soft">
+                  Positioning · Value proposition · Actionable CTAs
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <div className="p-8 rounded-3xl bg-paper-sunken border border-rule h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-signal/10 border border-signal/20 text-signal flex items-center justify-center text-xl mb-6">
+                    ⚡
+                  </div>
+                  <h3 className="font-display text-2xl text-ink font-medium mb-3">
+                    A fast, well-built website
+                  </h3>
+                  <p className="text-sm text-muted leading-relaxed">
+                    We build custom websites that work smoothly across phones, tablets, and
+                    computers. Hand-coded modern React with next-generation WebP images that load in
+                    under a second without bloated plugins.
+                  </p>
+                </div>
+                <div className="mt-8 pt-6 border-t border-rule text-xs font-mono text-ink-soft">
+                  Mobile-first · Sub-second speed · Accessible UX
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <div className="p-8 rounded-3xl bg-paper-sunken border border-rule h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-signal/10 border border-signal/20 text-signal flex items-center justify-center text-xl mb-6">
+                    🧭
+                  </div>
+                  <h3 className="font-display text-2xl text-ink font-medium mb-3">
+                    A clear process from start to finish
+                  </h3>
+                  <p className="text-sm text-muted leading-relaxed">
+                    You know the price, scope, timeline, and who is responsible for the work before
+                    we begin. No surprise invoices, no scope creep, and no missed deadlines.
+                  </p>
+                </div>
+                <div className="mt-8 pt-6 border-t border-rule text-xs font-mono text-ink-soft">
+                  Fixed pricing · Agreed scope · 7-day milestone
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </Shell>
+      </section>
+
+      {/* ── 04. Sample Enquiry Demonstration ─────────────────────────── */}
+      <section className="py-20 sm:py-28 bg-paper-sunken border-b border-rule">
+        <Shell>
+          <Reveal>
+            <div className="max-w-2xl mb-12">
+              <span className="card-tag mb-3">CONVERSION IN ACTION</span>
+              <h2 className="font-display text-3xl sm:text-4xl text-ink font-normal tracking-tight mb-3">
+                Example of how your website enquiries could look.
+              </h2>
+              <p className="text-muted text-sm sm:text-base leading-relaxed">
+                Sample demonstrations showing how modern booking flows and instant WhatsApp
+                enquiries connect qualified customers directly to your business without friction.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+            {/* WhatsApp Notification Card */}
+            <Reveal delay={0.05}>
+              <div className="p-6 sm:p-8 rounded-3xl bg-paper border border-rule shadow-xs">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-lg font-bold">
+                    💬
+                  </div>
+                  <div>
+                    <h4 className="font-display text-base text-ink font-medium">
+                      Direct WhatsApp Enquiry
+                    </h4>
+                    <span className="text-[11px] font-mono text-muted">
+                      Sample visitor enquiry flow
+                    </span>
+                  </div>
+                </div>
+                <div className="p-4 rounded-2xl bg-paper-sunken border border-rule text-xs sm:text-sm text-ink font-sans leading-relaxed">
+                  <p className="text-muted italic mb-2">Incoming WhatsApp message:</p>
+                  <p className="font-medium">
+                    &ldquo;Hi! I reviewed your clinic&apos;s treatment cases on your website and would
+                    like to book a consultation this Thursday afternoon.&rdquo;
+                  </p>
+                </div>
+                <div className="mt-4 flex items-center justify-between text-[11px] font-mono text-muted">
+                  <span>✓ 1-tap pre-filled intent</span>
+                  <span className="text-emerald-600 font-medium">Instant conversion</span>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Calendar Booking Card */}
+            <Reveal delay={0.1}>
+              <div className="p-6 sm:p-8 rounded-3xl bg-paper border border-rule shadow-xs">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-signal/10 text-signal flex items-center justify-center text-lg font-bold">
+                    📅
+                  </div>
+                  <div>
+                    <h4 className="font-display text-base text-ink font-medium">
+                      Automated Calendar Booking
+                    </h4>
+                    <span className="text-[11px] font-mono text-muted">
+                      Sample appointment confirmation
+                    </span>
+                  </div>
+                </div>
+                <div className="p-4 rounded-2xl bg-paper-sunken border border-rule text-xs sm:text-sm text-ink font-sans leading-relaxed">
+                  <p className="text-muted italic mb-2">Calendar booking notification:</p>
+                  <p className="font-medium">
+                    &ldquo;New 20-min consultation booked with Dr. Sarah Jenkins for Architecture
+                    Consultation via Google Meet.&rdquo;
+                  </p>
+                </div>
+                <div className="mt-4 flex items-center justify-between text-[11px] font-mono text-muted">
+                  <span>✓ Synced to your Google Calendar</span>
+                  <span className="text-signal font-medium">Zero back-and-forth</span>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </Shell>
+      </section>
+
+      {/* ── 05. Featured Demos (6 Diverse Examples + Link to 50) ─────── */}
+      <section id="demos" className="py-20 sm:py-28 bg-paper border-b border-rule">
+        <Shell>
+          <Reveal>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+              <div className="max-w-2xl">
+                <span className="card-tag mb-3">LIVE SPECIMENS</span>
+                <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
+                  Don&apos;t just imagine your new website. See it.
+                </h2>
+                <p className="text-muted text-sm sm:text-base mt-3 leading-relaxed">
+                  We&apos;ve created 50 live website demos for different industries. Explore the
+                  design, test the features, and see how your website could be built around your
+                  business. Every demo is a sample concept, not a claim of completed client work.
+                </p>
+              </div>
+
+              <Link
+                to="/portfolio/"
+                className="btn-primary !py-3.5 !px-6 text-xs rounded-full shrink-0 shadow-xs inline-flex items-center gap-2 self-start md:self-auto"
+              >
+                <span>Explore All 50 Demos</span>
+                <span>→</span>
+              </Link>
+            </div>
+          </Reveal>
+
+          {/* 6 Curated Demos Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {featuredDemos.map((demo) => {
+              const thumbnail =
+                demo.themes?.[0]?.image || '/demos/thumbnails/interior-design-theme1.webp';
               return (
-                <Reveal key={trap.id} delay={idx * 90}>
-                  <div
-                    onClick={() => setActiveTrap(isSelected ? null : trap.id)}
-                    className={`relative p-6 sm:p-8 rounded-[24px] bg-white/[0.04] backdrop-blur-md border transition-all duration-300 cursor-pointer flex flex-col justify-between h-full ${
-                      isSelected
-                        ? 'border-signal ring-1 ring-signal/40 bg-white/[0.07] shadow-[0_20px_40px_rgba(199,7,75,0.2)]'
-                        : 'border-white/10 hover:border-white/20 hover:bg-white/[0.06]'
-                    }`}
-                  >
+                <Reveal key={demo.id}>
+                  <div className="group h-full rounded-3xl bg-paper-sunken border border-rule hover:border-signal/50 transition-all flex flex-col justify-between overflow-hidden shadow-xs hover:shadow-md">
                     <div>
-                      {/* Unified single tag */}
-                      <div className="mb-4">
-                        <span
-                          className={`inline-block text-[11px] font-semibold px-2.5 py-1 rounded-[6px] ${
-                            trap.badgeTone === 'signal'
-                              ? 'bg-signal/20 text-signal-bright'
-                              : trap.badgeTone === 'warning'
-                              ? 'bg-amber-500/20 text-amber-300'
-                              : 'bg-red-500/20 text-red-300'
-                          }`}
-                        >
-                          {trap.tag} · {trap.badge}
-                        </span>
+                      {/* Image Preview */}
+                      <div className="relative aspect-[16/10] overflow-hidden bg-ink/5 border-b border-rule">
+                        <img
+                          src={thumbnail}
+                          alt={demo.client}
+                          loading="lazy"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-ink/80 text-paper backdrop-blur-md text-[10px] font-mono uppercase tracking-wider">
+                          {demo.sector}
+                        </div>
                       </div>
 
-                      <h3 className="font-display text-2xl text-paper font-medium mb-3">{trap.title}</h3>
-                      <p className="text-on-ink-muted text-sm leading-relaxed">{trap.description}</p>
+                      {/* Content */}
+                      <div className="p-6">
+                        <h3 className="font-display text-xl text-ink font-medium group-hover:text-signal transition-colors mb-2">
+                          {demo.client}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-muted leading-relaxed line-clamp-2 mb-4">
+                          {demo.summary}
+                        </p>
+                        <div className="text-[11px] font-mono text-signal bg-signal/10 px-3 py-1.5 rounded-lg border border-signal/20 inline-block mb-2">
+                          {demo.conversionEngine}
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Uncoded Hub Contrast Box */}
-                    <div className="mt-6 pt-4 border-t border-white/10 flex items-start gap-2">
-                      <span className="text-signal-bright font-bold shrink-0">✓</span>
-                      <p className="text-xs text-paper/90 font-medium leading-relaxed">{trap.contrast}</p>
+                    {/* Action */}
+                    <div className="p-6 pt-0">
+                      <a
+                        href={demo.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-between w-full p-3 rounded-xl bg-ink text-paper hover:bg-signal transition-colors text-xs font-mono font-medium shadow-xs"
+                      >
+                        <span>Open Live Demo</span>
+                        <span>↗</span>
+                      </a>
                     </div>
                   </div>
                 </Reveal>
@@ -555,1469 +557,473 @@ export default function Home({ onBook }: { onBook: () => void }) {
             })}
           </div>
 
-          {/* Bottom Free Audit Strip inside Dark Section */}
-          <Reveal delay={280}>
-            <div className="mt-14 max-w-2xl mx-auto p-6 rounded-[24px] bg-white/[0.03] border border-white/10 text-center">
-              <p className="text-paper text-sm font-medium">
-                Find out how much revenue your current website is quietly leaking.
+          <div className="text-center">
+            <Link
+              to="/portfolio/"
+              className="inline-flex items-center gap-2 text-xs font-mono text-signal hover:underline"
+            >
+              <span>View all 50 industry demos across Medical, Legal, Architecture &amp; More →</span>
+            </Link>
+          </div>
+        </Shell>
+      </section>
+
+      {/* ── 06. How It Works (The 7-Day Sprint Blueprint) ────────────── */}
+      <section className="py-20 sm:py-28 bg-paper-sunken border-b border-rule">
+        <Shell>
+          <Reveal>
+            <div className="max-w-2xl mb-14">
+              <span className="card-tag mb-3">THE SPRINT PROTOCOL</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight mb-3">
+                Your new website, step by step.
+              </h2>
+              <p className="text-muted text-sm sm:text-base leading-relaxed">
+                The seven-working-day timeline applies to projects that fit the agreed scope and
+                start conditions. Here is exactly what happens during your sprint week.
               </p>
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-                <button
-                  onClick={onBook}
-                  className="bg-signal hover:bg-signal-bright text-paper text-xs md:text-sm font-medium px-6 py-2.5 rounded-full transition-colors flex items-center gap-1.5 cursor-pointer shadow-md"
-                >
-                  <span>Schedule 20-min Discovery Call</span>
-                  <span>→</span>
-                </button>
-                <Link
-                  to="/portfolio/"
-                  className="text-on-ink-muted hover:text-paper text-xs md:text-sm font-medium px-4 py-2 transition-colors"
-                >
-                  Inspect all 50 live industry demos first
-                </Link>
+            </div>
+          </Reveal>
+
+          {/* 3 Simple Stages */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <Reveal delay={0.05}>
+              <div className="p-8 rounded-3xl bg-paper border border-rule h-full flex flex-col justify-between shadow-xs">
+                <div>
+                  <span className="text-xs font-mono text-signal block mb-3">Stage 01 · Day 1</span>
+                  <h3 className="font-display text-2xl text-ink font-medium mb-3">Plan</h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                    We discuss your business, your customers, and what your website needs to achieve
+                    on a focused 20-minute call. You receive a clear scope, fixed price, and agreed
+                    launch date before work begins.
+                  </p>
+                </div>
+                <div className="mt-8 pt-6 border-t border-rule text-xs font-mono text-muted">
+                  Alignment · Asset intake · Scope sign-off
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <div className="p-8 rounded-3xl bg-paper border border-rule h-full flex flex-col justify-between shadow-xs">
+                <div>
+                  <span className="text-xs font-mono text-signal block mb-3">Stage 02 · Days 2–5</span>
+                  <h3 className="font-display text-2xl text-ink font-medium mb-3">
+                    Design and Build
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                    Geetha works on the design direction, typography, and content. Deepak builds the
+                    clean React code and interactive features. You get daily 5-minute video updates
+                    to review progress along the way.
+                  </p>
+                </div>
+                <div className="mt-8 pt-6 border-t border-rule text-xs font-mono text-muted">
+                  Daily Loom check-ins · Direct founder execution
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <div className="p-8 rounded-3xl bg-paper border border-rule h-full flex flex-col justify-between shadow-xs">
+                <div>
+                  <span className="text-xs font-mono text-signal block mb-3">Stage 03 · Days 6–7</span>
+                  <h3 className="font-display text-2xl text-ink font-medium mb-3">
+                    Test and Launch
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                    We check the website across phones, tablets, and computers, make the agreed final
+                    refinements, point your domain, and hand over complete ownership of your code and
+                    assets.
+                  </p>
+                </div>
+                <div className="mt-8 pt-6 border-t border-rule text-xs font-mono text-signal">
+                  Cross-device QA · Domain connection · 100% handover
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Contractual Guarantee Callout */}
+          <Reveal>
+            <div className="p-8 sm:p-10 rounded-3xl bg-paper border-2 border-signal/30 shadow-sm">
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div className="max-w-2xl">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-signal/10 text-signal font-mono text-xs uppercase tracking-wider mb-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" />
+                    <span>Contractual On-Time Guarantee</span>
+                  </div>
+                  <h3 className="font-display text-2xl sm:text-3xl text-ink font-normal mb-2">
+                    On time, or your entire build is free.
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                    We agree on the project scope and timeline before work begins. If we fail to
+                    deliver the agreed website within seven working days due to a delay on our side,
+                    you pay nothing for the build. No excuses. No hidden conditions. Just a promise
+                    we stand behind.
+                  </p>
+                </div>
+
+                <div className="text-xs font-mono text-muted shrink-0 space-y-1">
+                  <div>✓ Written contractual guarantee</div>
+                  <div>✓ Fixed launch milestone</div>
+                  <Link to="/terms/" className="text-signal hover:underline block pt-1">
+                    Read Full Terms &amp; Conditions →
+                  </Link>
+                </div>
               </div>
             </div>
           </Reveal>
         </Shell>
       </section>
 
-      {/* ── SECTION 3: The 3-Pillar Solution & Interactive App Mockup ──
-          Cloaked Section 3: "Cloaked lets you take back control" */}
-      <Section size="loose">
+      {/* ── 07. Proof & Engineering Standards ────────────────────────── */}
+      <section className="py-20 sm:py-28 bg-paper border-b border-rule">
         <Shell>
           <Reveal>
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="label text-signal font-semibold mb-2.5 block">
-                The Uncoded Hub System
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
-                Uncoded Hub gives you back your <em className="italic hero-signal font-medium">competitive edge.</em>
+            <div className="max-w-3xl mb-12">
+              <span className="card-tag mb-3">CRAFT OVER CLAIMS</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight mb-4">
+                We believe in showing our work.
               </h2>
-              <p className="text-lead text-muted mt-5 max-w-xl mx-auto">
-                Everything you need to turn cold visitors into pre-sold enquiries — without you having
-                to write copy, manage developers, or wait months.
+              <p className="text-muted text-sm sm:text-base leading-relaxed">
+                We&apos;re a young studio, so we won&apos;t fill this page with borrowed client logos
+                or made-up results. Instead, you can explore our 50 live demos, test how fast they
+                load on your phone, and inspect the quality of the websites we build.
               </p>
             </div>
           </Reveal>
 
-          {/* 3 Pillar Columns with unified single tag */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {THREE_PILLARS.map((p, idx) => (
-              <Reveal key={p.num} delay={idx * 80}>
-                <div className="bg-paper-raised p-8 rounded-[24px] border border-rule-strong shadow-xs flex flex-col justify-between h-full">
-                  <div>
-                    <span className="card-tag mb-4">
-                      {p.pill}
-                    </span>
-                    <h3 className="font-display text-2xl text-ink font-medium mb-3">{p.title}</h3>
-                    <p className="text-muted text-sm leading-relaxed">{p.p}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
+          {/* 5 Verifiable Standards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div className="p-5 rounded-2xl bg-paper-sunken border border-rule">
+              <span className="text-xl block mb-2">📱</span>
+              <h4 className="font-display text-base text-ink font-medium mb-1">Mobile Performance</h4>
+              <p className="text-xs text-muted leading-relaxed">
+                Optimized for sub-second mobile loading on cellular networks.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-paper-sunken border border-rule">
+              <span className="text-xl block mb-2">📐</span>
+              <h4 className="font-display text-base text-ink font-medium mb-1">Responsive Layouts</h4>
+              <p className="text-xs text-muted leading-relaxed">
+                Fluid design that looks intentional on every screen size.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-paper-sunken border border-rule">
+              <span className="text-xl block mb-2">👁️</span>
+              <h4 className="font-display text-base text-ink font-medium mb-1">Accessibility Basics</h4>
+              <p className="text-xs text-muted leading-relaxed">
+                High-contrast readable typography and intuitive keyboard navigation.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-paper-sunken border border-rule">
+              <span className="text-xl block mb-2">🧱</span>
+              <h4 className="font-display text-base text-ink font-medium mb-1">Clear Page Hierarchy</h4>
+              <p className="text-xs text-muted leading-relaxed">
+                Semantic HTML structure that visitors and Google understand immediately.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-paper-sunken border border-rule">
+              <span className="text-xl block mb-2">📬</span>
+              <h4 className="font-display text-base text-ink font-medium mb-1">Working Funnels</h4>
+              <p className="text-xs text-muted leading-relaxed">
+                Verified WhatsApp buttons, appointment booking, and tested forms.
+              </p>
+            </div>
           </div>
+        </Shell>
+      </section>
 
-          {/* Split Interactive Showcase (Cloaked Lifestyle + Notification Pills) */}
-          <div className="grid lg:grid-cols-12 gap-8 items-stretch">
-            {/* Left Card: Customer inquiry notification mockup */}
-            <Reveal delay={120} className="lg:col-span-7">
-              <div className="relative h-full min-h-[380px] rounded-[28px] overflow-hidden border border-rule-strong bg-paper-sunk p-6 sm:p-8 flex flex-col justify-between shadow-sm">
-                <picture className="absolute inset-0 block w-full h-full">
-                  <source media="(max-width: 767px)" srcSet="/our-service-mobile.webp" />
-                  <img
-                    src="/our-service.webp"
-                    alt="Responsive website working across all devices"
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover grayscale opacity-25"
-                  />
-                </picture>
-
-                <div className="relative z-10">
-                  <span className="label text-signal font-semibold block mb-2">
-                    Real-time inquiry notifications
-                  </span>
-                  <h4 className="font-display text-2xl text-ink font-medium max-w-md">
-                    Inquiries that arrive educated, qualified, and ready to buy.
-                  </h4>
-                </div>
-
-                {/* Floating Notification Cards (Cloaked style) */}
-                <div className="relative z-10 space-y-3 mt-6">
-                  {/* WhatsApp Lead Notification */}
-                  <div className="bg-paper/95 backdrop-blur-md p-4 rounded-[16px] border border-rule-strong shadow-md flex items-start gap-3 max-w-md">
-                    <span className="w-9 h-9 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs shrink-0">
-                      WA
-                    </span>
-                    <div className="text-xs">
-                      <div className="flex items-center justify-between gap-4">
-                        <strong className="text-ink font-semibold">WhatsApp Inquiry · High Ticket</strong>
-                        <span className="text-[10px] text-muted">2m ago</span>
-                      </div>
-                      <p className="text-muted mt-1 leading-normal">
-                        "Hi Deepak! Saw your interior architecture portfolio. We're closing on a 4BHK villa in Indiranagar. Budget ₹45L. Can we do a concept diagnostic call Thursday?"
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Direct Calendar Booking */}
-                  <div className="bg-paper/95 backdrop-blur-md p-4 rounded-[16px] border border-rule-strong shadow-md flex items-start gap-3 max-w-md ml-auto">
-                    <span className="w-9 h-9 rounded-full bg-signal text-white flex items-center justify-center font-bold text-xs shrink-0">
-                      CAL
-                    </span>
-                    <div className="text-xs">
-                      <div className="flex items-center justify-between gap-4">
-                        <strong className="text-ink font-semibold">Calendar Booking Confirmed</strong>
-                        <span className="text-[10px] text-muted">Just now</span>
-                      </div>
-                      <p className="text-muted mt-1 leading-normal">
-                        Pre-Sold Discovery Session booked for Friday at 11:30 AM IST. All intake questions answered.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Right Card: 7-Day Guarantee Spotlight */}
-            <Reveal delay={180} className="lg:col-span-5">
-              <div className="h-full rounded-[28px] overflow-hidden border border-rule-strong bg-paper-raised p-8 flex flex-col justify-between shadow-sm">
-                <div>
-                  <div className="w-12 h-12 rounded-full bg-signal/10 text-signal flex items-center justify-center mb-6">
-                    <IconTimer className="w-6 h-6" />
-                  </div>
-                  <span className="label text-signal font-semibold block mb-1.5">
-                    Contractual deadline
-                  </span>
-                  <h4 className="font-display text-3xl text-ink font-medium leading-snug">
-                    If we are late, you do not pay.
-                  </h4>
-                  <p className="text-muted text-sm leading-relaxed mt-4">
-                    Not a voucher, not a discount on your next project. If your site is not live
-                    by the end of day seven under our published conditions, the build is free and you keep everything.
+      {/* ── 08. Meet the Founders (Deepak & Geetha) ──────────────────── */}
+      <section className="py-20 sm:py-28 bg-paper-sunken border-b border-rule">
+        <Shell>
+          <Reveal>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-7">
+                <span className="card-tag mb-3">THE STUDIO</span>
+                <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight mb-6">
+                  Two people. Both of them on your project.
+                </h2>
+                <div className="space-y-4 text-sm sm:text-base text-muted leading-relaxed font-normal">
+                  <p>
+                    We&apos;re Deepak and Geetha, a brother-and-sister team based in Bengaluru.
+                  </p>
+                  <p>
+                    Geetha takes care of the design, layout, and visual experience. Deepak handles
+                    the planning, engineering, and development.
+                  </p>
+                  <p>
+                    When you speak with us, you&apos;re speaking directly with the people who will
+                    work on your website. We keep our team small because we believe good work starts
+                    with clear communication and personal responsibility.
+                  </p>
+                  <p className="font-medium text-ink">
+                    No hand-offs. No mystery team. Just us, working with you.
                   </p>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-rule flex items-center justify-between">
-                  <div className="text-xs">
-                    <span className="text-muted block">Signed by co-founders:</span>
-                    <strong className="text-ink font-medium">Deepak &amp; Geetha</strong>
-                  </div>
-                  <button onClick={onBook} className="btn-primary text-xs py-2 px-4">
-                    Schedule call →
-                  </button>
+                <div className="mt-8 flex flex-wrap items-center gap-4">
+                  <Link
+                    to="/about/"
+                    className="btn-primary !py-3 !px-6 text-xs rounded-full inline-flex items-center gap-2"
+                  >
+                    <span>Read Our Story &amp; Principles</span>
+                    <span>→</span>
+                  </Link>
+
+                  <a
+                    href="https://wa.me/918660819023?text=Hi%20Deepak%20and%20Geetha,%20I'd%20like%20to%20discuss%20a%20website%20for%20my%20business."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 rounded-full border border-rule hover:border-signal text-ink font-mono text-xs transition-colors bg-paper"
+                  >
+                    WhatsApp Co-Founders ↗
+                  </a>
                 </div>
               </div>
-            </Reveal>
-          </div>
-        </Shell>
-      </Section>
 
-      {/* ── SECTION 4: High-Voltage Stat Bento Cards ──
-          Cloaked Section 6: Massive solid orange/vermilion stat blocks */}
-      <section className="py-20 bg-paper-sunk border-y border-rule">
+              {/* Founder Photos Side */}
+              <div className="lg:col-span-5 grid grid-cols-2 gap-4">
+                <div className="p-3 rounded-3xl bg-paper border border-rule shadow-xs text-center">
+                  <div className="aspect-[4/5] rounded-2xl overflow-hidden mb-3 bg-ink/5">
+                    <img
+                      src="/deepak.webp"
+                      alt="Deepak - Co-Founder & Systems Architect"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h4 className="font-display text-base text-ink font-medium">Deepak Ravi</h4>
+                  <span className="text-[11px] font-mono text-muted block">Engineering &amp; Code</span>
+                </div>
+
+                <div className="p-3 rounded-3xl bg-paper border border-rule shadow-xs text-center">
+                  <div className="aspect-[4/5] rounded-2xl overflow-hidden mb-3 bg-ink/5">
+                    <img
+                      src="/geetha.webp"
+                      alt="Geetha - Co-Founder & Creative Director"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h4 className="font-display text-base text-ink font-medium">Geetha</h4>
+                  <span className="text-[11px] font-mono text-muted block">Design &amp; Layout</span>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </Shell>
+      </section>
+
+      {/* ── 09. Regional Hubs (Bengaluru & Global Markets) ────────────── */}
+      <section className="py-20 sm:py-28 bg-paper border-b border-rule">
         <Shell>
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <span className="label text-signal font-semibold block mb-2">
-                Measurable standards
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
-                Built for business owners who demand results.
+              <span className="card-tag mb-3">GLOBAL REACH · LOCAL ROOTS</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight mb-3">
+                A Bengaluru web design studio, working worldwide.
               </h2>
+              <p className="text-muted text-sm sm:text-base leading-relaxed">
+                We&apos;re based in Bengaluru, India, and work with businesses across India and around
+                the world. Whether you&apos;re in Indiranagar, Whitefield, London, Dubai, or
+                elsewhere, you work directly with Deepak and Geetha.
+              </p>
             </div>
           </Reveal>
 
-          {/* 3 High-Impact Solid Vermilion/Crimson Cards */}
-          <div className="grid md:grid-cols-3 gap-6">
-            <Reveal delay={60}>
-              <div className="bg-signal text-white p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* Bengaluru Hub Card */}
+            <Reveal delay={0.05}>
+              <div className="p-8 rounded-3xl bg-paper-sunken border border-rule h-full flex flex-col justify-between shadow-xs">
                 <div>
-                  <span className="text-xs font-bold text-white uppercase tracking-wider block mb-2">
-                    Turnaround timeline
-                  </span>
-                  <div className="font-display text-6xl sm:text-7xl font-medium tracking-tight text-white">
-                    7 days
-                  </div>
+                  <span className="text-2xl block mb-3">📍</span>
+                  <h3 className="font-display text-2xl text-ink font-medium mb-2">
+                    Bengaluru Web Design Studio
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed mb-6">
+                    Serving 100 Bengaluru commercial corridors across Indiranagar, Koramangala,
+                    Whitefield, and HSR Layout. Local GST tax invoicing and in-person discovery meetings
+                    available.
+                  </p>
                 </div>
-                <p className="text-white text-sm mt-6 leading-relaxed font-sans">
-                  From discovery call to live production deployment. No open-ended months of waiting.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={120}>
-              <div className="bg-signal text-white p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
-                <div>
-                  <span className="text-xs font-bold text-white uppercase tracking-wider block mb-2">
-                    On-time guarantee
-                  </span>
-                  <div className="font-display text-6xl sm:text-7xl font-medium tracking-tight text-white">
-                    100%
-                  </div>
-                </div>
-                <p className="text-white text-sm mt-6 leading-relaxed font-sans">
-                  Contractual delivery rate under our published guarantee. On time, or the build is free.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={180}>
-              <div className="bg-signal text-white p-8 sm:p-10 rounded-[28px] shadow-lg flex flex-col justify-between h-full">
-                <div>
-                  <span className="text-xs font-bold text-white uppercase tracking-wider block mb-2">
-                    Google PageSpeed
-                  </span>
-                  <div className="font-display text-6xl sm:text-7xl font-medium tracking-tight text-white">
-                    99+
-                  </div>
-                </div>
-                <p className="text-white text-sm mt-6 leading-relaxed font-sans">
-                  Verified mobile performance. Loads in under 1 second on real 4G devices worldwide.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-        </Shell>
-      </section>
-
-      {/* ── SECTION 4B: Interactive Speed ROI & Revenue Leakage Calculator ── */}
-      <section className="py-16 sm:py-24 bg-paper">
-        <Shell>
-          <Reveal>
-            <SpeedRoiCalculator onBookCall={onBook} />
-          </Reveal>
-        </Shell>
-      </section>
-
-      {/* ── SECTION 5: Live Specimen Builds Showcase (Full-Width Dual-Display Studio Console) ── */}
-      <Section id="live-demos" size="tight" className="pt-8 pb-6 sm:pt-10 sm:pb-8 lg:pt-12 lg:pb-10 scroll-mt-20 w-full">
-        <div className="w-full max-w-[1780px] 2xl:max-w-[1880px] mx-auto px-3 sm:px-6 lg:px-8">
-          <Reveal>
-            {/* 1. Ultra-Compact Header Row */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                <span className="label text-signal font-semibold text-[10px] py-0.5 px-2">
-                  50 Builds · Live Demos
-                </span>
-                <h2 className="font-display text-xl sm:text-2xl text-ink font-normal tracking-tight">
-                  Test the builds live before you commit.
-                </h2>
-                <span className="text-muted text-xs hidden lg:inline">
-                  — Dual-display simultaneous theme contrast · 2s theme cycle · 6s fleet advance
-                </span>
-              </div>
-
-              {/* Navigation Controls & Status */}
-              <div className="flex items-center gap-2 shrink-0">
-                <button
-                  onClick={() => setIsDemoPaused(!isDemoPaused)}
-                  className="px-2.5 py-1 rounded-full border border-rule-strong bg-paper hover:bg-paper-raised text-[9px] font-mono text-muted hover:text-ink transition-all cursor-pointer flex items-center gap-1.5 shadow-2xs"
-                  title={isDemoPaused ? 'Resume auto-advance' : 'Pause auto-advance'}
-                >
-                  <span
-                    className={`w-1.5 h-1.5 rounded-full ${
-                      isDemoPaused ? 'bg-amber-400' : 'bg-emerald-500 animate-pulse'
-                    }`}
-                    aria-hidden="true"
-                  />
-                  <span>{isDemoPaused ? 'RESUME AUTO' : 'PAUSE AUTO'}</span>
-                </button>
-                <div className="flex items-center gap-1">
-                  <button
-                    onClick={prevDemo}
-                    className="w-7 h-7 rounded-full border border-rule-strong bg-paper hover:bg-paper-raised text-ink flex items-center justify-center transition-colors cursor-pointer text-xs shadow-2xs"
-                    aria-label="Previous demo"
-                    title="Previous demo"
-                  >
-                    ←
-                  </button>
-                  <button
-                    onClick={nextDemo}
-                    className="w-7 h-7 rounded-full border border-rule-strong bg-paper hover:bg-paper-raised text-ink flex items-center justify-center transition-colors cursor-pointer text-xs shadow-2xs"
-                    aria-label="Next demo"
-                    title="Next demo"
-                  >
-                    →
-                  </button>
-                </div>
-                <span className="font-mono text-xs text-muted pl-0.5">
-                  <span className="text-signal font-semibold">{String(activeDemoIdx + 1).padStart(2, '0')}</span>/{DEMO_SPECIMENS.length}
-                </span>
                 <Link
-                  to="/portfolio/"
-                  className="hidden md:inline-flex items-center gap-1 text-[11px] font-mono text-muted hover:text-signal transition-colors pl-2"
+                  to="/web-design/bangalore/"
+                  className="inline-flex items-center justify-between w-full p-3 rounded-xl bg-ink text-paper hover:bg-signal transition-colors text-xs font-mono font-medium"
                 >
-                  <span>All 50 Demos</span>
+                  <span>Explore Bengaluru Studio &amp; Corridors</span>
                   <span>→</span>
                 </Link>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
 
-          {/* ── 2. DUAL CINEMA STUDIO DISPLAYS BESIDE EACH OTHER (FULL-WIDTH 2-COLUMN DISPLAY) ── */}
-          <Reveal delay={30}>
-            {(() => {
-              const currentDemo = DEMO_SPECIMENS[activeDemoIdx];
-              const leftThemeIdx = activeThemeIdx;
-              const rightThemeIdx =
-                rightThemeOverride !== null
-                  ? rightThemeOverride
-                  : (activeThemeIdx + 1) % currentDemo.themes.length;
-
-              const leftTheme = currentDemo.themes[leftThemeIdx] || currentDemo.themes[0];
-              const rightTheme = currentDemo.themes[rightThemeIdx] || currentDemo.themes[1] || currentDemo.themes[0];
-
-              return (
-                <div
-                  onMouseEnter={() => setIsDemoPaused(true)}
-                  onMouseLeave={() => setIsDemoPaused(false)}
-                  className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5 mb-3"
-                >
-                  {/* ── LEFT STUDIO DISPLAY (PRIMARY AESTHETIC) ── */}
-                  <div className="bg-paper-raised border border-rule-strong hover:border-signal/40 rounded-[20px] overflow-hidden shadow-xl transition-all duration-300 flex flex-col justify-between group/disp1">
-                    {/* Top Window Bar */}
-                    <div className="flex items-center justify-between px-3.5 sm:px-4 py-2 bg-[#121416] text-paper text-xs font-mono border-b border-white/10 select-none">
-                      <div className="flex items-center gap-1.5">
-                        <span className="w-2.5 h-2.5 rounded-full bg-rose-500/90 inline-block" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-amber-400/90 inline-block" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/90 inline-block" />
-                      </div>
-                      <div className="flex items-center gap-1.5 text-white/75 bg-white/5 border border-white/10 px-3 py-0.5 rounded-full text-[10px]">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                        <span className="truncate max-w-[140px] sm:max-w-[240px]">
-                          uncodedhub.com{currentDemo.url}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-signal-bright font-semibold text-[9px] tracking-wider hidden sm:inline">
-                          DISPLAY 01
-                        </span>
-                        <span className="text-[9px] text-white/70 font-mono bg-white/10 px-1.5 py-0.2 rounded font-medium">
-                          {leftTheme.name}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* 3-Segment Theme Progress Indicator Bar */}
-                    <div className="grid grid-cols-3 gap-1.5 px-3.5 sm:px-4 py-1.5 bg-[#0e1012] border-b border-white/10">
-                      {currentDemo.themes.map((theme, tIdx) => {
-                        const isCurrent = leftThemeIdx === tIdx;
-                        const isPassed = leftThemeIdx > tIdx;
-                        return (
-                          <button
-                            key={theme.name}
-                            onClick={() => setActiveThemeIdx(tIdx)}
-                            className="text-left group/seg cursor-pointer"
-                            title={`Switch Left Display to Theme ${tIdx + 1}: ${theme.name}`}
-                          >
-                            <div className="h-1.5 rounded-full bg-white/15 overflow-hidden relative">
-                              {isPassed && <div className="h-full w-full bg-signal" />}
-                              {isCurrent && (
-                                <div
-                                  key={`theme-seg-left-${activeDemoIdx}-${leftThemeIdx}`}
-                                  className={`h-full bg-signal ${
-                                    !isDemoPaused && isDemoInView
-                                      ? 'animate-theme-progress-2s'
-                                      : 'w-full'
-                                  }`}
-                                />
-                              )}
-                            </div>
-                            <div className="flex items-center justify-between mt-0.5 text-[8px] sm:text-[9px] font-mono">
-                              <span
-                                className={`truncate ${
-                                  isCurrent
-                                    ? 'text-signal-bright font-semibold'
-                                    : 'text-white/40 group-hover/seg:text-white/70'
-                                }`}
-                              >
-                                T{tIdx + 1}: {theme.name}
-                              </span>
-                            </div>
-                          </button>
-                        );
-                      })}
-                    </div>
-
-                    {/* Proportional Screen with True 16:9 Aspect Ratio */}
-                    <div className="relative aspect-[16/9] w-full overflow-hidden bg-black select-none group/view">
-                      {currentDemo.themes.map((theme, tIdx) => {
-                        const isThemeActive = leftThemeIdx === tIdx;
-                        return (
-                          <img
-                            key={`left-${currentDemo.id}-${theme.name}`}
-                            src={theme.image}
-                            alt={`${currentDemo.client} - ${theme.name}`}
-                            width={1440}
-                            height={810}
-                            loading={tIdx === 0 ? 'eager' : 'lazy'}
-                            decoding="async"
-                            className={`absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 ease-in-out group-hover/view:scale-[1.01] ${
-                              isThemeActive
-                                ? 'opacity-100 z-10'
-                                : 'opacity-0 z-0 pointer-events-none'
-                            }`}
-                          />
-                        );
-                      })}
-
-                      {/* Floating Theme HUD Badge (Bottom-Left) */}
-                      <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 bg-ink/90 backdrop-blur-md border border-white/20 text-paper rounded-lg px-2.5 py-1 sm:px-3 sm:py-1.5 shadow-xl z-20 flex items-center gap-2.5 pointer-events-none">
-                        <div>
-                          <div className="text-[8px] font-mono uppercase tracking-wider text-signal-bright font-semibold">
-                            T0{leftThemeIdx + 1} · {leftTheme.style}
-                          </div>
-                          <div className="text-[11px] sm:text-xs font-semibold text-white truncate max-w-[130px] sm:max-w-[200px]">
-                            {leftTheme.name}
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-1 border-l border-white/20 pl-2">
-                          {leftTheme.palette.map((color, cIdx) => (
-                            <span
-                              key={cIdx}
-                              className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full border border-black/40 shadow-xs inline-block"
-                              style={{ backgroundColor: color }}
-                              title={color}
-                            />
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Floating Indicator (Top-Right) */}
-                      <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 bg-ink/85 backdrop-blur-md border border-white/15 text-white text-[9px] font-mono px-2 py-0.5 rounded-full z-20 flex items-center gap-1 pointer-events-none shadow-md">
-                        <span className="w-1.5 h-1.5 rounded-full bg-signal animate-ping" />
-                        <span>PRIMARY THEME</span>
-                      </div>
-
-                      {/* Centered Launch Overlay on Hover */}
-                      <a
-                        href={currentDemo.url}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        className="absolute inset-0 bg-ink/0 group-hover/view:bg-ink/20 transition-colors flex items-center justify-center z-25"
-                      >
-                        <span className="opacity-0 group-hover/view:opacity-100 transition-all duration-300 transform group-hover/view:scale-100 scale-95 bg-ink/95 text-paper text-xs font-mono px-3.5 py-1.5 rounded-full shadow-xl border border-white/25 flex items-center gap-1.5">
-                          <span>Launch Live Build ↗</span>
-                        </span>
-                      </a>
-                    </div>
-
-                    {/* Bottom Manual Clickable Bar */}
-                    <div className="flex items-center justify-between gap-2 px-3 py-1.5 bg-[#121416] border-t border-white/10">
-                      <span className="text-[9px] font-mono text-white/50 uppercase tracking-wider pl-0.5 shrink-0">
-                        Theme 01:
-                      </span>
-                      <div className="grid grid-cols-3 gap-1.5 flex-1">
-                        {currentDemo.themes.map((theme, tIdx) => (
-                          <button
-                            key={theme.name}
-                            onClick={() => setActiveThemeIdx(tIdx)}
-                            className={`py-0.5 px-2 rounded-md border text-[10px] font-mono flex items-center justify-between gap-1 transition-all cursor-pointer ${
-                              leftThemeIdx === tIdx
-                                ? 'bg-white/20 border-signal text-white shadow-xs font-semibold'
-                                : 'bg-white/5 border-white/10 text-white/60 hover:text-white hover:bg-white/10'
-                            }`}
-                          >
-                            <span className="truncate">{theme.name}</span>
-                            <div className="flex items-center gap-0.5 shrink-0">
-                              {theme.palette.slice(0, 2).map((col, cIdx) => (
-                                <span
-                                  key={cIdx}
-                                  className="w-1.5 h-1.5 rounded-full border border-black/30"
-                                  style={{ backgroundColor: col }}
-                                />
-                              ))}
-                            </div>
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* ── RIGHT STUDIO DISPLAY (CONTRAST AESTHETIC) ── */}
-                  <div className="bg-paper-raised border border-rule-strong hover:border-signal/40 rounded-[20px] overflow-hidden shadow-xl transition-all duration-300 flex flex-col justify-between group/disp2">
-                    {/* Top Window Bar */}
-                    <div className="flex items-center justify-between px-3.5 sm:px-4 py-2 bg-[#121416] text-paper text-xs font-mono border-b border-white/10 select-none">
-                      <div className="flex items-center gap-1.5">
-                        <span className="w-2.5 h-2.5 rounded-full bg-rose-500/90 inline-block" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-amber-400/90 inline-block" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/90 inline-block" />
-                      </div>
-                      <div className="flex items-center gap-1.5 text-white/75 bg-white/5 border border-white/10 px-3 py-0.5 rounded-full text-[10px]">
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-                        <span className="truncate max-w-[140px] sm:max-w-[240px]">
-                          uncodedhub.com{currentDemo.url}?contrast
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-amber-400 font-semibold text-[9px] tracking-wider hidden sm:inline">
-                          DISPLAY 02
-                        </span>
-                        <span className="text-[9px] text-white/70 font-mono bg-white/10 px-1.5 py-0.2 rounded font-medium">
-                          {rightTheme.name}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* 3-Segment Theme Progress Indicator Bar */}
-                    <div className="grid grid-cols-3 gap-1.5 px-3.5 sm:px-4 py-1.5 bg-[#0e1012] border-b border-white/10">
-                      {currentDemo.themes.map((theme, tIdx) => {
-                        const isCurrent = rightThemeIdx === tIdx;
-                        return (
-                          <button
-                            key={theme.name}
-                            onClick={() => setRightThemeOverride(tIdx)}
-                            className="text-left group/seg cursor-pointer"
-                            title={`Switch Right Display to Theme ${tIdx + 1}: ${theme.name}`}
-                          >
-                            <div className="h-1.5 rounded-full bg-white/15 overflow-hidden relative">
-                              {isCurrent ? (
-                                <div className="h-full w-full bg-amber-400" />
-                              ) : (
-                                <div className="h-full bg-transparent" />
-                              )}
-                            </div>
-                            <div className="flex items-center justify-between mt-0.5 text-[8px] sm:text-[9px] font-mono">
-                              <span
-                                className={`truncate ${
-                                  isCurrent
-                                    ? 'text-amber-400 font-semibold'
-                                    : 'text-white/40 group-hover/seg:text-white/70'
-                                }`}
-                              >
-                                T{tIdx + 1}: {theme.name}
-                              </span>
-                            </div>
-                          </button>
-                        );
-                      })}
-                    </div>
-
-                    {/* Proportional Screen with True 16:9 Aspect Ratio */}
-                    <div className="relative aspect-[16/9] w-full overflow-hidden bg-black select-none group/view">
-                      {currentDemo.themes.map((theme, tIdx) => {
-                        const isThemeActive = rightThemeIdx === tIdx;
-                        return (
-                          <img
-                            key={`right-${currentDemo.id}-${theme.name}`}
-                            src={theme.image}
-                            alt={`${currentDemo.client} - ${theme.name}`}
-                            width={1440}
-                            height={810}
-                            loading="lazy"
-                            decoding="async"
-                            className={`absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 ease-in-out group-hover/view:scale-[1.01] ${
-                              isThemeActive
-                                ? 'opacity-100 z-10'
-                                : 'opacity-0 z-0 pointer-events-none'
-                            }`}
-                          />
-                        );
-                      })}
-
-                      {/* Floating Theme HUD Badge (Bottom-Left) */}
-                      <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 bg-ink/90 backdrop-blur-md border border-white/20 text-paper rounded-lg px-2.5 py-1 sm:px-3 sm:py-1.5 shadow-xl z-20 flex items-center gap-2.5 pointer-events-none">
-                        <div>
-                          <div className="text-[8px] font-mono uppercase tracking-wider text-amber-400 font-semibold">
-                            T0{rightThemeIdx + 1} · {rightTheme.style}
-                          </div>
-                          <div className="text-[11px] sm:text-xs font-semibold text-white truncate max-w-[130px] sm:max-w-[200px]">
-                            {rightTheme.name}
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-1 border-l border-white/20 pl-2">
-                          {rightTheme.palette.map((color, cIdx) => (
-                            <span
-                              key={cIdx}
-                              className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full border border-black/40 shadow-xs inline-block"
-                              style={{ backgroundColor: color }}
-                              title={color}
-                            />
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Floating Indicator (Top-Right) */}
-                      <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 bg-ink/85 backdrop-blur-md border border-white/15 text-white text-[9px] font-mono px-2 py-0.5 rounded-full z-20 flex items-center gap-1 pointer-events-none shadow-md">
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-                        <span>CONTRAST THEME</span>
-                      </div>
-
-                      {/* Centered Launch Overlay on Hover */}
-                      <a
-                        href={currentDemo.url}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        className="absolute inset-0 bg-ink/0 group-hover/view:bg-ink/20 transition-colors flex items-center justify-center z-25"
-                      >
-                        <span className="opacity-0 group-hover/view:opacity-100 transition-all duration-300 transform group-hover/view:scale-100 scale-95 bg-ink/95 text-paper text-xs font-mono px-3.5 py-1.5 rounded-full shadow-xl border border-white/25 flex items-center gap-1.5">
-                          <span>Launch Live Build ↗</span>
-                        </span>
-                      </a>
-                    </div>
-
-                    {/* Bottom Manual Clickable Bar */}
-                    <div className="flex items-center justify-between gap-2 px-3 py-1.5 bg-[#121416] border-t border-white/10">
-                      <span className="text-[9px] font-mono text-white/50 uppercase tracking-wider pl-0.5 shrink-0">
-                        Theme 02:
-                      </span>
-                      <div className="grid grid-cols-3 gap-1.5 flex-1">
-                        {currentDemo.themes.map((theme, tIdx) => (
-                          <button
-                            key={theme.name}
-                            onClick={() => setRightThemeOverride(tIdx)}
-                            className={`py-0.5 px-2 rounded-md border text-[10px] font-mono flex items-center justify-between gap-1 transition-all cursor-pointer ${
-                              rightThemeIdx === tIdx
-                                ? 'bg-white/20 border-amber-400 text-white shadow-xs font-semibold'
-                                : 'bg-white/5 border-white/10 text-white/60 hover:text-white hover:bg-white/10'
-                            }`}
-                          >
-                            <span className="truncate">{theme.name}</span>
-                            <div className="flex items-center gap-0.5 shrink-0">
-                              {theme.palette.slice(0, 2).map((col, cIdx) => (
-                                <span
-                                  key={cIdx}
-                                  className="w-1.5 h-1.5 rounded-full border border-black/30"
-                                  style={{ backgroundColor: col }}
-                                />
-                              ))}
-                            </div>
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+            {/* Global Hub Card */}
+            <Reveal delay={0.1}>
+              <div className="p-8 rounded-3xl bg-paper-sunken border border-rule h-full flex flex-col justify-between shadow-xs">
+                <div>
+                  <span className="text-2xl block mb-3">🌍</span>
+                  <h3 className="font-display text-2xl text-ink font-medium mb-2">
+                    Global Markets (20 Countries)
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed mb-6">
+                    Dedicated country editions for the US, UK, Australia, UAE, Canada, and Europe.
+                    Native currency invoicing (USD, GBP, EUR, AED, AUD) and asynchronous timezone
+                    delivery.
+                  </p>
                 </div>
-              );
-            })()}
-          </Reveal>
-
-          {/* ── 3. COMPACT SPECIMEN INTEL BAR (DIRECTLY UNDER THE DUAL DISPLAYS) ── */}
-          <Reveal delay={45}>
-            {(() => {
-              const currentDemo = DEMO_SPECIMENS[activeDemoIdx];
-
-              return (
-                <div className="w-full bg-paper-raised px-3.5 sm:px-5 py-2.5 rounded-[16px] border border-rule-strong shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-2.5 mb-3">
-                  {/* Left: Specimen Number, Client, Sector & Speed Result */}
-                  <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                    <span className="card-tag text-[9px] sm:text-[10px] py-0.5 px-2 font-mono">
-                      #{currentDemo.num} {currentDemo.sector}
-                    </span>
-                    <h3 className="font-display text-sm sm:text-base text-ink font-medium">
-                      {currentDemo.client}
-                    </h3>
-                    <span className="px-2 py-0.5 rounded-full bg-signal-wash border border-signal/20 text-[9px] font-mono text-signal font-semibold">
-                      {currentDemo.result.split('·')[0].trim()}
-                    </span>
-                  </div>
-
-                  {/* Middle: Conversion Architecture Highlight */}
-                  <div className="hidden xl:flex items-center gap-2 text-xs text-muted max-w-xl truncate border-l border-rule pl-3">
-                    <span className="font-mono text-[9px] text-signal font-semibold uppercase shrink-0">
-                      Conversion Engine:
-                    </span>
-                    <span className="text-ink truncate font-medium">
-                      {currentDemo.conversionEngine}
-                    </span>
-                  </div>
-
-                  {/* Right: Direct Actions */}
-                  <div className="flex items-center gap-2 shrink-0 self-end md:self-auto">
-                    <a
-                      href={currentDemo.url}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="btn-primary text-xs py-1.5 px-4 flex items-center justify-center gap-1.5 shadow-2xs font-semibold"
-                    >
-                      <span>Test Live Build</span>
-                      <span>↗</span>
-                    </a>
-                    <Link
-                      to="/portfolio/"
-                      className="text-xs text-muted hover:text-signal font-medium transition-colors px-2 py-1"
-                    >
-                      Explore All 50 in Portfolio →
-                    </Link>
-                  </div>
-                </div>
-              );
-            })()}
-          </Reveal>
-
-          {/* ── 4. COMPACT FLEET MATRIX (WITH THUMBNAIL MINI-PREVIEW) ── */}
-          <Reveal delay={60}>
-            <div>
-              <div className="flex items-center justify-between mb-1.5">
-                <span className="text-[9px] font-mono uppercase tracking-wider text-signal font-semibold">
-                  Fleet Matrix ({DEMO_SPECIMENS.length} Builds)
-                </span>
-                <span className="text-[9px] font-mono text-muted">
-                  Click any sector to switch dual displays above instantly
-                </span>
-              </div>
-
-              {/* 3 Compact Rows of 6 Buttons (6:6:5 + 1 Custom Slot = 18 Total) */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
-                {DEMO_SPECIMENS.map((demo, idx) => {
-                  const isActive = activeDemoIdx === idx;
-                  return (
-                    <button
-                      key={demo.id}
-                      id={`home-demo-grid-${idx}`}
-                      onClick={() => selectDemo(idx)}
-                      className={`p-2 rounded-[14px] border text-left transition-all cursor-pointer relative overflow-hidden group ${
-                        isActive
-                          ? 'bg-paper-raised border-signal text-ink shadow-sm ring-1 ring-signal/30'
-                          : 'bg-paper-sunken/60 hover:bg-paper-raised border-rule hover:border-rule-strong text-ink-muted hover:text-ink'
-                      }`}
-                    >
-                      {/* Mini Preview Thumbnail Window */}
-                      <div className="relative aspect-[16/10] w-full rounded-[8px] overflow-hidden bg-black mb-1.5 border border-rule/50">
-                        <img
-                          src={demo.themes[0].image}
-                          alt={`${demo.shortName} preview`}
-                          width={240}
-                          height={150}
-                          loading="lazy"
-                          decoding="async"
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute top-1 left-1 bg-ink/80 text-[8px] font-mono text-white px-1 rounded">
-                          #{demo.num}
-                        </div>
-                        {isActive && (
-                          <div className="absolute top-1 right-1 bg-signal text-[7.5px] font-mono text-paper font-semibold px-1 rounded">
-                            ACTIVE
-                          </div>
-                        )}
-                      </div>
-
-                      {/* 6-Second Demo Progress Bar across the active button */}
-                      {isActive && isDemoInView && !isDemoPaused && (
-                        <div
-                          key={`progress-grid-${activeDemoIdx}`}
-                          className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-signal animate-demo-progress-6s"
-                        />
-                      )}
-                      <div className="flex items-center justify-between mb-0.5">
-                        <span className="text-[11px] font-semibold block truncate text-ink group-hover:text-signal transition-colors">
-                          {demo.shortName || demo.client}
-                        </span>
-                        {isActive ? (
-                          <span className="w-1.5 h-1.5 rounded-full bg-signal animate-ping" />
-                        ) : (
-                          <span className="w-1.5 h-1.5 rounded-full bg-rule-strong group-hover:bg-signal/50 transition-colors" />
-                        )}
-                      </div>
-                      <span className="text-[9px] text-muted block truncate">
-                        {demo.sector}
-                      </span>
-                    </button>
-                  );
-                })}
-
-                {/* 18th Slot: Custom Sprint Request completing the 6:6:5 grid */}
-                <button
-                  onClick={onBook}
-                  className="p-2 rounded-[14px] border border-dashed border-signal/50 bg-signal-wash/40 hover:bg-signal-wash text-left transition-all cursor-pointer group flex flex-col justify-between"
-                  title="Book a 7-day custom sprint for your industry"
+                <Link
+                  to="/markets/"
+                  className="inline-flex items-center justify-between w-full p-3 rounded-xl bg-ink text-paper hover:bg-signal transition-colors text-xs font-mono font-medium"
                 >
-                  <div className="relative aspect-[16/10] w-full rounded-[8px] overflow-hidden bg-signal-wash/60 mb-1.5 border border-dashed border-signal/30 flex items-center justify-center">
-                    <span className="text-signal text-lg font-bold group-hover:scale-110 transition-transform">
-                      +
-                    </span>
-                  </div>
-                  <div>
-                    <div className="flex items-center justify-between mb-0.5">
-                      <span className="text-[11px] font-semibold block truncate text-signal">
-                        Your Custom Build
-                      </span>
-                      <span className="text-signal text-[11px] group-hover:translate-x-0.5 transition-transform">
-                        →
-                      </span>
-                    </div>
-                    <span className="text-[9px] text-muted block truncate">
-                      7-Day Sprint Slot
-                    </span>
-                  </div>
-                </button>
+                  <span>Explore 20 Global Country Editions</span>
+                  <span>→</span>
+                </Link>
               </div>
-            </div>
-          </Reveal>
-        </div>
-      </Section>
+            </Reveal>
+          </div>
+        </Shell>
+      </section>
 
-      {/* ── SECTION: Specialized Industry Web Design Sprints ────────────────── */}
-      <section className="py-20 md:py-28 bg-paper border-b border-rule relative overflow-hidden">
+      {/* ── 10. Homepage FAQs (8 Essential Buying Questions) ──────────── */}
+      <section className="py-20 sm:py-28 bg-paper-sunken border-b border-rule">
         <Shell>
           <Reveal>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-              <div>
-                <span className="label text-signal font-semibold mb-2.5 block">
-                  50 SPECIALIZED INDUSTRY SILOS
-                </span>
-                <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
-                  Web design engineered for your exact business.
-                </h2>
-                <p className="text-lead text-muted mt-4 max-w-2xl">
-                  A clinic needs 2-tap patient triage. An architect needs 3D render-to-reality comparisons.
-                  We don't sell generic templates — we handcraft dedicated digital platforms tailored to your industry's buying psychology.
-                </p>
-              </div>
-
-              <Link
-                to="/web-design/"
-                className="btn-primary !py-3 !px-7 text-xs rounded-full inline-flex items-center gap-2 self-start md:self-auto shrink-0 shadow-xs"
-              >
-                <span>Explore All 50 Industries</span>
-                <span>→</span>
-              </Link>
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <span className="card-tag mb-3">CLARITY FIRST</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-muted text-sm sm:text-base mt-3 leading-relaxed">
+                Clear answers on pricing, our 7-working-day timeline, deliverables, and code
+                ownership.
+              </p>
             </div>
           </Reveal>
 
-          {/* 12-Card Bento Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {FEATURED_WEB_DESIGN_NICHES.map((niche, idx) => (
-              <Reveal key={niche.key} delay={idx * 20}>
-                <Link
-                  to={`/web-design/${niche.key}/`}
-                  className="group block p-7 rounded-[24px] bg-paper-raised border border-rule-strong hover:border-signal/50 hover:shadow-md transition-all duration-300 h-full flex flex-col justify-between"
+          <div className="max-w-4xl mx-auto space-y-4 mb-10">
+            {HOMEPAGE_FAQS.map((faq, idx) => {
+              const isOpen = activeFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className="p-6 rounded-[20px] bg-paper border border-rule transition-all shadow-xs"
                 >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="w-10 h-10 rounded-xl bg-paper-sunken border border-rule flex items-center justify-center text-lg">
-                        {niche.icon}
-                      </span>
-                      <span className="px-2.5 py-0.5 rounded-full bg-signal-wash border border-signal/20 text-[10px] font-mono text-signal font-semibold">
-                        7-Day Sprint
-                      </span>
-                    </div>
-
-                    <h3 className="font-display text-xl text-ink font-medium mb-2.5 group-hover:text-signal transition-colors">
-                      {niche.name}
+                  <button
+                    type="button"
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full flex items-center justify-between text-left gap-4 cursor-pointer"
+                  >
+                    <h3 className="font-display text-base sm:text-lg text-ink font-medium">
+                      {faq.q}
                     </h3>
-
-                    <p className="text-muted text-xs sm:text-sm leading-relaxed mb-6">
-                      {niche.hook}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 border-t border-rule flex items-center justify-between text-xs font-mono">
-                    <span className="text-muted text-[11px]">{niche.stat}</span>
-                    <span className="text-signal group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-sans font-medium text-xs">
-                      View Platform →
+                    <span className="text-signal text-lg font-mono shrink-0">
+                      {isOpen ? '−' : '+'}
                     </span>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-
-          {/* Remaining 5 Industries Quick-Link Row */}
-          <div className="p-6 rounded-2xl bg-paper-sunken border border-rule flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="flex flex-wrap items-center gap-2 text-xs">
-              <span className="font-mono text-muted uppercase text-[11px] mr-2">Also Specializing In:</span>
-              <Link to="/web-design/gym-fitness-club/" className="px-3 py-1 rounded-full bg-paper border border-rule text-ink hover:border-signal hover:text-signal transition-colors">
-                Gyms & Fitness Clubs
-              </Link>
-              <Link to="/web-design/salon-beauty/" className="px-3 py-1 rounded-full bg-paper border border-rule text-ink hover:border-signal hover:text-signal transition-colors">
-                Salons & Bridal Beauty
-              </Link>
-              <Link to="/web-design/fitness-coach/" className="px-3 py-1 rounded-full bg-paper border border-rule text-ink hover:border-signal hover:text-signal transition-colors">
-                Private Fitness Coaches
-              </Link>
-              <Link to="/web-design/yoga-meditation/" className="px-3 py-1 rounded-full bg-paper border border-rule text-ink hover:border-signal hover:text-signal transition-colors">
-                Yoga & Meditation Shalas
-              </Link>
-              <Link to="/web-design/creative-portfolio/" className="px-3 py-1 rounded-full bg-paper border border-rule text-ink hover:border-signal hover:text-signal transition-colors">
-                Creative Design Studios
-              </Link>
-            </div>
-
-            <Link
-              to="/web-design/"
-              className="font-mono text-xs text-signal hover:text-ink transition-colors whitespace-nowrap"
-            >
-              View Directory of All 50 →
-            </Link>
-          </div>
-
-          {/* Bengaluru City Local Sprint Feature Card */}
-          <div className="mt-6 p-6 rounded-2xl bg-paper-raised border border-rule-strong hover:border-signal/40 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <span className="w-12 h-12 rounded-xl bg-signal/10 border border-signal/20 text-signal flex items-center justify-center text-xl shrink-0">
-                📍
-              </span>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-display text-base text-ink font-medium">
-                    Web Design in Bangalore · 100 Localities
-                  </span>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-signal-wash text-signal border border-signal/20">
-                    Local Sprints
-                  </span>
+                  </button>
+                  {isOpen && (
+                    <p className="text-xs sm:text-sm text-muted mt-4 leading-relaxed pt-4 border-t border-rule font-sans">
+                      {faq.a}
+                    </p>
+                  )}
                 </div>
-                <p className="text-muted text-xs mt-1">
-                  Targeted React websites for clinics, architects &amp; founders in Indiranagar, Koramangala, Whitefield, HSR Layout &amp; beyond.
-                </p>
-              </div>
-            </div>
+              );
+            })}
+          </div>
 
+          <div className="text-center">
             <Link
-              to="/web-design/bangalore/"
-              className="btn-primary !py-2.5 !px-5 text-xs rounded-full inline-flex items-center gap-1.5 self-start md:self-auto shrink-0 shadow-xs"
+              to="/faq/"
+              className="btn-primary !py-3 !px-6 text-xs rounded-full inline-flex items-center gap-2"
             >
-              <span>Explore Bangalore Hub</span>
+              <span>View All Frequently Asked Questions</span>
               <span>→</span>
             </Link>
           </div>
-
-          {/* Dual Exploration Row: Solutions & Alternatives */}
-          <div className="mt-6 grid md:grid-cols-2 gap-6">
-            {/* Solutions Card */}
-            <div className="p-7 rounded-[24px] bg-paper-raised border border-rule-strong hover:border-signal/40 transition-all flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="w-10 h-10 rounded-xl bg-signal/10 border border-signal/20 text-signal flex items-center justify-center text-lg">
-                    🛠️
-                  </span>
-                  <span className="px-2.5 py-0.5 rounded-full bg-signal-wash border border-signal/20 text-[10px] font-mono text-signal font-semibold">
-                    10 Business Problems
-                  </span>
-                </div>
-                <h3 className="font-display text-xl text-ink font-medium mb-2">
-                  Engineered Solutions
-                </h3>
-                <p className="text-muted text-xs sm:text-sm leading-relaxed mb-4">
-                  Solve concrete website bottlenecks: sub-800ms speed optimization, outdated site redesigns, appointment booking engines, and lead generation architecture.
-                </p>
-                <div className="flex flex-wrap gap-1.5 mb-6">
-                  <Link to="/solutions/speed-optimization/" className="px-2.5 py-1 rounded-md bg-paper border border-rule text-xs text-ink hover:text-signal hover:border-signal transition-colors">
-                    Speed &amp; CWV
-                  </Link>
-                  <Link to="/solutions/website-redesign/" className="px-2.5 py-1 rounded-md bg-paper border border-rule text-xs text-ink hover:text-signal hover:border-signal transition-colors">
-                    Redesign
-                  </Link>
-                  <Link to="/solutions/lead-generation-websites/" className="px-2.5 py-1 rounded-md bg-paper border border-rule text-xs text-ink hover:text-signal hover:border-signal transition-colors">
-                    Lead Gen
-                  </Link>
-                  <Link to="/solutions/booking-websites/" className="px-2.5 py-1 rounded-md bg-paper border border-rule text-xs text-ink hover:text-signal hover:border-signal transition-colors">
-                    Booking
-                  </Link>
-                </div>
-              </div>
-              <Link
-                to="/solutions/"
-                className="text-signal hover:underline inline-flex items-center gap-1.5 font-medium text-xs font-mono"
-              >
-                <span>Explore All 10 Solutions</span>
-                <span>→</span>
-              </Link>
-            </div>
-
-            {/* Alternatives Card */}
-            <div className="p-7 rounded-[24px] bg-paper-raised border border-rule-strong hover:border-signal/40 transition-all flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="w-10 h-10 rounded-xl bg-signal/10 border border-signal/20 text-signal flex items-center justify-center text-lg">
-                    ⚖️
-                  </span>
-                  <span className="px-2.5 py-0.5 rounded-full bg-signal-wash border border-signal/20 text-[10px] font-mono text-signal font-semibold">
-                    10 Architectural Comparisons
-                  </span>
-                </div>
-                <h3 className="font-display text-xl text-ink font-medium mb-2">
-                  Compare Alternatives
-                </h3>
-                <p className="text-muted text-xs sm:text-sm leading-relaxed mb-4">
-                  Honest side-by-side technical evaluations: Hand-coded React vs Webflow, Framer, WordPress, Shopify, Wix, and bloated 3-month agency retainers.
-                </p>
-                <div className="flex flex-wrap gap-1.5 mb-6">
-                  <Link to="/alternatives/webflow/" className="px-2.5 py-1 rounded-md bg-paper border border-rule text-xs text-ink hover:text-signal hover:border-signal transition-colors">
-                    Webflow
-                  </Link>
-                  <Link to="/alternatives/framer/" className="px-2.5 py-1 rounded-md bg-paper border border-rule text-xs text-ink hover:text-signal hover:border-signal transition-colors">
-                    Framer
-                  </Link>
-                  <Link to="/alternatives/wordpress/" className="px-2.5 py-1 rounded-md bg-paper border border-rule text-xs text-ink hover:text-signal hover:border-signal transition-colors">
-                    WordPress
-                  </Link>
-                  <Link to="/alternatives/shopify/" className="px-2.5 py-1 rounded-md bg-paper border border-rule text-xs text-ink hover:text-signal hover:border-signal transition-colors">
-                    Shopify
-                  </Link>
-                </div>
-              </div>
-              <Link
-                to="/alternatives/"
-                className="text-signal hover:underline inline-flex items-center gap-1.5 font-medium text-xs font-mono"
-              >
-                <span>Explore All 10 Comparisons</span>
-                <span>→</span>
-              </Link>
-            </div>
-          </div>
         </Shell>
       </section>
 
-      {/* ── SECTION 04: The 7-Day Sprint Blueprint (The Process) ────────────────── */}
-      <section className="py-20 md:py-28 bg-paper-sunken/40 border-y border-rule relative overflow-hidden">
+      {/* ── 11. Free Website Audit (Single, High-Value Lead Magnet) ──── */}
+      <section id="audit" className="py-20 sm:py-28 bg-paper border-b border-rule">
         <Shell>
           <Reveal>
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="label text-signal font-semibold mb-2.5 block">
-                7-day delivery system
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
-                The 7-day sprint blueprint.
+            <div className="max-w-3xl mx-auto text-center mb-10">
+              <span className="card-tag mb-3">FREE 10-POINT CHECKLIST</span>
+              <h2 className="font-display text-3xl sm:text-4xl text-ink font-normal tracking-tight mb-3">
+                Is your website giving visitors a reason to contact you?
               </h2>
-              <p className="text-lead text-muted mt-4 max-w-2xl mx-auto">
-                Three clear, predictable milestones — the client's-eye view, not the internal production schedule.
-                You always know what is being built, who is building it, and exactly when it goes live.
+              <p className="text-muted text-sm sm:text-base leading-relaxed">
+                Use our free 10-point website audit to check how clearly your website explains your
+                business, builds trust, and guides visitors towards taking action. Enter your
+                details and get the audit delivered to your inbox.
               </p>
             </div>
-          </Reveal>
 
-          {/* 3 Cloaked-Style Bento Step Cards */}
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {/* Step 1 */}
-            <Reveal delay={60}>
-              <div className="bg-paper-raised p-8 sm:p-9 rounded-[28px] border border-rule-strong shadow-sm hover:shadow-md hover:border-ink/30 transition-all duration-300 flex flex-col justify-between h-full group">
-                <div>
-                  <span className="card-tag mb-4">
-                    Day 1 · Scope lock
-                  </span>
-
-                  <h3 className="font-display text-2xl text-ink font-medium mb-3">
-                    Schedule &amp; scope
-                  </h3>
-                  <p className="text-muted leading-relaxed text-sm mb-6">
-                    Book your 20-minute discovery call directly with Deepak &amp; Geetha. We identify your high-margin offerings, diagnose why visitors currently bounce, and lock your scope sheet.
-                  </p>
-
-                  <ul className="space-y-2 text-xs text-ink/80 pt-4 border-t border-rule">
-                    <li className="flex items-center gap-2">
-                      <span className="text-signal font-bold">✓</span>
-                      <span>20-minute founder discovery call</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-signal font-bold">✓</span>
-                      <span>Fixed-price written scope sheet</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-signal font-bold">✓</span>
-                      <span>Wireframe &amp; narrative direction</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="mt-8 pt-4 border-t border-rule bg-paper-sunken/60 -mx-8 -mb-8 p-5 sm:p-6 rounded-b-[28px]">
-                  <p className="text-xs font-semibold text-ink flex items-center gap-1.5">
-                    <span className="text-signal">⚡</span>
-                    <span>Benefit: Absolute clarity before a single line of code is written.</span>
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Step 2 */}
-            <Reveal delay={120}>
-              <div className="bg-paper-raised p-8 sm:p-9 rounded-[28px] border border-rule-strong shadow-sm hover:shadow-md hover:border-ink/30 transition-all duration-300 flex flex-col justify-between h-full group">
-                <div>
-                  <span className="card-tag mb-4">
-                    Days 2–5 · Build
-                  </span>
-
-                  <h3 className="font-display text-2xl text-ink font-medium mb-3">
-                    Design &amp; engineering
-                  </h3>
-                  <p className="text-muted leading-relaxed text-sm mb-6">
-                    Geetha crafts the custom editorial design system and typography; Deepak engineers sub-1.0s fast React &amp; Vite code with seamless lead capture hooks.
-                  </p>
-
-                  <ul className="space-y-2 text-xs text-ink/80 pt-4 border-t border-rule">
-                    <li className="flex items-center gap-2">
-                      <span className="text-signal font-bold">✓</span>
-                      <span>100% bespoke design (zero templates)</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-signal font-bold">✓</span>
-                      <span>Next-gen React 19 &amp; Vite speed</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-signal font-bold">✓</span>
-                      <span>Calendar, WhatsApp &amp; CRM hooks</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="mt-8 pt-4 border-t border-rule bg-paper-sunken/60 -mx-8 -mb-8 p-5 sm:p-6 rounded-b-[28px]">
-                  <p className="text-xs font-semibold text-ink flex items-center gap-1.5">
-                    <span className="text-signal">⚡</span>
-                    <span>Benefit: You don't have to write copy or manage a developer.</span>
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Step 3 */}
-            <Reveal delay={180}>
-              <div className="bg-paper-raised p-8 sm:p-9 rounded-[28px] border border-rule-strong shadow-sm hover:shadow-md hover:border-ink/30 transition-all duration-300 flex flex-col justify-between h-full group">
-                <div>
-                  <span className="card-tag mb-4">
-                    Days 6–7 · Launch
-                  </span>
-
-                  <h3 className="font-display text-2xl text-ink font-medium mb-3">
-                    Verification &amp; handover
-                  </h3>
-                  <p className="text-muted leading-relaxed text-sm mb-6">
-                    We run rigorous cross-device audits, verify 95+ Lighthouse mobile benchmarks, point your DNS live, and hand over 100% of your source code repository.
-                  </p>
-
-                  <ul className="space-y-2 text-xs text-ink/80 pt-4 border-t border-rule">
-                    <li className="flex items-center gap-2">
-                      <span className="text-signal font-bold">✓</span>
-                      <span>95+ Google Lighthouse verification</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-signal font-bold">✓</span>
-                      <span>100% full Git code ownership</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-signal font-bold">✓</span>
-                      <span>30-day post-launch warranty</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="mt-8 pt-4 border-t border-rule bg-paper-sunken/60 -mx-8 -mb-8 p-5 sm:p-6 rounded-b-[28px]">
-                  <p className="text-xs font-semibold text-ink flex items-center gap-1.5">
-                    <span className="text-signal">⚡</span>
-                    <span>Benefit: Serious prospects are pre-sold before they ever message you.</span>
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Bottom Commitment Strip */}
-          <Reveal delay={240}>
-            <div className="mt-14 max-w-4xl mx-auto p-4 sm:p-5 rounded-[20px] bg-paper-raised border border-rule-strong shadow-xs flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs font-medium text-ink">
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-signal" />
-                <span>Fixed price in writing</span>
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-signal" />
-                <span>7 working days contractual</span>
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-signal" />
-                <span>Late means free guarantee</span>
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-signal" />
-                <span>100% client code ownership</span>
-              </span>
+            <div className="max-w-xl mx-auto">
+              <LeadMagnetForm />
             </div>
           </Reveal>
         </Shell>
       </section>
 
-      {/* ── SECTION 05: Standards & Performance ─────────────────────── */}
-      <section className="py-20 md:py-28 bg-paper">
-        <Shell>
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left Column: Heading & Evidence Argument */}
-            <Reveal className="lg:col-span-5">
-              <span className="label text-signal font-semibold mb-2.5 block">
-                Engineering standards
-              </span>
+      {/* ── 12. Final Closing Call-to-Action ──────────────────────────── */}
+      <section className="py-24 sm:py-32 bg-ink text-paper text-center relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-signal/15 rounded-full blur-[100px] pointer-events-none -z-10" />
 
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight leading-[1.08]">
-                The numbers we hold ourselves to.
-              </h2>
-
-              <p className="text-muted leading-relaxed mt-6 text-sm sm:text-base">
-                We are a young studio, so we don't show you a wall of borrowed client logos.
-                Instead, we publish the exact engineering standards every single site we ship is contractually verified against.
-              </p>
-
-              <p className="text-muted leading-relaxed mt-4 text-sm sm:text-base">
-                Open your browser's developer tools, run Google Lighthouse on this page, and check the
-                numbers yourself. That is a vastly more honest signal than any agency sales pitch.
-              </p>
-
-              {/* Lab Audit Badge */}
-              <div className="mt-8 p-4 rounded-[18px] bg-paper-sunken/80 border border-rule-strong flex items-center justify-between gap-4">
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                    <span className="text-xs font-semibold text-ink">Lighthouse 99 / 100</span>
-                  </div>
-                  <span className="text-[11px] text-muted block mt-0.5">Tested on live 4G mobile emulation</span>
-                </div>
-                <Link to="/portfolio/" className="btn-primary text-xs py-2 px-4 shrink-0">
-                  Inspect Demos →
-                </Link>
-              </div>
-            </Reveal>
-
-            {/* Right Column: 6 Bento Metric Specimen Cards */}
-            <Reveal delay={120} className="lg:col-span-7">
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                {BUDGET.map((b) => (
-                  <div
-                    key={b.metric}
-                    className="bg-paper-raised p-5 sm:p-6 rounded-[24px] border border-rule-strong shadow-xs hover:shadow-md hover:border-signal/40 transition-all duration-300 flex flex-col justify-between"
-                  >
-                    <div>
-                      <span className="text-[11px] font-semibold text-muted leading-snug block mb-2">
-                        {b.metric}
-                      </span>
-                      <span className="font-display text-3xl sm:text-4xl font-medium text-ink block tracking-tight">
-                        {b.value}
-                      </span>
-                    </div>
-
-                    <span className="text-xs text-muted block mt-3">
-                      {b.target}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-        </Shell>
-      </section>
-
-      {/* ── SECTION 8: Studio Founders (Deepak & Geetha) ───────────── */}
-      <Section tone="sunk">
-        <Shell>
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <Reveal className="lg:col-span-5">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="rounded-[20px] overflow-hidden border border-rule-strong bg-paper shadow-sm">
-                  <picture className="w-full aspect-[3/4] block">
-                    <source media="(max-width: 767px)" srcSet="/deepak-mobile.webp" />
-                    <img
-                      src="/deepak.webp"
-                      alt="Deepak, co-founder"
-                      width={540}
-                      height={540}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-full object-cover grayscale"
-                    />
-                  </picture>
-                  <div className="p-3 text-center border-t border-rule">
-                    <strong className="text-xs text-ink block">Deepak</strong>
-                    <span className="text-[10px] text-muted">Development</span>
-                  </div>
-                </div>
-
-                <div className="rounded-[20px] overflow-hidden border border-rule-strong bg-paper shadow-sm">
-                  <picture className="w-full aspect-[3/4] block">
-                    <source media="(max-width: 767px)" srcSet="/geetha-mobile.webp" />
-                    <img
-                      src="/geetha.webp"
-                      alt="Geetha, co-founder"
-                      width={700}
-                      height={700}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-full object-cover object-top grayscale"
-                    />
-                  </picture>
-                  <div className="p-3 text-center border-t border-rule">
-                    <strong className="text-xs text-ink block">Geetha</strong>
-                    <span className="text-[10px] text-muted">Design & Copy</span>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-
-            <Reveal delay={120} className="lg:col-span-7">
-              <SectionHead index="06" eyebrow="The studio" title="Two people. Both of them on your project." />
-              <p className="text-muted leading-relaxed mt-6 max-w-xl">
-                We are Deepak and Geetha, a brother and sister running a two-person studio in
-                Bengaluru. Geetha designs, Deepak builds, and the person you meet on the discovery
-                call is the person who does the work. There is no account manager between you and
-                the people making decisions about your site.
-              </p>
-              <p className="text-muted leading-relaxed mt-4 max-w-xl">
-                It also means we take on a capped number of builds per month. That is a real
-                quality constraint, not an artificial marketing scarcity tactic.
-              </p>
-              <div className="mt-8">
-                <Link to="/about/" className="link-underline text-ink text-sm font-medium">
-                  More about how we work →
-                </Link>
-              </div>
-            </Reveal>
-          </div>
-        </Shell>
-      </Section>
-
-      {/* ── SECTION 9: FAQ Accordion ──────────────────────────────── */}
-      <Section>
         <Shell width="narrow">
           <Reveal>
-            <SectionHead
-              index="07"
-              eyebrow="Frequently Asked Questions"
-              title="Frequently asked questions about our 7-day build."
-              intro="Plain-English answers on our sprint timeline, the 50% late delivery guarantee, 100% code ownership, React architecture, and working directly with Deepak & Geetha."
-            />
-          </Reveal>
-          <div className="mt-14">
-            <FaqAccordion />
-          </div>
-        </Shell>
-      </Section>
+            <div className="max-w-2xl mx-auto">
+              <span className="label text-signal-bright block mb-4 font-mono text-xs uppercase tracking-wider">
+                GET STARTED
+              </span>
 
-      {/* ── SECTION 10: Lead Magnet (The 10-Point Audit) ───────────── */}
-      <Section id="lead-magnet" tone="ink" size="default">
-        <Shell>
-          <Reveal>
-            <div className="mb-3">
-              <span className="label text-signal-bright">Free diagnostic resource</span>
-            </div>
-            <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-end mb-12">
-              <h2 className="font-display text-3xl sm:text-4xl text-on-ink font-normal">
-                Score your own site.<br />
-                <em className="italic text-signal-bright font-medium">Before</em> you book a call.
+              <h2 className="font-display text-3xl sm:text-5xl text-paper font-normal tracking-tight leading-tight mb-6">
+                Ready for a website that works harder for your business?
               </h2>
-              <p className="text-lead text-on-ink-muted leading-relaxed">
-                The Pre-Sold Prospects Audit — the same 10-point trust diagnostic we run for every client, now in your hands.
+
+              <p className="text-on-ink-muted text-sm sm:text-base leading-relaxed mb-10">
+                Let&apos;s talk about your business, what your customers need, and what your website
+                should help you achieve. You&apos;ll leave with a clear idea of the right approach,
+                the price, and the next steps — even if we&apos;re not the right fit.
               </p>
-            </div>
-          </Reveal>
 
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            {/* Left: Cover card */}
-            <Reveal className="lg:col-span-5 flex flex-col gap-6">
-              <div className="relative bg-paper-raised border border-rule-strong rounded-[24px] overflow-hidden shadow-2xl p-3 flex items-center justify-center">
-                <img
-                  src="/lead-magnet-cover.webp"
-                  alt="The Pre-Sold Prospects Audit"
-                  className="w-full h-auto object-contain rounded-[18px]"
-                  width={1200}
-                  height={680}
-                  loading="lazy"
-                />
+              <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
+                <button
+                  type="button"
+                  onClick={handleBooking}
+                  className="btn-primary !px-9 !py-4 text-sm rounded-full shadow-lg cursor-pointer inline-flex items-center gap-2"
+                >
+                  <span>Book Your Free 20-Minute Call</span>
+                  <span>→</span>
+                </button>
+
+                <a
+                  href="https://wa.me/918660819023?text=Hi%20Deepak%20and%20Geetha,%20I'd%20like%20to%20discuss%20a%20website%20for%20my%20business."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 rounded-full border border-white/20 hover:border-white text-paper font-mono text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 bg-white/[0.04]"
+                >
+                  <span>WhatsApp Co-Founders Directly</span>
+                  <span>↗</span>
+                </a>
               </div>
 
-              <div>
-                <p className="label text-on-ink-muted mb-4">What's inside</p>
-                <ul className="space-y-3">
-                  {[
-                    { label: 'The 10-point trust test', sub: 'We score every client site against this before we start.' },
-                    { label: 'Your scoring band', sub: 'Silent Loss, Leaking, or Near Your Ceiling.' },
-                    { label: 'The silent objections', sub: 'What a skeptical prospect thinks before they message you.' },
-                    { label: '20-minute action checklist', sub: 'One fix per point, ordered by where you scored lowest.' },
-                  ].map(({ label, sub }) => (
-                    <li key={label} className="flex gap-3 items-start text-xs">
-                      <span className="shrink-0 mt-0.5 w-4 h-4 rounded-full bg-signal/20 text-signal-bright flex items-center justify-center font-bold">
-                        ✓
-                      </span>
-                      <span>
-                        <strong className="text-on-ink font-medium block">{label}</strong>
-                        <span className="text-on-ink-muted">{sub}</span>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
+              <p className="text-xs font-mono text-on-ink-muted mb-8">
+                Prefer to explain your project in writing?{' '}
+                <Link to="/contact/" className="text-signal-bright underline">
+                  Send us a project brief →
+                </Link>
+              </p>
 
-            {/* Right: Form card */}
-            <Reveal delay={120} className="lg:col-span-7">
-              <div className="bg-paper-raised border border-rule-strong rounded-[24px] overflow-hidden shadow-2xl">
-                <div className="bg-signal px-6 py-4 flex items-center gap-3">
-                  <span className="text-paper font-bold text-sm">⚡</span>
-                  <p className="font-sans font-semibold text-paper text-sm">
-                    Get the free audit — lands in your inbox in 60 seconds
-                  </p>
-                </div>
-                <div className="p-6 md:p-8">
-                  <LeadMagnetForm embedded />
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </Shell>
-      </Section>
-
-      {/* ── SECTION 11: Cloaked-Style Modern Dual-Card Closing Lead Capture CTA ── */}
-      <section className="bg-paper-sunken/70 text-ink py-20 sm:py-28 border-t border-rule">
-        <Shell>
-          <Reveal>
-            <div className="grid md:grid-cols-12 gap-8 items-center bg-ink text-paper border border-white/10 rounded-[32px] p-8 sm:p-12 shadow-[0_24px_70px_rgba(0,0,0,0.2)]">
-              {/* Left Brand Mark */}
-              <div className="md:col-span-6 flex flex-col justify-between h-full">
-                <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <LogoMark size={48} />
-                    <span className="font-display text-2xl text-paper font-medium">Uncoded Hub</span>
-                  </div>
-                  <h3 className="font-display text-3xl sm:text-4xl text-paper font-normal leading-tight">
-                    Fixed price. Seven working days.<br />
-                    <em className="text-signal-bright italic font-medium">On time or free.</em>
-                  </h3>
-                  <p className="text-on-ink-muted text-sm leading-relaxed mt-4 max-w-md">
-                    No deck and no sales pitch. Book a 20-minute call to see if your business is
-                    the right fit for our seven-day sprint.
-                  </p>
-                </div>
-
-                <div className="mt-8 flex items-center gap-4 text-xs text-on-ink-muted">
-                  <span>● Deepak &amp; Geetha</span>
-                  <span>·</span>
-                  <span>Bengaluru, India</span>
-                  <span>·</span>
-                  <span>Working globally</span>
-                </div>
-              </div>
-
-              {/* Right CTA Action Card */}
-              <div className="md:col-span-6 bg-white/[0.06] p-6 sm:p-8 rounded-[24px] border border-white/15 flex flex-col justify-between shadow-inner">
-                <div>
-                  <span className="label text-signal-bright block mb-2 font-semibold">
-                    Reserve your build cohort
-                  </span>
-                  <h4 className="font-display text-2xl text-paper font-medium mb-3">
-                    Ready to let your website sell before you do?
-                  </h4>
-                  <p className="text-on-ink-muted text-xs leading-relaxed mb-6">
-                    Leave with a written scope, a fixed price, and a defined delivery date — or an honest recommendation if you need something else.
-                  </p>
-                </div>
-
-                <div className="space-y-3">
-                  <button
-                    onClick={onBook}
-                    className="w-full bg-signal hover:bg-signal-bright text-paper font-sans font-medium text-sm py-3.5 px-6 rounded-full transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-lg"
-                  >
-                    <span>Schedule My FREE 20-Minute Call</span>
-                    <span>→</span>
-                  </button>
-                  <Link
-                    to="/contact/"
-                    className="w-full block text-center text-xs text-on-ink-muted hover:text-paper py-2 transition-colors"
-                  >
-                    Or send us a written brief instead
-                  </Link>
-                </div>
+              <div className="text-xs font-mono text-on-ink-muted/80 pt-6 border-t border-white/10">
+                Deepak &amp; Geetha · Bengaluru, India · Working worldwide
               </div>
             </div>
           </Reveal>
         </Shell>
       </section>
-
-      <FloatingLeadMagnetBanner />
     </>
   );
 }

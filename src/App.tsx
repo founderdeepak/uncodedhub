@@ -152,9 +152,9 @@ export default function App() {
         {/* ── Top Announcement Banner — positioned explicitly below the navigation header ── */}
         <div className="bg-ink text-paper text-[11px] sm:text-[12px] font-mono py-2 px-4 border-b border-white/10 text-center flex items-center justify-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
-          <span>Fixed scope, fixed timeline, terms published in full</span>
+          <span>Fixed scope · Fixed price · 7-working-day sprint · Clear terms</span>
           <span className="text-white/40">·</span>
-          <span className="text-signal-bright font-medium">Late means free guarantee</span>
+          <span className="text-signal-bright font-medium">On time or your entire build is free</span>
         </div>
       </header>
 
