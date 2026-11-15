@@ -4,30 +4,112 @@ import { Link } from 'react-router-dom';
 import { Reveal, Shell } from '../components/primitives';
 import { BANGALORE_LOCALITIES } from '../data/bangaloreLocalities';
 
+/* ═══════════════════════════════════════════════════════════════════
+   BENGALURU WEB DESIGN HUB — UNCODED HUB
+   Canonical: https://uncodedhub.com/web-design/bangalore/
+
+   Core Positioning:
+   "Web Design Company in Bangalore. Your Website, Built in 7 Working Days."
+   "We help Bengaluru businesses get custom websites that look professional, load fast, and turn more visitors into enquiries."
+
+   Architecture:
+   1. Customer-Centric Hero & Plain English Outcomes
+   2. Why Choose a Bengaluru Web Design Studio? (Local Founder Advantage)
+   3. What Makes Uncoded Hub Different (Focusing on Our Strengths)
+   4. 12 Featured Premier Localities
+   5. Searchable Directory for All 100 Localities
+   6. Contractual 7-Day Guarantee: On Time or 100% Free
+   7. Bengaluru Buying FAQs
+   8. Focused Single CTA (Book 20-Min Discovery Call)
+   ═══════════════════════════════════════════════════════════════════ */
+
 interface BangaloreHubProps {
   onBook?: () => void;
 }
 
-const ZONES = [
-  { id: 'all', label: 'All 100 Localities' },
-  { id: 'East Bengaluru', label: 'East (Indiranagar, Whitefield, ORR)' },
-  { id: 'South Bengaluru', label: 'South (Koramangala, HSR, Jayanagar)' },
-  { id: 'Central Bengaluru', label: 'Central (MG Road, CBD, Lavelle Rd)' },
-  { id: 'North Bengaluru', label: 'North (Hebbal, Sadashivanagar, HRBR)' },
+const FEATURED_LOCALITY_SLUGS = [
+  'indiranagar',
+  'koramangala',
+  'whitefield',
+  'hsr-layout',
+  'jayanagar',
+  'mg-road',
+  'electronic-city',
+  'malleswaram',
+  'bellandur',
+  'jp-nagar',
+  'sadashivanagar',
+  'hebbal',
 ];
 
-export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
+const ZONES = [
+  { id: 'all', label: 'All Localities' },
+  { id: 'East', label: 'East (Indiranagar, Whitefield, Bellandur)' },
+  { id: 'South', label: 'South (Koramangala, HSR, Jayanagar, JP Nagar)' },
+  { id: 'Central', label: 'Central (MG Road, Lavelle Rd, Sadashivanagar)' },
+  { id: 'North', label: 'North (Hebbal, Malleswaram, Yelahanka)' },
+];
+
+const BANGALORE_FAQS = [
+  {
+    q: 'Can we meet in person in Bengaluru before starting the project?',
+    a: 'Yes. While most of our discovery and sprint check-ins happen efficiently over Google Meet or WhatsApp, we are based right here in Bengaluru. For established local clinics, studios, and firms, we are happy to meet in person across Indiranagar, Koramangala, Whitefield, or the CBD to review your project scope.',
+  },
+  {
+    q: 'How does the 7-day website sprint work for a Bangalore business?',
+    a: 'Once we complete our 20-minute discovery call and confirm your basic assets (logo, services, and photos), your sprint begins. Day 1 is strategic architecture, Day 2 is visual design direction, Days 3–4 are custom engineering, Day 5 is copy and enquiry funnels, Day 6 is mobile testing across Airtel/Jio networks, and Day 7 is live launch. You work directly with founders Deepak and Geetha throughout the week.',
+  },
+  {
+    q: 'Do you provide a Karnataka GST tax invoice?',
+    a: 'Yes, 100%. Uncoded Hub provides a compliant Karnataka GST B2B tax invoice with every project, allowing registered companies and practices to claim full Input Tax Credit (ITC).',
+  },
+  {
+    q: 'What makes your custom React websites faster than local WordPress agencies?',
+    a: 'Most local agencies sell bloated WordPress or Elementor templates that load 30+ conflicting plugins, causing 5 to 8 second delays on mobile phones. We hand-code clean React with next-generation WebP images and zero bloatware. Your site loads in under a second on mobile networks, giving visitors an effortless browsing experience and improving your local Google ranking.',
+  },
+  {
+    q: 'Will our website rank on Google for local searches in our Bangalore neighborhood?',
+    a: 'Yes. Every page includes comprehensive technical on-page SEO: localized title tags, structured Schema.org markup (LocalBusiness, Organization, and Service), canonical tags, and Google Search Console indexing. This signals to Google exactly where your business is located and which services you provide in your neighborhood.',
+  },
+  {
+    q: 'What happens if we need updates or changes after launch?',
+    a: 'Every sprint includes 30 days of direct founder support for bug fixes and minor adjustments. After that, you are in complete control: you own 100% of the clean source code and can edit text yourself, hire any developer, or commission small fixed-price mini-sprints with us. We also offer optional care plans for busy founders.',
+  },
+];
+
+export default function BangaloreHub({ onBook }: BangaloreHubProps) {
   const [selectedZone, setSelectedZone] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
-  const localities = useMemo(() => {
+  const handleBooking = () => {
+    if (onBook) {
+      onBook();
+    } else {
+      window.location.href = '/contact/#book';
+    }
+  };
+
+  const toggleFaq = (idx: number) => {
+    setActiveFaq(activeFaq === idx ? null : idx);
+  };
+
+  // 12 Curated Featured Localities
+  const featuredLocalities = useMemo(() => {
+    return FEATURED_LOCALITY_SLUGS.map((slug) => BANGALORE_LOCALITIES[slug]).filter(Boolean);
+  }, []);
+
+  // Filtered list for the full searchable directory
+  const allLocalitiesList = useMemo(() => {
     return Object.values(BANGALORE_LOCALITIES).filter((loc) => {
-      const matchesZone = selectedZone === 'all' || loc.zone.includes(selectedZone.replace(' Bengaluru', ''));
+      const matchesZone = selectedZone === 'all' || loc.zone.includes(selectedZone);
+      const q = searchQuery.toLowerCase().trim();
       const matchesSearch =
-        loc.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        loc.pincode.includes(searchQuery) ||
-        loc.keyLandmarks.some((l) => l.toLowerCase().includes(searchQuery.toLowerCase())) ||
-        loc.niches.some((n) => n.name.toLowerCase().includes(searchQuery.toLowerCase()));
+        !q ||
+        loc.name.toLowerCase().includes(q) ||
+        loc.pincode.includes(q) ||
+        loc.keyLandmarks.some((l) => l.toLowerCase().includes(q)) ||
+        loc.niches.some((n) => n.name.toLowerCase().includes(q));
       return matchesZone && matchesSearch;
     });
   }, [selectedZone, searchQuery]);
@@ -38,7 +120,7 @@ export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
     name: 'Uncoded Hub — Web Design Company in Bangalore',
     url: 'https://uncodedhub.com/web-design/bangalore/',
     description:
-      'Bespoke, sub-second business websites built in 7 business days by senior founders Deepak & Geetha in Bengaluru. Zero WordPress bloat, built-in local SEO, late-means-free guarantee.',
+      'Web design company in Bangalore. Custom, high-performance websites built in 7 working days by senior founders Deepak & Geetha in Bengaluru. Contractual on-time guarantee.',
     priceRange: '₹35,000 - ₹85,000',
     telephone: '+91 86608 19023',
     address: {
@@ -53,14 +135,6 @@ export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
       latitude: 12.9716,
       longitude: 77.5946,
     },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        opens: '08:00',
-        closes: '20:00',
-      },
-    ],
     areaServed: Object.values(BANGALORE_LOCALITIES).map((loc) => ({
       '@type': 'AdministrativeArea',
       name: `${loc.name}, Bengaluru`,
@@ -111,24 +185,22 @@ export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
         <title>Web Design Company in Bangalore | 7-Day Sprint — Uncoded Hub</title>
         <meta
           name="description"
-          content="Bespoke, high-performance websites for Bengaluru businesses launched in 7 days. Handcrafted React code, sub-0.8s mobile speed, built-in SEO. Late means 100% free."
+          content="Web design company in Bangalore. Your custom website built in 7 working days by senior founders Deepak & Geetha. Fast mobile speed, local SEO, on-time guarantee."
         />
         <link rel="canonical" href="https://uncodedhub.com/web-design/bangalore/" />
-        {/* OpenGraph */}
-        <meta property="og:site_name" content="Uncoded Hub" />
         <meta property="og:title" content="Web Design Company in Bangalore | 7-Day Sprint — Uncoded Hub" />
         <meta
           property="og:description"
-          content="Bespoke, high-performance websites for Bengaluru businesses launched in 7 days. Handcrafted React code, sub-0.8s mobile speed, built-in SEO."
+          content="We help Bengaluru businesses get custom websites that look professional, load fast, and turn more visitors into enquiries."
         />
         <meta property="og:url" content="https://uncodedhub.com/web-design/bangalore/" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://uncodedhub.com/og-image.jpg" />
+        <meta property="og:image" content="https://uncodedhub.com/og/bangalore-hub.jpg" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
       </Helmet>
 
-      {/* ── Breadcrumb Navigation ────────────────────────────────── */}
+      {/* ── Breadcrumb Ribbon ────────────────────────────────────────── */}
       <div className="bg-paper border-b border-rule pt-20 sm:pt-24 pb-3">
         <Shell>
           <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
@@ -141,210 +213,284 @@ export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
                 Web Design
               </Link>
               <span>/</span>
-              <span className="text-ink font-medium">Bangalore Hub</span>
+              <span className="text-ink font-medium">Bangalore Studio</span>
             </nav>
 
-            <Link
-              to="/web-design/"
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-signal/10 hover:bg-signal/20 text-signal font-mono text-[11px] transition-colors"
-            >
-              <span>← All 50 National Industry Sprints</span>
-            </Link>
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+              <Link
+                to="/web-design/"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-signal/10 hover:bg-signal/20 text-signal font-mono text-[11px] transition-colors"
+              >
+                <span>← All 50 Industry Silos</span>
+              </Link>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-paper border border-rule text-ink font-mono text-[11px]">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span>7-Day Guarantee: On Time or Free</span>
+              </div>
+            </div>
           </div>
         </Shell>
       </div>
 
-      {/* ── Editorial Bangalore Hero ── */}
-      <section className="pt-12 sm:pt-16 pb-16 bg-paper relative overflow-hidden border-b border-rule">
-        <div className="absolute top-0 right-0 w-[36rem] h-[36rem] bg-signal/10 rounded-full blur-[100px] pointer-events-none -z-10" />
+      {/* ── 01. Customer-Centric Hero Section ────────────────────────── */}
+      <section className="pt-12 sm:pt-20 pb-16 sm:pb-24 bg-paper relative overflow-hidden border-b border-rule">
+        <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-signal/5 rounded-full blur-[140px] pointer-events-none -z-10" />
 
         <Shell>
           <Reveal>
-            <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="card-tag">BENGALURU LOCAL WEB ENGINEERING</span>
-              <span className="text-xs font-mono text-muted">·</span>
-              <span className="text-xs font-mono text-signal">25 High-Ticket Localities</span>
-              <span className="text-xs font-mono text-muted">·</span>
-              <span className="text-xs font-mono text-muted">7-Day Contractual Sprints</span>
-            </div>
-
-            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl text-ink font-normal tracking-tight leading-[1.06] max-w-4xl">
-              Web design company in{' '}
-              <span className="text-signal italic font-serif">Bangalore</span> that launches in 7 days.
-            </h1>
-
-            <p className="text-muted text-base sm:text-xl max-w-2xl mt-6 leading-relaxed">
-              Zero WordPress plugin bloat. Zero junior developer hand-offs. Deepak & Geetha build bespoke, sub-second React websites for Bengaluru’s top clinics, architects, tech startups, and luxury businesses. On time, or your build is free.
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link
-                to="/contact/"
-                className="bg-signal hover:bg-signal-bright text-paper font-sans font-medium text-sm py-4 px-8 rounded-full transition-colors flex items-center gap-2 shadow-sm cursor-pointer"
-              >
-                <span>Book a 20-minute discovery call</span>
-                <span>→</span>
-              </Link>
-              <a
-                href="#localities"
-                className="border border-rule-strong hover:border-ink text-ink font-mono text-xs py-4 px-6 rounded-full transition-colors bg-paper-raised"
-              >
-                Explore 100 Bangalore Localities ↓
-              </a>
-            </div>
-
-            {/* Quick Metrics Bar */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 pt-8 border-t border-rule text-xs font-mono">
-              <div>
-                <p className="text-muted uppercase tracking-wider text-[10px]">Mobile Benchmark</p>
-                <p className="font-display text-2xl text-ink mt-1">0.8s LCP</p>
-                <p className="text-muted text-[11px]">Sub-second on Airtel/Jio 4G</p>
+            <div className="max-w-4xl">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="card-tag">BENGALURU LOCAL WEB STUDIO</span>
+                <span className="text-xs font-mono text-muted">·</span>
+                <span className="text-xs font-mono text-signal">Deepak &amp; Geetha Direct Delivery</span>
               </div>
-              <div>
-                <p className="text-muted uppercase tracking-wider text-[10px]">Delivery Window</p>
-                <p className="font-display text-2xl text-signal mt-1">7 Business Days</p>
-                <p className="text-muted text-[11px]">Contractual late-means-free</p>
-              </div>
-              <div>
-                <p className="text-muted uppercase tracking-wider text-[10px]">Senior Founders</p>
-                <p className="font-display text-2xl text-ink mt-1">Deepak & Geetha</p>
-                <p className="text-muted text-[11px]">Direct build, zero interns</p>
-              </div>
-              <div>
-                <p className="text-muted uppercase tracking-wider text-[10px]">Compliance</p>
-                <p className="font-display text-2xl text-ink mt-1">Karnataka GST</p>
-                <p className="text-muted text-[11px]">Full B2B tax input credit</p>
-              </div>
-            </div>
-          </Reveal>
-        </Shell>
-      </section>
 
-      {/* ── The Bangalore Agency Reality ── */}
-      <section className="py-20 bg-paper-sunken border-b border-rule">
-        <Shell>
-          <Reveal>
-            <div className="max-w-3xl mb-12">
-              <span className="card-tag mb-3">THE BENGALURU AGENCY REALITY</span>
-              <h2 className="font-display text-3xl sm:text-4xl text-ink font-normal leading-tight">
-                Why Bangalore businesses fire their web design agencies and hire Uncoded Hub.
-              </h2>
-              <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
-                Whether you run a cosmetic dental center in Indiranagar, a luxury villa brokerage in Whitefield, or a SaaS company in HSR Layout, traditional web agencies fail you in three predictable ways:
+              <h1 className="font-display text-4xl sm:text-6xl md:text-7xl text-ink font-normal tracking-tight leading-[1.05] mb-6">
+                Web Design Company in Bangalore. <br />
+                <span className="text-signal italic font-serif">Your Website, Built in 7 Working Days.</span>
+              </h1>
+
+              <p className="text-lead text-muted text-base sm:text-xl leading-relaxed max-w-3xl mb-6">
+                We help Bengaluru businesses get custom websites that look professional, load fast, and turn more visitors into enquiries.
               </p>
-            </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="p-8 rounded-[24px] bg-paper-raised border border-rule-strong shadow-xs flex flex-col justify-between">
-                <div>
-                  <div className="w-10 h-10 rounded-full bg-signal/10 border border-signal/20 text-signal flex items-center justify-center font-mono text-sm mb-6">
-                    01
-                  </div>
-                  <h3 className="font-display text-xl text-ink font-medium">The 4-Month Timeline Trap</h3>
-                  <p className="text-muted text-xs sm:text-sm mt-3 leading-relaxed">
-                    A standard 6-page site stretches into endless review cycles, missing launch deadlines, and excuses about "internal team bandwidth." You spend months chasing status updates while competitors take your market share.
-                  </p>
-                </div>
-                <div className="mt-6 pt-4 border-t border-rule text-xs font-mono text-signal">
-                  Uncoded Hub: Exactly 7 business days or 100% free.
-                </div>
-              </div>
-
-              <div className="p-8 rounded-[24px] bg-paper-raised border border-rule-strong shadow-xs flex flex-col justify-between">
-                <div>
-                  <div className="w-10 h-10 rounded-full bg-signal/10 border border-signal/20 text-signal flex items-center justify-center font-mono text-sm mb-6">
-                    02
-                  </div>
-                  <h3 className="font-display text-xl text-ink font-medium">The Intern Hand-Off</h3>
-                  <p className="text-muted text-xs sm:text-sm mt-3 leading-relaxed">
-                    Agency executives sell you on polished case studies during your discovery meeting. The moment the advance invoice is paid, your project is handed to a junior intern juggling 12 client accounts simultaneously.
-                  </p>
-                </div>
-                <div className="mt-6 pt-4 border-t border-rule text-xs font-mono text-signal">
-                  Uncoded Hub: Geetha designs, Deepak codes. Direct senior attention.
-                </div>
-              </div>
-
-              <div className="p-8 rounded-[24px] bg-paper-raised border border-rule-strong shadow-xs flex flex-col justify-between">
-                <div>
-                  <div className="w-10 h-10 rounded-full bg-signal/10 border border-signal/20 text-signal flex items-center justify-center font-mono text-sm mb-6">
-                    03
-                  </div>
-                  <h3 className="font-display text-xl text-ink font-medium">The 35-Plugin WordPress Bloat</h3>
-                  <p className="text-muted text-xs sm:text-sm mt-3 leading-relaxed">
-                    Slow, stitched-together Elementor templates that take 5+ seconds to load on mobile phones. When an update runs, plugins conflict and break your inquiry forms, followed by hefty monthly maintenance bills.
-                  </p>
-                </div>
-                <div className="mt-6 pt-4 border-t border-rule text-xs font-mono text-signal">
-                  Uncoded Hub: Hand-coded React + Vite. 0.8s mobile LCP. Zero plugins.
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </Shell>
-      </section>
-
-      {/* ── 100 Localities Directory ── */}
-      <section id="localities" className="py-20 bg-paper">
-        <Shell>
-          <Reveal>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-              <div>
-                <span className="card-tag mb-3">HYPERLOCAL BENGALURU COVERAGE</span>
-                <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
-                  Choose your Bangalore locality.
-                </h2>
-                <p className="text-muted text-sm sm:text-base mt-3 max-w-xl">
-                  Each locality hub features genuine Bangalore coordinates, nearby business landmarks, tech parks, and our top 4 dedicated industry platforms.
+              <div className="p-5 rounded-2xl bg-paper-sunken border border-rule mb-10 max-w-3xl">
+                <p className="text-xs sm:text-sm text-ink-soft leading-relaxed mb-0 font-sans">
+                  <strong>Work directly with founders Deepak and Geetha.</strong> No junior hand-offs. No confusing process. Just a clear plan, a fixed scope, and a website built around your business.
                 </p>
               </div>
 
-              {/* Search Box */}
-              <div className="w-full md:w-80">
-                <input
-                  type="text"
-                  placeholder="Search locality, pincode, landmark..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-4 py-3 rounded-full bg-paper-raised border border-rule-strong text-xs font-mono placeholder:text-muted focus:outline-none focus:border-signal transition-colors shadow-2xs"
-                />
+              <div className="flex flex-wrap items-center gap-4 mb-12">
+                <button
+                  type="button"
+                  onClick={handleBooking}
+                  className="btn-primary !px-8 !py-4 text-sm rounded-full shadow-md cursor-pointer inline-flex items-center gap-2"
+                >
+                  <span>Book a Free 20-Minute Discovery Call</span>
+                  <span>→</span>
+                </button>
+
+                <a
+                  href="#featured-localities"
+                  className="px-6 py-4 rounded-full border border-rule-strong hover:border-signal text-ink font-mono text-xs uppercase tracking-wider transition-colors bg-paper-raised inline-flex items-center gap-2"
+                >
+                  <span>View Bangalore Localities</span>
+                  <span>↓</span>
+                </a>
+
+                <a
+                  href="https://wa.me/918660819023?text=Hi%20Deepak%20and%20Geetha,%20I'd%20like%20to%20discuss%20a%20website%20for%20my%20Bangalore%20business."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-mono text-muted hover:text-signal transition-colors inline-flex items-center gap-1.5 px-3 py-2"
+                >
+                  <span>💬 WhatsApp: +91 86608 19023</span>
+                  <span>↗</span>
+                </a>
+              </div>
+
+              {/* Realistic Grounded Metrics Bar */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-rule text-xs font-mono">
+                <div>
+                  <p className="text-muted uppercase tracking-wider text-[10px]">Mobile Performance</p>
+                  <p className="font-display text-2xl text-ink mt-1">Sub-Second</p>
+                  <p className="text-muted text-[11px]">Tested on Airtel &amp; Jio 4G</p>
+                </div>
+                <div>
+                  <p className="text-muted uppercase tracking-wider text-[10px]">Delivery Sprint</p>
+                  <p className="font-display text-2xl text-signal mt-1">7 Working Days</p>
+                  <p className="text-muted text-[11px]">On time, or 100% free</p>
+                </div>
+                <div>
+                  <p className="text-muted uppercase tracking-wider text-[10px]">Direct Founders</p>
+                  <p className="font-display text-2xl text-ink mt-1">Deepak &amp; Geetha</p>
+                  <p className="text-muted text-[11px]">Direct build, zero interns</p>
+                </div>
+                <div>
+                  <p className="text-muted uppercase tracking-wider text-[10px]">B2B Tax Compliance</p>
+                  <p className="font-display text-2xl text-ink mt-1">Karnataka GST</p>
+                  <p className="text-muted text-[11px]">Full input tax credit (ITC)</p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </Shell>
+      </section>
+
+      {/* ── 02. Why Choose a Bengaluru Web Design Studio? ─────────────── */}
+      <section className="py-20 sm:py-28 bg-paper-sunken border-b border-rule">
+        <Shell>
+          <Reveal>
+            <div className="max-w-3xl mb-12">
+              <span className="card-tag mb-3">LOCAL ADVANTAGE</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
+                Why choose a Bengaluru web design studio?
+              </h2>
+              <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
+                When you hire Uncoded Hub, you work with founders who live and build right here in Bengaluru. You gain genuine local advantages that distant agencies simply cannot match:
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-7 rounded-[24px] bg-paper border border-rule shadow-xs flex flex-col justify-between">
+              <div>
+                <span className="text-2xl block mb-4">🤝</span>
+                <h3 className="font-display text-xl text-ink font-medium mb-2">
+                  Direct Founder Access
+                </h3>
+                <p className="text-muted text-xs sm:text-sm leading-relaxed">
+                  Speak directly with Deepak and Geetha. Meet on Google Meet or in-person in Bengaluru. No time-zone friction or junior middlemen.
+                </p>
               </div>
             </div>
 
-            {/* Zone Filter Tabs */}
-            <div className="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-rule">
-              {ZONES.map((zone) => (
-                <button
-                  key={zone.id}
-                  type="button"
-                  onClick={() => setSelectedZone(zone.id)}
-                  className={`px-4 py-2 rounded-full text-xs font-mono transition-all cursor-pointer ${
-                    selectedZone === zone.id
-                      ? 'bg-ink text-paper font-medium shadow-xs'
-                      : 'bg-paper-raised text-muted hover:text-ink border border-rule hover:border-rule-strong'
-                  }`}
-                >
-                  {zone.label}
-                </button>
-              ))}
+            <div className="p-7 rounded-[24px] bg-paper border border-rule shadow-xs flex flex-col justify-between">
+              <div>
+                <span className="text-2xl block mb-4">📍</span>
+                <h3 className="font-display text-xl text-ink font-medium mb-2">
+                  Deep Local Context
+                </h3>
+                <p className="text-muted text-xs sm:text-sm leading-relaxed">
+                  We understand the unique differences between clients on 100ft Road Indiranagar, tech founders in HSR, and families in Jayanagar.
+                </p>
+              </div>
             </div>
 
-            {/* Localities Grid */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {localities.map((loc) => (
-                <div
-                  key={loc.slug}
-                  className="p-8 rounded-[24px] bg-paper-raised border border-rule-strong shadow-xs hover:border-signal/40 transition-all duration-300 flex flex-col justify-between"
-                >
+            <div className="p-7 rounded-[24px] bg-paper border border-rule shadow-xs flex flex-col justify-between">
+              <div>
+                <span className="text-2xl block mb-4">⚡</span>
+                <h3 className="font-display text-xl text-ink font-medium mb-2">
+                  Built for Indian 4G/5G
+                </h3>
+                <p className="text-muted text-xs sm:text-sm leading-relaxed">
+                  We test every website on real Android and iOS devices on Airtel and Jio networks to ensure instant mobile loading without lag.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-7 rounded-[24px] bg-paper border border-rule shadow-xs flex flex-col justify-between">
+              <div>
+                <span className="text-2xl block mb-4">💼</span>
+                <h3 className="font-display text-xl text-ink font-medium mb-2">
+                  Karnataka GST Invoicing
+                </h3>
+                <p className="text-muted text-xs sm:text-sm leading-relaxed">
+                  Receive a compliant Karnataka B2B tax invoice with every project, allowing your business to claim full Input Tax Credit (ITC).
+                </p>
+              </div>
+            </div>
+          </div>
+        </Shell>
+      </section>
+
+      {/* ── 03. What Makes Uncoded Hub Different ──────────────────────── */}
+      <section className="py-20 sm:py-28 bg-paper border-b border-rule">
+        <Shell>
+          <Reveal>
+            <div className="max-w-3xl mb-12">
+              <span className="card-tag mb-3">OUR EXECUTION DISCIPLINE</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
+                What makes Uncoded Hub different.
+              </h2>
+              <p className="text-muted text-sm sm:text-base mt-4 leading-relaxed">
+                Whether you run an aesthetic clinic, an architecture practice, a tech startup, or a commercial firm, here is why Bengaluru businesses choose our studio:
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="p-8 rounded-[24px] bg-paper-raised border border-rule hover:border-signal/50 shadow-xs flex flex-col justify-between transition-all">
+              <div>
+                <span className="font-mono text-xs font-bold text-signal uppercase tracking-wider block mb-2">
+                  01 · Fixed 7-Day Sprint
+                </span>
+                <h3 className="font-display text-xl text-ink font-medium mb-3">
+                  A Clear, Reliable Schedule
+                </h3>
+                <p className="text-muted text-xs sm:text-sm leading-relaxed">
+                  We work single-threaded with dedicated attention. Instead of dragging a project across months, your website is designed, built, and launched in exactly 7 working days.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-rule text-xs font-mono text-signal">
+                Contractual guarantee: On time or 100% free.
+              </div>
+            </div>
+
+            <div className="p-8 rounded-[24px] bg-paper-raised border border-rule hover:border-signal/50 shadow-xs flex flex-col justify-between transition-all">
+              <div>
+                <span className="font-mono text-xs font-bold text-signal uppercase tracking-wider block mb-2">
+                  02 · Senior Founders
+                </span>
+                <h3 className="font-display text-xl text-ink font-medium mb-3">
+                  Direct Founder Craft
+                </h3>
+                <p className="text-muted text-xs sm:text-sm leading-relaxed">
+                  The people who meet you on the discovery call are the exact two people who design and code your website. Geetha directs design; Deepak architects the code.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-rule text-xs font-mono text-signal">
+                Zero junior interns, zero subcontracting.
+              </div>
+            </div>
+
+            <div className="p-8 rounded-[24px] bg-paper-raised border border-rule hover:border-signal/50 shadow-xs flex flex-col justify-between transition-all">
+              <div>
+                <span className="font-mono text-xs font-bold text-signal uppercase tracking-wider block mb-2">
+                  03 · Custom React Speed
+                </span>
+                <h3 className="font-display text-xl text-ink font-medium mb-3">
+                  Zero Template Bloat
+                </h3>
+                <p className="text-muted text-xs sm:text-sm leading-relaxed">
+                  Clean, modern React code that compiles to static HTML with next-gen WebP images. Your site loads in under a second on mobile and costs virtually ₹0/month to host.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-rule text-xs font-mono text-signal">
+                100% full source code ownership.
+              </div>
+            </div>
+          </div>
+        </Shell>
+      </section>
+
+      {/* ── 04. 12 Featured Premier Localities ────────────────────────── */}
+      <section className="py-20 sm:py-28 bg-paper-sunken border-b border-rule" id="featured-localities">
+        <Shell>
+          <Reveal>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+              <div className="max-w-2xl">
+                <span className="card-tag mb-3">FEATURED HUBS</span>
+                <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
+                  Web design across Bengaluru's premier commercial corridors.
+                </h2>
+                <p className="text-muted text-sm sm:text-base mt-3">
+                  Explore how we tailor digital architectures to the specific commercial realities of Bengaluru's most active business neighborhoods:
+                </p>
+              </div>
+
+              <a
+                href="#all-localities"
+                className="text-xs font-mono text-signal hover:underline shrink-0"
+              >
+                Search all 100 localities ↓
+              </a>
+            </div>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredLocalities.map((loc, idx) => (
+              <Reveal key={loc.slug} delay={Math.min(idx * 30, 200)}>
+                <div className="p-7 rounded-[24px] bg-paper border border-rule hover:border-signal/50 shadow-xs transition-all flex flex-col justify-between h-full">
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-signal/10 border border-signal/20 text-signal">
+                    <div className="flex items-center justify-between mb-3 text-xs font-mono">
+                      <span className="px-2.5 py-0.5 rounded-full bg-signal/10 text-signal font-semibold">
                         PIN: {loc.pincode}
                       </span>
-                      <span className="text-xs font-mono text-muted">{loc.zone}</span>
+                      <span className="text-muted">{loc.zone}</span>
                     </div>
 
-                    <h3 className="font-display text-2xl text-ink font-medium">
+                    <h3 className="font-display text-2xl text-ink font-medium mb-1">
                       <Link
                         to={`/web-design/bangalore/${loc.slug}/`}
                         className="hover:text-signal transition-colors flex items-center gap-2"
@@ -354,21 +500,20 @@ export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
                       </Link>
                     </h3>
 
-                    <p className="text-muted text-xs sm:text-sm mt-3 line-clamp-2 leading-relaxed">
+                    <p className="text-muted text-xs leading-relaxed mt-2 line-clamp-2">
                       {loc.commercialProfile}
                     </p>
 
-                    {/* 5 Flagship Niches in this Locality */}
-                    <div className="mt-6 pt-4 border-t border-rule">
-                      <p className="text-[10px] font-mono text-muted uppercase tracking-wider mb-2.5">
-                        Top 5 Local Sectors:
+                    <div className="mt-5 pt-4 border-t border-rule">
+                      <p className="text-[10px] font-mono text-muted uppercase tracking-wider mb-2">
+                        Top Local Business Sectors:
                       </p>
-                      <div className="space-y-1.5">
-                        {loc.niches.map((niche) => (
+                      <div className="space-y-1">
+                        {loc.niches.slice(0, 3).map((niche) => (
                           <Link
                             key={niche.nicheKey}
                             to={`/web-design/bangalore/${loc.slug}/${niche.nicheKey}/`}
-                            className="flex items-center justify-between text-xs font-mono text-ink/80 hover:text-signal transition-colors py-1 px-2 rounded-lg hover:bg-paper-sunken"
+                            className="flex items-center justify-between text-xs font-mono text-ink-soft hover:text-signal transition-colors py-1 px-2 rounded-lg hover:bg-paper-sunken"
                           >
                             <span className="flex items-center gap-1.5 truncate">
                               <span>{niche.icon}</span>
@@ -381,97 +526,231 @@ export default function BangaloreHub({ onBook: _onBook }: BangaloreHubProps) {
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-rule flex items-center justify-between text-xs font-mono">
-                    <span className="text-muted truncate max-w-[160px]">{loc.keyLandmarks[0]}</span>
+                  <div className="mt-5 pt-3 border-t border-rule flex items-center justify-between text-xs font-mono">
+                    <span className="text-muted text-[11px] truncate max-w-[150px]">
+                      {loc.keyLandmarks[0]}
+                    </span>
                     <Link
                       to={`/web-design/bangalore/${loc.slug}/`}
-                      className="text-signal hover:underline inline-flex items-center gap-1 font-medium"
+                      className="text-signal hover:underline font-medium inline-flex items-center gap-1"
                     >
                       <span>Explore Hub</span>
                       <span>→</span>
                     </Link>
                   </div>
                 </div>
+              </Reveal>
+            ))}
+          </div>
+        </Shell>
+      </section>
+
+      {/* ── 05. Searchable Directory for All 100 Localities ───────────── */}
+      <section id="all-localities" className="py-20 sm:py-28 bg-paper border-b border-rule scroll-mt-24">
+        <Shell>
+          <Reveal>
+            <div className="max-w-3xl mb-10">
+              <span className="card-tag mb-3">HYPERLOCAL DIRECTORY</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
+                Search all 100 Bangalore localities.
+              </h2>
+              <p className="text-muted text-sm sm:text-base mt-3">
+                Looking for web design in your specific neighborhood? Search by area name, landmark, or pincode below:
+              </p>
+            </div>
+
+            {/* Controls Bar */}
+            <div className="p-4 rounded-2xl bg-paper-sunken border border-rule mb-8 flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between">
+              {/* Zone Filter Tabs */}
+              <div className="flex flex-wrap items-center gap-2">
+                {ZONES.map((zone) => (
+                  <button
+                    key={zone.id}
+                    type="button"
+                    onClick={() => setSelectedZone(zone.id)}
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-mono transition-all cursor-pointer ${
+                      selectedZone === zone.id
+                        ? 'bg-ink text-paper font-semibold shadow-xs'
+                        : 'bg-paper text-muted hover:text-ink border border-rule'
+                    }`}
+                  >
+                    {zone.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Search Box */}
+              <div className="w-full md:w-72 shrink-0">
+                <input
+                  type="text"
+                  placeholder="Search locality, pincode, landmark..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full px-4 py-2 text-xs font-mono bg-paper border border-rule rounded-full focus:outline-none focus:border-signal text-ink placeholder:text-muted"
+                />
+              </div>
+            </div>
+
+            {/* Compact Grid of Localities */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+              {allLocalitiesList.map((loc) => (
+                <Link
+                  key={loc.slug}
+                  to={`/web-design/bangalore/${loc.slug}/`}
+                  className="p-3.5 rounded-xl bg-paper-raised border border-rule hover:border-signal/50 hover:shadow-xs transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="flex items-center justify-between text-[10px] font-mono text-muted mb-1">
+                      <span>{loc.pincode}</span>
+                      <span className="text-signal/80 font-serif">{loc.kannadaName}</span>
+                    </div>
+                    <span className="font-display text-sm text-ink font-medium group-hover:text-signal transition-colors block truncate">
+                      {loc.name}
+                    </span>
+                    <span className="text-[10px] text-muted block mt-0.5 truncate">
+                      {loc.keyLandmarks[0] || loc.zone}
+                    </span>
+                  </div>
+                  <div className="mt-2.5 pt-2 border-t border-rule/50 flex items-center justify-between text-[10px] font-mono text-muted">
+                    <span>{loc.niches.length} Sectors</span>
+                    <span className="text-signal group-hover:translate-x-0.5 transition-transform">→</span>
+                  </div>
+                </Link>
               ))}
             </div>
 
-            {localities.length === 0 && (
-              <div className="text-center py-16 text-muted font-mono text-sm">
-                No localities matching "{searchQuery}". Try searching by area name, landmark, or pincode.
+            {allLocalitiesList.length === 0 && (
+              <div className="text-center py-12 text-muted font-mono text-xs">
+                No localities matching "{searchQuery}". Try searching by area name, pincode, or landmark.
               </div>
             )}
           </Reveal>
         </Shell>
       </section>
 
-      {/* ── National Industry Sprints Cross-Link ── */}
+      {/* ── 06. Contractual 7-Day Guarantee ───────────────────────────── */}
       <section className="py-16 bg-paper-sunken border-b border-rule">
         <Shell>
           <Reveal>
-            <div className="p-8 rounded-[24px] bg-paper-raised border border-rule-strong flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-              <div>
-                <span className="card-tag mb-2">LOOKING BEYOND BENGALURU?</span>
-                <h3 className="font-display text-2xl text-ink font-medium">
-                  We build specialized web platforms for 50 high-ticket industries pan-India.
-                </h3>
-                <p className="text-muted text-xs sm:text-sm mt-2 max-w-2xl leading-relaxed">
-                  From aesthetic dental practices and luxury interior studios to corporate advisory firms and coaching businesses, explore our 50 bespoke national industry silos.
-                </p>
+            <div className="p-8 sm:p-12 rounded-[28px] bg-paper border-2 border-signal/60 max-w-4xl mx-auto shadow-sm">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div>
+                  <span className="px-3 py-1 rounded-full bg-signal text-paper font-mono text-[11px] font-bold uppercase tracking-wider inline-block mb-3">
+                    Contractual Commitment
+                  </span>
+                  <h3 className="font-display text-2xl sm:text-3xl text-ink font-normal">
+                    Delivered in 7 Working Days. On Time, or 100% Free.
+                  </h3>
+                  <p className="text-muted text-xs sm:text-sm mt-3 max-w-2xl leading-relaxed">
+                    Before we accept your deposit, we establish a binding launch date. If Uncoded Hub misses the agreed launch milestone due to our own delay, you receive an immediate <strong>100% refund of your deposit</strong>, and you retain the complete codebase, design files, and platform assets free of charge.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleBooking}
+                  className="btn-primary !py-3.5 !px-6 text-xs rounded-full shrink-0 shadow-xs cursor-pointer self-start md:self-auto"
+                >
+                  Reserve Your Sprint Slot →
+                </button>
               </div>
-
-              <Link
-                to="/web-design/"
-                className="btn-primary !py-3 !px-6 text-xs rounded-full whitespace-nowrap inline-flex items-center gap-2 shrink-0 shadow-xs"
-              >
-                <span>Explore All 50 Industries</span>
-                <span>→</span>
-              </Link>
             </div>
           </Reveal>
         </Shell>
       </section>
 
-      {/* ── Closing CTA Module ── */}
-      <section className="py-20 bg-ink text-paper relative overflow-hidden">
+      {/* ── 07. Bengaluru Buying FAQs ─────────────────────────────────── */}
+      <section className="py-20 sm:py-28 bg-paper border-b border-rule">
+        <Shell>
+          <Reveal>
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <span className="card-tag mb-3">LOCAL CLARITY</span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-muted text-sm sm:text-base mt-3 leading-relaxed">
+                Common questions from Bangalore business owners on timelines, in-person meetings, and local SEO.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="max-w-4xl mx-auto space-y-4">
+            {BANGALORE_FAQS.map((faq, idx) => {
+              const isOpen = activeFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className="p-6 rounded-[20px] bg-paper-sunken border border-rule transition-all shadow-xs"
+                >
+                  <button
+                    type="button"
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full flex items-center justify-between text-left gap-4 cursor-pointer"
+                  >
+                    <h4 className="font-display text-base sm:text-lg text-ink font-medium">
+                      {faq.q}
+                    </h4>
+                    <span className="text-signal text-lg font-mono shrink-0">
+                      {isOpen ? '−' : '+'}
+                    </span>
+                  </button>
+                  {isOpen && (
+                    <p className="text-xs sm:text-sm text-muted mt-4 leading-relaxed pt-4 border-t border-rule font-sans">
+                      {faq.a}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </Shell>
+      </section>
+
+      {/* ── 08. Focused Closing CTA ───────────────────────────────────── */}
+      <section className="py-24 sm:py-32 bg-ink text-paper text-center relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-signal/15 rounded-full blur-[100px] pointer-events-none -z-10" />
 
         <Shell width="narrow">
           <Reveal>
-            <div className="text-center">
-              <span className="label text-signal-bright block mb-4">
-                BENGALURU WEBSITE LAUNCH PROTOCOL
+            <div className="max-w-2xl mx-auto">
+              <span className="label text-signal-bright block mb-4 font-mono text-xs uppercase tracking-wider">
+                BENGALURU DISCOVERY CALL
               </span>
 
-              <h2 className="font-display text-3xl sm:text-5xl text-paper font-normal tracking-tight leading-tight">
-                Ready to dominate Google rankings in your Bangalore neighborhood?
+              <h2 className="font-display text-3xl sm:text-5xl text-paper font-normal tracking-tight leading-tight mb-6">
+                Ready to build a website that does justice to your Bangalore business?
               </h2>
 
-              <p className="text-on-ink-muted text-sm sm:text-base max-w-xl mx-auto mt-6 leading-relaxed">
-                Book a 20-minute architecture discovery teardown. We will analyze your competitors, inspect your existing speed, and map out a fixed 7-day launch contract.
+              <p className="text-on-ink-muted text-sm sm:text-base leading-relaxed mb-10">
+                Book a free 20-minute discovery call directly with Deepak &amp; Geetha. We’ll review your business, analyze your local competition, and give you an exact written scope and launch date before you commit a single rupee.
               </p>
 
-              <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-                <Link
-                  to="/contact/"
-                  className="bg-signal hover:bg-signal-bright text-paper font-sans font-medium text-sm py-4 px-8 rounded-full transition-colors flex items-center gap-2 shadow-md cursor-pointer"
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <button
+                  type="button"
+                  onClick={handleBooking}
+                  className="btn-primary !px-9 !py-4 text-sm rounded-full shadow-lg cursor-pointer inline-flex items-center gap-2"
                 >
-                  <span>Book a 20-minute discovery call</span>
+                  <span>Book Free 20-Minute Discovery Call</span>
                   <span>→</span>
-                </Link>
-                <Link
-                  to="/portfolio/"
-                  className="border border-white/20 hover:border-signal text-paper font-mono text-xs py-4 px-6 rounded-full transition-colors"
+                </button>
+
+                <a
+                  href="https://wa.me/918660819023?text=Hi%20Deepak%20and%20Geetha,%20I'd%20like%20to%20discuss%20a%20website%20for%20my%20Bangalore%20business."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 rounded-full border border-white/20 hover:border-white text-paper font-mono text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 bg-white/[0.04]"
                 >
-                  View 50 Industry Live Demos →
-                </Link>
+                  <span>WhatsApp Co-Founders Directly</span>
+                  <span>↗</span>
+                </a>
               </div>
 
               <div className="mt-8 flex items-center justify-center gap-6 text-xs font-mono text-on-ink-muted">
-                <span>✓ Contractual 7-day sprint</span>
+                <span>✓ 7-Day Sprint</span>
                 <span>·</span>
-                <span>✓ Late means 100% free</span>
+                <span>✓ On Time or 100% Free</span>
                 <span>·</span>
-                <span>✓ 100% code ownership</span>
+                <span>✓ Karnataka GST Invoice</span>
               </div>
             </div>
           </Reveal>
