@@ -349,7 +349,7 @@ export default function Home({ onBook }: HomeProps) {
 
             {/* 3 Clean Proof Metrics Strip */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-10 mt-12 border-t border-rule">
-              <div className="p-4 rounded-2xl bg-paper-sunken border border-rule">
+              <div className="p-5 rounded-2xl bg-paper-raised border border-rule-strong hover:border-signal/40 transition-all shadow-2xs">
                 <span className="font-display text-3xl text-signal font-normal block mb-1">
                   7 Working Days*
                 </span>
@@ -358,7 +358,7 @@ export default function Home({ onBook }: HomeProps) {
                 </span>
               </div>
 
-              <div className="p-4 rounded-2xl bg-paper-sunken border border-rule">
+              <div className="p-5 rounded-2xl bg-paper-raised border border-rule-strong hover:border-signal/40 transition-all shadow-2xs">
                 <span className="font-display text-3xl text-ink font-normal block mb-1">
                   100% Client Ownership
                 </span>
@@ -367,7 +367,7 @@ export default function Home({ onBook }: HomeProps) {
                 </span>
               </div>
 
-              <div className="p-4 rounded-2xl bg-paper-sunken border border-rule">
+              <div className="p-5 rounded-2xl bg-paper-raised border border-rule-strong hover:border-signal/40 transition-all shadow-2xs">
                 <span className="font-display text-3xl text-ink font-normal block mb-1">
                   2 Senior Founders
                 </span>
@@ -380,23 +380,38 @@ export default function Home({ onBook }: HomeProps) {
         </Shell>
       </section>
 
-      {/* ── 02. The Customer Problem (Agency Reality) ────────────────── */}
-      <section className="py-20 sm:py-28 bg-paper-sunken border-b border-rule">
+      {/* ── 02. The Customer Problem (Agency Reality - Cinematic Dark Chapter) ── */}
+      <section className="py-24 sm:py-32 bg-ink text-paper relative overflow-hidden border-y border-white/10">
+        {/* Ambient atmospheric raspberry orbs in dark space */}
+        <div
+          aria-hidden="true"
+          className="absolute -top-32 left-1/4 w-[40rem] h-[40rem] rounded-full pointer-events-none"
+          style={{ background: 'radial-gradient(circle, rgba(199, 7, 75, 0.18) 0%, transparent 70%)' }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-32 right-1/4 w-[36rem] h-[36rem] rounded-full pointer-events-none"
+          style={{ background: 'radial-gradient(circle, rgba(199, 7, 75, 0.12) 0%, transparent 70%)' }}
+        />
+
         <Shell>
           <Reveal>
-            <div className="max-w-3xl mb-12">
-              <span className="card-tag mb-3">WHY WE BUILT UNCODED HUB</span>
-              <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight mb-6">
+            <div className="max-w-3xl mb-14">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-signal-bright text-xs font-mono uppercase tracking-wider mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-signal-bright animate-pulse" aria-hidden="true" />
+                <span>WHY WE BUILT UNCODED HUB</span>
+              </span>
+              <h2 className="font-display text-3xl sm:text-5xl text-paper font-normal tracking-tight mb-6">
                 Getting a good website shouldn&apos;t be this difficult.
               </h2>
-              <div className="text-base sm:text-lg text-muted leading-relaxed space-y-4 font-normal">
+              <div className="text-base sm:text-lg text-on-ink-muted leading-relaxed space-y-4 font-normal">
                 <p>
                   You&apos;ve probably heard the stories. Projects that take months. Prices that
                   keep changing. People who sell you the project but disappear when the actual work
                   begins.
                 </p>
                 <p>
-                  <strong className="text-ink font-medium">That&apos;s not how we work.</strong> You
+                  <strong className="text-signal-bright font-medium">That&apos;s not how we work.</strong> You
                   speak directly with the people building your website. Deepak handles the
                   engineering. Geetha handles the design. Your scope and price are agreed before work
                   begins. Your website belongs to you.
@@ -409,60 +424,69 @@ export default function Home({ onBook }: HomeProps) {
             </div>
           </Reveal>
 
-          {/* 3 Contrast Cards */}
+          {/* 3 Dark Floating Glass Bento Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Reveal delay={0.05}>
-              <div className="p-6 sm:p-8 rounded-3xl bg-paper border border-rule h-full flex flex-col justify-between">
+              <div className="p-6 sm:p-8 rounded-[24px] bg-white/[0.04] backdrop-blur-md border border-white/10 hover:border-signal/50 hover:bg-white/[0.07] hover:shadow-[0_20px_45px_rgba(199,7,75,0.2)] transition-all duration-300 flex flex-col justify-between h-full group">
                 <div>
-                  <span className="text-xs font-mono text-signal block mb-2">01 · Direct Contact</span>
-                  <h3 className="font-display text-xl text-ink font-medium mb-3">
+                  <span className="text-xs font-mono text-signal-bright block mb-2 font-medium">
+                    01 · Direct Contact
+                  </span>
+                  <h3 className="font-display text-2xl text-paper font-medium mb-3 group-hover:text-signal-bright transition-colors">
                     Direct Founder Accountability
                   </h3>
-                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                  <p className="text-xs sm:text-sm text-on-ink-muted leading-relaxed">
                     You never deal with account executives or junior middlemen. You collaborate
                     directly with the two senior specialists who write every line of code and design
                     every screen.
                   </p>
                 </div>
-                <div className="pt-6 mt-6 border-t border-rule text-xs font-mono text-signal">
-                  ✓ Direct Slack &amp; Loom communication
+                <div className="pt-6 mt-6 border-t border-white/10 text-xs font-mono text-signal-bright flex items-center gap-2">
+                  <span className="font-bold">✓</span>
+                  <span>Direct Slack &amp; Loom communication</span>
                 </div>
               </div>
             </Reveal>
 
             <Reveal delay={0.1}>
-              <div className="p-6 sm:p-8 rounded-3xl bg-paper border border-rule h-full flex flex-col justify-between">
+              <div className="p-6 sm:p-8 rounded-[24px] bg-white/[0.04] backdrop-blur-md border border-white/10 hover:border-signal/50 hover:bg-white/[0.07] hover:shadow-[0_20px_45px_rgba(199,7,75,0.2)] transition-all duration-300 flex flex-col justify-between h-full group">
                 <div>
-                  <span className="text-xs font-mono text-signal block mb-2">02 · Fixed Schedule</span>
-                  <h3 className="font-display text-xl text-ink font-medium mb-3">
+                  <span className="text-xs font-mono text-signal-bright block mb-2 font-medium">
+                    02 · Fixed Schedule
+                  </span>
+                  <h3 className="font-display text-2xl text-paper font-medium mb-3 group-hover:text-signal-bright transition-colors">
                     Fixed 7-Day Sprint Protocol
                   </h3>
-                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                  <p className="text-xs sm:text-sm text-on-ink-muted leading-relaxed">
                     Instead of dragging your project across 4 months of status calls, we agree on a
                     tight, fixed scope and deliver your complete website in seven working days.
                   </p>
                 </div>
-                <div className="pt-6 mt-6 border-t border-rule text-xs font-mono text-signal">
-                  ✓ On time or 100% free guarantee
+                <div className="pt-6 mt-6 border-t border-white/10 text-xs font-mono text-signal-bright flex items-center gap-2">
+                  <span className="font-bold">✓</span>
+                  <span>On time or 100% free guarantee</span>
                 </div>
               </div>
             </Reveal>
 
             <Reveal delay={0.15}>
-              <div className="p-6 sm:p-8 rounded-3xl bg-paper border border-rule h-full flex flex-col justify-between">
+              <div className="p-6 sm:p-8 rounded-[24px] bg-white/[0.04] backdrop-blur-md border border-white/10 hover:border-signal/50 hover:bg-white/[0.07] hover:shadow-[0_20px_45px_rgba(199,7,75,0.2)] transition-all duration-300 flex flex-col justify-between h-full group">
                 <div>
-                  <span className="text-xs font-mono text-signal block mb-2">03 · Zero Lock-In</span>
-                  <h3 className="font-display text-xl text-ink font-medium mb-3">
+                  <span className="text-xs font-mono text-signal-bright block mb-2 font-medium">
+                    03 · Zero Lock-In
+                  </span>
+                  <h3 className="font-display text-2xl text-paper font-medium mb-3 group-hover:text-signal-bright transition-colors">
                     100% Client Ownership
                   </h3>
-                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                  <p className="text-xs sm:text-sm text-on-ink-muted leading-relaxed">
                     We don&apos;t hold your digital assets hostage. You receive your complete clean
                     GitHub repository, domain credentials, and design files with zero monthly maintenance
                     traps.
                   </p>
                 </div>
-                <div className="pt-6 mt-6 border-t border-rule text-xs font-mono text-signal">
-                  ✓ Full source code &amp; IP transfer
+                <div className="pt-6 mt-6 border-t border-white/10 text-xs font-mono text-signal-bright flex items-center gap-2">
+                  <span className="font-bold">✓</span>
+                  <span>Full source code &amp; IP transfer</span>
                 </div>
               </div>
             </Reveal>
@@ -570,7 +594,7 @@ export default function Home({ onBook }: HomeProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             {/* WhatsApp Notification Card */}
             <Reveal delay={0.05}>
-              <div className="p-6 sm:p-8 rounded-3xl bg-paper border border-rule shadow-xs">
+              <div className="p-6 sm:p-8 rounded-3xl bg-paper border border-rule shadow-sm hover:shadow-md hover:border-emerald-500/40 transition-all">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-lg font-bold">
                     💬
@@ -584,23 +608,26 @@ export default function Home({ onBook }: HomeProps) {
                     </span>
                   </div>
                 </div>
-                <div className="p-4 rounded-2xl bg-paper-sunken border border-rule text-xs sm:text-sm text-ink font-sans leading-relaxed">
+                <div className="p-4 rounded-2xl bg-emerald-500/[0.04] border border-emerald-500/20 text-xs sm:text-sm text-ink font-sans leading-relaxed">
                   <p className="text-muted italic mb-2">Incoming WhatsApp message:</p>
-                  <p className="font-medium">
+                  <p className="font-medium text-ink">
                     &ldquo;Hi! I reviewed your clinic&apos;s treatment cases on your website and would
                     like to book a consultation this Thursday afternoon.&rdquo;
                   </p>
                 </div>
                 <div className="mt-4 flex items-center justify-between text-[11px] font-mono text-muted">
-                  <span>✓ 1-tap pre-filled intent</span>
-                  <span className="text-emerald-600 font-medium">Instant conversion</span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                    <span>1-tap pre-filled intent</span>
+                  </span>
+                  <span className="text-emerald-600 font-semibold">Instant conversion</span>
                 </div>
               </div>
             </Reveal>
 
             {/* Calendar Booking Card */}
             <Reveal delay={0.1}>
-              <div className="p-6 sm:p-8 rounded-3xl bg-paper border border-rule shadow-xs">
+              <div className="p-6 sm:p-8 rounded-3xl bg-paper border border-rule shadow-sm hover:shadow-md hover:border-signal/40 transition-all">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full bg-signal/10 text-signal flex items-center justify-center text-lg font-bold">
                     📅
@@ -614,16 +641,19 @@ export default function Home({ onBook }: HomeProps) {
                     </span>
                   </div>
                 </div>
-                <div className="p-4 rounded-2xl bg-paper-sunken border border-rule text-xs sm:text-sm text-ink font-sans leading-relaxed">
+                <div className="p-4 rounded-2xl bg-signal/[0.04] border border-signal/20 text-xs sm:text-sm text-ink font-sans leading-relaxed">
                   <p className="text-muted italic mb-2">Calendar booking notification:</p>
-                  <p className="font-medium">
+                  <p className="font-medium text-ink">
                     &ldquo;New 20-min consultation booked with Dr. Sarah Jenkins for Architecture
                     Consultation via Google Meet.&rdquo;
                   </p>
                 </div>
                 <div className="mt-4 flex items-center justify-between text-[11px] font-mono text-muted">
-                  <span>✓ Synced to your Google Calendar</span>
-                  <span className="text-signal font-medium">Zero back-and-forth</span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-signal" aria-hidden="true" />
+                    <span>Synced to your Google Calendar</span>
+                  </span>
+                  <span className="text-signal font-semibold">Zero back-and-forth</span>
                 </div>
               </div>
             </Reveal>
@@ -797,19 +827,26 @@ export default function Home({ onBook }: HomeProps) {
             </Reveal>
           </div>
 
-          {/* Contractual Guarantee Callout */}
+          {/* Contractual Guarantee Callout (Obsidian & Raspberry Vault Card) */}
           <Reveal>
-            <div className="p-8 sm:p-10 rounded-3xl bg-paper border-2 border-signal/30 shadow-sm">
-              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="relative p-8 sm:p-12 rounded-[32px] bg-ink text-paper border border-signal/50 shadow-[0_24px_60px_rgba(199,7,75,0.22)] overflow-hidden">
+              {/* Corner ambient raspberry glow */}
+              <div
+                aria-hidden="true"
+                className="absolute -top-16 -right-16 w-80 h-80 rounded-full pointer-events-none"
+                style={{ background: 'radial-gradient(circle, rgba(199, 7, 75, 0.28) 0%, transparent 70%)' }}
+              />
+
+              <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
                 <div className="max-w-2xl">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-signal/10 text-signal font-mono text-xs uppercase tracking-wider mb-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" />
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-signal/20 text-signal-bright border border-signal/40 font-mono text-xs uppercase tracking-wider mb-4">
+                    <span className="w-1.5 h-1.5 rounded-full bg-signal-bright animate-pulse" aria-hidden="true" />
                     <span>Contractual On-Time Guarantee</span>
                   </div>
-                  <h3 className="font-display text-2xl sm:text-3xl text-ink font-normal mb-2">
+                  <h3 className="font-display text-2xl sm:text-4xl text-paper font-normal mb-3">
                     On time, or your entire build is free.
                   </h3>
-                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                  <p className="text-xs sm:text-sm text-on-ink-muted leading-relaxed">
                     We agree on the project scope and timeline before work begins. If we fail to
                     deliver the agreed website within seven working days due to a delay on our side,
                     you pay nothing for the build. No excuses. No hidden conditions. Just a promise
@@ -817,10 +854,16 @@ export default function Home({ onBook }: HomeProps) {
                   </p>
                 </div>
 
-                <div className="text-xs font-mono text-muted shrink-0 space-y-1">
-                  <div>✓ Written contractual guarantee</div>
-                  <div>✓ Fixed launch milestone</div>
-                  <Link to="/terms/" className="text-signal hover:underline block pt-1">
+                <div className="text-xs font-mono text-on-ink-muted shrink-0 space-y-2 bg-white/[0.04] p-5 rounded-2xl border border-white/10">
+                  <div className="flex items-center gap-2">
+                    <span className="text-signal-bright font-bold">✓</span>
+                    <span>Written contractual guarantee</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-signal-bright font-bold">✓</span>
+                    <span>Fixed launch milestone</span>
+                  </div>
+                  <Link to="/terms/" className="text-signal-bright hover:underline block pt-2 font-semibold border-t border-white/10">
                     Read Full Terms &amp; Conditions →
                   </Link>
                 </div>
@@ -830,12 +873,12 @@ export default function Home({ onBook }: HomeProps) {
         </Shell>
       </section>
 
-      {/* ── 07. Proof & Engineering Standards ────────────────────────── */}
+      {/* ── 07. Proof & Engineering Standards (Measurable Standards) ─── */}
       <section className="py-20 sm:py-28 bg-paper border-b border-rule">
         <Shell>
           <Reveal>
             <div className="max-w-3xl mb-12">
-              <span className="card-tag mb-3">CRAFT OVER CLAIMS</span>
+              <span className="card-tag mb-3">CRAFT OVER CLAIMS · MEASURABLE STANDARDS</span>
               <h2 className="font-display text-3xl sm:text-5xl text-ink font-normal tracking-tight mb-4">
                 We believe in showing our work.
               </h2>
@@ -847,9 +890,60 @@ export default function Home({ onBook }: HomeProps) {
             </div>
           </Reveal>
 
+          {/* 3 High-Impact Solid Raspberry Cards (Signature Visual Standard) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+            <Reveal delay={0.05}>
+              <div className="bg-signal text-white p-8 sm:p-10 rounded-[28px] shadow-[0_16px_40px_rgba(199,7,75,0.32)] flex flex-col justify-between h-full border border-white/20 transition-transform duration-300 hover:-translate-y-1">
+                <div>
+                  <span className="text-xs font-bold text-white/90 uppercase tracking-wider block mb-2 font-mono">
+                    Turnaround timeline
+                  </span>
+                  <div className="font-display text-5xl sm:text-6xl lg:text-7xl font-medium tracking-tight text-white">
+                    7 days
+                  </div>
+                </div>
+                <p className="text-white/95 text-xs sm:text-sm mt-6 leading-relaxed font-sans">
+                  From discovery call to live production deployment. No open-ended months of waiting.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <div className="bg-signal text-white p-8 sm:p-10 rounded-[28px] shadow-[0_16px_40px_rgba(199,7,75,0.32)] flex flex-col justify-between h-full border border-white/20 transition-transform duration-300 hover:-translate-y-1">
+                <div>
+                  <span className="text-xs font-bold text-white/90 uppercase tracking-wider block mb-2 font-mono">
+                    On-time guarantee
+                  </span>
+                  <div className="font-display text-5xl sm:text-6xl lg:text-7xl font-medium tracking-tight text-white">
+                    100%
+                  </div>
+                </div>
+                <p className="text-white/95 text-xs sm:text-sm mt-6 leading-relaxed font-sans">
+                  Contractual delivery rate under our published guarantee. On time, or the build is free.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <div className="bg-signal text-white p-8 sm:p-10 rounded-[28px] shadow-[0_16px_40px_rgba(199,7,75,0.32)] flex flex-col justify-between h-full border border-white/20 transition-transform duration-300 hover:-translate-y-1">
+                <div>
+                  <span className="text-xs font-bold text-white/90 uppercase tracking-wider block mb-2 font-mono">
+                    Google PageSpeed
+                  </span>
+                  <div className="font-display text-5xl sm:text-6xl lg:text-7xl font-medium tracking-tight text-white">
+                    99+
+                  </div>
+                </div>
+                <p className="text-white/95 text-xs sm:text-sm mt-6 leading-relaxed font-sans">
+                  Verified mobile performance. Loads in under 1 second on real 4G devices worldwide.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+
           {/* 5 Verifiable Standards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            <div className="p-5 rounded-2xl bg-paper-sunken border border-rule">
+            <div className="p-5 rounded-2xl bg-paper-sunken border border-rule hover:border-signal/40 hover:shadow-xs transition-all">
               <span className="text-xl block mb-2">📱</span>
               <h4 className="font-display text-base text-ink font-medium mb-1">Mobile Performance</h4>
               <p className="text-xs text-muted leading-relaxed">
@@ -857,7 +951,7 @@ export default function Home({ onBook }: HomeProps) {
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-paper-sunken border border-rule">
+            <div className="p-5 rounded-2xl bg-paper-sunken border border-rule hover:border-signal/40 hover:shadow-xs transition-all">
               <span className="text-xl block mb-2">📐</span>
               <h4 className="font-display text-base text-ink font-medium mb-1">Responsive Layouts</h4>
               <p className="text-xs text-muted leading-relaxed">
@@ -865,7 +959,7 @@ export default function Home({ onBook }: HomeProps) {
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-paper-sunken border border-rule">
+            <div className="p-5 rounded-2xl bg-paper-sunken border border-rule hover:border-signal/40 hover:shadow-xs transition-all">
               <span className="text-xl block mb-2">👁️</span>
               <h4 className="font-display text-base text-ink font-medium mb-1">Accessibility Basics</h4>
               <p className="text-xs text-muted leading-relaxed">
@@ -873,7 +967,7 @@ export default function Home({ onBook }: HomeProps) {
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-paper-sunken border border-rule">
+            <div className="p-5 rounded-2xl bg-paper-sunken border border-rule hover:border-signal/40 hover:shadow-xs transition-all">
               <span className="text-xl block mb-2">🧱</span>
               <h4 className="font-display text-base text-ink font-medium mb-1">Clear Page Hierarchy</h4>
               <p className="text-xs text-muted leading-relaxed">
@@ -881,7 +975,7 @@ export default function Home({ onBook }: HomeProps) {
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-paper-sunken border border-rule">
+            <div className="p-5 rounded-2xl bg-paper-sunken border border-rule hover:border-signal/40 hover:shadow-xs transition-all">
               <span className="text-xl block mb-2">📬</span>
               <h4 className="font-display text-base text-ink font-medium mb-1">Working Funnels</h4>
               <p className="text-xs text-muted leading-relaxed">
@@ -1124,14 +1218,25 @@ export default function Home({ onBook }: HomeProps) {
       </section>
 
       {/* ── 12. Final Closing Call-to-Action ──────────────────────────── */}
-      <section className="py-24 sm:py-32 bg-ink text-paper text-center relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-signal/15 rounded-full blur-[100px] pointer-events-none -z-10" />
+      <section className="py-24 sm:py-32 bg-ink text-paper text-center relative overflow-hidden border-t border-white/10">
+        {/* Dual atmospheric raspberry glow spheres */}
+        <div
+          aria-hidden="true"
+          className="absolute -top-24 right-1/4 w-[36rem] h-[36rem] rounded-full pointer-events-none"
+          style={{ background: 'radial-gradient(circle, rgba(199, 7, 75, 0.22) 0%, transparent 70%)' }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-24 left-1/4 w-[32rem] h-[32rem] rounded-full pointer-events-none"
+          style={{ background: 'radial-gradient(circle, rgba(199, 7, 75, 0.16) 0%, transparent 70%)' }}
+        />
 
         <Shell width="narrow">
           <Reveal>
-            <div className="max-w-2xl mx-auto">
-              <span className="label text-signal-bright block mb-4 font-mono text-xs uppercase tracking-wider">
-                GET STARTED
+            <div className="max-w-2xl mx-auto relative z-10">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-signal-bright text-xs font-mono uppercase tracking-wider mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-signal-bright animate-pulse" aria-hidden="true" />
+                <span>GET STARTED</span>
               </span>
 
               <h2 className="font-display text-3xl sm:text-5xl text-paper font-normal tracking-tight leading-tight mb-6">
@@ -1148,17 +1253,22 @@ export default function Home({ onBook }: HomeProps) {
                 <button
                   type="button"
                   onClick={handleBooking}
-                  className="btn-primary !px-9 !py-4 text-sm rounded-full shadow-lg cursor-pointer inline-flex items-center gap-2"
+                  className="btn-hero-cta group cursor-pointer"
                 >
-                  <span>Book Your Free 20-Minute Call</span>
-                  <span>→</span>
+                  <span className="flex items-center gap-2.5">
+                    <span className="w-2 h-2 rounded-full bg-paper/90 animate-pulse" aria-hidden="true" />
+                    <span>Book Your Free 20-Minute Call</span>
+                  </span>
+                  <span className="btn-hero-cta-badge" aria-hidden="true">
+                    →
+                  </span>
                 </button>
 
                 <a
                   href="https://wa.me/918660819023?text=Hi%20Deepak%20and%20Geetha,%20I'd%20like%20to%20discuss%20a%20website%20for%20my%20business."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-4 rounded-full border border-white/20 hover:border-white text-paper font-mono text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 bg-white/[0.04]"
+                  className="px-8 py-4 rounded-full border border-white/20 hover:border-signal-bright text-paper font-mono text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 bg-white/[0.05] hover:bg-white/[0.09]"
                 >
                   <span>WhatsApp Co-Founders Directly</span>
                   <span>↗</span>
