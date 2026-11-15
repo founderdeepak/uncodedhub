@@ -4,8 +4,15 @@ import { Link } from 'react-router-dom';
 import { Reveal, Shell } from '../components/primitives';
 
 /* ═══════════════════════════════════════════════════════════════════
-   FREQUENTLY ASKED QUESTIONS (39 DETAILED ANSWERS)
-   Cloaked-style editorial UI with live category filter & search
+   FREQUENTLY ASKED QUESTIONS — UNCODED HUB
+   Canonical: https://uncodedhub.com/faq/
+
+   Customer-Centric Architecture:
+   - Plain English answers focused on business outcomes, not developer jargon.
+   - Curated high-priority buying questions at the top.
+   - Clear, honest explanations of the 7-day sprint, pricing, guarantee, and founder delivery.
+   - Inline CTAs on key commercial questions.
+   - Full Schema.org FAQPage structured data for Google Search.
    ═══════════════════════════════════════════════════════════════════ */
 
 interface FaqItem {
@@ -14,423 +21,313 @@ interface FaqItem {
   categoryLabel: string;
   question: string;
   answer: string[];
+  hasCta?: boolean;
 }
 
 const FAQ_ITEMS: FaqItem[] = [
-  /* Category 1: Sprint & Timeline (5) */
+  /* ── 01. Sprint & Process ── */
   {
     id: 'sprint-how-7-days',
     category: 'sprint',
-    categoryLabel: 'SPRINT · TIMELINE',
-    question: 'How can a custom business website truly be designed and built in just 7 days?',
+    categoryLabel: 'Process & Timeline',
+    question: 'How does your 7-day website sprint actually work?',
     answer: [
-      'Most web agencies take 8 to 16 weeks not because building a high-performing site takes 500 hours, but because projects get bogged down in endless email chains, middle-manager approvals, and fragmented junior teams juggling dozens of accounts simultaneously.',
-      'At Uncoded Hub, you work directly with founders Deepak (engineering) and Geetha (design). We book only two sprint cohorts per month. During your 7-day sprint window, your project receives our dedicated, uninterrupted focus with zero agency bureaucracy.',
+      'Most web agencies take 3 to 6 months not because building a great website takes hundreds of hours, but because projects get buried under agency meetings, account managers, and junior developers juggling 15 clients at once.',
+      'At Uncoded Hub, we work single-threaded. We accept only two client sprints at a time. During your 7-day sprint, co-founders Deepak (engineering) and Geetha (design) dedicate their full, uninterrupted attention exclusively to your website.',
+      'From Monday kickoff to Sunday evening, we move sequentially: Day 1 strategy and intake, Day 2 visual design direction, Days 3–4 custom development, Day 5 content and conversion funnels, Day 6 testing and mobile speed audit, and Day 7 live launch.',
     ],
-  },
-  {
-    id: 'sprint-day-by-day',
-    category: 'sprint',
-    categoryLabel: 'SPRINT · PROCESS',
-    question: 'What exact day-by-day milestones happen during the 7 days?',
-    answer: [
-      'Day 1: Kickoff call, brand asset audit, architecture map, and high-fidelity homepage layout direction.',
-      'Day 2: Full interactive UI design approval, typography pairing, and design system lockup.',
-      'Day 3: Clean semantic frontend component development and responsive layout architecture.',
-      'Day 4: Content population, typography refinement, interactive components, and lead funnel assembly.',
-      'Day 5: Form routing, CRM/WhatsApp hooks, database configuration, and technical integrations.',
-      'Day 6: Deep performance benchmarking (Core Web Vitals, 95+ Lighthouse score), cross-browser audits, and on-page SEO schema verification.',
-      'Day 7: Final staging walkthrough, revision touch-ups, production deployment, and domain DNS switchover.',
-    ],
+    hasCta: true,
   },
   {
     id: 'sprint-client-prerequisites',
     category: 'sprint',
-    categoryLabel: 'SPRINT · PREREQUISITES',
-    question: 'What do I need to provide before Day 1 begins?',
+    categoryLabel: 'Process & Timeline',
+    question: 'What do I need to prepare before the sprint begins?',
     answer: [
-      'To guarantee delivery within 7 calendar days, we complete a pre-sprint checklist before your scheduled kickoff date. This includes your vector logo, brand guidelines or preferred color palette, high-resolution photography or project portfolio images, key text copy (or bulleted outlines we refine together), and domain registrar access.',
-      'Once this asset pack is confirmed in our shared portal, your sprint date is officially locked and the 7-day clock begins.',
+      'Very little. Before kickoff, we complete a simple pre-sprint checklist with you. All we need is your logo (or brand name), high-resolution photos of your work, team, or practice (if available), your primary service list, and access to your domain registrar.',
+      'If you don’t have professional copy, we write high-converting copy for you during the discovery phase. Once your assets are confirmed, your sprint date is officially locked and our 7-day clock begins.',
+    ],
+  },
+  {
+    id: 'sprint-client-delays',
+    category: 'sprint',
+    categoryLabel: 'Process & Timeline',
+    question: 'What happens if my team is delayed in providing feedback?',
+    answer: [
+      'The 7-day timeline relies on prompt feedback at two key moments: Design Direction on Day 2, and Staging Review on Day 6.',
+      'If your team needs extra days to consult internal partners or gather additional photos, the sprint timer simply pauses without penalty. It resumes as soon as you are ready, ensuring no rushed decisions.',
     ],
   },
   {
     id: 'sprint-revisions',
     category: 'sprint',
-    categoryLabel: 'SPRINT · REVISIONS',
-    question: 'Can we request revisions during the 7-day sprint?',
+    categoryLabel: 'Process & Timeline',
+    question: 'Can I request changes and revisions during the sprint?',
     answer: [
-      'Yes. Revisions are baked directly into the sprint workflow. On Day 2 you review and approve the design system and editorial aesthetics; on Day 5 and 6 you test the fully interactive staging build.',
-      'Because you communicate directly with Geetha and Deepak via a private Slack or WhatsApp channel with real-time feedback cycles, adjustments happen in minutes rather than days.',
+      'Yes. Revisions are built directly into the sprint. On Day 2, you review and approve the design direction, typography, and visual style. On Day 6, you test the fully interactive staging site on your phone and computer.',
+      'Because you communicate directly with Deepak and Geetha on a private WhatsApp channel, adjustments happen in minutes rather than days.',
     ],
   },
   {
-    id: 'sprint-client-delay',
+    id: 'sprint-capacity',
     category: 'sprint',
-    categoryLabel: 'SPRINT · ACCOUNTABILITY',
-    question: 'What happens if our team is slow to provide feedback during the sprint?',
+    categoryLabel: 'Process & Timeline',
+    question: 'How many projects do you take on each month?',
     answer: [
-      'The 7-day timeline relies on same-day client feedback at key milestone gates (specifically Design Approval on Day 2 and Staging Review on Day 6).',
-      'If your internal team requires additional days to gather stakeholder signoffs or supply missing content, the sprint timer simply pauses and resumes immediately once feedback is submitted.',
+      'Exactly two client sprints per month. That is a deliberate choice.',
+      'Because Deepak and Geetha personally design and code every project, limiting our client intake is the only way to guarantee senior attention, sub-second performance, and 100% on-time delivery.',
     ],
   },
 
-  /* Category 2: Pricing & Guarantee (5) */
+  /* ── 02. Pricing & Guarantees ── */
   {
     id: 'pricing-cost',
     category: 'pricing',
-    categoryLabel: 'PRICING · TRANSPARENCY',
-    question: 'How much does a typical 7-day custom website build cost?',
+    categoryLabel: 'Pricing & Guarantee',
+    question: 'How much does a website cost, and are there any hidden fees?',
     answer: [
-      'We quote fixed, transparent project fees based on your specific scope sheet during our initial 20-minute discovery call with Deepak & Geetha.',
-      'Unlike traditional agencies that quote open-ended hourly billing or charge surprise invoices for every revision, our proposal specifies a single fixed price that includes custom design, clean frontend development, performance tuning, on-page SEO groundwork, and 30 days of warranty.',
+      'We offer three clear starting points: Essential Website from ₹35,000 INR (≈ $490 USD), Business Website from ₹55,000 INR (≈ $750 USD), and Online Store from ₹85,000+ INR (≈ $1,150+ USD).',
+      'During your free 20-minute discovery call, we review your exact requirements and provide one fixed written quote. That number never changes.',
+      'There are zero hidden agency fees, zero markup on hosting, and zero mandatory monthly retainers. You pay only the agreed project price.',
     ],
+    hasCta: true,
   },
   {
-    id: 'pricing-guarantee-details',
+    id: 'pricing-guarantee',
     category: 'pricing',
-    categoryLabel: 'GUARANTEE · ACCOUNTABILITY',
-    question: 'How does the contractual "On Time, or 100% Free" Delivery Guarantee actually work?',
+    categoryLabel: 'Pricing & Guarantee',
+    question: 'How does the "On Time, or 100% Free" delivery guarantee work?',
     answer: [
-      'Our guarantee is simple, contractual, and published in full in our Terms of Service.',
-      'If Uncoded Hub fails to deliver your fully functional staging website within the agreed sprint due to our own delay, we issue an immediate 100% full refund of your deposit, and you retain the complete codebase, design files, and platform assets free of charge. We put our own revenue on the line to prove our commitment to execution discipline.',
+      'Our guarantee is contractual, binding, and published in our Terms of Service.',
+      'Before we accept your deposit, we agree on a fixed launch date in writing. If Uncoded Hub misses the agreed launch milestone due to our own delay, you receive an immediate 100% full refund of your deposit, and you keep the complete codebase, design files, and platform assets free of charge.',
+      'We put our own revenue on the line because our single-threaded sprint model eliminates agency bottlenecks.',
     ],
+    hasCta: true,
   },
   {
-    id: 'pricing-hidden-fees',
+    id: 'pricing-payment-schedule',
     category: 'pricing',
-    categoryLabel: 'PRICING · NO SURPRISES',
-    question: 'Are there any hidden fees, monthly retainer lock-ins, or surprise hosting markups?',
-    answer: [
-      'None. Zero monthly lock-in, zero proprietary platform fees, and zero hosting markups. You pay only the agreed project fee.',
-      'You host your website directly on your own infrastructure (Hostinger, Cloudflare, Vercel, or AWS) where standard hosting costs typically range from $3 to $10/month directly to the provider. You maintain complete direct billing control.',
-    ],
-  },
-  {
-    id: 'pricing-milestone-schedule',
-    category: 'pricing',
-    categoryLabel: 'PAYMENTS · MILESTONES',
+    categoryLabel: 'Pricing & Guarantee',
     question: 'What is your payment milestone structure?',
     answer: [
-      'We work on a straightforward 50/50 milestone model:',
-      '• 50% reservation deposit upon signing the scope sheet to reserve your dedicated 7-day sprint cohort.',
-      '• 50% final balance upon completion of staging review, prior to public DNS switchover or source code repository transfer.',
+      'We work on a straightforward 50/50 milestone structure:',
+      '• 50% reservation deposit upon signing the scope sheet to lock your dedicated sprint slot on our calendar.',
+      '• 50% final balance upon completion of staging review, prior to public DNS switchover and final repository transfer.',
+      'For Indian businesses, we provide a Karnataka GST tax invoice with full B2B Input Tax Credit (ITC). For international clients, we accept Stripe, Wise, and international cards.',
     ],
   },
   {
-    id: 'pricing-refunds',
+    id: 'pricing-international',
     category: 'pricing',
-    categoryLabel: 'PAYMENTS · REFUNDS',
-    question: 'Do you offer refunds if we change our mind before work starts?',
+    categoryLabel: 'Pricing & Guarantee',
+    question: 'Do you work with businesses outside India?',
     answer: [
-      'Because we strictly reserve two sprints per month and turn away other clients for your scheduled calendar slot, reservation deposits are non-refundable once sprint onboarding and asset preparation begin.',
-      'However, if you notify us at least 10 business days before your scheduled kickoff date, you may reschedule your sprint cohort to any available opening within 90 days at zero penalty.',
+      'Yes. Approximately half of our clients are based in the United States, United Kingdom, Australia, United Arab Emirates, Europe, and Canada.',
+      'We provide country-specific currency pricing, time-zone friendly communication, and remote delivery with recorded video walkthroughs. You receive boutique agency quality with approximately 65% cost savings compared to domestic agencies in London or New York.',
     ],
   },
 
-  /* Category 3: Design & Aesthetics (5) */
+  /* ── 03. Working with Deepak & Geetha ── */
   {
-    id: 'design-no-templates',
-    category: 'design',
-    categoryLabel: 'DESIGN · BESPOKE',
+    id: 'team-direct-founders',
+    category: 'team',
+    categoryLabel: 'Working with Us',
+    question: 'Will I work directly with Deepak and Geetha?',
+    answer: [
+      'Yes, 100%. When you hire Uncoded Hub, you work directly with the two senior founders who actually design and build your website.',
+      'There are no junior interns learning on your project, no outsourced contractors, and no account managers acting as middlemen. Deepak handles technical architecture and code; Geetha directs visual design and messaging.',
+    ],
+    hasCta: true,
+  },
+  {
+    id: 'team-why-uncoded-hub',
+    category: 'team',
+    categoryLabel: 'Working with Us',
+    question: 'Why should I choose Uncoded Hub over a traditional agency or a freelancer?',
+    answer: [
+      'Freelancers on hourly rates have misaligned incentives: the slower they work, the more you pay, and they frequently disappear midway through a build.',
+      'Traditional agencies charge ₹2,00,000 to ₹6,00,000 ($5,000–$15,000+ abroad), take months to deliver, and hand your project off to junior staff.',
+      'Uncoded Hub gives you senior co-founder delivery, sub-second mobile speed, one fixed price agreed in writing, and a binding 7-day completion guarantee: on time, or 100% free.',
+    ],
+  },
+  {
+    id: 'team-existing-brand',
+    category: 'team',
+    categoryLabel: 'Working with Us',
+    question: 'Can you work with our existing brand guidelines, logo, and photography?',
+    answer: [
+      'Yes. If you have established brand guidelines, typography standards, or color palettes, we follow them rigorously while elevating them into a modern, high-contrast digital experience.',
+      'If you do not have an established brand, Geetha will curate a refined typographic hierarchy and tailored color palette suited to your market authority.',
+    ],
+  },
+  {
+    id: 'team-copywriting-included',
+    category: 'team',
+    categoryLabel: 'Working with Us',
+    question: 'What if we don’t have written copy ready for the website?',
+    answer: [
+      'We write the copy for you. You never have to stare at a blank screen or fill out endless questionnaires.',
+      'During our 20-minute discovery call, we ask specific questions about your services, your ideal clients, and what sets you apart. We then craft persuasive, customer-focused copy decks designed to build trust and drive enquiries.',
+    ],
+  },
+
+  /* ── 04. Design, Speed & Technology ── */
+  {
+    id: 'tech-mobile-speed',
+    category: 'tech',
+    categoryLabel: 'Design & Performance',
+    question: 'Will my website load fast and work well on mobile phones?',
+    answer: [
+      'Yes, exceptionally fast. Most websites are bloated with dozens of plugins, uncompressed images, and heavy page builders that take 5 to 8 seconds to load on mobile phones.',
+      'We hand-code clean React with next-generation WebP images and zero bloatware. Your website loads in under a second on mobile 4G, keeping visitors engaged and significantly improving your Google ranking signals.',
+    ],
+    hasCta: true,
+  },
+  {
+    id: 'tech-no-templates',
+    category: 'tech',
+    categoryLabel: 'Design & Performance',
     question: 'Do you use pre-made WordPress or Webflow templates?',
     answer: [
-      'Never. Every single Uncoded Hub website is designed bespoke by Geetha from an empty canvas, crafted specifically around your business narrative, your high-value offerings, and your target clientele.',
-      'We deliberately avoid generic template tropes — like floating stock photos, meaningless placeholder illustrations, and chaotic multi-colored buttons — in favor of calm, high-contrast editorial typography, architectural hierarchy, and squircle bento structure.',
+      'Never. Every Uncoded Hub website is designed from a blank canvas, tailored specifically to your business model, customer journey, and competitive strengths.',
+      'We avoid generic template clichés—such as cheesy stock photos, meaningless animations, and confusing navigation—in favor of clean, high-contrast editorial design that immediately communicates authority.',
     ],
   },
-  {
-    id: 'design-brand-guidelines',
-    category: 'design',
-    categoryLabel: 'DESIGN · IDENTITY',
-    question: 'Can you match or elevate our existing brand identity and guidelines?',
-    answer: [
-      'Yes. If you already have established brand guidelines, typography standards, or color palettes, we follow them rigorously while elevating them into modern, responsive digital design tokens.',
-      'If you do not have an established design system, Geetha will curate a refined typographic hierarchy and tailored color palette suited to your industry authority.',
-    ],
-  },
-  {
-    id: 'design-responsive',
-    category: 'design',
-    categoryLabel: 'DESIGN · RESPONSIVE',
-    question: 'How do you ensure the website looks great on mobile, tablet, and ultra-wide screens?',
-    answer: [
-      'Every layout is engineered mobile-first with adaptive fluid typography and proportional rem spacing. We test across physical iPhones, Android devices, iPads, laptops, and 4K displays.',
-      'Navigation drawers, touch targets, legible font sizes, and image aspect ratios are optimized so mobile visitors experience an app-quality, effortless browsing flow.',
-    ],
-  },
-  {
-    id: 'design-preview-approval',
-    category: 'design',
-    categoryLabel: 'DESIGN · APPROVALS',
-    question: 'Can we see a live design preview before the code is finalized?',
-    answer: [
-      'Yes. On Day 2 of your sprint, you receive high-fidelity interactive design previews of key hero lockups, typography scales, and core sections before full code assembly.',
-      'This guarantees you have complete visual alignment early in the week before deep frontend engineering proceeds.',
-    ],
-  },
-  {
-    id: 'design-editorial-advantage',
-    category: 'design',
-    categoryLabel: 'DESIGN · CONVERSION',
-    question: 'What makes your editorial Cloaked-style aesthetics convert better than traditional corporate sites?',
-    answer: [
-      'Modern high-ticket buyers are fatigued by flashy, cartoonish marketing templates with generic stock photography. Clean editorial design communicates quiet confidence, institutional trust, and prestige.',
-      'By using disciplined black/white contrast, tactile paper surfaces, generous whitespace, and sharp micro-copy, your website signals immediate authority that justifies premium pricing.',
-    ],
-  },
-
-  /* Category 4: Technology & Performance (5) */
   {
     id: 'tech-stack-why-not-wordpress',
     category: 'tech',
-    categoryLabel: 'TECH · ARCHITECTURE',
-    question: 'What technology stack do you build with, and why not WordPress?',
+    categoryLabel: 'Design & Performance',
+    question: 'What technology do you build with, and why not WordPress?',
     answer: [
-      'We build with modern React 19, TypeScript, Vite, and clean Vanilla Tailwind CSS tokens, rendered as prerendered static HTML.',
-      'Unlike WordPress, which requires 30+ plugins that frequently conflict, run slow SQL queries on every page load, and create recurring security vulnerabilities, our static architecture has zero server-side database bottlenecks, loads in under a second, and cannot be hacked through PHP exploits.',
+      'We build with modern, hand-crafted React and Tailwind CSS, deployed on global edge networks.',
+      'Unlike WordPress, which requires 30+ plugins that frequently conflict, slow down pages, and require weekly security updates, our custom code has zero plugin vulnerabilities, requires no database maintenance, and cannot be hacked through PHP exploits.',
     ],
   },
   {
-    id: 'tech-lighthouse-scores',
+    id: 'tech-hosting-costs',
     category: 'tech',
-    categoryLabel: 'TECH · PERFORMANCE',
-    question: 'Why does Uncoded Hub achieve 95–100/100 Google Lighthouse scores?',
-    answer: [
-      'We achieve near-perfect performance scores because every asset is strictly engineered: zero render-blocking third-party scripts, self-hosted next-gen WOFF2 fonts with unicode subsets, responsive WebP images with explicit width/height dimensions, and prerendered static HTML that paints instantaneously on the first TCP packet.',
-    ],
-  },
-  {
-    id: 'tech-hosting-options',
-    category: 'tech',
-    categoryLabel: 'TECH · HOSTING',
+    categoryLabel: 'Design & Performance',
     question: 'Where is the website hosted, and what are the ongoing server costs?',
     answer: [
-      'Because our sites compile to pure static HTML/CSS/JS, they can run on any modern web host: Hostinger, Cloudflare Pages, Vercel, Netlify, or Apache/Nginx web servers.',
-      'Ongoing hosting costs are negligible — typically $0 (on Cloudflare Pages or Vercel hobby tiers) or $2 to $5/month on Hostinger shared premium hosting.',
+      'Because our websites compile to clean static code, they can be hosted on modern global edge platforms like Cloudflare Pages or Vercel.',
+      'Ongoing hosting costs are virtually zero—typically ₹0 to $5/month directly to the provider. You retain direct billing control in your own account with zero agency markups.',
     ],
   },
   {
-    id: 'tech-integrations',
+    id: 'tech-seo-included',
     category: 'tech',
-    categoryLabel: 'TECH · INTEGRATIONS',
-    question: 'Can you integrate custom third-party tools like CRM, Calendly, WhatsApp, or analytics?',
+    categoryLabel: 'Design & Performance',
+    question: 'Is SEO included to help our business rank on Google?',
     answer: [
-      'Yes. We seamlessly connect Calendly/Cal.com booking widgets, direct WhatsApp click-to-chat triggers, Supabase or Airtable lead capture tables, Google Analytics 4 (deferred to preserve 100/100 Lighthouse), and custom webhook endpoints for HubSpot, Make.com, or Zapier.',
-    ],
-  },
-  {
-    id: 'tech-accessibility',
-    category: 'tech',
-    categoryLabel: 'TECH · ACCESSIBILITY',
-    question: 'Is the website accessible (WCAG compliant) and responsive?',
-    answer: [
-      'Yes. We adhere to WCAG 2.1 AA standards: high contrast text-to-background ratios, keyboard-navigable interactive controls, proper semantic heading hierarchies (single H1 per page), descriptive ARIA landmarks, and alt text on all informative visual assets.',
+      'Yes. Technical on-page SEO is built into every page: optimized title tags, meta descriptions, canonical URLs, XML sitemaps, OpenGraph social share cards, and rich Schema.org structured data (LocalBusiness, Organization, Service, and FAQPage).',
+      'This ensures Google and modern AI search engines (ChatGPT, Perplexity) immediately understand your business, services, and location.',
     ],
   },
 
-  /* Category 5: SEO & Conversion (4) */
-  {
-    id: 'seo-included',
-    category: 'seo',
-    categoryLabel: 'SEO · FOUNDATION',
-    question: 'Is on-page SEO included in the 7-day build?',
-    answer: [
-      'Yes, comprehensive technical on-page SEO is built into every page: bespoke meta titles, keyword-optimized meta descriptions, canonical URLs, XML sitemaps with real git commit lastmod dates, robots.txt directives, and OpenGraph/Twitter social share preview cards.',
-    ],
-  },
-  {
-    id: 'seo-schema-markup',
-    category: 'seo',
-    categoryLabel: 'SEO · STRUCTURED DATA',
-    question: 'Do you include structured data (JSON-LD Schema) for Google rich search results?',
-    answer: [
-      'Yes. We embed rich JSON-LD schema tailored to your business model: ProfessionalService, LocalBusiness, Organization, Service, and FAQPage schemas.',
-      'This helps Google understand your exact location, founders, service offerings, and enables rich search features like FAQ dropdown accordions in Google search results.',
-    ],
-  },
-  {
-    id: 'seo-conversion-focus',
-    category: 'seo',
-    categoryLabel: 'CONVERSION · STRATEGY',
-    question: 'How do you optimize the site to turn visitors into booked inquiries and leads?',
-    answer: [
-      'Every section is structured around conversion psychology: an above-the-fold value proposition that answers "What do you do and why should I care?", quantifiable social proof, interactive specimen demos, transparent deliverables, and persistent, friction-free calls to action.',
-    ],
-  },
-  {
-    id: 'seo-ai-search-engines',
-    category: 'seo',
-    categoryLabel: 'SEO · AI DISCOVERY',
-    question: 'Will our website be indexable by modern AI search engines like Perplexity, ChatGPT, and Claude?',
-    answer: [
-      'Yes. Because every single page is prerendered to raw semantic static HTML on disk, AI search engine crawlers (PerplexityBot, GPTBot, ClaudeBot) read your exact text copy, pricing terms, and service specifications immediately without needing complex JavaScript execution.',
-    ],
-  },
-
-  /* Category 6: Ownership & Support (4) */
+  /* ── 05. Ownership & After Launch ── */
   {
     id: 'ownership-source-code',
     category: 'ownership',
-    categoryLabel: 'OWNERSHIP · 100% YOURS',
-    question: 'Who owns the source code, design assets, and intellectual property?',
+    categoryLabel: 'Ownership & Support',
+    question: 'Will I actually own 100% of my website and code after launch?',
     answer: [
-      'You do. 100%. Upon payment of the final invoice, full ownership of the clean Git repository, custom design assets, stylesheets, and code transfers entirely to you.',
-      'We do not retain proprietary holdbacks or license keys. Any developer in the world can open your codebase and maintain it effortlessly.',
+      'Yes, completely and unconditionally. Upon settlement of the final invoice, full ownership of the clean GitHub repository, design assets, and files transfers entirely to you.',
+      'We do not retain proprietary holdbacks or licensing keys. Any developer in the world can inspect, edit, or maintain your codebase in the future.',
     ],
   },
   {
-    id: 'ownership-post-launch-warranty',
+    id: 'ownership-post-launch-support',
     category: 'ownership',
-    categoryLabel: 'SUPPORT · 30-DAY WARRANTY',
-    question: 'What happens after launch? Is there a warranty period?',
+    categoryLabel: 'Ownership & Support',
+    question: 'What happens after launch? Is there ongoing support?',
     answer: [
-      'Every project includes a 30-day post-launch warranty at zero additional cost. If any layout bug, broken link, or form submission failure occurs, Deepak & Geetha fix it with priority turnaround.',
-      'We also provide an asynchronous Loom walkthrough video showing your team how everything operates.',
+      'Every project includes a 30-day post-launch warranty with direct support from Deepak & Geetha. If any display bug, broken link, or form issue occurs, we resolve it promptly at zero cost.',
+      'We also provide recorded video walkthroughs showing your team how everything works. If you need updates or new pages later, we can quote them as small, transparent mini-sprints, or you can opt for an optional website care plan.',
     ],
+    hasCta: true,
   },
   {
     id: 'ownership-updating-content',
     category: 'ownership',
-    categoryLabel: 'MAINTENANCE · CMS',
-    question: 'Can our team update text, blog posts, and images without knowing how to code?',
+    categoryLabel: 'Ownership & Support',
+    question: 'Can our team update text and images easily without knowing how to code?',
     answer: [
-      'Yes. Our blog architecture uses clean, human-readable Markdown files where adding a new article or modifying copy is as simple as typing in a text file.',
-      'If your team prefers a visual CMS, we can connect headless systems like Decap CMS or Sanity so non-technical staff can edit content safely in a browser dashboard.',
+      'Yes. For text and articles, our system uses simple, human-readable Markdown files where updating text is as easy as editing a text document.',
+      'If your team prefers a visual dashboard, we can connect a headless CMS (such as Decap CMS or Sanity) so non-technical staff can update content safely in a browser.',
     ],
   },
   {
-    id: 'ownership-security-ssl',
+    id: 'ownership-redesign-vs-rescue',
     category: 'ownership',
-    categoryLabel: 'SECURITY · HYGIENE',
-    question: 'How do you handle security, SSL encryption, and spam prevention?',
+    categoryLabel: 'Ownership & Support',
+    question: 'What is the difference between a planned website redesign and a broken-site rescue?',
     answer: [
-      'Our static architecture has zero exposed WordPress admin panels, SQL injection vectors, or PHP backend vulnerabilities. All domains enforce HSTS Strict-Transport-Security, X-Content-Type-Options: nosniff, and SSL encryption.',
-      'Lead forms feature silent honeypot anti-spam traps and client-side time-on-page validation to block automated bots without forcing annoying captchas on real customers.',
+      'We gladly do planned website modernizations—migrating an established business from an outdated, slow WordPress or Wix site to modern React while preserving 1:1 Google rankings and backlinks.',
+      'However, we decline taking over broken, hacked, or abandoned spaghetti-code websites for piecemeal bug patching. In our experience, patching fragile legacy code wastes money; a clean, fresh build is faster, cheaper, and far more reliable.',
     ],
   },
 
-  /* Category 7: 50 Niche Architectures (specialized industry systems) */
+  /* ── 06. Industry Solutions & Niches ── */
   {
-    id: 'niche-educational-academy',
-    category: 'sectors',
-    categoryLabel: '50 NICHES · ACADEMIES & COACHING',
-    question: 'How does Uncoded Hub build conversion engines for Educational Academies and Coaching Institutes?',
+    id: 'niche-medical-clinics',
+    category: 'industries',
+    categoryLabel: 'Industry Solutions',
+    question: 'How do you design for medical clinics and healthcare practices?',
     answer: [
-      'We replace slow, generic PDF course brochures with interactive curriculum explorers, upcoming batch schedules, and instant counseling lead capture funnels.',
-      'Parents and students get clear fee transparency, faculty credentials, alumni placement proofs, and automated WhatsApp counseling triggers that significantly increase demo class registrations.',
+      'We build patient-first digital experiences with friction-free 2-tap appointment booking, doctor credentials, department triage, and clear procedure guides.',
+      'Patients in pain or seeking a specialist get immediate reassurance, transparent clinic timings, and direct WhatsApp routing without telephone delays.',
     ],
   },
   {
-    id: 'niche-gym-fitness-club',
-    category: 'sectors',
-    categoryLabel: '50 NICHES · GYMS & FITNESS CLUBS',
-    question: 'What conversion architecture is engineered for Commercial Gyms and Fitness Clubs?',
+    id: 'niche-architecture-estates',
+    category: 'industries',
+    categoryLabel: 'Industry Solutions',
+    question: 'How do you showcase projects for architects, interior designers, and contractors?',
     answer: [
-      'Instead of passive facility photo dumps, we engineer instant Day-Pass claim engines, floor-by-floor virtual equipment tours, live class schedules, and membership tier calculators.',
-      'Visitors can claim a trial workout or book an onboarding tour in under 30 seconds with immediate WhatsApp/SMS confirmation, eliminating front-desk follow-up delays.',
+      'Instead of sluggish image galleries, we build high-definition project case studies that load in 400 milliseconds, featuring before/after sliders, material specifications, and client briefs.',
+      'High-net-worth clients experience your craftsmanship with full-bleed visual authority on mobile and desktop displays.',
     ],
   },
   {
-    id: 'niche-business-portfolio',
-    category: 'sectors',
-    categoryLabel: '50 NICHES · ENTERPRISE B2B & ADVISORY',
-    question: 'How do you position Enterprise B2B and Corporate Advisory consultancies to win RFP shortlists?',
+    id: 'niche-corporate-legal',
+    category: 'industries',
+    categoryLabel: 'Industry Solutions',
+    question: 'How do you position corporate advisory, law, and financial consultancies?',
     answer: [
-      'We build authoritative corporate flagships designed to win enterprise decision-maker confidence with structured engagement models, executive partner credentials, case impact ROI metrics, and NDA-protected intake flows.',
-      'Refined editorial typography and sub-second loading performance ensure board members, venture partners, and procurement directors experience peerless prestige.',
+      'We build authoritative corporate flagships designed to win enterprise decision-maker trust, featuring partner credentials, practice area breakdowns, verified case results, and confidential enquiry funnels.',
+      'Quiet, editorial typography and sub-second performance signal prestige and institutional credibility.',
     ],
   },
   {
-    id: 'niche-spa-wellness',
-    category: 'sectors',
-    categoryLabel: '50 NICHES · SPAS & WELLNESS RETREATS',
-    question: 'How does the studio craft Luxury Spa and Wellness Retreat digital experiences?',
+    id: 'niche-hospitality-dining',
+    category: 'industries',
+    categoryLabel: 'Industry Solutions',
+    question: 'How do you build for restaurants, hospitality, and luxury resorts?',
     answer: [
-      'We build sensory, serene digital sanctuaries featuring treatment ritual guides, therapist certification spotlights, curated wellness packages, and integrated booking flows.',
-      'Subtle ambient aesthetics, calm typography, and direct WhatsApp concierge routing make reserving a premium rejuvenation session effortless and inviting.',
+      'We replace clunky PDF menus with interactive seasonal menus, zero-commission table hold reservations, room showcase carousels, and direct concierge WhatsApp links.',
+      'Guests can view dining selections and reserve reservations in seconds on their smartphones.',
     ],
   },
   {
-    id: 'niche-salon-beauty',
-    category: 'sectors',
-    categoryLabel: '50 NICHES · SALONS & BRIDAL BEAUTY',
-    question: 'What high-converting features are included for Salons and Bridal Beauty studios?',
+    id: 'niche-wellness-beauty',
+    category: 'industries',
+    categoryLabel: 'Industry Solutions',
+    question: 'How do you build for boutique salons, wellness retreats, and fitness clubs?',
     answer: [
-      'We construct editorial bridal package lookbooks, master stylist portfolio carousels, service-with-pricing menus, and peak-season bridal reservation engines.',
-      'Brides and salon clients can review before/after transformations and secure consultations before sought-after wedding dates and stylists get fully booked.',
-    ],
-  },
-  {
-    id: 'niche-fitness-coach',
-    category: 'sectors',
-    categoryLabel: '50 NICHES · PRIVATE FITNESS COACHES',
-    question: 'How do you turn a Fitness Coach website into a high-ticket client acquisition engine?',
-    answer: [
-      'We replace generic trainer bios with verified client transformation case studies, 1-on-1 coaching application questionnaires, video testimonials, and structured program roadmaps.',
-      'The multi-step intake pre-qualifies committed clients ready to invest in 12-week or 6-month elite body transformations while filtering out price shoppers.',
-    ],
-  },
-  {
-    id: 'niche-yoga-meditation',
-    category: 'sectors',
-    categoryLabel: '50 NICHES · YOGA SHALAS & RETREATS',
-    question: 'How is a Yoga Shala or Meditation Sanctuary website designed for community retention?',
-    answer: [
-      'We engineer tranquil, distraction-free digital spaces with real-time class timetables, teacher training (TTC) curriculum outlines, retreat booking flows, and drop-in pass reservations.',
-      'Mindful editorial design and instant WhatsApp community links welcome practitioners and turn curious first-timers into long-term studio members.',
-    ],
-  },
-  {
-    id: 'niche-creative-portfolio',
-    category: 'sectors',
-    categoryLabel: '50 NICHES · CREATIVE STUDIOS & AGENCIES',
-    question: 'What makes your Creative Design Studio and Agency websites stand out from typical portfolios?',
-    answer: [
-      'We build ultra-fast, motion-refined showcases featuring interactive case-study breakdowns, deliverable scope matrices, before/after slider comparisons, and frictionless project brief forms.',
-      'Zero bloated templates or sluggish page transitions — just crisp, tailored visual storytelling that commands premium 5-figure and 6-figure client engagements.',
-    ],
-  },
-  {
-    id: 'niche-healthcare-diagnostics',
-    category: 'sectors',
-    categoryLabel: '50 NICHES · PATHOLOGY & DIAGNOSTIC LABS',
-    question: 'How do you build patient trust and appointment volume for Pathology and Diagnostic Labs?',
-    answer: [
-      'We build 1-click home sample collection booking funnels, pre-test preparation instructions, preventive health checkup packages, and instant WhatsApp report delivery access.',
-      'NABL accreditation badges, equipment certifications, and clear test turnaround guarantees give anxious patients immediate reassurance and confidence.',
-    ],
-  },
-  {
-    id: 'niche-clinic-polyclinic',
-    category: 'sectors',
-    categoryLabel: '50 NICHES · POLYCLINICS & CLINICAL CENTERS',
-    question: 'What conversion architecture is implemented for Multi-Specialty Polyclinics?',
-    answer: [
-      'We design specialty-by-specialty department navigation, multi-doctor OPD schedule matrices, department triage selectors, and instant appointment booking with automated confirmations.',
-      'Patients quickly find the right specialist, view consulting hours, and reserve time slots without front-desk telephone friction or waiting room uncertainty.',
-    ],
-  },
-  {
-    id: 'niche-doctor-specialist',
-    category: 'sectors',
-    categoryLabel: '50 NICHES · SUPER-SPECIALIST DOCTORS',
-    question: 'How do you establish clinical authority for Super-Specialist Doctors and Surgeons?',
-    answer: [
-      'We build dignified, peer-reviewed medical portfolios featuring surgical case volumes, fellowship credentials, condition guides, patient recovery stories, and second-opinion tele-consultation funnels.',
-      'Ethical, patient-centric design balances clinical authority with empathetic clarity, providing patients and referring physicians complete peace of mind.',
+      'We build sensory digital sanctuaries with treatment menus, stylist lookbooks, instant day-pass claims, and peak-season reservation funnels.',
+      'Clients get visual clarity on services and can book consultations or memberships effortlessly.',
     ],
   },
 ];
 
 const CATEGORIES = [
   { key: 'all', label: 'All Questions', count: FAQ_ITEMS.length },
-  { key: 'sectors', label: '50 Niche Architectures', count: 11 },
-  { key: 'sprint', label: 'Sprint & Timeline', count: 5 },
-  { key: 'pricing', label: 'Pricing & Guarantee', count: 5 },
-  { key: 'design', label: 'Design & Aesthetics', count: 5 },
-  { key: 'tech', label: 'Tech & Performance', count: 5 },
-  { key: 'seo', label: 'SEO & Conversion', count: 4 },
+  { key: 'sprint', label: 'Process & Timeline', count: 5 },
+  { key: 'pricing', label: 'Pricing & Guarantee', count: 4 },
+  { key: 'team', label: 'Working with Us', count: 4 },
+  { key: 'tech', label: 'Design & Performance', count: 5 },
   { key: 'ownership', label: 'Ownership & Support', count: 4 },
+  { key: 'industries', label: 'Industry Solutions', count: 5 },
 ];
 
 export default function Faq({ onBook }: { onBook?: () => void }) {
@@ -438,8 +335,17 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [openIds, setOpenIds] = useState<Record<string, boolean>>({
     'sprint-how-7-days': true,
-    'pricing-guarantee-details': true,
+    'pricing-cost': true,
+    'pricing-guarantee': true,
   });
+
+  const handleBooking = () => {
+    if (onBook) {
+      onBook();
+    } else {
+      window.location.href = '/contact/#book';
+    }
+  };
 
   const toggleItem = (id: string) => {
     setOpenIds((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -491,35 +397,59 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
         <title>Frequently Asked Questions &amp; 7-Day Sprints — Uncoded Hub</title>
         <meta
           name="description"
-          content="39 detailed answers about our 7-day website sprint, pricing, 100% late-means-free guarantee, React tech stack, code ownership, and senior founder delivery."
+          content="Clear answers on our 7-day website sprint, transparent pricing, contractual on-time guarantee, custom design, code ownership, and working with Deepak & Geetha."
         />
         <link rel="canonical" href="https://uncodedhub.com/faq/" />
         <meta property="og:title" content="Frequently Asked Questions — Uncoded Hub" />
         <meta
           property="og:description"
-          content="39 detailed answers on our 7-day sprint model, 50 niche architectures, contractual on-time or 100% free guarantee, tech stack, pricing, and code ownership."
+          content="Clear answers on our 7-day sprint model, transparent pricing, on-time or 100% free guarantee, code ownership, and founder delivery."
         />
         <meta property="og:url" content="https://uncodedhub.com/faq/" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
-      {/* ── Page Hero ─────────────────────────────────────────── */}
-      <section className="relative pt-6 pb-12 sm:pt-10 sm:pb-16 border-b border-rule-subtle bg-paper">
+      {/* ── Breadcrumb Ribbon ────────────────────────────────────────── */}
+      <div className="bg-paper border-b border-rule pt-20 sm:pt-24 pb-3">
+        <Shell>
+          <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-muted">
+              <Link to="/" className="hover:text-ink transition-colors">
+                Home
+              </Link>
+              <span>/</span>
+              <span className="text-ink font-medium">Frequently Asked Questions</span>
+            </nav>
+
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-signal/10 text-signal font-mono text-[11px]">
+                <span>⚡ Plain English Answers · Zero Developer Jargon</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-paper border border-rule text-ink font-mono text-[11px]">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span>On Time or 100% Free Guarantee</span>
+              </div>
+            </div>
+          </div>
+        </Shell>
+      </div>
+
+      {/* ── Page Hero ────────────────────────────────────────────────── */}
+      <section className="relative pt-10 pb-12 sm:pt-16 sm:pb-20 border-b border-rule bg-paper">
         <Shell>
           <Reveal>
             <div className="max-w-4xl">
               <span className="label text-signal font-semibold block mb-3">
-                Knowledge base · 39 detailed answers
+                KNOWLEDGE BASE · RADICAL CLARITY
               </span>
 
-              <h1 className="font-display text-[2.75rem] sm:text-5xl md:text-6xl text-ink tracking-tight leading-[1.06]">
-                Frequently asked questions.
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl text-ink tracking-tight leading-[1.06] mb-4">
+                Frequently Asked Questions.
               </h1>
 
-              <div className="mt-6 text-base sm:text-lg text-ink-muted leading-relaxed max-w-2xl">
+              <div className="mt-4 text-base sm:text-lg text-muted leading-relaxed max-w-2xl">
                 <p>
-                  No sales talk, no agency jargon. Plain answers on our seven-day sprint model,
-                  the contractual on-time or 100% free guarantee, code ownership, tech stack, and working directly with{' '}
+                  No sales talk, no agency jargon. Plain answers on our seven-day sprint model, fixed pricing, the contractual on-time guarantee, complete code ownership, and working directly with{' '}
                   <strong className="text-ink font-semibold">Deepak &amp; Geetha</strong>.
                 </p>
               </div>
@@ -531,42 +461,32 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
                     type="search"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search any question (e.g. guarantee, WordPress, pricing)..."
-                    className="w-full px-4 py-3 pl-10 rounded-[14px] bg-paper-raised border border-rule-strong text-ink text-sm placeholder:text-ink-muted/50 focus:outline-none focus:border-ink transition-colors shadow-sm"
+                    placeholder="Search any question (e.g. pricing, guarantee, timeline, WordPress)..."
+                    className="w-full px-4 py-3 pl-10 rounded-[14px] bg-paper-raised border border-rule-strong text-ink text-sm placeholder:text-muted/60 focus:outline-none focus:border-signal transition-colors shadow-xs"
                   />
-                  <svg
-                    className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-muted pointer-events-none"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  </svg>
+                  <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted text-xs pointer-events-none">
+                    🔍
+                  </span>
                   {searchQuery && (
                     <button
                       onClick={() => setSearchQuery('')}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono text-ink-muted hover:text-ink"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono text-muted hover:text-ink cursor-pointer"
                     >
                       CLEAR
                     </button>
                   )}
                 </div>
 
-                <div className="flex items-center gap-2 text-xs font-medium">
+                <div className="flex items-center gap-2 text-xs font-mono">
                   <button
                     onClick={expandAll}
-                    className="px-3 py-2.5 rounded-[12px] bg-paper-sunken border border-rule hover:border-ink transition-colors text-ink"
+                    className="px-3.5 py-3 rounded-[12px] bg-paper-sunken border border-rule hover:border-ink transition-colors text-ink cursor-pointer"
                   >
                     Expand all
                   </button>
                   <button
                     onClick={collapseAll}
-                    className="px-3 py-2.5 rounded-[12px] bg-paper-sunken border border-rule hover:border-ink transition-colors text-ink-muted hover:text-ink"
+                    className="px-3.5 py-3 rounded-[12px] bg-paper-sunken border border-rule hover:border-ink transition-colors text-muted hover:text-ink cursor-pointer"
                   >
                     Collapse
                   </button>
@@ -581,16 +501,16 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
                     <button
                       key={cat.key}
                       onClick={() => setSelectedCategory(cat.key)}
-                      className={`px-3.5 py-1.5 rounded-full text-xs font-mono transition-all flex items-center gap-1.5 ${
+                      className={`px-3.5 py-1.5 rounded-full text-xs font-mono transition-all flex items-center gap-1.5 cursor-pointer ${
                         isActive
-                          ? 'bg-ink text-paper shadow-sm'
-                          : 'bg-paper-sunken text-ink-muted hover:text-ink border border-rule'
+                          ? 'bg-ink text-paper shadow-xs font-semibold'
+                          : 'bg-paper-sunken text-muted hover:text-ink border border-rule'
                       }`}
                     >
                       <span>{cat.label}</span>
                       <span
                         className={`text-[10px] px-1.5 py-0.2 rounded-full ${
-                          isActive ? 'bg-white/20 text-paper' : 'bg-paper-raised text-ink-muted'
+                          isActive ? 'bg-white/20 text-paper' : 'bg-paper-raised text-muted'
                         }`}
                       >
                         {cat.count}
@@ -604,14 +524,14 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
         </Shell>
       </section>
 
-      {/* ── FAQ Bento Accordion List ──────────────────────────── */}
-      <section className="py-12 sm:py-16 bg-paper-sunken/40">
+      {/* ── FAQ Bento Accordion List ─────────────────────────────────── */}
+      <section className="py-12 sm:py-20 bg-paper-sunken">
         <Shell>
           <div className="max-w-4xl mx-auto space-y-4">
             {filteredItems.length === 0 ? (
               <div className="bg-paper-raised border border-rule-strong rounded-[24px] p-10 text-center">
                 <p className="font-display text-2xl text-ink mb-2">No matching questions found.</p>
-                <p className="text-ink-muted text-sm mb-6">
+                <p className="text-muted text-sm mb-6">
                   Try clearing your search query or switching categories.
                 </p>
                 <button
@@ -630,9 +550,9 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
                 return (
                   <Reveal key={item.id} delay={Math.min(idx * 20, 200)}>
                     <div
-                      className={`bg-paper-raised border transition-all duration-200 rounded-[20px] overflow-hidden ${
+                      className={`bg-paper border transition-all duration-200 rounded-[20px] overflow-hidden ${
                         isOpen
-                          ? 'border-ink/40 shadow-[0_8px_24px_rgba(0,0,0,0.04)]'
+                          ? 'border-signal/50 shadow-sm ring-1 ring-signal/10'
                           : 'border-rule hover:border-rule-strong'
                       }`}
                     >
@@ -644,9 +564,9 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
                       >
                         <div className="space-y-1.5 flex-1 pr-2">
                           <span className="card-tag">
-                            {item.categoryLabel.charAt(0) + item.categoryLabel.slice(1).toLowerCase()}
+                            {item.categoryLabel}
                           </span>
-                          <h2 className="font-display text-lg sm:text-xl md:text-[1.375rem] text-ink leading-snug tracking-tight mt-1">
+                          <h2 className="font-display text-lg sm:text-xl text-ink leading-snug tracking-tight mt-1">
                             {item.question}
                           </h2>
                         </div>
@@ -655,7 +575,7 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
                         <div
                           className={`mt-1 w-8 h-8 rounded-full flex items-center justify-center border transition-all shrink-0 ${
                             isOpen
-                              ? 'bg-ink text-paper border-ink rotate-180'
+                              ? 'bg-signal text-paper border-signal rotate-180'
                               : 'bg-paper-sunken text-ink border-rule group-hover:border-ink'
                           }`}
                         >
@@ -665,22 +585,37 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
                         </div>
                       </button>
 
-                      {/* Accordion Content — Kept in DOM for AI Answer Engines & Prerender Answerability */}
+                      {/* Accordion Content */}
                       <div
                         id={`faq-panel-${item.id}`}
                         role="region"
-                        aria-labelledby={`faq-btn-${item.id}`}
                         className="grid transition-[grid-template-rows] duration-300 ease-out"
                         style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
                       >
                         <div className="overflow-hidden">
-                          <div className="px-5 pb-6 sm:px-6 sm:pb-7 pt-1 border-t border-rule/60">
+                          <div className="px-5 pb-6 sm:px-6 sm:pb-7 pt-1 border-t border-rule">
                             <div className="space-y-3 pt-3">
                               {item.answer.map((para, pIdx) => (
-                                <p key={pIdx} className="text-sm sm:text-base text-ink-muted leading-relaxed">
+                                <p key={pIdx} className="text-xs sm:text-sm text-ink-soft leading-relaxed mb-0 font-sans">
                                   {para}
                                 </p>
                               ))}
+
+                              {/* Helpful Inline CTA for high-intent questions */}
+                              {item.hasCta && (
+                                <div className="mt-4 pt-3 border-t border-rule flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+                                  <span className="text-muted">
+                                    Still have questions about your specific project?
+                                  </span>
+                                  <button
+                                    type="button"
+                                    onClick={handleBooking}
+                                    className="text-signal hover:underline font-semibold cursor-pointer inline-flex items-center gap-1"
+                                  >
+                                    <span>Let's talk for 20 minutes →</span>
+                                  </button>
+                                </div>
+                              )}
                             </div>
                           </div>
                         </div>
@@ -694,70 +629,67 @@ export default function Faq({ onBook }: { onBook?: () => void }) {
         </Shell>
       </section>
 
-      {/* ── Closing Dual Bento CTA ───────────────────────────── */}
-      <section className="py-16 sm:py-24 bg-paper border-t border-rule">
+      {/* ── Closing Dual Bento CTA ───────────────────────────────────── */}
+      <section className="py-20 sm:py-28 bg-paper border-t border-rule">
         <Shell>
           <Reveal>
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-2 gap-6">
-                {/* Card 1: Still have a question? */}
-                <div className="bg-paper-raised border border-rule-strong rounded-[24px] p-8 sm:p-10 flex flex-col justify-between shadow-sm">
+                {/* Card 1: Have a specific question? */}
+                <div className="bg-paper-raised border border-rule-strong rounded-[24px] p-8 sm:p-10 flex flex-col justify-between shadow-xs">
                   <div>
-                    <span className="card-tag mb-3">
-                      Direct inquiry
-                    </span>
+                    <span className="card-tag mb-3">DIRECT INQUIRY</span>
                     <h3 className="font-display text-2xl sm:text-3xl text-ink leading-tight tracking-tight">
                       Have a specific question not covered here?
                     </h3>
-                    <p className="text-ink-muted text-sm leading-relaxed mt-4">
-                      Send us an email or message us directly on WhatsApp. You will receive a direct reply
-                      from Deepak or Geetha within a few hours.
+                    <p className="text-muted text-xs sm:text-sm leading-relaxed mt-4">
+                      Message us directly on WhatsApp or send an email. You will receive a direct reply from Deepak or Geetha within a few hours.
                     </p>
                   </div>
-                  <div className="mt-8 pt-6 border-t border-rule flex flex-col sm:flex-row gap-3">
+                  <div className="mt-8 pt-6 border-t border-rule flex flex-col sm:flex-row gap-3 font-mono text-xs">
                     <a
-                      href="mailto:hello@uncodedhub.com"
-                      className="px-4 py-2.5 rounded-[12px] bg-paper-sunken border border-rule hover:border-ink transition-colors text-xs font-medium text-ink text-center"
-                    >
-                      hello@uncodedhub.com ↗
-                    </a>
-                    <a
-                      href="https://wa.me/918660819023"
+                      href="https://wa.me/918660819023?text=Hi%20Deepak%20and%20Geetha,%20I%20have%20a%20question%20about%20your%20website%20services."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2.5 rounded-[12px] bg-paper-sunken border border-rule hover:border-ink transition-colors text-xs font-medium text-ink text-center"
+                      className="px-4 py-3 rounded-full bg-signal text-paper font-semibold hover:bg-signal-bright transition-colors text-center shadow-xs"
                     >
                       WhatsApp: +91 86608 19023 ↗
+                    </a>
+                    <a
+                      href="mailto:hello@uncodedhub.com"
+                      className="px-4 py-3 rounded-full bg-paper border border-rule hover:border-ink transition-colors text-ink text-center"
+                    >
+                      hello@uncodedhub.com ↗
                     </a>
                   </div>
                 </div>
 
-                {/* Card 2: Ready to build? */}
+                {/* Card 2: Ready to talk? */}
                 <div className="bg-ink text-paper rounded-[24px] p-8 sm:p-10 flex flex-col justify-between shadow-xl">
                   <div>
-                    <span className="label text-signal-bright font-semibold block mb-3">
-                      Reserve your cohort
+                    <span className="label text-signal-bright font-semibold block mb-3 font-mono text-xs">
+                      CO-FOUNDER DISCOVERY
                     </span>
                     <h3 className="font-display text-2xl sm:text-3xl text-paper leading-tight tracking-tight">
-                      Ready to launch your high-converting website in 7 days?
+                      Ready to launch your custom website in 7 days?
                     </h3>
-                    <p className="text-on-ink-muted text-sm leading-relaxed mt-4">
-                      Book a free 20-minute discovery call directly on our calendar. We will review your current
-                      site, outline your scope sheet, and confirm your sprint kickoff date.
+                    <p className="text-on-ink-muted text-xs sm:text-sm leading-relaxed mt-4">
+                      Book a free 20-minute discovery call directly on our calendar. We will review your current site, outline your scope sheet, and confirm your sprint kickoff date.
                     </p>
                   </div>
                   <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-3">
                     <button
-                      onClick={onBook}
-                      className="btn-primary w-full text-center"
+                      type="button"
+                      onClick={handleBooking}
+                      className="btn-primary w-full text-center text-xs py-3.5 rounded-full cursor-pointer shadow-md"
                     >
-                      Schedule Discovery Call
+                      Schedule Discovery Call →
                     </button>
                     <Link
                       to="/portfolio/"
-                      className="px-4 py-2.5 rounded-[12px] bg-white/10 hover:bg-white/20 transition-colors text-xs font-mono text-paper text-center border border-white/15"
+                      className="px-4 py-3.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-xs font-mono text-paper text-center border border-white/15"
                     >
-                      Inspect Live Demos
+                      Inspect Live Demos ↗
                     </Link>
                   </div>
                 </div>
