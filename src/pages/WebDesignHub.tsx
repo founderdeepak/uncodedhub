@@ -429,7 +429,7 @@ export default function WebDesignHub({ onBook }: WebDesignHubProps) {
                 <span>📍 Bangalore Studio &amp; 100 Localities →</span>
               </Link>
               <Link
-                to="/markets/us/"
+                to="/markets/"
                 className="hidden md:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-paper border border-rule hover:border-signal/50 text-muted hover:text-ink font-mono text-[11px] transition-colors"
               >
                 <span>🌐 Global Delivery in 20+ Countries →</span>
@@ -677,7 +677,7 @@ export default function WebDesignHub({ onBook }: WebDesignHubProps) {
                     View Global Packages →
                   </a>
                   <Link
-                    to="/markets/us/"
+                    to="/markets/"
                     className="text-xs font-mono text-center text-muted hover:text-signal transition-colors"
                   >
                     Explore US, UK, Australia &amp; Global Hubs ↗
@@ -1327,7 +1327,7 @@ export default function WebDesignHub({ onBook }: WebDesignHubProps) {
                 </div>
 
                 <Link
-                  to="/markets/us/"
+                  to="/markets/"
                   className="border border-rule-strong hover:border-signal text-ink hover:text-signal font-mono text-xs py-3 px-5 rounded-full transition-colors bg-paper text-center justify-center inline-flex items-center gap-2"
                 >
                   Explore International Client Hubs →

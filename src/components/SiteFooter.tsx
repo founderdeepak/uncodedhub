@@ -743,8 +743,8 @@ export default function SiteFooter() {
           <div className={indexTab === 'markets' ? 'block' : 'hidden'}>
             <div className="flex items-center justify-between mb-3 text-[11px] font-mono text-on-ink-muted">
               <span>Tier-1 &amp; Tier-2 International Economic Hubs · Direct 7-Day Founder Sprints</span>
-              <Link to="/services/#pricing-guide" className="text-signal-bright hover:underline">
-                View Global Sprints &amp; Pricing Matrix →
+              <Link to="/markets/" className="text-signal-bright hover:underline">
+                View Master Global Hub &amp; 20 Countries →
               </Link>
             </div>
 

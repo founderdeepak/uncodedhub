@@ -97,7 +97,9 @@ export default function GlobalMarketLanding({ onBook }: GlobalMarketLandingProps
               <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-ink-muted">
                 <Link to="/" className="hover:text-ink transition-colors">Home</Link>
                 <span>/</span>
-                <span className="text-ink-soft">International Markets</span>
+                <Link to="/markets/" className="hover:text-ink transition-colors">
+                  International Markets
+                </Link>
                 <span>/</span>
                 <span className="text-signal font-semibold">{data.countryName}</span>
               </nav>
@@ -148,7 +150,7 @@ export default function GlobalMarketLanding({ onBook }: GlobalMarketLandingProps
                     Compare Local vs Uncoded Hub ↓
                   </a>
                   <a
-                    href="https://wa.me/918073801261?text=Hi%20Deepak,%20I'm%20based%20in%20the%20${data.countryName}%20and%20interested%20in%20a%207-day%20web%20sprint."
+                    href={`https://wa.me/918660819023?text=Hi%20Deepak%20and%20Geetha,%20I'm%20based%20in%20${encodeURIComponent(data.countryName)}%20and%20interested%20in%20a%207-day%20web%20sprint.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-sm font-medium text-emerald-600 hover:text-emerald-700 px-4 py-3"
@@ -656,7 +658,7 @@ export default function GlobalMarketLanding({ onBook }: GlobalMarketLandingProps
                     Schedule Your Free Discovery Call
                   </Link>
                   <a
-                    href="https://wa.me/918073801261?text=Hi%20Deepak,%20I'm%20based%20in%20the%20${data.countryName}%20and%20interested%20in%20a%207-day%20web%20sprint."
+                    href={`https://wa.me/918660819023?text=Hi%20Deepak%20and%20Geetha,%20I'm%20based%20in%20${encodeURIComponent(data.countryName)}%20and%20interested%20in%20a%207-day%20web%20sprint.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-6 py-4 border border-white/20 hover:border-white/60 text-paper rounded-[3px] text-sm font-mono transition-colors"

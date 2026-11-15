@@ -168,7 +168,7 @@ export default function GlobalCityLanding({ onBook }: GlobalCityLandingProps) {
               <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-ink-muted">
                 <Link to="/" className="hover:text-ink transition-colors">Home</Link>
                 <span>/</span>
-                <Link to="/services/#pricing-guide" className="hover:text-ink transition-colors">Global Markets</Link>
+                <Link to="/markets/" className="hover:text-ink transition-colors">Global Markets</Link>
                 <span>/</span>
                 <Link to={`/markets/${cityData.countrySlug}/`} className="hover:text-ink transition-colors">
                   {cityData.countryName}

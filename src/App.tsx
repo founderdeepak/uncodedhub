@@ -26,6 +26,7 @@ const AlternativesHub = lazy(() => import('./pages/AlternativesHub'));
 const AlternativeLanding = lazy(() => import('./pages/AlternativeLanding'));
 const SolutionsHub = lazy(() => import('./pages/SolutionsHub'));
 const SolutionLanding = lazy(() => import('./pages/SolutionLanding'));
+const GlobalHub = lazy(() => import('./pages/GlobalHub'));
 const GlobalMarketLanding = lazy(() => import('./pages/GlobalMarketLanding'));
 const GlobalCityLanding = lazy(() => import('./pages/GlobalCityLanding'));
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
@@ -376,6 +377,38 @@ export default function App() {
             element={
               <Suspense fallback={null}>
                 <SolutionLanding onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/markets"
+            element={
+              <Suspense fallback={null}>
+                <GlobalHub onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/markets/"
+            element={
+              <Suspense fallback={null}>
+                <GlobalHub onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/global"
+            element={
+              <Suspense fallback={null}>
+                <GlobalHub onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/global/"
+            element={
+              <Suspense fallback={null}>
+                <GlobalHub onBook={goToBooking} />
               </Suspense>
             }
           />
