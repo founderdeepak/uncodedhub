@@ -24,6 +24,7 @@ const STATIC_ROUTE_FILES = {
   '/faq': 'src/pages/Faq.tsx',
   '/contact': 'src/pages/Contact.tsx',
   '/web-design': 'src/pages/WebDesignHub.tsx',
+  '/markets': 'src/pages/GlobalHub.tsx',
   '/alternatives': 'src/pages/AlternativesHub.tsx',
   '/alternatives/wordpress': 'src/pages/AlternativeLanding.tsx',
   '/alternatives/wix-squarespace': 'src/pages/AlternativeLanding.tsx',

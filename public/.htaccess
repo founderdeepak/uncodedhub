@@ -1,6 +1,7 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+  DirectoryIndex index.html
 
   # 1. Force HTTPS and non-www (apex domain)
   RewriteCond %{HTTPS} off [OR]
@@ -28,6 +29,10 @@
 
   # 4c. Consolidate legacy /blog/niche/:niche to canonical /blog/industries/:niche/
   RewriteRule ^blog/niche/([a-zA-Z0-9_\-]+)/?$ https://uncodedhub.com/blog/industries/$1/ [L,R=301]
+
+  # 4d. Consolidate legacy /global and /global/:market to canonical /markets/
+  RewriteRule ^global/([a-zA-Z0-9_\-]+)/?$ https://uncodedhub.com/markets/$1/ [L,R=301]
+  RewriteRule ^global/?$ https://uncodedhub.com/markets/ [L,R=301]
 
   # 5. Clean query parameter canonicalization (?book=true -> /contact/)
   RewriteCond %{QUERY_STRING} ^book=true$ [NC]
