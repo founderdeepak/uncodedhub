@@ -3,37 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sri Ayyanar Sirpa Kalai | 30 Years Traditional Temple Architecture & Sacred Sculptures</title>
-  <meta name="description" content="Sri Ayyanar Sirpa Kalai — Master Sthapathis A.K. Balaji & A.K. Thennarasu. 30 years of traditional Chozha Agama Vithi temple architecture, Sudhai Sirpam, Raja Gopurams, Mandapams & Kovil Varna Velai across Tamil Nadu, Andhra, Karnataka & Nepal.">
+  <title>Sri Ayyanar Sirpa Kalai | Sacred Chozha Temple Architecture &amp; Sculptures</title>
+  <meta name="description" content="Sri Ayyanar Sirpa Kalai — Master Sthapathis A.K. Balaji &amp; A.K. Thennarasu. 30 years of traditional Chozha Agama Vithi temple architecture, Sudhai Sirpam, Raja Gopurams, Mandapams &amp; Kovil Varna Velai across Tamil Nadu, Andhra, Karnataka &amp; Nepal.">
   <meta name="robots" content="noindex, nofollow, noarchive">
 
-  <!-- Google Fonts: Cinzel, Plus Jakarta Sans, JetBrains Mono -->
+  <!-- Google Fonts: Cinzel Decorative, Cinzel, Plus Jakarta Sans, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- FontAwesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
-      --bg-dark: #07090c;
-      --bg-surface: #0e1219;
-      --bg-surface-elevated: #141923;
-      --bg-card: #181f2c;
-      --gold-primary: #d4af37;
-      --gold-light: #f7df94;
-      --gold-deep: #997819;
-      --vermilion: #c7074b;
+      --bg-midnight: #050813;
+      --bg-surface: #0a0f20;
+      --bg-surface-elevated: #0f162e;
+      --bg-card: #121b36;
+      --gold-primary: #dfb76c;
+      --gold-light: #f5dfa8;
+      --gold-deep: #a17f38;
+      --gold-glow: rgba(223, 183, 108, 0.15);
+      --border-gold-subtle: rgba(223, 183, 108, 0.22);
+      --border-gold-strong: rgba(223, 183, 108, 0.55);
+      --vermilion: #b91c1c;
       --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --text-dim: #64748b;
-      --border-subtle: rgba(255, 255, 255, 0.12);
-      --border-strong: rgba(255, 255, 255, 0.2);
-      --font-heading: 'Cinzel', Georgia, serif;
+      --text-muted: #8a9bb8;
+      --text-dim: #5c6d8c;
+      --font-display: 'Cinzel', Georgia, serif;
       --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
-      --shadow-neutral: 0 16px 36px rgba(0, 0, 0, 0.6);
+      --shadow-museum: 0 24px 60px rgba(0, 0, 0, 0.85);
     }
 
     * {
@@ -43,125 +44,155 @@
     }
 
     body {
-      background-color: var(--bg-dark);
+      background-color: var(--bg-midnight);
       color: var(--text-main);
       font-family: var(--font-body);
       line-height: 1.6;
       overflow-x: hidden;
       padding-bottom: 76px;
       -webkit-font-smoothing: antialiased;
+      background-image: radial-gradient(circle at 50% 0%, rgba(20, 30, 60, 0.5) 0%, transparent 60%);
     }
 
     .font-heritage {
-      font-family: var(--font-heading);
-      letter-spacing: 0.02em;
+      font-family: var(--font-display);
+      letter-spacing: 0.04em;
     }
 
-    /* Unslop Rule 1: Solid color typography instead of text gradients */
-    .text-gold {
-      color: var(--gold-light);
-    }
-    .text-vermilion {
-      color: var(--vermilion);
+    .font-mono-tag {
+      font-family: var(--font-mono);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    /* Unslop Rule 6 & 7: Crisp confident CTA with matched inner radius */
-    .btn-sacred-primary {
-      background: var(--gold-primary);
-      color: #07090c;
+    /* Architectural Gold Geometric Brackets (Museum Reference) */
+    .museum-frame {
+      position: relative;
+    }
+    .bracket-tr {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 28px;
+      height: 28px;
+      border-top: 2px solid var(--gold-primary);
+      border-right: 2px solid var(--gold-primary);
+      pointer-events: none;
+      z-index: 5;
+    }
+    .bracket-bl {
+      position: absolute;
+      bottom: -6px;
+      left: -6px;
+      width: 28px;
+      height: 28px;
+      border-bottom: 2px solid var(--gold-primary);
+      border-left: 2px solid var(--gold-primary);
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    /* Refined Luxury Buttons (Reference Match) */
+    .btn-gold-editorial {
+      background: linear-gradient(135deg, #f5dfa8 0%, #dfb76c 60%, #b89146 100%);
+      color: #060913;
       font-weight: 700;
-      padding: 0.85rem 1.85rem;
-      border-radius: 9999px;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
       display: inline-flex;
       align-items: center;
       gap: 0.65rem;
-      transition: background-color 0.2s ease, transform 0.2s ease;
       text-decoration: none;
-      font-size: 0.875rem;
       cursor: pointer;
-      border: none;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--gold-light);
+      box-shadow: 0 4px 20px rgba(223, 183, 108, 0.25);
+      transition: all 0.25s ease;
     }
-    .btn-sacred-primary:hover {
-      background: #e2be4a;
-      transform: translateY(-1px);
+    .btn-gold-editorial:hover {
+      background: #f5dfa8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(223, 183, 108, 0.4);
       color: #000;
     }
 
-    .btn-sacred-secondary {
-      background: #141923;
-      border: 1px solid var(--border-subtle);
-      color: #fff;
+    .btn-wire-editorial {
+      background: transparent;
+      color: var(--gold-light);
       font-weight: 600;
-      padding: 0.85rem 1.65rem;
-      border-radius: 9999px;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.85rem 1.85rem;
+      border-radius: 4px;
       display: inline-flex;
       align-items: center;
       gap: 0.65rem;
-      transition: border-color 0.2s ease, background-color 0.2s ease;
       text-decoration: none;
-      font-size: 0.875rem;
       cursor: pointer;
+      border: 1px solid var(--border-gold-strong);
+      transition: all 0.25s ease;
     }
-    .btn-sacred-secondary:hover {
-      background: #1c2331;
-      border-color: var(--border-strong);
-      color: var(--gold-light);
+    .btn-wire-editorial:hover {
+      background: rgba(223, 183, 108, 0.1);
+      border-color: var(--gold-light);
+      color: #fff;
     }
 
-    /* Unslop Rule 10 & 12: Solid grounded surface cards with clean hairline borders */
-    .bento-card {
+    /* Museum Bento Card */
+    .museum-card {
       background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 20px;
-      transition: border-color 0.25s ease, transform 0.25s ease;
+      border: 1px solid var(--border-gold-subtle);
+      border-radius: 8px;
       position: relative;
       overflow: hidden;
+      transition: all 0.3s ease;
     }
-    .bento-card:hover {
-      border-color: var(--border-strong);
+    .museum-card:hover {
+      border-color: var(--border-gold-strong);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7);
       transform: translateY(-2px);
     }
 
     /* Filter Tabs */
     .gallery-filter-btn {
-      padding: 0.6rem 1.4rem;
-      border-radius: 9999px;
-      font-size: 0.825rem;
+      padding: 0.55rem 1.4rem;
+      border-radius: 4px;
+      font-size: 0.775rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
-      border: 1px solid var(--border-subtle);
-      background: var(--bg-surface);
+      border: 1px solid var(--border-gold-subtle);
+      background: #090e1f;
       color: var(--text-muted);
-      font-family: var(--font-body);
+      font-family: var(--font-display);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
     .gallery-filter-btn.active, .gallery-filter-btn:hover {
       background: var(--gold-primary);
-      color: #07090c;
+      color: #060913;
       border-color: var(--gold-primary);
+      font-weight: 700;
     }
 
-    /* Creative Scroll Experience Container */
-    .sculpt-story-section {
-      position: relative;
-      background: #090c11;
-      border-top: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    /* Before / After Paint Reveal Slider */
+    /* Interactive Comparison Slider */
     .compare-container {
       position: relative;
       width: 100%;
-      max-width: 760px;
+      max-width: 860px;
       aspect-ratio: 16/10;
       margin: 2rem auto 0;
-      border-radius: 20px;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: var(--shadow-neutral);
-      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-museum);
+      border: 1px solid var(--border-gold-strong);
       user-select: none;
+      background: #000;
     }
     .compare-img {
       position: absolute;
@@ -178,7 +209,7 @@
       height: 100%;
       width: 50%;
       overflow: hidden;
-      border-right: 2px solid var(--gold-light);
+      border-right: 2px solid var(--gold-primary);
     }
     .compare-slider {
       position: absolute;
@@ -203,7 +234,7 @@
       align-items: center;
       justify-content: center;
       color: #000;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.75);
       pointer-events: none;
       z-index: 10;
     }
@@ -214,13 +245,38 @@
       position: fixed;
       inset: 0;
       z-index: 999;
-      background: rgba(4, 5, 8, 0.95);
+      background: rgba(3, 5, 12, 0.96);
       align-items: center;
       justify-content: center;
       padding: 1.5rem;
     }
     #lightbox-modal.active {
       display: flex;
+    }
+
+    /* Circular Temple Avatar Medallions (Reference Detail) */
+    .avatar-medallion {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 2px solid var(--border-gold-strong);
+      overflow: hidden;
+      position: relative;
+      background: #090e1f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .avatar-medallion:hover {
+      transform: scale(1.08);
+      border-color: var(--gold-primary);
+    }
+    .avatar-medallion img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     /* Mobile Sticky Bar */
@@ -230,506 +286,626 @@
       left: 0;
       right: 0;
       z-index: 100;
-      background: #090c12;
-      border-top: 1px solid var(--border-subtle);
+      background: #070a16;
+      border-top: 1px solid var(--border-gold-subtle);
       padding: 0.75rem 1rem;
       display: flex;
       gap: 0.75rem;
     }
 
-    /* Unslop Rule 16: Text wrap balance on headings */
     h1, h2, h3, h4, h5, h6 {
       text-wrap: balance;
     }
     p {
       text-wrap: pretty;
     }
+
+    @media (min-width: 900px) {
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.15fr 0.85fr;
+        gap: 2rem;
+        align-items: center;
+      }
+      .mobile-sticky-dock {
+        display: none;
+      }
+      body {
+        padding-bottom: 0;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Top Announcement Bar (Unslop Rule 2: Clean icon, no emojis; Rule 17: Solid surface) -->
-  <div style="background: #0e1219; border-bottom: 1px solid var(--border-subtle); padding: 0.5rem 1rem; text-align: center; font-size: 0.75rem; color: var(--gold-light); font-family: var(--font-mono);">
-    <i class="fa-solid fa-gopuram" style="margin-right: 0.4rem; color: var(--gold-primary);"></i>
-    <span>30 Years of Sacred Chozha Agama Vithi Temple Architecture &amp; Sculpting</span>
-    <span style="opacity: 0.4; margin: 0 0.5rem;">·</span>
-    <span style="color: #fff;">Tamil Nadu, Andhra, Karnataka, Puducherry &amp; Nepal</span>
+  <!-- Top Lineage Bar -->
+  <div style="background: #03060e; border-bottom: 1px solid var(--border-gold-subtle); padding: 0.5rem 1.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--gold-light); font-family: var(--font-mono);">
+    <div>
+      <i class="fa-solid fa-gopuram" style="margin-right: 0.4rem; color: var(--gold-primary);"></i>
+      <span>SRI AYYANAR SIRPA KALAI · ESTD. 1994 · CHOZHA AGAMA VIDHI</span>
+    </div>
+    <div style="opacity: 0.85; display: none;" class="md-block">
+      TAMIL NADU · ANDHRA · KARNATAKA · PUDUCHERRY · TELANGANA · MP · NEPAL
+    </div>
   </div>
 
-  <!-- Header -->
-  <header style="max-width: 1240px; margin: 0 auto; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between;">
-    <div style="display: flex; align-items: center; gap: 0.85rem;">
-      <div style="width: 44px; height: 44px; border-radius: 12px; background: #141923; display: flex; align-items: center; justify-content: center; color: var(--gold-primary); font-size: 1.25rem; border: 1px solid var(--border-subtle);">
-        <i class="fa-solid fa-gopuram"></i>
+  <!-- Header Navigation (Luxury Editorial Format Matching Reference) -->
+  <header style="max-width: 1380px; margin: 0 auto; padding: 1.5rem 1.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(223, 183, 108, 0.15);">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <div style="width: 44px; height: 44px; border: 1px solid var(--gold-primary); display: flex; align-items: center; justify-content: center; background: #0c1224; border-radius: 4px;">
+        <i class="fa-solid fa-gopuram" style="color: var(--gold-primary); font-size: 1.25rem;"></i>
       </div>
       <div>
-        <h1 class="font-heritage" style="font-size: 1.2rem; font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: 0.03em;">SRI AYYANAR SIRPA KALAI</h1>
-        <p style="font-size: 0.725rem; color: var(--gold-light); font-family: var(--font-mono);">ஸ்ரீ அய்யனார் சிற்பக் கலைக்கூடம் · Estd. 30 Years</p>
+        <h1 class="font-heritage" style="font-size: 1.15rem; font-weight: 700; color: #fff; letter-spacing: 0.12em; text-transform: uppercase;">
+          SRI AYYANAR SIRPA KALAI
+        </h1>
+        <p style="font-size: 0.7rem; color: var(--gold-light); font-family: var(--font-mono);">
+          MASTER STHAPATHIS A.K. BALAJI &amp; A.K. THENNARASU
+        </p>
       </div>
     </div>
 
-    <!-- Sthapathi Desk Phone & Direct WhatsApp -->
+    <!-- Editorial Menu Links -->
+    <nav style="display: none;" class="md-flex" style="gap: 2rem;">
+      <a href="#creation-story" style="color: var(--text-muted); text-decoration: none; font-size: 0.75rem; font-family: var(--font-display); letter-spacing: 0.1em; text-transform: uppercase; margin: 0 1rem; transition: color 0.2s;" onmouseover="this.style.color='#f5dfa8'" onmouseout="this.style.color='#8a9bb8'">PROCESS</a>
+      <a href="#portfolio-gallery" style="color: var(--text-muted); text-decoration: none; font-size: 0.75rem; font-family: var(--font-display); letter-spacing: 0.1em; text-transform: uppercase; margin: 0 1rem; transition: color 0.2s;" onmouseover="this.style.color='#f5dfa8'" onmouseout="this.style.color='#8a9bb8'">WORKS</a>
+      <a href="#disciplines" style="color: var(--text-muted); text-decoration: none; font-size: 0.75rem; font-family: var(--font-display); letter-spacing: 0.1em; text-transform: uppercase; margin: 0 1rem; transition: color 0.2s;" onmouseover="this.style.color='#f5dfa8'" onmouseout="this.style.color='#8a9bb8'">DISCIPLINES</a>
+      <a href="#estimator" style="color: var(--text-muted); text-decoration: none; font-size: 0.75rem; font-family: var(--font-display); letter-spacing: 0.1em; text-transform: uppercase; margin: 0 1rem; transition: color 0.2s;" onmouseover="this.style.color='#f5dfa8'" onmouseout="this.style.color='#8a9bb8'">PLANNER</a>
+    </nav>
+
+    <!-- Header Action Desk -->
     <div style="display: flex; align-items: center; gap: 1.25rem;">
-      <div style="display: none;" class="md-block">
-        <span style="font-size: 0.725rem; color: var(--text-muted); display: block; text-align: right;">Master Sthapathi Desk:</span>
-        <a href="tel:+919047144936" style="color: var(--gold-light); font-weight: 700; font-size: 0.95rem; text-decoration: none; font-family: var(--font-mono);">+91 90471 44936</a>
-      </div>
-      <a href="https://wa.me/919047144936?text=Vanakkam%20Balaji%20Sthapathi,%20I%20would%20like%20to%20discuss%20a%20temple%20architecture%20/%20sculpture%20project%20with%20Sri%20Ayyanar%20Sirpa%20Kalai." target="_blank" class="btn-sacred-primary" style="padding: 0.65rem 1.35rem; font-size: 0.8rem;">
-        <i class="fab fa-whatsapp" style="font-size: 1.1rem;"></i> WhatsApp Sthapathi
+      <a href="https://wa.me/919047144936?text=Vanakkam%20Balaji%20Sthapathi,%20I%20would%20like%20to%20consult%20regarding%20a%20temple%20project." target="_blank" class="btn-gold-editorial" style="padding: 0.65rem 1.4rem; font-size: 0.75rem;">
+        <i class="fab fa-whatsapp"></i> CONSULT STHAPATHI
       </a>
     </div>
   </header>
 
-  <!-- Hero Section (Unslop Rule 5: No badge, Rule 9: No glow orbs, Rule 6: Single primary CTA) -->
-  <section style="position: relative; padding: 4.5rem 1.5rem 5rem; text-align: center; border-bottom: 1px solid var(--border-subtle);">
-    <div style="max-width: 960px; margin: 0 auto; position: relative; z-index: 2;">
-      <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--gold-light); margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-        <i class="fa-solid fa-dharmachakra" style="font-size: 0.85rem;"></i>
-        <span>Sirpa Sasthira Agama Vithi · Chozha Architecture Heritage</span>
-      </div>
+  <!-- ═══════════════════════════════════════════════════════════════════
+       HERO STAGE: MASTER EDITORIAL COMPOSITION (MATCHING USER REFERENCE)
+       Left Column: Classical Headline & Story
+       Center Column: Floating Temple Gopuram & Sculpture with Chiaroscuro & Gold Brackets
+       Right Column: Record of Sacred History & Temple Landmarks
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section style="position: relative; max-width: 1380px; margin: 0 auto; padding: 4rem 1.5rem 5rem;">
+    <div class="hero-grid" style="display: grid; gap: 2.5rem; align-items: center;">
 
-      <h2 class="font-heritage" style="font-size: 3rem; line-height: 1.15; font-weight: 800; color: #fff; margin-bottom: 1.5rem;">
-        30 Years of Sacred Chozha Temple Architecture, Sudhai Sirpam &amp; Varna Velai
-      </h2>
-
-      <p style="font-size: 1.125rem; color: var(--text-muted); line-height: 1.7; max-width: 760px; margin: 0 auto 2.5rem;">
-        Led by Master Sthapathis <strong style="color: #fff;">A.K. Balaji</strong> and <strong style="color: #fff;">A.K. Thennarasu</strong>. We design, carve, sculpt, and paint majestic Raja Gopurams, sacred Vimana deities, and grand temple complexes strictly in accordance with scriptural <span style="color: var(--gold-light);">Agama Sastras</span>.
-      </p>
-
-      <!-- Rule 6: Single decisive primary CTA button -->
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-bottom: 3.5rem;">
-        <a href="https://wa.me/919047144936?text=Vanakkam%20Balaji%20Sthapathi,%20I%20would%20like%20to%20discuss%20a%20temple%20project." target="_blank" class="btn-sacred-primary" style="font-size: 1rem; padding: 1rem 2.25rem;">
-          <i class="fab fa-whatsapp" style="font-size: 1.25rem;"></i> Consult Balaji Sthapathi Directly on WhatsApp
-        </a>
-        <a href="#creation-story" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: none; font-family: var(--font-mono);">
-          <span>Inspect the Chisel to Painting Transformation ↓</span>
-        </a>
-      </div>
-
-      <!-- Rule 14: Authentic Architectural Credentials Ledger -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 1.75rem 1.25rem; box-shadow: var(--shadow-neutral);">
-        <div>
-          <span style="font-size: 1.85rem; font-weight: 800; color: var(--gold-light); display: block;" class="font-heritage">30+ Years</span>
-          <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Sacred Sthapathi Lineage</span>
+      <!-- LEFT COLUMN: The Sacred Story of Ayyanar -->
+      <div>
+        <div class="font-mono-tag" style="font-size: 0.75rem; color: var(--gold-primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span style="display: inline-block; width: 24px; height: 1px; background: var(--gold-primary);"></span>
+          YET THE SACRED STORY OF
         </div>
-        <div>
-          <span style="font-size: 1.85rem; font-weight: 800; color: #fff; display: block;" class="font-heritage">Chozha Standard</span>
-          <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Agama Vidhi Strict Compliance</span>
+
+        <h2 class="font-heritage" style="font-size: 3.25rem; font-weight: 800; line-height: 1.08; color: #fff; margin-bottom: 1.5rem; letter-spacing: 0.05em;">
+          S R I <br>
+          <span style="color: var(--gold-light);">A Y Y A N A R</span>
+        </h2>
+
+        <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem; max-width: 380px;">
+          IN SACRED STONE, SILENCE TURNS TO PRAYER. OVER THREE DECADES OF SCRIPTURAL CHOZHA AGAMA ARCHITECTURE, SUDHAI SCULPTING, AND KOVIL VARNA VELAI UNDER MASTER STHAPATHIS A.K. BALAJI &amp; A.K. THENNARASU.
+        </p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;">
+          <a href="https://wa.me/919047144936?text=Vanakkam%20Balaji%20Sthapathi,%20I%20would%20like%20to%20consult%20regarding%20a%20temple%20project." target="_blank" class="btn-gold-editorial">
+            <i class="fab fa-whatsapp"></i> CONSULT STHAPATHI
+          </a>
+          <a href="#creation-story" class="btn-wire-editorial">
+            VIEW PROCESS
+          </a>
         </div>
-        <div>
-          <span style="font-size: 1.85rem; font-weight: 800; color: var(--gold-light); display: block;" class="font-heritage">7 States + Nepal</span>
-          <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Completed Shrines &amp; Gopurams</span>
-        </div>
-        <div>
-          <span style="font-size: 1.85rem; font-weight: 800; color: #fff; display: block;" class="font-heritage">100% Handcrafted</span>
-          <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Direct Sthapathi Site Supervision</span>
+
+        <div style="font-size: 0.7rem; color: var(--text-dim); font-family: var(--font-mono); letter-spacing: 0.08em;">
+          LOCATION: ALL OVER INDIA &amp; NEPAL · 100% AGAMA VIDHI COMPLIANT
         </div>
       </div>
+
+      <!-- CENTER COLUMN: Floating Sacred Temple Gopuram (Chiaroscuro & Gold Brackets) -->
+      <div style="position: relative; display: flex; justify-content: center;">
+        <div class="museum-frame" style="position: relative; width: 100%; max-width: 480px; aspect-ratio: 4/5; border-radius: 6px; overflow: hidden; border: 1px solid var(--border-gold-strong); box-shadow: var(--shadow-museum); background: #080d1c;">
+          
+          <!-- Reference Gold Geometric Corner Brackets -->
+          <div class="bracket-tr"></div>
+          <div class="bracket-bl"></div>
+
+          <!-- Real Temple Gopuram & Architecture -->
+          <img src="/demos/ayyanar/gopuram-hero.jpg" alt="Chozha Temple Raja Gopuram by Sri Ayyanar Sirpa Kalai" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) brightness(0.95);">
+          
+          <!-- Subtle Dark Chiaroscuro Vignette -->
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5, 8, 19, 0.2) 0%, rgba(5, 8, 19, 0.4) 60%, rgba(5, 8, 19, 0.95) 100%);"></div>
+
+          <!-- In-Frame Architectural Stamp -->
+          <div style="position: absolute; bottom: 20px; left: 24px; right: 24px;">
+            <div style="font-size: 0.7rem; font-family: var(--font-mono); color: var(--gold-light); margin-bottom: 0.25rem;">
+              BESUR PALAYAM · THIRUVANNAMALAI
+            </div>
+            <h3 class="font-heritage" style="font-size: 1.45rem; color: #fff; margin-bottom: 0.25rem;">
+              SRIVASA PERUMAL KOVIL
+            </h3>
+            <p style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">
+              Raja Gopuram Architecture &amp; Kattida Kalai · Chozha Standard
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: Record of Sacred History & Temple Landmarks (Reference Match) -->
+      <div>
+        <!-- Card 1: Record of History -->
+        <div class="museum-card" style="padding: 1.75rem; margin-bottom: 1.5rem; background: #0a0f22;">
+          <div class="font-mono-tag" style="font-size: 0.7rem; color: var(--gold-primary); margin-bottom: 0.5rem;">
+            RECORD OF SACRED HISTORY
+          </div>
+          <h4 class="font-heritage" style="font-size: 1.35rem; color: #fff; margin-bottom: 0.5rem;">
+            IN 1994 · MASTER STHAPATHI LINEAGE
+          </h4>
+          <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">
+            Rooted in hereditary Chozha temple architecture. Over 30 years carving sanctum sanctorums, vimana gopurams, and monumental sacred idols.
+          </p>
+          <div style="display: flex; gap: 1.5rem; border-top: 1px solid var(--border-gold-subtle); padding-top: 0.85rem;">
+            <div>
+              <div style="font-size: 1.35rem; font-weight: 800; color: var(--gold-light);" class="font-heritage">30+</div>
+              <div style="font-size: 0.65rem; color: var(--text-dim); font-family: var(--font-mono);">YEARS CRAFT</div>
+            </div>
+            <div>
+              <div style="font-size: 1.35rem; font-weight: 800; color: #fff;" class="font-heritage">7+</div>
+              <div style="font-size: 0.65rem; color: var(--text-dim); font-family: var(--font-mono);">STATES &amp; NEPAL</div>
+            </div>
+            <div>
+              <div style="font-size: 1.35rem; font-weight: 800; color: var(--gold-light);" class="font-heritage">100%</div>
+              <div style="font-size: 0.65rem; color: var(--text-dim); font-family: var(--font-mono);">AGAMA VIDHI</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Completed Temple Landmarks Medallions -->
+        <div class="museum-card" style="padding: 1.75rem; background: #0a0f22;">
+          <div class="font-mono-tag" style="font-size: 0.7rem; color: var(--gold-primary); margin-bottom: 0.25rem;">
+            SACRED TEMPLE COMMISSIONS
+          </div>
+          <h4 class="font-heritage" style="font-size: 1.15rem; color: #fff; margin-bottom: 1rem;">
+            LANDMARK SHRINES EXECUTED
+          </h4>
+
+          <!-- Row of Circular Avatar Medallions (Just like Reference) -->
+          <div style="display: flex; gap: 0.85rem; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap;">
+            <div class="avatar-medallion" title="Thiruvannamalai - Srivasa Perumal Kovil">
+              <img src="/demos/ayyanar/gopuram-hero.jpg" alt="Besur Palayam Srivasa Perumal Kovil">
+            </div>
+            <div class="avatar-medallion" title="Chengam - Pachai Vaaliamman Kovil">
+              <img src="/demos/ayyanar/sudhai-relief.jpg" alt="Pachai Vaaliamman Kovil">
+            </div>
+            <div class="avatar-medallion" title="Puducherry - Muthumariamman Kovil">
+              <img src="/demos/ayyanar/varna-painting.jpg" alt="Puducherry Muthumariamman Kovil">
+            </div>
+            <div class="avatar-medallion" title="Hosur - Sivan Kovil">
+              <img src="/demos/ayyanar/temple-architecture.jpg" alt="Hosur Sivan Kovil">
+            </div>
+            <div class="avatar-medallion" title="Hosur Matham - Pachai Amman Kovil">
+              <img src="/demos/ayyanar/sculpture-detail.jpg" alt="Hosur Matham Pachai Amman Kovil">
+            </div>
+          </div>
+
+          <div style="font-size: 0.775rem; color: var(--text-muted); line-height: 1.5; font-family: var(--font-mono);">
+            +5 Major Temple Landmark Commissions in Tamil Nadu &amp; Puducherry, plus active sites in Kadapa, Tirupati, MP &amp; Nepal.
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
+  <!-- Horizontal Editorial Nav Strip (Matching the Reference Row of "CLASSES, ARTISTS, STUDIOS, SHOP, EVENTS") -->
+  <div style="max-width: 1380px; margin: 0 auto 5rem; padding: 1.25rem 1.5rem; border-top: 1px solid var(--border-gold-subtle); border-bottom: 1px solid var(--border-gold-subtle); display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center; gap: 1rem; font-family: var(--font-display); font-size: 0.8rem; letter-spacing: 0.12em; color: var(--gold-light);">
+    <span>KATTIDA KALAI</span>
+    <span style="opacity: 0.3;">·</span>
+    <span>SUDHAI SIRPAM</span>
+    <span style="opacity: 0.3;">·</span>
+    <span>KOVIL VARNA VELAI</span>
+    <span style="opacity: 0.3;">·</span>
+    <span>RAJA GOPURAM</span>
+    <span style="opacity: 0.3;">·</span>
+    <span>MOOLA VIGRAHAM</span>
+    <span style="opacity: 0.3;">·</span>
+    <span>MAHA KUMBHABHISHEKAM</span>
+  </div>
+
   <!-- ═══════════════════════════════════════════════════════════════════
-       FEATURE: CREATIVE SCROLL EXPERIENCE — THE MAKING & PAINTING OF A SCULPTURE
+       THE CREATIVE SCROLL EXPERIENCE: CHISEL TO SACRED PAINT TRANSFORMATION
        ═══════════════════════════════════════════════════════════════════ -->
-  <section id="creation-story" class="sculpt-story-section" style="padding: 5rem 1.5rem 6rem;">
-    <div style="max-width: 1240px; margin: 0 auto; text-align: center; margin-bottom: 3.5rem;">
-      <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--gold-light); margin-bottom: 0.5rem;">Sacred Consecration Timeline</div>
-      <h3 class="font-heritage" style="font-size: 2.5rem; font-weight: 800; color: #fff;">
-        From Raw Stone to Divine Radiance: The Sculptor's Journey
+  <section id="creation-story" style="max-width: 1380px; margin: 0 auto; padding: 3rem 1.5rem 6rem;">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <div class="font-mono-tag" style="font-size: 0.75rem; color: var(--gold-primary); margin-bottom: 0.5rem;">
+        SACRED TRANSFORMATION JOURNEY
+      </div>
+      <h3 class="font-heritage" style="font-size: 2.75rem; font-weight: 800; color: #fff;">
+        FROM RAW STONE TO DIVINE RADIANCE
       </h3>
-      <p style="color: var(--text-muted); max-width: 720px; margin: 0.5rem auto 0; font-size: 1rem;">
-        The sacred sequential transformation. Watch how Balaji and Thennarasu Sthapathi chisel raw monolithic rock into sanctified Sudhai relief, culminating in vibrant <span style="color: var(--gold-light);">Kovil Varna Velai</span> for Maha Kumbhabhishekam.
+      <p style="color: var(--text-muted); max-width: 760px; margin: 0.5rem auto 0; font-size: 1rem;">
+        Witness the sequential creation process followed by Master Sthapathis Balaji and Thennarasu. Every temple sanctum, gopuram, and murthi evolves through ancient shastric milestones before Maha Kumbhabhishekam.
       </p>
     </div>
 
-    <!-- The 4-Stage Interactive Scroll Journey Grid (Unslop Rule 15: Real specifications, Rule 10: Clean hairline borders) -->
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
-      <!-- Step 1 -->
-      <div class="bento-card" style="padding: 1.5rem;">
-        <div style="position: relative; aspect-ratio: 1/1; border-radius: 12px; overflow: hidden; margin-bottom: 1.25rem; background: #111;">
-          <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Chisel carving raw granite" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.85); color: #fff; font-size: 0.75rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 4px; border: 1px solid var(--border-subtle);">
-            Phase 01 · Marking
+    <!-- 4 Sequential Stages Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+      
+      <!-- Stage 1 -->
+      <div class="museum-card" style="padding: 1.5rem;">
+        <div style="position: relative; aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; margin-bottom: 1.25rem; border: 1px solid var(--border-gold-subtle);">
+          <img src="/demos/ayyanar/temple-architecture.jpg" alt="Ayadi Shastra Temple Planning" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; top: 10px; left: 10px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
+            PHASE 01 · AYADI VIDHI
           </span>
         </div>
-        <h4 class="font-heritage" style="font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">Ayadi Shastra &amp; Rough Chisel</h4>
+        <h4 class="font-heritage" style="font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">Ayadi Sasthiram &amp; Layout</h4>
         <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-          Mathematical calculation of sacred proportions (*Ayadi calculations*) on raw Black Granite or sandstone. Removing rough outer rock to release the sacred anatomical posture.
+          Calculation of the 6 sacred formulas (Aya, Vyaya, Yoni, Vara, Thithi, Nakshatra) defining the exact sanctum orientation, base plinth, and gopuram elevation.
         </p>
       </div>
 
-      <!-- Step 2 -->
-      <div class="bento-card" style="padding: 1.5rem;">
-        <div style="position: relative; aspect-ratio: 1/1; border-radius: 12px; overflow: hidden; margin-bottom: 1.25rem; background: #111;">
-          <img src="https://images.unsplash.com/photo-1609766857329-a1b7e9227546?auto=format&fit=crop&w=800&q=80" alt="Intricate Stone Sculpting" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.85); color: var(--gold-light); font-size: 0.75rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 4px; border: 1px solid var(--border-subtle);">
-            Phase 02 · Iconography
+      <!-- Stage 2 -->
+      <div class="museum-card" style="padding: 1.5rem;">
+        <div style="position: relative; aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; margin-bottom: 1.25rem; border: 1px solid var(--border-gold-subtle);">
+          <img src="/demos/ayyanar/sculpture-detail.jpg" alt="Chozha Iconographic Detailing" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; top: 10px; left: 10px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
+            PHASE 02 · SIRPA KALAI
           </span>
         </div>
-        <h4 class="font-heritage" style="font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">Chozha Iconographic Detailing</h4>
+        <h4 class="font-heritage" style="font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">Chozha Iconographic Carving</h4>
         <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
           Hand-carving delicate divine features: serene meditative eyes, ornate makara crowns, sacred weapons, jewelry, and flowing silk drapery with micro-chisels.
         </p>
       </div>
 
-      <!-- Step 3 -->
-      <div class="bento-card" style="padding: 1.5rem;">
-        <div style="position: relative; aspect-ratio: 1/1; border-radius: 12px; overflow: hidden; margin-bottom: 1.25rem; background: #111;">
-          <img src="https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&w=800&q=80" alt="Sudhai Mortar Sculpting" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.85); color: #fff; font-size: 0.75rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 4px; border: 1px solid var(--border-subtle);">
-            Phase 03 · Mortar Relief
+      <!-- Stage 3 -->
+      <div class="museum-card" style="padding: 1.5rem;">
+        <div style="position: relative; aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; margin-bottom: 1.25rem; border: 1px solid var(--border-gold-subtle);">
+          <img src="/demos/ayyanar/sudhai-relief.jpg" alt="Sudhai Sirpam Mortar Relief" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; top: 10px; left: 10px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
+            PHASE 03 · SUDHAI VELAI
           </span>
         </div>
-        <h4 class="font-heritage" style="font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">Sudhai Sirpam (Mortar Sculpting)</h4>
+        <h4 class="font-heritage" style="font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">Sudhai Sirpam (Mortar Relief)</h4>
         <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-          Specialized high-durability lime-mortar sculpting on Gopurams and Vimanams. Fashioning sacred lion vahanas, yalis, and dvarapalakas built to endure outdoor weather for centuries.
+          High-durability traditional lime-mortar sculpting on Gopuram tiers, Vimanams, and compound walls. Fashioning sacred lion vahanas, yalis, and guardian dvarapalakas.
         </p>
       </div>
 
-      <!-- Step 4 -->
-      <div class="bento-card" style="padding: 1.5rem;">
-        <div style="position: relative; aspect-ratio: 1/1; border-radius: 12px; overflow: hidden; margin-bottom: 1.25rem; background: #111;">
-          <img src="https://images.unsplash.com/photo-1621847468516-1ed5d0df56fe?auto=format&fit=crop&w=800&q=80" alt="Kovil Varna Velai Temple Painting" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.85); color: #34d399; font-size: 0.75rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 4px; border: 1px solid var(--border-subtle);">
-            Phase 04 · Consecrated
+      <!-- Stage 4 -->
+      <div class="museum-card" style="padding: 1.5rem;">
+        <div style="position: relative; aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; margin-bottom: 1.25rem; border: 1px solid var(--border-gold-subtle);">
+          <img src="/demos/ayyanar/varna-painting.jpg" alt="Kovil Varna Velai Temple Painting" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; top: 10px; left: 10px; background: rgba(5, 8, 19, 0.9); color: #4ade80; font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
+            PHASE 04 · VARNA VELAI
           </span>
         </div>
         <h4 class="font-heritage" style="font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">Kovil Varna Velai (Painting)</h4>
         <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-          The sacred color consecration. Applying weather-proof mineral pigments, Kumkuma crimson, Peacock blue, and 24K gold foil ready for Maha Kumbhabhishekam.
+          Applying weather-resistant consecrated mineral pigments, sacred vermilion, peacock blue, and gold leaf highlights in preparation for Maha Kumbhabhishekam.
         </p>
       </div>
+
     </div>
 
-    <!-- Interactive Before & After: Raw Stone vs. Painted Temple Sudhai (Rule 7: matched radius) -->
-    <div style="max-width: 900px; margin: 0 auto; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 2.5rem 1.5rem; text-align: center;">
-      <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--gold-light); margin-bottom: 0.5rem;">Interactive Paint Transformation</div>
-      <h4 class="font-heritage" style="font-size: 1.75rem; color: #fff; margin-bottom: 0.5rem;">
-        Drag the Brush: Raw Stone to Sacred Varna Velai
+    <!-- Interactive Before / After Paint Reveal Engine -->
+    <div class="museum-card" style="max-width: 960px; margin: 0 auto; padding: 2.5rem 1.5rem; text-align: center; background: #080d1c;">
+      <div class="font-mono-tag" style="font-size: 0.75rem; color: var(--gold-primary); margin-bottom: 0.5rem;">
+        INTERACTIVE PAINT &amp; SCULPT ENGINE
+      </div>
+      <h4 class="font-heritage" style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">
+        DRAG THE BRUSH: RAW SCULPTING TO KOVIL VARNA VELAI
       </h4>
-      <p style="font-size: 0.9rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">
-        Slide left and right to reveal the transformation from hand-carved stone to vibrant temple painting.
+      <p style="font-size: 0.9rem; color: var(--text-muted); max-width: 660px; margin: 0 auto;">
+        Slide left and right to inspect the sacred transformation from handcrafted Sudhai mortar relief into vibrant, consecrated temple color.
       </p>
 
       <div class="compare-container" id="compare-box">
         <!-- Colored / Painted Sculpture (Full background) -->
-        <img class="compare-img" src="https://images.unsplash.com/photo-1621847468516-1ed5d0df56fe?auto=format&fit=crop&w=1200&q=80" alt="Painted Temple Sculpture">
+        <img class="compare-img" src="/demos/ayyanar/varna-painting.jpg" alt="Kovil Varna Velai Temple Painting">
         
-        <!-- Raw Stone Sculpture (Left Clipped Overlay) -->
+        <!-- Raw Sculpted Relief (Left Clipped Overlay) -->
         <div class="compare-overlay" id="compare-overlay">
-          <img class="compare-img" src="https://images.unsplash.com/photo-1609766857329-a1b7e9227546?auto=format&fit=crop&w=1200&q=80" alt="Raw Stone Carved Sculpture" style="width: 760px; max-width: none;">
+          <img class="compare-img" src="/demos/ayyanar/sudhai-relief.jpg" alt="Sudhai Mortar Sculpture Relief" style="width: 860px; max-width: none;">
         </div>
 
-        <input type="range" min="0" max="100" value="50" class="compare-slider" id="compare-range">
+        <input type="range" min="0" max="100" value="50" class="compare-slider" id="compare-range" aria-label="Compare raw sculpture with painted temple art">
         
         <div class="slider-handle" id="slider-handle">
           <i class="fas fa-arrows-alt-h" style="font-size: 0.95rem;"></i>
         </div>
       </div>
 
-      <div style="display: flex; justify-content: space-between; max-width: 760px; margin: 1rem auto 0; font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted);">
-        <span style="color: var(--gold-light);">← Raw Stone Chisel Work</span>
-        <span style="color: #34d399;">Kovil Varna Velai Painting →</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════════
-       FEATURE: MASTER SCULPTOR PORTFOLIO GALLERY (16 DETAILED WORKS)
-       ═══════════════════════════════════════════════════════════════════ -->
-  <section style="max-width: 1240px; margin: 0 auto; padding: 6rem 1.5rem;" id="portfolio-gallery">
-    <div style="text-align: center; margin-bottom: 3.5rem;">
-      <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--gold-light); margin-bottom: 0.5rem;">Master Portfolio</div>
-      <h3 class="font-heritage" style="font-size: 2.75rem; font-weight: 800; color: #fff;">
-        The Sacred Archive of Works
-      </h3>
-      <p style="color: var(--text-muted); max-width: 700px; margin: 0.5rem auto 2.5rem; font-size: 1rem;">
-        Explore our curated portfolio across temple gopurams, sudhai relief, temple paintings, and private sacred statues. Click any work to inspect high-definition chisel details.
-      </p>
-
-      <!-- Category Filter Tabs -->
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.65rem;" id="gallery-tabs">
-        <button class="gallery-filter-btn active" onclick="filterGallery('all')">All Works (8 Featured)</button>
-        <button class="gallery-filter-btn" onclick="filterGallery('gopuram')">Temple Architecture &amp; Gopurams</button>
-        <button class="gallery-filter-btn" onclick="filterGallery('sudhai')">Sudhai Sirpangal (Mortar)</button>
-        <button class="gallery-filter-btn" onclick="filterGallery('varna')">Kovil Varna Velai (Painting)</button>
-        <button class="gallery-filter-btn" onclick="filterGallery('idols')">Deity Murthis &amp; Memorials</button>
-      </div>
-    </div>
-
-    <!-- Gallery Grid (Rule 7: matched radius) -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;" id="gallery-grid">
-
-      <!-- Item 1: Gopuram -->
-      <div class="bento-card gallery-item" data-cat="gopuram" onclick="openLightbox('https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80', 'Raja Gopuram Architecture', 'Besur Palayam, Thiruvannamalai — Srivasa Perumal Kovil', 'Chozha Dravidian Multi-Tier Gopuram with sacred Ayadi dimensions.')">
-        <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
-          <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80" alt="Raja Gopuram" style="width: 100%; height: 100%; object-fit: cover;">
-          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(9, 11, 14, 0.95) 100%);"></div>
-          <span style="position: absolute; top: 14px; left: 14px; background: rgba(0,0,0,0.85); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 4px; border: 1px solid var(--border-subtle);">
-            Thiruvannamalai
-          </span>
-          <div style="position: absolute; bottom: 16px; left: 16px; right: 16px;">
-            <h5 class="font-heritage" style="font-size: 1.15rem; color: #fff;">Srivasa Perumal Raja Gopuram</h5>
-            <p style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Kattida Kalai · Turnkey Build</p>
-          </div>
-        </div>
+      <div style="display: flex; justify-content: space-between; max-width: 860px; margin: 1rem auto 0; font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted);">
+        <span style="color: var(--gold-light);">← Sculpted Relief (Sudhai Sirpam)</span>
+        <span style="color: #4ade80;">Consecrated Temple Painting (Varna Velai) →</span>
       </div>
 
-      <!-- Item 2: Sudhai -->
-      <div class="bento-card gallery-item" data-cat="sudhai" onclick="openLightbox('https://images.unsplash.com/photo-1621847468516-1ed5d0df56fe?auto=format&fit=crop&w=1200&q=80', 'Vimana Sudhai Sirpangal', 'Moonurmangalam, Chengam — Pachai Vaaliamman Kovil', 'High-relief mortar sculpting of goddess parivara deities.')">
-        <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
-          <img src="https://images.unsplash.com/photo-1621847468516-1ed5d0df56fe?auto=format&fit=crop&w=800&q=80" alt="Sudhai Sirpam" style="width: 100%; height: 100%; object-fit: cover;">
-          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(9, 11, 14, 0.95) 100%);"></div>
-          <span style="position: absolute; top: 14px; left: 14px; background: rgba(0,0,0,0.85); color: #fff; font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 4px; border: 1px solid var(--border-subtle);">
-            Chengam Taluk
-          </span>
-          <div style="position: absolute; bottom: 16px; left: 16px; right: 16px;">
-            <h5 class="font-heritage" style="font-size: 1.15rem; color: #fff;">Pachai Vaaliamman Sudhai</h5>
-            <p style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Sudhai Sirpam · Goddess Sanctum</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 3: Varna Velai -->
-      <div class="bento-card gallery-item" data-cat="varna" onclick="openLightbox('https://images.unsplash.com/photo-1605649487212-47bdab064df8?auto=format&fit=crop&w=1200&q=80', 'Maha Kumbhabhishekam Varna Velai', 'Puducherry — Muthumariamman Kovil', 'Traditional gopuram fresco and multi-layer weather-resistant painting.')">
-        <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
-          <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df8?auto=format&fit=crop&w=800&q=80" alt="Kovil Varna Velai" style="width: 100%; height: 100%; object-fit: cover;">
-          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(9, 11, 14, 0.95) 100%);"></div>
-          <span style="position: absolute; top: 14px; left: 14px; background: rgba(0,0,0,0.85); color: #34d399; font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 4px; border: 1px solid var(--border-subtle);">
-            Puducherry
-          </span>
-          <div style="position: absolute; bottom: 16px; left: 16px; right: 16px;">
-            <h5 class="font-heritage" style="font-size: 1.15rem; color: #fff;">Muthumariamman Kovil Varna</h5>
-            <p style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Kovil Varna Velai · Kumbhabhishekam</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 4: Idols -->
-      <div class="bento-card gallery-item" data-cat="idols" onclick="openLightbox('https://images.unsplash.com/photo-1599818816934-8c8869165d21?auto=format&fit=crop&w=1200&q=80', 'Panchaloha Nataraja Murthi', 'Private Heritage Collection', 'Chola lost-wax bronze casting with Agama Shastra balance.')">
-        <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
-          <img src="https://images.unsplash.com/photo-1599818816934-8c8869165d21?auto=format&fit=crop&w=800&q=80" alt="Bronze Nataraja" style="width: 100%; height: 100%; object-fit: cover;">
-          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(9, 11, 14, 0.95) 100%);"></div>
-          <span style="position: absolute; top: 14px; left: 14px; background: rgba(0,0,0,0.85); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 4px; border: 1px solid var(--border-subtle);">
-            Panchaloha
-          </span>
-          <div style="position: absolute; bottom: 16px; left: 16px; right: 16px;">
-            <h5 class="font-heritage" style="font-size: 1.15rem; color: #fff;">Ananda Tandava Nataraja</h5>
-            <p style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Bronze Murthi · Chozha Tradition</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 5: Architecture Mandapam -->
-      <div class="bento-card gallery-item" data-cat="gopuram" onclick="openLightbox('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80', 'Sivan Kovil Maha Mandapam', 'Hosur, Sathya Nagar — Mookandapalli', 'Carved monolithic granite pillars with Yali capitals.')">
-        <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Hosur Sivan Kovil" style="width: 100%; height: 100%; object-fit: cover;">
-          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(9, 11, 14, 0.95) 100%);"></div>
-          <span style="position: absolute; top: 14px; left: 14px; background: rgba(0,0,0,0.85); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 4px; border: 1px solid var(--border-subtle);">
-            Hosur
-          </span>
-          <div style="position: absolute; bottom: 16px; left: 16px; right: 16px;">
-            <h5 class="font-heritage" style="font-size: 1.15rem; color: #fff;">Hosur Sivan Kovil Sanctum</h5>
-            <p style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Maha Mandapam &amp; Nandi Shrine</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 6: Sudhai Vahanas -->
-      <div class="bento-card gallery-item" data-cat="sudhai" onclick="openLightbox('https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&w=1200&q=80', 'Sacred Temple Vahana Sculptures', 'Hosur, Matham — Pachai Amman Kovil', 'Simha and Yali vahanas sculpted in high-density mortar.')">
-        <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
-          <img src="https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&w=800&q=80" alt="Sudhai Vahanas" style="width: 100%; height: 100%; object-fit: cover;">
-          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(9, 11, 14, 0.95) 100%);"></div>
-          <span style="position: absolute; top: 14px; left: 14px; background: rgba(0,0,0,0.85); color: #fff; font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 4px; border: 1px solid var(--border-subtle);">
-            Hosur Matham
-          </span>
-          <div style="position: absolute; bottom: 16px; left: 16px; right: 16px;">
-            <h5 class="font-heritage" style="font-size: 1.15rem; color: #fff;">Pachai Amman Vahana Sudhai</h5>
-            <p style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Simha &amp; Yali Vahana Relief</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 7: Granite Murthi -->
-      <div class="bento-card gallery-item" data-cat="idols" onclick="openLightbox('https://images.unsplash.com/photo-1609766857329-a1b7e9227546?auto=format&fit=crop&w=1200&q=80', 'Krishna Shila Vinayagar Murthi', 'Private Temple Mandir Commission', 'Carved in high-density Krishna Shila black granite.')">
-        <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
-          <img src="https://images.unsplash.com/photo-1609766857329-a1b7e9227546?auto=format&fit=crop&w=800&q=80" alt="Granite Ganesha" style="width: 100%; height: 100%; object-fit: cover;">
-          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(9, 11, 14, 0.95) 100%);"></div>
-          <span style="position: absolute; top: 14px; left: 14px; background: rgba(0,0,0,0.85); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 4px; border: 1px solid var(--border-subtle);">
-            Black Granite
-          </span>
-          <div style="position: absolute; bottom: 16px; left: 16px; right: 16px;">
-            <h5 class="font-heritage" style="font-size: 1.15rem; color: #fff;">Krishna Shila Vinayagar</h5>
-            <p style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Moola Vigraham · 3ft Granite</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 8: Nepal Cross-Border Shrines -->
-      <div class="bento-card gallery-item" data-cat="gopuram" onclick="openLightbox('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80', 'Himalayan Shrine Architecture', 'Nepal Commission', 'Traditional Dravidian-Chozha fusion shrine architecture in Nepal.')">
-        <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
-          <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Nepal Shrine Work" style="width: 100%; height: 100%; object-fit: cover;">
-          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(9, 11, 14, 0.95) 100%);"></div>
-          <span style="position: absolute; top: 14px; left: 14px; background: rgba(0,0,0,0.85); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 4px; border: 1px solid var(--border-subtle);">
-            Nepal Shrines
-          </span>
-          <div style="position: absolute; bottom: 16px; left: 16px; right: 16px;">
-            <h5 class="font-heritage" style="font-size: 1.15rem; color: #fff;">Nepal Cross-Border Shrines</h5>
-            <p style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">International Temple Commission</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════════
-       INTERACTIVE COMMISSION CALCULATOR & TIMELINE ESTIMATOR
-       ═══════════════════════════════════════════════════════════════════ -->
-  <section style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); padding: 5rem 1.5rem;" id="estimator">
-    <div style="max-width: 860px; margin: 0 auto; text-align: center;">
-      <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--gold-light); margin-bottom: 0.5rem;">Interactive Project Planner</div>
-      <h3 class="font-heritage" style="font-size: 2.25rem; font-weight: 800; color: #fff;">
-        Estimate Your Temple Commission &amp; Timeline
-      </h3>
-      <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 2.5rem;">
-        Select your project type and scale to get estimated milestone timelines governed by traditional Agama discipline:
-      </p>
-
-      <div style="background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 2.5rem 2rem; text-align: left; box-shadow: var(--shadow-neutral);">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-          <div>
-            <label style="display: block; font-size: 0.8rem; font-family: var(--font-mono); color: var(--gold-light); margin-bottom: 0.5rem;">
-              1. Project Category:
-            </label>
-            <select id="calc-category" style="width: 100%; background: #0e1219; color: #fff; border: 1px solid var(--border-subtle); padding: 0.85rem; border-radius: 10px; font-family: var(--font-body); font-size: 0.9rem;" onchange="updateEstimator()">
-              <option value="gopuram">Raja Gopuram / Temple Architecture</option>
-              <option value="sudhai">Sudhai Sirpangal (Mortar Sculptures)</option>
-              <option value="varna">Kovil Varna Velai (Temple Painting)</option>
-              <option value="idol">Custom Deity Idols / Memorial Statues</option>
-            </select>
-          </div>
-
-          <div>
-            <label style="display: block; font-size: 0.8rem; font-family: var(--font-mono); color: var(--gold-light); margin-bottom: 0.5rem;">
-              2. Commission Scale:
-            </label>
-            <select id="calc-scale" style="width: 100%; background: #0e1219; color: #fff; border: 1px solid var(--border-subtle); padding: 0.85rem; border-radius: 10px; font-family: var(--font-body); font-size: 0.9rem;" onchange="updateEstimator()">
-              <option value="small">Single Shrine / 1-4ft Idols</option>
-              <option value="medium">Medium Temple Gopuram / Vimanam</option>
-              <option value="large">Full Temple Complex / Maha Kumbhabhishekam</option>
-            </select>
-          </div>
-        </div>
-
-        <div style="background: #0e1219; border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
-          <div>
-            <span style="font-size: 0.75rem; color: var(--gold-light); font-family: var(--font-mono); display: block;">Estimated Project Timeline:</span>
-            <span id="calc-duration" style="font-size: 1.75rem; font-weight: 800; color: #fff;" class="font-heritage">6 Months</span>
-          </div>
-          <div>
-            <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono); display: block;">Supervision:</span>
-            <span style="font-size: 1rem; color: var(--gold-light); font-weight: 600;">Direct Sthapathi Site Leadership</span>
-          </div>
-        </div>
-
-        <button onclick="sendCalculatedWhatsApp()" class="btn-sacred-primary" style="width: 100%; justify-content: center; font-size: 1rem; padding: 1rem;">
-          <i class="fab fa-whatsapp" style="font-size: 1.25rem;"></i> Send Project Details to Balaji Sthapathi on WhatsApp
+      <div style="margin-top: 1.5rem;">
+        <button id="brush-play-btn" onclick="playAutoBrushAnimation()" class="btn-wire-editorial" style="font-size: 0.8rem; padding: 0.65rem 1.5rem;">
+          <i class="fa-solid fa-paintbrush" style="color: var(--gold-primary);"></i> WATCH AUTOMATIC BRUSH SWEEP
         </button>
       </div>
     </div>
   </section>
 
-  <!-- Master Sthapathis Profile (Rule 2: No emoji, Rule 12: Solid surface) -->
-  <section style="background: var(--bg-dark); border-top: 1px solid var(--border-subtle); padding: 5rem 1.5rem;">
-    <div style="max-width: 960px; margin: 0 auto; text-align: center;">
-      <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--gold-light); margin-bottom: 0.5rem;">Direct Sthapathi Leadership</div>
-      <h3 class="font-heritage" style="font-size: 2.5rem; font-weight: 700; color: #fff; margin-bottom: 1rem;">
-        Meet Your Master Sthapathis
+  <!-- ═══════════════════════════════════════════════════════════════════
+       MASTER PORTFOLIO: 5 COMPLETED TEMPLE LANDMARKS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section id="portfolio-gallery" style="max-width: 1380px; margin: 0 auto; padding: 4rem 1.5rem 6rem; border-top: 1px solid rgba(223, 183, 108, 0.15);">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <div class="font-mono-tag" style="font-size: 0.75rem; color: var(--gold-primary); margin-bottom: 0.5rem;">
+        AUTHENTIC SACRED ARCHIVE
+      </div>
+      <h3 class="font-heritage" style="font-size: 2.75rem; font-weight: 800; color: #fff;">
+        LANDMARK TEMPLE COMMISSIONS
       </h3>
-      <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 3.5rem;">
-        When you commission Sri Ayyanar Sirpa Kalai, you collaborate directly with the master craftsmen who calculate sacred proportions, sculpt on scaffolding, and oversee every chisel mark. Zero intermediaries.
+      <p style="color: var(--text-muted); max-width: 720px; margin: 0.5rem auto 2rem; font-size: 1rem;">
+        Major completed temples across Tamil Nadu, Puducherry, and neighboring states. Click any commission to inspect high-definition chisel lines and Agama detailing.
       </p>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; text-align: left;">
-        <!-- Balaji Sthapathi -->
-        <div class="bento-card" style="padding: 2.25rem; background: var(--bg-surface);">
-          <div style="display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem;">
-            <div style="width: 56px; height: 56px; border-radius: 12px; background: #141923; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--gold-primary); border: 1px solid var(--border-subtle);">
-              <i class="fa-solid fa-dharmachakra"></i>
-            </div>
-            <div>
-              <h4 class="font-heritage" style="font-size: 1.35rem; color: #fff;">A.K. Balaji — Sthapathi</h4>
-              <span style="font-size: 0.8rem; color: var(--gold-light); font-family: var(--font-mono);">Chief Temple Architect &amp; Sculptor</span>
-            </div>
+      <!-- Category Filter Tabs -->
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.65rem;" id="gallery-tabs">
+        <button class="gallery-filter-btn active" onclick="filterGallery('all')">All Works</button>
+        <button class="gallery-filter-btn" onclick="filterGallery('gopuram')">Temple Architecture &amp; Gopurams</button>
+        <button class="gallery-filter-btn" onclick="filterGallery('sudhai')">Sudhai Sirpangal (Mortar)</button>
+        <button class="gallery-filter-btn" onclick="filterGallery('varna')">Kovil Varna Velai (Painting)</button>
+        <button class="gallery-filter-btn" onclick="filterGallery('sanctum')">Sanctum Murthis &amp; Memorials</button>
+      </div>
+    </div>
+
+    <!-- Gallery Grid of Real Completed Works -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.75rem;" id="gallery-grid">
+
+      <!-- Work 1: Besur Palayam, Thiruvannamalai -->
+      <div class="museum-card gallery-item" data-cat="gopuram" onclick="openLightbox('/demos/ayyanar/gopuram-hero.jpg', 'Srivasa Perumal Kovil — Raja Gopuram', 'Thiruvannamalai Mavattam, Besur Palayam', 'Turnkey Raja Gopuram construction and Vimana sculpting governed by traditional Chozha Dravidian Agama Vidhi.')">
+        <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
+          <img src="/demos/ayyanar/gopuram-hero.jpg" alt="Besur Palayam Srivasa Perumal Kovil" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(5, 8, 19, 0.95) 100%);"></div>
+          <span style="position: absolute; top: 14px; left: 14px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
+            THIRUVANNAMALAI
+          </span>
+          <div style="position: absolute; bottom: 16px; left: 16px; right: 16px;">
+            <h5 class="font-heritage" style="font-size: 1.25rem; color: #fff;">Srivasa Perumal Kovil</h5>
+            <p style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Raja Gopuram &amp; Kattida Kalai · Besur Palayam</p>
           </div>
-          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.75rem;">
-            30 years of traditional temple planning, Chozha Agama Vithi calculations, Gopura Sudhai sculpting, and multi-state site administration.
-          </p>
-          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-            <a href="https://wa.me/919047144936?text=Vanakkam%20Balaji%20Sthapathi,%20I%20would%20like%20to%20consult%20on%20a%20temple%20project." target="_blank" class="btn-sacred-primary" style="justify-content: center; font-size: 0.9rem;">
-              <i class="fab fa-whatsapp"></i> WhatsApp: +91 90471 44936
-            </a>
-            <a href="tel:+919047144936" class="btn-sacred-secondary" style="justify-content: center; font-size: 0.9rem;">
-              <i class="fas fa-phone-alt"></i> Direct Call: 9047144936
-            </a>
+        </div>
+      </div>
+
+      <!-- Work 2: Moonurmangalam, Chengam -->
+      <div class="museum-card gallery-item" data-cat="sudhai" onclick="openLightbox('/demos/ayyanar/sudhai-relief.jpg', 'Pachai Vaaliamman Kovil — Sudhai Sirpam', 'Thiruvannamalai Mavattam, Chengam, Moonurmangalam', 'Handcrafted Sudhai relief sculptures for goddess sanctum vimanam, lion vahanas, and parivara shrines.')">
+        <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
+          <img src="/demos/ayyanar/sudhai-relief.jpg" alt="Pachai Vaaliamman Kovil Sudhai Sirpam" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(5, 8, 19, 0.95) 100%);"></div>
+          <span style="position: absolute; top: 14px; left: 14px; background: rgba(5, 8, 19, 0.9); color: #fff; font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
+            CHENGAM VATTAM
+          </span>
+          <div style="position: absolute; bottom: 16px; left: 16px; right: 16px;">
+            <h5 class="font-heritage" style="font-size: 1.25rem; color: #fff;">Pachai Vaaliamman Kovil</h5>
+            <p style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Sudhai Sirpam &amp; Vimanam · Moonurmangalam</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work 3: Pondicherry Muthumariamman Kovil -->
+      <div class="museum-card gallery-item" data-cat="varna" onclick="openLightbox('/demos/ayyanar/varna-painting.jpg', 'Muthumariamman Kovil — Varna Velai', 'Puducherry', 'Traditional gopuram fresco, weather-resistant mineral color finishing, and gold detailing for Maha Kumbhabhishekam.')">
+        <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
+          <img src="/demos/ayyanar/varna-painting.jpg" alt="Puducherry Muthumariamman Kovil Varna Velai" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(5, 8, 19, 0.95) 100%);"></div>
+          <span style="position: absolute; top: 14px; left: 14px; background: rgba(5, 8, 19, 0.9); color: #4ade80; font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
+            PUDUCHERRY
+          </span>
+          <div style="position: absolute; bottom: 16px; left: 16px; right: 16px;">
+            <h5 class="font-heritage" style="font-size: 1.25rem; color: #fff;">Muthumariamman Kovil</h5>
+            <p style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Kovil Varna Velai · Maha Kumbhabhishekam</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work 4: Hosur Sivan Kovil -->
+      <div class="museum-card gallery-item" data-cat="gopuram" onclick="openLightbox('/demos/ayyanar/temple-architecture.jpg', 'Sivan Kovil — Maha Mandapam &amp; Gopuram', 'Hosur, Mookandapalli, Sathya Nagar', 'Monolithic granite pillars, Nandi mandapam alignment, and Chozha sanctum architecture.')">
+        <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
+          <img src="/demos/ayyanar/temple-architecture.jpg" alt="Hosur Sivan Kovil Maha Mandapam" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(5, 8, 19, 0.95) 100%);"></div>
+          <span style="position: absolute; top: 14px; left: 14px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
+            HOSUR MOOKANDAPALLI
+          </span>
+          <div style="position: absolute; bottom: 16px; left: 16px; right: 16px;">
+            <h5 class="font-heritage" style="font-size: 1.25rem; color: #fff;">Hosur Sivan Kovil</h5>
+            <p style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Maha Mandapam &amp; Sanctum · Sathya Nagar</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work 5: Hosur Matham Pachai Amman Kovil -->
+      <div class="museum-card gallery-item" data-cat="sudhai" onclick="openLightbox('/demos/ayyanar/sculpture-detail.jpg', 'Pachai Amman Kovil — Vahanas &amp; Gopura Sudhai', 'Hosur, Matham', 'Intricately modeled guardian dvarapalakas, simha vahanas, and sacred parivara deities in high-relief lime mortar.')">
+        <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
+          <img src="/demos/ayyanar/sculpture-detail.jpg" alt="Hosur Matham Pachai Amman Kovil" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(5, 8, 19, 0.95) 100%);"></div>
+          <span style="position: absolute; top: 14px; left: 14px; background: rgba(5, 8, 19, 0.9); color: #fff; font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
+            HOSUR MATHAM
+          </span>
+          <div style="position: absolute; bottom: 16px; left: 16px; right: 16px;">
+            <h5 class="font-heritage" style="font-size: 1.25rem; color: #fff;">Pachai Amman Kovil</h5>
+            <p style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Gopura Sudhai &amp; Vahanas · Matham</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work 6: Private Home & Garden Statues -->
+      <div class="museum-card gallery-item" data-cat="sanctum" onclick="openLightbox('/demos/ayyanar/sculpture-detail.jpg', 'Private Home &amp; Garden Mandir Sculptures', 'Luxury Residences &amp; Estates', 'Custom Black Granite, marble, and bronze Vigrahams sculpted to precise Ayadi Shastra measurements for private puja mandirs.')">
+        <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
+          <img src="/demos/ayyanar/sculpture-detail.jpg" alt="Private Home Sanctum Sculpture" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(5, 8, 19, 0.95) 100%);"></div>
+          <span style="position: absolute; top: 14px; left: 14px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
+            PRIVATE SANCTUMS
+          </span>
+          <div style="position: absolute; bottom: 16px; left: 16px; right: 16px;">
+            <h5 class="font-heritage" style="font-size: 1.25rem; color: #fff;">Private Home &amp; Garden Mandirs</h5>
+            <p style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Custom Deities &amp; Sacred Fountains</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       INTERACTIVE COMMISSION PLANNER & TIMELINE ESTIMATOR
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section id="estimator" style="background: #070b1a; border-top: 1px solid rgba(223, 183, 108, 0.15); padding: 5.5rem 1.5rem;">
+    <div style="max-width: 860px; margin: 0 auto; text-align: center;">
+      <div class="font-mono-tag" style="font-size: 0.75rem; color: var(--gold-primary); margin-bottom: 0.5rem;">
+        PROJECT PLANNING DESK
+      </div>
+      <h3 class="font-heritage" style="font-size: 2.25rem; font-weight: 800; color: #fff;">
+        ESTIMATE YOUR TEMPLE COMMISSION &amp; TIMELINE
+      </h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 2.5rem;">
+        Select your project scope to see typical completion cycles governed by traditional shastric discipline:
+      </p>
+
+      <div class="museum-card" style="padding: 2.5rem 2rem; text-align: left; background: #0a0f24; border: 1px solid var(--border-gold-strong);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+          <div>
+            <label style="display: block; font-size: 0.75rem; font-family: var(--font-mono); color: var(--gold-light); margin-bottom: 0.5rem; letter-spacing: 0.08em; text-transform: uppercase;">
+              1. Project Category:
+            </label>
+            <select id="calc-category" style="width: 100%; background: #060914; color: #fff; border: 1px solid var(--border-gold-subtle); padding: 0.85rem; border-radius: 4px; font-family: var(--font-body); font-size: 0.9rem;" onchange="updateEstimator()">
+              <option value="gopuram">Raja Gopuram / Temple Architecture (Kattida Kalai)</option>
+              <option value="sudhai">Sudhai Sirpangal (Mortar Sculptures)</option>
+              <option value="varna">Kovil Varna Velai (Temple Painting)</option>
+              <option value="idol">Custom Deity Vigrahams / Memorial Statues</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.75rem; font-family: var(--font-mono); color: var(--gold-light); margin-bottom: 0.5rem; letter-spacing: 0.08em; text-transform: uppercase;">
+              2. Commission Scale:
+            </label>
+            <select id="calc-scale" style="width: 100%; background: #060914; color: #fff; border: 1px solid var(--border-gold-subtle); padding: 0.85rem; border-radius: 4px; font-family: var(--font-body); font-size: 0.9rem;" onchange="updateEstimator()">
+              <option value="small">Single Shrine / 1-4ft Murthis (Small Scale)</option>
+              <option value="medium">Medium Temple Gopuram / Vimanam (Medium Scale)</option>
+              <option value="large">Full Temple Complex / Maha Kumbhabhishekam (Turnkey)</option>
+            </select>
           </div>
         </div>
 
-        <!-- Thennarasu Sthapathi -->
-        <div class="bento-card" style="padding: 2.25rem; background: var(--bg-surface);">
-          <div style="display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem;">
-            <div style="width: 56px; height: 56px; border-radius: 12px; background: #141923; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--gold-primary); border: 1px solid var(--border-subtle);">
-              <i class="fa-solid fa-dharmachakra"></i>
-            </div>
-            <div>
-              <h4 class="font-heritage" style="font-size: 1.35rem; color: #fff;">A.K. Thennarasu — Sthapathi</h4>
-              <span style="font-size: 0.8rem; color: var(--gold-light); font-family: var(--font-mono);">Master Sculptor &amp; Varna Velai</span>
-            </div>
+        <div style="background: #050813; border: 1px solid var(--border-gold-subtle); border-radius: 4px; padding: 1.5rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+          <div>
+            <span style="font-size: 0.7rem; color: var(--gold-light); font-family: var(--font-mono); display: block; letter-spacing: 0.08em;">AGAMA CONSTRUCTION CYCLE:</span>
+            <span id="calc-duration" style="font-size: 1.85rem; font-weight: 800; color: #fff;" class="font-heritage">6 Months</span>
           </div>
-          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.75rem;">
-            Expertise in intricate deity facial anatomy, Chozha iconography, temple fresco murals, and high-durability weather pigment application.
-          </p>
-          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-            <a href="tel:+919626884710" class="btn-sacred-secondary" style="justify-content: center; font-size: 0.9rem;">
-              <i class="fas fa-phone-alt"></i> Direct Call: +91 96268 84710
-            </a>
+          <div>
+            <span style="font-size: 0.7rem; color: var(--text-dim); font-family: var(--font-mono); display: block; letter-spacing: 0.08em;">SUPERVISION:</span>
+            <span style="font-size: 0.95rem; color: var(--gold-light); font-weight: 600;">DIRECT STHAPATHI SITE LEADERSHIP</span>
           </div>
         </div>
+
+        <button onclick="sendCalculatedWhatsApp()" class="btn-gold-editorial" style="width: 100%; justify-content: center; font-size: 0.95rem; padding: 1rem;">
+          <i class="fab fa-whatsapp" style="font-size: 1.25rem;"></i> CONSULT BALAJI STHAPATHI WITH THESE DETAILS ON WHATSAPP
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- Final CTA Box (Rule 17: Solid dark surface, Rule 10: Clean hairline border) -->
-  <section style="max-width: 960px; margin: 5rem auto; padding: 0 1.5rem;">
-    <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 24px; padding: 3.5rem 2rem; text-align: center; box-shadow: var(--shadow-neutral);">
-      <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--gold-light); margin-bottom: 0.5rem;">Direct Temple Intake Desk</div>
-      <h3 class="font-heritage" style="font-size: 2.5rem; font-weight: 800; color: #fff; margin-bottom: 1rem;">
-        Planning a Temple Construction, Gopuram or Kumbhabhishekam?
+  <!-- ═══════════════════════════════════════════════════════════════════
+       MASTER STHAPATHIS PROFILE & CALL DESK
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section style="max-width: 1200px; margin: 0 auto; padding: 5.5rem 1.5rem;">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <div class="font-mono-tag" style="font-size: 0.75rem; color: var(--gold-primary); margin-bottom: 0.5rem;">
+        HEREDITARY LEADERSHIP
+      </div>
+      <h3 class="font-heritage" style="font-size: 2.5rem; font-weight: 700; color: #fff; margin-bottom: 1rem;">
+        MEET YOUR MASTER STHAPATHIS
       </h3>
-      <p style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto 2.5rem;">
+      <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; max-width: 700px; margin: 0 auto;">
+        When you commission Sri Ayyanar Sirpa Kalai, you speak and plan directly with the master sculptors who draw the Agama plans and carve on site. Zero brokerages, direct shastric authenticity.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; text-align: left;">
+      
+      <!-- Balaji Sthapathi -->
+      <div class="museum-card" style="padding: 2.25rem; background: #080d1c;">
+        <div style="display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem;">
+          <div style="width: 56px; height: 56px; border-radius: 4px; background: #0e152d; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--gold-primary); border: 1px solid var(--border-gold-subtle);">
+            <i class="fa-solid fa-dharmachakra"></i>
+          </div>
+          <div>
+            <h4 class="font-heritage" style="font-size: 1.35rem; color: #fff;">A.K. Balaji — Sthapathi</h4>
+            <span style="font-size: 0.75rem; color: var(--gold-light); font-family: var(--font-mono);">CHIEF TEMPLE ARCHITECT &amp; SCULPTOR</span>
+          </div>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.75rem;">
+          30 years of traditional temple planning, Chozha Agama Vithi calculations, Gopura Sudhai sculpting, and multi-state site administration. Available for WhatsApp and direct phone consultation.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <a href="https://wa.me/919047144936?text=Vanakkam%20Balaji%20Sthapathi,%20I%20would%20like%20to%20consult%20regarding%20a%20temple%20project." target="_blank" class="btn-gold-editorial" style="justify-content: center; font-size: 0.85rem;">
+            <i class="fab fa-whatsapp"></i> WHATSAPP: +91 90471 44936
+          </a>
+          <a href="tel:+919047144936" class="btn-wire-editorial" style="justify-content: center; font-size: 0.85rem;">
+            <i class="fas fa-phone-alt"></i> CALL: 9047144936
+          </a>
+        </div>
+      </div>
+
+      <!-- Thennarasu Sthapathi -->
+      <div class="museum-card" style="padding: 2.25rem; background: #080d1c;">
+        <div style="display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem;">
+          <div style="width: 56px; height: 56px; border-radius: 4px; background: #0e152d; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--gold-primary); border: 1px solid var(--border-gold-subtle);">
+            <i class="fa-solid fa-brush"></i>
+          </div>
+          <div>
+            <h4 class="font-heritage" style="font-size: 1.35rem; color: #fff;">A.K. Thennarasu — Sthapathi</h4>
+            <span style="font-size: 0.75rem; color: var(--gold-light); font-family: var(--font-mono);">MASTER SCULPTOR &amp; VARNA VELAI</span>
+          </div>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.75rem;">
+          Mastery over deity facial iconography, fine relief ornamentation, traditional temple frescoes, and weatherproof mineral pigment execution across temples in Tamil Nadu and neighboring states.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <a href="tel:+919626884710" class="btn-wire-editorial" style="justify-content: center; font-size: 0.85rem;">
+            <i class="fas fa-phone-alt"></i> CALL: +91 96268 84710
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final Intake Banner -->
+  <section style="max-width: 960px; margin: 4rem auto 6rem; padding: 0 1.5rem;">
+    <div class="museum-card" style="padding: 3.5rem 2rem; text-align: center; background: #080d1e; border: 1px solid var(--border-gold-strong);">
+      <div class="font-mono-tag" style="font-size: 0.75rem; color: var(--gold-primary); margin-bottom: 0.5rem;">
+        DIRECT TEMPLE INTAKE DESK
+      </div>
+      <h3 class="font-heritage" style="font-size: 2.25rem; font-weight: 800; color: #fff; margin-bottom: 1rem;">
+        PLANNING A TEMPLE CONSECRATION OR GOPURAM?
+      </h3>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; max-width: 650px; margin: 0 auto 2.5rem;">
         Speak directly with Balaji Sthapathi. Share your temple location, architectural requirements, or deity dimensions for a scripturally compliant estimate and timeline.
       </p>
 
       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
-        <a href="https://wa.me/919047144936?text=Vanakkam%20Balaji%20Sthapathi,%20I%20would%20like%20to%20discuss%20a%20temple%20construction%20/%20renovation%20estimate." target="_blank" class="btn-sacred-primary" style="font-size: 1rem; padding: 1rem 2.25rem;">
-          <i class="fab fa-whatsapp" style="font-size: 1.25rem;"></i> WhatsApp Balaji Sthapathi
+        <a href="https://wa.me/919047144936?text=Vanakkam%20Balaji%20Sthapathi,%20I%20would%20like%20to%20discuss%20a%20temple%20construction%20/%20renovation%20estimate." target="_blank" class="btn-gold-editorial" style="font-size: 0.9rem; padding: 0.95rem 2.25rem;">
+          <i class="fab fa-whatsapp" style="font-size: 1.15rem;"></i> WHATSAPP BALAJI STHAPATHI
         </a>
-        <a href="tel:+919047144936" class="btn-sacred-secondary" style="font-size: 1rem; padding: 1rem 2rem;">
-          <i class="fas fa-phone-alt"></i> Call +91 90471 44936
+        <a href="tel:+919047144936" class="btn-wire-editorial" style="font-size: 0.9rem; padding: 0.95rem 2rem;">
+          <i class="fas fa-phone-alt"></i> CALL +91 90471 44936
         </a>
       </div>
 
-      <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); font-family: var(--font-mono); font-size: 0.775rem; color: var(--gold-light);">
-        Serving Tamil Nadu · Andhra Pradesh · Karnataka · Puducherry · Telangana · Madhya Pradesh · Nepal
+      <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-gold-subtle); font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold-light);">
+        SERVING TAMIL NADU · ANDHRA PRADESH (KADAPA, TIRUPATI) · KARNATAKA · PUDUCHERRY · TELANGANA · MP · NEPAL
       </div>
     </div>
   </section>
 
   <!-- Lightbox Modal -->
   <div id="lightbox-modal" onclick="closeLightbox()">
-    <div style="position: relative; max-width: 900px; width: 100%; background: #0c0f14; border: 1px solid var(--border-subtle); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-neutral);" onclick="event.stopPropagation()">
-      <button onclick="closeLightbox()" style="position: absolute; top: 16px; right: 16px; z-index: 10; background: rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+    <div style="position: relative; max-width: 900px; width: 100%; background: #070b1a; border: 1px solid var(--border-gold-strong); border-radius: 6px; overflow: hidden; box-shadow: var(--shadow-museum);" onclick="event.stopPropagation()">
+      <button onclick="closeLightbox()" style="position: absolute; top: 16px; right: 16px; z-index: 10; background: rgba(0,0,0,0.8); border: 1px solid var(--border-gold-subtle); color: #fff; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
         ✕
       </button>
       <div style="aspect-ratio: 16/10; width: 100%; background: #000; overflow: hidden;">
@@ -744,36 +920,79 @@
   </div>
 
   <!-- Footer -->
-  <footer style="border-top: 1px solid var(--border-subtle); padding: 2.5rem 1.5rem 4.5rem; text-align: center; color: var(--text-dim); font-size: 0.8rem; font-family: var(--font-mono);">
+  <footer style="border-top: 1px solid var(--border-gold-subtle); padding: 3rem 1.5rem 4.5rem; text-align: center; color: var(--text-dim); font-size: 0.8rem; font-family: var(--font-mono);">
     <p style="color: #fff; font-weight: 600; margin-bottom: 0.5rem;" class="font-heritage">SRI AYYANAR SIRPA KALAI</p>
     <p>30 Years of Sacred Chozha Agama Vithi Temple Architecture · Sudhai Sirpangal · Kovil Varna Velai</p>
-    <p style="margin-top: 0.5rem;">Chief Sthapathi: A.K. Balaji (+91 90471 44936) · A.K. Thennarasu (+91 96268 84710)</p>
-    <p style="margin-top: 1rem; font-size: 0.7rem; color: #475569;">Digital Presentation Engineered by Uncoded Hub Sprints</p>
+    <p style="margin-top: 0.5rem; color: var(--gold-light);">Chief Sthapathis: A.K. Balaji (+91 90471 44936) · A.K. Thennarasu (+91 96268 84710)</p>
   </footer>
 
   <!-- Mobile Sticky Dock -->
   <div class="mobile-sticky-dock">
-    <a href="https://wa.me/919047144936?text=Vanakkam%20Balaji%20Sthapathi,%20I%20would%20like%20to%20discuss%20a%20temple%20project." target="_blank" style="flex: 1; background: #25D366; color: #000; font-weight: 700; padding: 0.85rem; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none; font-size: 0.85rem; font-family: var(--font-body);">
+    <a href="https://wa.me/919047144936?text=Vanakkam%20Balaji%20Sthapathi,%20I%20would%20like%20to%20discuss%20a%20temple%20project." target="_blank" style="flex: 1; background: #25D366; color: #000; font-weight: 700; padding: 0.85rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none; font-size: 0.85rem; font-family: var(--font-body);">
       <i class="fab fa-whatsapp" style="font-size: 1.15rem;"></i> WhatsApp
     </a>
-    <a href="tel:+919047144936" style="flex: 1; background: var(--gold-primary); color: #000; font-weight: 700; padding: 0.85rem; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none; font-size: 0.85rem; font-family: var(--font-body);">
+    <a href="tel:+919047144936" style="flex: 1; background: var(--gold-primary); color: #000; font-weight: 700; padding: 0.85rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none; font-size: 0.85rem; font-family: var(--font-body);">
       <i class="fas fa-phone-alt"></i> Call Sthapathi
     </a>
   </div>
 
-  <!-- Interactive JavaScript Logic: Slider, Filter, Estimator, Lightbox -->
+  <!-- Interactive JavaScript Logic: Slider, Scroll-driven Animation, Filter, Estimator, Lightbox -->
   <script>
-    // 1. Before / After Paint Slider Drag Interaction
+    // 1. Before / After Paint Slider Drag & Scroll Animation
+    const compareBox = document.getElementById('compare-box');
     const compareRange = document.getElementById('compare-range');
     const compareOverlay = document.getElementById('compare-overlay');
     const sliderHandle = document.getElementById('slider-handle');
 
-    if (compareRange && compareOverlay && sliderHandle) {
+    function updateSlider(val) {
+      if (!compareOverlay || !sliderHandle) return;
+      compareOverlay.style.width = val + '%';
+      sliderHandle.style.left = val + '%';
+      if (compareRange) compareRange.value = val;
+    }
+
+    if (compareRange) {
       compareRange.addEventListener('input', (e) => {
-        const val = e.target.value;
-        compareOverlay.style.width = val + '%';
-        sliderHandle.style.left = val + '%';
+        updateSlider(e.target.value);
       });
+    }
+
+    // Scroll-driven dynamic painting reveal
+    window.addEventListener('scroll', () => {
+      if (!compareBox) return;
+      const rect = compareBox.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        const progress = Math.min(Math.max((windowHeight - rect.top) / (windowHeight + rect.height), 0), 1);
+        const targetPercent = Math.round(15 + progress * 70);
+        updateSlider(targetPercent);
+      }
+    }, { passive: true });
+
+    // Smooth brush sweep animation
+    let isSweeping = false;
+    function playAutoBrushAnimation() {
+      if (isSweeping) return;
+      isSweeping = true;
+      const btn = document.getElementById('brush-play-btn');
+      if (btn) btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> PAINTING IN PROGRESS...';
+      
+      let step = 0;
+      const totalSteps = 100;
+      const interval = setInterval(() => {
+        step++;
+        const angle = (step / totalSteps) * Math.PI * 2;
+        const val = Math.round(50 + 40 * Math.sin(angle));
+        updateSlider(val);
+        
+        if (step >= totalSteps) {
+          clearInterval(interval);
+          isSweeping = false;
+          updateSlider(50);
+          if (btn) btn.innerHTML = '<i class="fa-solid fa-paintbrush" style="color: var(--gold-primary);"></i> WATCH AUTOMATIC BRUSH SWEEP';
+        }
+      }, 25);
     }
 
     // 2. Portfolio Category Filter
