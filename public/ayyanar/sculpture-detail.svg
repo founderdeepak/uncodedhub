@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a1024"/>
+      <stop offset="100%" stop-color="#04060e"/>
+    </linearGradient>
+    <linearGradient id="goldGrad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5dfa8"/>
+      <stop offset="50%" stop-color="#dfb76c"/>
+      <stop offset="100%" stop-color="#8c6a28"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bgGrad2)"/>
+  
+  <!-- Sacred Halo (Prabhavali) -->
+  <circle cx="400" cy="380" r="220" fill="none" stroke="url(#goldGrad2)" stroke-width="3" stroke-dasharray="8 6"/>
+  <circle cx="400" cy="380" r="190" fill="none" stroke="rgba(223, 183, 108, 0.4)" stroke-width="1.5"/>
+  
+  <!-- Chozha Deity Iconography Silhouette -->
+  <g stroke="url(#goldGrad2)" fill="none" stroke-width="2.5">
+    <!-- Kiritam (Crown) -->
+    <path d="M 360 240 L 400 140 L 440 240 Z" fill="rgba(223, 183, 108, 0.15)"/>
+    <circle cx="400" cy="130" r="8" fill="#dfb76c"/>
+    <path d="M 370 200 L 430 200 M 380 170 L 420 170"/>
+
+    <!-- Face & Serene Meditative Eyes -->
+    <path d="M 350 250 Q 400 230 450 250 Q 460 330 400 370 Q 340 330 350 250 Z" fill="rgba(10, 16, 36, 0.8)"/>
+    <path d="M 370 280 Q 385 270 400 280 M 400 280 Q 415 270 430 280" stroke-width="2"/>
+    <path d="M 400 280 L 400 320 L 390 330 L 410 330" stroke-width="1.5"/>
+    <path d="M 380 345 Q 400 355 420 345" stroke-width="2"/>
+
+    <!-- Kundala (Earrings) & Neck Ornaments -->
+    <circle cx="340" cy="310" r="14" fill="rgba(223, 183, 108, 0.2)"/>
+    <circle cx="460" cy="310" r="14" fill="rgba(223, 183, 108, 0.2)"/>
+    <path d="M 330 390 Q 400 440 470 390 Q 400 460 330 390 Z" fill="rgba(223, 183, 108, 0.1)"/>
+
+    <!-- Sacred Torso & Abhaya Hasta (Grace Posture) -->
+    <path d="M 330 430 L 260 520 Q 230 540 250 580 L 290 560" stroke-width="2"/>
+    <path d="M 470 430 L 540 520 Q 570 540 550 580 L 510 560" stroke-width="2"/>
+    
+    <!-- Peedam (Lotus Pedestal Base) -->
+    <path d="M 220 780 Q 400 730 580 780 L 620 840 Q 400 810 180 840 Z" fill="rgba(223, 183, 108, 0.2)"/>
+    <rect x="200" y="840" width="400" height="40" rx="4" stroke-width="2"/>
+  </g>
+
+  <text x="400" y="930" text-anchor="middle" font-family="'Cinzel', serif" font-size="20" font-weight="700" fill="#f5dfa8" letter-spacing="3">
+    CHOZHA MOOLA VIGRAHAM
+  </text>
+  <text x="400" y="960" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" fill="#8a9bb8" letter-spacing="2">
+    HAND-CARVED KRISHNA SHILA GRANITE &amp; PANCHALOHA
+  </text>
+</svg>

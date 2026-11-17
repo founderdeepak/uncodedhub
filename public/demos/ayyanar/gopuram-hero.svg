@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080d1e"/>
+      <stop offset="100%" stop-color="#03050c"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5dfa8"/>
+      <stop offset="50%" stop-color="#dfb76c"/>
+      <stop offset="100%" stop-color="#9a7732"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(223, 183, 108, 0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bgGrad)"/>
+  <rect width="800" height="1000" fill="url(#grid)"/>
+
+  <!-- Architectural Yantra & Elevation -->
+  <g stroke="url(#goldGrad)" fill="none" stroke-width="2" opacity="0.9">
+    <!-- Kalasam Spire Top -->
+    <path d="M 400 80 L 400 120 M 390 120 L 410 120 M 395 100 L 405 100" stroke-width="3"/>
+    <circle cx="400" cy="140" r="14" fill="#dfb76c"/>
+    <path d="M 370 170 Q 400 150 430 170 L 440 190 L 360 190 Z" fill="rgba(223, 183, 108, 0.15)"/>
+
+    <!-- Tier 7 -->
+    <rect x="340" y="200" width="120" height="45" rx="3" stroke-width="1.5"/>
+    <path d="M 320 250 L 480 250 L 460 280 L 340 280 Z"/>
+
+    <!-- Tier 6 -->
+    <rect x="310" y="290" width="180" height="55" rx="3" stroke-width="1.5"/>
+    <path d="M 280 350 L 520 350 L 500 385 L 300 385 Z"/>
+
+    <!-- Tier 5 -->
+    <rect x="270" y="395" width="260" height="65" rx="3" stroke-width="1.5"/>
+    <path d="M 230 465 L 570 465 L 550 505 L 250 505 Z"/>
+
+    <!-- Tier 4 -->
+    <rect x="230" y="515" width="340" height="75" rx="3" stroke-width="1.5"/>
+    <path d="M 180 595 L 620 595 L 595 640 L 205 640 Z"/>
+
+    <!-- Tier 3 -->
+    <rect x="180" y="650" width="440" height="85" rx="3" stroke-width="1.5"/>
+    <path d="M 130 740 L 670 740 L 640 790 L 160 790 Z"/>
+
+    <!-- Tier 2 Base Plinth -->
+    <rect x="140" y="800" width="520" height="95" rx="3" stroke-width="2"/>
+
+    <!-- Grand Entrance Gateway (Dwaram) -->
+    <path d="M 320 895 L 320 780 Q 400 740 480 780 L 480 895 Z" stroke-width="2.5" fill="rgba(6, 9, 19, 0.95)"/>
+    <circle cx="400" cy="730" r="18" fill="none" stroke-width="2"/>
+    <path d="M 400 710 L 400 750 M 380 730 L 420 730" stroke-width="1.5"/>
+  </g>
+
+  <!-- Typography Stamp -->
+  <text x="400" y="940" text-anchor="middle" font-family="'Cinzel', serif" font-size="22" font-weight="700" fill="#f5dfa8" letter-spacing="4">
+    CHOZHA RAJA GOPURAM
+  </text>
+  <text x="400" y="970" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" fill="#8a9bb8" letter-spacing="2">
+    AGAMA VIDHI · 7-TIER ARCHITECTURAL SPECIFICATION
+  </text>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080e22"/>
+      <stop offset="100%" stop-color="#03050d"/>
+    </linearGradient>
+    <linearGradient id="goldGrad3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5dfa8"/>
+      <stop offset="100%" stop-color="#a38035"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bgGrad3)"/>
+
+  <!-- Pillars & Mandapam Perspective -->
+  <g stroke="url(#goldGrad3)" fill="none" stroke-width="2">
+    <!-- Ceiling Beam & Cornice -->
+    <rect x="100" y="160" width="600" height="60" rx="3" fill="rgba(223, 183, 108, 0.1)"/>
+    <path d="M 60 220 L 740 220 M 80 240 L 720 240" stroke-width="1.5"/>
+
+    <!-- Left Pillar with Yali Bracket -->
+    <rect x="160" y="240" width="80" height="580" rx="2" stroke-width="2"/>
+    <path d="M 140 280 L 260 280 M 140 780 L 260 780"/>
+    <path d="M 160 340 Q 110 390 140 450 Q 190 420 160 340 Z" fill="rgba(223, 183, 108, 0.15)"/>
+
+    <!-- Center Sanctum Entrance -->
+    <path d="M 320 820 L 320 380 Q 400 320 480 380 L 480 820 Z" stroke-width="2.5" fill="rgba(5, 8, 18, 0.95)"/>
+    <circle cx="400" cy="500" r="40" stroke-width="2"/>
+    <circle cx="400" cy="500" r="16" fill="#dfb76c"/>
+
+    <!-- Right Pillar with Yali Bracket -->
+    <rect x="560" y="240" width="80" height="580" rx="2" stroke-width="2"/>
+    <path d="M 540 280 L 660 280 M 540 780 L 660 780"/>
+    <path d="M 640 340 Q 690 390 660 450 Q 610 420 640 340 Z" fill="rgba(223, 183, 108, 0.15)"/>
+
+    <!-- Base Plinth Steps -->
+    <path d="M 100 820 L 700 820 L 740 860 L 60 860 Z" fill="rgba(223, 183, 108, 0.08)"/>
+    <rect x="40" y="860" width="720" height="30" stroke-width="2"/>
+  </g>
+
+  <text x="400" y="930" text-anchor="middle" font-family="'Cinzel', serif" font-size="20" font-weight="700" fill="#f5dfa8" letter-spacing="3">
+    MAHA MANDAPAM &amp; YALI PILLARS
+  </text>
+  <text x="400" y="960" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" fill="#8a9bb8" letter-spacing="2">
+    DRAVIDIAN MONOLITHIC GRANITE ARCHITECTURE
+  </text>
+</svg>

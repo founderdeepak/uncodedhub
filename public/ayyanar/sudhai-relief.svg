@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b1022"/>
+      <stop offset="100%" stop-color="#04060d"/>
+    </linearGradient>
+    <linearGradient id="mortarGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d6ceb8"/>
+      <stop offset="50%" stop-color="#b8ab91"/>
+      <stop offset="100%" stop-color="#736854"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bgGrad4)"/>
+
+  <!-- High Relief Lime Mortar Modeling Simulation -->
+  <g stroke="url(#mortarGrad)" fill="none" stroke-width="2">
+    <rect x="120" y="140" width="560" height="700" rx="8" stroke-width="2.5" fill="rgba(20, 26, 44, 0.4)"/>
+    
+    <!-- Simha (Lion) Guardian Relieff -->
+    <circle cx="400" cy="400" r="150" stroke-width="3" fill="rgba(184, 171, 145, 0.08)"/>
+    <path d="M 280 400 Q 400 280 520 400 Q 560 520 400 560 Q 240 520 280 400 Z" fill="rgba(184, 171, 145, 0.15)"/>
+    
+    <!-- Lion Eyes & Mane -->
+    <circle cx="350" cy="380" r="16" fill="#b8ab91"/>
+    <circle cx="450" cy="380" r="16" fill="#b8ab91"/>
+    <path d="M 400 410 L 380 460 L 420 460 Z" fill="#736854"/>
+    <path d="M 350 490 Q 400 520 450 490" stroke-width="3"/>
+    
+    <!-- Surrounding Makara Floral Motifs -->
+    <path d="M 180 200 Q 280 240 220 320" stroke-width="2"/>
+    <path d="M 620 200 Q 520 240 580 320" stroke-width="2"/>
+    <path d="M 180 780 Q 280 740 220 660" stroke-width="2"/>
+    <path d="M 620 780 Q 520 740 580 660" stroke-width="2"/>
+  </g>
+
+  <text x="400" y="900" text-anchor="middle" font-family="'Cinzel', serif" font-size="20" font-weight="700" fill="#d6ceb8" letter-spacing="3">
+    SUDHAI SIRPAM (LIME MORTAR)
+  </text>
+  <text x="400" y="930" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" fill="#8a9bb8" letter-spacing="2">
+    TRADITIONAL GOPURA SUDHAI &amp; VAHANA RELIEF
+  </text>
+</svg>
