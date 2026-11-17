@@ -15,6 +15,36 @@
   <!-- FontAwesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <script>
+    // Fail-safe universal image loader for local file://, localhost, and live production
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', function() {
+          if (this.dataset.retried) return;
+          this.dataset.retried = '1';
+          const filename = this.src.split('/').pop().split('?')[0];
+          const alternates = [
+            'ayyanar/' + filename,
+            './ayyanar/' + filename,
+            '/demos/ayyanar/' + filename,
+            '/ayyanar/' + filename
+          ];
+          let idx = 0;
+          const tryNext = () => {
+            if (idx < alternates.length) {
+              const nextSrc = alternates[idx++];
+              const testImg = new Image();
+              testImg.onload = () => { img.src = nextSrc; };
+              testImg.onerror = tryNext;
+              testImg.src = nextSrc;
+            }
+          };
+          tryNext();
+        });
+      });
+    });
+  </script>
+
   <style>
     :root {
       --bg-midnight: #050813;
@@ -409,7 +439,7 @@
           <div class="bracket-bl"></div>
 
           <!-- Real Temple Gopuram & Architecture -->
-          <img src="/demos/ayyanar/gopuram-hero.jpg" alt="Chozha Temple Raja Gopuram by Sri Ayyanar Sirpa Kalai" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) brightness(0.95);">
+          <img src="ayyanar/gopuram-hero.jpg" alt="Chozha Temple Raja Gopuram by Sri Ayyanar Sirpa Kalai" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) brightness(0.95);">
           
           <!-- Subtle Dark Chiaroscuro Vignette -->
           <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5, 8, 19, 0.2) 0%, rgba(5, 8, 19, 0.4) 60%, rgba(5, 8, 19, 0.95) 100%);"></div>
@@ -470,19 +500,19 @@
           <!-- Row of Circular Avatar Medallions (Just like Reference) -->
           <div style="display: flex; gap: 0.85rem; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap;">
             <div class="avatar-medallion" title="Thiruvannamalai - Srivasa Perumal Kovil">
-              <img src="/demos/ayyanar/gopuram-hero.jpg" alt="Besur Palayam Srivasa Perumal Kovil">
+              <img src="ayyanar/gopuram-hero.jpg" alt="Besur Palayam Srivasa Perumal Kovil">
             </div>
             <div class="avatar-medallion" title="Chengam - Pachai Vaaliamman Kovil">
-              <img src="/demos/ayyanar/sudhai-relief.jpg" alt="Pachai Vaaliamman Kovil">
+              <img src="ayyanar/sudhai-relief.jpg" alt="Pachai Vaaliamman Kovil">
             </div>
             <div class="avatar-medallion" title="Puducherry - Muthumariamman Kovil">
-              <img src="/demos/ayyanar/varna-painting.jpg" alt="Puducherry Muthumariamman Kovil">
+              <img src="ayyanar/varna-painting.jpg" alt="Puducherry Muthumariamman Kovil">
             </div>
             <div class="avatar-medallion" title="Hosur - Sivan Kovil">
-              <img src="/demos/ayyanar/temple-architecture.jpg" alt="Hosur Sivan Kovil">
+              <img src="ayyanar/temple-architecture.jpg" alt="Hosur Sivan Kovil">
             </div>
             <div class="avatar-medallion" title="Hosur Matham - Pachai Amman Kovil">
-              <img src="/demos/ayyanar/sculpture-detail.jpg" alt="Hosur Matham Pachai Amman Kovil">
+              <img src="ayyanar/sculpture-detail.jpg" alt="Hosur Matham Pachai Amman Kovil">
             </div>
           </div>
 
@@ -532,7 +562,7 @@
       <!-- Stage 1 -->
       <div class="museum-card" style="padding: 1.5rem;">
         <div style="position: relative; aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; margin-bottom: 1.25rem; border: 1px solid var(--border-gold-subtle);">
-          <img src="/demos/ayyanar/temple-architecture.jpg" alt="Ayadi Shastra Temple Planning" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="ayyanar/temple-architecture.jpg" alt="Ayadi Shastra Temple Planning" style="width: 100%; height: 100%; object-fit: cover;">
           <span style="position: absolute; top: 10px; left: 10px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
             PHASE 01 · AYADI VIDHI
           </span>
@@ -546,7 +576,7 @@
       <!-- Stage 2 -->
       <div class="museum-card" style="padding: 1.5rem;">
         <div style="position: relative; aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; margin-bottom: 1.25rem; border: 1px solid var(--border-gold-subtle);">
-          <img src="/demos/ayyanar/sculpture-detail.jpg" alt="Chozha Iconographic Detailing" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="ayyanar/sculpture-detail.jpg" alt="Chozha Iconographic Detailing" style="width: 100%; height: 100%; object-fit: cover;">
           <span style="position: absolute; top: 10px; left: 10px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
             PHASE 02 · SIRPA KALAI
           </span>
@@ -560,7 +590,7 @@
       <!-- Stage 3 -->
       <div class="museum-card" style="padding: 1.5rem;">
         <div style="position: relative; aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; margin-bottom: 1.25rem; border: 1px solid var(--border-gold-subtle);">
-          <img src="/demos/ayyanar/sudhai-relief.jpg" alt="Sudhai Sirpam Mortar Relief" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="ayyanar/sudhai-relief.jpg" alt="Sudhai Sirpam Mortar Relief" style="width: 100%; height: 100%; object-fit: cover;">
           <span style="position: absolute; top: 10px; left: 10px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
             PHASE 03 · SUDHAI VELAI
           </span>
@@ -574,7 +604,7 @@
       <!-- Stage 4 -->
       <div class="museum-card" style="padding: 1.5rem;">
         <div style="position: relative; aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; margin-bottom: 1.25rem; border: 1px solid var(--border-gold-subtle);">
-          <img src="/demos/ayyanar/varna-painting.jpg" alt="Kovil Varna Velai Temple Painting" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="ayyanar/varna-painting.jpg" alt="Kovil Varna Velai Temple Painting" style="width: 100%; height: 100%; object-fit: cover;">
           <span style="position: absolute; top: 10px; left: 10px; background: rgba(5, 8, 19, 0.9); color: #4ade80; font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
             PHASE 04 · VARNA VELAI
           </span>
@@ -601,11 +631,11 @@
 
       <div class="compare-container" id="compare-box">
         <!-- Colored / Painted Sculpture (Full background) -->
-        <img class="compare-img" src="/demos/ayyanar/varna-painting.jpg" alt="Kovil Varna Velai Temple Painting">
+        <img class="compare-img" src="ayyanar/varna-painting.jpg" alt="Kovil Varna Velai Temple Painting">
         
         <!-- Raw Sculpted Relief (Left Clipped Overlay) -->
         <div class="compare-overlay" id="compare-overlay">
-          <img class="compare-img" src="/demos/ayyanar/sudhai-relief.jpg" alt="Sudhai Mortar Sculpture Relief" style="width: 860px; max-width: none;">
+          <img class="compare-img" src="ayyanar/sudhai-relief.jpg" alt="Sudhai Mortar Sculpture Relief" style="width: 860px; max-width: none;">
         </div>
 
         <input type="range" min="0" max="100" value="50" class="compare-slider" id="compare-range" aria-label="Compare raw sculpture with painted temple art">
@@ -657,9 +687,9 @@
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.75rem;" id="gallery-grid">
 
       <!-- Work 1: Besur Palayam, Thiruvannamalai -->
-      <div class="museum-card gallery-item" data-cat="gopuram" onclick="openLightbox('/demos/ayyanar/gopuram-hero.jpg', 'Srivasa Perumal Kovil — Raja Gopuram', 'Thiruvannamalai Mavattam, Besur Palayam', 'Turnkey Raja Gopuram construction and Vimana sculpting governed by traditional Chozha Dravidian Agama Vidhi.')">
+      <div class="museum-card gallery-item" data-cat="gopuram" onclick="openLightbox('ayyanar/gopuram-hero.jpg', 'Srivasa Perumal Kovil — Raja Gopuram', 'Thiruvannamalai Mavattam, Besur Palayam', 'Turnkey Raja Gopuram construction and Vimana sculpting governed by traditional Chozha Dravidian Agama Vidhi.')">
         <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
-          <img src="/demos/ayyanar/gopuram-hero.jpg" alt="Besur Palayam Srivasa Perumal Kovil" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="ayyanar/gopuram-hero.jpg" alt="Besur Palayam Srivasa Perumal Kovil" style="width: 100%; height: 100%; object-fit: cover;">
           <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(5, 8, 19, 0.95) 100%);"></div>
           <span style="position: absolute; top: 14px; left: 14px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
             THIRUVANNAMALAI
@@ -672,9 +702,9 @@
       </div>
 
       <!-- Work 2: Moonurmangalam, Chengam -->
-      <div class="museum-card gallery-item" data-cat="sudhai" onclick="openLightbox('/demos/ayyanar/sudhai-relief.jpg', 'Pachai Vaaliamman Kovil — Sudhai Sirpam', 'Thiruvannamalai Mavattam, Chengam, Moonurmangalam', 'Handcrafted Sudhai relief sculptures for goddess sanctum vimanam, lion vahanas, and parivara shrines.')">
+      <div class="museum-card gallery-item" data-cat="sudhai" onclick="openLightbox('ayyanar/sudhai-relief.jpg', 'Pachai Vaaliamman Kovil — Sudhai Sirpam', 'Thiruvannamalai Mavattam, Chengam, Moonurmangalam', 'Handcrafted Sudhai relief sculptures for goddess sanctum vimanam, lion vahanas, and parivara shrines.')">
         <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
-          <img src="/demos/ayyanar/sudhai-relief.jpg" alt="Pachai Vaaliamman Kovil Sudhai Sirpam" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="ayyanar/sudhai-relief.jpg" alt="Pachai Vaaliamman Kovil Sudhai Sirpam" style="width: 100%; height: 100%; object-fit: cover;">
           <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(5, 8, 19, 0.95) 100%);"></div>
           <span style="position: absolute; top: 14px; left: 14px; background: rgba(5, 8, 19, 0.9); color: #fff; font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
             CHENGAM VATTAM
@@ -687,9 +717,9 @@
       </div>
 
       <!-- Work 3: Pondicherry Muthumariamman Kovil -->
-      <div class="museum-card gallery-item" data-cat="varna" onclick="openLightbox('/demos/ayyanar/varna-painting.jpg', 'Muthumariamman Kovil — Varna Velai', 'Puducherry', 'Traditional gopuram fresco, weather-resistant mineral color finishing, and gold detailing for Maha Kumbhabhishekam.')">
+      <div class="museum-card gallery-item" data-cat="varna" onclick="openLightbox('ayyanar/varna-painting.jpg', 'Muthumariamman Kovil — Varna Velai', 'Puducherry', 'Traditional gopuram fresco, weather-resistant mineral color finishing, and gold detailing for Maha Kumbhabhishekam.')">
         <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
-          <img src="/demos/ayyanar/varna-painting.jpg" alt="Puducherry Muthumariamman Kovil Varna Velai" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="ayyanar/varna-painting.jpg" alt="Puducherry Muthumariamman Kovil Varna Velai" style="width: 100%; height: 100%; object-fit: cover;">
           <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(5, 8, 19, 0.95) 100%);"></div>
           <span style="position: absolute; top: 14px; left: 14px; background: rgba(5, 8, 19, 0.9); color: #4ade80; font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
             PUDUCHERRY
@@ -702,9 +732,9 @@
       </div>
 
       <!-- Work 4: Hosur Sivan Kovil -->
-      <div class="museum-card gallery-item" data-cat="gopuram" onclick="openLightbox('/demos/ayyanar/temple-architecture.jpg', 'Sivan Kovil — Maha Mandapam &amp; Gopuram', 'Hosur, Mookandapalli, Sathya Nagar', 'Monolithic granite pillars, Nandi mandapam alignment, and Chozha sanctum architecture.')">
+      <div class="museum-card gallery-item" data-cat="gopuram" onclick="openLightbox('ayyanar/temple-architecture.jpg', 'Sivan Kovil — Maha Mandapam &amp; Gopuram', 'Hosur, Mookandapalli, Sathya Nagar', 'Monolithic granite pillars, Nandi mandapam alignment, and Chozha sanctum architecture.')">
         <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
-          <img src="/demos/ayyanar/temple-architecture.jpg" alt="Hosur Sivan Kovil Maha Mandapam" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="ayyanar/temple-architecture.jpg" alt="Hosur Sivan Kovil Maha Mandapam" style="width: 100%; height: 100%; object-fit: cover;">
           <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(5, 8, 19, 0.95) 100%);"></div>
           <span style="position: absolute; top: 14px; left: 14px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
             HOSUR MOOKANDAPALLI
@@ -717,9 +747,9 @@
       </div>
 
       <!-- Work 5: Hosur Matham Pachai Amman Kovil -->
-      <div class="museum-card gallery-item" data-cat="sudhai" onclick="openLightbox('/demos/ayyanar/sculpture-detail.jpg', 'Pachai Amman Kovil — Vahanas &amp; Gopura Sudhai', 'Hosur, Matham', 'Intricately modeled guardian dvarapalakas, simha vahanas, and sacred parivara deities in high-relief lime mortar.')">
+      <div class="museum-card gallery-item" data-cat="sudhai" onclick="openLightbox('ayyanar/sculpture-detail.jpg', 'Pachai Amman Kovil — Vahanas &amp; Gopura Sudhai', 'Hosur, Matham', 'Intricately modeled guardian dvarapalakas, simha vahanas, and sacred parivara deities in high-relief lime mortar.')">
         <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
-          <img src="/demos/ayyanar/sculpture-detail.jpg" alt="Hosur Matham Pachai Amman Kovil" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="ayyanar/sculpture-detail.jpg" alt="Hosur Matham Pachai Amman Kovil" style="width: 100%; height: 100%; object-fit: cover;">
           <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(5, 8, 19, 0.95) 100%);"></div>
           <span style="position: absolute; top: 14px; left: 14px; background: rgba(5, 8, 19, 0.9); color: #fff; font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
             HOSUR MATHAM
@@ -732,9 +762,9 @@
       </div>
 
       <!-- Work 6: Private Home & Garden Statues -->
-      <div class="museum-card gallery-item" data-cat="sanctum" onclick="openLightbox('/demos/ayyanar/sculpture-detail.jpg', 'Private Home &amp; Garden Mandir Sculptures', 'Luxury Residences &amp; Estates', 'Custom Black Granite, marble, and bronze Vigrahams sculpted to precise Ayadi Shastra measurements for private puja mandirs.')">
+      <div class="museum-card gallery-item" data-cat="sanctum" onclick="openLightbox('ayyanar/sculpture-detail.jpg', 'Private Home &amp; Garden Mandir Sculptures', 'Luxury Residences &amp; Estates', 'Custom Black Granite, marble, and bronze Vigrahams sculpted to precise Ayadi Shastra measurements for private puja mandirs.')">
         <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
-          <img src="/demos/ayyanar/sculpture-detail.jpg" alt="Private Home Sanctum Sculpture" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="ayyanar/sculpture-detail.jpg" alt="Private Home Sanctum Sculpture" style="width: 100%; height: 100%; object-fit: cover;">
           <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(5, 8, 19, 0.95) 100%);"></div>
           <span style="position: absolute; top: 14px; left: 14px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);">
             PRIVATE SANCTUMS
