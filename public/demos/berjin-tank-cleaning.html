@@ -132,8 +132,8 @@
       position: sticky;
       top: 0;
       background: rgba(10, 13, 20, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      /* solid surface */
+      -webkit-/* solid surface */
       border-bottom: 1px solid var(--border-subtle);
       z-index: 100;
       padding: 14px 36px;
@@ -818,8 +818,8 @@
       left: 0;
       right: 0;
       background: rgba(10, 13, 20, 0.96);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      /* solid surface */
+      -webkit-/* solid surface */
       border-top: 1px solid var(--border-subtle);
       padding: 10px 16px;
       z-index: 999;
@@ -877,6 +877,18 @@
         display: none;
       }
     }
+  
+    /* Unslop Design Rules (UNSLOP_DESIGN_RULES.md) */
+    h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    .inline-icon {
+      width: 1em;
+      height: 1em;
+      display: inline-block;
+      vertical-align: -0.15em;
+      stroke: currentColor;
+    }
+
   </style>
 </head>
 <body>
@@ -890,7 +902,7 @@
         <span class="badge-pill">
           <i class="fa-solid fa-certificate"></i> Certified 6-Stage Deep Sanitization
         </span>
-        <span class="top-location">📍 Serving Apartments, Villas, Gated Societies &amp; Commercial Properties</span>
+        <span class="top-location"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Serving Apartments, Villas, Gated Societies &amp; Commercial Properties</span>
       </div>
       <div class="top-right">
         <span><span class="status-live-dot"></span> Same-Day Slots Available</span>
@@ -1409,9 +1421,9 @@
 
         <div class="footer-col">
           <h4>Direct Contact</h4>
-          <p style="margin-bottom: 8px;">👤 <strong>Berjin Raj B V</strong></p>
-          <p style="margin-bottom: 8px;">📞 <a href="tel:+919900911929" style="color: var(--primary-cyan-light); text-decoration: none;">Call for Booking</a></p>
-          <p style="margin-bottom: 8px;">💬 <a href="https://wa.me/919900911929" target="_blank" style="color: #25d366; text-decoration: none;">WhatsApp: Instant Quote</a></p>
+          <p style="margin-bottom: 8px;"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/></svg> <strong>Berjin Raj B V</strong></p>
+          <p style="margin-bottom: 8px;"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <a href="tel:+919900911929" style="color: var(--primary-cyan-light); text-decoration: none;">Call for Booking</a></p>
+          <p style="margin-bottom: 8px;"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> <a href="https://wa.me/919900911929" target="_blank" style="color: #25d366; text-decoration: none;">WhatsApp: Instant Quote</a></p>
           <p style="font-size: 0.78rem; color: #10b981; margin-top: 10px;">● Operating: Mon – Sun (7:00 AM – 8:00 PM)</p>
         </div>
       </div>

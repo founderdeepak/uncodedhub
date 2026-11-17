@@ -95,8 +95,8 @@
       position: sticky;
       top: 0;
       background: rgba(10, 11, 13, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      /* solid surface */
+      -webkit-/* solid surface */
       border-bottom: 1px solid var(--border-subtle);
       z-index: 100;
       transition: var(--transition-smooth);
@@ -402,7 +402,7 @@
       position: absolute;
       inset: 0;
       background: rgba(10, 11, 14, 0.75);
-      backdrop-filter: blur(3px);
+      /* solid surface */
       z-index: 1;
     }
     .stage-frame-container {
@@ -942,7 +942,7 @@
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.92);
-      backdrop-filter: blur(10px);
+      /* solid surface */
       z-index: 2000;
       align-items: center;
       justify-content: center;
@@ -989,6 +989,18 @@
         font-size: 2.6rem;
       }
     }
+  
+    /* Unslop Design Rules (UNSLOP_DESIGN_RULES.md) */
+    h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    .inline-icon {
+      width: 1em;
+      height: 1em;
+      display: inline-block;
+      vertical-align: -0.15em;
+      stroke: currentColor;
+    }
+
   </style>
 </head>
 <body>

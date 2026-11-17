@@ -129,3 +129,106 @@ export function IconClose({ className = '' }: { className?: string }) {
     </svg>
   );
 }
+
+export function IconQuill({ className = '' }: { className?: string }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <path d="M19 3C10 3 6 9 6 15c0 2 1 4 3 5l1-3c-1-1-1-2-1-3 0-4 3-8 8-9l2-2Z" {...s} />
+      <path d="M6 15l-3 6 6-3" {...s} />
+    </svg>
+  );
+}
+
+export function IconBolt({ className = '' }: { className?: string }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <path d="M13 2 4.5 13.5H12L11 22l8.5-11.5H12L13 2Z" {...s} />
+    </svg>
+  );
+}
+
+export function IconChat({ className = '' }: { className?: string }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <path d="M20 14a4 4 0 0 1-4 4H7.5L3 21V6a4 4 0 0 1 4-4h9a4 4 0 0 1 4 4v8Z" {...s} />
+    </svg>
+  );
+}
+
+export function IconCalendar({ className = '' }: { className?: string }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <rect x="3.5" y="4.5" width="17" height="16" rx="2" {...s} />
+      <line x1="3.5" y1="9.5" x2="20.5" y2="9.5" {...s} />
+      <line x1="8" y1="2.5" x2="8" y2="5.5" {...s} />
+      <line x1="16" y1="2.5" x2="16" y2="5.5" {...s} />
+    </svg>
+  );
+}
+
+export function IconDeviceMobile({ className = '' }: { className?: string }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <rect x="6" y="2.5" width="12" height="19" rx="2.5" {...s} />
+      <line x1="10.5" y1="18" x2="13.5" y2="18" {...s} />
+    </svg>
+  );
+}
+
+export function IconLayoutGrid({ className = '' }: { className?: string }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1" {...s} />
+      <rect x="13" y="3.5" width="7.5" height="7.5" rx="1" {...s} />
+      <rect x="3.5" y="13" width="7.5" height="7.5" rx="1" {...s} />
+      <rect x="13" y="13" width="7.5" height="7.5" rx="1" {...s} />
+    </svg>
+  );
+}
+
+export function IconEye({ className = '' }: { className?: string }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <path d="M2.5 12c2.5-5 6-7.5 9.5-7.5s7 2.5 9.5 7.5c-2.5 5-6 7.5-9.5 7.5S5 17 2.5 12Z" {...s} />
+      <circle cx="12" cy="12" r="3" {...s} />
+    </svg>
+  );
+}
+
+export function IconHierarchy({ className = '' }: { className?: string }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <rect x="8.5" y="2.5" width="7" height="5" rx="1" {...s} />
+      <rect x="2.5" y="16.5" width="7" height="5" rx="1" {...s} />
+      <rect x="14.5" y="16.5" width="7" height="5" rx="1" {...s} />
+      <path d="M12 7.5v4.5M6 16.5v-2a2.5 2.5 0 0 1 2.5-2.5h7a2.5 2.5 0 0 1 2.5 2.5v2" {...s} />
+    </svg>
+  );
+}
+
+export function IconFunnel({ className = '' }: { className?: string }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <polygon points="3.5 4.5 20.5 4.5 14 12.5 14 19.5 10 21.5 10 12.5 3.5 4.5" {...s} />
+    </svg>
+  );
+}
+
+export function IconMapPin({ className = '' }: { className?: string }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <path d="M12 21.5s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" {...s} />
+      <circle cx="12" cy="9.5" r="2.5" {...s} />
+    </svg>
+  );
+}
+
+export function IconGlobe({ className = '' }: { className?: string }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <circle cx="12" cy="12" r="9" {...s} />
+      <line x1="3" y1="12" x2="21" y2="12" {...s} />
+      <path d="M12 3a14.5 14.5 0 0 1 4 9 14.5 14.5 0 0 1-4 9 14.5 14.5 0 0 1-4-9 14.5 14.5 0 0 1 4-9Z" {...s} />
+    </svg>
+  );
+}

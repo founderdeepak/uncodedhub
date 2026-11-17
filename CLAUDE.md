@@ -34,6 +34,30 @@ material, as one of the things that kills momentum and lead magnets specifically
 one already 90% done). This file exists so that discipline is enforced automatically,
 not something the owner has to keep re-asserting.
 
+## Design Engineering Standards (Non-Negotiable)
+
+Every page, component, client deliverable, and all 50 industry demos must strictly comply with `UNSLOP_DESIGN_RULES.md`:
+1. Drop the purple gradient.
+2. Use consistent icons, no emojis.
+3. Swap out Inter for fonts with character.
+4. No italic serif word on the end of headlines.
+5. Lose the headline badge.
+6. Skip the 2-button hero (single confident CTA).
+7. Match outer + inner radius mathematically (R_inner = R_outer - padding).
+8. Fix color contrast (WCAG AA compliant).
+9. Cut glowing colored shadows & radial ambient orbs.
+10. No colored card borders (use subtle neutral hairlines).
+11. Break up identical feature cards (use asymmetrical / editorial layouts).
+12. No glassmorphism (use solid, grounded surfaces).
+13. Ease up on all-caps labels (sentence case default).
+14. Drop the vanity stat banner (embed proof in real sentences).
+15. Ditch generic 1-2-3 steps (use tangible working sprint schedules).
+16. Fix text wrapping (text-wrap: balance / text-pretty).
+17. No gradient backgrounds (solid, stable palettes).
+18. Restyle default shadcn / template primitives.
+19. No fade-in on every section (immediate, fast rendering).
+20. Custom favicon + complete meta tags.
+
 ## gstack
 
 Use /browse from gstack for all web browsing. Never use mcp__claude-in-chrome__* tools.

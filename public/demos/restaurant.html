@@ -282,8 +282,8 @@
       top: 0;
       z-index: 100;
       background: var(--header-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      /* solid surface */
+      -webkit-/* solid surface */
       border-bottom: 1px solid var(--border-color);
       padding: 16px 0;
     }
@@ -866,8 +866,8 @@
       align-items: center;
       gap: 8px;
       background: rgba(14, 14, 14, 0.94);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      /* solid surface */
+      -webkit-/* solid surface */
       border: 1.5px solid rgba(255, 255, 255, 0.16);
       border-radius: 999px;
       padding: 7px 12px;
@@ -937,8 +937,8 @@
       width: 100vw;
       height: 100vh;
       background: rgba(0, 0, 0, 0.78);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      /* solid surface */
+      -webkit-/* solid surface */
       z-index: 9999;
       display: none;
       align-items: center;
@@ -1215,6 +1215,18 @@
         justify-content: center;
       }
     }
+  
+    /* Unslop Design Rules (UNSLOP_DESIGN_RULES.md) */
+    h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    .inline-icon {
+      width: 1em;
+      height: 1em;
+      display: inline-block;
+      vertical-align: -0.15em;
+      stroke: currentColor;
+    }
+
   </style>
 </head>
 <body data-theme="smoked-charcoal">
@@ -1685,7 +1697,7 @@
   <!-- Floating Lead Magnet Button -->
   <div class="lead-magnet-floating-widget" id="leadMagnetWidget">
     <button class="lm-floating-btn" onclick="openPitchModal()" title="Free 3-Page Executive Guide">
-      <span class="lm-btn-icon-wrap">📄</span>
+      <span class="lm-btn-icon-wrap"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
       <span>Free Studio Briefing</span>
       <span class="lm-pulse-ping"></span>
     </button>

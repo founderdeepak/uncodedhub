@@ -158,6 +158,18 @@
         font-size: 8.5pt;
       }
     }
+  
+    /* Unslop Design Rules (UNSLOP_DESIGN_RULES.md) */
+    h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    .inline-icon {
+      width: 1em;
+      height: 1em;
+      display: inline-block;
+      vertical-align: -0.15em;
+      stroke: currentColor;
+    }
+
   </style>
 </head>
 <body>
@@ -169,7 +181,7 @@
         <i class="fa-solid fa-file-lines" style="color: #e5a655; margin-right: 6px;"></i> Shutter Bug Studioz — Google Doc Exporter
       </strong>
       <span style="font-size: 0.82rem; color: #9ba3af;">
-        Step 1: Click "Copy All for Google Docs" &nbsp;➔&nbsp; Step 2: Open <a href="https://docs.new" target="_blank" style="color: #e5a655; text-decoration: underline;">docs.new</a> &nbsp;➔&nbsp; Step 3: Paste (Ctrl+V)
+        Step 1: Click "Copy All for Google Docs" &nbsp;<span class="arrow-indicator" aria-hidden="true">→</span>&nbsp; Step 2: Open <a href="https://docs.new" target="_blank" style="color: #e5a655; text-decoration: underline;">docs.new</a> &nbsp;<span class="arrow-indicator" aria-hidden="true">→</span>&nbsp; Step 3: Paste (Ctrl+V)
       </span>
     </div>
     <div style="display: flex; gap: 12px;">
@@ -472,7 +484,7 @@
       try {
         const successful = document.execCommand('copy');
         if (successful) {
-          alert('✅ Questionnaire copied to clipboard with full formatting!\n\n1. Open docs.new in your browser.\n2. Press Ctrl + V to paste.\n3. All tables, colors, and answer boxes will paste perfectly into Google Docs!');
+          alert('<span class="check-mark" aria-hidden="true">✓</span> Questionnaire copied to clipboard with full formatting!\n\n1. Open docs.new in your browser.\n2. Press Ctrl + V to paste.\n3. All tables, colors, and answer boxes will paste perfectly into Google Docs!');
         } else {
           alert('Please press Ctrl + C to copy.');
         }

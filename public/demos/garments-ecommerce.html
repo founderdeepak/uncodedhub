@@ -41,8 +41,8 @@
     ::-webkit-scrollbar-thumb:hover { background: #888; }
     .glass-nav {
       background: rgba(250, 249, 246, 0.94);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      /* solid surface */
+      -webkit-/* solid surface */
     }
     .badge-pulse {
       animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -51,6 +51,18 @@
       0%, 100% { opacity: 1; }
       50% { opacity: .5; }
     }
+  
+    /* Unslop Design Rules (UNSLOP_DESIGN_RULES.md) */
+    h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    .inline-icon {
+      width: 1em;
+      height: 1em;
+      display: inline-block;
+      vertical-align: -0.15em;
+      stroke: currentColor;
+    }
+
   </style>
 </head>
 <body class="bg-brand-cream text-neutral-900 font-sans antialiased min-h-screen flex flex-col">
@@ -70,7 +82,7 @@
       <div class="flex items-center gap-2">
         <span class="text-neutral-400 font-mono text-[11px]">Active View:</span>
         <button id="viewToggleBtn" onclick="toggleStoreView()" class="px-3 py-1 rounded bg-amber-500 hover:bg-amber-400 text-neutral-950 font-semibold font-mono text-[11px] transition-colors flex items-center gap-1.5 cursor-pointer">
-          <span id="viewToggleIcon">📊</span>
+          <span id="viewToggleIcon"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
           <span id="viewToggleText">Switch to Merchant Admin View</span>
         </button>
       </div>
@@ -84,7 +96,7 @@
 
     <!-- Top Announcement -->
     <div class="bg-neutral-900 text-neutral-200 text-center py-2 px-4 text-xs font-mono tracking-wider flex items-center justify-center gap-3">
-      <span>✨ FESTIVE EDIT 2026</span>
+      <span><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"/></svg> FESTIVE EDIT 2026</span>
       <span class="text-neutral-600">·</span>
       <span>FREE PAN-INDIA EXPRESS SHIPPING OVER ₹999</span>
       <span class="text-neutral-600">·</span>
@@ -116,7 +128,7 @@
           <!-- Search input -->
           <div class="relative hidden sm:block w-48 lg:w-64">
             <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Search 20 garments…" class="w-full bg-white border border-neutral-300 rounded-full py-1.5 pl-8 pr-3 text-xs placeholder:text-neutral-400 focus:outline-none focus:border-neutral-950 font-sans" />
-            <span class="absolute left-2.5 top-2 text-neutral-400 text-xs">🔍</span>
+            <span class="absolute left-2.5 top-2 text-neutral-400 text-xs"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
           </div>
 
           <!-- Currency badge -->
@@ -126,7 +138,7 @@
 
           <!-- Cart Trigger -->
           <button onclick="openCart()" class="relative p-2.5 rounded-full bg-neutral-950 text-white hover:bg-neutral-800 transition-colors flex items-center gap-2 cursor-pointer">
-            <span class="text-sm">🛍️</span>
+            <span class="text-sm"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>️</span>
             <span class="text-xs font-mono font-medium hidden sm:inline">Bag</span>
             <span id="cartCountBadge" class="w-5 h-5 rounded-full bg-amber-400 text-neutral-950 font-mono font-bold text-[10px] flex items-center justify-center">0</span>
           </button>
@@ -158,13 +170,13 @@
         </p>
         <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
           <span class="flex items-center gap-1.5 bg-neutral-900 border border-neutral-800 px-3 py-1.5 rounded-full text-neutral-300">
-            ⚡ 0.4s Fast Initial Load
+            <svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> 0.4s Fast Initial Load
           </span>
           <span class="flex items-center gap-1.5 bg-neutral-900 border border-neutral-800 px-3 py-1.5 rounded-full text-neutral-300">
-            🔄 Live Stock Counter
+            <svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg> Live Stock Counter
           </span>
           <span class="flex items-center gap-1.5 bg-neutral-900 border border-neutral-800 px-3 py-1.5 rounded-full text-neutral-300">
-            💳 Razorpay & Cash on Delivery (COD)
+            <svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg> Razorpay & Cash on Delivery (COD)
           </span>
         </div>
       </div>
@@ -229,7 +241,7 @@
         <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-5">
           <div class="flex items-center justify-between text-slate-400 text-xs font-mono mb-2">
             <span>TODAY'S REVENUE</span>
-            <span>💰</span>
+            <span><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/></svg></span>
           </div>
           <div id="adminKpiRevenue" class="text-2xl font-bold font-mono text-emerald-400">₹48,950</div>
           <span class="text-[11px] text-slate-400 mt-1 block">+18.4% vs yesterday</span>
@@ -238,7 +250,7 @@
         <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-5">
           <div class="flex items-center justify-between text-slate-400 text-xs font-mono mb-2">
             <span>TOTAL ORDERS</span>
-            <span>📦</span>
+            <span><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg></span>
           </div>
           <div id="adminKpiOrders" class="text-2xl font-bold font-mono text-white">12 Orders</div>
           <span class="text-[11px] text-slate-400 mt-1 block">3 pending dispatch</span>
@@ -247,7 +259,7 @@
         <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-5">
           <div class="flex items-center justify-between text-slate-400 text-xs font-mono mb-2">
             <span>ACTIVE PRODUCTS</span>
-            <span>🏷️</span>
+            <span><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>️</span>
           </div>
           <div id="adminKpiProducts" class="text-2xl font-bold font-mono text-amber-400">20 SKUs</div>
           <span class="text-[11px] text-slate-400 mt-1 block">All synchronized</span>
@@ -256,7 +268,7 @@
         <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-5">
           <div class="flex items-center justify-between text-slate-400 text-xs font-mono mb-2">
             <span>AVERAGE ORDER VALUE</span>
-            <span>📈</span>
+            <span><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
           </div>
           <div class="text-2xl font-bold font-mono text-cyan-400">₹4,079</div>
           <span class="text-[11px] text-slate-400 mt-1 block">UPI: 72% · COD: 28%</span>
@@ -266,18 +278,18 @@
       <!-- Admin Tabs -->
       <div class="flex border-b border-slate-800 gap-6 text-xs font-mono mb-6 overflow-x-auto no-scrollbar">
         <button onclick="setAdminTab('orders')" id="tabBtnOrders" class="pb-3 border-b-2 border-amber-400 text-amber-400 font-bold flex items-center gap-1.5 whitespace-nowrap">
-          <span>📦 Inbound Orders</span>
+          <span><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg> Inbound Orders</span>
           <span id="adminOrdersBadge" class="px-1.5 py-0.2 rounded-full bg-amber-500/20 text-[10px]">3</span>
         </button>
         <button onclick="setAdminTab('bitrix')" id="tabBtnBitrix" class="pb-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-1.5 whitespace-nowrap">
-          <span>⚡ Bitrix24 Free CRM Pipeline</span>
+          <span><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Bitrix24 Free CRM Pipeline</span>
           <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 text-[10px]">100% Free</span>
         </button>
         <button onclick="setAdminTab('inventory')" id="tabBtnInventory" class="pb-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-1.5 whitespace-nowrap">
-          <span>🏷️ Inventory Manager (20 SKUs)</span>
+          <span><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>️ Inventory Manager (20 SKUs)</span>
         </button>
         <button onclick="setAdminTab('gateways')" id="tabBtnGateways" class="pb-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-1.5 whitespace-nowrap">
-          <span>⚙️ Payment & Shipping Settings</span>
+          <span><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>️ Payment & Shipping Settings</span>
         </button>
       </div>
 
@@ -326,7 +338,7 @@
 
           <div class="flex items-center gap-2">
             <button onclick="triggerSampleBitrixOrder()" class="px-3 py-2 rounded bg-emerald-600 hover:bg-emerald-500 text-white font-mono text-xs font-bold transition-colors flex items-center gap-1.5 cursor-pointer">
-              <span>⚡ Send Sample Deal to Bitrix24</span>
+              <span><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Send Sample Deal to Bitrix24</span>
             </button>
           </div>
         </div>
@@ -387,7 +399,7 @@
               <span class="text-emerald-400 text-[11px]">● Connected</span>
             </div>
             <p class="text-slate-400 text-[11px]">
-              Enter the free Inbound Webhook URL generated from the client's free Bitrix24 account (<span class="text-slate-300">Applications ➔ Developer Resources ➔ Inbound Webhook</span>).
+              Enter the free Inbound Webhook URL generated from the client's free Bitrix24 account (<span class="text-slate-300">Applications <span class="arrow-indicator" aria-hidden="true">→</span> Developer Resources <span class="arrow-indicator" aria-hidden="true">→</span> Inbound Webhook</span>).
             </p>
 
             <div>
@@ -410,7 +422,7 @@
             <div class="flex items-center justify-between">
               <span class="text-white font-bold uppercase tracking-wider">Copy-Paste React/JS Code</span>
               <button onclick="navigator.clipboard.writeText(document.getElementById('bitrixCodeBlock').textContent); alert('Bitrix24 integration code copied to clipboard!');" class="text-amber-400 hover:underline text-[11px]">
-                Copy Code 📋
+                Copy Code <svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
               </button>
             </div>
             <p class="text-slate-400 text-[11px]">
@@ -474,7 +486,7 @@
       <div id="adminTabGateways" class="hidden grid md:grid-cols-2 gap-6">
         <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-6 space-y-4">
           <h3 class="text-sm font-mono font-semibold text-white uppercase tracking-wider flex items-center gap-2">
-            <span>💳 Payment Gateway Integration</span>
+            <span><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg> Payment Gateway Integration</span>
           </h3>
           <p class="text-xs text-slate-400">Direct integration without high Shopify app subscription fees.</p>
           
@@ -501,7 +513,7 @@
 
         <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-6 space-y-4">
           <h3 class="text-sm font-mono font-semibold text-white uppercase tracking-wider flex items-center gap-2">
-            <span>🚚 Shipping & Logistics Integration</span>
+            <span><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Shipping & Logistics Integration</span>
           </h3>
           <p class="text-xs text-slate-400">Automated courier dispatch and AWB generation for Indian apparel brands.</p>
 
@@ -527,7 +539,7 @@
   <!-- ══════════════════════════════════════════════════════════════════
        PRODUCT DETAIL MODAL (Quick View & Variant Selector)
        ══════════════════════════════════════════════════════════════════ -->
-  <div id="productModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
+  <div id="productModal" class="fixed inset-0 z-50 hidden bg-black/60  flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl border border-neutral-200 flex flex-col md:flex-row max-h-[90vh]">
       <!-- Image Preview Column -->
       <div class="md:w-1/2 bg-neutral-100 relative min-h-[300px] flex items-center justify-center p-6 overflow-hidden">
@@ -579,7 +591,7 @@
             <div id="modalSizeButtons" class="flex flex-wrap gap-2">
               <!-- Dynamically populated -->
             </div>
-            <span id="modalStockNotice" class="text-[11px] font-mono text-amber-600 mt-2 block">⚡ Low Stock: Only 3 units remaining in M</span>
+            <span id="modalStockNotice" class="text-[11px] font-mono text-amber-600 mt-2 block"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Low Stock: Only 3 units remaining in M</span>
           </div>
         </div>
 
@@ -598,7 +610,7 @@
   <!-- ══════════════════════════════════════════════════════════════════
        SLIDE-OUT CART DRAWER
        ══════════════════════════════════════════════════════════════════ -->
-  <div id="cartDrawerBackdrop" onclick="closeCart()" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-xs transition-opacity"></div>
+  <div id="cartDrawerBackdrop" onclick="closeCart()" class="fixed inset-0 z-50 hidden bg-black/50  transition-opacity"></div>
   <div id="cartDrawer" class="fixed right-0 top-0 bottom-0 z-50 w-full max-w-md bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300">
     <!-- Cart Header -->
     <div class="p-5 border-b border-neutral-200 flex items-center justify-between">
@@ -649,7 +661,7 @@
         <span>→</span>
       </button>
       <div class="text-center text-[10px] text-neutral-500 font-sans">
-        🔒 256-Bit SSL Secured · Razorpay UPI / Cards / COD
+        <svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> 256-Bit SSL Secured · Razorpay UPI / Cards / COD
       </div>
     </div>
   </div>
@@ -657,7 +669,7 @@
   <!-- ══════════════════════════════════════════════════════════════════
        CHECKOUT MODAL (1-Tap UPI / COD Simulator)
        ══════════════════════════════════════════════════════════════════ -->
-  <div id="checkoutModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
+  <div id="checkoutModal" class="fixed inset-0 z-50 hidden bg-black/60  flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-neutral-200 flex flex-col max-h-[92vh]">
       <div class="p-5 bg-neutral-950 text-white flex items-center justify-between">
         <div>
@@ -696,14 +708,14 @@
             <label class="p-3 border rounded-lg flex items-center gap-2 cursor-pointer border-neutral-950 bg-neutral-50">
               <input type="radio" name="paymentOption" value="UPI" checked class="accent-neutral-950" />
               <div>
-                <span class="font-bold block text-neutral-950">⚡ UPI / 1-Tap QR</span>
+                <span class="font-bold block text-neutral-950"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> UPI / 1-Tap QR</span>
                 <span class="text-[10px] text-neutral-500">GPay, PhonePe, Paytm</span>
               </div>
             </label>
             <label class="p-3 border rounded-lg flex items-center gap-2 cursor-pointer border-neutral-200 hover:border-neutral-400">
               <input type="radio" name="paymentOption" value="COD" class="accent-neutral-950" />
               <div>
-                <span class="font-bold block text-neutral-950">💵 Cash on Delivery</span>
+                <span class="font-bold block text-neutral-950"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/></svg> Cash on Delivery</span>
                 <span class="text-[10px] text-neutral-500">Pay cash upon arrival</span>
               </div>
             </label>
@@ -728,7 +740,7 @@
   <!-- ══════════════════════════════════════════════════════════════════
        ORDER SUCCESS MODAL
        ══════════════════════════════════════════════════════════════════ -->
-  <div id="orderSuccessModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
+  <div id="orderSuccessModal" class="fixed inset-0 z-50 hidden bg-black/60  flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-md w-full p-6 text-center shadow-2xl border border-neutral-200">
       <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mx-auto mb-4">
         ✓
@@ -760,7 +772,7 @@
 
       <div class="space-y-2">
         <button onclick="viewInMerchantAdmin()" class="w-full py-2.5 px-4 bg-amber-500 hover:bg-amber-400 text-neutral-950 font-mono text-xs font-semibold rounded-lg transition-colors flex items-center justify-center gap-2">
-          <span>👀 View Order in Merchant Admin Dashboard</span>
+          <span><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg> View Order in Merchant Admin Dashboard</span>
           <span>→</span>
         </button>
         <button onclick="closeSuccessModal()" class="w-full py-2.5 px-4 bg-neutral-100 hover:bg-neutral-200 text-neutral-800 font-mono text-xs rounded-lg transition-colors">
@@ -1199,8 +1211,8 @@
 
             <!-- Stock indicator -->
             <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none">
-              <span class="text-[10px] font-mono bg-white/90 backdrop-blur-xs text-neutral-800 px-2 py-0.5 rounded-full shadow-xs">
-                ${p.stock <= 5 ? `🔥 Only ${p.stock} left` : `✓ In Stock (${p.stock})`}
+              <span class="text-[10px] font-mono bg-white/90  text-neutral-800 px-2 py-0.5 rounded-full shadow-xs">
+                ${p.stock <= 5 ? `<svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Only ${p.stock} left` : `✓ In Stock (${p.stock})`}
               </span>
             </div>
           </div>
@@ -1306,7 +1318,7 @@
     function updateStockNotice() {
       const notice = document.getElementById('modalStockNotice');
       if (activeModalProduct.stock <= 5) {
-        notice.textContent = `⚡ High Demand: Only ${activeModalProduct.stock} left in size ${selectedSize}!`;
+        notice.textContent = `<svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> High Demand: Only ${activeModalProduct.stock} left in size ${selectedSize}!`;
         notice.className = "text-[11px] font-mono text-amber-600 mt-2 block font-semibold";
       } else {
         notice.textContent = `✓ In Stock: Ready to ship within 24 hours.`;
@@ -1359,7 +1371,7 @@
       if (CART.length === 0) {
         container.innerHTML = `
           <div class="py-16 text-center text-neutral-400">
-            <span class="text-4xl block mb-2">🛍️</span>
+            <span class="text-4xl block mb-2"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>️</span>
             <p class="font-serif text-lg text-neutral-700">Your shopping bag is empty</p>
             <p class="text-xs font-mono text-neutral-400 mt-1">Explore our 20 curated garments and add your favorite pieces.</p>
           </div>
@@ -1583,13 +1595,13 @@
         store.classList.remove('hidden');
         admin.classList.add('hidden');
         text.textContent = 'Switch to Merchant Admin View';
-        icon.textContent = '📊';
+        icon.textContent = '<svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>';
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         store.classList.add('hidden');
         admin.classList.remove('hidden');
         text.textContent = 'Switch to Customer Storefront';
-        icon.textContent = '🛍️';
+        icon.textContent = '<svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>️';
         renderAdminDashboard();
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
@@ -1642,23 +1654,23 @@
         
         let targetCol = colNew;
         let nextStatus = 'Processing';
-        let stageLabel = 'To Packing ➔';
+        let stageLabel = 'To Packing <span class="arrow-indicator" aria-hidden="true">→</span>';
 
         if (order.status === 'Pending') {
           targetCol = colNew;
           countNew++;
           nextStatus = 'Processing';
-          stageLabel = 'Pack Items ➔';
+          stageLabel = 'Pack Items <span class="arrow-indicator" aria-hidden="true">→</span>';
         } else if (order.status === 'Processing') {
           targetCol = colPacking;
           countPacking++;
           nextStatus = 'Dispatched';
-          stageLabel = 'Dispatch (AWB) ➔';
+          stageLabel = 'Dispatch (AWB) <span class="arrow-indicator" aria-hidden="true">→</span>';
         } else if (order.status === 'Dispatched') {
           targetCol = colDispatched;
           countDispatched++;
           nextStatus = 'Delivered';
-          stageLabel = 'Mark Delivered ➔';
+          stageLabel = 'Mark Delivered <span class="arrow-indicator" aria-hidden="true">→</span>';
         } else {
           targetCol = colDelivered;
           countDelivered++;
@@ -1723,7 +1735,7 @@
       renderBitrixKanban();
       renderAdminDashboard();
 
-      alert(`⚡ Bitrix24 Deal Created!\n\nDeal: #${sampleId} - Priya Sundaram\nAmount: ₹7,499\nStatus: Pushed to "1. New Inbound" stage in Bitrix24 CRM.\nStaff receives sound alert on mobile.`);
+      alert(`<svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Bitrix24 Deal Created!\n\nDeal: #${sampleId} - Priya Sundaram\nAmount: ₹7,499\nStatus: Pushed to "1. New Inbound" stage in Bitrix24 CRM.\nStaff receives sound alert on mobile.`);
     }
 
     function saveBitrixWebhook() {
@@ -1756,7 +1768,7 @@
           <td class="py-3 px-4">
             <span class="text-white font-semibold">${order.custName}</span><br>
             <span class="text-slate-400 text-[11px]">${order.custPhone}</span><br>
-            <span class="text-slate-400 text-[10px] truncate max-w-xs block" title="${order.address}">📍 ${order.address}</span>
+            <span class="text-slate-400 text-[10px] truncate max-w-xs block" title="${order.address}"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> ${order.address}</span>
           </td>
           <td class="py-3 px-4 max-w-xs truncate text-slate-300" title="${order.items}">${order.items}</td>
           <td class="py-3 px-4 font-bold text-emerald-400">₹${order.amount.toLocaleString('en-IN')}</td>
