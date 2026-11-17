@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Turnkey residential interior architecture and private home sanctuaries. Features photorealistic 3D render-to-reality comparisons, 100% itemized trade-cost procurement transparency, and an interactive 3-style visual theme switcher.',
-    result: '⚡ 0.8s LCP · 100% Lighthouse · Capped 4-Client Roster',
+    result: '0.8s LCP · 100% Lighthouse · Capped 4-Client Roster',
     conversionEngine: 'Interactive Trade Fee Estimator & 3D Render-to-Reality Comparison Slider',
     themes: [
       {
@@ -72,7 +72,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Independent prime property advisory and off-market residential acquisitions. Features a capped 8-client roster model, 14-point legal title verification checklist, and strict client NDA confidentiality booking.',
-    result: '⚡ 0.7s LCP · Zero Developer Bias · Verified Title Audit Funnel',
+    result: '0.7s LCP · Zero Developer Bias · Verified Title Audit Funnel',
     conversionEngine: '14-Point Legal Title Audit & Confidential Off-Market Acquisition Intake',
     themes: [
       {
@@ -110,7 +110,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Specialized anxiety-free dental practice and smile aesthetics website. Built with a patient stop-signal protocol, upfront written treatment fee estimates, Class-B autoclave sterilisation badges, and zero-judgment consultation booking.',
-    result: '⚡ 0.8s LCP · Anxiety-Free Protocol · Complete Pricing Transparency',
+    result: '0.8s LCP · Anxiety-Free Protocol · Complete Pricing Transparency',
     conversionEngine: 'Interactive Treatment Fee Calculator & Patient Stop-Signal Anxiety Guarantee',
     themes: [
       {
@@ -148,7 +148,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Documentary destination wedding photography and cinematic film studio. Anchored by a strictly 1-wedding-per-weekend contract commitment, guaranteed 48-hour sneak peek delivery, and 4-week full gallery handoff.',
-    result: '⚡ 0.8s LCP · 1-Wedding Rule · 4-Week Delivery Contract Guarantee',
+    result: '0.8s LCP · 1-Wedding Rule · 4-Week Delivery Contract Guarantee',
     conversionEngine: 'Weekend Exclusivity Date Checker & 48-Hour Sneak Peek SLA Commitment',
     themes: [
       {
@@ -186,7 +186,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Precision engineered modular kitchens and civil renovations. Highlights 100% IS:710 Marine BWP plywood standards, Blum German hardware certifications, 10-year written warranty seals, and free laser survey booking.',
-    result: '⚡ 0.8s LCP · IS:710 Marine Plywood · 10-Year Warranty Commitment',
+    result: '0.8s LCP · IS:710 Marine Plywood · 10-Year Warranty Commitment',
     conversionEngine: 'Material Spec Sheet Verifier & Free 3D Laser Measurement Booking',
     themes: [
       {
@@ -224,7 +224,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Strategic executive sparring and 90-day scaling architecture for high-growth founders and C-suite leaders navigating critical transition windows. Built around diagnostic-first intake and zero-pitch exploratory calls.',
-    result: '⚡ 0.7s LCP · Diagnostic-First Architecture · Zero-Pitch Protocol',
+    result: '0.7s LCP · Diagnostic-First Architecture · Zero-Pitch Protocol',
     conversionEngine: 'Executive Readiness Screener & Zero-Pitch Sparring Session Intake',
     themes: [
       {
@@ -262,7 +262,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Premier academic coaching for STEM, Olympiads, and competitive board examinations. Features smart 15-student capped batches, concept-first IIT/Medical faculty, and an interactive annual scholarship & tuition estimator.',
-    result: '⚡ 0.8s LCP · Capped 15-Student Model · Interactive Scholarship Calculator',
+    result: '0.8s LCP · Capped 15-Student Model · Interactive Scholarship Calculator',
     conversionEngine: '15-Student Batch Cap Selector & Interactive Merit Scholarship Estimator',
     themes: [
       {
@@ -300,7 +300,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'High-intensity athletic training facility with Eleiko Olympic barbells and capped peak-hour floor capacity. Built with an interactive 1-Day VIP Trial Pass activator and upfront membership pricing matrix.',
-    result: '⚡ 0.7s LCP · Zero Crowding Cap · Instant VIP Pass Activator',
+    result: '0.7s LCP · Zero Crowding Cap · Instant VIP Pass Activator',
     conversionEngine: '1-Day VIP Pass Generator & Peak-Hour Real-Time Capacity HUD',
     themes: [
       {
@@ -338,7 +338,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Institutional strategy consulting and M&A transaction advisory for mid-market enterprises. Highlights proven deal track records, client NDA covenants, and an interactive 6-pillar business diagnostic scorecard.',
-    result: '⚡ 0.7s LCP · C-Suite Diagnostic Engine · Verified Case Studies',
+    result: '0.7s LCP · C-Suite Diagnostic Engine · Verified Case Studies',
     conversionEngine: 'Interactive 6-Pillar Enterprise Diagnostic Scorecard & Deal History Vault',
     themes: [
       {
@@ -376,7 +376,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Five-star urban sanctuary featuring traditional Balinese bodywork and authentic Kerala Ayurvedic therapies. Includes an interactive tension-zone ritual builder, private couple suite previews, and upfront treatment fees.',
-    result: '⚡ 0.8s LCP · Tension-Zone Therapy Builder · Transparent Menu',
+    result: '0.8s LCP · Tension-Zone Therapy Builder · Transparent Menu',
     conversionEngine: 'Interactive Tension-Zone Treatment Customizer & Private Suite Booking',
     themes: [
       {
@@ -414,7 +414,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Bespoke Balayage, K18 molecular repair, and HD bridal aesthetics studio. Built with hospital-grade autoclave sterilisation disclosures, an interactive bridal estimate calculator, and 1-tap WhatsApp slot booking.',
-    result: '⚡ 0.7s LCP · Interactive Bridal Calculator · 1-Tap Booking',
+    result: '0.7s LCP · Interactive Bridal Calculator · 1-Tap Booking',
     conversionEngine: 'Custom Bridal Aesthetic Quote Estimator & Instant Stylist Slot Booking',
     themes: [
       {
@@ -452,7 +452,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Biomechanical body recomposition and athletic conditioning for busy corporate executives. Features an intake readiness calculator, 12-week verified DEXA scan transformations, and a capped 20-client roster.',
-    result: '⚡ 0.7s LCP · Capped 20-Roster Model · DEXA Transformation Grid',
+    result: '0.7s LCP · Capped 20-Roster Model · DEXA Transformation Grid',
     conversionEngine: 'Interactive Intake Readiness Audit & DEXA Verified Progress Log',
     themes: [
       {
@@ -490,7 +490,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Traditional Hatha, Ashtanga, and restorative sound healing studio with teakwood flooring and certified RYS-200 masters. Features an interactive class timetable filter and instant trial booking.',
-    result: '⚡ 0.8s LCP · Interactive Timetable Filter · Zero Commercial Gimmicks',
+    result: '0.8s LCP · Interactive Timetable Filter · Zero Commercial Gimmicks',
     conversionEngine: 'Real-Time Class Capacity Filter & 1-Tap Trial Mat Reservation',
     themes: [
       {
@@ -528,7 +528,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Multi-disciplinary digital design agency crafting award-calibre identities, high-conversion web systems, and 3D interactions. Includes an interactive project sprint scope estimator and client case studies.',
-    result: '⚡ 0.8s LCP · Interactive Scope Estimator · 100% Lighthouse Score',
+    result: '0.8s LCP · Interactive Scope Estimator · 100% Lighthouse Score',
     conversionEngine: 'Interactive Brand Sprint Scope Estimator & Case Study Interactive Viewer',
     themes: [
       {
@@ -566,7 +566,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'NABL & CAP accredited diagnostic pathology laboratory offering barcode-tracked sample chains, 6-hour digital report turnaround, and an interactive home phlebotomy package selector.',
-    result: '⚡ 0.7s LCP · NABL Certified Protocol · Home Blood Collection Funnel',
+    result: '0.7s LCP · NABL Certified Protocol · Home Blood Collection Funnel',
     conversionEngine: 'Home Phlebotomy Package Selector & Live Barcode Sample Tracking Simulator',
     themes: [
       {
@@ -604,7 +604,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Same-day outpatient medical centre featuring on-site digital pharmacy, minor OT, and senior specialists across 6 core departments. Includes an interactive OPD doctor schedule filter and appointment engine.',
-    result: '⚡ 0.8s LCP · Live Doctor Roster Filter · Zero Wait-Time Guarantee',
+    result: '0.8s LCP · Live Doctor Roster Filter · Zero Wait-Time Guarantee',
     conversionEngine: 'Live OPD Doctor Schedule Filter & Instant Confirmed Appointment Engine',
     themes: [
       {
@@ -642,7 +642,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Fellowship-trained robotic joint replacement and sports arthroscopy super-specialist. Built around an interactive joint mobility symptom screener, written hospital fee estimates, and cashless TPA insurance guidance.',
-    result: '⚡ 0.7s LCP · Interactive Joint Symptom Screener · Cashless Insurance Desk',
+    result: '0.7s LCP · Interactive Joint Symptom Screener · Cashless Insurance Desk',
     conversionEngine: 'Joint Mobility Pre-Diagnosis Screener & Cashless Insurance Desk Guide',
     themes: [
       {
@@ -680,7 +680,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Wood-fired coastal and charcoal kitchen flagship. Features instant in-memory responsive HTML mobile menus, zero-commission WhatsApp table reservations, and 0% third-party delivery fee loss.',
-    result: '⚡ 0.4s LCP · 0% Delivery Commissions · 100% Guest Data Ownership',
+    result: '0.4s LCP · 0% Delivery Commissions · 100% Guest Data Ownership',
     conversionEngine: 'Instant Filterable HTML Menu & Direct WhatsApp Table Reservation Portal',
     themes: [
       {
@@ -718,7 +718,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Bar Council of India compliant legal practice platform. Features confidential conflict-of-interest matter intake, reported judgments archive, and retainer fee clarity.',
-    result: '⚡ 0.5s LCP · 100% BCI Compliant · 24-Hr Conflict Check SLA',
+    result: '0.5s LCP · 100% BCI Compliant · 24-Hr Conflict Check SLA',
     conversionEngine: 'Privileged Matter Intake Questionnaire & Adverse Party Conflict Screener',
     themes: [
       {
@@ -756,7 +756,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Parashara Vedic astrology platform featuring precision Kundali birth chart intake, daily planetary transit panchang, and prepaid Zoom appointment scheduler.',
-    result: '⚡ 0.6s LCP · Precision Lahiri Ayanamsha Intake · Prepaid Zoom Bookings',
+    result: '0.6s LCP · Precision Lahiri Ayanamsha Intake · Prepaid Zoom Bookings',
     conversionEngine: 'Kundali Birth Coordinate Form & Daily Panchang Muhurat Ticker',
     themes: [
       {
@@ -794,7 +794,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Turnkey civil contracting platform with interactive BOQ construction cost estimator, live drone milestone audit portal, and zero-substitute material brand transparency.',
-    result: '⚡ 0.6s LCP · Interactive BOQ Estimator · Drone Milestone Radar',
+    result: '0.6s LCP · Interactive BOQ Estimator · Drone Milestone Radar',
     conversionEngine: 'Turnkey BOQ Cost Slider & Live Drone Site Milestone Portal',
     themes: [
       {
@@ -832,7 +832,7 @@ export const PROJECTS: Project[] = [
     year: '7-Day Sprint Build',
     summary:
       'Corporate chartered accountancy digital flagship with statutory tax compliance radar, interactive monthly retainer estimator, and secure client document vault.',
-    result: '⚡ 0.5s LCP · Statutory Tax Radar · Interactive Retainer Estimator',
+    result: '0.5s LCP · Statutory Tax Radar · Interactive Retainer Estimator',
     conversionEngine: 'Corporate Retainer Estimator & Statutory Filing Calendar Radar',
     themes: [
       {
@@ -869,7 +869,7 @@ export const PROJECTS: Project[] = [
     category: 'design',
     year: '7-Day Sprint Build',
     summary: 'Bespoke residential villas, biophilic commercial spaces, and sustainable masterplanning with interactive 3D elevation estimates.',
-    result: '⚡ 0.4s LCP · LEED Platinum Ready · Zero Kickback Model',
+    result: '0.4s LCP · LEED Platinum Ready · Zero Kickback Model',
     conversionEngine: 'Interactive Architectural Scope & Budget Estimator',
     themes: [
       {
@@ -906,7 +906,7 @@ export const PROJECTS: Project[] = [
     category: 'hospitality',
     year: '7-Day Sprint Build',
     summary: 'Boutique plantation villas, private plunge pools, and farm-to-table culinary sanctuaries engineered for zero-commission direct bookings.',
-    result: '⚡ 0.4s LCP · 0% OTA Commissions · Direct Booking Hold',
+    result: '0.4s LCP · 0% OTA Commissions · Direct Booking Hold',
     conversionEngine: 'Direct Villa Availability & Experience Package Selector',
     themes: [
       {
@@ -943,7 +943,7 @@ export const PROJECTS: Project[] = [
     category: 'marketing',
     year: '7-Day Sprint Build',
     summary: 'High-velocity growth architecture for B2B brands with interactive ROAS forecasting and attribution modeling.',
-    result: '⚡ 0.4s LCP · 4.6x Verified ROAS · Attribution Radar',
+    result: '0.4s LCP · 4.6x Verified ROAS · Attribution Radar',
     conversionEngine: 'B2B Pipeline & Paid Media ROAS Growth Calculator',
     themes: [
       {
@@ -980,7 +980,7 @@ export const PROJECTS: Project[] = [
     category: 'hr',
     year: '7-Day Sprint Build',
     summary: 'Leadership search and executive hiring portal with instant salary benchmarking and confidential mandate submission.',
-    result: '⚡ 0.5s LCP · 18-Day Shortlist SLA · 94% Retention',
+    result: '0.5s LCP · 18-Day Shortlist SLA · 94% Retention',
     conversionEngine: 'Executive Search Retainer & Talent Benchmarking Calculator',
     themes: [
       {
@@ -1017,7 +1017,7 @@ export const PROJECTS: Project[] = [
     category: 'retail',
     year: '7-Day Sprint Build',
     summary: 'Sub-second mobile apothecary storefront with interactive skin diagnosis quiz, 1-click cart, and zero Shopify bloat.',
-    result: '⚡ 0.3s LCP · 1-Click WhatsApp Express Cart · Zero Plugins',
+    result: '0.3s LCP · 1-Click WhatsApp Express Cart · Zero Plugins',
     conversionEngine: 'Custom Skin Diagnostic & Botanical Regimen Builder',
     themes: [
       {
@@ -1054,7 +1054,7 @@ export const PROJECTS: Project[] = [
     category: 'services',
     year: '7-Day Sprint Build',
     summary: 'Estate gardens, native forest restoration, and automated outdoor living pavilions with live square-footage estimators.',
-    result: '⚡ 0.4s LCP · 3-Year Plant Warranty · Smart Drip Integration',
+    result: '0.4s LCP · 3-Year Plant Warranty · Smart Drip Integration',
     conversionEngine: 'Estate Landscape Square-Footage & Hardscape Estimator',
     themes: [
       {
@@ -1091,7 +1091,7 @@ export const PROJECTS: Project[] = [
     category: 'events',
     year: '7-Day Sprint Build',
     summary: 'Luxury destination wedding and corporate gala architecture with guest-count budget modeling and production calendars.',
-    result: '⚡ 0.4s LCP · Zero Hidden Markups · 1:1 Director Model',
+    result: '0.4s LCP · Zero Hidden Markups · 1:1 Director Model',
     conversionEngine: 'Destination Wedding & Corporate Gala Budget Allocator',
     themes: [
       {
@@ -1128,7 +1128,7 @@ export const PROJECTS: Project[] = [
     category: 'healthcare',
     year: '7-Day Sprint Build',
     summary: 'Advanced surgical veterinary hospital with instant emergency triage, symptom intake, and digital radiography access.',
-    result: '⚡ 0.4s LCP · 24/7 Trauma ICU · Zero Wait Priority Intake',
+    result: '0.4s LCP · 24/7 Trauma ICU · Zero Wait Priority Intake',
     conversionEngine: 'Pet Health Triage & Priority Appointment Booking',
     themes: [
       {
@@ -1165,7 +1165,7 @@ export const PROJECTS: Project[] = [
     category: 'automotive',
     year: '7-Day Sprint Build',
     summary: 'Self-healing TPU paint protection films and 9H graphene ceramic coating platform with interactive vehicle customizer.',
-    result: '⚡ 0.4s LCP · 7-Year Warranty Card · Dust-Free Bay Tour',
+    result: '0.4s LCP · 7-Year Warranty Card · Dust-Free Bay Tour',
     conversionEngine: 'Vehicle Class & Detailing Package Configurator',
     themes: [
       {
@@ -1202,7 +1202,7 @@ export const PROJECTS: Project[] = [
     category: 'services',
     year: '7-Day Sprint Build',
     summary: 'Hospital-grade sanitization and corporate facility cleaning platform with instant square-footage pricing calculations.',
-    result: '⚡ 0.4s LCP · ISO 9001 Protocols · Background-Verified Crews',
+    result: '0.4s LCP · ISO 9001 Protocols · Background-Verified Crews',
     conversionEngine: 'Commercial Facility & Deep Cleaning Quote Estimator',
     themes: [
       {
@@ -1239,7 +1239,7 @@ export const PROJECTS: Project[] = [
     category: 'industrial',
     year: '7-Day Sprint Build',
     summary: 'AS9100D certified 5-axis CNC machining platform with rapid RFQ intake, alloy selection, and micron-level tolerance specifications.',
-    result: '⚡ 0.4s LCP · ±5 Micron Accuracy · 72-Hour Rapid Prototypes',
+    result: '0.4s LCP · ±5 Micron Accuracy · 72-Hour Rapid Prototypes',
     conversionEngine: 'Rapid RFQ & Material Tolerance Specification Intake',
     themes: [
       {
@@ -1276,7 +1276,7 @@ export const PROJECTS: Project[] = [
     category: 'finance',
     year: '7-Day Sprint Build',
     summary: 'Fee-only fiduciary wealth advisory platform with interactive SIP and compounding freedom calculators for HNI families.',
-    result: '⚡ 0.4s LCP · Zero Commissions · ₹350Cr+ Assets Under Advisory',
+    result: '0.4s LCP · Zero Commissions · ₹350Cr+ Assets Under Advisory',
     conversionEngine: 'SIP & Compound Wealth Freedom Calculator',
     themes: [
       {
@@ -1313,7 +1313,7 @@ export const PROJECTS: Project[] = [
     category: 'transport',
     year: '7-Day Sprint Build',
     summary: 'Container freight and pharmaceutical cold-chain portal with live route rate estimators and telemetry vehicle tracking.',
-    result: '⚡ 0.4s LCP · 99.4% On-Time SLA · Real-Time GPS Tracking',
+    result: '0.4s LCP · 99.4% On-Time SLA · Real-Time GPS Tracking',
     conversionEngine: 'Interstate Freight Route & Tonnage Rate Estimator',
     themes: [
       {
@@ -1350,7 +1350,7 @@ export const PROJECTS: Project[] = [
     category: 'luxury',
     year: '7-Day Sprint Build',
     summary: 'Bespoke hallmarked bridal jewellery and diamond solitaire atelier with carat weight customizer and private vault booking.',
-    result: '⚡ 0.4s LCP · BIS 916 Hallmark · Private Vault Booking',
+    result: '0.4s LCP · BIS 916 Hallmark · Private Vault Booking',
     conversionEngine: 'Solitaire Diamond Carat & Metal Customizer',
     themes: [
       {
@@ -1387,7 +1387,7 @@ export const PROJECTS: Project[] = [
     category: 'commercial',
     year: '7-Day Sprint Build',
     summary: 'Acoustic soundproof cabins and enterprise tech workspaces with live seat pricing calculators and instant tour passes.',
-    result: '⚡ 0.4s LCP · 1 Gbps Dual Fiber · Zero Capex Fit-Out',
+    result: '0.4s LCP · 1 Gbps Dual Fiber · Zero Capex Fit-Out',
     conversionEngine: 'Team Workspace & Enterprise Seat Calculator',
     themes: [
       {
@@ -1424,7 +1424,7 @@ export const PROJECTS: Project[] = [
     category: 'consulting',
     year: '7-Day Sprint Build',
     summary: 'ICCRC and MARA registered immigration consultancy with automated Express Entry CRS points assessment funnels.',
-    result: '⚡ 0.4s LCP · 99.2% Visa Success · Government Licensed Counsel',
+    result: '0.4s LCP · 99.2% Visa Success · Government Licensed Counsel',
     conversionEngine: 'Express Entry CRS Points & Eligibility Estimator',
     themes: [
       {
@@ -1461,7 +1461,7 @@ export const PROJECTS: Project[] = [
     category: 'energy',
     year: '7-Day Sprint Build',
     summary: 'Bi-facial solar rooftop arrays and net-metering portal with electricity bill reduction calculators and MNRE subsidy tools.',
-    result: '⚡ 0.4s LCP · 90% Bill Reduction · 25-Year Performance Warranty',
+    result: '0.4s LCP · 90% Bill Reduction · 25-Year Performance Warranty',
     conversionEngine: 'Rooftop Solar ROI & Monthly Savings Calculator',
     themes: [
       {
@@ -1498,7 +1498,7 @@ export const PROJECTS: Project[] = [
     category: 'hospitality',
     year: '7-Day Sprint Build',
     summary: 'Wild yeast sourdough and luxury bespoke wedding cake platform with custom flavor customizer and morning fresh dispatch.',
-    result: '⚡ 0.4s LCP · 36-Hr Wild Ferment · 100% French Normandy Butter',
+    result: '0.4s LCP · 36-Hr Wild Ferment · 100% French Normandy Butter',
     conversionEngine: 'Custom Celebration Cake Designer & Pre-Order',
     themes: [
       {
@@ -1535,7 +1535,7 @@ export const PROJECTS: Project[] = [
     category: 'hospitality',
     year: '7-Day Sprint Build',
     summary: '16 rotating craft taps and wood-fired smokehouse platform with live ABV/IBU digital taplist and table hold reservations.',
-    result: '⚡ 0.4s LCP · 16 Rotating Taps · 100% German & Belgian Malts',
+    result: '0.4s LCP · 16 Rotating Taps · 100% German & Belgian Malts',
     conversionEngine: 'Live On-Tap Beer Board & Tasting Flight Selector',
     themes: [
       {
@@ -1572,7 +1572,7 @@ export const PROJECTS: Project[] = [
     category: 'security',
     year: '7-Day Sprint Build',
     summary: 'AI perimeter intrusion detection and 4K color night-vision camera engineering with channel capacity estimators.',
-    result: '⚡ 0.4s LCP · 4K Color Night Vision · 0.2s Facial Recognition',
+    result: '0.4s LCP · 4K Color Night Vision · 0.2s Facial Recognition',
     conversionEngine: 'Property Security & Camera Point Estimator',
     themes: [
       {
@@ -1609,7 +1609,7 @@ export const PROJECTS: Project[] = [
     category: 'mechanical',
     year: '7-Day Sprint Build',
     summary: 'Daikin and Mitsubishi certified VRV/VRF centralized cooling with building tonnage calculators and smart BMS integration.',
-    result: '⚡ 0.4s LCP · -35% Power Consumption · 10-Yr Compressor Warranty',
+    result: '0.4s LCP · -35% Power Consumption · 10-Yr Compressor Warranty',
     conversionEngine: 'Facility Tonnage & HVAC Cooling Capacity Calculator',
     themes: [
       {
@@ -1646,7 +1646,7 @@ export const PROJECTS: Project[] = [
     category: 'services',
     year: '7-Day Sprint Build',
     summary: 'Odorless termite drilling and commercial HACCP food-safe pest eradication with 1-year service retreatment guarantees.',
-    result: '⚡ 0.4s LCP · 1-Year Retreatment Warranty · 100% Odorless',
+    result: '0.4s LCP · 1-Year Retreatment Warranty · 100% Odorless',
     conversionEngine: 'Pest Infestation Diagnostic & Warranty Plan Selector',
     themes: [
       {
@@ -1683,7 +1683,7 @@ export const PROJECTS: Project[] = [
     category: 'logistics',
     year: '7-Day Sprint Build',
     summary: '5-layer bubble packing and private container moving fleet with instant distance calculators and zero mixed-load guarantees.',
-    result: '⚡ 0.4s LCP · 100% Transit Insurance · Live Container GPS Tracking',
+    result: '0.4s LCP · 100% Transit Insurance · Live Container GPS Tracking',
     conversionEngine: 'Household Relocation & Distance Cost Estimator',
     themes: [
       {
@@ -1720,7 +1720,7 @@ export const PROJECTS: Project[] = [
     category: 'hospitality',
     year: '7-Day Sprint Build',
     summary: 'Royal regional cuisines, 30+ interactive live cooking theater stations, and per-plate catering investment estimators.',
-    result: '⚡ 0.4s LCP · 30+ Live Counters · ISO 22000 Food Certified',
+    result: '0.4s LCP · 30+ Live Counters · ISO 22000 Food Certified',
     conversionEngine: 'Wedding & Corporate Per-Plate Menu Cost Estimator',
     themes: [
       {
@@ -1757,7 +1757,7 @@ export const PROJECTS: Project[] = [
     category: 'education',
     year: '7-Day Sprint Build',
     summary: 'AMI certified Montessori preschool with CCTV parent live stream, organic pediatric kitchen, and campus visit scheduling.',
-    result: '⚡ 0.4s LCP · 1:5 Adult-to-Child Ratio · Live CCTV Parent App',
+    result: '0.4s LCP · 1:5 Adult-to-Child Ratio · Live CCTV Parent App',
     conversionEngine: 'Child Age Group Program Matcher & Campus Tour Scheduler',
     themes: [
       {
@@ -1794,7 +1794,7 @@ export const PROJECTS: Project[] = [
     category: 'education',
     year: '7-Day Sprint Build',
     summary: 'Automated track simulator training, dual-control sanitized cars, doorstep pickup, and end-to-end driving license packages.',
-    result: '⚡ 0.4s LCP · 98.5% First-Attempt RTO Pass · Doorstep Pickup',
+    result: '0.4s LCP · 98.5% First-Attempt RTO Pass · Doorstep Pickup',
     conversionEngine: 'Driving Package Customizer & License Booking',
     themes: [
       {
@@ -1831,7 +1831,7 @@ export const PROJECTS: Project[] = [
     category: 'healthcare',
     year: '7-Day Sprint Build',
     summary: 'Zeiss 3D digital wavefront refraction, progressive fitting, and handcrafted Japanese beta-titanium eyewear showroom.',
-    result: '⚡ 0.4s LCP · 21-Point Clinical Exam · 1-Year Scratch Warranty',
+    result: '0.4s LCP · 21-Point Clinical Exam · 1-Year Scratch Warranty',
     conversionEngine: 'Digital Vision Exam & Frame Styling Consultation',
     themes: [
       {
@@ -1868,7 +1868,7 @@ export const PROJECTS: Project[] = [
     category: 'services',
     year: '7-Day Sprint Build',
     summary: '6-stage mechanized water tank cleaning, high-pressure rotary descaling, and UV antibacterial sterilization with zero human entry.',
-    result: '⚡ 0.4s LCP · 6-Stage Mechanized Wash · UV Treated Sterile',
+    result: '0.4s LCP · 6-Stage Mechanized Wash · UV Treated Sterile',
     conversionEngine: 'Tank Capacity & Domestic Sanitization Quote Calculator',
     themes: [
       {

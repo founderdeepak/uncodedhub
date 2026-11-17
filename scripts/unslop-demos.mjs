@@ -116,6 +116,11 @@ for (const file of files) {
     }
   }
 
+  // 5. Unslop theme switcher buttons: strip entity emojis from tc-btn
+  content = content.replace(/<span>\s*&#[0-9]+;\s*/gi, '<span>');
+  // and remove neon glow from tc-dot
+  content = content.replace(/box-shadow\s*:\s*0\s+0\s+8px\s+#[0-9a-fA-F]+;?/gi, '');
+
   if (content !== originalContent) {
     fs.writeFileSync(filePath, content, 'utf8');
     modifiedCount++;

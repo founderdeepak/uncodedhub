@@ -232,3 +232,31 @@ export function IconGlobe({ className = '' }: { className?: string }) {
     </svg>
   );
 }
+
+export function IconSearch({ className = '' }: { className?: string }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <circle cx="11" cy="11" r="7.5" {...s} />
+      <line x1="16.5" y1="16.5" x2="21" y2="21" {...s} />
+    </svg>
+  );
+}
+
+export function IconDeviceDesktop({ className = '' }: { className?: string }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <rect x="2.5" y="3.5" width="19" height="13" rx="2" {...s} />
+      <line x1="8" y1="20.5" x2="16" y2="20.5" {...s} />
+      <line x1="12" y1="16.5" x2="12" y2="20.5" {...s} />
+    </svg>
+  );
+}
+
+export function IconDeviceTablet({ className = '' }: { className?: string }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <rect x="4.5" y="2.5" width="15" height="19" rx="2.5" {...s} />
+      <line x1="11" y1="18.5" x2="13" y2="18.5" {...s} />
+    </svg>
+  );
+}

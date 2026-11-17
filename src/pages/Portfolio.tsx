@@ -3,6 +3,13 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Reveal, Shell, Section, SectionHead } from '../components/primitives';
 import { LogoMark } from '../components/Logo';
+import {
+  IconEye,
+  IconSearch,
+  IconDeviceMobile,
+  IconDeviceTablet,
+  IconDeviceDesktop,
+} from '../components/Glyphs';
 import { PROJECTS, type Project, type ThemeItem } from '../data/projects';
 export type { Project, ThemeItem };
 
@@ -349,23 +356,24 @@ function FlagshipCaseStudyCard({
               onClick={() => onOpenPreview(project, activeTheme)}
               className="btn-secondary !py-3 !px-4 text-xs inline-flex items-center gap-1.5 cursor-pointer bg-paper border border-rule-strong hover:border-signal"
             >
-              <span>Test Viewport 👁</span>
+              <IconEye className="w-3.5 h-3.5" />
+              <span>Inspect Viewport</span>
             </button>
           </div>
         </div>
 
         {/* Right Column: Visual Frame */}
         <div className="lg:col-span-7">
-          <div className="relative aspect-[16/10] w-full rounded-[22px] overflow-hidden bg-ink border border-rule-strong shadow-lg group">
+          <div className="relative aspect-[16/10] w-full rounded-[20px] overflow-hidden bg-ink border border-rule-strong shadow-md group">
             {/* Top Browser Bar */}
             <div className="flex items-center justify-between px-4 py-2.5 bg-ink text-paper text-[11px] font-mono border-b border-white/10 select-none">
               <div className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-rose-500/90 inline-block" />
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-400/90 inline-block" />
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/90 inline-block" />
+                <span className="w-2.5 h-2.5 rounded-full bg-white/20 inline-block" />
+                <span className="w-2.5 h-2.5 rounded-full bg-white/20 inline-block" />
+                <span className="w-2.5 h-2.5 rounded-full bg-white/20 inline-block" />
               </div>
               <div className="flex items-center gap-2 text-white/80">
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" />
                 <span>{project.id}.uncodedhub.com</span>
               </div>
               <span className="text-[10px] text-signal-bright font-mono">
@@ -392,12 +400,12 @@ function FlagshipCaseStudyCard({
             ))}
 
             {/* Hover Floating Overlay */}
-            <div className="absolute inset-0 bg-ink/35 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center gap-3 backdrop-blur-[2px]">
+            <div className="absolute inset-0 bg-ink/60 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center gap-3">
               <a
                 href={project.url}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="bg-signal hover:bg-signal-bright text-paper text-xs font-semibold px-5 py-3 rounded-full shadow-lg transition-transform transform hover:scale-105 inline-flex items-center gap-2 cursor-pointer"
+                className="bg-signal hover:bg-signal-bright text-paper text-xs font-semibold px-5 py-3 rounded-full shadow-md transition-transform transform hover:scale-105 inline-flex items-center gap-2 cursor-pointer"
               >
                 <span>Launch Live Demonstration</span>
                 <span>↗</span>
@@ -509,7 +517,7 @@ function SpecimenCard({
 
             {/* Bottom floating theme identifier pill inside thumbnail */}
             <div className="absolute bottom-3 left-3 right-3 z-20 flex items-center justify-between gap-2 pointer-events-none">
-              <div className="bg-ink/85 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15 text-[11px] text-paper flex items-center gap-2 shadow-lg">
+              <div className="bg-ink px-3 py-1.5 rounded-full border border-white/15 text-[11px] text-paper flex items-center gap-2 shadow-md">
                 <span className="font-mono text-signal-bright font-semibold">
                   Theme 0{activeTheme + 1}/03:
                 </span>
@@ -521,7 +529,7 @@ function SpecimenCard({
                 </span>
               </div>
 
-              <div className="bg-ink/85 backdrop-blur-md px-2.5 py-1.5 rounded-full border border-white/15 flex items-center gap-1.5 shadow-lg">
+              <div className="bg-ink px-2.5 py-1.5 rounded-full border border-white/15 flex items-center gap-1.5 shadow-md">
                 {currentTheme.palette.map((color, cIdx) => (
                   <span
                     key={cIdx}
@@ -534,21 +542,22 @@ function SpecimenCard({
             </div>
 
             {/* Hover Action Overlay */}
-            <div className="absolute inset-0 bg-ink/40 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center gap-3 backdrop-blur-[2px]">
+            <div className="absolute inset-0 bg-ink/60 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center gap-3">
               <a
                 href={project.url}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="bg-signal hover:bg-signal-bright text-paper text-xs font-semibold px-4 py-2.5 rounded-full shadow-lg transition-transform transform hover:scale-105 inline-flex items-center gap-1.5 cursor-pointer"
+                className="bg-signal hover:bg-signal-bright text-paper text-xs font-semibold px-4 py-2.5 rounded-full shadow-md transition-transform transform hover:scale-105 inline-flex items-center gap-1.5 cursor-pointer"
               >
                 <span>Launch Live ↗</span>
               </a>
               <button
                 type="button"
                 onClick={() => onOpenPreview(project, activeTheme)}
-                className="bg-ink/90 hover:bg-ink text-paper text-xs font-medium px-4 py-2.5 rounded-full shadow-lg transition-transform transform hover:scale-105 inline-flex items-center gap-1.5 cursor-pointer border border-white/20"
+                className="bg-ink hover:bg-[#1f2430] text-paper text-xs font-medium px-4 py-2.5 rounded-full shadow-md transition-transform transform hover:scale-105 inline-flex items-center gap-1.5 cursor-pointer border border-white/20"
               >
-                <span>Test Viewport 👁</span>
+                <IconEye className="w-3.5 h-3.5" />
+                <span>Inspect Viewport</span>
               </button>
             </div>
           </div>
@@ -637,7 +646,8 @@ function SpecimenCard({
             className="btn-secondary !py-2.5 !px-3.5 text-xs inline-flex items-center gap-1.5 cursor-pointer bg-paper border border-rule-strong hover:border-signal"
             title="Interactive in-page viewport test"
           >
-            <span>Viewport 👁</span>
+            <IconEye className="w-3.5 h-3.5" />
+            <span>Inspect</span>
           </button>
         </div>
 
@@ -991,7 +1001,9 @@ export default function Work({ onBook }: { onBook: () => void }) {
                   placeholder="Search 50 industries, features, or styles..."
                   className="w-full text-xs font-sans px-4 py-2.5 pl-9 rounded-full bg-paper border border-rule-strong focus:border-signal focus:outline-hidden text-ink placeholder:text-muted/70 transition-colors shadow-xs"
                 />
-                <span className="absolute left-3 top-3 text-xs text-muted pointer-events-none">🔍</span>
+                <span className="absolute left-3 top-3 text-xs text-muted pointer-events-none">
+                  <IconSearch className="w-3.5 h-3.5" />
+                </span>
                 {searchQuery && (
                   <button
                     type="button"
@@ -1072,7 +1084,9 @@ export default function Work({ onBook }: { onBook: () => void }) {
           {/* ── LEVEL 3: COMPLETE 50-PROJECT LIVE DEMO VAULT ───────── */}
           {filteredProjects.length === 0 ? (
             <div className="text-center py-20 bg-paper rounded-[28px] border border-rule-strong p-8">
-              <span className="text-3xl mb-3 block">🔍</span>
+              <span className="w-12 h-12 rounded-full bg-paper-raised border border-rule flex items-center justify-center mx-auto mb-4 text-muted">
+                <IconSearch className="w-5 h-5 text-signal" />
+              </span>
               <h3 className="font-display text-2xl text-ink font-medium">No matching demonstrations found</h3>
               <p className="text-muted text-sm max-w-md mx-auto mt-2">
                 We did not find any demonstration matching "{searchQuery}". You can reset filters or request a bespoke 7-day build for your specific industry.
@@ -1125,9 +1139,9 @@ export default function Work({ onBook }: { onBook: () => void }) {
               <span className="label text-signal-bright block mb-3">
                 Verifiable Engineering Proof
               </span>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-paper font-normal leading-tight">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-paper font-normal leading-tight [text-wrap:balance]">
                 The four engineering standards{' '}
-                <em className="text-signal-bright italic font-medium">you can verify in your console.</em>
+                <span className="text-signal-bright font-medium">you can verify in your console.</span>
               </h2>
               <p className="text-on-ink-muted text-sm md:text-base leading-relaxed mt-5">
                 Every website we deliver is held to measurable, uncompromising engineering standards.
@@ -1140,7 +1154,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SPECIMEN_STANDARDS.map((s, idx) => (
               <Reveal key={s.n} delay={idx * 70}>
-                <div className="p-6 sm:p-8 rounded-[24px] bg-white/[0.04] backdrop-blur-md border border-white/10 flex flex-col justify-between h-full">
+                <div className="p-6 sm:p-8 rounded-[20px] bg-[#14161c] border border-white/10 flex flex-col justify-between h-full">
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-4">
                       <span className="inline-block text-[11px] font-semibold px-2.5 py-1 rounded-[6px] bg-signal/20 text-signal-bright">
@@ -1226,7 +1240,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
       {/* ── IN-PAGE VIEWPORT MODAL SIMULATOR ─────────────────────── */}
       {previewProject && (
         <div
-          className="fixed inset-0 z-[99999] bg-ink/80 backdrop-blur-md flex flex-col items-center justify-center p-3 sm:p-6"
+          className="fixed inset-0 z-[99999] bg-ink/90 flex flex-col items-center justify-center p-3 sm:p-6"
           onClick={() => setPreviewProject(null)}
         >
           <div
@@ -1252,35 +1266,38 @@ export default function Work({ onBook }: { onBook: () => void }) {
                 <button
                   type="button"
                   onClick={() => setPreviewDevice('desktop')}
-                  className={`px-3 py-1 text-xs rounded-full transition-all cursor-pointer ${
+                  className={`px-3 py-1.5 text-xs rounded-full transition-all cursor-pointer inline-flex items-center gap-1.5 ${
                     previewDevice === 'desktop'
                       ? 'bg-signal text-paper font-semibold'
                       : 'text-white/70 hover:text-white'
                   }`}
                 >
-                  🖥 Desktop
+                  <IconDeviceDesktop className="w-3.5 h-3.5" />
+                  <span>Desktop</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => setPreviewDevice('tablet')}
-                  className={`px-3 py-1 text-xs rounded-full transition-all cursor-pointer ${
+                  className={`px-3 py-1.5 text-xs rounded-full transition-all cursor-pointer inline-flex items-center gap-1.5 ${
                     previewDevice === 'tablet'
                       ? 'bg-signal text-paper font-semibold'
                       : 'text-white/70 hover:text-white'
                   }`}
                 >
-                  📱 Tablet (768px)
+                  <IconDeviceTablet className="w-3.5 h-3.5" />
+                  <span>Tablet (768px)</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => setPreviewDevice('mobile')}
-                  className={`px-3 py-1 text-xs rounded-full transition-all cursor-pointer ${
+                  className={`px-3 py-1.5 text-xs rounded-full transition-all cursor-pointer inline-flex items-center gap-1.5 ${
                     previewDevice === 'mobile'
                       ? 'bg-signal text-paper font-semibold'
                       : 'text-white/70 hover:text-white'
                   }`}
                 >
-                  📲 Mobile (390px)
+                  <IconDeviceMobile className="w-3.5 h-3.5" />
+                  <span>Mobile (390px)</span>
                 </button>
               </div>
 
