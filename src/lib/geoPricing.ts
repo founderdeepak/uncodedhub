@@ -13,6 +13,10 @@ export interface GeoRegion {
     starter: string;
     growth: string;
     bespoke: string;
+    singlePage?: string;
+    business?: string;
+    ecommerce?: string;
+    redesign?: string;
   };
   hourlyVsSprint: {
     localAgencyRate: string;
@@ -30,15 +34,19 @@ export const DOMESTIC_INDIA_REGION: GeoRegion = {
   currencyCode: 'INR',
   isInternational: false,
   pricing: {
-    starter: '₹35,000',
-    growth: '₹55,000',
-    bespoke: '₹85,000+',
+    singlePage: '₹20,000 – ₹35,000',
+    business: '₹35,000 – ₹55,000',
+    ecommerce: '₹85,000 – ₹1,25,000',
+    redesign: '₹15,000 – ₹25,000',
+    starter: '₹20,000 – ₹35,000',
+    growth: '₹35,000 – ₹55,000',
+    bespoke: '₹85,000 – ₹1,25,000',
   },
   hourlyVsSprint: {
     localAgencyRate: '₹1,50,000 – ₹5,00,000 + ₹15k/mo',
     localTimeline: '8 to 16 Weeks',
-    uncodedHubRate: '₹35,000 – ₹85,000',
-    savings: 'Save ₹1,00,000+ & Launch in 7 Days',
+    uncodedHubRate: '₹20,000 – ₹85,000',
+    savings: 'Save ₹1,00,000+ & Launch in 3–7 Days',
   },
 };
 

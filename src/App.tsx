@@ -29,6 +29,10 @@ const SolutionLanding = lazy(() => import('./pages/SolutionLanding'));
 const GlobalHub = lazy(() => import('./pages/GlobalHub'));
 const GlobalMarketLanding = lazy(() => import('./pages/GlobalMarketLanding'));
 const GlobalCityLanding = lazy(() => import('./pages/GlobalCityLanding'));
+const SinglePageService = lazy(() => import('./pages/services/SinglePageService'));
+const BusinessWebsiteService = lazy(() => import('./pages/services/BusinessWebsiteService'));
+const EcommerceService = lazy(() => import('./pages/services/EcommerceService'));
+const WebsiteRedesignService = lazy(() => import('./pages/services/WebsiteRedesignService'));
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 /* Paths are unchanged from the previous site so existing links and
@@ -193,6 +197,38 @@ export default function App() {
             element={
               <Suspense fallback={null}>
                 <Services onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/services/single-page-website"
+            element={
+              <Suspense fallback={null}>
+                <SinglePageService onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/services/business-website"
+            element={
+              <Suspense fallback={null}>
+                <BusinessWebsiteService onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/services/ecommerce-website"
+            element={
+              <Suspense fallback={null}>
+                <EcommerceService onBook={goToBooking} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/services/website-redesign"
+            element={
+              <Suspense fallback={null}>
+                <WebsiteRedesignService onBook={goToBooking} />
               </Suspense>
             }
           />

@@ -19,6 +19,10 @@ const BANGALORE_LOCALITIES = JSON.parse(readFileSync(bangaloreLocalitiesFile, 'u
 const STATIC_ROUTE_FILES = {
   '/': 'src/pages/Home.tsx',
   '/services': 'src/pages/Services.tsx',
+  '/services/single-page-website': 'src/pages/services/SinglePageService.tsx',
+  '/services/business-website': 'src/pages/services/BusinessWebsiteService.tsx',
+  '/services/ecommerce-website': 'src/pages/services/EcommerceService.tsx',
+  '/services/website-redesign': 'src/pages/services/WebsiteRedesignService.tsx',
   '/portfolio': 'src/pages/Portfolio.tsx',
   '/about': 'src/pages/About.tsx',
   '/faq': 'src/pages/Faq.tsx',
