@@ -539,17 +539,66 @@
       gap: 0.75rem;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-      text-wrap: balance;
+    /* ==========================================================================
+       GLOBAL TEXT WRAPPING & WORD-INTEGRITY ENGINE (NEVER SPLIT WORDS IN HALF)
+       ========================================================================== */
+    *, *::before, *::after {
+      word-break: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      -ms-hyphens: none !important;
     }
-    p {
-      text-wrap: pretty;
+
+    /* Headings, Titles, Badges, Tabs, and Buttons: NEVER break words in the middle */
+    h1, h2, h3, h4, h5, h6,
+    .font-heritage,
+    .font-mono-tag,
+    .section-title-responsive,
+    .hero-title-responsive,
+    .sub-title-responsive,
+    .card-title-responsive,
+    .gallery-filter-btn,
+    .diff-set-btn,
+    .diff-active-title,
+    .btn-gold-editorial,
+    .btn-wire-editorial,
+    .strip-item,
+    .nav-link,
+    .phase-badge,
+    button,
+    label {
+      word-break: keep-all !important;
+      overflow-wrap: normal !important;
+      text-wrap: wrap !important;
+      line-break: strict !important;
+    }
+
+    /* Items that MUST ALWAYS stay together on a single unbroken line */
+    .strip-item,
+    .diff-set-btn,
+    .phase-badge,
+    .btn-lang-switch,
+    .mobile-sticky-dock a,
+    .diff-timer-tag,
+    .avatar-medallion,
+    .keep-together {
+      white-space: nowrap !important;
+      word-break: keep-all !important;
+      display: inline-flex !important;
+      align-items: center !important;
+    }
+
+    .gallery-filter-btn {
+      white-space: nowrap !important;
+      word-break: keep-all !important;
     }
 
     
     /* Fluid Responsive Typography Classes */
     .hero-title-responsive {
-      font-size: clamp(1.9rem, 6.5vw, 3.25rem) !important;
+      font-size: clamp(1.75rem, 5.8vw, 3.25rem) !important;
       line-height: 1.15 !important;
     }
     .section-title-responsive {
@@ -565,21 +614,38 @@
       line-height: 1.3 !important;
     }
 
-    /* Tamil Typography Tuning */
+    /* Tamil Typography Tuning - Absolute Protection against Syllable & Character Splitting */
     body.lang-ta {
-      font-family: 'Noto Sans Tamil', -apple-system, sans-serif !important;
+      font-family: 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
     }
+    body.lang-ta,
     body.lang-ta * {
       letter-spacing: normal !important;
+      word-break: keep-all !important;
+      line-break: strict !important;
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
     }
     body.lang-ta .font-heritage {
       font-family: 'Noto Sans Tamil', serif !important;
-      letter-spacing: 0.01em !important;
+      letter-spacing: 0 !important;
     }
-    body.lang-ta h1, body.lang-ta h2, body.lang-ta h3, body.lang-ta h4, body.lang-ta h5, body.lang-ta h6 {
+    body.lang-ta h1, 
+    body.lang-ta h2, 
+    body.lang-ta h3, 
+    body.lang-ta h4, 
+    body.lang-ta h5, 
+    body.lang-ta h6 {
       line-height: 1.35 !important;
+      word-break: keep-all !important;
+      overflow-wrap: normal !important;
     }
-
+    body.lang-ta p {
+      line-height: 1.75 !important;
+      text-align: left !important;
+      word-break: normal !important;
+      overflow-wrap: break-word !important;
+    }
     /* Global Mobile Guards */
     html, body {
       overflow-x: hidden !important;
@@ -783,7 +849,7 @@
   <div id="lineage-bar" style="background: #03060e; border-bottom: 1px solid var(--border-gold-subtle); padding: 0.5rem 1.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--gold-light); font-family: var(--font-mono);">
     <div>
       <i class="fa-solid fa-gopuram" style="margin-right: 0.4rem; color: var(--gold-primary);"></i>
-      <span id="lineage-badge">SRI AYYANAR SIRPA KALAI · ESTD. 1994 · CHOZHA AGAMA VIDHI</span>
+      <span id="lineage-badge" style="word-break: keep-all; white-space: nowrap; display: inline-block;">SRI AYYANAR SIRPA KALAI · ESTD. 1994 · CHOZHA AGAMA VIDHI</span>
     </div>
     <div style="opacity: 0.85; display: none;" class="md-block" id="lineage-territory">
       TAMIL NADU · ANDHRA · KARNATAKA · PUDUCHERRY · TELANGANA · MP · NEPAL
@@ -800,12 +866,8 @@
           <i class="fa-solid fa-gopuram" style="color: var(--gold-primary); font-size: 1.25rem;"></i>
         </div>
         <div>
-          <div class="font-heritage" style="font-size: 1.15rem; font-weight: 700; color: #fff; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.2;" id="brand-title">
-            SRI AYYANAR SIRPA KALAI
-          </div>
-          <div style="font-size: 0.675rem; color: var(--gold-light); font-family: var(--font-mono);" id="brand-subtitle">
-            MASTER STHAPATHIS A.K. BALAJI &amp; A.K. THENNARASU
-          </div>
+          <div class="font-heritage" style="font-weight: 700; color: #fff; line-height: 1.2; word-break: keep-all; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="brand-title">SRI AYYANAR SIRPA KALAI</div>
+          <div style="color: var(--gold-light); font-family: var(--font-mono); word-break: keep-all; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="brand-subtitle">MASTER STHAPATHIS A.K. BALAJI &amp; A.K. THENNARASU</div>
         </div>
       </a>
 
@@ -884,8 +946,8 @@
         </div>
 
         <h2 class="font-heritage hero-title-responsive" id="hero-title">
-          S R I <br>
-          <span style="color: var(--gold-light);">A Y Y A N A R</span>
+          <span style="white-space: nowrap;">S R I</span> <br>
+          <span style="color: var(--gold-light); display: inline-block; white-space: nowrap;">A Y Y A N A R</span>
         </h2>
 
         <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem; max-width: 390px;" id="hero-description">
@@ -1003,17 +1065,17 @@
 
   <!-- Horizontal Editorial Nav Strip -->
   <div style="max-width: 1400px; margin: 0 auto 4.5rem; padding: 1.25rem 1.5rem; border-top: 1px solid var(--border-gold-subtle); border-bottom: 1px solid var(--border-gold-subtle); display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center; gap: 1rem; font-family: var(--font-display); font-size: 0.8rem; letter-spacing: 0.12em; color: var(--gold-light);" id="strip-disciplines">
-    <span id="strip-1">KATTIDA KALAI</span>
+    <span id="strip-1" class="strip-item">KATTIDA KALAI</span>
     <span style="opacity: 0.3;">·</span>
-    <span id="strip-2">SUDHAI SIRPAM</span>
+    <span id="strip-2" class="strip-item">SUDHAI SIRPAM</span>
     <span style="opacity: 0.3;">·</span>
-    <span id="strip-3">KOVIL VARNA VELAI</span>
+    <span id="strip-3" class="strip-item">KOVIL VARNA VELAI</span>
     <span style="opacity: 0.3;">·</span>
-    <span id="strip-4">RAJA GOPURAM</span>
+    <span id="strip-4" class="strip-item">RAJA GOPURAM</span>
     <span style="opacity: 0.3;">·</span>
-    <span id="strip-5">MOOLA VIGRAHAM</span>
+    <span id="strip-5" class="strip-item">MOOLA VIGRAHAM</span>
     <span style="opacity: 0.3;">·</span>
-    <span id="strip-6">MAHA KUMBHABHISHEKAM</span>
+    <span id="strip-6" class="strip-item">MAHA KUMBHABHISHEKAM</span>
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════════════
@@ -1039,7 +1101,7 @@
       <div class="museum-card" style="padding: 1.5rem;">
         <div style="position: relative; aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; margin-bottom: 1.25rem; border: 1px solid var(--border-gold-subtle);">
           <img src="ayyanar/landmark-besur-palayam.png" alt="Ayadi Shastra Temple Planning" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 10px; left: 10px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);" id="p1-badge">
+          <span style="position: absolute; top: 10px; left: 10px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);" id="p1-badge" class="phase-badge">
             PHASE 01 · AYADI VIDHI
           </span>
         </div>
@@ -1053,7 +1115,7 @@
       <div class="museum-card" style="padding: 1.5rem;">
         <div style="position: relative; aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; margin-bottom: 1.25rem; border: 1px solid var(--border-gold-subtle);">
           <img src="ayyanar/human-sculpture-1.png" alt="Chozha Iconographic Detailing" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 10px; left: 10px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);" id="p2-badge">
+          <span style="position: absolute; top: 10px; left: 10px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);" id="p2-badge" class="phase-badge">
             PHASE 02 · SIRPA KALAI
           </span>
         </div>
@@ -1067,7 +1129,7 @@
       <div class="museum-card" style="padding: 1.5rem;">
         <div style="position: relative; aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; margin-bottom: 1.25rem; border: 1px solid var(--border-gold-subtle);">
           <img src="ayyanar/sudhai-sirpam.png" alt="Sudhai Sirpam Mortar Relief" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 10px; left: 10px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);" id="p3-badge">
+          <span style="position: absolute; top: 10px; left: 10px; background: rgba(5, 8, 19, 0.9); color: var(--gold-light); font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);" id="p3-badge" class="phase-badge">
             PHASE 03 · SUDHAI VELAI
           </span>
         </div>
@@ -1081,7 +1143,7 @@
       <div class="museum-card" style="padding: 1.5rem;">
         <div style="position: relative; aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; margin-bottom: 1.25rem; border: 1px solid var(--border-gold-subtle);">
           <img src="ayyanar/kovil-varna-velai.png" alt="Kovil Varna Velai Temple Painting" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 10px; left: 10px; background: rgba(5, 8, 19, 0.9); color: #4ade80; font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);" id="p4-badge">
+          <span style="position: absolute; top: 10px; left: 10px; background: rgba(5, 8, 19, 0.9); color: #4ade80; font-size: 0.7rem; font-family: var(--font-mono); padding: 0.25rem 0.65rem; border-radius: 2px; border: 1px solid var(--border-gold-subtle);" id="p4-badge" class="phase-badge">
             PHASE 04 · VARNA VELAI
           </span>
         </div>
@@ -1907,7 +1969,7 @@
         headerConsultText: "CONSULT STHAPATHI",
         langSwitchLabel: "தமிழ் / EN",
         heroTag: "YET THE SACRED STORY OF",
-        heroTitle: "S R I <br><span style='color: var(--gold-light);'>A Y Y A N A R</span>",
+        heroTitle: "<span style='white-space: nowrap;'>S R I</span> <br><span style='color: var(--gold-light); display: inline-block; white-space: nowrap;'>A Y Y A N A R</span>",
         heroDesc: "IN SACRED STONE, SILENCE TURNS TO PRAYER. OVER THREE DECADES OF SCRIPTURAL CHOZHA AGAMA ARCHITECTURE, SUDHAI SCULPTING, AND KOVIL VARNA VELAI UNDER MASTER STHAPATHIS A.K. BALAJI & A.K. THENNARASU.",
         heroCtaPrimary: "CONSULT STHAPATHI",
         heroCtaSecondary: "VIEW PROCESS",
@@ -2002,7 +2064,7 @@
         headerConsultText: "ஸ்தபதியிடம் பேச",
         langSwitchLabel: "EN | தமிழ்",
         heroTag: "புனித சோழர் மரபின் கலை வரலாறு",
-        heroTitle: "ஸ்ரீ அய்யனார் <br><span style='color: var(--gold-light);'>சிற்பக் கலைக்கூடம்</span>",
+        heroTitle: "<span style='white-space: nowrap;'>ஸ்ரீ அய்யனார்</span> <br><span style='color: var(--gold-light); display: inline-block; white-space: nowrap;'>சிற்பக் கலைக்கூடம்</span>",
         heroDesc: "கல்லிலே கலைவண்ணம் கண்ட சோழர் மரபு. சிற்ப சாஸ்திர ஆகம விதிகளின்படி ராஜகோபுரங்கள், சுதை சிற்பங்கள், மற்றும் கோவில் வர்ண வேலைகளில் 30 ஆண்டு காலம் சிறந்து விளங்கும் ஸ்தபதிகள் அ.கோ. பாலாஜி & அ.கோ. தென்னரசு.",
         heroCtaPrimary: "ஸ்தபதியிடம் பேச",
         heroCtaSecondary: "உருவாக்க முறை",
