@@ -14,8 +14,8 @@ export default function SiteFooter() {
   return (
     <footer className="bg-ink text-paper border-t border-white/10 pt-16 sm:pt-20 pb-12">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 pb-16 border-b border-white/10">
-          {/* Column 1: Brand & Philosophy (spans 2 columns on lg) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-10 pb-16 border-b border-white/10">
+          {/* Column 1: Brand & Philosophy (spans 2 columns) */}
           <div className="lg:col-span-2">
             <Link
               to="/"
@@ -34,7 +34,41 @@ export default function SiteFooter() {
             </div>
           </div>
 
-          {/* Column 2: Explore */}
+          {/* Column 2: Services & Packages */}
+          <div>
+            <h4 className="font-mono text-xs uppercase tracking-wider text-paper/80 font-semibold mb-4">
+              Services
+            </h4>
+            <ul className="space-y-2.5 text-xs font-sans text-on-ink-muted">
+              <li>
+                <Link to="/services/" className="hover:text-paper transition-colors font-medium text-paper/90">
+                  Services &amp; Pricing Hub
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/single-page-website/" className="hover:text-signal transition-colors">
+                  Single Page Website <span className="text-[10px] text-signal font-mono font-bold">3d</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/business-website/" className="hover:text-signal transition-colors">
+                  Business Website <span className="text-[10px] text-signal font-mono font-bold">7d</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/ecommerce-website/" className="hover:text-signal transition-colors">
+                  Custom Online Store <span className="text-[10px] text-signal font-mono font-bold">2-3w</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/website-redesign/" className="hover:text-signal transition-colors">
+                  Website Redesign <span className="text-[10px] text-signal font-mono font-bold">5d</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Explore */}
           <div>
             <h4 className="font-mono text-xs uppercase tracking-wider text-paper/80 font-semibold mb-4">
               Explore
@@ -51,18 +85,13 @@ export default function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link to="/services/" className="hover:text-paper transition-colors">
-                  Services &amp; Pricing Guide
-                </Link>
-              </li>
-              <li>
                 <Link to="/web-design/bangalore/" className="hover:text-paper transition-colors">
-                  Bengaluru Studio &amp; Corridors
+                  Bengaluru Local Studio
                 </Link>
               </li>
               <li>
                 <Link to="/markets/" className="hover:text-paper transition-colors">
-                  Global Hub &amp; 20 Countries
+                  Global Hub (20 Countries)
                 </Link>
               </li>
               <li>
@@ -73,7 +102,7 @@ export default function SiteFooter() {
             </ul>
           </div>
 
-          {/* Column 3: Company */}
+          {/* Column 4: Company */}
           <div>
             <h4 className="font-mono text-xs uppercase tracking-wider text-paper/80 font-semibold mb-4">
               Company
@@ -112,7 +141,7 @@ export default function SiteFooter() {
             </ul>
           </div>
 
-          {/* Column 4: Get in Touch */}
+          {/* Column 5: Get in Touch */}
           <div>
             <h4 className="font-mono text-xs uppercase tracking-wider text-paper/80 font-semibold mb-4">
               Get in Touch

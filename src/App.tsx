@@ -35,14 +35,52 @@ const EcommerceService = lazy(() => import('./pages/services/EcommerceService'))
 const WebsiteRedesignService = lazy(() => import('./pages/services/WebsiteRedesignService'));
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
-/* Paths are unchanged from the previous site so existing links and
-   indexed URLs keep working; only the labels are new. /blog only joins
-   NAV once a real post exists — a permanently empty page linked from
-   every other page is a liability, not an asset. */
-const NAV = [
+interface NavChild {
+  label: string;
+  path: string;
+  desc: string;
+  badge: string;
+}
+
+interface NavItem {
+  label: string;
+  path: string;
+  children?: NavChild[];
+}
+
+const NAV: NavItem[] = [
   { label: 'Work', path: '/portfolio/' },
   { label: 'Web Design', path: '/web-design/' },
-  { label: 'Services', path: '/services/' },
+  {
+    label: 'Services',
+    path: '/services/',
+    children: [
+      {
+        label: 'Single Page Website',
+        path: '/services/single-page-website/',
+        desc: '3-Day sprint · Paid ad funnels & single high-ticket offers',
+        badge: '3 Days',
+      },
+      {
+        label: 'Custom Business Website',
+        path: '/services/business-website/',
+        desc: '7-Day sprint · Authority digital flagship (On time or free)',
+        badge: '7 Days',
+      },
+      {
+        label: 'Custom Online Store',
+        path: '/services/ecommerce-website/',
+        desc: 'High-speed D2C storefront · Sub-second checkout',
+        badge: '2–3 Wks',
+      },
+      {
+        label: 'Website Redesign',
+        path: '/services/website-redesign/',
+        desc: '5-Day speed sprint · 100% SEO rank preservation',
+        badge: '5 Days',
+      },
+    ],
+  },
   { label: 'Studio', path: '/about/' },
   { label: 'FAQ', path: '/faq/' },
   ...(hasBlogPosts ? [{ label: 'Blogs', path: '/blog/' }] : []),
@@ -127,17 +165,88 @@ export default function App() {
           </Link>
 
           <nav aria-label="Primary" className="hidden md:flex items-center gap-7 lg:gap-8">
-            {NAV.map((item) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                className={({ isActive }) =>
-                  `text-[0.9375rem] link-quiet ${isActive ? 'text-signal font-medium' : 'text-ink-soft hover:text-ink'}`
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
+            {NAV.map((item) => {
+              if (item.children) {
+                const isServicesActive =
+                  location.pathname === '/services/' ||
+                  location.pathname.startsWith('/services/');
+
+                return (
+                  <div key={item.path} className="relative group py-2">
+                    <NavLink
+                      to={item.path}
+                      className={
+                        `text-[0.9375rem] link-quiet inline-flex items-center gap-1.5 transition-colors ${
+                          isServicesActive ? 'text-signal font-medium' : 'text-ink-soft hover:text-ink'
+                        }`
+                      }
+                    >
+                      <span>{item.label}</span>
+                      <svg
+                        className="w-3.5 h-3.5 text-muted transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </NavLink>
+
+                    {/* Desktop Dropdown Flyout */}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto transition-all duration-200 z-[120]">
+                      <div className="w-80 p-3 rounded-2xl bg-paper border border-rule shadow-xl">
+                        <div className="px-3 py-2 border-b border-rule/50 mb-1 flex items-center justify-between">
+                          <Link
+                            to="/services/"
+                            className="text-[11px] font-mono uppercase tracking-wider text-muted hover:text-signal transition-colors font-semibold flex items-center gap-1"
+                          >
+                            <span>All Services &amp; Fixed Pricing</span>
+                            <span>→</span>
+                          </Link>
+                        </div>
+                        <div className="space-y-1">
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.path}
+                              to={child.path}
+                              className="p-2.5 rounded-xl hover:bg-paper-sunken transition-colors block group/item"
+                            >
+                              <div className="flex items-center justify-between mb-0.5">
+                                <span className="font-display text-sm font-medium text-ink group-hover/item:text-signal transition-colors">
+                                  {child.label}
+                                </span>
+                                <span className="px-1.5 py-0.5 rounded bg-signal/10 text-signal font-mono text-[10px] font-bold uppercase">
+                                  {child.badge}
+                                </span>
+                              </div>
+                              <p className="text-[11px] text-muted leading-tight line-clamp-1">
+                                {child.desc}
+                              </p>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  className={({ isActive }) =>
+                    `text-[0.9375rem] link-quiet ${isActive ? 'text-signal font-medium' : 'text-ink-soft hover:text-ink'}`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              );
+            })}
             <button onClick={goToBooking} className="btn-primary !px-6 !py-2.5 text-sm">
               Book a call
             </button>
@@ -168,21 +277,57 @@ export default function App() {
         aria-hidden={!menuOpen}
         className={`mobile-nav ${menuOpen ? 'mobile-nav-open' : ''} fixed inset-0 z-[99] bg-paper md:hidden pt-[6.5rem] flex flex-col`}
       >
-        <nav aria-label="Mobile" className="flex-1 px-6 pt-8 flex flex-col">
-          {NAV.map((item, i) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className="font-display text-[2.25rem] leading-[1.25] py-3 border-b border-rule flex items-baseline gap-5"
-            >
-              <span className="label text-muted">{String(i + 1).padStart(2, '0')}</span>
-              {item.label}
-            </Link>
-          ))}
-          <button onClick={goToBooking} className="btn-primary w-full mt-8">
+        <nav aria-label="Mobile" className="flex-1 px-6 pt-6 flex flex-col overflow-y-auto">
+          {NAV.map((item, i) => {
+            if (item.children) {
+              return (
+                <div key={item.path} className="border-b border-rule py-3">
+                  <Link
+                    to={item.path}
+                    className="font-display text-[2rem] leading-[1.25] flex items-baseline gap-5"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    <span className="label text-muted">{String(i + 1).padStart(2, '0')}</span>
+                    <span>{item.label}</span>
+                  </Link>
+                  <div className="pl-9 pt-2 pb-1 space-y-1.5">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.path}
+                        to={child.path}
+                        onClick={() => setMenuOpen(false)}
+                        className="flex items-center justify-between text-xs font-mono text-ink-soft hover:text-signal py-1.5 border-b border-rule/30"
+                      >
+                        <span className="inline-flex items-center gap-1.5">
+                          <span className="text-signal">↳</span>
+                          <span>{child.label}</span>
+                        </span>
+                        <span className="px-1.5 py-0.5 rounded bg-signal/10 text-signal font-mono text-[10px] font-bold">
+                          {child.badge}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setMenuOpen(false)}
+                className="font-display text-[2.25rem] leading-[1.25] py-3 border-b border-rule flex items-baseline gap-5"
+              >
+                <span className="label text-muted">{String(i + 1).padStart(2, '0')}</span>
+                {item.label}
+              </Link>
+            );
+          })}
+          <button onClick={goToBooking} className="btn-primary w-full mt-6">
             Book a call
           </button>
-          <p className="label text-muted mt-auto pb-8 pt-10">
+          <p className="label text-muted mt-auto pb-6 pt-6">
             hello@uncodedhub.com · +91 86608 19023
           </p>
         </nav>
