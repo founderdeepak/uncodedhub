@@ -125,16 +125,18 @@ export default function BangaloreHub({ onBook }: BangaloreHubProps) {
     telephone: '+91 86608 19023',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: '13th Cross Rd, Basavanagara',
       addressLocality: 'Bengaluru',
       addressRegion: 'Karnataka',
-      postalCode: '560038',
+      postalCode: '560037',
       addressCountry: 'IN',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 12.9716,
-      longitude: 77.5946,
+      latitude: 12.9698,
+      longitude: 77.6974,
     },
+    hasMap: 'https://maps.app.goo.gl/fwvgEPkguRSfkcC49',
     areaServed: Object.values(BANGALORE_LOCALITIES).map((loc) => ({
       '@type': 'AdministrativeArea',
       name: `${loc.name}, Bengaluru`,

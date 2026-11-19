@@ -185,7 +185,7 @@ export default function Contact() {
             </div>
           </Reveal>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 k: 'WhatsApp',
@@ -202,6 +202,14 @@ export default function Contact() {
                 note: 'Best for detailed project briefs, RFP specifications, design Figma links, or existing website audits.',
                 href: 'mailto:hello@uncodedhub.com',
                 action: 'Send an Email →',
+              },
+              {
+                k: 'Studio Location',
+                v: '13th Cross Rd, Basavanagara',
+                pill: 'Google Verified',
+                note: 'Bengaluru, Karnataka 560037. In-person reviews by appointment. Open on Google Maps.',
+                href: 'https://maps.app.goo.gl/fwvgEPkguRSfkcC49',
+                action: 'Open in Google Maps →',
               },
               {
                 k: 'Operating hours',
@@ -333,7 +341,7 @@ export default function Contact() {
                 },
                 {
                   name: 'Google Maps',
-                  handle: 'Uncoded Hub · Bengaluru',
+                  handle: '13th Cross Rd, Basavanagara · 560037',
                   desc: 'Verified studio location, directions & Google reviews',
                   href: 'https://maps.app.goo.gl/fwvgEPkguRSfkcC49',
                   tag: 'Verified Location',
@@ -494,7 +502,7 @@ export default function Contact() {
                   <span>·</span>
                   <span>Zero Sales Reps</span>
                   <span>·</span>
-                  <span>Bengaluru, India</span>
+                  <span>13th Cross Rd, Basavanagara, Bengaluru 560037</span>
                 </div>
               </div>
 

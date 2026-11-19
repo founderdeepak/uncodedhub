@@ -190,8 +190,20 @@ export default function SiteFooter() {
                   +91 86608 19023
                 </a>
               </li>
-              <li className="pt-2 text-on-ink-muted/80">
-                Bengaluru, Karnataka, India
+              <li className="pt-2 text-on-ink-muted/90 text-xs leading-relaxed">
+                <a
+                  href="https://maps.app.goo.gl/fwvgEPkguRSfkcC49"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-signal transition-colors group flex items-start gap-1.5"
+                  title="View Uncoded Hub on Google Maps"
+                >
+                  <span className="text-signal mt-0.5">📍</span>
+                  <span>
+                    13th Cross Rd, Basavanagara,<br />
+                    Bengaluru, Karnataka 560037
+                  </span>
+                </a>
               </li>
               <li className="pt-2">
                 <Link

@@ -66,7 +66,7 @@ const PRIVACY_SECTIONS = [
     points: [
       'You hold full rights to inspect, update, export, or request the immediate permanent deletion of all personal data held by Uncoded Hub.',
       'To exercise any privacy right or ask a question regarding your data, email Deepak & Geetha directly at hello@uncodedhub.com.',
-      'Data Controller: Uncoded Hub, Bengaluru, Karnataka, India.',
+      'Data Controller: Uncoded Hub, 13th Cross Rd, Basavanagara, Bengaluru, Karnataka 560037, India.',
     ],
   },
 ];
