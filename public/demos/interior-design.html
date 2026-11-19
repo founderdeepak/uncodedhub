@@ -192,7 +192,7 @@
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
-      padding-bottom: 90px; /* Switcher space */
+      padding-bottom: 0;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -2217,55 +2217,7 @@
     </div>
   </footer>
 
-  <!-- ==========================================================================
-       FLOATING 3-STYLE INTERACTIVE PREVIEW SWITCHER
-       ========================================================================== -->
-  <div class="theme-controller" role="region" aria-label="Aesthetic Architecture Switcher">
-    <div class="tc-label">
-      <span class="tc-dot"></span>
-      3 Layout &amp; Visual Styles
-    </div>
-    
-    <button class="tc-btn active" data-theme="warm-heritage" onclick="switchTheme('warm-heritage', this)">
-      <span>Warm Heritage</span>
-    </button>
-
-    <button class="tc-btn" data-theme="obsidian-luxe" onclick="switchTheme('obsidian-luxe', this)">
-      <span>Obsidian Luxe</span>
-    </button>
-
-    <button class="tc-btn" data-theme="avant-garde" onclick="switchTheme('avant-garde', this)">
-      <span>Nordic Gallery</span>
-    </button>
-  </div>
-
-  <script>
-    function switchTheme(themeName, btnElement) {
-      document.body.setAttribute('data-theme', themeName);
-      
-      // Update switcher active states
-      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
-      if (btnElement) {
-        btnElement.classList.add('active');
-      }
-
-      // Store in session
-      try {
-        localStorage.setItem('meridian_active_style', themeName);
-      } catch (err) {}
-    }
-
-    // Auto-restore previously selected style
-    try {
-      const savedTheme = localStorage.getItem('meridian_active_style');
-      if (savedTheme) {
-        const targetBtn = document.querySelector(`.tc-btn[data-theme="${savedTheme}"]`);
-        if (targetBtn) {
-          switchTheme(savedTheme, targetBtn);
-        }
-      }
-    } catch (err) {}
-  </script>
+  
 
   <style>
     @keyframes demoFadeIn {
