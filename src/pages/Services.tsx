@@ -551,7 +551,7 @@ export default function Services({ onBook }: ServicesProps) {
 
       {/* ── 03. Four Packages Side-by-Side Comparison ─────────────────── */}
       <section className="py-20 sm:py-28 bg-paper border-b border-rule scroll-mt-24" id="packages-comparison">
-        <Shell>
+        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-8 xl:px-12">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="card-tag mb-3">FOUR PROVEN OFFERS</span>
@@ -589,8 +589,8 @@ export default function Services({ onBook }: ServicesProps) {
             </div>
           </Reveal>
 
-          {/* Four Packages Cards */}
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-16">
+          {/* Four Packages Cards - Expanded Full Width */}
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8 mb-16">
             {SERVICE_PACKAGES.map((pkg, idx) => {
               const displayPrice = isInternational ? pkg.priceUsd : pkg.priceInr;
 
@@ -678,7 +678,7 @@ export default function Services({ onBook }: ServicesProps) {
             })}
           </div>
 
-          {/* Matthew's ₹15,000 Lead Magnet Bonus Showcase */}
+          {/* Universal ₹15,000 Client Asset Bonus Showcase */}
           <Reveal>
             <div className="mb-14 p-8 sm:p-10 rounded-[28px] bg-paper-sunken border-2 border-signal/30 shadow-md">
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-8 border-b border-rule">
@@ -726,13 +726,13 @@ export default function Services({ onBook }: ServicesProps) {
             </div>
           </Reveal>
 
-          {/* Alex Hormozi Zero-Risk Pre-Payment Demo Guarantee */}
+          {/* Zero-Risk Pre-Payment Demo Guarantee */}
           <Reveal>
             <div className="p-8 sm:p-10 rounded-[28px] bg-gradient-to-br from-paper to-paper-sunken border-2 border-signal/40 max-w-5xl mx-auto shadow-lg mb-12">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 font-mono text-xs font-bold uppercase tracking-wider mb-2">
-                    <span>🛡️ Alex Hormozi Risk-Reversal Guarantee</span>
+                    <span>🛡️ Zero-Risk Pre-Payment Guarantee</span>
                   </div>
                   <h3 className="font-display text-2xl sm:text-3xl text-ink font-normal">
                     Inspect Your Live Demo Before Paying a Single Rupee.
@@ -778,7 +778,7 @@ export default function Services({ onBook }: ServicesProps) {
               </button>
             </div>
           </Reveal>
-        </Shell>
+        </div>
       </section>
 
       {/* ── 04. Our 5-Step Process (From Discovery to Launch) ─────────── */}
@@ -1065,12 +1065,16 @@ export default function Services({ onBook }: ServicesProps) {
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="p-8 rounded-[26px] bg-paper-sunken border border-rule flex items-start gap-5">
-              <div className="w-14 h-14 rounded-2xl bg-signal/10 border border-signal/20 flex items-center justify-center font-display text-2xl font-bold text-signal shrink-0">
-                D
-              </div>
+              <img
+                src="/deepak.webp"
+                alt="Deepak, Co-Founder & Technical Architect"
+                className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-signal/30 shadow-md shrink-0"
+                width={80}
+                height={80}
+              />
               <div>
                 <h3 className="font-display text-xl text-ink font-medium">Deepak</h3>
-                <span className="text-xs font-mono text-signal uppercase tracking-wider block mb-2">
+                <span className="text-xs font-mono text-signal uppercase tracking-wider block mb-2 font-semibold">
                   Co-Founder &amp; Technical Architect
                 </span>
                 <p className="text-muted text-xs sm:text-sm leading-relaxed">
@@ -1080,12 +1084,16 @@ export default function Services({ onBook }: ServicesProps) {
             </div>
 
             <div className="p-8 rounded-[26px] bg-paper-sunken border border-rule flex items-start gap-5">
-              <div className="w-14 h-14 rounded-2xl bg-signal/10 border border-signal/20 flex items-center justify-center font-display text-2xl font-bold text-signal shrink-0">
-                G
-              </div>
+              <img
+                src="/geetha.webp"
+                alt="Geetha, Co-Founder & Head of Design"
+                className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-signal/30 shadow-md shrink-0"
+                width={80}
+                height={80}
+              />
               <div>
                 <h3 className="font-display text-xl text-ink font-medium">Geetha</h3>
-                <span className="text-xs font-mono text-signal uppercase tracking-wider block mb-2">
+                <span className="text-xs font-mono text-signal uppercase tracking-wider block mb-2 font-semibold">
                   Co-Founder &amp; Head of Design
                 </span>
                 <p className="text-muted text-xs sm:text-sm leading-relaxed">
@@ -1204,8 +1212,31 @@ export default function Services({ onBook }: ServicesProps) {
         <Shell>
           <Reveal>
             <div className="max-w-3xl mx-auto">
-              <div className="w-14 h-14 rounded-2xl bg-signal/10 text-signal inline-flex items-center justify-center font-mono text-2xl mb-6 border border-signal/20">
-                ⚡
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <div className="flex items-center -space-x-3">
+                  <img
+                    src="/deepak.webp"
+                    alt="Deepak, Co-Founder"
+                    className="w-14 h-14 rounded-full object-cover border-2 border-signal shadow-md"
+                    width={56}
+                    height={56}
+                  />
+                  <img
+                    src="/geetha.webp"
+                    alt="Geetha, Co-Founder"
+                    className="w-14 h-14 rounded-full object-cover border-2 border-signal shadow-md"
+                    width={56}
+                    height={56}
+                  />
+                </div>
+                <div className="text-left">
+                  <div className="text-sm font-display font-medium text-ink">
+                    Deepak &amp; Geetha
+                  </div>
+                  <div className="text-xs font-mono text-signal font-semibold">
+                    Co-Founders · Direct Senior Execution
+                  </div>
+                </div>
               </div>
 
               <h2 className="font-display text-4xl sm:text-6xl text-ink font-normal tracking-tight mb-4 leading-tight">

@@ -24,10 +24,29 @@ export default function SiteFooter() {
               <LogoMark className="w-7 h-7 text-signal" />
               <span className="font-display text-xl tracking-tight font-medium">Uncoded Hub</span>
             </Link>
-            <p className="text-on-ink-muted text-sm leading-relaxed max-w-sm mb-6">
+            <p className="text-on-ink-muted text-sm leading-relaxed max-w-sm mb-4">
               Custom websites. Clear process. Direct founder involvement. Built by Deepak &amp;
               Geetha in Bengaluru, serving ambitious businesses across India and around the world.
             </p>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center -space-x-2">
+                <img
+                  src="/deepak.webp"
+                  alt="Deepak"
+                  className="w-8 h-8 rounded-full object-cover border border-signal/60"
+                  width={32}
+                  height={32}
+                />
+                <img
+                  src="/geetha.webp"
+                  alt="Geetha"
+                  className="w-8 h-8 rounded-full object-cover border border-signal/60"
+                  width={32}
+                  height={32}
+                />
+              </div>
+              <span className="text-xs font-mono text-paper/80">Deepak &amp; Geetha · Founders</span>
+            </div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-signal">
               <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" />
               <span>Contractual 7-day sprint · On time or 100% free</span>

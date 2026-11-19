@@ -322,10 +322,21 @@ export default function About({ onBook }: AboutProps) {
                     <span className="text-xs font-mono text-white/40">Co-Founder</span>
                   </div>
 
-                  <h3 className="font-display text-3xl text-paper font-medium mb-1">Geetha</h3>
-                  <p className="text-xs font-mono text-signal-bright/90 mb-6">
-                    Visual direction, typography, layout &amp; conversion psychology
-                  </p>
+                  <div className="flex items-center gap-4 mb-5">
+                    <img
+                      src="/geetha.webp"
+                      alt="Geetha, Co-Founder & Head of Design"
+                      className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-signal-bright/40 shadow-lg shrink-0"
+                      width={80}
+                      height={80}
+                    />
+                    <div>
+                      <h3 className="font-display text-3xl text-paper font-medium mb-1">Geetha</h3>
+                      <p className="text-xs font-mono text-signal-bright/90">
+                        Visual direction, typography, layout &amp; conversion psychology
+                      </p>
+                    </div>
+                  </div>
 
                   <div className="space-y-4 text-on-ink-muted text-xs sm:text-sm leading-relaxed">
                     <p>
@@ -371,10 +382,21 @@ export default function About({ onBook }: AboutProps) {
                     <span className="text-xs font-mono text-white/40">Co-Founder</span>
                   </div>
 
-                  <h3 className="font-display text-3xl text-paper font-medium mb-1">Deepak</h3>
-                  <p className="text-xs font-mono text-signal-bright/90 mb-6">
-                    Structure, custom React code, sub-second speed &amp; edge deployment
-                  </p>
+                  <div className="flex items-center gap-4 mb-5">
+                    <img
+                      src="/deepak.webp"
+                      alt="Deepak, Co-Founder & Technical Architect"
+                      className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-signal-bright/40 shadow-lg shrink-0"
+                      width={80}
+                      height={80}
+                    />
+                    <div>
+                      <h3 className="font-display text-3xl text-paper font-medium mb-1">Deepak</h3>
+                      <p className="text-xs font-mono text-signal-bright/90">
+                        Structure, custom React code, sub-second speed &amp; edge deployment
+                      </p>
+                    </div>
+                  </div>
 
                   <div className="space-y-4 text-on-ink-muted text-xs sm:text-sm leading-relaxed">
                     <p>
@@ -598,9 +620,28 @@ export default function About({ onBook }: AboutProps) {
             <div className="grid md:grid-cols-12 gap-8 items-center bg-white/[0.03] border border-white/10 rounded-[32px] p-8 sm:p-12">
               <div className="md:col-span-6 flex flex-col justify-between h-full">
                 <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <LogoMark size={48} />
-                    <span className="font-display text-2xl text-paper font-medium">Uncoded Hub</span>
+                  <div className="flex items-center gap-4 mb-6">
+                    <LogoMark className="w-9 h-9 text-signal shrink-0" />
+                    <div className="flex items-center -space-x-2">
+                      <img
+                        src="/deepak.webp"
+                        alt="Deepak, Co-Founder"
+                        className="w-11 h-11 rounded-full object-cover border-2 border-signal shadow-md"
+                        width={44}
+                        height={44}
+                      />
+                      <img
+                        src="/geetha.webp"
+                        alt="Geetha, Co-Founder"
+                        className="w-11 h-11 rounded-full object-cover border-2 border-signal shadow-md"
+                        width={44}
+                        height={44}
+                      />
+                    </div>
+                    <div>
+                      <span className="font-display text-xl text-paper font-medium block">Uncoded Hub</span>
+                      <span className="font-mono text-[10px] text-signal uppercase tracking-wider block">Direct Founders</span>
+                    </div>
                   </div>
                   <h3 className="font-display text-3xl sm:text-4xl text-paper font-normal leading-tight">
                     Come and talk directly with Deepak &amp; Geetha.

@@ -162,7 +162,7 @@ export default function ServiceDetailPage({ onBook, serviceKey }: ServiceDetailP
           </Reveal>
         </Shell>
 
-        {/* ── 02. The Hormozi "Stupid to Say No" Risk Reversal ───────────── */}
+        {/* ── 02. The Zero-Risk Pre-Payment Demo Guarantee ───────────── */}
         <section className="mt-20 py-16 bg-paper border-y border-rule">
           <Shell>
             <Reveal>
@@ -218,6 +218,34 @@ export default function ServiceDetailPage({ onBook, serviceKey }: ServiceDetailP
                 <p className="text-muted text-sm sm:text-base mt-3 leading-relaxed">
                   Every deliverable is engineered by founders Deepak & Geetha with zero junior outsourcing. Here is the exact scope breakdown:
                 </p>
+
+                {/* Direct Founder Execution Badge */}
+                <div className="mt-6 inline-flex flex-wrap items-center gap-4 p-3.5 sm:px-5 sm:py-3 rounded-2xl bg-paper-sunken border border-rule">
+                  <div className="flex items-center -space-x-3">
+                    <img
+                      src="/deepak.webp"
+                      alt="Deepak, Co-Founder & Technical Architect"
+                      className="w-12 h-12 rounded-full object-cover border-2 border-paper shadow-sm"
+                      width={48}
+                      height={48}
+                    />
+                    <img
+                      src="/geetha.webp"
+                      alt="Geetha, Co-Founder & Head of Design"
+                      className="w-12 h-12 rounded-full object-cover border-2 border-paper shadow-sm"
+                      width={48}
+                      height={48}
+                    />
+                  </div>
+                  <div>
+                    <div className="text-xs font-mono font-semibold text-ink">
+                      Direct Founder Engineering &amp; Design
+                    </div>
+                    <div className="text-[11px] font-mono text-muted">
+                      Deepak (7.2+ yrs Code &amp; Speed) · Geetha (McKinsey Alum Design)
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6 mb-16">
@@ -246,7 +274,7 @@ export default function ServiceDetailPage({ onBook, serviceKey }: ServiceDetailP
           </Shell>
         </section>
 
-        {/* ── 04. The ₹15,000 Grand Slam Bonus (Matthew's Logic) ─────────── */}
+        {/* ── 04. The ₹15,000 Client Asset Bonus ─────────── */}
         <section className="py-20 sm:py-24 bg-paper border-b border-rule">
           <Shell>
             <Reveal>
@@ -372,6 +400,33 @@ export default function ServiceDetailPage({ onBook, serviceKey }: ServiceDetailP
           <Shell>
             <Reveal>
               <div className="p-10 sm:p-14 rounded-3xl bg-ink text-paper text-center max-w-4xl mx-auto shadow-xl">
+                <div className="flex items-center justify-center gap-3 mb-6">
+                  <div className="flex items-center -space-x-3">
+                    <img
+                      src="/deepak.webp"
+                      alt="Deepak, Co-Founder"
+                      className="w-14 h-14 rounded-full object-cover border-2 border-signal shadow-md"
+                      width={56}
+                      height={56}
+                    />
+                    <img
+                      src="/geetha.webp"
+                      alt="Geetha, Co-Founder"
+                      className="w-14 h-14 rounded-full object-cover border-2 border-signal shadow-md"
+                      width={56}
+                      height={56}
+                    />
+                  </div>
+                  <div className="text-left">
+                    <div className="text-sm font-display font-medium text-white">
+                      Deepak &amp; Geetha
+                    </div>
+                    <div className="text-xs font-mono text-signal">
+                      Co-Founders · Single-Threaded Delivery
+                    </div>
+                  </div>
+                </div>
+
                 <span className="text-xs font-mono text-signal uppercase tracking-wider block mb-3 font-bold">
                   DIRECT FOUNDER CALENDAR OPEN
                 </span>

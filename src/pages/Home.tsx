@@ -1231,8 +1231,26 @@ export default function Home({ onBook }: HomeProps) {
                 </Link>
               </p>
 
-              <div className="text-xs font-mono text-white/60 pt-6 border-t border-white/10">
-                Deepak &amp; Geetha · Bengaluru, India · Working worldwide
+              <div className="pt-6 border-t border-white/10 flex flex-col items-center justify-center gap-2">
+                <div className="flex items-center -space-x-2">
+                  <img
+                    src="/deepak.webp"
+                    alt="Deepak, Co-Founder"
+                    className="w-10 h-10 rounded-full object-cover border-2 border-signal shadow-sm"
+                    width={40}
+                    height={40}
+                  />
+                  <img
+                    src="/geetha.webp"
+                    alt="Geetha, Co-Founder"
+                    className="w-10 h-10 rounded-full object-cover border-2 border-signal shadow-sm"
+                    width={40}
+                    height={40}
+                  />
+                </div>
+                <div className="text-xs font-mono text-white/70">
+                  Deepak &amp; Geetha · Bengaluru, India · Working worldwide
+                </div>
               </div>
             </div>
           </Reveal>
