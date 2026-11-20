@@ -89,10 +89,18 @@ export default function About({ onBook }: AboutProps) {
       ],
       address: {
         '@type': 'PostalAddress',
+        streetAddress: '13th Cross Rd, Basavanagara',
         addressLocality: 'Bengaluru',
         addressRegion: 'Karnataka',
+        postalCode: '560037',
         addressCountry: 'IN',
       },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 12.9698,
+        longitude: 77.6974,
+      },
+      hasMap: 'https://maps.app.goo.gl/fwvgEPkguRSfkcC49',
     },
   };
 
