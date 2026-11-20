@@ -92,9 +92,9 @@
   
   <style>
     /* ==========================================================================
-       CSS DESIGN SYSTEM & THEME TOKENS (HIGH CONTRAST & LEGIBILITY)
+       SIGNATURE AESTHETIC DESIGN TOKENS (WARM HERITAGE EDITORIAL)
        ========================================================================== */
-    :root, body[data-theme="warm-heritage"] {
+    :root {
       --bg-primary: #F8F5EE;
       --bg-surface: #FFFFFF;
       --bg-card: #FFFFFF;
@@ -117,58 +117,6 @@
       --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
       --card-shadow: 0 10px 30px rgba(50, 40, 25, 0.07);
       --header-bg: rgba(248, 245, 238, 0.94);
-      --input-bg: #FFFFFF;
-    }
-
-    body[data-theme="obsidian-luxe"] {
-      --bg-primary: #0D0C0A;
-      --bg-surface: #151412;
-      --bg-card: #181714;
-      --bg-card-subtle: #211F1B;
-      --text-primary: #F7F5F0;
-      --text-muted: #CBC4B7;
-      --text-subtle: #968F83;
-      --border-color: rgba(212, 175, 55, 0.22);
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --accent: #D4AF37;
-      --accent-hover: #E5C378;
-      --accent-contrast: #0D0C0A;
-      --accent-light: rgba(212, 175, 55, 0.12);
-      --badge-bg: rgba(212, 175, 55, 0.16);
-      --badge-text: #E5C378;
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 24px;
-      --font-heading: 'Cormorant Garamond', Georgia, serif;
-      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
-      --card-shadow: 0 20px 48px rgba(0, 0, 0, 0.65);
-      --header-bg: rgba(13, 12, 10, 0.94);
-      --input-bg: #151412;
-    }
-
-    body[data-theme="avant-garde"] {
-      --bg-primary: #FAF9F6;
-      --bg-surface: #FFFFFF;
-      --bg-card: #FFFFFF;
-      --bg-card-subtle: #F3F0E9;
-      --text-primary: #141311;
-      --text-muted: #4B463E;
-      --text-subtle: #7A7469;
-      --border-color: #DDD7CE;
-      --border-subtle: #ECE7DE;
-      --accent: #2C3E2D;
-      --accent-hover: #1E2B1F;
-      --accent-contrast: #FFFFFF;
-      --accent-light: #EBF0EA;
-      --badge-bg: #E3EBE2;
-      --badge-text: #2C3E2D;
-      --radius-sm: 6px;
-      --radius-md: 12px;
-      --radius-lg: 20px;
-      --font-heading: 'Cormorant Garamond', Georgia, serif;
-      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
-      --card-shadow: 0 12px 35px rgba(25, 20, 15, 0.05);
-      --header-bg: rgba(250, 249, 246, 0.95);
       --input-bg: #FFFFFF;
     }
 
@@ -451,67 +399,6 @@
       font-size: 12px;
       font-weight: 700;
       color: var(--text-primary);
-    }
-
-    /* Harmonious Luxury Nuances for STYLE 2: Obsidian Luxe (Midnight & Champagne Gold) */
-    body[data-theme="obsidian-luxe"] .hero-image-main {
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
-    }
-    body[data-theme="obsidian-luxe"] .hero-floating-card {
-      background: rgba(21, 20, 18, 0.92);
-      border-color: rgba(212, 175, 55, 0.4);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
-    }
-    body[data-theme="obsidian-luxe"] .compare-section {
-      background: #080706;
-    }
-    body[data-theme="obsidian-luxe"] .diff-pill-left,
-    body[data-theme="obsidian-luxe"] .diff-pill-right {
-      background: rgba(13, 12, 10, 0.88);
-      color: #F7F5F0;
-      border: 1px solid rgba(212, 175, 55, 0.3);
-    }
-    body[data-theme="obsidian-luxe"] .slider-handle {
-      background: #D4AF37;
-      color: #0D0C0A;
-      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.5);
-    }
-    body[data-theme="obsidian-luxe"] .craft-img,
-    body[data-theme="obsidian-luxe"] .founder-feature-img {
-      border-color: rgba(212, 175, 55, 0.25);
-    }
-
-    /* Harmonious Architectural Nuances for STYLE 3: Nordic Gallery (Alabaster & Forest Bronze) */
-    body[data-theme="avant-garde"] .hero-image-main {
-      border: 1px solid #DDD7CE;
-      box-shadow: 0 20px 48px rgba(25, 20, 15, 0.08);
-    }
-    body[data-theme="avant-garde"] .hero-floating-card {
-      background: #FFFFFF;
-      border-color: #DDD7CE;
-      box-shadow: 0 16px 36px rgba(25, 20, 15, 0.08);
-    }
-    body[data-theme="avant-garde"] .compare-section {
-      background: #F3F0E9;
-    }
-    body[data-theme="avant-garde"] .diff-pill-left,
-    body[data-theme="avant-garde"] .diff-pill-right {
-      background: #FFFFFF;
-      color: #141311;
-      border: 1px solid #DDD7CE;
-    }
-    body[data-theme="avant-garde"] .slider-handle {
-      background: #2C3E2D;
-      color: #FFFFFF;
-      box-shadow: 0 4px 18px rgba(44, 62, 45, 0.4);
-    }
-    body[data-theme="avant-garde"] .btn-primary {
-      background: #2C3E2D;
-      color: #FFFFFF;
-    }
-    body[data-theme="avant-garde"] .btn-primary:hover {
-      background: #1E2B1F;
     }
 
     /* ==========================================================================
@@ -867,74 +754,6 @@
       align-items: center;
     }
 
-    /* ==========================================================================
-       INTERACTIVE FLOATING STYLE SWITCHER (PREVIEW CONTROLLER)
-       ========================================================================== */
-    .theme-controller {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 999;
-      background: rgba(18, 16, 14, 0.94);
-      /* solid surface */
-      padding: 8px 10px;
-      border-radius: 50px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
-    }
-
-    .tc-label {
-      color: #FAF8F5;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 0 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border-right: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .tc-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #2ECC71;
-      
-    }
-
-    .tc-btn {
-      background: transparent;
-      border: none;
-      color: #CFCAC2;
-      padding: 8px 18px;
-      border-radius: 40px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.2s ease;
-    }
-
-    .tc-btn:hover {
-      color: #FFF;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .tc-btn.active {
-      background: #FFFFFF;
-      color: #12100E;
-      font-weight: 700;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
     /* Responsive */
     @media (max-width: 992px) {
       .hero-grid, .problem-cards, .portfolio-grid, .process-timeline, .form-container, .guarantees-grid, .testimonials-grid {
@@ -944,7 +763,6 @@
       .comparison-grid { grid-template-columns: 1fr; }
       .comp-col-bad { border-right: none; border-bottom: 1px solid var(--border-color); padding-bottom: 24px; padding-right: 0; }
       .nav-links { display: none; }
-      .theme-controller { width: 92%; overflow-x: auto; justify-content: flex-start; border-radius: 16px; }
     }
   
     /* Uncoded Hub Studio Popup Modal */
@@ -1621,7 +1439,7 @@
   </style>
 </head>
 
-<body data-theme="warm-heritage">
+<body>
 
   <!-- Top Uncoded Hub Specimen Banner -->
   <div style="background: #14130F; color: #F5F3EF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; padding: 10px 20px; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 99999; /* solid surface */ box-shadow: 0 4px 20px rgba(0,0,0,0.25);">

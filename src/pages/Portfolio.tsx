@@ -20,7 +20,7 @@ export type { Project, ThemeItem };
    1. Customer-Focused Hero & Manifesto:
       "Your Business Deserves a Website That Looks as Good as the Work You Do."
    2. Foundational Proof Pillars:
-      50 Live Demonstrations · 150 Unique Themes · Sub-0.8s LCP · Zero Bloat
+      50 Live Demonstrations · 20 Flagship Deep-Engineered Niches · Sub-0.8s LCP · Zero Bloat
    3. Level 1: Three Curated Flagship Showcases (Storytelling Format)
       - The Challenge, Our Approach, What Makes This Special, Honest Concept Label
    4. Mid-Page Interstitial Discovery CTA
@@ -50,7 +50,7 @@ export const LUXURY_SECTORS: LuxurySector[] = [
     count: 50,
     headline: '50 Working Production Websites Engineered with Zero Theme or Plugin Bloat',
     description:
-      'Explore the entire suite of fifty live production builds, featuring 150 unique aesthetic themes, custom typography tokens, and high-conversion client acquisition engines.',
+      'Explore the entire suite of fifty live production builds, featuring 20 flagship deep-engineered niches, custom typography tokens, and high-conversion client acquisition engines.',
     projectIds: PROJECTS.map((p) => p.id),
   },
   {
@@ -253,15 +253,14 @@ function FlagshipCaseStudyCard({
   whySpecial,
 }: {
   project: Project;
-  onOpenPreview: (project: Project, themeIdx: number) => void;
+  onOpenPreview: (project: Project) => void;
   badgeText: string;
   headline: string;
   challenge: string;
   approach: string;
   whySpecial: string;
 }) {
-  const [activeTheme, setActiveTheme] = useState(0);
-  const currentTheme = project.themes[activeTheme] || project.themes[0];
+  const signatureTheme = project.themes[0];
 
   return (
     <div className="bg-paper-raised border border-rule-strong rounded-[32px] p-6 sm:p-10 shadow-sm hover:border-signal/50 transition-all duration-300">
@@ -312,30 +311,24 @@ function FlagshipCaseStudyCard({
             </div>
           </div>
 
-          {/* Theme Palette & Selector */}
-          <div>
-            <div className="text-[11px] font-mono text-muted uppercase tracking-wider mb-2 flex items-center justify-between">
-              <span>Switch Aesthetic Theme:</span>
-              <span className="text-signal font-semibold">{currentTheme.name}</span>
+          {/* Signature Aesthetic Architecture Badge */}
+          <div className="p-3.5 bg-paper rounded-[16px] border border-rule flex items-center justify-between gap-3">
+            <div>
+              <span className="text-[10px] font-mono text-muted uppercase tracking-wider block">
+                Signature Aesthetic:
+              </span>
+              <span className="text-ink font-medium text-xs sm:text-sm">
+                {signatureTheme.name} <span className="text-muted font-normal text-xs">({signatureTheme.style})</span>
+              </span>
             </div>
-            <div className="grid grid-cols-3 gap-2">
-              {project.themes.map((t, idx) => (
-                <button
-                  key={t.name}
-                  type="button"
-                  onClick={() => setActiveTheme(idx)}
-                  className={`py-2 px-2.5 rounded-[12px] text-xs font-sans flex items-center justify-center gap-2 transition-all cursor-pointer ${
-                    activeTheme === idx
-                      ? 'bg-ink text-paper font-semibold shadow-xs'
-                      : 'bg-paper text-muted hover:text-ink border border-rule hover:border-signal/40'
-                  }`}
-                >
-                  <span
-                    className="w-2.5 h-2.5 rounded-full shrink-0"
-                    style={{ backgroundColor: t.accentHex }}
-                  />
-                  <span className="truncate">{t.name}</span>
-                </button>
+            <div className="flex items-center gap-1.5 shrink-0">
+              {signatureTheme.palette.map((color, cIdx) => (
+                <span
+                  key={cIdx}
+                  className="w-3 h-3 rounded-full border border-black/10"
+                  style={{ backgroundColor: color }}
+                  title={color}
+                />
               ))}
             </div>
           </div>
@@ -353,7 +346,7 @@ function FlagshipCaseStudyCard({
             </a>
             <button
               type="button"
-              onClick={() => onOpenPreview(project, activeTheme)}
+              onClick={() => onOpenPreview(project)}
               className="btn-secondary !py-3 !px-4 text-xs inline-flex items-center gap-1.5 cursor-pointer bg-paper border border-rule-strong hover:border-signal"
             >
               <IconEye className="w-3.5 h-3.5" />
@@ -377,27 +370,20 @@ function FlagshipCaseStudyCard({
                 <span>{project.id}.uncodedhub.com</span>
               </div>
               <span className="text-[10px] text-signal-bright font-mono">
-                {currentTheme.style}
+                {signatureTheme.style}
               </span>
             </div>
 
-            {/* Cross-fading theme images */}
-            {project.themes.map((theme, idx) => (
-              <img
-                key={theme.name}
-                src={theme.image}
-                alt={`${project.client} — ${theme.name} Theme`}
-                width={1280}
-                height={720}
-                loading="lazy"
-                decoding="async"
-                className={`absolute inset-0 top-8 w-full h-[calc(100%-2rem)] object-cover object-top transition-all duration-700 ease-out ${
-                  activeTheme === idx
-                    ? 'opacity-100 scale-100 z-10'
-                    : 'opacity-0 scale-[1.03] z-0 pointer-events-none'
-                }`}
-              />
-            ))}
+            {/* Signature Showcase Image */}
+            <img
+              src={signatureTheme.image}
+              alt={`${project.client} — ${signatureTheme.name}`}
+              width={1280}
+              height={720}
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 top-8 w-full h-[calc(100%-2rem)] object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+            />
 
             {/* Hover Floating Overlay */}
             <div className="absolute inset-0 bg-ink/60 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center gap-3">
@@ -426,26 +412,13 @@ function SpecimenCard({
   onOpenPreview,
 }: {
   project: Project;
-  onOpenPreview: (project: Project, themeIdx: number) => void;
+  onOpenPreview: (project: Project) => void;
 }) {
-  const [activeTheme, setActiveTheme] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(() => {
-      setActiveTheme((prev) => (prev + 1) % project.themes.length);
-    }, 3200);
-    return () => clearInterval(interval);
-  }, [isPaused, project.themes.length]);
-
-  const currentTheme = project.themes[activeTheme] || project.themes[0];
+  const signatureTheme = project.themes[0];
 
   return (
     <div
       id={`specimen-${project.id}`}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
       className="bg-paper-raised p-6 sm:p-8 border border-rule-strong hover:border-signal/50 card-lift flex flex-col justify-between rounded-[28px] group shadow-sm transition-all duration-300 relative"
     >
       <div>
@@ -460,7 +433,7 @@ function SpecimenCard({
             </div>
 
             <div className="flex items-center gap-2 text-white/80">
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" />
               <span className="truncate max-w-[150px] sm:max-w-[220px]">
                 {project.id}.uncodedhub.com
               </span>
@@ -468,69 +441,40 @@ function SpecimenCard({
 
             <div className="flex items-center gap-2">
               <span className="text-[10px] text-signal-bright font-semibold tracking-wider font-mono">
-                AUTO 3s
+                {signatureTheme.style}
               </span>
             </div>
           </div>
 
-          {/* 3-Segment Progress Indicator Bar */}
-          <div className="grid grid-cols-3 gap-1 px-3 py-1.5 bg-ink/95 border-b border-white/10">
-            {project.themes.map((t, idx) => (
-              <div
-                key={t.name}
-                onClick={() => setActiveTheme(idx)}
-                className="h-1 rounded-full bg-white/20 overflow-hidden cursor-pointer relative"
-                title={`Theme ${idx + 1}: ${t.name} (${t.style})`}
-              >
-                {activeTheme === idx ? (
-                  <div
-                    key={`active-${activeTheme}`}
-                    className="h-full bg-signal-bright animate-specimen-progress rounded-full"
-                  />
-                ) : activeTheme > idx ? (
-                  <div className="h-full bg-white/70 rounded-full" />
-                ) : (
-                  <div className="h-full bg-transparent" />
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Cross-Fading Unique Thumbnail Stack */}
+          {/* Signature Thumbnail */}
           <div className="relative aspect-[16/9] w-full overflow-hidden bg-ink">
-            {project.themes.map((theme, idx) => (
-              <img
-                key={theme.name}
-                src={theme.image}
-                alt={`${project.client} — ${theme.name} Theme`}
-                width={1280}
-                height={720}
-                loading="lazy"
-                decoding="async"
-                className={`absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 ease-out ${
-                  activeTheme === idx
-                    ? 'opacity-100 scale-100 z-10'
-                    : 'opacity-0 scale-[1.03] z-0 pointer-events-none'
-                }`}
-              />
-            ))}
+            <img
+              src={signatureTheme.image}
+              alt={`${project.client} — ${signatureTheme.name}`}
+              width={1280}
+              height={720}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
+            />
 
-            {/* Bottom floating theme identifier pill inside thumbnail */}
+            {/* Bottom signature aesthetic identifier pill */}
             <div className="absolute bottom-3 left-3 right-3 z-20 flex items-center justify-between gap-2 pointer-events-none">
-              <div className="bg-ink px-3 py-1.5 rounded-full border border-white/15 text-[11px] text-paper flex items-center gap-2 shadow-md">
-                <span className="font-mono text-signal-bright font-semibold">
-                  Theme 0{activeTheme + 1}/03:
-                </span>
+              <div className="bg-ink/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/15 text-[11px] text-paper flex items-center gap-2 shadow-md">
+                <span
+                  className="w-2 h-2 rounded-full shrink-0"
+                  style={{ backgroundColor: signatureTheme.accentHex }}
+                />
                 <span className="font-medium text-white truncate max-w-[120px] sm:max-w-none">
-                  {currentTheme.name}
+                  {signatureTheme.name}
                 </span>
                 <span className="text-white/60 text-[10px] hidden sm:inline">
-                  ({currentTheme.style})
+                  ({signatureTheme.style})
                 </span>
               </div>
 
-              <div className="bg-ink px-2.5 py-1.5 rounded-full border border-white/15 flex items-center gap-1.5 shadow-md">
-                {currentTheme.palette.map((color, cIdx) => (
+              <div className="bg-ink/90 backdrop-blur-sm px-2.5 py-1.5 rounded-full border border-white/15 flex items-center gap-1.5 shadow-md">
+                {signatureTheme.palette.map((color, cIdx) => (
                   <span
                     key={cIdx}
                     className="w-2.5 h-2.5 rounded-full border border-white/30"
@@ -553,44 +497,13 @@ function SpecimenCard({
               </a>
               <button
                 type="button"
-                onClick={() => onOpenPreview(project, activeTheme)}
+                onClick={() => onOpenPreview(project)}
                 className="bg-ink hover:bg-[#1f2430] text-paper text-xs font-medium px-4 py-2.5 rounded-full shadow-md transition-transform transform hover:scale-105 inline-flex items-center gap-1.5 cursor-pointer border border-white/20"
               >
                 <IconEye className="w-3.5 h-3.5" />
                 <span>Inspect Viewport</span>
               </button>
             </div>
-          </div>
-        </div>
-
-        {/* Tactile 3-Theme Switcher Buttons */}
-        <div className="mb-4">
-          <div className="text-[10px] font-mono text-muted uppercase tracking-wider mb-1.5 flex items-center justify-between">
-            <span>3 Handcrafted Theme Variations:</span>
-            <span className="text-signal font-semibold">Auto-Cycles every 3s</span>
-          </div>
-          <div className="grid grid-cols-3 gap-1.5 p-1 bg-paper rounded-[14px] border border-rule">
-            {project.themes.map((t, idx) => (
-              <button
-                key={t.name}
-                type="button"
-                onClick={() => {
-                  setActiveTheme(idx);
-                  setIsPaused(true);
-                }}
-                className={`py-1.5 px-2 rounded-[10px] text-[11px] font-sans flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
-                  activeTheme === idx
-                    ? 'bg-ink text-paper font-semibold shadow-xs'
-                    : 'text-muted hover:text-ink hover:bg-paper-raised'
-                }`}
-              >
-                <span
-                  className="w-2 h-2 rounded-full shrink-0"
-                  style={{ backgroundColor: t.accentHex }}
-                />
-                <span className="truncate">{t.name}</span>
-              </button>
-            ))}
           </div>
         </div>
 
@@ -642,7 +555,7 @@ function SpecimenCard({
           </a>
           <button
             type="button"
-            onClick={() => onOpenPreview(project, activeTheme)}
+            onClick={() => onOpenPreview(project)}
             className="btn-secondary !py-2.5 !px-3.5 text-xs inline-flex items-center gap-1.5 cursor-pointer bg-paper border border-rule-strong hover:border-signal"
             title="Interactive in-page viewport test"
           >
@@ -799,7 +712,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
         <meta property="og:title" content="Portfolio &amp; 50 Live Production Demos — Uncoded Hub" />
         <meta
           property="og:description"
-          content="Explore 50 live, fully functioning website demonstrations across 50 industries handcrafted with 150 unique themes."
+          content="Explore 50 live, fully functioning website demonstrations across 50 industries handcrafted with zero bloat and bespoke conversion architecture."
         />
         <meta property="og:url" content="https://uncodedhub.com/portfolio/" />
         <meta property="og:type" content="website" />
@@ -811,7 +724,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
         <meta name="twitter:title" content="Portfolio &amp; 50 Live Production Demos — Uncoded Hub" />
         <meta
           name="twitter:description"
-          content="Explore 50 live, fully functioning website demonstrations across 50 industries handcrafted with 150 unique themes."
+          content="Explore 50 live, fully functioning website demonstrations across 50 industries handcrafted with zero bloat and bespoke conversion architecture."
         />
         <meta name="twitter:image" content="https://uncodedhub.com/og/portfolio.jpg" />
       </Helmet>
@@ -830,7 +743,7 @@ export default function Work({ onBook }: { onBook: () => void }) {
               </span>
               <span className="text-muted text-xs">·</span>
               <span className="text-xs font-mono text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
-                150 Hand-Coded Visual Themes
+                20 Flagship Deep-Engineered Niches
               </span>
             </div>
 
@@ -882,9 +795,9 @@ export default function Work({ onBook }: { onBook: () => void }) {
             </div>
 
             <div className="p-4 bg-paper rounded-[18px] border border-rule">
-              <span className="font-mono text-xs text-signal block mb-1">02 · Style Variety</span>
-              <strong className="text-ink font-display text-lg block">150 Unique Themes</strong>
-              <span className="text-muted text-xs">3 distinct visual aesthetics hand-coded for each industry.</span>
+              <span className="font-mono text-xs text-signal block mb-1">02 · Deep Engineering</span>
+              <strong className="text-ink font-display text-lg block">20 Flagship Niches</strong>
+              <span className="text-muted text-xs">Bespoke acquisition tools &amp; authentic visual storytelling.</span>
             </div>
 
             <div className="p-4 bg-paper rounded-[18px] border border-rule">
