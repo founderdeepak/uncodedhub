@@ -1,48 +1,45 @@
 # Demo_05_Home_Renovation — Asset & Upgrade Brief
 
-**Client / Brand**: Halbrook Studio Precision Renovation
-**Sector**: Modular Kitchens & Full Renovation
-**Category**: renovation
-**Demo File**: [home-renovation.html](file:///c:/Users/LENOVO/Downloads/uncoded-hub/public/demos/home-renovation.html)
-**Live Local URL**: `http://localhost:3000/demos/home-renovation.html`
-**Live Production URL**: `https://uncodedhub.com/demos/home-renovation.html`
+**Client / Brand**: Halbrook Studio Precision Renovation  
+**Sector**: Modular Kitchens & Full Renovation  
+**Category**: renovation  
+**Demo File**: [home-renovation.html](file:///c:/Users/LENOVO/Downloads/uncoded-hub/public/demos/home-renovation.html)  
+**Live Local URL**: `http://localhost:3000/demos/home-renovation.html`  
+**Live Production URL**: `https://uncodedhub.com/demos/home-renovation.html`  
+**Status**: **100% COMPLETE · SINGLE SIGNATURE MASTERPIECE**
 
 ---
 
 ## 1. Core Conversion Engine & Positioning
-* **Brand Summary**: Precision engineered modular kitchens and civil renovations. Highlights 100% IS:710 Marine BWP plywood standards, Blum German hardware certifications, 10-year written warranty seals, and free laser survey booking.
-* **Core Conversion Engine**: **Material Spec Sheet Verifier & Free 3D Laser Measurement Booking**
-* **Key Business Result**: 0.8s LCP · IS:710 Marine Plywood · 10-Year Warranty Commitment
-
-### Visual Themes in this Demo:
-  1. **Industrial Craft** (Solid Timber & Architectural Steel) — Accent: `#8B5A2B` | Palette: #F5F3EF, #8B5A2B, #222222
-  2. **Obsidian Copper** (Dark Architectural Luxury) — Accent: `#C87D55` | Palette: #141312, #C87D55, #E6E1DC
-  3. **Nordic Living Grid** (Warm Scandinavian Open Space) — Accent: `#2B4C6F` | Palette: #F8F9FA, #2B4C6F, #E2E8F0
-
----
-
-## 2. Required Images Checklist (Drop Here in `Assets/`)
-
-To achieve the unslop gold standard (like Sri Ayyanar Sirpa Kalai), please add **high-resolution authentic images** to this folder or the `Assets/` subfolder:
-
-| File Name | Slot & Purpose | Recommended Aspect & Resolution | Description |
-| :--- | :--- | :--- | :--- |
-| `01_Hero_Showcase.png` | Hero Banner / Focal Center | 16:9 (1920×1080) or 4:5 (1200×1500) | Dramatic, aspirational hero image representing the pinnacle of this craft. |
-| `02_Work_01.png` | Portfolio Feature 1 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #1. |
-| `03_Work_02.png` | Portfolio Feature 2 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #2. |
-| `04_Work_03.png` | Portfolio Feature 3 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #3. |
-| `05_Work_04.png` | Portfolio Feature 4 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #4. |
-| `06_Work_05.png` | Portfolio Feature 5 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #5. |
-| `07_Before_Raw.png` | Comparison Slider (Left) | 16:10 (1200×750) | Raw / unpolished / initial stage (e.g. bare shell, untreated, blueprint). |
-| `08_After_Finished.png`| Comparison Slider (Right)| 16:10 (1200×750) | Finished, pristine, luxury outcome (e.g. furnished sanctuary, polished result). |
-| `09_Founder_Or_Expert.png`| Master / Founder Portrait| 1:1 or 4:5 Portrait | Authentic studio / clinic / workshop portrait of the principal expert. |
-| `10_Process_Detail.png`| Craftsmanship / Studio | 16:9 or 4:3 | Micro-detail of materials, tools, operatory, or on-site craftsmanship. |
+* **Brand Summary**: Precision-engineered modular kitchens and full civil home renovations. Factory-built on German CNC machinery with 5-day on-site assembly, 100% calibrated IS:710 Marine BWP plywood, original Austrian Blum soft-close fittings, and an insurance-backed 10-year written warranty.
+* **Core Conversion Engine**: **Room-by-Room Renovation Scope Estimator & Free 3D Laser Measurement Booking**
+* **Signature Aesthetic**: **Industrial Architectural Craft & Warm Precision**
+  * Accent: `#B25A24` (Burnished Terracotta/Copper) & `#8B5A2B` (Architectural Timber)
+  * Palette: `#F8F5EE` (Alabaster Limestone Canvas), `#FFFFFF`, `#1C1814` (Deep Charcoal Text)
+  * Display Typography: `Cormorant Garamond` (architectural serif) + `Plus Jakarta Sans`
+* **Key Business Result**: 0.8s LCP · 100% IS:710 Marine Plywood · ₹1,500/Day Delay Penalty Guarantee
 
 ---
 
-## 3. Unslop Design Standard Rules
-1. **No Purple AI Gradients**: Use editorial dark midnight navy, museum bronze, stone, or warm earth palettes.
-2. **Character-Rich Typography**: High-contrast editorial display font for headings; clean neutral body text.
-3. **Strict Word Integrity**: No split words on mobile (`word-break: keep-all; overflow-wrap: normal`).
-4. **Authentic Chiaroscuro Lighting**: High contrast, moody shadows, realistic depth. Zero cheesy smiling stock photos.
-5. **Direct High-Intent CTAs**: One-tap WhatsApp consult with pre-filled shastric/project details + interactive timeline estimator.
+## 2. Integrated 10 Real Assets Inventory
+
+| File Name | Slot & Destination | Purpose & Integration in Demo |
+| :--- | :--- | :--- |
+| `01_Hero_Showcase.png` | Hero Banner (`/demos/assets/demo-05-home-renovation/01_Hero_Showcase.png`) | Warm Modern Kitchen and Living Space with German CNC certification tag and floating homeowner testimonial from HSR Layout. |
+| `02_Work_01.png` | Featured Project #1 | *The Minimalist Charcoal & Oak Kitchen* in Indiranagar (Anti-fingerprint matte shutters, quartz waterfall, Blum Legrabox pantry). |
+| `03_Work_02.png` | Featured Project #2 | *The Amber-Lit Architectural Wardrobe* in Koramangala (Floor-to-ceiling smoked tempered glass, sensor LED backlighting, velvet drawers). |
+| `04_Work_03.png` | Featured Project #3 | *The Fluted Glass Spa Ensuite* in Whitefield (Micro-cement walls, floating stone double vanity, brushed bronze rain shower). |
+| `05_Work_04.png` | Featured Project #4 | *The Acoustic Slat Media Architecture* in HSR Sector 2 (White oak fluted slat panels, floating slate console, concealed cable management). |
+| `06_Work_05.png` | Featured Project #5 | *The Open-Plan 2BHK Transformation* in Bellandur (1,350 sq.ft fluid breakfast island divider, herringbone hardwood flooring). |
+| `07_Before_Raw.png` | Renovation Slider (Left) | Interactive comparison: Unfinished Brick & Bare-Shell Civil State with exposed electrical conduits. |
+| `08_After_Finished.png`| Renovation Slider (Right)| Interactive comparison: Turnkey Finished Luxury Sanctuary with warm walnut, Calacatta marble, and architectural lighting. |
+| `09_Founder_Or_Expert.png`| Director Spotlight | Principal Project Director David Halbrook on job site with architectural plans — *"Why We Refuse to Subcontract Civil Supervision."* |
+| `10_Process_Detail.png`| Material Science Banner | Precision Cabinetry Materials Showcase: 100% IS:710 Marine BWP Plywood, Blum soft-close runners, and zero-glue-line laser edging. |
+
+---
+
+## 3. Interactive Conversion Features Live in Demo
+1. **Interactive Before / After Renovation Slider**: Full 60fps drag slider comparing bare-shell civil brickwork against turnkey finished modular kitchen and living architecture.
+2. **Room-by-Room Scope & Investment Calculator**: Real-time investment brackets across 4 scope tiers (Kitchen only, Kitchen + Wardrobes, 2BHK Turnkey, 3BHK/Villa).
+3. **Free 3D Laser Survey Booking Console**: On-site digital laser floor plan & moisture probe appointment scheduler with WhatsApp routing.
+4. **Founder Pitch Modal & Lead Magnet**: Uncoded Hub 7-day sprint briefing with downloadable 3-page executive PDF.
