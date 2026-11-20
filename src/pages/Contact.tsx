@@ -341,7 +341,7 @@ export default function Contact() {
                 },
                 {
                   name: 'Google Maps',
-                  handle: '13th Cross Rd, Basavanagara · 560037',
+                  handle: 'Uncoded Hub - Web Design Company · 560037',
                   desc: 'Verified studio location, directions & Google reviews',
                   href: 'https://maps.app.goo.gl/fwvgEPkguRSfkcC49',
                   tag: 'Verified Location',
