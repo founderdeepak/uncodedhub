@@ -22,6 +22,12 @@
   RewriteRule ^audit/?$ https://uncodedhub.com/audit-checklist/ [L,R=301]
   RewriteRule ^sitemap/?$ https://uncodedhub.com/sitemap.xml [L,R=301]
   RewriteRule ^(feed|rss)/?$ https://uncodedhub.com/rss.xml [L,R=301]
+  RewriteRule ^pricing/?$ https://uncodedhub.com/services/ [L,R=301]
+  RewriteRule ^work/?$ https://uncodedhub.com/portfolio/ [L,R=301]
+  RewriteRule ^demos/?$ https://uncodedhub.com/portfolio/ [L,R=301]
+  RewriteRule ^case-studies/?$ https://uncodedhub.com/portfolio/ [L,R=301]
+  RewriteRule ^contact-us/?$ https://uncodedhub.com/contact/ [L,R=301]
+  RewriteRule ^about-us/?$ https://uncodedhub.com/about/ [L,R=301]
 
   # 4b. Consolidate legacy /for/:niche and /services/:niche URLs to canonical /web-design/:niche/
   RewriteRule ^for/([a-zA-Z0-9_\-]+)/?$ https://uncodedhub.com/web-design/$1/ [L,R=301]
