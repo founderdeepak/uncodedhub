@@ -184,7 +184,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Oxford Collegiate',
         style: 'Ivy Academic Heritage',
-        image: '/demos/thumbnails/educational-academy-theme1.webp',
+        image: '/demos/assets/demo-07-educational-academy/01_Hero_Showcase.png',
         palette: ['#F9F7F2', '#1E3A8A', '#B45309'],
         accentHex: '#1E3A8A',
       },
