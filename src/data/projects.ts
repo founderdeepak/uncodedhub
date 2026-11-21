@@ -472,7 +472,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Judicial Navy & Brass',
         style: 'Commercial Chambers',
-        image: '/demos/thumbnails/law-firm-theme1.webp',
+        image: '/demos/assets/demo-19-law-firm/01_Hero_Showcase.png',
         palette: ['#070B14', '#C59B27', '#F1F5F9'],
         accentHex: '#C59B27',
       },

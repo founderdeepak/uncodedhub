@@ -1,48 +1,42 @@
-# Demo_19_Law_Firm — Asset & Upgrade Brief
+# Demo_19_Law_Firm — Asset & Upgrade Brief [STATUS: COMPLETED & DEPLOYED]
 
-**Client / Brand**: Vanguard Chambers Advocates
-**Sector**: Commercial Litigation & Corporate Law
-**Category**: legal
-**Demo File**: [law-firm.html](file:///c:/Users/LENOVO/Downloads/uncoded-hub/public/demos/law-firm.html)
-**Live Local URL**: `http://localhost:3000/demos/law-firm.html`
-**Live Production URL**: `https://uncodedhub.com/demos/law-firm.html`
+**Client / Brand**: Vanguard Chambers Advocates & Legal Consultants  
+**Sector**: Commercial Litigation, Cross-Border Arbitration & Corporate Governance  
+**Category**: legal  
+**Demo File**: [law-firm.html](file:///c:/Users/LENOVO/Downloads/uncoded-hub/public/demos/law-firm.html)  
+**Live Local URL**: `http://localhost:3000/demos/law-firm.html`  
+**Live Production URL**: `https://uncodedhub.com/demos/law-firm.html`  
+**Target Folder for Images**: `UncodedHub Projects/Demo_19_Law_Firm/Assets/`
 
 ---
 
 ## 1. Core Conversion Engine & Positioning
-* **Brand Summary**: Bar Council of India compliant legal practice platform. Features confidential conflict-of-interest matter intake, reported judgments archive, and retainer fee clarity.
+* **Brand Summary**: Premier high-stakes commercial litigation and cross-border arbitration chambers in Bengaluru & New Delhi. Bar Council of India (BCI) compliant practice architecture.
 * **Core Conversion Engine**: **Privileged Matter Intake Questionnaire & Adverse Party Conflict Screener**
-* **Key Business Result**: 0.5s LCP · 100% BCI Compliant · 24-Hr Conflict Check SLA
-
-### Visual Themes in this Demo:
-  1. **Judicial Navy & Brass** (Commercial Chambers) — Accent: `#C59B27` | Palette: #070B14, #C59B27, #F1F5F9
-  2. **Slate Arbitral Tribunal** (International Dispute Forum) — Accent: `#94A3B8` | Palette: #0E1626, #94A3B8, #FFFFFF
-  3. **Heritage Law Library** (Senior Counsel Archive) — Accent: `#D4AF37` | Palette: #03060A, #D4AF37, #E2E8F0
+* **Single Signature Aesthetic**: **Judicial Navy & Burnished Brass** &mdash; Obsidian Midnight (`#070B14`), Deep Oxford Navy (`#0D1527`), Burnished Imperial Brass (`#C59B27`), Warm Legal Parchment (`#F8F6F0`), Subdued Silver Slate (`#94A3B8`). Zero cheesy stock gavels or neon purple AI gradients.
+* **Key Business Result**: 0.5s LCP · 100% BCI Compliant · 24-Hr Conflict Check SLA · 0 Opaque Hourly Billing Surprises
 
 ---
 
-## 2. Required Images Checklist (Drop Here in `Assets/`)
+## 2. Required 10 Images Table (Drop in `Assets/`)
 
-To achieve the unslop gold standard (like Sri Ayyanar Sirpa Kalai), please add **high-resolution authentic images** to this folder or the `Assets/` subfolder:
-
-| File Name | Slot & Purpose | Recommended Aspect & Resolution | Description |
+| File Name | Slot & Purpose | Recommended Aspect & Resolution | Exact Subject & Visual Prompt Framing |
 | :--- | :--- | :--- | :--- |
-| `01_Hero_Showcase.png` | Hero Banner / Focal Center | 16:9 (1920×1080) or 4:5 (1200×1500) | Dramatic, aspirational hero image representing the pinnacle of this craft. |
-| `02_Work_01.png` | Portfolio Feature 1 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #1. |
-| `03_Work_02.png` | Portfolio Feature 2 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #2. |
-| `04_Work_03.png` | Portfolio Feature 3 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #3. |
-| `05_Work_04.png` | Portfolio Feature 4 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #4. |
-| `06_Work_05.png` | Portfolio Feature 5 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #5. |
-| `07_Before_Raw.png` | Comparison Slider (Left) | 16:10 (1200×750) | Raw / unpolished / initial stage (e.g. bare shell, untreated, blueprint). |
-| `08_After_Finished.png`| Comparison Slider (Right)| 16:10 (1200×750) | Finished, pristine, luxury outcome (e.g. furnished sanctuary, polished result). |
-| `09_Founder_Or_Expert.png`| Master / Founder Portrait| 1:1 or 4:5 Portrait | Authentic studio / clinic / workshop portrait of the principal expert. |
-| `10_Process_Detail.png`| Craftsmanship / Studio | 16:9 or 4:3 | Micro-detail of materials, tools, operatory, or on-site craftsmanship. |
+| `01_Hero_Showcase.png` | **Main Hero Chambers Showcase** | 16:9 (1920×1080) | Grand commercial arbitration law chamber at twilight; floor-to-ceiling mahogany bookstacks, heavy polished walnut conference table with leather brief folios, warm brass desk lamp glowing over open legal case reports, quiet power and judicial gravitas. |
+| `02_Work_01.png` | **Practice 1: High-Stakes Commercial Arbitration** | 16:10 or 4:5 (1200×1500) | Senior partners and counsel in a high-floor glass boardroom reviewing cross-border contractual dispute dossiers and tribunal hearing transcripts; Bengaluru skyline evening view outside. |
+| `03_Work_02.png` | **Practice 2: Mergers & NCLT Corporate Insolvency** | 16:10 or 4:5 (1200×1500) | Corporate restructuring team analyzing antitrust filing charts, cap-table audit binders, and SEBI regulatory clearance submissions under clean warm architectural pendant lighting. |
+| `04_Work_03.png` | **Practice 3: Intellectual Property & Trade Secrets** | 16:10 or 4:5 (1200×1500) | Close-up flat-lay of patent claim technical blueprints, non-disclosure agreement briefs, and an injunction petition with formal court ribbon binding on dark oak. |
+| `05_Work_04.png` | **Practice 4: White-Collar Defense & Forensic Scrutiny** | 16:10 or 4:5 (1200×1500) | Private conference room discussion; counsel examining forensic transaction ledgers and encrypted digital forensic audit reports under focused warm spotlight. |
+| `06_Work_05.png` | **Practice 5: Supreme Court Appellate Advocates** | 16:10 or 4:5 (1200×1500) | Dramatic low-angle view of appellate advocate podium in an oak-paneled court hall; thick legal case law compendiums with color-coded sticky flags ready for oral argument. |
+| `07_Before_Raw.png` | **Comparison Slider (Left)** | 16:10 (1200×750) | **BEFORE**: The Opaque Hourly Billing & Conflict Nightmare &mdash; Frustrated enterprise general counsel examining an unexpected handwritten hourly invoice with surprise billable increments, unexplained admin surcharges, and unanswered conflict-of-interest emails. |
+| `08_After_Finished.png` | **Comparison Slider (Right)** | 16:10 (1200×750) | **AFTER**: Transparent Retainer & 24-Hr Conflict Clearance &mdash; Crisp responsive portal on tablet displaying milestone-based fixed retainer breakdown, automated 24-hr adverse party conflict clearance certificate, and direct encrypted counsel messaging. |
+| `09_Artisan_Founder.png` | **Senior Advocate & Managing Partner** | 1:1 or 4:5 Portrait | Senior Advocate Adv. Vikramaditya Sen (28+ years experience, Supreme Court & High Court) in immaculate tailored dark charcoal three-piece suit, advocate neckband, seated in personal library with calm, formidable intellect and dignity. |
+| `10_Process_Detail.png` | **Heritage Parchment & Brass Seals** | 16:9 or 4:3 | Macro detail of hand-bound legal brief with green ribbon tape, embossed brass firm seal, premium Montblanc fountain pen with gold nib resting on textured legal parchment paper. |
 
 ---
 
-## 3. Unslop Design Standard Rules
-1. **No Purple AI Gradients**: Use editorial dark midnight navy, museum bronze, stone, or warm earth palettes.
-2. **Character-Rich Typography**: High-contrast editorial display font for headings; clean neutral body text.
-3. **Strict Word Integrity**: No split words on mobile (`word-break: keep-all; overflow-wrap: normal`).
-4. **Authentic Chiaroscuro Lighting**: High contrast, moody shadows, realistic depth. Zero cheesy smiling stock photos.
-5. **Direct High-Intent CTAs**: One-tap WhatsApp consult with pre-filled shastric/project details + interactive timeline estimator.
+## 3. High-Conversion Features to be Implemented
+1. **Interactive Before / After Retainer Transparency Slider**: Contrast opaque surprise hourly bills (`07_Before_Raw.png`) with clear milestone-based retainers and automated conflict check certificates (`08_After_Finished.png`).
+2. **Confidential Adverse Party Conflict Screener**: Immediate interactive intake checking adverse party names and corporate entities with a strict 24-Hour SLA.
+3. **Bar Council of India (BCI) Ethics Compliance Banner**: Explicit compliance disclaimer under Rule 36 of Bar Council of India Rules.
+4. **Direct Encrypted WhatsApp Consultation Desk**: Immediate privileged consultation booking for Urgent Injunctions, NCLT Hearings, and Commercial Arbitrations.
