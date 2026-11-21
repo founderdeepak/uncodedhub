@@ -1,4 +1,4 @@
-# Demo_18_Restaurant — Asset & Upgrade Brief
+# Demo_18_Restaurant — Asset & Upgrade Brief [STATUS: COMPLETED & DEPLOYED]
 
 **Client / Brand**: Saffron & Smoke Charcoal Kitchen & Coastal Hearth  
 **Sector**: Fine Dining Charcoal Kitchen & Artisanal Wood-Fired Hearth  

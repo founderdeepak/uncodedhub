@@ -1,115 +1,2018 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saffron &amp; Smoke | Modern Coastal &amp; Woodfire Kitchen | Private Dining Specimen</title>
-  <meta name="description" content="Explore the modern woodfire and coastal restaurant demo by Uncoded Hub. Live digital mobile menu with dietary filters, zero-commission table reservations, and 3-theme changer.">
+  <title>Saffron & Smoke | Wood-Fired Coastal & Charcoal Kitchen | Bengaluru</title>
+  <meta name="description" content="Artisanal open-flame wood-fired coastal and charcoal dining in Bengaluru. Features an instant 0.4s digital mobile menu with dietary filters and zero-commission direct WhatsApp table reservations.">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://uncodedhub.com/demos/restaurant.html">
   <link rel="alternate" hreflang="en" href="https://uncodedhub.com/demos/restaurant.html">
   <link rel="alternate" hreflang="x-default" href="https://uncodedhub.com/demos/restaurant.html">
 
+  <!-- OpenGraph Metadata -->
+  <meta property="og:site_name" content="Uncoded Hub">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://uncodedhub.com/demos/restaurant.html">
+  <meta property="og:title" content="Saffron & Smoke | Wood-Fired Coastal & Charcoal Kitchen">
+  <meta property="og:description" content="Artisanal open-flame dining in Bengaluru. 100% seasoned hardwood charcoal, instant 0.4s mobile menu, and direct zero-commission table reservations.">
+  <meta property="og:image" content="https://uncodedhub.com/demos/assets/demo-18-restaurant/01_Hero_Showcase.png">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:image:alt" content="Saffron and Smoke Open Fire Coastal Hearth Kitchen">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@uncodedhub">
+  <meta name="twitter:creator" content="@uncodedhub">
+  <meta name="twitter:title" content="Saffron & Smoke | Artisanal Wood-Fired Kitchen">
+  <meta name="twitter:description" content="Wood-fired coastal grills and slow-smoked Kashmiri curries. Instant mobile menu and direct table reservations in Bengaluru.">
+  <meta name="twitter:image" content="https://uncodedhub.com/demos/assets/demo-18-restaurant/01_Hero_Showcase.png">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Restaurant",
+        "@id": "https://uncodedhub.com/demos/restaurant.html#restaurant",
+        "name": "Saffron & Smoke Charcoal Kitchen & Coastal Hearth",
+        "url": "https://uncodedhub.com/demos/restaurant.html",
+        "image": "https://uncodedhub.com/demos/assets/demo-18-restaurant/01_Hero_Showcase.png",
+        "servesCuisine": ["Coastal Indian", "Charcoal Grill", "Wood-Fired Tandoor"],
+        "priceRange": "₹₹₹",
+        "telephone": "+91-80-2856-9933",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "13th Cross Rd, Basavanagara",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "Karnataka",
+          "postalCode": "560037",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "12.9698",
+          "longitude": "77.6961"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "12:30",
+            "closes": "15:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "19:00",
+            "closes": "23:30"
+          }
+        ],
+        "hasMenu": "https://uncodedhub.com/demos/restaurant.html#menu",
+        "acceptsReservations": "True"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://uncodedhub.com/demos/restaurant.html",
+        "url": "https://uncodedhub.com/demos/restaurant.html",
+        "name": "Saffron & Smoke | Wood-Fired Coastal & Charcoal Kitchen",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://uncodedhub.com/#website",
+          "url": "https://uncodedhub.com/",
+          "name": "Uncoded Hub"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://uncodedhub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://uncodedhub.com/#portfolio" },
+            { "@type": "ListItem", "position": 3, "name": "Restaurant Demo", "item": "https://uncodedhub.com/demos/restaurant.html" }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <button class="tc-btn active" data-theme="smoked-charcoal" onclick="switchTheme('smoked-charcoal', this)">
-      <span>Smoked Charcoal &amp; Amber</span>
-    </button>
-    <button class="tc-btn" data-theme="terracotta-bistro" onclick="switchTheme('terracotta-bistro', this)">
-      <span>Terracotta Bistro &amp; Cream</span>
-    </button>
-    <button class="tc-btn" data-theme="avant-garde-hearth" onclick="switchTheme('avant-garde-hearth', this)">
-      <span>Avant-Garde Fire Red</span>
-    </button>
-  </div>
+  <!-- Warm Atmospheric Typography: Plus Jakarta Sans (Body / Menu / Pricing), Space Grotesk (Kitchen HUD / Telemetry) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Uncoded Hub Studio Pitch & Cover Letter Modal -->
-  <div class="pitch-modal-backdrop" id="uncodedPitchModal" onclick="handleBackdropClick(event)">
-    <div class="pitch-modal-card">
-      <button class="pitch-close-btn" onclick="closePitchModal()" title="Close dialog">✕</button>
-      
-      <div class="uh-popup-header">
-        <div class="uh-brand-group">
-          <img src="/logo-medium.webp" alt="Uncoded Hub" class="uh-brand-logo-img">
-          <div>
-            <div class="uh-brand-name">Uncoded Hub</div>
-            <div class="uh-brand-sub">Two-Person Studio · Bengaluru</div>
-          </div>
+  <style>
+    /* ==========================================================================
+       SAFFRON & SMOKE SIGNATURE THEME: Smoked Charcoal & Glowing Amber
+       ========================================================================== */
+    :root {
+      --bg-dark: #0D0B0A;
+      --bg-surface: #14100E;
+      --bg-card: #1C1714;
+      --bg-card-hover: #26201B;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(224, 122, 95, 0.3);
+      --text-pure: #FAF8F5;
+      --text-body: #E7E3DE;
+      --text-muted: #A8A29E;
+      --text-dim: #78716C;
+      --accent-ember: #E07A5F; /* Burnt Terracotta Flame */
+      --accent-hover: #F28C73;
+      --accent-saffron: #D4A373; /* Saffron Amber */
+      --accent-gold: #F59E0B;
+      --accent-emerald: #10B981;
+      --font-display: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'Space Grotesk', monospace;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 14px;
+      --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-body);
+      font-family: var(--font-display);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      selection-background-color: var(--accent-ember);
+      selection-color: #000;
+    }
+
+    ::selection {
+      background: var(--accent-ember);
+      color: #000000;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Hearth Dispatch Bar */
+    .hearth-dispatch-bar {
+      background: #090706;
+      color: #FAF8F5;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .dispatch-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hearth-status-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ember-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent-ember);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-ember);
+      animation: pulseEmber 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseEmber {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .dispatch-phone {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+    }
+
+    .dispatch-phone span {
+      color: var(--accent-saffron);
+      font-weight: 600;
+    }
+
+    /* Main Restaurant Navbar */
+    .restaurant-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 11, 10, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: var(--transition-smooth);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .restaurant-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-fire-box {
+      width: 40px;
+      height: 40px;
+      background: var(--accent-ember);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0D0B0A;
+      font-weight: 800;
+      box-shadow: 0 4px 15px rgba(224, 122, 95, 0.35);
+    }
+
+    .brand-title-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title-main {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-pure);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .brand-title-main span {
+      color: var(--accent-saffron);
+    }
+
+    .brand-subhead-mono {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-body);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-link:hover {
+      color: var(--accent-saffron);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-ember {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #0D0B0A;
+      background: var(--accent-ember);
+      border: none;
+      padding: 12px 22px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 16px rgba(224, 122, 95, 0.3);
+    }
+
+    .btn-ember:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(224, 122, 95, 0.45);
+    }
+
+    .btn-outline-amber {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent-saffron);
+      background: transparent;
+      border: 1.5px solid var(--border-accent);
+      padding: 11px 20px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-outline-amber:hover {
+      border-color: var(--accent-saffron);
+      background: rgba(212, 163, 115, 0.08);
+      color: var(--text-pure);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 70px 0 90px;
+      position: relative;
+      background: radial-gradient(circle at 80% 20%, rgba(224, 122, 95, 0.12) 0%, transparent 60%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 6.5fr 5.5fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-eyebrow-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-ember);
+      background: rgba(224, 122, 95, 0.12);
+      border: 1px solid var(--border-accent);
+      padding: 6px 14px;
+      border-radius: 40px;
+      margin-bottom: 20px;
+    }
+
+    .hero-headline {
+      font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--text-pure);
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .hero-headline span {
+      color: var(--accent-saffron);
+    }
+
+    .hero-paragraph {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 34px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    /* Hero Hearth Frame */
+    .hero-hearth-viewport {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-accent);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+    }
+
+    .hud-hearth-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      background: #080605;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .hud-hearth-bar span {
+      color: var(--accent-ember);
+      font-weight: 700;
+    }
+
+    .hero-img-container {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .hero-hearth-viewport:hover .hero-img-container img {
+      transform: scale(1.02);
+    }
+
+    /* Key Hospitality Metrics */
+    .hearth-metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .metric-brick {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .metric-brick-val {
+      font-family: var(--font-mono);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent-ember);
+      letter-spacing: -0.02em;
+    }
+
+    .metric-brick-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-pure);
+    }
+
+    .metric-brick-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Section Global Headers */
+    .section-wrap {
+      padding: 90px 0;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .section-header {
+      margin-bottom: 48px;
+    }
+
+    .section-tag-mono {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-ember);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .section-main-heading {
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      font-weight: 800;
+      color: var(--text-pure);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .section-subtext {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       BEFORE / AFTER MENU SPEED SLIDER (Conversion Anchor)
+       ========================================================================== */
+    .comparison-container {
+      position: relative;
+      width: 100%;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: #000;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .comparison-slider-inner {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+    }
+
+    .comparison-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    .comparison-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 50%;
+      overflow: hidden;
+      border-right: 3px solid var(--accent-ember);
+      box-shadow: 4px 0 24px rgba(224, 122, 95, 0.5);
+      z-index: 2;
+    }
+
+    .comparison-overlay .comparison-image {
+      width: 100%;
+      max-width: none;
+    }
+
+    .slider-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 48px;
+      height: 48px;
+      background: var(--accent-ember);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: ew-resize;
+      z-index: 10;
+      box-shadow: 0 0 25px rgba(224, 122, 95, 0.7);
+      color: #000;
+      font-weight: 800;
+    }
+
+    .slider-handle svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .slider-badge {
+      position: absolute;
+      bottom: 24px;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      z-index: 5;
+    }
+
+    .badge-before {
+      left: 24px;
+      background: rgba(13, 11, 10, 0.92);
+      color: #EF4444;
+      border: 1px solid rgba(239, 68, 68, 0.4);
+    }
+
+    .badge-after {
+      right: 24px;
+      background: rgba(13, 11, 10, 0.92);
+      color: var(--accent-saffron);
+      border: 1px solid var(--border-accent);
+    }
+
+    .comparison-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .comp-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+    }
+
+    .comp-card.pdf-pain {
+      border-top: 3px solid #EF4444;
+    }
+
+    .comp-card.html-gain {
+      border-top: 3px solid var(--accent-ember);
+    }
+
+    .comp-card-header {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .comp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: var(--text-body);
+    }
+
+    .comp-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .comp-list li svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* ==========================================================================
+       CULINARY SHOWCASES & EXPERIENCES (5 Modules)
+       ========================================================================== */
+    .dishes-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 28px;
+    }
+
+    .dish-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition-smooth);
+    }
+
+    .dish-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .dish-card.large {
+      grid-column: span 7;
+    }
+
+    .dish-card.medium {
+      grid-column: span 5;
+    }
+
+    .dish-card.full {
+      grid-column: span 12;
+    }
+
+    .dish-img-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .dish-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .dish-card:hover .dish-img-wrap img {
+      transform: scale(1.03);
+    }
+
+    .dish-badge-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      background: rgba(13, 11, 10, 0.85);
+      color: var(--accent-saffron);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(6px);
+    }
+
+    .dish-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .dish-subhead-mono {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent-ember);
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .dish-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-pure);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .dish-description {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+
+    .dish-footer-meta {
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-pure);
+      font-weight: 600;
+    }
+
+    .dish-footer-meta span {
+      color: var(--accent-saffron);
+    }
+
+    /* ==========================================================================
+       EXECUTIVE CHEF & HEARTH MANIFESTO
+       ========================================================================== */
+    .chef-grid {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .chef-portrait-frame {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-accent);
+      background: var(--bg-surface);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    }
+
+    .chef-photo-container {
+      aspect-ratio: 4 / 5;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .chef-photo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .chef-caption-strip {
+      padding: 20px 24px;
+      background: #080605;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chef-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-pure);
+    }
+
+    .chef-role {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-ember);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .chef-manifesto-body {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .chef-quote {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-pure);
+      border-left: 3px solid var(--accent-ember);
+      padding-left: 20px;
+      line-height: 1.45;
+    }
+
+    .chef-narrative {
+      font-size: 1.02rem;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+
+    .hearth-rules-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .rule-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 16px 18px;
+      border-radius: var(--radius-sm);
+    }
+
+    .rule-title-ember {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--accent-ember);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .rule-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* ==========================================================================
+       CONVERSION ENGINE: INSTANT IN-MEMORY FILTERABLE HTML MENU
+       ========================================================================== */
+    .menu-section-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .menu-filter-buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .menu-pill {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 40px;
+      background: var(--bg-dark);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-body);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .menu-pill:hover {
+      border-color: var(--accent-saffron);
+    }
+
+    .menu-pill.active {
+      background: var(--accent-ember);
+      color: #0D0B0A;
+      border-color: var(--accent-ember);
+      box-shadow: 0 4px 14px rgba(224, 122, 95, 0.35);
+    }
+
+    .menu-items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-item-tile {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+    }
+
+    .menu-item-tile:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+    }
+
+    .item-top-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .item-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-pure);
+    }
+
+    .item-price {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--accent-saffron);
+      white-space: nowrap;
+    }
+
+    .item-sub-hindi {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-ember);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .item-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .item-footer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .dietary-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+    }
+
+    .tag-gf { background: rgba(16, 185, 129, 0.15); color: #10B981; }
+    .tag-veg { background: rgba(56, 189, 248, 0.15); color: #38BDF8; }
+    .tag-chef { background: rgba(224, 122, 95, 0.15); color: var(--accent-ember); }
+
+    /* Direct WhatsApp Reservation Banner */
+    .reservation-banner-box {
+      background: linear-gradient(135deg, #1C1714 0%, #14100E 100%);
+      border: 1.5px solid var(--border-accent);
+      border-radius: var(--radius-md);
+      padding: 40px;
+      margin-top: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 28px;
+    }
+
+    .res-banner-text h3 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--text-pure);
+      margin-bottom: 6px;
+    }
+
+    .res-banner-text p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      max-width: 580px;
+    }
+
+    /* 4 Hearth Standards */
+    .standards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .standard-item-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .standard-num-ember {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--accent-ember);
+    }
+
+    .standard-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-pure);
+    }
+
+    .standard-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Table Reservation Modal */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-hearth-sheet {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-md);
+      max-width: 540px;
+      width: 100%;
+      padding: 36px;
+      position: relative;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .modal-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-saffron);
+      text-transform: uppercase;
+    }
+
+    .form-input {
+      padding: 12px 14px;
+      background: var(--bg-dark);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-pure);
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent-ember);
+      box-shadow: 0 0 12px rgba(224, 122, 95, 0.3);
+    }
+
+    /* Restaurant Footer & Canonical NAP */
+    .restaurant-footer {
+      background: #080605;
+      color: var(--text-muted);
+      padding: 80px 0 36px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-grid-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.6fr;
+      gap: 48px;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand-blurb {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin-top: 14px;
+      max-width: 320px;
+    }
+
+    .footer-column-heading {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-saffron);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 18px;
+    }
+
+    .footer-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 0.88rem;
+    }
+
+    .footer-nav-list a:hover {
+      color: var(--text-pure);
+    }
+
+    .footer-nap-block {
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    .footer-nap-block strong {
+      color: var(--text-pure);
+    }
+
+    .footer-bottom-line {
+      padding-top: 30px;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .nav-links { display: none; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .chef-grid { grid-template-columns: 1fr; }
+      .dish-card.large, .dish-card.medium { grid-column: span 12; }
+      .comparison-cards-grid { grid-template-columns: 1fr; }
+      .footer-grid-row { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .footer-grid-row { grid-template-columns: 1fr; }
+      .menu-items-grid { grid-template-columns: 1fr; }
+      .hero-cta-group { flex-direction: column; align-items: stretch; }
+      .btn-ember, .btn-outline-amber { width: 100%; }
+      .hearth-rules-grid { grid-template-columns: 1fr; }
+      .footer-bottom-line { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Hearth Dispatch Bar -->
+  <div class="hearth-dispatch-bar">
+    <div class="container">
+      <div class="dispatch-inner">
+        <div class="hearth-status-pill">
+          <span class="ember-dot"></span>
+          <span>WOOD-FIRED HEARTH EMBERS LIT &bull; DINNER SERVICE: 07:00 PM – 11:30 PM</span>
         </div>
-        <span class="uh-badge-studio">7-Day Sprint Prototype</span>
-      </div>
-
-      <div class="founders-row">
-        <div class="founders-photos">
-          <div class="founder-pic-box">
-            <img src="/deepak.webp" alt="Deepak, co-founder" class="founder-pic">
-            <span class="founder-name">Deepak</span>
-            <span class="founder-role">Engineering</span>
-          </div>
-          <div class="founder-pic-box">
-            <img src="/geetha.webp" alt="Geetha, co-founder" class="founder-pic">
-            <span class="founder-name">Geetha</span>
-            <span class="founder-role">Design &amp; Strategy</span>
-          </div>
+        <div class="dispatch-phone">
+          <span>Host Stand &amp; Valet Desk:</span> +91 80 2856 9933 &bull; WhatsApp: +91 86608 19023
         </div>
-        <div class="founders-intro">
-          <h2>Why We Hand-Built This Live Prototype For Your Business Before Asking For A Rupee.</h2>
-          <p>A personal note from Deepak &amp; Geetha to the founder or practice director reviewing this website.</p>
-        </div>
-      </div>
-
-      <div class="pitch-body">
-        <p>Dear Founder / Business Owner,</p>
-        <p>Most digital agencies pitch generic 40-page PDF decks, throw around corporate jargon, and demand lakhs before proving they understand a single thing about your real clients. <strong>We do the opposite: we do the work first.</strong></p>
-
-        <div class="insight-card">
-          <h4>The 50-Millisecond Silent Decision</h4>
-          <p>When a prospective client or patient searches for your service in your city, they don't judge your years of dedication or credentials on paper. <strong>They judge you in the first 50 milliseconds based on visual certainty.</strong> In high-ticket services, clients do not buy a service—they buy <em>relief from the fear of making an expensive mistake</em>. If your site takes 4+ seconds to load, breaks on mobile, or looks like a template from 2018, over 70% bounce silently and hire the competitor who looks established.</p>
-        </div>
-
-        <div class="insight-card">
-          <h4>What This Live Prototype Solves For Your Business</h4>
-          <p>We didn't build an aesthetic brochure. We built a high-conversion client acquisition engine: sub-second load time on Indian mobile 4G networks, upfront service clarity, interactive self-qualification tools, and direct 1-tap WhatsApp consultation. It answers your prospect's unvoiced fears before they ever hesitate.</p>
-        </div>
-
-        <div class="belief-card">
-          <div class="belief-quote">
-            "Uncoded Hub is a brother and sister who got tired of watching competent, high-quality businesses lose work to worse competitors simply because the competitor had a faster, clearer website."
-          </div>
-          <div class="commitments-grid">
-            <div class="comm-item">
-              <strong>1. Senior Delivery Only</strong>
-              No hidden junior team, no account managers. Deepak and Geetha engineer and design every single line.
-            </div>
-            <div class="comm-item">
-              <strong>2. 7-Day Turnaround</strong>
-              Live and launched in 7 working days flat—not 3 months of agency delays.
-            </div>
-            <div class="comm-item">
-              <strong>3. 100% Asset Ownership</strong>
-              Domain, hosting, code, and content in your name from day one with zero monthly platform lock-ins.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="pitch-actions">
-        <button class="pitch-cta-dismiss" onclick="closePitchModal()">Explore Live Demo Specimen ↓</button>
-        <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha%2C%20I%20am%20viewing%20the%20Saffron%20%26%20Smoke%20demo%20and%20would%20like%20to%20discuss%20building%20our%20website." class="pitch-cta-wa" target="_blank" rel="noopener noreferrer">
-          Claim This Website on WhatsApp (+91 86608 19023) →
-        </a>
       </div>
     </div>
   </div>
 
-  <!-- Floating Lead Magnet Button -->
-  <div class="lead-magnet-floating-widget" id="leadMagnetWidget">
-    <button class="lm-floating-btn" onclick="openPitchModal()" title="Free 3-Page Executive Guide">
-      <span class="lm-btn-icon-wrap"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
-      <span>Free Studio Briefing</span>
-      <span class="lm-pulse-ping"></span>
-    </button>
+  <!-- Main Restaurant Navbar -->
+  <header class="restaurant-navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="#hero" class="restaurant-brand">
+          <div class="brand-fire-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+          </div>
+          <div class="brand-title-col">
+            <div class="brand-title-main">SAFFRON &amp; <span>SMOKE</span></div>
+            <div class="brand-subhead-mono">Charcoal Kitchen &bull; Coastal Hearth</div>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#dishes" class="nav-link">Hearth Craft</a></li>
+          <li><a href="#comparison" class="nav-link">Menu vs PDF</a></li>
+          <li><a href="#chef" class="nav-link">Pitmaster</a></li>
+          <li><a href="#menu" class="nav-link">Live Menu</a></li>
+          <li><a href="#standards" class="nav-link">Fire Standards</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="#menu" class="btn-outline-amber">View Menu</a>
+          <a href="#reserve" class="btn-ember">Reserve Table</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-eyebrow-tag">
+            <span class="ember-dot"></span>
+            <span>Artisanal Woodfire &bull; Bengaluru</span>
+          </div>
+          <h1 class="hero-headline">
+            REAL HARDWOOD FIRE. <span>KASHMIRI SAFFRON.</span> ZERO PDF PINCHING.
+          </h1>
+          <p class="hero-paragraph">
+            Saffron & Smoke celebrates ancestral open-flame cooking. 100% seasoned hardwood embers, 12-hour slow-smoked coastal delicacies, and a sub-second 0.4s digital menu that eliminates predatory 30% delivery aggregator commissions.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#menu" class="btn-ember">
+              Explore Live Filterable Menu
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#reserve" class="btn-outline-amber">Reserve Dinner Booth</a>
+          </div>
+        </div>
+
+        <!-- Hero Hearth Frame -->
+        <div class="hero-hearth-viewport">
+          <div class="hud-hearth-bar">
+            <div>HEARTH FLAME TEMP: <span>450°C HARDWOOD</span></div>
+            <div>MENU LOAD: <span>0.4s IN-MEMORY</span></div>
+          </div>
+          <div class="hero-img-container">
+            <img src="assets/demo-18-restaurant/01_Hero_Showcase.png" alt="Saffron & Smoke Coastal Hearth Kitchen with Roaring Embers" width="1920" height="1080" loading="eager">
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Hospitality Metrics -->
+      <div class="hearth-metrics-strip">
+        <div class="metric-brick">
+          <div class="metric-brick-val">0.4s LCP</div>
+          <div class="metric-brick-title">Instant Digital Menu</div>
+          <div class="metric-brick-desc">Zero PDF downloads or pinching on mobile</div>
+        </div>
+        <div class="metric-brick">
+          <div class="metric-brick-val">100% Charcoal</div>
+          <div class="metric-brick-title">Hardwood &amp; Coconut Embers</div>
+          <div class="metric-brick-desc">Zero electric grills or artificial smoke</div>
+        </div>
+        <div class="metric-brick">
+          <div class="metric-brick-val">0% Commission</div>
+          <div class="metric-brick-title">Direct WhatsApp Booking</div>
+          <div class="metric-brick-desc">Zero revenue loss to 30% middleman apps</div>
+        </div>
+        <div class="metric-brick">
+          <div class="metric-brick-val">12-Hour</div>
+          <div class="metric-brick-title">Slow-Smoked Perfection</div>
+          <div class="metric-brick-desc">Kashmiri saffron &amp; heritage marinades</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before / After Menu Speed Slider Section -->
+  <section class="section-wrap" id="comparison">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag-mono">// MOBILE GUEST EXPERIENCE</span>
+        <h2 class="section-main-heading">THE 15MB PDF MENU NIGHTMARE VS. 0.4s INSTANT HTML</h2>
+        <p class="section-subtext">
+          Slide horizontally to see why forcing diners to download a slow, unreadable PDF menu loses 65% of hungry mobile visitors before they ever place an order.
+        </p>
+      </div>
+
+      <div class="comparison-container" id="sliderContainer">
+        <div class="comparison-slider-inner">
+          <!-- After (Right / Background) -->
+          <img src="assets/demo-18-restaurant/08_After_Finished.png" alt="Instant 0.4s Responsive HTML Mobile Menu" class="comparison-image" id="afterImage">
+          
+          <!-- Before (Left / Foreground Overlay) -->
+          <div class="comparison-overlay" id="comparisonOverlay">
+            <img src="assets/demo-18-restaurant/07_Before_Raw.png" alt="Clunky 15MB PDF Menu Download Nightmare" class="comparison-image" id="beforeImage">
+          </div>
+
+          <!-- Handle -->
+          <div class="slider-handle" id="sliderHandle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>
+          </div>
+
+          <div class="slider-badge badge-before">BEFORE // 15MB PDF Pinch &amp; Zoom Agony</div>
+          <div class="slider-badge badge-after">AFTER // Instant 0.4s Responsive Menu</div>
+        </div>
+      </div>
+
+      <div class="comparison-cards-grid">
+        <div class="comp-card pdf-pain">
+          <div class="comp-card-header" style="color: #EF4444;">
+            <span>The Heavy PDF Menu Trap</span>
+            <span>Drop-off Rate: 65%</span>
+          </div>
+          <ul class="comp-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              <span>Guests forced to download a 15MB file over weak restaurant 4G signals, eating up phone storage.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              <span>Tiny microscopic font forcing endless horizontal pinching and zooming on modern phone screens.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              <span>Zero dietary filtering: gluten-free and vegan guests cannot find what they can safely eat.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="comp-card html-gain">
+          <div class="comp-card-header" style="color: var(--accent-ember);">
+            <span>Saffron &amp; Smoke Instant Menu</span>
+            <span>Load Speed: 0.4 Seconds</span>
+          </div>
+          <ul class="comp-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-ember)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Sub-second instant load in browser memory with zero downloads, zero apps, and zero pop-ups.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-ember)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>1-tap category pills (Grills, Curries, Breads, Libations) with crystal-clear high-res photos and prices.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-ember)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Direct WhatsApp table reservation and ordering without handing 30% revenue to delivery apps.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Culinary Showcases (5 Modules) -->
+  <section class="section-wrap" id="dishes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag-mono">// HEARTH SPECIALTIES</span>
+        <h2 class="section-main-heading">OPEN-FLAME EMBERS &amp; SLOW-SMOKED HERITAGE</h2>
+        <p class="section-subtext">
+          Every dish is born from real hardwood logs, stone-ground mountain spices, and ancient coastal pitmaster recipes.
+        </p>
+      </div>
+
+      <div class="dishes-grid">
+        <!-- Dish 01: Lamb Shank (Large) -->
+        <article class="dish-card large">
+          <div class="dish-img-wrap">
+            <img src="assets/demo-18-restaurant/02_Work_01.png" alt="Smoked Kashmiri Lamb Shank with Saffron Ghee Glaze" loading="lazy">
+            <span class="dish-badge-tag">Pitmaster Signature // 01</span>
+          </div>
+          <div class="dish-body">
+            <div>
+              <div class="dish-subhead-mono">12-Hour Pit Smoked</div>
+              <h3 class="dish-title">Smoked Kashmiri Rogan Josh Lamb Shank</h3>
+              <p class="dish-description">
+                Slow-braised over hickory and dried apricot wood embers for 12 hours. Glazed with saffron bone marrow jus, roasted shallots, and cracked Tellicherry black pepper on hand-thrown stoneware.
+              </p>
+            </div>
+            <div class="dish-footer-meta">
+              <div>WOOD: <span>HICKORY &amp; APRICOT</span></div>
+              <div>PRICE: <span>₹1,250</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dish 02: Tiger Prawns (Medium) -->
+        <article class="dish-card medium">
+          <div class="dish-img-wrap">
+            <img src="assets/demo-18-restaurant/03_Work_02.png" alt="Charred Coastal Tiger Prawns over Coconut Embers" loading="lazy">
+            <span class="dish-badge-tag">Coastal Catch // 02</span>
+          </div>
+          <div class="dish-body">
+            <div>
+              <div class="dish-subhead-mono">Coconut Shell Charcoal</div>
+              <h3 class="dish-title">Charred Malabar Tiger Prawns</h3>
+              <p class="dish-description">
+                Wild jumbo prawns flash-blistered at 450°C. Tossed in brown coconut butter, roasted curry leaves, and coastal bird's eye chili relish.
+              </p>
+            </div>
+            <div class="dish-footer-meta">
+              <div>HEAT: <span>450°C FLASH CHAR</span></div>
+              <div>PRICE: <span>₹980</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dish 03: Truffle Kulcha (Medium) -->
+        <article class="dish-card medium">
+          <div class="dish-img-wrap">
+            <img src="assets/demo-18-restaurant/04_Work_03.png" alt="Wood-Fired Saffron and Truffle Stuffed Kulcha" loading="lazy">
+            <span class="dish-badge-tag">Artisanal Hearth // 03</span>
+          </div>
+          <div class="dish-body">
+            <div>
+              <div class="dish-subhead-mono">450°C Clay Tandoor</div>
+              <h3 class="dish-title">Wild Mushroom &amp; Truffle Saffron Kulcha</h3>
+              <p class="dish-description">
+                Naturally fermented sourdough stuffed with smoked morels and porcini mushrooms, finished with winter black truffle ghee and Kashmiri saffron wash.
+              </p>
+            </div>
+            <div class="dish-footer-meta">
+              <div>FERMENTATION: <span>24-HR SOURDOUGH</span></div>
+              <div>PRICE: <span>₹450</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dish 04: Smoked Cocktail (Large) -->
+        <article class="dish-card large">
+          <div class="dish-img-wrap">
+            <img src="assets/demo-18-restaurant/05_Work_04.png" alt="Smoked Applewood Whiskey Cocktail Ritual" loading="lazy">
+            <span class="dish-badge-tag">Craft Libations // 04</span>
+          </div>
+          <div class="dish-body">
+            <div>
+              <div class="dish-subhead-mono">Table-Side Smoke Ritual</div>
+              <h3 class="dish-title">The Applewood Saffron Old Fashioned</h3>
+              <p class="dish-description">
+                Single barrel aged bourbon infused with saffron bitters and jaggery syrup, smoked table-side under a hand-blown cloche with charred applewood chips over crystal clear ice.
+              </p>
+            </div>
+            <div class="dish-footer-meta">
+              <div>WOOD: <span>SWEET APPLEWOOD</span></div>
+              <div>PRICE: <span>₹750</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dish 05: Candlelit Dining Room (Full Width) -->
+        <article class="dish-card full">
+          <div class="dish-img-wrap" style="aspect-ratio: 21 / 9;">
+            <img src="assets/demo-18-restaurant/06_Work_05.png" alt="Intimate Candlelit Dining Room at Saffron & Smoke" loading="lazy">
+            <span class="dish-badge-tag">The Dining Room // 05</span>
+          </div>
+          <div class="dish-body">
+            <div>
+              <div class="dish-subhead-mono">Atmospheric Dining Sanctuary</div>
+              <h3 class="dish-title">Intimate Teakwood Booths Beside the Glowing Hearth</h3>
+              <p class="dish-description">
+                Exposed historic red brick, custom reclaimed railway sleeper tables, hand-forged copper cutlery, and soft acoustic jazz. An unhurried evening where the crackle of open timber fire sets the rhythm of your dinner.
+              </p>
+            </div>
+            <div class="dish-footer-meta">
+              <div>SEATING CAPACITY: <span>48 INTIMATE COVERS</span></div>
+              <div>RESERVATION POLICY: <span>TABLES HELD FOR 15 MINS</span></div>
+              <div>VALET PARKING: <span>COMPLIMENTARY ON-SITE</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Executive Chef & Hearth Manifesto Section -->
+  <section class="section-wrap" id="chef">
+    <div class="container">
+      <div class="chef-grid">
+        <div class="chef-portrait-frame">
+          <div class="chef-photo-container">
+            <img src="assets/demo-18-restaurant/09_Artisan_Founder.png" alt="Executive Chef Kabir Saxena by the Charcoal Grill" loading="lazy">
+          </div>
+          <div class="chef-caption-strip">
+            <div>
+              <div class="chef-name">Kabir Saxena</div>
+              <div class="chef-role">Executive Chef &amp; Pitmaster</div>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; background: rgba(224, 122, 95, 0.15); color: var(--accent-ember); padding: 4px 8px; border-radius: var(--radius-sm); font-weight: 700;">16+ Yrs Fire Craft</span>
+          </div>
+        </div>
+
+        <div class="chef-manifesto-body">
+          <span class="section-tag-mono">// CULINARY MANIFESTO</span>
+          <div class="chef-quote">
+            "Gas stoves are for boiling water. Real flavor comes from the soul of timber, the alchemy of hot embers, and the patience of slow smoke."
+          </div>
+          <p class="chef-narrative">
+            Trained under master charcoal cooks across Kashmir, Lucknow, and the Konkan coast, Chef Kabir Saxena built Saffron & Smoke on a radical refusal to take shortcuts. In an era where commercial kitchens microwave pre-cooked gravies and use artificial liquid smoke, every single skewer and curry pot here is cooked over living seasoned embers.
+          </p>
+
+          <div class="hearth-rules-grid">
+            <div class="rule-card">
+              <div class="rule-title-ember">01 // Zero Gas Burners</div>
+              <div class="rule-text">Our main cooking line runs 100% on seasoned oak, babool wood, and coconut-shell charcoal.</div>
+            </div>
+            <div class="rule-card">
+              <div class="rule-title-ember">02 // 48-Hour Marinades</div>
+              <div class="rule-text">Meats and coastal seafood rest in stone-ground spices, cold-pressed mustard oil, and hung curd for 48 hours.</div>
+            </div>
+            <div class="rule-card">
+              <div class="rule-title-ember">03 // Fresh Catch Boat Sourcing</div>
+              <div class="rule-text">We source directly from artisanal fishermen in Mangalore and Malvan, flown in fresh daily on ice.</div>
+            </div>
+            <div class="rule-card">
+              <div class="rule-title-ember">04 // Zero Middleman Fees</div>
+              <div class="rule-text">We pass the 30% commission saved from delivery platforms into better farm ingredients and guest savings.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Detail: Embers & Saffron -->
+  <section class="section-wrap" id="standards">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 7fr 5fr; gap: 40px; align-items: center;">
+        <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-accent); aspect-ratio: 16 / 10;">
+          <img src="assets/demo-18-restaurant/10_Process_Detail.png" alt="Smoldering Applewood Embers with Kashmiri Saffron and Spices" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <span class="section-tag-mono">// INGREDIENT PROVENANCE</span>
+          <h3 style="font-size: 1.8rem; font-weight: 800; color: var(--text-pure); line-height: 1.25;">
+            GENUINE KASHMIRI MONGRA SAFFRON &amp; HARDWOOD EMBERS
+          </h3>
+          <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6;">
+            We don't use yellow food coloring or commercial spice extracts. Our saffron is Grade-A1 Mongra hand-picked in Pampore, Kashmir. When infused into pure A2 Gir cow ghee and slow-smoked over seasoned applewood, it creates an aroma impossible to replicate in industrial kitchens.
+          </p>
+
+          <div style="display: flex; gap: 20px; font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-pure);">
+            <div>MOISTURE: <span>&lt;8% CERTIFIED</span></div>
+            <div>ORIGIN: <span>PAMPORE, J&amp;K</span></div>
+            <div>PURITY: <span>100% UNADULTERATED</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conversion Engine: Instant In-Memory Filterable HTML Menu -->
+  <section class="section-wrap" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag-mono">// FAST-TRACK ORDERING &bull; 0.4s SPEED</span>
+        <h2 class="section-main-heading">EXPLORE OUR LIVE IN-MEMORY DINNER MENU</h2>
+        <p class="section-subtext">
+          Zero PDF lag. Tap below to filter instantly across our open-fire hearth specialties.
+        </p>
+      </div>
+
+      <div class="menu-section-card">
+        <!-- Category Filter Buttons -->
+        <div class="menu-filter-buttons" id="menuFilters">
+          <button class="menu-pill active" data-cat="all">All Specialties (12 Items)</button>
+          <button class="menu-pill" data-cat="grills">Wood-Fired Grills</button>
+          <button class="menu-pill" data-cat="curries">Slow-Smoked Curries</button>
+          <button class="menu-pill" data-cat="breads">Hearth Breads</button>
+          <button class="menu-pill" data-cat="drinks">Smoked Cocktails</button>
+        </div>
+
+        <!-- Menu Grid -->
+        <div class="menu-items-grid" id="menuGrid">
+          <!-- Item 1 -->
+          <div class="menu-item-tile" data-cat="curries">
+            <div>
+              <div class="item-top-row">
+                <div class="item-title">Smoked Kashmiri Lamb Shank</div>
+                <div class="item-price">₹1,250</div>
+              </div>
+              <div class="item-sub-hindi">Dum Pukht &bull; Saffron Ghee</div>
+              <p class="item-desc">12-hour pit-smoked lamb shank with saffron marrow glaze, charred baby shallots, and cracked Tellicherry pepper.</p>
+            </div>
+            <div class="item-footer-bar">
+              <span class="dietary-tag tag-chef">Pitmaster Special</span>
+              <button class="btn-outline-amber" style="padding: 6px 12px; font-size: 0.75rem;" onclick="addDish('Smoked Kashmiri Lamb Shank', 1250)">
+                Add to Booking
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="menu-item-tile" data-cat="grills">
+            <div>
+              <div class="item-top-row">
+                <div class="item-title">Charred Malabar Tiger Prawns</div>
+                <div class="item-price">₹980</div>
+              </div>
+              <div class="item-sub-hindi">Coconut Husk Char &bull; Curry Leaf</div>
+              <p class="item-desc">Wild Arabian sea prawns flash-grilled at 450°C, tossed with brown coconut butter and roasted lime.</p>
+            </div>
+            <div class="item-footer-bar">
+              <span class="dietary-tag tag-gf">Gluten Free</span>
+              <button class="btn-outline-amber" style="padding: 6px 12px; font-size: 0.75rem;" onclick="addDish('Charred Malabar Tiger Prawns', 980)">
+                Add to Booking
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="menu-item-tile" data-cat="grills">
+            <div>
+              <div class="item-top-row">
+                <div class="item-title">Smoked Bhatti Murgh</div>
+                <div class="item-price">₹680</div>
+              </div>
+              <div class="item-sub-hindi">48-Hr Yogurt Marinade &bull; Charcoal Char</div>
+              <p class="item-desc">Free-range chicken thighs marinated in smoked mustard oil, dark degi mirch, and roasted coriander roots.</p>
+            </div>
+            <div class="item-footer-bar">
+              <span class="dietary-tag tag-gf">Gluten Free</span>
+              <button class="btn-outline-amber" style="padding: 6px 12px; font-size: 0.75rem;" onclick="addDish('Smoked Bhatti Murgh', 680)">
+                Add to Booking
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="menu-item-tile" data-cat="breads">
+            <div>
+              <div class="item-top-row">
+                <div class="item-title">Wild Mushroom &amp; Truffle Kulcha</div>
+                <div class="item-price">₹450</div>
+              </div>
+              <div class="item-sub-hindi">Tandoor Puffed &bull; A2 Ghee Wash</div>
+              <p class="item-desc">Fermented sourdough stuffed with smoked morels, black truffle butter, and roasted cumin seeds.</p>
+            </div>
+            <div class="item-footer-bar">
+              <span class="dietary-tag tag-veg">Vegetarian</span>
+              <button class="btn-outline-amber" style="padding: 6px 12px; font-size: 0.75rem;" onclick="addDish('Truffle Saffron Kulcha', 450)">
+                Add to Booking
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="menu-item-tile" data-cat="curries">
+            <div>
+              <div class="item-top-row">
+                <div class="item-title">Charcoal Smoked Paneer Rawalpindi</div>
+                <div class="item-price">₹590</div>
+              </div>
+              <div class="item-sub-hindi">Cast Iron Skillet &bull; Rich Tomato Silk</div>
+              <p class="item-desc">Malai paneer cubes charred over coal, simmered in an un-strained smoked plum tomato sauce with Kasuri methi.</p>
+            </div>
+            <div class="item-footer-bar">
+              <span class="dietary-tag tag-veg">Vegetarian</span>
+              <button class="btn-outline-amber" style="padding: 6px 12px; font-size: 0.75rem;" onclick="addDish('Smoked Paneer Rawalpindi', 590)">
+                Add to Booking
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="menu-item-tile" data-cat="drinks">
+            <div>
+              <div class="item-top-row">
+                <div class="item-title">Applewood Saffron Old Fashioned</div>
+                <div class="item-price">₹750</div>
+              </div>
+              <div class="item-sub-hindi">Bourbon &bull; Cloche Smoked Table-Side</div>
+              <p class="item-desc">Single-barrel bourbon, house saffron bitters, palm jaggery, crystal clear ice sphere, and charred wood smoke.</p>
+            </div>
+            <div class="item-footer-bar">
+              <span class="dietary-tag tag-chef">Craft Cocktail</span>
+              <button class="btn-outline-amber" style="padding: 6px 12px; font-size: 0.75rem;" onclick="addDish('Applewood Saffron Old Fashioned', 750)">
+                Add to Booking
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Direct Zero-Commission WhatsApp Table Reservation Banner -->
+      <div class="reservation-banner-box" id="reserve">
+        <div class="res-banner-text">
+          <h3>Reserve Your Dinner Booth Directly on WhatsApp</h3>
+          <p>
+            Skip middleman apps. Book directly with our host stand for priority booth seating, zero cancellation penalties, and complimentary saffron amuse-bouche upon arrival.
+          </p>
+        </div>
+        <button class="btn-ember" id="btnOpenReservation">
+          Reserve Table for Tonight
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- 4 Saffron & Smoke Standards -->
+      <div class="standards-grid">
+        <div class="standard-item-box">
+          <div class="standard-num-ember">01 // STANDARD</div>
+          <h4 class="standard-title">100% Real Timber Fire</h4>
+          <p class="standard-desc">Every dish is infused with authentic smoke from seasoned oak, hickory, and coconut husks. Zero artificial liquid smoke.</p>
+        </div>
+        <div class="standard-item-box">
+          <div class="standard-num-ember">02 // STANDARD</div>
+          <h4 class="standard-title">Instant 0.4s Digital Menu</h4>
+          <p class="standard-desc">No heavy 15MB PDF downloads or pinch-to-zoom frustration. Instant, responsive HTML with full allergen transparency.</p>
+        </div>
+        <div class="standard-item-box">
+          <div class="standard-num-ember">03 // STANDARD</div>
+          <h4 class="standard-title">Zero Aggregator Commission</h4>
+          <p class="standard-desc">Direct reservations keep 30% revenue inside the restaurant, funding heirloom farm ingredients and better wages.</p>
+        </div>
+        <div class="standard-item-box">
+          <div class="standard-num-ember">04 // STANDARD</div>
+          <h4 class="standard-title">Table Held for 15 Mins</h4>
+          <p class="standard-desc">Your table is strictly prepared and held for 15 minutes past reservation time with dedicated personalized service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservation Modal -->
+  <div class="modal-backdrop" id="reservationModal">
+    <div class="modal-hearth-sheet">
+      <button class="modal-close-btn" id="btnCloseModal">&times;</button>
+      <div class="section-tag-mono">// DIRECT HOST STAND</div>
+      <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--text-pure); margin-bottom: 6px;">
+        Reserve Your Table at Saffron &amp; Smoke
+      </h3>
+      <p style="font-size: 0.88rem; color: var(--text-muted);">
+        Direct confirmation with our restaurant host stand. Zero booking fees.
+      </p>
+
+      <form class="modal-form" onsubmit="event.preventDefault(); alert('Table request sent! Our host stand will confirm via WhatsApp within 10 minutes.'); document.getElementById('reservationModal').classList.remove('active');">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" class="form-input" placeholder="e.g. Vikramaditya Rao" required>
+        </div>
+        <div class="form-group">
+          <label>Mobile Number (for WhatsApp Confirmation)</label>
+          <input type="tel" class="form-input" placeholder="+91 98800 00000" required>
+        </div>
+        <div class="form-group">
+          <label>Guest Count &amp; Seating</label>
+          <select class="form-input">
+            <option value="2">2 Guests &bull; Intimate Hearth Booth</option>
+            <option value="4">4 Guests &bull; Teakwood Dining Table</option>
+            <option value="6">6 to 8 Guests &bull; Private Chef's Counter</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Preferred Date &amp; Dinner Slot</label>
+          <select class="form-input">
+            <option value="tonight-early">Tonight &bull; 07:30 PM (Early Dinner)</option>
+            <option value="tonight-late">Tonight &bull; 09:15 PM (Late Fire Counter)</option>
+            <option value="tomorrow-dinner">Tomorrow &bull; 08:00 PM (Prime Service)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-ember" style="margin-top: 8px; width: 100%;">
+          Confirm Reservation on WhatsApp
+        </button>
+      </form>
+    </div>
   </div>
 
-  
+  <!-- Restaurant Footer & Canonical NAP -->
+  <footer class="restaurant-footer">
+    <div class="container">
+      <div class="footer-grid-row">
+        <div>
+          <div style="font-size: 1.5rem; font-weight: 800; color: #FAF8F5; letter-spacing: -0.02em;">
+            SAFFRON &amp; <span style="color: var(--accent-saffron);">SMOKE</span>
+          </div>
+          <p class="footer-brand-blurb">
+            Artisanal wood-fired coastal kitchen and charcoal hearth in Bengaluru. Celebrating heirloom Indian open-flame culinary arts with instant digital hospitality.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-column-heading">The Menu</div>
+          <ul class="footer-nav-list">
+            <li><a href="#menu">Wood-Fired Grills</a></li>
+            <li><a href="#menu">Pit-Smoked Curries</a></li>
+            <li><a href="#menu">Tandoor Kulchas</a></li>
+            <li><a href="#menu">Craft Libations</a></li>
+            <li><a href="#dishes">Hearth Specials</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-column-heading">Guest Services</div>
+          <ul class="footer-nav-list">
+            <li><a href="#reserve">Table Reservations</a></li>
+            <li><a href="#comparison">Why No PDF Menus</a></li>
+            <li><a href="#chef">Pitmaster Philosophy</a></li>
+            <li><a href="#standards">Ingredient Sourcing</a></li>
+            <li><a href="#reserve">Private Dining Room</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-column-heading">Hearth Location NAP</div>
+          <div class="footer-nap-block">
+            <strong>Uncoded Hub - Web Design Company</strong><br>
+            Saffron &amp; Smoke Charcoal Kitchen<br>
+            13th Cross Rd, Basavanagara,<br>
+            Bengaluru, Karnataka 560037, India<br><br>
+            <strong>Dinner Service:</strong> Tue–Sun: 07:00 PM – 11:30 PM<br>
+            <strong>Weekend Lunch:</strong> Sat–Sun: 12:30 PM – 03:30 PM<br>
+            <strong>Host Stand Desk:</strong> +91 80 2856 9933
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-line">
+        <div>© 2026 Saffron &amp; Smoke Charcoal Kitchen. Handcrafted with zero bloated frameworks by Uncoded Hub.</div>
+        <div>Bengaluru, Karnataka &bull; 13th Cross Rd, Basavanagara, 560037</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // 1. Before/After Menu Speed Slider Logic
+    (function initSlider() {
+      const container = document.getElementById('sliderContainer');
+      const overlay = document.getElementById('comparisonOverlay');
+      const handle = document.getElementById('sliderHandle');
+      if (!container || !overlay || !handle) return;
+
+      let isDragging = false;
+
+      function updateSlider(xPos) {
+        const rect = container.getBoundingClientRect();
+        let x = xPos - rect.left;
+        if (x < 0) x = 0;
+        if (x > rect.width) x = rect.width;
+        const percentage = (x / rect.width) * 100;
+
+        overlay.style.width = percentage + '%';
+        handle.style.left = percentage + '%';
+      }
+
+      function onMouseMove(e) {
+        if (!isDragging) return;
+        updateSlider(e.clientX);
+      }
+
+      function onTouchMove(e) {
+        if (!isDragging || !e.touches[0]) return;
+        updateSlider(e.touches[0].clientX);
+      }
+
+      handle.addEventListener('mousedown', () => isDragging = true);
+      window.addEventListener('mouseup', () => isDragging = false);
+      window.addEventListener('mousemove', onMouseMove);
+
+      handle.addEventListener('touchstart', () => isDragging = true);
+      window.addEventListener('touchend', () => isDragging = false);
+      window.addEventListener('touchmove', onTouchMove);
+
+      container.addEventListener('click', (e) => {
+        updateSlider(e.clientX);
+      });
+    })();
+
+    // 2. Instant In-Memory Filterable HTML Menu Logic
+    (function initMenu() {
+      const pills = document.querySelectorAll('.menu-pill');
+      const items = document.querySelectorAll('.menu-item-tile');
+
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+
+          const category = pill.dataset.cat;
+
+          items.forEach(item => {
+            if (category === 'all' || item.dataset.cat === category) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    })();
+
+    function addDish(name, price) {
+      alert(name + ' (₹' + price + ') added to your table inquiry! Proceed to Reserve Table to lock your booth.');
+    }
+
+    // 3. Modal Triggers
+    (function initModal() {
+      const modal = document.getElementById('reservationModal');
+      const openBtn = document.getElementById('btnOpenReservation');
+      const closeBtn = document.getElementById('btnCloseModal');
+
+      if (!modal || !openBtn || !closeBtn) return;
+
+      openBtn.addEventListener('click', () => {
+        modal.classList.add('active');
+      });
+
+      closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('active');
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -448,7 +448,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Smoked Charcoal & Amber',
         style: 'Wood-Fired Hearth',
-        image: '/demos/thumbnails/restaurant-theme1.webp',
+        image: '/demos/assets/demo-18-restaurant/01_Hero_Showcase.png',
         palette: ['#0D0B0A', '#E07A5F', '#D4A373'],
         accentHex: '#E07A5F',
       },
