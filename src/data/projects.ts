@@ -376,7 +376,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Clinical Cobalt',
         style: 'Accredited NABL Precision',
-        image: '/demos/thumbnails/healthcare-diagnostics-theme1.webp',
+        image: '/demos/assets/demo-15-healthcare-diagnostics/01_Hero_Showcase.png',
         palette: ['#F0F6FF', '#1D4ED8', '#1E293B'],
         accentHex: '#1D4ED8',
       },
