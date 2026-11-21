@@ -256,9 +256,9 @@ export const PROJECTS: Project[] = [
       {
         name: 'Ubud Botanical',
         style: 'Lush Forest Bathhouse',
-        image: '/demos/thumbnails/spa-wellness-theme1.webp',
-        palette: ['#F7F5EE', '#4A6B53', '#C48A54'],
-        accentHex: '#4A6B53',
+        image: '/demos/assets/demo-10-spa-wellness/01_Hero_Showcase.png',
+        palette: ['#121A16', '#22302A', '#C48A54'],
+        accentHex: '#C48A54',
       },
     ],
     nicheSlug: '/blog/industries/spa-wellness',

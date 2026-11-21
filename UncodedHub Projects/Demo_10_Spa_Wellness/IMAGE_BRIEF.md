@@ -1,4 +1,4 @@
-# Demo_10_Spa_Wellness — Asset & Upgrade Brief
+# Demo_10_Spa_Wellness — Asset & Upgrade Brief [STATUS: COMPLETED & DEPLOYED]
 
 **Client / Brand**: SereneSanctuary Luxury Spa & Ayurveda  
 **Sector**: Luxury Spa & Holistic Wellness  

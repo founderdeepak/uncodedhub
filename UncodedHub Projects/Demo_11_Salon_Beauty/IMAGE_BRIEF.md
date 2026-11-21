@@ -1,48 +1,41 @@
 # Demo_11_Salon_Beauty — Asset & Upgrade Brief
 
-**Client / Brand**: LuxeAura Hair & Aesthetics Lounge
-**Sector**: High-End Salon & Bridal Beauty
-**Category**: beauty
-**Demo File**: [salon-beauty.html](file:///c:/Users/LENOVO/Downloads/uncoded-hub/public/demos/salon-beauty.html)
-**Live Local URL**: `http://localhost:3000/demos/salon-beauty.html`
-**Live Production URL**: `https://uncodedhub.com/demos/salon-beauty.html`
+**Client / Brand**: LuxeAura Hair & Aesthetics Lounge  
+**Sector**: High-End Salon & Bridal Beauty  
+**Category**: beauty  
+**Demo File**: [salon-beauty.html](file:///c:/Users/LENOVO/Downloads/uncoded-hub/public/demos/salon-beauty.html)  
+**Live Local URL**: `http://localhost:3000/demos/salon-beauty.html`  
+**Live Production URL**: `https://uncodedhub.com/demos/salon-beauty.html`  
+**Target Folder for Images**: `UncodedHub Projects/Demo_11_Salon_Beauty/Assets/`
 
 ---
 
 ## 1. Core Conversion Engine & Positioning
-* **Brand Summary**: Bespoke Balayage, K18 molecular repair, and HD bridal aesthetics studio. Built with hospital-grade autoclave sterilisation disclosures, an interactive bridal estimate calculator, and 1-tap WhatsApp slot booking.
-* **Core Conversion Engine**: **Custom Bridal Aesthetic Quote Estimator & Instant Stylist Slot Booking**
-* **Key Business Result**: 0.7s LCP · Interactive Bridal Calculator · 1-Tap Booking
-
-### Visual Themes in this Demo:
-  1. **Rose Gold Glam** (Opulent Bridal Aesthetics) — Accent: `#BE7C7D` | Palette: #FAF5F5, #BE7C7D, #582C35
-  2. **Paris Noir Monolith** (Haute Couture Editorial) — Accent: `#D4AF37` | Palette: #111111, #E5E5E5, #D4AF37
-  3. **Clean Organic Pastel** (Botanical Hair Atelier) — Accent: `#8EA89D` | Palette: #F9F8F6, #8EA89D, #3F4E46
+* **Brand Summary**: Haute couture hair atelier and bridal aesthetics lounge specializing in custom French Balayage, K18 molecular polypeptide hair repair, and HD airbrush bridal makeup. Includes hospital-grade autoclave tool disclosures and an interactive bridal estimate calculator.
+* **Core Conversion Engine**: **Interactive Custom Bridal Aesthetic Quote Estimator & VIP Stylist Slot Booking**
+* **Single Signature Aesthetic**: **Paris Noir Haute Couture & Champagne Gold** &mdash; Obsidian Carbon (`#0F1115`), Alabaster Cream (`#FBF9F7`), Champagne Gold Accent (`#D4AF37`), Subtle Rose Gold (`#BE7C7D`), Sleek Editorial Monolith.
 
 ---
 
-## 2. Required Images Checklist (Drop Here in `Assets/`)
+## 2. Required 10 Images Table (Drop in `Assets/`)
 
-To achieve the unslop gold standard (like Sri Ayyanar Sirpa Kalai), please add **high-resolution authentic images** to this folder or the `Assets/` subfolder:
-
-| File Name | Slot & Purpose | Recommended Aspect & Resolution | Description |
+| File Name | Slot & Purpose | Recommended Aspect & Resolution | Exact Subject & Visual Framing |
 | :--- | :--- | :--- | :--- |
-| `01_Hero_Showcase.png` | Hero Banner / Focal Center | 16:9 (1920×1080) or 4:5 (1200×1500) | Dramatic, aspirational hero image representing the pinnacle of this craft. |
-| `02_Work_01.png` | Portfolio Feature 1 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #1. |
-| `03_Work_02.png` | Portfolio Feature 2 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #2. |
-| `04_Work_03.png` | Portfolio Feature 3 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #3. |
-| `05_Work_04.png` | Portfolio Feature 4 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #4. |
-| `06_Work_05.png` | Portfolio Feature 5 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #5. |
-| `07_Before_Raw.png` | Comparison Slider (Left) | 16:10 (1200×750) | Raw / unpolished / initial stage (e.g. bare shell, untreated, blueprint). |
-| `08_After_Finished.png`| Comparison Slider (Right)| 16:10 (1200×750) | Finished, pristine, luxury outcome (e.g. furnished sanctuary, polished result). |
-| `09_Founder_Or_Expert.png`| Master / Founder Portrait| 1:1 or 4:5 Portrait | Authentic studio / clinic / workshop portrait of the principal expert. |
-| `10_Process_Detail.png`| Craftsmanship / Studio | 16:9 or 4:3 | Micro-detail of materials, tools, operatory, or on-site craftsmanship. |
+| `01_Hero_Showcase.png` | **Main Hero Banner Showcase** | 16:9 (1920×1080) | Haute couture Parisian hair atelier salon floor; warm back-lit arched mirrors, sleek Italian leather styling chairs, polished black terrazzo floor, stylist perfecting model's cascading honey balayage waves. |
+| `02_Work_01.png` | **Signature 1: French Balayage** | 16:10 or 4:5 (1200×1500) | Dimensional sun-kissed French Balayage on brunette hair, seamless blended roots, high-gloss shine, soft studio portrait lighting. |
+| `03_Work_02.png` | **Signature 2: HD Royal Bridal Look** | 16:10 or 4:5 (1200×1500) | Regal bridal makeup portrait; flawless airbrush skin, intricate floral-braided bridal updo, champagne gold jewelry, soft dewy finish. |
+| `04_Work_03.png` | **Signature 3: K18 Molecular Repair** | 16:10 or 4:5 (1200×1500) | Glass-hair finish transformation; macro shot of silk-smooth, zero-frizz reflective hair strands under salon ring light. |
+| `05_Work_04.png` | **Signature 4: Editorial Precision Cut** | 16:10 or 4:5 (1200×1500) | Razor-sharp blunt bob haircut with architectural precision, clean jawline framing, modern Paris fashion week editorial aesthetic. |
+| `06_Work_05.png` | **Signature 5: VIP Bridal Suite Suite** | 16:10 or 4:5 (1200×1500) | Private bridal glam suite with champagne bucket on brass bar cart, velvet vanity couch, full-length illuminated tri-fold mirror. |
+| `07_Before_Raw.png` | **Comparison Slider (Left)** | 16:10 (1200×750) | **BEFORE**: Severe Bleach Breakage & Brassy Frizz &mdash; Damaged brassy yellow tones, split ends, chemical stress, dull matte texture. |
+| `08_After_Finished.png` | **Comparison Slider (Right)** | 16:10 (1200×750) | **AFTER**: Luminous Dimensional Silk &mdash; Restored molecular polypeptide bonds, icy beige dimensional balayage, high-gloss mirror shine. |
+| `09_Artisan_Founder.png` | **Creative Director Portrait** | 1:1 or 4:5 Portrait | Sophisticated portrait of Creative Director & Master Colorist (Claire Delacroix) in tailored black blazer holding Japanese Mizutani scissors in the salon atelier. |
+| `10_Process_Detail.png` | **Color Formulation & Tools** | 16:9 or 4:3 | Macro close-up of custom clay balayage paint bowls, gold foil balayage sheets, Dyson Supersonic Pro dryer, and medical-grade autoclave sterilization pouch. |
 
 ---
 
-## 3. Unslop Design Standard Rules
-1. **No Purple AI Gradients**: Use editorial dark midnight navy, museum bronze, stone, or warm earth palettes.
-2. **Character-Rich Typography**: High-contrast editorial display font for headings; clean neutral body text.
-3. **Strict Word Integrity**: No split words on mobile (`word-break: keep-all; overflow-wrap: normal`).
-4. **Authentic Chiaroscuro Lighting**: High contrast, moody shadows, realistic depth. Zero cheesy smiling stock photos.
-5. **Direct High-Intent CTAs**: One-tap WhatsApp consult with pre-filled shastric/project details + interactive timeline estimator.
+## 3. High-Conversion Features to be Implemented
+1. **Interactive Before / After Molecular Hair Recovery Slider**: Contrast damaged brassy frizz (`07_Before_Raw.png`) with luminous molecular gloss (`08_After_Finished.png`).
+2. **Interactive Bridal & Balayage Quote Estimator**: Clients select hair length, service tier (Bridal package, Balayage, K18 treatment), and bridal party headcount for transparent instant quotes.
+3. **Hospital-Grade Autoclave Hygiene Disclosures**: Visible sterilisation seals and single-use sealed tool pouches for every client.
+4. **4 LuxeAura Atelier Guarantees**: Ammonia-Free Color Formulations, Zero Hidden Service Charges, Dedicated Master Stylist Attention, and 100% Satisfaction Tonal Guarantee.
