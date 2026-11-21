@@ -278,11 +278,11 @@ export const PROJECTS: Project[] = [
     conversionEngine: 'Custom Bridal Aesthetic Quote Estimator & Instant Stylist Slot Booking',
     themes: [
       {
-        name: 'Rose Gold Glam',
-        style: 'Opulent Bridal Aesthetics',
-        image: '/demos/thumbnails/salon-beauty-theme1.webp',
-        palette: ['#FAF5F5', '#BE7C7D', '#582C35'],
-        accentHex: '#BE7C7D',
+        name: 'Paris Noir Haute Couture',
+        style: 'Parisian Balayage & Bridal',
+        image: '/demos/assets/demo-11-salon-beauty/01_Hero_Showcase.png',
+        palette: ['#0F1115', '#1F252E', '#D4AF37'],
+        accentHex: '#D4AF37',
       },
     ],
     nicheSlug: '/blog/industries/salon-beauty',
