@@ -400,7 +400,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Trusted Medical Navy',
         style: 'Senior Specialist OPD',
-        image: '/demos/thumbnails/clinic-polyclinic-theme1.webp',
+        image: '/demos/assets/demo-16-clinic-polyclinic/01_Hero_Showcase.png',
         palette: ['#F8FAFC', '#0369A1', '#0F172A'],
         accentHex: '#0369A1',
       },

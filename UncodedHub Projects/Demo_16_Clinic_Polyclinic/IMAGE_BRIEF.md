@@ -1,4 +1,4 @@
-# Demo_16_Clinic_Polyclinic — Asset & Upgrade Brief
+# Demo_16_Clinic_Polyclinic — Asset & Upgrade Brief [STATUS: COMPLETED & DEPLOYED]
 
 **Client / Brand**: OmniCare Multi-Speciality Polyclinic & Day Care  
 **Sector**: Multi-Speciality Clinic, Day Care OT & Outpatient Medicine  
