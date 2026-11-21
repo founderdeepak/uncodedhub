@@ -208,7 +208,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Industrial Iron',
         style: 'Heavy Barbells & Raw Steel',
-        image: '/demos/thumbnails/gym-fitness-club-theme1.webp',
+        image: '/demos/assets/demo-08-gym-fitness-club/01_Hero_Showcase.png',
         palette: ['#0E0E10', '#EF4444', '#E4E4E7'],
         accentHex: '#EF4444',
       },

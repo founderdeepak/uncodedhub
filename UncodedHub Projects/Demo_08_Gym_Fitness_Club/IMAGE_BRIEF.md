@@ -1,4 +1,4 @@
-# Demo_08_Gym_Fitness_Club — Asset & Upgrade Brief
+# Demo_08_Gym_Fitness_Club — Asset & Upgrade Brief (Completed)
 
 **Client / Brand**: IronVault Fitness & Strength Club  
 **Sector**: Commercial Gym & Strength Club  
@@ -6,36 +6,35 @@
 **Demo File**: [gym-fitness-club.html](file:///c:/Users/LENOVO/Downloads/uncoded-hub/public/demos/gym-fitness-club.html)  
 **Live Local URL**: `http://localhost:3000/demos/gym-fitness-club.html`  
 **Live Production URL**: `https://uncodedhub.com/demos/gym-fitness-club.html`  
-**Target Folder for Images**: `UncodedHub Projects/Demo_08_Gym_Fitness_Club/Assets/`
 
 ---
 
 ## 1. Core Conversion Engine & Positioning
 * **Brand Summary**: High-intensity athletic training facility with Eleiko Olympic barbells, calibrated competition plates, and capped peak-hour floor capacity. Built with an interactive 1-Day VIP Trial Pass activator and upfront membership pricing matrix.
 * **Core Conversion Engine**: **1-Day VIP Pass Generator & Peak-Hour Real-Time Capacity HUD**
-* **Single Signature Aesthetic**: **Industrial Iron & Raw Calibrated Steel** — Matte Obsidian (`#0E0E10`), Precision Crimson (`#EF4444`), Calibrated Steel Zinc (`#E4E4E7`), Heavy Industrial Sans & Mono.
+* **Single Signature Aesthetic**: **Industrial Iron & Raw Calibrated Steel** — Matte Obsidian (`#0A0C0E`), Precision Crimson (`#EF4444`), Calibrated Steel Zinc (`#F4F4F5`), Heavy Industrial Sans & Mono.
 
 ---
 
-## 2. Required 10 Images Table (Drop in `Assets/`)
+## 2. Integrated Authentic Assets (`public/demos/assets/demo-08-gym-fitness-club/`)
 
-| File Name | Slot & Purpose | Recommended Aspect & Resolution | Exact Subject & Visual Framing |
+| File Name | Slot & Purpose | Description | Status |
 | :--- | :--- | :--- | :--- |
-| `01_Hero_Showcase.png` | Main Hero Banner Showcase | 16:9 (1920×1080) | Dramatic, atmospheric athletic strength facility at dawn; Eleiko Olympic platforms, chalk dust drifting in warm spotlight beams, zero crowding. |
-| `02_Case_Study_1.png` | Zone 1: Olympic Lifting | 16:10 or 4:5 (1200×1500) | Olympic weightlifting and deadlift platform with calibrated competition plates and chalk block under focused industrial overhead lights. |
-| `03_Case_Study_2.png` | Zone 2: Powerlifting Cage | 16:10 or 4:5 (1200×1500) | Heavy competition powerlifting squat cage and bench press station with steel safety bands and precision barbell collars. |
-| `04_Case_Study_3.png` | Zone 3: Athletic Turf | 16:10 or 4:5 (1200×1500) | 30-meter high-density athletic sprint turf with heavy steel prowler sled, battle ropes, and kettlebells in crisp focus. |
-| `05_Case_Study_4.png` | Zone 4: Heavy Dumbbell Vault | 16:10 or 4:5 (1200×1500) | Urethane dumbbell rack ascending up to 70kg in immaculate alignment against a matte black steel wall. |
-| `06_Case_Study_5.png` | Zone 5: Athletic Recovery | 16:10 or 4:5 (1200×1500) | Scandinavian cedar dry sauna and dual stainless steel cold plunge tubs at 4°C with ambient mood lighting. |
-| `07_Before_Raw.png` | Comparison Slider (Left) | 16:10 (1200×750) | **BEFORE**: The Overcrowded Commercial Gym &mdash; 45-min waits for benches, disorganized weights on floor, chaotic commercial pop music, broken cables. |
-| `08_After_Finished.png` | Comparison Slider (Right) | 16:10 (1200×750) | **AFTER**: The Capped IronVault Sanctuary &mdash; Dedicated private platform per athlete, calibrated plates racked, focused athletic intensity, zero queues. |
-| `09_Artisan_Founder.png` | Head Strength Coach Portrait | 1:1 or 4:5 Portrait | Authentic gritty portrait of the Head Strength Coach & Founder in gym attire with chalk on hands and a leather lifting belt in front of a squat rack. |
-| `10_Process_Detail.png` | Craftsmanship & Steel Detail | 16:9 or 4:3 | Macro close-up of aggressive knurling on a stainless steel Eleiko barbell with brass bushing, magnesium chalk, and calibrated chrome collar. |
+| `01_Hero_Showcase.png` | Main Hero Banner Showcase | Sunlit dawn Eleiko strength training gym with zero crowding and chalk dust | **Integrated** |
+| `02_Case_Study_1.png` | Zone 1: Olympic Lifting Station | IWF-certified Olympic weightlifting and deadlift platform with calibrated discs | **Integrated** |
+| `03_Case_Study_2.png` | Zone 2: Heavy Squat Cage | Competition power rack and heavy bench press setup with 1000kg safety rating | **Integrated** |
+| `04_Case_Study_3.png` | Zone 3: Athletic Sprint Turf | 30-meter high-density sprint turf track with heavy steel prowler sleds | **Integrated** |
+| `05_Case_Study_4.png` | Zone 4: Heavy Dumbbell Vault | Urethane dumbbell racks escalating up to 70kg in immaculate alignment | **Integrated** |
+| `06_Case_Study_5.png` | Zone 5: Athletic Recovery Suite | Contrast therapy suite with Finnish cedar sauna and 4°C cold plunge tubs | **Integrated** |
+| `07_Before_Raw.png` | Comparison Slider (Left) | **BEFORE**: The Overcrowded Commercial Gym &mdash; 45-min queues &amp; chaos | **Integrated** |
+| `08_After_Finished.png` | Comparison Slider (Right) | **AFTER**: The Capped IronVault Sanctuary &mdash; Dedicated private platform | **Integrated** |
+| `09_Artisan_Founder.png` | Head Strength Coach Portrait | Marcus Vance, Head Strength Coach &amp; Founder with chalk and leather belt | **Integrated** |
+| `10_Process_Detail.png` | Knurling &amp; Steel Detail | Macro detail of aggressive knurling on an Eleiko stainless steel barbell | **Integrated** |
 
 ---
 
-## 3. High-Conversion Features to be Implemented
-1. **Interactive Before / After Gym Experience Slider**: Contrast the 45-minute commercial gym queue (`07_Before_Raw.png`) with the dedicated private platform experience (`08_After_Finished.png`).
-2. **Interactive 1-Day VIP Trial Pass Activator**: Prospective members select their training focus (Powerlifting, Olympic Weightlifting, Functional Hypertrophy, Athletic Conditioning) to generate a personalized digital pass with instant WhatsApp activation.
-3. **Real-Time Floor Capacity HUD**: Visual indicator demonstrating strict 25-athlete peak-hour floor ceiling.
-4. **Transparent Equipment Manifest**: 100% Eleiko, Rogue, and calibrated competition equipment specifications with zero generic machinery.
+## 3. High-Conversion Features Implemented
+1. **Interactive Before / After Gym Model Slider**: Real touch/mouse draggable comparison between the 45-minute commercial gym queue (`07_Before_Raw.png`) and the dedicated private platform sanctuary (`08_After_Finished.png`).
+2. **Interactive 1-Day VIP Pass Generator &amp; Capacity HUD**: Athletes select their training discipline to generate an instant digital pass code with live peak-hour floor capacity status.
+3. **Four Non-Negotiable Facility Guarantees**: Strict 25-Athlete Peak Floor Cap, 100% Calibrated Competition Steel, Zero Contract Traps, and Athletic Etiquette Charter.
+4. **Digital Pass Activation Funnel**: Instant simulated pass activation with WhatsApp delivery.
