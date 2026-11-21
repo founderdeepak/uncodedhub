@@ -302,10 +302,10 @@ export const PROJECTS: Project[] = [
     conversionEngine: 'Interactive Intake Readiness Audit & DEXA Verified Progress Log',
     themes: [
       {
-        name: 'Performance Orange',
-        style: 'High-Energy Kinetic Studio',
-        image: '/demos/thumbnails/fitness-coach-theme1.webp',
-        palette: ['#0D0D0E', '#F97316', '#F4F4F5'],
+        name: 'Stealth Obsidian & Kinetic Blaze',
+        style: 'Executive Kinesiology & Lab',
+        image: '/demos/assets/demo-12-fitness-coach/01_Hero_Showcase.png',
+        palette: ['#0B0D11', '#141820', '#F97316'],
         accentHex: '#F97316',
       },
     ],
