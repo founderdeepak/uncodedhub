@@ -496,8 +496,8 @@ export const PROJECTS: Project[] = [
       {
         name: 'Cosmic Violet & Gold',
         style: 'Celestial Vedic Sanctuary',
-        image: '/demos/thumbnails/astrology-theme1.webp',
-        palette: ['#090614', '#F4C430', '#8B5CF6'],
+        image: '/demos/assets/demo-20-astrology/01_Hero_Showcase.png',
+        palette: ['#080512', '#F4C430', '#D97706'],
         accentHex: '#F4C430',
       },
     ],

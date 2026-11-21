@@ -3,36 +3,1911 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vaidik Jyotish &amp; Vastu Sansthan | Authentic Vedic Charting &amp; Spatial Energy Audits</title>
-  <meta name="description" content="Explore the authentic Vedic astrology and residential Vastu demo by Uncoded Hub. Kundali analysis, gemstone consultation, and direct consultation booking.">
+  <title>Astraea Vedic Sansthan | Classical Parashara Jyotish &amp; Sacred Vastu Architecture</title>
+  <meta name="description" content="Explore Astraea Vedic Sansthan by Uncoded Hub. Mathematical Parashara Kundali charting, non-destructive Vastu audits, certified Jyotish gemology, and direct WhatsApp consultations.">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://uncodedhub.com/demos/astrology.html">
   <link rel="alternate" hreflang="en" href="https://uncodedhub.com/demos/astrology.html">
   <link rel="alternate" hreflang="x-default" href="https://uncodedhub.com/demos/astrology.html">
 
-  
-    <button class="tc-btn active" data-theme="cosmic-violet" onclick="switchTheme('cosmic-violet', this)">
-      <span>Cosmic Violet &amp; Gold</span>
-    </button>
-    <button class="tc-btn" data-theme="vedic-saffron" onclick="switchTheme('vedic-saffron', this)">
-      <span>Vedic Saffron &amp; Ivory</span>
-    </button>
-    <button class="tc-btn" data-theme="astral-slate" onclick="switchTheme('astral-slate', this)">
-      <span>Astral Obsidian Starlight</span>
-    </button>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #080512;
+      --bg-secondary: #120B24;
+      --bg-card: rgba(18, 11, 36, 0.78);
+      --bg-card-hover: rgba(26, 17, 51, 0.9);
+      --border-gold: rgba(244, 196, 48, 0.32);
+      --border-gold-subtle: rgba(244, 196, 48, 0.16);
+      --accent-gold: #F4C430;
+      --accent-gold-light: #FDE047;
+      --accent-gold-glow: rgba(244, 196, 48, 0.22);
+      --accent-copper: #D97706;
+      --text-primary: #FAF6EE;
+      --text-muted: #A79BB8;
+      --text-subtle: #736787;
+      --font-display: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      word-break: keep-all;
+      overflow-wrap: normal;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Live Panchang Ticker Bar */
+    .panchang-ticker-bar {
+      background: #05030A;
+      border-bottom: 1px solid var(--border-gold-subtle);
+      padding: 8px 16px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      letter-spacing: 0.02em;
+      flex-wrap: wrap;
+    }
+
+    .panchang-ticker-bar strong {
+      color: var(--accent-gold);
+      font-weight: 600;
+    }
+
+    .panchang-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(244, 196, 48, 0.08);
+      padding: 2px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(244, 196, 48, 0.2);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent-gold-light);
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header.sansthan-header {
+      background: rgba(8, 5, 18, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-gold-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      padding: 16px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .brand-crest {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #221442, #120B24);
+      border: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-gold);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.35rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    }
+
+    .brand-text h1 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      letter-spacing: 0.06em;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .brand-text span {
+      font-size: 0.72rem;
+      color: var(--accent-gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-menu a:hover {
+      color: var(--accent-gold);
+    }
+
+    .nav-cta-btn {
+      background: linear-gradient(135deg, #F4C430, #D97706);
+      color: #080512;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.84rem;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+      border: 1px solid #FDE047;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-cta-btn:hover {
+      background: linear-gradient(135deg, #FDE047, #F4C430);
+      box-shadow: 0 6px 20px var(--accent-gold-glow);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 80px 0 60px;
+      position: relative;
+      background: radial-gradient(circle at 50% 20%, rgba(26, 17, 51, 0.95), var(--bg-primary) 70%);
+      border-bottom: 1px solid var(--border-gold-subtle);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(244, 196, 48, 0.1);
+      border: 1px solid var(--border-gold);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      color: var(--accent-gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge .ping-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #F4C430;
+      box-shadow: 0 0 10px #F4C430;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 3.1rem;
+      line-height: 1.16;
+      color: var(--text-primary);
+      margin-bottom: 22px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-title span.gold-highlight {
+      color: var(--accent-gold);
+      background: linear-gradient(135deg, #FAF6EE 20%, #FDE047 60%, #F4C430 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 44px;
+    }
+
+    .btn-gold-primary {
+      background: linear-gradient(135deg, #F4C430 0%, #D97706 100%);
+      color: #080512;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border: 1px solid #FDE047;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 24px rgba(244, 196, 48, 0.25);
+    }
+
+    .btn-gold-primary:hover {
+      background: linear-gradient(135deg, #FDE047 0%, #F4C430 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(244, 196, 48, 0.35);
+    }
+
+    .btn-outline-brass {
+      background: rgba(18, 11, 36, 0.8);
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 14px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 1px solid var(--border-gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-outline-brass:hover {
+      border-color: var(--accent-gold-light);
+      background: rgba(28, 17, 56, 0.9);
+      color: var(--accent-gold-light);
+    }
+
+    .hero-stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-gold-subtle);
+    }
+
+    .stat-item h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--accent-gold);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .stat-item p {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+
+    .hero-media-wrap {
+      position: relative;
+    }
+
+    .hero-img-frame {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(244, 196, 48, 0.12);
+      position: relative;
+    }
+
+    .hero-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .hero-img-frame:hover img {
+      transform: scale(1.02);
+    }
+
+    .hero-seal-badge {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(8, 5, 18, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-gold);
+      padding: 12px 18px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    }
+
+    .seal-icon {
+      color: var(--accent-gold);
+      font-size: 1.5rem;
+    }
+
+    .seal-text span {
+      display: block;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .seal-text strong {
+      font-size: 0.82rem;
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    /* Section Headings */
+    .section-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 50px;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-gold);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2.3rem;
+      line-height: 1.25;
+      color: var(--text-primary);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Comparison Slider Section */
+    .slider-section {
+      padding: 90px 0;
+      background: #0B0719;
+      border-bottom: 1px solid var(--border-gold-subtle);
+    }
+
+    .comparison-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+      position: relative;
+    }
+
+    .comparison-slider-wrap {
+      position: relative;
+      width: 100%;
+      height: 540px;
+      overflow: hidden;
+      user-select: none;
+      touch-action: pan-y;
+      cursor: ew-resize;
+    }
+
+    .slider-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    .slider-img.img-after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+    }
+
+    .slider-divider-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: #F4C430;
+      transform: translateX(-50%);
+      pointer-events: none;
+      box-shadow: 0 0 16px #F4C430;
+      z-index: 10;
+    }
+
+    .slider-handle-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #080512;
+      border: 2px solid #F4C430;
+      box-shadow: 0 0 20px rgba(244, 196, 48, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #F4C430;
+      font-weight: 800;
+      font-size: 1rem;
+      pointer-events: none;
+      z-index: 11;
+    }
+
+    .slider-pill-label {
+      position: absolute;
+      bottom: 24px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      z-index: 5;
+      backdrop-filter: blur(10px);
+    }
+
+    .slider-pill-label.left-label {
+      left: 24px;
+      background: rgba(185, 28, 28, 0.85);
+      color: #FEE2E2;
+      border: 1px solid rgba(239, 68, 68, 0.4);
+    }
+
+    .slider-pill-label.right-label {
+      right: 24px;
+      background: rgba(18, 11, 36, 0.92);
+      color: var(--accent-gold-light);
+      border: 1px solid var(--border-gold);
+    }
+
+    .comparison-insights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 1000px;
+      margin: 32px auto 0;
+    }
+
+    .insight-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold-subtle);
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .insight-box.before-box {
+      border-left: 4px solid #EF4444;
+    }
+
+    .insight-box.after-box {
+      border-left: 4px solid #F4C430;
+    }
+
+    .insight-box h4 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .insight-box p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Shastric Service Grid */
+    .services-section {
+      padding: 90px 0;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-gold-subtle);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .services-grid .service-card:first-child {
+      grid-column: span 2;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold-subtle);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    }
+
+    .service-card-img {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+    }
+
+    .service-card:first-child .service-card-img {
+      height: 300px;
+    }
+
+    .service-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-card-img img {
+      transform: scale(1.05);
+    }
+
+    .service-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(8, 5, 18, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-gold);
+      color: var(--accent-gold);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .service-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-body h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .service-body p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .service-meta-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .service-meta-list li {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      background: rgba(244, 196, 48, 0.08);
+      border: 1px solid rgba(244, 196, 48, 0.2);
+      color: var(--accent-gold-light);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    /* Acharya Lineage & Sansthan Ethos */
+    .lineage-section {
+      padding: 90px 0;
+      background: #0B0719;
+      border-bottom: 1px solid var(--border-gold-subtle);
+    }
+
+    .lineage-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .acharya-portrait-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+      position: relative;
+    }
+
+    .acharya-portrait-card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .acharya-title-badge {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(8, 5, 18, 0.98), transparent);
+    }
+
+    .acharya-title-badge h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .acharya-title-badge p {
+      font-size: 0.78rem;
+      color: var(--accent-gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .lineage-ethos-content h2 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      line-height: 1.25;
+    }
+
+    .quote-block {
+      border-left: 3px solid var(--accent-gold);
+      padding-left: 20px;
+      margin: 24px 0;
+      font-style: italic;
+      color: var(--text-primary);
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    .standards-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .standard-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold-subtle);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .standard-item h4 {
+      font-family: var(--font-display);
+      font-size: 0.98rem;
+      color: var(--accent-gold);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .standard-item p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Conversion Engine: Kundali Intake & Panchang Form */
+    .intake-section {
+      padding: 90px 0;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-gold-subtle);
+    }
+
+    .intake-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 14px;
+      padding: 44px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .intake-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-group label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .form-group label span.label-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: none;
+      font-weight: 400;
+    }
+
+    .form-control {
+      background: rgba(8, 5, 18, 0.8);
+      border: 1px solid var(--border-gold-subtle);
+      border-radius: 6px;
+      padding: 12px 16px;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 14px var(--accent-gold-glow);
+      background: rgba(18, 11, 36, 0.95);
+    }
+
+    .intake-output-box {
+      background: rgba(5, 3, 10, 0.9);
+      border: 1px solid var(--border-gold);
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .output-col h5 {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .output-col p.output-value {
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      color: var(--accent-gold-light);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .output-col p.output-sub {
+      font-size: 0.74rem;
+      color: var(--text-subtle);
+      margin-top: 4px;
+    }
+
+    .intake-submit-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-gold-subtle);
+    }
+
+    .shastra-notice {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .shastra-notice svg {
+      width: 18px;
+      height: 18px;
+      color: var(--accent-gold);
+      flex-shrink: 0;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 90px 0;
+      background: #0B0719;
+      border-bottom: 1px solid var(--border-gold-subtle);
+    }
+
+    .faq-grid {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .faq-item:hover {
+      border-color: var(--border-gold);
+    }
+
+    .faq-question {
+      padding: 20px 24px;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-question span.toggle-icon {
+      color: var(--accent-gold);
+      font-size: 1.2rem;
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-question span.toggle-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 24px 22px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* Footer */
+    footer.sansthan-footer {
+      background: #05030A;
+      padding: 60px 0 30px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-gold-subtle);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .footer-col p {
+      font-size: 0.84rem;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col ul a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col ul a:hover {
+      color: var(--accent-gold);
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      color: var(--text-subtle);
+    }
+
+    /* Studio Pitch Modal */
+    .pitch-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .pitch-modal-backdrop.active {
+      display: flex;
+    }
+
+    .pitch-modal-card {
+      background: #0F0A1E;
+      border: 1px solid var(--border-gold);
+      border-radius: 14px;
+      width: 100%;
+      max-width: 760px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 36px;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.9);
+      color: var(--text-primary);
+    }
+
+    .pitch-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .pitch-close-btn:hover {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+    }
+
+    .uh-popup-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-gold-subtle);
+    }
+
+    .uh-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .uh-brand-logo-img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+    }
+
+    .uh-brand-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .uh-brand-sub {
+      font-size: 0.74rem;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .uh-badge-studio {
+      background: rgba(244, 196, 48, 0.12);
+      border: 1px solid var(--border-gold);
+      color: var(--accent-gold-light);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .founders-row {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 24px;
+      align-items: center;
+    }
+
+    .founders-photos {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .founder-pic-box {
+      text-align: center;
+    }
+
+    .founder-pic {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px solid var(--accent-gold);
+      object-fit: cover;
+      margin-bottom: 4px;
+    }
+
+    .founder-name {
+      display: block;
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .founder-role {
+      display: block;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+    }
+
+    .founders-intro h2 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      line-height: 1.35;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .founders-intro p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .pitch-body {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+
+    .pitch-body p {
+      margin-bottom: 14px;
+    }
+
+    .pitch-body strong {
+      color: var(--text-primary);
+    }
+
+    .insight-card {
+      background: rgba(8, 5, 18, 0.7);
+      border: 1px solid var(--border-gold-subtle);
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+
+    .insight-card h4 {
+      font-size: 0.92rem;
+      color: var(--accent-gold);
+      margin-bottom: 6px;
+    }
+
+    .insight-card p {
+      margin: 0;
+      font-size: 0.84rem;
+    }
+
+    .commitments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .comm-item {
+      background: rgba(18, 11, 36, 0.6);
+      border: 1px solid var(--border-gold-subtle);
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+    }
+
+    .comm-item strong {
+      display: block;
+      color: var(--accent-gold);
+      margin-bottom: 4px;
+      font-size: 0.82rem;
+    }
+
+    .pitch-actions {
+      display: flex;
+      gap: 14px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-gold-subtle);
+    }
+
+    .pitch-cta-dismiss {
+      background: transparent;
+      border: 1px solid var(--border-gold);
+      color: var(--text-primary);
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.86rem;
+    }
+
+    .pitch-cta-wa {
+      background: linear-gradient(135deg, #F4C430, #D97706);
+      color: #080512;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.88rem;
+      flex: 1;
+      text-align: center;
+      transition: all 0.2s;
+      border: 1px solid #FDE047;
+    }
+
+    .pitch-cta-wa:hover {
+      background: linear-gradient(135deg, #FDE047, #F4C430);
+    }
+
+    /* Floating Lead Magnet Widget */
+    .lead-magnet-floating-widget {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+    }
+
+    .lm-floating-btn {
+      background: #080512;
+      border: 1px solid var(--accent-gold);
+      color: var(--text-primary);
+      padding: 12px 20px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.84rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px var(--accent-gold-glow);
+      position: relative;
+      transition: all 0.2s ease;
+    }
+
+    .lm-floating-btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-gold-light);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.9), 0 0 26px rgba(244, 196, 48, 0.4);
+    }
+
+    .lm-pulse-ping {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      box-shadow: 0 0 8px var(--accent-gold);
+    }
+
+    .inline-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-grid, .lineage-grid {
+        grid-template-columns: 1fr;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .services-grid .service-card:first-child {
+        grid-column: span 1;
+      }
+      .hero-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .intake-form-grid, .intake-output-box, .comparison-insights, .standards-list {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      .nav-menu {
+        display: none;
+      }
+      .comparison-slider-wrap {
+        height: 380px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .commitments-grid {
+        grid-template-columns: 1fr;
+      }
+      .intake-card {
+        padding: 24px;
+      }
+      .intake-submit-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Live Panchang Ticker Bar -->
+  <div class="panchang-ticker-bar">
+    <span><strong>Live Vedic Panchang:</strong> Shukla Paksha Trayodashi</span>
+    <span class="panchang-pill">&#9789; Chandra in Rohini Nakshatra</span>
+    <span class="panchang-pill">&#9737; Surya in Vrishabha (Taurus)</span>
+    <span class="panchang-pill">&#10022; Rahu Kaal: 04:30 PM &ndash; 06:00 PM</span>
+    <span><strong>Lahiri Ayanamsha:</strong> 24&deg; 12' 48"</span>
   </div>
+
+  <!-- Header -->
+  <header class="sansthan-header">
+    <div class="container nav-inner">
+      <a href="/demos/astrology.html" class="brand-group">
+        <div class="brand-crest">&#2384;</div>
+        <div class="brand-text">
+          <h1>Astraea Vedic Sansthan</h1>
+          <span>Parashara Jyotish &bull; Sacred Vastu Architecture</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#services">Shastric Disciplines</a></li>
+        <li><a href="#rigor">Scientific Contrast</a></li>
+        <li><a href="#lineage">Acharya &amp; Lineage</a></li>
+        <li><a href="#kundali-intake">Kundali Intake</a></li>
+        <li><a href="#faq">Vedic FAQ</a></li>
+      </ul>
+
+      <a href="#kundali-intake" class="nav-cta-btn">
+        <span>Kundali Dossier</span>
+        <svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="ping-dot"></span>
+          <span>Brihat Parashara Hora Shastra &bull; Mathematical Ephemeris</span>
+        </div>
+
+        <h1 class="hero-title">
+          Mathematical Vedic Astrology &amp; Vastu. <br>
+          <span class="gold-highlight">Zero Commercial Superstition.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Where classical Sanskrit Jyotish shastras meet precision astronomical planetary ephemeris. Replaces sensationalist tabloid horoscopes with exact degree calculations, certified unheated natural gemstones, and non-destructive spatial energy audits.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#kundali-intake" class="btn-gold-primary">
+            <span>Precision Birth Chart Intake</span>
+            <svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </a>
+          <a href="https://wa.me/918660819023?text=Astraea%20Vedic%20Sansthan%20-%20Consultation%20Appointment%20Request" target="_blank" rel="noopener noreferrer" class="btn-outline-brass">
+            <span>Direct WhatsApp Sanctuary Booking</span>
+          </a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="stat-item">
+            <h3>30+ Yrs</h3>
+            <p>Vedic Scholarly Lineage</p>
+          </div>
+          <div class="stat-item">
+            <h3>0.01&deg; Arc</h3>
+            <p>Lahiri Ayanamsha Precision</p>
+          </div>
+          <div class="stat-item">
+            <h3>100%</h3>
+            <p>Certified Untreated Gems</p>
+          </div>
+          <div class="stat-item">
+            <h3>14,800+</h3>
+            <p>Charts Rigorously Decoded</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-media-wrap">
+        <div class="hero-img-frame">
+          <img src="/demos/assets/demo-20-astrology/01_Hero_Showcase.png" alt="Astraea Vedic Sansthan Twilight Vedic Astrology Study" width="1920" height="1080" loading="eager">
+          <div class="hero-seal-badge">
+            <span class="seal-icon">&#9788;</span>
+            <div class="seal-text">
+              <span>Parashara Sansthan</span>
+              <strong>Bengaluru &bull; Kashi &bull; Ujjain</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Comparison Slider Section -->
+  <section class="slider-section" id="rigor">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Epistemological Contrast</span>
+        <h2 class="section-title">The Commercial Superstition Scam vs. Shastric Rigor</h2>
+        <p class="section-subtitle">
+          Commercial astrologers monetize fear through fabricated curses and fake synthetic glass stones. Drag the slider to witness Astraea Sansthan's mathematical clarity.
+        </p>
+      </div>
+
+      <div class="comparison-container">
+        <div class="comparison-slider-wrap" id="comparisonSlider">
+          <img src="/demos/assets/demo-20-astrology/07_Before_Raw.png" alt="Clickbait Tabloid Horoscopes and Synthetic Gem Scam" class="slider-img img-before">
+          <img src="/demos/assets/demo-20-astrology/08_After_Finished.png" alt="Astraea Vedic Mathematical Shastric Consultation" class="slider-img img-after" id="afterImage">
+          <div class="slider-divider-line" id="dividerLine"></div>
+          <div class="slider-handle-button" id="sliderHandle">&#8646;</div>
+          <span class="slider-pill-label left-label">Commercial Astrology: Fear &amp; Synthetic Glass</span>
+          <span class="slider-pill-label right-label">Astraea Sansthan: Mathematical Ephemeris</span>
+        </div>
+      </div>
+
+      <div class="comparison-insights">
+        <div class="insight-box before-box">
+          <h4>
+            <span style="color:#EF4444;">&#10008;</span>
+            The Commercial Astrologer Trap (Fear-Based Commerce)
+          </h4>
+          <p>
+            Generic 12-sign newspaper horoscopes, fear-mongering 'Kaal Sarp / Manglik' curses designed to sell synthetic dyed glass rings at &#8377;50,000 markups, and destructive wall demolitions for false Vastu panic.
+          </p>
+        </div>
+        <div class="insight-box after-box">
+          <h4>
+            <span style="color:#F4C430;">&#10004;</span>
+            The Astraea Sansthan Shastric Covenant
+          </h4>
+          <p>
+            Exact degree calculations across 16 divisional charts (Shodashvarga), 100% unheated natural Jyotish gemstones with GIA/IGI laboratory spectral verification, and non-destructive copper/brass spatial energy balancing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shastric Service Grid -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Classical Shastric Disciplines</span>
+        <h2 class="section-title">Authentic Vedic Astrological Services</h2>
+        <p class="section-subtitle">
+          Rooted exclusively in classical Brihat Parashara Hora Shastra, Jaimini Upadesha Sutras, and Mayamatam Vastu treatises.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1 (Featured) -->
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="/demos/assets/demo-20-astrology/02_Work_01.png" alt="Parashara Kundali Birth Charting Desk" loading="lazy">
+            <span class="service-badge">Core Shastra</span>
+          </div>
+          <div class="service-body">
+            <h3>Parashara Kundali &amp; Shodashvarga Comprehensive Analysis</h3>
+            <p>
+              In-depth mathematical charting across all 16 divisional horoscopes &mdash; including D1 (Physical Destiny), D9 Navamsha (Dharmic &amp; Spousal Alignment), and D10 Dashamsha (Career &amp; Leadership Status). Precise Vimshottari Mahadasha timeline forecasting to navigate critical life transitions.
+            </p>
+            <ul class="service-meta-list">
+              <li>16 Divisional Charts</li>
+              <li>Vimshottari Dasha Periods</li>
+              <li>Lahiri Ayanamsha 24&deg; 12'</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="/demos/assets/demo-20-astrology/03_Work_02.png" alt="Vastu Purusha Mandala Spatial Energy Audit Workspace" loading="lazy">
+            <span class="service-badge">Spatial Architecture</span>
+          </div>
+          <div class="service-body">
+            <h3>Vastu Purusha Mandala Spatial Energy Audits</h3>
+            <p>
+              81-pada energy grid audits for luxury residences, commercial campuses, and corporate boardrooms. Correcting directional imbalances (Ishanya, Nairutya, Agneya, Vayavya) using non-destructive copper energy grids and pyramid earth neutralization.
+            </p>
+            <ul class="service-meta-list">
+              <li>81-Pada Energy Grid</li>
+              <li>Zero Structural Demolition</li>
+              <li>Pancha Bhoota Harmonization</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="/demos/assets/demo-20-astrology/04_Work_03.png" alt="Natural Jyotish Gemstone Testing and Certification" loading="lazy">
+            <span class="service-badge">Gemological Purity</span>
+          </div>
+          <div class="service-body">
+            <h3>Certified Natural Jyotish Ratna Gemology</h3>
+            <p>
+              Strict prescription of untreated, unheated, natural Sattvic gemstones (Burmese Ruby, Ceylon Yellow Sapphire, Colombian Emerald, Natural Basra Pearl). Delivered exclusively with GIA / IGI spectral laboratory authenticity reports.
+            </p>
+            <ul class="service-meta-list">
+              <li>100% Unheated &amp; Untreated</li>
+              <li>GIA / IGI Certified</li>
+              <li>Prana Pratishtha Consecration</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="/demos/assets/demo-20-astrology/05_Work_04.png" alt="Vedic Panchang Shubh Muhurat Auspicious Timing Desk" loading="lazy">
+            <span class="service-badge">Electional Astrology</span>
+          </div>
+          <div class="service-body">
+            <h3>Shubh Muhurat Electional Timing &amp; Panchang</h3>
+            <p>
+              Micro-calculated auspicious windows for enterprise incorporation, commercial mergers, real estate registration, Griha Pravesh, and Vivaha Sanskar to ensure maximum cosmic and planetary alignment.
+            </p>
+            <ul class="service-meta-list">
+              <li>Nakshatra &amp; Tithi Purity</li>
+              <li>Chaughadiya &amp; Hora Alignment</li>
+              <li>Corporate Contract Timing</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="/demos/assets/demo-20-astrology/06_Work_05.png" alt="Private Consultative Sanctuary at Astraea Sansthan" loading="lazy">
+            <span class="service-badge">Sanctuary Reading</span>
+          </div>
+          <div class="service-body">
+            <h3>Private 1-on-1 Consultative Reading Sanctum</h3>
+            <p>
+              Comprehensive 60-minute confidential consultation with Acharya Devrat Shastri. Detailed discussion of career inflection points, health cycles, relationship compatibility, and targeted shastric remedies.
+            </p>
+            <ul class="service-meta-list">
+              <li>60-Min In-Depth Session</li>
+              <li>Encrypted Digital Dossier</li>
+              <li>Direct WhatsApp Follow-Up</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Acharya Lineage & Manifesto -->
+  <section class="lineage-section" id="lineage">
+    <div class="container lineage-grid">
+      <div class="acharya-portrait-card">
+        <img src="/demos/assets/demo-20-astrology/09_Artisan_Founder.png" alt="Acharya Devrat Shastri, Master Jyotishi and Vastu Scholar" loading="lazy">
+        <div class="acharya-title-badge">
+          <h3>Acharya Devrat Shastri</h3>
+          <p>Jyotish Acharya &bull; M.A. Sanskrit (Gold Medalist, BHU) &bull; 30+ Years Standing</p>
+        </div>
+      </div>
+
+      <div class="lineage-ethos-content">
+        <span class="section-eyebrow">The Scholarly Lineage</span>
+        <h2>"Jyotisha Is Celestial Meteorology For The Human Soul."</h2>
+
+        <div class="quote-block">
+          "Jyotisha is the eye of the Vedas &mdash; Jyotisham Netram Ucyate. It was never intended as fatalistic fortune-telling or fear-mongering commercialism. It is sacred mathematics charting karmic seasons, allowing a seeker to act with wisdom, courage, and divine clarity."
+        </div>
+
+        <p style="color:var(--text-muted); font-size: 0.92rem; line-height: 1.65; margin-bottom: 24px;">
+          Acharya Devrat Shastri has guided Supreme Court jurists, industrial founders, and seekers worldwide over three decades. Operating from a serene study in Bengaluru, the Sansthan preserves the authentic Guru-Shishya tradition without commercial dilution.
+        </p>
+
+        <div class="standards-list">
+          <div class="standard-item">
+            <h4>
+              <span>&#9670;</span>
+              Zero Demolition Vastu
+            </h4>
+            <p>Remedial energy corrections utilize sacred copper earth grids and pyramid conduits. We never recommend breaking walls or structural demolition.</p>
+          </div>
+
+          <div class="standard-item">
+            <h4>
+              <span>&#9670;</span>
+              Spectral Gem Verification
+            </h4>
+            <p>Every prescribed gemstone is tested for zero thermal or chemical enhancement, ensuring genuine electro-magnetic remedial resonance.</p>
+          </div>
+
+          <div class="standard-item">
+            <h4>
+              <span>&#9670;</span>
+              Mathematical Lahiri Standard
+            </h4>
+            <p>Planetary calculations are cross-referenced with NASA Jet Propulsion Laboratory (JPL) ephemeris data using high-precision Lahiri Ayanamsha.</p>
+          </div>
+
+          <div class="standard-item">
+            <h4>
+              <span>&#9670;</span>
+              Ethical Fee Transparency
+            </h4>
+            <p>Fixed, transparent consultation fees. We strictly do not upsell overpriced customized pujas, lockets, or commercial trinkets.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conversion Engine: Kundali Intake & Panchang Form -->
+  <section class="intake-section" id="kundali-intake">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Precision Astrological Intake</span>
+        <h2 class="section-title">Kundali Birth Coordinate Dossier &amp; Transit Ticker</h2>
+        <p class="section-subtitle">
+          Submit your exact astronomical birth coordinates for mathematical chart preparation and direct consultation scheduling with Acharya Devrat Shastri.
+        </p>
+      </div>
+
+      <div class="intake-card">
+        <form id="kundaliIntakeForm" onsubmit="event.preventDefault(); handleIntakeSubmit();">
+          <div class="intake-form-grid">
+            <div class="form-group">
+              <label for="seekerName">Full Name of Seeker</label>
+              <input type="text" id="seekerName" class="form-control" placeholder="e.g. Anand K. Vardhan" required>
+            </div>
+
+            <div class="form-group">
+              <label for="consultDomain">Primary Life Dimension Query</label>
+              <select id="consultDomain" class="form-control" onchange="updateIntakeCalculations()">
+                <option value="career-artha">Career &amp; Enterprise Growth (Artha &amp; D10 Dashamsha)</option>
+                <option value="marriage-vivaha">Marriage &amp; Relationship Compatibility (D9 Navamsha)</option>
+                <option value="vastu-audit">Residential or Commercial Vastu Energy Audit</option>
+                <option value="health-ayur">Health Cycles &amp; Sade Sati Navigation (Ayur &amp; Shani)</option>
+                <option value="shubh-muhurat">Shubh Muhurat Auspicious Timing Determination</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="birthDate">Date of Birth</label>
+              <input type="date" id="birthDate" class="form-control" required onchange="updateIntakeCalculations()">
+            </div>
+
+            <div class="form-group">
+              <label for="birthTime">
+                <span>Exact Time of Birth</span>
+                <span class="label-sub">Exact minute from hospital birth certificate</span>
+              </label>
+              <input type="time" id="birthTime" class="form-control" required onchange="updateIntakeCalculations()">
+            </div>
+
+            <div class="form-group">
+              <label for="birthPlace">
+                <span>Place of Birth (City, State, Country)</span>
+                <span class="label-sub">For exact Lat/Long geo-coordinates</span>
+              </label>
+              <input type="text" id="birthPlace" class="form-control" placeholder="e.g. Bengaluru, Karnataka, India" required oninput="updateIntakeCalculations()">
+            </div>
+
+            <div class="form-group">
+              <label for="consultMode">Preferred Consultation Mode</label>
+              <select id="consultMode" class="form-control">
+                <option value="zoom-hd">Confidential Zoom Video (60 Mins with PDF Dossier)</option>
+                <option value="in-person">In-Person at Bengaluru Sanctum (Basavanagara Study)</option>
+                <option value="express-audio">Encrypted WhatsApp High-Definition Audio Call</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="specificQuery">
+                <span>Specific Astrological or Vastu Inquiries</span>
+                <span class="label-sub">Confidential &bull; Reviewed solely by Acharya Shastri</span>
+              </label>
+              <textarea id="specificQuery" class="form-control" rows="3" placeholder="Detail any critical questions regarding career transitions, business expansion, ongoing litigation, or health cycles..."></textarea>
+            </div>
+          </div>
+
+          <div class="intake-output-box">
+            <div class="output-col">
+              <h5>Calculated Ephemeris Framework</h5>
+              <p class="output-value" id="calculationSystemDisplay">
+                <span style="color:#22C55E;">&#9679;</span> Lahiri Ayanamsha (Chitra Paksha)
+              </p>
+              <p class="output-sub">16 Divisional Shodashvarga Charts</p>
+            </div>
+
+            <div class="output-col">
+              <h5>Assigned Acharya Desk</h5>
+              <p class="output-value" id="assignedDeskDisplay">Artha &amp; D10 Dashamsha Chamber</p>
+              <p class="output-sub">Acharya Devrat Shastri Direct</p>
+            </div>
+
+            <div class="output-col">
+              <h5>Dossier Preparation SLA</h5>
+              <p class="output-value" id="slaTurnaroundDisplay">&lt; 6 Hours Turnaround</p>
+              <p class="output-sub">Comprehensive Chart Verification</p>
+            </div>
+          </div>
+
+          <div class="intake-submit-row">
+            <div class="shastra-notice">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span>100% Confidential. Governed by classical Vedic ethical non-disclosure traditions.</span>
+            </div>
+
+            <button type="submit" class="btn-gold-primary">
+              <span>Submit Birth Coordinates on WhatsApp &rarr;</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ethical FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Shastric Clarifications</span>
+        <h2 class="section-title">Frequently Asked Astrological &amp; Vastu Questions</h2>
+        <p class="section-subtitle">
+          Debunking commercial myths and understanding how classical Vedic sciences operate.
+        </p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item active">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What if my exact birth time is uncertain by 10 to 20 minutes?</span>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            In Vedic astrology, divisional charts (especially D9 Navamsha and D10 Dashamsha) shift every few minutes. When birth time is uncertain, Acharya Devrat Shastri performs 'Nashta Jataka' Birth Time Rectification (BTR) by reverse-engineering your major past life milestones (graduation date, marriage date, major accidents, job shifts) to identify your precise ascendant degree.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Is structural wall demolition necessary to fix Vastu doshas?</span>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Absolutely not. Classical Mayamatam and Vishwakarma Prakash scriptures specify energetic balancing through elemental conduits. At Astraea Sansthan, we rectify Brahmasthan, toilet placements, and kitchen cuts using energized copper pyramids, brass boundary wires, lead strips, and specific directional gemstones without touching a single brick.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Are synthetic heated gemstones effective for astrological remedies?</span>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            No. Heat treatment and beryllium diffusion destroy the natural crystalline vibrational matrix of a gemstone. A stone must be 100% natural, untreated, and unheated to channel planetary cosmic frequencies effectively. We only recommend gemstones verified by certified spectral laboratories like GIA or IGI.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What is the difference between Western astrology and Vedic astrology?</span>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Western astrology uses the Tropical (Sayana) zodiac, which is tied to seasonal equinoxes and drifts over time. Vedic Jyotish uses the Sidereal (Nirayana) zodiac with Lahiri Ayanamsha, reflecting the actual physical positions of constellations in the sky. Furthermore, Vedic astrology features unique Vimshottari Dasha planetary timeline cycles that allow precise forecasting impossible in Western astrology.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sansthan Footer with Strict NAP -->
+  <footer class="sansthan-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Astraea Vedic Sansthan</h4>
+          <p>
+            Centre for Classical Parashara Jyotish, Shodashvarga Ephemeris, and Non-Destructive Sacred Vastu Architecture.
+          </p>
+          <p style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-gold);">
+            Scholarly Lineage: Kashi Vidyapeeth &bull; Acharya Devrat Shastri, Jyotish Ratna
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Sanctum &amp; Study Location</h4>
+          <p><strong>Astraea Vedic Sansthan</strong></p>
+          <p>13th Cross Rd, Basavanagara,<br>Bengaluru, Karnataka 560037</p>
+          <p>Direct Consult Desk: +91 86608 19023</p>
+          <p>Email: support@uncodedhub.com</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shastric Disciplines</h4>
+          <ul>
+            <li><a href="#services">Parashara Kundali Charting</a></li>
+            <li><a href="#services">Vastu Purusha Mandala Audits</a></li>
+            <li><a href="#services">Certified Natural Gemology</a></li>
+            <li><a href="#services">Shubh Muhurat Determination</a></li>
+            <li><a href="#services">Birth Time Rectification (BTR)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Ethical Standards</h4>
+          <ul>
+            <li><a href="#rigor">Anti-Superstition Covenant</a></li>
+            <li><a href="#lineage">Zero-Demolition Guarantee</a></li>
+            <li><a href="#kundali-intake">Confidential Dossier Protocols</a></li>
+            <li><a href="#faq">Vedic Astrological Science FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Astraea Vedic Sansthan &bull; Website Engineered by <strong>Uncoded Hub</strong> (Bengaluru Web Design Studio)
+        </div>
+        <div>
+          Classical Vedic Wisdom &bull; Zero Superstition Guarantee
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- Uncoded Hub Studio Pitch & Cover Letter Modal -->
   <div class="pitch-modal-backdrop" id="uncodedPitchModal" onclick="handleBackdropClick(event)">
     <div class="pitch-modal-card">
-      <button class="pitch-close-btn" onclick="closePitchModal()" title="Close dialog">✕</button>
+      <button class="pitch-close-btn" onclick="closePitchModal()" title="Close dialog">&#10005;</button>
       
       <div class="uh-popup-header">
         <div class="uh-brand-group">
-          <img src="/logo-medium.webp" alt="Uncoded Hub" class="uh-brand-logo-img">
+          <img src="/logo-medium.webp" alt="Uncoded Hub Logo" class="uh-brand-logo-img">
           <div>
             <div class="uh-brand-name">Uncoded Hub</div>
-            <div class="uh-brand-sub">Two-Person Studio · Bengaluru</div>
+            <div class="uh-brand-sub">Two-Person Studio &bull; Bengaluru</div>
           </div>
         </div>
         <span class="uh-badge-studio">7-Day Sprint Prototype</span>
@@ -52,50 +1927,45 @@
           </div>
         </div>
         <div class="founders-intro">
-          <h2>Why We Hand-Built This Live Prototype For Your Business Before Asking For A Rupee.</h2>
-          <p>A personal note from Deepak &amp; Geetha to the founder or practice director reviewing this website.</p>
+          <h2>Why We Hand-Built This Live Prototype For Your Sansthan Before Asking For A Rupee.</h2>
+          <p>A personal note from Deepak &amp; Geetha to the Acharya or Sansthan Director reviewing this website.</p>
         </div>
       </div>
 
       <div class="pitch-body">
-        <p>Dear Founder / Business Owner,</p>
-        <p>Most digital agencies pitch generic 40-page PDF decks, throw around corporate jargon, and demand lakhs before proving they understand a single thing about your real clients. <strong>We do the opposite: we do the work first.</strong></p>
+        <p>Dear Acharya / Sansthan Director,</p>
+        <p>Most digital agencies pitch generic 40-page PDF decks, build neon-purple cartoon zodiac sites, and treat sacred Vedic sciences like cheap carnival fortune-telling. <strong>We do the opposite: we engineer an authentic shastric specimen first.</strong></p>
 
         <div class="insight-card">
-          <h4>The 50-Millisecond Silent Decision</h4>
-          <p>When a prospective client or patient searches for your service in your city, they don't judge your years of dedication or credentials on paper. <strong>They judge you in the first 50 milliseconds based on visual certainty.</strong> In high-ticket services, clients do not buy a service—they buy <em>relief from the fear of making an expensive mistake</em>. If your site takes 4+ seconds to load, breaks on mobile, or looks like a template from 2018, over 70% bounce silently and hire the competitor who looks established.</p>
+          <h4>The 50-Millisecond Sacred Perception</h4>
+          <p>When high-net-worth seekers, corporate leaders, or families search for a genuine Vedic astrologer, they immediately recoil from tacky neon crystal balls and spammy popups. If your site looks like an amateur blog from 2015, discerning clients assume you are just another commercial fortune-teller. <strong>High-value seekers demand intellectual gravitas and spiritual purity.</strong></p>
         </div>
 
         <div class="insight-card">
-          <h4>What This Live Prototype Solves For Your Business</h4>
-          <p>We didn't build an aesthetic brochure. We built a high-conversion client acquisition engine: sub-second load time on Indian mobile 4G networks, upfront service clarity, interactive self-qualification tools, and direct 1-tap WhatsApp consultation. It answers your prospect's unvoiced fears before they ever hesitate.</p>
+          <h4>What This Live Prototype Solves For Astraea Sansthan</h4>
+          <p>We built a dignified client acquisition engine: sub-second LCP speed on Indian mobile 4G networks, precision birth coordinate capture, daily panchang ephemeris calculation, and direct 1-tap WhatsApp consultation scheduling.</p>
         </div>
 
-        <div class="belief-card">
-          <div class="belief-quote">
-            "Uncoded Hub is a brother and sister who got tired of watching competent, high-quality businesses lose work to worse competitors simply because the competitor had a faster, clearer website."
+        <div class="commitments-grid">
+          <div class="comm-item">
+            <strong>1. Senior Delivery Only</strong>
+            No junior account managers. Deepak and Geetha engineer and design every line of code.
           </div>
-          <div class="commitments-grid">
-            <div class="comm-item">
-              <strong>1. Senior Delivery Only</strong>
-              No hidden junior team, no account managers. Deepak and Geetha engineer and design every single line.
-            </div>
-            <div class="comm-item">
-              <strong>2. 7-Day Turnaround</strong>
-              Live and launched in 7 working days flat—not 3 months of agency delays.
-            </div>
-            <div class="comm-item">
-              <strong>3. 100% Asset Ownership</strong>
-              Domain, hosting, code, and content in your name from day one with zero monthly platform lock-ins.
-            </div>
+          <div class="comm-item">
+            <strong>2. 7-Day Turnaround</strong>
+            Live and launched in 7 working days flat &mdash; not 3 months of agency delays.
+          </div>
+          <div class="comm-item">
+            <strong>3. 100% Asset Ownership</strong>
+            Domain, hosting, code, and content in your name from Day 1 with zero monthly lock-in fees.
           </div>
         </div>
       </div>
 
       <div class="pitch-actions">
-        <button class="pitch-cta-dismiss" onclick="closePitchModal()">Explore Live Demo Specimen ↓</button>
-        <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha%2C%20I%20am%20viewing%20the%20Vaidik%20Jyotish%20%26%20Vastu%20demo%20and%20would%20like%20to%20discuss%20building%20our%20website." class="pitch-cta-wa" target="_blank" rel="noopener noreferrer">
-          Claim This Website on WhatsApp (+91 86608 19023) →
+        <button class="pitch-cta-dismiss" onclick="closePitchModal()">Explore Live Specimen &darr;</button>
+        <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha%2C%20I%20am%20viewing%20the%20Astraea%20Vedic%20Astrology%20demo%20and%20would%20like%20to%20discuss%20our%20sansthan%20website." class="pitch-cta-wa" target="_blank" rel="noopener noreferrer">
+          Claim This Prototype on WhatsApp (+91 86608 19023) &rarr;
         </a>
       </div>
     </div>
@@ -103,13 +1973,129 @@
 
   <!-- Floating Lead Magnet Button -->
   <div class="lead-magnet-floating-widget" id="leadMagnetWidget">
-    <button class="lm-floating-btn" onclick="openPitchModal()" title="Free 3-Page Executive Guide">
-      <span class="lm-btn-icon-wrap"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
-      <span>Free Studio Briefing</span>
+    <button class="lm-floating-btn" onclick="openPitchModal()" title="Review Studio Pitch &amp; Founders Note">
       <span class="lm-pulse-ping"></span>
+      <span>Founders' Briefing</span>
     </button>
   </div>
 
-  
+  <!-- Scripts -->
+  <script>
+    // Comparison Slider Logic
+    const sliderContainer = document.getElementById('comparisonSlider');
+    const afterImage = document.getElementById('afterImage');
+    const dividerLine = document.getElementById('dividerLine');
+    const sliderHandle = document.getElementById('sliderHandle');
+
+    let isSliding = false;
+
+    function setSliderPosition(x) {
+      const rect = sliderContainer.getBoundingClientRect();
+      let pos = (x - rect.left) / rect.width;
+      if (pos < 0) pos = 0;
+      if (pos > 1) pos = 1;
+      const percentage = pos * 100;
+      
+      afterImage.style.clipPath = `polygon(${percentage}% 0%, 100% 0%, 100% 100%, ${percentage}% 100%)`;
+      dividerLine.style.left = `${percentage}%`;
+      sliderHandle.style.left = `${percentage}%`;
+    }
+
+    sliderContainer.addEventListener('mousedown', (e) => {
+      isSliding = true;
+      setSliderPosition(e.clientX);
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isSliding) return;
+      setSliderPosition(e.clientX);
+    });
+
+    window.addEventListener('mouseup', () => {
+      isSliding = false;
+    });
+
+    sliderContainer.addEventListener('touchstart', (e) => {
+      isSliding = true;
+      if (e.touches[0]) setSliderPosition(e.touches[0].clientX);
+    });
+
+    window.addEventListener('touchmove', (e) => {
+      if (!isSliding) return;
+      if (e.touches[0]) setSliderPosition(e.touches[0].clientX);
+    });
+
+    window.addEventListener('touchend', () => {
+      isSliding = false;
+    });
+
+    // FAQ Toggle
+    function toggleFaq(el) {
+      const parent = el.parentElement;
+      parent.classList.toggle('active');
+    }
+
+    // Dynamic Intake Calculations
+    function updateIntakeCalculations() {
+      const domain = document.getElementById('consultDomain').value;
+      const deskDisplay = document.getElementById('assignedDeskDisplay');
+      const slaDisplay = document.getElementById('slaTurnaroundDisplay');
+
+      if (domain === 'career-artha') {
+        deskDisplay.textContent = 'Artha & D10 Dashamsha Chamber';
+        slaDisplay.textContent = '< 6 Hours Turnaround';
+      } else if (domain === 'marriage-vivaha') {
+        deskDisplay.textContent = 'Vivaha & D9 Navamsha Chamber';
+        slaDisplay.textContent = '< 6 Hours Turnaround';
+      } else if (domain === 'vastu-audit') {
+        deskDisplay.textContent = 'Spatial Vastu Purusha Mandala Unit';
+        slaDisplay.textContent = '< 12 Hours Energy Mapping';
+      } else if (domain === 'health-ayur') {
+        deskDisplay.textContent = 'Ayur & Shani Sade Sati Chamber';
+        slaDisplay.textContent = '< 4 Hours Priority SLA';
+      } else {
+        deskDisplay.textContent = 'Muhurat Electional Almanac Unit';
+        slaDisplay.textContent = '< 4 Hours Turnaround';
+      }
+    }
+
+    function handleIntakeSubmit() {
+      const name = document.getElementById('seekerName').value.trim();
+      const domain = document.getElementById('consultDomain').selectedOptions[0].text;
+      const dob = document.getElementById('birthDate').value;
+      const tob = document.getElementById('birthTime').value;
+      const pob = document.getElementById('birthPlace').value.trim();
+      const mode = document.getElementById('consultMode').selectedOptions[0].text;
+      const query = document.getElementById('specificQuery').value.trim();
+
+      let text = `*Sacred Kundali Intake - Astraea Vedic Sansthan*\n\n`;
+      text += `• *Seeker:* ${name}\n`;
+      text += `• *Query Domain:* ${domain}\n`;
+      text += `• *Date of Birth:* ${dob || 'Not Entered'}\n`;
+      text += `• *Time of Birth:* ${tob || 'Not Entered'}\n`;
+      text += `• *Place of Birth:* ${pob || 'Not Entered'}\n`;
+      text += `• *Consultation Mode:* ${mode}\n`;
+      if (query) text += `• *Query Details:* ${query.slice(0, 140)}...\n`;
+      text += `\nPlease initiate mathematical ephemeris calculation and schedule reading appointment.`;
+
+      const encoded = encodeURIComponent(text);
+      window.open(`https://wa.me/918660819023?text=${encoded}`, '_blank');
+    }
+
+    // Pitch Modal Logic
+    function openPitchModal() {
+      document.getElementById('uncodedPitchModal').classList.add('active');
+    }
+
+    function closePitchModal() {
+      document.getElementById('uncodedPitchModal').classList.remove('active');
+    }
+
+    function handleBackdropClick(event) {
+      if (event.target.id === 'uncodedPitchModal') {
+        closePitchModal();
+      }
+    }
+  </script>
 </body>
 </html>
