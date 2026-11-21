@@ -1,48 +1,41 @@
 # Demo_14_Creative_Portfolio — Asset & Upgrade Brief
 
-**Client / Brand**: AuraGrid Interactive Creative Studio
-**Sector**: Creative Design & Brand Engineering
-**Category**: creative
-**Demo File**: [creative-portfolio.html](file:///c:/Users/LENOVO/Downloads/uncoded-hub/public/demos/creative-portfolio.html)
-**Live Local URL**: `http://localhost:3000/demos/creative-portfolio.html`
-**Live Production URL**: `https://uncodedhub.com/demos/creative-portfolio.html`
+**Client / Brand**: AuraGrid Interactive Creative Studio  
+**Sector**: Creative Design & Brand Engineering  
+**Category**: creative  
+**Demo File**: [creative-portfolio.html](file:///c:/Users/LENOVO/Downloads/uncoded-hub/public/demos/creative-portfolio.html)  
+**Live Local URL**: `http://localhost:3000/demos/creative-portfolio.html`  
+**Live Production URL**: `https://uncodedhub.com/demos/creative-portfolio.html`  
+**Target Folder for Images**: `UncodedHub Projects/Demo_14_Creative_Portfolio/Assets/`
 
 ---
 
 ## 1. Core Conversion Engine & Positioning
-* **Brand Summary**: Multi-disciplinary digital design agency crafting award-calibre identities, high-conversion web systems, and 3D interactions. Includes an interactive project sprint scope estimator and client case studies.
+* **Brand Summary**: Multi-disciplinary avant-garde digital design agency engineering high-conversion web architectures, kinetic 3D brand interactions, and bespoke identity systems. Includes an interactive Brand Sprint Scope Estimator and case study interactive viewer.
 * **Core Conversion Engine**: **Interactive Brand Sprint Scope Estimator & Case Study Interactive Viewer**
-* **Key Business Result**: 0.8s LCP · Interactive Scope Estimator · 100% Lighthouse Score
-
-### Visual Themes in this Demo:
-  1. **Neo-Brutalist Acid** (Avant-Garde Kinetic Agency) — Accent: `#A3E635` | Palette: #F4F4F0, #A3E635, #0A0A0A
-  2. **Swiss Editorial** (Typographic Masterpiece) — Accent: `#EF4444` | Palette: #FFFFFF, #EF4444, #171717
-  3. **Cyberpunk Terminal** (Dark Monolith 3D Lab) — Accent: `#06B6D4` | Palette: #07080D, #06B6D4, #EC4899
+* **Single Signature Aesthetic**: **Neo-Brutalist Kinetic Slate & Acid Lime** &mdash; Obsidian Carbon (`#090B0E`), Clean Editorial Slate (`#12161E`), Acid Lime Accent (`#A3E635`), Crisp Chalk White (`#F4F4F0`), Hyper-Modern Kinetic Geometry.
 
 ---
 
-## 2. Required Images Checklist (Drop Here in `Assets/`)
+## 2. Required 10 Images Table (Drop in `Assets/`)
 
-To achieve the unslop gold standard (like Sri Ayyanar Sirpa Kalai), please add **high-resolution authentic images** to this folder or the `Assets/` subfolder:
-
-| File Name | Slot & Purpose | Recommended Aspect & Resolution | Description |
+| File Name | Slot & Purpose | Recommended Aspect & Resolution | Exact Subject & Visual Framing |
 | :--- | :--- | :--- | :--- |
-| `01_Hero_Showcase.png` | Hero Banner / Focal Center | 16:9 (1920×1080) or 4:5 (1200×1500) | Dramatic, aspirational hero image representing the pinnacle of this craft. |
-| `02_Work_01.png` | Portfolio Feature 1 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #1. |
-| `03_Work_02.png` | Portfolio Feature 2 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #2. |
-| `04_Work_03.png` | Portfolio Feature 3 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #3. |
-| `05_Work_04.png` | Portfolio Feature 4 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #4. |
-| `06_Work_05.png` | Portfolio Feature 5 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #5. |
-| `07_Before_Raw.png` | Comparison Slider (Left) | 16:10 (1200×750) | Raw / unpolished / initial stage (e.g. bare shell, untreated, blueprint). |
-| `08_After_Finished.png`| Comparison Slider (Right)| 16:10 (1200×750) | Finished, pristine, luxury outcome (e.g. furnished sanctuary, polished result). |
-| `09_Founder_Or_Expert.png`| Master / Founder Portrait| 1:1 or 4:5 Portrait | Authentic studio / clinic / workshop portrait of the principal expert. |
-| `10_Process_Detail.png`| Craftsmanship / Studio | 16:9 or 4:3 | Micro-detail of materials, tools, operatory, or on-site craftsmanship. |
+| `01_Hero_Showcase.png` | **Main Hero Banner Showcase** | 16:9 (1920×1080) | Dark futuristic creative agency studio; multi-monitor curved workstations displaying 3D wireframes and kinetic typography, acid-lime ambient neon glow, sleek dark concrete architecture. |
+| `02_Work_01.png` | **Work 1: Fintech Brand Identity** | 16:10 or 4:5 (1200×1500) | Complete design system showcase; embossed metallic black business cards, futuristic mobile app interface, holographic foil logo lockup. |
+| `03_Work_02.png` | **Work 2: Kinetic 3D Web Experience** | 16:10 or 4:5 (1200×1500) | Award-winning WebGL interactive website mockup; floating fluid 3D glass geometries, custom brutalist typography, responsive desktop view. |
+| `04_Work_03.png` | **Work 3: Luxury Packaging Architecture** | 16:10 or 4:5 (1200×1500) | Matte black unboxing experience for luxury audio product; sculpted recycled paper pulp casing, minimalist typography, acid-lime seal tape. |
+| `05_Work_04.png` | **Work 4: Spatial Design & Exhibition** | 16:10 or 4:5 (1200×1500) | Interactive LED architectural brand pavilion; reflective glass floor, visitors interacting with ambient sensor-driven generative graphics. |
+| `06_Work_05.png` | **Work 5: High-Converting E-Commerce** | 16:10 or 4:5 (1200×1500) | Ultra-fast headless e-commerce store layout; oversized product imagery, sub-second micro-interactions, clean checkout drawer UX. |
+| `07_Before_Raw.png` | **Comparison Slider (Left)** | 16:10 (1200×750) | **BEFORE**: Generic Templated Slop &mdash; Cluttered bootstrap layout, generic corporate stock photos, slow loading spinners, zero emotional impact. |
+| `08_After_Finished.png` | **Comparison Slider (Right)** | 16:10 (1200×750) | **AFTER**: Bespoke Kinetic Brand Architecture &mdash; Razor-sharp typography, smooth 60fps micro-interactions, distinct brand presence that commands 5x pricing. |
+| `09_Artisan_Founder.png` | **Creative Director Portrait** | 1:1 or 4:5 Portrait | Modern editorial portrait of Creative Director & Design Technologist (Siddharth Kulkarni) in minimalist black mock-neck sweater in design lab. |
+| `10_Process_Detail.png` | **Design Lab & Prototyping Gear** | 16:9 or 4:3 | Macro close-up of Pantone color swatch fan, precision aluminum Apple stylus, wireframe sketchbook grids, and custom keyboard on dark desk. |
 
 ---
 
-## 3. Unslop Design Standard Rules
-1. **No Purple AI Gradients**: Use editorial dark midnight navy, museum bronze, stone, or warm earth palettes.
-2. **Character-Rich Typography**: High-contrast editorial display font for headings; clean neutral body text.
-3. **Strict Word Integrity**: No split words on mobile (`word-break: keep-all; overflow-wrap: normal`).
-4. **Authentic Chiaroscuro Lighting**: High contrast, moody shadows, realistic depth. Zero cheesy smiling stock photos.
-5. **Direct High-Intent CTAs**: One-tap WhatsApp consult with pre-filled shastric/project details + interactive timeline estimator.
+## 3. High-Conversion Features to be Implemented
+1. **Interactive Before / After Brand Perception Slider**: Contrast generic templated web slop (`07_Before_Raw.png`) with bespoke kinetic architecture (`08_After_Finished.png`).
+2. **Interactive Brand Sprint Scope Estimator**: Clients select project scope (Brand Identity, High-Conversion Web Architecture, 3D Interactive Design, Full Product Sprint) to calculate sprint timeline and transparent fixed-fee investment.
+3. **100% Performance & Lighthouse Disclosures**: Sub-second LCP, zero layout shifts, and accessible contrast guarantees.
+4. **4 AuraGrid Atelier Guarantees**: 100% Bespoke Code (Zero Generic Themes/Templates), Guaranteed 60fps Web Animations, Direct Access to Senior Design Technologist, and On-Time Sprint Delivery Guarantee.

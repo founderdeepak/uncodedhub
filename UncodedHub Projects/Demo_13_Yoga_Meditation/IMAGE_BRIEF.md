@@ -1,4 +1,4 @@
-# Demo_13_Yoga_Meditation — Asset & Upgrade Brief
+# Demo_13_Yoga_Meditation — Asset & Upgrade Brief [STATUS: COMPLETED & DEPLOYED]
 
 **Client / Brand**: PranaPulse Yoga & Mindfulness Shala  
 **Sector**: Authentic Yoga & Breathwork Shala  

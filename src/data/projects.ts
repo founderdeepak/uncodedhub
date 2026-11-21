@@ -326,10 +326,10 @@ export const PROJECTS: Project[] = [
     conversionEngine: 'Real-Time Class Capacity Filter & 1-Tap Trial Mat Reservation',
     themes: [
       {
-        name: 'Rishikesh Ochre',
-        style: 'Sacred Temple Teakwood',
-        image: '/demos/thumbnails/yoga-meditation-theme1.webp',
-        palette: ['#F9F6F0', '#C27D38', '#382D24'],
+        name: 'Rishikesh Ochre & Teakwood',
+        style: 'Sacred Himalayan Shala',
+        image: '/demos/assets/demo-13-yoga-meditation/01_Hero_Showcase.png',
+        palette: ['#1A140F', '#241D17', '#C27D38'],
         accentHex: '#C27D38',
       },
     ],
