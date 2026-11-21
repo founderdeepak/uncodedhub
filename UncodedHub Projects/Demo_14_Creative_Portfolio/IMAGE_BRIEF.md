@@ -1,4 +1,4 @@
-# Demo_14_Creative_Portfolio — Asset & Upgrade Brief
+# Demo_14_Creative_Portfolio — Asset & Upgrade Brief [STATUS: COMPLETED & DEPLOYED]
 
 **Client / Brand**: AuraGrid Interactive Creative Studio  
 **Sector**: Creative Design & Brand Engineering  

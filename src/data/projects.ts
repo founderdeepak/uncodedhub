@@ -352,7 +352,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Neo-Brutalist Acid',
         style: 'Avant-Garde Kinetic Agency',
-        image: '/demos/thumbnails/creative-portfolio-theme1.webp',
+        image: '/demos/assets/demo-14-creative-portfolio/01_Hero_Showcase.png',
         palette: ['#F4F4F0', '#A3E635', '#0A0A0A'],
         accentHex: '#A3E635',
       },

@@ -1,48 +1,41 @@
 # Demo_15_Healthcare_Diagnostics — Asset & Upgrade Brief
 
-**Client / Brand**: ApexPulse Comprehensive Diagnostics
-**Sector**: Pathology & Medical Imaging
-**Category**: healthcare
-**Demo File**: [healthcare-diagnostics.html](file:///c:/Users/LENOVO/Downloads/uncoded-hub/public/demos/healthcare-diagnostics.html)
-**Live Local URL**: `http://localhost:3000/demos/healthcare-diagnostics.html`
-**Live Production URL**: `https://uncodedhub.com/demos/healthcare-diagnostics.html`
+**Client / Brand**: ApexPulse Comprehensive Diagnostics & Medical Imaging  
+**Sector**: Pathology & Advanced Clinical Imaging  
+**Category**: healthcare  
+**Demo File**: [healthcare-diagnostics.html](file:///c:/Users/LENOVO/Downloads/uncoded-hub/public/demos/healthcare-diagnostics.html)  
+**Live Local URL**: `http://localhost:3000/demos/healthcare-diagnostics.html`  
+**Live Production URL**: `https://uncodedhub.com/demos/healthcare-diagnostics.html`  
+**Target Folder for Images**: `UncodedHub Projects/Demo_15_Healthcare_Diagnostics/Assets/`
 
 ---
 
 ## 1. Core Conversion Engine & Positioning
-* **Brand Summary**: NABL & CAP accredited diagnostic pathology laboratory offering barcode-tracked sample chains, 6-hour digital report turnaround, and an interactive home phlebotomy package selector.
-* **Core Conversion Engine**: **Home Phlebotomy Package Selector & Live Barcode Sample Tracking Simulator**
-* **Key Business Result**: 0.7s LCP · NABL Certified Protocol · Home Blood Collection Funnel
-
-### Visual Themes in this Demo:
-  1. **Clinical Cobalt** (Accredited NABL Precision) — Accent: `#1D4ED8` | Palette: #F0F6FF, #1D4ED8, #1E293B
-  2. **Clean Sterile Teal** (Automated Sample Chain) — Accent: `#0D9488` | Palette: #F0FDFA, #0D9488, #134E4A
-  3. **Midnight Precision** (Advanced Molecular HUD) — Accent: `#38BDF8` | Palette: #0B1120, #38BDF8, #E2E8F0
+* **Brand Summary**: NABL & CAP accredited diagnostic pathology and medical imaging center offering barcode-tracked sample chains, 6-hour verified digital report turnaround, and an interactive home phlebotomy package booking engine.
+* **Core Conversion Engine**: **Interactive Home Phlebotomy Package Selector & Live Barcode Sample Tracking Simulator**
+* **Single Signature Aesthetic**: **Clinical Cobalt & Accredited Sapphire** &mdash; Crisp Clean Medical Arctic White (`#F8FAFC`), Deep Clinical Navy (`#0F172A`), Hospital Sapphire (`#1D4ED8`), Cyan Status Indicator (`#0EA5E9`), Sterile Precision Glass.
 
 ---
 
-## 2. Required Images Checklist (Drop Here in `Assets/`)
+## 2. Required 10 Images Table (Drop in `Assets/`)
 
-To achieve the unslop gold standard (like Sri Ayyanar Sirpa Kalai), please add **high-resolution authentic images** to this folder or the `Assets/` subfolder:
-
-| File Name | Slot & Purpose | Recommended Aspect & Resolution | Description |
+| File Name | Slot & Purpose | Recommended Aspect & Resolution | Exact Subject & Visual Prompt Framing |
 | :--- | :--- | :--- | :--- |
-| `01_Hero_Showcase.png` | Hero Banner / Focal Center | 16:9 (1920×1080) or 4:5 (1200×1500) | Dramatic, aspirational hero image representing the pinnacle of this craft. |
-| `02_Work_01.png` | Portfolio Feature 1 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #1. |
-| `03_Work_02.png` | Portfolio Feature 2 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #2. |
-| `04_Work_03.png` | Portfolio Feature 3 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #3. |
-| `05_Work_04.png` | Portfolio Feature 4 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #4. |
-| `06_Work_05.png` | Portfolio Feature 5 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #5. |
-| `07_Before_Raw.png` | Comparison Slider (Left) | 16:10 (1200×750) | Raw / unpolished / initial stage (e.g. bare shell, untreated, blueprint). |
-| `08_After_Finished.png`| Comparison Slider (Right)| 16:10 (1200×750) | Finished, pristine, luxury outcome (e.g. furnished sanctuary, polished result). |
-| `09_Founder_Or_Expert.png`| Master / Founder Portrait| 1:1 or 4:5 Portrait | Authentic studio / clinic / workshop portrait of the principal expert. |
-| `10_Process_Detail.png`| Craftsmanship / Studio | 16:9 or 4:3 | Micro-detail of materials, tools, operatory, or on-site craftsmanship. |
+| `01_Hero_Showcase.png` | **Main Hero Banner Showcase** | 16:9 (1920×1080) | Ultra-modern NABL accredited diagnostic laboratory; automated robotic chemistry analyzers with blue ambient LED status lighting, clean sterile glass partitions, pristine stainless steel workbenches. |
+| `02_Work_01.png` | **Work 1: Advanced 3T MRI Suite** | 16:10 or 4:5 (1200×1500) | State-of-the-art wide-bore 3 Tesla MRI scanner in a calm patient-friendly suite; soft recessed indirect ambient ceiling lighting, pristine clinical floor. |
+| `03_Work_02.png` | **Work 2: Robotic Immunoassay Analyzer** | 16:10 or 4:5 (1200×1500) | Close-up of fully automated robotic clinical analyzer arm pipetting samples into barcoded reagent micro-wells; precision liquid handling mechanism. |
+| `04_Work_03.png` | **Work 3: High-Resolution 128-Slice CT** | 16:10 or 4:5 (1200×1500) | Dual-source 128-slice cardiac CT scanner with high-contrast low-dose imaging gantry, ergonomic patient bed, clean clinical control room in background. |
+| `05_Work_04.png` | **Work 4: Molecular Cytology & PCR Suite** | 16:10 or 4:5 (1200×1500) | Laminar flow bio-safety cabinet in molecular diagnostic lab; micro-centrifuges, real-time thermal cycler PCR instruments, sterile blue gloved handling. |
+| `06_Work_05.png` | **Work 5: Certified Home Blood Collection** | 16:10 or 4:5 (1200×1500) | Professional uniformed certified phlebotomist in sterile scrubs and PPE preparing a temperature-controlled sample transport cooler at a modern patient residence. |
+| `07_Before_Raw.png` | **Comparison Slider (Left)** | 16:10 (1200×750) | **BEFORE**: Outdated Manual Lab Chaos &mdash; Misplaced handwritten paper requisition slips, unlabelled test tubes, cluttered desk, faded carbon-copy report sheets with slow 48-hr wait. |
+| `08_After_Finished.png` | **Comparison Slider (Right)** | 16:10 (1200×750) | **AFTER**: 100% Barcoded Digital Traceability &mdash; Crisp encrypted digital PDF report on iPad screen, laser-scanned barcode vacuum tubes, real-time SMS tracking updates, 6-hr verified NABL report. |
+| `09_Artisan_Founder.png` | **Chief Pathologist & Lab Director** | 1:1 or 4:5 Portrait | Senior Chief Pathologist (Dr. Priya Nair, MD Pathology) in pristine white lab coat with NABL badge and stethoscope, standing confidently in modern pathology microscopy room. |
+| `10_Process_Detail.png` | **Barcoded Vacuum Tubes & Micro-Pipette** | 16:9 or 4:3 | Macro close-up of color-coded vacuum blood collection tubes (EDTA purple, Heparin green, Serum red) in precision rack with laser-engraved 2D DataMatrix barcodes. |
 
 ---
 
-## 3. Unslop Design Standard Rules
-1. **No Purple AI Gradients**: Use editorial dark midnight navy, museum bronze, stone, or warm earth palettes.
-2. **Character-Rich Typography**: High-contrast editorial display font for headings; clean neutral body text.
-3. **Strict Word Integrity**: No split words on mobile (`word-break: keep-all; overflow-wrap: normal`).
-4. **Authentic Chiaroscuro Lighting**: High contrast, moody shadows, realistic depth. Zero cheesy smiling stock photos.
-5. **Direct High-Intent CTAs**: One-tap WhatsApp consult with pre-filled shastric/project details + interactive timeline estimator.
+## 3. High-Conversion Features to be Implemented
+1. **Interactive Before / After Sample Security Slider**: Contrast vulnerable manual paper slips (`07_Before_Raw.png`) with end-to-end barcoded robotic digital traceability (`08_After_Finished.png`).
+2. **Interactive Home Phlebotomy Package Selector**: Patients select health check profile (Comprehensive Executive Wellness, Cardiac Risk Screen, Diabetic & Renal Profile, Senior Citizen Panel) with instant pricing and 1-click home slot booking.
+3. **Live Barcode Sample Tracking Simulator**: Enter sample barcode `AP-84920` to preview 5-stage sample journey (Sample Collected &rarr; Cold-Chain Transit &rarr; Centrifugation &rarr; Robotic Analysis &rarr; NABL MD Signoff).
+4. **4 ApexPulse Clinical Accreditations**: 100% NABL & CAP Audit Standards, Certified Cold-Chain Transport (&lt;4°C), Dual-Pathologist Verification on All Abnormal Values, and Guaranteed 6-Hour Digital Report Turnaround.
