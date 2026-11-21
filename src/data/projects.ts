@@ -424,7 +424,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Harley Surgical Navy',
         style: 'Robotic Arthroplasty Specialist',
-        image: '/demos/thumbnails/doctor-specialist-theme1.webp',
+        image: '/demos/assets/demo-17-doctor-specialist/01_Hero_Showcase.png',
         palette: ['#F1F5F9', '#0F172A', '#0284C7'],
         accentHex: '#0284C7',
       },

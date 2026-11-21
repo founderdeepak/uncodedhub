@@ -1,4 +1,4 @@
-# Demo_17_Doctor_Specialist — Asset & Upgrade Brief
+# Demo_17_Doctor_Specialist — Asset & Upgrade Brief [STATUS: COMPLETED & DEPLOYED]
 
 **Client / Brand**: Dr. Alistair Vance, MS (Ortho), MCh, FRCS (Tr & Orth)  
 **Sector**: Super-Specialist Orthopaedic Surgery & Robotic Arthroplasty  
