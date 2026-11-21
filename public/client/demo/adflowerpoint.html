@@ -150,8 +150,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between gap-4">
       <!-- Brand Logo Lockup -->
       <a href="#hero" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-maroon-800 to-maroon-900 border border-gold-500/40 flex items-center justify-center text-2xl shadow-inner group-hover:scale-105 transition">
-          🌸
+        <div class="h-11 px-2 rounded-lg bg-gradient-to-br from-maroon-900 to-black border border-gold-500/40 flex items-center justify-center shadow-inner group-hover:scale-105 transition">
+          <img src="/client/demo/assets/adflowerpoint/official_logo.png" alt="AD Flower Manufacturer" class="h-8 object-contain">
         </div>
         <div>
           <div class="font-display font-bold text-base sm:text-lg tracking-wider text-white flex items-center gap-2">
@@ -164,6 +164,7 @@
 
       <!-- Quick Nav Links -->
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="#categories" class="hover:text-gold-400 transition">5 Specialties</a>
         <a href="#products" class="hover:text-gold-400 transition">10 Products</a>
         <a href="#calculator" class="hover:text-gold-400 transition">Bulk Calculator</a>
         <a href="#about" class="hover:text-gold-400 transition">Factory Standards</a>
@@ -240,23 +241,106 @@
         </div>
       </div>
 
-      <!-- Right Hero Showcase Card (Now using high-res 01_Hero_Showcase.png) -->
+      <!-- Right Hero Showcase: Official Manufacturer Creative Poster -->
       <div class="lg:col-span-5">
-        <div class="relative bg-gradient-to-b from-maroon-800 to-maroon-950 p-2.5 rounded-2xl border-2 border-gold-500/40 shadow-2xl">
-          <div class="relative rounded-xl overflow-hidden group aspect-[4/5] bg-black">
-            <img src="/client/demo/assets/adflowerpoint/01_Hero_Showcase.png" alt="AD Flower Point Opulent Wedding Floral Mandap" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex items-end p-5">
-              <div class="text-white">
-                <span class="bg-rose-600 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded shadow">Verified Manufacturer</span>
-                <h4 class="font-display font-bold text-lg sm:text-xl mt-1.5 text-gold-300">AD FLOWER POINT</h4>
-                <p class="text-xs text-rose-100/90 mt-0.5">Wedding Mandap Garlands, Mogra Gajras &amp; Haldi Sets</p>
-                <p class="text-[11px] text-gold-400/90 font-mono mt-1">📞 Direct Factory Desk: +91 9272191331</p>
+        <div class="relative bg-gradient-to-b from-maroon-800 to-maroon-950 p-2.5 rounded-2xl border-2 border-gold-500/50 shadow-2xl">
+          <div class="relative rounded-xl overflow-hidden group bg-black">
+            <img src="/client/demo/assets/adflowerpoint/official_brand_poster.png" alt="AD Flower Manufacturer Official Creative Poster" class="w-full h-auto object-cover group-hover:scale-[1.02] transition duration-500">
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/75 to-transparent p-4 flex items-center justify-between">
+              <div>
+                <span class="bg-gradient-to-r from-gold-500 to-amber-600 text-slate-950 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded shadow">
+                  Official Manufacturer Creative
+                </span>
+                <div class="text-xs font-bold text-white mt-1">Bringing Beauty to Your Celebrations</div>
+                <div class="text-[10px] text-gold-300 font-mono">Bulk Orders Only &bull; Direct Factory Supply</div>
               </div>
+              <a href="#categories" class="bg-maroon-800/90 hover:bg-maroon-700 text-gold-300 text-xs px-3 py-1.5 rounded-lg border border-gold-500/30 font-semibold transition whitespace-nowrap shadow">
+                Explore 5 Arches &darr;
+              </a>
             </div>
           </div>
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- 5 Signature Categories from Official Creative (Arches) -->
+  <section id="categories" class="py-12 bg-[#080406] border-b border-maroon-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+        <div>
+          <span class="text-xs uppercase font-bold tracking-widest text-gold-400">Official Factory Specialties &bull; Bulk Orders Only</span>
+          <h2 class="font-display text-xl sm:text-3xl font-bold text-white mt-1">Our Core Products</h2>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">Click any category arch below to immediately filter the wholesale catalog and view per-piece bulk rates.</p>
+        </div>
+        <div class="text-xs text-gold-300 font-mono flex items-center gap-2 bg-maroon-900/60 px-3.5 py-2 rounded-lg border border-gold-500/20 shadow">
+          <span>✨</span> Handcrafted &bull; Washable &bull; Pan-India Dispatch
+        </div>
+      </div>
+
+      <!-- The 5 Arches Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        <!-- Haar -->
+        <button type="button" onclick="filterFromArch('haar')" class="group cursor-pointer text-left bg-gradient-to-b from-maroon-900/80 to-maroon-950 p-2.5 rounded-2xl border border-gold-500/40 hover:border-gold-400 hover:scale-[1.03] transition duration-300 shadow-xl flex flex-col items-center">
+          <div class="w-full aspect-[4/5] rounded-xl overflow-hidden border border-gold-500/30 bg-black relative">
+            <img src="/client/demo/assets/adflowerpoint/arch_haar.png" alt="Haar Varmala" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute bottom-2 inset-x-2 bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-slate-950 text-[11px] font-display font-bold py-1 rounded text-center shadow">HAAR</span>
+          </div>
+          <div class="mt-2.5 text-center pb-1">
+            <div class="text-xs font-bold text-white group-hover:text-gold-300">Wedding Varmala</div>
+            <div class="text-[10px] text-slate-400">Milni &amp; Bridal Sets</div>
+          </div>
+        </button>
+
+        <!-- Latkan -->
+        <button type="button" onclick="filterFromArch('latkan')" class="group cursor-pointer text-left bg-gradient-to-b from-maroon-900/80 to-maroon-950 p-2.5 rounded-2xl border border-gold-500/40 hover:border-gold-400 hover:scale-[1.03] transition duration-300 shadow-xl flex flex-col items-center">
+          <div class="w-full aspect-[4/5] rounded-xl overflow-hidden border border-gold-500/30 bg-black relative">
+            <img src="/client/demo/assets/adflowerpoint/arch_latkan.png" alt="Latkan" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute bottom-2 inset-x-2 bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-slate-950 text-[11px] font-display font-bold py-1 rounded text-center shadow">LATKAN</span>
+          </div>
+          <div class="mt-2.5 text-center pb-1">
+            <div class="text-xs font-bold text-white group-hover:text-gold-300">Designer Tassels</div>
+            <div class="text-[10px] text-slate-400">Gold Jhumkis &amp; Pearls</div>
+          </div>
+        </button>
+
+        <!-- Gajara -->
+        <button type="button" onclick="filterFromArch('gajara')" class="group cursor-pointer text-left bg-gradient-to-b from-maroon-900/80 to-maroon-950 p-2.5 rounded-2xl border border-gold-500/40 hover:border-gold-400 hover:scale-[1.03] transition duration-300 shadow-xl flex flex-col items-center">
+          <div class="w-full aspect-[4/5] rounded-xl overflow-hidden border border-gold-500/30 bg-black relative">
+            <img src="/client/demo/assets/adflowerpoint/arch_gajara.png" alt="Gajara" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute bottom-2 inset-x-2 bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-slate-950 text-[11px] font-display font-bold py-1 rounded text-center shadow">GAJARA</span>
+          </div>
+          <div class="mt-2.5 text-center pb-1">
+            <div class="text-xs font-bold text-white group-hover:text-gold-300">Scented Mogra</div>
+            <div class="text-[10px] text-slate-400">Hair Circlets &amp; Chotis</div>
+          </div>
+        </button>
+
+        <!-- Haldi Set -->
+        <button type="button" onclick="filterFromArch('haldiset')" class="group cursor-pointer text-left bg-gradient-to-b from-maroon-900/80 to-maroon-950 p-2.5 rounded-2xl border border-gold-500/40 hover:border-gold-400 hover:scale-[1.03] transition duration-300 shadow-xl flex flex-col items-center">
+          <div class="w-full aspect-[4/5] rounded-xl overflow-hidden border border-gold-500/30 bg-black relative">
+            <img src="/client/demo/assets/adflowerpoint/arch_haldiset.png" alt="Haldi Set" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute bottom-2 inset-x-2 bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-slate-950 text-[11px] font-display font-bold py-1 rounded text-center shadow">HALDI SET</span>
+          </div>
+          <div class="mt-2.5 text-center pb-1">
+            <div class="text-xs font-bold text-white group-hover:text-gold-300">Floral Jewellery</div>
+            <div class="text-[10px] text-slate-400">Mehendi &amp; Haldi Sets</div>
+          </div>
+        </button>
+
+        <!-- Toran -->
+        <button type="button" onclick="filterFromArch('toran')" class="group cursor-pointer text-left bg-gradient-to-b from-maroon-900/80 to-maroon-950 p-2.5 rounded-2xl border border-gold-500/40 hover:border-gold-400 hover:scale-[1.03] transition duration-300 shadow-xl flex flex-col items-center col-span-2 sm:col-span-1">
+          <div class="w-full aspect-[4/5] rounded-xl overflow-hidden border border-gold-500/30 bg-black relative">
+            <img src="/client/demo/assets/adflowerpoint/arch_toran.png" alt="Toran" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute bottom-2 inset-x-2 bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-slate-950 text-[11px] font-display font-bold py-1 rounded text-center shadow">TORAN</span>
+          </div>
+          <div class="mt-2.5 text-center pb-1">
+            <div class="text-xs font-bold text-white group-hover:text-gold-300">Festive Door Hangings</div>
+            <div class="text-[10px] text-slate-400">Marigold &amp; Pearl Drops</div>
+          </div>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -407,22 +491,30 @@
           </div>
         </div>
 
-        <div class="lg:col-span-6 grid grid-cols-2 gap-4">
-          <div class="rounded-xl overflow-hidden border border-gold-500/20 shadow-lg">
-            <img src="/client/demo/assets/adflowerpoint/02_Product_Haar_01.png" alt="Haar Manufacturing" class="w-full h-48 object-cover">
-            <div class="p-3 bg-maroon-950 text-xs font-bold text-center">Handcrafted Varmalas</div>
+        <div class="lg:col-span-6 space-y-4">
+          <div class="rounded-xl overflow-hidden border border-gold-500/30 shadow-xl relative aspect-[16/9]">
+            <img src="/client/demo/assets/adflowerpoint/01_Hero_Showcase.png" alt="Grand Wedding Mandap Installation" class="w-full h-full object-cover">
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-3.5 text-xs text-white">
+              <span class="text-gold-300 font-bold">Opulent Event Production:</span> Artificial flower mandaps, backdrop arches &amp; stage canopies built with AD Flower Point factory inventory.
+            </div>
           </div>
-          <div class="rounded-xl overflow-hidden border border-gold-500/20 shadow-lg">
-            <img src="/client/demo/assets/adflowerpoint/09_Product_Toran_01.png" alt="Toran Manufacturing" class="w-full h-48 object-cover">
-            <div class="p-3 bg-maroon-950 text-xs font-bold text-center">Festive Door Torans</div>
-          </div>
-          <div class="rounded-xl overflow-hidden border border-gold-500/20 shadow-lg">
-            <img src="/client/demo/assets/adflowerpoint/05_Product_Gajra_01.png" alt="Gajra Manufacturing" class="w-full h-48 object-cover">
-            <div class="p-3 bg-maroon-950 text-xs font-bold text-center">Scented Mogra Gajras</div>
-          </div>
-          <div class="rounded-xl overflow-hidden border border-gold-500/20 shadow-lg">
-            <img src="/client/demo/assets/adflowerpoint/07_Product_Haldiset_01.png" alt="Haldi Jewellery Manufacturing" class="w-full h-48 object-cover">
-            <div class="p-3 bg-maroon-950 text-xs font-bold text-center">Haldi Floral Jewellery</div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-xl overflow-hidden border border-gold-500/20 shadow-lg">
+              <img src="/client/demo/assets/adflowerpoint/02_Product_Haar_01.png" alt="Haar Manufacturing" class="w-full h-28 object-cover">
+              <div class="p-2 bg-maroon-950 text-[11px] font-bold text-center">Handcrafted Varmalas</div>
+            </div>
+            <div class="rounded-xl overflow-hidden border border-gold-500/20 shadow-lg">
+              <img src="/client/demo/assets/adflowerpoint/09_Product_Toran_01.png" alt="Toran Manufacturing" class="w-full h-28 object-cover">
+              <div class="p-2 bg-maroon-950 text-[11px] font-bold text-center">Festive Door Torans</div>
+            </div>
+            <div class="rounded-xl overflow-hidden border border-gold-500/20 shadow-lg">
+              <img src="/client/demo/assets/adflowerpoint/05_Product_Gajra_01.png" alt="Gajra Manufacturing" class="w-full h-28 object-cover">
+              <div class="p-2 bg-maroon-950 text-[11px] font-bold text-center">Scented Mogra Gajras</div>
+            </div>
+            <div class="rounded-xl overflow-hidden border border-gold-500/20 shadow-lg">
+              <img src="/client/demo/assets/adflowerpoint/07_Product_Haldiset_01.png" alt="Haldi Jewellery Manufacturing" class="w-full h-28 object-cover">
+              <div class="p-2 bg-maroon-950 text-[11px] font-bold text-center">Haldi Floral Jewellery</div>
+            </div>
           </div>
         </div>
 
@@ -856,8 +948,22 @@
       document.querySelectorAll('.cat-pill').forEach(b => {
         b.className = 'cat-pill bg-maroon-900 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full border border-maroon-800 transition cursor-pointer';
       });
-      btn.className = 'cat-pill active bg-gold-500 text-slate-950 font-bold px-3.5 py-1.5 rounded-full transition shadow cursor-pointer';
+      if (btn) {
+        btn.className = 'cat-pill active bg-gold-500 text-slate-950 font-bold px-3.5 py-1.5 rounded-full transition shadow cursor-pointer';
+      }
       renderProducts(cat);
+    }
+
+    // Filter from Signature Arch Cards
+    function filterFromArch(cat) {
+      const pills = Array.from(document.querySelectorAll('.cat-pill'));
+      const targetBtn = pills.find(b => b.getAttribute('onclick') && b.getAttribute('onclick').includes(`'${cat}'`));
+      filterCategory(cat, targetBtn);
+      
+      const prodSec = document.getElementById('products');
+      if (prodSec) {
+        prodSec.scrollIntoView({ behavior: 'smooth' });
+      }
     }
 
     // Add to Cart Logic
