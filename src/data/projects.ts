@@ -232,9 +232,9 @@ export const PROJECTS: Project[] = [
       {
         name: 'Savile Row Slate',
         style: 'Institutional M&A Advisory',
-        image: '/demos/thumbnails/business-portfolio-theme1.webp',
-        palette: ['#F4F5F7', '#1E293B', '#475569'],
-        accentHex: '#1E293B',
+        image: '/demos/assets/demo-09-business-portfolio/01_Hero_Showcase.png',
+        palette: ['#0F172A', '#1E293B', '#D97706'],
+        accentHex: '#D97706',
       },
     ],
     nicheSlug: '/blog/industries/business-portfolio',
