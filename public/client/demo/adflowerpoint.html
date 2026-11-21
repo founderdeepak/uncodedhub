@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,18 +60,29 @@
       overflow-wrap: normal;
     }
 
+    section {
+      scroll-margin-top: 90px;
+    }
+
     .gold-gradient-text {
       background: linear-gradient(135deg, #FFFBEB 0%, #FDE047 50%, #EAB308 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .card-border {
-      border: 1px solid rgba(234, 179, 8, 0.22);
+    /* Modal & Drawer strict display states (prevents pointer-event blocking) */
+    #cartDrawer {
+      display: none;
+    }
+    #cartDrawer.open {
+      display: block !important;
     }
 
-    .card-border:hover {
-      border-color: rgba(234, 179, 8, 0.5);
+    #uncodedPitchModal {
+      display: none;
+    }
+    #uncodedPitchModal.open {
+      display: flex !important;
     }
 
     /* Custom scrollbar */
@@ -90,10 +101,10 @@
     }
   </style>
 </head>
-<body class="antialiased min-h-screen flex flex-col">
+<body class="antialiased min-h-screen flex flex-col relative">
 
   <!-- Uncoded Hub Sticky Pitch Banner -->
-  <aside aria-label="Pitch Banner" class="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-slate-950 font-semibold text-xs px-4 py-2 sticky top-0 z-50 shadow-lg">
+  <aside aria-label="Pitch Banner" class="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-slate-950 font-semibold text-xs px-4 py-2 sticky top-0 z-40 shadow-lg">
     <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
       <div class="flex items-center gap-2 mx-auto sm:mx-0">
         <span class="w-2.5 h-2.5 rounded-full bg-slate-950 animate-ping"></span>
@@ -101,7 +112,7 @@
         <span class="hidden md:inline text-amber-950">• Engineered by Uncoded Hub Bengaluru</span>
       </div>
       <div class="flex items-center gap-2">
-        <button onclick="openPitchModal()" class="bg-slate-950 text-amber-300 px-3 py-1 rounded-full text-[11px] font-bold hover:bg-slate-900 transition shadow">
+        <button type="button" onclick="openPitchModal()" class="cursor-pointer bg-slate-950 text-amber-300 px-3.5 py-1.5 rounded-full text-[11px] font-bold hover:bg-slate-900 transition shadow">
           🚀 Lock 7-Day Launch &bull; Pay 50% Advance
         </button>
       </div>
@@ -135,38 +146,38 @@
   </div>
 
   <!-- Main Navigation Header -->
-  <header class="sticky top-8 z-40 bg-maroon-950/95 backdrop-blur-md border-b border-maroon-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex items-center justify-between gap-4">
+  <header class="sticky top-[38px] z-30 bg-maroon-950/95 backdrop-blur-md border-b border-maroon-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between gap-4">
       <!-- Brand Logo Lockup -->
       <a href="#hero" class="flex items-center gap-3 group">
-        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-maroon-800 to-maroon-900 border border-gold-500/40 flex items-center justify-center text-2xl shadow-inner group-hover:scale-105 transition">
+        <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-maroon-800 to-maroon-900 border border-gold-500/40 flex items-center justify-center text-2xl shadow-inner group-hover:scale-105 transition">
           🌸
         </div>
         <div>
-          <div class="font-display font-bold text-lg sm:text-xl tracking-wider text-white flex items-center gap-2">
+          <div class="font-display font-bold text-base sm:text-lg tracking-wider text-white flex items-center gap-2">
             <span>AD FLOWER POINT</span>
-            <span class="text-[10px] bg-rose-600/30 text-rose-300 px-2 py-0.5 rounded font-sans uppercase font-bold tracking-widest border border-rose-500/30">Factory</span>
+            <span class="text-[9px] bg-rose-600/30 text-rose-300 px-1.5 py-0.5 rounded font-sans uppercase font-bold tracking-widest border border-rose-500/30">Factory</span>
           </div>
-          <div class="text-[11px] text-gold-400 tracking-widest font-sans uppercase">Decor &bull; Tradition &bull; Elegance</div>
+          <div class="text-[10px] text-gold-400 tracking-widest font-sans uppercase">Decor &bull; Tradition &bull; Elegance</div>
         </div>
       </a>
 
       <!-- Quick Nav Links -->
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
-        <a href="#products" class="hover:text-gold-400 transition">10 Products Catalog</a>
-        <a href="#calculator" class="hover:text-gold-400 transition">Bulk PO Calculator</a>
+        <a href="#products" class="hover:text-gold-400 transition">10 Products</a>
+        <a href="#calculator" class="hover:text-gold-400 transition">Bulk Calculator</a>
         <a href="#about" class="hover:text-gold-400 transition">Factory Standards</a>
         <a href="#why-storefront" class="hover:text-gold-400 transition">Why Storefront?</a>
       </nav>
 
       <!-- Cart Button & Direct WhatsApp -->
       <div class="flex items-center gap-3">
-        <button onclick="toggleCartDrawer()" class="relative flex items-center gap-2 bg-maroon-800 hover:bg-maroon-700 text-gold-300 px-4 py-2 rounded-lg text-sm font-semibold border border-gold-500/30 transition">
-          <span>🛒 Wholesale PO Cart</span>
-          <span id="cartCountBadge" class="bg-rose-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">0</span>
+        <button type="button" onclick="openCartDrawer()" class="cursor-pointer relative flex items-center gap-2 bg-maroon-800 hover:bg-maroon-700 text-gold-300 px-3.5 py-2 rounded-lg text-xs font-semibold border border-gold-500/30 transition shadow">
+          <span>🛒 PO Cart</span>
+          <span id="cartCountBadge" class="bg-rose-600 text-white text-[11px] px-2 py-0.2 rounded-full font-bold">0</span>
         </button>
 
-        <a href="https://wa.me/919272191331?text=Hi%20AD%20Flower%20Point%2C%20I%20am%20viewing%20your%20wholesale%20catalog%20and%20would%20like%20to%20place%20a%20bulk%20order." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-lg transition">
+        <a href="https://wa.me/919272191331?text=Hi%20AD%20Flower%20Point%2C%20I%20am%20viewing%20your%20wholesale%20catalog%20and%20would%20like%20to%20place%20a%20bulk%20order." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-3.5 py-2 rounded-lg text-xs font-bold shadow-lg transition">
           <span>💬 Order on WhatsApp</span>
         </a>
       </div>
@@ -229,16 +240,17 @@
         </div>
       </div>
 
-      <!-- Right Hero Poster Card -->
+      <!-- Right Hero Showcase Card (Now using high-res 01_Hero_Showcase.png) -->
       <div class="lg:col-span-5">
-        <div class="relative bg-gradient-to-b from-maroon-800 to-maroon-950 p-2 rounded-2xl border-2 border-gold-500/40 shadow-2xl">
-          <div class="relative rounded-xl overflow-hidden group">
-            <img src="/client/demo/assets/adflowerpoint/01_Hero_Showcase.png" alt="AD Flower Manufacturer Official Poster" class="w-full h-auto object-cover group-hover:scale-102 transition duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+        <div class="relative bg-gradient-to-b from-maroon-800 to-maroon-950 p-2.5 rounded-2xl border-2 border-gold-500/40 shadow-2xl">
+          <div class="relative rounded-xl overflow-hidden group aspect-[4/5] bg-black">
+            <img src="/client/demo/assets/adflowerpoint/01_Hero_Showcase.png" alt="AD Flower Point Opulent Wedding Floral Mandap" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex items-end p-5">
               <div class="text-white">
-                <span class="bg-rose-600 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded">Verified Manufacturer</span>
-                <h4 class="font-display font-bold text-lg mt-1">AD Flower Manufacturer &bull; Pune / India</h4>
-                <p class="text-xs text-gold-300">Call / WhatsApp: +91 9272191331</p>
+                <span class="bg-rose-600 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded shadow">Verified Manufacturer</span>
+                <h4 class="font-display font-bold text-lg sm:text-xl mt-1.5 text-gold-300">AD FLOWER POINT</h4>
+                <p class="text-xs text-rose-100/90 mt-0.5">Wedding Mandap Garlands, Mogra Gajras &amp; Haldi Sets</p>
+                <p class="text-[11px] text-gold-400/90 font-mono mt-1">📞 Direct Factory Desk: +91 9272191331</p>
               </div>
             </div>
           </div>
@@ -249,7 +261,7 @@
   </section>
 
   <!-- Interactive Wholesale PO Calculator -->
-  <section id="calculator" class="py-12 bg-maroon-900/40 border-b border-maroon-800">
+  <section id="calculator" class="py-14 bg-maroon-900/40 border-b border-maroon-800">
     <div class="max-w-5xl mx-auto px-4 sm:px-8">
       <div class="text-center mb-8">
         <span class="text-xs uppercase font-bold tracking-widest text-gold-400">B2B Wholesale Portal</span>
@@ -259,10 +271,10 @@
 
       <div class="bg-maroon-950 border border-gold-500/30 rounded-2xl p-6 sm:p-8 shadow-xl grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         <!-- Inputs -->
-        <div class="md:col-span-7 space-y-4">
+        <div class="md:col-span-7 space-y-5">
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Select Product Category</label>
-            <select id="calcCategory" onchange="calculateWholesale()" class="w-full bg-maroon-900 border border-maroon-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-400">
+            <label for="calcCategory" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Select Product Category</label>
+            <select id="calcCategory" onchange="calculateWholesale()" class="w-full bg-maroon-900 border border-maroon-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
               <option value="haar" data-retail="299" data-bulk="160">Wedding Haar / Varmala (Red Velvet &amp; Pearl)</option>
               <option value="latkan" data-retail="180" data-bulk="95">Designer Pearl Jhumki Latkan Pairs</option>
               <option value="gajara" data-retail="120" data-bulk="65">Scented Mogra Bridal Hair Gajra Rings</option>
@@ -272,16 +284,18 @@
           </div>
 
           <div>
-            <div class="flex justify-between items-center text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">
+            <div class="flex justify-between items-center text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
               <span>Order Quantity</span>
               <span id="calcQtyDisplay" class="text-gold-400 font-mono text-sm">50 Pieces</span>
             </div>
             <input type="range" id="calcQty" min="10" max="500" step="10" value="50" oninput="calculateWholesale()" class="w-full accent-gold-500 bg-maroon-800 h-2 rounded-lg cursor-pointer">
-            <div class="flex justify-between text-[11px] text-slate-500 font-mono mt-1">
-              <span>10 pcs (Sample)</span>
-              <span>50 pcs (Event Tier)</span>
-              <span>200 pcs (Wholesale)</span>
-              <span>500 pcs (Distributor)</span>
+            
+            <!-- Quick Preset Quantity Buttons -->
+            <div class="grid grid-cols-4 gap-2 mt-3">
+              <button type="button" onclick="setPresetQty(10)" class="preset-btn bg-maroon-900 hover:bg-maroon-800 text-slate-300 text-[11px] py-1.5 px-2 rounded border border-maroon-700 transition">10 Pcs</button>
+              <button type="button" onclick="setPresetQty(50)" class="preset-btn bg-gold-500/20 text-gold-300 text-[11px] py-1.5 px-2 rounded border border-gold-500/40 font-bold transition">50 Pcs</button>
+              <button type="button" onclick="setPresetQty(100)" class="preset-btn bg-maroon-900 hover:bg-maroon-800 text-slate-300 text-[11px] py-1.5 px-2 rounded border border-maroon-700 transition">100 Pcs</button>
+              <button type="button" onclick="setPresetQty(250)" class="preset-btn bg-maroon-900 hover:bg-maroon-800 text-slate-300 text-[11px] py-1.5 px-2 rounded border border-maroon-700 transition">250 Pcs</button>
             </div>
           </div>
         </div>
@@ -306,7 +320,7 @@
             </div>
           </div>
 
-          <button onclick="orderCalculatedPO()" class="w-full mt-6 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-4 rounded-lg text-xs uppercase tracking-wider transition shadow flex items-center justify-center gap-2">
+          <button type="button" onclick="orderCalculatedPO()" class="cursor-pointer w-full mt-6 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-4 rounded-lg text-xs uppercase tracking-wider transition shadow flex items-center justify-center gap-2">
             <span>Send This PO on WhatsApp</span>
             <span>&rarr;</span>
           </button>
@@ -329,13 +343,13 @@
 
         <!-- Filter Tabs -->
         <div class="flex items-center gap-2 flex-wrap text-xs font-semibold">
-          <button onclick="filterCategory('all', this)" class="cat-pill active bg-gold-500 text-slate-950 px-3.5 py-1.5 rounded-full transition">All (10)</button>
-          <button onclick="filterCategory('haar', this)" class="cat-pill bg-maroon-900 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full border border-maroon-800 transition">Haar (2)</button>
-          <button onclick="filterCategory('gajara', this)" class="cat-pill bg-maroon-900 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full border border-maroon-800 transition">Gajra (2)</button>
-          <button onclick="filterCategory('toran', this)" class="cat-pill bg-maroon-900 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full border border-maroon-800 transition">Toran (2)</button>
-          <button onclick="filterCategory('haldiset', this)" class="cat-pill bg-maroon-900 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full border border-maroon-800 transition">Haldi Sets (2)</button>
-          <button onclick="filterCategory('latkan', this)" class="cat-pill bg-maroon-900 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full border border-maroon-800 transition">Latkans (1)</button>
-          <button onclick="filterCategory('bulk', this)" class="cat-pill bg-maroon-900 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full border border-maroon-800 transition">Bulk Box (1)</button>
+          <button type="button" onclick="filterCategory('all', this)" class="cat-pill active bg-gold-500 text-slate-950 px-3.5 py-1.5 rounded-full transition shadow">All (10)</button>
+          <button type="button" onclick="filterCategory('haar', this)" class="cat-pill bg-maroon-900 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full border border-maroon-800 transition">Haar (2)</button>
+          <button type="button" onclick="filterCategory('gajara', this)" class="cat-pill bg-maroon-900 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full border border-maroon-800 transition">Gajra (2)</button>
+          <button type="button" onclick="filterCategory('toran', this)" class="cat-pill bg-maroon-900 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full border border-maroon-800 transition">Toran (2)</button>
+          <button type="button" onclick="filterCategory('haldiset', this)" class="cat-pill bg-maroon-900 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full border border-maroon-800 transition">Haldi Sets (2)</button>
+          <button type="button" onclick="filterCategory('latkan', this)" class="cat-pill bg-maroon-900 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full border border-maroon-800 transition">Latkans (1)</button>
+          <button type="button" onclick="filterCategory('bulk', this)" class="cat-pill bg-maroon-900 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full border border-maroon-800 transition">Bulk Box (1)</button>
         </div>
       </div>
 
@@ -387,7 +401,7 @@
               <div class="text-xs text-slate-400">Need Custom Color Dyeing?</div>
               <div class="text-sm font-bold text-white">We manufacture custom color combinations on bulk orders</div>
             </div>
-            <a href="https://wa.me/919272191331?text=Hi%20AD%20Flower%20Point%2C%20I%20need%20custom%20colors%20for%20an%20upcoming%20event." target="_blank" rel="noopener noreferrer" class="bg-gold-500 hover:bg-gold-400 text-slate-950 font-bold text-xs px-3 py-2 rounded-lg transition whitespace-nowrap">
+            <a href="https://wa.me/919272191331?text=Hi%20AD%20Flower%20Point%2C%20I%20need%20custom%20colors%20for%20an%20upcoming%20event." target="_blank" rel="noopener noreferrer" class="bg-gold-500 hover:bg-gold-400 text-slate-950 font-bold text-xs px-3.5 py-2 rounded-lg transition whitespace-nowrap shadow">
               Ask on WhatsApp &rarr;
             </a>
           </div>
@@ -485,7 +499,7 @@
         </p>
 
         <div class="flex flex-wrap items-center justify-center gap-4 mt-6">
-          <button onclick="openPitchModal()" class="bg-slate-950 hover:bg-slate-900 text-gold-300 font-bold px-8 py-4 rounded-xl text-sm transition shadow-lg flex items-center gap-2">
+          <button type="button" onclick="openPitchModal()" class="cursor-pointer bg-slate-950 hover:bg-slate-900 text-gold-300 font-bold px-8 py-4 rounded-xl text-sm transition shadow-lg flex items-center gap-2">
             <span>Lock 7-Day Sprint &bull; Pay 50% Advance</span>
             <span>&rarr;</span>
           </button>
@@ -498,10 +512,10 @@
     </div>
   </section>
 
-  <!-- Slide-Over Inquiry Cart Drawer -->
-  <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-0">
-    <div onclick="toggleCartDrawer()" class="absolute inset-0 bg-black/70 backdrop-blur-sm pointer-events-auto"></div>
-    <div class="absolute inset-y-0 right-0 max-w-full flex pl-10 pointer-events-auto">
+  <!-- Slide-Over Inquiry Cart Drawer (Strict display toggle) -->
+  <aside id="cartDrawer" aria-label="Wholesale Cart" class="fixed inset-0 z-50 overflow-hidden">
+    <div onclick="closeCartDrawer()" class="fixed inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"></div>
+    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10 z-10">
       <div class="w-screen max-w-md bg-maroon-950 border-l border-gold-500/40 p-6 flex flex-col shadow-2xl text-white">
         
         <div class="flex items-center justify-between pb-4 border-b border-maroon-800">
@@ -509,16 +523,14 @@
             <span class="text-xl">🛒</span>
             <h3 class="font-display font-bold text-lg">Wholesale Inquiry Cart</h3>
           </div>
-          <button onclick="toggleCartDrawer()" class="text-slate-400 hover:text-white text-xl p-1">&times;</button>
+          <button type="button" onclick="closeCartDrawer()" class="cursor-pointer text-slate-400 hover:text-white text-2xl p-1 leading-none">&times;</button>
         </div>
 
         <div id="cartItemList" class="flex-1 overflow-y-auto py-4 space-y-3">
-          <div class="text-center py-12 text-slate-500 text-sm">
-            Your inquiry cart is empty.<br>Click "+ Add to Bulk Cart" on any product.
-          </div>
+          <!-- Cart items rendered here -->
         </div>
 
-        <div class="pt-4 border-t border-maroon-800 space-y-3">
+        <div class="pt-4 border-t border-maroon-800 space-y-3 bg-maroon-950">
           <div class="flex justify-between text-sm font-semibold">
             <span class="text-slate-400">Total Items:</span>
             <span id="cartTotalItems" class="text-gold-300 font-mono">0</span>
@@ -528,7 +540,7 @@
             <span id="cartSubtotal" class="text-gold-300 font-mono">&#8377;0</span>
           </div>
 
-          <button onclick="checkoutViaWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-4 rounded-xl text-sm transition shadow flex items-center justify-center gap-2">
+          <button type="button" onclick="checkoutViaWhatsApp()" class="cursor-pointer w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-4 rounded-xl text-sm transition shadow flex items-center justify-center gap-2">
             <span>Send Formal PO on WhatsApp (+91 9272191331)</span>
             <span>&rarr;</span>
           </button>
@@ -536,12 +548,12 @@
 
       </div>
     </div>
-  </div>
+  </aside>
 
-  <!-- Uncoded Hub Studio Pitch Modal -->
-  <div id="uncodedPitchModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 hidden">
+  <!-- Uncoded Hub Studio Pitch Modal (Strict display toggle) -->
+  <div id="uncodedPitchModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md items-center justify-center p-4">
     <div class="bg-maroon-950 border border-gold-500 rounded-2xl max-w-xl w-full p-6 sm:p-8 relative shadow-2xl text-white max-h-[90vh] overflow-y-auto">
-      <button onclick="closePitchModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">&times;</button>
+      <button type="button" onclick="closePitchModal()" class="cursor-pointer absolute top-4 right-4 text-slate-400 hover:text-white text-2xl leading-none">&times;</button>
       
       <div class="flex items-center gap-3 pb-4 border-b border-maroon-800">
         <div class="text-2xl">🌸</div>
@@ -554,7 +566,7 @@
       <div class="py-4 space-y-4 text-xs sm:text-sm text-slate-300">
         <p>Dear Partner at <strong>AD Flower Point</strong>,</p>
         <p>
-          We hand-built this working e-commerce prototype specifically for your business after reviewing your Instagram (<a href="https://www.instagram.com/adflowerpoint" class="text-gold-400 underline">@adflowerpoint</a>) and your official product categories: <strong>Haar, Latkan, Gajra, Haldi Sets &amp; Torans</strong>.
+          We hand-built this working e-commerce prototype specifically for your business after reviewing your Instagram (<a href="https://www.instagram.com/adflowerpoint" target="_blank" rel="noopener noreferrer" class="text-gold-400 underline">@adflowerpoint</a>) and your official product categories: <strong>Haar, Latkan, Gajra, Haldi Sets &amp; Torans</strong>.
         </p>
 
         <div class="bg-maroon-900/60 p-4 rounded-xl border border-gold-500/20 space-y-2">
@@ -572,7 +584,7 @@
       </div>
 
       <div class="pt-4 border-t border-maroon-800 flex gap-3">
-        <button onclick="closePitchModal()" class="flex-1 bg-maroon-900 hover:bg-maroon-800 text-slate-300 py-3 rounded-lg text-xs font-semibold">
+        <button type="button" onclick="closePitchModal()" class="cursor-pointer flex-1 bg-maroon-900 hover:bg-maroon-800 text-slate-300 py-3 rounded-lg text-xs font-semibold">
           Keep Exploring Demo
         </button>
         <a href="https://wa.me/918660819023?text=Hi%20Deepak%2C%20I%20am%20from%20AD%20Flower%20Point.%20I%20have%20reviewed%20the%20demo%20website%20and%20want%20to%20send%20the%2050%25%20advance%20to%20start%20our%20website." target="_blank" rel="noopener noreferrer" class="flex-2 bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-slate-950 font-bold py-3 px-6 rounded-lg text-xs transition text-center shadow">
@@ -580,6 +592,14 @@
         </a>
       </div>
     </div>
+  </div>
+
+  <!-- Floating Sticky WhatsApp Order Button -->
+  <div class="fixed bottom-6 right-6 z-30 flex flex-col items-end gap-2">
+    <a href="https://wa.me/919272191331?text=Hi%20AD%20Flower%20Point%2C%20I%20have%20an%20urgent%20wholesale%20requirement%20for%20artificial%20flowers." target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs px-4 py-3 rounded-full shadow-2xl transition hover:scale-105 border border-emerald-400/50">
+      <span class="w-2.5 h-2.5 rounded-full bg-emerald-200 animate-ping"></span>
+      <span>💬 WhatsApp Factory Desk</span>
+    </a>
   </div>
 
   <!-- Footer -->
@@ -639,7 +659,7 @@
 
   <!-- Scripts -->
   <script>
-    // 10 Curated Products for AD Flower Point
+    // 10 Products with Verified Assets
     const products = [
       {
         id: 1,
@@ -780,7 +800,7 @@
         card.className = 'bg-maroon-900/70 border border-maroon-800 hover:border-gold-500/50 rounded-2xl overflow-hidden shadow-lg transition duration-300 flex flex-col group';
         card.innerHTML = `
           <div class="relative h-56 overflow-hidden bg-black/40">
-            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
             <span class="absolute top-3 left-3 bg-rose-600/90 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow">
               ${p.badge}
             </span>
@@ -817,10 +837,10 @@
               </div>
 
               <div class="grid grid-cols-2 gap-2">
-                <button onclick="addToCart(${p.id})" class="w-full bg-maroon-800 hover:bg-maroon-700 text-gold-300 border border-gold-500/30 font-bold text-xs py-2 px-2 rounded-lg transition flex items-center justify-center gap-1">
+                <button type="button" id="btn-add-${p.id}" onclick="addToCart(${p.id}, this)" class="cursor-pointer w-full bg-maroon-800 hover:bg-maroon-700 text-gold-300 border border-gold-500/30 font-bold text-xs py-2 px-2 rounded-lg transition flex items-center justify-center gap-1">
                   <span>+ Add to PO</span>
                 </button>
-                <a href="https://wa.me/919272191331?text=Hi%20AD%20Flower%20Point%2C%20I%20want%20to%20order%20${encodeURIComponent(p.name)}%20(SKU%3A%20${p.sku})%20in%20bulk." target="_blank" rel="noopener noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-2 px-2 rounded-lg transition flex items-center justify-center gap-1 text-center">
+                <a href="https://wa.me/919272191331?text=Hi%20AD%20Flower%20Point%2C%20I%20want%20to%20order%20${encodeURIComponent(p.name)}%20(SKU%3A%20${p.sku})%20in%20bulk." target="_blank" rel="noopener noreferrer" class="cursor-pointer w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-2 px-2 rounded-lg transition flex items-center justify-center gap-1 text-center">
                   <span>⚡ 1-Tap Order</span>
                 </a>
               </div>
@@ -834,14 +854,14 @@
     // Filter Categories
     function filterCategory(cat, btn) {
       document.querySelectorAll('.cat-pill').forEach(b => {
-        b.className = 'cat-pill bg-maroon-900 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full border border-maroon-800 transition';
+        b.className = 'cat-pill bg-maroon-900 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full border border-maroon-800 transition cursor-pointer';
       });
-      btn.className = 'cat-pill active bg-gold-500 text-slate-950 font-bold px-3.5 py-1.5 rounded-full transition';
+      btn.className = 'cat-pill active bg-gold-500 text-slate-950 font-bold px-3.5 py-1.5 rounded-full transition shadow cursor-pointer';
       renderProducts(cat);
     }
 
     // Add to Cart Logic
-    function addToCart(productId) {
+    function addToCart(productId, btnElement) {
       const prod = products.find(p => p.id === productId);
       if (!prod) return;
 
@@ -852,16 +872,27 @@
         cart.push({ ...prod, quantity: prod.moq });
       }
 
+      // Visual feedback on button
+      if (btnElement) {
+        const origHTML = btnElement.innerHTML;
+        btnElement.innerHTML = `<span class="text-emerald-400">✓ Added!</span>`;
+        btnElement.classList.add('border-emerald-500');
+        setTimeout(() => {
+          btnElement.innerHTML = origHTML;
+          btnElement.classList.remove('border-emerald-500');
+        }, 1200);
+      }
+
       updateCartUI();
       openCartDrawer();
     }
 
     function updateCartUI() {
       const badge = document.getElementById('cartCountBadge');
-      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const totalUnits = cart.reduce((sum, item) => sum + item.quantity, 0);
       badge.textContent = cart.length;
 
-      document.getElementById('cartTotalItems').textContent = `${totalItems} pcs (${cart.length} items)`;
+      document.getElementById('cartTotalItems').textContent = `${totalUnits} pcs (${cart.length} items)`;
 
       const subtotal = cart.reduce((sum, item) => sum + (item.wholesalePrice * item.quantity), 0);
       document.getElementById('cartSubtotal').textContent = `₹${subtotal.toLocaleString('en-IN')}`;
@@ -870,7 +901,7 @@
       if (cart.length === 0) {
         list.innerHTML = `
           <div class="text-center py-12 text-slate-500 text-sm">
-            Your inquiry cart is empty.<br>Click "+ Add to Bulk Cart" on any product.
+            Your inquiry cart is empty.<br>Click "+ Add to PO" on any product.
           </div>
         `;
         return;
@@ -885,11 +916,28 @@
           <div class="flex-1">
             <h5 class="text-xs font-bold text-white line-clamp-1">${item.name}</h5>
             <div class="text-[11px] text-gold-300 font-mono mt-0.5">₹${item.wholesalePrice} × ${item.quantity} = ₹${(item.wholesalePrice * item.quantity).toLocaleString('en-IN')}</div>
+            <div class="flex items-center gap-2 mt-1">
+              <button type="button" onclick="adjustCartQty(${item.id}, -${item.moq})" class="cursor-pointer bg-maroon-800 hover:bg-maroon-700 text-slate-300 text-[10px] px-2 py-0.5 rounded border border-maroon-700">-</button>
+              <span class="text-xs font-mono font-bold">${item.quantity}</span>
+              <button type="button" onclick="adjustCartQty(${item.id}, ${item.moq})" class="cursor-pointer bg-maroon-800 hover:bg-maroon-700 text-slate-300 text-[10px] px-2 py-0.5 rounded border border-maroon-700">+</button>
+            </div>
           </div>
-          <button onclick="removeFromCart(${item.id})" class="text-rose-400 hover:text-rose-300 text-sm p-1 font-bold">&times;</button>
+          <button type="button" onclick="removeFromCart(${item.id})" class="cursor-pointer text-rose-400 hover:text-rose-300 text-lg p-1.5 font-bold" title="Remove">&times;</button>
         `;
         list.appendChild(itemEl);
       });
+    }
+
+    function adjustCartQty(productId, delta) {
+      const item = cart.find(c => c.id === productId);
+      if (!item) return;
+
+      item.quantity += delta;
+      if (item.quantity <= 0) {
+        removeFromCart(productId);
+      } else {
+        updateCartUI();
+      }
     }
 
     function removeFromCart(productId) {
@@ -897,23 +945,16 @@
       updateCartUI();
     }
 
-    function toggleCartDrawer() {
-      const drawer = document.getElementById('cartDrawer');
-      if (drawer.classList.contains('opacity-0')) {
-        openCartDrawer();
-      } else {
-        closeCartDrawer();
-      }
-    }
-
     function openCartDrawer() {
       const drawer = document.getElementById('cartDrawer');
-      drawer.classList.remove('opacity-0', 'pointer-events-none');
+      drawer.classList.add('open');
+      document.body.style.overflow = 'hidden';
     }
 
     function closeCartDrawer() {
       const drawer = document.getElementById('cartDrawer');
-      drawer.classList.add('opacity-0', 'pointer-events-none');
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
     }
 
     function checkoutViaWhatsApp() {
@@ -965,6 +1006,20 @@
       document.getElementById('calcPerUnit').textContent = `₹${bulk} / piece`;
     }
 
+    function setPresetQty(qty) {
+      document.getElementById('calcQty').value = qty;
+      calculateWholesale();
+
+      // Highlight active preset button
+      document.querySelectorAll('.preset-btn').forEach(b => {
+        if (b.textContent.includes(`${qty} Pcs`)) {
+          b.className = 'preset-btn bg-gold-500/20 text-gold-300 text-[11px] py-1.5 px-2 rounded border border-gold-500/40 font-bold transition';
+        } else {
+          b.className = 'preset-btn bg-maroon-900 hover:bg-maroon-800 text-slate-300 text-[11px] py-1.5 px-2 rounded border border-maroon-700 transition';
+        }
+      });
+    }
+
     function orderCalculatedPO() {
       const catSelect = document.getElementById('calcCategory');
       const prodName = catSelect.options[catSelect.selectedIndex].text;
@@ -982,12 +1037,24 @@
 
     // Modal Logic
     function openPitchModal() {
-      document.getElementById('uncodedPitchModal').classList.remove('hidden');
+      const modal = document.getElementById('uncodedPitchModal');
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
     }
 
     function closePitchModal() {
-      document.getElementById('uncodedPitchModal').classList.add('hidden');
+      const modal = document.getElementById('uncodedPitchModal');
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
     }
+
+    // Close on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeCartDrawer();
+        closePitchModal();
+      }
+    });
 
     // Initialize
     renderProducts();
