@@ -132,3 +132,53 @@ Set up these 3 items in your LinkedIn **"Featured"** section:
 3. **Post / Media 3: The 7-Day "Late Means Free" Guarantee**
    * *Title:* Our Contractual Guarantee: Live on Day 7 or ₹0
    * *URL:* `https://uncodedhub.com/services/`
+
+---
+
+## 📌 Part 5: Experience Section (Uncoded Hub Job Description)
+
+*Direct Edit Link:* [LinkedIn Experience Edit](https://www.linkedin.com/in/deepakdeveloper/details/experience/edit/forms/2871213941/)
+
+### Title Options:
+* **Option A (Recommended · Maximum Authority):** `Co-Founder & Lead Web Engineer`
+* **Option B (Hybrid SEO):** `Co-Founder & Website Architect | React & Performance Specialist`
+* **Option C (Direct & Punchy):** `Co-Founder & Website Builder`
+
+### Employment Type: `Full-time`
+### Company Name: `Uncoded Hub`
+### Location: `Greater Bengaluru Area · Hybrid` (or `On-site`)
+### Start Date: `Jan 2026 - Present`
+
+### Description Box Copy (Copy & Paste Directly):
+
+```text
+We build sub-second, high-converting websites for service businesses and modern brands — delivered in 7 days flat, or it’s 100% free.
+
+Most businesses don't lose high-ticket clients because of their work — they lose them because their website takes 5+ seconds to load, looks outdated on mobile, and makes booking a hassle. We eliminate that.
+
+At Uncoded Hub, we replace slow, bloated CMS templates with hand-crafted, high-performance React web architecture engineered for instant credibility, top Google rankings, and direct inquiry capture.
+
+▸ WHAT WE BUILD & DELIVER:
+• Custom Business Websites (Sub-second React architecture, 99+ Core Web Vitals)
+• Complete Website Redesigns & Speed Upgrades (Modernizing legacy sites with zero downtime)
+• High-Converting Single Page Funnels & Landing Pages
+• High-Speed D2C E-Commerce Storefronts (Instant checkout & cart drawers)
+• Automated WhatsApp Lead Capture & 1-Tap Booking Engines
+• Advanced Local SEO Architecture & Google Business Profile (GBP) Optimization
+• Conversion-Focused Copywriting & Positioning Strategy
+
+▸ SECTORS WE SERVE:
+Architects & Interior Designers · Luxury Retail & Jewellery · Clinics, Dental & Aesthetic Medicine · Real Estate Developers · Automotive Detailing · High-End D2C Brands · Professional Practices & Consultancies
+
+▸ OUR CONTRACTUAL RISK REVERSAL:
+⏱️ 7-Day Sprint Delivery: Your platform is live and taking clients on Day 7.
+🛡️ Late Means Free: If we miss the deadline by even one hour, you pay ₹0. No fine print.
+✨ 100% Code Ownership: Zero proprietary lock-in or surprise monthly fees.
+
+Explore 50+ live interactive industry demos:
+🌐 uncodedhub.com
+💬 Message me with "WEBSITE" for a 5-minute teardown of your current site architecture.
+
+Keywords: Web Design · Web Development · React Developer · Website Redesign · Frontend Architecture · E-Commerce Development · Local SEO · Conversion Rate Optimization · Landing Page Design · Bangalore
+```
+
