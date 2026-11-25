@@ -214,15 +214,14 @@
 
   <!-- Generator & Application Logic -->
   <script>
-    // Copywriting Templates Generator
+    // Copywriting Templates Generator (Zero-Bot & Anti-Detection Standard - No Company Mention)
     function generateCopy(cleanName, cleanComp, position, persona, variant) {
-      const companyMention = cleanComp ? ` at ${cleanComp}` : '';
       const v = (variant || 0) % 3;
 
       if (persona === 'FOUNDER') {
         if (v === 0) {
           return {
-            full: `Hi ${cleanName}, hope you're having an inspiring week building${companyMention}!
+            full: `Hi ${cleanName}, hope you're having an inspiring and productive week!
 
 I wanted to take a brief moment to share something very close to my heart. Over the past few months, we poured our heart and soul into building Uncoded Hub (https://uncodedhub.com) — a dedicated design & web engineering studio where we craft bespoke, high-converting digital flagships without cookie-cutter templates.
 
@@ -236,7 +235,7 @@ And if you, your team, or anyone in your circle (a friend, family member, or col
           };
         } else if (v === 1) {
           return {
-            full: `Hello ${cleanName}, hope all is thriving with your work${companyMention}!
+            full: `Hello ${cleanName}, hope all is thriving with your recent projects and ventures!
 
 I'm reaching out with genuine excitement to share a personal milestone. We’ve recently launched Uncoded Hub (https://uncodedhub.com) — our boutique studio dedicated to building bespoke, lightning-fast web experiences for ambitious brands.
 
@@ -260,7 +259,7 @@ No pitch whatsoever — just celebrating this milestone, and I’d be deeply gra
 
 If you or anyone in your circle ever needs an exceptional website built with true craftsmanship, I'm always here. Here's to building great things! 🥂`,
             short: `Hi ${cleanName}! Dropping by to share a joyful milestone — we’ve officially launched Uncoded Hub (https://uncodedhub.com) for bespoke web engineering. No pitch at all, just sharing our joy with builders in my network and requesting a quick happy wish or blessing! Keep us in mind whenever a website comes up in your circle. 💫`,
-            followup: `Thank you for the wonderful wish, ${cleanName}! That truly made my day. Here’s wishing you and ${cleanComp || 'your team'} exponential success. Let’s stay connected!`
+            followup: `Thank you for the wonderful wish, ${cleanName}! That truly made my day. Here’s wishing you and your team exponential success. Let’s stay connected!`
           };
         }
       }
@@ -280,7 +279,7 @@ Whenever you or any creative peer, friend, or client ever needs an extraordinary
           };
         } else {
           return {
-            full: `Hello ${cleanName}, hope your creative projects${companyMention} are going wonderfully!
+            full: `Hello ${cleanName}, hope your creative projects and visual work are going wonderfully!
 
 Wanted to share an uplifting update with you. We’ve recently brought Uncoded Hub (https://uncodedhub.com) to life — a design-first studio where we craft custom, high-end websites where design aesthetics, typography, and motion meet rock-solid engineering.
 
@@ -312,7 +311,7 @@ If your team or anyone in your circle (a peer, friend, or colleague) ever looks 
           };
         } else {
           return {
-            full: `Hello ${cleanName}, hope everything is going well with your engineering work${companyMention}!
+            full: `Hello ${cleanName}, hope everything is going well with your technical builds and engineering work!
 
 I'm writing to share a personal milestone that I'm really excited about. We have just launched Uncoded Hub (https://uncodedhub.com) — built on modern, lightning-fast architecture, custom React components, and zero clunky legacy templates.
 
@@ -345,7 +344,7 @@ Whenever you, a colleague, or a close friend ever think of building a trusted we
 
       if (persona === 'REALESTATE') {
         return {
-          full: `Hi ${cleanName}, hope you're having a productive week${companyMention}!
+          full: `Hi ${cleanName}, hope you're having a productive and rewarding week!
 
 I wanted to take a moment to share an exciting milestone from our end. We’ve just launched Uncoded Hub (https://uncodedhub.com) — crafting bespoke, architectural-grade websites designed to showcase spaces, properties, and projects with elegance and prestige.
 
