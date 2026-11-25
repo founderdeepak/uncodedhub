@@ -1,48 +1,28 @@
-# Demo_36_Jewellery_Stores — Asset & Upgrade Brief
+# Demo_36_Jewellery_Stores — Asset & AI Generation Master Prompts
 
-**Client / Brand**: Rivaah Heritage Ateliers
-**Sector**: High Jewellery & Polki Solitaires
-**Category**: luxury
-**Demo File**: [jewellery-stores.html](file:///c:/Users/LENOVO/Downloads/uncoded-hub/public/demos/jewellery-stores.html)
-**Live Local URL**: `http://localhost:3000/demos/jewellery-stores.html`
-**Live Production URL**: `https://uncodedhub.com/demos/jewellery-stores.html`
+**Client / Brand**: Rivaah Heritage Ateliers  
+**Sector**: High Jewellery, Polki Solitaires & Haute Horology  
+**Category**: Ultra-Luxury Craft  
+**Target Folder**: [`UncodedHub Projects/Demo_36_Jewellery_Stores/Assets/`](file:///c:/Users/LENOVO/Downloads/uncoded-hub/UncodedHub%20Projects/Demo_36_Jewellery_Stores/Assets/)  
 
 ---
 
-## 1. Core Conversion Engine & Positioning
-* **Brand Summary**: Bespoke hallmarked bridal jewellery and diamond solitaire atelier with carat weight customizer and private vault booking.
-* **Core Conversion Engine**: **Solitaire Diamond Carat & Metal Customizer**
-* **Key Business Result**: 0.4s LCP · BIS 916 Hallmark · Private Vault Booking
+## 🎨 Master AI Image Prompts Table (Midjourney v6 / FLUX.1 / Ideogram / DALL-E 3)
 
-### Visual Themes in this Demo:
-  1. **Royal Crimson Gold** (Heritage Bridal) — Accent: `#FBBF24` | Palette: #14060B, #FBBF24, #F4EFEA
-  2. **Obsidian Solitaire** (High Diamond) — Accent: `#FFFFFF` | Palette: #080808, #FFFFFF, #A3A3A3
-  3. **Imperial Velvet** (Maharaja Heirloom) — Accent: `#E879F9` | Palette: #180814, #E879F9, #FAF8F5
-
----
-
-## 2. Required Images Checklist (Drop Here in `Assets/`)
-
-To achieve the unslop gold standard (like Sri Ayyanar Sirpa Kalai), please add **high-resolution authentic images** to this folder or the `Assets/` subfolder:
-
-| File Name | Slot & Purpose | Recommended Aspect & Resolution | Description |
-| :--- | :--- | :--- | :--- |
-| `01_Hero_Showcase.png` | Hero Banner / Focal Center | 16:9 (1920×1080) or 4:5 (1200×1500) | Dramatic, aspirational hero image representing the pinnacle of this craft. |
-| `02_Work_01.png` | Portfolio Feature 1 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #1. |
-| `03_Work_02.png` | Portfolio Feature 2 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #2. |
-| `04_Work_03.png` | Portfolio Feature 3 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #3. |
-| `05_Work_04.png` | Portfolio Feature 4 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #4. |
-| `06_Work_05.png` | Portfolio Feature 5 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #5. |
-| `07_Before_Raw.png` | Comparison Slider (Left) | 16:10 (1200×750) | Raw / unpolished / initial stage (e.g. bare shell, untreated, blueprint). |
-| `08_After_Finished.png`| Comparison Slider (Right)| 16:10 (1200×750) | Finished, pristine, luxury outcome (e.g. furnished sanctuary, polished result). |
-| `09_Founder_Or_Expert.png`| Master / Founder Portrait| 1:1 or 4:5 Portrait | Authentic studio / clinic / workshop portrait of the principal expert. |
-| `10_Process_Detail.png`| Craftsmanship / Studio | 16:9 or 4:3 | Micro-detail of materials, tools, operatory, or on-site craftsmanship. |
+| # | File Name | Recommended Aspect Ratio | Scene Description | Copy-Paste AI Generation Prompt |
+|:---|:---|:---:|:---|:---|
+| **01** | `01_Hero_Showcase.png` | **16:9** (1920×1080) | Dramatic Hero Showcase | `A solitary 4-carat flawless D-color round brilliant diamond engagement ring resting on rich dark charcoal crinkled silk velvet, breathtaking fire and spectral chromatic dispersion, pin-sharp diamond facets reflecting soft golden bokeh, high-contrast chiaroscuro lighting, luxury jewelry house campaign photography in the style of Cartier and Harry Winston, 8k resolution, photorealistic, macro lens depth of field --ar 16:9 --style raw` |
+| **02** | `02_Work_01.png` | **16:10** or **4:5** | Stage 1: Rough Crystal & Sourcing | `A master gemologist wearing white linen gloves holding a natural raw uncut diamond octahedral crystal alongside a high-end brass optical loupe on a dark slate jeweler's desk, gemological cert papers and tweezers in soft background blur, museum documentary lighting, micro texture of natural rough mineral stone, 8k resolution, photorealistic --ar 16:10 --style raw` |
+| **03** | `03_Work_02.png` | **16:10** or **4:5** | Stage 2: Laser Facet Planning | `Extreme close-up of a high-tech Sarin green laser scanning an uncut gemstone mounted in a precision stainless steel dop, digital wireframe laser grid projected onto the crystal facets in a dark diamond cutting cleanroom laboratory, high-tech luxury horology and gemstone engineering aesthetic, razor sharp focus, cinematic lighting, 8k --ar 16:10 --style raw` |
+| **04** | `04_Work_03.png` | **16:10** or **4:5** | Stage 3: Micro-Pavé Hand Setting | `Extreme macro shot of an artisanal goldsmith's hands using fine precision titanium tweezers and a micro-graver tool to set tiny flawless pavé diamonds into an 18k yellow gold filigree band under the bright halogen lamp of a binocular microscope, metal dust, authentic atelier craftsmanship, high tactile realism, 8k --ar 16:10 --style raw` |
+| **05** | `05_Work_04.png` | **16:10** or **4:5** | Stage 4: BIS Hallmark & Inspection | `Microscopic macro view of an official 916 BIS hallmark and microscopic laser cert inscription along the inner platinum shank of a bespoke luxury ring, reflection of an optical loupe glass, surgical cleanliness, high contrast lighting, authentic jewellery certification aesthetic, 8k --ar 16:10 --style raw` |
+| **06** | `06_Work_05.png` | **16:10** or **4:5** | Stage 5: Masterpiece Vault Reveal | `An opulent royal bridal heirloom uncut Polki diamond and emerald necklace displayed on an obsidian black marble bust inside a secure vault, warm spotlight casting specular light bursts across uncut diamonds, museum exhibit showcase, hyper-luxurious heritage Indian royalty aesthetic, 8k resolution, pristine clarity --ar 16:10 --style raw` |
+| **07** | `07_Before_Raw.png` | **16:10** (1200×750) | Slider Left: Archival Design Sketch | `Archival vintage jewelry design blueprint, an authentic hand-painted gouache watercolor sketch of an elaborate emerald and diamond royal necklace on aged cream parchment paper, pencil annotations, calligraphic stone measurements and millimeter notations, vintage atelier desk setting, 8k --ar 16:10 --style raw` |
+| **08** | `08_After_Finished.png` | **16:10** (1200×750) | Slider Right: Finished Sparkling Piece | `The exact physical finished emerald and diamond royal necklace from the sketch, draped on a dark matte slate display, gleaming 22k gold filigree, brilliant specular gemstone reflections, identical camera angle and focal distance as the sketch, breathtaking luxury jewelry photography, 8k --ar 16:10 --style raw` |
+| **09** | `09_Founder_Or_Expert.png` | **4:5** (1080×1350) | Master Founder / Gemologist | `Editorial portrait of a distinguished master gemologist and atelier founder in his late 40s wearing a tailored midnight navy suit and holding an antique loupe, standing beside a wooden workbench in a heritage private jewelry salon in Bangalore, warm ambient lighting, authentic confident expression, luxury magazine feature portrait, 8k --ar 4:5 --style raw` |
+| **10** | `10_Process_Detail.png` | **16:9** (1920×1080) | Atelier Craft Bench & Micro-Tools | `Close-up shot of an authentic artisanal jewelry maker's wooden workbench, neat arrangement of vintage brass loupes, fine metal calipers, pliers, small ceramic crucible with gold flakes, diamond tweezers, and wax ring molds, warm incandescent work lamp casting soft golden shadows, authentic master craftsman workspace, 8k --ar 16:9 --style raw` |
 
 ---
 
-## 3. Unslop Design Standard Rules
-1. **No Purple AI Gradients**: Use editorial dark midnight navy, museum bronze, stone, or warm earth palettes.
-2. **Character-Rich Typography**: High-contrast editorial display font for headings; clean neutral body text.
-3. **Strict Word Integrity**: No split words on mobile (`word-break: keep-all; overflow-wrap: normal`).
-4. **Authentic Chiaroscuro Lighting**: High contrast, moody shadows, realistic depth. Zero cheesy smiling stock photos.
-5. **Direct High-Intent CTAs**: One-tap WhatsApp consult with pre-filled shastric/project details + interactive timeline estimator.
+## 🚫 Negative Prompts & Unslop Rules:
+* `cartoon, 3D render, generic stock photo, plastic gems, deformed fingers, extra hands, cheesy smiling model, oversaturated purple gradient, blurry facets, low resolution, watermark, text logo`

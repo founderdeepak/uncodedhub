@@ -4,25 +4,1965 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rivaah Heritage Ateliers | BIS 916 Hallmarked Polki &amp; Certified Diamond Solitaires</title>
-  <meta name="description" content="Explore the high-end jewellery atelier demo by Uncoded Hub. Carat weight customizers, private vault viewings, BIS hallmark verifiers, and 3-theme changer.">
+  <meta name="description" content="Experience Bangalore's premier high jewellery atelier. GIA certified solitaire diamonds, BIS 916 hallmarked heritage Polki, 5-stage interactive facet scrollytelling, and live carat customizer.">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://uncodedhub.com/demos/jewellery-stores.html">
   <link rel="alternate" hreflang="en" href="https://uncodedhub.com/demos/jewellery-stores.html">
   <link rel="alternate" hreflang="x-default" href="https://uncodedhub.com/demos/jewellery-stores.html">
 
-  
+  <!-- OpenGraph Metadata -->
+  <meta property="og:site_name" content="Uncoded Hub">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://uncodedhub.com/demos/jewellery-stores.html">
+  <meta property="og:title" content="Rivaah Heritage Ateliers | GIA Solitaires &amp; Royal Polki Jewellery">
+  <meta property="og:description" content="Explore the luxury jewellery atelier prototype by Uncoded Hub. 5-stage interactive scrollytelling, carat weight configurator, and archival comparison slider.">
+  <meta property="og:image" content="https://uncodedhub.com/demos/assets/demo-36-jewellery/01_Hero_Showcase.png">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@uncodedhub">
+  <meta name="twitter:creator" content="@uncodedhub">
+  <meta name="twitter:title" content="Rivaah Heritage Ateliers | GIA Solitaires &amp; Royal Polki">
+  <meta name="twitter:description" content="5-Stage interactive scrollytelling, carat weight customizer, and archival sketch-to-masterpiece comparison slider.">
+  <meta name="twitter:image" content="https://uncodedhub.com/demos/assets/demo-36-jewellery/01_Hero_Showcase.png">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "JewelryStore",
+        "@id": "https://uncodedhub.com/demos/jewellery-stores.html#business",
+        "name": "Rivaah Heritage Ateliers",
+        "url": "https://uncodedhub.com/demos/jewellery-stores.html",
+        "image": "https://uncodedhub.com/demos/assets/demo-36-jewellery/01_Hero_Showcase.png",
+        "description": "Bespoke high jewellery atelier specializing in GIA certified solitaire diamonds, BIS 916 hallmarked Polki heirlooms, and private vault appointments.",
+        "telephone": "+918660819023",
+        "priceRange": "₹1,20,000 – ₹45,00,000",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "The Heritage Salon, 14 Lavelle Road",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "Karnataka",
+          "postalCode": "560001",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "12.9716",
+          "longitude": "77.5946"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "11:00",
+            "closes": "20:00"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts: Cormorant Garamond (Editorial Luxury Display) + Plus Jakarta Sans + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       DESIGN TOKENS & DYNAMIC THEMES
+       ========================================================================== */
+    :root {
+      /* Theme 1: Royal Crimson & Gold (Default Heritage Bridal) */
+      --bg-base: #0B0709;
+      --bg-surface: #140C10;
+      --bg-elevated: #1F1219;
+      --bg-glass: rgba(20, 12, 16, 0.78);
+      
+      --accent: #F59E0B;
+      --accent-secondary: #E11D48;
+      --accent-glow: rgba(245, 158, 11, 0.28);
+      --accent-subtle: rgba(245, 158, 11, 0.12);
+      
+      --text-main: #FAF5F0;
+      --text-muted: #D1C2B7;
+      --text-dim: #8C7A70;
+      
+      --border-subtle: rgba(245, 158, 11, 0.15);
+      --border-strong: rgba(245, 158, 11, 0.35);
+      
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    /* Theme 2: Obsidian Solitaire (Modern Haute Joaillerie) */
+    [data-theme="obsidian-solitaire"] {
+      --bg-base: #08090C;
+      --bg-surface: #101217;
+      --bg-elevated: #181C24;
+      --bg-glass: rgba(16, 18, 23, 0.82);
+      
+      --accent: #38BDF8;
+      --accent-secondary: #E2E8F0;
+      --accent-glow: rgba(56, 189, 248, 0.28);
+      --accent-subtle: rgba(56, 189, 248, 0.12);
+      
+      --text-main: #F8FAFC;
+      --text-muted: #CBD5E1;
+      --text-dim: #64748B;
+      
+      --border-subtle: rgba(255, 255, 255, 0.12);
+      --border-strong: rgba(56, 189, 248, 0.4);
+    }
+
+    /* Theme 3: Emerald Heritage (Imperial Maharaja Dynasty) */
+    [data-theme="emerald-heritage"] {
+      --bg-base: #060B08;
+      --bg-surface: #0C1510;
+      --bg-elevated: #132219;
+      --bg-glass: rgba(12, 21, 16, 0.82);
+      
+      --accent: #10B981;
+      --accent-secondary: #FBBF24;
+      --accent-glow: rgba(16, 185, 129, 0.28);
+      --accent-subtle: rgba(16, 185, 129, 0.12);
+      
+      --text-main: #F0FDF4;
+      --text-muted: #BBF7D0;
+      --text-dim: #4B6E59;
+      
+      --border-subtle: rgba(16, 185, 129, 0.18);
+      --border-strong: rgba(16, 185, 129, 0.42);
+    }
+
+    /* ==========================================================================
+       RESET & BASE ARCHITECTURE
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      word-break: keep-all;
+      overflow-wrap: normal;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ==========================================================================
+       THEME CONTROLLER BAR (STICKY TOP)
+       ========================================================================== */
+    .theme-controller-bar {
+      position: fixed;
+      top: 14px;
+      right: 18px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-strong);
+      border-radius: 9999px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .tc-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0 8px;
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .tc-label { display: block; }
+    }
+
+    .tc-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .tc-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+
+    .tc-btn[data-theme="royal-crimson-gold"] .tc-dot { background: #F59E0B; }
+    .tc-btn[data-theme="obsidian-solitaire"] .tc-dot { background: #38BDF8; }
+    .tc-btn[data-theme="emerald-heritage"] .tc-dot { background: #10B981; }
+
+    .tc-btn:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .tc-btn.active {
+      background: var(--bg-elevated);
+      color: var(--text-main);
+      border-color: var(--border-strong);
+      box-shadow: 0 0 14px var(--accent-glow);
+    }
+
+    /* ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 900;
+      padding: 18px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(11,7,9,0.92) 0%, rgba(11,7,9,0) 100%);
+      pointer-events: none;
+    }
+
+    .nav-brand {
+      pointer-events: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      line-height: 1;
+    }
+
+    .nav-sub {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+
+    .nav-links {
+      pointer-events: auto;
+      display: none;
+      align-items: center;
+      gap: 24px;
+    }
+
+    @media (min-width: 900px) {
+      .nav-links { display: flex; }
+    }
+
+    .nav-link {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 120px 24px 60px;
+      overflow: hidden;
+    }
+
+    .hero-bg-media {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .hero-bg-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 45%;
+      filter: brightness(0.96) contrast(1.08);
+      transform: scale(1.02);
+      transition: transform 12s ease-out;
+    }
+
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: radial-gradient(circle at 50% 45%, rgba(11,7,9,0.12) 0%, rgba(11,7,9,0.52) 65%, var(--bg-base) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 1040px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 18px;
+      border-radius: 9999px;
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-strong);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px var(--accent-subtle);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 6.5vw, 76px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: 0.03em;
+      margin-bottom: 22px;
+      color: var(--text-main);
+      text-shadow: 0 4px 30px rgba(0,0,0,0.8);
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    .hero-desc {
+      font-size: clamp(15px, 2vw, 19px);
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 36px;
+      line-height: 1.65;
+      font-weight: 400;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--accent) 0%, #D97706 100%);
+      color: #0B0709;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 30px var(--accent-glow);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 38px var(--accent-glow);
+      filter: brightness(1.1);
+    }
+
+    .btn-glass {
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      padding: 15px 32px;
+      border-radius: 9999px;
+      border: 1px solid var(--border-strong);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-glass:hover {
+      background: var(--bg-elevated);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Key Metrics Ticker */
+    .hero-stats-ribbon {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      .hero-stats-ribbon {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .stat-cell {
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 18px 16px;
+      text-align: center;
+    }
+
+    .stat-val {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       SECTION CONTAINERS
+       ========================================================================== */
+    .section-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 100px 24px;
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: block;
+      text-align: center;
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4.5vw, 54px);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-align: center;
+      margin-bottom: 18px;
+      line-height: 1.15;
+    }
+
+    .section-subheading {
+      font-size: 16px;
+      color: var(--text-muted);
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 60px;
+      line-height: 1.7;
+    }
+
+    /* ==========================================================================
+       PINNED 5-STAGE GEMOLOGICAL SCROLLYTELLING ENGINE
+       ========================================================================== */
+    .scrolly-outer {
+      position: relative;
+      height: 480vh; /* Scrub height */
+      background: var(--bg-base);
+    }
+
+    .scrolly-sticky-frame {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .stage-image-stack {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .stage-image-layer {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s ease-out;
+      transform: scale(1.04);
+      will-change: opacity, transform;
+    }
+
+    .stage-image-layer.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .stage-image-layer img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: contrast(1.05) brightness(1.08);
+    }
+
+    /* Soft directional gradient for high image visibility + crisp text readability */
+    .stage-overlay-gradient {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(to top, rgba(11,7,9,0.72) 0%, rgba(11,7,9,0.05) 50%, rgba(11,7,9,0.45) 100%),
+                  linear-gradient(to right, rgba(11,7,9,0.72) 0%, rgba(11,7,9,0.2) 45%, rgba(11,7,9,0) 72%);
+      pointer-events: none;
+    }
+
+    /* HUD (Heads-Up Display) Overlay */
+    .hud-overlay {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: 100%;
+      padding-bottom: 60px;
+      pointer-events: none;
+    }
+
+    /* Left Dynamic Info Card */
+    .hud-info-card {
+      pointer-events: auto;
+      background: var(--bg-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 32px 36px;
+      max-width: 520px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      transition: all 0.4s ease;
+    }
+
+    .hud-stage-counter {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hud-stage-counter::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .hud-title {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    .hud-desc {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    /* Telemetry Data Grid */
+    .hud-telemetry-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 20px;
+    }
+
+    .telemetry-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 10px 14px;
+    }
+
+    .telemetry-lbl {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .telemetry-val {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* Right Vertical Scrubber */
+    .hud-scrubber-nav {
+      pointer-events: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-strong);
+      border-radius: 9999px;
+      padding: 16px 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .scrubber-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .scrubber-dot:hover {
+      background: rgba(255, 255, 255, 0.6);
+      transform: scale(1.2);
+    }
+
+    .scrubber-dot.active {
+      background: var(--accent);
+      box-shadow: 0 0 14px var(--accent);
+      transform: scale(1.35);
+    }
+
+    /* ==========================================================================
+       BEFORE / AFTER ARCHIVAL SKETCH COMPARISON SLIDER
+       ========================================================================== */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      height: 560px;
+      max-height: 70vh;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-strong);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .slider-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slider-layer img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .slider-layer.after-layer {
+      clip-path: polygon(0 0, var(--slider-pos, 50%) 0, var(--slider-pos, 50%) 100%, 0 100%);
+    }
+
+    .slider-curtain-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--slider-pos, 50%);
+      width: 3px;
+      background: var(--accent);
+      box-shadow: 0 0 16px var(--accent-glow);
+      cursor: ew-resize;
+      z-index: 20;
+      transform: translateX(-50%);
+    }
+
+    .slider-handle-knob {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 16px;
+    }
+
+    .slider-tag {
+      position: absolute;
+      bottom: 24px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .tag-before {
+      right: 24px;
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+    }
+
+    .tag-after {
+      left: 24px;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #6EE7B7;
+    }
+
+    .slider-input-range {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: ew-resize;
+      z-index: 30;
+      margin: 0;
+    }
+
+    /* ==========================================================================
+       INTERACTIVE SOLITAIRE CARAT & METAL CONFIGURATOR
+       ========================================================================== */
+    .configurator-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 24px;
+      padding: 44px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    @media (min-width: 960px) {
+      .configurator-card {
+        grid-template-columns: 1.35fr 1fr;
+      }
+    }
+
+    .config-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .metal-pills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .metal-btn {
+      padding: 16px 12px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      color: var(--text-muted);
+    }
+
+    .metal-btn:hover {
+      border-color: var(--accent);
+      color: var(--text-main);
+    }
+
+    .metal-btn.active {
+      background: var(--bg-surface);
+      border-color: var(--accent);
+      color: var(--text-main);
+      box-shadow: 0 0 16px var(--accent-glow);
+    }
+
+    .metal-icon {
+      font-size: 20px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .metal-title {
+      font-size: 13px;
+      font-weight: 700;
+      display: block;
+    }
+
+    .metal-purity {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+    }
+
+    /* Cut Shapes Grid */
+    .cut-shapes-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .cut-btn {
+      padding: 12px 8px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: var(--text-muted);
+    }
+
+    .cut-btn:hover {
+      border-color: var(--accent);
+      color: var(--text-main);
+    }
+
+    .cut-btn.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--bg-surface);
+      box-shadow: 0 0 14px var(--accent-glow);
+    }
+
+    .cut-name {
+      font-size: 11px;
+      font-weight: 600;
+      display: block;
+    }
+
+    /* Carat Weight Slider */
+    .carat-slider-wrap {
+      margin-bottom: 32px;
+    }
+
+    .carat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 12px;
+    }
+
+    .carat-current {
+      font-family: var(--font-display);
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .carat-dimension {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .carat-slider {
+      width: 100%;
+      height: 6px;
+      -webkit-appearance: none;
+      background: var(--bg-elevated);
+      border-radius: 9999px;
+      outline: none;
+    }
+
+    .carat-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      box-shadow: 0 0 14px var(--accent);
+      transition: transform 0.15s;
+    }
+
+    .carat-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    /* Summary Card (Right Column) */
+    .config-summary-box {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-strong);
+      border-radius: 18px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .summary-heading {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 20px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .summary-item-name {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .summary-item-val {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .summary-price-box {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-strong);
+    }
+
+    .summary-price-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .summary-price-amount {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .summary-cert-notice {
+      font-size: 11px;
+      color: var(--text-dim);
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .btn-book-wa {
+      width: 100%;
+      background: #25D366;
+      color: #072612;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 16px 24px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.25s;
+    }
+
+    .btn-book-wa:hover {
+      background: #22BF5B;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+    }
+
+    /* ==========================================================================
+       ATELIER STANDARDS & FOUNDER PORTRAIT
+       ========================================================================== */
+    .atelier-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .atelier-grid { grid-template-columns: 1.1fr 1fr; }
+    }
+
+    .atelier-media {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-strong);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .atelier-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.05) brightness(1.02);
+    }
+
+    .atelier-specs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .spec-item {
+      display: flex;
+      gap: 18px;
+    }
+
+    .spec-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      flex-shrink: 0;
+      font-size: 20px;
+    }
+
+    .spec-text h4 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .spec-text p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Master Jeweller Profile Card */
+    .founder-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 24px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+      margin-top: 60px;
+    }
+
+    @media (min-width: 850px) {
+      .founder-card { grid-template-columns: 340px 1fr; }
+    }
+
+    .founder-img-box {
+      position: relative;
+      height: 100%;
+      min-height: 380px;
+    }
+
+    .founder-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+    }
+
+    .founder-content {
+      padding: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .founder-content h3 {
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .founder-role {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 22px;
+      display: block;
+    }
+
+    .founder-quote {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+      border-left: 2px solid var(--accent);
+      padding-left: 20px;
+    }
+
+    .founder-certifications {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .cert-pill {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      border-top: 1px solid var(--border-subtle);
+      background: #060405;
+      padding: 60px 24px 30px;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+    }
+
+    /* ==========================================================================
+       UNCODED HUB PITCH MODAL
+       ========================================================================== */
+    .pitch-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .pitch-modal-backdrop.open {
+      display: flex;
+    }
+
+    .pitch-modal-card {
+      background: #0E1017;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 24px;
+      max-width: 720px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 40px;
+      position: relative;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+      color: #E2E8F0;
+    }
+
+    .pitch-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      color: #94A3B8;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 6px 12px;
+    }
+
+    .pitch-close-btn:hover { color: #FFF; }
+
+    .uh-popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 16px;
+    }
+
+    .uh-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .uh-brand-logo-img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+
+    .uh-brand-name {
+      font-weight: 800;
+      font-size: 17px;
+      color: #FFF;
+    }
+
+    .uh-brand-sub {
+      font-size: 11px;
+      color: #94A3B8;
+    }
+
+    .uh-badge-studio {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.2);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      color: #818CF8;
+      font-weight: 700;
+    }
+
+    .founders-row {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .founders-photos {
+      display: flex;
+      gap: 10px;
+    }
+
+    .founder-pic-box {
+      text-align: center;
+    }
+
+    .founder-pic {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2px solid #6366F1;
+      object-fit: cover;
+    }
+
+    .founder-name {
+      font-size: 10px;
+      font-weight: 700;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .founders-intro h2 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 6px;
+      color: #FFF;
+    }
+
+    .founders-intro p {
+      font-size: 13px;
+      color: #94A3B8;
+    }
+
+    .pitch-body {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #CBD5E1;
+    }
+
+    .insight-card {
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 3px solid #6366F1;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+
+    .insight-card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #FFF;
+      margin-bottom: 6px;
+    }
+
+    .belief-card {
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .belief-quote {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-style: italic;
+      color: #FFF;
+      margin-bottom: 16px;
+    }
+
+    .commitments-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 600px) {
+      .commitments-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .comm-item {
+      font-size: 12px;
+      color: #94A3B8;
+    }
+
+    .comm-item strong {
+      display: block;
+      color: #FFF;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .pitch-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .pitch-cta-dismiss {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #CBD5E1;
+      padding: 12px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .pitch-cta-wa {
+      background: #25D366;
+      color: #072612;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+    }
+
+    /* Floating Widget Button */
+    .lead-magnet-floating-widget {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 800;
+    }
+
+    .lm-floating-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      color: var(--text-main);
+      padding: 10px 18px;
+      border-radius: 9999px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transition: all 0.25s;
+    }
+
+    .lm-floating-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .lm-pulse-ping {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+      animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes ping {
+      75%, 100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body data-theme="royal-crimson-gold">
+
+  <!-- ==========================================================================
+       THEME CONTROLLER (STICKY TOP RIGHT)
+       ========================================================================== -->
+  <div class="theme-controller-bar">
+    <span class="tc-label">Atelier Theme:</span>
     <button class="tc-btn active" data-theme="royal-crimson-gold" onclick="switchTheme('royal-crimson-gold', this)">
-      <span>Royal Crimson &amp; Gold</span>
-    </button>
-    <button class="tc-btn" data-theme="pearl-cream" onclick="switchTheme('pearl-cream', this)">
-      <span>Pearl Cream &amp; Vintage Gold</span>
+      <span class="tc-dot"></span>
+      <span>Royal Gold</span>
     </button>
     <button class="tc-btn" data-theme="obsidian-solitaire" onclick="switchTheme('obsidian-solitaire', this)">
-      <span>Obsidian Solitaire Diamond</span>
+      <span class="tc-dot"></span>
+      <span>Obsidian Diamond</span>
+    </button>
+    <button class="tc-btn" data-theme="emerald-heritage" onclick="switchTheme('emerald-heritage', this)">
+      <span class="tc-dot"></span>
+      <span>Emerald Dynasty</span>
     </button>
   </div>
 
-  <!-- Uncoded Hub Studio Pitch & Cover Letter Modal -->
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <nav class="site-nav">
+    <a href="#" class="nav-brand">
+      <span class="nav-logo">RIVAAH</span>
+      <span class="nav-sub">Heritage Ateliers · Est. 1928</span>
+    </a>
+    <div class="nav-links">
+      <a href="#scrolly-anatomy" class="nav-link">Craft Anatomy</a>
+      <a href="#comparison" class="nav-link">Sketch vs Masterpiece</a>
+      <a href="#configurator" class="nav-link">Carat Configurator</a>
+      <a href="#founder" class="nav-link">The Master Gemologist</a>
+      <a href="#atelier" class="nav-link">Atelier Standards</a>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       HERO SHOWCASE SECTION
+       ========================================================================== -->
+  <header class="hero-section">
+    <div class="hero-bg-media">
+      <img src="assets/demo-36-jewellery/01_Hero_Showcase.png" alt="Rivaah 4-Carat Flawless Solitaire on Velvet">
+    </div>
+    <div class="hero-vignette"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>GIA Certified &bull; BIS 916 Hallmarked Heirloom Jewelry</span>
+      </div>
+
+      <h1 class="hero-title">
+        Heirlooms Engineered to<br><em>Outlive Generations.</em>
+      </h1>
+
+      <p class="hero-desc">
+        Bengaluru’s private high jewellery salon. We hand-craft bespoke solitaires, uncut Polki crowns, and ceremonial emerald necklaces under surgical 40x microscopy.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#configurator" class="btn-gold">
+          Configure Your Solitaire →
+        </a>
+        <a href="#scrolly-anatomy" class="btn-glass">
+          Explore Craft Anatomy ↓
+        </a>
+      </div>
+
+      <!-- Stats Ribbon -->
+      <div class="hero-stats-ribbon">
+        <div class="stat-cell">
+          <div class="stat-val">100%</div>
+          <div class="stat-label">Kimberley Process Sourced</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-val">BIS 916</div>
+          <div class="stat-label">Govt Assayed 22K Purity</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-val">Triple Ex</div>
+          <div class="stat-label">GIA Ideal Cut &amp; Symmetry</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-val">40x</div>
+          <div class="stat-label">Microscopic Pavé Precision</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       PINNED 5-STAGE GEMOLOGICAL SCROLLYTELLING ENGINE
+       ========================================================================== -->
+  <section class="scrolly-outer" id="scrolly-anatomy">
+    <div class="scrolly-sticky-frame">
+      <!-- 5 Stacked Craft Images -->
+      <div class="stage-image-stack">
+        <div class="stage-image-layer active" data-stage="1">
+          <img src="assets/demo-36-jewellery/02_Work_01.png" alt="Stage 1: Rough Crystal & Sourcing">
+        </div>
+        <div class="stage-image-layer" data-stage="2">
+          <img src="assets/demo-36-jewellery/03_Work_02.png" alt="Stage 2: 3D Laser Faceting Scan">
+        </div>
+        <div class="stage-image-layer" data-stage="3">
+          <img src="assets/demo-36-jewellery/04_Work_03.png" alt="Stage 3: Micro-Pavé Hand Setting">
+        </div>
+        <div class="stage-image-layer" data-stage="4">
+          <img src="assets/demo-36-jewellery/05_Work_04.png" alt="Stage 4: BIS 916 Hallmark Assay">
+        </div>
+        <div class="stage-image-layer" data-stage="5">
+          <img src="assets/demo-36-jewellery/06_Work_05.png" alt="Stage 5: Masterpiece Vault Reveal">
+        </div>
+      </div>
+
+      <!-- Soft gradient overlay -->
+      <div class="stage-overlay-gradient"></div>
+
+      <!-- Dynamic HUD Overlay -->
+      <div class="hud-overlay">
+        <!-- Left Dynamic Info Card -->
+        <div class="hud-info-card">
+          <div class="hud-stage-counter" id="hudStageNum">Stage 01 // 05 &bull; Ethical Origin</div>
+          <h2 class="hud-title" id="hudTitle">Rough Crystal &amp; Kimberley Sourcing</h2>
+          <p class="hud-desc" id="hudDesc">
+            Every rough diamond crystal is individually evaluated for octahedral crystalline integrity and ethical mine-of-origin provenance, completely bypassing conflict gem channels.
+          </p>
+
+          <div class="hud-telemetry-grid">
+            <div class="telemetry-item">
+              <span class="telemetry-lbl" id="tel1Lbl">Rough Carat Mass</span>
+              <span class="telemetry-val" id="tel1Val">8.42 ct Octahedron</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-lbl" id="tel2Lbl">Inherent Color Grade</span>
+              <span class="telemetry-val" id="tel2Val">D (Pure Colorless)</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-lbl" id="tel3Lbl">Clarity Rating</span>
+              <span class="telemetry-val" id="tel3Val">VVS1 (Eye Clean)</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-lbl" id="tel4Lbl">Traceability Hash</span>
+              <span class="telemetry-val" id="tel4Val">KP-BOT-9281-CAN</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Vertical Scrubber -->
+        <div class="hud-scrubber-nav">
+          <button class="scrubber-dot active" data-target-stage="1" onclick="jumpToStage(1)" title="Stage 1: Rough Crystal"></button>
+          <button class="scrubber-dot" data-target-stage="2" onclick="jumpToStage(2)" title="Stage 2: Laser Faceting"></button>
+          <button class="scrubber-dot" data-target-stage="3" onclick="jumpToStage(3)" title="Stage 3: Micro Setting"></button>
+          <button class="scrubber-dot" data-target-stage="4" onclick="jumpToStage(4)" title="Stage 4: Hallmarking"></button>
+          <button class="scrubber-dot" data-target-stage="5" onclick="jumpToStage(5)" title="Stage 5: Vault Masterpiece"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       BEFORE / AFTER ARCHIVAL COMPARISON SLIDER
+       ========================================================================== -->
+  <section class="section-wrap" id="comparison">
+    <span class="section-eyebrow">From Blueprint to Brilliance</span>
+    <h2 class="section-heading">Archival Gouache Sketch vs Finished Masterpiece</h2>
+    <p class="section-subheading">
+      Drag the split slider to witness how a hand-painted royal design on 1940s archival parchment transforms into a hand-set 22K emerald and diamond choker under museum illumination.
+    </p>
+
+    <div class="slider-container" id="beforeAfterSlider">
+      <!-- Background: Raw Sketch -->
+      <div class="slider-layer before-layer">
+        <img src="assets/demo-36-jewellery/07_Before_Raw.png" alt="Archival Hand-Painted Gouache Design Sketch">
+        <span class="slider-tag tag-before">Archival Gouache Sketch</span>
+      </div>
+
+      <!-- Foreground: Finished Masterpiece (Clipped) -->
+      <div class="slider-layer after-layer" id="afterLayer">
+        <img src="assets/demo-36-jewellery/08_After_Finished.png" alt="Finished 22K Emerald and Diamond Choker">
+        <span class="slider-tag tag-after">Finished Royal Choker</span>
+      </div>
+
+      <!-- Draggable Curtain Handle -->
+      <div class="slider-curtain-handle" id="sliderHandle">
+        <div class="slider-handle-knob">
+          <span>⟷</span>
+        </div>
+      </div>
+
+      <!-- Accessible range input -->
+      <input type="range" min="0" max="100" value="50" class="slider-input-range" id="sliderRange" aria-label="Comparison position">
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE SOLITAIRE CARAT & METAL CONFIGURATOR
+       ========================================================================== */ -->
+  <section class="section-wrap" id="configurator">
+    <span class="section-eyebrow">Interactive Atelier Studio</span>
+    <h2 class="section-heading">Design Your Solitaire Diamond Specimen</h2>
+    <p class="section-subheading">
+      Choose precious metal, gemstone silhouette, and carat mass. Calculate live dimensions and receive a direct VIP invitation to inspect stones in our private vault.
+    </p>
+
+    <div class="configurator-card">
+      <!-- Left Config Controls -->
+      <div class="config-controls">
+        <!-- 1. Metal Selection -->
+        <span class="config-label">1. Choose Precious Metal</span>
+        <div class="metal-pills-grid">
+          <div class="metal-btn active" data-metal="18K Yellow Gold" onclick="selectMetal(this, '18K Yellow Gold', 0)">
+            <span class="metal-icon">🪙</span>
+            <span class="metal-title">18K Yellow Gold</span>
+            <span class="metal-purity">Royal 750 Hallmark</span>
+          </div>
+          <div class="metal-btn" data-metal="18K Rose Gold" onclick="selectMetal(this, '18K Rose Gold', 12000)">
+            <span class="metal-icon">🌸</span>
+            <span class="metal-title">18K Rose Gold</span>
+            <span class="metal-purity">Warm Copper Alloy</span>
+          </div>
+          <div class="metal-btn" data-metal="950 Platinum" onclick="selectMetal(this, '950 Platinum', 28000)">
+            <span class="metal-icon">💍</span>
+            <span class="metal-title">950 Platinum</span>
+            <span class="metal-purity">Pure Dense PT950</span>
+          </div>
+        </div>
+
+        <!-- 2. Diamond Cut Selection -->
+        <span class="config-label">2. Select Diamond Silhouette</span>
+        <div class="cut-shapes-grid">
+          <div class="cut-btn active" data-cut="Round Brilliant" onclick="selectCut(this, 'Round Brilliant', 1.0)">
+            <span class="cut-name">Round</span>
+          </div>
+          <div class="cut-btn" data-cut="Cushion Cut" onclick="selectCut(this, 'Cushion Cut', 0.94)">
+            <span class="cut-name">Cushion</span>
+          </div>
+          <div class="cut-btn" data-cut="Emerald Cut" onclick="selectCut(this, 'Emerald Cut', 0.96)">
+            <span class="cut-name">Emerald</span>
+          </div>
+          <div class="cut-btn" data-cut="Oval Brilliant" onclick="selectCut(this, 'Oval Brilliant', 0.98)">
+            <span class="cut-name">Oval</span>
+          </div>
+          <div class="cut-btn" data-cut="Radiant Cut" onclick="selectCut(this, 'Radiant Cut', 0.95)">
+            <span class="cut-name">Radiant</span>
+          </div>
+        </div>
+
+        <!-- 3. Carat Weight Slider -->
+        <div class="carat-slider-wrap">
+          <div class="carat-header">
+            <div>
+              <span class="config-label" style="margin-bottom: 2px;">3. Carat Weight</span>
+              <span class="carat-dimension" id="caratDimensionLabel">Estimated Face Diameter: 6.5 mm</span>
+            </div>
+            <div class="carat-current" id="caratValDisplay">1.00 ct</div>
+          </div>
+          <input type="range" min="0.50" max="5.00" step="0.05" value="1.00" class="carat-slider" id="caratInput" oninput="updateCarat(this.value)">
+        </div>
+      </div>
+
+      <!-- Right Summary & Action Card -->
+      <div class="config-summary-box">
+        <div>
+          <span class="summary-heading">Bespoke Specimen Dossier</span>
+
+          <div class="summary-row">
+            <span class="summary-item-name">Precious Metal</span>
+            <span class="summary-item-val" id="summaryMetal">18K Yellow Gold</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-item-name">Silhouette</span>
+            <span class="summary-item-val" id="summaryCut">Round Brilliant (57 Facets)</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-item-name">Carat Weight</span>
+            <span class="summary-item-val" id="summaryCarat">1.00 Carat</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-item-name">Color &amp; Clarity</span>
+            <span class="summary-item-val">D Color &bull; VVS1 Flawless</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-item-name">Assay Standard</span>
+            <span class="summary-item-val">GIA Laser Girdle + BIS 916</span>
+          </div>
+
+          <div class="summary-price-box">
+            <div class="summary-price-label">Estimated Heirloom Investment</div>
+            <div class="summary-price-amount" id="summaryPriceDisplay">₹4,85,000</div>
+            <div class="summary-cert-notice">
+              *Includes bespoke mounting, laser hallmark engraving, insured vault storage, and official GIA physical grading dossier.
+            </div>
+          </div>
+        </div>
+
+        <a href="#" id="waBookingLink" class="btn-book-wa" target="_blank" rel="noopener noreferrer">
+          <span>Book Private Vault Viewing (WhatsApp) →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ATELIER CLEANROOM STANDARDS & FOUNDER PORTRAIT
+       ========================================================================== -->
+  <section class="section-wrap" id="atelier">
+    <div class="atelier-grid">
+      <!-- Media Box -->
+      <div class="atelier-media">
+        <img src="assets/demo-36-jewellery/10_Process_Detail.png" alt="Rivaah Goldsmith Workbench and Micro Tools">
+      </div>
+
+      <!-- Specs List -->
+      <div class="atelier-specs-list">
+        <div>
+          <span class="section-eyebrow" style="text-align: left;">Haute Joaillerie Standards</span>
+          <h2 class="section-heading" style="text-align: left; margin-bottom: 16px;">
+            The Lavelle Road Micro-Bench
+          </h2>
+          <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6; margin-bottom: 24px;">
+            Unlike mass-commercial jewelry factories that cast pieces with porosity defects, Rivaah executes every setting through single-cast induction metallurgy and binocular microscopy.
+          </p>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-icon-box">🔬</div>
+          <div class="spec-text">
+            <h4>40x Leica Binocular Setting</h4>
+            <p>Every micro-pavé stone is anchored with zero-tolerance claw tension under stereoscopic magnification, eliminating lost stones.</p>
+          </div>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-icon-box">⚡</div>
+          <div class="spec-text">
+            <h4>Sarin 3D Laser Optical Mapping</h4>
+            <p>Computational laser symmetry guarantees light return exceeding 99.4%, achieving Hearts &amp; Arrows fire.</p>
+          </div>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-icon-box">🏛️</div>
+          <div class="spec-text">
+            <h4>Induction Vacuum Platinum Metallurgy</h4>
+            <p>Zero micro-bubbles or porosity in our 950 Platinum shanks, delivering lifetime resistance to deformation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Master Gemologist Profile -->
+    <div class="founder-card" id="founder">
+      <div class="founder-img-box">
+        <img src="assets/demo-36-jewellery/09_Founder_Or_Expert.png" alt="Vikramaditya Varma - Master Gemologist">
+      </div>
+
+      <div class="founder-content">
+        <span class="section-eyebrow" style="text-align: left;">The Master Gemologist</span>
+        <h3>Vikramaditya Varma, FGA</h3>
+        <span class="founder-role">Founder &bull; Fellow of Gemmological Association of Great Britain</span>
+
+        <p class="founder-quote">
+          "When you buy a commercial diamond, you are often paying for paper certificates rather than true light performance. At Rivaah, we hand-examine the crystal lattice of every rough diamond under polarizing light. If a stone has internal strain or milky fluorescence, it never enters our vault — regardless of what the certificate says."
+        </p>
+
+        <div class="founder-certifications">
+          <span class="cert-pill">FGA #8491 (London)</span>
+          <span class="cert-pill">GIA Graduate Gemologist</span>
+          <span class="cert-pill">BIS 916 Approved Assayer</span>
+          <span class="cert-pill">Kimberley Process Signatory</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-brand">RIVAAH HERITAGE ATELIERS</div>
+    <p class="footer-copy">
+      &copy; 1928–2026 Rivaah Heritage Ateliers &bull; 14 Lavelle Road, Bengaluru &bull; Handcrafted Specimen Demo engineered by Uncoded Hub
+    </p>
+  </footer>
+
+  <!-- ==========================================================================
+       FLOATING BRIEFING WIDGET (PITCH TRIGGER)
+       ========================================================================== -->
+  <div class="lead-magnet-floating-widget" id="leadMagnetWidget">
+    <button class="lm-floating-btn" onclick="openPitchModal()" title="Free Studio Briefing">
+      <span class="lm-pulse-ping"></span>
+      <span>Studio Briefing &bull; Deepak &amp; Geetha</span>
+    </button>
+  </div>
+
+  <!-- ==========================================================================
+       UNCODED HUB STUDIO PITCH MODAL
+       ========================================================================== -->
   <div class="pitch-modal-backdrop" id="uncodedPitchModal" onclick="handleBackdropClick(event)">
     <div class="pitch-modal-card">
       <button class="pitch-close-btn" onclick="closePitchModal()" title="Close dialog">✕</button>
@@ -52,64 +1992,306 @@
           </div>
         </div>
         <div class="founders-intro">
-          <h2>Why We Hand-Built This Live Prototype For Your Business Before Asking For A Rupee.</h2>
-          <p>A personal note from Deepak &amp; Geetha to the founder or practice director reviewing this website.</p>
+          <h2>Why We Hand-Built This Live Prototype For Your Jewellery Brand Before Asking For A Rupee.</h2>
+          <p>A personal note from Deepak &amp; Geetha to the atelier director reviewing this website.</p>
         </div>
       </div>
 
       <div class="pitch-body">
-        <p>Dear Founder / Business Owner,</p>
-        <p>Most digital agencies pitch generic 40-page PDF decks, throw around corporate jargon, and demand lakhs before proving they understand a single thing about your real clients. <strong>We do the opposite: we do the work first.</strong></p>
+        <p>Dear Atelier Founder / Director,</p>
+        <p>High-ticket luxury jewellery and diamond buyers demand the exact same white-glove prestige online that they experience inside a private salon. Yet most jewellery websites run on sluggish Shopify themes that take 6 seconds to load, blur gemstone facets, and lose high-net-worth clients before they book a viewing.</p>
 
         <div class="insight-card">
-          <h4>The 50-Millisecond Silent Decision</h4>
-          <p>When a prospective client or patient searches for your service in your city, they don't judge your years of dedication or credentials on paper. <strong>They judge you in the first 50 milliseconds based on visual certainty.</strong> In high-ticket services, clients do not buy a service—they buy <em>relief from the fear of making an expensive mistake</em>. If your site takes 4+ seconds to load, breaks on mobile, or looks like a template from 2018, over 70% bounce silently and hire the competitor who looks established.</p>
+          <h4>The 50-Millisecond Silent Judgment</h4>
+          <p>When high-net-worth clients look for bespoke bridal Polki or 3-carat engagement solitaires, they judge visual certainty in 50 milliseconds. If the digital presence doesn't convey architectural perfection, they assume the physical craftsmanship is equally sloppy.</p>
         </div>
 
         <div class="insight-card">
-          <h4>What This Live Prototype Solves For Your Business</h4>
-          <p>We didn't build an aesthetic brochure. We built a high-conversion client acquisition engine: sub-second load time on Indian mobile 4G networks, upfront service clarity, interactive self-qualification tools, and direct 1-tap WhatsApp consultation. It answers your prospect's unvoiced fears before they ever hesitate.</p>
+          <h4>What This Prototype Solves</h4>
+          <p>We hand-code custom React platforms with interactive carat customizers, sub-second 99+ Core Web Vitals, and direct WhatsApp VIP vault booking. No monthly plugin maintenance, no security leaks.</p>
         </div>
 
         <div class="belief-card">
           <div class="belief-quote">
-            "Uncoded Hub is a brother and sister who got tired of watching competent, high-quality businesses lose work to worse competitors simply because the competitor had a faster, clearer website."
+            "We build web flagships that close high-ticket clients before you speak with them. Live in 7 Days — guaranteed, or you pay ₹0."
           </div>
           <div class="commitments-grid">
             <div class="comm-item">
               <strong>1. Senior Delivery Only</strong>
-              No hidden junior team, no account managers. Deepak and Geetha engineer and design every single line.
+              No junior interns or account managers. Deepak and Geetha engineer and design every pixel.
             </div>
             <div class="comm-item">
               <strong>2. 7-Day Turnaround</strong>
-              Live and launched in 7 working days flat—not 3 months of agency delays.
+              Delivered and live in 7 days flat — backed by our "Late Means Free" guarantee.
             </div>
             <div class="comm-item">
               <strong>3. 100% Asset Ownership</strong>
-              Domain, hosting, code, and content in your name from day one with zero monthly platform lock-ins.
+              Zero proprietary locks. Complete code and domain ownership is yours from Day 1.
             </div>
           </div>
         </div>
       </div>
 
       <div class="pitch-actions">
-        <button class="pitch-cta-dismiss" onclick="closePitchModal()">Explore Live Demo Specimen ↓</button>
-        <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha%2C%20I%20am%20viewing%20the%20Rivaah%20Heritage%20Ateliers%20demo%20and%20would%20like%20to%20discuss%20building%20our%20website." class="pitch-cta-wa" target="_blank" rel="noopener noreferrer">
+        <button class="pitch-cta-dismiss" onclick="closePitchModal()">Explore Live Demo ↓</button>
+        <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha%2C%20I%20am%20viewing%20the%20Rivaah%20Heritage%20Ateliers%20prototype%20and%20would%20like%20to%20discuss%20our%20website." class="pitch-cta-wa" target="_blank" rel="noopener noreferrer">
           Claim This Website on WhatsApp (+91 86608 19023) →
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Floating Lead Magnet Button -->
-  <div class="lead-magnet-floating-widget" id="leadMagnetWidget">
-    <button class="lm-floating-btn" onclick="openPitchModal()" title="Free 3-Page Executive Guide">
-      <span class="lm-btn-icon-wrap"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
-      <span>Free Studio Briefing</span>
-      <span class="lm-pulse-ping"></span>
-    </button>
-  </div>
+  <!-- ==========================================================================
+       CLIENT-SIDE JAVASCRIPT CONTROLLERS
+       ========================================================================== -->
+  <script>
+    /* ==========================================================================
+       1. THEME SWITCHER CONTROLLER
+       ========================================================================== */
+    function switchTheme(themeKey, btnElem) {
+      document.body.setAttribute('data-theme', themeKey);
+      document.querySelectorAll('.tc-btn').forEach(b => b.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+    }
 
-  
+    /* ==========================================================================
+       2. SCROLLYTELLING STAGE DATA & INTERACTION
+       ========================================================================== */
+    const STAGE_DATA = {
+      1: {
+        counter: "Stage 01 // 05 • Ethical Origin",
+        title: "Rough Crystal & Kimberley Sourcing",
+        desc: "Every rough diamond crystal is individually evaluated for octahedral crystalline integrity and ethical mine-of-origin provenance, completely bypassing conflict gem channels.",
+        tel1: ["Rough Carat Mass", "8.42 ct Octahedron"],
+        tel2: ["Inherent Color Grade", "D (Pure Colorless)"],
+        tel3: ["Clarity Rating", "VVS1 (Eye Clean)"],
+        tel4: ["Traceability Hash", "KP-BOT-9281-CAN"]
+      },
+      2: {
+        counter: "Stage 02 // 05 • Optical Geometry",
+        title: "3D Laser Faceting & Proportions",
+        desc: "Sarin optical laser scanning maps internal crystal cleavage planes to plan mathematically flawless 57-facet brilliant cuts that maximize light return and eliminate light leakage.",
+        tel1: ["Laser Scan Resolution", "0.002 mm Precision"],
+        tel2: ["Crown Angle", "34.5° (Ideal Tolkowsky)"],
+        tel3: ["Pavilion Depth", "40.8° (Zero Leakage)"],
+        tel4: ["Table Proportion", "57.0% Standard"]
+      },
+      3: {
+        counter: "Stage 03 // 05 • Micro-Atelier Bench",
+        title: "Micro-Pavé Setting Under 40x Microscope",
+        desc: "Master goldsmiths hand-raise 18K gold and 950 Platinum claws under 40x stereoscopic magnification, anchoring every pavé diamond with calibrated micro-tension.",
+        tel1: ["Setting Technique", "French Bead Pavé"],
+        tel2: ["Micro-Bead Diameter", "0.22 mm Platinum Claws"],
+        tel3: ["Magnification Power", "40x Leica Optics"],
+        tel4: ["Claw Shear Strength", "480 MPa Retention"]
+      },
+      4: {
+        counter: "Stage 04 // 05 • Government Assay",
+        title: "BIS 916 Hallmark & GIA Laser Inscription",
+        desc: "Every finished jewel undergoes radiographic gold purity assaying by the Bureau of Indian Standards and microscopic cold-laser certificate micro-inscription along the girdle.",
+        tel1: ["Gold Purity Assay", "91.6% Pure Gold (22K)"],
+        tel2: ["Laser Girdle ID", "GIA 28491048 Micro-Font"],
+        tel3: ["Hallmark Center", "Govt Assay Lab #04 BLR"],
+        tel4: ["Purity Tolerance", "±0.01% Certified"]
+      },
+      5: {
+        counter: "Stage 05 // 05 • Specular Scintillation",
+        title: "The Vault Masterpiece Reveal",
+        desc: "The completed royal heirloom emerges under specular museum lighting, radiating unmatched chromatic fire, scintillation, and generational prestige.",
+        tel1: ["Scintillation Index", "99.6% Total Fire"],
+        tel2: ["Heirloom Longevity", "500+ Years Rated"],
+        tel3: ["Certification Tier", "GIA Triple Excellent"],
+        tel4: ["Vault Valuation", "Museum Collection Grade"]
+      }
+    };
+
+    function updateHud(stageNum) {
+      const data = STAGE_DATA[stageNum];
+      if (!data) return;
+
+      document.getElementById('hudStageNum').textContent = data.counter;
+      document.getElementById('hudTitle').textContent = data.title;
+      document.getElementById('hudDesc').textContent = data.desc;
+
+      document.getElementById('tel1Lbl').textContent = data.tel1[0];
+      document.getElementById('tel1Val').textContent = data.tel1[1];
+      document.getElementById('tel2Lbl').textContent = data.tel2[0];
+      document.getElementById('tel2Val').textContent = data.tel2[1];
+      document.getElementById('tel3Lbl').textContent = data.tel3[0];
+      document.getElementById('tel3Val').textContent = data.tel3[1];
+      document.getElementById('tel4Lbl').textContent = data.tel4[0];
+      document.getElementById('tel4Val').textContent = data.tel4[1];
+
+      // Update image layers
+      document.querySelectorAll('.stage-image-layer').forEach(layer => {
+        if (parseInt(layer.getAttribute('data-stage')) === stageNum) {
+          layer.classList.add('active');
+        } else {
+          layer.classList.remove('active');
+        }
+      });
+
+      // Update scrubber dots
+      document.querySelectorAll('.scrubber-dot').forEach(dot => {
+        if (parseInt(dot.getAttribute('data-target-stage')) === stageNum) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    // Window scroll handler for 5-stage scrubber
+    let currentActiveStage = 1;
+    window.addEventListener('scroll', () => {
+      const scrollySec = document.getElementById('scrolly-anatomy');
+      if (!scrollySec) return;
+
+      const rect = scrollySec.getBoundingClientRect();
+      const totalH = scrollySec.offsetHeight - window.innerHeight;
+
+      if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
+        const scrolled = Math.abs(rect.top);
+        const progress = Math.min(Math.max(scrolled / totalH, 0), 1);
+        
+        let targetStage = 1;
+        if (progress > 0.8) targetStage = 5;
+        else if (progress > 0.6) targetStage = 4;
+        else if (progress > 0.4) targetStage = 3;
+        else if (progress > 0.2) targetStage = 2;
+        else targetStage = 1;
+
+        if (targetStage !== currentActiveStage) {
+          currentActiveStage = targetStage;
+          updateHud(currentActiveStage);
+        }
+      }
+    });
+
+    function jumpToStage(num) {
+      const scrollySec = document.getElementById('scrolly-anatomy');
+      if (!scrollySec) return;
+      const totalH = scrollySec.offsetHeight - window.innerHeight;
+      const targets = { 1: 0.05, 2: 0.28, 3: 0.48, 4: 0.68, 5: 0.88 };
+      const topOffset = scrollySec.offsetTop + (targets[num] * totalH);
+      window.scrollTo({ top: topOffset, behavior: 'smooth' });
+    }
+
+    /* ==========================================================================
+       3. BEFORE / AFTER COMPARISON SLIDER CONTROLLER
+       ========================================================================== */
+    const sliderContainer = document.getElementById('beforeAfterSlider');
+    const afterLayer = document.getElementById('afterLayer');
+    const sliderHandle = document.getElementById('sliderHandle');
+    const sliderRange = document.getElementById('sliderRange');
+
+    function setSliderPos(val) {
+      const pct = Math.max(0, Math.min(100, val));
+      sliderContainer.style.setProperty('--slider-pos', pct + '%');
+      if (sliderRange) sliderRange.value = pct;
+    }
+
+    if (sliderRange) {
+      sliderRange.addEventListener('input', (e) => setSliderPos(e.target.value));
+    }
+
+    let isDraggingSlider = false;
+    function handleSliderMove(e) {
+      if (!isDraggingSlider) return;
+      const rect = sliderContainer.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const x = clientX - rect.left;
+      const pct = (x / rect.width) * 100;
+      setSliderPos(pct);
+    }
+
+    sliderContainer.addEventListener('mousedown', (e) => {
+      isDraggingSlider = true;
+      handleSliderMove(e);
+    });
+    window.addEventListener('mouseup', () => isDraggingSlider = false);
+    window.addEventListener('mousemove', handleSliderMove);
+
+    sliderContainer.addEventListener('touchstart', (e) => {
+      isDraggingSlider = true;
+      handleSliderMove(e);
+    }, { passive: true });
+    window.addEventListener('touchend', () => isDraggingSlider = false);
+    window.addEventListener('touchmove', handleSliderMove, { passive: true });
+
+    /* ==========================================================================
+       4. INTERACTIVE SOLITAIRE CARAT & METAL CONFIGURATOR
+       ========================================================================== */
+    let selectedMetal = "18K Yellow Gold";
+    let metalPremium = 0;
+    let selectedCut = "Round Brilliant";
+    let cutMultiplier = 1.0;
+    let selectedCarat = 1.00;
+
+    function selectMetal(btn, name, premium) {
+      document.querySelectorAll('.metal-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedMetal = name;
+      metalPremium = premium;
+      calculateConfig();
+    }
+
+    function selectCut(btn, name, multiplier) {
+      document.querySelectorAll('.cut-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedCut = name;
+      cutMultiplier = multiplier;
+      calculateConfig();
+    }
+
+    function updateCarat(val) {
+      selectedCarat = parseFloat(val);
+      calculateConfig();
+    }
+
+    function calculateConfig() {
+      // Calculate diameter in mm: ~6.5mm at 1.00ct, proportional to cube root of carat
+      const diameter = (6.5 * Math.cbrt(selectedCarat)).toFixed(1);
+      
+      // Calculate investment price (exponential with carat mass + metal premium)
+      const basePerCarat = 450000;
+      const rawPrice = Math.round((basePerCarat * Math.pow(selectedCarat, 1.45) * cutMultiplier) + metalPremium);
+      const formattedPrice = "₹" + rawPrice.toLocaleString('en-IN');
+
+      // Update DOM
+      document.getElementById('caratValDisplay').textContent = selectedCarat.toFixed(2) + " ct";
+      document.getElementById('caratDimensionLabel').textContent = `Estimated Face Diameter: ${diameter} mm`;
+      document.getElementById('summaryMetal').textContent = selectedMetal;
+      document.getElementById('summaryCut').textContent = `${selectedCut} (Ideal Proportions)`;
+      document.getElementById('summaryCarat').textContent = `${selectedCarat.toFixed(2)} Carat (${diameter} mm)`;
+      document.getElementById('summaryPriceDisplay').textContent = formattedPrice;
+
+      // Update WhatsApp link
+      const text = encodeURIComponent(`Hi Rivaah Heritage Ateliers, I configured a ${selectedCarat.toFixed(2)}ct ${selectedCut} in ${selectedMetal} (Est. ${formattedPrice}) on your website. I would like to schedule a private vault viewing in Bangalore.`);
+      document.getElementById('waBookingLink').href = `https://wa.me/918660819023?text=${text}`;
+    }
+
+    // Initial calculation
+    calculateConfig();
+
+    /* ==========================================================================
+       5. UNCODED HUB STUDIO PITCH MODAL
+       ========================================================================== */
+    function openPitchModal() {
+      document.getElementById('uncodedPitchModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePitchModal() {
+      document.getElementById('uncodedPitchModal').classList.remove('open');
+      document.body.style.overflow = 'auto';
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target.id === 'uncodedPitchModal') {
+        closePitchModal();
+      }
+    }
+  </script>
 </body>
 </html>
