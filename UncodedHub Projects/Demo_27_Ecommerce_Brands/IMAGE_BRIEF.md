@@ -1,48 +1,35 @@
-# Demo_27_Ecommerce_Brands — Asset & Upgrade Brief
+# Demo 27 — Noir Botanicals | Luxury Cold-Pressed Apothecary & Organic Skincare
+**Asset & Image Production Brief**
 
-**Client / Brand**: Noir Botanicals
-**Sector**: Luxury D2C Apothecary & Skincare
-**Category**: retail
-**Demo File**: [ecommerce-brands.html](file:///c:/Users/LENOVO/Downloads/uncoded-hub/public/demos/ecommerce-brands.html)
-**Live Local URL**: `http://localhost:3000/demos/ecommerce-brands.html`
-**Live Production URL**: `https://uncodedhub.com/demos/ecommerce-brands.html`
-
----
-
-## 1. Core Conversion Engine & Positioning
-* **Brand Summary**: Sub-second mobile apothecary storefront with interactive skin diagnosis quiz, 1-click cart, and zero Shopify bloat.
-* **Core Conversion Engine**: **Custom Skin Diagnostic & Botanical Regimen Builder**
-* **Key Business Result**: 0.3s LCP · 1-Click WhatsApp Express Cart · Zero Plugins
-
-### Visual Themes in this Demo:
-  1. **Amber Apothecary** (Dark Botanical) — Accent: `#F59E0B` | Palette: #0C0A09, #F59E0B, #F4EFEA
-  2. **Warm Cream Silk** (High-End Editorial) — Accent: `#876239` | Palette: #F8F5EE, #876239, #191512
-  3. **Obsidian Velvet** (Luxury Noir) — Accent: `#D4AF37` | Palette: #000000, #D4AF37, #FFFFFF
+- **Brand Name**: Noir Botanicals
+- **Industry / Sector**: Luxury D2C Organic Skincare, Cellular Botanical Apothecary & Cold-Pressed Elixirs
+- **Demo File**: `public/demos/ecommerce-brands.html`
+- **Live Local URL**: `http://localhost:3000/demos/ecommerce-brands.html`
+- **Live Production URL**: `https://uncodedhub.com/demos/ecommerce-brands.html`
 
 ---
 
-## 2. Required Images Checklist (Drop Here in `Assets/`)
+## 1. Aesthetic & Art Direction Standard
+- **Lighting**: Warm editorial studio lighting, luminous sunlit amber glass reflections, subtle rim lights, crisp tactile textures. No muddy darkness.
+- **Color Palette**: Rich deep amber gold (`#D97706`), cold-pressed botanical green, warm silk cream (`#F8F5EE`), matte obsidian stone (`#0C0A09`).
+- **Visual Feel**: Aesop / Le Labo / Augustinus Bader caliber luxury D2C editorial aesthetic. Uncluttered, tactile, organic, clinical-grade precision.
 
-To achieve the unslop gold standard (like Sri Ayyanar Sirpa Kalai), please add **high-resolution authentic images** to this folder or the `Assets/` subfolder:
+---
 
-| File Name | Slot & Purpose | Recommended Aspect & Resolution | Description |
+## 2. Master Image Prompts Table (10 Slots)
+
+Drop the generated images directly into:
+`UncodedHub Projects/Demo_27_Ecommerce_Brands/Assets/`
+
+| Slot / File Name | Aspect Ratio | Subject & Scene Composition | Master AI Image Generation Prompt (Midjourney v6 / Flux) |
 | :--- | :--- | :--- | :--- |
-| `01_Hero_Showcase.png` | Hero Banner / Focal Center | 16:9 (1920×1080) or 4:5 (1200×1500) | Dramatic, aspirational hero image representing the pinnacle of this craft. |
-| `02_Work_01.png` | Portfolio Feature 1 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #1. |
-| `03_Work_02.png` | Portfolio Feature 2 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #2. |
-| `04_Work_03.png` | Portfolio Feature 3 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #3. |
-| `05_Work_04.png` | Portfolio Feature 4 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #4. |
-| `06_Work_05.png` | Portfolio Feature 5 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #5. |
-| `07_Before_Raw.png` | Comparison Slider (Left) | 16:10 (1200×750) | Raw / unpolished / initial stage (e.g. bare shell, untreated, blueprint). |
-| `08_After_Finished.png`| Comparison Slider (Right)| 16:10 (1200×750) | Finished, pristine, luxury outcome (e.g. furnished sanctuary, polished result). |
-| `09_Founder_Or_Expert.png`| Master / Founder Portrait| 1:1 or 4:5 Portrait | Authentic studio / clinic / workshop portrait of the principal expert. |
-| `10_Process_Detail.png`| Craftsmanship / Studio | 16:9 or 4:3 | Micro-detail of materials, tools, operatory, or on-site craftsmanship. |
-
----
-
-## 3. Unslop Design Standard Rules
-1. **No Purple AI Gradients**: Use editorial dark midnight navy, museum bronze, stone, or warm earth palettes.
-2. **Character-Rich Typography**: High-contrast editorial display font for headings; clean neutral body text.
-3. **Strict Word Integrity**: No split words on mobile (`word-break: keep-all; overflow-wrap: normal`).
-4. **Authentic Chiaroscuro Lighting**: High contrast, moody shadows, realistic depth. Zero cheesy smiling stock photos.
-5. **Direct High-Intent CTAs**: One-tap WhatsApp consult with pre-filled shastric/project details + interactive timeline estimator.
+| **01_Hero_Showcase.png** | 16:9 or 4:5 | **Flagship Cold-Pressed Apothecary Collection**<br>Two heavy amber glass dropper bottles and an organic ceramic face cream jar resting on sun-drenched raw travertine stone. Droplets of golden plant oil glistening on stone. | `Luxury D2C skincare product photography, flagship amber glass dropper bottle and frosted cream jar on warm textured travertine stone, backlit by warm golden morning sunlight, crystal clear oil droplets on stone, botanical olive branch shadow, editorial aesthetic like Aesop and Augustinus Bader, ultra high detail 8k, sharp focus, luminous, soft warm shadows --ar 16:9 --style raw --v 6.1` |
+| **02_Work_01.png**<br>*(Scrolly Stage 1)* | 4:5 | **Stage 1: Wild Botanical Foraging at Dawn**<br>Hands of an artisan botanist harvesting fresh wild sea buckthorn and damask rose hips in a mist-covered mountain herb garden at sunrise. Dew drops on petals. | `Cinematic close-up of artisan herbalist hands gently harvesting vibrant orange wild sea buckthorn berries and fresh damask rose hips at sunrise, morning dew glistening on leaves, soft misty mountain background, warm morning golden hour rim light, National Geographic documentary style, sharp macro detail --ar 4:5 --style raw --v 6.1` |
+| **03_Work_02.png**<br>*(Scrolly Stage 2)* | 4:5 | **Stage 2: Sub-Zero Supercritical CO2 Extraction**<br>Stainless steel cold-press extraction machinery in a pristine minimalist laboratory studio. Glass sight-glasses filled with swirling liquid gold botanical extract. | `Minimalist botanical chemistry laboratory, stainless steel supercritical cold extraction vessel, borosilicate glass condenser tube filled with swirling luminous golden botanical oil, clinical cleanliness, soft clean laboratory lighting with warm amber reflections, high-end pharmaceutical aesthetic, 8k --ar 4:5 --style raw --v 6.1` |
+| **04_Work_03.png**<br>*(Scrolly Stage 3)* | 4:5 | **Stage 3: Molecular Blending & Micro-Filtration**<br>Rich golden botanical elixir being gravity-filtered through laboratory glass funnel into dark violet Miron glass apothecary bottles. Pure viscosity. | `Macro photography of luminous amber botanical oil slowly dripping through a crystal laboratory funnel into a heavy dark violet glass bottle, thick rich viscous golden liquid, micro air bubbles suspended in oil, dramatic studio side lighting, tactile organic luxury, hyper-detailed texture --ar 4:5 --style raw --v 6.1` |
+| **05_Work_04.png**<br>*(Scrolly Stage 4)* | 4:5 | **Stage 4: Active Cellular Elixir on Glowing Skin**<br>Close-up macro of a glass pipette dispensing a single crystal droplet of amber face oil onto bare, dewy, luminous human skin. Immediate hydration glow. | `Extreme macro beauty photography, clear glass dropper pipette releasing a single drop of golden facial oil onto smooth glowing healthy cheekbone skin, dewy luminous skin texture, natural pores, ultra-clean commercial skincare lighting, soft warm tones, flawless luxury beauty campaign --ar 4:5 --style raw --v 6.1` |
+| **06_Work_05.png**<br>*(Scrolly Stage 5)* | 4:5 | **Stage 5: Complete 3-Step Daily Restoration Ritual**<br>The full Noir Botanicals regimen: Cellular Cleansing Oil, Active Barrier Essence, and Nourishing Night Balm arranged harmoniously on honed limestone. | `Commercial product still life of a luxury 3-piece skincare set in matching amber glass and matte black ceramic packaging, arranged elegantly on honed cream limestone beside a glass of pure spring water and dried botanical twigs, soft diffuse architectural studio light, sophisticated luxury retail --ar 4:5 --style raw --v 6.1` |
+| **07_Before_Raw.png**<br>*(Slider: Before)* | 16:10 | **Before: Compromised, Inflamed Skin Barrier**<br>High-magnification clinical skin diagnostic photo showing micro-redness, dehydration lines, flakey dry patches, and compromised lipid barrier. | `High resolution macro medical diagnostic photography of sensitive facial skin barrier showing micro redness, irritation, dry patches and uneven dull texture, honest dermatological clinical close-up, neutral balanced clinical lighting, authentic unretouched skin detail --ar 16:10 --style raw --v 6.1` |
+| **08_After_Finished.png**<br>*(Slider: After)* | 16:10 | **After: Restored Glass Skin Cellular Barrier**<br>Same skin area after 28 days of botanical lipid restoration: calm, plump, deeply hydrated, smooth, even-toned with a radiant cellular glow. | `High resolution macro photography of the same skin area completely healed, plump deeply hydrated glass skin, luminous natural radiance, zero redness, calm strengthened skin barrier, supple smooth texture, dewy natural glow, clean luxury dermatological photography --ar 16:10 --style raw --v 6.1` |
+| **09_Founder_Or_Expert.png** | 4:5 or 1:1 | **Master Botanical Chemist & Formulator**<br>Portrait of Dr. Evelyn Vance, chief botanical formulator, in a linen studio apron holding an amber glass vial in a sunlit herb-drying apothecary workshop. | `Editorial portrait of a female master botanical cosmetic chemist in her late 30s wearing a neutral linen apron, holding an amber glass dropper bottle, standing in a sun-drenched apothecary workshop with shelves of dried herbs and glass beakers, confident serene expression, warm natural window light, Kinfolk magazine style --ar 4:5 --style raw --v 6.1` |
+| **10_Process_Detail.png** | 16:9 or 4:3 | **Embossed Linen Label & Amber Glass Packaging Detail**<br>Extreme macro of the dark amber bottle shoulder, heavy knurled gold dropper collar, debossed textured cotton paper label with gold foil typography. | `Extreme macro product detail of a luxury cosmetic bottle, textured cream cotton paper label with crisp debossed typography and subtle gold foil stamping, knurled brass dropper cap, optical reflections on thick amber glass wall, premium tactile craftsmanship, Hasselblad medium format look --ar 16:9 --style raw --v 6.1` |

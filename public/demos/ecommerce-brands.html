@@ -3,24 +3,2014 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noir Botanicals | Luxury Cold-Pressed Apothecary &amp; Organic Skincare</title>
-  <meta name="description" content="Explore the sub-second D2C apothecary storefront demo by Uncoded Hub. Live skin diagnostic quiz, instant 1-click cart, zero Shopify app bloat, and 3-theme changer.">
+  <title>Noir Botanicals | Luxury Cold-Pressed Apothecary &amp; Organic Skincare Storefront</title>
+  <meta name="description" content="Explore the sub-second D2C apothecary storefront demo by Uncoded Hub. 5-stage botanical extraction scrollytelling, live skin diagnostic regimen builder, before/after barrier slider, and 1-click WhatsApp cart.">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://uncodedhub.com/demos/ecommerce-brands.html">
   <link rel="alternate" hreflang="en" href="https://uncodedhub.com/demos/ecommerce-brands.html">
   <link rel="alternate" hreflang="x-default" href="https://uncodedhub.com/demos/ecommerce-brands.html">
 
-  
-    <button class="tc-btn active" data-theme="amber-apothecary" onclick="switchTheme('amber-apothecary', this)">
-      <span>Amber Apothecary Luxe</span>
-    </button>
-    <button class="tc-btn" data-theme="silk-cream" onclick="switchTheme('silk-cream', this)">
-      <span>Warm Silk Cream &amp; Clay</span>
-    </button>
-    <button class="tc-btn" data-theme="obsidian-velvet" onclick="switchTheme('obsidian-velvet', this)">
-      <span>Obsidian Velvet Monolith</span>
-    </button>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Noir Botanicals | Luxury Cold-Pressed Cellular Apothecary Demo">
+  <meta property="og:description" content="Explore the bespoke D2C apothecary demo by Uncoded Hub. 5-stage cold-pressed scrollytelling, interactive clinical skin diagnosis quiz, and 1-click WhatsApp express checkout.">
+  <meta property="og:url" content="https://uncodedhub.com/demos/ecommerce-brands.html">
+  <meta property="og:image" content="https://uncodedhub.com/demos/assets/demo-27-ecommerce/01_Hero_Showcase.png">
+  <meta property="og:site_name" content="Uncoded Hub Demos">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Noir Botanicals | Luxury Cold-Pressed Cellular Apothecary Demo">
+  <meta name="twitter:description" content="Sub-second D2C botanical storefront with interactive skin diagnosis, 5-stage extraction scrollytelling, and zero Shopify bloat.">
+  <meta name="twitter:image" content="https://uncodedhub.com/demos/assets/demo-27-ecommerce/01_Hero_Showcase.png">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Noir Botanicals Cellular Apothecary",
+    "image": "https://uncodedhub.com/demos/assets/demo-27-ecommerce/01_Hero_Showcase.png",
+    "description": "Luxury cold-pressed organic skincare and cellular botanical elixirs handcrafted without heat degradation.",
+    "priceRange": "₹₹₹",
+    "currenciesAccepted": "INR, USD, EUR",
+    "paymentAccepted": "Cash, Credit Card, UPI, Net Banking",
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Cellular Barrier Restorative Oil",
+          "description": "Supercritical CO2 extracted organic Sea Buckthorn and Damask Rose lipid serum.",
+          "offers": {
+            "@type": "Offer",
+            "price": "3450",
+            "priceCurrency": "INR"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       THEME VARIABLES & RESET
+       ========================================================================== */
+    :root, [data-theme="amber-apothecary"] {
+      --bg-primary: #0a0908;
+      --bg-secondary: #13110e;
+      --bg-card: #181512;
+      --bg-card-hover: #221e19;
+      --text-main: #f5f0eb;
+      --text-muted: #a69d94;
+      --text-faint: #6e655d;
+      --accent: #d97706;
+      --accent-glow: rgba(217, 119, 6, 0.25);
+      --accent-soft: rgba(217, 119, 6, 0.12);
+      --border: rgba(217, 119, 6, 0.18);
+      --border-soft: rgba(255, 255, 255, 0.08);
+      --nav-bg: rgba(10, 9, 8, 0.88);
+      --badge-bg: rgba(217, 119, 6, 0.15);
+      --badge-text: #f59e0b;
+      --hero-overlay: linear-gradient(180deg, rgba(10,9,8,0.7) 0%, rgba(10,9,8,0.2) 40%, rgba(10,9,8,0.85) 100%);
+    }
+
+    [data-theme="silk-cream"] {
+      --bg-primary: #f9f6f0;
+      --bg-secondary: #f0ebe1;
+      --bg-card: #e5dfd3;
+      --bg-card-hover: #dbd4c6;
+      --text-main: #1f1a16;
+      --text-muted: #5e5349;
+      --text-faint: #8f8276;
+      --accent: #785128;
+      --accent-glow: rgba(120, 81, 40, 0.2);
+      --accent-soft: rgba(120, 81, 40, 0.08);
+      --border: rgba(120, 81, 40, 0.22);
+      --border-soft: rgba(0, 0, 0, 0.08);
+      --nav-bg: rgba(249, 246, 240, 0.92);
+      --badge-bg: rgba(120, 81, 40, 0.12);
+      --badge-text: #785128;
+      --hero-overlay: linear-gradient(180deg, rgba(249,246,240,0.6) 0%, rgba(249,246,240,0.15) 40%, rgba(249,246,240,0.85) 100%);
+    }
+
+    [data-theme="obsidian-velvet"] {
+      --bg-primary: #040404;
+      --bg-secondary: #0c0c0c;
+      --bg-card: #141414;
+      --bg-card-hover: #1f1f1f;
+      --text-main: #ffffff;
+      --text-muted: #a3a3a3;
+      --text-faint: #5e5e5e;
+      --accent: #c5a059;
+      --accent-glow: rgba(197, 160, 89, 0.25);
+      --accent-soft: rgba(197, 160, 89, 0.1);
+      --border: rgba(197, 160, 89, 0.22);
+      --border-soft: rgba(255, 255, 255, 0.08);
+      --nav-bg: rgba(4, 4, 4, 0.9);
+      --badge-bg: rgba(197, 160, 89, 0.14);
+      --badge-text: #c5a059;
+      --hero-overlay: linear-gradient(180deg, rgba(4,4,4,0.7) 0%, rgba(4,4,4,0.15) 40%, rgba(4,4,4,0.88) 100%);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      word-break: keep-all;
+      overflow-wrap: normal;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, .font-serif {
+      font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+
+    .font-editorial {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ==========================================================================
+       DEMO BANNER & THEME SWITCHER
+       ========================================================================== */
+    .demo-top-bar {
+      background: #000;
+      border-bottom: 1px solid rgba(217, 119, 6, 0.25);
+      padding: 0.6rem 1rem;
+      font-size: 0.82rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .demo-badge-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .demo-tag {
+      background: var(--accent);
+      color: #000;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .demo-pitch-trigger {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.76rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .demo-pitch-trigger:hover {
+      background: var(--accent);
+      color: #000;
+    }
+
+    .theme-switcher-group {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .tc-label {
+      color: #999;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-right: 0.25rem;
+    }
+
+    .tc-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ddd;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.74rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tc-btn.active, .tc-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #000;
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       NAVIGATION
+       ========================================================================== */
+    .site-header {
+      position: relative;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-soft);
+      padding: 1.1rem 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    .brand-subtitle {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: -2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.03em;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn-header-cta {
+      background: var(--accent);
+      color: #000;
+      font-weight: 600;
+      font-size: 0.84rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px var(--accent-glow);
+    }
+
+    .btn-header-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px var(--accent-glow);
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 5rem 0;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(1.04) contrast(1.05);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: var(--hero-overlay);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--badge-bg);
+      border: 1px solid var(--border);
+      color: var(--badge-text);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-pill::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 5.2vw, 4.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.4rem;
+      color: var(--text-main);
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 2.5rem;
+      font-weight: 400;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 0.85rem 1.85rem;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 20px var(--accent-glow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px var(--accent-glow);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-soft);
+      color: var(--text-main);
+      font-weight: 500;
+      font-size: 0.92rem;
+      padding: 0.85rem 1.85rem;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(8px);
+      transition: all 0.25s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 800px;
+      margin: 3.5rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .metric-item {
+      text-align: center;
+    }
+
+    .metric-value {
+      font-family: 'Cinzel', serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    .metric-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ==========================================================================
+       SCROLLYTELLING SECTION (THE EXTRACTION SEQUENCE)
+       ========================================================================== */
+    .scrolly-section {
+      position: relative;
+      background: var(--bg-secondary);
+      padding: 6rem 0 8rem;
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-pill {
+      display: inline-block;
+      background: var(--badge-bg);
+      border: 1px solid var(--border);
+      color: var(--badge-text);
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.6vw, 2.85rem);
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .scrolly-container {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 3.5rem;
+      align-items: start;
+      position: relative;
+    }
+
+    /* Left Narrative Flow */
+    .scrolly-narrative {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .scrolly-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+      padding: 2.2rem;
+      transition: all 0.35s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scrolly-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    .scrolly-card.active {
+      border-color: var(--border);
+      background: var(--bg-card-hover);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+    }
+
+    .scrolly-card.active::before {
+      background: var(--accent);
+    }
+
+    .stage-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.85rem;
+    }
+
+    .stage-num {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .stage-badge {
+      font-size: 0.72rem;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .stage-title {
+      font-size: 1.45rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-main);
+    }
+
+    .stage-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .stage-specs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-soft);
+      font-size: 0.8rem;
+    }
+
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .spec-label {
+      color: var(--text-faint);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .spec-val {
+      color: var(--text-main);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    /* Right Sticky Viewport */
+    .scrolly-viewport {
+      position: sticky;
+      top: 100px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      background: #000;
+      aspect-ratio: 4/5;
+    }
+
+    .viewport-image-stack {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .viewport-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(1.05) contrast(1.04);
+      opacity: 0;
+      transform: scale(1.04);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .viewport-img.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .viewport-hud {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.88) 100%);
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      z-index: 10;
+    }
+
+    .hud-caption {
+      color: #fff;
+      font-size: 0.92rem;
+      font-weight: 600;
+      max-width: 70%;
+    }
+
+    .hud-sub {
+      color: var(--accent);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 2px;
+    }
+
+    .hud-counter {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* Stage Navigation Pills */
+    .scrolly-pills {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .stage-pill-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      color: var(--text-muted);
+      padding: 0.45rem 1rem;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .stage-pill-btn.active, .stage-pill-btn:hover {
+      background: var(--accent);
+      color: #000;
+      font-weight: 600;
+      border-color: var(--accent);
+    }
+
+    /* ==========================================================================
+       INTERACTIVE SKIN DIAGNOSTIC & REGIMEN BUILDER
+       ========================================================================== */
+    .diagnostic-section {
+      padding: 7rem 0;
+      background: var(--bg-primary);
+      position: relative;
+    }
+
+    .diagnostic-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 3rem;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+    }
+
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3.5rem;
+    }
+
+    .quiz-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+    }
+
+    .quiz-step-title {
+      font-size: 1.15rem;
+      margin-bottom: 0.85rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .quiz-step-num {
+      width: 26px;
+      height: 26px;
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .option-chips {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .option-chip {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-soft);
+      color: var(--text-muted);
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      font-size: 0.86rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+      line-height: 1.35;
+    }
+
+    .option-chip:hover {
+      border-color: var(--border);
+      color: var(--text-main);
+    }
+
+    .option-chip.selected {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Regimen Result Panel */
+    .regimen-panel {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .regimen-header {
+      border-bottom: 1px solid var(--border-soft);
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .regimen-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .regimen-name {
+      font-size: 1.55rem;
+      margin-top: 0.35rem;
+      color: var(--text-main);
+    }
+
+    .regimen-products {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .product-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-name {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .product-role {
+      font-size: 0.75rem;
+      color: var(--text-faint);
+    }
+
+    .product-price {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .regimen-total-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.35rem;
+    }
+
+    .total-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .total-price {
+      font-family: 'Cinzel', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .total-perk {
+      font-size: 0.74rem;
+      color: #10b981;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .btn-cart-whatsapp {
+      background: #25d366;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 0.95rem;
+      border-radius: 6px;
+      text-align: center;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.25);
+    }
+
+    .btn-cart-whatsapp:hover {
+      background: #1eb956;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+    }
+
+    /* ==========================================================================
+       BEFORE / AFTER SKIN BARRIER RESTORATION SLIDER
+       ========================================================================== */
+    .comparison-section {
+      padding: 7rem 0;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .slider-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      position: relative;
+      aspect-ratio: 16/10;
+      background: #000;
+      user-select: none;
+    }
+
+    .slider-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(1.05) contrast(1.04);
+    }
+
+    .slider-img.before-img {
+      clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+      z-index: 2;
+    }
+
+    .slider-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: #fff;
+      z-index: 10;
+      cursor: ew-resize;
+      transform: translateX(-50%);
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    }
+
+    .slider-handle-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #fff;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+      font-size: 1rem;
+      border: 2px solid var(--accent);
+    }
+
+    .slider-badge {
+      position: absolute;
+      top: 1.5rem;
+      z-index: 5;
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      backdrop-filter: blur(8px);
+    }
+
+    .slider-badge.before {
+      left: 1.5rem;
+      background: rgba(0, 0, 0, 0.75);
+      color: #ef4444;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .slider-badge.after {
+      right: 1.5rem;
+      background: rgba(0, 0, 0, 0.75);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    /* ==========================================================================
+       FORMULATOR & PACKAGING SPLIT SECTION
+       ========================================================================== */
+    .craft-section {
+      padding: 7rem 0;
+      background: var(--bg-primary);
+    }
+
+    .craft-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 6rem;
+    }
+
+    .craft-image-box {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+      aspect-ratio: 4/5;
+    }
+
+    .craft-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(1.05) contrast(1.04);
+      transition: transform 0.6s ease;
+    }
+
+    .craft-image-box:hover img {
+      transform: scale(1.03);
+    }
+
+    .craft-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .quote-block {
+      border-left: 2px solid var(--accent);
+      padding-left: 1.5rem;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--text-main);
+      font-family: 'Playfair Display', serif;
+      line-height: 1.6;
+    }
+
+    .author-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .author-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .author-title {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Second split: Packaging */
+    .packaging-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .packaging-features {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .feature-card:hover {
+      border-color: var(--border);
+      background: var(--bg-card-hover);
+    }
+
+    .feature-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+    }
+
+    .feature-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-soft);
+      padding: 5rem 0 3rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+      max-width: 320px;
+    }
+
+    .footer-heading {
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+      font-weight: 700;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-soft);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.82rem;
+      color: var(--text-faint);
+    }
+
+    /* ==========================================================================
+       UNCODED HUB STUDIO MODAL
+       ========================================================================== */
+    .pitch-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .pitch-modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .pitch-modal-card {
+      background: #11100f;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      max-width: 760px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2.5rem;
+      position: relative;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.8);
+      color: #f5f0eb;
+    }
+
+    .pitch-close-btn {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+
+    .pitch-close-btn:hover {
+      background: var(--accent);
+      color: #000;
+    }
+
+    .uh-popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .uh-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .uh-brand-logo-img {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+    }
+
+    .uh-brand-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #fff;
+    }
+
+    .uh-brand-sub {
+      font-size: 0.75rem;
+      color: #999;
+    }
+
+    .uh-badge-studio {
+      background: var(--accent);
+      color: #000;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .founders-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 1.25rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .founders-photos {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .founder-pic-box {
+      text-align: center;
+    }
+
+    .founder-pic {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      object-fit: cover;
+      margin-bottom: 0.25rem;
+    }
+
+    .founder-name {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .founder-role {
+      display: block;
+      font-size: 0.68rem;
+      color: #aaa;
+    }
+
+    .founders-intro h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.35rem;
+      color: #fff;
+    }
+
+    .founders-intro p {
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    .pitch-body {
+      font-size: 0.92rem;
+      color: #ccc;
+      line-height: 1.65;
+    }
+
+    .pitch-body p {
+      margin-bottom: 1rem;
+    }
+
+    .insight-card {
+      background: rgba(217, 119, 6, 0.08);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .insight-card h4 {
+      color: var(--accent);
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .insight-card p {
+      margin-bottom: 0;
+      font-size: 0.88rem;
+      color: #ddd;
+    }
+
+    /* Floating WhatsApp Button */
+    .floating-wa-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #25d366;
+      color: #fff;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+      z-index: 999;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .floating-wa-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .scrolly-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .scrolly-viewport {
+        position: relative;
+        top: 0;
+        aspect-ratio: 16/10;
+        margin-bottom: 2rem;
+      }
+
+      .quiz-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .craft-grid, .packaging-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-metrics {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .option-chips {
+        grid-template-columns: 1fr;
+      }
+
+      .diagnostic-card {
+        padding: 1.5rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body data-theme="amber-apothecary">
+
+  <!-- Uncoded Hub Demo Control Bar -->
+  <div class="demo-top-bar">
+    <div class="demo-badge-wrap">
+      <span class="demo-tag">LIVE PROTOTYPE</span>
+      <span style="color:#aaa;">Sector: Luxury D2C Apothecary &amp; Organic Skincare</span>
+      <button class="demo-pitch-trigger" onclick="openPitchModal()">
+        <span>Why We Built This First</span> →
+      </button>
+    </div>
+
+    <div class="theme-switcher-group">
+      <span class="tc-label">Theme:</span>
+      <button class="tc-btn active" data-theme="amber-apothecary" onclick="switchTheme('amber-apothecary', this)">
+        <span>Amber Luxe</span>
+      </button>
+      <button class="tc-btn" data-theme="silk-cream" onclick="switchTheme('silk-cream', this)">
+        <span>Silk Cream</span>
+      </button>
+      <button class="tc-btn" data-theme="obsidian-velvet" onclick="switchTheme('obsidian-velvet', this)">
+        <span>Obsidian</span>
+      </button>
+    </div>
   </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="#" class="brand-logo">
+        <span class="brand-title">NOIR BOTANICALS</span>
+        <span class="brand-subtitle">Cold-Pressed Cellular Apothecary</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#extraction-sequence" class="nav-link">Extraction</a></li>
+          <li><a href="#diagnostic" class="nav-link">Skin Quiz</a></li>
+          <li><a href="#restoration" class="nav-link">Clinical Results</a></li>
+          <li><a href="#philosophy" class="nav-link">Formulation</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#diagnostic" class="btn-header-cta">Custom Regimen</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-bg">
+      <img src="assets/demo-27-ecommerce/01_Hero_Showcase.png" alt="Noir Botanicals Flagship Cold-Pressed Skincare Collection">
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <div class="hero-pill">Supercritical CO₂ Cold-Extraction · Sub-Second D2C Platform</div>
+      <h1 class="hero-title">Skin Restored at the Cellular Boundary.</h1>
+      <p class="hero-subtitle">
+        Wild-foraged high-altitude botanicals extracted without thermal degradation. 100% active plant lipid terpenes engineered to rebuild compromised moisture barriers in 28 days.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#diagnostic" class="btn-primary">
+          <span>Take 60-Sec Skin Quiz</span> →
+        </a>
+        <a href="#extraction-sequence" class="btn-secondary">
+          <span>Explore Extraction Science</span>
+        </a>
+      </div>
+
+      <div class="hero-metrics">
+        <div class="metric-item">
+          <div class="metric-value">0.3s</div>
+          <div class="metric-label">Instant LCP Load Speed</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">100%</div>
+          <div class="metric-label">Active Plant Lipids</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">1-Tap</div>
+          <div class="metric-label">WhatsApp Express Checkout</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scrollytelling Section: The Extraction Sequence -->
+  <section class="scrolly-section" id="extraction-sequence">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pill">The Cellular Extraction Sequence</span>
+        <h2 class="section-title">From Mountain Harvest to Cellular Fusion</h2>
+        <p class="section-desc">
+          Commercial skincare dilutes active compounds with 80% water and uses heat that oxidizes delicate antioxidants. Scroll through our 5-stage closed-loop supercritical process.
+        </p>
+      </div>
+
+      <!-- Stage Selector Buttons -->
+      <div class="scrolly-pills">
+        <button class="stage-pill-btn active" onclick="activateStage(0)">01. Wild Harvest</button>
+        <button class="stage-pill-btn" onclick="activateStage(1)">02. Sub-Zero CO₂</button>
+        <button class="stage-pill-btn" onclick="activateStage(2)">03. Micro-Filtration</button>
+        <button class="stage-pill-btn" onclick="activateStage(3)">04. Cellular Fusion</button>
+        <button class="stage-pill-btn" onclick="activateStage(4)">05. 3-Step Ritual</button>
+      </div>
+
+      <div class="scrolly-container">
+        <!-- Left Narrative Cards -->
+        <div class="scrolly-narrative">
+          
+          <!-- Stage 1 -->
+          <div class="scrolly-card active" data-stage="0" onclick="activateStage(0)">
+            <div class="stage-header">
+              <span class="stage-num">Stage 01</span>
+              <span class="stage-badge">Purity Standard</span>
+            </div>
+            <h3 class="stage-title">Wild Botanical Foraging at Dawn</h3>
+            <p class="stage-desc">
+              High-altitude Sea Buckthorn berries and wild Damask Rose hips are foraged by hand at dawn before sunlight degrades volatile antioxidant phenols. Harvested in small, sustainable batches from untouched mountain reserves.
+            </p>
+            <div class="stage-specs">
+              <div class="spec-item">
+                <span class="spec-label">Harvest Elevation</span>
+                <span class="spec-val">2,400m Sub-Alpine</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Peak Bioactivity</span>
+                <span class="spec-val">Dawn Dew Window</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage 2 -->
+          <div class="scrolly-card" data-stage="1" onclick="activateStage(1)">
+            <div class="stage-header">
+              <span class="stage-num">Stage 02</span>
+              <span class="stage-badge">Zero Heat</span>
+            </div>
+            <h3 class="stage-title">Sub-Zero Supercritical CO₂ Extraction</h3>
+            <p class="stage-desc">
+              Rather than chemical solvents or boiling steam distillation, dense liquid CO₂ passes through raw botanicals at cold temperatures. This captures fragile bio-flavonoids, carotenoids, and fatty acid chains in their native living state.
+            </p>
+            <div class="stage-specs">
+              <div class="spec-item">
+                <span class="spec-label">Extraction Temp</span>
+                <span class="spec-val">31°C (Zero Thermal Loss)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Solvent Purity</span>
+                <span class="spec-val">100% Residue-Free CO₂</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="scrolly-card" data-stage="2" onclick="activateStage(2)">
+            <div class="stage-header">
+              <span class="stage-num">Stage 03</span>
+              <span class="stage-badge">Photonic Shield</span>
+            </div>
+            <h3 class="stage-title">Molecular Blending &amp; Miron Violet Glass</h3>
+            <p class="stage-desc">
+              Gravity-filtered through borosilicate funnels without shear pumps to preserve lipid integrity. Immediately sealed into German Miron violet biophotonic glass, which blocks the entire visible light spectrum except violet and infrared.
+            </p>
+            <div class="stage-specs">
+              <div class="spec-item">
+                <span class="spec-label">Packaging Substrate</span>
+                <span class="spec-val">Miron Biophotonic Glass</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Shelf Stability</span>
+                <span class="spec-val">24 Months Zero Preservatives</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage 4 -->
+          <div class="scrolly-card" data-stage="3" onclick="activateStage(3)">
+            <div class="stage-header">
+              <span class="stage-num">Stage 04</span>
+              <span class="stage-badge">Bio-Identical</span>
+            </div>
+            <h3 class="stage-title">Active Cellular Fusion on Bare Skin</h3>
+            <p class="stage-desc">
+              Because our cold-pressed lipid chains mirror human sebum composition, the golden elixir absorbs in under 45 seconds without sitting as a greasy film. Active ceramides slip through the stratum corneum to repair lipid matrices.
+            </p>
+            <div class="stage-specs">
+              <div class="spec-item">
+                <span class="spec-label">Absorption Rate</span>
+                <span class="spec-val">&lt; 45 Seconds</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Comedogenic Rating</span>
+                <span class="spec-val">0 (Non-Pore Clogging)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage 5 -->
+          <div class="scrolly-card" data-stage="4" onclick="activateStage(4)">
+            <div class="stage-header">
+              <span class="stage-num">Stage 05</span>
+              <span class="stage-badge">Daily Protocol</span>
+            </div>
+            <h3 class="stage-title">The Complete 3-Step Daily Ritual</h3>
+            <p class="stage-desc">
+              Step 1: Cellular Cleansing Nectar. Step 2: Antioxidant Hydrosol Barrier Mist. Step 3: Concentrated Restorative Face Oil. A minimalist daily regimen delivering glass skin without the 10-step consumerist confusion.
+            </p>
+            <div class="stage-specs">
+              <div class="spec-item">
+                <span class="spec-label">Active Compounds</span>
+                <span class="spec-val">Omega 3, 6, 7 &amp; 9</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Clinical Result</span>
+                <span class="spec-val">94% Barrier Density (+28d)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Sticky Viewport with Image Stack -->
+        <div class="scrolly-viewport">
+          <div class="viewport-image-stack">
+            <img src="assets/demo-27-ecommerce/02_Work_01.png" alt="Stage 1: Wild Botanical Foraging at Dawn" class="viewport-img active" data-img-stage="0">
+            <img src="assets/demo-27-ecommerce/03_Work_02.png" alt="Stage 2: Sub-Zero Supercritical CO2 Extraction Lab" class="viewport-img" data-img-stage="1">
+            <img src="assets/demo-27-ecommerce/04_Work_03.png" alt="Stage 3: Molecular Blending & Micro-Filtration" class="viewport-img" data-img-stage="2">
+            <img src="assets/demo-27-ecommerce/05_Work_04.png" alt="Stage 4: Active Cellular Fusion on Glowing Skin" class="viewport-img" data-img-stage="3">
+            <img src="assets/demo-27-ecommerce/06_Work_05.png" alt="Stage 5: Complete 3-Step Restoration Ritual" class="viewport-img" data-img-stage="4">
+          </div>
+
+          <div class="viewport-hud">
+            <div>
+              <div class="hud-caption" id="hudCaptionText">Wild Botanical Foraging at Dawn</div>
+              <div class="hud-sub" id="hudSubText">High-Altitude Sea Buckthorn &amp; Rose Hips</div>
+            </div>
+            <div class="hud-counter" id="hudCounterText">01 / 05</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Skin Diagnostic & Custom Regimen Builder -->
+  <section class="diagnostic-section" id="diagnostic">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pill">Interactive Diagnostic Engine</span>
+        <h2 class="section-title">Formulate Your Custom Cellular Regimen</h2>
+        <p class="section-desc">
+          Select your current barrier condition, environmental stressors, and skin goals. Our algorithmic apothecary generates your bespoke daily protocol with 1-click WhatsApp delivery.
+        </p>
+      </div>
+
+      <div class="diagnostic-card">
+        <div class="quiz-grid">
+          <!-- Left: Quiz Options -->
+          <div class="quiz-steps">
+            
+            <!-- Step 1 -->
+            <div>
+              <div class="quiz-step-title">
+                <span class="quiz-step-num">1</span>
+                <span>Current Skin Barrier Condition</span>
+              </div>
+              <div class="option-chips" id="barrierStep">
+                <button class="option-chip selected" data-barrier="compromised" onclick="selectQuizOption('barrier', 'compromised', this)">
+                  <strong>Compromised &amp; Flakey</strong><br><small>Redness, stinging, impaired lipid barrier</small>
+                </button>
+                <button class="option-chip" data-barrier="dehydrated" onclick="selectQuizOption('barrier', 'dehydrated', this)">
+                  <strong>Dehydrated &amp; Dull</strong><br><small>Tightness, fine dehydration lines, loss of glow</small>
+                </button>
+                <button class="option-chip" data-barrier="congested" onclick="selectQuizOption('barrier', 'congested', this)">
+                  <strong>Congested &amp; Sensitive</strong><br><small>Hormonal breakouts with surface dryness</small>
+                </button>
+                <button class="option-chip" data-barrier="mature" onclick="selectQuizOption('barrier', 'mature', this)">
+                  <strong>Loss of Elasticity</strong><br><small>Deep moisture loss, oxidative collagen decline</small>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div>
+              <div class="quiz-step-title">
+                <span class="quiz-step-num">2</span>
+                <span>Primary Environmental Stressor</span>
+              </div>
+              <div class="option-chips" id="climateStep">
+                <button class="option-chip selected" data-climate="urban" onclick="selectQuizOption('climate', 'urban', this)">
+                  <strong>Urban Smog &amp; Blue Light</strong><br><small>High particulate pollution and screen exposure</small>
+                </button>
+                <button class="option-chip" data-climate="dry" onclick="selectQuizOption('climate', 'dry', this)">
+                  <strong>Air Conditioning &amp; Low Humidity</strong><br><small>Continuous moisture evaporation indoors</small>
+                </button>
+                <button class="option-chip" data-climate="tropical" onclick="selectQuizOption('climate', 'tropical', this)">
+                  <strong>High UV &amp; Tropical Humidity</strong><br><small>Solar oxidative stress and excess sebum</small>
+                </button>
+                <button class="option-chip" data-climate="travel" onclick="selectQuizOption('climate', 'travel', this)">
+                  <strong>Frequent Air Travel</strong><br><small>Cabin pressure shifts and rapid dehydration</small>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div>
+              <div class="quiz-step-title">
+                <span class="quiz-step-num">3</span>
+                <span>Desired Clinical Target</span>
+              </div>
+              <div class="option-chips" id="targetStep">
+                <button class="option-chip selected" data-target="lipid" onclick="selectQuizOption('target', 'lipid', this)">
+                  <strong>Total Lipid Barrier Reconstruction</strong><br><small>Relieve redness, seal moisture, prevent transepidermal loss</small>
+                </button>
+                <button class="option-chip" data-target="radiance" onclick="selectQuizOption('target', 'radiance', this)">
+                  <strong>Unfiltered Glass Skin Glow</strong><br><small>Smooth micro-texture and illuminate dull tone</small>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right: Dynamic Regimen Result Panel -->
+          <div class="regimen-panel">
+            <div class="regimen-header">
+              <span class="regimen-tag">Custom Prescription Protocol</span>
+              <h3 class="regimen-name" id="regimenPrescriptionTitle">Intense Barrier Lipid Reconstruction</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.35rem;" id="regimenPrescriptionDesc">
+                Formulated for sensitive, compromised skin facing urban particulate pollution. Supercritical Sea Buckthorn ceramides immediately restore lipid density.
+              </p>
+            </div>
+
+            <div class="regimen-products" id="regimenProductsList">
+              <div class="product-row">
+                <div class="product-info">
+                  <span class="product-name">Cellular Restorative Face Oil (30ml)</span>
+                  <span class="product-role">Supercritical CO₂ Sea Buckthorn &amp; Rose Hip</span>
+                </div>
+                <span class="product-price">₹3,450</span>
+              </div>
+              <div class="product-row">
+                <div class="product-info">
+                  <span class="product-name">Antioxidant Hydrosol Barrier Mist (100ml)</span>
+                  <span class="product-role">Damask Rose &amp; Wild Tansy Floral Water</span>
+                </div>
+                <span class="product-price">₹1,850</span>
+              </div>
+            </div>
+
+            <div class="regimen-total-box">
+              <div class="total-row">
+                <span class="total-label">Prescription Regimen Investment:</span>
+                <span class="total-price" id="regimenTotalDisplay">₹5,300</span>
+              </div>
+              <div class="total-perk">
+                <span>✓ Includes Free Pan-India Courier &amp; Miron Glass Protection</span>
+              </div>
+            </div>
+
+            <a href="#" class="btn-cart-whatsapp" id="btnWhatsAppCart" target="_blank" rel="noopener">
+              <span>Order Custom Regimen via WhatsApp</span> →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before / After Transformation Slider -->
+  <section class="comparison-section" id="restoration">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pill">28-Day Clinical Proof</span>
+        <h2 class="section-title">Cellular Transformation Under Macro Diagnostic Light</h2>
+        <p class="section-desc">
+          Drag the interactive divider to inspect the stratum corneum before and after 28 days of cold-pressed lipid application. Notice the elimination of micro-inflammation and the emergence of natural glass skin radiance.
+        </p>
+      </div>
+
+      <div class="slider-wrap" id="sliderContainer">
+        <!-- After image (Full background) -->
+        <img src="assets/demo-27-ecommerce/08_After_Finished.png" alt="28-Day Restored Glass Skin Cellular Barrier" class="slider-img after-img">
+        <span class="slider-badge after">Day 28: Restored Barrier</span>
+
+        <!-- Before image (Clipped) -->
+        <img src="assets/demo-27-ecommerce/07_Before_Raw.png" alt="Day 0: Compromised Inflamed Skin Barrier" class="slider-img before-img" id="sliderBeforeImg">
+        <span class="slider-badge before">Day 0: Compromised</span>
+
+        <!-- Draggable Handle -->
+        <div class="slider-handle" id="sliderHandle">
+          <div class="slider-handle-button">⇄</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Master Formulator & Studio Philosophy -->
+  <section class="craft-section" id="philosophy">
+    <div class="container">
+      
+      <!-- Split 1: Founder & Formulator -->
+      <div class="craft-grid">
+        <div class="craft-image-box">
+          <img src="assets/demo-27-ecommerce/09_Founder_Or_Expert.png" alt="Dr. Evelyn Vance - Master Botanical Chemist & Formulator">
+        </div>
+
+        <div class="craft-content">
+          <span class="section-pill">The Formulator's Desk</span>
+          <h2 class="section-title">"Commercial skincare sells you water and preservatives. We formulate pure botanical vitality."</h2>
+          
+          <div class="quote-block">
+            "When you heat active botanicals past 45°C, their volatile terpene chains fracture. You are left with dead carrier oil. By extracting through supercritical CO₂ at room temperature, the cell structure remains alive — delivering immediate biological recognition to human skin."
+          </div>
+
+          <div class="author-info">
+            <span class="author-name">Dr. Evelyn Vance</span>
+            <span class="author-title">Chief Formulator &amp; Master Botanical Chemist · D.Sc Phytotherapy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Split 2: Packaging & Tactile Detail -->
+      <div class="packaging-grid">
+        <div class="packaging-features">
+          <span class="section-pill">Sensory &amp; Material Precision</span>
+          <h2 class="section-title">Every Detail Engineered for Zero Oxidation.</h2>
+          
+          <div class="feature-card">
+            <div class="feature-title">German Miron Violet Glass</div>
+            <div class="feature-desc">Acts as a natural bio-filter, preventing photochemical degradation without chemical parabens or synthetic stabilizers.</div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-title">Knurled Brass Pipette Collar</div>
+            <div class="feature-desc">Precision drop-dispensing mechanism delivers exactly 0.05ml per squeeze to eliminate product wastage.</div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-title">FSC Textured Cotton Paper</div>
+            <div class="feature-desc">Tactile, debossed unbleached cotton fiber labels printed with non-toxic botanical vegetable inks.</div>
+          </div>
+        </div>
+
+        <div class="craft-image-box">
+          <img src="assets/demo-27-ecommerce/10_Process_Detail.png" alt="Noir Botanicals Heavy Miron Glass and Debossed Linen Label">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <span class="brand-title">NOIR BOTANICALS</span>
+          <p class="footer-brand-desc">
+            Bespoke cold-pressed apothecary elixirs handcrafted from high-altitude wild botanicals. Hand-filled in micro-batches and bottled in biophotonic violet glass.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-heading">Cellular Rituals</div>
+          <ul class="footer-links">
+            <li><a href="#diagnostic">Custom Skin Quiz</a></li>
+            <li><a href="#extraction-sequence">Extraction Science</a></li>
+            <li><a href="#restoration">Clinical Proof</a></li>
+            <li><a href="#philosophy">Our Formulator</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Purity Standards</div>
+          <ul class="footer-links">
+            <li><a href="#">Supercritical CO₂</a></li>
+            <li><a href="#">Miron Violet Glass</a></li>
+            <li><a href="#">Zero Preservatives</a></li>
+            <li><a href="#">Ethical Wild Harvest</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Direct Concierge</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Have questions regarding your skin barrier? Speak directly with our master herbalist concierge.
+          </p>
+          <a href="https://wa.me/919999999999?text=Hi%20Noir%20Botanicals,%20I%20have%20a%20question%20about%20my%20skin%20barrier." class="btn-primary" style="padding: 0.6rem 1rem; font-size: 0.82rem;" target="_blank" rel="noopener">
+            <span>WhatsApp Apothecary Concierge</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Noir Botanicals Apothecary. All rights reserved.
+        </div>
+        <div>
+          Handcrafted sub-second React architecture by <a href="https://uncodedhub.com" style="color:var(--accent); font-weight:600;">Uncoded Hub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/919999999999?text=Hi%20Noir%20Botanicals,%20I%20am%20interested%20in%20your%20cold-pressed%20skincare%20regimen." class="floating-wa-btn" title="Chat on WhatsApp" target="_blank" rel="noopener">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.97.53 1.871.814 2.801.815 3.179 0 5.767-2.587 5.768-5.766.001-3.18-2.586-5.766-5.773-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.745 0-3.385-.45-4.819-1.238l-7.181 1.883 1.916-6.99c-.878-1.488-1.385-3.228-1.385-5.086 0-5.514 4.486-10 10-10s10 4.486 10 10z"/>
+    </svg>
+  </a>
 
   <!-- Uncoded Hub Studio Pitch & Cover Letter Modal -->
   <div class="pitch-modal-backdrop" id="uncodedPitchModal" onclick="handleBackdropClick(event)">
@@ -52,64 +2042,275 @@
           </div>
         </div>
         <div class="founders-intro">
-          <h2>Why We Hand-Built This Live Prototype For Your Business Before Asking For A Rupee.</h2>
-          <p>A personal note from Deepak &amp; Geetha to the founder or practice director reviewing this website.</p>
+          <h2>Why We Hand-Built This Live Prototype For Your Brand Before Asking For A Rupee.</h2>
+          <p>A personal note from Deepak &amp; Geetha to the brand founder or marketing director.</p>
         </div>
       </div>
 
       <div class="pitch-body">
-        <p>Dear Founder / Business Owner,</p>
-        <p>Most digital agencies pitch generic 40-page PDF decks, throw around corporate jargon, and demand lakhs before proving they understand a single thing about your real clients. <strong>We do the opposite: we do the work first.</strong></p>
+        <p>Dear D2C Founder / Brand Director,</p>
+        <p>Most ecommerce web agencies push bloated Shopify templates loaded with 28 monthly subscription apps that drag your mobile page load time to 5.4 seconds. In luxury D2C beauty and skincare, <strong>every 1-second delay slashes mobile conversion by 26%</strong>.</p>
 
         <div class="insight-card">
-          <h4>The 50-Millisecond Silent Decision</h4>
-          <p>When a prospective client or patient searches for your service in your city, they don't judge your years of dedication or credentials on paper. <strong>They judge you in the first 50 milliseconds based on visual certainty.</strong> In high-ticket services, clients do not buy a service—they buy <em>relief from the fear of making an expensive mistake</em>. If your site takes 4+ seconds to load, breaks on mobile, or looks like a template from 2018, over 70% bounce silently and hire the competitor who looks established.</p>
+          <h4>The 0.3-Second Tactile Advantage</h4>
+          <p>When high-value customers browse high-ticket skincare, they don't buy a commodity — they buy sensory certainty and trust. A sub-second, hand-coded storefront with custom interactive skin diagnostics and instant 1-click cart drawers outperforms generic templates every single time.</p>
         </div>
 
         <div class="insight-card">
-          <h4>What This Live Prototype Solves For Your Business</h4>
-          <p>We didn't build an aesthetic brochure. We built a high-conversion client acquisition engine: sub-second load time on Indian mobile 4G networks, upfront service clarity, interactive self-qualification tools, and direct 1-tap WhatsApp consultation. It answers your prospect's unvoiced fears before they ever hesitate.</p>
+          <h4>Our Contractual Guarantee: Live in 7 Days — Or Free</h4>
+          <p>If your bespoke D2C storefront isn’t live, fully tested, and ready to accept orders by Day 7, you pay ₹0. We bear 100% of the delivery risk so you never deal with months of agency delays.</p>
         </div>
 
-        <div class="belief-card">
-          <div class="belief-quote">
-            "Uncoded Hub is a brother and sister who got tired of watching competent, high-quality businesses lose work to worse competitors simply because the competitor had a faster, clearer website."
-          </div>
-          <div class="commitments-grid">
-            <div class="comm-item">
-              <strong>1. Senior Delivery Only</strong>
-              No hidden junior team, no account managers. Deepak and Geetha engineer and design every single line.
-            </div>
-            <div class="comm-item">
-              <strong>2. 7-Day Turnaround</strong>
-              Live and launched in 7 working days flat—not 3 months of agency delays.
-            </div>
-            <div class="comm-item">
-              <strong>3. 100% Asset Ownership</strong>
-              Domain, hosting, code, and content in your name from day one with zero monthly platform lock-ins.
-            </div>
-          </div>
+        <div style="margin-top: 1.5rem; text-align: center;">
+          <a href="https://wa.me/919999999999?text=Hi%20Deepak%20and%20Geetha,%20I%20reviewed%20your%20Noir%20Botanicals%20demo%20and%20would%20like%20to%20discuss%20a%20website%20for%20my%20brand." class="btn-primary" style="padding: 0.85rem 1.85rem;" target="_blank" rel="noopener">
+            <span>Schedule 15-Min Private Strategy Session</span> →
+          </a>
         </div>
-      </div>
-
-      <div class="pitch-actions">
-        <button class="pitch-cta-dismiss" onclick="closePitchModal()">Explore Live Demo Specimen ↓</button>
-        <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha%2C%20I%20am%20viewing%20the%20Noir%20Botanicals%20demo%20and%20would%20like%20to%20discuss%20building%20our%20website." class="pitch-cta-wa" target="_blank" rel="noopener noreferrer">
-          Claim This Website on WhatsApp (+91 86608 19023) →
-        </a>
       </div>
     </div>
   </div>
 
-  <!-- Floating Lead Magnet Button -->
-  <div class="lead-magnet-floating-widget" id="leadMagnetWidget">
-    <button class="lm-floating-btn" onclick="openPitchModal()" title="Free 3-Page Executive Guide">
-      <span class="lm-btn-icon-wrap"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
-      <span>Free Studio Briefing</span>
-      <span class="lm-pulse-ping"></span>
-    </button>
-  </div>
+  <!-- JavaScript Interactions -->
+  <script>
+    /* ==========================================================================
+       1. THEME SWITCHER
+       ========================================================================== */
+    function switchTheme(themeKey, btnElem) {
+      document.body.setAttribute('data-theme', themeKey);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+    }
 
-  
+    /* ==========================================================================
+       2. SCROLLYTELLING LOGIC
+       ========================================================================== */
+    const stageData = [
+      {
+        title: "Wild Botanical Foraging at Dawn",
+        sub: "High-Altitude Sea Buckthorn & Rose Hips",
+        counter: "01 / 05"
+      },
+      {
+        title: "Sub-Zero Supercritical CO₂ Extraction",
+        sub: "31°C Cold-Extraction with Zero Thermal Loss",
+        counter: "02 / 05"
+      },
+      {
+        title: "Molecular Blending & Micro-Filtration",
+        sub: "Miron Violet Biophotonic Glass Bottling",
+        counter: "03 / 05"
+      },
+      {
+        title: "Active Cellular Fusion on Bare Skin",
+        sub: "Bio-Identical Absorption in Under 45 Seconds",
+        counter: "04 / 05"
+      },
+      {
+        title: "The Complete 3-Step Daily Ritual",
+        sub: "Clinical Glass Skin Barrier Restoration",
+        counter: "05 / 05"
+      }
+    ];
+
+    function activateStage(index) {
+      // Update cards
+      const cards = document.querySelectorAll('.scrolly-card');
+      cards.forEach((c, idx) => {
+        if (idx === index) c.classList.add('active');
+        else c.classList.remove('active');
+      });
+
+      // Update pill buttons
+      const pills = document.querySelectorAll('.stage-pill-btn');
+      pills.forEach((p, idx) => {
+        if (idx === index) p.classList.add('active');
+        else p.classList.remove('active');
+      });
+
+      // Update images
+      const images = document.querySelectorAll('.viewport-img');
+      images.forEach((img, idx) => {
+        if (idx === index) img.classList.add('active');
+        else img.classList.remove('active');
+      });
+
+      // Update HUD
+      if (stageData[index]) {
+        document.getElementById('hudCaptionText').textContent = stageData[index].title;
+        document.getElementById('hudSubText').textContent = stageData[index].sub;
+        document.getElementById('hudCounterText').textContent = stageData[index].counter;
+      }
+    }
+
+    // Scroll trigger observer for cards
+    window.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            const stageIndex = parseInt(entry.target.getAttribute('data-stage'));
+            activateStage(stageIndex);
+          }
+        });
+      }, {
+        threshold: 0.5,
+        rootMargin: "-10% 0px -10% 0px"
+      });
+
+      document.querySelectorAll('.scrolly-card').forEach(card => observer.observe(card));
+    });
+
+    /* ==========================================================================
+       3. INTERACTIVE SKIN DIAGNOSTIC & REGIMEN CALCULATOR
+       ========================================================================== */
+    let selectedBarrier = 'compromised';
+    let selectedClimate = 'urban';
+    let selectedTarget = 'lipid';
+
+    const regimenDatabase = {
+      'compromised-urban-lipid': {
+        title: "Intense Barrier Lipid Reconstruction",
+        desc: "Engineered for sensitive, damaged skin exposed to urban traffic smog and indoor blue light. Rebuilds intercellular lipids and blocks particulate adherence.",
+        products: [
+          { name: "Cellular Restorative Face Oil (30ml)", role: "Supercritical Sea Buckthorn & Rose Hips", price: 3450 },
+          { name: "Antioxidant Hydrosol Barrier Mist (100ml)", role: "Damask Rose & Wild Tansy Floral Water", price: 1850 }
+        ]
+      },
+      'dehydrated-dry-radiance': {
+        title: "Deep Cellular Hydro-Glow Protocol",
+        desc: "Tailored for moisture-depleted skin enduring constant air-conditioned environments. Quenches micro-thirst and restores glassy surface light reflection.",
+        products: [
+          { name: "Phyto-Squalane Radiance Elixir (30ml)", role: "Olive Squalane & Neroli Blossom Lipid", price: 3250 },
+          { name: "Hyaluronic Cellular Dew Serum (50ml)", role: "Multi-Molecular Botanical Infusion", price: 2450 }
+        ]
+      },
+      'congested-tropical-lipid': {
+        title: "Clarifying Bio-Lipid Balancing Ritual",
+        desc: "Designed for combination or breakout-prone skin in high humidity. Regulates excess sebum while preventing acid mantle breakdown.",
+        products: [
+          { name: "Blue Tansy Purifying Elixir (30ml)", role: "Cold-Pressed Blue Tansy & Black Seed", price: 3150 },
+          { name: "Cellular Cleansing Nectar (120ml)", role: "Gentle Saponin Botanical Wash", price: 1750 }
+        ]
+      },
+      'default': {
+        title: "Holistic Daily Cellular Restoration",
+        desc: "Our master daily protocol supporting cellular renewal, barrier density, and environmental resilience across all skin types.",
+        products: [
+          { name: "Cellular Restorative Face Oil (30ml)", role: "Supercritical Sea Buckthorn & Rose Hips", price: 3450 },
+          { name: "Phyto-Squalane Radiance Elixir (30ml)", role: "Olive Squalane & Neroli Blossom Lipid", price: 3250 }
+        ]
+      }
+    };
+
+    function selectQuizOption(category, value, btnElem) {
+      if (category === 'barrier') selectedBarrier = value;
+      if (category === 'climate') selectedClimate = value;
+      if (category === 'target') selectedTarget = value;
+
+      // Update button styles in that row
+      const parent = btnElem.parentElement;
+      parent.querySelectorAll('.option-chip').forEach(b => b.classList.remove('selected'));
+      btnElem.classList.add('selected');
+
+      updateRegimen();
+    }
+
+    function updateRegimen() {
+      const key = `${selectedBarrier}-${selectedClimate}-${selectedTarget}`;
+      const data = regimenDatabase[key] || regimenDatabase['compromised-urban-lipid'];
+
+      document.getElementById('regimenPrescriptionTitle').textContent = data.title;
+      document.getElementById('regimenPrescriptionDesc').textContent = data.desc;
+
+      // Render products
+      const listContainer = document.getElementById('regimenProductsList');
+      listContainer.innerHTML = '';
+
+      let total = 0;
+      data.products.forEach(p => {
+        total += p.price;
+        const row = document.createElement('div');
+        row.className = 'product-row';
+        row.innerHTML = `
+          <div class="product-info">
+            <span class="product-name">${p.name}</span>
+            <span class="product-role">${p.role}</span>
+          </div>
+          <span class="product-price">₹${p.price.toLocaleString('en-IN')}</span>
+        `;
+        listContainer.appendChild(row);
+      });
+
+      const formattedTotal = `₹${total.toLocaleString('en-IN')}`;
+      document.getElementById('regimenTotalDisplay').textContent = formattedTotal;
+
+      // Update WhatsApp URL
+      const waMsg = encodeURIComponent(`Hi Noir Botanicals! I completed your Skin Diagnostic Quiz on your website and was prescribed "${data.title}" (Total: ${formattedTotal}). I would like to place an order.`);
+      document.getElementById('btnWhatsAppCart').href = `https://wa.me/919999999999?text=${waMsg}`;
+    }
+
+    // Initialize regimen
+    updateRegimen();
+
+    /* ==========================================================================
+       4. BEFORE / AFTER COMPARISON SLIDER
+       ========================================================================== */
+    const sliderContainer = document.getElementById('sliderContainer');
+    const sliderBeforeImg = document.getElementById('sliderBeforeImg');
+    const sliderHandle = document.getElementById('sliderHandle');
+    let isSliding = false;
+
+    function setSliderPosition(x) {
+      const rect = sliderContainer.getBoundingClientRect();
+      let pos = (x - rect.left) / rect.width;
+      if (pos < 0.05) pos = 0.05;
+      if (pos > 0.95) pos = 0.95;
+
+      const percentage = pos * 100;
+      sliderBeforeImg.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+      sliderHandle.style.left = `${percentage}%`;
+    }
+
+    sliderContainer.addEventListener('mousedown', (e) => {
+      isSliding = true;
+      setSliderPosition(e.clientX);
+    });
+
+    window.addEventListener('mouseup', () => { isSliding = false; });
+    window.addEventListener('mousemove', (e) => {
+      if (!isSliding) return;
+      setSliderPosition(e.clientX);
+    });
+
+    // Touch support for mobile
+    sliderContainer.addEventListener('touchstart', (e) => {
+      isSliding = true;
+      setSliderPosition(e.touches[0].clientX);
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => { isSliding = false; });
+    window.addEventListener('touchmove', (e) => {
+      if (!isSliding) return;
+      setSliderPosition(e.touches[0].clientX);
+    }, { passive: true });
+
+    /* ==========================================================================
+       5. MODAL LOGIC
+       ========================================================================== */
+    function openPitchModal() {
+      document.getElementById('uncodedPitchModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePitchModal() {
+      document.getElementById('uncodedPitchModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target.id === 'uncodedPitchModal') {
+        closePitchModal();
+      }
+    }
+  </script>
 </body>
 </html>
