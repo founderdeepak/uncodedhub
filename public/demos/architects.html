@@ -351,7 +351,8 @@
       position: absolute;
       inset: 0;
       z-index: 2;
-      background: radial-gradient(circle at 50% 45%, rgba(14,12,10,0.12) 0%, rgba(14,12,10,0.52) 65%, var(--bg-base) 100%);
+      background: radial-gradient(circle at 50% 45%, rgba(14,12,10,0.5) 0%, rgba(14,12,10,0.78) 65%, var(--bg-base) 100%),
+                  linear-gradient(180deg, rgba(14,12,10,0.65) 0%, rgba(14,12,10,0.2) 45%, rgba(14,12,10,0.85) 100%);
     }
 
     .hero-content {
@@ -360,6 +361,9 @@
       max-width: 1040px;
       margin: 0 auto;
       text-align: center;
+      padding: 32px 24px;
+      border-radius: 28px;
+      background: radial-gradient(ellipse at center, rgba(14,12,10,0.65) 0%, rgba(14,12,10,0) 80%);
     }
 
     .hero-badge {
@@ -368,13 +372,13 @@
       gap: 8px;
       padding: 7px 18px;
       border-radius: 9999px;
-      background: var(--bg-glass);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(18, 14, 12, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--border-strong);
       font-family: var(--font-mono);
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--accent);
@@ -384,13 +388,13 @@
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(38px, 6.5vw, 76px);
-      font-weight: 600;
-      line-height: 1.08;
-      letter-spacing: 0.03em;
+      font-size: clamp(34px, 6vw, 74px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
       margin-bottom: 22px;
-      color: var(--text-main);
-      text-shadow: 0 4px 30px rgba(0,0,0,0.8);
+      color: #ffffff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.95), 0 6px 32px rgba(0,0,0,0.9);
     }
 
     .hero-title em {
@@ -401,12 +405,12 @@
 
     .hero-desc {
       font-size: clamp(15px, 2vw, 19px);
-      color: var(--text-muted);
+      color: #e5dfd8;
       max-width: 720px;
       margin: 0 auto 36px;
       line-height: 1.65;
-      font-weight: 400;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      font-weight: 450;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.95), 0 4px 16px rgba(0,0,0,0.85);
     }
 
     .hero-actions {
@@ -1555,6 +1559,122 @@
       75%, 100% {
         transform: scale(2);
         opacity: 0;
+      }
+    }
+
+    /* ==========================================================================
+       RESPONSIVE RULES: SCROLLYTELLING & HUD ON MOBILE / TABLET
+       ========================================================================== */
+    @media (max-width: 900px) {
+      .hud-overlay {
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 16px 24px;
+        gap: 12px;
+      }
+
+      .stage-image-layer img {
+        object-position: center 30%; /* Focus on architectural structure */
+      }
+
+      .hud-info-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 18px 20px;
+        border-radius: 16px;
+        background: rgba(18, 14, 12, 0.92);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      }
+
+      .hud-title {
+        font-size: 22px;
+        margin-bottom: 6px;
+      }
+
+      .hud-desc {
+        font-size: 13px;
+        line-height: 1.45;
+        margin-bottom: 12px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .hud-telemetry-grid {
+        gap: 8px;
+        padding-top: 10px;
+      }
+
+      .telemetry-item {
+        padding: 6px 10px;
+      }
+
+      .telemetry-lbl {
+        font-size: 8.5px;
+        margin-bottom: 2px;
+      }
+
+      .telemetry-val {
+        font-size: 12.5px;
+      }
+
+      .hud-scrubber-nav {
+        flex-direction: row;
+        padding: 6px 14px;
+        gap: 10px;
+        border-radius: 9999px;
+        order: -1;
+        background: rgba(18, 14, 12, 0.9);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+      }
+
+      .scrubber-dot {
+        width: 24px;
+        height: 6px;
+        border-radius: 3px;
+      }
+
+      .scrubber-dot.active {
+        width: 36px;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-section {
+        padding: 100px 16px 40px;
+      }
+
+      .hero-content {
+        padding: 24px 12px;
+      }
+
+      .hero-badge {
+        font-size: 9.5px;
+        padding: 5px 12px;
+        margin-bottom: 16px;
+      }
+
+      .hero-title {
+        font-size: 32px;
+        line-height: 1.15;
+      }
+
+      .hero-desc {
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+
+      .hud-title {
+        font-size: 19px;
+      }
+
+      .hud-info-card {
+        padding: 14px 16px;
       }
     }
   </style>
