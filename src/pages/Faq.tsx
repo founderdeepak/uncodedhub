@@ -86,7 +86,7 @@ const FAQ_ITEMS: FaqItem[] = [
     categoryLabel: 'Pricing & Guarantee',
     question: 'How much does a website cost, and are there any hidden fees?',
     answer: [
-      'We offer three clear starting points: Essential Website from ₹35,000 INR (≈ $490 USD), Business Website from ₹55,000 INR (≈ $750 USD), and Online Store from ₹85,000+ INR (≈ $1,150+ USD).',
+      'We offer four clear starting points: Single Page from ₹12,000 INR (≈ $600 USD), Custom Business Website from ₹20,000 INR (≈ $990 USD), E-Commerce Store from ₹50,000 INR (≈ $2,400 USD), and Website Redesign from ₹10,000 INR (≈ $500 USD).',
       'During your free 20-minute discovery call, we review your exact requirements and provide one fixed written quote. That number never changes.',
       'There are zero hidden agency fees, zero markup on hosting, and zero mandatory monthly retainers. You pay only the agreed project price.',
     ],

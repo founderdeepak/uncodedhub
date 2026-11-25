@@ -42,3 +42,5 @@ video_production/temp/
 __pycache__/
 *.pyc
 *.zip
+!public/downloads/*.zip
+deepak_threads_gumroad/chrome_temp/

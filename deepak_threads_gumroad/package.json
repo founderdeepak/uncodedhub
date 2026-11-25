@@ -1,0 +1,17 @@
+{
+  "name": "deepak_threads_gumroad",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "markdown-it": "^15.0.3",
+    "pdf-lib": "^1.17.1",
+    "pdfkit": "^0.20.2"
+  }
+}

@@ -33,6 +33,7 @@ const SinglePageService = lazy(() => import('./pages/services/SinglePageService'
 const BusinessWebsiteService = lazy(() => import('./pages/services/BusinessWebsiteService'));
 const EcommerceService = lazy(() => import('./pages/services/EcommerceService'));
 const WebsiteRedesignService = lazy(() => import('./pages/services/WebsiteRedesignService'));
+const ClientBonusDownload = lazy(() => import('./pages/ClientBonusDownload'));
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 interface NavChild {
@@ -702,6 +703,22 @@ export default function App() {
             element={
               <Suspense fallback={<div className="min-h-screen bg-[#090B10] flex items-center justify-center font-mono text-xs text-muted">Loading Outreach Command Center...</div>}>
                 <TeamOutreach />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/client-bonus"
+            element={
+              <Suspense fallback={null}>
+                <ClientBonusDownload />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/client-bonus/"
+            element={
+              <Suspense fallback={null}>
+                <ClientBonusDownload />
               </Suspense>
             }
           />

@@ -9,6 +9,7 @@ Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 Allow: /demos/
 Disallow: /client/
+Disallow: /client-bonus/
 Disallow: /linkedin-dispatch/
 Disallow: /team-outreach/
 

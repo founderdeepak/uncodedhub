@@ -121,7 +121,7 @@ export default function BangaloreHub({ onBook }: BangaloreHubProps) {
     url: 'https://uncodedhub.com/web-design/bangalore/',
     description:
       'Web design company in Bangalore. Custom, high-performance websites built in 7 working days by senior founders Deepak & Geetha in Bengaluru. Contractual on-time guarantee.',
-    priceRange: '₹35,000 - ₹85,000',
+    priceRange: 'Starts from ₹12,000',
     telephone: '+91 86608 19023',
     address: {
       '@type': 'PostalAddress',

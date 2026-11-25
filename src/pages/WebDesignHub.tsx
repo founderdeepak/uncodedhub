@@ -563,7 +563,7 @@ export default function WebDesignHub({ onBook }: WebDesignHubProps) {
                     India Projects (INR ₹)
                   </h3>
                   <p className="text-xs font-mono text-signal mb-4">
-                    Transparent milestone packages from ₹35,000 to ₹85,000+
+                    Transparent milestone packages starting from ₹12,000
                   </p>
 
                   <p className="text-muted text-xs sm:text-sm leading-relaxed mb-6">
@@ -977,7 +977,7 @@ export default function WebDesignHub({ onBook }: WebDesignHubProps) {
                       <span className="text-xs font-mono text-muted">/ one-time</span>
                     </div>
                     <div className="flex items-center justify-between text-xs font-mono text-signal mt-1">
-                      <span>{isInternational ? `${region.currencyCode} · Remote Delivery` : '₹35,000 INR (GST Eligible)'}</span>
+                      <span>{isInternational ? `${region.currencyCode} · Remote Delivery` : 'Starts from ₹12,000 INR (GST Eligible)'}</span>
                       <span className="text-muted">⏱ 3–5 Working Days</span>
                     </div>
                   </div>
@@ -1046,7 +1046,7 @@ export default function WebDesignHub({ onBook }: WebDesignHubProps) {
                       <span className="text-xs font-mono text-muted">/ one-time</span>
                     </div>
                     <div className="flex items-center justify-between text-xs font-mono text-signal mt-1">
-                      <span>{isInternational ? `${region.currencyCode} · Direct Founder Sprint` : '₹55,000 INR (GST Eligible)'}</span>
+                      <span>{isInternational ? `${region.currencyCode} · Direct Founder Sprint` : 'Starts from ₹20,000 INR (GST Eligible)'}</span>
                       <span className="text-muted">⏱ 7 Days (On Time or Free)</span>
                     </div>
                   </div>
@@ -1115,7 +1115,7 @@ export default function WebDesignHub({ onBook }: WebDesignHubProps) {
                       <span className="text-xs font-mono text-muted">/ one-time</span>
                     </div>
                     <div className="flex items-center justify-between text-xs font-mono text-signal mt-1">
-                      <span>{isInternational ? `${region.currencyCode} · Custom Architecture` : '₹85,000+ INR (GST Eligible)'}</span>
+                      <span>{isInternational ? `${region.currencyCode} · Custom Architecture` : 'Starts from ₹50,000 INR (GST Eligible)'}</span>
                       <span className="text-muted">⏱ 10–14 Working Days</span>
                     </div>
                   </div>

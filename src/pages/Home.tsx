@@ -57,7 +57,7 @@ const HOMEPAGE_FAQS = [
   },
   {
     q: 'How much does a website cost?',
-    a: 'We offer transparent, fixed pricing published upfront. In India, our sprints range from ₹35,000 for single-page flagships to ₹85,000 for full custom business platforms. For international clients, sprints range from $1,800 to $3,800 USD (or equivalent in GBP, EUR, AED, AUD). There are no hidden fees, hourly surprises, or monthly maintenance lock-ins.',
+    a: 'We offer transparent, fixed pricing published upfront. In India, single-page websites start from ₹12,000, custom business websites start from ₹20,000, e-commerce stores start from ₹50,000, and website redesigns start from ₹10,000. For international clients, sprints start from $600 to $2,400 USD (or equivalent in GBP, EUR, AED, AUD). There are no hidden fees, hourly surprises, or monthly maintenance lock-ins.',
   },
   {
     q: 'How does the seven-working-day process work?',
@@ -114,7 +114,7 @@ export default function Home({ onBook }: HomeProps) {
       'Custom websites built for ambitious businesses in India and around the world. Direct senior founder engineering by Deepak & Geetha in a 7-working-day sprint.',
     url: 'https://uncodedhub.com/',
     telephone: '+91 86608 19023',
-    priceRange: '₹35,000 - ₹85,000 / $1,800 - $3,800 USD',
+    priceRange: 'Starts from ₹12,000 / $600 USD',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '13th Cross Rd, Basavanagara',

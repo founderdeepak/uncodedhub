@@ -26,8 +26,8 @@ const SERVICE_PACKAGES = [
     tierNum: '01 · Fast Launch',
     name: 'Single Page Website Sprint',
     tagline: 'For one clear offer, paid ad campaigns, and fast market validation.',
-    priceInr: '₹20,000 – ₹35,000',
-    priceUsd: '$990 – $1,800',
+    priceInr: 'Starts from ₹12,000',
+    priceUsd: 'Starts from $600',
     timeline: '3 Working Days',
     idealFor: 'Landing pages, Google Ads campaigns, single service offers, and fast MVP launches.',
     deliverables: [
@@ -49,8 +49,8 @@ const SERVICE_PACKAGES = [
     tierNum: '02 · Most Popular',
     name: 'Custom Business Website',
     tagline: 'For practices, studios, and high-ticket service firms wanting local market authority.',
-    priceInr: '₹35,000 – ₹55,000',
-    priceUsd: '$1,800 – $2,800',
+    priceInr: 'Starts from ₹20,000',
+    priceUsd: 'Starts from $990',
     timeline: '7 Working Days (Contractual Guarantee)',
     idealFor: 'Clinics, architecture studios, interior firms, law practices, and premium local service firms.',
     deliverables: [
@@ -73,8 +73,8 @@ const SERVICE_PACKAGES = [
     tierNum: '03 · E-Commerce',
     name: 'Custom D2C Online Store',
     tagline: 'High-speed storefront with sub-second checkout and zero sluggish app bloat.',
-    priceInr: '₹85,000 – ₹1,25,000',
-    priceUsd: '$2,800 – $4,200',
+    priceInr: 'Starts from ₹50,000',
+    priceUsd: 'Starts from $2,400',
     timeline: '2–3 Weeks',
     idealFor: 'D2C boutique brands, artisanal bakeries, jewellery designers, and specialty retailers.',
     deliverables: [
@@ -97,8 +97,8 @@ const SERVICE_PACKAGES = [
     tierNum: '04 · Modernization',
     name: 'Website Redesign & Speed Sprint',
     tagline: 'Modernize outdated WordPress/Wix sites with 100% guaranteed SEO rank preservation.',
-    priceInr: '₹15,000 – ₹25,000',
-    priceUsd: '$750 – $1,250',
+    priceInr: 'Starts from ₹10,000',
+    priceUsd: 'Starts from $500',
     timeline: '5 Working Days',
     idealFor: 'Businesses losing leads to competitors due to slow, broken WordPress or Wix websites.',
     deliverables: [
@@ -269,7 +269,7 @@ export default function Services({ onBook }: ServicesProps) {
           {
             '@type': 'Offer',
             name: 'Single Page Website Sprint',
-            price: '20000',
+            price: '12000',
             priceCurrency: 'INR',
             description: 'One custom-designed page, copywriting, WhatsApp routing, delivered in 3 working days.',
             url: 'https://uncodedhub.com/services/single-page-website/',
@@ -277,7 +277,7 @@ export default function Services({ onBook }: ServicesProps) {
           {
             '@type': 'Offer',
             name: 'Custom Business Website (Flagship)',
-            price: '35000',
+            price: '20000',
             priceCurrency: 'INR',
             description: 'Complete digital flagship, booking flows, 3 themes, 7-day contractual guarantee.',
             url: 'https://uncodedhub.com/services/business-website/',
@@ -285,7 +285,7 @@ export default function Services({ onBook }: ServicesProps) {
           {
             '@type': 'Offer',
             name: 'Custom D2C Online Store',
-            price: '85000',
+            price: '50000',
             priceCurrency: 'INR',
             description: 'High-speed product catalogue, payment gateways, automated notifications, 2–3 weeks.',
             url: 'https://uncodedhub.com/services/ecommerce-website/',
@@ -293,7 +293,7 @@ export default function Services({ onBook }: ServicesProps) {
           {
             '@type': 'Offer',
             name: 'Website Redesign & Speed Sprint',
-            price: '15000',
+            price: '10000',
             priceCurrency: 'INR',
             description: 'Modernize WordPress/Wix to sub-second React with 100% SEO preservation in 5 working days.',
             url: 'https://uncodedhub.com/services/website-redesign/',
