@@ -186,27 +186,28 @@ Use the pre-built Boolean queries below. You can paste these directly into Googl
 
 When reaching out to these 200 prospects on LinkedIn, avoid generic sales pitches. Use these high-converting scripts aligned with our Customer Saga:
 
-### 📨 Script 1: Connection Request Note (300 character limit)
+### 📨 Script 1: Connection Request Note (Under 280 characters · Zero-Bot / No Company Name)
 ```text
-Hi [First Name], noticed your work with [Studio/Practice Name]. Loved your recent projects in [City]. We specialize in custom 7-day web architectures for [Niche] studios to help win high-ticket clients before the call starts. Would love to connect and share some reference work! - Deepak
+Hi [First Name], came across your profile while reviewing leaders in [Discipline, e.g. architecture / aesthetic practice]. Really respect the level of craft in your recent projects. Would love to connect and follow your work! - Deepak
 ```
 
 ### 📨 Script 2: First Follow-Up Message (After Connection Accepted)
 ```text
 Hi [First Name], thanks for connecting!
 
-I was reviewing your online presence and noticed you don't have a dedicated website linked for [Company Name] (or relying primarily on Instagram/portals). 
+I was reviewing your online footprint and noticed you don't have a dedicated web presence linked (or relying primarily on Instagram / third-party portals). 
 
-In [Niche], serious high-budget clients almost always search Google to verify authority before calling.
+In [Discipline/Field], serious high-budget clients almost always search Google to verify authority before calling.
 
 We run Uncoded Hub—a boutique studio where Geetha designs and I engineer custom, hand-coded websites in 7 days flat. 
 
 We actually built a live, working reference site for your industry that you can test on your phone right now:
-👉 uncodedhub.com/demos/[industry-slug].html
+👉 https://uncodedhub.com/demos/[industry-slug].html
 
-It loads in 1.1s and scores 100/100 on Google PageSpeed. Plus, we back our delivery with our "Late Means Free" guarantee: if your site isn't live on Day 7, you pay ₹0.
+It loads in 0.8s and scores 99+ on Google PageSpeed. Plus, we back our delivery with our "Late Means Free" guarantee: if your site isn't live on Day 7, you pay ₹0.
 
-Would you be open to a quick 10-minute chat this week to see what a custom architecture would look like for [Company Name]?
+Would you be open to a quick 10-minute chat this week to explore what a custom architecture could look like for your private client acquisition?
+```
 
 Best regards,
 Deepak
