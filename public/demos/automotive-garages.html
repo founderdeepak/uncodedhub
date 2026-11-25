@@ -3,26 +3,2063 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apex Bespoke Auto Care | Supercar Paint Protection Film &amp; Precision Detailing</title>
-  <meta name="description" content="Explore the high-end automotive detailing and PPF studio demo by Uncoded Hub. 3D vehicle package configurators, dust-free bay showcases, and 3-theme changer.">
+  <title>Apex Bespoke Auto Care | Supercar Paint Protection Film &amp; Precision Detailing Atelier</title>
+  <meta name="description" content="Experience Bangalore's premier automotive detailing atelier. Self-healing TPU paint protection films, 9H graphene ceramic coatings, interactive 5-stage scroll animation, and custom vehicle configurator.">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://uncodedhub.com/demos/automotive-garages.html">
   <link rel="alternate" hreflang="en" href="https://uncodedhub.com/demos/automotive-garages.html">
   <link rel="alternate" hreflang="x-default" href="https://uncodedhub.com/demos/automotive-garages.html">
 
-  
-    <button class="tc-btn active" data-theme="carbon-rosso" onclick="switchTheme('carbon-rosso', this)">
-      <span>Carbon Rosso &amp; Obsidian</span>
+  <!-- OpenGraph Metadata -->
+  <meta property="og:site_name" content="Uncoded Hub">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://uncodedhub.com/demos/automotive-garages.html">
+  <meta property="og:title" content="Apex Bespoke Auto Care | Supercar Paint Protection Film &amp; Precision Detailing Atelier">
+  <meta property="og:description" content="Explore the bespoke automotive detailing demo by Uncoded Hub. 5-stage interactive scroll animation engine, before-after paint correction slider, and vehicle package configurator.">
+  <meta property="og:image" content="https://uncodedhub.com/demos/assets/demo-31-automotive/01_Hero_Showcase.png">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@uncodedhub">
+  <meta name="twitter:creator" content="@uncodedhub">
+  <meta name="twitter:title" content="Apex Bespoke Auto Care | Supercar Paint Protection Film &amp; Detailing">
+  <meta name="twitter:description" content="5-Stage interactive scroll animation, before/after paint correction slider, and live package configurator for exotic vehicles.">
+  <meta name="twitter:image" content="https://uncodedhub.com/demos/assets/demo-31-automotive/01_Hero_Showcase.png">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AutoRepair",
+        "@id": "https://uncodedhub.com/demos/automotive-garages.html#business",
+        "name": "Apex Bespoke Auto Care",
+        "url": "https://uncodedhub.com/demos/automotive-garages.html",
+        "image": "https://uncodedhub.com/demos/assets/demo-31-automotive/01_Hero_Showcase.png",
+        "description": "High-end automotive detailing, TPU self-healing paint protection films, and 9H graphene ceramic coatings atelier.",
+        "telephone": "+918660819023",
+        "priceRange": "₹25,000 – ₹2,20,000",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Atelier Bay 4, Industrial Horizon, Koramangala Outer Ring Rd",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "Karnataka",
+          "postalCode": "560034",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "12.9279",
+          "longitude": "77.6271"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "09:00",
+            "closes": "20:00"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       THEME VARIABLES & LUXURY TOKENS
+       ========================================================================== */
+    :root {
+      /* Theme 1: Carbon Rosso & Obsidian (Default Supercar Racing) */
+      --bg-base: #080607;
+      --bg-surface: #120B0D;
+      --bg-elevated: #1A1013;
+      --bg-glass: rgba(18, 11, 13, 0.75);
+      --border-subtle: rgba(248, 113, 113, 0.15);
+      --border-strong: rgba(248, 113, 113, 0.35);
+      --accent: #F43F5E;
+      --accent-glow: rgba(244, 63, 94, 0.4);
+      --accent-secondary: #FB7185;
+      --text-main: #FFFFFF;
+      --text-muted: #A1A1AA;
+      --text-dim: #71717A;
+      --font-display: 'Cinzel', serif;
+      --font-tech: 'Space Grotesk', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    [data-theme="speedway-amber"] {
+      --bg-base: #0A0805;
+      --bg-surface: #141009;
+      --bg-elevated: #1F180E;
+      --bg-glass: rgba(20, 16, 9, 0.78);
+      --border-subtle: rgba(245, 158, 11, 0.18);
+      --border-strong: rgba(245, 158, 11, 0.4);
+      --accent: #F59E0B;
+      --accent-glow: rgba(245, 158, 11, 0.4);
+      --accent-secondary: #FDE68A;
+      --text-main: #FFFDF9;
+      --text-muted: #A8A29E;
+      --text-dim: #78716C;
+    }
+
+    [data-theme="stealth-matte"] {
+      --bg-base: #06080C;
+      --bg-surface: #0E131A;
+      --bg-elevated: #151D28;
+      --bg-glass: rgba(14, 19, 26, 0.8);
+      --border-subtle: rgba(56, 189, 248, 0.16);
+      --border-strong: rgba(56, 189, 248, 0.38);
+      --accent: #38BDF8;
+      --accent-glow: rgba(56, 189, 248, 0.4);
+      --accent-secondary: #BAE6FD;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+    }
+
+    /* Reset & Base Setup */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-base);
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-main);
+      background-color: var(--bg-base);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      word-break: keep-all;
+      overflow-wrap: normal;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ==========================================================================
+       THEME CONTROLLER BAR (STICKY TOP)
+       ========================================================================== */
+    .theme-controller-bar {
+      position: fixed;
+      top: 14px;
+      right: 18px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 8px;
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-strong);
+      border-radius: 9999px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .tc-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0 8px;
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .tc-label { display: block; }
+    }
+
+    .tc-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      font-family: var(--font-tech);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .tc-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+
+    .tc-btn[data-theme="carbon-rosso"] .tc-dot { background: #F43F5E; }
+    .tc-btn[data-theme="speedway-amber"] .tc-dot { background: #F59E0B; }
+    .tc-btn[data-theme="stealth-matte"] .tc-dot { background: #38BDF8; }
+
+    .tc-btn:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .tc-btn.active {
+      background: var(--bg-elevated);
+      color: var(--text-main);
+      border-color: var(--border-strong);
+      box-shadow: 0 0 14px var(--accent-glow);
+    }
+
+    /* ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 900;
+      padding: 16px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(8,6,7,0.92) 0%, rgba(8,6,7,0) 100%);
+      pointer-events: none;
+    }
+
+    .nav-brand {
+      pointer-events: auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-crest {
+      width: 38px;
+      height: 38px;
+      border: 1.5px solid var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 18px;
+      color: var(--accent);
+      background: var(--bg-surface);
+      box-shadow: 0 0 18px var(--accent-glow);
+    }
+
+    .brand-text-block h1 {
+      font-family: var(--font-display);
+      font-size: 17px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.1;
+    }
+
+    .brand-sub {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      pointer-events: auto;
+      display: none;
+      align-items: center;
+      gap: 28px;
+      margin-right: 280px; /* Space for theme switcher */
+    }
+
+    @media (min-width: 1024px) {
+      .nav-links { display: flex; }
+    }
+
+    .nav-link {
+      font-family: var(--font-tech);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 24px 80px;
+      overflow: hidden;
+    }
+
+    .hero-bg-media {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .hero-bg-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      filter: brightness(0.65) contrast(1.15);
+      transform: scale(1.03);
+      transition: transform 12s ease-out;
+    }
+
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: radial-gradient(circle at 50% 50%, rgba(8,6,7,0.3) 0%, rgba(8,6,7,0.92) 80%, var(--bg-base) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 1080px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-strong);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-secondary);
+      margin-bottom: 24px;
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 6vw, 68px);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: var(--text-main);
+      text-transform: uppercase;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, var(--text-main) 30%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: clamp(15px, 2vw, 19px);
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: #000000;
+      font-family: var(--font-tech);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 25px var(--accent-glow);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 35px var(--accent-glow);
+      filter: brightness(1.08);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-glass);
+      color: var(--text-main);
+      font-family: var(--font-tech);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 15px 30px;
+      border-radius: 8px;
+      border: 1px solid var(--border-strong);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-stats-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 850px;
+      margin: 60px auto 0;
+      padding-top: 36px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    @media (min-width: 768px) {
+      .hero-stats-row { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .stat-pill {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: var(--font-tech);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-num span { color: var(--accent); }
+
+    .stat-lbl {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    /* ==========================================================================
+       APPROACH A: 5-STAGE PINNED SCROLL ANIMATION ENGINE
+       ========================================================================== */
+    .scrollytelling-container {
+      position: relative;
+      height: 480vh; /* 4.8x viewport for realistic, high-fidelity scrubbing */
+      background: var(--bg-base);
+    }
+
+    .scrollytelling-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      perspective: 1000px;
+    }
+
+    /* Visual Canvas Viewport */
+    .stage-canvas-viewport {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .stage-image-layer {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s ease-out;
+      transform: scale(1.05);
+      will-change: opacity, transform;
+    }
+
+    .stage-image-layer.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .stage-image-layer img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: contrast(1.1) brightness(0.85);
+    }
+
+    .stage-overlay-gradient {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(to top, rgba(8,6,7,0.95) 0%, rgba(8,6,7,0.3) 50%, rgba(8,6,7,0.85) 100%),
+                  radial-gradient(circle at 80% 50%, rgba(0,0,0,0) 0%, rgba(8,6,7,0.7) 100%);
+      pointer-events: none;
+    }
+
+    /* HUD (Heads-Up Display) Overlay */
+    .hud-overlay {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: 78vh;
+      pointer-events: none;
+    }
+
+    .hud-card {
+      pointer-events: auto;
+      max-width: 520px;
+      padding: 32px;
+      background: var(--bg-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-strong);
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+
+    .hud-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .hud-step-pill {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      background: var(--accent);
+      color: #000000;
+      border-radius: 4px;
+    }
+
+    .hud-status-live {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-secondary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hud-status-live::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.3); }
+    }
+
+    .hud-title {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.2;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .hud-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Technical Metric Grid */
+    .hud-telemetry-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .telemetry-item {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .tel-label {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 3px;
+    }
+
+    .tel-val {
+      font-family: var(--font-tech);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* Vertical Interactive Scrubber Track */
+    .hud-scrubber-track {
+      pointer-events: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px 16px;
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-strong);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .scrubber-node {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      padding: 4px 6px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .scrubber-node:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .node-pip {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--text-dim);
+      background: transparent;
+      transition: all 0.25s ease;
+    }
+
+    .scrubber-node.active .node-pip {
+      border-color: var(--accent);
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent-glow);
+      transform: scale(1.3);
+    }
+
+    .node-text {
+      display: none;
+      flex-direction: column;
+    }
+
+    @media (min-width: 900px) {
+      .node-text { display: flex; }
+    }
+
+    .node-idx {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+    }
+
+    .node-name {
+      font-family: var(--font-tech);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .scrubber-node.active .node-name {
+      color: var(--text-main);
+    }
+
+    .scrubber-node.active .node-idx {
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       BEFORE / AFTER PAINT CORRECTION INTERACTIVE SLIDER
+       ========================================================================== */
+    .section-wrap {
+      padding: 100px 24px;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 60px;
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4.5vw, 44px);
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+
+    .section-lead {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Comparison Box */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      height: 560px;
+      max-height: 70vh;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border-strong);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .slider-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slider-layer img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .slider-layer.after-layer {
+      clip-path: polygon(0 0, var(--slider-pos, 50%) 0, var(--slider-pos, 50%) 100%, 0 100%);
+    }
+
+    .slider-curtain-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--slider-pos, 50%);
+      width: 3px;
+      background: var(--accent);
+      box-shadow: 0 0 16px var(--accent-glow);
+      cursor: ew-resize;
+      z-index: 20;
+      transform: translateX(-50%);
+    }
+
+    .slider-handle-knob {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 16px;
+    }
+
+    .slider-tag {
+      position: absolute;
+      bottom: 24px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .tag-before {
+      right: 24px;
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #FCA5A5;
+    }
+
+    .tag-after {
+      left: 24px;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #6EE7B7;
+    }
+
+    /* Range input for mobile accessibility */
+    .slider-input-range {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: ew-resize;
+      z-index: 30;
+      margin: 0;
+    }
+
+    /* ==========================================================================
+       INTERACTIVE VEHICLE & PACKAGE CONFIGURATOR
+       ========================================================================== */
+    .configurator-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    @media (min-width: 960px) {
+      .configurator-card {
+        grid-template-columns: 1.4fr 1fr;
+      }
+    }
+
+    .config-label {
+      font-family: var(--font-tech);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .vehicle-pills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .veh-btn {
+      padding: 16px;
+      background: var(--bg-elevated);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      text-align: left;
+      cursor: pointer;
+      color: var(--text-main);
+      transition: all 0.25s ease;
+    }
+
+    .veh-btn:hover {
+      border-color: var(--border-strong);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .veh-btn.active {
+      border-color: var(--accent);
+      background: var(--bg-glass);
+      box-shadow: 0 0 18px var(--accent-glow);
+    }
+
+    .veh-type {
+      font-family: var(--font-tech);
+      font-size: 14px;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .veh-ex {
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    /* Treatment Packages */
+    .packages-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .pkg-choice {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      background: var(--bg-elevated);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .pkg-choice:hover {
+      border-color: var(--border-strong);
+    }
+
+    .pkg-choice.active {
+      border-color: var(--accent);
+      background: var(--bg-glass);
+      box-shadow: 0 0 14px var(--accent-glow);
+    }
+
+    .pkg-info h4 {
+      font-family: var(--font-tech);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 2px;
+    }
+
+    .pkg-info p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .pkg-price-badge {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* Configurator Summary Box */
+    .config-summary-box {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-strong);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .summary-header {
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 20px;
+    }
+
+    .summary-header h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-main);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .summary-header p {
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    .summary-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+      font-size: 13px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+    }
+
+    .summary-row.total {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-main);
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .summary-total-price {
+      font-family: var(--font-tech);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin: 12px 0 20px;
+    }
+
+    .summary-guarantee-note {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 8px;
+      border-left: 3px solid var(--accent);
+      margin-bottom: 24px;
+    }
+
+    /* ==========================================================================
+       DUST-FREE CLEANROOM ATELIER & CRAFTSMANSHIP
+       ========================================================================== */
+    .atelier-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .atelier-grid { grid-template-columns: 1.1fr 1fr; }
+    }
+
+    .atelier-media {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border-strong);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .atelier-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .atelier-specs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .spec-item {
+      display: flex;
+      gap: 16px;
+    }
+
+    .spec-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .spec-text h4 {
+      font-family: var(--font-tech);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .spec-text p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       MASTER FOUNDER & ATELIER DIRECTOR PROFILE
+       ========================================================================== */
+    .founder-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    @media (min-width: 850px) {
+      .founder-card { grid-template-columns: 320px 1fr; }
+    }
+
+    .founder-img-box {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .founder-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .founder-content h3 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text-main);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .founder-role {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .founder-quote {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .founder-certifications {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .cert-pill {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      background: var(--bg-elevated);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       FOOTER & BOOKING CTA
+       ========================================================================== */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-elevated) 100%);
+      border: 1px solid var(--border-strong);
+      border-radius: 24px;
+      padding: 60px 32px;
+      text-align: center;
+      margin: 80px auto 40px;
+      max-width: 1180px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      height: 250px;
+      background: var(--accent-glow);
+      filter: blur(100px);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .cta-heading {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--text-main);
+      margin-bottom: 16px;
+    }
+
+    .cta-sub {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 32px;
+    }
+
+    .demo-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+    }
+
+    .demo-footer a {
+      color: var(--text-muted);
+      text-decoration: underline;
+    }
+
+    /* ==========================================================================
+       UNCODED HUB STUDIO PITCH MODAL
+       ========================================================================== */
+    .pitch-modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .pitch-modal-backdrop.open {
+      display: flex;
+    }
+
+    .pitch-modal-card {
+      background: #0E121A;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 36px;
+      position: relative;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.8);
+      color: #E2E8F0;
+    }
+
+    .pitch-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: #94A3B8;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .pitch-close-btn:hover { background: rgba(255,255,255,0.18); color: #FFF; }
+
+    .uh-popup-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 24px;
+    }
+
+    .uh-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .uh-brand-logo-img {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+    }
+
+    .uh-brand-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      color: #FFF;
+    }
+
+    .uh-brand-sub {
+      font-size: 11px;
+      color: #94A3B8;
+    }
+
+    .uh-badge-studio {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.15);
+      color: #38BDF8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .founders-row {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .founders-photos {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .founder-pic-box {
+      text-align: center;
+    }
+
+    .founder-pic {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.2);
+      object-fit: cover;
+      margin-bottom: 4px;
+    }
+
+    .founder-name {
+      font-size: 10px;
+      font-weight: 700;
+      color: #FFF;
+      display: block;
+    }
+
+    .founder-role {
+      font-size: 9px;
+      color: #94A3B8;
+    }
+
+    .founders-intro h2 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: #FFF;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .founders-intro p {
+      font-size: 13px;
+      color: #94A3B8;
+    }
+
+    .insight-card {
+      background: rgba(255,255,255,0.03);
+      border-left: 3px solid #38BDF8;
+      padding: 16px 20px;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 16px;
+    }
+
+    .insight-card h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #FFF;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .insight-card p {
+      font-size: 12.5px;
+      color: #CBD5E1;
+      line-height: 1.6;
+    }
+
+    .commitments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 650px) {
+      .commitments-grid { grid-template-columns: 1fr; }
+    }
+
+    .comm-item {
+      background: rgba(255,255,255,0.02);
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 11.5px;
+      color: #94A3B8;
+      line-height: 1.5;
+    }
+
+    .comm-item strong {
+      color: #FFF;
+      display: block;
+      margin-bottom: 3px;
+      font-size: 12px;
+    }
+
+    .pitch-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .pitch-cta-wa {
+      background: #25D366;
+      color: #000;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: filter 0.2s;
+    }
+
+    .pitch-cta-wa:hover { filter: brightness(1.1); }
+
+    .pitch-cta-dismiss {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #FFF;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* Floating Studio Briefing Button */
+    .lead-magnet-floating-widget {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 800;
+    }
+
+    .lm-floating-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 9999px;
+      color: var(--text-main);
+      font-family: var(--font-tech);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      cursor: pointer;
+      position: relative;
+      transition: all 0.25s ease;
+    }
+
+    .lm-floating-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px var(--accent-glow);
+      border-color: var(--accent);
+    }
+
+    .lm-pulse-ping {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 1.6s infinite;
+    }
+  </style>
+</head>
+<body data-theme="carbon-rosso">
+
+  <!-- ==========================================================================
+       THEME CONTROLLER BAR
+       ========================================================================== -->
+  <div class="theme-controller-bar">
+    <span class="tc-label">Atelier Palette:</span>
+    <button class="tc-btn active" data-theme="carbon-rosso" onclick="switchTheme('carbon-rosso', this)" title="Carbon Rosso & Obsidian Theme">
+      <span class="tc-dot"></span>
+      <span>Carbon Rosso</span>
     </button>
-    <button class="tc-btn" data-theme="speedway-amber" onclick="switchTheme('speedway-amber', this)">
-      <span>Speedway Amber &amp; Silver</span>
+    <button class="tc-btn" data-theme="speedway-amber" onclick="switchTheme('speedway-amber', this)" title="Speedway Amber Theme">
+      <span class="tc-dot"></span>
+      <span>Speedway Amber</span>
     </button>
-    <button class="tc-btn" data-theme="stealth-matte" onclick="switchTheme('stealth-matte', this)">
-      <span>Stealth Matte Titanium</span>
+    <button class="tc-btn" data-theme="stealth-matte" onclick="switchTheme('stealth-matte', this)" title="Stealth Matte Theme">
+      <span class="tc-dot"></span>
+      <span>Stealth Titanium</span>
     </button>
   </div>
 
-  <!-- Uncoded Hub Studio Pitch & Cover Letter Modal -->
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <nav class="site-nav">
+    <div class="nav-brand">
+      <div class="brand-crest">A</div>
+      <div class="brand-text-block">
+        <h1>Apex Bespoke</h1>
+        <div class="brand-sub">Auto Care &bull; Detailing Atelier</div>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="#protocol" class="nav-link">5-Stage Protocol</a>
+      <a href="#comparison" class="nav-link">Paint Correction</a>
+      <a href="#configurator" class="nav-link">Build Configurator</a>
+      <a href="#atelier" class="nav-link">Cleanroom Tour</a>
+      <a href="#founder" class="nav-link">Founder Standards</a>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== */ -->
+  <header class="hero-section">
+    <div class="hero-bg-media">
+      <img src="assets/demo-31-automotive/01_Hero_Showcase.png" alt="Apex Hypercar Detailing Atelier" id="heroImg">
+    </div>
+    <div class="hero-vignette"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>ISO-Class 7 Cleanroom Bay</span> &bull; <span>10-Year Self-Healing Film Warranty</span>
+      </div>
+      <h2 class="hero-title">
+        The Sovereign Armor for <span>Supercars &amp; Exotic Marques</span>
+      </h2>
+      <p class="hero-desc">
+        Bengaluru’s bespoke automotive atelier. We combine laser paint-depth gauge inspection, multi-stage rotary jeweling, and self-healing TPU armor for owners who demand flawless optical clarity.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#configurator" class="btn-primary">
+          <span>Configure Your Package</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#protocol" class="btn-secondary">
+          <span>Explore 5-Stage Protocol ↓</span>
+        </a>
+      </div>
+
+      <div class="hero-stats-row">
+        <div class="stat-pill">
+          <div class="stat-num"><span>99.4</span>%</div>
+          <div class="stat-lbl">Optical Defect Elimination</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-num"><span>200</span>µm</div>
+          <div class="stat-lbl">TPU Self-Healing Thickness</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-num"><span>115</span>°</div>
+          <div class="stat-lbl">Hydrophobic Contact Angle</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-num"><span>10</span> Yrs</div>
+          <div class="stat-lbl">Guaranteed Warranty Bond</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       APPROACH A: 5-STAGE PINNED SCROLL ANIMATION ENGINE
+       ========================================================================== -->
+  <section class="scrollytelling-container" id="protocol">
+    <div class="scrollytelling-sticky">
+      <!-- Background Dynamic Image Stages -->
+      <div class="stage-canvas-viewport">
+        <!-- Stage 1 -->
+        <div class="stage-image-layer active" data-stage="1">
+          <img src="assets/demo-31-automotive/02_Work_01.png" alt="Stage 1 - Macro Inspection of Swirl Marks and Orange Peel">
+        </div>
+        <!-- Stage 2 -->
+        <div class="stage-image-layer" data-stage="2">
+          <img src="assets/demo-31-automotive/03_Work_02.png" alt="Stage 2 - Precision Automotive Polishing in a Dark Garage">
+        </div>
+        <!-- Stage 3 -->
+        <div class="stage-image-layer" data-stage="3">
+          <img src="assets/demo-31-automotive/04_Work_03.png" alt="Stage 3 - Precision PPF Application in the Detailing Garage">
+        </div>
+        <!-- Stage 4 -->
+        <div class="stage-image-layer" data-stage="4">
+          <img src="assets/demo-31-automotive/05_Work_04.png" alt="Stage 4 - Graphene Ceramic Coating Application">
+        </div>
+        <!-- Stage 5 -->
+        <div class="stage-image-layer" data-stage="5">
+          <img src="assets/demo-31-automotive/06_Work_05.png" alt="Stage 5 - Hydrophobic Ceramic Shield Water Beading">
+        </div>
+      </div>
+
+      <div class="stage-overlay-gradient"></div>
+
+      <!-- HUD (Heads-Up Display) Overlay -->
+      <div class="hud-overlay">
+        <!-- Left Dynamic Info Card -->
+        <div class="hud-card" id="hudCard">
+          <div class="hud-badge-row">
+            <span class="hud-step-pill" id="hudStepPill">STAGE 01 / 05</span>
+            <span class="hud-status-live" id="hudStatus">MICROSCOPIC DEFECT MAPPING</span>
+          </div>
+          <h3 class="hud-title" id="hudTitle">Macro Paint &amp; Swirl Inspection</h3>
+          <p class="hud-desc" id="hudDesc">
+            Before a machine touches your paintwork, every panel undergoes ultrasonic paint-depth profiling across 140 grid points to detect factory clear coat thickness and hidden micro-swirls.
+          </p>
+
+          <div class="hud-telemetry-grid">
+            <div class="telemetry-item">
+              <div class="tel-label" id="telLabel1">Clear Coat Profile</div>
+              <div class="tel-val" id="telVal1">118µm Total Depth</div>
+            </div>
+            <div class="telemetry-item">
+              <div class="tel-label" id="telLabel2">Surface Temperature</div>
+              <div class="tel-val" id="telVal2">21.4°C Controlled</div>
+            </div>
+            <div class="telemetry-item">
+              <div class="tel-label" id="telLabel3">Defect Threshold</div>
+              <div class="tel-val" id="telVal3">24µm Swirl Depth</div>
+            </div>
+            <div class="telemetry-item">
+              <div class="tel-label" id="telLabel4">Target Correction</div>
+              <div class="tel-val" id="telVal4">98% Clarity Goal</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Vertical Interactive Scrubber Track -->
+        <div class="hud-scrubber-track">
+          <button class="scrubber-node active" onclick="jumpToStage(1)" data-node="1">
+            <span class="node-pip"></span>
+            <div class="node-text">
+              <span class="node-idx">STAGE 01</span>
+              <span class="node-name">Surface Inspection</span>
+            </div>
+          </button>
+          <button class="scrubber-node" onclick="jumpToStage(2)" data-node="2">
+            <span class="node-pip"></span>
+            <div class="node-text">
+              <span class="node-idx">STAGE 02</span>
+              <span class="node-name">Rotary Jeweling</span>
+            </div>
+          </button>
+          <button class="scrubber-node" onclick="jumpToStage(3)" data-node="3">
+            <span class="node-pip"></span>
+            <div class="node-text">
+              <span class="node-idx">STAGE 03</span>
+              <span class="node-name">Self-Healing TPU</span>
+            </div>
+          </button>
+          <button class="scrubber-node" onclick="jumpToStage(4)" data-node="4">
+            <span class="node-pip"></span>
+            <div class="node-text">
+              <span class="node-idx">STAGE 04</span>
+              <span class="node-name">9H Graphene Infusion</span>
+            </div>
+          </button>
+          <button class="scrubber-node" onclick="jumpToStage(5)" data-node="5">
+            <span class="node-pip"></span>
+            <div class="node-text">
+              <span class="node-idx">STAGE 05</span>
+              <span class="node-name">Hydrophobic Shield</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       BEFORE / AFTER INTERACTIVE PAINT CORRECTION SLIDER
+       ========================================================================== -->
+  <section class="section-wrap" id="comparison">
+    <div class="section-header">
+      <span class="section-eyebrow">Real Specimen Verification</span>
+      <h2 class="section-heading">Swirl Elimination &bull; Mirror Restoration</h2>
+      <p class="section-lead">
+        Drag the split-curtain handle across the damaged factory finish to reveal the flawless, true reflection after our 3-stage compound, polish, and jeweling treatment.
+      </p>
+    </div>
+
+    <div class="slider-container" id="sliderBox">
+      <!-- Before Image (Base Layer - Swirls) -->
+      <div class="slider-layer before-layer">
+        <img src="assets/demo-31-automotive/07_Before_Raw.png" alt="Swirl-Marked Sports Car Before Restoration">
+        <span class="slider-tag tag-before">Untreated: Severe Swirls &amp; Holograms</span>
+      </div>
+
+      <!-- After Image (Clipped Layer - Mirror) -->
+      <div class="slider-layer after-layer" id="afterLayer">
+        <img src="assets/demo-31-automotive/08_After_Finished.png" alt="Mirror Perfection Aftercare Showcase">
+        <span class="slider-tag tag-after">After Apex Jeweling: 99.4% Optical Purity</span>
+      </div>
+
+      <!-- Center Draggable Curtain Line -->
+      <div class="slider-curtain-handle" id="sliderHandle">
+        <div class="slider-handle-knob">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>
+        </div>
+      </div>
+
+      <!-- Accessible range input -->
+      <input type="range" min="0" max="100" value="50" class="slider-input-range" id="sliderRange" oninput="updateSlider(this.value)" aria-label="Before after comparison slider">
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE VEHICLE & PACKAGE CONFIGURATOR
+       ========================================================================== -->
+  <section class="section-wrap" id="configurator">
+    <div class="section-header">
+      <span class="section-eyebrow">Interactive Atelier Estimator</span>
+      <h2 class="section-heading">Configure Your Bespoke Protection Plan</h2>
+      <p class="section-lead">
+        Select your vehicle class and protection package. Receive an instant turnaround estimate, warranty duration, and pre-formatted WhatsApp consultation request.
+      </p>
+    </div>
+
+    <div class="configurator-card">
+      <!-- Left Options Form -->
+      <div class="config-controls">
+        <div class="config-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+          Step 1: Choose Vehicle Architecture
+        </div>
+
+        <div class="vehicle-pills-grid">
+          <div class="veh-btn active" onclick="selectVehicle('supercar', this)" data-veh="supercar">
+            <span class="veh-type">Exotic &amp; Supercar</span>
+            <span class="veh-ex">Ferrari, Lambo, 911, McLaren</span>
+          </div>
+          <div class="veh-btn" onclick="selectVehicle('sedan', this)" data-veh="sedan">
+            <span class="veh-type">Ultra-Luxury Sedan</span>
+            <span class="veh-ex">Maybach, S-Class, Bentley, 7-Series</span>
+          </div>
+          <div class="veh-btn" onclick="selectVehicle('suv', this)" data-veh="suv">
+            <span class="veh-type">Performance SUV</span>
+            <span class="veh-ex">Urus, G63 AMG, Range Rover SV</span>
+          </div>
+          <div class="veh-btn" onclick="selectVehicle('vintage', this)" data-veh="vintage">
+            <span class="veh-type">Vintage &amp; Collector Spec</span>
+            <span class="veh-ex">Heritage Restorations, Classic 911</span>
+          </div>
+        </div>
+
+        <div class="config-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Step 2: Choose Armor &amp; Detailing Tier
+        </div>
+
+        <div class="packages-list">
+          <div class="pkg-choice active" onclick="selectPackage('full_ppf', this)" data-pkg="full_ppf">
+            <div class="pkg-info">
+              <h4>Apex Full-Body Self-Healing TPU PPF</h4>
+              <p>200µm optical TPU film across 100% of painted bodywork. 10-Yr Warranty.</p>
+            </div>
+            <div class="pkg-price-badge" id="pkgPriceFullPpf">₹1,85,000</div>
+          </div>
+
+          <div class="pkg-choice" onclick="selectPackage('track_ppf', this)" data-pkg="track_ppf">
+            <div class="pkg-info">
+              <h4>High-Impact Track Pack PPF + Ceramic</h4>
+              <p>Full bonnet, bumper, fenders, mirrors, and rockers + 9H ceramic on rear.</p>
+            </div>
+            <div class="pkg-price-badge" id="pkgPriceTrackPpf">₹95,000</div>
+          </div>
+
+          <div class="pkg-choice" onclick="selectPackage('ceramic_shield', this)" data-pkg="ceramic_shield">
+            <div class="pkg-info">
+              <h4>Triple-Layer 9H Graphene Ceramic Fusion</h4>
+              <p>3-Stage machine jeweling + dual 9H base coats + top hydrophobic seal.</p>
+            </div>
+            <div class="pkg-price-badge" id="pkgPriceCeramic">₹45,000</div>
+          </div>
+
+          <div class="pkg-choice" onclick="selectPackage('paint_correct', this)" data-pkg="paint_correct">
+            <div class="pkg-info">
+              <h4>Bespoke Multi-Stage Paint Restoration</h4>
+              <p>Heavy compound cutting, micro-polishing, and jeweling to remove 98% defects.</p>
+            </div>
+            <div class="pkg-price-badge" id="pkgPriceCorrection">₹28,000</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Summary & Action Box -->
+      <div class="config-summary-box">
+        <div>
+          <div class="summary-header">
+            <h3 id="summaryVehTitle">Supercar / Exotic Coupe</h3>
+            <p id="summaryPkgTitle">Apex Full-Body Self-Healing TPU PPF</p>
+          </div>
+
+          <div class="summary-items-list">
+            <div class="summary-row">
+              <span>Atelier Cleanroom Sprint:</span>
+              <strong id="summaryDuration" class="text-white">5 Working Days</strong>
+            </div>
+            <div class="summary-row">
+              <span>Warranty Protection Bond:</span>
+              <strong id="summaryWarranty" class="text-emerald-400">10-Year Anti-Yellowing</strong>
+            </div>
+            <div class="summary-row">
+              <span>Included Hydrophobic Seal:</span>
+              <strong class="text-white">Graphene Top Coat Free</strong>
+            </div>
+            <div class="summary-row">
+              <span>Door Edge &amp; Sill Guards:</span>
+              <strong class="text-white">Full Wrap Included</strong>
+            </div>
+          </div>
+
+          <div class="summary-total-price" id="summaryTotalAmount">
+            ₹1,85,000 <span class="text-xs font-mono text-slate-400 font-normal">/ all inclusive</span>
+          </div>
+
+          <div class="summary-guarantee-note">
+            <strong>Apex Cleanroom Guarantee:</strong> Your vehicle stays in a dust-filtered, climate-controlled, HEPA-ventilated bay with 24/7 CCTV livestream access for the owner.
+          </div>
+        </div>
+
+        <div>
+          <a href="#" id="waBookingBtn" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: 100%; justify-content: center;">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Book Cleanroom Slot on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       DUST-FREE CLEANROOM ATELIER & CRAFTSMANSHIP
+       ========================================================================== -->
+  <section class="section-wrap" id="atelier">
+    <div class="atelier-grid">
+      <div class="atelier-media">
+        <img src="assets/demo-31-automotive/10_Process_Detail.png" alt="Precision PPF Workshop Still Life">
+      </div>
+
+      <div class="atelier-specs-list">
+        <div>
+          <span class="section-eyebrow">Operating Facility Standards</span>
+          <h2 class="section-heading" style="text-align: left; margin-bottom: 20px;">
+            The Bengaluru Cleanroom Sanctuary
+          </h2>
+          <p class="section-lead" style="margin-bottom: 28px;">
+            True paint protection cannot occur in an open garage exposed to roadside dust and ambient soot. Apex was engineered from the slab up as a medical-grade installation theater.
+          </p>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/></svg>
+          </div>
+          <div class="spec-text">
+            <h4>Positive-Pressure HEPA Air Filtration</h4>
+            <p>Our dual industrial air handlers continuously push filtered air downward, preventing dust particulates from settling beneath TPU film layers during installation.</p>
+          </div>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <div class="spec-text">
+            <h4>6,500K Color-Corrected Surgical LED Array</h4>
+            <p>Overhead hexagonal and side wall floodlights recreate high-noon desert sunlight. Even 0.5-micron scratches cannot hide from our inspection crew.</p>
+          </div>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="spec-text">
+            <h4>Custom CAD Plotter Patterns (Zero Blade-on-Paint)</h4>
+            <p>We use precision computer-cut patterns matched to your chassis VIN. No razors ever touch your factory clear coat during edge tucking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MASTER FOUNDER & ATELIER DIRECTOR PROFILE
+       ========================================================================== -->
+  <section class="section-wrap" id="founder">
+    <div class="founder-card">
+      <div class="founder-img-box">
+        <img src="assets/demo-31-automotive/09_Founder_Or_Expert.png" alt="Raghavendra Rao - Founder & Master Detailer">
+      </div>
+
+      <div class="founder-content">
+        <span class="section-eyebrow">The Master Craftsman</span>
+        <h3>Raghavendra Rao</h3>
+        <span class="founder-role">Founder &bull; Certified Master Detailer &bull; IDA Member</span>
+
+        <p class="founder-quote">
+          "When you buy a ₹3 Crore supercar, the factory clear coat is only as thick as a Post-It note. If an inexperienced detailer aggressively cuts your clear coat with cheap compound, that factory paint is gone forever. At Apex, we don’t rush jobs. We only take two vehicles per week in our atelier, guaranteeing that every millimeter is inspected and sealed under surgical conditions."
+        </p>
+
+        <div class="founder-certifications">
+          <span class="cert-pill">IDA Certified Detailer #4829</span>
+          <span class="cert-pill">XPEL Factory Trained Installer</span>
+          <span class="cert-pill">Gtechniq Accredited Center</span>
+          <span class="cert-pill">12+ Years Supercar Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CTA BANNER
+       ========================================================================== -->
+  <section class="section-wrap" style="padding-top: 0;">
+    <div class="cta-banner">
+      <span class="section-eyebrow" style="color: var(--accent);">Limited Atelier Capacity</span>
+      <h2 class="cta-heading">Protect Your Investment Before Delivery</h2>
+      <p class="cta-sub">
+        We coordinate directly with Ferrari, Porsche, and Lamborghini Bengaluru dealerships for flatbed transit directly from showroom to our dust-free bay.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha%2C%20I%20am%20viewing%20the%20Apex%20Bespoke%20Auto%20Care%20demo%20and%20would%20like%20to%20discuss%20building%20our%20website." class="btn-primary" target="_blank" rel="noopener noreferrer">
+          <span>Inquire Atelier Availability on WhatsApp</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       DEMO FOOTER
+       ========================================================================== -->
+  <footer class="demo-footer">
+    <p>
+      &copy; 2026 Apex Bespoke Auto Care &bull; Hand-crafted prototype engineered by <a href="https://uncodedhub.com/" target="_blank">Uncoded Hub</a>. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- ==========================================================================
+       UNCODED HUB STUDIO PITCH MODAL
+       ========================================================================== -->
   <div class="pitch-modal-backdrop" id="uncodedPitchModal" onclick="handleBackdropClick(event)">
     <div class="pitch-modal-card">
       <button class="pitch-close-btn" onclick="closePitchModal()" title="Close dialog">✕</button>
@@ -32,7 +2069,7 @@
           <img src="/logo-medium.webp" alt="Uncoded Hub" class="uh-brand-logo-img">
           <div>
             <div class="uh-brand-name">Uncoded Hub</div>
-            <div class="uh-brand-sub">Two-Person Studio · Bengaluru</div>
+            <div class="uh-brand-sub">Two-Person Studio &bull; Bengaluru</div>
           </div>
         </div>
         <span class="uh-badge-studio">7-Day Sprint Prototype</span>
@@ -53,47 +2090,48 @@
         </div>
         <div class="founders-intro">
           <h2>Why We Hand-Built This Live Prototype For Your Business Before Asking For A Rupee.</h2>
-          <p>A personal note from Deepak &amp; Geetha to the founder or practice director reviewing this website.</p>
+          <p>A personal note from Deepak &amp; Geetha to the automotive atelier owner reviewing this website.</p>
         </div>
       </div>
 
       <div class="pitch-body">
-        <p>Dear Founder / Business Owner,</p>
-        <p>Most digital agencies pitch generic 40-page PDF decks, throw around corporate jargon, and demand lakhs before proving they understand a single thing about your real clients. <strong>We do the opposite: we do the work first.</strong></p>
+        <p style="margin-bottom: 14px;">Dear Auto Care Atelier Director,</p>
+        <p style="margin-bottom: 14px;">
+          Most digital agencies pitch generic 40-page PDF decks, throw around corporate jargon, and demand lakhs before proving they understand a single thing about hypercar owners. <strong>We do the opposite: we hand-craft the working prototype first.</strong>
+        </p>
 
         <div class="insight-card">
           <h4>The 50-Millisecond Silent Decision</h4>
-          <p>When a prospective client or patient searches for your service in your city, they don't judge your years of dedication or credentials on paper. <strong>They judge you in the first 50 milliseconds based on visual certainty.</strong> In high-ticket services, clients do not buy a service—they buy <em>relief from the fear of making an expensive mistake</em>. If your site takes 4+ seconds to load, breaks on mobile, or looks like a template from 2018, over 70% bounce silently and hire the competitor who looks established.</p>
+          <p>
+            When an owner of a ₹2.5 Crore Porsche or BMW M4 looks for detailing or PPF, they do not read text walls. <strong>They judge you in the first 50 milliseconds based on visual certainty.</strong> If your site is slow, looks like a generic car wash template, or fails to showcase surgical-grade cleanroom protocols, they immediately click away and contact whoever looks like an elite specialist.
+          </p>
         </div>
 
         <div class="insight-card">
           <h4>What This Live Prototype Solves For Your Business</h4>
-          <p>We didn't build an aesthetic brochure. We built a high-conversion client acquisition engine: sub-second load time on Indian mobile 4G networks, upfront service clarity, interactive self-qualification tools, and direct 1-tap WhatsApp consultation. It answers your prospect's unvoiced fears before they ever hesitate.</p>
+          <p>
+            We engineered an Apple-standard pinned scrollytelling animation showing the 5 craft stages, an interactive before-and-after swirl removal curtain, and an instant vehicle package configurator that sends pre-qualified customer inquiries straight to your phone.
+          </p>
         </div>
 
-        <div class="belief-card">
-          <div class="belief-quote">
-            "Uncoded Hub is a brother and sister who got tired of watching competent, high-quality businesses lose work to worse competitors simply because the competitor had a faster, clearer website."
+        <div class="commitments-grid">
+          <div class="comm-item">
+            <strong>1. Senior Delivery Only</strong>
+            Zero juniors or outsourced temps. Deepak and Geetha design and engineer every single line of code.
           </div>
-          <div class="commitments-grid">
-            <div class="comm-item">
-              <strong>1. Senior Delivery Only</strong>
-              No hidden junior team, no account managers. Deepak and Geetha engineer and design every single line.
-            </div>
-            <div class="comm-item">
-              <strong>2. 7-Day Turnaround</strong>
-              Live and launched in 7 working days flat—not 3 months of agency delays.
-            </div>
-            <div class="comm-item">
-              <strong>3. 100% Asset Ownership</strong>
-              Domain, hosting, code, and content in your name from day one with zero monthly platform lock-ins.
-            </div>
+          <div class="comm-item">
+            <strong>2. 7-Day Turnaround</strong>
+            Live and launched in 7 working days flat—on time or 100% free under our contractual guarantee.
+          </div>
+          <div class="comm-item">
+            <strong>3. Complete Asset Ownership</strong>
+            Code, domain, and graphics 100% in your name from day one with zero monthly platform subscriptions.
           </div>
         </div>
       </div>
 
       <div class="pitch-actions">
-        <button class="pitch-cta-dismiss" onclick="closePitchModal()">Explore Live Demo Specimen ↓</button>
+        <button class="pitch-cta-dismiss" onclick="closePitchModal()">Explore Live Specimen ↓</button>
         <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha%2C%20I%20am%20viewing%20the%20Apex%20Bespoke%20Auto%20Care%20demo%20and%20would%20like%20to%20discuss%20building%20our%20website." class="pitch-cta-wa" target="_blank" rel="noopener noreferrer">
           Claim This Website on WhatsApp (+91 86608 19023) →
         </a>
@@ -101,15 +2139,335 @@
     </div>
   </div>
 
-  <!-- Floating Lead Magnet Button -->
+  <!-- Floating Studio Briefing Button -->
   <div class="lead-magnet-floating-widget" id="leadMagnetWidget">
     <button class="lm-floating-btn" onclick="openPitchModal()" title="Free 3-Page Executive Guide">
-      <span class="lm-btn-icon-wrap"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
       <span>Free Studio Briefing</span>
       <span class="lm-pulse-ping"></span>
     </button>
   </div>
 
-  
+  <!-- ==========================================================================
+       CLIENT SCRIPTS: SCROLLYTELLING, SLIDER, CONFIGURATOR, THEMES
+       ========================================================================== -->
+  <script>
+    /* ==========================================================================
+       1. THEME SWITCHING ENGINE
+       ========================================================================== */
+    function switchTheme(themeName, btn) {
+      document.body.setAttribute('data-theme', themeName);
+      document.querySelectorAll('.tc-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      localStorage.setItem('apex_atelier_theme', themeName);
+    }
+
+    // Auto-restore saved theme
+    (function initTheme() {
+      const saved = localStorage.getItem('apex_atelier_theme');
+      if (saved) {
+        document.body.setAttribute('data-theme', saved);
+        const matchBtn = document.querySelector(`.tc-btn[data-theme="${saved}"]`);
+        if (matchBtn) {
+          document.querySelectorAll('.tc-btn').forEach(b => b.classList.remove('active'));
+          matchBtn.classList.add('active');
+        }
+      }
+    })();
+
+    /* ==========================================================================
+       2. APPROACH A: 5-STAGE PINNED SCROLLYTELLING CONTROLLER
+       ========================================================================== */
+    const STAGE_DATA = {
+      1: {
+        pill: 'STAGE 01 / 05',
+        status: 'MICROSCOPIC DEFECT MAPPING',
+        title: 'Macro Paint & Swirl Inspection',
+        desc: 'Before a machine touches your paintwork, every panel undergoes ultrasonic paint-depth profiling across 140 grid points to detect factory clear coat thickness and hidden micro-swirls.',
+        l1: 'Clear Coat Profile', v1: '118µm Total Depth',
+        l2: 'Surface Temperature', v2: '21.4°C Controlled',
+        l3: 'Defect Threshold', v3: '24µm Swirl Depth',
+        l4: 'Target Correction', v4: '98% Clarity Goal'
+      },
+      2: {
+        pill: 'STAGE 02 / 05',
+        status: 'SURFACE REPAIR & LEVELING',
+        title: 'Multi-Stage Rotary Jeweling',
+        desc: 'Using diminishing abrasive micro-compounds and Italian dual-action machines, we cut away oxidation and micro-marring, restoring optical flat reflection without thinning the clear coat.',
+        l1: 'Gloss Level', v1: '+48 GU (Gloss Units)',
+        l2: 'Pad Spec', v2: 'Microfiber & Wool Blend',
+        l3: 'Rotary Speed', v3: '1,400 RPM Jeweling',
+        l4: 'Hologram Check', v4: 'Zero Residue Verified'
+      },
+      3: {
+        pill: 'STAGE 03 / 05',
+        status: 'PHYSICAL IMPACT ARMOR',
+        title: 'Optically Clear TPU PPF Wrap',
+        desc: 'Thermoplastic polyurethane (TPU) film with instant heat-activated self-healing properties is computer-plotted to your chassis VIN and hand-tucked deep into all panel seams.',
+        l1: 'Film Thickness', v1: '200 Micron Optical TPU',
+        l2: 'Self-Healing', v2: 'Instant at 40°C Heat',
+        l3: 'Edge Wrapping', v3: 'Full Hemmed Edges',
+        l4: 'Impact Shield', v4: '140 km/h Gravel Proof'
+      },
+      4: {
+        pill: 'STAGE 04 / 05',
+        status: 'MOLECULAR CHEMICAL INFUSION',
+        title: '9H Graphene Ceramic Fusion',
+        desc: 'Atom-thick graphene ceramic matrix bonds chemically to the TPU and exposed surfaces, creating an impenetrable glass shield against bird-droppings, acid rain, and harsh UV rays.',
+        l1: 'Hardness Rating', v1: '9H Certified Mohs Scale',
+        l2: 'UV Resistance', v2: '100% UVA/UVB Block',
+        l3: 'Chemical pH Range', v3: 'pH 2 to pH 13 Tolerant',
+        l4: 'Bond Longevity', v4: '7+ Years Molecular Hold'
+      },
+      5: {
+        pill: 'STAGE 05 / 05',
+        status: 'SUPERHYDROPHOBIC LOTUS SEAL',
+        title: 'Hydrophobic Lotus Finish',
+        desc: 'Water, mud, and road grime slide effortlessly off the surface at a 115° contact angle. The self-cleaning barrier keeps your vehicle pristine between washes.',
+        l1: 'Contact Angle', v1: '115° Superhydrophobic',
+        l2: 'Sheeting Velocity', v2: 'Instant Droplet Slide',
+        l3: 'Wash Maintenance', v3: '80% Less Friction',
+        l4: 'Final Warranty', v4: '10-Year Certificate Issued'
+      }
+    };
+
+    let currentActiveStage = 1;
+
+    function handleScrollScrubbing() {
+      const container = document.getElementById('protocol');
+      if (!container) return;
+
+      const rect = container.getBoundingClientRect();
+      const totalScrollable = container.offsetHeight - window.innerHeight;
+
+      if (totalScrollable <= 0) return;
+
+      // Calculate progress from 0.0 to 1.0 within the scrollytelling container
+      const currentScroll = -rect.top;
+      let progress = currentScroll / totalScrollable;
+      progress = Math.max(0, Math.min(1, progress));
+
+      // Calculate target stage: 1 to 5
+      let targetStage = 1;
+      if (progress < 0.20) targetStage = 1;
+      else if (progress < 0.40) targetStage = 2;
+      else if (progress < 0.60) targetStage = 3;
+      else if (progress < 0.80) targetStage = 4;
+      else targetStage = 5;
+
+      if (targetStage !== currentActiveStage) {
+        setStage(targetStage);
+      }
+    }
+
+    function setStage(stageNum) {
+      currentActiveStage = stageNum;
+
+      // 1. Update image layers
+      document.querySelectorAll('.stage-image-layer').forEach(layer => {
+        const layerNum = parseInt(layer.getAttribute('data-stage'), 10);
+        if (layerNum === stageNum) {
+          layer.classList.add('active');
+        } else {
+          layer.classList.remove('active');
+        }
+      });
+
+      // 2. Update HUD content
+      const data = STAGE_DATA[stageNum];
+      if (data) {
+        document.getElementById('hudStepPill').textContent = data.pill;
+        document.getElementById('hudStatus').textContent = data.status;
+        document.getElementById('hudTitle').textContent = data.title;
+        document.getElementById('hudDesc').textContent = data.desc;
+
+        document.getElementById('telLabel1').textContent = data.l1;
+        document.getElementById('telVal1').textContent = data.v1;
+        document.getElementById('telLabel2').textContent = data.l2;
+        document.getElementById('telVal2').textContent = data.v2;
+        document.getElementById('telLabel3').textContent = data.l3;
+        document.getElementById('telVal3').textContent = data.v3;
+        document.getElementById('telLabel4').textContent = data.l4;
+        document.getElementById('telVal4').textContent = data.v4;
+      }
+
+      // 3. Update right scrubber buttons
+      document.querySelectorAll('.scrubber-node').forEach(node => {
+        const nodeNum = parseInt(node.getAttribute('data-node'), 10);
+        if (nodeNum === stageNum) {
+          node.classList.add('active');
+        } else {
+          node.classList.remove('active');
+        }
+      });
+    }
+
+    function jumpToStage(stageNum) {
+      const container = document.getElementById('protocol');
+      if (!container) return;
+
+      const totalScrollable = container.offsetHeight - window.innerHeight;
+      const targetRatio = (stageNum - 1) / 4.2;
+      const containerTop = container.offsetTop;
+      const targetScrollY = containerTop + (totalScrollable * targetRatio);
+
+      window.scrollTo({
+        top: targetScrollY,
+        behavior: 'smooth'
+      });
+    }
+
+    window.addEventListener('scroll', handleScrollScrubbing, { passive: true });
+
+    /* ==========================================================================
+       3. BEFORE / AFTER INTERACTIVE SLIDER
+       ========================================================================== */
+    function updateSlider(val) {
+      const sliderBox = document.getElementById('sliderBox');
+      if (sliderBox) {
+        sliderBox.style.setProperty('--slider-pos', val + '%');
+      }
+    }
+
+    // Mouse and Touch dragging support
+    (function initSliderDrag() {
+      const sliderBox = document.getElementById('sliderBox');
+      if (!sliderBox) return;
+
+      let isDragging = false;
+
+      function onMove(e) {
+        if (!isDragging) return;
+        const rect = sliderBox.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        let percent = ((clientX - rect.left) / rect.width) * 100;
+        percent = Math.max(2, Math.min(98, percent));
+        updateSlider(percent);
+        const range = document.getElementById('sliderRange');
+        if (range) range.value = percent;
+      }
+
+      sliderBox.addEventListener('mousedown', (e) => { isDragging = true; onMove(e); });
+      window.addEventListener('mouseup', () => { isDragging = false; });
+      window.addEventListener('mousemove', onMove);
+
+      sliderBox.addEventListener('touchstart', (e) => { isDragging = true; onMove(e); }, { passive: true });
+      window.addEventListener('touchend', () => { isDragging = false; });
+      window.addEventListener('touchmove', onMove, { passive: true });
+    })();
+
+    /* ==========================================================================
+       4. INTERACTIVE VEHICLE & PACKAGE CONFIGURATOR
+       ========================================================================== */
+    const PRICING_MATRIX = {
+      supercar: {
+        title: 'Exotic & Supercar Coupe',
+        full_ppf: { price: '₹1,85,000', days: '5 Working Days', warranty: '10-Year Anti-Yellowing Bond' },
+        track_ppf: { price: '₹95,000', days: '3 Working Days', warranty: '7-Year Partial Bond' },
+        ceramic_shield: { price: '₹45,000', days: '2 Working Days', warranty: '5-Year Ceramic Certificate' },
+        paint_correct: { price: '₹28,000', days: '2 Working Days', warranty: 'Single-Event Restoration' }
+      },
+      sedan: {
+        title: 'Ultra-Luxury Executive Sedan',
+        full_ppf: { price: '₹1,95,000', days: '6 Working Days', warranty: '10-Year Anti-Yellowing Bond' },
+        track_ppf: { price: '₹1,05,000', days: '3 Working Days', warranty: '7-Year Partial Bond' },
+        ceramic_shield: { price: '₹50,000', days: '2 Working Days', warranty: '5-Year Ceramic Certificate' },
+        paint_correct: { price: '₹32,000', days: '2 Working Days', warranty: 'Single-Event Restoration' }
+      },
+      suv: {
+        title: 'Performance / Full-Size Luxury SUV',
+        full_ppf: { price: '₹2,15,000', days: '6 Working Days', warranty: '10-Year Anti-Yellowing Bond' },
+        track_ppf: { price: '₹1,15,000', days: '4 Working Days', warranty: '7-Year Partial Bond' },
+        ceramic_shield: { price: '₹55,000', days: '3 Working Days', warranty: '5-Year Ceramic Certificate' },
+        paint_correct: { price: '₹35,000', days: '2 Working Days', warranty: 'Single-Event Restoration' }
+      },
+      vintage: {
+        title: 'Vintage & Collector Heritage Spec',
+        full_ppf: { price: '₹2,35,000', days: '7 Working Days', warranty: '10-Year Custom Preservation Bond' },
+        track_ppf: { price: '₹1,25,000', days: '5 Working Days', warranty: '7-Year Partial Bond' },
+        ceramic_shield: { price: '₹60,000', days: '3 Working Days', warranty: '5-Year Ceramic Certificate' },
+        paint_correct: { price: '₹42,000', days: '3 Working Days', warranty: 'Bespoke Single-Stage Jewel' }
+      }
+    };
+
+    let selectedVehicle = 'supercar';
+    let selectedPackage = 'full_ppf';
+
+    function selectVehicle(vehKey, el) {
+      selectedVehicle = vehKey;
+      document.querySelectorAll('.veh-btn').forEach(b => b.classList.remove('active'));
+      if (el) el.classList.add('active');
+      updateConfiguratorUI();
+    }
+
+    function selectPackage(pkgKey, el) {
+      selectedPackage = pkgKey;
+      document.querySelectorAll('.pkg-choice').forEach(b => b.classList.remove('active'));
+      if (el) el.classList.add('active');
+      updateConfiguratorUI();
+    }
+
+    function updateConfiguratorUI() {
+      const vehData = PRICING_MATRIX[selectedVehicle];
+      if (!vehData) return;
+
+      // Update package pill badges
+      document.getElementById('pkgPriceFullPpf').textContent = vehData.full_ppf.price;
+      document.getElementById('pkgPriceTrackPpf').textContent = vehData.track_ppf.price;
+      document.getElementById('pkgPriceCeramic').textContent = vehData.ceramic_shield.price;
+      document.getElementById('pkgPriceCorrection').textContent = vehData.paint_correct.price;
+
+      const activePkg = vehData[selectedPackage];
+
+      // Update right side summary
+      document.getElementById('summaryVehTitle').textContent = vehData.title;
+      
+      const pkgNameMap = {
+        full_ppf: 'Apex Full-Body Self-Healing TPU PPF',
+        track_ppf: 'High-Impact Track Pack PPF + Ceramic',
+        ceramic_shield: 'Triple-Layer 9H Graphene Ceramic Fusion',
+        paint_correct: 'Bespoke Multi-Stage Paint Restoration'
+      };
+      document.getElementById('summaryPkgTitle').textContent = pkgNameMap[selectedPackage];
+      document.getElementById('summaryDuration').textContent = activePkg.days;
+      document.getElementById('summaryWarranty').textContent = activePkg.warranty;
+      document.getElementById('summaryTotalAmount').innerHTML = `${activePkg.price} <span class="text-xs font-mono text-slate-400 font-normal">/ all inclusive</span>`;
+
+      // Update WhatsApp booking link
+      const waBtn = document.getElementById('waBookingBtn');
+      if (waBtn) {
+        const textMsg = encodeURIComponent(
+          `Hi Raghavendra, I configured my vehicle on the Apex Bespoke website:\n\n` +
+          `• Vehicle Architecture: ${vehData.title}\n` +
+          `• Selected Package: ${pkgNameMap[selectedPackage]}\n` +
+          `• Estimated Investment: ${activePkg.price}\n` +
+          `• Estimated Timeline: ${activePkg.days}\n\n` +
+          `I would like to inquire about cleanroom bay availability for my vehicle.`
+        );
+        waBtn.href = `https://wa.me/918660819023?text=${textMsg}`;
+      }
+    }
+
+    // Initialize configurator defaults
+    updateConfiguratorUI();
+
+    /* ==========================================================================
+       5. PITCH MODAL CONTROLS
+       ========================================================================== */
+    function openPitchModal() {
+      const modal = document.getElementById('uncodedPitchModal');
+      if (modal) modal.classList.add('open');
+    }
+
+    function closePitchModal() {
+      const modal = document.getElementById('uncodedPitchModal');
+      if (modal) modal.classList.remove('open');
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target && e.target.id === 'uncodedPitchModal') {
+        closePitchModal();
+      }
+    }
+  </script>
 </body>
 </html>
