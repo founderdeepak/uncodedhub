@@ -94,7 +94,7 @@
     /* ==========================================================================
        SIGNATURE AESTHETIC DESIGN TOKENS (WARM HERITAGE EDITORIAL)
        ========================================================================== */
-    :root {
+    :root, [data-theme="warm-heritage"] {
       --bg-primary: #F8F5EE;
       --bg-surface: #FFFFFF;
       --bg-card: #FFFFFF;
@@ -118,6 +118,92 @@
       --card-shadow: 0 10px 30px rgba(50, 40, 25, 0.07);
       --header-bg: rgba(248, 245, 238, 0.94);
       --input-bg: #FFFFFF;
+    }
+
+    [data-theme="obsidian-luxe"] {
+      --bg-primary: #0C0A09;
+      --bg-surface: #141210;
+      --bg-card: #1A1715;
+      --bg-card-subtle: #221F1C;
+      --text-primary: #FAF8F5;
+      --text-muted: #C4BCB3;
+      --text-subtle: #8A8177;
+      --border-color: rgba(229, 195, 120, 0.25);
+      --border-subtle: rgba(255, 255, 255, 0.1);
+      --accent: #E5C378;
+      --accent-hover: #F2D898;
+      --accent-contrast: #0C0A09;
+      --accent-light: rgba(229, 195, 120, 0.12);
+      --badge-bg: rgba(229, 195, 120, 0.15);
+      --badge-text: #E5C378;
+      --header-bg: rgba(12, 10, 9, 0.94);
+      --input-bg: #1A1715;
+      --card-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    [data-theme="avant-garde"] {
+      --bg-primary: #0B1320;
+      --bg-surface: #111C2E;
+      --bg-card: #16243B;
+      --bg-card-subtle: #1C2E4A;
+      --text-primary: #FFFFFF;
+      --text-muted: #94A3B8;
+      --text-subtle: #64748B;
+      --border-color: rgba(56, 189, 248, 0.28);
+      --border-subtle: rgba(255, 255, 255, 0.1);
+      --accent: #38BDF8;
+      --accent-hover: #0EA5E9;
+      --accent-contrast: #0B1320;
+      --accent-light: rgba(56, 189, 248, 0.15);
+      --badge-bg: rgba(56, 189, 248, 0.15);
+      --badge-text: #38BDF8;
+      --header-bg: rgba(11, 19, 32, 0.94);
+      --input-bg: #16243B;
+      --card-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Calculator Chip Styles */
+    .calc-chip {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip:hover {
+      border-color: var(--accent);
+    }
+    .calc-chip.active {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .calc-chip-tier {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip-tier:hover {
+      border-color: var(--accent);
+    }
+    .calc-chip-tier.active {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
     /* Base Reset */
@@ -1436,29 +1522,42 @@
       .diff-pill-right { right: 10px; }
     }
 
+    .tc-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ddd;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.74rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tc-btn.active, .tc-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--accent-contrast);
+      font-weight: 600;
+    }
   </style>
 </head>
 
-<body>
+<body data-theme="warm-heritage">
 
-  <!-- Top Uncoded Hub Specimen Banner -->
-  <div style="background: #14130F; color: #F5F3EF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; padding: 10px 20px; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 99999; /* solid surface */ box-shadow: 0 4px 20px rgba(0,0,0,0.25);">
-    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-      <a href="/portfolio/" style="color: #FFFFFF; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 12px; padding: 5px 12px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; transition: all 0.2s ease;">
-        ← Back to Uncoded Hub Portfolio
-      </a>
-      <span style="color: rgba(245,243,239,0.4); display: inline-block;">|</span>
-      <span style="color: #F5F3EF; font-weight: 500; font-size: 12.5px;">
-        Handcrafted 7-Day Sprint Specimen Prototype
-      </span>
+  <!-- Uncoded Hub Demo Control Bar -->
+  <div class="demo-top-bar" style="background: #000; border-bottom: 1px solid rgba(255,255,255,0.15); padding: 0.6rem 1.25rem; font-size: 0.82rem; position: sticky; top: 0; z-index: 99999; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+      <span style="background: var(--accent); color: var(--accent-contrast); font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase;">LIVE PROTOTYPE</span>
+      <span style="color:#aaa;">Sector: Luxury Residential Interior Architecture</span>
+      <button onclick="openPitchModal()" style="background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 0.25rem 0.75rem; border-radius: 4px; cursor: pointer; font-size: 0.76rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+        <span>Why We Built This First</span> →
+      </button>
     </div>
-    <div style="display: flex; align-items: center; gap: 16px;">
-      <span style="background: rgba(199,7,75,0.2); color: #FF4D79; border: 1px solid rgba(199,7,75,0.45); font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 9px; border-radius: 3px;">
-        Interactive Niche Demo
-      </span>
-      <a href="/contact/" style="color: #FFFFFF; font-size: 12.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; transition: opacity 0.2s ease;">
-        Book Your 7-Day Sprint →
-      </a>
+
+    <div style="display: flex; align-items: center; gap: 0.4rem;">
+      <span style="color: #999; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 0.25rem;">Theme:</span>
+      <button class="tc-btn active" data-theme="warm-heritage" onclick="switchTheme('warm-heritage', this)">Warm Heritage</button>
+      <button class="tc-btn" data-theme="obsidian-luxe" onclick="switchTheme('obsidian-luxe', this)">Obsidian Luxe</button>
+      <button class="tc-btn" data-theme="avant-garde" onclick="switchTheme('avant-garde', this)">Avant-Garde</button>
     </div>
   </div>
 
@@ -1528,7 +1627,7 @@
 
       <div class="hero-visual">
         <img class="hero-image-main" 
-             src="/demos/assets/demo-01-interior/01_Hero_Showcase.png" 
+             src="assets/demo-01-interior/01_Hero_Showcase.png" 
              alt="Luxury Living Room Interior Architecture with Italian Marble and Oak Paneling">
         
         <div class="hero-floating-card">
@@ -1613,13 +1712,13 @@
         <div class="compare-container" id="interiorDiffBox" style="--clip-pos: 50%;">
           <!-- Layer 1: Handover Reality (Base) -->
           <img class="compare-img compare-img-after" 
-               src="/demos/assets/demo-01-interior/08_After_Finished.png" 
+               src="assets/demo-01-interior/08_After_Finished.png" 
                alt="Completed Turnkey Transformation - Luxurious Warm Neutral Living Room Sanctuary" 
                loading="lazy">
           
           <!-- Layer 2: Bare Concrete Shell (Clipped) -->
           <img class="compare-img compare-img-before" 
-               src="/demos/assets/demo-01-interior/07_Before_Raw.png" 
+               src="assets/demo-01-interior/07_Before_Raw.png" 
                alt="Bare Concrete Shell with Chalk MEP Plans in Unfinished Interior" 
                loading="lazy">
 
@@ -1658,7 +1757,7 @@
         <!-- Project 1 (7 cols): The Alabaster Penthouse -->
         <div class="project-card span-7">
           <div class="project-img-wrap" style="height: 340px;">
-            <img src="/demos/assets/demo-01-interior/02_Work_01.png" 
+            <img src="assets/demo-01-interior/02_Work_01.png" 
                  alt="The Alabaster Penthouse - Minimalist Master Bedroom Sanctuary with Fluted Oak" 
                  loading="lazy">
             <span class="project-tag">Minimalist Penthouse</span>
@@ -1678,7 +1777,7 @@
         <!-- Project 2 (5 cols): The Monolith Culinary Atelier -->
         <div class="project-card span-5">
           <div class="project-img-wrap" style="height: 340px;">
-            <img src="/demos/assets/demo-01-interior/03_Work_02.png" 
+            <img src="assets/demo-01-interior/03_Work_02.png" 
                  alt="The Monolith Culinary Atelier - Luxury Kitchen with Veined Quartzite Island" 
                  loading="lazy">
             <span class="project-tag">Culinary Atelier</span>
@@ -1698,7 +1797,7 @@
         <!-- Project 3 (4 cols): The Smoked Oak Study & Library -->
         <div class="project-card span-4">
           <div class="project-img-wrap" style="height: 280px;">
-            <img src="/demos/assets/demo-01-interior/04_Work_03.png" 
+            <img src="assets/demo-01-interior/04_Work_03.png" 
                  alt="The Smoked Oak Library & Study - Moody Modern Den" 
                  loading="lazy">
             <span class="project-tag">Private Library</span>
@@ -1718,7 +1817,7 @@
         <!-- Project 4 (4 cols): The Travertine Wellness Sanctuary -->
         <div class="project-card span-4">
           <div class="project-img-wrap" style="height: 280px;">
-            <img src="/demos/assets/demo-01-interior/05_Work_04.png" 
+            <img src="assets/demo-01-interior/05_Work_04.png" 
                  alt="The Travertine Wellness Bath - Warm Japandi Spa Bathroom Retreat" 
                  loading="lazy">
             <span class="project-tag">Spa Sanctuary</span>
@@ -1738,7 +1837,7 @@
         <!-- Project 5 (4 cols): The Nordic Dining Pavilion -->
         <div class="project-card span-4">
           <div class="project-img-wrap" style="height: 280px;">
-            <img src="/demos/assets/demo-01-interior/06_Work_05.png" 
+            <img src="assets/demo-01-interior/06_Work_05.png" 
                  alt="The Nordic Dining Pavilion - Sculptural Bleached Oak Dining Room" 
                  loading="lazy">
             <span class="project-tag">Dining Pavilion</span>
@@ -1802,7 +1901,7 @@
     <div class="wrap">
       <div class="founder-feature-grid">
         <div class="founder-feature-image-wrap">
-          <img src="/demos/assets/demo-01-interior/09_Founder_Or_Expert.png" 
+          <img src="assets/demo-01-interior/09_Founder_Or_Expert.png" 
                alt="Ar. Devendra Varma, Principal Architect & Founding Director" 
                class="founder-feature-img" 
                loading="lazy">
@@ -1873,7 +1972,7 @@
           </div>
         </div>
         <div class="craft-image-wrap">
-          <img src="/demos/assets/demo-01-interior/10_Process_Detail.png" 
+          <img src="assets/demo-01-interior/10_Process_Detail.png" 
                alt="Artisanal Joinery: Hand-Fitting Smoked Oak to Veined Travertine" 
                class="craft-img" 
                loading="lazy">
@@ -1951,6 +2050,105 @@
               <p>VP Engineering &bull; Duplex Villa, Adarsh Palm Retreat</p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE TURNKEY FITOUT SCOPE & BUDGET ESTIMATOR (ENGINE 2)
+       ========================================================================== -->
+  <section id="cost-estimator" class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="badge">Real-Time Trade Cost Transparency</div>
+        <h2>Interactive Turnkey Interior Scope &amp; Budget Calculator</h2>
+        <p>Adjust your home's carpet area, configuration, and material finish. Get an instant, realistic budget estimation and execution timeline with zero hidden designer margins.</p>
+      </div>
+
+      <div class="calculator-card" style="background: var(--bg-card); border: 1.5px solid var(--border-color); border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--card-shadow); max-width: 1080px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: 1.25fr 1fr; gap: 44px; align-items: center;" class="calc-grid">
+          
+          <!-- Controls -->
+          <div>
+            <!-- Area Slider -->
+            <div style="margin-bottom: 28px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px;">
+                <label style="font-weight: 700; font-size: 15px; color: var(--text-primary);">Carpet Area (Built-up)</label>
+                <span id="interiorAreaDisplay" style="font-family: var(--font-heading); font-size: 24px; font-weight: 700; color: var(--accent);">2,400 sq.ft</span>
+              </div>
+              <input type="range" id="interiorAreaSlider" min="1000" max="8000" step="100" value="2400" 
+                     style="width: 100%; height: 8px; border-radius: 4px; accent-color: var(--accent); cursor: pointer;"
+                     oninput="updateInteriorEstimate()">
+              <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--text-subtle); margin-top: 6px;">
+                <span>1,000 sq.ft (Compact Apt)</span>
+                <span>4,000 sq.ft (Duplex)</span>
+                <span>8,000 sq.ft (Grand Villa)</span>
+              </div>
+            </div>
+
+            <!-- Home Typology -->
+            <div style="margin-bottom: 28px;">
+              <label style="font-weight: 700; font-size: 15px; color: var(--text-primary); display: block; margin-bottom: 12px;">Home Typology</label>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;" id="interiorTypologyChips">
+                <button type="button" class="calc-chip active" data-typology="3bhk" onclick="selectTypology('3bhk', 1.0, this)">3BHK Luxury Residence</button>
+                <button type="button" class="calc-chip" data-typology="4bhk" onclick="selectTypology('4bhk', 1.15, this)">4BHK Sky Penthouse</button>
+                <button type="button" class="calc-chip" data-typology="villa" onclick="selectTypology('villa', 1.30, this)">Independent Duplex Villa</button>
+                <button type="button" class="calc-chip" data-typology="renovation" onclick="selectTypology('renovation', 1.20, this)">Turnkey Home Renovation</button>
+              </div>
+            </div>
+
+            <!-- Material & Craft Tier -->
+            <div>
+              <label style="font-weight: 700; font-size: 15px; color: var(--text-primary); display: block; margin-bottom: 12px;">Finish &amp; Material Specification Tier</label>
+              <div style="display: grid; grid-template-columns: 1fr; gap: 10px;" id="interiorTierChips">
+                <button type="button" class="calc-chip-tier active" data-tier="contemporary" onclick="selectTier('contemporary', 1850, this)">
+                  <div><strong>Signature Contemporary</strong> &bull; German PU, Quartz counters, Concealed LED cove</div>
+                  <span style="font-size: 12px; opacity: 0.8;">₹1,850 / sq.ft</span>
+                </button>
+                <button type="button" class="calc-chip-tier" data-tier="luxury" onclick="selectTier('luxury', 2450, this)">
+                  <div><strong>Ultra-Luxury Bespoke</strong> &bull; Calacatta Viola, Fluted Oak, Hafele/Blum, 2700K lighting</div>
+                  <span style="font-size: 12px; opacity: 0.8;">₹2,450 / sq.ft</span>
+                </button>
+                <button type="button" class="calc-chip-tier" data-tier="monolithic" onclick="selectTier('monolithic', 3200, this)">
+                  <div><strong>Monolithic Haute Living</strong> &bull; Bookmatched Travertine, Solid Walnut, Smart Automation</div>
+                  <span style="font-size: 12px; opacity: 0.8;">₹3,200 / sq.ft</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Output Panel -->
+          <div style="background: var(--bg-card-subtle); border: 1.5px solid var(--border-color); border-radius: var(--radius-md); padding: 32px; text-align: center;">
+            <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700;">Estimated Turnkey Investment</span>
+            <div id="interiorEstimatedCost" style="font-family: var(--font-heading); font-size: 46px; font-weight: 800; color: var(--text-primary); margin: 8px 0 12px; line-height: 1;">
+              ₹44.4 Lakhs
+            </div>
+
+            <div style="display: inline-block; padding: 6px 14px; background: var(--badge-bg); color: var(--badge-text); border-radius: 50px; font-size: 13px; font-weight: 600; margin-bottom: 24px;" id="interiorTimelineDisplay">
+              ⏱ Guaranteed Execution: 48 Days
+            </div>
+
+            <div style="text-align: left; font-size: 13px; color: var(--text-muted); line-height: 1.6; border-top: 1px solid var(--border-color); padding-top: 18px; margin-bottom: 24px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <span>100% Itemized Trade Invoices:</span>
+                <strong style="color: var(--text-primary);">Included</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <span>Daily 6 PM Photo Log &amp; Site Cam:</span>
+                <strong style="color: var(--text-primary);">Included</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span>Contractual Late Penalty Guarantee:</span>
+                <strong style="color: var(--accent);">₹2,500 / Day</strong>
+              </div>
+            </div>
+
+            <a href="#" id="interiorWhatsAppCta" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center; padding: 14px 20px; font-size: 14px; font-weight: 700;">
+              Lock In This Estimate via WhatsApp &rarr;
+            </a>
+          </div>
+
         </div>
       </div>
     </div>
@@ -2232,6 +2430,75 @@
         }
       }, 15000);
     });
+
+    /* ==========================================================================
+       1. THEME SWITCHER
+       ========================================================================== */
+    function switchTheme(themeKey, btnElem) {
+      document.body.setAttribute('data-theme', themeKey);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+    }
+
+    /* ==========================================================================
+       2. INTERACTIVE INTERIOR FITOUT SCOPE & BUDGET ESTIMATOR (ENGINE 2)
+       ========================================================================== */
+    let currentArea = 2400;
+    let currentTypologyMultiplier = 1.0;
+    let currentTypologyLabel = "3BHK Luxury Residence";
+    let currentRatePerSqFt = 1850;
+    let currentTierLabel = "Signature Contemporary";
+
+    function selectTypology(key, multiplier, btn) {
+      currentTypologyMultiplier = multiplier;
+      currentTypologyLabel = btn.textContent.trim();
+      document.querySelectorAll('#interiorTypologyChips .calc-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateInteriorEstimate();
+    }
+
+    function selectTier(key, rate, btn) {
+      currentRatePerSqFt = rate;
+      currentTierLabel = btn.querySelector('strong').textContent.trim();
+      document.querySelectorAll('#interiorTierChips .calc-chip-tier').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateInteriorEstimate();
+    }
+
+    function updateInteriorEstimate() {
+      const slider = document.getElementById('interiorAreaSlider');
+      if (slider) currentArea = parseInt(slider.value);
+      
+      const areaDisplay = document.getElementById('interiorAreaDisplay');
+      if (areaDisplay) areaDisplay.textContent = currentArea.toLocaleString('en-IN') + ' sq.ft';
+
+      // Raw budget
+      const totalRaw = currentArea * currentRatePerSqFt * currentTypologyMultiplier;
+      let costText = "";
+      if (totalRaw >= 10000000) {
+        costText = "₹" + (totalRaw / 10000000).toFixed(2) + " Cr";
+      } else {
+        costText = "₹" + (totalRaw / 100000).toFixed(1) + " Lakhs";
+      }
+
+      const costElem = document.getElementById('interiorEstimatedCost');
+      if (costElem) costElem.textContent = costText;
+
+      // Estimated timeline based on area
+      let days = Math.round(42 + (currentArea / 300));
+      const timelineElem = document.getElementById('interiorTimelineDisplay');
+      if (timelineElem) timelineElem.textContent = "⏱ Guaranteed Execution: " + days + " Days";
+
+      // Update WhatsApp link
+      const waBtn = document.getElementById('interiorWhatsAppCta');
+      if (waBtn) {
+        const msg = encodeURIComponent("Hi Meridian Interiors! I used your online Turnkey Scope Calculator for a " + currentArea.toLocaleString('en-IN') + " sq.ft " + currentTypologyLabel + " with " + currentTierLabel + " (Est. " + costText + ", " + days + " Days). I would like to schedule a 1-on-1 Concept Diagnostic.");
+        waBtn.href = "https://wa.me/918660819023?text=" + msg;
+      }
+    }
+
+    // Initialize estimate on load
+    window.addEventListener('DOMContentLoaded', updateInteriorEstimate);
   </script>
 
 </body>
