@@ -121,6 +121,21 @@ async function renderOnce(page, route) {
       return match;
     }
   });
+
+  // Deduplicate metadata: on all routes where page-specific Helmet metadata exists,
+  // remove the static index.html generic template fallbacks so search engines (Bing, Google)
+  // only see the page's unique meta description and OpenGraph tags.
+  html = html.replace(/<meta[^>]+name="description"[^>]+content="Custom high-performance business websites designed and launched in 7 days[^"]*"[^>]*>\s*/gi, '');
+  html = html.replace(/<meta[^>]+property="og:description"[^>]+content="A web design and development studio[^"]*"[^>]*>\s*/gi, '');
+  html = html.replace(/<meta[^>]+name="twitter:description"[^>]+content="A web design and development studio[^"]*"[^>]*>\s*/gi, '');
+  html = html.replace(/<meta[^>]+property="og:title"[^>]+content="Uncoded Hub — Business Websites, Built in Seven Days"[^>]*>\s*/gi, '');
+  html = html.replace(/<meta[^>]+name="twitter:title"[^>]+content="Uncoded Hub — Business Websites, Built in Seven Days"[^>]*>\s*/gi, '');
+  if (route !== '/') {
+    html = html.replace(/<meta[^>]+property="og:url"[^>]+content="https:\/\/uncodedhub\.com\/"[^>]*>\s*/gi, '');
+    html = html.replace(/<meta[^>]+property="og:image"[^>]+content="https:\/\/uncodedhub\.com\/og-image\.jpg"[^>]*>\s*/gi, '');
+    html = html.replace(/<meta[^>]+property="og:image:alt"[^>]+content="Uncoded Hub — web design and development studio"[^>]*>\s*/gi, '');
+    html = html.replace(/<meta[^>]+name="twitter:image"[^>]+content="https:\/\/uncodedhub\.com\/og-image\.jpg"[^>]*>\s*/gi, '');
+  }
   console.log(`  [${Date.now() - startedAt}ms] ${route}`);
   return html;
 }
