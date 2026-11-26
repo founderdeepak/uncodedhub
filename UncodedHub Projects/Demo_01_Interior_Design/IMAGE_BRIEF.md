@@ -1,51 +1,35 @@
-# Demo_01_Interior_Design — Asset & Upgrade Brief
+# Demo 01 — Meridian Architecture & Interiors | Luxury Residential Turnkey Sanctuaries
+**Asset & Image Production Brief**
 
-**Client / Brand**: Meridian Architecture & Interiors
-**Sector**: Interior Architecture & Studios
-**Category**: interiors
-**Demo File**: [interior-design.html](file:///c:/Users/LENOVO/Downloads/uncoded-hub/public/demos/interior-design.html)
-**Live Local URL**: `http://localhost:3000/demos/interior-design.html`
-**Live Production URL**: `https://uncodedhub.com/demos/interior-design.html`
-
----
-
-## 1. Core Conversion Engine & Positioning
-
-- **Brand Summary**: Turnkey residential interior architecture and private home sanctuaries. Features photorealistic 3D render-to-reality comparisons, 100% itemized trade-cost procurement transparency, and an interactive 3-style visual theme switcher.
-- **Core Conversion Engine**: **Interactive Trade Fee Estimator & 3D Render-to-Reality Comparison Slider**
-- **Key Business Result**: 0.8s LCP · 100% Lighthouse · Capped 4-Client Roster
-
-### Visual Themes in this Demo:
-
-1. **Warm Heritage** (Heritage Editorial) — Accent: `#876239` | Palette: #F8F5EE, #876239, #191512
-2. **Obsidian Luxe** (Dark Gold Monolith) — Accent: `#E5C378` | Palette: #0C0A09, #E5C378, #FAF8F5
-3. **Avant-Garde Grid** (Swiss Brutalist) — Accent: `#FF3B00` | Palette: #FFFFFF, #FF3B00, #0A0A0A
+- **Brand Name**: Meridian Interiors & Architecture
+- **Industry / Sector**: Luxury Residential Interior Architecture, Villa Sanctuaries & Turnkey Penthouses
+- **Demo File**: `public/demos/interior-design.html`
+- **Live Local URL**: `http://localhost:3000/demos/interior-design.html`
+- **Live Production URL**: `https://uncodedhub.com/demos/interior-design.html`
 
 ---
 
-## 2. Required Images Checklist (Drop Here in `Assets/`)
-
-To achieve the unslop gold standard (like Sri Ayyanar Sirpa Kalai), please add **high-resolution authentic images** to this folder or the `Assets/` subfolder:
-
-| File Name                  | Slot & Purpose             | Recommended Aspect & Resolution     | Description                                                                     |
-| :------------------------- | :------------------------- | :---------------------------------- | :------------------------------------------------------------------------------ |
-| `01_Hero_Showcase.png`     | Hero Banner / Focal Center | 16:9 (1920×1080) or 4:5 (1200×1500) | Dramatic, aspirational hero image representing the pinnacle of this craft.      |
-| `02_Work_01.png`           | Portfolio Feature 1        | 4:5 (1080×1350) or 16:10            | Flagship completed project / case study #1.                                     |
-| `03_Work_02.png`           | Portfolio Feature 2        | 4:5 (1080×1350) or 16:10            | Flagship completed project / case study #2.                                     |
-| `04_Work_03.png`           | Portfolio Feature 3        | 4:5 (1080×1350) or 16:10            | Flagship completed project / case study #3.                                     |
-| `05_Work_04.png`           | Portfolio Feature 4        | 4:5 (1080×1350) or 16:10            | Flagship completed project / case study #4.                                     |
-| `06_Work_05.png`           | Portfolio Feature 5        | 4:5 (1080×1350) or 16:10            | Flagship completed project / case study #5.                                     |
-| `07_Before_Raw.png`        | Comparison Slider (Left)   | 16:10 (1200×750)                    | Raw / unpolished / initial stage (e.g. bare shell, untreated, blueprint).       |
-| `08_After_Finished.png`    | Comparison Slider (Right)  | 16:10 (1200×750)                    | Finished, pristine, luxury outcome (e.g. furnished sanctuary, polished result). |
-| `09_Founder_Or_Expert.png` | Master / Founder Portrait  | 1:1 or 4:5 Portrait                 | Authentic studio / clinic / workshop portrait of the principal expert.          |
-| `10_Process_Detail.png`    | Craftsmanship / Studio     | 16:9 or 4:3                         | Micro-detail of materials, tools, operatory, or on-site craftsmanship.          |
+## 1. Aesthetic & Art Direction Standard
+- **Lighting**: Warm architectural chiaroscuro, 2700K indirect cove glow, golden hour window light, soft luminous shadows. Images must be bright, warm, and tactile — no muddy darkness.
+- **Materials**: Honed Roman Travertine, Bookmatched Calacatta Viola Marble, Fluted European White Oak, Brushed Antique Bronze, Bouclé & Belgian Linen.
+- **Visual Feel**: Architectural Digest, Elle Decor, Vincent Van Duysen, and Studio McGee high-end luxury editorial standard.
 
 ---
 
-## 3. Unslop Design Standard Rules
+## 2. Master Image Prompts Table (10 Slots)
 
-1. **No Purple AI Gradients**: Use editorial dark midnight navy, museum bronze, stone, or warm earth palettes.
-2. **Character-Rich Typography**: High-contrast editorial display font for headings; clean neutral body text.
-3. **Strict Word Integrity**: No split words on mobile (`word-break: keep-all; overflow-wrap: normal`).
-4. **Authentic Chiaroscuro Lighting**: High contrast, moody shadows, realistic depth. Zero cheesy smiling stock photos.
-5. **Direct High-Intent CTAs**: One-tap WhatsApp consult with pre-filled shastric/project details + interactive timeline estimator.
+Drop the generated images directly into:
+`UncodedHub Projects/Demo_01_Interior_Design/Assets/`
+
+| Slot / File Name | Aspect Ratio | Subject & Scene Composition | Master AI Image Generation Prompt (Midjourney v6.1 / Flux) |
+| :--- | :--- | :--- | :--- |
+| **01_Hero_Showcase.png** | 16:9 | **Sunlit Double-Height Penthouse Living Sanctuary**<br>Double-height ceiling penthouse living salon, floor-to-ceiling windows overlooking sunset city skyline. Monolithic travertine fireplace, curved off-white bouclé sofa, fluted oak architectural wall panels, warm evening ambient cove lighting, Architectural Digest quality. | `Architectural Digest photography of a luxury double-height penthouse living room at golden hour sunset, floor-to-ceiling glass windows overlooking city skyline, monolithic honed travertine fireplace, curved cream bouclé sofa, fluted oak wall paneling, herringbone wood flooring, warm ambient 2700k cove lighting, soft golden sun rays, ultra detailed, editorial luxury interior --ar 16:9 --style raw --v 6.1` |
+| **02_Work_01.png**<br>*(Scrolly Stage 1)* | 4:5 | **Stage 1: Spatial Geometry & Material Selection**<br>Architect’s drafting desk with hand-drawn floor plan layout, physical material swatches (veined marble slab, fluted oak sample, brushed bronze hardware, textured linen fabric) illuminated by warm morning studio desk lamp. | `Overhead aesthetic shot of an interior architect's drafting table, architectural layout blueprint, physical luxury material samples neatly arranged: bookmatched Calacatta Viola marble tile, fluted white oak wood block, brushed brass hardware sample, neutral linen swatch, warm desk lamp lighting, Kinfolk studio style, ultra sharp --ar 4:5 --style raw --v 6.1` |
+| **03_Work_02.png**<br>*(Scrolly Stage 2)* | 4:5 | **Stage 2: Custom Joinery & Fluted Millwork Crafting**<br>Artisan carpenter in a sunlit architectural workshop hand-planing and assembling floor-to-ceiling fluted white oak wardrobe panels and concealed pivot doors, wood curls on bench, tactile craftsmanship. | `Artisan woodworker workshop, master carpenter handcrafting custom floor-to-ceiling fluted white oak cabinetry, delicate wood shavings on workbench, warm sunlight streaming through large factory windows, authentic carpentry tools, rich oak wood grain, shallow depth of field, tactile craftsmanship --ar 4:5 --style raw --v 6.1` |
+| **04_Work_03.png**<br>*(Scrolly Stage 3)* | 4:5 | **Stage 3: Monolithic Calacatta Viola Kitchen Island**<br>Sculptural kitchen with a seamless monolithic island in honed Calacatta Viola marble with rich plum veining, fluted oak bar stools, integrated bronze induction cooktop, warm subtle under-counter illumination. | `Luxury minimalist kitchen architecture, massive monolithic island made of honed Calacatta Viola marble with dramatic purple and gold veining, fluted oak barstools, integrated bronze fixtures, warm indirect LED under-counter lighting, soft morning diffuse daylight, Elle Decor showcase --ar 4:5 --style raw --v 6.1` |
+| **05_Work_04.png**<br>*(Scrolly Stage 4)* | 4:5 | **Stage 4: Architectural Lighting & Evening Ambiance**<br>Intimate master bedroom sanctuary at dusk, soft 2700K indirect ceiling cove lighting, textured plaster feature wall, fluted acoustic timber headboard, warm bedside alabaster pendant lamps casting gentle gradient glow. | `Bespoke luxury master bedroom suite at dusk, 2700K warm indirect ceiling cove lighting, textured limewash plaster walls, fluted timber headboard with integrated ambient backlighting, glowing alabaster bedside sconces, plush neutral linen bedding, serene mood, five-star hotel suite atmosphere --ar 4:5 --style raw --v 6.1` |
+| **06_Work_05.png**<br>*(Scrolly Stage 5)* | 4:5 | **Stage 5: Fully Curated Turnkey Dining Salon**<br>Finished dining room ready for intimate entertaining. Solid travertine oval dining table, Pierre Jeanneret oak chairs, contemporary bronze mobile chandelier, minimalist ceramic vessels, sheer linen curtains filtering soft breeze. | `Editorial photography of a completed luxury dining room, solid honed travertine dining table, cane and oak dining chairs, modern sculptural brass pendant chandelier, sheer cream linen drapes softly illuminated by natural daylight, minimalist ceramic floral centerpiece, Architectural Digest cover quality --ar 4:5 --style raw --v 6.1` |
+| **07_Before_Raw.png**<br>*(Slider: Before)* | 16:10 | **Before: Bare Concrete High-Rise Shell**<br>Unfinished residential apartment under construction: exposed grey concrete pillars, rough dusty concrete floor, bare ceiling with hanging electrical conduits, raw brick partitions under cool fluorescent construction light. | `Interior photograph of a high-rise apartment before renovation, bare raw grey concrete columns and ceiling, dusty unpolished concrete floor, exposed electrical conduits, raw red brick partition wall, construction site interior, wide angle view --ar 16:10 --style raw --v 6.1` |
+| **08_After_Finished.png**<br>*(Slider: After)* | 16:10 | **After: Transformed Luminous Penthouse Living Salon**<br>Exact identical angle and perspective showing the completed luxury living room with warm French oak herringbone floors, smooth plaster walls, fluted oak millwork, warm ambient lighting, and panoramic city sunset. | `Identical camera angle and perspective of the completed luxury penthouse renovation, warm French oak herringbone parquet flooring, smooth off-white plaster walls, custom fluted oak media unit, curved bouclé furniture, warm 2700k ambient cove lighting, sunset glow, stunning high-end transformation --ar 16:10 --style raw --v 6.1` |
+| **09_Founder_Or_Expert.png** | 4:5 or 1:1 | **Principal Interior Architect & Creative Director**<br>Portrait of Ar. Maya Sen, principal interior architect, in a tailored ivory linen blazer standing in her sunlit design studio holding a marble tile sample, confident and serene expression. | `Professional editorial portrait of a female principal interior architect in her late 30s wearing a chic ivory tailored blazer, holding a polished marble tile sample, standing in a bright sunlit design studio with architectural moodboards and material shelves in background, warm natural lighting, Vogue Living profile style --ar 4:5 --style raw --v 6.1` |
+| **10_Process_Detail.png**<br> | 16:9 | **Tactile Material Harmony Macro**<br>Extreme close-up macro of raw luxury materials: honed Roman travertine tile edge meeting brushed antique bronze trim, woven heavy cream Belgian linen texture, crisp tactile shadows. | `Macro still life detail of luxury interior materials, honed Roman travertine slab edge adjoining brushed antique bronze trim, textured natural cream bouclé fabric, tactile European oak grain, crisp directional lighting, macro texture study, Hasselblad medium format look --ar 16:9 --style raw --v 6.1` |

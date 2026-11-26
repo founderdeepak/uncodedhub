@@ -14,7 +14,7 @@
   <meta property="og:url" content="https://uncodedhub.com/demos/clinic-polyclinic.html">
   <meta property="og:title" content="OmniCare Multi-Speciality Polyclinic & Day Care | Senior Specialist Outpatient Care">
   <meta property="og:description" content="Premier multi-speciality outpatient polyclinic in Bengaluru. 14 board-certified specialists, minor day-care OT, and guaranteed <15 minute wait times.">
-  <meta property="og:image" content="https://uncodedhub.com/demos/assets/demo-16-clinic-polyclinic/01_Hero_Showcase.png">
+  <meta property="og:image" content="https://uncodedhub.comassets/demo-16-clinic-polyclinic/01_Hero_Showcase.png">
   <meta property="og:image:width" content="1920">
   <meta property="og:image:height" content="1080">
   <meta property="og:image:alt" content="OmniCare Multi-Speciality Polyclinic Modern Reception Lounge">
@@ -26,7 +26,7 @@
   <meta name="twitter:creator" content="@uncodedhub">
   <meta name="twitter:title" content="OmniCare Multi-Speciality Polyclinic & Day Care">
   <meta name="twitter:description" content="Senior MD/MS outpatient specialists, minor surgical OT, on-site pharmacy, and guaranteed <15 min wait times in Bengaluru.">
-  <meta name="twitter:image" content="https://uncodedhub.com/demos/assets/demo-16-clinic-polyclinic/01_Hero_Showcase.png">
+  <meta name="twitter:image" content="https://uncodedhub.comassets/demo-16-clinic-polyclinic/01_Hero_Showcase.png">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -38,8 +38,8 @@
         "@id": "https://uncodedhub.com/demos/clinic-polyclinic.html#organization",
         "name": "OmniCare Multi-Speciality Polyclinic & Day Care Centre",
         "url": "https://uncodedhub.com/demos/clinic-polyclinic.html",
-        "logo": "https://uncodedhub.com/demos/assets/demo-16-clinic-polyclinic/01_Hero_Showcase.png",
-        "image": "https://uncodedhub.com/demos/assets/demo-16-clinic-polyclinic/01_Hero_Showcase.png",
+        "logo": "https://uncodedhub.comassets/demo-16-clinic-polyclinic/01_Hero_Showcase.png",
+        "image": "https://uncodedhub.comassets/demo-16-clinic-polyclinic/01_Hero_Showcase.png",
         "description": "Multi-speciality outpatient polyclinic featuring senior specialists across 6 departments, day-care surgical OT, ultrasound, and digital pharmacy.",
         "telephone": "+91-80-2856-4400",
         "priceRange": "₹₹",
@@ -1256,9 +1256,120 @@
       .vows-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
+  
+    [data-theme="midnight-care"] {
+      --navy-deep: #0B1120;
+      --navy-dark: #111C30;
+      --navy-card: #18243C;
+      --navy-border: rgba(56, 189, 248, 0.25);
+      --teal-primary: #38BDF8;
+      --teal-hover: #0EA5E9;
+      --text-white: #FFFFFF;
+      --text-slate: #94A3B8;
+      --text-subtle: #64748B;
+      --bg-light: #0B1120;
+      --bg-card: #18243C;
+      --border-light: rgba(255, 255, 255, 0.12);
+    }
+
+    [data-theme="warm-healing"] {
+      --navy-deep: #FDFBF7;
+      --navy-dark: #F5EFE6;
+      --navy-card: #FFFFFF;
+      --navy-border: #DCD4C7;
+      --teal-primary: #0F766E;
+      --teal-hover: #115E59;
+      --text-white: #1C1917;
+      --text-slate: #44403C;
+      --text-subtle: #78716C;
+      --bg-light: #FDFBF7;
+      --bg-card: #FFFFFF;
+      --border-light: #EBE4D8;
+    }
+
+    .calc-chip {
+      background: var(--bg-card, #FFFFFF);
+      border: 1.5px solid var(--navy-border, #CBD5E1);
+      color: var(--text-white, #0A2540);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip:hover { border-color: var(--teal-primary, #0D9488); }
+    .calc-chip.active {
+      background: rgba(13, 148, 136, 0.15);
+      border-color: var(--teal-primary, #0D9488);
+      color: var(--teal-primary, #0D9488);
+    }
+
+    .calc-chip-tier {
+      background: var(--bg-card, #FFFFFF);
+      border: 1.5px solid var(--navy-border, #CBD5E1);
+      color: var(--text-white, #0A2540);
+      padding: 12px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip-tier:hover { border-color: var(--teal-primary, #0D9488); }
+    .calc-chip-tier.active {
+      background: rgba(13, 148, 136, 0.15);
+      border-color: var(--teal-primary, #0D9488);
+      color: var(--teal-primary, #0D9488);
+    }
+
+    .tc-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #E2E8F0;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tc-btn.active, .tc-btn:hover {
+      background: #0D9488;
+      border-color: #0D9488;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
   </style>
 </head>
 <body>
+
+  <!-- Top Uncoded Hub Specimen Banner -->
+  <div style="background: #091D26; color: #F5F3EF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; padding: 10px 20px; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 99999; box-shadow: 0 4px 20px rgba(0,0,0,0.25);">
+    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <a href="/portfolio/" style="color: #FFFFFF; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 12px; padding: 5px 12px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; transition: all 0.2s ease;">
+        &larr; Back to Uncoded Hub Portfolio
+      </a>
+      <span style="color: rgba(245,243,239,0.4); display: inline-block;">|</span>
+      <span style="color: #F5F3EF; font-weight: 500; font-size: 12.5px;">
+        Demo 16 &bull; Multi-Speciality Polyclinic Specimen
+      </span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 0.4rem;">
+        <span style="color: #94A3B8; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Theme:</span>
+        <button class="tc-btn active" onclick="switchTheme('polyclinic-teal', this)">Polyclinic Teal</button>
+        <button class="tc-btn" onclick="switchTheme('midnight-care', this)">Midnight Care</button>
+        <button class="tc-btn" onclick="switchTheme('warm-healing', this)">Warm Sanctuary</button>
+      </div>
+      <a href="/contact/" style="color: #38BDF8; font-size: 12.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px;">
+        Book Sprint &rarr;
+      </a>
+    </div>
+  </div>
 
   <!-- Top Live Status & Emergency Dispatch Bar -->
   <div class="top-status-bar">
@@ -1292,6 +1403,7 @@
 
         <ul class="nav-links">
           <li><a href="#suites" class="nav-link">Speciality Wings</a></li>
+          <li><a href="#triage-intake" class="nav-link">Triage &amp; Cost Estimator</a></li>
           <li><a href="#comparison" class="nav-link">Zero-Wait Proof</a></li>
           <li><a href="#director" class="nav-link">Medical Director</a></li>
           <li><a href="#schedule" class="nav-link">Doctor Schedule Filter</a></li>
@@ -1447,6 +1559,118 @@
   </section>
 
   <!-- Medical Suites & Clinical Wings (5 Modules) -->
+  
+  <!-- ==========================================================================
+       ENGINE 4: RAPID OUTPATIENT TRIAGE & SPECIALIST FEE ESTIMATOR
+       ========================================================================== -->
+  <section id="triage-intake" class="suites-section" style="background: var(--bg-light, #F8FAFC); border-top: 1px solid var(--border-light, #E2E8F0); padding: 80px 0;">
+    <div class="container">
+      <div class="section-title-wrap text-center" style="max-width: 780px; margin: 0 auto 40px auto; text-align: center;">
+        <div class="meta-label">ENGINE 4 &bull; RAPID OUTPATIENT TRIAGE INTAKE</div>
+        <h2 style="font-size: 36px; margin: 12px 0;">Specialist Department Triage &amp; Queue Estimator</h2>
+        <p style="color: var(--text-slate, #64748B); font-size: 16px;">Guaranteed &lt;15 minute consultation wait time. Select your clinical department and physician tier to see exact consultation fees and confirm your immediate appointment slot.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: start; max-width: 1120px; margin: 0 auto;" class="calc-grid-wrap">
+        <!-- Controls Column -->
+        <div style="background: var(--bg-card, #FFFFFF); border: 1.5px solid var(--navy-border, #CBD5E1); border-radius: 16px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
+          <!-- Step 1: Department -->
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-white, #0A2540); margin-bottom: 10px;">1. Select Clinical Department</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" id="clinicDeptChips">
+              <button type="button" class="calc-chip active" onclick="selectClinicDept('internal', 800, 'Dr. Arvind Sundaram, MD', 'Internal Medicine & Diabetology', this)">
+                Internal Medicine<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Senior MD Physician</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectClinicDept('paediatrics', 750, 'Dr. Neha Varma, DNB', 'Paediatrics & Immunization', this)">
+                Paediatrics<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Child Care &amp; Vaccines</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectClinicDept('ortho', 900, 'Dr. Rajiv Menon, MS', 'Orthopaedics & Joint Care', this)">
+                Orthopaedics<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Bone, Joint &amp; Spine</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectClinicDept('cardio', 1100, 'Dr. Sanjeev Rao, DM', 'Preventive Cardiology & ECG', this)">
+                Cardiology<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Echocardiogram &amp; TMT</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Consultation Format -->
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-white, #0A2540); margin-bottom: 10px;">2. Consultation Format</label>
+            <div style="display: flex; flex-direction: column; gap: 8px;" id="clinicFormatChips">
+              <div class="calc-chip-tier active" onclick="selectClinicFormat('clinic', 1.0, 'In-Clinic Express Consultation (Guaranteed <15 Min Wait)', this)">
+                <div>
+                  <strong style="display: block; font-size: 14px;">In-Clinic OPD Slot (Guaranteed &lt;15 Min Wait)</strong>
+                  <span style="font-size: 12px; color: var(--text-slate, #64748B);">Air-conditioned private consultation lounge &bull; On-site pharmacy</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: #0D9488;">Guaranteed</span>
+              </div>
+              <div class="calc-chip-tier" onclick="selectClinicFormat('home', 1.5, 'Home Visit Doctor & Sample Collection', this)">
+                <div>
+                  <strong style="display: block; font-size: 14px;">Home Care Doctor Visit &amp; Phlebotomy</strong>
+                  <span style="font-size: 12px; color: var(--text-slate, #64748B);">Senior GP visits residence within 60 mins &bull; Bedside ECG</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: #0D9488;">Home Care</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Digital Prescriptions Guarantee -->
+          <div style="background: rgba(13, 148, 136, 0.08); padding: 14px 18px; border-radius: 8px; border: 1px solid rgba(13, 148, 136, 0.25); display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <strong style="font-size: 13.5px; color: var(--text-white, #0A2540); display: block;">&#10003; 100% Digital Prescription &amp; Vitals History</strong>
+              <span style="font-size: 12px; color: var(--text-slate, #64748B);">Instant WhatsApp sync &bull; 10% discount at on-site pharmacy</span>
+            </div>
+            <span style="background: #0D9488; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px;">NABH STANDARDS</span>
+          </div>
+        </div>
+
+        <!-- Breakdown Output Card -->
+        <div style="background: var(--bg-card, #FFFFFF); border: 2px solid #0D9488; border-radius: 16px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span style="background: rgba(13, 148, 136, 0.15); color: #0D9488; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">Confirmed OPD Slot</span>
+              <span id="clinicDeptBadge" style="font-size: 12px; font-weight: 700; color: #0D9488;">Internal Medicine</span>
+            </div>
+
+            <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px dashed var(--navy-border, #CBD5E1);">
+              <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-slate, #64748B); margin-bottom: 4px;">Consultation Fee Bracket</div>
+              <div id="clinicFeeDisplay" style="font-size: 34px; font-weight: 800; color: var(--text-white, #0A2540); line-height: 1.1;">₹800 Only</div>
+              <div id="clinicDoctorDisplay" style="font-size: 13px; color: #0D9488; font-weight: 600; margin-top: 6px;">Attending: Dr. Arvind Sundaram, MD</div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-slate, #64748B);">&#10003; Live Waiting Time:</span>
+                <strong style="color: #0D9488; font-weight: 700;">&lt; 8 Mins Currently</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-slate, #64748B);">&#10003; Follow-Up Validity:</span>
+                <strong style="color: var(--text-white, #0A2540); font-weight: 700;">Free Within 7 Days</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-slate, #64748B);">&#10003; Pharmacy &amp; Lab On-Site:</span>
+                <strong style="color: var(--text-white, #0A2540); font-weight: 700;">Same Floor Dispatch</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-slate, #64748B);">&#10003; Emergency Minor OT:</span>
+                <strong style="color: var(--text-white, #0A2540); font-weight: 700;">24/7 Day Care Ready</strong>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <a id="clinicWhatsAppBtn" href="https://wa.me/918660819023?text=Hi%20OmniCare%20Polyclinic,%20I%20am%20booking%20a%20consultation%20with%20Dr.%20Arvind%20Sundaram%20(Internal%20Medicine,%20Fee%20₹800).%20Please%20confirm%20today's%20immediate%20slot." target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: 100%; text-align: center; justify-content: center; font-size: 15px; padding: 14px 20px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+              <span>Confirm Immediate Slot via WhatsApp &rarr;</span>
+            </a>
+            <div style="text-align: center; font-size: 11.5px; color: var(--text-slate, #64748B); margin-top: 10px;">
+              Walk-ins welcome &bull; Priority queue reserved for WhatsApp appointments
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section-wrap" id="suites">
     <div class="container">
       <div class="section-header">
@@ -1935,6 +2159,54 @@
 
   <!-- Interactive Scripts -->
   <script>
+
+    // Theme Switcher
+    function switchTheme(themeKey, btnElem) {
+      document.body.setAttribute('data-theme', themeKey);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+    }
+
+    // Engine 4: Polyclinic Triage Estimator
+    let currentClinicDept = 'Internal Medicine & Diabetology';
+    let currentDoctor = 'Dr. Arvind Sundaram, MD';
+    let currentBaseFee = 800;
+    let currentFormatMulti = 1.0;
+
+    function selectClinicDept(key, baseFee, docName, deptLabel, btn) {
+      currentBaseFee = baseFee;
+      currentDoctor = docName;
+      currentClinicDept = deptLabel;
+      document.querySelectorAll('#clinicDeptChips .calc-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const badge = document.getElementById('clinicDeptBadge');
+      if (badge) badge.textContent = deptLabel.split('&')[0].trim();
+      updateTriageEstimate();
+    }
+
+    function selectClinicFormat(key, multi, label, btn) {
+      currentFormatMulti = multi;
+      document.querySelectorAll('#clinicFormatChips .calc-chip-tier').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateTriageEstimate();
+    }
+
+    function updateTriageEstimate() {
+      const calcFee = Math.round(currentBaseFee * currentFormatMulti);
+
+      const feeDisplay = document.getElementById('clinicFeeDisplay');
+      if (feeDisplay) feeDisplay.textContent = '₹' + calcFee + ' Only';
+
+      const docDisplay = document.getElementById('clinicDoctorDisplay');
+      if (docDisplay) docDisplay.textContent = 'Attending: ' + currentDoctor;
+
+      const waBtn = document.getElementById('clinicWhatsAppBtn');
+      if (waBtn) {
+        const msg = encodeURIComponent('Hi OmniCare Polyclinic, I am booking a consultation with ' + currentDoctor + ' (' + currentClinicDept + ', Fee ₹' + calcFee + '). Please confirm today\\\'s slot.');
+        waBtn.href = 'https://wa.me/918660819023?text=' + msg;
+      }
+    }
+
     // 1. Before/After Zero-Wait Slider Logic
     (function initSlider() {
       const container = document.getElementById('sliderContainer');

@@ -16,7 +16,7 @@
   <meta property="og:url" content="https://uncodedhub.com/demos/dental-clinic.html">
   <meta property="og:title" content="Willowmere Dental &amp; Facial Aesthetics | Private Clinical Specimen">
   <meta property="og:description" content="Live interactive boutique dental practice demo. Natural smile transformation slider, digital 3D intraoral scanning, patient stop-signal protocol, and itemized treatment pricing matrix.">
-  <meta property="og:image" content="https://uncodedhub.com/demos/assets/demo-03-dental-clinic/01_Hero_Showcase.png">
+  <meta property="og:image" content="https://uncodedhub.comassets/demo-03-dental-clinic/01_Hero_Showcase.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
   <meta property="og:locale" content="en_US">
@@ -26,7 +26,7 @@
   <meta name="twitter:site" content="@uncodedhub">
   <meta name="twitter:title" content="Willowmere Dental &amp; Facial Aesthetics | Private Clinical Specimen">
   <meta name="twitter:description" content="Live interactive boutique dental practice demo. Natural smile transformation slider, digital 3D intraoral scanning, patient stop-signal protocol, and itemized treatment pricing matrix.">
-  <meta name="twitter:image" content="https://uncodedhub.com/demos/assets/demo-03-dental-clinic/01_Hero_Showcase.png">
+  <meta name="twitter:image" content="https://uncodedhub.comassets/demo-03-dental-clinic/01_Hero_Showcase.png">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -39,7 +39,7 @@
         "name": "Willowmere Dental & Facial Aesthetics",
         "url": "https://uncodedhub.com/demos/dental-clinic.html",
         "description": "Boutique private dental and facial aesthetics practice specializing in anxiety-free dentistry, Swiss-guided implants, and bespoke porcelain smile design.",
-        "image": "https://uncodedhub.com/demos/assets/demo-03-dental-clinic/01_Hero_Showcase.png",
+        "image": "https://uncodedhub.comassets/demo-03-dental-clinic/01_Hero_Showcase.png",
         "telephone": "+91-80-4920-3300",
         "address": {
           "@type": "PostalAddress",
@@ -1232,6 +1232,13 @@
       </span>
     </div>
     <div style="display: flex; align-items: center; gap: 16px;">
+      
+      <div style="display: flex; align-items: center; gap: 0.4rem; margin-right: 12px;">
+        <span style="color: #A3B8AD; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Theme:</span>
+        <button class="tc-btn active" onclick="switchTheme('nordic-clinical', this)">Nordic Clinical</button>
+        <button class="tc-btn" onclick="switchTheme('obsidian-aesthetic', this)">Obsidian Spa</button>
+        <button class="tc-btn" onclick="switchTheme('ivory-sanctuary', this)">Ivory Sanctuary</button>
+      </div>
       <span style="background: rgba(37,211,102,0.15); color: #25D366; border: 1px solid rgba(37,211,102,0.35); font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 9px; border-radius: 3px;">
         Demo 03 &bull; Dental Clinics &amp; Aesthetics
       </span>
@@ -1254,6 +1261,7 @@
         <a href="#transformation">Smile Transformation</a>
         <a href="#doctor">Lead Clinician</a>
         <a href="#comfort">Painless Protocol</a>
+        <a href="#aligner-estimator">Smile Estimator</a>
         <a href="#pricing">Transparent Pricing</a>
       </nav>
 
@@ -1302,7 +1310,7 @@
 
       <div class="hero-visual">
         <img class="hero-image-main" 
-             src="/demos/assets/demo-03-dental-clinic/01_Hero_Showcase.png" 
+             src="assets/demo-03-dental-clinic/01_Hero_Showcase.png" 
              alt="Willowmere Dental Clinic Sunlit Operatory with Architectural Greenery and State-of-the-Art Ergonomic Chair">
         
         <div class="hero-floating-card">
@@ -1326,13 +1334,13 @@
         <div class="compare-container" id="dentalDiffBox" style="--clip-pos: 50%;">
           <!-- Layer 1: After / Restored Natural Ivory Smile (Base) -->
           <img class="compare-img compare-img-after" 
-               src="/demos/assets/demo-03-dental-clinic/08_After_Finished.png" 
+               src="assets/demo-03-dental-clinic/08_After_Finished.png" 
                alt="Restored Natural Ivory Smile with Minimal-Prep Ceramic Veneers and Healthy Gingival Margins" 
                loading="lazy">
           
           <!-- Layer 2: Before / Natural Enamel Wear & Misalignment (Clipped) -->
           <img class="compare-img compare-img-before" 
-               src="/demos/assets/demo-03-dental-clinic/07_Before_Raw.png" 
+               src="assets/demo-03-dental-clinic/07_Before_Raw.png" 
                alt="Before Treatment: Natural Incisal Misalignment, Wear, and Discoloration" 
                loading="lazy">
 
@@ -1423,7 +1431,7 @@
         <!-- Card 1: Porcelain Veneers (Span 6) -->
         <div class="clinic-card portfolio-span-6 tall">
           <div class="clinic-img-wrap">
-            <img src="/demos/assets/demo-03-dental-clinic/02_Work_01.png" alt="Hand-Layered E-Max Porcelain Veneers Smile Design Result" loading="lazy">
+            <img src="assets/demo-03-dental-clinic/02_Work_01.png" alt="Hand-Layered E-Max Porcelain Veneers Smile Design Result" loading="lazy">
             <span class="clinic-tag">Smile Aesthetics</span>
           </div>
           <div class="clinic-body">
@@ -1441,7 +1449,7 @@
         <!-- Card 2: Clear Aligners (Span 6) -->
         <div class="clinic-card portfolio-span-6 tall">
           <div class="clinic-img-wrap">
-            <img src="/demos/assets/demo-03-dental-clinic/03_Work_02.png" alt="Crystal-Clear Orthodontic Aligner on Architectural Speckled Stone Tray" loading="lazy">
+            <img src="assets/demo-03-dental-clinic/03_Work_02.png" alt="Crystal-Clear Orthodontic Aligner on Architectural Speckled Stone Tray" loading="lazy">
             <span class="clinic-tag">3D Orthodontics</span>
           </div>
           <div class="clinic-body">
@@ -1459,7 +1467,7 @@
         <!-- Card 3: Dental Implants (Span 4) -->
         <div class="clinic-card portfolio-span-4">
           <div class="clinic-img-wrap">
-            <img src="/demos/assets/demo-03-dental-clinic/04_Work_03.png" alt="Full-Arch Dental Implant Rehabilitation Confident Smile" loading="lazy">
+            <img src="assets/demo-03-dental-clinic/04_Work_03.png" alt="Full-Arch Dental Implant Rehabilitation Confident Smile" loading="lazy">
             <span class="clinic-tag">Swiss Implants</span>
           </div>
           <div class="clinic-body">
@@ -1477,7 +1485,7 @@
         <!-- Card 4: Facial Aesthetics (Span 4) -->
         <div class="clinic-card portfolio-span-4">
           <div class="clinic-img-wrap">
-            <img src="/demos/assets/demo-03-dental-clinic/05_Work_04.png" alt="Medical Facial Harmonization and Subtle Lip Contour" loading="lazy">
+            <img src="assets/demo-03-dental-clinic/05_Work_04.png" alt="Medical Facial Harmonization and Subtle Lip Contour" loading="lazy">
             <span class="clinic-tag">Facial Aesthetics</span>
           </div>
           <div class="clinic-body">
@@ -1495,7 +1503,7 @@
         <!-- Card 5: Family & Pediatric (Span 4) -->
         <div class="clinic-card portfolio-span-4">
           <div class="clinic-img-wrap">
-            <img src="/demos/assets/demo-03-dental-clinic/06_Work_05.png" alt="Warm Family Dental Consultation in Sunlit Clinic Lounge" loading="lazy">
+            <img src="assets/demo-03-dental-clinic/06_Work_05.png" alt="Warm Family Dental Consultation in Sunlit Clinic Lounge" loading="lazy">
             <span class="clinic-tag">Family Preventive</span>
           </div>
           <div class="clinic-body">
@@ -1519,7 +1527,7 @@
       <div class="clinician-grid">
         <div class="clinician-image-box">
           <img class="clinician-photo" 
-               src="/demos/assets/demo-03-dental-clinic/09_Founder_Or_Expert.png" 
+               src="assets/demo-03-dental-clinic/09_Founder_Or_Expert.png" 
                alt="Dr. Alistair Vance, Principal Clinical Director in Modern Sunlit Dental Sanctuary" 
                loading="lazy">
           <div class="clinician-badge-float">
@@ -1592,7 +1600,7 @@
 
         <div>
           <img class="tech-image" 
-               src="/demos/assets/demo-03-dental-clinic/10_Process_Detail.png" 
+               src="assets/demo-03-dental-clinic/10_Process_Detail.png" 
                alt="Digital Dentistry Intraoral 3D Scanning Wand Emitting Soft LED Diagnostic Light" 
                loading="lazy">
         </div>
@@ -1632,6 +1640,118 @@
   </section>
 
   <!-- Transparent Fee Matrix -->
+  
+  <!-- ==========================================================================
+       ENGINE 4: INTERACTIVE CLEAR ALIGNER & SMILE MAKEOVER ESTIMATOR
+       ========================================================================== -->
+  <section id="aligner-estimator" class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="wrap">
+      <div class="section-header" style="max-width: 780px; margin: 0 auto 40px auto; text-align: center;">
+        <div class="badge">Engine 4 &bull; Clinical Diagnostic Intake</div>
+        <h2>Clear Aligner &amp; Smile Design Cost Calculator</h2>
+        <p>Interactive Swiss-precision clinical fee estimator. Select your aesthetic goals, case severity, and material tier to project realistic investment brackets with 0% EMI availability.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: start; max-width: 1120px; margin: 0 auto;" class="calc-grid-wrap">
+        <!-- Controls Column -->
+        <div style="background: var(--bg-card); border: 1.5px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--card-shadow);">
+          <!-- Step 1: Procedure -->
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-primary); margin-bottom: 10px;">1. Select Clinical Focus</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" id="dentalProcChips">
+              <button type="button" class="calc-chip active" onclick="selectDentalProc('aligners', 1.0, 75000, 140000, 'Invisible Clear Aligners', this)">
+                Clear Aligners<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Bespoke Transparent Trays</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectDentalProc('veneers', 1.35, 95000, 195000, 'Porcelain Smile Veneers', this)">
+                Porcelain Veneers<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">E-Max Handcrafted Ceramic</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectDentalProc('implant', 1.5, 45000, 95000, 'Swiss Straumann Implant', this)">
+                Dental Implant<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Titanium + Zirconia Crown</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectDentalProc('whitening', 0.4, 18000, 32000, 'Laser Teeth Whitening', this)">
+                Laser Whitening<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Same-Day 8-Shade Lift</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Complexity -->
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-primary); margin-bottom: 10px;">2. Clinical Complexity</label>
+            <div style="display: flex; flex-direction: column; gap: 8px;" id="dentalComplexityChips">
+              <div class="calc-chip-tier active" onclick="selectDentalComplexity(1.0, 'Mild Spacing / Minor Aesthetic Touch', this)">
+                <div>
+                  <strong style="display: block; font-size: 14px;">Mild (Minor Crowding or Diastema)</strong>
+                  <span style="font-size: 12px; color: var(--text-subtle);">4 &ndash; 6 months duration &bull; 12-16 aligner steps</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: var(--accent);">Level 1</span>
+              </div>
+              <div class="calc-chip-tier" onclick="selectDentalComplexity(1.3, 'Moderate Crowding / Rotated Premolars', this)">
+                <div>
+                  <strong style="display: block; font-size: 14px;">Moderate (Arch Expansion &amp; Deep Bite)</strong>
+                  <span style="font-size: 12px; color: var(--text-subtle);">8 &ndash; 12 months duration &bull; Full digital monitoring</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: var(--accent);">Level 2</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Scan Included -->
+          <div style="background: var(--bg-card-subtle); padding: 14px 18px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <strong style="font-size: 13.5px; color: var(--text-primary); display: block;">&#10003; 3D Digital Intraoral Scan (iTero)</strong>
+              <span style="font-size: 12px; color: var(--text-subtle);">Zero messy putty impressions &bull; Sub-millimeter digital model</span>
+            </div>
+            <span style="background: var(--badge-bg); color: var(--badge-text); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px;">COMPLIMENTARY</span>
+          </div>
+        </div>
+
+        <!-- Breakdown Output Card -->
+        <div style="background: var(--bg-card); border: 2px solid var(--accent); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--card-shadow); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge" style="margin-bottom: 0;">Clinical Treatment Plan</span>
+              <span id="dentalProcBadge" style="font-size: 12px; font-weight: 700; color: var(--accent);">Invisible Clear Aligners</span>
+            </div>
+
+            <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px dashed var(--border-color);">
+              <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-subtle); margin-bottom: 4px;">Estimated Treatment Investment</div>
+              <div id="dentalTotalDisplay" style="font-size: 34px; font-weight: 800; font-family: var(--font-heading); color: var(--text-primary); line-height: 1.1;">₹75,000 &ndash; ₹1,40,000</div>
+              <div id="dentalEmiDisplay" style="font-size: 13px; color: var(--accent); font-weight: 600; margin-top: 6px;">Zero-Interest EMI Available from ₹6,250 / month</div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted);">&#10003; 3D Simulation Preview:</span>
+                <strong style="color: var(--accent); font-weight: 700;">Included (Day 1)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted);">&#10003; Material Standard:</span>
+                <strong style="color: var(--text-primary); font-weight: 700;">Swiss Medical Grade</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted);">&#10003; Patient Stop-Signal Guarantee:</span>
+                <strong style="color: var(--text-primary); font-weight: 700;">100% Pain-Controlled</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted);">&#10003; Post-Treatment Retainers:</span>
+                <strong style="color: var(--text-primary); font-weight: 700;">Included (2 Pairs)</strong>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <a id="dentalWhatsAppBtn" href="https://wa.me/918660819023?text=Hi%20Willowmere%20Dental,%20I%20am%20inquiring%20about%20Invisible%20Clear%20Aligners%20(Estimated%20₹75,000%20-%20₹1,40,000).%20Please%20schedule%20a%203D%20Intraoral%20Scan." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center; font-size: 15px; padding: 14px 20px; display: inline-flex; align-items: center; gap: 8px;">
+              <span>Schedule 3D Scan via WhatsApp &rarr;</span>
+            </a>
+            <div style="text-align: center; font-size: 11.5px; color: var(--text-subtle); margin-top: 10px;">
+              Zero sales pressure &bull; Confidential clinical consultation
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="pricing" class="section-padding fee-matrix-section">
     <div class="wrap">
       <div class="section-header">
@@ -1851,7 +1971,7 @@
       <!-- Header matching Uncoded Hub site -->
       <div class="uh-popup-header">
         <div class="uh-brand-group">
-          <img src="/logo-medium.webp" alt="Uncoded Hub" class="uh-brand-logo-img">
+          <img src="../logo-medium.webp" alt="Uncoded Hub" class="uh-brand-logo-img">
           <div>
             <div class="uh-brand-name">Uncoded Hub</div>
             <div class="uh-brand-sub">Two-Person Studio · Bengaluru</div>
@@ -1864,12 +1984,12 @@
       <div class="founders-row">
         <div class="founders-photos">
           <div class="founder-pic-box">
-            <img src="/deepak.webp" alt="Deepak, co-founder" class="founder-pic">
+            <img src="../deepak.webp" alt="Deepak, co-founder" class="founder-pic">
             <span class="founder-name">Deepak</span>
             <span class="founder-role">Engineering</span>
           </div>
           <div class="founder-pic-box">
-            <img src="/geetha.webp" alt="Geetha, co-founder" class="founder-pic">
+            <img src="../geetha.webp" alt="Geetha, co-founder" class="founder-pic">
             <span class="founder-name">Geetha</span>
             <span class="founder-role">Design &amp; Strategy</span>
           </div>
@@ -1959,6 +2079,58 @@
 
   <!-- Interactive Scripts -->
   <script>
+
+    // Theme Switcher
+    function switchTheme(themeKey, btnElem) {
+      document.body.setAttribute('data-theme', themeKey);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+    }
+
+    // Engine 4: Dental Treatment Estimator
+    let currentDentalProc = 'Invisible Clear Aligners';
+    let currentMinFee = 75000;
+    let currentMaxFee = 140000;
+    let currentComplexityMulti = 1.0;
+
+    function selectDentalProc(key, multi, minFee, maxFee, label, btn) {
+      currentDentalProc = label;
+      currentMinFee = minFee;
+      currentMaxFee = maxFee;
+      document.querySelectorAll('#dentalProcChips .calc-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const badge = document.getElementById('dentalProcBadge');
+      if (badge) badge.textContent = label;
+      updateDentalEstimate();
+    }
+
+    function selectDentalComplexity(multi, label, btn) {
+      currentComplexityMulti = multi;
+      document.querySelectorAll('#dentalComplexityChips .calc-chip-tier').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateDentalEstimate();
+    }
+
+    function updateDentalEstimate() {
+      const calcMin = Math.round(currentMinFee * currentComplexityMulti);
+      const calcMax = Math.round(currentMaxFee * currentComplexityMulti);
+
+      const totalDisplay = document.getElementById('dentalTotalDisplay');
+      if (totalDisplay) totalDisplay.innerHTML = '₹' + calcMin.toLocaleString('en-IN') + ' &ndash; ₹' + calcMax.toLocaleString('en-IN');
+
+      const emiDisplay = document.getElementById('dentalEmiDisplay');
+      if (emiDisplay) {
+        const emiMin = Math.round(calcMin / 12);
+        emiDisplay.textContent = 'Zero-Interest EMI Available from ₹' + emiMin.toLocaleString('en-IN') + ' / month';
+      }
+
+      const waBtn = document.getElementById('dentalWhatsAppBtn');
+      if (waBtn) {
+        const msg = encodeURIComponent('Hi Willowmere Dental, I am inquiring about ' + currentDentalProc + ' (Estimated ₹' + calcMin.toLocaleString('en-IN') + ' - ₹' + calcMax.toLocaleString('en-IN') + '). Please schedule a 3D Intraoral Scan.');
+        waBtn.href = 'https://wa.me/918660819023?text=' + msg;
+      }
+    }
+
     // Smile Comparison Slider Function
     function updateSmileDiff(val) {
       const box = document.getElementById('dentalDiffBox');

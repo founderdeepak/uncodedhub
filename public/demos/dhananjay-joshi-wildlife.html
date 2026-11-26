@@ -1013,6 +1013,13 @@
       <span><i class="fa-solid fa-gem" style="color: var(--accent-gold); margin-right: 6px;"></i> Curated Fine Art Frames for Architects, Interior Designers & Private Collectors</span>
     </div>
     <div>
+      
+      <div style="display: flex; align-items: center; gap: 0.4rem; margin-left: 16px;">
+        <span style="color: #94A3B8; font-size: 11px; text-transform: uppercase;">Theme:</span>
+        <button class="tc-btn active" onclick="switchTheme('safari-nocturne', this)">Safari</button>
+        <button class="tc-btn" onclick="switchTheme('kabini-forest', this)">Kabini</button>
+        <button class="tc-btn" onclick="switchTheme('curator-white', this)">Curator Light</button>
+      </div>
       <span>Direct Gallery Atelier:</span>
       <a href="tel:+918682953144"><i class="fa-solid fa-phone"></i> +91 86829 53144</a>
       <a href="https://wa.me/918682953144" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Direct</a>
@@ -1709,5 +1716,27 @@
       window.open(`https://wa.me/918682953144?text=${msg}`, '_blank');
     }
   </script>
+
+  <script>
+    function switchTheme(themeName, btn) {
+      document.documentElement.setAttribute('data-theme', themeName);
+      localStorage.setItem('dhananjay_theme', themeName);
+      document.querySelectorAll('.tc-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('dhananjay_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        const matchBtn = document.querySelector('.tc-btn[onclick*="' + savedTheme + '"]');
+        if (matchBtn) {
+          document.querySelectorAll('.tc-btn').forEach(b => b.classList.remove('active'));
+          matchBtn.classList.add('active');
+        }
+      }
+    });
+  </script>
+
 </body>
 </html>

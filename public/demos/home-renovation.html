@@ -16,7 +16,7 @@
   <meta property="og:url" content="https://uncodedhub.com/demos/home-renovation.html">
   <meta property="og:title" content="Halbrook Precision Renovation &amp; Modular Kitchens | Live Demo Specimen">
   <meta property="og:description" content="Architectural home renovation and modular kitchen engineering studio demo. 100% IS:710 Marine Plywood, Blum hardware, before/after renovation slider, and free 3D laser survey booking.">
-  <meta property="og:image" content="https://uncodedhub.com/demos/assets/demo-05-home-renovation/01_Hero_Showcase.png">
+  <meta property="og:image" content="https://uncodedhub.comassets/demo-05-home-renovation/01_Hero_Showcase.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
   <meta property="og:locale" content="en_US">
@@ -26,7 +26,7 @@
   <meta name="twitter:site" content="@uncodedhub">
   <meta name="twitter:title" content="Halbrook Precision Renovation &amp; Modular Kitchens | Live Demo Specimen">
   <meta name="twitter:description" content="Architectural home renovation and modular kitchen engineering studio demo. 100% IS:710 Marine Plywood, Blum hardware, before/after renovation slider, and free 3D laser survey booking.">
-  <meta name="twitter:image" content="https://uncodedhub.com/demos/assets/demo-05-home-renovation/01_Hero_Showcase.png">
+  <meta name="twitter:image" content="https://uncodedhub.comassets/demo-05-home-renovation/01_Hero_Showcase.png">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -39,7 +39,7 @@
         "name": "Halbrook Precision Renovation Studios",
         "url": "https://uncodedhub.com/demos/home-renovation.html",
         "description": "Precision engineered modular kitchens and civil renovations. Highlights 100% IS:710 Marine BWP plywood standards, Blum German hardware certifications, 10-year written warranty seals, and free laser survey booking.",
-        "image": "https://uncodedhub.com/demos/assets/demo-05-home-renovation/01_Hero_Showcase.png",
+        "image": "https://uncodedhub.comassets/demo-05-home-renovation/01_Hero_Showcase.png",
         "telephone": "+91-86608-19023",
         "address": {
           "@type": "PostalAddress",
@@ -108,6 +108,112 @@
       --header-bg: rgba(248, 245, 238, 0.96);
       --input-bg: #FFFFFF;
     }
+
+    [data-theme="nordic-minimalist"] {
+      --bg-primary: #F0F4F8;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #E2E8F0;
+      --text-primary: #0F172A;
+      --text-muted: #334155;
+      --text-subtle: #64748B;
+      --border-color: #CBD5E1;
+      --border-subtle: #E2E8F0;
+      --accent: #0284C7;
+      --accent-hover: #0369A1;
+      --accent-contrast: #FFFFFF;
+      --accent-light: #E0F2FE;
+      --badge-bg: #E0F2FE;
+      --badge-text: #0369A1;
+      --wood-tone: #475569;
+      --card-shadow: 0 12px 35px rgba(15, 23, 42, 0.06);
+      --header-bg: rgba(240, 244, 248, 0.96);
+      --input-bg: #FFFFFF;
+    }
+
+    [data-theme="industrial-slate"] {
+      --bg-primary: #121417;
+      --bg-surface: #1C1F24;
+      --bg-card: #23272F;
+      --bg-card-subtle: #2D323B;
+      --text-primary: #F8FAFC;
+      --text-muted: #CBD5E1;
+      --text-subtle: #94A3B8;
+      --border-color: rgba(217, 119, 6, 0.35);
+      --border-subtle: rgba(255, 255, 255, 0.12);
+      --accent: #F59E0B;
+      --accent-hover: #D97706;
+      --accent-contrast: #121417;
+      --accent-light: rgba(245, 158, 11, 0.15);
+      --badge-bg: rgba(245, 158, 11, 0.15);
+      --badge-text: #F59E0B;
+      --wood-tone: #D97706;
+      --card-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
+      --header-bg: rgba(18, 20, 23, 0.96);
+      --input-bg: #23272F;
+    }
+
+    /* Engine 2 Calculator Styles */
+    .calc-chip {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip:hover {
+      border-color: var(--accent);
+    }
+    .calc-chip.active {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .calc-chip-tier {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip-tier:hover {
+      border-color: var(--accent);
+    }
+    .calc-chip-tier.active {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .tc-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #E2E8F0;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tc-btn.active, .tc-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--accent-contrast);
+      font-weight: 700;
+    }
+
 
     *, *::before, *::after {
       box-sizing: border-box;
@@ -1515,6 +1621,13 @@
         <span>Warranty: <strong>10-Year Written</strong></span>
       </div>
       <div class="specimen-actions">
+
+        <div style="display: flex; align-items: center; gap: 0.4rem; margin-right: 12px;">
+          <span style="color: #999; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Theme:</span>
+          <button class="tc-btn active" onclick="switchTheme('terracotta-craft', this)">Terracotta Craft</button>
+          <button class="tc-btn" onclick="switchTheme('nordic-minimalist', this)">Nordic Minimalist</button>
+          <button class="tc-btn" onclick="switchTheme('industrial-slate', this)">Industrial Slate</button>
+        </div>
         <a href="/portfolio/" class="specimen-btn specimen-btn-back">&larr; Return to Portfolio</a>
         <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha,%20I%20am%20exploring%20the%20Home%20Renovation%20demo%20and%20want%20to%20discuss%20a%20bespoke%20website%20for%20my%20firm." class="specimen-btn specimen-btn-wa" target="_blank" rel="noopener noreferrer">WhatsApp Studio</a>
         <a href="https://uncodedhub.com/#book" class="specimen-btn specimen-btn-agency">Book Custom Sprint</a>
@@ -1590,7 +1703,7 @@
 
       <div class="hero-visual-frame">
         <div class="hero-image-wrap">
-          <img src="/demos/assets/demo-05-home-renovation/01_Hero_Showcase.png" 
+          <img src="assets/demo-05-home-renovation/01_Hero_Showcase.png" 
                alt="Warm Modern Kitchen and Living Space Crafted by Halbrook Renovation Studios" 
                loading="eager">
           <span class="hero-cert-tag">German CNC Built &bull; Fluted Walnut &amp; Calacatta Marble</span>
@@ -1672,13 +1785,13 @@
         <div class="compare-container" id="renovationSlider" style="--clip-pos: 50%;">
           <!-- Layer 1: Finished Luxury Kitchen (Base) -->
           <img class="compare-img compare-img-after" 
-               src="/demos/assets/demo-05-home-renovation/08_After_Finished.png" 
+               src="assets/demo-05-home-renovation/08_After_Finished.png" 
                alt="Turnkey Luxury Kitchen with Fluted Walnut, Calacatta Marble Waterfall, and Architectural Lighting" 
                loading="lazy">
           
           <!-- Layer 2: Raw Civil Shell (Clipped) -->
           <img class="compare-img compare-img-before" 
-               src="/demos/assets/demo-05-home-renovation/07_Before_Raw.png" 
+               src="assets/demo-05-home-renovation/07_Before_Raw.png" 
                alt="Unfinished Brick and Bare-Shell Civil Kitchen State Before Renovation" 
                loading="lazy">
 
@@ -1720,7 +1833,7 @@
         <!-- Feature 1: Minimalist Charcoal & Oak Kitchen (Span 7) -->
         <div class="project-card card-span-7">
           <div class="project-img-wrap">
-            <img src="/demos/assets/demo-05-home-renovation/02_Work_01.png" 
+            <img src="assets/demo-05-home-renovation/02_Work_01.png" 
                  alt="Warm Minimalist Charcoal and Oak Kitchen with Concealed Appliance Garage" 
                  loading="lazy">
             <span class="project-tag">Modular Kitchen &bull; Indiranagar</span>
@@ -1740,7 +1853,7 @@
         <!-- Feature 2: Walk-In Wardrobe (Span 5) -->
         <div class="project-card card-span-5 card-tall">
           <div class="project-img-wrap">
-            <img src="/demos/assets/demo-05-home-renovation/03_Work_02.png" 
+            <img src="assets/demo-05-home-renovation/03_Work_02.png" 
                  alt="Luxurious Amber-Lit Walk-In Wardrobe with Smoked Glass Doors" 
                  loading="lazy">
             <span class="project-tag">Master Suite &bull; Koramangala</span>
@@ -1760,7 +1873,7 @@
         <!-- Feature 3: Luxury Spa Ensuite (Span 4) -->
         <div class="project-card card-span-4">
           <div class="project-img-wrap">
-            <img src="/demos/assets/demo-05-home-renovation/04_Work_03.png" 
+            <img src="assets/demo-05-home-renovation/04_Work_03.png" 
                  alt="Warm Luxury Bathroom Spa with Micro-Cement and Fluted Glass Shower" 
                  loading="lazy">
             <span class="project-tag">Civil Ensuite &bull; Whitefield</span>
@@ -1780,7 +1893,7 @@
         <!-- Feature 4: Oak Media Wall (Span 4) -->
         <div class="project-card card-span-4">
           <div class="project-img-wrap">
-            <img src="/demos/assets/demo-05-home-renovation/05_Work_04.png" 
+            <img src="assets/demo-05-home-renovation/05_Work_04.png" 
                  alt="Warm Oak Acoustic Slat Media Wall in Modern Living Room" 
                  loading="lazy">
             <span class="project-tag">Living Architecture &bull; HSR Layout</span>
@@ -1800,7 +1913,7 @@
         <!-- Feature 5: Compact Luxury Apartment (Span 4) -->
         <div class="project-card card-span-4">
           <div class="project-img-wrap">
-            <img src="/demos/assets/demo-05-home-renovation/06_Work_05.png" 
+            <img src="assets/demo-05-home-renovation/06_Work_05.png" 
                  alt="Warm Modern Compact Luxury Apartment Living Space" 
                  loading="lazy">
             <span class="project-tag">Full 2BHK Renovation &bull; Bellandur</span>
@@ -1827,7 +1940,7 @@
     <div class="wrap">
       <div class="spotlight-grid">
         <div class="spotlight-visual">
-          <img src="/demos/assets/demo-05-home-renovation/09_Founder_Or_Expert.png" 
+          <img src="assets/demo-05-home-renovation/09_Founder_Or_Expert.png" 
                alt="David Halbrook, Principal Civil Engineer &amp; Managing Director Reviewing Job Site Plans" 
                loading="lazy">
         </div>
@@ -1882,7 +1995,7 @@
           </div>
         </div>
         <div class="materials-visual">
-          <img src="/demos/assets/demo-05-home-renovation/10_Process_Detail.png" 
+          <img src="assets/demo-05-home-renovation/10_Process_Detail.png" 
                alt="Precision Cabinetry Materials Showcase: IS:710 Marine Plywood Core and Blum German Runners" 
                loading="lazy">
         </div>
@@ -1894,95 +2007,117 @@
        ROOM-BY-ROOM ESTIMATE CALCULATOR & FREE 3D LASER SURVEY
        ========================================================================== -->
   <section id="calculator" class="calc-section section-padding">
-    <div class="wrap calc-grid">
-      <div class="calc-info">
-        <div class="badge">Factory-Direct Transparency</div>
-        <h2>Instant Scope Estimation &amp; Free 3D Laser Measurement</h2>
-        <p>
-          Select your project type and home size to receive an instant realistic investment bracket. Then schedule a free on-site digital laser survey with our senior modular engineer.
-        </p>
+  <div class="wrap">
+    <div class="section-header" style="max-width: 780px; margin: 0 auto 40px auto; text-align: center;">
+      <div class="badge">Engine 2 &bull; Interactive Turnkey Cost Builder</div>
+      <h2>Instant Modular Scope Estimation &amp; Laser Survey</h2>
+      <p>Interactive turnkey cost model with transparent factory-direct engineering. Choose your renovation scope, area, and hardware tier to see instant itemized pricing before scheduling your on-site digital laser survey.</p>
+    </div>
 
-        <div class="calc-guarantee-box">
-          <h4>&#9733; What Happens During Your Free Laser Survey:</h4>
-          <p>
-            1. Digital millimeter-accurate laser floor plan mapping.<br>
-            2. Moisture probe inspection of kitchen walls and wet zones.<br>
-            3. Tactile physical material sample kit (Marine ply cuts, Blum hinges, quartz swatches).<br>
-            4. Line-by-line itemized quote with zero obligation.
-          </p>
+    <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: start; max-width: 1140px; margin: 0 auto;" class="calc-grid-wrap">
+      <!-- Controls Column -->
+      <div style="background: var(--bg-card); border: 1.5px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--card-shadow);">
+        <!-- Step 1: Scope Chips -->
+        <div style="margin-bottom: 24px;">
+          <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-primary); margin-bottom: 10px;">1. Select Project Scope</label>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" id="renoScopeChips">
+            <button type="button" class="calc-chip active" onclick="selectRenoScope('kitchen-only', 1.0, 'Modular Kitchen Overhaul', this)">
+              Modular Kitchen Only<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Full German Hardware</span>
+            </button>
+            <button type="button" class="calc-chip" onclick="selectRenoScope('kitchen-wardrobes', 1.45, 'Kitchen + 2 Wardrobes', this)">
+              Kitchen + Wardrobes<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">2 Master Bedrooms</span>
+            </button>
+            <button type="button" class="calc-chip" onclick="selectRenoScope('full-2bhk', 2.1, 'Full Turnkey 2BHK', this)">
+              Complete 2BHK Overhaul<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Civil, Bath &amp; Modular</span>
+            </button>
+            <button type="button" class="calc-chip" onclick="selectRenoScope('full-3bhk', 3.2, 'Full Turnkey 3BHK / Villa', this)">
+              Full 3BHK / Villa<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Luxury Architectural</span>
+            </button>
+          </div>
         </div>
 
-        <div style="font-size: 13.5px; color: var(--text-subtle);">
-          <strong style="color: var(--text-primary);">Prefer instant WhatsApp consultation?</strong><br>
-          Connect directly with David Halbrook at <a href="https://wa.me/918660819023?text=Hi%20Halbrook%20Studios,%20I%20am%20inquiring%20about%20a%20modular%20kitchen%20and%20renovation%20estimate." style="color: var(--accent); font-weight: 700;">+91 86608 19023 &rarr;</a>
+        <!-- Step 2: Carpet Area Slider -->
+        <div style="margin-bottom: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <label style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-primary); margin: 0;">2. Carpet / Floor Area</label>
+            <span id="renoAreaDisplay" style="font-size: 20px; font-weight: 800; font-family: var(--font-heading); color: var(--accent);">1,400 sq.ft</span>
+          </div>
+          <input type="range" id="renoAreaSlider" min="600" max="3600" step="50" value="1400" oninput="updateRenoEstimate()" style="width: 100%; accent-color: var(--accent); cursor: pointer;">
+          <div style="display: flex; justify-content: space-between; font-size: 11.5px; color: var(--text-subtle); margin-top: 6px;">
+            <span>600 sq.ft (Compact)</span>
+            <span>1,800 sq.ft (Standard 3BHK)</span>
+            <span>3,600 sq.ft (Villa)</span>
+          </div>
+        </div>
+
+        <!-- Step 3: Hardware / Finish Tier -->
+        <div>
+          <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-primary); margin-bottom: 10px;">3. Material &amp; Hardware Tier</label>
+          <div style="display: flex; flex-direction: column; gap: 8px;" id="renoTierChips">
+            <div class="calc-chip-tier active" onclick="selectRenoTier('gold', 1.0, 'Gold: 100% IS:710 Marine + Blum Soft-Close', this)">
+              <div>
+                <strong style="display: block; font-size: 14px;">Gold &bull; 100% IS:710 Marine Ply + Blum Hardware</strong>
+                <span style="font-size: 12px; color: var(--text-subtle);">Austrian Blum tandembox, anti-fingerprint acrylic shutters</span>
+              </div>
+              <span style="font-size: 13px; font-weight: 700; color: var(--accent);">Benchmark</span>
+            </div>
+            <div class="calc-chip-tier" onclick="selectRenoTier('platinum', 1.35, 'Platinum: Marine Ply + Blum Aventos & Quartz', this)">
+              <div>
+                <strong style="display: block; font-size: 14px;">Platinum &bull; Marine Ply + Blum Aventos &amp; Quartz</strong>
+                <span style="font-size: 12px; color: var(--text-subtle);">Electric servo-drive liftups, 18mm Silestone quartz, fluted glass</span>
+              </div>
+              <span style="font-size: 13px; font-weight: 700; color: var(--accent);">+35% Elite</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="form-box">
-        <h3 style="font-size: 24px; margin-bottom: 20px;">Room-by-Room Renovation Estimator</h3>
-        
-        <div id="demo-success-box" style="display:none; text-align:center; padding: 40px 20px; background: var(--bg-card); border: 1.5px solid var(--accent); border-radius: var(--radius-md); animation: demoFadeIn 0.35s ease;">
-          <div style="width: 54px; height: 54px; border-radius: 50%; background: var(--accent-light); color: var(--accent); display: inline-flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 16px; border: 1.5px solid var(--accent);">&#10003;</div>
-          <h3 style="font-size: 24px; color: var(--text-primary); margin-bottom: 8px;">Laser Survey Request Registered</h3>
-          <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.6; max-width: 440px; margin: 0 auto 20px;">Thank you! Your survey request has been received in this live demo simulation. In a live client deployment, an instant WhatsApp &amp; SMS ping alerts project director David Halbrook.</p>
-          <button type="button" onclick="resetDemoInquiry()" class="btn btn-outline" style="font-size: 13.5px; padding: 10px 22px;">Calculate Another Space</button>
+      <!-- Breakdown Output Card -->
+      <div style="background: var(--bg-card); border: 2px solid var(--accent); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--card-shadow); display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <span class="badge" style="margin-bottom: 0;">Factory-Direct Scope Ledger</span>
+            <span id="renoScopeBadge" style="font-size: 12px; font-weight: 700; color: var(--accent);">Modular Kitchen Overhaul</span>
+          </div>
+
+          <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px dashed var(--border-color);">
+            <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-subtle); margin-bottom: 4px;">Projected Factory-Direct Investment</div>
+            <div id="renoTotalDisplay" style="font-size: 38px; font-weight: 800; font-family: var(--font-heading); color: var(--text-primary); line-height: 1.1;">₹4.20 Lakhs &ndash; ₹5.60 Lakhs</div>
+            <div id="renoTimelineDisplay" style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">Factory CNC: 21 Days &bull; On-Site Assembly: 5 Days Flat</div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+            <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+              <span style="color: var(--text-muted);">&#10003; Plywood Certification:</span>
+              <strong style="color: var(--accent); font-weight: 700;">100% IS:710 Marine BWP</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+              <span style="color: var(--text-muted);">&#10003; Hardware Mechanism:</span>
+              <strong id="renoHardwareDisplay" style="color: var(--text-primary); font-weight: 700;">Blum Austrian Soft-Close</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+              <span style="color: var(--text-muted);">&#10003; Written Handover Guarantee:</span>
+              <strong style="color: var(--text-primary); font-weight: 700;">₹1,500/day Late Penalty</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+              <span style="color: var(--text-muted);">&#10003; Comprehensive Warranty:</span>
+              <strong style="color: var(--text-primary); font-weight: 700;">10-Year Written Seal</strong>
+            </div>
+          </div>
         </div>
 
-        <form id="demo-form" onsubmit="handleDemoInquiry(event)">
-          <div class="form-group">
-            <label for="projectScope">Select Renovation Scope *</label>
-            <select id="projectScope" class="form-control" onchange="updateEstimate()" required>
-              <option value="kitchen-only" selected>Modular Kitchen Only (New / Full Overhaul)</option>
-              <option value="kitchen-wardrobes">Modular Kitchen + Custom Wardrobes (2 Bedrooms)</option>
-              <option value="full-2bhk">Complete Turnkey 2BHK Civil &amp; Modular Overhaul</option>
-              <option value="full-3bhk">Complete Turnkey 3BHK / Villa Renovation</option>
-            </select>
+        <div>
+          <a id="renoWhatsAppBtn" href="https://wa.me/918660819023?text=Hi%20Halbrook%20Studios,%20I%20am%20inquiring%20about%20Modular%20Kitchen%20Overhaul%20for%201400%20sq.ft%20home%20(Estimated%20₹4.20%20-%20₹5.60%20Lakhs).%20Please%20schedule%20free%203D%20laser%20survey." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center; font-size: 15px; padding: 14px 20px; display: inline-flex; align-items: center; gap: 8px;">
+            <span>Schedule Free 3D Laser Survey via WhatsApp &rarr;</span>
+          </a>
+          <div style="text-align: center; font-size: 11.5px; color: var(--text-subtle); margin-top: 10px;">
+            Includes 3D millimeter laser map &bull; Physical sample kit &bull; Zero obligation
           </div>
-
-          <!-- Dynamic Live Estimate Display Box -->
-          <div class="estimate-display-box">
-            <div class="estimate-title">Projected Factory-Direct Investment:</div>
-            <div class="estimate-amount" id="estimateAmount">&#8377;3,85,000 &ndash; &#8377;5,20,000</div>
-            <p class="estimate-detail" id="estimateDetail">Includes 100% IS:710 Marine BWP ply, Blum soft-close tandembox drawers, anti-fingerprint acrylic shutters, and 5-day on-site assembly.</p>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="clientName">Your Name *</label>
-              <input type="text" id="clientName" class="form-control" placeholder="e.g. Arvind Swaminathan" required>
-            </div>
-            <div class="form-group">
-              <label for="clientPhone">WhatsApp Number *</label>
-              <input type="tel" id="clientPhone" class="form-control" placeholder="+91 98455 67890" required>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="apartmentLocality">Apartment Society / Locality *</label>
-              <input type="text" id="apartmentLocality" class="form-control" placeholder="e.g. Prestige Jindal, Tumkur Rd" required>
-            </div>
-            <div class="form-group">
-              <label for="surveyDate">Preferred Survey Date *</label>
-              <input type="date" id="surveyDate" class="form-control" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="projectNotes">Tell us about specific needs or questions</label>
-            <textarea id="projectNotes" class="form-control" rows="2" placeholder="e.g. Need heavy-duty spice pull-outs, microwave tall unit, target move-in next month..."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 15.5px; margin-top: 10px;">
-            Confirm Free 3D Laser Survey &amp; Itemized Quote &rarr;
-          </button>
-          <p style="font-size: 12px; color: var(--text-subtle); text-align: center; margin-top: 10px; margin-bottom: 0;">
-            100% Free site measurement. Zero sales pressure.
-          </p>
-        </form>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ==========================================================================
        SITE FOOTER
@@ -2008,7 +2143,7 @@
       
       <div class="uh-popup-header">
         <div class="uh-brand-group">
-          <img src="/logo-medium.webp" alt="Uncoded Hub" class="uh-brand-logo-img">
+          <img src="../logo-medium.webp" alt="Uncoded Hub" class="uh-brand-logo-img">
           <div>
             <div class="uh-brand-name">Uncoded Hub</div>
             <div class="uh-brand-sub">Two-Person Web Design Studio &bull; Bengaluru</div>
@@ -2020,12 +2155,12 @@
       <div class="founders-row">
         <div class="founders-photos">
           <div class="founder-pic-box">
-            <img src="/deepak.webp" alt="Deepak, co-founder" class="founder-pic">
+            <img src="../deepak.webp" alt="Deepak, co-founder" class="founder-pic">
             <span class="founder-name">Deepak</span>
             <span class="founder-role">Engineering</span>
           </div>
           <div class="founder-pic-box">
-            <img src="/geetha.webp" alt="Geetha, co-founder" class="founder-pic">
+            <img src="../geetha.webp" alt="Geetha, co-founder" class="founder-pic">
             <span class="founder-name">Geetha</span>
             <span class="founder-role">Design &amp; Strategy</span>
           </div>
@@ -2083,6 +2218,67 @@
        SCRIPTS: SLIDER, CALCULATOR, FORM, MODAL
        ========================================================================== -->
   <script>
+
+    // Theme Switcher
+    function switchTheme(themeKey, btnElem) {
+      document.body.setAttribute('data-theme', themeKey);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+    }
+
+    // Engine 2: Home Renovation & Modular Kitchen Estimator
+    let currentRenoScope = 'Modular Kitchen Overhaul';
+    let currentRenoScopeMulti = 1.0;
+    let currentRenoArea = 1400;
+    let currentRenoTierMulti = 1.0;
+    let currentRenoTierName = 'Gold: 100% IS:710 Marine + Blum Soft-Close';
+
+    function selectRenoScope(key, multi, label, btn) {
+      currentRenoScopeMulti = multi;
+      currentRenoScope = label;
+      document.querySelectorAll('#renoScopeChips .calc-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const badge = document.getElementById('renoScopeBadge');
+      if (badge) badge.textContent = label;
+      updateRenoEstimate();
+    }
+
+    function selectRenoTier(key, multi, label, btn) {
+      currentRenoTierMulti = multi;
+      currentRenoTierName = label;
+      document.querySelectorAll('#renoTierChips .calc-chip-tier').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const hwDisplay = document.getElementById('renoHardwareDisplay');
+      if (hwDisplay) hwDisplay.textContent = key === 'platinum' ? 'Blum Aventos & Quartz' : 'Blum Austrian Soft-Close';
+      updateRenoEstimate();
+    }
+
+    function updateRenoEstimate() {
+      const slider = document.getElementById('renoAreaSlider');
+      if (slider) currentRenoArea = parseInt(slider.value);
+
+      const areaDisplay = document.getElementById('renoAreaDisplay');
+      if (areaDisplay) areaDisplay.textContent = currentRenoArea.toLocaleString('en-IN') + ' sq.ft';
+
+      // Base formula: ₹300/sq.ft baseline modulated by scope & hardware tier
+      const baseMin = currentRenoArea * 260 * currentRenoScopeMulti * currentRenoTierMulti;
+      const baseMax = currentRenoArea * 350 * currentRenoScopeMulti * currentRenoTierMulti;
+
+      function fmtReno(val) {
+        if (val >= 10000000) return '₹' + (val / 10000000).toFixed(2) + ' Cr';
+        return '₹' + (val / 100000).toFixed(2) + ' Lakhs';
+      }
+
+      const totalDisplay = document.getElementById('renoTotalDisplay');
+      if (totalDisplay) totalDisplay.innerHTML = fmtReno(baseMin) + ' &ndash; ' + fmtReno(baseMax);
+
+      const waBtn = document.getElementById('renoWhatsAppBtn');
+      if (waBtn) {
+        const msg = encodeURIComponent('Hi Halbrook Studios, I am inquiring about ' + currentRenoScope + ' for a ' + currentRenoArea + ' sq.ft home (' + fmtReno(baseMin) + ' - ' + fmtReno(baseMax) + '). Please schedule a free 3D laser survey.');
+        waBtn.href = 'https://wa.me/918660819023?text=' + msg;
+      }
+    }
+
     // 1. Before / After Renovation Slider
     function updateRenoDiff(val) {
       const box = document.getElementById('renovationSlider');

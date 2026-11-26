@@ -14,7 +14,7 @@
   <meta property="og:url" content="https://uncodedhub.com/demos/doctor-specialist.html">
   <meta property="og:title" content="Dr. Alistair Vance, MS, FRCS | Robotic Joint Replacement & Sports Orthopaedic Surgeon">
   <meta property="og:description" content="Fellowship-trained robotic joint replacement super-specialist. Sub-millimeter Mako robotic accuracy, muscle-sparing recovery, and cashless hospital insurance support.">
-  <meta property="og:image" content="https://uncodedhub.com/demos/assets/demo-17-doctor-specialist/01_Hero_Showcase.png">
+  <meta property="og:image" content="https://uncodedhub.comassets/demo-17-doctor-specialist/01_Hero_Showcase.png">
   <meta property="og:image:width" content="1920">
   <meta property="og:image:height" content="1080">
   <meta property="og:image:alt" content="Dr. Alistair Vance Robotic Joint Replacement Surgery Suite">
@@ -26,7 +26,7 @@
   <meta name="twitter:creator" content="@uncodedhub">
   <meta name="twitter:title" content="Dr. Alistair Vance | Robotic Joint Replacement & Sports Ortho">
   <meta name="twitter:description" content="Senior fellowship-trained robotic knee & anterior hip arthroplasty specialist in Bengaluru. Walk pain-free on Day 1.">
-  <meta name="twitter:image" content="https://uncodedhub.com/demos/assets/demo-17-doctor-specialist/01_Hero_Showcase.png">
+  <meta name="twitter:image" content="https://uncodedhub.comassets/demo-17-doctor-specialist/01_Hero_Showcase.png">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -38,7 +38,7 @@
         "@id": "https://uncodedhub.com/demos/doctor-specialist.html#physician",
         "name": "Dr. Alistair Vance, MS (Ortho), MCh, FRCS (Tr & Orth)",
         "url": "https://uncodedhub.com/demos/doctor-specialist.html",
-        "image": "https://uncodedhub.com/demos/assets/demo-17-doctor-specialist/09_Artisan_Founder.png",
+        "image": "https://uncodedhub.comassets/demo-17-doctor-specialist/09_Artisan_Founder.png",
         "medicalSpecialty": "Orthopedic",
         "description": "Fellowship-trained robotic knee & hip replacement and sports medicine surgeon with over 18 years experience and 4,200+ successful joint surgeries.",
         "telephone": "+91-80-2856-7788",
@@ -1361,9 +1361,120 @@
       .surgical-metrics-grid { grid-template-columns: 1fr; }
       .footer-bottom-bar { flex-direction: column; gap: 12px; text-align: center; }
     }
+  
+    [data-theme="titanium-dark"] {
+      --navy-deep: #090D16;
+      --navy-dark: #0F1626;
+      --navy-card: #151D2A;
+      --navy-border: rgba(56, 189, 248, 0.25);
+      --cerulean-primary: #38BDF8;
+      --cerulean-hover: #0EA5E9;
+      --text-white: #FFFFFF;
+      --text-slate: #94A3B8;
+      --text-subtle: #64748B;
+      --bg-light: #090D16;
+      --bg-card: #151D2A;
+      --border-light: rgba(255, 255, 255, 0.12);
+    }
+
+    [data-theme="clean-clinical-white"] {
+      --navy-deep: #FFFFFF;
+      --navy-dark: #F8FAFC;
+      --navy-card: #FFFFFF;
+      --navy-border: #CBD5E1;
+      --cerulean-primary: #0284C7;
+      --cerulean-hover: #0369A1;
+      --text-white: #0F172A;
+      --text-slate: #334155;
+      --text-subtle: #64748B;
+      --bg-light: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --border-light: #E2E8F0;
+    }
+
+    .calc-chip {
+      background: var(--bg-card, #FFFFFF);
+      border: 1.5px solid var(--navy-border, #CBD5E1);
+      color: var(--text-white, #0A2540);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip:hover { border-color: var(--cerulean-primary, #00A3E0); }
+    .calc-chip.active {
+      background: rgba(0, 163, 224, 0.15);
+      border-color: var(--cerulean-primary, #00A3E0);
+      color: var(--cerulean-primary, #00A3E0);
+    }
+
+    .calc-chip-tier {
+      background: var(--bg-card, #FFFFFF);
+      border: 1.5px solid var(--navy-border, #CBD5E1);
+      color: var(--text-white, #0A2540);
+      padding: 12px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip-tier:hover { border-color: var(--cerulean-primary, #00A3E0); }
+    .calc-chip-tier.active {
+      background: rgba(0, 163, 224, 0.15);
+      border-color: var(--cerulean-primary, #00A3E0);
+      color: var(--cerulean-primary, #00A3E0);
+    }
+
+    .tc-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #E2E8F0;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tc-btn.active, .tc-btn:hover {
+      background: #00A3E0;
+      border-color: #00A3E0;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
   </style>
 </head>
 <body>
+
+  <!-- Top Uncoded Hub Specimen Banner -->
+  <div style="background: #06152B; color: #F5F3EF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; padding: 10px 20px; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 99999; box-shadow: 0 4px 20px rgba(0,0,0,0.25);">
+    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <a href="/portfolio/" style="color: #FFFFFF; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 12px; padding: 5px 12px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; transition: all 0.2s ease;">
+        &larr; Back to Uncoded Hub Portfolio
+      </a>
+      <span style="color: rgba(245,243,239,0.4); display: inline-block;">|</span>
+      <span style="color: #F5F3EF; font-weight: 500; font-size: 12.5px;">
+        Demo 17 &bull; Robotic Orthopaedic Surgeon Specimen
+      </span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 0.4rem;">
+        <span style="color: #94A3B8; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Theme:</span>
+        <button class="tc-btn active" onclick="switchTheme('surgical-navy', this)">Surgical Navy</button>
+        <button class="tc-btn" onclick="switchTheme('titanium-dark', this)">Titanium Dark</button>
+        <button class="tc-btn" onclick="switchTheme('clean-clinical-white', this)">Clinical Light</button>
+      </div>
+      <a href="/contact/" style="color: #38BDF8; font-size: 12.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px;">
+        Book Sprint &rarr;
+      </a>
+    </div>
+  </div>
 
   <!-- Top Surgical Credentials Bar -->
   <div class="top-credentials-bar">
@@ -1397,6 +1508,7 @@
 
         <ul class="nav-links">
           <li><a href="#procedures" class="nav-link">Surgical Procedures</a></li>
+          <li><a href="#recovery-estimator" class="nav-link">Recovery &amp; Cost Calculator</a></li>
           <li><a href="#comparison" class="nav-link">X-Ray Alignment</a></li>
           <li><a href="#surgeon" class="nav-link">Credentials</a></li>
           <li><a href="#screener" class="nav-link">Joint Screener</a></li>
@@ -1552,6 +1664,118 @@
   </section>
 
   <!-- Flagship Surgical Procedures (5 Modules) -->
+  
+  <!-- ==========================================================================
+       ENGINE 2: ROBOTIC ARTHROPLASTY RECOVERY & CASHLESS INSURANCE CALCULATOR
+       ========================================================================== -->
+  <section id="recovery-estimator" class="procedures-section" style="background: var(--bg-light, #F8FAFC); border-top: 1px solid var(--border-light, #E2E8F0); padding: 80px 0;">
+    <div class="container">
+      <div class="section-title-wrap text-center" style="max-width: 780px; margin: 0 auto 40px auto; text-align: center;">
+        <div class="meta-label">ENGINE 2 &bull; SURGICAL ECONOMICS &amp; RECOVERY LEDGER</div>
+        <h2 style="font-size: 36px; margin: 12px 0;">Robotic Arthroplasty Recovery &amp; Cost Planner</h2>
+        <p style="color: var(--text-slate, #64748B); font-size: 16px;">Interactive surgical planning tool for robotic knee and hip replacements. Calculate hospital stay duration, day-1 ambulation milestones, and cashless insurance coverage approval.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: start; max-width: 1120px; margin: 0 auto;" class="calc-grid-wrap">
+        <!-- Controls Column -->
+        <div style="background: var(--bg-card, #FFFFFF); border: 1.5px solid var(--navy-border, #CBD5E1); border-radius: 16px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
+          <!-- Step 1: Procedure -->
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-white, #0A2540); margin-bottom: 10px;">1. Surgical Joint Procedure</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" id="orthoProcChips">
+              <button type="button" class="calc-chip active" onclick="selectOrthoProc('knee', 1.0, 185000, 245000, 'Mako Robotic Total Knee', 'Day 1 (Within 4 Hours)', this)">
+                Mako Robotic Knee<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Sub-mm 3D Alignment</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectOrthoProc('hip', 1.1, 210000, 280000, 'Muscle-Sparing Anterior Hip', 'Day 1 (Same Evening)', this)">
+                Anterior Hip Arthroplasty<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Zero Muscle Cutting</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectOrthoProc('acl', 0.65, 115000, 160000, 'Arthroscopic ACL / Sports Repair', 'Day 2 (Weight Bearing)', this)">
+                Arthroscopic ACL<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Hamstring Autograft</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectOrthoProc('revision', 1.45, 290000, 390000, 'Complex Revision Joint Arthroplasty', 'Day 2 (Guided Walker)', this)">
+                Revision Arthroplasty<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Custom Trabecular Metal</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Insurance TPA Mode -->
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-white, #0A2540); margin-bottom: 10px;">2. Financing / Insurance Channel</label>
+            <div style="display: flex; flex-direction: column; gap: 8px;" id="orthoInsuranceChips">
+              <div class="calc-chip-tier active" onclick="selectOrthoInsurance('cashless', 0.85, 'Cashless TPA Desk (Star / HDFC / Care / Max)', this)">
+                <div>
+                  <strong style="display: block; font-size: 14px;">Cashless Hospital TPA Network</strong>
+                  <span style="font-size: 12px; color: var(--text-slate, #64748B);">Up to 85-95% covered by policy &bull; Zero upfront deposit</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: #0284C7;">Cashless</span>
+              </div>
+              <div class="calc-chip-tier" onclick="selectOrthoInsurance('self', 1.0, 'Direct Private Self-Pay (Package Pricing)', this)">
+                <div>
+                  <strong style="display: block; font-size: 14px;">Direct Self-Pay Package</strong>
+                  <span style="font-size: 12px; color: var(--text-slate, #64748B);">All-inclusive: Surgeon, OT, Robotic CT, 3 days private suite</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: #0284C7;">Turnkey</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Robotic Accuracy Guarantee Box -->
+          <div style="background: rgba(2, 132, 199, 0.08); padding: 14px 18px; border-radius: 8px; border: 1px solid rgba(2, 132, 199, 0.25); display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <strong style="font-size: 13.5px; color: var(--text-white, #0A2540); display: block;">&#10003; Stryker Mako Robotic Haptic Feedback</strong>
+              <span style="font-size: 12px; color: var(--text-slate, #64748B);">Prevents bone over-resection beyond 0.5mm tolerance</span>
+            </div>
+            <span style="background: #0284C7; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px;">CERTIFIED</span>
+          </div>
+        </div>
+
+        <!-- Breakdown Output Card -->
+        <div style="background: var(--bg-card, #FFFFFF); border: 2px solid #0284C7; border-radius: 16px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span style="background: rgba(2, 132, 199, 0.15); color: #0284C7; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">Surgical Discharge Ledger</span>
+              <span id="orthoProcBadge" style="font-size: 12px; font-weight: 700; color: #0284C7;">Mako Robotic Total Knee</span>
+            </div>
+
+            <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px dashed var(--navy-border, #CBD5E1);">
+              <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-slate, #64748B); margin-bottom: 4px;">Projected Turnkey Procedure Package</div>
+              <div id="orthoTotalDisplay" style="font-size: 34px; font-weight: 800; color: var(--text-white, #0A2540); line-height: 1.1;">₹1,85,000 &ndash; ₹2,45,000</div>
+              <div id="orthoAmbulationDisplay" style="font-size: 13px; color: #0284C7; font-weight: 600; margin-top: 6px;">Guaranteed Ambulation: Day 1 (Within 4 Hours)</div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-slate, #64748B);">&#10003; Hospital Stay Duration:</span>
+                <strong style="color: var(--text-white, #0A2540); font-weight: 700;">2 Nights / 3 Days</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-slate, #64748B);">&#10003; Joint Implant Longevity:</span>
+                <strong style="color: var(--text-white, #0A2540); font-weight: 700;">25+ Year Rated Wear</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-slate, #64748B);">&#10003; Insurance Pre-Authorization:</span>
+                <strong style="color: #0284C7; font-weight: 700;">Instant 2-Hour Approval</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-slate, #64748B);">&#10003; Surgeon Direct Oversight:</span>
+                <strong style="color: var(--text-white, #0A2540); font-weight: 700;">100% Dr. Vance Led</strong>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <a id="orthoWhatsAppBtn" href="https://wa.me/918660819023?text=Hi%20Dr.%20Alistair%20Vance%20Clinic,%20I%20am%20inquiring%20about%20Mako%20Robotic%20Total%20Knee%20Replacement%20(Estimated%20₹1,85,000%20-%20₹2,45,000).%20Please%20schedule%20an%20X-Ray%20and%20Surgical%20Consult." target="_blank" rel="noopener noreferrer" class="btn-cerulean" style="width: 100%; text-align: center; justify-content: center; font-size: 15px; padding: 14px 20px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+              <span>Schedule Second Opinion via WhatsApp &rarr;</span>
+            </a>
+            <div style="text-align: center; font-size: 11.5px; color: var(--text-slate, #64748B); margin-top: 10px;">
+              Bring recent MRI / X-Rays for complimentary digital surgical telemetry audit
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section-wrap" id="procedures">
     <div class="container">
       <div class="section-header">
@@ -1986,6 +2210,52 @@
 
   <!-- Interactive Scripts -->
   <script>
+
+    // Theme Switcher
+    function switchTheme(themeKey, btnElem) {
+      document.body.setAttribute('data-theme', themeKey);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+    }
+
+    // Engine 2: Orthopaedic Surgery & Recovery Estimator
+    let currentOrthoProc = 'Mako Robotic Total Knee';
+    let currentOrthoMin = 185000;
+    let currentOrthoMax = 245000;
+    let currentAmbulation = 'Day 1 (Within 4 Hours)';
+
+    function selectOrthoProc(key, multi, minFee, maxFee, label, ambulation, btn) {
+      currentOrthoProc = label;
+      currentOrthoMin = minFee;
+      currentOrthoMax = maxFee;
+      currentAmbulation = ambulation;
+      document.querySelectorAll('#orthoProcChips .calc-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const badge = document.getElementById('orthoProcBadge');
+      if (badge) badge.textContent = label;
+      updateOrthoEstimate();
+    }
+
+    function selectOrthoInsurance(key, multi, label, btn) {
+      document.querySelectorAll('#orthoInsuranceChips .calc-chip-tier').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateOrthoEstimate();
+    }
+
+    function updateOrthoEstimate() {
+      const totalDisplay = document.getElementById('orthoTotalDisplay');
+      if (totalDisplay) totalDisplay.innerHTML = '₹' + currentOrthoMin.toLocaleString('en-IN') + ' &ndash; ₹' + currentOrthoMax.toLocaleString('en-IN');
+
+      const ambDisplay = document.getElementById('orthoAmbulationDisplay');
+      if (ambDisplay) ambDisplay.textContent = 'Guaranteed Ambulation: ' + currentAmbulation;
+
+      const waBtn = document.getElementById('orthoWhatsAppBtn');
+      if (waBtn) {
+        const msg = encodeURIComponent('Hi Dr. Alistair Vance Clinic, I am inquiring about ' + currentOrthoProc + ' (Estimated ₹' + currentOrthoMin.toLocaleString('en-IN') + ' - ₹' + currentOrthoMax.toLocaleString('en-IN') + '). Please schedule an X-Ray and Surgical Consult.');
+        waBtn.href = 'https://wa.me/918660819023?text=' + msg;
+      }
+    }
+
     // 1. Before/After Radiographic Slider Logic
     (function initSlider() {
       const container = document.getElementById('sliderContainer');

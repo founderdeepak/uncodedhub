@@ -14,7 +14,7 @@
   <meta property="og:url" content="https://uncodedhub.com/demos/healthcare-diagnostics.html">
   <meta property="og:title" content="ApexPulse Comprehensive Diagnostics | NABL & CAP Accredited Pathology & 3T MRI Imaging">
   <meta property="og:description" content="Accredited diagnostic pathology and advanced medical imaging. Robotic testing, barcode-tracked cold-chain transit, and certified home phlebotomy.">
-  <meta property="og:image" content="https://uncodedhub.com/demos/assets/demo-15-healthcare-diagnostics/01_Hero_Showcase.png">
+  <meta property="og:image" content="https://uncodedhub.comassets/demo-15-healthcare-diagnostics/01_Hero_Showcase.png">
   <meta property="og:image:width" content="1920">
   <meta property="og:image:height" content="1080">
   <meta property="og:image:alt" content="ApexPulse Comprehensive Diagnostics Automated Laboratory">
@@ -26,7 +26,7 @@
   <meta name="twitter:creator" content="@uncodedhub">
   <meta name="twitter:title" content="ApexPulse Diagnostics | NABL Pathology & Medical Imaging">
   <meta name="twitter:description" content="NABL accredited pathology and 3T MRI medical imaging. 6-hour verified digital reports and home blood collection.">
-  <meta name="twitter:image" content="https://uncodedhub.com/demos/assets/demo-15-healthcare-diagnostics/01_Hero_Showcase.png">
+  <meta name="twitter:image" content="https://uncodedhub.comassets/demo-15-healthcare-diagnostics/01_Hero_Showcase.png">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -38,8 +38,8 @@
         "@id": "https://uncodedhub.com/demos/healthcare-diagnostics.html#organization",
         "name": "ApexPulse Comprehensive Diagnostics & Medical Imaging",
         "url": "https://uncodedhub.com/demos/healthcare-diagnostics.html",
-        "logo": "https://uncodedhub.com/demos/assets/demo-15-healthcare-diagnostics/01_Hero_Showcase.png",
-        "image": "https://uncodedhub.com/demos/assets/demo-15-healthcare-diagnostics/01_Hero_Showcase.png",
+        "logo": "https://uncodedhub.comassets/demo-15-healthcare-diagnostics/01_Hero_Showcase.png",
+        "image": "https://uncodedhub.comassets/demo-15-healthcare-diagnostics/01_Hero_Showcase.png",
         "description": "NABL & CAP accredited pathology laboratory and advanced 3T MRI imaging facility providing barcode-tracked sample chains and 6-hour verified digital reports.",
         "telephone": "+91-80-2856-1122",
         "priceRange": "₹₹",
@@ -1434,9 +1434,120 @@
       .clinical-standards-grid { grid-template-columns: 1fr; }
       .footer-bottom-row { flex-direction: column; gap: 12px; text-align: center; }
     }
+  
+    [data-theme="clean-room-dark"] {
+      --cobalt-deep: #080D1A;
+      --cobalt-dark: #0F172A;
+      --cobalt-card: #162032;
+      --cobalt-border: rgba(96, 165, 250, 0.25);
+      --cobalt-primary: #60A5FA;
+      --cobalt-hover: #3B82F6;
+      --text-white: #FFFFFF;
+      --text-slate: #94A3B8;
+      --text-subtle: #64748B;
+      --bg-light: #080D1A;
+      --bg-card: #162032;
+      --border-light: rgba(255, 255, 255, 0.12);
+    }
+
+    [data-theme="clinical-emerald"] {
+      --cobalt-deep: #F7FDF9;
+      --cobalt-dark: #ECFDF5;
+      --cobalt-card: #FFFFFF;
+      --cobalt-border: #A7F3D0;
+      --cobalt-primary: #059669;
+      --cobalt-hover: #047857;
+      --text-white: #064E3B;
+      --text-slate: #065F46;
+      --text-subtle: #047857;
+      --bg-light: #F7FDF9;
+      --bg-card: #FFFFFF;
+      --border-light: #D1FAE5;
+    }
+
+    .calc-chip {
+      background: var(--bg-card, #FFFFFF);
+      border: 1.5px solid var(--cobalt-border, #CBD5E1);
+      color: var(--text-white, #0F2042);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip:hover { border-color: var(--cobalt-primary, #1D4ED8); }
+    .calc-chip.active {
+      background: rgba(29, 78, 216, 0.15);
+      border-color: var(--cobalt-primary, #1D4ED8);
+      color: var(--cobalt-primary, #1D4ED8);
+    }
+
+    .calc-chip-tier {
+      background: var(--bg-card, #FFFFFF);
+      border: 1.5px solid var(--cobalt-border, #CBD5E1);
+      color: var(--text-white, #0F2042);
+      padding: 12px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip-tier:hover { border-color: var(--cobalt-primary, #1D4ED8); }
+    .calc-chip-tier.active {
+      background: rgba(29, 78, 216, 0.15);
+      border-color: var(--cobalt-primary, #1D4ED8);
+      color: var(--cobalt-primary, #1D4ED8);
+    }
+
+    .tc-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #E2E8F0;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tc-btn.active, .tc-btn:hover {
+      background: #1D4ED8;
+      border-color: #1D4ED8;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
   </style>
 </head>
 <body>
+
+  <!-- Top Uncoded Hub Specimen Banner -->
+  <div style="background: #081229; color: #F5F3EF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; padding: 10px 20px; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 99999; box-shadow: 0 4px 20px rgba(0,0,0,0.25);">
+    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <a href="/portfolio/" style="color: #FFFFFF; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 12px; padding: 5px 12px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; transition: all 0.2s ease;">
+        &larr; Back to Uncoded Hub Portfolio
+      </a>
+      <span style="color: rgba(245,243,239,0.4); display: inline-block;">|</span>
+      <span style="color: #F5F3EF; font-weight: 500; font-size: 12.5px;">
+        Demo 15 &bull; Diagnostic Pathology &amp; 3T MRI Specimen
+      </span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 0.4rem;">
+        <span style="color: #94A3B8; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Theme:</span>
+        <button class="tc-btn active" onclick="switchTheme('diagnostic-blue', this)">Diagnostic Blue</button>
+        <button class="tc-btn" onclick="switchTheme('clean-room-dark', this)">Clean Room Dark</button>
+        <button class="tc-btn" onclick="switchTheme('clinical-emerald', this)">Precision Emerald</button>
+      </div>
+      <a href="/contact/" style="color: #60A5FA; font-size: 12.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px;">
+        Book Sprint &rarr;
+      </a>
+    </div>
+  </div>
 
   <!-- Top Hospital Dispatch & Accreditation Bar -->
   <div class="top-accreditation-bar">
@@ -1470,6 +1581,7 @@
 
         <ul class="nav-links">
           <li><a href="#suites" class="nav-link">Diagnostic Suites</a></li>
+          <li><a href="#diagnostic-calc" class="nav-link">Package &amp; Phlebotomy Calculator</a></li>
           <li><a href="#traceability" class="nav-link">Sample Traceability</a></li>
           <li><a href="#director" class="nav-link">Chief Pathologist</a></li>
           <li><a href="#tracker" class="nav-link">Live Tracker</a></li>
@@ -1625,6 +1737,119 @@
   </section>
 
   <!-- Medical Imaging & Diagnostic Suites (5 Modules) -->
+  
+  <!-- ==========================================================================
+       ENGINE 2/4: INTERACTIVE DIAGNOSTIC PACKAGE & HOME BLOOD COLLECTION BUILDER
+       ========================================================================== -->
+  <section id="diagnostic-calc" class="suites-section" style="background: var(--bg-light, #F8FAFC); border-top: 1px solid var(--border-light, #E2E8F0); padding: 80px 0;">
+    <div class="container">
+      <div class="section-title-wrap text-center" style="max-width: 780px; margin: 0 auto 40px auto; text-align: center;">
+        <div class="meta-label">ENGINE 2/4 &bull; DIAGNOSTIC TEST PACKAGE BUILDER</div>
+        <h2 style="font-size: 36px; margin: 12px 0;">Home Blood Collection &amp; Health Package Planner</h2>
+        <p style="color: var(--text-slate, #64748B); font-size: 16px;">NABL &amp; CAP accredited pathology testing. Calculate package costs, family member discounts, and schedule barcode-tracked home sample collection with 6-hour verified digital reports.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: start; max-width: 1120px; margin: 0 auto;" class="calc-grid-wrap">
+        <!-- Controls Column -->
+        <div style="background: var(--bg-card, #FFFFFF); border: 1.5px solid var(--cobalt-border, #CBD5E1); border-radius: 16px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
+          <!-- Step 1: Package Profile -->
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-white, #0F2042); margin-bottom: 10px;">1. Select Diagnostic Package</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" id="diagPackageChips">
+              <button type="button" class="calc-chip active" onclick="selectDiagPackage('executive', 2499, 'Executive Full Body (84 Tests)', 'Complete CBC, Liver, Kidney, Lipid, Thyroid & HbA1c', this)">
+                Executive Full Body<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">84 Tests &bull; CBC, LFT, KFT</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectDiagPackage('cardiac', 3200, 'Advanced Cardiac Risk Profile', 'Lipid Fractionation, hs-CRP, Homocysteine, D-Dimer', this)">
+                Cardiac &amp; Lipid Panel<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">hs-CRP, Homocysteine</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectDiagPackage('diabetes', 1499, 'Comprehensive Diabetic Care', 'Fasting, PP, HbA1c, Microalbuminuria, Creatinine', this)">
+                Diabetic Care Profile<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">HbA1c &amp; Renal Clearance</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectDiagPackage('mri', 8500, '3T MRI Whole Spine / Brain', 'Sub-millimeter Neuro Resolution with Contrast', this)">
+                3T MRI Neuro / Spine<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">High-Res Siemens 3T</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Collection Mode -->
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-white, #0F2042); margin-bottom: 10px;">2. Sample Collection Mode</label>
+            <div style="display: flex; flex-direction: column; gap: 8px;" id="diagModeChips">
+              <div class="calc-chip-tier active" onclick="selectDiagMode('home', 0, 'VIP Home Blood Collection (Cold-Chain Phlebotomy)', this)">
+                <div>
+                  <strong style="display: block; font-size: 14px;">VIP Home Blood Collection (Certified Phlebotomist)</strong>
+                  <span style="font-size: 12px; color: var(--text-slate, #64748B);">Barcode-tracked sample transit in temperature-controlled cooler</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: #1D4ED8;">Home Desk</span>
+              </div>
+              <div class="calc-chip-tier" onclick="selectDiagMode('center', -200, 'Walk-In Diagnostic Center Visit', this)">
+                <div>
+                  <strong style="display: block; font-size: 14px;">Walk-In Express Diagnostic Center Visit</strong>
+                  <span style="font-size: 12px; color: var(--text-slate, #64748B);">Instant token &bull; Complimentary healthy post-fast breakfast</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: #1D4ED8;">In-Center</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Family Members Discount -->
+          <div>
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-white, #0F2042); margin-bottom: 10px;">3. Number of Family Members</label>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;" id="diagMembersChips">
+              <button type="button" class="calc-chip active" onclick="selectDiagMembers(1, 1.0, this)">1 Person<br><span style="font-size: 11px; opacity: 0.8;">Standard</span></button>
+              <button type="button" class="calc-chip" onclick="selectDiagMembers(2, 0.9, this)">2 Persons<br><span style="font-size: 11px; opacity: 0.8;">10% Off</span></button>
+              <button type="button" class="calc-chip" onclick="selectDiagMembers(3, 0.8, this)">3+ Family<br><span style="font-size: 11px; opacity: 0.8;">20% Off</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breakdown Output Card -->
+        <div style="background: var(--bg-card, #FFFFFF); border: 2px solid #1D4ED8; border-radius: 16px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span style="background: rgba(29, 78, 216, 0.15); color: #1D4ED8; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">Verified Test Order</span>
+              <span id="diagPackageBadge" style="font-size: 12px; font-weight: 700; color: #1D4ED8;">Executive Full Body</span>
+            </div>
+
+            <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px dashed var(--cobalt-border, #CBD5E1);">
+              <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-slate, #64748B); margin-bottom: 4px;">Total Package Investment</div>
+              <div id="diagTotalDisplay" style="font-size: 34px; font-weight: 800; color: var(--text-white, #0F2042); line-height: 1.1;">₹2,499 Only</div>
+              <div id="diagReportTimeDisplay" style="font-size: 13px; color: #1D4ED8; font-weight: 600; margin-top: 6px;">Guaranteed Digital Report: Within 6 Hours</div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-slate, #64748B);">&#10003; Accreditation:</span>
+                <strong style="color: #1D4ED8; font-weight: 700;">NABL &amp; CAP Certified</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-slate, #64748B);">&#10003; Cold-Chain Guarantee:</span>
+                <strong style="color: var(--text-white, #0F2042); font-weight: 700;">4°C Barcode Tracked</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-slate, #64748B);">&#10003; Doctor Report Counseling:</span>
+                <strong style="color: var(--text-white, #0F2042); font-weight: 700;">Free Tele-Consult</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-slate, #64748B);">&#10003; Home Visit Slot:</span>
+                <strong style="color: var(--text-white, #0F2042); font-weight: 700;">6:30 AM &ndash; 11:30 AM</strong>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <a id="diagWhatsAppBtn" href="https://wa.me/918660819023?text=Hi%20ApexPulse%20Diagnostics,%20I%20am%20booking%20the%20Executive%20Full%20Body%20(84%20Tests)%20package%20for%201%20Person%20(Total%20₹2,499).%20Please%20schedule%20home%20collection." target="_blank" rel="noopener noreferrer" class="btn-cobalt" style="width: 100%; text-align: center; justify-content: center; font-size: 15px; padding: 14px 20px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+              <span>Schedule Home Blood Collection via WhatsApp &rarr;</span>
+            </a>
+            <div style="text-align: center; font-size: 11.5px; color: var(--text-slate, #64748B); margin-top: 10px;">
+              Vaccinated phlebotomists &bull; Single-use vacuum sealed BD vacutainers
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section-wrap" id="suites">
     <div class="container">
       <div class="section-header">
@@ -2117,6 +2342,60 @@
 
   <!-- Interactive Scripts -->
   <script>
+
+    // Theme Switcher
+    function switchTheme(themeKey, btnElem) {
+      document.body.setAttribute('data-theme', themeKey);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+    }
+
+    // Engine 2/4: Diagnostics Package Calculator
+    let currentDiagPkgName = 'Executive Full Body (84 Tests)';
+    let currentDiagPkgPrice = 2499;
+    let currentDiagModeAdjustment = 0;
+    let currentDiagPersons = 1;
+    let currentDiagDiscount = 1.0;
+
+    function selectDiagPackage(key, price, name, desc, btn) {
+      currentDiagPkgPrice = price;
+      currentDiagPkgName = name;
+      document.querySelectorAll('#diagPackageChips .calc-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const badge = document.getElementById('diagPackageBadge');
+      if (badge) badge.textContent = name.split('(')[0].trim();
+      updateDiagEstimate();
+    }
+
+    function selectDiagMode(key, adj, label, btn) {
+      currentDiagModeAdjustment = adj;
+      document.querySelectorAll('#diagModeChips .calc-chip-tier').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateDiagEstimate();
+    }
+
+    function selectDiagMembers(count, discount, btn) {
+      currentDiagPersons = count;
+      currentDiagDiscount = discount;
+      document.querySelectorAll('#diagMembersChips .calc-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateDiagEstimate();
+    }
+
+    function updateDiagEstimate() {
+      const perPerson = currentDiagPkgPrice + currentDiagModeAdjustment;
+      const totalRaw = Math.round(perPerson * currentDiagPersons * currentDiagDiscount);
+
+      const totalDisplay = document.getElementById('diagTotalDisplay');
+      if (totalDisplay) totalDisplay.textContent = '₹' + totalRaw.toLocaleString('en-IN') + ' Only';
+
+      const waBtn = document.getElementById('diagWhatsAppBtn');
+      if (waBtn) {
+        const msg = encodeURIComponent('Hi ApexPulse Diagnostics, I am booking the ' + currentDiagPkgName + ' package for ' + currentDiagPersons + ' Person(s) (Total ₹' + totalRaw.toLocaleString('en-IN') + '). Please schedule sample collection.');
+        waBtn.href = 'https://wa.me/918660819023?text=' + msg;
+      }
+    }
+
     // 1. Before/After Traceability Slider Logic
     (function initSlider() {
       const container = document.getElementById('sliderContainer');

@@ -1225,6 +1225,13 @@
   <!-- Top Studio Bar (Full Width & Single Line Guaranteed) -->
   <div class="top-banner">
     <div class="top-banner-inner">
+
+        <div style="display: flex; align-items: center; gap: 0.4rem; margin-left: auto;">
+          <span style="color: #94A3B8; font-size: 11px; text-transform: uppercase;">Theme:</span>
+          <button class="tc-btn active" onclick="switchTheme('darkroom-amber', this)">Amber</button>
+          <button class="tc-btn" onclick="switchTheme('leica-monochrome', this)">Leica Red</button>
+          <button class="tc-btn" onclick="switchTheme('gallery-pure', this)">Gallery Light</button>
+        </div>
       <div class="top-left">
         <span class="badge-pill">
           <i class="fa-solid fa-star"></i> 4.9★ Top Rated
@@ -2187,5 +2194,27 @@
     // Initialize visualizer on load
     updateVisualizer();
   </script>
+
+  <script>
+    function switchTheme(themeName, btn) {
+      document.documentElement.setAttribute('data-theme', themeName);
+      localStorage.setItem('shutterbug_theme', themeName);
+      document.querySelectorAll('.tc-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('shutterbug_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        const matchBtn = document.querySelector('.tc-btn[onclick*="' + savedTheme + '"]');
+        if (matchBtn) {
+          document.querySelectorAll('.tc-btn').forEach(b => b.classList.remove('active'));
+          matchBtn.classList.add('active');
+        }
+      }
+    });
+  </script>
+
 </body>
 </html>

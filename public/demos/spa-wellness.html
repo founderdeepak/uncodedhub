@@ -16,7 +16,7 @@
   <meta property="og:url" content="https://uncodedhub.com/demos/spa-wellness.html">
   <meta property="og:title" content="SereneSanctuary Luxury Spa &amp; Ayurveda | Five-Star Holistic Botanical Wellness">
   <meta property="og:description" content="Five-star holistic wellness sanctuary combining traditional Balinese deep-tissue bodywork and authentic Kerala Ayurvedic therapies. Interactive tension-zone customizer and private couple suites.">
-  <meta property="og:image" content="https://uncodedhub.com/demos/assets/demo-10-spa-wellness/01_Hero_Showcase.png">
+  <meta property="og:image" content="https://uncodedhub.comassets/demo-10-spa-wellness/01_Hero_Showcase.png">
   <meta property="og:image:width" content="1920">
   <meta property="og:image:height" content="1080">
   <meta property="og:image:alt" content="SereneSanctuary Botanical Hydrotherapy Pool at Sunrise">
@@ -28,7 +28,7 @@
   <meta name="twitter:creator" content="@uncodedhub">
   <meta name="twitter:title" content="SereneSanctuary Luxury Spa &amp; Ayurveda | Five-Star Holistic Botanical Wellness">
   <meta name="twitter:description" content="Traditional Balinese bodywork and authentic Kerala Ayurvedic therapies. Interactive tension-zone customizer and private suite reservations.">
-  <meta name="twitter:image" content="https://uncodedhub.com/demos/assets/demo-10-spa-wellness/01_Hero_Showcase.png">
+  <meta name="twitter:image" content="https://uncodedhub.comassets/demo-10-spa-wellness/01_Hero_Showcase.png">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -66,7 +66,7 @@
         "name": "SereneSanctuary Luxury Spa & Ayurveda",
         "description": "Five-star holistic botanical sanctuary featuring Kerala Ayurvedic Shirodhara, Balinese deep-tissue massage, Hinoki cedar onsen, and Himalayan salt therapies.",
         "url": "https://uncodedhub.com/demos/spa-wellness.html",
-        "image": "https://uncodedhub.com/demos/assets/demo-10-spa-wellness/01_Hero_Showcase.png",
+        "image": "https://uncodedhub.comassets/demo-10-spa-wellness/01_Hero_Showcase.png",
         "priceRange": "$$$$",
         "address": {
           "@type": "PostalAddress",
@@ -1493,9 +1493,132 @@
         grid-template-columns: 1fr;
       }
     }
+  
+    [data-theme="sandalwood-cream"] {
+      --bg-primary: #FAF7F2;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #F3EDE3;
+      --text-primary: #1C1917;
+      --text-muted: #574A3D;
+      --text-subtle: #7C6F62;
+      --border-color: #DCD4C7;
+      --border-subtle: #EBE4D8;
+      --accent: #854D0E;
+      --accent-hover: #713F12;
+      --accent-contrast: #FFFFFF;
+      --accent-light: #FEF3C7;
+      --badge-bg: #FEF3C7;
+      --badge-text: #713F12;
+      --card-shadow: 0 10px 30px rgba(60, 40, 20, 0.08);
+      --header-bg: rgba(250, 247, 242, 0.96);
+      --input-bg: #FFFFFF;
+    }
+
+    [data-theme="midnight-onsen"] {
+      --bg-primary: #0B0E0D;
+      --bg-surface: #121815;
+      --bg-card: #19221D;
+      --bg-card-subtle: #202B25;
+      --text-primary: #F0FDF4;
+      --text-muted: #CBD5E1;
+      --text-subtle: #94A3B8;
+      --border-color: rgba(16, 185, 129, 0.28);
+      --border-subtle: rgba(255, 255, 255, 0.12);
+      --accent: #10B981;
+      --accent-hover: #059669;
+      --accent-contrast: #0B0E0D;
+      --accent-light: rgba(16, 185, 129, 0.15);
+      --badge-bg: rgba(16, 185, 129, 0.15);
+      --badge-text: #10B981;
+      --card-shadow: 0 14px 40px rgba(0, 0, 0, 0.65);
+      --header-bg: rgba(11, 14, 13, 0.96);
+      --input-bg: #19221D;
+    }
+
+    .calc-chip {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip:hover { border-color: var(--accent); }
+    .calc-chip.active {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .calc-chip-tier {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 12px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip-tier:hover { border-color: var(--accent); }
+    .calc-chip-tier.active {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .tc-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #E2E8F0;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tc-btn.active, .tc-btn:hover {
+      background: var(--accent, #D4AF37);
+      border-color: var(--accent, #D4AF37);
+      color: var(--accent-contrast, #121A16);
+      font-weight: 700;
+    }
+
   </style>
 </head>
 <body>
+
+  <!-- Top Uncoded Hub Specimen Banner -->
+  <div style="background: #0C120F; color: #F5F3EF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; padding: 10px 20px; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 99999; box-shadow: 0 4px 20px rgba(0,0,0,0.25);">
+    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <a href="/portfolio/" style="color: #FFFFFF; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 12px; padding: 5px 12px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; transition: all 0.2s ease;">
+        &larr; Back to Uncoded Hub Portfolio
+      </a>
+      <span style="color: rgba(245,243,239,0.4); display: inline-block;">|</span>
+      <span style="color: #F5F3EF; font-weight: 500; font-size: 12.5px;">
+        Demo 10 &bull; Luxury Botanical Spa &amp; Ayurveda Specimen
+      </span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 0.4rem;">
+        <span style="color: #94A3B8; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Theme:</span>
+        <button class="tc-btn active" onclick="switchTheme('forest-moss', this)">Forest Moss</button>
+        <button class="tc-btn" onclick="switchTheme('sandalwood-cream', this)">Sandalwood Light</button>
+        <button class="tc-btn" onclick="switchTheme('midnight-onsen', this)">Midnight Onsen</button>
+      </div>
+      <a href="/contact/" style="color: #10B981; font-size: 12.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px;">
+        Book Sprint &rarr;
+      </a>
+    </div>
+  </div>
 
   <!-- UNCEDED HUB DEMO SPECIMEN HEADER BAR -->
   <aside class="uncoded-demo-bar" aria-label="Demo Specimen Bar">
@@ -1585,7 +1708,7 @@
       </div>
 
       <div class="hero-visual-card">
-        <img src="/demos/assets/demo-10-spa-wellness/01_Hero_Showcase.png" alt="SereneSanctuary Sunken Stone Botanical Pool at Sunrise" width="1920" height="1080">
+        <img src="assets/demo-10-spa-wellness/01_Hero_Showcase.png" alt="SereneSanctuary Sunken Stone Botanical Pool at Sunrise" width="1920" height="1080">
         <div class="hero-visual-badge">
           <div class="badge-left">
             <h4>Sunken Hydrotherapy Sanctuary</h4>
@@ -1610,11 +1733,11 @@
     <div class="slider-wrapper">
       <div class="comparison-container" id="comparisonBox">
         <div class="comparison-image-box after-image">
-          <img src="/demos/assets/demo-10-spa-wellness/08_After_Finished.png" alt="Deep Nervous System Restoration in Ambient Tea Sanctuary" width="1200" height="750">
+          <img src="assets/demo-10-spa-wellness/08_After_Finished.png" alt="Deep Nervous System Restoration in Ambient Tea Sanctuary" width="1200" height="750">
           <span class="badge-tag-after">AFTER: Somatic Stillness &amp; Vitality</span>
         </div>
         <div class="comparison-image-box before-image" id="beforeImageBox">
-          <img src="/demos/assets/demo-10-spa-wellness/07_Before_Raw.png" alt="Chronic Office Stress and Neck Tension" width="1200" height="750">
+          <img src="assets/demo-10-spa-wellness/07_Before_Raw.png" alt="Chronic Office Stress and Neck Tension" width="1200" height="750">
           <span class="badge-tag-before">BEFORE: Postural Fatigue &amp; Burnout</span>
         </div>
         <div class="slider-handle" id="sliderHandle">
@@ -1649,7 +1772,7 @@
       <!-- Ritual 1 -->
       <article class="ritual-card">
         <div class="ritual-thumb">
-          <img src="/demos/assets/demo-10-spa-wellness/02_Work_01.png" alt="Ayurvedic Shirodhara Ritual" width="1200" height="1500" loading="lazy">
+          <img src="assets/demo-10-spa-wellness/02_Work_01.png" alt="Ayurvedic Shirodhara Ritual" width="1200" height="1500" loading="lazy">
           <div class="ritual-tag">Ayurvedic Classic</div>
         </div>
         <div class="ritual-body">
@@ -1677,7 +1800,7 @@
       <!-- Ritual 2 -->
       <article class="ritual-card">
         <div class="ritual-thumb">
-          <img src="/demos/assets/demo-10-spa-wellness/03_Work_02.png" alt="Balinese Deep Tissue Massage" width="1200" height="1500" loading="lazy">
+          <img src="assets/demo-10-spa-wellness/03_Work_02.png" alt="Balinese Deep Tissue Massage" width="1200" height="1500" loading="lazy">
           <div class="ritual-tag">Deep Somatic</div>
         </div>
         <div class="ritual-body">
@@ -1705,7 +1828,7 @@
       <!-- Ritual 3 -->
       <article class="ritual-card">
         <div class="ritual-thumb">
-          <img src="/demos/assets/demo-10-spa-wellness/04_Work_03.png" alt="Hinoki Cedar Onsen" width="1200" height="1500" loading="lazy">
+          <img src="assets/demo-10-spa-wellness/04_Work_03.png" alt="Hinoki Cedar Onsen" width="1200" height="1500" loading="lazy">
           <div class="ritual-tag">Hydrotherapy</div>
         </div>
         <div class="ritual-body">
@@ -1733,7 +1856,7 @@
       <!-- Ritual 4 -->
       <article class="ritual-card">
         <div class="ritual-thumb">
-          <img src="/demos/assets/demo-10-spa-wellness/05_Work_04.png" alt="Himalayan Salt Sanctuary" width="1200" height="1500" loading="lazy">
+          <img src="assets/demo-10-spa-wellness/05_Work_04.png" alt="Himalayan Salt Sanctuary" width="1200" height="1500" loading="lazy">
           <div class="ritual-tag">Halotherapy</div>
         </div>
         <div class="ritual-body">
@@ -1761,7 +1884,7 @@
       <!-- Ritual 5 -->
       <article class="ritual-card">
         <div class="ritual-thumb">
-          <img src="/demos/assets/demo-10-spa-wellness/06_Work_05.png" alt="Couple Hydrotherapy Suite" width="1200" height="1500" loading="lazy">
+          <img src="assets/demo-10-spa-wellness/06_Work_05.png" alt="Couple Hydrotherapy Suite" width="1200" height="1500" loading="lazy">
           <div class="ritual-tag">VIP Couples</div>
         </div>
         <div class="ritual-body">
@@ -1806,7 +1929,7 @@
   <section class="master-section" id="master">
     <div class="master-grid">
       <div class="master-portrait-card">
-        <img src="/demos/assets/demo-10-spa-wellness/09_Artisan_Founder.png" alt="Dr. Maya Shankaran in the Ayurvedic Apothecary" width="1200" height="1500" loading="lazy">
+        <img src="assets/demo-10-spa-wellness/09_Artisan_Founder.png" alt="Dr. Maya Shankaran in the Ayurvedic Apothecary" width="1200" height="1500" loading="lazy">
         <div class="master-seal">
           <strong>Dr. Maya Shankaran, BAMS</strong>
           <span>Medical Director &amp; Master Vaidya</span>
@@ -1842,6 +1965,118 @@
   </section>
 
   <!-- INTERACTIVE TENSION-ZONE TREATMENT CUSTOMIZER -->
+  
+  <!-- ==========================================================================
+       ENGINE 4: TENSION-ZONE BOTANICAL THERAPY & PRIVATE SUITE CUSTOMIZER
+       ========================================================================== -->
+  <section id="spa-estimator" style="background: var(--bg-surface, #1B2621); border-top: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding: 80px 0;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+      <div style="max-width: 780px; margin: 0 auto 40px auto; text-align: center;">
+        <div style="display: inline-block; background: rgba(212,175,55,0.15); color: #D4AF37; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 5px 14px; border-radius: 30px; margin-bottom: 14px;">ENGINE 4 &bull; BOTANICAL SANCTUARY CUSTOMIZER</div>
+        <h2 style="font-size: 36px; margin: 0 0 12px 0; color: var(--text-primary, #F9F8F5);">Holistic Ritual &amp; Tension-Zone Planner</h2>
+        <p style="color: var(--text-muted, #C4BCB3); font-size: 16px;">Five-star Ayurvedic &amp; Balinese wellness protocols. Select your targeted restoration ritual, duration, and private hydrotherapy suite to calculate your personalized wellness fee.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: start; max-width: 1120px; margin: 0 auto;" class="calc-grid-wrap">
+        <!-- Controls Column -->
+        <div style="background: var(--bg-card, #22302A); border: 1.5px solid var(--border-color, rgba(255,255,255,0.12)); border-radius: 16px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
+          <!-- Step 1: Botanical Ritual -->
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-primary, #F9F8F5); margin-bottom: 10px;">1. Select Botanical Ritual</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" id="spaRitualChips">
+              <button type="button" class="calc-chip active" onclick="selectSpaRitual('shirodhara', 6500, 'Kerala Ayurvedic Shirodhara', 'Continuous stream of warm medicated herbal oils', this)">
+                Ayurvedic Shirodhara<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Warm Medicated Oils</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectSpaRitual('balinese', 5800, 'Balinese Deep-Tissue Herbal Compress', 'Acupressure & warm steamed herbal poultices', this)">
+                Balinese Deep-Tissue<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Steamed Herbal Compress</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectSpaRitual('onsen', 8200, 'Hinoki Cedar Hydrotherapy Onsen', 'Aromatic Japanese cedar mineral soak + scrub', this)">
+                Hinoki Cedar Onsen<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Mineral Hydrotherapy</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectSpaRitual('salt', 7400, 'Himalayan Pink Salt Detox Cocoon', 'Full body mineral exfoliation & thermal wrap', this)">
+                Himalayan Salt Detox<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Thermal Mineral Cocoon</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Duration -->
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-primary, #F9F8F5); margin-bottom: 10px;">2. Ritual Duration &amp; Suite</label>
+            <div style="display: flex; flex-direction: column; gap: 8px;" id="spaDurationChips">
+              <div class="calc-chip-tier active" onclick="selectSpaDuration(1.0, '60 Minutes Single Sanctuary Suite', this)">
+                <div>
+                  <strong style="display: block; font-size: 14px;">60 Mins &bull; Single Sanctuary Suite</strong>
+                  <span style="font-size: 12px; color: var(--text-subtle, #8A8177);">Private rainforest shower &bull; Organic herbal tea</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: #D4AF37;">60 Mins</span>
+              </div>
+              <div class="calc-chip-tier" onclick="selectSpaDuration(1.35, '90 Minutes Signature Sanctuary Suite', this)">
+                <div>
+                  <strong style="display: block; font-size: 14px;">90 Mins &bull; Signature Sanctuary Suite (Extended)</strong>
+                  <span style="font-size: 12px; color: var(--text-subtle, #8A8177);">Foot reflexology + head marma massage included</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: #D4AF37;">90 Mins</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pure Organic Botanical Guarantee -->
+          <div style="background: rgba(212,175,55,0.08); padding: 14px 18px; border-radius: 8px; border: 1px solid rgba(212,175,55,0.25); display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <strong style="font-size: 13.5px; color: var(--text-primary, #F9F8F5); display: block;">&#10003; 100% Cold-Pressed Organic Botanical Oils</strong>
+              <span style="font-size: 12px; color: var(--text-subtle, #8A8177);">Zero mineral oils &bull; Zero synthetic fragrance &bull; Handcrafted</span>
+            </div>
+            <span style="background: #D4AF37; color: #121A16; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px;">CERTIFIED</span>
+          </div>
+        </div>
+
+        <!-- Breakdown Output Card -->
+        <div style="background: var(--bg-card, #22302A); border: 2px solid #D4AF37; border-radius: 16px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span style="background: rgba(212,175,55,0.15); color: #D4AF37; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">Private Suite Reservation</span>
+              <span id="spaRitualBadge" style="font-size: 12px; font-weight: 700; color: #D4AF37;">Shirodhara</span>
+            </div>
+
+            <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px dashed var(--border-color, rgba(255,255,255,0.15));">
+              <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-subtle, #8A8177); margin-bottom: 4px;">Ritual Investment Bracket</div>
+              <div id="spaTotalDisplay" style="font-size: 34px; font-weight: 800; color: var(--text-primary, #F9F8F5); line-height: 1.1;">₹6,500 Only</div>
+              <div id="spaDurationDisplay" style="font-size: 13px; color: #D4AF37; font-weight: 600; margin-top: 6px;">Includes Hinoki Foot Ritual &amp; Herbal Sound Bath</div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted, #C4BCB3);">&#10003; Ayurvedic Prakriti Audit:</span>
+                <strong style="color: #D4AF37; font-weight: 700;">Included (Day 1)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted, #C4BCB3);">&#10003; Therapist Credentials:</span>
+                <strong style="color: var(--text-primary, #F9F8F5); font-weight: 700;">Certified Kerala Masters</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted, #C4BCB3);">&#10003; Private Steam Suite:</span>
+                <strong style="color: var(--text-primary, #F9F8F5); font-weight: 700;">Complimentary 15 Mins</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted, #C4BCB3);">&#10003; Post-Ritual Elixir:</span>
+                <strong style="color: var(--text-primary, #F9F8F5); font-weight: 700;">Organic Saffron Infusion</strong>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <a id="spaWhatsAppBtn" href="https://wa.me/918660819023?text=Hi%20SereneSanctuary,%20I%20am%20reserving%20a%20private%20suite%20for%20Kerala%20Ayurvedic%20Shirodhara%20(₹6,500).%20Please%20confirm%20slot%20availability." target="_blank" rel="noopener noreferrer" style="background: #D4AF37; color: #121A16; font-weight: 700; width: 100%; text-align: center; justify-content: center; font-size: 15px; padding: 14px 20px; display: inline-flex; align-items: center; gap: 8px; border-radius: 8px; text-decoration: none;">
+              <span>Reserve Sanctuary Suite via WhatsApp &rarr;</span>
+            </a>
+            <div style="text-align: center; font-size: 11.5px; color: var(--text-subtle, #8A8177); margin-top: 10px;">
+              Absolute tranquility &bull; Mobile-free sanctuary zone
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="customizer-section" id="customizer">
     <div class="section-header">
       <span class="section-eyebrow">Personalized Ritual Builder</span>
@@ -1917,7 +2152,7 @@
       <!-- Summary Panel -->
       <div class="summary-panel">
         <div class="summary-banner">
-          <img src="/demos/assets/demo-10-spa-wellness/10_Process_Detail.png" alt="Hand-steeped Botanical Oils in Apothecary" width="1200" height="800">
+          <img src="assets/demo-10-spa-wellness/10_Process_Detail.png" alt="Hand-steeped Botanical Oils in Apothecary" width="1200" height="800">
           <div class="summary-banner-overlay">
             <h4>Bespoke Apothecary Prescription</h4>
             <p id="oilPrescription">Kottakkal Brahmi &amp; Sesame Oil Infusion</p>
@@ -2066,6 +2301,49 @@
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
+
+    // Theme Switcher
+    function switchTheme(themeKey, btnElem) {
+      document.body.setAttribute('data-theme', themeKey);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+    }
+
+    // Engine 4: Spa Ritual Customizer
+    let currentSpaRitual = 'Kerala Ayurvedic Shirodhara';
+    let currentSpaBaseFee = 6500;
+    let currentSpaDurationMulti = 1.0;
+
+    function selectSpaRitual(key, fee, label, desc, btn) {
+      currentSpaBaseFee = fee;
+      currentSpaRitual = label;
+      document.querySelectorAll('#spaRitualChips .calc-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const badge = document.getElementById('spaRitualBadge');
+      if (badge) badge.textContent = label.split(' ')[0] + ' ' + label.split(' ')[1];
+      updateSpaEstimate();
+    }
+
+    function selectSpaDuration(multi, label, btn) {
+      currentSpaDurationMulti = multi;
+      document.querySelectorAll('#spaDurationChips .calc-chip-tier').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateSpaEstimate();
+    }
+
+    function updateSpaEstimate() {
+      const calcTotal = Math.round(currentSpaBaseFee * currentSpaDurationMulti);
+
+      const totalDisplay = document.getElementById('spaTotalDisplay');
+      if (totalDisplay) totalDisplay.textContent = '₹' + calcTotal.toLocaleString('en-IN') + ' Only';
+
+      const waBtn = document.getElementById('spaWhatsAppBtn');
+      if (waBtn) {
+        const msg = encodeURIComponent('Hi SereneSanctuary, I am reserving a private suite for ' + currentSpaRitual + ' (Total ₹' + calcTotal.toLocaleString('en-IN') + '). Please confirm slot availability.');
+        waBtn.href = 'https://wa.me/918660819023?text=' + msg;
+      }
+    }
+
     // ═══════════════════════════════════════════════════════════════════
     // INTERACTIVE BEFORE / AFTER SLIDER LOGIC
     // ═══════════════════════════════════════════════════════════════════

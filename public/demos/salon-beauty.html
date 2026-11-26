@@ -16,7 +16,7 @@
   <meta property="og:url" content="https://uncodedhub.com/demos/salon-beauty.html">
   <meta property="og:title" content="LuxeAura Hair &amp; Aesthetics Lounge | Haute Couture Balayage &amp; Bridal Studio">
   <meta property="og:description" content="Haute couture Parisian hair atelier and bridal aesthetics lounge. Signature French Balayage, K18 molecular repair, and HD airbrush bridal glam.">
-  <meta property="og:image" content="https://uncodedhub.com/demos/assets/demo-11-salon-beauty/01_Hero_Showcase.png">
+  <meta property="og:image" content="https://uncodedhub.comassets/demo-11-salon-beauty/01_Hero_Showcase.png">
   <meta property="og:image:width" content="1920">
   <meta property="og:image:height" content="1080">
   <meta property="og:image:alt" content="LuxeAura Paris Atelier Salon Floor and Cascading Balayage Waves">
@@ -28,7 +28,7 @@
   <meta name="twitter:creator" content="@uncodedhub">
   <meta name="twitter:title" content="LuxeAura Hair &amp; Aesthetics Lounge | Haute Couture Balayage &amp; Bridal Studio">
   <meta name="twitter:description" content="Signature French Balayage, K18 molecular repair, and HD airbrush bridal glam. Interactive quote estimator.">
-  <meta name="twitter:image" content="https://uncodedhub.com/demos/assets/demo-11-salon-beauty/01_Hero_Showcase.png">
+  <meta name="twitter:image" content="https://uncodedhub.comassets/demo-11-salon-beauty/01_Hero_Showcase.png">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -66,7 +66,7 @@
         "name": "LuxeAura Hair & Aesthetics Lounge",
         "description": "Haute couture hair atelier, custom French Balayage, K18 molecular polypeptide hair repair, and HD bridal airbrush artistry.",
         "url": "https://uncodedhub.com/demos/salon-beauty.html",
-        "image": "https://uncodedhub.com/demos/assets/demo-11-salon-beauty/01_Hero_Showcase.png",
+        "image": "https://uncodedhub.comassets/demo-11-salon-beauty/01_Hero_Showcase.png",
         "priceRange": "$$$$",
         "address": {
           "@type": "PostalAddress",
@@ -1491,9 +1491,134 @@
         grid-template-columns: 1fr;
       }
     }
+  
+    [data-theme="rose-chiffon"] {
+      --bg-primary: #FAF5F6;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #F5EAEB;
+      --text-primary: #4C0519;
+      --text-muted: #881337;
+      --text-subtle: #9F1239;
+      --border-color: #FECDD3;
+      --border-subtle: #FFE4E6;
+      --accent: #E11D48;
+      --accent-hover: #BE123C;
+      --accent-contrast: #FFFFFF;
+      --accent-light: #FFE4E6;
+      --badge-bg: #FFE4E6;
+      --badge-text: #BE123C;
+      --gold-accent: #E11D48;
+      --card-shadow: 0 10px 30px rgba(225, 29, 72, 0.08);
+      --header-bg: rgba(250, 245, 246, 0.96);
+      --input-bg: #FFFFFF;
+    }
+
+    [data-theme="alabaster-pure"] {
+      --bg-primary: #FFFFFF;
+      --bg-surface: #F9F8F6;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #F3EFE9;
+      --text-primary: #121212;
+      --text-muted: #383838;
+      --text-subtle: #5C5C5C;
+      --border-color: #D6CEBE;
+      --border-subtle: #E8E3D8;
+      --accent: #C5A059;
+      --accent-hover: #A38038;
+      --accent-contrast: #121212;
+      --accent-light: #F7F2E7;
+      --badge-bg: #F7F2E7;
+      --badge-text: #8A6820;
+      --gold-accent: #C5A059;
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+      --header-bg: rgba(255, 255, 255, 0.96);
+      --input-bg: #FFFFFF;
+    }
+
+    .calc-chip {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip:hover { border-color: var(--accent); }
+    .calc-chip.active {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .calc-chip-tier {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 12px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip-tier:hover { border-color: var(--accent); }
+    .calc-chip-tier.active {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .tc-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #E2E8F0;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tc-btn.active, .tc-btn:hover {
+      background: var(--accent, #E5C378);
+      border-color: var(--accent, #E5C378);
+      color: var(--accent-contrast, #0F1115);
+      font-weight: 700;
+    }
+
   </style>
 </head>
 <body>
+
+  <!-- Top Uncoded Hub Specimen Banner -->
+  <div style="background: #090B0E; color: #F5F3EF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; padding: 10px 20px; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 99999; box-shadow: 0 4px 20px rgba(0,0,0,0.25);">
+    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <a href="/portfolio/" style="color: #FFFFFF; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 12px; padding: 5px 12px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; transition: all 0.2s ease;">
+        &larr; Back to Uncoded Hub Portfolio
+      </a>
+      <span style="color: rgba(245,243,239,0.4); display: inline-block;">|</span>
+      <span style="color: #F5F3EF; font-weight: 500; font-size: 12.5px;">
+        Demo 11 &bull; Haute Couture Balayage &amp; Bridal Specimen
+      </span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 0.4rem;">
+        <span style="color: #94A3B8; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Theme:</span>
+        <button class="tc-btn active" onclick="switchTheme('paris-noir', this)">Paris Noir</button>
+        <button class="tc-btn" onclick="switchTheme('rose-chiffon', this)">Rose Chiffon</button>
+        <button class="tc-btn" onclick="switchTheme('alabaster-pure', this)">Alabaster Light</button>
+      </div>
+      <a href="/contact/" style="color: #E5C378; font-size: 12.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px;">
+        Book Sprint &rarr;
+      </a>
+    </div>
+  </div>
 
   <!-- UNCEDED HUB DEMO SPECIMEN HEADER BAR -->
   <aside class="uncoded-demo-bar" aria-label="Demo Specimen Bar">
@@ -1526,6 +1651,7 @@
           <li><a href="#comparison">Molecular Repair</a></li>
           <li><a href="#lookbook">Lookbook</a></li>
           <li><a href="#director">Creative Director</a></li>
+          <li><a href="#salon-estimator">Couture Customizer</a></li>
           <li><a href="#estimator">Quote Estimator</a></li>
         </ul>
       </nav>
@@ -1581,7 +1707,7 @@
       </div>
 
       <div class="hero-visual-card">
-        <img src="/demos/assets/demo-11-salon-beauty/01_Hero_Showcase.png" alt="LuxeAura Paris Salon Floor with Cascading Balayage Waves" width="1920" height="1080">
+        <img src="assets/demo-11-salon-beauty/01_Hero_Showcase.png" alt="LuxeAura Paris Salon Floor with Cascading Balayage Waves" width="1920" height="1080">
         <div class="hero-visual-badge">
           <div class="badge-left">
             <h4>Private Styling Station</h4>
@@ -1606,11 +1732,11 @@
     <div class="slider-wrapper">
       <div class="comparison-container" id="comparisonBox">
         <div class="comparison-image-box after-image">
-          <img src="/demos/assets/demo-11-salon-beauty/08_After_Finished.png" alt="Luminous Icy Beige Balayage After Restoration" width="1200" height="750">
+          <img src="assets/demo-11-salon-beauty/08_After_Finished.png" alt="Luminous Icy Beige Balayage After Restoration" width="1200" height="750">
           <span class="badge-tag-after">AFTER: Luminous Dimensional Silk</span>
         </div>
         <div class="comparison-image-box before-image" id="beforeImageBox">
-          <img src="/demos/assets/demo-11-salon-beauty/07_Before_Raw.png" alt="Severe Bleach Breakage and Brassy Frizz Before" width="1200" height="750">
+          <img src="assets/demo-11-salon-beauty/07_Before_Raw.png" alt="Severe Bleach Breakage and Brassy Frizz Before" width="1200" height="750">
           <span class="badge-tag-before">BEFORE: Bleach Breakage &amp; Brassy Frizz</span>
         </div>
         <div class="slider-handle" id="sliderHandle">
@@ -1645,7 +1771,7 @@
       <!-- Look 1 -->
       <article class="lookbook-card">
         <div class="lookbook-thumb">
-          <img src="/demos/assets/demo-11-salon-beauty/02_Work_01.png" alt="French Balayage Beauty Portrait" width="1200" height="1500" loading="lazy">
+          <img src="assets/demo-11-salon-beauty/02_Work_01.png" alt="French Balayage Beauty Portrait" width="1200" height="1500" loading="lazy">
           <div class="lookbook-tag">Signature</div>
         </div>
         <div class="lookbook-body">
@@ -1673,7 +1799,7 @@
       <!-- Look 2 -->
       <article class="lookbook-card">
         <div class="lookbook-thumb">
-          <img src="/demos/assets/demo-11-salon-beauty/03_Work_02.png" alt="HD Royal Bridal Look" width="1200" height="1500" loading="lazy">
+          <img src="assets/demo-11-salon-beauty/03_Work_02.png" alt="HD Royal Bridal Look" width="1200" height="1500" loading="lazy">
           <div class="lookbook-tag">Royal Bridal</div>
         </div>
         <div class="lookbook-body">
@@ -1701,7 +1827,7 @@
       <!-- Look 3 -->
       <article class="lookbook-card">
         <div class="lookbook-thumb">
-          <img src="/demos/assets/demo-11-salon-beauty/04_Work_03.png" alt="Glossy K18 Molecular Repair Salon Hair" width="1200" height="1500" loading="lazy">
+          <img src="assets/demo-11-salon-beauty/04_Work_03.png" alt="Glossy K18 Molecular Repair Salon Hair" width="1200" height="1500" loading="lazy">
           <div class="lookbook-tag">Clinical Repair</div>
         </div>
         <div class="lookbook-body">
@@ -1729,7 +1855,7 @@
       <!-- Look 4 -->
       <article class="lookbook-card">
         <div class="lookbook-thumb">
-          <img src="/demos/assets/demo-11-salon-beauty/05_Work_04.png" alt="Editorial Portrait with Sleek Bob" width="1200" height="1500" loading="lazy">
+          <img src="assets/demo-11-salon-beauty/05_Work_04.png" alt="Editorial Portrait with Sleek Bob" width="1200" height="1500" loading="lazy">
           <div class="lookbook-tag">Precision Cut</div>
         </div>
         <div class="lookbook-body">
@@ -1757,7 +1883,7 @@
       <!-- Look 5 -->
       <article class="lookbook-card">
         <div class="lookbook-thumb">
-          <img src="/demos/assets/demo-11-salon-beauty/06_Work_05.png" alt="Luxurious VIP Bridal Suite Dressing Room" width="1200" height="1500" loading="lazy">
+          <img src="assets/demo-11-salon-beauty/06_Work_05.png" alt="Luxurious VIP Bridal Suite Dressing Room" width="1200" height="1500" loading="lazy">
           <div class="lookbook-tag">VIP Suite</div>
         </div>
         <div class="lookbook-body">
@@ -1802,7 +1928,7 @@
   <section class="director-section" id="director">
     <div class="director-grid">
       <div class="director-portrait-card">
-        <img src="/demos/assets/demo-11-salon-beauty/09_Artisan_Founder.png" alt="Claire Delacroix — Creative Director of LuxeAura" width="1200" height="1500" loading="lazy">
+        <img src="assets/demo-11-salon-beauty/09_Artisan_Founder.png" alt="Claire Delacroix — Creative Director of LuxeAura" width="1200" height="1500" loading="lazy">
         <div class="director-seal">
           <strong>Claire Delacroix</strong>
           <span>Creative Director &amp; Master Colorist</span>
@@ -1838,6 +1964,118 @@
   </section>
 
   <!-- INTERACTIVE BRIDAL & BALAYAGE QUOTE ESTIMATOR -->
+  
+  <!-- ==========================================================================
+       ENGINE 2/4: INTERACTIVE HAUTE COUTURE BALAYAGE & BRIDAL GLAM ESTIMATOR
+       ========================================================================== -->
+  <section id="salon-estimator" style="background: var(--bg-surface, #171B22); border-top: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding: 80px 0;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+      <div style="max-width: 780px; margin: 0 auto 40px auto; text-align: center;">
+        <div style="display: inline-block; background: rgba(229,195,120,0.15); color: #E5C378; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 5px 14px; border-radius: 30px; margin-bottom: 14px;">ENGINE 2/4 &bull; COUTURE SERVICE LEDGER</div>
+        <h2 style="font-size: 36px; margin: 0 0 12px 0; color: var(--text-primary, #FBF9F7);">Bespoke Color &amp; Bridal Artistry Customizer</h2>
+        <p style="color: var(--text-muted, #C4BCB3); font-size: 16px;">Transparent Parisian atelier pricing. Select your signature hair treatment, length, and master stylist tier to calculate instant service fees and reserve your private styling chair.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: start; max-width: 1120px; margin: 0 auto;" class="calc-grid-wrap">
+        <!-- Controls Column -->
+        <div style="background: var(--bg-card, #1F252E); border: 1.5px solid var(--border-color, rgba(255,255,255,0.12)); border-radius: 16px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
+          <!-- Step 1: Signature Service -->
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-primary, #FBF9F7); margin-bottom: 10px;">1. Select Signature Service</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" id="salonServiceChips">
+              <button type="button" class="calc-chip active" onclick="selectSalonService('balayage', 14500, 'French Dimensional Balayage + Gloss', 'Custom clay bleach hand-painting & K18 treatment', this)">
+                French Balayage<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Hand-Painted + Gloss</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectSalonService('bridal', 28000, 'HD Airbrush Bridal Glam Suite', 'Includes trial, draping, hair couture, and luxury kit', this)">
+                HD Bridal Glam<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Airbrush + Hair Couture</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectSalonService('k18', 8500, 'K18 Molecular Polypeptide Reversal', 'Patented peptide bond builder for bleached hair', this)">
+                K18 Molecular Repair<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Full Reversal + Blowout</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectSalonService('russian', 6500, 'Russian Manicure & Lash Atelier', 'Precision dry e-file cuticle care + silk lashes', this)">
+                Russian Manicure &amp; Lash<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Medical Autoclave Safe</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Hair Length -->
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-primary, #FBF9F7); margin-bottom: 10px;">2. Hair Length &amp; Density</label>
+            <div style="display: flex; flex-direction: column; gap: 8px;" id="salonLengthChips">
+              <div class="calc-chip-tier active" onclick="selectSalonLength(1.0, 'Medium Collarbone Length', this)">
+                <div>
+                  <strong style="display: block; font-size: 14px;">Medium Collarbone Length (Standard)</strong>
+                  <span style="font-size: 12px; color: var(--text-subtle, #8A8177);">Standard product formula &bull; 3.5 hours session</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: #E5C378;">1.0x</span>
+              </div>
+              <div class="calc-chip-tier" onclick="selectSalonLength(1.25, 'Waist Length / High Density', this)">
+                <div>
+                  <strong style="display: block; font-size: 14px;">Waist Length or High-Density Mane</strong>
+                  <span style="font-size: 12px; color: var(--text-subtle, #8A8177);">Double product ratio &bull; Extended 4.5 hours session</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: #E5C378;">+25% Extra</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Autoclave Sterile Guarantee -->
+          <div style="background: rgba(229,195,120,0.08); padding: 14px 18px; border-radius: 8px; border: 1px solid rgba(229,195,120,0.25); display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <strong style="font-size: 13.5px; color: var(--text-primary, #FBF9F7); display: block;">&#10003; Hospital-Grade Class-B Autoclave Sterilization</strong>
+              <span style="font-size: 12px; color: var(--text-subtle, #8A8177);">Single-use towels &bull; Sealed sterile instrument pouches</span>
+            </div>
+            <span style="background: #E5C378; color: #0F1115; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px;">100% STERILE</span>
+          </div>
+        </div>
+
+        <!-- Breakdown Output Card -->
+        <div style="background: var(--bg-card, #1F252E); border: 2px solid #E5C378; border-radius: 16px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span style="background: rgba(229,195,120,0.15); color: #E5C378; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">Private Chair Reservation</span>
+              <span id="salonServiceBadge" style="font-size: 12px; font-weight: 700; color: #E5C378;">French Balayage</span>
+            </div>
+
+            <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px dashed var(--border-color, rgba(255,255,255,0.15));">
+              <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-subtle, #8A8177); margin-bottom: 4px;">Service Investment Bracket</div>
+              <div id="salonTotalDisplay" style="font-size: 34px; font-weight: 800; color: var(--text-primary, #FBF9F7); line-height: 1.1;">₹14,500 Only</div>
+              <div id="salonTimeDisplay" style="font-size: 13px; color: #E5C378; font-weight: 600; margin-top: 6px;">Includes K18 Molecular Bond Shield &amp; French Gloss</div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted, #C4BCB3);">&#10003; Complimentary Consultation:</span>
+                <strong style="color: #E5C378; font-weight: 700;">Included (15 Mins)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted, #C4BCB3);">&#10003; Molecular Hair Health Test:</span>
+                <strong style="color: var(--text-primary, #FBF9F7); font-weight: 700;">Porosity &amp; Elasticity Audit</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted, #C4BCB3);">&#10003; Color Longevity:</span>
+                <strong style="color: var(--text-primary, #FBF9F7); font-weight: 700;">4 &ndash; 6 Months Wear</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted, #C4BCB3);">&#10003; Lounge Amenities:</span>
+                <strong style="color: var(--text-primary, #FBF9F7); font-weight: 700;">Matcha &bull; Parisian Nespresso</strong>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <a id="salonWhatsAppBtn" href="https://wa.me/918660819023?text=Hi%20LuxeAura%20Lounge,%20I%20am%20reserving%20a%20chair%20for%20French%20Dimensional%20Balayage%20+%20Gloss%20(₹14,500).%20Please%20confirm%20chair%20availability." target="_blank" rel="noopener noreferrer" style="background: #E5C378; color: #0F1115; font-weight: 700; width: 100%; text-align: center; justify-content: center; font-size: 15px; padding: 14px 20px; display: inline-flex; align-items: center; gap: 8px; border-radius: 8px; text-decoration: none;">
+              <span>Reserve Atelier Chair via WhatsApp &rarr;</span>
+            </a>
+            <div style="text-align: center; font-size: 11.5px; color: var(--text-subtle, #8A8177); margin-top: 10px;">
+              Zero waiting &bull; Dedicated stylist for your entire booked slot
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="estimator-section" id="estimator">
     <div class="section-header">
       <span class="section-eyebrow">Transparent Rate Engine</span>
@@ -1907,7 +2145,7 @@
       <!-- Summary Panel -->
       <div class="summary-panel">
         <div class="summary-banner">
-          <img src="/demos/assets/demo-11-salon-beauty/10_Process_Detail.png" alt="Custom Hair Color Formulation Workstation" width="1200" height="800">
+          <img src="assets/demo-11-salon-beauty/10_Process_Detail.png" alt="Custom Hair Color Formulation Workstation" width="1200" height="800">
           <div class="summary-banner-overlay">
             <h4>Bespoke Formulation Spec</h4>
             <p id="summaryFormula">Ammonia-Free Italian Clay Formulation</p>
@@ -2056,6 +2294,49 @@
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
+
+    // Theme Switcher
+    function switchTheme(themeKey, btnElem) {
+      document.body.setAttribute('data-theme', themeKey);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+    }
+
+    // Engine 2/4: Salon Customizer
+    let currentSalonService = 'French Dimensional Balayage + Gloss';
+    let currentSalonBaseFee = 14500;
+    let currentLengthMulti = 1.0;
+
+    function selectSalonService(key, fee, label, desc, btn) {
+      currentSalonBaseFee = fee;
+      currentSalonService = label;
+      document.querySelectorAll('#salonServiceChips .calc-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const badge = document.getElementById('salonServiceBadge');
+      if (badge) badge.textContent = label.split('+')[0].trim();
+      updateSalonEstimate();
+    }
+
+    function selectSalonLength(multi, label, btn) {
+      currentLengthMulti = multi;
+      document.querySelectorAll('#salonLengthChips .calc-chip-tier').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateSalonEstimate();
+    }
+
+    function updateSalonEstimate() {
+      const calcTotal = Math.round(currentSalonBaseFee * currentLengthMulti);
+
+      const totalDisplay = document.getElementById('salonTotalDisplay');
+      if (totalDisplay) totalDisplay.textContent = '₹' + calcTotal.toLocaleString('en-IN') + ' Only';
+
+      const waBtn = document.getElementById('salonWhatsAppBtn');
+      if (waBtn) {
+        const msg = encodeURIComponent('Hi LuxeAura Lounge, I am reserving a chair for ' + currentSalonService + ' (Total ₹' + calcTotal.toLocaleString('en-IN') + '). Please confirm chair availability.');
+        waBtn.href = 'https://wa.me/918660819023?text=' + msg;
+      }
+    }
+
     // ═══════════════════════════════════════════════════════════════════
     // INTERACTIVE BEFORE / AFTER SLIDER LOGIC
     // ═══════════════════════════════════════════════════════════════════

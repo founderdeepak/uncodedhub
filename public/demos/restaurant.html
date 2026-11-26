@@ -14,7 +14,7 @@
   <meta property="og:url" content="https://uncodedhub.com/demos/restaurant.html">
   <meta property="og:title" content="Saffron & Smoke | Wood-Fired Coastal & Charcoal Kitchen">
   <meta property="og:description" content="Artisanal open-flame dining in Bengaluru. 100% seasoned hardwood charcoal, instant 0.4s mobile menu, and direct zero-commission table reservations.">
-  <meta property="og:image" content="https://uncodedhub.com/demos/assets/demo-18-restaurant/01_Hero_Showcase.png">
+  <meta property="og:image" content="https://uncodedhub.comassets/demo-18-restaurant/01_Hero_Showcase.png">
   <meta property="og:image:width" content="1920">
   <meta property="og:image:height" content="1080">
   <meta property="og:image:alt" content="Saffron and Smoke Open Fire Coastal Hearth Kitchen">
@@ -26,7 +26,7 @@
   <meta name="twitter:creator" content="@uncodedhub">
   <meta name="twitter:title" content="Saffron & Smoke | Artisanal Wood-Fired Kitchen">
   <meta name="twitter:description" content="Wood-fired coastal grills and slow-smoked Kashmiri curries. Instant mobile menu and direct table reservations in Bengaluru.">
-  <meta name="twitter:image" content="https://uncodedhub.com/demos/assets/demo-18-restaurant/01_Hero_Showcase.png">
+  <meta name="twitter:image" content="https://uncodedhub.comassets/demo-18-restaurant/01_Hero_Showcase.png">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -38,7 +38,7 @@
         "@id": "https://uncodedhub.com/demos/restaurant.html#restaurant",
         "name": "Saffron & Smoke Charcoal Kitchen & Coastal Hearth",
         "url": "https://uncodedhub.com/demos/restaurant.html",
-        "image": "https://uncodedhub.com/demos/assets/demo-18-restaurant/01_Hero_Showcase.png",
+        "image": "https://uncodedhub.comassets/demo-18-restaurant/01_Hero_Showcase.png",
         "servesCuisine": ["Coastal Indian", "Charcoal Grill", "Wood-Fired Tandoor"],
         "priceRange": "₹₹₹",
         "telephone": "+91-80-2856-9933",
@@ -1262,9 +1262,118 @@
       .hearth-rules-grid { grid-template-columns: 1fr; }
       .footer-bottom-line { flex-direction: column; gap: 12px; text-align: center; }
     }
+  
+    [data-theme="coastal-limestone"] {
+      --bg-charcoal: #FBF8F3;
+      --bg-hearth: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #F7EFE4;
+      --border-ember: #E5D9C8;
+      --border-subtle: #EFE7DB;
+      --accent-ember: #C2410C;
+      --accent-saffron: #D97706;
+      --text-pure: #191410;
+      --text-muted: #483E34;
+      --text-dim: #73675B;
+    }
+
+    [data-theme="saffron-regal"] {
+      --bg-charcoal: #140D07;
+      --bg-hearth: #1C130B;
+      --bg-card: #241A10;
+      --bg-card-hover: #2D2015;
+      --border-ember: rgba(245, 158, 11, 0.35);
+      --border-subtle: rgba(255, 255, 255, 0.12);
+      --accent-ember: #F59E0B;
+      --accent-saffron: #FBBF24;
+      --text-pure: #FFFBEB;
+      --text-muted: #FDE68A;
+      --text-dim: #D97706;
+    }
+
+    .calc-chip {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-ember);
+      color: var(--text-pure);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip:hover { border-color: var(--accent-ember); }
+    .calc-chip.active {
+      background: rgba(234, 88, 12, 0.15);
+      border-color: var(--accent-ember);
+      color: var(--accent-saffron);
+    }
+
+    .calc-chip-tier {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-ember);
+      color: var(--text-pure);
+      padding: 12px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip-tier:hover { border-color: var(--accent-ember); }
+    .calc-chip-tier.active {
+      background: rgba(234, 88, 12, 0.15);
+      border-color: var(--accent-ember);
+      color: var(--accent-saffron);
+    }
+
+    .tc-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #E2E8F0;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tc-btn.active, .tc-btn:hover {
+      background: #EA580C;
+      border-color: #EA580C;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
   </style>
 </head>
 <body>
+
+  <!-- Top Uncoded Hub Specimen Banner -->
+  <div style="background: #090807; color: #F5F3EF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; padding: 10px 20px; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 99999; box-shadow: 0 4px 20px rgba(0,0,0,0.25);">
+    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <a href="/portfolio/" style="color: #FFFFFF; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 12px; padding: 5px 12px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; transition: all 0.2s ease;">
+        &larr; Back to Uncoded Hub Portfolio
+      </a>
+      <span style="color: rgba(245,243,239,0.4); display: inline-block;">|</span>
+      <span style="color: #F5F3EF; font-weight: 500; font-size: 12.5px;">
+        Demo 18 &bull; Wood-Fired Hearth &amp; Coastal Kitchen Specimen
+      </span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 0.4rem;">
+        <span style="color: #94A3B8; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Theme:</span>
+        <button class="tc-btn active" onclick="switchTheme('charcoal-ember', this)">Charcoal Hearth</button>
+        <button class="tc-btn" onclick="switchTheme('coastal-limestone', this)">Coastal Light</button>
+        <button class="tc-btn" onclick="switchTheme('saffron-regal', this)">Saffron Regal</button>
+      </div>
+      <a href="/contact/" style="color: #F59E0B; font-size: 12.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px;">
+        Book Sprint &rarr;
+      </a>
+    </div>
+  </div>
 
   <!-- Top Hearth Dispatch Bar -->
   <div class="hearth-dispatch-bar">
@@ -1300,6 +1409,7 @@
           <li><a href="#comparison" class="nav-link">Menu vs PDF</a></li>
           <li><a href="#chef" class="nav-link">Pitmaster</a></li>
           <li><a href="#menu" class="nav-link">Live Menu</a></li>
+          <li><a href="#dining-estimator" class="nav-link">Tasting Estimator</a></li>
           <li><a href="#standards" class="nav-link">Fire Standards</a></li>
         </ul>
 
@@ -1649,6 +1759,120 @@
   </section>
 
   <!-- Conversion Engine: Instant In-Memory Filterable HTML Menu -->
+  
+  <!-- ==========================================================================
+       ENGINE 2/4: INTERACTIVE OPEN-HEARTH TASTING & VIP TABLE ESTIMATOR
+       ========================================================================== -->
+  <section id="dining-estimator" class="section-wrap" style="background: var(--bg-charcoal, #0E0C0A); border-top: 1px solid var(--border-subtle, rgba(255,255,255,0.1)); padding: 80px 0;">
+    <div class="container">
+      <div class="section-header text-center" style="max-width: 780px; margin: 0 auto 40px auto; text-align: center;">
+        <div class="section-badge">ENGINE 2/4 &bull; TASTING MENU LEDGER</div>
+        <h2 class="section-headline" style="font-size: 36px; margin: 12px 0;">Wood-Fired Tasting Experience &amp; VIP Table Planner</h2>
+        <p class="section-description" style="color: var(--text-dim, #A39788); font-size: 16px;">Zero-commission direct table reservations. Select your hearth tasting menu, sommelier pairing, and party size to project table investment and confirm your direct booking.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: start; max-width: 1120px; margin: 0 auto;" class="calc-grid-wrap">
+        <!-- Controls Column -->
+        <div style="background: var(--bg-hearth, #15120F); border: 1.5px solid var(--border-ember, #3D2617); border-radius: 16px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+          <!-- Step 1: Tasting Experience -->
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-pure, #FFF8F0); margin-bottom: 10px;">1. Select Hearth Dining Format</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" id="restExperienceChips">
+              <button type="button" class="calc-chip active" onclick="selectRestExperience('degustation', 3200, '7-Course Chef Hearth Degustation', 'Slow-cooked coastal catch & wild game skewers', this)">
+                7-Course Degustation<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Chef Wood-Fired Menu</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectRestExperience('coastal', 3800, 'Coastal Mangalorean Charcoal Feast', 'Whole red snapper, mud crab & ghee roast', this)">
+                Coastal Charcoal Feast<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Daily Fresh Seafood Catch</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectRestExperience('tandoor', 2600, 'Slow-Smoked Tandoor Sharing Feast', 'Rann-e-Khyber & artisanal fermented breads', this)">
+                Tandoor Sharing Feast<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Family-Style Clay Oven</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectRestExperience('pdr', 4500, 'Private Dining Room (PDR) Gala', 'Dedicated hearth chef & private butler service', this)">
+                Private Dining Room (PDR)<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Exclusive 12-Guest Suite</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Beverage Pairing -->
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-pure, #FFF8F0); margin-bottom: 10px;">2. Beverage Pairing</label>
+            <div style="display: flex; flex-direction: column; gap: 8px;" id="restPairingChips">
+              <div class="calc-chip-tier active" onclick="selectRestPairing('botanical', 800, 'Artisanal Fermented Kombucha & Botanicals', this)">
+                <div>
+                  <strong style="display: block; font-size: 14px;">Artisanal Fermented Kombucha &amp; Botanical Cordials</strong>
+                  <span style="font-size: 12px; color: var(--text-dim, #A39788);">House-brewed tepache, kokum shrub, saffron fizz</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: #EA580C;">+₹800/guest</span>
+              </div>
+              <div class="calc-chip-tier" onclick="selectRestPairing('reserve', 2200, 'Sommelier Reserve Wine & Craft Cocktail Flight', this)">
+                <div>
+                  <strong style="display: block; font-size: 14px;">Sommelier Reserve Wine &amp; Craft Smoke Cocktails</strong>
+                  <span style="font-size: 12px; color: var(--text-dim, #A39788);">5 pairings: Natural low-intervention wines + smoked mezcal</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: #EA580C;">+₹2,200/guest</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Guests -->
+          <div>
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-pure, #FFF8F0); margin-bottom: 10px;">3. Number of Guests</label>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;" id="restGuestChips">
+              <button type="button" class="calc-chip active" onclick="selectRestGuests(2, this)">2 Guests</button>
+              <button type="button" class="calc-chip" onclick="selectRestGuests(4, this)">4 Guests</button>
+              <button type="button" class="calc-chip" onclick="selectRestGuests(6, this)">6 Guests</button>
+              <button type="button" class="calc-chip" onclick="selectRestGuests(8, this)">8 Guests</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breakdown Output Card -->
+        <div style="background: var(--bg-hearth, #15120F); border: 2px solid #EA580C; border-radius: 16px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span style="background: rgba(234,88,12,0.15); color: #EA580C; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">Direct Table Reservation</span>
+              <span id="restExperienceBadge" style="font-size: 12px; font-weight: 700; color: #EA580C;">7-Course Degustation</span>
+            </div>
+
+            <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px dashed var(--border-ember, #3D2617);">
+              <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim, #A39788); margin-bottom: 4px;">Projected Table Total</div>
+              <div id="restTotalDisplay" style="font-size: 34px; font-weight: 800; color: var(--text-pure, #FFF8F0); line-height: 1.1;">₹8,000 Only</div>
+              <div id="restPerGuestDisplay" style="font-size: 13px; color: #EA580C; font-weight: 600; margin-top: 6px;">₹4,000 / guest (Includes Beverage Pairing)</div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted, #C9BFB5);">&#10003; Open-Hearth Seating:</span>
+                <strong style="color: #EA580C; font-weight: 700;">Counter View Included</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted, #C9BFB5);">&#10003; Zero Third-Party Markups:</span>
+                <strong style="color: var(--text-pure, #FFF8F0); font-weight: 700;">Direct Kitchen Reservation</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted, #C9BFB5);">&#10003; Dietary Accommodations:</span>
+                <strong style="color: var(--text-pure, #FFF8F0); font-weight: 700;">Gluten-Free &bull; Jain Available</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted, #C9BFB5);">&#10003; Valet Parking:</span>
+                <strong style="color: var(--text-pure, #FFF8F0); font-weight: 700;">Complimentary at Porch</strong>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <a id="restWhatsAppBtn" href="https://wa.me/918660819023?text=Hi%20Saffron%20%26%20Smoke,%20I%20am%20reserving%20a%20table%20for%207-Course%20Chef%20Hearth%20Degustation%20(2%20Guests,%20Total%20₹8,000).%20Please%20confirm%20table%20availability." target="_blank" rel="noopener noreferrer" style="background: #EA580C; color: #FFFFFF; font-weight: 700; width: 100%; text-align: center; justify-content: center; font-size: 15px; padding: 14px 20px; display: inline-flex; align-items: center; gap: 8px; border-radius: 8px; text-decoration: none;">
+              <span>Confirm VIP Table via WhatsApp &rarr;</span>
+            </a>
+            <div style="text-align: center; font-size: 11.5px; color: var(--text-dim, #A39788); margin-top: 10px;">
+              Instant confirmation &bull; Table held for 20 minutes past reservation time
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section-wrap" id="menu">
     <div class="container">
       <div class="section-header">
@@ -1923,6 +2147,61 @@
 
   <!-- Interactive Scripts -->
   <script>
+
+    // Theme Switcher
+    function switchTheme(themeKey, btnElem) {
+      document.body.setAttribute('data-theme', themeKey);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+    }
+
+    // Engine 2/4: Restaurant Tasting Estimator
+    let currentRestExperience = '7-Course Chef Hearth Degustation';
+    let currentFoodPrice = 3200;
+    let currentPairingPrice = 800;
+    let currentGuests = 2;
+
+    function selectRestExperience(key, price, label, desc, btn) {
+      currentFoodPrice = price;
+      currentRestExperience = label;
+      document.querySelectorAll('#restExperienceChips .calc-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const badge = document.getElementById('restExperienceBadge');
+      if (badge) badge.textContent = label.split(' ')[0] + ' ' + label.split(' ')[1];
+      updateDiningEstimate();
+    }
+
+    function selectRestPairing(key, price, label, btn) {
+      currentPairingPrice = price;
+      document.querySelectorAll('#restPairingChips .calc-chip-tier').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateDiningEstimate();
+    }
+
+    function selectRestGuests(count, btn) {
+      currentGuests = count;
+      document.querySelectorAll('#restGuestChips .calc-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateDiningEstimate();
+    }
+
+    function updateDiningEstimate() {
+      const perGuest = currentFoodPrice + currentPairingPrice;
+      const totalRaw = perGuest * currentGuests;
+
+      const totalDisplay = document.getElementById('restTotalDisplay');
+      if (totalDisplay) totalDisplay.textContent = '₹' + totalRaw.toLocaleString('en-IN') + ' Only';
+
+      const perGuestDisplay = document.getElementById('restPerGuestDisplay');
+      if (perGuestDisplay) perGuestDisplay.textContent = '₹' + perGuest.toLocaleString('en-IN') + ' / guest (Includes Beverage Pairing)';
+
+      const waBtn = document.getElementById('restWhatsAppBtn');
+      if (waBtn) {
+        const msg = encodeURIComponent('Hi Saffron & Smoke, I am reserving a table for ' + currentRestExperience + ' (' + currentGuests + ' Guests, Total ₹' + totalRaw.toLocaleString('en-IN') + '). Please confirm table availability.');
+        waBtn.href = 'https://wa.me/918660819023?text=' + msg;
+      }
+    }
+
     // 1. Before/After Menu Speed Slider Logic
     (function initSlider() {
       const container = document.getElementById('sliderContainer');

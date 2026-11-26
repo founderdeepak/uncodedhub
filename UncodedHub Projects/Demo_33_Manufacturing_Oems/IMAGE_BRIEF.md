@@ -1,48 +1,35 @@
-# Demo_33_Manufacturing_Oems — Asset & Upgrade Brief
+# Demo 33 — Precision Dynamics OEM | 5-Axis CNC Precision Machining & Aerospace Tooling
+**Asset & Image Production Brief**
 
-**Client / Brand**: Precision Dynamics OEM
-**Sector**: Aerospace & Industrial Tooling
-**Category**: industrial
-**Demo File**: [manufacturing-oems.html](file:///c:/Users/LENOVO/Downloads/uncoded-hub/public/demos/manufacturing-oems.html)
-**Live Local URL**: `http://localhost:3000/demos/manufacturing-oems.html`
-**Live Production URL**: `https://uncodedhub.com/demos/manufacturing-oems.html`
-
----
-
-## 1. Core Conversion Engine & Positioning
-* **Brand Summary**: AS9100D certified 5-axis CNC machining platform with rapid RFQ intake, alloy selection, and micron-level tolerance specifications.
-* **Core Conversion Engine**: **Rapid RFQ & Material Tolerance Specification Intake**
-* **Key Business Result**: 0.4s LCP · ±5 Micron Accuracy · 72-Hour Rapid Prototypes
-
-### Visual Themes in this Demo:
-  1. **Industrial Forge** (Heavy Tooling) — Accent: `#FB923C` | Palette: #140A04, #FB923C, #F4EFEA
-  2. **Technical Blueprint** (Aerospace Grid) — Accent: `#38BDF8` | Palette: #0B1522, #38BDF8, #FFFFFF
-  3. **Precision Titanium** (Medical Alloy) — Accent: `#94A3B8` | Palette: #111111, #94A3B8, #FAF8F5
+- **Brand Name**: Precision Dynamics OEM
+- **Industry / Sector**: Aerospace & Defense Tooling, 5-Axis CNC Precision Machining, Medical Implants, AS9100D Certified Engineering
+- **Demo File**: `public/demos/manufacturing-oems.html`
+- **Live Local URL**: `http://localhost:3000/demos/manufacturing-oems.html`
+- **Live Production URL**: `https://uncodedhub.com/demos/manufacturing-oems.html`
 
 ---
 
-## 2. Required Images Checklist (Drop Here in `Assets/`)
+## 1. Aesthetic & Art Direction Standard
+- **Lighting**: Cinematic industrial chiaroscuro, bright cool white LED work lights inside CNC machine enclosures, glowing cyan laser inspection lines, warm sparks and golden coolant reflections. No muddy darkness.
+- **Materials**: Aerospace Titanium (Grade 5 Ti-6Al-4V), Inconel 718, 7075-T6 Billet Aluminum, polished black granite surface plates, ruby CMM styli.
+- **Visual Feel**: DMG MORI, Hermle, Zeiss Metrology, and SpaceX supplier caliber industrial aesthetic. Pristine, clinical, high-tech, razor-sharp.
 
-To achieve the unslop gold standard (like Sri Ayyanar Sirpa Kalai), please add **high-resolution authentic images** to this folder or the `Assets/` subfolder:
+---
 
-| File Name | Slot & Purpose | Recommended Aspect & Resolution | Description |
+## 2. Master Image Prompts Table (10 Slots)
+
+Drop the generated images directly into:
+`UncodedHub Projects/Demo_33_Manufacturing_OEMs/Assets/`
+
+| Slot / File Name | Aspect Ratio | Subject & Scene Composition | Master AI Image Generation Prompt (Midjourney v6.1 / Flux) |
 | :--- | :--- | :--- | :--- |
-| `01_Hero_Showcase.png` | Hero Banner / Focal Center | 16:9 (1920×1080) or 4:5 (1200×1500) | Dramatic, aspirational hero image representing the pinnacle of this craft. |
-| `02_Work_01.png` | Portfolio Feature 1 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #1. |
-| `03_Work_02.png` | Portfolio Feature 2 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #2. |
-| `04_Work_03.png` | Portfolio Feature 3 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #3. |
-| `05_Work_04.png` | Portfolio Feature 4 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #4. |
-| `06_Work_05.png` | Portfolio Feature 5 | 4:5 (1080×1350) or 16:10 | Flagship completed project / case study #5. |
-| `07_Before_Raw.png` | Comparison Slider (Left) | 16:10 (1200×750) | Raw / unpolished / initial stage (e.g. bare shell, untreated, blueprint). |
-| `08_After_Finished.png`| Comparison Slider (Right)| 16:10 (1200×750) | Finished, pristine, luxury outcome (e.g. furnished sanctuary, polished result). |
-| `09_Founder_Or_Expert.png`| Master / Founder Portrait| 1:1 or 4:5 Portrait | Authentic studio / clinic / workshop portrait of the principal expert. |
-| `10_Process_Detail.png`| Craftsmanship / Studio | 16:9 or 4:3 | Micro-detail of materials, tools, operatory, or on-site craftsmanship. |
-
----
-
-## 3. Unslop Design Standard Rules
-1. **No Purple AI Gradients**: Use editorial dark midnight navy, museum bronze, stone, or warm earth palettes.
-2. **Character-Rich Typography**: High-contrast editorial display font for headings; clean neutral body text.
-3. **Strict Word Integrity**: No split words on mobile (`word-break: keep-all; overflow-wrap: normal`).
-4. **Authentic Chiaroscuro Lighting**: High contrast, moody shadows, realistic depth. Zero cheesy smiling stock photos.
-5. **Direct High-Intent CTAs**: One-tap WhatsApp consult with pre-filled shastric/project details + interactive timeline estimator.
+| **01_Hero_Showcase.png** | 16:9 | **5-Axis Simultaneous CNC Machining a Monolithic Titanium Impeller**<br>High-end 5-axis CNC rotary table milling a complex aerospace titanium turbine blisk. Emulsion coolant mist spraying, bright internal LED work lights, sharp carbide cutter spinning, ultra-high-precision engineering. | `Cinematic industrial photography of a 5-axis simultaneous CNC milling center machining a monolithic aerospace titanium turbine blisk, high-pressure semi-synthetic blue coolant mist spraying over spinning carbide endmill, bright clean white internal machine lighting, metallic reflections, razor-sharp metal chips, Zeiss and DMG Mori industrial quality, 8k resolution, photorealistic --ar 16:9 --style raw --v 6.1` |
+| **02_Work_01.png**<br>*(Scrolly Stage 1)* | 4:5 | **Stage 1: CAD/CAM Toolpath Simulation & FEA Stress Modeling**<br>Dark aerospace engineering office with multi-monitor CAD workstation displaying complex 5-axis simultaneous toolpaths and colorful FEA stress mesh of a flight-critical rocket engine bracket. | `Aerospace CAD engineering workstation in a sleek dark control room, high resolution dual monitors displaying 3D multi-axis CAM cutter toolpaths and finite element stress analysis rainbow gradient heat map of a titanium jet engine bracket, blue ambient lighting, technical drawing blueprints on desk, ultra sharp --ar 4:5 --style raw --v 6.1` |
+| **03_Work_02.png**<br>*(Scrolly Stage 2)* | 4:5 | **Stage 2: High-Speed Heavy Roughing (Inconel 718 Forging)**<br>Aggressive high-feed face milling of a massive forged aerospace superalloy billet. Glowing hot metal chips flying into heavy steel enclosure, heavy emulsion fluid wash. | `Macro industrial photography of a high-feed indexable face mill roughing an Inconel 718 aerospace forged billet, bright orange fiery metal chips peeling off at high speed, intense fluid coolant stream washing chips away, heavy steel vise fixture, raw mechanical power, high-speed photography, sharp action freeze --ar 4:5 --style raw --v 6.1` |
+| **04_Work_03.png**<br>*(Scrolly Stage 3)* | 4:5 | **Stage 3: 5-Axis Micro-Finish (±2 Micron Tolerance)**<br>Precision solid carbide ball nose end mill executing continuous 5-axis surface finishing on a mirror-smooth curved airfoil surface. Microscopic scalloped tool marks creating holographic light refraction. | `Extreme macro detail of a micro-grain carbide ball nose end mill finishing a complex contoured aerospace titanium blade surface, microscopic iridescent toolpath scallops reflecting light with rainbow diffraction, mirror-lapped metal surface, clean coolant droplets, micron precision manufacturing, 8k --ar 4:5 --style raw --v 6.1` |
+| **05_Work_04.png**<br>*(Scrolly Stage 4)* | 4:5 | **Stage 4: ZEISS CMM Metrology & Optical Laser Scanning**<br>Pristine climate-controlled quality laboratory. Ruby-tipped CMM probe inspecting the datum bore of a machined aerospace part while a bright blue 3D laser scanner casts a grid of measurement points. | `Pristine temperature-controlled metrology cleanroom laboratory, high-precision Zeiss coordinate measuring machine with a red ruby spherical probe touching a mirror-machined aerospace titanium housing, bright cyan 3D laser inspection grid projected across the component, black granite surface plate, clinical aerospace quality control --ar 4:5 --style raw --v 6.1` |
+| **06_Work_05.png**<br>*(Scrolly Stage 5)* | 4:5 | **Stage 5: AS9100D Certified Flight-Ready Component**<br>The completed aerospace propulsion blisk resting majestically on a matte black inspection stand with laser-engraved serial QR codes, accompanied by a calibrated digital micrometer. | `Still life commercial photography of a finished flight-ready titanium aerospace turbine blisk on a clean matte dark surface, crisp laser-etched serial numbers and AS9100 certification markings, digital micrometer resting beside it displaying 0.002mm, soft directional studio lighting, aerospace exhibition showcase --ar 4:5 --style raw --v 6.1` |
+| **07_Before_Raw.png**<br>*(Slider: Before)* | 16:10 | **Before: Raw Heavy Forged Titanium Billet**<br>Rough, oxidized, unmachined block of aerospace Grade 5 titanium alloy with industrial band-saw cut edges, mill scale, and yellow inspection chalk marks. | `Industrial photograph of a raw heavy forged titanium alloy metal block before machining, rough dark oxidized surface texture with mill scale, industrial yellow chalk batch markings, rough band saw cut edges, heavy raw metallurgy on wooden pallet --ar 16:10 --style raw --v 6.1` |
+| **08_After_Finished.png**<br>*(Slider: After)* | 16:10 | **After: Sculpted 5-Axis Monolithic Aerospace Impeller**<br>Identical angle showing the fully sculpted, lightweight, mirror-milled titanium aerospace impeller with thin aerodynamic blades and zero imperfections. | `Identical angle industrial photograph of the finished component machined from that exact billet, intricate 5-axis sculpted titanium aerospace impeller with paper-thin aerodynamic curved vanes, pristine satin machined finish, perfect geometry, zero defects --ar 16:10 --style raw --v 6.1` |
+| **09_Founder_Or_Expert.png** | 4:5 or 1:1 | **VP of Engineering & Chief Metrologist**<br>Experienced aerospace manufacturing director in clean safety glasses and navy shop coat holding a precision digital bore gauge on an active shop floor with illuminated CNC machines behind him. | `Professional portrait of a senior aerospace manufacturing engineer in his late 40s wearing safety glasses and a navy engineering coat, holding a digital vernier caliper, standing confidently on a clean modern CNC factory floor with blurred illuminated machines in background, warm natural industrial lighting --ar 4:5 --style raw --v 6.1` |
+| **10_Process_Detail.png** | 16:9 or 4:3 | **Micro-Detail: Ruby Probe & Wire EDM Spark Precision**<br>Extreme close-up macro of a 2mm synthetic ruby CMM stylus making micron-level contact with a machined datum hole, digital micrometer readout, crisp metallic textures. | `Extreme macro industrial detail of a bright red ruby sphere tip on a CMM measuring probe touching a precision ground steel bore with sub-micron tolerance, microscopic reflection in the polished metal bore, high-tech industrial metrology, tack-sharp depth of field, Hasselblad commercial look --ar 16:9 --style raw --v 6.1` |

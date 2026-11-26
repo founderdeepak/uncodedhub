@@ -14,7 +14,7 @@
   <meta property="og:url" content="https://uncodedhub.com/demos/real-estate.html">
   <meta property="og:title" content="Marlow &amp; Co. | Private Property Advisory &bull; HNW Real Estate Specimen">
   <meta property="og:description" content="Live real estate demo featuring interactive 14-point title forensic inspection, verified off-market portfolio, and VIP WhatsApp booking. Built by Uncoded Hub.">
-  <meta property="og:image" content="https://uncodedhub.com/demos/assets/demo-02-real-estate/01_Hero_Showcase.png">
+  <meta property="og:image" content="https://uncodedhub.comassets/demo-02-real-estate/01_Hero_Showcase.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
   <meta property="og:image:alt" content="Marlow &amp; Co. Private Property Advisory Demo Specimen">
@@ -26,7 +26,7 @@
   <meta name="twitter:creator" content="@uncodedhub">
   <meta name="twitter:title" content="Marlow &amp; Co. | Private Property Advisory &bull; HNW Real Estate Specimen">
   <meta name="twitter:description" content="Live real estate demo featuring interactive 14-point title forensic inspection, verified off-market portfolio, and VIP WhatsApp booking. Built by Uncoded Hub.">
-  <meta name="twitter:image" content="https://uncodedhub.com/demos/assets/demo-02-real-estate/01_Hero_Showcase.png">
+  <meta name="twitter:image" content="https://uncodedhub.comassets/demo-02-real-estate/01_Hero_Showcase.png">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -64,7 +64,7 @@
         "name": "Marlow & Co. Private Property Advisory",
         "headline": "Acquire Prime Residential Real Estate with Zero Broker Bias",
         "description": "Exclusive buyer-side fiduciary representation for high-net-worth acquisitions across Mumbai, Bangalore, and Goa.",
-        "image": "https://uncodedhub.com/demos/assets/demo-02-real-estate/01_Hero_Showcase.png",
+        "image": "https://uncodedhub.comassets/demo-02-real-estate/01_Hero_Showcase.png",
         "telephone": "+91-22-6890-4100",
         "address": {
           "@type": "PostalAddress",
@@ -119,6 +119,114 @@
       --header-bg: rgba(247, 245, 240, 0.95);
       --input-bg: #FFFFFF;
     }
+
+    [data-theme="obsidian-penthouse"] {
+      --bg-primary: #0D1117;
+      --bg-surface: #161B22;
+      --bg-card: #1F242C;
+      --bg-card-subtle: #252B35;
+      --text-primary: #F0F6FC;
+      --text-muted: #C9D1D9;
+      --text-subtle: #8B949E;
+      --border-color: rgba(229, 195, 120, 0.32);
+      --border-subtle: rgba(255, 255, 255, 0.12);
+      --accent: #E5C378;
+      --accent-hover: #F2D898;
+      --accent-contrast: #0D1117;
+      --accent-light: rgba(229, 195, 120, 0.15);
+      --gold: #E5C378;
+      --gold-light: rgba(229, 195, 120, 0.12);
+      --badge-bg: rgba(229, 195, 120, 0.15);
+      --badge-text: #E5C378;
+      --card-shadow: 0 14px 40px rgba(0, 0, 0, 0.65);
+      --header-bg: rgba(13, 17, 23, 0.95);
+      --input-bg: #1F242C;
+    }
+
+    [data-theme="monaco-ivory"] {
+      --bg-primary: #FAF6F0;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #F3ECE1;
+      --text-primary: #1C1917;
+      --text-muted: #44403C;
+      --text-subtle: #78716C;
+      --border-color: #D6CEBE;
+      --border-subtle: #E7E0D3;
+      --accent: #9A6B2F;
+      --accent-hover: #7D531F;
+      --accent-contrast: #FFFFFF;
+      --accent-light: #FBF4E8;
+      --gold: #B8860B;
+      --gold-light: #FAF2DD;
+      --badge-bg: #EFE6D5;
+      --badge-text: #7D531F;
+      --card-shadow: 0 10px 30px rgba(60, 40, 20, 0.08);
+      --header-bg: rgba(250, 246, 240, 0.96);
+      --input-bg: #FFFFFF;
+    }
+
+    /* Engine 2 Calculator Styles */
+    .calc-chip {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip:hover {
+      border-color: var(--accent);
+    }
+    .calc-chip.active {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .calc-chip-tier {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    .calc-chip-tier:hover {
+      border-color: var(--accent);
+    }
+    .calc-chip-tier.active {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .tc-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #E2E8F0;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tc-btn.active, .tc-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--accent-contrast);
+      font-weight: 700;
+    }
+
 
     *, *::before, *::after {
       box-sizing: border-box;
@@ -1185,6 +1293,13 @@
       <span style="color: #F5F3EF; font-weight: 500; font-size: 12.5px;">
         Demo 02 &bull; Prime Real Estate &amp; Private Advisory Specimen
       </span>
+
+      <div style="display: flex; align-items: center; gap: 0.4rem;">
+        <span style="color: #A3B8AD; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 0.25rem;">Theme:</span>
+        <button class="tc-btn active" onclick="switchTheme('british-racing', this)">British Racing</button>
+        <button class="tc-btn" onclick="switchTheme('obsidian-penthouse', this)">Obsidian Penthouse</button>
+        <button class="tc-btn" onclick="switchTheme('monaco-ivory', this)">Monaco Ivory</button>
+      </div>
     </div>
     <div style="display: flex; align-items: center; gap: 16px;">
       <span style="background: rgba(197,160,89,0.2); color: #E5C378; border: 1px solid rgba(197,160,89,0.45); font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 9px; border-radius: 3px;">
@@ -1207,6 +1322,7 @@
       <nav class="nav-links">
         <a href="#inventory">Verified Estates</a>
         <a href="#diligence-slider">14-Point Title Forensic</a>
+        <a href="#investment-estimator">Acquisition Calculator</a>
         <a href="#partner-profile">Principal Advisory</a>
         <a href="#process">Acquisition Protocol</a>
         <a href="#fiduciary">Buyer-Side Fiduciary</a>
@@ -1257,7 +1373,7 @@
 
       <div class="hero-visual">
         <img class="hero-image-main" 
-             src="/demos/assets/demo-02-real-estate/01_Hero_Showcase.png" 
+             src="assets/demo-02-real-estate/01_Hero_Showcase.png" 
              alt="The Cantilever Villa Retreat - Prime Luxury Architectural Residence at Twilight">
         
         <div class="hero-floating-card">
@@ -1335,13 +1451,13 @@
         <div class="compare-container" id="estateDiffBox" style="--clip-pos: 50%;">
           <!-- Layer 1: After / Verified 14-Point Clear Title Dossier (Base) -->
           <img class="compare-img compare-img-after" 
-               src="/demos/assets/demo-02-real-estate/08_After_Verified_Title.png" 
+               src="assets/demo-02-real-estate/08_After_Verified_Title.png" 
                alt="Certified 14-Point Clear Title Dossier with High Court Seal and Green Verification Badges" 
                loading="lazy">
           
           <!-- Layer 2: Before / Unverified Title Risk Desk (Clipped) -->
           <img class="compare-img compare-img-before" 
-               src="/demos/assets/demo-02-real-estate/07_Before_Title_Risk.png" 
+               src="assets/demo-02-real-estate/07_Before_Title_Risk.png" 
                alt="Unverified Real Estate Title Risk Desk with High-Court Caveats and Encumbrances" 
                loading="lazy">
 
@@ -1369,6 +1485,122 @@
   </section>
 
   <!-- ==========================================================================
+       ENGINE 2: REAL-TIME HNW CAPITAL ALLOCATION & ACQUISITION YIELD CALCULATOR
+       ========================================================================== -->
+  <section id="investment-estimator" class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="wrap">
+      <div class="section-header" style="max-width: 780px; margin: 0 auto 40px auto; text-align: center;">
+        <div class="badge">Engine 2 &bull; Interactive Yield &amp; Outlay Estimator</div>
+        <h2>Private Capital Allocation &amp; Title Shield Calculator</h2>
+        <p>Interactive institutional acquisition modeling for High-Net-Worth buyers. Calculate actual capital deployment, forensic title savings, and projected yields before submitting an advisory mandate.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: start; max-width: 1120px; margin: 0 auto;" class="calc-grid-wrap">
+        <!-- Controls Column -->
+        <div style="background: var(--bg-card); border: 1.5px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--card-shadow);">
+          <!-- Step 1: Typology -->
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-primary); margin-bottom: 10px;">1. Select Prime Asset Typology</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" id="estateTypologyChips">
+              <button type="button" class="calc-chip active" onclick="selectEstateTypology('penthouse', 1.0, 3.4, this)">
+                Sea-Facing Penthouse<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Worli / Bandra West</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectEstateTypology('bungalow', 0.9, 5.8, this)">
+                Portuguese Private Villa<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Assagao / North Goa</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectEstateTypology('villa', 0.85, 4.2, this)">
+                Gated Golf Villa<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">Sadashivanagar / BLR</span>
+              </button>
+              <button type="button" class="calc-chip" onclick="selectEstateTypology('commercial', 1.15, 8.6, this)">
+                Grade-A Commercial<br><span style="font-size: 11px; opacity: 0.8; font-weight: 400;">BKC / Outer Ring Rd</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Capital Allocation Slider -->
+          <div style="margin-bottom: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <label style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-primary); margin: 0;">2. Target Capital Allocation</label>
+              <span id="estateBudgetDisplay" style="font-size: 20px; font-weight: 800; font-family: var(--font-heading); color: var(--accent);">₹15.00 Cr</span>
+            </div>
+            <input type="range" id="estateBudgetSlider" min="5" max="50" step="0.5" value="15" oninput="updateEstateEstimate()" style="width: 100%; accent-color: var(--accent); cursor: pointer;">
+            <div style="display: flex; justify-content: space-between; font-size: 11.5px; color: var(--text-subtle); margin-top: 6px;">
+              <span>₹5 Cr (Entry Prime)</span>
+              <span>₹25 Cr (Bespoke Penthouse)</span>
+              <span>₹50 Cr (Ultra Estate)</span>
+            </div>
+          </div>
+
+          <!-- Step 3: Funding Mode -->
+          <div>
+            <label style="display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-primary); margin-bottom: 10px;">3. Private Financing Structure</label>
+            <div style="display: flex; flex-direction: column; gap: 8px;" id="estateFundingChips">
+              <div class="calc-chip-tier active" onclick="selectEstateFunding('equity', 0, this)">
+                <div>
+                  <strong style="display: block; font-size: 14px;">100% Direct Liquid Equity</strong>
+                  <span style="font-size: 12px; color: var(--text-subtle);">Zero interest carry &bull; Direct Sub-Registrar closing</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: var(--accent);">Self-Funded</span>
+              </div>
+              <div class="calc-chip-tier" onclick="selectEstateFunding('lombard', 0.6, this)">
+                <div>
+                  <strong style="display: block; font-size: 14px;">Private Lombard Wealth Credit (60% LTV)</strong>
+                  <span style="font-size: 12px; color: var(--text-subtle);">8.25% p.a. against securities portfolio &bull; Tax-optimized</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: var(--accent);">60% Leveraged</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breakdown Output Card -->
+        <div style="background: var(--bg-card); border: 2px solid var(--accent); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--card-shadow); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge" style="margin-bottom: 0;">Institutional Acquisition Ledger</span>
+              <span id="estateTypologyBadge" style="font-size: 12px; font-weight: 700; color: var(--accent);">Sea-Facing Penthouse</span>
+            </div>
+
+            <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px dashed var(--border-color);">
+              <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-subtle); margin-bottom: 4px;">Net Acquisition Capital</div>
+              <div id="estateTotalDisplay" style="font-size: 38px; font-weight: 800; font-family: var(--font-heading); color: var(--text-primary); line-height: 1.1;">₹15.00 Cr</div>
+              <div id="estateEquityBreakdown" style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">100% Equity Outlay: ₹15.00 Cr</div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted);">&#10003; Broker Bias Commission Eliminated:</span>
+                <strong id="estateBrokerSaveDisplay" style="color: var(--accent); font-weight: 700;">₹30.00 Lakhs Saved</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted);">&#10003; 14-Point Forensic Title Clearance:</span>
+                <strong style="color: var(--text-primary); font-weight: 700;">Guaranteed 0-Defect</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted);">&#10003; Projected Annual Rental Inflow:</span>
+                <strong id="estateYieldAnnual" style="color: var(--text-primary); font-weight: 700;">₹51.00 Lakhs / yr</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px;">
+                <span style="color: var(--text-muted);">&#10003; Projected Monthly Cashflow:</span>
+                <strong id="estateYieldMonthly" style="color: var(--text-primary); font-weight: 700;">₹4.25 Lakhs / mo</strong>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <a id="estateWhatsAppBtn" href="https://wa.me/918660819023?text=Hi%20Marlow%20Advisory,%20I%20am%20exploring%20an%20acquisition%20of%20Sea-Facing%20Penthouse%20with%20a%20budget%20of%20₹15.00%20Cr.%20Please%20share%20verified%20off-market%20dossiers." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center; font-size: 15px; padding: 14px 20px; display: inline-flex; align-items: center; gap: 8px;">
+              <span>Direct WhatsApp Advisory Mandate &rarr;</span>
+            </a>
+            <div style="text-align: center; font-size: 11.5px; color: var(--text-subtle); margin-top: 10px;">
+              Strict client non-disclosure &bull; Direct access to Managing Partner
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
        5-ESTATE ASYMMETRIC PORTFOLIO GRID
        ========================================================================== -->
   <section id="inventory" class="section-padding">
@@ -1383,7 +1615,7 @@
         <!-- Estate 1 (7 cols): The Glasshouse Pavilion -->
         <div class="project-card span-7">
           <div class="project-img-wrap" style="height: 350px;">
-            <img src="/demos/assets/demo-02-real-estate/02_Estate_01.png" 
+            <img src="assets/demo-02-real-estate/02_Estate_01.png" 
                  alt="The Glasshouse Pavilion - Twilight Glass Villa by the Lake" 
                  loading="lazy">
             <span class="project-tag">Off-Market Exclusive</span>
@@ -1403,7 +1635,7 @@
         <!-- Estate 2 (5 cols): The Heritage Courtyard Bungalow -->
         <div class="project-card span-5">
           <div class="project-img-wrap" style="height: 350px;">
-            <img src="/demos/assets/demo-02-real-estate/03_Estate_02.png" 
+            <img src="assets/demo-02-real-estate/03_Estate_02.png" 
                  alt="The Heritage Courtyard Bungalow - Golden-Hour Heritage Courtyard" 
                  loading="lazy">
             <span class="project-tag">Heritage Freehold</span>
@@ -1423,7 +1655,7 @@
         <!-- Estate 3 (4 cols): The Skyline Penthouse -->
         <div class="project-card span-4">
           <div class="project-img-wrap" style="height: 270px;">
-            <img src="/demos/assets/demo-02-real-estate/04_Estate_03.png" 
+            <img src="assets/demo-02-real-estate/04_Estate_03.png" 
                  alt="The Skyline Penthouse - Luxury Rooftop Terrace at Sunset with Coastal View" 
                  loading="lazy">
             <span class="project-tag">Sea-Facing Duplex</span>
@@ -1443,7 +1675,7 @@
         <!-- Estate 4 (4 cols): The Equestrian Meadow Villa -->
         <div class="project-card span-4">
           <div class="project-img-wrap" style="height: 270px;">
-            <img src="/demos/assets/demo-02-real-estate/05_Estate_04.png" 
+            <img src="assets/demo-02-real-estate/05_Estate_04.png" 
                  alt="The Equestrian Meadow Villa - Mediterranean Stone Villa with Paddocks" 
                  loading="lazy">
             <span class="project-tag">Private Country Estate</span>
@@ -1463,7 +1695,7 @@
         <!-- Estate 5 (4 cols): The Atelier Residence -->
         <div class="project-card span-4">
           <div class="project-img-wrap" style="height: 270px;">
-            <img src="/demos/assets/demo-02-real-estate/06_Estate_05.png" 
+            <img src="assets/demo-02-real-estate/06_Estate_05.png" 
                  alt="The Atelier Residence - Architectural Cantilever Simplex" 
                  loading="lazy">
             <span class="project-tag">Architectural Simplex</span>
@@ -1491,7 +1723,7 @@
       <div class="founder-feature-grid">
         <div class="founder-feature-visual">
           <img class="founder-feature-img" 
-               src="/demos/assets/demo-02-real-estate/09_Managing_Partner.png" 
+               src="assets/demo-02-real-estate/09_Managing_Partner.png" 
                alt="Arthur Marlow, Managing Partner & Senior Real Estate Fiduciary in Study" 
                loading="lazy">
           <div class="founder-badge-card">
@@ -1565,7 +1797,7 @@
 
         <div class="craft-image-wrap">
           <img class="craft-img" 
-               src="/demos/assets/demo-02-real-estate/10_Legal_Due_Diligence.png" 
+               src="assets/demo-02-real-estate/10_Legal_Due_Diligence.png" 
                alt="14-Point Forensic Real Estate Title Audit and High Court Verification Documents" 
                loading="lazy">
           <div class="craft-tag">
@@ -1762,7 +1994,7 @@
       
       <div class="uh-popup-header">
         <div class="uh-brand-group">
-          <img src="/logo-brand.png" alt="Uncoded Hub Logo" class="uh-brand-logo-img" onerror="this.src='/favicon.svg'">
+          <img src="../logo-medium.webp" alt="Uncoded Hub Logo" class="uh-brand-logo-img" onerror="this.style.display='none'">
           <div>
             <div class="uh-brand-name">Uncoded Hub</div>
             <div class="uh-brand-tag">Boutique Web Engineering Studio</div>
@@ -1784,8 +2016,8 @@
         <!-- Direct Founders from About page -->
         <div class="founders-row">
           <div class="founders-photos">
-            <img src="/deepak.webp" alt="Deepak, Co-Founder & Technical Architect" class="founder-photo-ring">
-            <img src="/geetha.webp" alt="Geetha, Co-Founder & Design Director" class="founder-photo-ring">
+            <img src="../deepak.webp" alt="Deepak, Co-Founder & Technical Architect" class="founder-photo-ring">
+            <img src="../geetha.webp" alt="Geetha, Co-Founder & Design Director" class="founder-photo-ring">
           </div>
           <div class="founders-text">
             <h4>Built Directly by Deepak &amp; Geetha</h4>
@@ -1838,6 +2070,84 @@
   </div>
 
   <script>
+
+    // Theme Switcher
+    function switchTheme(themeKey, btnElem) {
+      document.body.setAttribute('data-theme', themeKey);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+    }
+
+    // Engine 2: Real Estate Acquisition & Yield Calculator
+    let currentEstateTypology = 'Sea-Facing Penthouse';
+    let currentYieldRate = 3.4;
+    let currentBudgetCr = 15.0;
+    let currentLtv = 0; // 0 for equity, 0.6 for lombard
+
+    function selectEstateTypology(key, multi, yieldPct, btn) {
+      currentYieldRate = yieldPct;
+      currentEstateTypology = btn.childNodes[0].textContent.trim();
+      document.querySelectorAll('#estateTypologyChips .calc-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const badge = document.getElementById('estateTypologyBadge');
+      if (badge) badge.textContent = currentEstateTypology;
+      updateEstateEstimate();
+    }
+
+    function selectEstateFunding(key, ltv, btn) {
+      currentLtv = ltv;
+      document.querySelectorAll('#estateFundingChips .calc-chip-tier').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateEstateEstimate();
+    }
+
+    function updateEstateEstimate() {
+      const slider = document.getElementById('estateBudgetSlider');
+      if (slider) currentBudgetCr = parseFloat(slider.value);
+
+      const budgetDisplay = document.getElementById('estateBudgetDisplay');
+      if (budgetDisplay) budgetDisplay.textContent = '₹' + currentBudgetCr.toFixed(2) + ' Cr';
+
+      const totalDisplay = document.getElementById('estateTotalDisplay');
+      if (totalDisplay) totalDisplay.textContent = '₹' + currentBudgetCr.toFixed(2) + ' Cr';
+
+      // Broker save (standard 2% commission eliminated)
+      const brokerSaveCr = currentBudgetCr * 0.02;
+      const brokerSaveLakhs = brokerSaveCr * 100;
+      const brokerSaveDisplay = document.getElementById('estateBrokerSaveDisplay');
+      if (brokerSaveDisplay) brokerSaveDisplay.textContent = '₹' + brokerSaveLakhs.toFixed(2) + ' Lakhs Saved';
+
+      // Equity breakdown
+      const equityDisplay = document.getElementById('estateEquityBreakdown');
+      if (equityDisplay) {
+        if (currentLtv > 0) {
+          const debtCr = currentBudgetCr * currentLtv;
+          const equityCr = currentBudgetCr * (1 - currentLtv);
+          equityDisplay.textContent = 'Private Debt: ₹' + debtCr.toFixed(2) + ' Cr (60%) | Liquid Equity: ₹' + equityCr.toFixed(2) + ' Cr (40%)';
+        } else {
+          equityDisplay.textContent = '100% Direct Liquid Equity: ₹' + currentBudgetCr.toFixed(2) + ' Cr';
+        }
+      }
+
+      // Yield calculation
+      const annualYieldCr = (currentBudgetCr * (currentYieldRate / 100));
+      const annualYieldLakhs = annualYieldCr * 100;
+      const monthlyYieldLakhs = annualYieldLakhs / 12;
+
+      const yieldAnnual = document.getElementById('estateYieldAnnual');
+      if (yieldAnnual) yieldAnnual.textContent = '₹' + annualYieldLakhs.toFixed(2) + ' Lakhs / yr (' + currentYieldRate + '%)';
+
+      const yieldMonthly = document.getElementById('estateYieldMonthly');
+      if (yieldMonthly) yieldMonthly.textContent = '₹' + monthlyYieldLakhs.toFixed(2) + ' Lakhs / mo';
+
+      // WhatsApp CTA
+      const waBtn = document.getElementById('estateWhatsAppBtn');
+      if (waBtn) {
+        const msg = encodeURIComponent('Hi Marlow Advisory, I am exploring an acquisition of ' + currentEstateTypology + ' with a capital allocation of ₹' + currentBudgetCr.toFixed(2) + ' Cr. Please share verified off-market dossiers.');
+        waBtn.href = 'https://wa.me/918660819023?text=' + msg;
+      }
+    }
+
     // Interactive Title Forensic Comparison Slider
     function updateEstateDiff(val) {
       const box = document.getElementById('estateDiffBox');
