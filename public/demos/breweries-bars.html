@@ -4,25 +4,1345 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Copperhead Craft Brewery | 16 Rotating Taps, Smoked Kitchen &amp; Beer Garden</title>
-  <meta name="description" content="Explore the independent microbrewery &amp; craft taproom demo by Uncoded Hub. Live digital on-tap boards, ABV/IBU flavor selectors, and 3-theme changer.">
+  <meta name="description" content="Explore the independent microbrewery &amp; craft taproom demo by Uncoded Hub. Live digital on-tap boards, private event keg estimators, and 3-theme changer.">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://uncodedhub.com/demos/breweries-bars.html">
   <link rel="alternate" hreflang="en" href="https://uncodedhub.com/demos/breweries-bars.html">
   <link rel="alternate" hreflang="x-default" href="https://uncodedhub.com/demos/breweries-bars.html">
 
-  
-    <button class="tc-btn active" data-theme="copper-kettle-amber" onclick="switchTheme('copper-kettle-amber', this)">
-      <span>Copper Kettle Amber &amp; Charcoal</span>
-    </button>
-    <button class="tc-btn" data-theme="taproom-cream" onclick="switchTheme('taproom-cream', this)">
-      <span>Taproom Cream &amp; Stout Brown</span>
-    </button>
-    <button class="tc-btn" data-theme="hop-harvest-green" onclick="switchTheme('hop-harvest-green', this)">
-      <span>Hop Harvest Green Avant-Garde</span>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #0F0C0A;
+      --bg-surface: #1A1512;
+      --bg-card: #241D19;
+      --bg-card-hover: #302621;
+      --text-primary: #FFF8F2;
+      --text-muted: #E6D2C4;
+      --text-dim: #B39D8E;
+      --border-color: rgba(245, 158, 11, 0.25);
+      --border-accent: #F59E0B;
+      --accent-color: #F59E0B;
+      --accent-glow: rgba(245, 158, 11, 0.22);
+      --accent-hover: #D97706;
+      --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    [data-theme="taproom-cream"] {
+      --bg-primary: #FAF6F0;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #F4EBE1;
+      --text-primary: #261B14;
+      --text-muted: #594234;
+      --text-dim: #8C6D58;
+      --border-color: #DFCFBF;
+      --border-accent: #B45309;
+      --accent-color: #B45309;
+      --accent-glow: rgba(180, 83, 9, 0.15);
+      --accent-hover: #92400E;
+    }
+
+    [data-theme="hop-harvest-green"] {
+      --bg-primary: #070D0A;
+      --bg-surface: #0E1A14;
+      --bg-card: #15261E;
+      --bg-card-hover: #1D3328;
+      --text-primary: #F0FDF4;
+      --text-muted: #A7F3D0;
+      --text-dim: #6EE7B7;
+      --border-color: rgba(34, 197, 94, 0.25);
+      --border-accent: #22C55E;
+      --accent-color: #22C55E;
+      --accent-glow: rgba(34, 197, 94, 0.2);
+      --accent-hover: #16A34A;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Uncoded Top Bar */
+    .uncoded-top-bar {
+      background: #080605;
+      color: #E2E8F0;
+      font-size: 13px;
+      padding: 9px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .uncoded-top-bar a.back-link {
+      color: #FFFFFF;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      font-size: 12px;
+      padding: 4px 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 4px;
+    }
+
+    .tc-group { display: flex; align-items: center; gap: 6px; }
+
+    .tc-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #E2E8F0;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .tc-btn.active, .tc-btn:hover {
+      background: var(--accent-color);
+      border-color: var(--accent-color);
+      color: #0F0C0A;
+      font-weight: 700;
+    }
+
+    /* Taproom Dispatch Bar */
+    .taproom-bar {
+      background: rgba(0, 0, 0, 0.45);
+      border-bottom: 1px solid var(--border-color);
+      font-size: 11.5px;
+      color: var(--text-dim);
+      padding: 7px 0;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+
+    .taproom-bar strong { color: var(--accent-color); }
+
+    /* Header */
+    header.site-header {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 38px;
+      z-index: 900;
+      padding: 16px 0;
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      background: var(--accent-color);
+      color: #0F0C0A;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 22px;
+      box-shadow: 0 4px 14px var(--accent-glow);
+    }
+
+    .brand-name {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-tag {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent-color); }
+
+    .header-cta {
+      background: var(--accent-color);
+      color: #0F0C0A;
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .header-cta:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 4px 16px var(--accent-glow);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 80px 0 60px;
+      position: relative;
+      border-bottom: 1px solid var(--border-color);
+      background: radial-gradient(circle at 75% 25%, var(--accent-glow), transparent 45%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid var(--accent-color);
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-color);
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 46px;
+      line-height: 1.15;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title span.highlight { color: var(--accent-color); }
+
+    .hero-desc {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .btn-primary {
+      background: var(--accent-color);
+      color: #0F0C0A;
+      padding: 15px 30px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 8px 24px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      padding: 14px 26px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      border: 1px solid var(--border-color);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-surface);
+      border-color: var(--accent-color);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .metric-card h3 {
+      font-family: var(--font-mono);
+      font-size: 26px;
+      color: var(--accent-color);
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .metric-card p {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .hero-visual-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .spec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 16px;
+    }
+
+    .spec-header h4 {
+      font-family: var(--font-heading);
+      font-size: 18px;
+    }
+
+    .status-pill {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      background: rgba(34, 197, 94, 0.15);
+      color: #22C55E;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      font-size: 13.5px;
+    }
+
+    .spec-row span.label { color: var(--text-dim); }
+    .spec-row span.value {
+      color: var(--text-primary);
+      font-weight: 600;
+      font-family: var(--font-mono);
+    }
+
+    /* Engine 2/3: Event & Tap Calculator */
+    .engine-section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--border-color);
+      background: var(--bg-surface);
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 50px;
+    }
+
+    .section-eyebrow {
+      color: var(--accent-color);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 16px;
+    }
+
+    .calc-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+    }
+
+    .calc-group { margin-bottom: 26px; }
+
+    .calc-label {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .pill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .pill-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .pill-btn:hover {
+      border-color: var(--accent-color);
+      color: var(--text-primary);
+    }
+
+    .pill-btn.active {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+      font-weight: 700;
+    }
+
+    .summary-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .summary-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+    }
+
+    .summary-price {
+      font-family: var(--font-mono);
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .breakdown-list {
+      margin-bottom: 28px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+    }
+
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      margin-bottom: 12px;
+      color: var(--text-muted);
+    }
+
+    .breakdown-row strong {
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+    }
+
+    .wa-calc-btn {
+      background: #25D366;
+      color: #0F0C0A;
+      font-weight: 700;
+      text-align: center;
+      padding: 14px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .wa-calc-btn:hover {
+      background: #1EBE5D;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+    }
+
+    /* Capabilities */
+    .services-section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .service-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-color);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+    }
+
+    .service-num {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--accent-color);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .service-card h3 {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .service-specs {
+      list-style: none;
+      border-top: 1px solid var(--border-color);
+      padding-top: 18px;
+      margin-bottom: 24px;
+    }
+
+    .service-specs li {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-specs li::before {
+      content: '✔';
+      color: var(--accent-color);
+      font-weight: 700;
+      font-size: 11px;
+    }
+
+    .service-price {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--accent-color);
+      font-weight: 700;
+    }
+
+    /* Case Studies */
+    .case-section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--border-color);
+      background: var(--bg-surface);
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .case-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px;
+    }
+
+    .case-tag {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--accent-color);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+
+    .case-card h3 {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .case-card p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .case-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+    }
+
+    .stat-item strong {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 16px;
+      color: var(--accent-color);
+    }
+
+    .stat-item span {
+      font-size: 11.5px;
+      color: var(--text-dim);
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .faq-wrap { max-width: 820px; margin: 0 auto; }
+
+    .faq-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 20px 24px;
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question span.toggle-icon {
+      font-size: 18px;
+      color: var(--accent-color);
+      transition: transform 0.25s;
+    }
+
+    .faq-item.open .faq-question span.toggle-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      display: none;
+      padding: 0 24px 22px;
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .faq-item.open .faq-answer { display: block; }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 90px 0;
+      background: radial-gradient(circle at 50% 50%, var(--accent-glow), transparent 60%);
+    }
+
+    .contact-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 50px;
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+    }
+
+    .contact-box h2 {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .contact-box p {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 34px;
+    }
+
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    footer.site-footer {
+      background: #080605;
+      border-top: 1px solid var(--border-color);
+      padding: 40px 0;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    /* Pitch Modal & Widget */
+    .pitch-modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 99999;
+      padding: 20px;
+      overflow-y: auto;
+      align-items: center;
+      justify-content: center;
+    }
+    .pitch-modal-backdrop.active { display: flex; }
+    .pitch-modal-card {
+      background: #15110E;
+      color: #FFF8F2;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      border-radius: 14px;
+      max-width: 660px;
+      width: 100%;
+      padding: 32px;
+      position: relative;
+    }
+    .pitch-close-btn {
+      position: absolute;
+      top: 18px; right: 18px;
+      background: transparent;
+      border: none;
+      color: #94A3B8;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .uh-popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 14px;
+    }
+    .uh-brand-group { display: flex; align-items: center; gap: 10px; }
+    .uh-brand-logo-img { width: 34px; height: 34px; border-radius: 6px; }
+    .uh-brand-name { font-weight: 700; font-size: 15px; color: #FFFFFF; }
+    .uh-brand-sub { font-size: 11px; color: #94A3B8; }
+    .uh-badge-studio {
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid #F59E0B;
+      color: #F59E0B;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .founders-row {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 20px;
+      background: rgba(255,255,255,0.03);
+      padding: 16px;
+      border-radius: 8px;
+    }
+    .founders-photos { display: flex; gap: 10px; }
+    .founder-pic-box { text-align: center; }
+    .founder-pic { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid #F59E0B; }
+    .founder-name { display: block; font-size: 11px; font-weight: 700; margin-top: 4px; color: #FFFFFF; }
+    .founder-role { display: block; font-size: 10px; color: #94A3B8; }
+    .founders-intro h2 { font-size: 16px; line-height: 1.35; margin-bottom: 4px; color: #FFFFFF; }
+    .founders-intro p { font-size: 12px; color: #94A3B8; margin: 0; }
+    .pitch-body { font-size: 13.5px; line-height: 1.6; color: #CBD5E1; margin-bottom: 24px; }
+    .pitch-body p { margin-bottom: 12px; }
+    .insight-card {
+      background: rgba(0,0,0,0.3);
+      border-left: 3px solid #F59E0B;
+      padding: 12px 16px;
+      margin: 14px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .insight-card h4 { font-size: 13px; color: #F59E0B; margin-bottom: 4px; }
+    .insight-card p { font-size: 12px; margin: 0; color: #94A3B8; }
+    .pitch-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 18px;
+    }
+    .pitch-cta-dismiss {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #94A3B8;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .pitch-cta-wa {
+      background: #F59E0B;
+      color: #0F0C0A;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 13px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lead-magnet-floating-widget {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 999;
+    }
+    .lm-floating-btn {
+      background: #15110E;
+      color: #F59E0B;
+      border: 1.5px solid #F59E0B;
+      border-radius: 40px;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+    .lm-pulse-ping {
+      width: 8px; height: 8px;
+      background: #22C55E;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #22C55E;
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid, .calc-container { grid-template-columns: 1fr; }
+      .services-grid, .case-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hero-title { font-size: 34px; }
+      .calc-container { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Uncoded Specimen Bar -->
+  <div class="uncoded-top-bar">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <a href="/portfolio/" class="back-link">&larr; Portfolio</a>
+      <span style="opacity: 0.3;">|</span>
+      <span style="font-weight: 600; font-size: 12px;">Demo 33 &bull; Independent Craft Microbrewery &amp; Taproom</span>
+    </div>
+    <div class="tc-group">
+      <span style="font-size: 11px; opacity: 0.6; text-transform: uppercase;">Theme:</span>
+      <button class="tc-btn active" onclick="switchTheme('copper-kettle-amber', this)">Copper Kettle</button>
+      <button class="tc-btn" onclick="switchTheme('taproom-cream', this)">Taproom Cream</button>
+      <button class="tc-btn" onclick="switchTheme('hop-harvest-green', this)">Hop Harvest</button>
+    </div>
+  </div>
+
+  <!-- Taproom Dispatch Bar -->
+  <div class="taproom-bar">
+    <div class="container">
+      <strong>Live Taproom Status:</strong> 16 Fresh Craft Kegs Tapped Daily &bull; Slow-Smoked Texas Style Kitchen &bull; Open-Air Pet-Friendly Beer Garden in Indiranagar
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/demos/breweries-bars.html" class="brand-logo">
+        <div class="brand-badge">C</div>
+        <div>
+          <div class="brand-name">COPPERHEAD CRAFT BREWERY</div>
+          <div class="brand-tag">Independent Brewhouse &amp; Taproom</div>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#event-calc">Private Party &amp; Keg Planner</a>
+        <a href="#on-tap">16 Fresh Pours</a>
+        <a href="#smoked-kitchen">Smoked Kitchen</a>
+        <a href="#faqs">Taproom FAQs</a>
+      </nav>
+      <a href="#event-calc" class="header-cta">
+        <span>Reserve Table</span> &rarr;
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-eyebrow">
+          <span>Fresh From Conditioning Tanks</span> &bull; <span>Zero Glycerin</span>
+        </div>
+        <h1 class="hero-title">
+          16 Master Pours &amp; Low-and-Slow Smoked BBQ <span class="highlight">On Tap.</span>
+        </h1>
+        <p class="hero-desc">
+          Unfiltered, unpasteurized, and brewed with whole-cone hops and German malts. Experience cold hazy IPAs, crisp Belgian Wits, and rich coffee stouts paired with 14-hour hickory smoked brisket.
+        </p>
+        <div class="hero-actions">
+          <a href="#event-calc" class="btn-primary">
+            <span>Calculate Private Party Keg</span> &darr;
+          </a>
+          <a href="https://wa.me/918660819023?text=Hi%20Copperhead%20Brewery%2C%20I%20would%20like%20to%20reserve%20a%20table%20in%20the%20beer%20garden." class="btn-secondary" target="_blank" rel="noopener noreferrer">
+            <span>Instant Table on WhatsApp</span> &rarr;
+          </a>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric-card">
+            <h3>16 Taps</h3>
+            <p>Rotating Craft Pours</p>
+          </div>
+          <div class="metric-card">
+            <h3>14 Hours</h3>
+            <p>Hickory Smoked Brisket</p>
+          </div>
+          <div class="metric-card">
+            <h3>100%</h3>
+            <p>Naturally Carbonated</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual-card">
+        <div class="spec-header">
+          <h4>Live Tapboard Telemetry</h4>
+          <span class="status-pill">Tanks Pouring Live</span>
+        </div>
+        <div class="spec-row">
+          <span class="label">Tap 01 (Flagship):</span>
+          <span class="value">Hazy Mosaic DIPA &bull; 7.2% ABV</span>
+        </div>
+        <div class="spec-row">
+          <span class="label">Tap 04 (German Classic):</span>
+          <span class="value">Bavarian Hefeweizen &bull; 5.1% ABV</span>
+        </div>
+        <div class="spec-row">
+          <span class="label">Tap 08 (Seasonal):</span>
+          <span class="value">Alphonso Mango Sour &bull; 4.8% ABV</span>
+        </div>
+        <div class="spec-row">
+          <span class="label">Current Beer Garden Status:</span>
+          <span class="value" style="color: #22C55E;">Tables Open &bull; Live Acoustic Tonight</span>
+        </div>
+        <div class="spec-row">
+          <span class="label">Serving Temperature:</span>
+          <span class="value">Precision 3.5&deg;C Glycol Line</span>
+        </div>
+        <div class="spec-row">
+          <span class="label">Kitchen Special:</span>
+          <span class="value">Applewood Smoked Pork Belly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engine 2/3: Event & Tap Calculator -->
+  <section class="engine-section" id="event-calc">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Engine 2 &bull; Interactive Taproom Planner</div>
+        <h2 class="section-title">Private Group &amp; Micro-Event Keg Estimator</h2>
+        <p class="section-subtitle">Planning an office celebration, birthday, or private roof deck gathering? Configure guest headcount, craft pour packages, and kitchen grazing boards for an instant quote.</p>
+      </div>
+
+      <div class="calc-container">
+        <div class="calc-controls">
+          <div class="calc-group">
+            <div class="calc-label">
+              <span>1. Group Size</span>
+            </div>
+            <div class="pill-grid">
+              <button class="pill-btn" onclick="setPartySize(10, '10 Guests (Small Group)', this)">10 Guests</button>
+              <button class="pill-btn active" onclick="setPartySize(25, '25 Guests (Social Party)', this)">25 Guests</button>
+              <button class="pill-btn" onclick="setPartySize(60, '60 Guests (Exclusive Deck)', this)">60 Guests</button>
+            </div>
+          </div>
+
+          <div class="calc-group">
+            <div class="calc-label">
+              <span>2. Craft Pour Tier</span>
+            </div>
+            <div class="pill-grid">
+              <button class="pill-btn active" onclick="setPourPackage(950, '3 Pints Craft Pours per Guest', this)">Standard (3 Pints)</button>
+              <button class="pill-btn" onclick="setPourPackage(1600, 'Unlimited Craft Pours (3 Hours)', this)">Unlimited (3 Hrs)</button>
+              <button class="pill-btn" onclick="setPourPackage(2400, 'Brewer Private Keg + Tasting Flight', this)">Private Dedicated Keg</button>
+            </div>
+          </div>
+
+          <div class="calc-group">
+            <div class="calc-label">
+              <span>3. Smoked Kitchen Food Package</span>
+            </div>
+            <div class="pill-grid">
+              <button class="pill-btn active" onclick="setFoodPackage(650, 'Loaded Craft Nachos &amp; Smoked Wings', this)">Bar Bites Platter</button>
+              <button class="pill-btn" onclick="setFoodPackage(1150, 'Texas Hickory Brisket &amp; Slider Board', this)">Full Smokehouse Feast</button>
+              <button class="pill-btn" onclick="setFoodPackage(1650, 'Chef Live Carving Station', this)">Live Carving Station</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-card">
+          <div>
+            <div class="summary-title">Estimated Event Package Investment</div>
+            <div class="summary-price" id="partyPriceDisplay">₹40,000</div>
+            
+            <div class="breakdown-list">
+              <div class="breakdown-row">
+                <span>Per-Guest Allocation:</span>
+                <strong id="perGuestDisplay">₹1,600 / Person</strong>
+              </div>
+              <div class="breakdown-row">
+                <span>Craft Pour Package:</span>
+                <strong id="selectedPourDisplay">Standard (3 Pints)</strong>
+              </div>
+              <div class="breakdown-row">
+                <span>Kitchen Grazing:</span>
+                <strong id="selectedFoodDisplay">Bar Bites Platter</strong>
+              </div>
+              <div class="breakdown-row">
+                <span>Private Table Allocation:</span>
+                <strong>Reserved Beer Garden Pavilion</strong>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="wa-calc-btn" id="waBrewBtn" target="_blank" rel="noopener noreferrer">
+            <span>Book Private Event On WhatsApp</span> &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- On-Tap Capabilities -->
+  <section class="services-section" id="on-tap">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">House Specialties</div>
+        <h2 class="section-title">Award-Winning Brewhouse Styles</h2>
+        <p class="section-subtitle">Crafted without shortcuts in our state-of-the-art 10-hectolitre copper brewhouse.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div>
+            <div class="service-num">01 / HOP FORWARD</div>
+            <h3>Copperhead Hazy IPA</h3>
+            <p>Double dry-hopped with Citra, Mosaic, and Galaxy hops. Intense aromas of ripe passionfruit, crushed pine, and juicy mango with smooth pillowy bitterness.</p>
+            <ul class="service-specs">
+              <li>6.8% ABV &bull; 45 IBU</li>
+              <li>Oat &amp; wheat malt creamy mouthfeel</li>
+              <li>Cold-chain stored from tank to glass</li>
+            </ul>
+          </div>
+          <div class="service-price">₹340 / 500ml Pint</div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-num">02 / EUROPEAN REVERENCE</div>
+            <h3>Bavarian Cloudy Hefeweizen</h3>
+            <p>Brewed with 60% malted German wheat and fermented with authentic Weihenstephan yeast, yielding classic clove and ripe banana esters.</p>
+            <ul class="service-specs">
+              <li>5.2% ABV &bull; 14 IBU</li>
+              <li>Unfiltered cloudiness &amp; thick foamy head</li>
+              <li>Refreshing low-bitterness afternoon thirst-quencher</li>
+            </ul>
+          </div>
+          <div class="service-price">₹320 / 500ml Pint</div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-num">03 / DARK &amp; ROASTED</div>
+            <h3>Bourbon Cask Smoked Porter</h3>
+            <p>Brewed with peated barley and aged over charred oak staves. Notes of dark Valrhona cacao, espresso roast, and subtle campfire wood smoke.</p>
+            <ul class="service-specs">
+              <li>7.4% ABV &bull; 35 IBU</li>
+              <li>Infused with organic Coorg coffee beans</li>
+              <li>Pairs extraordinarily with smoked brisket</li>
+            </ul>
+          </div>
+          <div class="service-price">₹380 / 500ml Pint</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Smoked Kitchen -->
+  <section class="case-section" id="smoked-kitchen">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Hickory Pit Smokehouse</div>
+        <h2 class="section-title">Crafted To Pair With Cold Pours</h2>
+        <p class="section-subtitle">Slow smoked low-and-slow over seasoned firewood in our custom outdoor offset pit.</p>
+      </div>
+
+      <div class="case-grid">
+        <div class="case-card">
+          <div class="case-tag">Signature Smokehouse &bull; 14 Hours Low &amp; Slow</div>
+          <h3>Texas Black Pepper Prime Brisket</h3>
+          <p>Coarse Tellicherry black pepper and sea salt bark, smoked over hickory logs until fork-tender with a deep mahogany smoke ring. Served with house pickled onions and warm brioche.</p>
+          <div class="case-stats">
+            <div class="stat-item">
+              <strong>14 Hours</strong>
+              <span>Pit Smoked</span>
+            </div>
+            <div class="stat-item">
+              <strong>100%</strong>
+              <span>Hickory Firewood</span>
+            </div>
+            <div class="stat-item">
+              <strong>House Pickles</strong>
+              <span>Included</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-tag">Plant-Forward BBQ &bull; Pit Roasted</div>
+          <h3>Smoked Jackfruit &amp; Portobello Carnitas</h3>
+          <p>Young raw jackfruit braised with dark porter, ancho chilies, and smoked over applewood embers. Piled onto warm corn tortillas with salsa verde and cotija cheese.</p>
+          <div class="case-stats">
+            <div class="stat-item">
+              <strong>Plant-Based</strong>
+              <span>100% Vegetarian</span>
+            </div>
+            <div class="stat-item">
+              <strong>Applewood</strong>
+              <span>Smoke Infused</span>
+            </div>
+            <div class="stat-item">
+              <strong>House Made</strong>
+              <span>Corn Tortillas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faqs">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Taproom Logistics</div>
+        <h2 class="section-title">Frequently Answered Questions</h2>
+      </div>
+
+      <div class="faq-wrap">
+        <div class="faq-item open">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Can I book a table in advance for weekend evenings?</span>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes. We accept table reservations for parties of 4 or more up to 7:30 PM on weekends through our direct WhatsApp link. For walk-ins, our beer garden hosts a comfortable bar lounge while your outdoor table is prepared.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Is your beer garden pet-friendly?</span>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            100% pet-friendly. Our open-air courtyard welcomes leashed dogs, and we provide complimentary water bowls and unseasoned smoked bone treats prepared fresh daily by our pitmaster.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Do you offer growlers or canned craft beer to take home?</span>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Subject to prevailing excise regulations, we offer counter-pressure filled 1-litre amber glass growlers purged with CO2 to ensure your beer stays fresh and bubbly for up to 72 hours in your home refrigerator.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Can we host corporate gatherings or buy out the roof deck?</span>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes. Our mezzanine and rooftop terrace can accommodate private groups of 30 to 120 guests with dedicated craft taps, personalized menus, and audio-visual projector setups for company milestones.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-box">
+        <h2>Reserve Your Spot At The Taps</h2>
+        <p>Drop a quick message on WhatsApp to reserve your table, check today's live tap availability, or schedule a group celebration.</p>
+        <div class="contact-actions">
+          <a href="https://wa.me/918660819023?text=Hi%20Copperhead%20Brewery%2C%20I%20would%20like%20to%20reserve%20a%20table%20for%20this%20evening." class="btn-primary" target="_blank" rel="noopener noreferrer">
+            <span>Reserve Table on WhatsApp</span> &rarr;
+          </a>
+          <button class="btn-secondary" onclick="openPitchModal()">
+            <span>Why This Website Works</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>COPPERHEAD CRAFT BREWERY</strong> &bull; 100ft Road, Indiranagar, Bengaluru
+      </div>
+      <div>
+        Independent Craft &bull; 16 Rotating Taps &bull; © 2026 Copperhead Brewery. Specimen by Uncoded Hub.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lead Magnet Floating Button -->
+  <div class="lead-magnet-floating-widget">
+    <button class="lm-floating-btn" onclick="openPitchModal()">
+      <span>Uncoded Hub Pitch</span>
+      <span class="lm-pulse-ping"></span>
     </button>
   </div>
 
-  <!-- Uncoded Hub Studio Pitch & Cover Letter Modal -->
+  <!-- Uncoded Pitch Modal -->
   <div class="pitch-modal-backdrop" id="uncodedPitchModal" onclick="handleBackdropClick(event)">
     <div class="pitch-modal-card">
       <button class="pitch-close-btn" onclick="closePitchModal()" title="Close dialog">✕</button>
@@ -35,81 +1355,128 @@
             <div class="uh-brand-sub">Two-Person Studio · Bengaluru</div>
           </div>
         </div>
-        <span class="uh-badge-studio">7-Day Sprint Prototype</span>
+        <span class="uh-badge-studio">7-Day Turnaround</span>
       </div>
 
       <div class="founders-row">
         <div class="founders-photos">
           <div class="founder-pic-box">
-            <img src="/deepak.webp" alt="Deepak, co-founder" class="founder-pic">
+            <img src="/deepak.webp" alt="Deepak" class="founder-pic">
             <span class="founder-name">Deepak</span>
             <span class="founder-role">Engineering</span>
           </div>
           <div class="founder-pic-box">
-            <img src="/geetha.webp" alt="Geetha, co-founder" class="founder-pic">
+            <img src="/geetha.webp" alt="Geetha" class="founder-pic">
             <span class="founder-name">Geetha</span>
-            <span class="founder-role">Design &amp; Strategy</span>
+            <span class="founder-role">Design</span>
           </div>
         </div>
         <div class="founders-intro">
-          <h2>Why We Hand-Built This Live Prototype For Your Business Before Asking For A Rupee.</h2>
-          <p>A personal note from Deepak &amp; Geetha to the founder or practice director reviewing this website.</p>
+          <h2>Why Microbreweries Need Interactive Event Estimators</h2>
+          <p>A note from Deepak &amp; Geetha to craft brewery founders and taproom managers.</p>
         </div>
       </div>
 
       <div class="pitch-body">
-        <p>Dear Founder / Business Owner,</p>
-        <p>Most digital agencies pitch generic 40-page PDF decks, throw around corporate jargon, and demand lakhs before proving they understand a single thing about your real clients. <strong>We do the opposite: we do the work first.</strong></p>
-
+        <p>Tech companies and birthday planners in Bengaluru are constantly looking to host 20-50 person private parties at breweries. When your website only has a static PDF menu, they get frustrated trying to calculate budgets and book elsewhere.</p>
         <div class="insight-card">
-          <h4>The 50-Millisecond Silent Decision</h4>
-          <p>When a prospective client or patient searches for your service in your city, they don't judge your years of dedication or credentials on paper. <strong>They judge you in the first 50 milliseconds based on visual certainty.</strong> In high-ticket services, clients do not buy a service—they buy <em>relief from the fear of making an expensive mistake</em>. If your site takes 4+ seconds to load, breaks on mobile, or looks like a template from 2018, over 70% bounce silently and hire the competitor who looks established.</p>
+          <h4>The Power of Engine 2 (Private Party &amp; Keg Planner)</h4>
+          <p>By letting corporate leads configure headcounts, drink packages, and food platters with real-time per-head pricing, you capture high-ticket private event bookings directly on WhatsApp.</p>
         </div>
-
-        <div class="insight-card">
-          <h4>What This Live Prototype Solves For Your Business</h4>
-          <p>We didn't build an aesthetic brochure. We built a high-conversion client acquisition engine: sub-second load time on Indian mobile 4G networks, upfront service clarity, interactive self-qualification tools, and direct 1-tap WhatsApp consultation. It answers your prospect's unvoiced fears before they ever hesitate.</p>
-        </div>
-
-        <div class="belief-card">
-          <div class="belief-quote">
-            "Uncoded Hub is a brother and sister who got tired of watching competent, high-quality businesses lose work to worse competitors simply because the competitor had a faster, clearer website."
-          </div>
-          <div class="commitments-grid">
-            <div class="comm-item">
-              <strong>1. Senior Delivery Only</strong>
-              No hidden junior team, no account managers. Deepak and Geetha engineer and design every single line.
-            </div>
-            <div class="comm-item">
-              <strong>2. 7-Day Turnaround</strong>
-              Live and launched in 7 working days flat—not 3 months of agency delays.
-            </div>
-            <div class="comm-item">
-              <strong>3. 100% Asset Ownership</strong>
-              Domain, hosting, code, and content in your name from day one with zero monthly platform lock-ins.
-            </div>
-          </div>
-        </div>
+        <p>We build, launch, and host this high-energy craft brewhouse platform in 7 days flat. If we're late, it's 100% free.</p>
       </div>
 
       <div class="pitch-actions">
-        <button class="pitch-cta-dismiss" onclick="closePitchModal()">Explore Live Demo Specimen ↓</button>
-        <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha%2C%20I%20am%20viewing%20the%20Copperhead%20Craft%20Brewery%20demo%20and%20would%20like%20to%20discuss%20building%20our%20website." class="pitch-cta-wa" target="_blank" rel="noopener noreferrer">
-          Claim This Website on WhatsApp (+91 86608 19023) →
+        <button class="pitch-cta-dismiss" onclick="closePitchModal()">Close Specimen</button>
+        <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha%2C%20I%20am%20viewing%20the%20Copperhead%20Brewery%20demo%20and%20would%20like%20to%20discuss%20our%20brewery%20website." class="pitch-cta-wa" target="_blank" rel="noopener noreferrer">
+          Claim This Website on WhatsApp &rarr;
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Floating Lead Magnet Button -->
-  <div class="lead-magnet-floating-widget" id="leadMagnetWidget">
-    <button class="lm-floating-btn" onclick="openPitchModal()" title="Free 3-Page Executive Guide">
-      <span class="lm-btn-icon-wrap"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
-      <span>Free Studio Briefing</span>
-      <span class="lm-pulse-ping"></span>
-    </button>
-  </div>
+  <script>
+    // Theme Switcher
+    function switchTheme(themeKey, btnElem) {
+      document.body.setAttribute('data-theme', themeKey);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+    }
 
-  
+    // Engine 2: Event Calculator Logic
+    let currentGuestCount = 25;
+    let currentPourRate = 950;
+    let currentFoodRate = 650;
+    let currentPartyLabel = '25 Guests (Social Party)';
+    let currentPourLabel = 'Standard (3 Pints)';
+    let currentFoodLabel = 'Bar Bites Platter';
+
+    function setPartySize(count, label, elem) {
+      currentGuestCount = count;
+      currentPartyLabel = label;
+      elem.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      elem.classList.add('active');
+      updatePartyCalculation();
+    }
+
+    function setPourPackage(rate, label, elem) {
+      currentPourRate = rate;
+      currentPourLabel = label;
+      document.getElementById('selectedPourDisplay').innerText = elem.innerText.trim();
+      elem.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      elem.classList.add('active');
+      updatePartyCalculation();
+    }
+
+    function setFoodPackage(rate, label, elem) {
+      currentFoodRate = rate;
+      currentFoodLabel = label;
+      document.getElementById('selectedFoodDisplay').innerText = elem.innerText.trim();
+      elem.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      elem.classList.add('active');
+      updatePartyCalculation();
+    }
+
+    function updatePartyCalculation() {
+      const perGuest = currentPourRate + currentFoodRate;
+      const totalCost = perGuest * currentGuestCount;
+
+      document.getElementById('perGuestDisplay').innerText = '₹' + perGuest.toLocaleString('en-IN') + ' / Person';
+      document.getElementById('partyPriceDisplay').innerText = '₹' + totalCost.toLocaleString('en-IN');
+
+      // WhatsApp routing update
+      const waBtn = document.getElementById('waBrewBtn');
+      if (waBtn) {
+        const text = encodeURIComponent(
+          `Hi Copperhead Brewery, I calculated an event package on your website for ${currentPartyLabel}: ${currentPourLabel} + ${currentFoodLabel} (Est: ₹${totalCost.toLocaleString('en-IN')} total, ₹${perGuest.toLocaleString('en-IN')}/head). We would like to confirm dates for our gathering.`
+        );
+        waBtn.href = `https://wa.me/918660819023?text=${text}`;
+      }
+    }
+
+    // FAQ Accordion
+    function toggleFaq(elem) {
+      const parent = elem.parentElement;
+      parent.classList.toggle('open');
+    }
+
+    // Modal Handlers
+    function openPitchModal() {
+      document.getElementById('uncodedPitchModal').classList.add('active');
+    }
+
+    function closePitchModal() {
+      document.getElementById('uncodedPitchModal').classList.remove('active');
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target.id === 'uncodedPitchModal') {
+        closePitchModal();
+      }
+    }
+
+    // Initialize on load
+    updatePartyCalculation();
+  </script>
 </body>
 </html>

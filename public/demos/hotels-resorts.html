@@ -10,19 +10,1337 @@
   <link rel="alternate" hreflang="en" href="https://uncodedhub.com/demos/hotels-resorts.html">
   <link rel="alternate" hreflang="x-default" href="https://uncodedhub.com/demos/hotels-resorts.html">
 
-  
-    <button class="tc-btn active" data-theme="deep-plantation" onclick="switchTheme('deep-plantation', this)">
-      <span>Deep Plantation &amp; Brass</span>
-    </button>
-    <button class="tc-btn" data-theme="serene-ivory" onclick="switchTheme('serene-ivory', this)">
-      <span>Serene Botanical Ivory</span>
-    </button>
-    <button class="tc-btn" data-theme="monsoon-luxe" onclick="switchTheme('monsoon-luxe', this)">
-      <span>Monsoon Obsidian Gold</span>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #08110D;
+      --bg-surface: #101E17;
+      --bg-card: #162920;
+      --bg-card-hover: #1E352A;
+      --text-primary: #F4FBF7;
+      --text-muted: #D1E7DC;
+      --text-dim: #9BC4AF;
+      --border-color: rgba(212, 175, 55, 0.25);
+      --border-accent: #D4AF37;
+      --accent-color: #D4AF37;
+      --accent-glow: rgba(212, 175, 55, 0.22);
+      --accent-hover: #B8972E;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    [data-theme="serene-ivory"] {
+      --bg-primary: #FAF8F5;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #F2EFE9;
+      --text-primary: #121A15;
+      --text-muted: #3D4F44;
+      --text-dim: #647D6E;
+      --border-color: #D7DEC6;
+      --border-accent: #2E5C43;
+      --accent-color: #2E5C43;
+      --accent-glow: rgba(46, 92, 67, 0.15);
+      --accent-hover: #214330;
+    }
+
+    [data-theme="monsoon-luxe"] {
+      --bg-primary: #0A0C0E;
+      --bg-surface: #12161A;
+      --bg-card: #1A2026;
+      --bg-card-hover: #242C34;
+      --text-primary: #F1F5F9;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+      --border-color: rgba(255, 255, 255, 0.15);
+      --border-accent: #38BDF8;
+      --accent-color: #38BDF8;
+      --accent-glow: rgba(56, 189, 248, 0.2);
+      --accent-hover: #0EA5E9;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Uncoded Top Bar */
+    .uncoded-top-bar {
+      background: #050A08;
+      color: #E2E8F0;
+      font-size: 13px;
+      padding: 9px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .uncoded-top-bar a.back-link {
+      color: #FFFFFF;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      font-size: 12px;
+      padding: 4px 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 4px;
+    }
+
+    .tc-group { display: flex; align-items: center; gap: 6px; }
+
+    .tc-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #E2E8F0;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .tc-btn.active, .tc-btn:hover {
+      background: var(--accent-color);
+      border-color: var(--accent-color);
+      color: #08110D;
+      font-weight: 700;
+    }
+
+    /* Resort Notice Bar */
+    .resort-bar {
+      background: rgba(0, 0, 0, 0.5);
+      border-bottom: 1px solid var(--border-color);
+      font-size: 11.5px;
+      color: var(--text-dim);
+      padding: 7px 0;
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+
+    .resort-bar strong { color: var(--accent-color); }
+
+    /* Header */
+    header.site-header {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 38px;
+      z-index: 900;
+      padding: 16px 0;
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      background: var(--accent-color);
+      color: #08110D;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 24px;
+      box-shadow: 0 4px 14px var(--accent-glow);
+    }
+
+    .brand-name {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-tag {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent-color); }
+
+    .header-cta {
+      background: var(--accent-color);
+      color: #08110D;
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .header-cta:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 4px 16px var(--accent-glow);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 80px 0 60px;
+      position: relative;
+      border-bottom: 1px solid var(--border-color);
+      background: radial-gradient(circle at 75% 25%, var(--accent-glow), transparent 45%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid var(--accent-color);
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-color);
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 48px;
+      line-height: 1.15;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero-title span.highlight { color: var(--accent-color); }
+
+    .hero-desc {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .btn-primary {
+      background: var(--accent-color);
+      color: #08110D;
+      padding: 15px 30px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 8px 24px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      padding: 14px 26px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      border: 1px solid var(--border-color);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-surface);
+      border-color: var(--accent-color);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .metric-card h3 {
+      font-family: var(--font-mono);
+      font-size: 26px;
+      color: var(--accent-color);
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .metric-card p {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .hero-visual-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .spec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 16px;
+    }
+
+    .spec-header h4 {
+      font-family: var(--font-heading);
+      font-size: 20px;
+    }
+
+    .status-pill {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      background: rgba(34, 197, 94, 0.15);
+      color: #22C55E;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      font-size: 13.5px;
+    }
+
+    .spec-row span.label { color: var(--text-dim); }
+    .spec-row span.value {
+      color: var(--text-primary);
+      font-weight: 600;
+      font-family: var(--font-mono);
+    }
+
+    /* Engine 3: Direct Villa Booking Engine */
+    .engine-section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--border-color);
+      background: var(--bg-surface);
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 50px;
+    }
+
+    .section-eyebrow {
+      color: var(--accent-color);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 38px;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 16px;
+    }
+
+    .calc-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+    }
+
+    .calc-group { margin-bottom: 26px; }
+
+    .calc-label {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .pill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .pill-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .pill-btn:hover {
+      border-color: var(--accent-color);
+      color: var(--text-primary);
+    }
+
+    .pill-btn.active {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+      font-weight: 700;
+    }
+
+    .summary-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .summary-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+    }
+
+    .summary-price {
+      font-family: var(--font-mono);
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .breakdown-list {
+      margin-bottom: 28px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+    }
+
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      margin-bottom: 12px;
+      color: var(--text-muted);
+    }
+
+    .breakdown-row strong {
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+    }
+
+    .wa-calc-btn {
+      background: #25D366;
+      color: #08110D;
+      font-weight: 700;
+      text-align: center;
+      padding: 14px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .wa-calc-btn:hover {
+      background: #1EBE5D;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+    }
+
+    /* Capabilities */
+    .services-section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .service-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-color);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+    }
+
+    .service-num {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--accent-color);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .service-card h3 {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .service-specs {
+      list-style: none;
+      border-top: 1px solid var(--border-color);
+      padding-top: 18px;
+      margin-bottom: 24px;
+    }
+
+    .service-specs li {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-specs li::before {
+      content: '✔';
+      color: var(--accent-color);
+      font-weight: 700;
+      font-size: 11px;
+    }
+
+    .service-price {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--accent-color);
+      font-weight: 700;
+    }
+
+    /* Case Studies */
+    .case-section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--border-color);
+      background: var(--bg-surface);
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .case-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px;
+    }
+
+    .case-tag {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--accent-color);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+
+    .case-card h3 {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .case-card p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .case-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+    }
+
+    .stat-item strong {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 16px;
+      color: var(--accent-color);
+    }
+
+    .stat-item span {
+      font-size: 11.5px;
+      color: var(--text-dim);
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .faq-wrap { max-width: 820px; margin: 0 auto; }
+
+    .faq-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 20px 24px;
+      font-family: var(--font-heading);
+      font-size: 19px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question span.toggle-icon {
+      font-size: 18px;
+      color: var(--accent-color);
+      transition: transform 0.25s;
+    }
+
+    .faq-item.open .faq-question span.toggle-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      display: none;
+      padding: 0 24px 22px;
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .faq-item.open .faq-answer { display: block; }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 90px 0;
+      background: radial-gradient(circle at 50% 50%, var(--accent-glow), transparent 60%);
+    }
+
+    .contact-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 50px;
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+    }
+
+    .contact-box h2 {
+      font-family: var(--font-heading);
+      font-size: 38px;
+      margin-bottom: 16px;
+    }
+
+    .contact-box p {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 34px;
+    }
+
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    footer.site-footer {
+      background: #050A08;
+      border-top: 1px solid var(--border-color);
+      padding: 40px 0;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    /* Pitch Modal & Widget */
+    .pitch-modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 99999;
+      padding: 20px;
+      overflow-y: auto;
+      align-items: center;
+      justify-content: center;
+    }
+    .pitch-modal-backdrop.active { display: flex; }
+    .pitch-modal-card {
+      background: #0D1A14;
+      color: #F4FBF7;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 14px;
+      max-width: 660px;
+      width: 100%;
+      padding: 32px;
+      position: relative;
+    }
+    .pitch-close-btn {
+      position: absolute;
+      top: 18px; right: 18px;
+      background: transparent;
+      border: none;
+      color: #94A3B8;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .uh-popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 14px;
+    }
+    .uh-brand-group { display: flex; align-items: center; gap: 10px; }
+    .uh-brand-logo-img { width: 34px; height: 34px; border-radius: 6px; }
+    .uh-brand-name { font-weight: 700; font-size: 15px; color: #FFFFFF; }
+    .uh-brand-sub { font-size: 11px; color: #94A3B8; }
+    .uh-badge-studio {
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid #D4AF37;
+      color: #D4AF37;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .founders-row {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 20px;
+      background: rgba(255,255,255,0.03);
+      padding: 16px;
+      border-radius: 8px;
+    }
+    .founders-photos { display: flex; gap: 10px; }
+    .founder-pic-box { text-align: center; }
+    .founder-pic { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid #D4AF37; }
+    .founder-name { display: block; font-size: 11px; font-weight: 700; margin-top: 4px; color: #FFFFFF; }
+    .founder-role { display: block; font-size: 10px; color: #94A3B8; }
+    .founders-intro h2 { font-size: 16px; line-height: 1.35; margin-bottom: 4px; color: #FFFFFF; }
+    .founders-intro p { font-size: 12px; color: #94A3B8; margin: 0; }
+    .pitch-body { font-size: 13.5px; line-height: 1.6; color: #CBD5E1; margin-bottom: 24px; }
+    .pitch-body p { margin-bottom: 12px; }
+    .insight-card {
+      background: rgba(0,0,0,0.3);
+      border-left: 3px solid #D4AF37;
+      padding: 12px 16px;
+      margin: 14px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .insight-card h4 { font-size: 13px; color: #D4AF37; margin-bottom: 4px; }
+    .insight-card p { font-size: 12px; margin: 0; color: #94A3B8; }
+    .pitch-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 18px;
+    }
+    .pitch-cta-dismiss {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #94A3B8;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .pitch-cta-wa {
+      background: #D4AF37;
+      color: #08110D;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 13px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lead-magnet-floating-widget {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 999;
+    }
+    .lm-floating-btn {
+      background: #0D1A14;
+      color: #D4AF37;
+      border: 1.5px solid #D4AF37;
+      border-radius: 40px;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+    .lm-pulse-ping {
+      width: 8px; height: 8px;
+      background: #22C55E;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #22C55E;
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid, .calc-container { grid-template-columns: 1fr; }
+      .services-grid, .case-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hero-title { font-size: 34px; }
+      .calc-container { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Uncoded Specimen Bar -->
+  <div class="uncoded-top-bar">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <a href="/portfolio/" class="back-link">&larr; Portfolio</a>
+      <span style="opacity: 0.3;">|</span>
+      <span style="font-weight: 600; font-size: 12px;">Demo 36 &bull; Boutique Plantation Resort &amp; Plunge Pool Sanctuary</span>
+    </div>
+    <div class="tc-group">
+      <span style="font-size: 11px; opacity: 0.6; text-transform: uppercase;">Theme:</span>
+      <button class="tc-btn active" onclick="switchTheme('deep-plantation', this)">Deep Plantation</button>
+      <button class="tc-btn" onclick="switchTheme('serene-ivory', this)">Serene Ivory</button>
+      <button class="tc-btn" onclick="switchTheme('monsoon-luxe', this)">Monsoon Obsidian</button>
+    </div>
+  </div>
+
+  <!-- Resort Notice Bar -->
+  <div class="resort-bar">
+    <div class="container">
+      <strong>Zero-Commission Direct Booking Sanctuary:</strong> Exclusive Plunge Pool Plantation Villas &bull; Private Chef Verandah Dining &bull; Complimentary Estate Coffee Tour &bull; 100% Direct Best Rate Guarantee
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/demos/hotels-resorts.html" class="brand-logo">
+        <div class="brand-badge">T</div>
+        <div>
+          <div class="brand-name">THE TAMARIND SANCTUARY</div>
+          <div class="brand-tag">Luxury Plantation Villas &amp; Botanical Spa</div>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#villa-engine">Direct Villa Booking</a>
+        <a href="#villas">Private Pool Villas</a>
+        <a href="#botanical-spa">Ayurvedic Sanctuary</a>
+        <a href="#faqs">Estate FAQs</a>
+      </nav>
+      <a href="#villa-engine" class="header-cta">
+        <span>Reserve Villa</span> &rarr;
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-eyebrow">
+          <span>Private Heated Plunge Pools</span> &bull; <span>120-Acre Coffee Estate</span>
+        </div>
+        <h1 class="hero-title">
+          Where Centuries-Old Rainforest Canopy Meets <span class="highlight">Bespoke Heritage Luxury.</span>
+        </h1>
+        <p class="hero-desc">
+          Tucked within the pristine Western Ghats. Reconnect amidst private heated infinity pools, farm-to-table culinary dinners beneath the stars, and restorative herbal Ayurvedic rituals.
+        </p>
+        <div class="hero-actions">
+          <a href="#villa-engine" class="btn-primary">
+            <span>Configure Stay Package</span> &darr;
+          </a>
+          <a href="https://wa.me/918660819023?text=Hi%20The%20Tamarind%20Sanctuary%2C%20I%20would%20like%20to%20inquire%20about%20villa%20availability%20for%20an%20upcoming%20weekend%20retreat." class="btn-secondary" target="_blank" rel="noopener noreferrer">
+            <span>Direct WhatsApp Concierge</span> &rarr;
+          </a>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric-card">
+            <h3>120 Acres</h3>
+            <p>Private Coffee Forest</p>
+          </div>
+          <div class="metric-card">
+            <h3>18 Villas</h3>
+            <p>Secluded Private Estates</p>
+          </div>
+          <div class="metric-card">
+            <h3>0% OTA Markup</h3>
+            <p>Direct Booking Advantage</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual-card">
+        <div class="spec-header">
+          <h4>Estate Daily Dispatch</h4>
+          <span class="status-pill">Sanctuary Open Active</span>
+        </div>
+        <div class="spec-row">
+          <span class="label">Location:</span>
+          <span class="value">Coorg Canopy, Karnataka</span>
+        </div>
+        <div class="spec-row">
+          <span class="label">Elevation:</span>
+          <span class="value">1,150m Above Sea Level (21&deg;C)</span>
+        </div>
+        <div class="spec-row">
+          <span class="label">Featured Stay:</span>
+          <span class="value">Plantation Plunge Pool Villa</span>
+        </div>
+        <div class="spec-row">
+          <span class="label">This Weekend Availability:</span>
+          <span class="value" style="color: #22C55E;">2 Secluded Villas Available</span>
+        </div>
+        <div class="spec-row">
+          <span class="label">Direct Benefit:</span>
+          <span class="value">Free Airport Transfer &amp; Plantation High Tea</span>
+        </div>
+        <div class="spec-row">
+          <span class="label">Dining Experience:</span>
+          <span class="value">Wood-Fired Wild Kodava Tasting Menu</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engine 3: Direct Villa Booking Engine -->
+  <section class="engine-section" id="villa-engine">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Engine 3 &bull; Interactive Direct Reservation Engine</div>
+        <h2 class="section-title">Direct Booking &amp; Experience Customizer</h2>
+        <p class="section-subtitle">Book directly to bypass 18% OTA platform surcharges and enjoy complimentary airport transfers and private estate dining credits.</p>
+      </div>
+
+      <div class="calc-container">
+        <div class="calc-controls">
+          <div class="calc-group">
+            <div class="calc-label">
+              <span>1. Villa Category</span>
+            </div>
+            <div class="pill-grid">
+              <button class="pill-btn active" onclick="setVillaType(18500, 'Plantation Plunge Pool Villa (₹18,500/night)', this)">Pool Villa</button>
+              <button class="pill-btn" onclick="setVillaType(26500, 'Heritage Verandah Estate (₹26,500/night)', this)">Heritage Estate</button>
+              <button class="pill-btn" onclick="setVillaType(34000, 'Treehouse Canopy Penthouse (₹34,000/night)', this)">Treehouse Penthouse</button>
+            </div>
+          </div>
+
+          <div class="calc-group">
+            <div class="calc-label">
+              <span>2. Stay Duration</span>
+            </div>
+            <div class="pill-grid">
+              <button class="pill-btn active" onclick="setNights(2, '2 Nights (Weekend Escape)', this)">2 Nights</button>
+              <button class="pill-btn" onclick="setNights(3, '3 Nights (Forest Immersion)', this)">3 Nights</button>
+              <button class="pill-btn" onclick="setNights(5, '5 Nights (Wellness Sabbatical)', this)">5 Nights (10% Off)</button>
+            </div>
+          </div>
+
+          <div class="calc-group">
+            <div class="calc-label">
+              <span>3. Curated Sanctuary Experience</span>
+            </div>
+            <div class="pill-grid">
+              <button class="pill-btn active" onclick="setExperience(0, 'Complimentary Estate Coffee Walk', this)">Estate Coffee Tour</button>
+              <button class="pill-btn" onclick="setExperience(6500, 'Ayurvedic Couple Abhyanga Spa (+₹6,500)', this)">Couple Spa (+₹6.5k)</button>
+              <button class="pill-btn" onclick="setExperience(11000, 'Private Chef Candlelight Verandah BBQ (+₹11,000)', this)">Private Chef BBQ (+₹11k)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-card">
+          <div>
+            <div class="summary-title">Total Direct Sanctuary Stay Investment</div>
+            <div class="summary-price" id="villaTotalDisplay">₹37,000</div>
+            
+            <div class="breakdown-list">
+              <div class="breakdown-row">
+                <span>Selected Villa:</span>
+                <strong id="selectedVillaDisplay">Plantation Pool Villa</strong>
+              </div>
+              <div class="breakdown-row">
+                <span>Stay Length:</span>
+                <strong id="selectedNightsDisplay">2 Nights (Weekend Escape)</strong>
+              </div>
+              <div class="breakdown-row">
+                <span>Curated Experience:</span>
+                <strong id="selectedExpDisplay">Estate Coffee Walk</strong>
+              </div>
+              <div class="breakdown-row">
+                <span>Direct Booking Advantage:</span>
+                <strong style="color: #22C55E;">Zero OTA Fees &bull; Free Airport Pickup</strong>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="wa-calc-btn" id="waResortBtn" target="_blank" rel="noopener noreferrer">
+            <span>Confirm Dates On WhatsApp</span> &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Villa Collection -->
+  <section class="services-section" id="villas">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">The Sanctuary Collection</div>
+        <h2 class="section-title">Eighteen Secluded Private Residences</h2>
+        <p class="section-subtitle">Crafted from reclaimed teak, locally quarried granite, and open glass walls framing misty mountain valleys.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div>
+            <div class="service-num">01 / PRIVATE WATER</div>
+            <h3>Plantation Plunge Pool Villa</h3>
+            <p>Featuring a climate-controlled private outdoor stone plunge pool overlooking Arabica coffee slopes, outdoor rain shower, and teak daybeds.</p>
+            <ul class="service-specs">
+              <li>1,250 sq.ft private indoor/outdoor sanctuary</li>
+              <li>Heated 28&deg;C year-round stone plunge pool</li>
+              <li>Fireplace with kiln-dried fragrant firewood</li>
+            </ul>
+          </div>
+          <div class="service-price">From ₹18,500 / Night</div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-num">02 / HERITAGE GRANDEUR</div>
+            <h3>Heritage Verandah Estate Suite</h3>
+            <p>19th-century colonial planter architecture with high wooden beamed ceilings, antique four-poster brass beds, and private wrap-around verandah.</p>
+            <ul class="service-specs">
+              <li>2,100 sq.ft two-bedroom heritage bungalow</li>
+              <li>Private butler service &amp; afternoon tea</li>
+              <li>Hand-beaten copper clawfoot soaking bathtub</li>
+            </ul>
+          </div>
+          <div class="service-price">From ₹26,500 / Night</div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-num">03 / CANOPY HEIGHTS</div>
+            <h3>Treehouse Canopy Penthouse</h3>
+            <p>Perched 45 feet above the forest floor on living wild fig trees. Panoramic 360-degree rainforest views, glass observation deck, and birdwatching telescope.</p>
+            <ul class="service-specs">
+              <li>Suspended cantilevered teak deck</li>
+              <li>Outdoor sunset hydrotherapy jacuzzi</li>
+              <li>Private acoustic bird chorus at dawn</li>
+            </ul>
+          </div>
+          <div class="service-price">From ₹34,000 / Night</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wellness & Spa -->
+  <section class="case-section" id="botanical-spa">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Holistic Forest Healing</div>
+        <h2 class="section-title">The Tamarind Ayurvedic Spa Sanctuary</h2>
+        <p class="section-subtitle">Authentic Kerala herbal therapies utilizing organic botanicals harvested directly from our estate soil.</p>
+      </div>
+
+      <div class="case-grid">
+        <div class="case-card">
+          <div class="case-tag">Signature Therapy &bull; 90 Minutes</div>
+          <h3>Ksheeradhara &amp; Warm Herbal Poultice Ritual</h3>
+          <p>Continuous rhythmic pouring of medicated warm herbal milk over the third eye, accompanied by steam poultice body massage with estate-grown turmeric, camphor, and eucalyptus.</p>
+          <div class="case-stats">
+            <div class="stat-item">
+              <strong>90 Mins</strong>
+              <span>Deep Therapy</span>
+            </div>
+            <div class="stat-item">
+              <strong>100% Organic</strong>
+              <span>Estate Botanicals</span>
+            </div>
+            <div class="stat-item">
+              <strong>Vaidya Led</strong>
+              <span>Personalized Pulse</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-tag">Couple Sanctuary &bull; 120 Minutes</div>
+          <h3>Candlelit Rainforest Bath &amp; Abhyanga</h3>
+          <p>Synchronized warm cold-pressed sesame oil massage for couples, followed by a private mineral soak in a carved granite tub infused with wild forest rose petals and cedarwood oil.</p>
+          <div class="case-stats">
+            <div class="stat-item">
+              <strong>Private Pavilion</strong>
+              <span>Water Sounds</span>
+            </div>
+            <div class="stat-item">
+              <strong>Granite Tub</strong>
+              <span>Herbal Infusion</span>
+            </div>
+            <div class="stat-item">
+              <strong>High Tea</strong>
+              <span>Post-Spa Platter</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faqs">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Guest Concierge</div>
+        <h2 class="section-title">Frequently Answered Questions</h2>
+      </div>
+
+      <div class="faq-wrap">
+        <div class="faq-item open">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>How do we reach The Tamarind Sanctuary from Bengaluru or Mangaluru?</span>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            We are situated in northern Coorg, a scenic 4.5-hour drive (240 km) from Bengaluru International Airport via the Mysore expressway, or 2.5 hours from Kannur Airport. For direct website bookings, complimentary luxury SUV airport pickup and drop-off is included.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Why is booking directly on WhatsApp or your site better than OTAs?</span>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Online Travel Agencies (OTAs like MakeMyTrip and Booking.com) charge up to 20% in hidden commission fees. By booking direct with our estate concierge, you receive our guaranteed lowest price, complimentary high-speed Starlink WiFi, free room upgrade (subject to availability), and flexible date rescheduling.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Are the plunge pools heated during the winter and monsoon months?</span>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes. All our private villa plunge pools are equipped with eco-friendly thermodynamic heat pumps maintaining water temperatures at a soothing 28&deg;C to 30&deg;C regardless of outside rainfall or chilly mountain evenings.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Can you curate a private romantic dinner for anniversaries?</span>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes. Our concierge specializes in surprise celebrations: candlelit dining on a private wooden deck floating over the estate lotus pond, complete with customized acoustic violin accompaniment and a bespoke 5-course degustation menu.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-box">
+        <h2>Your Rainforest Sanctuary Awaits</h2>
+        <p>With only 18 private villas on 120 acres, dates fill rapidly for weekend escapes. Connect with our estate concierge on WhatsApp to reserve your dates.</p>
+        <div class="contact-actions">
+          <a href="https://wa.me/918660819023?text=Hi%20The%20Tamarind%20Sanctuary%2C%20I%20would%20like%20to%20reserve%20a%20private%20pool%20villa%20retreat." class="btn-primary" target="_blank" rel="noopener noreferrer">
+            <span>Reserve Villa on WhatsApp</span> &rarr;
+          </a>
+          <button class="btn-secondary" onclick="openPitchModal()">
+            <span>Why This Website Works</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>THE TAMARIND SANCTUARY</strong> &bull; Madikeri Foothills, Coorg, Karnataka
+      </div>
+      <div>
+        Eco-Luxury Plantation Resort &bull; 100% Direct Sanctuary &bull; © 2026 Tamarind Sanctuary. Specimen by Uncoded Hub.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lead Magnet Floating Button -->
+  <div class="lead-magnet-floating-widget">
+    <button class="lm-floating-btn" onclick="openPitchModal()">
+      <span>Uncoded Hub Pitch</span>
+      <span class="lm-pulse-ping"></span>
     </button>
   </div>
 
-  <!-- Uncoded Hub Studio Pitch & Cover Letter Modal -->
+  <!-- Uncoded Pitch Modal -->
   <div class="pitch-modal-backdrop" id="uncodedPitchModal" onclick="handleBackdropClick(event)">
     <div class="pitch-modal-card">
       <button class="pitch-close-btn" onclick="closePitchModal()" title="Close dialog">✕</button>
@@ -35,81 +1353,129 @@
             <div class="uh-brand-sub">Two-Person Studio · Bengaluru</div>
           </div>
         </div>
-        <span class="uh-badge-studio">7-Day Sprint Prototype</span>
+        <span class="uh-badge-studio">7-Day Turnaround</span>
       </div>
 
       <div class="founders-row">
         <div class="founders-photos">
           <div class="founder-pic-box">
-            <img src="/deepak.webp" alt="Deepak, co-founder" class="founder-pic">
+            <img src="/deepak.webp" alt="Deepak" class="founder-pic">
             <span class="founder-name">Deepak</span>
             <span class="founder-role">Engineering</span>
           </div>
           <div class="founder-pic-box">
-            <img src="/geetha.webp" alt="Geetha, co-founder" class="founder-pic">
+            <img src="/geetha.webp" alt="Geetha" class="founder-pic">
             <span class="founder-name">Geetha</span>
-            <span class="founder-role">Design &amp; Strategy</span>
+            <span class="founder-role">Design</span>
           </div>
         </div>
         <div class="founders-intro">
-          <h2>Why We Hand-Built This Live Prototype For Your Business Before Asking For A Rupee.</h2>
-          <p>A personal note from Deepak &amp; Geetha to the founder or practice director reviewing this website.</p>
+          <h2>Why Boutique Luxury Resorts Need Zero-OTA Direct Engines</h2>
+          <p>A note from Deepak &amp; Geetha to boutique hotel and private resort owners.</p>
         </div>
       </div>
 
       <div class="pitch-body">
-        <p>Dear Founder / Business Owner,</p>
-        <p>Most digital agencies pitch generic 40-page PDF decks, throw around corporate jargon, and demand lakhs before proving they understand a single thing about your real clients. <strong>We do the opposite: we do the work first.</strong></p>
-
+        <p>Boutique resorts lose 18% to 22% of every single room night booking to commission-hungry OTAs. High-spending guests want to interact directly with the property, verify amenities, and confirm dates instantly on WhatsApp without third-party middleman markup.</p>
         <div class="insight-card">
-          <h4>The 50-Millisecond Silent Decision</h4>
-          <p>When a prospective client or patient searches for your service in your city, they don't judge your years of dedication or credentials on paper. <strong>They judge you in the first 50 milliseconds based on visual certainty.</strong> In high-ticket services, clients do not buy a service—they buy <em>relief from the fear of making an expensive mistake</em>. If your site takes 4+ seconds to load, breaks on mobile, or looks like a template from 2018, over 70% bounce silently and hire the competitor who looks established.</p>
+          <h4>The Power of Engine 3 (Direct Villa Customizer)</h4>
+          <p>By giving prospective travelers an intuitive stay customizer with transparent direct-booking perks, you convert luxury weekend getaways directly on WhatsApp and retain 100% of room revenue.</p>
         </div>
-
-        <div class="insight-card">
-          <h4>What This Live Prototype Solves For Your Business</h4>
-          <p>We didn't build an aesthetic brochure. We built a high-conversion client acquisition engine: sub-second load time on Indian mobile 4G networks, upfront service clarity, interactive self-qualification tools, and direct 1-tap WhatsApp consultation. It answers your prospect's unvoiced fears before they ever hesitate.</p>
-        </div>
-
-        <div class="belief-card">
-          <div class="belief-quote">
-            "Uncoded Hub is a brother and sister who got tired of watching competent, high-quality businesses lose work to worse competitors simply because the competitor had a faster, clearer website."
-          </div>
-          <div class="commitments-grid">
-            <div class="comm-item">
-              <strong>1. Senior Delivery Only</strong>
-              No hidden junior team, no account managers. Deepak and Geetha engineer and design every single line.
-            </div>
-            <div class="comm-item">
-              <strong>2. 7-Day Turnaround</strong>
-              Live and launched in 7 working days flat—not 3 months of agency delays.
-            </div>
-            <div class="comm-item">
-              <strong>3. 100% Asset Ownership</strong>
-              Domain, hosting, code, and content in your name from day one with zero monthly platform lock-ins.
-            </div>
-          </div>
-        </div>
+        <p>We build, launch, and host this luxury resort booking portal in 7 days flat. If we're late, it's 100% free.</p>
       </div>
 
       <div class="pitch-actions">
-        <button class="pitch-cta-dismiss" onclick="closePitchModal()">Explore Live Demo Specimen ↓</button>
-        <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha%2C%20I%20am%20viewing%20the%20The%20Tamarind%20Sanctuary%20demo%20and%20would%20like%20to%20discuss%20building%20our%20website." class="pitch-cta-wa" target="_blank" rel="noopener noreferrer">
-          Claim This Website on WhatsApp (+91 86608 19023) →
+        <button class="pitch-cta-dismiss" onclick="closePitchModal()">Close Specimen</button>
+        <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha%2C%20I%20am%20viewing%20the%20Tamarind%20Sanctuary%20demo%20and%20would%20like%20to%20discuss%20our%20resort%20website." class="pitch-cta-wa" target="_blank" rel="noopener noreferrer">
+          Claim This Website on WhatsApp &rarr;
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Floating Lead Magnet Button -->
-  <div class="lead-magnet-floating-widget" id="leadMagnetWidget">
-    <button class="lm-floating-btn" onclick="openPitchModal()" title="Free 3-Page Executive Guide">
-      <span class="lm-btn-icon-wrap"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
-      <span>Free Studio Briefing</span>
-      <span class="lm-pulse-ping"></span>
-    </button>
-  </div>
+  <script>
+    // Theme Switcher
+    function switchTheme(themeKey, btnElem) {
+      document.body.setAttribute('data-theme', themeKey);
+      document.querySelectorAll('.tc-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+    }
 
-  
+    // Engine 3: Villa Booking Customizer Logic
+    let currentNightlyRate = 18500;
+    let currentStayNights = 2;
+    let currentExpFee = 0;
+    let currentVillaLabel = 'Plantation Plunge Pool Villa';
+    let currentNightsLabel = '2 Nights (Weekend Escape)';
+    let currentExpLabel = 'Complimentary Estate Coffee Tour';
+
+    function setVillaType(rate, label, elem) {
+      currentNightlyRate = rate;
+      currentVillaLabel = label;
+      document.getElementById('selectedVillaDisplay').innerText = elem.innerText.trim();
+      elem.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      elem.classList.add('active');
+      updateVillaCalculation();
+    }
+
+    function setNights(nights, label, elem) {
+      currentStayNights = nights;
+      currentNightsLabel = label;
+      document.getElementById('selectedNightsDisplay').innerText = label;
+      elem.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      elem.classList.add('active');
+      updateVillaCalculation();
+    }
+
+    function setExperience(fee, label, elem) {
+      currentExpFee = fee;
+      currentExpLabel = label;
+      document.getElementById('selectedExpDisplay').innerText = elem.innerText.trim();
+      elem.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      elem.classList.add('active');
+      updateVillaCalculation();
+    }
+
+    function updateVillaCalculation() {
+      // 10% discount for 5 nights or more
+      const discount = currentStayNights >= 5 ? 0.90 : 1.0;
+      const totalCost = Math.round((currentNightlyRate * currentStayNights * discount) + currentExpFee);
+
+      document.getElementById('villaTotalDisplay').innerText = '₹' + totalCost.toLocaleString('en-IN');
+
+      // WhatsApp routing update
+      const waBtn = document.getElementById('waResortBtn');
+      if (waBtn) {
+        const text = encodeURIComponent(
+          `Hi The Tamarind Sanctuary, I configured a stay on your website: ${currentVillaLabel}, Duration: ${currentNightsLabel}, Experience: ${currentExpLabel} (Est: ₹${totalCost.toLocaleString('en-IN')}). I would like to confirm dates for our retreat.`
+        );
+        waBtn.href = `https://wa.me/918660819023?text=${text}`;
+      }
+    }
+
+    // FAQ Accordion
+    function toggleFaq(elem) {
+      const parent = elem.parentElement;
+      parent.classList.toggle('open');
+    }
+
+    // Modal Handlers
+    function openPitchModal() {
+      document.getElementById('uncodedPitchModal').classList.add('active');
+    }
+
+    function closePitchModal() {
+      document.getElementById('uncodedPitchModal').classList.remove('active');
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target.id === 'uncodedPitchModal') {
+        closePitchModal();
+      }
+    }
+
+    // Initialize on load
+    updateVillaCalculation();
+  </script>
 </body>
 </html>
