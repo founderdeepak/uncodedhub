@@ -1,0 +1,2480 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- STRICTLY PRIVATE CLIENT DEMO - NO SEARCH ENGINE INDEXING -->
+  <title>Macliva Home Décor — Spaces That Feel Like Home | Official E-Commerce Demo</title>
+  <meta name="description" content="Official live e-commerce interactive prototype engineered for Macliva Home Décor by Uncoded Hub. Thoughtfully designed sculptures, spiritual idols, and tabletop accents (₹2,000 - ₹5,000).">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/macliva/logo-dark.png">
+
+  <!-- Typography: Clash Grotesk (Brandbook Primary) + Poppins (UI & Body) -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       MACLIVA BRAND SYSTEM & DESIGN TOKENS (FROM OFFICIAL BRANDBOOK)
+       ========================================================================== */
+    :root {
+      --primary: #5C7057;          /* Macliva Dark Olive / Sage Green */
+      --primary-dark: #445440;     /* Deep Botanical Shade */
+      --primary-light: #738A6D;    /* Muted Sage Accent */
+      --primary-tint: #EEF3ED;     /* Pale Olive Wash */
+      --cream: #FAF6F0;            /* Warm Alabaster Canvas */
+      --cream-card: #FFFFFF;       /* Pure White Card Base */
+      --cream-soft: #F3ECE1;       /* Light Warm Sand */
+      --gold: #CB9C43;             /* Gilt Warm Accent from Brandbook */
+      --charcoal: #232B22;         /* Deep Forest Black Text */
+      --text-muted: #667364;       /* Subtle Forest Body */
+      --border-color: rgba(92, 112, 87, 0.16);
+      --border-focus: rgba(92, 112, 87, 0.4);
+      --shadow-sm: 0 2px 8px rgba(35, 43, 34, 0.05);
+      --shadow-md: 0 8px 24px rgba(35, 43, 34, 0.08);
+      --shadow-lg: 0 16px 40px rgba(35, 43, 34, 0.12);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --font-display: 'Clash Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background-color: var(--cream);
+      color: var(--charcoal);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    h1, h2, h3, h4, .font-display {
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--charcoal);
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background: none;
+      transition: all 0.2s ease;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==========================================================================
+       1. TOP UNCODED HUB SPECIMEN & FOUNDERS PITCH BAR
+       ========================================================================== */
+    .uh-specimen-banner {
+      background: #192218;
+      color: #FAF6F0;
+      padding: 8px 16px;
+      font-size: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      position: relative;
+      z-index: 1000;
+    }
+
+    .uh-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .uh-badge-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .uh-status-pill {
+      background: var(--primary);
+      color: #FFFFFF;
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .uh-banner-text {
+      color: rgba(250, 246, 240, 0.9);
+      font-weight: 500;
+    }
+
+    .uh-banner-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .uh-pitch-trigger {
+      background: rgba(203, 156, 67, 0.18);
+      color: #E2B565;
+      border: 1px solid rgba(203, 156, 67, 0.4);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .uh-pitch-trigger:hover {
+      background: var(--gold);
+      color: #192218;
+    }
+
+    .uh-wa-pill {
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11.5px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .uh-wa-pill:hover {
+      background: #25D366;
+      color: #FFFFFF;
+      border-color: #25D366;
+    }
+
+    /* Announcement Bar */
+    .announcement-bar {
+      background: var(--primary);
+      color: #FFFFFF;
+      padding: 8px 16px;
+      text-align: center;
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .announcement-bar strong {
+      color: #F8E5BA;
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       2. STICKY MAIN NAVBAR
+       ========================================================================== */
+    .main-header {
+      background: rgba(250, 246, 240, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      transition: all 0.3s ease;
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+      gap: 24px;
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-logo-img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--charcoal);
+      position: relative;
+      padding: 4px 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.25s ease;
+    }
+
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .pincode-pill {
+      background: var(--cream-soft);
+      border: 1px solid var(--border-color);
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .pincode-pill strong {
+      color: var(--charcoal);
+    }
+
+    .cart-btn-trigger {
+      background: var(--primary);
+      color: #FFFFFF;
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      font-size: 13.5px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(92, 112, 87, 0.25);
+    }
+
+    .cart-btn-trigger:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .cart-count-badge {
+      background: var(--gold);
+      color: #192218;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: var(--radius-full);
+    }
+
+    /* ==========================================================================
+       3. HERO SECTION (INSPIRED BY BRANDBOOK PAGE 7)
+       ========================================================================== */
+    .hero-section {
+      padding: 56px 0 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 580px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-tint);
+      color: var(--primary);
+      border: 1px solid rgba(92, 112, 87, 0.2);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 12.5px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 3px rgba(92, 112, 87, 0.2);
+    }
+
+    .hero-title {
+      font-size: 54px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .hero-title .highlight {
+      color: var(--primary);
+      font-style: italic;
+    }
+
+    .hero-subtitle {
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #FFFFFF;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-size: 14.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 6px 20px rgba(92, 112, 87, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(92, 112, 87, 0.38);
+    }
+
+    .btn-secondary {
+      background: var(--cream-soft);
+      color: var(--charcoal);
+      border: 1px solid var(--border-color);
+      padding: 14px 24px;
+      border-radius: var(--radius-full);
+      font-size: 14.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-secondary:hover {
+      background: #FFFFFF;
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .hero-guarantees {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .guarantee-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .guarantee-icon {
+      font-size: 18px;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .guarantee-text h5 {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 2px;
+    }
+
+    .guarantee-text p {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Hero Staging Visual */
+    .hero-visual-card {
+      position: relative;
+      background: #FFFFFF;
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-main-img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+    }
+
+    .hero-floating-tag {
+      position: absolute;
+      bottom: 34px;
+      left: 34px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      padding: 12px 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(92, 112, 87, 0.15);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 280px;
+    }
+
+    .tag-thumb {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .tag-meta h6 {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 2px;
+    }
+
+    .tag-meta span {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* ==========================================================================
+       4. CATEGORY PILLS BAR
+       ========================================================================== */
+    .filter-bar-section {
+      padding: 16px 0 32px;
+    }
+
+    .filter-pills-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .pills-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .filter-pill {
+      background: #FFFFFF;
+      color: var(--charcoal);
+      border: 1px solid var(--border-color);
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .filter-pill:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .filter-pill.active {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(92, 112, 87, 0.2);
+    }
+
+    .filter-sort-select {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      color: var(--charcoal);
+      font-family: inherit;
+      font-size: 13px;
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       5. PRODUCT CATALOG GRID (₹2,000 - ₹5,000 RANGE)
+       ========================================================================== */
+    .products-section {
+      padding: 24px 0 80px;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 48px;
+    }
+
+    .section-header .section-tag {
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-header h2 {
+      font-size: 38px;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 15.5px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .product-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(92, 112, 87, 0.35);
+    }
+
+    .product-media-wrap {
+      position: relative;
+      background: #F8F5EE;
+      height: 340px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    .product-card:hover .product-img {
+      transform: scale(1.06);
+    }
+
+    .product-badges {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 2;
+    }
+
+    .badge-pill {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .badge-bestseller {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .badge-discount {
+      background: var(--gold);
+      color: #192218;
+    }
+
+    .quick-view-btn {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--charcoal);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-color);
+      padding: 9px 20px;
+      border-radius: var(--radius-full);
+      font-size: 12.5px;
+      font-weight: 600;
+      opacity: 0;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      z-index: 3;
+    }
+
+    .product-card:hover .quick-view-btn {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .quick-view-btn:hover {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+    }
+
+    .product-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-category {
+      font-size: 11.5px;
+      color: var(--primary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .product-title {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 8px;
+      color: var(--charcoal);
+    }
+
+    .product-spec-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .product-spec-row span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .product-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 18px;
+      margin-top: auto;
+    }
+
+    .current-price {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--charcoal);
+    }
+
+    .original-price {
+      font-size: 14px;
+      color: #8C998B;
+      text-decoration: line-through;
+    }
+
+    .save-tag {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #2E7D32;
+      background: #E8F5E9;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .product-actions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .btn-add-bag {
+      background: var(--primary);
+      color: #FFFFFF;
+      padding: 11px 14px;
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-add-bag:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-wa-order {
+      background: #25D366;
+      color: #FFFFFF;
+      padding: 11px 14px;
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-wa-order:hover {
+      background: #1EBE5D;
+    }
+
+    /* ==========================================================================
+       6. INTERACTIVE ROOM STYLING MATCHER
+       ========================================================================== */
+    .room-matcher-section {
+      background: var(--cream-soft);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: 80px 0;
+    }
+
+    .matcher-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .matcher-tabs {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .matcher-tab-btn {
+      background: var(--cream);
+      border: 1px solid var(--border-color);
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--charcoal);
+      transition: all 0.2s ease;
+    }
+
+    .matcher-tab-btn.active {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+    }
+
+    .matcher-result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .matcher-visual-img {
+      border-radius: var(--radius-md);
+      height: 320px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .matcher-info h3 {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .matcher-info p {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .matcher-specs-list {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .matcher-specs-list li {
+      font-size: 13.5px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ==========================================================================
+       7. BRAND STORY & PACKAGING HONESTY SECTION
+       ========================================================================== */
+    .brand-story-section {
+      padding: 88px 0;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .mockup-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .mockup-card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .story-content h2 {
+      font-size: 40px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .story-content p {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 15.5px;
+    }
+
+    .concept-equation {
+      background: #FFFFFF;
+      padding: 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: 28px;
+    }
+
+    .eq-item {
+      text-align: center;
+    }
+
+    .eq-item .eq-sym {
+      font-family: var(--font-display);
+      font-size: 26px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .eq-item .eq-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ==========================================================================
+       8. CART DRAWER (SLIDE-OUT INTERACTIVE)
+       ========================================================================== */
+    .cart-drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(25, 34, 24, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .cart-drawer-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 440px;
+      max-width: 100vw;
+      background: #FFFFFF;
+      z-index: 10000;
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2);
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .cart-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cart-header h3 {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cart-close-btn {
+      font-size: 20px;
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    .cart-close-btn:hover {
+      background: var(--cream-soft);
+      color: var(--charcoal);
+    }
+
+    .free-shipping-bar {
+      background: var(--primary-tint);
+      padding: 12px 24px;
+      border-bottom: 1px solid rgba(92, 112, 87, 0.15);
+      font-size: 12.5px;
+      color: var(--primary-dark);
+      font-weight: 500;
+    }
+
+    .cart-items-body {
+      padding: 24px;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+
+    .cart-item {
+      display: flex;
+      gap: 16px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .cart-item-thumb {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      background: #F8F5EE;
+    }
+
+    .cart-item-meta {
+      flex-grow: 1;
+    }
+
+    .cart-item-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+
+    .cart-item-price {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .cart-qty-ctrl {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+    }
+
+    .qty-btn {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      background: var(--cream);
+    }
+
+    .qty-num {
+      padding: 0 10px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .cart-footer {
+      padding: 24px;
+      border-top: 1px solid var(--border-color);
+      background: var(--cream);
+    }
+
+    .cart-summary-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: var(--text-muted);
+    }
+
+    .cart-summary-row.total {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--charcoal);
+      padding-top: 8px;
+      border-top: 1px dashed var(--border-color);
+      margin-top: 8px;
+    }
+
+    .cart-checkout-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .btn-checkout-wa {
+      background: #25D366;
+      color: #FFFFFF;
+      padding: 14px;
+      border-radius: var(--radius-full);
+      font-size: 14.5px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-checkout-wa:hover {
+      background: #1EBE5D;
+    }
+
+    .btn-checkout-pay {
+      background: var(--primary);
+      color: #FFFFFF;
+      padding: 14px;
+      border-radius: var(--radius-full);
+      font-size: 14.5px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-checkout-pay:hover {
+      background: var(--primary-dark);
+    }
+
+    /* ==========================================================================
+       9. QUICK VIEW MODAL
+       ========================================================================== */
+    .quick-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(25, 34, 24, 0.7);
+      backdrop-filter: blur(6px);
+      z-index: 10500;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .quick-modal-backdrop.open {
+      display: flex;
+    }
+
+    .quick-modal-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      max-width: 860px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      z-index: 10;
+    }
+
+    .modal-media {
+      background: #F8F5EE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-media img {
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: var(--radius-md);
+    }
+
+    .modal-body {
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-title {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .modal-price {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .modal-desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .modal-meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      margin-bottom: 24px;
+    }
+
+    .modal-meta-table td {
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .modal-meta-table td:first-child {
+      color: var(--text-muted);
+      width: 40%;
+    }
+
+    .modal-meta-table td:last-child {
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    /* ==========================================================================
+       10. CLIENT BRIEFING & FOUNDERS PITCH POPUP
+       ========================================================================== */
+    .pitch-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 26, 17, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 11000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .pitch-modal-backdrop.open {
+      display: flex;
+    }
+
+    .pitch-modal-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      max-width: 680px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 36px;
+      position: relative;
+      border: 2px solid var(--primary);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .pitch-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+    }
+
+    .pitch-modal-header h3 {
+      font-size: 22px;
+      color: var(--primary-dark);
+    }
+
+    .pitch-scope-box {
+      background: var(--primary-tint);
+      border: 1px solid rgba(92, 112, 87, 0.25);
+      padding: 20px;
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+    }
+
+    .pitch-scope-box h4 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: var(--primary-dark);
+    }
+
+    .pitch-scope-list {
+      list-style: none;
+      font-size: 13.5px;
+    }
+
+    .pitch-scope-list li {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pitch-pricing-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--cream);
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+    }
+
+    .pitch-pricing-col span {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .pitch-pricing-col strong {
+      font-family: var(--font-display);
+      font-size: 24px;
+      color: var(--charcoal);
+    }
+
+    /* Floating Founder CTA Button */
+    .floating-founder-pill {
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      z-index: 800;
+      background: #192218;
+      color: #FAF6F0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .floating-founder-pill:hover {
+      background: var(--primary);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    .floating-wa-btn {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 800;
+      background: #25D366;
+      color: #FFFFFF;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+      font-size: 26px;
+    }
+
+    .floating-wa-btn:hover {
+      transform: scale(1.08);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #192218;
+      color: #FAF6F0;
+      padding: 64px 0 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-col h4 {
+      color: #FFFFFF;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    .footer-col p {
+      color: rgba(250, 246, 240, 0.7);
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      color: rgba(250, 246, 240, 0.7);
+      font-size: 13.5px;
+    }
+
+    .footer-col ul li a:hover {
+      color: #FFFFFF;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      text-align: center;
+      color: rgba(250, 246, 240, 0.5);
+      font-size: 12.5px;
+    }
+
+    /* ==========================================================================
+       MOBILE RESPONSIVE ENGINE (< 768px)
+       ========================================================================== */
+    @media screen and (max-width: 768px) {
+      html, body {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        position: relative !important;
+      }
+
+      .container {
+        padding: 0 16px;
+      }
+
+      .nav-menu, .pincode-pill {
+        display: none !important;
+      }
+
+      .hero-grid, .story-grid, .matcher-result-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+
+      .hero-title {
+        font-size: 34px !important;
+      }
+
+      .hero-guarantees {
+        grid-template-columns: 1fr !important;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+
+      .quick-modal-card {
+        grid-template-columns: 1fr !important;
+      }
+
+      .floating-founder-pill {
+        left: 12px;
+        bottom: 12px;
+        padding: 8px 14px;
+        font-size: 11.5px;
+      }
+
+      .floating-wa-btn {
+        right: 12px;
+        bottom: 12px;
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. TOP UNCODED HUB SPECIMEN BAR
+       ========================================================================== -->
+  <aside class="uh-specimen-banner">
+    <div class="container uh-banner-inner">
+      <div class="uh-badge-group">
+        <span class="uh-status-pill">Private Client Prototype</span>
+        <span class="uh-banner-text">Handcrafted for <strong>Macliva Home Décor</strong> • Sub-Second Speed Architecture</span>
+      </div>
+      <div class="uh-banner-actions">
+        <button class="uh-pitch-trigger" onclick="openPitchModal()">
+          <span>Founder's Briefing &amp; Scope</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <a href="https://wa.me/918660819023?text=Hi%20Deepak%20%26%20Geetha%2C%20I%20am%20reviewing%20the%20Macliva%20Home%20Decor%20demo%20and%20would%20like%20to%20confirm%20the%2050%25%20advance." class="uh-wa-pill" target="_blank" rel="noopener noreferrer">
+          <span>WhatsApp Studio (+91 86608 19023)</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    ✦ Handcrafted Home Décor (₹2,000 – ₹5,000) • <strong>Free Pan-India Insured Dispatch</strong> on orders above ₹2,999 • Zero Transit Damage Guarantee ✦
+  </div>
+
+  <!-- ==========================================================================
+       2. STICKY MAIN NAVBAR
+       ========================================================================== -->
+  <header class="main-header">
+    <div class="container nav-wrap">
+      <a href="#hero" class="brand-logo-wrap" title="Macliva Home Décor">
+        <img src="assets/macliva/logo-dark.png" alt="Macliva Logo" class="brand-logo-img">
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#products" class="nav-link active">Curated Pieces</a></li>
+        <li><a href="#categories" class="nav-link">Spiritual &amp; Idols</a></li>
+        <li><a href="#styling" class="nav-link">Room Stylist</a></li>
+        <li><a href="#story" class="nav-link">Our Craft Story</a></li>
+        <li><a href="#unboxing" class="nav-link">Packaging Promise</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="pincode-pill" onclick="checkPincodePrompt()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span id="pincodeDisplay">Deliver to: <strong>560038 Bangalore</strong></span>
+        </div>
+
+        <button class="cart-btn-trigger" onclick="toggleCartDrawer(true)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span>Bag</span>
+          <span class="cart-count-badge" id="navCartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       3. HERO SECTION (INSPIRED BY BRANDBOOK PAGE 7)
+       ========================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span>Macliva Official E-Commerce Architecture</span>
+        </div>
+
+        <h1 class="hero-title">
+          Spaces that feel like <span class="highlight">home.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Thoughtfully curated home décor for a more beautiful everyday. Hand-finished resin sculptures, spiritual meditation idols, and tabletop accents that bring warmth and understated luxury to modern interiors.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#products" class="btn-primary">
+            <span>Explore Curations (₹2,000 – ₹5,000)</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://wa.me/918660819023?text=Hi%20Macliva%2C%20I%20am%20interested%20in%20custom%20styling%20advice%20for%20my%20home%20decor." class="btn-secondary" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
+            <span>Custom Styling Advice</span>
+          </a>
+        </div>
+
+        <div class="hero-guarantees">
+          <div class="guarantee-item">
+            <span class="guarantee-icon">✦</span>
+            <div class="guarantee-text">
+              <h5>Solid Heavyweight Cast</h5>
+              <p>Premium resin &amp; brass composite; zero hollow plastic.</p>
+            </div>
+          </div>
+          <div class="guarantee-item">
+            <span class="guarantee-icon">🛡️</span>
+            <div class="guarantee-text">
+              <h5>Transit Safe Promise</h5>
+              <p>Triple-cushioned foam; 100% free instant replacement.</p>
+            </div>
+          </div>
+          <div class="guarantee-item">
+            <span class="guarantee-icon">⚡</span>
+            <div class="guarantee-text">
+              <h5>24-Hour Dispatch</h5>
+              <p>Same-day dispatch with real-time tracking alerts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Staging -->
+      <div class="hero-visual-card">
+        <img src="assets/macliva/laptop-mockup.png" alt="Macliva Storefront Vision" class="hero-main-img">
+        
+        <div class="hero-floating-tag">
+          <img src="assets/macliva/product-bodhi-buddha.jpg" alt="Bodhi Buddha" class="tag-thumb">
+          <div class="tag-meta">
+            <h6>Bodhi Tree Buddha</h6>
+            <span>₹3,499</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. CATEGORY PILLS FILTER BAR
+       ========================================================================== */ -->
+  <section class="filter-bar-section" id="categories">
+    <div class="container filter-pills-wrap">
+      <div class="pills-group">
+        <button class="filter-pill active" onclick="filterCatalog('all', this)">All Curations (6)</button>
+        <button class="filter-pill" onclick="filterCatalog('spiritual', this)">Spiritual &amp; Idols (2)</button>
+        <button class="filter-pill" onclick="filterCatalog('tabletop', this)">Tabletop &amp; Bar (2)</button>
+        <button class="filter-pill" onclick="filterCatalog('abstract', this)">Modern Abstract (1)</button>
+        <button class="filter-pill" onclick="filterCatalog('nordic', this)">Scandinavian Decor (1)</button>
+      </div>
+
+      <div>
+        <select class="filter-sort-select" onchange="sortCatalog(this.value)">
+          <option value="featured">Sort by: Curated Bestsellers</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. PRODUCT CATALOG GRID (₹2,000 - ₹5,000 RANGE)
+       ========================================================================== -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Direct From Artisan Foundry</span>
+        <h2>Curated Home Décor Collection</h2>
+        <p>Each piece is individually cast, hand-burnished with lead-free patinas, and cushioned in custom gift packaging.</p>
+      </div>
+
+      <div class="products-grid" id="productsContainer">
+        <!-- Products will be dynamically rendered and filterable -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. INTERACTIVE ROOM STYLING MATCHER
+       ========================================================================== -->
+  <section class="room-matcher-section" id="styling">
+    <div class="container">
+      <div class="matcher-card">
+        <div class="section-header" style="margin-bottom: 24px;">
+          <span class="section-tag">Interactive Styling Assistant</span>
+          <h2>Where Will Your New Accent Live?</h2>
+          <p>Select your interior zone to discover how Macliva pieces harmonize proportions, natural light, and energy.</p>
+        </div>
+
+        <div class="matcher-tabs">
+          <button class="matcher-tab-btn active" onclick="selectRoom('living', this)">Living Room Console</button>
+          <button class="matcher-tab-btn" onclick="selectRoom('pooja', this)">Meditation / Sacred Space</button>
+          <button class="matcher-tab-btn" onclick="selectRoom('bar', this)">Dining Credenza &amp; Home Bar</button>
+          <button class="matcher-tab-btn" onclick="selectRoom('desk', this)">Executive Study Desk</button>
+        </div>
+
+        <div class="matcher-result-grid" id="matcherContent">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. BRAND STORY & PACKAGING HONESTY SECTION
+       ========================================================================== -->
+  <section class="brand-story-section" id="story">
+    <div class="container story-grid">
+      <div class="mockup-grid">
+        <img src="assets/macliva/storefront-mockup.png" alt="Macliva Boutique Storefront" class="mockup-card-img">
+        <img src="assets/macliva/tote-mockup.png" alt="Macliva Organic Cotton Tote" class="mockup-card-img">
+        <img src="assets/macliva/hangtag-mockup.png" alt="Macliva Luxury Hangtags" class="mockup-card-img">
+        <img src="assets/macliva/product-bodhi-buddha.jpg" alt="Artisan Bodhi Tree" class="mockup-card-img">
+      </div>
+
+      <div class="story-content">
+        <span class="section-tag" style="color: var(--primary); font-size: 12px; font-weight: 600; text-transform: uppercase;">The Macliva Philosophy</span>
+        <h2>Modern aesthetics, rooted in quiet harmony.</h2>
+        <p>
+          Macliva was born from a fundamental belief: a home shouldn't merely be decorated; it should be thoughtfully composed. We curate tactile, sculptural pieces that balance contemporary Scandinavian lines with classical warmth.
+        </p>
+        <p>
+          Every sculpture is cast from high-density resin composites that deliver authentic stone and bronze heft—grounding your spaces with physical gravitas rather than featherweight replicas.
+        </p>
+
+        <!-- Brand Equation from Brandbook Page 3 -->
+        <div class="concept-equation">
+          <div class="eq-item">
+            <div class="eq-sym">M</div>
+            <div class="eq-label">Brand Initial</div>
+          </div>
+          <div style="font-size: 18px; color: var(--text-muted);">+</div>
+          <div class="eq-item">
+            <div class="eq-sym">✦</div>
+            <div class="eq-label">Shine &amp; Radiance</div>
+          </div>
+          <div style="font-size: 18px; color: var(--text-muted);">+</div>
+          <div class="eq-item">
+            <div class="eq-sym">⌂</div>
+            <div class="eq-label">Living Spaces</div>
+          </div>
+          <div style="font-size: 18px; color: var(--text-muted);">=</div>
+          <div class="eq-item">
+            <div class="eq-sym" style="color: var(--primary);">Macliva</div>
+            <div class="eq-label">Meaningful Mark</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. CART DRAWER (SLIDE-OUT INTERACTIVE)
+       ========================================================================== -->
+  <div class="cart-drawer-backdrop" id="cartBackdrop" onclick="toggleCartDrawer(false)"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Bag">
+    <div class="cart-header">
+      <h3>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span>Your Bag (<span id="cartItemCount">0</span>)</span>
+      </h3>
+      <button class="cart-close-btn" onclick="toggleCartDrawer(false)" title="Close Bag">&times;</button>
+    </div>
+
+    <div class="free-shipping-bar" id="freeShippingBanner">
+      ✦ Add ₹2,999 for Free Insured Express Delivery across India.
+    </div>
+
+    <div class="cart-items-body" id="cartItemsList">
+      <!-- Populated via JS -->
+      <div style="text-align: center; padding: 48px 16px; color: var(--text-muted);">
+        <p style="font-size: 16px; margin-bottom: 8px;">Your bag is currently empty.</p>
+        <p style="font-size: 13px;">Explore our signature curations above to add your first piece.</p>
+      </div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">₹0</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>Insured Pan-India Shipping</span>
+        <span id="cartShippingFee" style="color: #2E7D32;">Calculated</span>
+      </div>
+      <div class="cart-summary-row total">
+        <span>Estimated Total</span>
+        <span id="cartTotal">₹0</span>
+      </div>
+
+      <div class="cart-checkout-actions">
+        <button class="btn-checkout-wa" onclick="checkoutViaWhatsApp()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
+          <span>Order 1-Click via WhatsApp</span>
+        </button>
+        <button class="btn-checkout-pay" onclick="triggerMockPayment()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          <span>Pay Online (UPI / Card / NetBanking)</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       9. QUICK VIEW MODAL
+       ========================================================================== -->
+  <div class="quick-modal-backdrop" id="quickModal" onclick="handleModalBackdropClick(event)">
+    <div class="quick-modal-card">
+      <button class="modal-close-btn" onclick="closeQuickModal()">&times;</button>
+      
+      <div class="modal-media">
+        <img id="modalImg" src="" alt="Product View">
+      </div>
+
+      <div class="modal-body">
+        <span id="modalCategory" style="font-size: 11.5px; color: var(--primary); font-weight: 600; text-transform: uppercase;"></span>
+        <h3 id="modalTitle" class="modal-title"></h3>
+        <div id="modalPrice" class="modal-price"></div>
+        <p id="modalDesc" class="modal-desc"></p>
+
+        <table class="modal-meta-table">
+          <tr>
+            <td>Material &amp; Casting</td>
+            <td id="modalMaterial">Solid Cold-Cast Polyresin &amp; Brass</td>
+          </tr>
+          <tr>
+            <td>Dimensions</td>
+            <td id="modalDimensions">12.5" H × 9.8" W</td>
+          </tr>
+          <tr>
+            <td>Net Weight</td>
+            <td id="modalWeight">1.85 kg (Heavyweight)</td>
+          </tr>
+          <tr>
+            <td>Care Instruction</td>
+            <td>Dust with dry microfiber cloth; avoid harsh chemical cleaners</td>
+          </tr>
+          <tr>
+            <td>Packaging</td>
+            <td>Custom Macliva Magnetic Box + High-Density Foam</td>
+          </tr>
+        </table>
+
+        <div style="display: flex; gap: 10px; margin-top: auto;">
+          <button id="modalAddBtn" class="btn-primary" style="flex: 1; justify-content: center;">Add to Bag</button>
+          <button id="modalWaBtn" class="btn-wa-order" style="flex: 1;">Buy on WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       10. CLIENT BRIEFING & FOUNDERS PITCH MODAL
+       ========================================================================== -->
+  <div class="pitch-modal-backdrop" id="pitchModal" onclick="handlePitchBackdropClick(event)">
+    <div class="pitch-modal-card">
+      <button class="modal-close-btn" onclick="closePitchModal()">&times;</button>
+      
+      <div class="pitch-modal-header">
+        <div>
+          <h3>Engineering Scope for Macliva</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-top: 2px;">Senior Studio Delivery by Deepak &amp; Geetha (Uncoded Hub)</p>
+        </div>
+        <span style="background: var(--primary-tint); color: var(--primary); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px;">7-DAY SPRINT</span>
+      </div>
+
+      <p style="font-size: 14.5px; line-height: 1.6; margin-bottom: 20px;">
+        Dear Macliva Founder,<br><br>
+        We built this interactive e-commerce prototype matching your <strong>official brandbook font (Clash Grotesk), color palette (#5C7057), and initial 6 product samples</strong> so you can experience your website live before making any financial commitment.
+      </p>
+
+      <div class="pitch-scope-box">
+        <h4>What Is Included in Your ₹20,000 Complete Store Build:</h4>
+        <ul class="pitch-scope-list">
+          <li>✓ <strong>Custom Fast E-Commerce Storefront:</strong> Sub-second LCP speed (0.7s) on mobile 4G.</li>
+          <li>✓ <strong>Payment Gateway Integration:</strong> Automated Razorpay / Cashfree UPI, Debit/Credit &amp; NetBanking.</li>
+          <li>✓ <strong>1-Click WhatsApp Ordering Funnel:</strong> Pre-filled checkout messages with SKU and delivery address capture.</li>
+          <li>✓ <strong>Shiprocket / Delhivery Courier Integration:</strong> Automated pincode verification, weight calculation, and live tracking.</li>
+          <li>✓ <strong>Mobile-First Zero-Overflow UX:</strong> 100% responsive fluid shopping bag and product quick-views.</li>
+          <li>✓ <strong>100% Asset Ownership:</strong> You own the source code, hosting, and customer database with zero monthly Shopify app subscriptions.</li>
+        </ul>
+      </div>
+
+      <div class="pitch-pricing-row">
+        <div class="pitch-pricing-col">
+          <span>Total Project Fee</span>
+          <strong>₹20,000 Flat</strong>
+        </div>
+        <div class="pitch-pricing-col" style="text-align: right;">
+          <span>50% Advance to Kickoff</span>
+          <strong style="color: var(--primary);">₹10,000</strong>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="https://wa.me/918660819023?text=Hi%20Deepak%2C%20I%20reviewed%20the%20Macliva%20demo%20and%20am%20ready%20to%20send%20the%2050%25%20advance%20(Rs%2010%2C000)%20to%20start%20the%207-day%20sprint." class="btn-primary" style="flex: 1; justify-content: center; background: #25D366; text-decoration: none;" target="_blank" rel="noopener noreferrer">
+          Confirm Advance on WhatsApp (+91 86608 19023) →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating CTAs -->
+  <button class="floating-founder-pill" onclick="openPitchModal()" title="Review Studio Pitch & Commercial Scope">
+    <span>✦ Scope &amp; ₹20K Delivery Brief</span>
+  </button>
+
+  <a href="https://wa.me/918660819023?text=Hi%20Macliva%20Home%20Decor%2C%20I%20am%20browsing%20your%20collection%20and%20have%20a%20question." class="floating-wa-btn" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
+  </a>
+
+  <!-- ==========================================================================
+       11. FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <img src="assets/macliva/logo-white.png" alt="Macliva" style="height: 34px; margin-bottom: 16px;">
+        <p>Spaces that feel like home. Curating artisanal resin and brass composite home accents that celebrate tranquility, form, and quiet elegance.</p>
+        <p style="margin-top: 14px; font-size: 12px; color: rgba(250, 246, 240, 0.4);">
+          Engineered as a Private Custom E-Commerce Prototype by Uncoded Hub.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Curated Categories</h4>
+        <ul>
+          <li><a href="#products">Spiritual &amp; Dhyana Idols</a></li>
+          <li><a href="#products">Tabletop Accents &amp; Figuring</a></li>
+          <li><a href="#products">Contemporary Abstract Art</a></li>
+          <li><a href="#products">Scandinavian Décor Duo</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Care &amp; Delivery</h4>
+        <ul>
+          <li><a href="#unboxing">Zero Transit Damage Guarantee</a></li>
+          <li><a href="#unboxing">Pan-India Express Dispatch</a></li>
+          <li><a href="#unboxing">Custom Magnetic Gift Packaging</a></li>
+          <li><a href="#unboxing">7-Day Free Replacement</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Studio Desk</h4>
+        <p>Direct Inquiries &amp; Corporate Gifting:</p>
+        <p style="color: #FFFFFF; font-weight: 600; margin-top: 4px;">concierge@macliva.com</p>
+        <p style="color: #FFFFFF; font-weight: 600;">+91 86608 19023</p>
+        <p style="font-size: 12px; margin-top: 8px;">Studio Hours: 10 AM – 7 PM IST</p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      &copy; 2026 Macliva Home Décor. All Rights Reserved. • Private Prototype Showcase for Client Approval.
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       12. JAVASCRIPT ENGINE (PRODUCTS, CART, MODALS & WHATSAPP GENERATOR)
+       ========================================================================== -->
+  <script>
+    // 1. MACLIVA PRODUCT CATALOG DATA (EXACT ₹2,000 - ₹5,000 PRICING)
+    const MACLIVA_PRODUCTS = [
+      {
+        id: 'bodhi-buddha',
+        category: 'spiritual',
+        categoryLabel: 'Spiritual Signature',
+        title: 'The Bodhi Serenity Buddha Idol',
+        price: 3499,
+        originalPrice: 4999,
+        discount: 'Save 30%',
+        badge: 'Bestseller',
+        image: 'assets/macliva/product-bodhi-buddha.jpg',
+        material: 'High-Density Cold Cast Resin & Brass Inlay',
+        dimensions: '12.5" H × 9.8" W × 4.2" D',
+        weight: '1.85 kg (Solid & Heavyweight)',
+        finish: 'Antique Gilded Gold with Peacock Patina Robe',
+        description: 'Meditating Shakyamuni Buddha seated calmly beneath an intricately cast radiating Bodhi Tree canopy. Brings profound spiritual stillness, balance, and visual grandeur to pooja sanctuaries, living consoles, or foyer entryways.'
+      },
+      {
+        id: 'crescent-buddha',
+        category: 'spiritual',
+        categoryLabel: 'Spiritual Meditation',
+        title: 'The Crescent Dhyana Moon Buddha',
+        price: 2899,
+        originalPrice: 3999,
+        discount: 'Save 28%',
+        badge: 'Staff Pick',
+        image: 'assets/macliva/product-crescent-buddha.jpg',
+        material: 'Fine Cast Polystone & Architectural Resin',
+        dimensions: '11.2" H × 8.5" W × 3.8" D',
+        weight: '1.40 kg',
+        finish: 'Matte Obsidian Black with Celestial Blue Textured Robe',
+        description: 'A serene Buddha resting in blessing upon an open palm, framed by a crescent moon adorned with vibrant celestial blue and gold dot-work mosaic texturing. An exquisite centerpiece for calming bedroom side tables or reading alcoves.'
+      },
+      {
+        id: 'wine-holder',
+        category: 'tabletop',
+        categoryLabel: 'Tabletop & Bar Luxury',
+        title: 'The Parisian Haute Wine Cradle',
+        price: 2499,
+        originalPrice: 3499,
+        discount: 'Save 29%',
+        badge: 'Trending',
+        image: 'assets/macliva/product-wine-holder.jpg',
+        material: 'Sculptural Reinforced Polyresin',
+        dimensions: '13.0" H × 6.5" W × 5.0" D',
+        weight: '1.60 kg (Weighted Stability Base)',
+        finish: 'Deep Midnight Teal & Gilded Satin Gold',
+        description: 'An Art Deco inspired sculptural figurine of an elegant silhouette holding standard 750ml wine or champagne bottles. Perfectly engineered center of gravity ensures absolute bottle stability on dining credenzas or home bars.'
+      },
+      {
+        id: 'dancing-couple',
+        category: 'abstract',
+        categoryLabel: 'Modern Abstract Art',
+        title: 'The Eternal Rhythm Dancing Duo',
+        price: 3199,
+        originalPrice: 4499,
+        discount: 'Save 29%',
+        badge: 'Artisanal Cast',
+        image: 'assets/macliva/product-dancing-couple.jpg',
+        material: 'Premium Matte Black Resin & Burnished Brass',
+        dimensions: '10.5" H × 9.0" W × 3.5" D',
+        weight: '1.25 kg',
+        finish: 'Velvet Matte Black with 24K Gilded Headpieces',
+        description: 'A fluid abstract sculpture capturing the passion, balance, and harmony of two dancers in motion. Styled effortlessly over coffee table art books, floating credenza shelves, or minimalist fireplace mantels.'
+      },
+      {
+        id: 'golden-owl',
+        category: 'tabletop',
+        categoryLabel: 'Tabletop Accents',
+        title: 'The Golden Athenian Owl Figurine',
+        price: 2199,
+        originalPrice: 2999,
+        discount: 'Save 27%',
+        badge: 'Limited Run',
+        image: 'assets/macliva/product-golden-owl.jpg',
+        material: 'Embossed Ceramic & Gilded Resin Core',
+        dimensions: '7.8" H × 6.2" W × 4.8" D',
+        weight: '980 grams',
+        finish: 'Stippled Golden Featherwork with Obsidian Cabochon Eyes',
+        description: 'Intricately textured owl statuette symbolizing wisdom, prosperity, and protection. Featuring hand-stippled plumage and gleaming dark obsidian glass eyes that catch ambient room light gracefully.'
+      },
+      {
+        id: 'nordic-reindeer',
+        category: 'nordic',
+        categoryLabel: 'Scandinavian Sculptures',
+        title: 'The Nordic Origami Reindeer Duo',
+        price: 3899,
+        originalPrice: 5299,
+        discount: 'Save 26%',
+        badge: 'Pair Set',
+        image: 'assets/macliva/product-nordic-reindeer.jpg',
+        material: 'Faceted Architectural Composite Resin',
+        dimensions: 'Standing: 11.5" H | Resting: 7.5" H',
+        weight: '2.10 kg (Combined Pair)',
+        finish: 'Crisp Matte White with Electroplated Mirror Gold Antlers',
+        description: 'A set of two faceted geometric deer sculptures (one standing proudly, one poised in peaceful repose). Includes both pieces, creating an instantly recognizable Scandinavian luxury vignette for dining or foyer consoles.'
+      }
+    ];
+
+    // 2. SHOPPING BAG STATE
+    let cart = [];
+    let currentFilter = 'all';
+
+    // 3. RENDER CATALOG
+    function renderCatalog() {
+      const container = document.getElementById('productsContainer');
+      let filtered = MACLIVA_PRODUCTS;
+
+      if (currentFilter !== 'all') {
+        filtered = MACLIVA_PRODUCTS.filter(p => p.category === currentFilter);
+      }
+
+      container.innerHTML = filtered.map(product => {
+        return `
+          <article class="product-card" data-id="${product.id}">
+            <div class="product-media-wrap">
+              <div class="product-badges">
+                <span class="badge-pill badge-bestseller">${product.badge}</span>
+                <span class="badge-pill badge-discount">${product.discount}</span>
+              </div>
+              
+              <img src="${product.image}" alt="${product.title}" class="product-img" loading="lazy">
+              
+              <button class="quick-view-btn" onclick="openQuickModal('${product.id}')">
+                Quick View &amp; Specs
+              </button>
+            </div>
+
+            <div class="product-body">
+              <span class="product-category">${product.categoryLabel}</span>
+              <h3 class="product-title">${product.title}</h3>
+              
+              <div class="product-spec-row">
+                <span>⚖️ ${product.weight.split(' ')[0]} kg</span>
+                <span>•</span>
+                <span>📐 ${product.dimensions.split(' ')[0]}</span>
+              </div>
+
+              <div class="product-price-row">
+                <span class="current-price">₹${product.price.toLocaleString('en-IN')}</span>
+                <span class="original-price">₹${product.originalPrice.toLocaleString('en-IN')}</span>
+                <span class="save-tag">${product.discount}</span>
+              </div>
+
+              <div class="product-actions-grid">
+                <button class="btn-add-bag" onclick="addToBag('${product.id}')">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  <span>Add to Bag</span>
+                </button>
+                <button class="btn-wa-order" onclick="orderItemViaWhatsApp('${product.id}')">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
+                  <span>Buy on WhatsApp</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    // 4. FILTERING & SORTING
+    function filterCatalog(category, btn) {
+      currentFilter = category;
+      document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      renderCatalog();
+    }
+
+    function sortCatalog(criteria) {
+      if (criteria === 'price-low') {
+        MACLIVA_PRODUCTS.sort((a, b) => a.price - b.price);
+      } else if (criteria === 'price-high') {
+        MACLIVA_PRODUCTS.sort((a, b) => b.price - a.price);
+      } else {
+        // default order
+        MACLIVA_PRODUCTS.sort((a, b) => a.id.localeCompare(b.id));
+      }
+      renderCatalog();
+    }
+
+    // 5. SHOPPING BAG OPERATIONS
+    function addToBag(productId) {
+      const product = MACLIVA_PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+
+      const existing = cart.find(item => item.id === productId);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ ...product, qty: 1 });
+      }
+
+      updateCartUI();
+      toggleCartDrawer(true);
+    }
+
+    function updateCartQty(productId, delta) {
+      const item = cart.find(i => i.id === productId);
+      if (!item) return;
+
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(i => i.id !== productId);
+      }
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const totalItems = cart.reduce((sum, i) => sum + i.qty, 0);
+      const subtotal = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+      
+      document.getElementById('navCartCount').innerText = totalItems;
+      document.getElementById('cartItemCount').innerText = totalItems;
+      document.getElementById('cartSubtotal').innerText = '₹' + subtotal.toLocaleString('en-IN');
+      document.getElementById('cartTotal').innerText = '₹' + subtotal.toLocaleString('en-IN');
+
+      // Free shipping threshold ₹2,999
+      const banner = document.getElementById('freeShippingBanner');
+      if (subtotal >= 2999) {
+        banner.innerHTML = '🎉 <strong>Congratulations!</strong> You have unlocked Free Insured Express Delivery.';
+        banner.style.background = '#E8F5E9';
+        banner.style.color = '#2E7D32';
+      } else if (subtotal > 0) {
+        const remaining = 2999 - subtotal;
+        banner.innerHTML = `✦ Add <strong>₹${remaining.toLocaleString('en-IN')}</strong> more to unlock Free Pan-India Shipping.`;
+        banner.style.background = 'var(--primary-tint)';
+        banner.style.color = 'var(--primary-dark)';
+      } else {
+        banner.innerHTML = '✦ Free Pan-India Insured Express Delivery on orders above ₹2,999.';
+        banner.style.background = 'var(--primary-tint)';
+        banner.style.color = 'var(--primary-dark)';
+      }
+
+      const listContainer = document.getElementById('cartItemsList');
+      if (cart.length === 0) {
+        listContainer.innerHTML = `
+          <div style="text-align: center; padding: 48px 16px; color: var(--text-muted);">
+            <p style="font-size: 16px; margin-bottom: 8px;">Your bag is currently empty.</p>
+            <p style="font-size: 13px;">Explore our signature curations above to add your first piece.</p>
+          </div>
+        `;
+        return;
+      }
+
+      listContainer.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.title}" class="cart-item-thumb">
+          <div class="cart-item-meta">
+            <h5 class="cart-item-title">${item.title}</h5>
+            <div class="cart-item-price">₹${item.price.toLocaleString('en-IN')}</div>
+            <div class="cart-qty-ctrl">
+              <button class="qty-btn" onclick="updateCartQty('${item.id}', -1)">&minus;</button>
+              <span class="qty-num">${item.qty}</span>
+              <button class="qty-btn" onclick="updateCartQty('${item.id}', 1)">&plus;</button>
+            </div>
+          </div>
+          <button style="color: #999; font-size: 18px; align-self: flex-start;" onclick="updateCartQty('${item.id}', -999)" title="Remove item">&times;</button>
+        </div>
+      `).join('');
+    }
+
+    function toggleCartDrawer(open) {
+      const drawer = document.getElementById('cartDrawer');
+      const backdrop = document.getElementById('cartBackdrop');
+      if (open) {
+        drawer.classList.add('open');
+        backdrop.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      } else {
+        drawer.classList.remove('open');
+        backdrop.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // 6. QUICK VIEW MODAL
+    function openQuickModal(productId) {
+      const p = MACLIVA_PRODUCTS.find(item => item.id === productId);
+      if (!p) return;
+
+      document.getElementById('modalImg').src = p.image;
+      document.getElementById('modalCategory').innerText = p.categoryLabel;
+      document.getElementById('modalTitle').innerText = p.title;
+      document.getElementById('modalPrice').innerText = '₹' + p.price.toLocaleString('en-IN');
+      document.getElementById('modalDesc').innerText = p.description;
+      document.getElementById('modalMaterial').innerText = p.material;
+      document.getElementById('modalDimensions').innerText = p.dimensions;
+      document.getElementById('modalWeight').innerText = p.weight;
+
+      document.getElementById('modalAddBtn').onclick = () => {
+        addToBag(p.id);
+        closeQuickModal();
+      };
+
+      document.getElementById('modalWaBtn').onclick = () => {
+        orderItemViaWhatsApp(p.id);
+      };
+
+      document.getElementById('quickModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeQuickModal() {
+      document.getElementById('quickModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function handleModalBackdropClick(e) {
+      if (e.target.id === 'quickModal') closeQuickModal();
+    }
+
+    // 7. PITCH MODAL
+    function openPitchModal() {
+      document.getElementById('pitchModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePitchModal() {
+      document.getElementById('pitchModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function handlePitchBackdropClick(e) {
+      if (e.target.id === 'pitchModal') closePitchModal();
+    }
+
+    // 8. WHATSAPP AUTOMATED ORDER FLOWS
+    const MACLIVA_STUDIO_WHATSAPP = '918660819023';
+
+    function orderItemViaWhatsApp(productId) {
+      const p = MACLIVA_PRODUCTS.find(item => item.id === productId);
+      if (!p) return;
+
+      const text = `Hello Macliva Home Décor Studio,
+
+I would like to place an order for:
+
+*Product:* ${p.title}
+*Price:* ₹${p.price.toLocaleString('en-IN')}
+*Material:* ${p.material}
+
+Please share delivery confirmation and payment link.
+
+*My Delivery Pincode:* `;
+      const url = `https://wa.me/${MACLIVA_STUDIO_WHATSAPP}?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+    }
+
+    function checkoutViaWhatsApp() {
+      if (cart.length === 0) {
+        alert('Please add at least one item to your bag.');
+        return;
+      }
+
+      let summary = 'Hello Macliva Home Décor Studio,
+
+I would like to order the following pieces from your collection:
+
+';
+      let total = 0;
+
+      cart.forEach((item, idx) => {
+        const itemTotal = item.price * item.qty;
+        total += itemTotal;
+        summary += `${idx + 1}. *${item.title}* × ${item.qty} = ₹${itemTotal.toLocaleString('en-IN')}
+`;
+      });
+
+      summary += `
+*Total Amount:* ₹${total.toLocaleString('en-IN')}`;
+      summary += `
+*Shipping:* Free Insured Pan-India Delivery`;
+      summary += `
+
+*My Delivery Name & Address:* `;
+
+      const url = `https://wa.me/${MACLIVA_STUDIO_WHATSAPP}?text=${encodeURIComponent(summary)}`;
+      window.open(url, '_blank');
+    }
+
+    function triggerMockPayment() {
+      if (cart.length === 0) {
+        alert('Your bag is empty.');
+        return;
+      }
+      const total = cart.reduce((s, i) => s + (i.price * i.qty), 0);
+      alert(`[Online Payment Gateway Mock]
+
+Initiating secure Razorpay / UPI checkout for ₹${total.toLocaleString('en-IN')}.
+
+In the final live launch, this connects directly to Macliva's business bank account with zero platform commission.`);
+    }
+
+    function checkPincodePrompt() {
+      const pin = prompt('Enter your 6-digit delivery pincode:', '560038');
+      if (pin && pin.trim().length === 6) {
+        document.getElementById('pincodeDisplay').innerHTML = `Deliver to: <strong>${pin.trim()} (Express Available)</strong>`;
+      }
+    }
+
+    // 9. ROOM MATCHER LOGIC
+    const ROOM_DATA = {
+      living: {
+        title: 'Living Room Foyer & Console Harmony',
+        desc: 'Foyer consoles set the sensory baseline for your entire residence. Low-profile horizontal consoles benefit from balanced vertical silhouettes that draw the eye without cluttering sightlines.',
+        recommended: 'The Nordic Origami Reindeer Duo or The Bodhi Serenity Buddha',
+        img: 'assets/macliva/product-nordic-reindeer.jpg',
+        specs: [
+          'Ideal Console Depth: 12" to 16"',
+          'Recommended Placement: Centered on travertine/marble or flanked by warm 2700K lamp lighting',
+          'Aesthetic Accentuation: Pair with textured linen or stone trays'
+        ]
+      },
+      pooja: {
+        title: 'Meditation & Sacred Pooja Alcove',
+        desc: 'Sacred alcoves require authentic physical gravitas. Unlike hollow stamped metal idols, cold-cast resin and brass cores absorb ambient vibration and glow warmly under traditional oil lamps (diyas).',
+        recommended: 'The Bodhi Serenity Buddha or Crescent Dhyana Buddha',
+        img: 'assets/macliva/product-bodhi-buddha.jpg',
+        specs: [
+          'Non-Tarnish Brass Finish: Safe near non-direct flame',
+          'Vastu / Energy Alignment: North-East or East facing placement',
+          'Surface Requirement: Solid teak, marble, or brass base'
+        ]
+      },
+      bar: {
+        title: 'Dining Credenza & Bespoke Home Bar',
+        desc: 'Bar stations and dining consoles demand conversational centerpieces that blend playful elegance with practical utility.',
+        recommended: 'The Parisian Haute Wine Cradle',
+        img: 'assets/macliva/product-wine-holder.jpg',
+        specs: [
+          'Bottle Compatibility: Holds 750ml wine, champagne, and single malt silhouettes',
+          'Surface Protection: Non-scratch felt-padded weighted base',
+          'Lighting Pairing: Stunning under recessed spot or overhead pendant illumination'
+        ]
+      },
+      desk: {
+        title: 'Executive Study & Architectural Desk',
+        desc: 'Executive workspaces thrive when adorned with tactile reminders of wisdom, focus, and organic form that provide visual relief during intense focus sessions.',
+        recommended: 'The Golden Athenian Owl or Eternal Rhythm Dancing Duo',
+        img: 'assets/macliva/product-golden-owl.jpg',
+        specs: [
+          'Desk Footprint: Compact 7.8" footprint fits beside monitor setups without crowding',
+          'Tactile Texture: Stippled featherwork provides pleasing tactile feedback',
+          'Symbolism: Athenian wisdom and financial vigilance'
+        ]
+      }
+    };
+
+    function selectRoom(key, btn) {
+      document.querySelectorAll('.matcher-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const data = ROOM_DATA[key];
+      const container = document.getElementById('matcherContent');
+
+      container.innerHTML = `
+        <div>
+          <img src="${data.img}" alt="${data.title}" class="matcher-visual-img">
+        </div>
+        <div class="matcher-info">
+          <span style="font-size: 12px; color: var(--primary); font-weight: 600; text-transform: uppercase;">Curator's Recommendation</span>
+          <h3>${data.title}</h3>
+          <p>${data.desc}</p>
+          <ul class="matcher-specs-list">
+            ${data.specs.map(s => `<li><span style="color: var(--primary); font-weight: 700;">✓</span> ${s}</li>`).join('')}
+          </ul>
+          <a href="#products" class="btn-primary" style="font-size: 13.5px; padding: 10px 22px;">
+            Shop Recommended: ${data.recommended} →
+          </a>
+        </div>
+      `;
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCatalog();
+      selectRoom('living', document.querySelector('.matcher-tab-btn.active'));
+    });
+  </script>
+</body>
+</html>
