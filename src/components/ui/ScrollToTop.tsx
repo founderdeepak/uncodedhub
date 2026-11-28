@@ -48,8 +48,8 @@ export function ScrollToTop() {
       onClick={scrollUp}
       aria-label="Scroll back to top"
       title="Back to top"
-      className={`fixed bottom-6 left-6 z-[80] print:hidden
-        group w-12 h-12 rounded-full
+      className={`fixed bottom-[4.75rem] sm:bottom-24 right-4 sm:right-6 z-[80] print:hidden
+        group w-10 h-10 sm:w-12 sm:h-12 rounded-full
         bg-ink text-paper
         shadow-[0_8px_24px_rgba(0,0,0,0.28)] hover:shadow-[0_8px_28px_rgba(199,7,75,0.45)]
         flex items-center justify-center

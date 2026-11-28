@@ -57,6 +57,7 @@ Every page, component, client deliverable, and all 50 industry demos must strict
 18. Restyle default shadcn / template primitives.
 19. No fade-in on every section (immediate, fast rendering).
 20. Custom favicon + complete meta tags.
+21. Mobile viewport discipline & zero-overlap ergonomics (The Honor / Geetha Standard: zero-overflow badges, responsive browser mockup bars, stacked CTAs, bottom-right stacked floating controls).
 
 ## gstack
 

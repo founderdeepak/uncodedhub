@@ -263,17 +263,17 @@ function FlagshipCaseStudyCard({
   const signatureTheme = project.themes[0];
 
   return (
-    <div className="bg-paper-raised border border-rule-strong rounded-[32px] p-6 sm:p-10 shadow-sm hover:border-signal/50 transition-all duration-300">
+    <div className="bg-paper-raised border border-rule-strong rounded-[24px] sm:rounded-[32px] p-4 sm:p-8 lg:p-10 shadow-sm hover:border-signal/50 transition-all duration-300">
       <div className="grid lg:grid-cols-12 gap-8 items-center">
         {/* Left Column: Story & Architecture */}
         <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6">
           <div>
             <div className="flex items-center gap-2 mb-3 flex-wrap">
-              <span className="inline-block text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-signal/15 text-signal border border-signal/25">
+              <span className="inline-block text-[10px] sm:text-[11px] font-sans font-semibold px-2.5 py-1 rounded-lg sm:rounded-full bg-signal/15 text-signal border border-signal/25 max-w-full break-words leading-tight">
                 {badgeText}
               </span>
-              <span className="text-xs font-mono text-muted">Specimen #{project.num}</span>
-              <span className="text-[11px] font-mono text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+              <span className="text-[11px] sm:text-xs font-mono text-muted">Specimen #{project.num}</span>
+              <span className="text-[10px] sm:text-[11px] font-mono text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
                 Live Concept Build
               </span>
             </div>
@@ -289,21 +289,21 @@ function FlagshipCaseStudyCard({
 
           {/* Storytelling Breakdown: The Challenge & Approach */}
           <div className="space-y-4 text-xs sm:text-sm">
-            <div className="p-3.5 bg-paper rounded-[16px] border border-rule">
+            <div className="p-3.5 bg-paper rounded-[12px] sm:rounded-[16px] border border-rule overflow-hidden">
               <strong className="text-signal block font-mono text-[11px] uppercase tracking-wider mb-1">
                 The Business Challenge:
               </strong>
               <p className="text-muted leading-relaxed">{challenge}</p>
             </div>
 
-            <div className="p-3.5 bg-paper rounded-[16px] border border-rule">
+            <div className="p-3.5 bg-paper rounded-[12px] sm:rounded-[16px] border border-rule overflow-hidden">
               <strong className="text-ink-soft block font-mono text-[11px] uppercase tracking-wider mb-1">
                 Our Strategic Approach:
               </strong>
               <p className="text-muted leading-relaxed">{approach}</p>
             </div>
 
-            <div className="p-3.5 bg-paper rounded-[16px] border border-rule">
+            <div className="p-3.5 bg-paper rounded-[12px] sm:rounded-[16px] border border-rule overflow-hidden">
               <strong className="text-emerald-700 block font-mono text-[11px] uppercase tracking-wider mb-1">
                 Why This Wins Clients:
               </strong>
@@ -312,7 +312,7 @@ function FlagshipCaseStudyCard({
           </div>
 
           {/* Signature Aesthetic Architecture Badge */}
-          <div className="p-3.5 bg-paper rounded-[16px] border border-rule flex items-center justify-between gap-3">
+          <div className="p-3.5 bg-paper rounded-[12px] sm:rounded-[16px] border border-rule flex items-center justify-between gap-3 overflow-hidden">
             <div>
               <span className="text-[10px] font-mono text-muted uppercase tracking-wider block">
                 Signature Aesthetic:
@@ -333,13 +333,13 @@ function FlagshipCaseStudyCard({
             </div>
           </div>
 
-          {/* Action CTAs */}
-          <div className="flex items-center gap-3 pt-2">
+          {/* Action CTAs: stacked full-width on mobile, 2-col on sm+ */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 w-full">
             <a
               href={project.url}
               target="_blank"
               rel="noreferrer noopener"
-              className="btn-primary !py-3 !px-6 text-xs inline-flex items-center gap-2 cursor-pointer shadow-sm"
+              className="btn-primary !py-3 !px-4 text-xs inline-flex items-center justify-center gap-2 cursor-pointer shadow-sm w-full text-center"
             >
               <span>Explore Live Demonstration</span>
               <span>↗</span>
@@ -347,7 +347,7 @@ function FlagshipCaseStudyCard({
             <button
               type="button"
               onClick={() => onOpenPreview(project)}
-              className="btn-secondary !py-3 !px-4 text-xs inline-flex items-center gap-1.5 cursor-pointer bg-paper border border-rule-strong hover:border-signal"
+              className="btn-secondary !py-3 !px-4 text-xs inline-flex items-center justify-center gap-1.5 cursor-pointer bg-paper border border-rule-strong hover:border-signal w-full text-center"
             >
               <IconEye className="w-3.5 h-3.5" />
               <span>Inspect Viewport</span>
@@ -357,19 +357,19 @@ function FlagshipCaseStudyCard({
 
         {/* Right Column: Visual Frame */}
         <div className="lg:col-span-7">
-          <div className="relative aspect-[16/10] w-full rounded-[20px] overflow-hidden bg-ink border border-rule-strong shadow-md group">
-            {/* Top Browser Bar */}
-            <div className="flex items-center justify-between px-4 py-2.5 bg-ink text-paper text-[11px] font-mono border-b border-white/10 select-none">
-              <div className="flex items-center gap-1.5">
+          <div className="relative aspect-[16/10] w-full rounded-[16px] sm:rounded-[20px] overflow-hidden bg-ink border border-rule-strong shadow-md group">
+            {/* Top Browser Bar: clean responsive layout without text collision */}
+            <div className="flex items-center justify-between px-3 sm:px-4 py-2.5 bg-ink text-paper text-[11px] font-mono border-b border-white/10 select-none gap-2">
+              <div className="flex items-center gap-1.5 shrink-0">
                 <span className="w-2.5 h-2.5 rounded-full bg-white/20 inline-block" />
                 <span className="w-2.5 h-2.5 rounded-full bg-white/20 inline-block" />
                 <span className="w-2.5 h-2.5 rounded-full bg-white/20 inline-block" />
               </div>
-              <div className="flex items-center gap-2 text-white/80">
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                <span>{project.id}.uncodedhub.com</span>
+              <div className="flex items-center gap-1.5 text-white/80 min-w-0 truncate text-[10px] sm:text-[11px]">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+                <span className="truncate">{project.id}.uncodedhub.com</span>
               </div>
-              <span className="text-[10px] text-signal-bright font-mono">
+              <span className="hidden sm:inline-block text-[10px] text-signal-bright font-mono shrink-0">
                 {signatureTheme.style}
               </span>
             </div>

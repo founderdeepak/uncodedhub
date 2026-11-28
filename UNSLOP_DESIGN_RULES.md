@@ -85,3 +85,15 @@ Every page on `uncodedhub.com`, every client deliverable, and all 50 live indust
 ### 20. Custom Favicon + Complete Meta Tags
 * **Rule**: Never leave default framework favicons or generic boilerplate meta titles.
 * **Standard**: Provide dedicated SVG and PNG touch favicons, complete OpenGraph images, descriptive canonical URLs, and schema markup on every page.
+
+---
+
+### 21. Mobile Viewport Discipline & Zero-Overlap Ergonomics (The Honor / Geetha Standard)
+* **Rule**: Never allow badges, pills, browser mockup bars, or action buttons to overflow card boundaries, squish into jagged heights, or have floating action buttons obscure reading copy on 360px–390px mobile screens.
+* **Standards**:
+  1. **Zero Text-Pill Overflow**: Badges and pills must have `max-w-full`, `break-words`, and `leading-tight` with `rounded-xl sm:rounded-full` so long case study or category labels never protrude past card boundaries on compact mobile screens.
+  2. **Browser Mockup Bar Responsiveness**: Mockup window bars must have `min-w-0 flex-1 truncate` on the URL bar (`law-firm.uncodedhub.com`) and hide secondary aesthetic style tags on mobile (`hidden sm:inline-block`) so mockup headers never squeeze or truncate into broken fragments (`law-`, `dental-`).
+  3. **Action Button Stacking**: Action button pairs side-by-side must stack full-width on mobile (`grid grid-cols-1 sm:grid-cols-2 gap-3 w-full`) with equal padding (`!py-3 !px-4`) and equal height, eliminating jagged vertical misalignment.
+  4. **Stacked Bottom-Right Floating Controls**: Never place floating action buttons on opposite bottom corners on mobile. Stack `ScrollToTop` directly above `FloatingWhatsApp` on the bottom right (`bottom-[4.75rem] sm:bottom-24 right-4 sm:right-6` and `bottom-4 sm:bottom-6 right-4 sm:right-6`). The entire left-to-right reading area of headings, paragraphs, and trust statements remains 100% unobstructed.
+  5. **Card Padding Scaling & Radius Harmony**: Outer card containers must scale down padding on compact screens (`p-4 sm:p-8 lg:p-10`), with inner cards maintaining geometric radius harmony ($R_{\text{inner}} = R_{\text{outer}} - \text{Padding}$) so inner cards never stick out.
+
