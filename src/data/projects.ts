@@ -45,7 +45,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#876239',
       },
     ],
-    nicheSlug: '/blog/industries/interior-designers',
+    nicheSlug: '/web-design/interior-designers/',
   },
   {
     id: 'real-estate',
@@ -69,7 +69,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#1E3A2F',
       },
     ],
-    nicheSlug: '/blog/industries/real-estate',
+    nicheSlug: '/web-design/real-estate/',
   },
   {
     id: 'dental-clinic',
@@ -93,7 +93,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#2D5A4C',
       },
     ],
-    nicheSlug: '/blog/industries/dental-clinics',
+    nicheSlug: '/web-design/dental-clinics/',
   },
   {
     id: 'wedding-photography',
@@ -117,7 +117,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#8C6D58',
       },
     ],
-    nicheSlug: '/blog/industries/wedding-photographers',
+    nicheSlug: '/web-design/wedding-photographers/',
   },
   {
     id: 'home-renovation',
@@ -141,7 +141,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#8B5A2B',
       },
     ],
-    nicheSlug: '/blog/industries/home-renovation',
+    nicheSlug: '/web-design/home-renovation/',
   },
   {
     id: 'executive-coaching',
@@ -165,7 +165,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#B38B59',
       },
     ],
-    nicheSlug: '/blog/industries/coaches-consultants',
+    nicheSlug: '/web-design/coaches-consultants/',
   },
   {
     id: 'educational-academy',
@@ -189,7 +189,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#1E3A8A',
       },
     ],
-    nicheSlug: '/blog/industries/educational-academy',
+    nicheSlug: '/web-design/educational-academy/',
   },
   {
     id: 'gym-fitness-club',
@@ -213,7 +213,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#EF4444',
       },
     ],
-    nicheSlug: '/blog/industries/gym-fitness-club',
+    nicheSlug: '/web-design/gym-fitness-club/',
   },
   {
     id: 'business-portfolio',
@@ -237,7 +237,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#D97706',
       },
     ],
-    nicheSlug: '/blog/industries/business-portfolio',
+    nicheSlug: '/web-design/business-portfolio/',
   },
   {
     id: 'spa-wellness',
@@ -261,7 +261,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#C48A54',
       },
     ],
-    nicheSlug: '/blog/industries/spa-wellness',
+    nicheSlug: '/web-design/spa-wellness/',
   },
   {
     id: 'salon-beauty',
@@ -285,7 +285,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#D4AF37',
       },
     ],
-    nicheSlug: '/blog/industries/salon-beauty',
+    nicheSlug: '/web-design/salon-beauty/',
   },
   {
     id: 'fitness-coach',
@@ -309,7 +309,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#F97316',
       },
     ],
-    nicheSlug: '/blog/industries/fitness-coach',
+    nicheSlug: '/web-design/fitness-coach/',
   },
   {
     id: 'yoga-meditation',
@@ -333,7 +333,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#C27D38',
       },
     ],
-    nicheSlug: '/blog/industries/yoga-meditation',
+    nicheSlug: '/web-design/yoga-meditation/',
   },
   {
     id: 'creative-portfolio',
@@ -357,7 +357,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#A3E635',
       },
     ],
-    nicheSlug: '/blog/industries/creative-portfolio',
+    nicheSlug: '/web-design/creative-portfolio/',
   },
   {
     id: 'healthcare-diagnostics',
@@ -381,7 +381,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#1D4ED8',
       },
     ],
-    nicheSlug: '/blog/industries/healthcare-diagnostics',
+    nicheSlug: '/web-design/healthcare-diagnostics/',
   },
   {
     id: 'clinic-polyclinic',
@@ -405,7 +405,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#0369A1',
       },
     ],
-    nicheSlug: '/blog/industries/clinic-polyclinic',
+    nicheSlug: '/web-design/clinic-polyclinic/',
   },
   {
     id: 'doctor-specialist',
@@ -429,7 +429,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#0284C7',
       },
     ],
-    nicheSlug: '/blog/industries/doctor-specialist',
+    nicheSlug: '/web-design/doctor-specialist/',
   },
   {
     id: 'restaurant',
@@ -501,7 +501,7 @@ export const PROJECTS: Project[] = [
         accentHex: '#F4C430',
       },
     ],
-    nicheSlug: '/web-design/astrology/',
+    nicheSlug: '/web-design/astrology-vastu/',
   },
   {
     id: 'construction',
@@ -520,12 +520,12 @@ export const PROJECTS: Project[] = [
       {
         name: 'Industrial Slate & Amber',
         style: 'Heavy Infrastructure',
-        image: '/demos/thumbnails/construction-theme1.webp',
+        image: '/demos/assets/demo-21-construction/01_Hero_Showcase.png',
         palette: ['#0A0D14', '#F59E0B', '#F9FAFB'],
         accentHex: '#F59E0B',
       },
     ],
-    nicheSlug: '/web-design/construction-contractors/',
+    nicheSlug: '/web-design/construction-companies/',
   },
   {
     id: 'accounting-firm',
@@ -544,7 +544,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Swiss Financial Navy',
         style: 'Big-4 Advisory Caliber',
-        image: '/demos/thumbnails/accounting-firm-theme1.webp',
+        image: '/demos/assets/demo-22-accounting/01_Hero_Showcase.png',
         palette: ['#070B19', '#00D2FF', '#F8FAFC'],
         accentHex: '#00D2FF',
       },
@@ -567,7 +567,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Warm Earth Stone',
         style: 'Earthy Minimalist',
-        image: '/demos/thumbnails/architects-theme1.webp',
+        image: '/demos/assets/demo-23-architects/01_Hero_Showcase.png',
         palette: ['#0F0E0D', '#D4A373', '#F4EFEA'],
         accentHex: '#D4A373',
       },
@@ -590,7 +590,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Deep Plantation',
         style: 'Colonial Heritage',
-        image: '/demos/thumbnails/hotels-resorts-theme1.webp',
+        image: '/demos/assets/demo-24-hotels/01_Hero_Showcase.png',
         palette: ['#0A120E', '#C49A45', '#F4EFEA'],
         accentHex: '#C49A45',
       },
@@ -613,7 +613,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Cyber Terminal',
         style: 'Data Grid Dark',
-        image: '/demos/thumbnails/marketing-agencies-theme1.webp',
+        image: '/demos/assets/demo-25-marketing/01_Hero_Showcase.png',
         palette: ['#080E14', '#00E599', '#F4EFEA'],
         accentHex: '#00E599',
       },
@@ -636,7 +636,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Wall Street Navy',
         style: 'Executive Blue',
-        image: '/demos/thumbnails/recruitment-agencies-theme1.webp',
+        image: '/demos/assets/demo-26-recruitment/01_Hero_Showcase.png',
         palette: ['#080C16', '#60A5FA', '#F4EFEA'],
         accentHex: '#60A5FA',
       },
@@ -659,7 +659,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Amber Apothecary',
         style: 'Dark Botanical',
-        image: '/demos/thumbnails/ecommerce-brands-theme1.webp',
+        image: '/demos/assets/demo-27-ecommerce/01_Hero_Showcase.png',
         palette: ['#0C0A09', '#F59E0B', '#F4EFEA'],
         accentHex: '#F59E0B',
       },
@@ -682,7 +682,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Deep Sage Garden',
         style: 'Botanical Earth',
-        image: '/demos/thumbnails/landscaping-theme1.webp',
+        image: '/demos/assets/demo-28-landscaping/01_Hero_Showcase.png',
         palette: ['#07120B', '#86EFAC', '#F4EFEA'],
         accentHex: '#86EFAC',
       },
@@ -705,7 +705,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Regal Amethyst',
         style: 'Palace Luxury',
-        image: '/demos/thumbnails/event-planners-theme1.webp',
+        image: '/demos/assets/demo-29-events/01_Hero_Showcase.png',
         palette: ['#110819', '#E879F9', '#F4EFEA'],
         accentHex: '#E879F9',
       },
@@ -728,7 +728,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Clinical Cyan',
         style: 'Sterile Trust',
-        image: '/demos/thumbnails/veterinary-clinics-theme1.webp',
+        image: '/demos/assets/demo-30-veterinary/01_Hero_Showcase.png',
         palette: ['#06131D', '#38BDF8', '#F4EFEA'],
         accentHex: '#38BDF8',
       },
@@ -751,7 +751,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Carbon Rosso',
         style: 'Supercar Racing',
-        image: '/demos/thumbnails/automotive-garages-theme1.webp',
+        image: '/demos/assets/demo-31-automotive/01_Hero_Showcase.png',
         palette: ['#120707', '#F87171', '#F4EFEA'],
         accentHex: '#F87171',
       },
@@ -774,7 +774,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Clean Teal',
         style: 'Sterile Hygiene',
-        image: '/demos/thumbnails/cleaning-services-theme1.webp',
+        image: '/demos/assets/demo-32-cleaning/01_Hero_Showcase.png',
         palette: ['#061615', '#2DD4BF', '#F4EFEA'],
         accentHex: '#2DD4BF',
       },
@@ -797,7 +797,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Industrial Forge',
         style: 'Heavy Tooling',
-        image: '/demos/thumbnails/manufacturing-oems-theme1.webp',
+        image: '/demos/assets/demo-33-manufacturing/01_Hero_Showcase.png',
         palette: ['#140A04', '#FB923C', '#F4EFEA'],
         accentHex: '#FB923C',
       },
@@ -820,7 +820,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Emerald Vault',
         style: 'Sovereign Wealth',
-        image: '/demos/thumbnails/financial-advisors-theme1.webp',
+        image: '/demos/assets/demo-34-financial/01_Hero_Showcase.png',
         palette: ['#06140D', '#F59E0B', '#F4EFEA'],
         accentHex: '#F59E0B',
       },
@@ -843,7 +843,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Fleet Cobalt',
         style: 'Heavy Highway',
-        image: '/demos/thumbnails/logistics-transport-theme1.webp',
+        image: '/demos/assets/demo-35-logistics/01_Hero_Showcase.png',
         palette: ['#08101E', '#60A5FA', '#F4EFEA'],
         accentHex: '#60A5FA',
       },
@@ -866,7 +866,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Royal Crimson Gold',
         style: 'Heritage Bridal',
-        image: '/demos/thumbnails/jewellery-stores-theme1.webp',
+        image: '/demos/assets/demo-36-jewellery/01_Hero_Showcase.png',
         palette: ['#14060B', '#FBBF24', '#F4EFEA'],
         accentHex: '#FBBF24',
       },
@@ -889,7 +889,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Warm Scandinavian Oak',
         style: 'Nordic Flex',
-        image: '/demos/thumbnails/coworking-spaces-theme1.webp',
+        image: '/demos/assets/demo-37-coworking/01_Hero_Showcase.png',
         palette: ['#130E05', '#FDE047', '#F4EFEA'],
         accentHex: '#FDE047',
       },
@@ -912,7 +912,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Sovereign Diplomatic',
         style: 'Consular Navy',
-        image: '/demos/thumbnails/immigration-consultants-theme1.webp',
+        image: '/demos/assets/demo-38-immigration/01_Hero_Showcase.png',
         palette: ['#080E1D', '#93C5FD', '#F4EFEA'],
         accentHex: '#93C5FD',
       },
@@ -935,7 +935,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Solar Flare Gold',
         style: 'Renewable Power',
-        image: '/demos/thumbnails/solar-companies-theme1.webp',
+        image: '/demos/assets/demo-39-solar/01_Hero_Showcase.png',
         palette: ['#130F04', '#FACC15', '#F4EFEA'],
         accentHex: '#FACC15',
       },
@@ -958,7 +958,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Warm Croissant Crust',
         style: 'French Boulangerie',
-        image: '/demos/thumbnails/bakeries-patisseries-theme1.webp',
+        image: '/demos/assets/demo-40-bakeries/01_Hero_Showcase.png',
         palette: ['#120A04', '#FBBF24', '#F4EFEA'],
         accentHex: '#FBBF24',
       },
@@ -981,7 +981,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Copper Kettle Amber',
         style: 'Industrial Taproom',
-        image: '/demos/thumbnails/breweries-bars-theme1.webp',
+        image: '/demos/assets/demo-41-breweries/01_Hero_Showcase.png',
         palette: ['#110903', '#F59E0B', '#F4EFEA'],
         accentHex: '#F59E0B',
       },
@@ -1004,7 +1004,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Tactical Cyber Green',
         style: 'Intrusion Radar',
-        image: '/demos/thumbnails/security-surveillance-theme1.webp',
+        image: '/demos/assets/demo-42-security/01_Hero_Showcase.png',
         palette: ['#05140E', '#34D399', '#F4EFEA'],
         accentHex: '#34D399',
       },
@@ -1027,7 +1027,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Cryo Ice Blue',
         style: 'Precision Thermal',
-        image: '/demos/thumbnails/hvac-contractors-theme1.webp',
+        image: '/demos/assets/demo-43-hvac/01_Hero_Showcase.png',
         palette: ['#06131D', '#38BDF8', '#F4EFEA'],
         accentHex: '#38BDF8',
       },
@@ -1050,7 +1050,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Shield Forest',
         style: 'Certified Bio-Shield',
-        image: '/demos/thumbnails/pest-control-theme1.webp',
+        image: '/demos/assets/demo-44-pest/01_Hero_Showcase.png',
         palette: ['#06150B', '#4ADE80', '#F4EFEA'],
         accentHex: '#4ADE80',
       },
@@ -1073,7 +1073,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Kraft Transit Amber',
         style: 'Heavy Packaging',
-        image: '/demos/thumbnails/packers-movers-theme1.webp',
+        image: '/demos/assets/demo-45-movers/01_Hero_Showcase.png',
         palette: ['#130C04', '#FBBF24', '#F4EFEA'],
         accentHex: '#FBBF24',
       },
@@ -1096,7 +1096,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Royal Crimson Gold',
         style: 'Maharaja Feast',
-        image: '/demos/thumbnails/caterers-theme1.webp',
+        image: '/demos/assets/demo-46-caterers/01_Hero_Showcase.png',
         palette: ['#140606', '#F59E0B', '#F4EFEA'],
         accentHex: '#F59E0B',
       },
@@ -1119,7 +1119,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Spring Meadow Green',
         style: 'Natural Play',
-        image: '/demos/thumbnails/daycares-preschools-theme1.webp',
+        image: '/demos/assets/demo-47-daycares/01_Hero_Showcase.png',
         palette: ['#06140D', '#34D399', '#F4EFEA'],
         accentHex: '#34D399',
       },
@@ -1142,7 +1142,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Speedway Yellow',
         style: 'Road Safety Amber',
-        image: '/demos/thumbnails/driving-schools-theme1.webp',
+        image: '/demos/assets/demo-48-driving/01_Hero_Showcase.png',
         palette: ['#120F04', '#FDE047', '#F4EFEA'],
         accentHex: '#FDE047',
       },
@@ -1165,7 +1165,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Zeiss Sapphire',
         style: 'Clinical Precision',
-        image: '/demos/thumbnails/optometry-eyewear-theme1.webp',
+        image: '/demos/assets/demo-49-optometry/01_Hero_Showcase.png',
         palette: ['#06131D', '#38BDF8', '#F4EFEA'],
         accentHex: '#38BDF8',
       },
@@ -1188,7 +1188,7 @@ export const PROJECTS: Project[] = [
       {
         name: 'Pure Water Aqua',
         style: 'Sanitized Hydration',
-        image: '/demos/thumbnails/home-services-theme1.webp',
+        image: '/demos/assets/demo-50-home/01_Hero_Showcase.png',
         palette: ['#06131D', '#06B6D4', '#F4EFEA'],
         accentHex: '#06B6D4',
       },
